@@ -1,11 +1,21 @@
 {
   "name": "purecloud-platform-client-v2",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A JavaScript library to interface with the PureCloud Platform API",
   "license": "MIT",
   "main": "src/purecloud-platform-client-v2/index.js",
-  "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --recursive"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MyPureCloud/platform-client-sdk-javascript.git"
+  },
+  "homepage": "https://github.com/MyPureCloud/platform-client-sdk-javascript",
+  "bugs": {
+    "url": "https://github.com/MyPureCloud/platform-client-sdk-javascript/issues"
+  },
+  "author": {
+    "name": "Genesys Developer Evangelists",
+    "email": "DeveloperEvangelists@genesys.com",
+    "url": "https://developer.mypurecloud.com"
   },
   "dependencies": {
     "superagent": "1.7.1"

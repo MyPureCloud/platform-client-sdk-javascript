@@ -18,7 +18,7 @@
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 2.0.1
+   * @version 2.0.2
    */
 
   /**
