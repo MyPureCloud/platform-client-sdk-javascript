@@ -18,7 +18,7 @@
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 2.0.2
+   * @version 2.0.3
    */
 
   /**
