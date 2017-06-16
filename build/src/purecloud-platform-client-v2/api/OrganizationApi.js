@@ -18,7 +18,7 @@
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 2.0.0
+   * @version 2.0.1
    */
 
   /**

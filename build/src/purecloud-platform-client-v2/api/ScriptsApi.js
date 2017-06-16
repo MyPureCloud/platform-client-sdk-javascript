@@ -18,7 +18,7 @@
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 2.0.0
+   * @version 2.0.1
    */
 
   /**
