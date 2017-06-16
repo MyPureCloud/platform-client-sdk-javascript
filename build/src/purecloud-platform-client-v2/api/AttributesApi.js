@@ -18,7 +18,7 @@
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 2.0.7
+   * @version 2.0.8
    */
 
   /**

@@ -25,8 +25,8 @@ npm install purecloud-platform-client-v2
 Reference from the CDN:
 
 ~~~ html
-<!-- Replace `2.0.7` with the version you want to use. -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/2.0.7/purecloud-platform-client-v2.min.js"></script>
+<!-- Replace `2.0.8` with the version you want to use. -->
+<script src="https://sdk-cdn.mypurecloud.com/javascript/2.0.8/purecloud-platform-client-v2.min.js"></script>
 ~~~
 
 View the documentation on the [PureCloud Developer Center](https://developer.mypurecloud.com/api/rest/client-libraries/javascript/).
