@@ -1,0 +1,644 @@
+---
+title: WorkforceManagementApi
+---
+# platformClient.WorkforceManagementApi
+
+All URIs are relative to *https://api.mypurecloud.com*
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+[**getWorkforcemanagementAdherence**](WorkforceManagementApi.html#getWorkforcemanagementAdherence) | **GET** /api/v2/workforcemanagement/adherence | Get a list of UserScheduleAdherence records for the requested users
+[**getWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitActivitycodes) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/activitycodes | Get activity codes corresponding to a management unit
+[**getWorkforcemanagementManagementunitIntradayQueues**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitIntradayQueues) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/intraday/queues | Get intraday queues for the given date
+[**getWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequest) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Get a time off request by id
+[**getWorkforcemanagementManagementunitUserTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequests) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests | Get a list of time off requests for any user
+[**getWorkforcemanagementManagementunitUsers**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUsers) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/users | Get agents in the management unit
+[**getWorkforcemanagementManagementunits**](WorkforceManagementApi.html#getWorkforcemanagementManagementunits) | **GET** /api/v2/workforcemanagement/managementunits | Get management units
+[**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequest) | **GET** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Get a time off request for the current user by id
+[**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequests) | **GET** /api/v2/workforcemanagement/timeoffrequests | Get a list of time off requests for the current user
+[**patchWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementTimeoffrequest) | **PATCH** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Mark a time off request for the current user as read or unread
+[**postWorkforcemanagementManagementunitIntraday**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitIntraday) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/intraday | Get intraday data for the given date for the requested queueIds
+[**postWorkforcemanagementManagementunitSchedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitSchedulesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/schedules/search | Get user schedules within the given time range
+[**postWorkforcemanagementSchedules**](WorkforceManagementApi.html#postWorkforcemanagementSchedules) | **POST** /api/v2/workforcemanagement/schedules | Get a schedule for the current user
+{: class="table table-striped"}
+
+<a name="getWorkforcemanagementAdherence"></a>
+
+# [**[UserScheduleAdherence]**](UserScheduleAdherence.html) getWorkforcemanagementAdherence(userId)
+
+GET /api/v2/workforcemanagement/adherence
+
+Get a list of UserScheduleAdherence records for the requested users
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var userId = ["userId_example"]; // [String] | User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request
+
+apiInstance.getWorkforcemanagementAdherence(userId)
+  .then(function(data) {
+    console.log(`getWorkforcemanagementAdherence success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getWorkforcemanagementAdherence');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | [**[String]**](String.html)| User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**[UserScheduleAdherence]**](UserScheduleAdherence.html)
+
+<a name="getWorkforcemanagementManagementunitActivitycodes"></a>
+
+# [**ActivityCodeContainer**](ActivityCodeContainer.html) getWorkforcemanagementManagementunitActivitycodes(muId)
+
+GET /api/v2/workforcemanagement/managementunits/{muId}/activitycodes
+
+Get activity codes corresponding to a management unit
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+
+apiInstance.getWorkforcemanagementManagementunitActivitycodes(muId)
+  .then(function(data) {
+    console.log(`getWorkforcemanagementManagementunitActivitycodes success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getWorkforcemanagementManagementunitActivitycodes');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActivityCodeContainer**](ActivityCodeContainer.html)
+
+<a name="getWorkforcemanagementManagementunitIntradayQueues"></a>
+
+# [**WfmIntradayQueueListing**](WfmIntradayQueueListing.html) getWorkforcemanagementManagementunitIntradayQueues(muId, _date)
+
+GET /api/v2/workforcemanagement/managementunits/{muId}/intraday/queues
+
+Get intraday queues for the given date
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+
+var _date = "_date_example"; // String | ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23
+
+apiInstance.getWorkforcemanagementManagementunitIntradayQueues(muId, _date)
+  .then(function(data) {
+    console.log(`getWorkforcemanagementManagementunitIntradayQueues success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getWorkforcemanagementManagementunitIntradayQueues');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **_date** | **String**| ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23 |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WfmIntradayQueueListing**](WfmIntradayQueueListing.html)
+
+<a name="getWorkforcemanagementManagementunitUserTimeoffrequest"></a>
+
+# [**TimeOffRequest**](TimeOffRequest.html) getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId)
+
+GET /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}
+
+Get a time off request by id
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+
+var userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
+
+var timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
+
+apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId)
+  .then(function(data) {
+    console.log(`getWorkforcemanagementManagementunitUserTimeoffrequest success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getWorkforcemanagementManagementunitUserTimeoffrequest');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **userId** | **String**| The userId to whom the Time Off Request applies. |  |
+ **timeOffRequestId** | **String**| Time Off Request Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TimeOffRequest**](TimeOffRequest.html)
+
+<a name="getWorkforcemanagementManagementunitUserTimeoffrequests"></a>
+
+# [**TimeOffRequestList**](TimeOffRequestList.html) getWorkforcemanagementManagementunitUserTimeoffrequests(muId, userId, opts)
+
+GET /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests
+
+Get a list of time off requests for any user
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+
+var userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
+
+var opts = { 
+  'recentlyReviewed': false // Boolean | Limit results to requests that have been reviewed within the preceding 30 days
+};
+apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(muId, userId, opts)
+  .then(function(data) {
+    console.log(`getWorkforcemanagementManagementunitUserTimeoffrequests success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getWorkforcemanagementManagementunitUserTimeoffrequests');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **userId** | **String**| The userId to whom the Time Off Request applies. |  |
+ **recentlyReviewed** | **Boolean**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+[**TimeOffRequestList**](TimeOffRequestList.html)
+
+<a name="getWorkforcemanagementManagementunitUsers"></a>
+
+# [**WfmUserEntityListing**](WfmUserEntityListing.html) getWorkforcemanagementManagementunitUsers(muId)
+
+GET /api/v2/workforcemanagement/managementunits/{muId}/users
+
+Get agents in the management unit
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+
+apiInstance.getWorkforcemanagementManagementunitUsers(muId)
+  .then(function(data) {
+    console.log(`getWorkforcemanagementManagementunitUsers success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getWorkforcemanagementManagementunitUsers');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WfmUserEntityListing**](WfmUserEntityListing.html)
+
+<a name="getWorkforcemanagementManagementunits"></a>
+
+# [**[ManagementUnit]**](ManagementUnit.html) getWorkforcemanagementManagementunits(opts)
+
+GET /api/v2/workforcemanagement/managementunits
+
+Get management units
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var opts = { 
+  'selector': "selector_example", // String | Selector
+  'pageSize': 25, // Number | 
+  'pageNumber': 1 // Number | 
+};
+apiInstance.getWorkforcemanagementManagementunits(opts)
+  .then(function(data) {
+    console.log(`getWorkforcemanagementManagementunits success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getWorkforcemanagementManagementunits');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **selector** | **String**| Selector | [optional]  |
+ **pageSize** | **Number**|  | [optional] [default to 25] |
+ **pageNumber** | **Number**|  | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**[ManagementUnit]**](ManagementUnit.html)
+
+<a name="getWorkforcemanagementTimeoffrequest"></a>
+
+# [**TimeOffRequest**](TimeOffRequest.html) getWorkforcemanagementTimeoffrequest(timeOffRequestId)
+
+GET /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}
+
+Get a time off request for the current user by id
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
+
+apiInstance.getWorkforcemanagementTimeoffrequest(timeOffRequestId)
+  .then(function(data) {
+    console.log(`getWorkforcemanagementTimeoffrequest success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getWorkforcemanagementTimeoffrequest');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **timeOffRequestId** | **String**| Time Off Request Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TimeOffRequest**](TimeOffRequest.html)
+
+<a name="getWorkforcemanagementTimeoffrequests"></a>
+
+# [**TimeOffRequestList**](TimeOffRequestList.html) getWorkforcemanagementTimeoffrequests(opts)
+
+GET /api/v2/workforcemanagement/timeoffrequests
+
+Get a list of time off requests for the current user
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var opts = { 
+  'recentlyReviewed': false // Boolean | Limit results to requests that have been reviewed within the preceding 30 days
+};
+apiInstance.getWorkforcemanagementTimeoffrequests(opts)
+  .then(function(data) {
+    console.log(`getWorkforcemanagementTimeoffrequests success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getWorkforcemanagementTimeoffrequests');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **recentlyReviewed** | **Boolean**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+[**TimeOffRequestList**](TimeOffRequestList.html)
+
+<a name="patchWorkforcemanagementTimeoffrequest"></a>
+
+# null patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
+
+PATCH /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}
+
+Mark a time off request for the current user as read or unread
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
+
+var opts = { 
+  'body': new platformClient.TimeOffRequestPatch() // TimeOffRequestPatch | 
+};
+apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
+  .then(function() {
+    console.log('patchWorkforcemanagementTimeoffrequest returned successfully.');
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling patchWorkforcemanagementTimeoffrequest');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **timeOffRequestId** | **String**| Time Off Request Id |  |
+ **body** | [**TimeOffRequestPatch**](TimeOffRequestPatch.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="postWorkforcemanagementManagementunitIntraday"></a>
+
+# [**IntradayResponse**](IntradayResponse.html) postWorkforcemanagementManagementunitIntraday(muId, opts)
+
+POST /api/v2/workforcemanagement/managementunits/{muId}/intraday
+
+Get intraday data for the given date for the requested queueIds
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+
+var opts = { 
+  'body': new platformClient.IntradayQueryDataCommand() // IntradayQueryDataCommand | body
+};
+apiInstance.postWorkforcemanagementManagementunitIntraday(muId, opts)
+  .then(function(data) {
+    console.log(`postWorkforcemanagementManagementunitIntraday success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling postWorkforcemanagementManagementunitIntraday');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **body** | [**IntradayQueryDataCommand**](IntradayQueryDataCommand.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**IntradayResponse**](IntradayResponse.html)
+
+<a name="postWorkforcemanagementManagementunitSchedulesSearch"></a>
+
+# [**UserScheduleContainer**](UserScheduleContainer.html) postWorkforcemanagementManagementunitSchedulesSearch(muId, opts)
+
+POST /api/v2/workforcemanagement/managementunits/{muId}/schedules/search
+
+Get user schedules within the given time range
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+
+var opts = { 
+  'body': new platformClient.UserListScheduleRequestBody() // UserListScheduleRequestBody | body
+};
+apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(muId, opts)
+  .then(function(data) {
+    console.log(`postWorkforcemanagementManagementunitSchedulesSearch success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling postWorkforcemanagementManagementunitSchedulesSearch');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **body** | [**UserListScheduleRequestBody**](UserListScheduleRequestBody.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserScheduleContainer**](UserScheduleContainer.html)
+
+<a name="postWorkforcemanagementSchedules"></a>
+
+# [**UserScheduleContainer**](UserScheduleContainer.html) postWorkforcemanagementSchedules(opts)
+
+POST /api/v2/workforcemanagement/schedules
+
+Get a schedule for the current user
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var opts = { 
+  'body': new platformClient.CurrentUserScheduleRequestBody() // CurrentUserScheduleRequestBody | body
+};
+apiInstance.postWorkforcemanagementSchedules(opts)
+  .then(function(data) {
+    console.log(`postWorkforcemanagementSchedules success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling postWorkforcemanagementSchedules');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | [**CurrentUserScheduleRequestBody**](CurrentUserScheduleRequestBody.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserScheduleContainer**](UserScheduleContainer.html)
+

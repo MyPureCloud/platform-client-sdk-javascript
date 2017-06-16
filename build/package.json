@@ -1,0 +1,18 @@
+{
+  "name": "purecloud-platform-client-v2",
+  "version": "2.0.0",
+  "description": "A JavaScript library to interface with the PureCloud Platform API",
+  "license": "MIT",
+  "main": "src/purecloud-platform-client-v2/index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --recursive"
+  },
+  "dependencies": {
+    "superagent": "1.7.1"
+  },
+  "devDependencies": {
+    "mocha": "~2.3.4",
+    "sinon": "1.17.3",
+    "expect.js": "~0.3.1"
+  }
+}

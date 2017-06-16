@@ -1,0 +1,2061 @@
+---
+title: UsersApi
+---
+# platformClient.UsersApi
+
+All URIs are relative to *https://api.mypurecloud.com*
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+[**deleteUser**](UsersApi.html#deleteUser) | **DELETE** /api/v2/users/{userId} | Delete user
+[**deleteUserRoles**](UsersApi.html#deleteUserRoles) | **DELETE** /api/v2/users/{userId}/roles | Removes all the roles from the user.
+[**deleteUserRoutingskill**](UsersApi.html#deleteUserRoutingskill) | **DELETE** /api/v2/users/{userId}/routingskills/{skillId} | Remove routing skill from user
+[**deleteUserStationAssociatedstation**](UsersApi.html#deleteUserStationAssociatedstation) | **DELETE** /api/v2/users/{userId}/station/associatedstation | Clear associated station
+[**deleteUserStationDefaultstation**](UsersApi.html#deleteUserStationDefaultstation) | **DELETE** /api/v2/users/{userId}/station/defaultstation | Clear default station
+[**getFieldconfig**](UsersApi.html#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
+[**getUser**](UsersApi.html#getUser) | **GET** /api/v2/users/{userId} | Get user.
+[**getUserAdjacents**](UsersApi.html#getUserAdjacents) | **GET** /api/v2/users/{userId}/adjacents | Get adjacents
+[**getUserCallforwarding**](UsersApi.html#getUserCallforwarding) | **GET** /api/v2/users/{userId}/callforwarding | Get a user&#39;s CallForwarding
+[**getUserDirectreports**](UsersApi.html#getUserDirectreports) | **GET** /api/v2/users/{userId}/directreports | Get direct reports
+[**getUserFavorites**](UsersApi.html#getUserFavorites) | **GET** /api/v2/users/{userId}/favorites | Get favorites
+[**getUserGeolocation**](UsersApi.html#getUserGeolocation) | **GET** /api/v2/users/{userId}/geolocations/{clientId} | Get a user&#39;s Geolocation
+[**getUserOutofoffice**](UsersApi.html#getUserOutofoffice) | **GET** /api/v2/users/{userId}/outofoffice | Get a OutOfOffice
+[**getUserProfileskills**](UsersApi.html#getUserProfileskills) | **GET** /api/v2/users/{userId}/profileskills | List profile skills for a user
+[**getUserQueues**](UsersApi.html#getUserQueues) | **GET** /api/v2/users/{userId}/queues | Get queues for user
+[**getUserRoles**](UsersApi.html#getUserRoles) | **GET** /api/v2/users/{userId}/roles | Returns a listing of roles and permissions for a user.
+[**getUserRoutingskills**](UsersApi.html#getUserRoutingskills) | **GET** /api/v2/users/{userId}/routingskills | List routing skills for user
+[**getUserRoutingstatus**](UsersApi.html#getUserRoutingstatus) | **GET** /api/v2/users/{userId}/routingstatus | Fetch the routing status of a user
+[**getUserStation**](UsersApi.html#getUserStation) | **GET** /api/v2/users/{userId}/station | Get station information for user
+[**getUserSuperiors**](UsersApi.html#getUserSuperiors) | **GET** /api/v2/users/{userId}/superiors | Get superiors
+[**getUsers**](UsersApi.html#getUsers) | **GET** /api/v2/users | Get the list of available users.
+[**getUsersMe**](UsersApi.html#getUsersMe) | **GET** /api/v2/users/me | Get current user details.
+[**getUsersSearch**](UsersApi.html#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
+[**patchUser**](UsersApi.html#patchUser) | **PATCH** /api/v2/users/{userId} | Update user
+[**patchUserCallforwarding**](UsersApi.html#patchUserCallforwarding) | **PATCH** /api/v2/users/{userId}/callforwarding | Patch a user&#39;s CallForwarding
+[**patchUserGeolocation**](UsersApi.html#patchUserGeolocation) | **PATCH** /api/v2/users/{userId}/geolocations/{clientId} | Patch a user&#39;s Geolocation
+[**patchUserQueue**](UsersApi.html#patchUserQueue) | **PATCH** /api/v2/users/{userId}/queues/{queueId} | Join or unjoin a queue for a user
+[**patchUserQueues**](UsersApi.html#patchUserQueues) | **PATCH** /api/v2/users/{userId}/queues | Join or unjoin a set of queues for a user
+[**postAnalyticsUsersAggregatesQuery**](UsersApi.html#postAnalyticsUsersAggregatesQuery) | **POST** /api/v2/analytics/users/aggregates/query | Query for user aggregates
+[**postAnalyticsUsersDetailsQuery**](UsersApi.html#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
+[**postAnalyticsUsersObservationsQuery**](UsersApi.html#postAnalyticsUsersObservationsQuery) | **POST** /api/v2/analytics/users/observations/query | Query for user observations
+[**postUserRoutingskills**](UsersApi.html#postUserRoutingskills) | **POST** /api/v2/users/{userId}/routingskills | Add routing skill to user
+[**postUsers**](UsersApi.html#postUsers) | **POST** /api/v2/users | Create user
+[**postUsersSearch**](UsersApi.html#postUsersSearch) | **POST** /api/v2/users/search | Search users
+[**putUserCallforwarding**](UsersApi.html#putUserCallforwarding) | **PUT** /api/v2/users/{userId}/callforwarding | Update a user&#39;s CallForwarding
+[**putUserOutofoffice**](UsersApi.html#putUserOutofoffice) | **PUT** /api/v2/users/{userId}/outofoffice | Update an OutOfOffice
+[**putUserProfileskills**](UsersApi.html#putUserProfileskills) | **PUT** /api/v2/users/{userId}/profileskills | Update profile skills for a user
+[**putUserRoles**](UsersApi.html#putUserRoles) | **PUT** /api/v2/users/{userId}/roles | Sets the user&#39;s roles
+[**putUserRoutingskill**](UsersApi.html#putUserRoutingskill) | **PUT** /api/v2/users/{userId}/routingskills/{skillId} | Update routing skill proficiency or state.
+[**putUserRoutingstatus**](UsersApi.html#putUserRoutingstatus) | **PUT** /api/v2/users/{userId}/routingstatus | Update the routing status of a user
+[**putUserStationAssociatedstationStationId**](UsersApi.html#putUserStationAssociatedstationStationId) | **PUT** /api/v2/users/{userId}/station/associatedstation/{stationId} | Set associated station
+[**putUserStationDefaultstationStationId**](UsersApi.html#putUserStationDefaultstationStationId) | **PUT** /api/v2/users/{userId}/station/defaultstation/{stationId} | Set default station
+{: class="table table-striped"}
+
+<a name="deleteUser"></a>
+
+# [**Empty**](Empty.html) deleteUser(userId)
+
+DELETE /api/v2/users/{userId}
+
+Delete user
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+apiInstance.deleteUser(userId)
+  .then(function(data) {
+    console.log(`deleteUser success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling deleteUser');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Empty**](Empty.html)
+
+<a name="deleteUserRoles"></a>
+
+# null deleteUserRoles(userId)
+
+DELETE /api/v2/users/{userId}/roles
+
+Removes all the roles from the user.
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+apiInstance.deleteUserRoles(userId)
+  .then(function() {
+    console.log('deleteUserRoles returned successfully.');
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling deleteUserRoles');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteUserRoutingskill"></a>
+
+# null deleteUserRoutingskill(userId, skillId)
+
+DELETE /api/v2/users/{userId}/routingskills/{skillId}
+
+Remove routing skill from user
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var skillId = "skillId_example"; // String | skillId
+
+apiInstance.deleteUserRoutingskill(userId, skillId)
+  .then(function() {
+    console.log('deleteUserRoutingskill returned successfully.');
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling deleteUserRoutingskill');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **skillId** | **String**| skillId |  |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteUserStationAssociatedstation"></a>
+
+# null deleteUserStationAssociatedstation(userId)
+
+DELETE /api/v2/users/{userId}/station/associatedstation
+
+Clear associated station
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+apiInstance.deleteUserStationAssociatedstation(userId)
+  .then(function() {
+    console.log('deleteUserStationAssociatedstation returned successfully.');
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling deleteUserStationAssociatedstation');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteUserStationDefaultstation"></a>
+
+# null deleteUserStationDefaultstation(userId)
+
+DELETE /api/v2/users/{userId}/station/defaultstation
+
+Clear default station
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+apiInstance.deleteUserStationDefaultstation(userId)
+  .then(function() {
+    console.log('deleteUserStationDefaultstation returned successfully.');
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling deleteUserStationDefaultstation');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="getFieldconfig"></a>
+
+# [**FieldConfig**](FieldConfig.html) getFieldconfig(type)
+
+GET /api/v2/fieldconfig
+
+Fetch field config for an entity type
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var type = "type_example"; // String | Field type
+
+apiInstance.getFieldconfig(type)
+  .then(function(data) {
+    console.log(`getFieldconfig success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getFieldconfig');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **type** | **String**| Field type | <br />**Values**: person, group, org, externalContact |
+{: class="table table-striped"}
+
+### Return type
+
+[**FieldConfig**](FieldConfig.html)
+
+<a name="getUser"></a>
+
+# [**User**](User.html) getUser(userId, opts)
+
+GET /api/v2/users/{userId}
+
+Get user.
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var opts = { 
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'state': "active" // String | Search for a user with this state
+};
+apiInstance.getUser(userId, opts)
+  .then(function(data) {
+    console.log(`getUser success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getUser');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+ **state** | **String**| Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
+{: class="table table-striped"}
+
+### Return type
+
+[**User**](User.html)
+
+<a name="getUserAdjacents"></a>
+
+# [**Adjacents**](Adjacents.html) getUserAdjacents(userId, opts)
+
+GET /api/v2/users/{userId}/adjacents
+
+Get adjacents
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+};
+apiInstance.getUserAdjacents(userId, opts)
+  .then(function(data) {
+    console.log(`getUserAdjacents success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getUserAdjacents');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+{: class="table table-striped"}
+
+### Return type
+
+[**Adjacents**](Adjacents.html)
+
+<a name="getUserCallforwarding"></a>
+
+# [**CallForwarding**](CallForwarding.html) getUserCallforwarding(userId)
+
+GET /api/v2/users/{userId}/callforwarding
+
+Get a user&#39;s CallForwarding
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+apiInstance.getUserCallforwarding(userId)
+  .then(function(data) {
+    console.log(`getUserCallforwarding success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getUserCallforwarding');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CallForwarding**](CallForwarding.html)
+
+<a name="getUserDirectreports"></a>
+
+# [**[User]**](User.html) getUserDirectreports(userId, opts)
+
+GET /api/v2/users/{userId}/directreports
+
+Get direct reports
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+};
+apiInstance.getUserDirectreports(userId, opts)
+  .then(function(data) {
+    console.log(`getUserDirectreports success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getUserDirectreports');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+{: class="table table-striped"}
+
+### Return type
+
+[**[User]**](User.html)
+
+<a name="getUserFavorites"></a>
+
+# [**UserEntityListing**](UserEntityListing.html) getUserFavorites(userId, opts)
+
+GET /api/v2/users/{userId}/favorites
+
+Get favorites
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'sortOrder': "ASC", // String | Sort order
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+};
+apiInstance.getUserFavorites(userId, opts)
+  .then(function(data) {
+    console.log(`getUserFavorites success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getUserFavorites');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **pageSize** | **Number**| Page size | [optional] [default to 25] |
+ **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
+ **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserEntityListing**](UserEntityListing.html)
+
+<a name="getUserGeolocation"></a>
+
+# [**Geolocation**](Geolocation.html) getUserGeolocation(userId, clientId)
+
+GET /api/v2/users/{userId}/geolocations/{clientId}
+
+Get a user&#39;s Geolocation
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | user Id
+
+var clientId = "clientId_example"; // String | client Id
+
+apiInstance.getUserGeolocation(userId, clientId)
+  .then(function(data) {
+    console.log(`getUserGeolocation success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getUserGeolocation');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| user Id |  |
+ **clientId** | **String**| client Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Geolocation**](Geolocation.html)
+
+<a name="getUserOutofoffice"></a>
+
+# [**OutOfOffice**](OutOfOffice.html) getUserOutofoffice(userId)
+
+GET /api/v2/users/{userId}/outofoffice
+
+Get a OutOfOffice
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+apiInstance.getUserOutofoffice(userId)
+  .then(function(data) {
+    console.log(`getUserOutofoffice success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getUserOutofoffice');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OutOfOffice**](OutOfOffice.html)
+
+<a name="getUserProfileskills"></a>
+
+# **[&#39;String&#39;]** getUserProfileskills(userId)
+
+GET /api/v2/users/{userId}/profileskills
+
+List profile skills for a user
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+apiInstance.getUserProfileskills(userId)
+  .then(function(data) {
+    console.log(`getUserProfileskills success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getUserProfileskills');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**[&#39;String&#39;]**
+
+<a name="getUserQueues"></a>
+
+# [**UserQueueEntityListing**](UserQueueEntityListing.html) getUserQueues(userId, opts)
+
+GET /api/v2/users/{userId}/queues
+
+Get queues for user
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'joined': true // Boolean | Is joined to the queue
+};
+apiInstance.getUserQueues(userId, opts)
+  .then(function(data) {
+    console.log(`getUserQueues success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getUserQueues');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **pageSize** | **Number**| Page size | [optional] [default to 25] |
+ **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **joined** | **Boolean**| Is joined to the queue | [optional] [default to true] |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserQueueEntityListing**](UserQueueEntityListing.html)
+
+<a name="getUserRoles"></a>
+
+# [**UserAuthorization**](UserAuthorization.html) getUserRoles(userId)
+
+GET /api/v2/users/{userId}/roles
+
+Returns a listing of roles and permissions for a user.
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+apiInstance.getUserRoles(userId)
+  .then(function(data) {
+    console.log(`getUserRoles success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getUserRoles');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserAuthorization**](UserAuthorization.html)
+
+<a name="getUserRoutingskills"></a>
+
+# [**UserSkillEntityListing**](UserSkillEntityListing.html) getUserRoutingskills(userId, opts)
+
+GET /api/v2/users/{userId}/routingskills
+
+List routing skills for user
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'sortOrder': "ASC" // String | Ascending or descending sort order
+};
+apiInstance.getUserRoutingskills(userId, opts)
+  .then(function(data) {
+    console.log(`getUserRoutingskills success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getUserRoutingskills');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **pageSize** | **Number**| Page size | [optional] [default to 25] |
+ **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserSkillEntityListing**](UserSkillEntityListing.html)
+
+<a name="getUserRoutingstatus"></a>
+
+# [**RoutingStatus**](RoutingStatus.html) getUserRoutingstatus(userId)
+
+GET /api/v2/users/{userId}/routingstatus
+
+Fetch the routing status of a user
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+apiInstance.getUserRoutingstatus(userId)
+  .then(function(data) {
+    console.log(`getUserRoutingstatus success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getUserRoutingstatus');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**RoutingStatus**](RoutingStatus.html)
+
+<a name="getUserStation"></a>
+
+# [**UserStations**](UserStations.html) getUserStation(userId)
+
+GET /api/v2/users/{userId}/station
+
+Get station information for user
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+apiInstance.getUserStation(userId)
+  .then(function(data) {
+    console.log(`getUserStation success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getUserStation');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserStations**](UserStations.html)
+
+<a name="getUserSuperiors"></a>
+
+# [**[User]**](User.html) getUserSuperiors(userId, opts)
+
+GET /api/v2/users/{userId}/superiors
+
+Get superiors
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+};
+apiInstance.getUserSuperiors(userId, opts)
+  .then(function(data) {
+    console.log(`getUserSuperiors success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getUserSuperiors');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+{: class="table table-striped"}
+
+### Return type
+
+[**[User]**](User.html)
+
+<a name="getUsers"></a>
+
+# [**UserEntityListing**](UserEntityListing.html) getUsers(opts)
+
+GET /api/v2/users
+
+Get the list of available users.
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'id': ["id_example"], // [String] | id
+  'sortOrder': "ASC", // String | Ascending or descending sort order
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'state': "active" // String | Only list users of this state
+};
+apiInstance.getUsers(opts)
+  .then(function(data) {
+    console.log(`getUsers success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getUsers');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number**| Page size | [optional] [default to 25] |
+ **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **id** | [**[String]**](String.html)| id | [optional]  |
+ **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+ **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+ **state** | **String**| Only list users of this state | [optional] [default to active]<br />**Values**: active, deleted |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserEntityListing**](UserEntityListing.html)
+
+<a name="getUsersMe"></a>
+
+# [**UserMe**](UserMe.html) getUsersMe(opts)
+
+GET /api/v2/users/me
+
+Get current user details.
+
+This request is not valid when using the Client Credentials OAuth grant.
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+};
+apiInstance.getUsersMe(opts)
+  .then(function(data) {
+    console.log(`getUsersMe success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getUsersMe');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserMe**](UserMe.html)
+
+<a name="getUsersSearch"></a>
+
+# [**UsersSearchResponse**](UsersSearchResponse.html) getUsersSearch(q64, opts)
+
+GET /api/v2/users/search
+
+Search users using the q64 value returned from a previous search
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var q64 = "q64_example"; // String | q64
+
+var opts = { 
+  'expand': ["expand_example"] // [String] | expand
+};
+apiInstance.getUsersSearch(q64, opts)
+  .then(function(data) {
+    console.log(`getUsersSearch success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getUsersSearch');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **q64** | **String**| q64 |  |
+ **expand** | [**[String]**](String.html)| expand | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UsersSearchResponse**](UsersSearchResponse.html)
+
+<a name="patchUser"></a>
+
+# [**User**](User.html) patchUser(userId, body)
+
+PATCH /api/v2/users/{userId}
+
+Update user
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var body = new platformClient.UpdateUser(); // UpdateUser | User
+
+apiInstance.patchUser(userId, body)
+  .then(function(data) {
+    console.log(`patchUser success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling patchUser');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **body** | [**UpdateUser**](UpdateUser.html)| User |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**User**](User.html)
+
+<a name="patchUserCallforwarding"></a>
+
+# [**CallForwarding**](CallForwarding.html) patchUserCallforwarding(userId, body)
+
+PATCH /api/v2/users/{userId}/callforwarding
+
+Patch a user&#39;s CallForwarding
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var body = new platformClient.CallForwarding(); // CallForwarding | Call forwarding
+
+apiInstance.patchUserCallforwarding(userId, body)
+  .then(function(data) {
+    console.log(`patchUserCallforwarding success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling patchUserCallforwarding');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **body** | [**CallForwarding**](CallForwarding.html)| Call forwarding |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CallForwarding**](CallForwarding.html)
+
+<a name="patchUserGeolocation"></a>
+
+# [**Geolocation**](Geolocation.html) patchUserGeolocation(userId, clientId, body)
+
+PATCH /api/v2/users/{userId}/geolocations/{clientId}
+
+Patch a user&#39;s Geolocation
+
+The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | user Id
+
+var clientId = "clientId_example"; // String | client Id
+
+var body = new platformClient.Geolocation(); // Geolocation | Geolocation
+
+apiInstance.patchUserGeolocation(userId, clientId, body)
+  .then(function(data) {
+    console.log(`patchUserGeolocation success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling patchUserGeolocation');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| user Id |  |
+ **clientId** | **String**| client Id |  |
+ **body** | [**Geolocation**](Geolocation.html)| Geolocation |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Geolocation**](Geolocation.html)
+
+<a name="patchUserQueue"></a>
+
+# [**UserQueue**](UserQueue.html) patchUserQueue(queueId, userId, body)
+
+PATCH /api/v2/users/{userId}/queues/{queueId}
+
+Join or unjoin a queue for a user
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var queueId = "queueId_example"; // String | Queue ID
+
+var userId = "userId_example"; // String | User ID
+
+var body = new platformClient.UserQueue(); // UserQueue | Queue Member
+
+apiInstance.patchUserQueue(queueId, userId, body)
+  .then(function(data) {
+    console.log(`patchUserQueue success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling patchUserQueue');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **queueId** | **String**| Queue ID |  |
+ **userId** | **String**| User ID |  |
+ **body** | [**UserQueue**](UserQueue.html)| Queue Member |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserQueue**](UserQueue.html)
+
+<a name="patchUserQueues"></a>
+
+# [**UserQueueEntityListing**](UserQueueEntityListing.html) patchUserQueues(userId, body)
+
+PATCH /api/v2/users/{userId}/queues
+
+Join or unjoin a set of queues for a user
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var body = [new platformClient.UserQueue()]; // [UserQueue] | User Queues
+
+apiInstance.patchUserQueues(userId, body)
+  .then(function(data) {
+    console.log(`patchUserQueues success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling patchUserQueues');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **body** | [**[UserQueue]**](UserQueue.html)| User Queues |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserQueueEntityListing**](UserQueueEntityListing.html)
+
+<a name="postAnalyticsUsersAggregatesQuery"></a>
+
+# [**PresenceQueryResponse**](PresenceQueryResponse.html) postAnalyticsUsersAggregatesQuery(body)
+
+POST /api/v2/analytics/users/aggregates/query
+
+Query for user aggregates
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var body = new platformClient.AggregationQuery(); // AggregationQuery | query
+
+apiInstance.postAnalyticsUsersAggregatesQuery(body)
+  .then(function(data) {
+    console.log(`postAnalyticsUsersAggregatesQuery success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling postAnalyticsUsersAggregatesQuery');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PresenceQueryResponse**](PresenceQueryResponse.html)
+
+<a name="postAnalyticsUsersDetailsQuery"></a>
+
+# [**AnalyticsUserDetailsQueryResponse**](AnalyticsUserDetailsQueryResponse.html) postAnalyticsUsersDetailsQuery(body)
+
+POST /api/v2/analytics/users/details/query
+
+Query for user details
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var body = new platformClient.UserDetailsQuery(); // UserDetailsQuery | query
+
+apiInstance.postAnalyticsUsersDetailsQuery(body)
+  .then(function(data) {
+    console.log(`postAnalyticsUsersDetailsQuery success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling postAnalyticsUsersDetailsQuery');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | [**UserDetailsQuery**](UserDetailsQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AnalyticsUserDetailsQueryResponse**](AnalyticsUserDetailsQueryResponse.html)
+
+<a name="postAnalyticsUsersObservationsQuery"></a>
+
+# [**ObservationQueryResponse**](ObservationQueryResponse.html) postAnalyticsUsersObservationsQuery(body)
+
+POST /api/v2/analytics/users/observations/query
+
+Query for user observations
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var body = new platformClient.ObservationQuery(); // ObservationQuery | query
+
+apiInstance.postAnalyticsUsersObservationsQuery(body)
+  .then(function(data) {
+    console.log(`postAnalyticsUsersObservationsQuery success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling postAnalyticsUsersObservationsQuery');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | [**ObservationQuery**](ObservationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ObservationQueryResponse**](ObservationQueryResponse.html)
+
+<a name="postUserRoutingskills"></a>
+
+# [**UserRoutingSkill**](UserRoutingSkill.html) postUserRoutingskills(userId, body)
+
+POST /api/v2/users/{userId}/routingskills
+
+Add routing skill to user
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var body = new platformClient.UserRoutingSkillPost(); // UserRoutingSkillPost | Skill
+
+apiInstance.postUserRoutingskills(userId, body)
+  .then(function(data) {
+    console.log(`postUserRoutingskills success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling postUserRoutingskills');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **body** | [**UserRoutingSkillPost**](UserRoutingSkillPost.html)| Skill |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserRoutingSkill**](UserRoutingSkill.html)
+
+<a name="postUsers"></a>
+
+# [**User**](User.html) postUsers(body)
+
+POST /api/v2/users
+
+Create user
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var body = new platformClient.CreateUser(); // CreateUser | User
+
+apiInstance.postUsers(body)
+  .then(function(data) {
+    console.log(`postUsers success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling postUsers');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | [**CreateUser**](CreateUser.html)| User |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**User**](User.html)
+
+<a name="postUsersSearch"></a>
+
+# [**UsersSearchResponse**](UsersSearchResponse.html) postUsersSearch(body)
+
+POST /api/v2/users/search
+
+Search users
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var body = new platformClient.UserSearchRequest(); // UserSearchRequest | Search request options
+
+apiInstance.postUsersSearch(body)
+  .then(function(data) {
+    console.log(`postUsersSearch success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling postUsersSearch');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UsersSearchResponse**](UsersSearchResponse.html)
+
+<a name="putUserCallforwarding"></a>
+
+# [**CallForwarding**](CallForwarding.html) putUserCallforwarding(userId, body)
+
+PUT /api/v2/users/{userId}/callforwarding
+
+Update a user&#39;s CallForwarding
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var body = new platformClient.CallForwarding(); // CallForwarding | Call forwarding
+
+apiInstance.putUserCallforwarding(userId, body)
+  .then(function(data) {
+    console.log(`putUserCallforwarding success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling putUserCallforwarding');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **body** | [**CallForwarding**](CallForwarding.html)| Call forwarding |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CallForwarding**](CallForwarding.html)
+
+<a name="putUserOutofoffice"></a>
+
+# [**OutOfOffice**](OutOfOffice.html) putUserOutofoffice(userId, body)
+
+PUT /api/v2/users/{userId}/outofoffice
+
+Update an OutOfOffice
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var body = new platformClient.OutOfOffice(); // OutOfOffice | The updated UserPresence
+
+apiInstance.putUserOutofoffice(userId, body)
+  .then(function(data) {
+    console.log(`putUserOutofoffice success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling putUserOutofoffice');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **body** | [**OutOfOffice**](OutOfOffice.html)| The updated UserPresence |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OutOfOffice**](OutOfOffice.html)
+
+<a name="putUserProfileskills"></a>
+
+# **[&#39;String&#39;]** putUserProfileskills(userId, opts)
+
+PUT /api/v2/users/{userId}/profileskills
+
+Update profile skills for a user
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var opts = { 
+  'body': [new platformClient.[String]()] // [String] | Skills
+};
+apiInstance.putUserProfileskills(userId, opts)
+  .then(function(data) {
+    console.log(`putUserProfileskills success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling putUserProfileskills');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **body** | **[String]**| Skills | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**[&#39;String&#39;]**
+
+<a name="putUserRoles"></a>
+
+# [**UserAuthorization**](UserAuthorization.html) putUserRoles(userId, body)
+
+PUT /api/v2/users/{userId}/roles
+
+Sets the user&#39;s roles
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var body = [new platformClient.[String]()]; // [String] | List of roles
+
+apiInstance.putUserRoles(userId, body)
+  .then(function(data) {
+    console.log(`putUserRoles success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling putUserRoles');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **body** | **[String]**| List of roles |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserAuthorization**](UserAuthorization.html)
+
+<a name="putUserRoutingskill"></a>
+
+# [**UserRoutingSkill**](UserRoutingSkill.html) putUserRoutingskill(userId, skillId, body)
+
+PUT /api/v2/users/{userId}/routingskills/{skillId}
+
+Update routing skill proficiency or state.
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var skillId = "skillId_example"; // String | skillId
+
+var body = new platformClient.UserRoutingSkill(); // UserRoutingSkill | Skill
+
+apiInstance.putUserRoutingskill(userId, skillId, body)
+  .then(function(data) {
+    console.log(`putUserRoutingskill success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling putUserRoutingskill');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **skillId** | **String**| skillId |  |
+ **body** | [**UserRoutingSkill**](UserRoutingSkill.html)| Skill |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserRoutingSkill**](UserRoutingSkill.html)
+
+<a name="putUserRoutingstatus"></a>
+
+# [**RoutingStatus**](RoutingStatus.html) putUserRoutingstatus(userId, body)
+
+PUT /api/v2/users/{userId}/routingstatus
+
+Update the routing status of a user
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var body = new platformClient.RoutingStatus(); // RoutingStatus | Routing Status
+
+apiInstance.putUserRoutingstatus(userId, body)
+  .then(function(data) {
+    console.log(`putUserRoutingstatus success! data: ${data}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling putUserRoutingstatus');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **body** | [**RoutingStatus**](RoutingStatus.html)| Routing Status |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**RoutingStatus**](RoutingStatus.html)
+
+<a name="putUserStationAssociatedstationStationId"></a>
+
+# null putUserStationAssociatedstationStationId(userId, stationId)
+
+PUT /api/v2/users/{userId}/station/associatedstation/{stationId}
+
+Set associated station
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var stationId = "stationId_example"; // String | stationId
+
+apiInstance.putUserStationAssociatedstationStationId(userId, stationId)
+  .then(function() {
+    console.log('putUserStationAssociatedstationStationId returned successfully.');
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling putUserStationAssociatedstationStationId');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **stationId** | **String**| stationId |  |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="putUserStationDefaultstationStationId"></a>
+
+# null putUserStationDefaultstationStationId(userId, stationId)
+
+PUT /api/v2/users/{userId}/station/defaultstation/{stationId}
+
+Set default station
+
+
+
+### Example
+
+~~~ javascript
+var platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var stationId = "stationId_example"; // String | stationId
+
+apiInstance.putUserStationDefaultstationStationId(userId, stationId)
+  .then(function() {
+    console.log('putUserStationDefaultstationStationId returned successfully.');
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling putUserStationDefaultstationStationId');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **stationId** | **String**| stationId |  |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
