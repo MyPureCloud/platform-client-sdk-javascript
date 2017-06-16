@@ -30,7 +30,7 @@ Delete a Presence Definition
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -75,7 +75,7 @@ Get a Presence Definition
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -124,7 +124,7 @@ Get an Organization&#39;s list of Presence Definitions
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -176,7 +176,7 @@ Get the list of SystemPresences
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -215,7 +215,7 @@ Get a user&#39;s Presence
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -263,7 +263,7 @@ The presence object can be patched one of three ways. Option 1: Set the &#39;pri
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -314,7 +314,7 @@ Create a Presence Definition
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -359,7 +359,7 @@ Update a Presence Definition
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';

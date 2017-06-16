@@ -56,7 +56,7 @@ Delete a heart beat alert
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -101,7 +101,7 @@ Delete a heart beat rule.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -146,7 +146,7 @@ Delete an interaction stats alert
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -191,7 +191,7 @@ Delete an interaction stats rule.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -236,7 +236,7 @@ Delete a routing status alert
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -281,7 +281,7 @@ Delete a routing status rule.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -326,7 +326,7 @@ Delete a user presence alert
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -371,7 +371,7 @@ Delete a user presence rule.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -416,7 +416,7 @@ Get a heart beat alert
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -465,7 +465,7 @@ Get heart beat alert list.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -511,7 +511,7 @@ Get a heart beat rule.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -560,7 +560,7 @@ Get a heart beat rule list.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -606,7 +606,7 @@ Get an interaction stats alert
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -655,7 +655,7 @@ Get interaction stats alert list.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -701,7 +701,7 @@ Gets user unread count of interaction stats alerts.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -740,7 +740,7 @@ Get an interaction stats rule.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -789,7 +789,7 @@ Get an interaction stats rule list.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -835,7 +835,7 @@ Get a routing status alert
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -884,7 +884,7 @@ Get routing status alert list.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -930,7 +930,7 @@ Get a routing status rule.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -979,7 +979,7 @@ Get a routing status rule list.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1025,7 +1025,7 @@ Get a user presence alert
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1074,7 +1074,7 @@ Get user presence alert list.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1120,7 +1120,7 @@ Get a user presence rule.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1169,7 +1169,7 @@ Get a user presence rule list.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1215,7 +1215,7 @@ Create a heart beat rule.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1264,7 +1264,7 @@ Create an interaction stats rule.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1313,7 +1313,7 @@ Create a routing status rule.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1362,7 +1362,7 @@ Create a user presence rule.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1411,7 +1411,7 @@ Update a heart beat rule
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1463,7 +1463,7 @@ Update an interaction stats alert read status
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1515,7 +1515,7 @@ Update an interaction stats rule
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1567,7 +1567,7 @@ Update a routing status rule
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1619,7 +1619,7 @@ Update a user presence rule
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';

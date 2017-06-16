@@ -28,7 +28,7 @@ Delete a user recording.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -73,7 +73,7 @@ Get a user recording.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -122,7 +122,7 @@ Download a user recording.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -171,7 +171,7 @@ Get a list of user recordings.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -221,7 +221,7 @@ Get user recording summary
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -260,7 +260,7 @@ Update a user recording.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';

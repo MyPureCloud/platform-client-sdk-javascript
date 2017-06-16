@@ -28,7 +28,7 @@ Delete OAuth Client
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -73,7 +73,7 @@ Get OAuth Client
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -118,7 +118,7 @@ The list of OAuth clients
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -157,7 +157,7 @@ This operation will set the client secret to a randomly generated cryptographica
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -202,7 +202,7 @@ The OAuth Grant/Client is required in order to create an authentication token an
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -247,7 +247,7 @@ Update OAuth Client
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';

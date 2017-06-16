@@ -25,7 +25,7 @@ Unassigns the user assigned to this station
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -70,7 +70,7 @@ Get station.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -115,7 +115,7 @@ Get the list of available stations.
 ### Example
 
 ~~~ javascript
-var platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
