@@ -17,7 +17,7 @@
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 2.0.4
+   * @version 2.0.5
    */
 
   /**

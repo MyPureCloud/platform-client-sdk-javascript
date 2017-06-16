@@ -18,7 +18,7 @@
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 2.0.4
+   * @version 2.0.5
    */
 
   /**
