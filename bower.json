@@ -1,0 +1,26 @@
+
+{
+    "name": "purecloud-platform-client-v2",
+    "homepage": "https://github.com/MyPureCloud/platform-client-sdk-javascript",
+    "authors": [
+        "Genesys Developer Evangelists"
+    ],
+    "description": "A JavaScript library to interface with the PureCloud Platform API",
+    "main": [
+        "build/web/purecloud-platform-client-v2.js",
+        "build/web/purecloud-platform-client-v2.min.js"
+    ],
+    "moduleType": [
+        "globals"
+    ],
+    "license": "MIT",
+    "ignore": [
+        ".*",
+        "src",
+        "docs",
+        "spec",
+        "templates",
+        "tutorials",
+        "*.*"
+    ]
+}
