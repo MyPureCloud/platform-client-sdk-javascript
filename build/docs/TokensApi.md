@@ -71,7 +71,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.TokensApi();
 apiInstance.getTokensMe()
   .then(function(data) {
-    console.log(`getTokensMe success! data: ${data}`);
+    console.log(`getTokensMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTokensMe');

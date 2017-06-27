@@ -492,7 +492,7 @@ var domainId = "domainId_example"; // String | domain ID
 
 apiInstance.getRoutingEmailDomain(domainId)
   .then(function(data) {
-    console.log(`getRoutingEmailDomain success! data: ${data}`);
+    console.log(`getRoutingEmailDomain success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRoutingEmailDomain');
@@ -539,7 +539,7 @@ var routeId = "routeId_example"; // String | route ID
 
 apiInstance.getRoutingEmailDomainRoute(domainName, routeId)
   .then(function(data) {
-    console.log(`getRoutingEmailDomainRoute success! data: ${data}`);
+    console.log(`getRoutingEmailDomainRoute success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRoutingEmailDomainRoute');
@@ -590,7 +590,7 @@ var opts = {
 };
 apiInstance.getRoutingEmailDomainRoutes(domainName, opts)
   .then(function(data) {
-    console.log(`getRoutingEmailDomainRoutes success! data: ${data}`);
+    console.log(`getRoutingEmailDomainRoutes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRoutingEmailDomainRoutes');
@@ -635,7 +635,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.RoutingApi();
 apiInstance.getRoutingEmailDomains()
   .then(function(data) {
-    console.log(`getRoutingEmailDomains success! data: ${data}`);
+    console.log(`getRoutingEmailDomains success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRoutingEmailDomains');
@@ -674,7 +674,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.RoutingApi();
 apiInstance.getRoutingEmailSetup()
   .then(function(data) {
-    console.log(`getRoutingEmailSetup success! data: ${data}`);
+    console.log(`getRoutingEmailSetup success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRoutingEmailSetup');
@@ -720,7 +720,7 @@ var opts = {
 };
 apiInstance.getRoutingLanguages(opts)
   .then(function(data) {
-    console.log(`getRoutingLanguages success! data: ${data}`);
+    console.log(`getRoutingLanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRoutingLanguages');
@@ -768,7 +768,7 @@ var queueId = "queueId_example"; // String | Queue ID
 
 apiInstance.getRoutingQueue(queueId)
   .then(function(data) {
-    console.log(`getRoutingQueue success! data: ${data}`);
+    console.log(`getRoutingQueue success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRoutingQueue');
@@ -816,7 +816,7 @@ var opts = {
 };
 apiInstance.getRoutingQueueEstimatedwaittime(queueId, opts)
   .then(function(data) {
-    console.log(`getRoutingQueueEstimatedwaittime success! data: ${data}`);
+    console.log(`getRoutingQueueEstimatedwaittime success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRoutingQueueEstimatedwaittime');
@@ -864,7 +864,7 @@ var mediaType = "mediaType_example"; // String | mediaType
 
 apiInstance.getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType)
   .then(function(data) {
-    console.log(`getRoutingQueueMediatypeEstimatedwaittime success! data: ${data}`);
+    console.log(`getRoutingQueueMediatypeEstimatedwaittime success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRoutingQueueMediatypeEstimatedwaittime');
@@ -923,7 +923,7 @@ var opts = {
 };
 apiInstance.getRoutingQueueUsers(queueId, opts)
   .then(function(data) {
-    console.log(`getRoutingQueueUsers success! data: ${data}`);
+    console.log(`getRoutingQueueUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRoutingQueueUsers');
@@ -979,7 +979,7 @@ var queueId = "queueId_example"; // String | Queue ID
 
 apiInstance.getRoutingQueueWrapupcodes(queueId)
   .then(function(data) {
-    console.log(`getRoutingQueueWrapupcodes success! data: ${data}`);
+    console.log(`getRoutingQueueWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRoutingQueueWrapupcodes');
@@ -1029,7 +1029,7 @@ var opts = {
 };
 apiInstance.getRoutingQueues(opts)
   .then(function(data) {
-    console.log(`getRoutingQueues success! data: ${data}`);
+    console.log(`getRoutingQueues success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRoutingQueues');
@@ -1078,7 +1078,7 @@ var skillId = "skillId_example"; // String | Skill ID
 
 apiInstance.getRoutingSkill(skillId)
   .then(function(data) {
-    console.log(`getRoutingSkill success! data: ${data}`);
+    console.log(`getRoutingSkill success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRoutingSkill');
@@ -1126,7 +1126,7 @@ var opts = {
 };
 apiInstance.getRoutingSkills(opts)
   .then(function(data) {
-    console.log(`getRoutingSkills success! data: ${data}`);
+    console.log(`getRoutingSkills success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRoutingSkills');
@@ -1170,7 +1170,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.RoutingApi();
 apiInstance.getRoutingUtilization()
   .then(function(data) {
-    console.log(`getRoutingUtilization success! data: ${data}`);
+    console.log(`getRoutingUtilization success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRoutingUtilization');
@@ -1212,7 +1212,7 @@ var codeId = "codeId_example"; // String | Wrapup Code ID
 
 apiInstance.getRoutingWrapupcode(codeId)
   .then(function(data) {
-    console.log(`getRoutingWrapupcode success! data: ${data}`);
+    console.log(`getRoutingWrapupcode success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRoutingWrapupcode');
@@ -1256,11 +1256,12 @@ var apiInstance = new platformClient.RoutingApi();
 var opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
+  'name': "name_example", // String | Name
   'sortBy': "name" // String | Sort by
 };
 apiInstance.getRoutingWrapupcodes(opts)
   .then(function(data) {
-    console.log(`getRoutingWrapupcodes success! data: ${data}`);
+    console.log(`getRoutingWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRoutingWrapupcodes');
@@ -1276,6 +1277,7 @@ apiInstance.getRoutingWrapupcodes(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number**| Page size | [optional] [default to 25] |
  **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **name** | **String**| Name | [optional]  |
  **sortBy** | **String**| Sort by | [optional] [default to name] |
 {: class="table table-striped"}
 
@@ -1312,7 +1314,7 @@ var opts = {
 };
 apiInstance.getUserRoutingskills(userId, opts)
   .then(function(data) {
-    console.log(`getUserRoutingskills success! data: ${data}`);
+    console.log(`getUserRoutingskills success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserRoutingskills');
@@ -1364,7 +1366,7 @@ var body = new platformClient.QueueMember(); // QueueMember | Queue Member
 
 apiInstance.patchRoutingQueueUser(queueId, memberId, body)
   .then(function(data) {
-    console.log(`patchRoutingQueueUser success! data: ${data}`);
+    console.log(`patchRoutingQueueUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchRoutingQueueUser');
@@ -1413,7 +1415,7 @@ var body = [new platformClient.QueueMember()]; // [QueueMember] | Queue Members
 
 apiInstance.patchRoutingQueueUsers(queueId, body)
   .then(function(data) {
-    console.log(`patchRoutingQueueUsers success! data: ${data}`);
+    console.log(`patchRoutingQueueUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchRoutingQueueUsers');
@@ -1459,7 +1461,7 @@ var body = new platformClient.ObservationQuery(); // ObservationQuery | query
 
 apiInstance.postAnalyticsQueuesObservationsQuery(body)
   .then(function(data) {
-    console.log(`postAnalyticsQueuesObservationsQuery success! data: ${data}`);
+    console.log(`postAnalyticsQueuesObservationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAnalyticsQueuesObservationsQuery');
@@ -1506,7 +1508,7 @@ var body = new platformClient.InboundRoute(); // InboundRoute | Route
 
 apiInstance.postRoutingEmailDomainRoutes(domainName, body)
   .then(function(data) {
-    console.log(`postRoutingEmailDomainRoutes success! data: ${data}`);
+    console.log(`postRoutingEmailDomainRoutes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postRoutingEmailDomainRoutes');
@@ -1552,7 +1554,7 @@ var body = new platformClient.InboundDomain(); // InboundDomain | Domain
 
 apiInstance.postRoutingEmailDomains(body)
   .then(function(data) {
-    console.log(`postRoutingEmailDomains success! data: ${data}`);
+    console.log(`postRoutingEmailDomains success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postRoutingEmailDomains');
@@ -1597,7 +1599,7 @@ var body = new platformClient.Language(); // Language | Language
 
 apiInstance.postRoutingLanguages(body)
   .then(function(data) {
-    console.log(`postRoutingLanguages success! data: ${data}`);
+    console.log(`postRoutingLanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postRoutingLanguages');
@@ -1647,7 +1649,7 @@ var opts = {
 };
 apiInstance.postRoutingQueueUsers(queueId, body, opts)
   .then(function(data) {
-    console.log(`postRoutingQueueUsers success! data: ${data}`);
+    console.log(`postRoutingQueueUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postRoutingQueueUsers');
@@ -1696,7 +1698,7 @@ var body = [new platformClient.WrapupCode()]; // [WrapupCode] | List of wrapup c
 
 apiInstance.postRoutingQueueWrapupcodes(queueId, body)
   .then(function(data) {
-    console.log(`postRoutingQueueWrapupcodes success! data: ${data}`);
+    console.log(`postRoutingQueueWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postRoutingQueueWrapupcodes');
@@ -1742,7 +1744,7 @@ var body = new platformClient.CreateQueueRequest(); // CreateQueueRequest | Queu
 
 apiInstance.postRoutingQueues(body)
   .then(function(data) {
-    console.log(`postRoutingQueues success! data: ${data}`);
+    console.log(`postRoutingQueues success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postRoutingQueues');
@@ -1787,7 +1789,7 @@ var body = new platformClient.RoutingSkill(); // RoutingSkill | Skill
 
 apiInstance.postRoutingSkills(body)
   .then(function(data) {
-    console.log(`postRoutingSkills success! data: ${data}`);
+    console.log(`postRoutingSkills success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postRoutingSkills');
@@ -1832,7 +1834,7 @@ var body = new platformClient.WrapupCode(); // WrapupCode | WrapupCode
 
 apiInstance.postRoutingWrapupcodes(body)
   .then(function(data) {
-    console.log(`postRoutingWrapupcodes success! data: ${data}`);
+    console.log(`postRoutingWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postRoutingWrapupcodes');
@@ -1879,7 +1881,7 @@ var body = new platformClient.UserRoutingSkillPost(); // UserRoutingSkillPost | 
 
 apiInstance.postUserRoutingskills(userId, body)
   .then(function(data) {
-    console.log(`postUserRoutingskills success! data: ${data}`);
+    console.log(`postUserRoutingskills success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postUserRoutingskills');
@@ -1929,7 +1931,7 @@ var body = new platformClient.InboundRoute(); // InboundRoute | Route
 
 apiInstance.putRoutingEmailDomainRoute(domainName, routeId, body)
   .then(function(data) {
-    console.log(`putRoutingEmailDomainRoute success! data: ${data}`);
+    console.log(`putRoutingEmailDomainRoute success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putRoutingEmailDomainRoute');
@@ -1978,7 +1980,7 @@ var body = new platformClient.Queue(); // Queue | Queue
 
 apiInstance.putRoutingQueue(queueId, body)
   .then(function(data) {
-    console.log(`putRoutingQueue success! data: ${data}`);
+    console.log(`putRoutingQueue success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putRoutingQueue');
@@ -2024,7 +2026,7 @@ var body = new platformClient.Utilization(); // Utilization | utilization
 
 apiInstance.putRoutingUtilization(body)
   .then(function(data) {
-    console.log(`putRoutingUtilization success! data: ${data}`);
+    console.log(`putRoutingUtilization success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putRoutingUtilization');
@@ -2071,7 +2073,7 @@ var body = new platformClient.WrapupCode(); // WrapupCode | WrapupCode
 
 apiInstance.putRoutingWrapupcode(codeId, body)
   .then(function(data) {
-    console.log(`putRoutingWrapupcode success! data: ${data}`);
+    console.log(`putRoutingWrapupcode success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putRoutingWrapupcode');
@@ -2121,7 +2123,7 @@ var body = new platformClient.UserRoutingSkill(); // UserRoutingSkill | Skill
 
 apiInstance.putUserRoutingskill(userId, skillId, body)
   .then(function(data) {
-    console.log(`putUserRoutingskill success! data: ${data}`);
+    console.log(`putUserRoutingskill success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putUserRoutingskill');

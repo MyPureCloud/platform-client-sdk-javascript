@@ -37,7 +37,7 @@ var type = "type_example"; // String | Field type
 
 apiInstance.getFieldconfig(type)
   .then(function(data) {
-    console.log(`getFieldconfig success! data: ${data}`);
+    console.log(`getFieldconfig success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getFieldconfig');
@@ -79,7 +79,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.OrganizationApi();
 apiInstance.getOrganizationsMe()
   .then(function(data) {
-    console.log(`getOrganizationsMe success! data: ${data}`);
+    console.log(`getOrganizationsMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getOrganizationsMe');
@@ -123,7 +123,7 @@ var enabled = new platformClient.FeatureState(); // FeatureState | New state of 
 
 apiInstance.patchOrganizationsFeature(featureName, enabled)
   .then(function(data) {
-    console.log(`patchOrganizationsFeature success! data: ${data}`);
+    console.log(`patchOrganizationsFeature success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchOrganizationsFeature');
@@ -170,7 +170,7 @@ var opts = {
 };
 apiInstance.putOrganizationsMe(opts)
   .then(function(data) {
-    console.log(`putOrganizationsMe success! data: ${data}`);
+    console.log(`putOrganizationsMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putOrganizationsMe');

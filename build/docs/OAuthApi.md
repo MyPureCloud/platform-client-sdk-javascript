@@ -84,7 +84,7 @@ var clientId = "clientId_example"; // String | Client ID
 
 apiInstance.getOauthClient(clientId)
   .then(function(data) {
-    console.log(`getOauthClient success! data: ${data}`);
+    console.log(`getOauthClient success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getOauthClient');
@@ -126,7 +126,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.OAuthApi();
 apiInstance.getOauthClients()
   .then(function(data) {
-    console.log(`getOauthClients success! data: ${data}`);
+    console.log(`getOauthClients success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getOauthClients');
@@ -168,7 +168,7 @@ var clientId = "clientId_example"; // String | Client ID
 
 apiInstance.postOauthClientSecret(clientId)
   .then(function(data) {
-    console.log(`postOauthClientSecret success! data: ${data}`);
+    console.log(`postOauthClientSecret success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postOauthClientSecret');
@@ -213,7 +213,7 @@ var body = new platformClient.OAuthClient(); // OAuthClient | Client
 
 apiInstance.postOauthClients(body)
   .then(function(data) {
-    console.log(`postOauthClients success! data: ${data}`);
+    console.log(`postOauthClients success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postOauthClients');
@@ -260,7 +260,7 @@ var body = new platformClient.OAuthClient(); // OAuthClient | Client
 
 apiInstance.putOauthClient(clientId, body)
   .then(function(data) {
-    console.log(`putOauthClient success! data: ${data}`);
+    console.log(`putOauthClient success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putOauthClient');

@@ -18,7 +18,7 @@
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 2.0.8
+   * @version 3.0.0
    */
 
   /**
@@ -775,6 +775,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {String} opts.name Name
      * @param {String} opts.sortBy Sort by (default to name)
      */
     this.getRoutingWrapupcodes = function(opts) { 
@@ -785,7 +786,7 @@
         '/api/v2/routing/wrapupcodes', 
         'GET', 
         {  }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'sortBy': opts['sortBy'] }, 
         {  }, 
         {  }, 
         null, 

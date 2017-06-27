@@ -175,7 +175,7 @@ var id = ["id_example"]; // [String] | List of Prompt IDs
 
 apiInstance.deleteArchitectPrompts(id)
   .then(function(data) {
-    console.log(`deleteArchitectPrompts success! data: ${data}`);
+    console.log(`deleteArchitectPrompts success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling deleteArchitectPrompts');
@@ -313,7 +313,7 @@ var id = ["id_example"]; // [String] | List of Flow IDs
 
 apiInstance.deleteFlows(id)
   .then(function(data) {
-    console.log(`deleteFlows success! data: ${data}`);
+    console.log(`deleteFlows success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling deleteFlows');
@@ -367,7 +367,7 @@ var opts = {
 };
 apiInstance.getArchitectDependencytracking(name, opts)
   .then(function(data) {
-    console.log(`getArchitectDependencytracking success! data: ${data}`);
+    console.log(`getArchitectDependencytracking success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getArchitectDependencytracking');
@@ -416,7 +416,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.ArchitectApi();
 apiInstance.getArchitectDependencytrackingBuild()
   .then(function(data) {
-    console.log(`getArchitectDependencytrackingBuild success! data: ${data}`);
+    console.log(`getArchitectDependencytrackingBuild success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getArchitectDependencytrackingBuild');
@@ -465,7 +465,7 @@ var opts = {
 };
 apiInstance.getArchitectDependencytrackingConsumedresources(id, version, objectType, opts)
   .then(function(data) {
-    console.log(`getArchitectDependencytrackingConsumedresources success! data: ${data}`);
+    console.log(`getArchitectDependencytrackingConsumedresources success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getArchitectDependencytrackingConsumedresources');
@@ -518,7 +518,7 @@ var opts = {
 };
 apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, opts)
   .then(function(data) {
-    console.log(`getArchitectDependencytrackingConsumingresources success! data: ${data}`);
+    console.log(`getArchitectDependencytrackingConsumingresources success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getArchitectDependencytrackingConsumingresources');
@@ -572,7 +572,7 @@ var opts = {
 };
 apiInstance.getArchitectDependencytrackingDeletedresourceconsumers(opts)
   .then(function(data) {
-    console.log(`getArchitectDependencytrackingDeletedresourceconsumers success! data: ${data}`);
+    console.log(`getArchitectDependencytrackingDeletedresourceconsumers success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getArchitectDependencytrackingDeletedresourceconsumers');
@@ -631,7 +631,7 @@ var opts = {
 };
 apiInstance.getArchitectDependencytrackingObject(id, opts)
   .then(function(data) {
-    console.log(`getArchitectDependencytrackingObject success! data: ${data}`);
+    console.log(`getArchitectDependencytrackingObject success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getArchitectDependencytrackingObject');
@@ -682,7 +682,7 @@ var typeId = "typeId_example"; // String | Type ID
 
 apiInstance.getArchitectDependencytrackingType(typeId)
   .then(function(data) {
-    console.log(`getArchitectDependencytrackingType success! data: ${data}`);
+    console.log(`getArchitectDependencytrackingType success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getArchitectDependencytrackingType');
@@ -729,7 +729,7 @@ var opts = {
 };
 apiInstance.getArchitectDependencytrackingTypes(opts)
   .then(function(data) {
-    console.log(`getArchitectDependencytrackingTypes success! data: ${data}`);
+    console.log(`getArchitectDependencytrackingTypes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getArchitectDependencytrackingTypes');
@@ -781,7 +781,7 @@ var opts = {
 };
 apiInstance.getArchitectDependencytrackingUpdatedresourceconsumers(opts)
   .then(function(data) {
-    console.log(`getArchitectDependencytrackingUpdatedresourceconsumers success! data: ${data}`);
+    console.log(`getArchitectDependencytrackingUpdatedresourceconsumers success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getArchitectDependencytrackingUpdatedresourceconsumers');
@@ -831,7 +831,7 @@ var promptId = "promptId_example"; // String | Prompt ID
 
 apiInstance.getArchitectPrompt(promptId)
   .then(function(data) {
-    console.log(`getArchitectPrompt success! data: ${data}`);
+    console.log(`getArchitectPrompt success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getArchitectPrompt');
@@ -878,7 +878,7 @@ var languageCode = "languageCode_example"; // String | Language
 
 apiInstance.getArchitectPromptResource(promptId, languageCode)
   .then(function(data) {
-    console.log(`getArchitectPromptResource success! data: ${data}`);
+    console.log(`getArchitectPromptResource success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getArchitectPromptResource');
@@ -928,7 +928,7 @@ var opts = {
 };
 apiInstance.getArchitectPromptResources(promptId, opts)
   .then(function(data) {
-    console.log(`getArchitectPromptResources success! data: ${data}`);
+    console.log(`getArchitectPromptResources success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getArchitectPromptResources');
@@ -980,7 +980,7 @@ var opts = {
 };
 apiInstance.getArchitectPrompts(opts)
   .then(function(data) {
-    console.log(`getArchitectPrompts success! data: ${data}`);
+    console.log(`getArchitectPrompts success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getArchitectPrompts');
@@ -1029,7 +1029,7 @@ var promptId = "promptId_example"; // String | promptId
 
 apiInstance.getArchitectSystemprompt(promptId)
   .then(function(data) {
-    console.log(`getArchitectSystemprompt success! data: ${data}`);
+    console.log(`getArchitectSystemprompt success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getArchitectSystemprompt');
@@ -1076,7 +1076,7 @@ var languageCode = "languageCode_example"; // String | Language
 
 apiInstance.getArchitectSystempromptResource(promptId, languageCode)
   .then(function(data) {
-    console.log(`getArchitectSystempromptResource success! data: ${data}`);
+    console.log(`getArchitectSystempromptResource success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getArchitectSystempromptResource');
@@ -1128,7 +1128,7 @@ var opts = {
 };
 apiInstance.getArchitectSystempromptResources(promptId, opts)
   .then(function(data) {
-    console.log(`getArchitectSystempromptResources success! data: ${data}`);
+    console.log(`getArchitectSystempromptResources success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getArchitectSystempromptResources');
@@ -1184,7 +1184,7 @@ var opts = {
 };
 apiInstance.getArchitectSystemprompts(opts)
   .then(function(data) {
-    console.log(`getArchitectSystemprompts success! data: ${data}`);
+    console.log(`getArchitectSystemprompts success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getArchitectSystemprompts');
@@ -1238,7 +1238,7 @@ var opts = {
 };
 apiInstance.getFlow(flowId, opts)
   .then(function(data) {
-    console.log(`getFlow success! data: ${data}`);
+    console.log(`getFlow success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getFlow');
@@ -1287,7 +1287,7 @@ var opts = {
 };
 apiInstance.getFlowLatestconfiguration(flowId, opts)
   .then(function(data) {
-    console.log(`getFlowLatestconfiguration success! data: ${data}`);
+    console.log(`getFlowLatestconfiguration success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getFlowLatestconfiguration');
@@ -1338,7 +1338,7 @@ var opts = {
 };
 apiInstance.getFlowVersion(flowId, versionId, opts)
   .then(function(data) {
-    console.log(`getFlowVersion success! data: ${data}`);
+    console.log(`getFlowVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getFlowVersion');
@@ -1390,7 +1390,7 @@ var opts = {
 };
 apiInstance.getFlowVersionConfiguration(flowId, versionId, opts)
   .then(function(data) {
-    console.log(`getFlowVersionConfiguration success! data: ${data}`);
+    console.log(`getFlowVersionConfiguration success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getFlowVersionConfiguration');
@@ -1442,7 +1442,7 @@ var opts = {
 };
 apiInstance.getFlowVersions(flowId, opts)
   .then(function(data) {
-    console.log(`getFlowVersions success! data: ${data}`);
+    console.log(`getFlowVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getFlowVersions');
@@ -1506,7 +1506,7 @@ var opts = {
 };
 apiInstance.getFlows(type, opts)
   .then(function(data) {
-    console.log(`getFlows success! data: ${data}`);
+    console.log(`getFlows success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getFlows');
@@ -1607,7 +1607,7 @@ var opts = {
 };
 apiInstance.postArchitectPromptResources(promptId, opts)
   .then(function(data) {
-    console.log(`postArchitectPromptResources success! data: ${data}`);
+    console.log(`postArchitectPromptResources success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postArchitectPromptResources');
@@ -1654,7 +1654,7 @@ var opts = {
 };
 apiInstance.postArchitectPrompts(opts)
   .then(function(data) {
-    console.log(`postArchitectPrompts success! data: ${data}`);
+    console.log(`postArchitectPrompts success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postArchitectPrompts');
@@ -1702,7 +1702,7 @@ var opts = {
 };
 apiInstance.postArchitectSystempromptResources(promptId, opts)
   .then(function(data) {
-    console.log(`postArchitectSystempromptResources success! data: ${data}`);
+    console.log(`postArchitectSystempromptResources success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postArchitectSystempromptResources');
@@ -1751,7 +1751,7 @@ var opts = {
 };
 apiInstance.postFlowVersions(flowId, opts)
   .then(function(data) {
-    console.log(`postFlowVersions success! data: ${data}`);
+    console.log(`postFlowVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postFlowVersions');
@@ -1798,7 +1798,7 @@ var opts = {
 };
 apiInstance.postFlows(opts)
   .then(function(data) {
-    console.log(`postFlows success! data: ${data}`);
+    console.log(`postFlows success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postFlows');
@@ -1843,7 +1843,7 @@ var flow = "flow_example"; // String | Flow ID
 
 apiInstance.postFlowsActionsCheckin(flow)
   .then(function(data) {
-    console.log(`postFlowsActionsCheckin success! data: ${data}`);
+    console.log(`postFlowsActionsCheckin success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postFlowsActionsCheckin');
@@ -1888,7 +1888,7 @@ var flow = "flow_example"; // String | Flow ID
 
 apiInstance.postFlowsActionsCheckout(flow)
   .then(function(data) {
-    console.log(`postFlowsActionsCheckout success! data: ${data}`);
+    console.log(`postFlowsActionsCheckout success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postFlowsActionsCheckout');
@@ -1933,7 +1933,7 @@ var flow = "flow_example"; // String | Flow ID
 
 apiInstance.postFlowsActionsDeactivate(flow)
   .then(function(data) {
-    console.log(`postFlowsActionsDeactivate success! data: ${data}`);
+    console.log(`postFlowsActionsDeactivate success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postFlowsActionsDeactivate');
@@ -1981,7 +1981,7 @@ var opts = {
 };
 apiInstance.postFlowsActionsPublish(flow, opts)
   .then(function(data) {
-    console.log(`postFlowsActionsPublish success! data: ${data}`);
+    console.log(`postFlowsActionsPublish success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postFlowsActionsPublish');
@@ -2027,7 +2027,7 @@ var flow = "flow_example"; // String | Flow ID
 
 apiInstance.postFlowsActionsRevert(flow)
   .then(function(data) {
-    console.log(`postFlowsActionsRevert success! data: ${data}`);
+    console.log(`postFlowsActionsRevert success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postFlowsActionsRevert');
@@ -2072,7 +2072,7 @@ var flow = "flow_example"; // String | Flow ID
 
 apiInstance.postFlowsActionsUnlock(flow)
   .then(function(data) {
-    console.log(`postFlowsActionsUnlock success! data: ${data}`);
+    console.log(`postFlowsActionsUnlock success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postFlowsActionsUnlock');
@@ -2120,7 +2120,7 @@ var opts = {
 };
 apiInstance.putArchitectPrompt(promptId, opts)
   .then(function(data) {
-    console.log(`putArchitectPrompt success! data: ${data}`);
+    console.log(`putArchitectPrompt success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putArchitectPrompt');
@@ -2171,7 +2171,7 @@ var opts = {
 };
 apiInstance.putArchitectPromptResource(promptId, languageCode, opts)
   .then(function(data) {
-    console.log(`putArchitectPromptResource success! data: ${data}`);
+    console.log(`putArchitectPromptResource success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putArchitectPromptResource');
@@ -2223,7 +2223,7 @@ var opts = {
 };
 apiInstance.putArchitectSystempromptResource(promptId, languageCode, opts)
   .then(function(data) {
-    console.log(`putArchitectSystempromptResource success! data: ${data}`);
+    console.log(`putArchitectSystempromptResource success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putArchitectSystempromptResource');
@@ -2273,7 +2273,7 @@ var opts = {
 };
 apiInstance.putFlow(flowId, opts)
   .then(function(data) {
-    console.log(`putFlow success! data: ${data}`);
+    console.log(`putFlow success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putFlow');

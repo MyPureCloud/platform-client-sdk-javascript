@@ -94,7 +94,7 @@ var greetingId = "greetingId_example"; // String | Greeting ID
 
 apiInstance.getGreeting(greetingId)
   .then(function(data) {
-    console.log(`getGreeting success! data: ${data}`);
+    console.log(`getGreeting success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getGreeting');
@@ -142,7 +142,7 @@ var opts = {
 };
 apiInstance.getGreetingMedia(greetingId, opts)
   .then(function(data) {
-    console.log(`getGreetingMedia success! data: ${data}`);
+    console.log(`getGreetingMedia success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getGreetingMedia');
@@ -157,7 +157,7 @@ apiInstance.getGreetingMedia(greetingId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **greetingId** | **String**| Greeting ID |  |
- **formatId** | **String**| The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE |
+ **formatId** | **String**| The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 {: class="table table-striped"}
 
 ### Return type
@@ -190,7 +190,7 @@ var opts = {
 };
 apiInstance.getGreetings(opts)
   .then(function(data) {
-    console.log(`getGreetings success! data: ${data}`);
+    console.log(`getGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getGreetings');
@@ -233,7 +233,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.GreetingsApi();
 apiInstance.getGreetingsDefaults()
   .then(function(data) {
-    console.log(`getGreetingsDefaults success! data: ${data}`);
+    console.log(`getGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getGreetingsDefaults');
@@ -279,7 +279,7 @@ var opts = {
 };
 apiInstance.getGroupGreetings(groupId, opts)
   .then(function(data) {
-    console.log(`getGroupGreetings success! data: ${data}`);
+    console.log(`getGroupGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getGroupGreetings');
@@ -326,7 +326,7 @@ var groupId = "groupId_example"; // String | Group ID
 
 apiInstance.getGroupGreetingsDefaults(groupId)
   .then(function(data) {
-    console.log(`getGroupGreetingsDefaults success! data: ${data}`);
+    console.log(`getGroupGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getGroupGreetingsDefaults');
@@ -375,7 +375,7 @@ var opts = {
 };
 apiInstance.getUserGreetings(userId, opts)
   .then(function(data) {
-    console.log(`getUserGreetings success! data: ${data}`);
+    console.log(`getUserGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserGreetings');
@@ -422,7 +422,7 @@ var userId = "userId_example"; // String | User ID
 
 apiInstance.getUserGreetingsDefaults(userId)
   .then(function(data) {
-    console.log(`getUserGreetingsDefaults success! data: ${data}`);
+    console.log(`getUserGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserGreetingsDefaults');
@@ -445,7 +445,7 @@ apiInstance.getUserGreetingsDefaults(userId)
 
 <a name="postGreetings"></a>
 
-# [**DefaultGreetingList**](DefaultGreetingList.html) postGreetings(body)
+# [**Greeting**](Greeting.html) postGreetings(body)
 
 POST /api/v2/greetings
 
@@ -467,7 +467,7 @@ var body = new platformClient.Greeting(); // Greeting | The Greeting to create
 
 apiInstance.postGreetings(body)
   .then(function(data) {
-    console.log(`postGreetings success! data: ${data}`);
+    console.log(`postGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postGreetings');
@@ -486,7 +486,7 @@ apiInstance.postGreetings(body)
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+[**Greeting**](Greeting.html)
 
 <a name="postGroupGreetings"></a>
 
@@ -514,7 +514,7 @@ var body = new platformClient.Greeting(); // Greeting | The Greeting to create
 
 apiInstance.postGroupGreetings(groupId, body)
   .then(function(data) {
-    console.log(`postGroupGreetings success! data: ${data}`);
+    console.log(`postGroupGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postGroupGreetings');
@@ -562,7 +562,7 @@ var body = new platformClient.Greeting(); // Greeting | The Greeting to create
 
 apiInstance.postUserGreetings(userId, body)
   .then(function(data) {
-    console.log(`postUserGreetings success! data: ${data}`);
+    console.log(`postUserGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postUserGreetings');
@@ -610,7 +610,7 @@ var body = new platformClient.Greeting(); // Greeting | The updated Greeting
 
 apiInstance.putGreeting(greetingId, body)
   .then(function(data) {
-    console.log(`putGreeting success! data: ${data}`);
+    console.log(`putGreeting success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putGreeting');
@@ -656,7 +656,7 @@ var body = new platformClient.DefaultGreetingList(); // DefaultGreetingList | Th
 
 apiInstance.putGreetingsDefaults(body)
   .then(function(data) {
-    console.log(`putGreetingsDefaults success! data: ${data}`);
+    console.log(`putGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putGreetingsDefaults');
@@ -703,7 +703,7 @@ var body = new platformClient.DefaultGreetingList(); // DefaultGreetingList | Th
 
 apiInstance.putGroupGreetingsDefaults(groupId, body)
   .then(function(data) {
-    console.log(`putGroupGreetingsDefaults success! data: ${data}`);
+    console.log(`putGroupGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putGroupGreetingsDefaults');
@@ -751,7 +751,7 @@ var body = new platformClient.DefaultGreetingList(); // DefaultGreetingList | Th
 
 apiInstance.putUserGreetingsDefaults(userId, body)
   .then(function(data) {
-    console.log(`putUserGreetingsDefaults success! data: ${data}`);
+    console.log(`putUserGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putUserGreetingsDefaults');

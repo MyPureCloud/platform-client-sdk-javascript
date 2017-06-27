@@ -430,7 +430,7 @@ var opts = {
 };
 apiInstance.getAlertingHeartbeatAlert(alertId, opts)
   .then(function(data) {
-    console.log(`getAlertingHeartbeatAlert success! data: ${data}`);
+    console.log(`getAlertingHeartbeatAlert success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAlertingHeartbeatAlert');
@@ -477,7 +477,7 @@ var opts = {
 };
 apiInstance.getAlertingHeartbeatAlerts(opts)
   .then(function(data) {
-    console.log(`getAlertingHeartbeatAlerts success! data: ${data}`);
+    console.log(`getAlertingHeartbeatAlerts success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAlertingHeartbeatAlerts');
@@ -525,7 +525,7 @@ var opts = {
 };
 apiInstance.getAlertingHeartbeatRule(ruleId, opts)
   .then(function(data) {
-    console.log(`getAlertingHeartbeatRule success! data: ${data}`);
+    console.log(`getAlertingHeartbeatRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAlertingHeartbeatRule');
@@ -572,7 +572,7 @@ var opts = {
 };
 apiInstance.getAlertingHeartbeatRules(opts)
   .then(function(data) {
-    console.log(`getAlertingHeartbeatRules success! data: ${data}`);
+    console.log(`getAlertingHeartbeatRules success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAlertingHeartbeatRules');
@@ -620,7 +620,7 @@ var opts = {
 };
 apiInstance.getAlertingInteractionstatsAlert(alertId, opts)
   .then(function(data) {
-    console.log(`getAlertingInteractionstatsAlert success! data: ${data}`);
+    console.log(`getAlertingInteractionstatsAlert success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAlertingInteractionstatsAlert');
@@ -667,7 +667,7 @@ var opts = {
 };
 apiInstance.getAlertingInteractionstatsAlerts(opts)
   .then(function(data) {
-    console.log(`getAlertingInteractionstatsAlerts success! data: ${data}`);
+    console.log(`getAlertingInteractionstatsAlerts success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAlertingInteractionstatsAlerts');
@@ -709,7 +709,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.AlertingApi();
 apiInstance.getAlertingInteractionstatsAlertsUnread()
   .then(function(data) {
-    console.log(`getAlertingInteractionstatsAlertsUnread success! data: ${data}`);
+    console.log(`getAlertingInteractionstatsAlertsUnread success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAlertingInteractionstatsAlertsUnread');
@@ -754,7 +754,7 @@ var opts = {
 };
 apiInstance.getAlertingInteractionstatsRule(ruleId, opts)
   .then(function(data) {
-    console.log(`getAlertingInteractionstatsRule success! data: ${data}`);
+    console.log(`getAlertingInteractionstatsRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAlertingInteractionstatsRule');
@@ -801,7 +801,7 @@ var opts = {
 };
 apiInstance.getAlertingInteractionstatsRules(opts)
   .then(function(data) {
-    console.log(`getAlertingInteractionstatsRules success! data: ${data}`);
+    console.log(`getAlertingInteractionstatsRules success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAlertingInteractionstatsRules');
@@ -849,7 +849,7 @@ var opts = {
 };
 apiInstance.getAlertingRoutingstatusAlert(alertId, opts)
   .then(function(data) {
-    console.log(`getAlertingRoutingstatusAlert success! data: ${data}`);
+    console.log(`getAlertingRoutingstatusAlert success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAlertingRoutingstatusAlert');
@@ -896,7 +896,7 @@ var opts = {
 };
 apiInstance.getAlertingRoutingstatusAlerts(opts)
   .then(function(data) {
-    console.log(`getAlertingRoutingstatusAlerts success! data: ${data}`);
+    console.log(`getAlertingRoutingstatusAlerts success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAlertingRoutingstatusAlerts');
@@ -944,7 +944,7 @@ var opts = {
 };
 apiInstance.getAlertingRoutingstatusRule(ruleId, opts)
   .then(function(data) {
-    console.log(`getAlertingRoutingstatusRule success! data: ${data}`);
+    console.log(`getAlertingRoutingstatusRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAlertingRoutingstatusRule');
@@ -991,7 +991,7 @@ var opts = {
 };
 apiInstance.getAlertingRoutingstatusRules(opts)
   .then(function(data) {
-    console.log(`getAlertingRoutingstatusRules success! data: ${data}`);
+    console.log(`getAlertingRoutingstatusRules success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAlertingRoutingstatusRules');
@@ -1039,7 +1039,7 @@ var opts = {
 };
 apiInstance.getAlertingUserpresenceAlert(alertId, opts)
   .then(function(data) {
-    console.log(`getAlertingUserpresenceAlert success! data: ${data}`);
+    console.log(`getAlertingUserpresenceAlert success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAlertingUserpresenceAlert');
@@ -1086,7 +1086,7 @@ var opts = {
 };
 apiInstance.getAlertingUserpresenceAlerts(opts)
   .then(function(data) {
-    console.log(`getAlertingUserpresenceAlerts success! data: ${data}`);
+    console.log(`getAlertingUserpresenceAlerts success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAlertingUserpresenceAlerts');
@@ -1134,7 +1134,7 @@ var opts = {
 };
 apiInstance.getAlertingUserpresenceRule(ruleId, opts)
   .then(function(data) {
-    console.log(`getAlertingUserpresenceRule success! data: ${data}`);
+    console.log(`getAlertingUserpresenceRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAlertingUserpresenceRule');
@@ -1181,7 +1181,7 @@ var opts = {
 };
 apiInstance.getAlertingUserpresenceRules(opts)
   .then(function(data) {
-    console.log(`getAlertingUserpresenceRules success! data: ${data}`);
+    console.log(`getAlertingUserpresenceRules success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAlertingUserpresenceRules');
@@ -1229,7 +1229,7 @@ var opts = {
 };
 apiInstance.postAlertingHeartbeatRules(body, opts)
   .then(function(data) {
-    console.log(`postAlertingHeartbeatRules success! data: ${data}`);
+    console.log(`postAlertingHeartbeatRules success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAlertingHeartbeatRules');
@@ -1278,7 +1278,7 @@ var opts = {
 };
 apiInstance.postAlertingInteractionstatsRules(body, opts)
   .then(function(data) {
-    console.log(`postAlertingInteractionstatsRules success! data: ${data}`);
+    console.log(`postAlertingInteractionstatsRules success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAlertingInteractionstatsRules');
@@ -1327,7 +1327,7 @@ var opts = {
 };
 apiInstance.postAlertingRoutingstatusRules(body, opts)
   .then(function(data) {
-    console.log(`postAlertingRoutingstatusRules success! data: ${data}`);
+    console.log(`postAlertingRoutingstatusRules success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAlertingRoutingstatusRules');
@@ -1376,7 +1376,7 @@ var opts = {
 };
 apiInstance.postAlertingUserpresenceRules(body, opts)
   .then(function(data) {
-    console.log(`postAlertingUserpresenceRules success! data: ${data}`);
+    console.log(`postAlertingUserpresenceRules success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAlertingUserpresenceRules');
@@ -1427,7 +1427,7 @@ var opts = {
 };
 apiInstance.putAlertingHeartbeatRule(ruleId, body, opts)
   .then(function(data) {
-    console.log(`putAlertingHeartbeatRule success! data: ${data}`);
+    console.log(`putAlertingHeartbeatRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putAlertingHeartbeatRule');
@@ -1479,7 +1479,7 @@ var opts = {
 };
 apiInstance.putAlertingInteractionstatsAlert(alertId, body, opts)
   .then(function(data) {
-    console.log(`putAlertingInteractionstatsAlert success! data: ${data}`);
+    console.log(`putAlertingInteractionstatsAlert success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putAlertingInteractionstatsAlert');
@@ -1531,7 +1531,7 @@ var opts = {
 };
 apiInstance.putAlertingInteractionstatsRule(ruleId, body, opts)
   .then(function(data) {
-    console.log(`putAlertingInteractionstatsRule success! data: ${data}`);
+    console.log(`putAlertingInteractionstatsRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putAlertingInteractionstatsRule');
@@ -1583,7 +1583,7 @@ var opts = {
 };
 apiInstance.putAlertingRoutingstatusRule(ruleId, body, opts)
   .then(function(data) {
-    console.log(`putAlertingRoutingstatusRule success! data: ${data}`);
+    console.log(`putAlertingRoutingstatusRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putAlertingRoutingstatusRule');
@@ -1635,7 +1635,7 @@ var opts = {
 };
 apiInstance.putAlertingUserpresenceRule(ruleId, body, opts)
   .then(function(data) {
-    console.log(`putAlertingUserpresenceRule success! data: ${data}`);
+    console.log(`putAlertingUserpresenceRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putAlertingUserpresenceRule');

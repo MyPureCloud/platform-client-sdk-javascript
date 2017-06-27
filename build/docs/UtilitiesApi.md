@@ -33,7 +33,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.UtilitiesApi();
 apiInstance.getDate()
   .then(function(data) {
-    console.log(`getDate success! data: ${data}`);
+    console.log(`getDate success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getDate');
@@ -77,7 +77,7 @@ var opts = {
 };
 apiInstance.getTimezones(opts)
   .then(function(data) {
-    console.log(`getTimezones success! data: ${data}`);
+    console.log(`getTimezones success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTimezones');
@@ -123,7 +123,7 @@ var body = new platformClient.Certificate(); // Certificate | Certificate
 
 apiInstance.postCertificateDetails(body)
   .then(function(data) {
-    console.log(`postCertificateDetails success! data: ${data}`);
+    console.log(`postCertificateDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postCertificateDetails');

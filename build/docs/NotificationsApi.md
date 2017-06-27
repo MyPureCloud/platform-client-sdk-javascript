@@ -86,7 +86,7 @@ var opts = {
 };
 apiInstance.getNotificationsAvailabletopics(opts)
   .then(function(data) {
-    console.log(`getNotificationsAvailabletopics success! data: ${data}`);
+    console.log(`getNotificationsAvailabletopics success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getNotificationsAvailabletopics');
@@ -131,7 +131,7 @@ var channelId = "channelId_example"; // String | Channel ID
 
 apiInstance.getNotificationsChannelSubscriptions(channelId)
   .then(function(data) {
-    console.log(`getNotificationsChannelSubscriptions success! data: ${data}`);
+    console.log(`getNotificationsChannelSubscriptions success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getNotificationsChannelSubscriptions');
@@ -173,7 +173,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.NotificationsApi();
 apiInstance.getNotificationsChannels()
   .then(function(data) {
-    console.log(`getNotificationsChannels success! data: ${data}`);
+    console.log(`getNotificationsChannels success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getNotificationsChannels');
@@ -217,7 +217,7 @@ var body = [new platformClient.ChannelTopic()]; // [ChannelTopic] | Body
 
 apiInstance.postNotificationsChannelSubscriptions(channelId, body)
   .then(function(data) {
-    console.log(`postNotificationsChannelSubscriptions success! data: ${data}`);
+    console.log(`postNotificationsChannelSubscriptions success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postNotificationsChannelSubscriptions');
@@ -260,7 +260,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.NotificationsApi();
 apiInstance.postNotificationsChannels()
   .then(function(data) {
-    console.log(`postNotificationsChannels success! data: ${data}`);
+    console.log(`postNotificationsChannels success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postNotificationsChannels');
@@ -304,7 +304,7 @@ var body = [new platformClient.ChannelTopic()]; // [ChannelTopic] | Body
 
 apiInstance.putNotificationsChannelSubscriptions(channelId, body)
   .then(function(data) {
-    console.log(`putNotificationsChannelSubscriptions success! data: ${data}`);
+    console.log(`putNotificationsChannelSubscriptions success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putNotificationsChannelSubscriptions');

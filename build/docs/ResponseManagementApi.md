@@ -136,7 +136,7 @@ var opts = {
 };
 apiInstance.getResponsemanagementLibraries(opts)
   .then(function(data) {
-    console.log(`getResponsemanagementLibraries success! data: ${data}`);
+    console.log(`getResponsemanagementLibraries success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getResponsemanagementLibraries');
@@ -182,7 +182,7 @@ var libraryId = "libraryId_example"; // String | Library ID
 
 apiInstance.getResponsemanagementLibrary(libraryId)
   .then(function(data) {
-    console.log(`getResponsemanagementLibrary success! data: ${data}`);
+    console.log(`getResponsemanagementLibrary success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getResponsemanagementLibrary');
@@ -230,7 +230,7 @@ var opts = {
 };
 apiInstance.getResponsemanagementResponse(responseId, opts)
   .then(function(data) {
-    console.log(`getResponsemanagementResponse success! data: ${data}`);
+    console.log(`getResponsemanagementResponse success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getResponsemanagementResponse');
@@ -281,7 +281,7 @@ var opts = {
 };
 apiInstance.getResponsemanagementResponses(libraryId, opts)
   .then(function(data) {
-    console.log(`getResponsemanagementResponses success! data: ${data}`);
+    console.log(`getResponsemanagementResponses success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getResponsemanagementResponses');
@@ -329,7 +329,7 @@ var body = new platformClient.Library(); // Library | Library
 
 apiInstance.postResponsemanagementLibraries(body)
   .then(function(data) {
-    console.log(`postResponsemanagementLibraries success! data: ${data}`);
+    console.log(`postResponsemanagementLibraries success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postResponsemanagementLibraries');
@@ -377,7 +377,7 @@ var opts = {
 };
 apiInstance.postResponsemanagementResponses(body, opts)
   .then(function(data) {
-    console.log(`postResponsemanagementResponses success! data: ${data}`);
+    console.log(`postResponsemanagementResponses success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postResponsemanagementResponses');
@@ -423,7 +423,7 @@ var body = new platformClient.ResponseQueryRequest(); // ResponseQueryRequest | 
 
 apiInstance.postResponsemanagementResponsesQuery(body)
   .then(function(data) {
-    console.log(`postResponsemanagementResponsesQuery success! data: ${data}`);
+    console.log(`postResponsemanagementResponsesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postResponsemanagementResponsesQuery');
@@ -470,7 +470,7 @@ var body = new platformClient.Library(); // Library | Library
 
 apiInstance.putResponsemanagementLibrary(libraryId, body)
   .then(function(data) {
-    console.log(`putResponsemanagementLibrary success! data: ${data}`);
+    console.log(`putResponsemanagementLibrary success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putResponsemanagementLibrary');
@@ -521,7 +521,7 @@ var opts = {
 };
 apiInstance.putResponsemanagementResponse(responseId, body, opts)
   .then(function(data) {
-    console.log(`putResponsemanagementResponse success! data: ${data}`);
+    console.log(`putResponsemanagementResponse success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putResponsemanagementResponse');

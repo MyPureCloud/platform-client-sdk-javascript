@@ -139,7 +139,7 @@ var groupId = "groupId_example"; // String | groupId
 
 apiInstance.getVoicemailGroupMailbox(groupId)
   .then(function(data) {
-    console.log(`getVoicemailGroupMailbox success! data: ${data}`);
+    console.log(`getVoicemailGroupMailbox success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getVoicemailGroupMailbox');
@@ -188,7 +188,7 @@ var opts = {
 };
 apiInstance.getVoicemailGroupMessages(groupId, opts)
   .then(function(data) {
-    console.log(`getVoicemailGroupMessages success! data: ${data}`);
+    console.log(`getVoicemailGroupMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getVoicemailGroupMessages');
@@ -235,7 +235,7 @@ var groupId = "groupId_example"; // String | Group ID
 
 apiInstance.getVoicemailGroupPolicy(groupId)
   .then(function(data) {
-    console.log(`getVoicemailGroupPolicy success! data: ${data}`);
+    console.log(`getVoicemailGroupPolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getVoicemailGroupPolicy');
@@ -277,7 +277,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.VoicemailApi();
 apiInstance.getVoicemailMailbox()
   .then(function(data) {
-    console.log(`getVoicemailMailbox success! data: ${data}`);
+    console.log(`getVoicemailMailbox success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getVoicemailMailbox');
@@ -316,7 +316,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.VoicemailApi();
 apiInstance.getVoicemailMeMailbox()
   .then(function(data) {
-    console.log(`getVoicemailMeMailbox success! data: ${data}`);
+    console.log(`getVoicemailMeMailbox success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getVoicemailMeMailbox');
@@ -360,7 +360,7 @@ var opts = {
 };
 apiInstance.getVoicemailMeMessages(opts)
   .then(function(data) {
-    console.log(`getVoicemailMeMessages success! data: ${data}`);
+    console.log(`getVoicemailMeMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getVoicemailMeMessages');
@@ -403,7 +403,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.VoicemailApi();
 apiInstance.getVoicemailMePolicy()
   .then(function(data) {
-    console.log(`getVoicemailMePolicy success! data: ${data}`);
+    console.log(`getVoicemailMePolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getVoicemailMePolicy');
@@ -448,7 +448,7 @@ var opts = {
 };
 apiInstance.getVoicemailMessage(messageId, opts)
   .then(function(data) {
-    console.log(`getVoicemailMessage success! data: ${data}`);
+    console.log(`getVoicemailMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getVoicemailMessage');
@@ -497,7 +497,7 @@ var opts = {
 };
 apiInstance.getVoicemailMessageMedia(messageId, opts)
   .then(function(data) {
-    console.log(`getVoicemailMessageMedia success! data: ${data}`);
+    console.log(`getVoicemailMessageMedia success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getVoicemailMessageMedia');
@@ -512,7 +512,7 @@ apiInstance.getVoicemailMessageMedia(messageId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String**| Message ID |  |
- **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE |
+ **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 {: class="table table-striped"}
 
 ### Return type
@@ -545,7 +545,7 @@ var opts = {
 };
 apiInstance.getVoicemailMessages(opts)
   .then(function(data) {
-    console.log(`getVoicemailMessages success! data: ${data}`);
+    console.log(`getVoicemailMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getVoicemailMessages');
@@ -588,7 +588,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.VoicemailApi();
 apiInstance.getVoicemailPolicy()
   .then(function(data) {
-    console.log(`getVoicemailPolicy success! data: ${data}`);
+    console.log(`getVoicemailPolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getVoicemailPolicy');
@@ -633,7 +633,7 @@ var opts = {
 };
 apiInstance.getVoicemailSearch(q64, opts)
   .then(function(data) {
-    console.log(`getVoicemailSearch success! data: ${data}`);
+    console.log(`getVoicemailSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getVoicemailSearch');
@@ -679,7 +679,7 @@ var userId = "userId_example"; // String | User ID
 
 apiInstance.getVoicemailUserpolicy(userId)
   .then(function(data) {
-    console.log(`getVoicemailUserpolicy success! data: ${data}`);
+    console.log(`getVoicemailUserpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getVoicemailUserpolicy');
@@ -726,7 +726,7 @@ var body = new platformClient.VoicemailGroupPolicy(); // VoicemailGroupPolicy | 
 
 apiInstance.patchVoicemailGroupPolicy(groupId, body)
   .then(function(data) {
-    console.log(`patchVoicemailGroupPolicy success! data: ${data}`);
+    console.log(`patchVoicemailGroupPolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchVoicemailGroupPolicy');
@@ -772,7 +772,7 @@ var body = new platformClient.VoicemailUserPolicy(); // VoicemailUserPolicy | Th
 
 apiInstance.patchVoicemailMePolicy(body)
   .then(function(data) {
-    console.log(`patchVoicemailMePolicy success! data: ${data}`);
+    console.log(`patchVoicemailMePolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchVoicemailMePolicy');
@@ -819,7 +819,7 @@ var body = new platformClient.VoicemailUserPolicy(); // VoicemailUserPolicy | Th
 
 apiInstance.patchVoicemailUserpolicy(userId, body)
   .then(function(data) {
-    console.log(`patchVoicemailUserpolicy success! data: ${data}`);
+    console.log(`patchVoicemailUserpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchVoicemailUserpolicy');
@@ -866,7 +866,7 @@ var opts = {
 };
 apiInstance.postVoicemailMessages(opts)
   .then(function(data) {
-    console.log(`postVoicemailMessages success! data: ${data}`);
+    console.log(`postVoicemailMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postVoicemailMessages');
@@ -911,7 +911,7 @@ var body = new platformClient.VoicemailSearchRequest(); // VoicemailSearchReques
 
 apiInstance.postVoicemailSearch(body)
   .then(function(data) {
-    console.log(`postVoicemailSearch success! data: ${data}`);
+    console.log(`postVoicemailSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postVoicemailSearch');
@@ -958,7 +958,7 @@ var body = new platformClient.VoicemailMessage(); // VoicemailMessage | Voicemai
 
 apiInstance.putVoicemailMessage(messageId, body)
   .then(function(data) {
-    console.log(`putVoicemailMessage success! data: ${data}`);
+    console.log(`putVoicemailMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putVoicemailMessage');
@@ -1004,7 +1004,7 @@ var body = new platformClient.VoicemailOrganizationPolicy(); // VoicemailOrganiz
 
 apiInstance.putVoicemailPolicy(body)
   .then(function(data) {
-    console.log(`putVoicemailPolicy success! data: ${data}`);
+    console.log(`putVoicemailPolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putVoicemailPolicy');

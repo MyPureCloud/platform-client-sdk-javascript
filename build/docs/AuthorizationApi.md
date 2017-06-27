@@ -142,7 +142,7 @@ var opts = {
 };
 apiInstance.getAuthorizationPermissions(opts)
   .then(function(data) {
-    console.log(`getAuthorizationPermissions success! data: ${data}`);
+    console.log(`getAuthorizationPermissions success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAuthorizationPermissions');
@@ -185,7 +185,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.AuthorizationApi();
 apiInstance.getAuthorizationProducts()
   .then(function(data) {
-    console.log(`getAuthorizationProducts success! data: ${data}`);
+    console.log(`getAuthorizationProducts success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAuthorizationProducts');
@@ -227,7 +227,7 @@ var roleId = "roleId_example"; // String | Role ID
 
 apiInstance.getAuthorizationRole(roleId)
   .then(function(data) {
-    console.log(`getAuthorizationRole success! data: ${data}`);
+    console.log(`getAuthorizationRole success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAuthorizationRole');
@@ -274,7 +274,7 @@ var rightRoleId = "rightRoleId_example"; // String | Right Role id
 
 apiInstance.getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId)
   .then(function(data) {
-    console.log(`getAuthorizationRoleComparedefaultRightRoleId success! data: ${data}`);
+    console.log(`getAuthorizationRoleComparedefaultRightRoleId success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAuthorizationRoleComparedefaultRightRoleId');
@@ -329,7 +329,7 @@ var opts = {
 };
 apiInstance.getAuthorizationRoles(opts)
   .then(function(data) {
-    console.log(`getAuthorizationRoles success! data: ${data}`);
+    console.log(`getAuthorizationRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAuthorizationRoles');
@@ -382,7 +382,7 @@ var userId = "userId_example"; // String | User ID
 
 apiInstance.getUserRoles(userId)
   .then(function(data) {
-    console.log(`getUserRoles success! data: ${data}`);
+    console.log(`getUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserRoles');
@@ -429,7 +429,7 @@ var body = new platformClient.DomainOrganizationRole(); // DomainOrganizationRol
 
 apiInstance.patchAuthorizationRole(roleId, body)
   .then(function(data) {
-    console.log(`patchAuthorizationRole success! data: ${data}`);
+    console.log(`patchAuthorizationRole success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchAuthorizationRole');
@@ -479,7 +479,7 @@ var body = new platformClient.DomainOrganizationRole(); // DomainOrganizationRol
 
 apiInstance.postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body)
   .then(function(data) {
-    console.log(`postAuthorizationRoleComparedefaultRightRoleId success! data: ${data}`);
+    console.log(`postAuthorizationRoleComparedefaultRightRoleId success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAuthorizationRoleComparedefaultRightRoleId');
@@ -526,7 +526,7 @@ var body = new platformClient.DomainOrganizationRoleCreate(); // DomainOrganizat
 
 apiInstance.postAuthorizationRoles(body)
   .then(function(data) {
-    console.log(`postAuthorizationRoles success! data: ${data}`);
+    console.log(`postAuthorizationRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAuthorizationRoles');
@@ -572,7 +572,7 @@ var opts = {
 };
 apiInstance.postAuthorizationRolesDefault(opts)
   .then(function(data) {
-    console.log(`postAuthorizationRolesDefault success! data: ${data}`);
+    console.log(`postAuthorizationRolesDefault success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAuthorizationRolesDefault');
@@ -619,7 +619,7 @@ var body = new platformClient.DomainOrganizationRoleUpdate(); // DomainOrganizat
 
 apiInstance.putAuthorizationRole(roleId, body)
   .then(function(data) {
-    console.log(`putAuthorizationRole success! data: ${data}`);
+    console.log(`putAuthorizationRole success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putAuthorizationRole');
@@ -667,7 +667,7 @@ var body = [new platformClient.[String]()]; // [String] | List of user IDs
 
 apiInstance.putAuthorizationRoleUsersAdd(roleId, body)
   .then(function(data) {
-    console.log(`putAuthorizationRoleUsersAdd success! data: ${data}`);
+    console.log(`putAuthorizationRoleUsersAdd success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putAuthorizationRoleUsersAdd');
@@ -715,7 +715,7 @@ var body = [new platformClient.[String]()]; // [String] | List of user IDs
 
 apiInstance.putAuthorizationRoleUsersRemove(roleId, body)
   .then(function(data) {
-    console.log(`putAuthorizationRoleUsersRemove success! data: ${data}`);
+    console.log(`putAuthorizationRoleUsersRemove success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putAuthorizationRoleUsersRemove');
@@ -761,7 +761,7 @@ var body = [new platformClient.DomainOrganizationRole()]; // [DomainOrganization
 
 apiInstance.putAuthorizationRolesDefault(body)
   .then(function(data) {
-    console.log(`putAuthorizationRolesDefault success! data: ${data}`);
+    console.log(`putAuthorizationRolesDefault success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putAuthorizationRolesDefault');
@@ -808,7 +808,7 @@ var body = [new platformClient.[String]()]; // [String] | List of roles
 
 apiInstance.putUserRoles(userId, body)
   .then(function(data) {
-    console.log(`putUserRoles success! data: ${data}`);
+    console.log(`putUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putUserRoles');

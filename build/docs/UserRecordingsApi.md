@@ -87,7 +87,7 @@ var opts = {
 };
 apiInstance.getUserrecording(recordingId, opts)
   .then(function(data) {
-    console.log(`getUserrecording success! data: ${data}`);
+    console.log(`getUserrecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserrecording');
@@ -136,7 +136,7 @@ var opts = {
 };
 apiInstance.getUserrecordingMedia(recordingId, opts)
   .then(function(data) {
-    console.log(`getUserrecordingMedia success! data: ${data}`);
+    console.log(`getUserrecordingMedia success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserrecordingMedia');
@@ -151,7 +151,7 @@ apiInstance.getUserrecordingMedia(recordingId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **recordingId** | **String**| User Recording ID |  |
- **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE |
+ **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 {: class="table table-striped"}
 
 ### Return type
@@ -185,7 +185,7 @@ var opts = {
 };
 apiInstance.getUserrecordings(opts)
   .then(function(data) {
-    console.log(`getUserrecordings success! data: ${data}`);
+    console.log(`getUserrecordings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserrecordings');
@@ -229,7 +229,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.UserRecordingsApi();
 apiInstance.getUserrecordingsSummary()
   .then(function(data) {
-    console.log(`getUserrecordingsSummary success! data: ${data}`);
+    console.log(`getUserrecordingsSummary success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserrecordingsSummary');
@@ -276,7 +276,7 @@ var opts = {
 };
 apiInstance.putUserrecording(recordingId, body, opts)
   .then(function(data) {
-    console.log(`putUserrecording success! data: ${data}`);
+    console.log(`putUserrecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putUserrecording');

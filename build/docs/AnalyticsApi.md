@@ -100,7 +100,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getAnalyticsConversationDetails(conversationId)
   .then(function(data) {
-    console.log(`getAnalyticsConversationDetails success! data: ${data}`);
+    console.log(`getAnalyticsConversationDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAnalyticsConversationDetails');
@@ -148,7 +148,7 @@ var opts = {
 };
 apiInstance.getAnalyticsReportingMetadata(opts)
   .then(function(data) {
-    console.log(`getAnalyticsReportingMetadata success! data: ${data}`);
+    console.log(`getAnalyticsReportingMetadata success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAnalyticsReportingMetadata');
@@ -198,7 +198,7 @@ var opts = {
 };
 apiInstance.getAnalyticsReportingReportIdMetadata(reportId, opts)
   .then(function(data) {
-    console.log(`getAnalyticsReportingReportIdMetadata success! data: ${data}`);
+    console.log(`getAnalyticsReportingReportIdMetadata success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAnalyticsReportingReportIdMetadata');
@@ -241,7 +241,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.AnalyticsApi();
 apiInstance.getAnalyticsReportingReportformats()
   .then(function(data) {
-    console.log(`getAnalyticsReportingReportformats success! data: ${data}`);
+    console.log(`getAnalyticsReportingReportformats success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAnalyticsReportingReportformats');
@@ -283,7 +283,7 @@ var scheduleId = "scheduleId_example"; // String | Schedule ID
 
 apiInstance.getAnalyticsReportingSchedule(scheduleId)
   .then(function(data) {
-    console.log(`getAnalyticsReportingSchedule success! data: ${data}`);
+    console.log(`getAnalyticsReportingSchedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAnalyticsReportingSchedule');
@@ -332,7 +332,7 @@ var opts = {
 };
 apiInstance.getAnalyticsReportingScheduleHistory(scheduleId, opts)
   .then(function(data) {
-    console.log(`getAnalyticsReportingScheduleHistory success! data: ${data}`);
+    console.log(`getAnalyticsReportingScheduleHistory success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAnalyticsReportingScheduleHistory');
@@ -379,7 +379,7 @@ var scheduleId = "scheduleId_example"; // String | Schedule ID
 
 apiInstance.getAnalyticsReportingScheduleHistoryLatest(scheduleId)
   .then(function(data) {
-    console.log(`getAnalyticsReportingScheduleHistoryLatest success! data: ${data}`);
+    console.log(`getAnalyticsReportingScheduleHistoryLatest success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAnalyticsReportingScheduleHistoryLatest');
@@ -426,7 +426,7 @@ var scheduleId = "scheduleId_example"; // String | Schedule ID
 
 apiInstance.getAnalyticsReportingScheduleHistoryRunId(runId, scheduleId)
   .then(function(data) {
-    console.log(`getAnalyticsReportingScheduleHistoryRunId success! data: ${data}`);
+    console.log(`getAnalyticsReportingScheduleHistoryRunId success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAnalyticsReportingScheduleHistoryRunId');
@@ -474,7 +474,7 @@ var opts = {
 };
 apiInstance.getAnalyticsReportingSchedules(opts)
   .then(function(data) {
-    console.log(`getAnalyticsReportingSchedules success! data: ${data}`);
+    console.log(`getAnalyticsReportingSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAnalyticsReportingSchedules');
@@ -517,7 +517,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.AnalyticsApi();
 apiInstance.getAnalyticsReportingTimeperiods()
   .then(function(data) {
-    console.log(`getAnalyticsReportingTimeperiods success! data: ${data}`);
+    console.log(`getAnalyticsReportingTimeperiods success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAnalyticsReportingTimeperiods');
@@ -561,7 +561,7 @@ var body = new platformClient.PropertyIndexRequest(); // PropertyIndexRequest | 
 
 apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
   .then(function(data) {
-    console.log(`postAnalyticsConversationDetailsProperties success! data: ${data}`);
+    console.log(`postAnalyticsConversationDetailsProperties success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAnalyticsConversationDetailsProperties');
@@ -607,7 +607,7 @@ var body = new platformClient.AggregationQuery(); // AggregationQuery | query
 
 apiInstance.postAnalyticsConversationsAggregatesQuery(body)
   .then(function(data) {
-    console.log(`postAnalyticsConversationsAggregatesQuery success! data: ${data}`);
+    console.log(`postAnalyticsConversationsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAnalyticsConversationsAggregatesQuery');
@@ -652,7 +652,7 @@ var body = new platformClient.ConversationQuery(); // ConversationQuery | query
 
 apiInstance.postAnalyticsConversationsDetailsQuery(body)
   .then(function(data) {
-    console.log(`postAnalyticsConversationsDetailsQuery success! data: ${data}`);
+    console.log(`postAnalyticsConversationsDetailsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAnalyticsConversationsDetailsQuery');
@@ -697,7 +697,7 @@ var body = new platformClient.AggregationQuery(); // AggregationQuery | query
 
 apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
   .then(function(data) {
-    console.log(`postAnalyticsEvaluationsAggregatesQuery success! data: ${data}`);
+    console.log(`postAnalyticsEvaluationsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAnalyticsEvaluationsAggregatesQuery');
@@ -742,7 +742,7 @@ var body = new platformClient.ObservationQuery(); // ObservationQuery | query
 
 apiInstance.postAnalyticsQueuesObservationsQuery(body)
   .then(function(data) {
-    console.log(`postAnalyticsQueuesObservationsQuery success! data: ${data}`);
+    console.log(`postAnalyticsQueuesObservationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAnalyticsQueuesObservationsQuery');
@@ -787,7 +787,7 @@ var scheduleId = "scheduleId_example"; // String | Schedule ID
 
 apiInstance.postAnalyticsReportingScheduleRunreport(scheduleId)
   .then(function(data) {
-    console.log(`postAnalyticsReportingScheduleRunreport success! data: ${data}`);
+    console.log(`postAnalyticsReportingScheduleRunreport success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAnalyticsReportingScheduleRunreport');
@@ -832,7 +832,7 @@ var body = new platformClient.ReportSchedule(); // ReportSchedule | ReportSchedu
 
 apiInstance.postAnalyticsReportingSchedules(body)
   .then(function(data) {
-    console.log(`postAnalyticsReportingSchedules success! data: ${data}`);
+    console.log(`postAnalyticsReportingSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAnalyticsReportingSchedules');
@@ -877,7 +877,7 @@ var body = new platformClient.AggregationQuery(); // AggregationQuery | query
 
 apiInstance.postAnalyticsUsersAggregatesQuery(body)
   .then(function(data) {
-    console.log(`postAnalyticsUsersAggregatesQuery success! data: ${data}`);
+    console.log(`postAnalyticsUsersAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAnalyticsUsersAggregatesQuery');
@@ -922,7 +922,7 @@ var body = new platformClient.UserDetailsQuery(); // UserDetailsQuery | query
 
 apiInstance.postAnalyticsUsersDetailsQuery(body)
   .then(function(data) {
-    console.log(`postAnalyticsUsersDetailsQuery success! data: ${data}`);
+    console.log(`postAnalyticsUsersDetailsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAnalyticsUsersDetailsQuery');
@@ -967,7 +967,7 @@ var body = new platformClient.ObservationQuery(); // ObservationQuery | query
 
 apiInstance.postAnalyticsUsersObservationsQuery(body)
   .then(function(data) {
-    console.log(`postAnalyticsUsersObservationsQuery success! data: ${data}`);
+    console.log(`postAnalyticsUsersObservationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAnalyticsUsersObservationsQuery');
@@ -1014,7 +1014,7 @@ var body = new platformClient.ReportSchedule(); // ReportSchedule | ReportSchedu
 
 apiInstance.putAnalyticsReportingSchedule(scheduleId, body)
   .then(function(data) {
-    console.log(`putAnalyticsReportingSchedule success! data: ${data}`);
+    console.log(`putAnalyticsReportingSchedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putAnalyticsReportingSchedule');

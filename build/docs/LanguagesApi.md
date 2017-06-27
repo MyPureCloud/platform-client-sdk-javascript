@@ -133,7 +133,7 @@ var languageId = "languageId_example"; // String | Language ID
 
 apiInstance.getLanguage(languageId)
   .then(function(data) {
-    console.log(`getLanguage success! data: ${data}`);
+    console.log(`getLanguage success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getLanguage');
@@ -182,7 +182,7 @@ var opts = {
 };
 apiInstance.getLanguages(opts)
   .then(function(data) {
-    console.log(`getLanguages success! data: ${data}`);
+    console.log(`getLanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getLanguages');
@@ -227,7 +227,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.LanguagesApi();
 apiInstance.getLanguagesTranslations()
   .then(function(data) {
-    console.log(`getLanguagesTranslations success! data: ${data}`);
+    console.log(`getLanguagesTranslations success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getLanguagesTranslations');
@@ -269,7 +269,7 @@ var language = "language_example"; // String | The language of the builtin trans
 
 apiInstance.getLanguagesTranslationsBuiltin(language)
   .then(function(data) {
-    console.log(`getLanguagesTranslationsBuiltin success! data: ${data}`);
+    console.log(`getLanguagesTranslationsBuiltin success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getLanguagesTranslationsBuiltin');
@@ -314,7 +314,7 @@ var language = "language_example"; // String | The language of the translation t
 
 apiInstance.getLanguagesTranslationsOrganization(language)
   .then(function(data) {
-    console.log(`getLanguagesTranslationsOrganization success! data: ${data}`);
+    console.log(`getLanguagesTranslationsOrganization success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getLanguagesTranslationsOrganization');
@@ -359,7 +359,7 @@ var userId = "userId_example"; // String | The user id
 
 apiInstance.getLanguagesTranslationsUser(userId)
   .then(function(data) {
-    console.log(`getLanguagesTranslationsUser success! data: ${data}`);
+    console.log(`getLanguagesTranslationsUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getLanguagesTranslationsUser');
@@ -404,7 +404,7 @@ var languageId = "languageId_example"; // String | Language ID
 
 apiInstance.getRoutingLanguage(languageId)
   .then(function(data) {
-    console.log(`getRoutingLanguage success! data: ${data}`);
+    console.log(`getRoutingLanguage success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRoutingLanguage');
@@ -449,7 +449,7 @@ var body = new platformClient.Language(); // Language | Language
 
 apiInstance.postLanguages(body)
   .then(function(data) {
-    console.log(`postLanguages success! data: ${data}`);
+    console.log(`postLanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postLanguages');

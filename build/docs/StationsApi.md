@@ -81,7 +81,7 @@ var stationId = "stationId_example"; // String | Station ID
 
 apiInstance.getStation(stationId)
   .then(function(data) {
-    console.log(`getStation success! data: ${data}`);
+    console.log(`getStation success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getStation');
@@ -134,7 +134,7 @@ var opts = {
 };
 apiInstance.getStations(opts)
   .then(function(data) {
-    console.log(`getStations success! data: ${data}`);
+    console.log(`getStations success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getStations');

@@ -358,7 +358,7 @@ var opts = {
 };
 apiInstance.getContentmanagementDocument(documentId, opts)
   .then(function(data) {
-    console.log(`getContentmanagementDocument success! data: ${data}`);
+    console.log(`getContentmanagementDocument success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementDocument');
@@ -412,7 +412,7 @@ var opts = {
 };
 apiInstance.getContentmanagementDocumentAudits(documentId, opts)
   .then(function(data) {
-    console.log(`getContentmanagementDocumentAudits success! data: ${data}`);
+    console.log(`getContentmanagementDocumentAudits success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementDocumentAudits');
@@ -467,7 +467,7 @@ var opts = {
 };
 apiInstance.getContentmanagementDocumentContent(documentId, opts)
   .then(function(data) {
-    console.log(`getContentmanagementDocumentContent success! data: ${data}`);
+    console.log(`getContentmanagementDocumentContent success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementDocumentContent');
@@ -522,7 +522,7 @@ var opts = {
 };
 apiInstance.getContentmanagementDocuments(workspaceId, opts)
   .then(function(data) {
-    console.log(`getContentmanagementDocuments success! data: ${data}`);
+    console.log(`getContentmanagementDocuments success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementDocuments');
@@ -580,7 +580,7 @@ var opts = {
 };
 apiInstance.getContentmanagementQuery(queryPhrase, opts)
   .then(function(data) {
-    console.log(`getContentmanagementQuery success! data: ${data}`);
+    console.log(`getContentmanagementQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementQuery');
@@ -630,7 +630,7 @@ var securityProfileId = "securityProfileId_example"; // String | Security Profil
 
 apiInstance.getContentmanagementSecurityprofile(securityProfileId)
   .then(function(data) {
-    console.log(`getContentmanagementSecurityprofile success! data: ${data}`);
+    console.log(`getContentmanagementSecurityprofile success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementSecurityprofile');
@@ -672,7 +672,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.ContentManagementApi();
 apiInstance.getContentmanagementSecurityprofiles()
   .then(function(data) {
-    console.log(`getContentmanagementSecurityprofiles success! data: ${data}`);
+    console.log(`getContentmanagementSecurityprofiles success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementSecurityprofiles');
@@ -717,7 +717,7 @@ var opts = {
 };
 apiInstance.getContentmanagementShare(shareId, opts)
   .then(function(data) {
-    console.log(`getContentmanagementShare success! data: ${data}`);
+    console.log(`getContentmanagementShare success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementShare');
@@ -769,7 +769,7 @@ var opts = {
 };
 apiInstance.getContentmanagementSharedSharedId(sharedId, opts)
   .then(function(data) {
-    console.log(`getContentmanagementSharedSharedId success! data: ${data}`);
+    console.log(`getContentmanagementSharedSharedId success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementSharedSharedId');
@@ -822,7 +822,7 @@ var opts = {
 };
 apiInstance.getContentmanagementShares(opts)
   .then(function(data) {
-    console.log(`getContentmanagementShares success! data: ${data}`);
+    console.log(`getContentmanagementShares success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementShares');
@@ -872,7 +872,7 @@ var opts = {
 };
 apiInstance.getContentmanagementStatus(opts)
   .then(function(data) {
-    console.log(`getContentmanagementStatus success! data: ${data}`);
+    console.log(`getContentmanagementStatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementStatus');
@@ -918,7 +918,7 @@ var statusId = "statusId_example"; // String | Status ID
 
 apiInstance.getContentmanagementStatusStatusId(statusId)
   .then(function(data) {
-    console.log(`getContentmanagementStatusStatusId success! data: ${data}`);
+    console.log(`getContentmanagementStatusStatusId success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementStatusStatusId');
@@ -960,7 +960,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.ContentManagementApi();
 apiInstance.getContentmanagementUsage()
   .then(function(data) {
-    console.log(`getContentmanagementUsage success! data: ${data}`);
+    console.log(`getContentmanagementUsage success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementUsage');
@@ -1005,7 +1005,7 @@ var opts = {
 };
 apiInstance.getContentmanagementWorkspace(workspaceId, opts)
   .then(function(data) {
-    console.log(`getContentmanagementWorkspace success! data: ${data}`);
+    console.log(`getContentmanagementWorkspace success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementWorkspace');
@@ -1058,7 +1058,7 @@ var opts = {
 };
 apiInstance.getContentmanagementWorkspaceDocuments(workspaceId, opts)
   .then(function(data) {
-    console.log(`getContentmanagementWorkspaceDocuments success! data: ${data}`);
+    console.log(`getContentmanagementWorkspaceDocuments success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementWorkspaceDocuments');
@@ -1113,7 +1113,7 @@ var opts = {
 };
 apiInstance.getContentmanagementWorkspaceMember(workspaceId, memberId, opts)
   .then(function(data) {
-    console.log(`getContentmanagementWorkspaceMember success! data: ${data}`);
+    console.log(`getContentmanagementWorkspaceMember success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementWorkspaceMember');
@@ -1165,7 +1165,7 @@ var opts = {
 };
 apiInstance.getContentmanagementWorkspaceMembers(workspaceId, opts)
   .then(function(data) {
-    console.log(`getContentmanagementWorkspaceMembers success! data: ${data}`);
+    console.log(`getContentmanagementWorkspaceMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementWorkspaceMembers');
@@ -1218,7 +1218,7 @@ var opts = {
 };
 apiInstance.getContentmanagementWorkspaceTagvalue(workspaceId, tagId, opts)
   .then(function(data) {
-    console.log(`getContentmanagementWorkspaceTagvalue success! data: ${data}`);
+    console.log(`getContentmanagementWorkspaceTagvalue success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementWorkspaceTagvalue');
@@ -1271,7 +1271,7 @@ var opts = {
 };
 apiInstance.getContentmanagementWorkspaceTagvalues(workspaceId, opts)
   .then(function(data) {
-    console.log(`getContentmanagementWorkspaceTagvalues success! data: ${data}`);
+    console.log(`getContentmanagementWorkspaceTagvalues success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementWorkspaceTagvalues');
@@ -1324,7 +1324,7 @@ var opts = {
 };
 apiInstance.getContentmanagementWorkspaces(opts)
   .then(function(data) {
-    console.log(`getContentmanagementWorkspaces success! data: ${data}`);
+    console.log(`getContentmanagementWorkspaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getContentmanagementWorkspaces');
@@ -1372,7 +1372,7 @@ var body = new platformClient.ContentQueryRequest(); // ContentQueryRequest | Al
 
 apiInstance.postContentmanagementAuditquery(body)
   .then(function(data) {
-    console.log(`postContentmanagementAuditquery success! data: ${data}`);
+    console.log(`postContentmanagementAuditquery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postContentmanagementAuditquery');
@@ -1423,7 +1423,7 @@ var opts = {
 };
 apiInstance.postContentmanagementDocument(documentId, body, opts)
   .then(function(data) {
-    console.log(`postContentmanagementDocument success! data: ${data}`);
+    console.log(`postContentmanagementDocument success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postContentmanagementDocument');
@@ -1476,7 +1476,7 @@ var opts = {
 };
 apiInstance.postContentmanagementDocumentContent(documentId, body, opts)
   .then(function(data) {
-    console.log(`postContentmanagementDocumentContent success! data: ${data}`);
+    console.log(`postContentmanagementDocumentContent success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postContentmanagementDocumentContent');
@@ -1528,7 +1528,7 @@ var opts = {
 };
 apiInstance.postContentmanagementDocuments(body, opts)
   .then(function(data) {
-    console.log(`postContentmanagementDocuments success! data: ${data}`);
+    console.log(`postContentmanagementDocuments success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postContentmanagementDocuments');
@@ -1579,7 +1579,7 @@ var opts = {
 };
 apiInstance.postContentmanagementQuery(body, opts)
   .then(function(data) {
-    console.log(`postContentmanagementQuery success! data: ${data}`);
+    console.log(`postContentmanagementQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postContentmanagementQuery');
@@ -1625,7 +1625,7 @@ var body = new platformClient.CreateShareRequest(); // CreateShareRequest | Crea
 
 apiInstance.postContentmanagementShares(body)
   .then(function(data) {
-    console.log(`postContentmanagementShares success! data: ${data}`);
+    console.log(`postContentmanagementShares success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postContentmanagementShares');
@@ -1672,7 +1672,7 @@ var body = new platformClient.TagValue(); // TagValue | tag
 
 apiInstance.postContentmanagementWorkspaceTagvalues(workspaceId, body)
   .then(function(data) {
-    console.log(`postContentmanagementWorkspaceTagvalues success! data: ${data}`);
+    console.log(`postContentmanagementWorkspaceTagvalues success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postContentmanagementWorkspaceTagvalues');
@@ -1723,7 +1723,7 @@ var opts = {
 };
 apiInstance.postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, opts)
   .then(function(data) {
-    console.log(`postContentmanagementWorkspaceTagvaluesQuery success! data: ${data}`);
+    console.log(`postContentmanagementWorkspaceTagvaluesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postContentmanagementWorkspaceTagvaluesQuery');
@@ -1770,7 +1770,7 @@ var body = new platformClient.WorkspaceCreate(); // WorkspaceCreate | Workspace
 
 apiInstance.postContentmanagementWorkspaces(body)
   .then(function(data) {
-    console.log(`postContentmanagementWorkspaces success! data: ${data}`);
+    console.log(`postContentmanagementWorkspaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postContentmanagementWorkspaces');
@@ -1817,7 +1817,7 @@ var body = new platformClient.Workspace(); // Workspace | Workspace
 
 apiInstance.putContentmanagementWorkspace(workspaceId, body)
   .then(function(data) {
-    console.log(`putContentmanagementWorkspace success! data: ${data}`);
+    console.log(`putContentmanagementWorkspace success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putContentmanagementWorkspace');
@@ -1867,7 +1867,7 @@ var body = new platformClient.WorkspaceMember(); // WorkspaceMember | Workspace 
 
 apiInstance.putContentmanagementWorkspaceMember(workspaceId, memberId, body)
   .then(function(data) {
-    console.log(`putContentmanagementWorkspaceMember success! data: ${data}`);
+    console.log(`putContentmanagementWorkspaceMember success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putContentmanagementWorkspaceMember');
@@ -1918,7 +1918,7 @@ var body = new platformClient.TagValue(); // TagValue | Workspace
 
 apiInstance.putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
   .then(function(data) {
-    console.log(`putContentmanagementWorkspaceTagvalue success! data: ${data}`);
+    console.log(`putContentmanagementWorkspaceTagvalue success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putContentmanagementWorkspaceTagvalue');

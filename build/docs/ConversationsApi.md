@@ -257,7 +257,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getAnalyticsConversationDetails(conversationId)
   .then(function(data) {
-    console.log(`getAnalyticsConversationDetails success! data: ${data}`);
+    console.log(`getAnalyticsConversationDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAnalyticsConversationDetails');
@@ -302,7 +302,7 @@ var conversationId = "conversationId_example"; // String | conversation ID
 
 apiInstance.getConversation(conversationId)
   .then(function(data) {
-    console.log(`getConversation success! data: ${data}`);
+    console.log(`getConversation success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversation');
@@ -352,7 +352,7 @@ var opts = {
 };
 apiInstance.getConversationParticipantWrapup(conversationId, participantId, opts)
   .then(function(data) {
-    console.log(`getConversationParticipantWrapup success! data: ${data}`);
+    console.log(`getConversationParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationParticipantWrapup');
@@ -401,7 +401,7 @@ var participantId = "participantId_example"; // String | participant ID
 
 apiInstance.getConversationParticipantWrapupcodes(conversationId, participantId)
   .then(function(data) {
-    console.log(`getConversationParticipantWrapupcodes success! data: ${data}`);
+    console.log(`getConversationParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationParticipantWrapupcodes');
@@ -448,7 +448,7 @@ var opts = {
 };
 apiInstance.getConversations(opts)
   .then(function(data) {
-    console.log(`getConversations success! data: ${data}`);
+    console.log(`getConversations success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversations');
@@ -493,7 +493,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getConversationsCall(conversationId)
   .then(function(data) {
-    console.log(`getConversationsCall success! data: ${data}`);
+    console.log(`getConversationsCall success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsCall');
@@ -543,7 +543,7 @@ var opts = {
 };
 apiInstance.getConversationsCallParticipantWrapup(conversationId, participantId, opts)
   .then(function(data) {
-    console.log(`getConversationsCallParticipantWrapup success! data: ${data}`);
+    console.log(`getConversationsCallParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsCallParticipantWrapup');
@@ -592,7 +592,7 @@ var participantId = "participantId_example"; // String | participantId
 
 apiInstance.getConversationsCallParticipantWrapupcodes(conversationId, participantId)
   .then(function(data) {
-    console.log(`getConversationsCallParticipantWrapupcodes success! data: ${data}`);
+    console.log(`getConversationsCallParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsCallParticipantWrapupcodes');
@@ -638,7 +638,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getConversationsCallback(conversationId)
   .then(function(data) {
-    console.log(`getConversationsCallback success! data: ${data}`);
+    console.log(`getConversationsCallback success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsCallback');
@@ -688,7 +688,7 @@ var opts = {
 };
 apiInstance.getConversationsCallbackParticipantWrapup(conversationId, participantId, opts)
   .then(function(data) {
-    console.log(`getConversationsCallbackParticipantWrapup success! data: ${data}`);
+    console.log(`getConversationsCallbackParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsCallbackParticipantWrapup');
@@ -737,7 +737,7 @@ var participantId = "participantId_example"; // String | participantId
 
 apiInstance.getConversationsCallbackParticipantWrapupcodes(conversationId, participantId)
   .then(function(data) {
-    console.log(`getConversationsCallbackParticipantWrapupcodes success! data: ${data}`);
+    console.log(`getConversationsCallbackParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsCallbackParticipantWrapupcodes');
@@ -780,7 +780,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.ConversationsApi();
 apiInstance.getConversationsCallbacks()
   .then(function(data) {
-    console.log(`getConversationsCallbacks success! data: ${data}`);
+    console.log(`getConversationsCallbacks success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsCallbacks');
@@ -819,7 +819,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.ConversationsApi();
 apiInstance.getConversationsCalls()
   .then(function(data) {
-    console.log(`getConversationsCalls success! data: ${data}`);
+    console.log(`getConversationsCalls success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsCalls');
@@ -864,7 +864,7 @@ var opts = {
 };
 apiInstance.getConversationsCallsHistory(opts)
   .then(function(data) {
-    console.log(`getConversationsCallsHistory success! data: ${data}`);
+    console.log(`getConversationsCallsHistory success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsCallsHistory');
@@ -908,7 +908,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.ConversationsApi();
 apiInstance.getConversationsCallsMaximumconferenceparties()
   .then(function(data) {
-    console.log(`getConversationsCallsMaximumconferenceparties success! data: ${data}`);
+    console.log(`getConversationsCallsMaximumconferenceparties success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsCallsMaximumconferenceparties');
@@ -950,7 +950,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getConversationsChat(conversationId)
   .then(function(data) {
-    console.log(`getConversationsChat success! data: ${data}`);
+    console.log(`getConversationsChat success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsChat');
@@ -1000,7 +1000,7 @@ var opts = {
 };
 apiInstance.getConversationsChatParticipantWrapup(conversationId, participantId, opts)
   .then(function(data) {
-    console.log(`getConversationsChatParticipantWrapup success! data: ${data}`);
+    console.log(`getConversationsChatParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsChatParticipantWrapup');
@@ -1049,7 +1049,7 @@ var participantId = "participantId_example"; // String | participantId
 
 apiInstance.getConversationsChatParticipantWrapupcodes(conversationId, participantId)
   .then(function(data) {
-    console.log(`getConversationsChatParticipantWrapupcodes success! data: ${data}`);
+    console.log(`getConversationsChatParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsChatParticipantWrapupcodes');
@@ -1092,7 +1092,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.ConversationsApi();
 apiInstance.getConversationsChats()
   .then(function(data) {
-    console.log(`getConversationsChats success! data: ${data}`);
+    console.log(`getConversationsChats success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsChats');
@@ -1134,7 +1134,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getConversationsCobrowsesession(conversationId)
   .then(function(data) {
-    console.log(`getConversationsCobrowsesession success! data: ${data}`);
+    console.log(`getConversationsCobrowsesession success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsCobrowsesession');
@@ -1184,7 +1184,7 @@ var opts = {
 };
 apiInstance.getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, opts)
   .then(function(data) {
-    console.log(`getConversationsCobrowsesessionParticipantWrapup success! data: ${data}`);
+    console.log(`getConversationsCobrowsesessionParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsCobrowsesessionParticipantWrapup');
@@ -1233,7 +1233,7 @@ var participantId = "participantId_example"; // String | participantId
 
 apiInstance.getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId)
   .then(function(data) {
-    console.log(`getConversationsCobrowsesessionParticipantWrapupcodes success! data: ${data}`);
+    console.log(`getConversationsCobrowsesessionParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsCobrowsesessionParticipantWrapupcodes');
@@ -1276,7 +1276,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.ConversationsApi();
 apiInstance.getConversationsCobrowsesessions()
   .then(function(data) {
-    console.log(`getConversationsCobrowsesessions success! data: ${data}`);
+    console.log(`getConversationsCobrowsesessions success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsCobrowsesessions');
@@ -1318,7 +1318,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getConversationsEmail(conversationId)
   .then(function(data) {
-    console.log(`getConversationsEmail success! data: ${data}`);
+    console.log(`getConversationsEmail success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsEmail');
@@ -1365,7 +1365,7 @@ var messageId = "messageId_example"; // String | messageId
 
 apiInstance.getConversationsEmailMessage(conversationId, messageId)
   .then(function(data) {
-    console.log(`getConversationsEmailMessage success! data: ${data}`);
+    console.log(`getConversationsEmailMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsEmailMessage');
@@ -1411,7 +1411,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getConversationsEmailMessages(conversationId)
   .then(function(data) {
-    console.log(`getConversationsEmailMessages success! data: ${data}`);
+    console.log(`getConversationsEmailMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsEmailMessages');
@@ -1456,7 +1456,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getConversationsEmailMessagesDraft(conversationId)
   .then(function(data) {
-    console.log(`getConversationsEmailMessagesDraft success! data: ${data}`);
+    console.log(`getConversationsEmailMessagesDraft success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsEmailMessagesDraft');
@@ -1506,7 +1506,7 @@ var opts = {
 };
 apiInstance.getConversationsEmailParticipantWrapup(conversationId, participantId, opts)
   .then(function(data) {
-    console.log(`getConversationsEmailParticipantWrapup success! data: ${data}`);
+    console.log(`getConversationsEmailParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsEmailParticipantWrapup');
@@ -1555,7 +1555,7 @@ var participantId = "participantId_example"; // String | participantId
 
 apiInstance.getConversationsEmailParticipantWrapupcodes(conversationId, participantId)
   .then(function(data) {
-    console.log(`getConversationsEmailParticipantWrapupcodes success! data: ${data}`);
+    console.log(`getConversationsEmailParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsEmailParticipantWrapupcodes');
@@ -1598,7 +1598,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.ConversationsApi();
 apiInstance.getConversationsEmails()
   .then(function(data) {
-    console.log(`getConversationsEmails success! data: ${data}`);
+    console.log(`getConversationsEmails success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationsEmails');
@@ -1744,7 +1744,7 @@ var body = new platformClient.Conversation(); // Conversation | Conversation
 
 apiInstance.patchConversationsCall(conversationId, body)
   .then(function(data) {
-    console.log(`patchConversationsCall success! data: ${data}`);
+    console.log(`patchConversationsCall success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchConversationsCall');
@@ -1898,7 +1898,7 @@ var body = new platformClient.MediaParticipantRequest(); // MediaParticipantRequ
 
 apiInstance.patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body)
   .then(function(data) {
-    console.log(`patchConversationsCallParticipantCommunication success! data: ${data}`);
+    console.log(`patchConversationsCallParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchConversationsCallParticipantCommunication');
@@ -1950,7 +1950,7 @@ var body = new platformClient.ConsultTransferUpdate(); // ConsultTransferUpdate 
 
 apiInstance.patchConversationsCallParticipantConsult(conversationId, participantId, body)
   .then(function(data) {
-    console.log(`patchConversationsCallParticipantConsult success! data: ${data}`);
+    console.log(`patchConversationsCallParticipantConsult success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchConversationsCallParticipantConsult');
@@ -1999,7 +1999,7 @@ var body = new platformClient.Conversation(); // Conversation | Conversation
 
 apiInstance.patchConversationsCallback(conversationId, body)
   .then(function(data) {
-    console.log(`patchConversationsCallback success! data: ${data}`);
+    console.log(`patchConversationsCallback success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchConversationsCallback');
@@ -2153,7 +2153,7 @@ var body = new platformClient.MediaParticipantRequest(); // MediaParticipantRequ
 
 apiInstance.patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body)
   .then(function(data) {
-    console.log(`patchConversationsCallbackParticipantCommunication success! data: ${data}`);
+    console.log(`patchConversationsCallbackParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchConversationsCallbackParticipantCommunication');
@@ -2203,7 +2203,7 @@ var body = new platformClient.Conversation(); // Conversation | Conversation
 
 apiInstance.patchConversationsChat(conversationId, body)
   .then(function(data) {
-    console.log(`patchConversationsChat success! data: ${data}`);
+    console.log(`patchConversationsChat success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchConversationsChat');
@@ -2357,7 +2357,7 @@ var body = new platformClient.MediaParticipantRequest(); // MediaParticipantRequ
 
 apiInstance.patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body)
   .then(function(data) {
-    console.log(`patchConversationsChatParticipantCommunication success! data: ${data}`);
+    console.log(`patchConversationsChatParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchConversationsChatParticipantCommunication');
@@ -2407,7 +2407,7 @@ var body = new platformClient.Conversation(); // Conversation | Conversation
 
 apiInstance.patchConversationsCobrowsesession(conversationId, body)
   .then(function(data) {
-    console.log(`patchConversationsCobrowsesession success! data: ${data}`);
+    console.log(`patchConversationsCobrowsesession success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchConversationsCobrowsesession');
@@ -2563,7 +2563,7 @@ var body = new platformClient.MediaParticipantRequest(); // MediaParticipantRequ
 
 apiInstance.patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body)
   .then(function(data) {
-    console.log(`patchConversationsCobrowsesessionParticipantCommunication success! data: ${data}`);
+    console.log(`patchConversationsCobrowsesessionParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchConversationsCobrowsesessionParticipantCommunication');
@@ -2613,7 +2613,7 @@ var body = new platformClient.Conversation(); // Conversation | Conversation
 
 apiInstance.patchConversationsEmail(conversationId, body)
   .then(function(data) {
-    console.log(`patchConversationsEmail success! data: ${data}`);
+    console.log(`patchConversationsEmail success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchConversationsEmail');
@@ -2767,7 +2767,7 @@ var body = new platformClient.MediaParticipantRequest(); // MediaParticipantRequ
 
 apiInstance.patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body)
   .then(function(data) {
-    console.log(`patchConversationsEmailParticipantCommunication success! data: ${data}`);
+    console.log(`patchConversationsEmailParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchConversationsEmailParticipantCommunication');
@@ -2817,7 +2817,7 @@ var body = new platformClient.PropertyIndexRequest(); // PropertyIndexRequest | 
 
 apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
   .then(function(data) {
-    console.log(`postAnalyticsConversationDetailsProperties success! data: ${data}`);
+    console.log(`postAnalyticsConversationDetailsProperties success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAnalyticsConversationDetailsProperties');
@@ -2863,7 +2863,7 @@ var body = new platformClient.AggregationQuery(); // AggregationQuery | query
 
 apiInstance.postAnalyticsConversationsAggregatesQuery(body)
   .then(function(data) {
-    console.log(`postAnalyticsConversationsAggregatesQuery success! data: ${data}`);
+    console.log(`postAnalyticsConversationsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAnalyticsConversationsAggregatesQuery');
@@ -2908,7 +2908,7 @@ var body = new platformClient.ConversationQuery(); // ConversationQuery | query
 
 apiInstance.postAnalyticsConversationsDetailsQuery(body)
   .then(function(data) {
-    console.log(`postAnalyticsConversationsDetailsQuery success! data: ${data}`);
+    console.log(`postAnalyticsConversationsDetailsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAnalyticsConversationsDetailsQuery');
@@ -3058,7 +3058,7 @@ var body = new platformClient.CallCommand(); // CallCommand | Conversation
 
 apiInstance.postConversationsCall(conversationId, body)
   .then(function(data) {
-    console.log(`postConversationsCall success! data: ${data}`);
+    console.log(`postConversationsCall success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postConversationsCall');
@@ -3108,7 +3108,7 @@ var body = new platformClient.ConsultTransfer(); // ConsultTransfer | Destinatio
 
 apiInstance.postConversationsCallParticipantConsult(conversationId, participantId, body)
   .then(function(data) {
-    console.log(`postConversationsCallParticipantConsult success! data: ${data}`);
+    console.log(`postConversationsCallParticipantConsult success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postConversationsCallParticipantConsult');
@@ -3256,7 +3256,7 @@ var body = new platformClient.Conversation(); // Conversation | Conversation
 
 apiInstance.postConversationsCallParticipants(conversationId, body)
   .then(function(data) {
-    console.log(`postConversationsCallParticipants success! data: ${data}`);
+    console.log(`postConversationsCallParticipants success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postConversationsCallParticipants');
@@ -3353,7 +3353,7 @@ var body = new platformClient.CreateCallbackCommand(); // CreateCallbackCommand 
 
 apiInstance.postConversationsCallbacks(body)
   .then(function(data) {
-    console.log(`postConversationsCallbacks success! data: ${data}`);
+    console.log(`postConversationsCallbacks success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postConversationsCallbacks');
@@ -3398,7 +3398,7 @@ var body = new platformClient.CreateCallRequest(); // CreateCallRequest | Call r
 
 apiInstance.postConversationsCalls(body)
   .then(function(data) {
-    console.log(`postConversationsCalls success! data: ${data}`);
+    console.log(`postConversationsCalls success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postConversationsCalls');
@@ -3494,7 +3494,7 @@ var body = new platformClient.CreateWebChatRequest(); // CreateWebChatRequest | 
 
 apiInstance.postConversationsChats(body)
   .then(function(data) {
-    console.log(`postConversationsChats success! data: ${data}`);
+    console.log(`postConversationsChats success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postConversationsChats');
@@ -3593,7 +3593,7 @@ var body = new platformClient.EmailMessage(); // EmailMessage | Reply
 
 apiInstance.postConversationsEmailMessages(conversationId, body)
   .then(function(data) {
-    console.log(`postConversationsEmailMessages success! data: ${data}`);
+    console.log(`postConversationsEmailMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postConversationsEmailMessages');
@@ -3690,7 +3690,7 @@ var body = new platformClient.CreateEmailRequest(); // CreateEmailRequest | Crea
 
 apiInstance.postConversationsEmails(body)
   .then(function(data) {
-    console.log(`postConversationsEmails success! data: ${data}`);
+    console.log(`postConversationsEmails success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postConversationsEmails');
@@ -3735,7 +3735,7 @@ var body = new platformClient.FaxSendRequest(); // FaxSendRequest | Fax
 
 apiInstance.postConversationsFaxes(body)
   .then(function(data) {
-    console.log(`postConversationsFaxes success! data: ${data}`);
+    console.log(`postConversationsFaxes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postConversationsFaxes');
@@ -3782,7 +3782,7 @@ var body = new platformClient.EmailMessage(); // EmailMessage | Draft
 
 apiInstance.putConversationsEmailMessagesDraft(conversationId, body)
   .then(function(data) {
-    console.log(`putConversationsEmailMessagesDraft success! data: ${data}`);
+    console.log(`putConversationsEmailMessagesDraft success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putConversationsEmailMessagesDraft');

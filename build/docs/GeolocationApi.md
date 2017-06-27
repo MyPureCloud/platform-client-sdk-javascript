@@ -34,7 +34,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.GeolocationApi();
 apiInstance.getGeolocationsSettings()
   .then(function(data) {
-    console.log(`getGeolocationsSettings success! data: ${data}`);
+    console.log(`getGeolocationsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getGeolocationsSettings');
@@ -78,7 +78,7 @@ var clientId = "clientId_example"; // String | client Id
 
 apiInstance.getUserGeolocation(userId, clientId)
   .then(function(data) {
-    console.log(`getUserGeolocation success! data: ${data}`);
+    console.log(`getUserGeolocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserGeolocation');
@@ -124,7 +124,7 @@ var body = new platformClient.GeolocationSettings(); // GeolocationSettings | Ge
 
 apiInstance.patchGeolocationsSettings(body)
   .then(function(data) {
-    console.log(`patchGeolocationsSettings success! data: ${data}`);
+    console.log(`patchGeolocationsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchGeolocationsSettings');
@@ -173,7 +173,7 @@ var body = new platformClient.Geolocation(); // Geolocation | Geolocation
 
 apiInstance.patchUserGeolocation(userId, clientId, body)
   .then(function(data) {
-    console.log(`patchUserGeolocation success! data: ${data}`);
+    console.log(`patchUserGeolocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchUserGeolocation');

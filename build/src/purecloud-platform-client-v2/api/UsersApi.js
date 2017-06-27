@@ -18,7 +18,7 @@
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 2.0.8
+   * @version 3.0.0
    */
 
   /**
@@ -979,6 +979,37 @@
         {  }, 
         {  }, 
         body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Send an activation email to the user
+     * 
+     * @param {String} userId User ID
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.force Resend the invitation even if one is already outstanding (default to false)
+     */
+    this.postUserInvite = function(userId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling postUserInvite";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/{userId}/invite', 
+        'POST', 
+        { 'userId': userId }, 
+        { 'force': opts['force'] }, 
+        {  }, 
+        {  }, 
+        null, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']

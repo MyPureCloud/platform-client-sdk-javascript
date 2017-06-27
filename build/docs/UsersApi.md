@@ -38,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsUsersAggregatesQuery**](UsersApi.html#postAnalyticsUsersAggregatesQuery) | **POST** /api/v2/analytics/users/aggregates/query | Query for user aggregates
 [**postAnalyticsUsersDetailsQuery**](UsersApi.html#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
 [**postAnalyticsUsersObservationsQuery**](UsersApi.html#postAnalyticsUsersObservationsQuery) | **POST** /api/v2/analytics/users/observations/query | Query for user observations
+[**postUserInvite**](UsersApi.html#postUserInvite) | **POST** /api/v2/users/{userId}/invite | Send an activation email to the user
 [**postUserRoutingskills**](UsersApi.html#postUserRoutingskills) | **POST** /api/v2/users/{userId}/routingskills | Add routing skill to user
 [**postUsers**](UsersApi.html#postUsers) | **POST** /api/v2/users | Create user
 [**postUsersSearch**](UsersApi.html#postUsersSearch) | **POST** /api/v2/users/search | Search users
@@ -75,7 +76,7 @@ var userId = "userId_example"; // String | User ID
 
 apiInstance.deleteUser(userId)
   .then(function(data) {
-    console.log(`deleteUser success! data: ${data}`);
+    console.log(`deleteUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling deleteUser');
@@ -303,7 +304,7 @@ var type = "type_example"; // String | Field type
 
 apiInstance.getFieldconfig(type)
   .then(function(data) {
-    console.log(`getFieldconfig success! data: ${data}`);
+    console.log(`getFieldconfig success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getFieldconfig');
@@ -352,7 +353,7 @@ var opts = {
 };
 apiInstance.getUser(userId, opts)
   .then(function(data) {
-    console.log(`getUser success! data: ${data}`);
+    console.log(`getUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUser');
@@ -402,7 +403,7 @@ var opts = {
 };
 apiInstance.getUserAdjacents(userId, opts)
   .then(function(data) {
-    console.log(`getUserAdjacents success! data: ${data}`);
+    console.log(`getUserAdjacents success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserAdjacents');
@@ -448,7 +449,7 @@ var userId = "userId_example"; // String | User ID
 
 apiInstance.getUserCallforwarding(userId)
   .then(function(data) {
-    console.log(`getUserCallforwarding success! data: ${data}`);
+    console.log(`getUserCallforwarding success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserCallforwarding');
@@ -496,7 +497,7 @@ var opts = {
 };
 apiInstance.getUserDirectreports(userId, opts)
   .then(function(data) {
-    console.log(`getUserDirectreports success! data: ${data}`);
+    console.log(`getUserDirectreports success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserDirectreports');
@@ -548,7 +549,7 @@ var opts = {
 };
 apiInstance.getUserFavorites(userId, opts)
   .then(function(data) {
-    console.log(`getUserFavorites success! data: ${data}`);
+    console.log(`getUserFavorites success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserFavorites');
@@ -599,7 +600,7 @@ var clientId = "clientId_example"; // String | client Id
 
 apiInstance.getUserGeolocation(userId, clientId)
   .then(function(data) {
-    console.log(`getUserGeolocation success! data: ${data}`);
+    console.log(`getUserGeolocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserGeolocation');
@@ -645,7 +646,7 @@ var userId = "userId_example"; // String | User ID
 
 apiInstance.getUserOutofoffice(userId)
   .then(function(data) {
-    console.log(`getUserOutofoffice success! data: ${data}`);
+    console.log(`getUserOutofoffice success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserOutofoffice');
@@ -690,7 +691,7 @@ var userId = "userId_example"; // String | User ID
 
 apiInstance.getUserProfileskills(userId)
   .then(function(data) {
-    console.log(`getUserProfileskills success! data: ${data}`);
+    console.log(`getUserProfileskills success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserProfileskills');
@@ -740,7 +741,7 @@ var opts = {
 };
 apiInstance.getUserQueues(userId, opts)
   .then(function(data) {
-    console.log(`getUserQueues success! data: ${data}`);
+    console.log(`getUserQueues success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserQueues');
@@ -788,7 +789,7 @@ var userId = "userId_example"; // String | User ID
 
 apiInstance.getUserRoles(userId)
   .then(function(data) {
-    console.log(`getUserRoles success! data: ${data}`);
+    console.log(`getUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserRoles');
@@ -838,7 +839,7 @@ var opts = {
 };
 apiInstance.getUserRoutingskills(userId, opts)
   .then(function(data) {
-    console.log(`getUserRoutingskills success! data: ${data}`);
+    console.log(`getUserRoutingskills success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserRoutingskills');
@@ -886,7 +887,7 @@ var userId = "userId_example"; // String | User ID
 
 apiInstance.getUserRoutingstatus(userId)
   .then(function(data) {
-    console.log(`getUserRoutingstatus success! data: ${data}`);
+    console.log(`getUserRoutingstatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserRoutingstatus');
@@ -931,7 +932,7 @@ var userId = "userId_example"; // String | User ID
 
 apiInstance.getUserStation(userId)
   .then(function(data) {
-    console.log(`getUserStation success! data: ${data}`);
+    console.log(`getUserStation success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserStation');
@@ -979,7 +980,7 @@ var opts = {
 };
 apiInstance.getUserSuperiors(userId, opts)
   .then(function(data) {
-    console.log(`getUserSuperiors success! data: ${data}`);
+    console.log(`getUserSuperiors success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserSuperiors');
@@ -1031,7 +1032,7 @@ var opts = {
 };
 apiInstance.getUsers(opts)
   .then(function(data) {
-    console.log(`getUsers success! data: ${data}`);
+    console.log(`getUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUsers');
@@ -1082,7 +1083,7 @@ var opts = {
 };
 apiInstance.getUsersMe(opts)
   .then(function(data) {
-    console.log(`getUsersMe success! data: ${data}`);
+    console.log(`getUsersMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUsersMe');
@@ -1130,7 +1131,7 @@ var opts = {
 };
 apiInstance.getUsersSearch(q64, opts)
   .then(function(data) {
-    console.log(`getUsersSearch success! data: ${data}`);
+    console.log(`getUsersSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUsersSearch');
@@ -1178,7 +1179,7 @@ var body = new platformClient.UpdateUser(); // UpdateUser | User
 
 apiInstance.patchUser(userId, body)
   .then(function(data) {
-    console.log(`patchUser success! data: ${data}`);
+    console.log(`patchUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchUser');
@@ -1226,7 +1227,7 @@ var body = new platformClient.CallForwarding(); // CallForwarding | Call forward
 
 apiInstance.patchUserCallforwarding(userId, body)
   .then(function(data) {
-    console.log(`patchUserCallforwarding success! data: ${data}`);
+    console.log(`patchUserCallforwarding success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchUserCallforwarding');
@@ -1276,7 +1277,7 @@ var body = new platformClient.Geolocation(); // Geolocation | Geolocation
 
 apiInstance.patchUserGeolocation(userId, clientId, body)
   .then(function(data) {
-    console.log(`patchUserGeolocation success! data: ${data}`);
+    console.log(`patchUserGeolocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchUserGeolocation');
@@ -1327,7 +1328,7 @@ var body = new platformClient.UserQueue(); // UserQueue | Queue Member
 
 apiInstance.patchUserQueue(queueId, userId, body)
   .then(function(data) {
-    console.log(`patchUserQueue success! data: ${data}`);
+    console.log(`patchUserQueue success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchUserQueue');
@@ -1376,7 +1377,7 @@ var body = [new platformClient.UserQueue()]; // [UserQueue] | User Queues
 
 apiInstance.patchUserQueues(userId, body)
   .then(function(data) {
-    console.log(`patchUserQueues success! data: ${data}`);
+    console.log(`patchUserQueues success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchUserQueues');
@@ -1422,7 +1423,7 @@ var body = new platformClient.AggregationQuery(); // AggregationQuery | query
 
 apiInstance.postAnalyticsUsersAggregatesQuery(body)
   .then(function(data) {
-    console.log(`postAnalyticsUsersAggregatesQuery success! data: ${data}`);
+    console.log(`postAnalyticsUsersAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAnalyticsUsersAggregatesQuery');
@@ -1467,7 +1468,7 @@ var body = new platformClient.UserDetailsQuery(); // UserDetailsQuery | query
 
 apiInstance.postAnalyticsUsersDetailsQuery(body)
   .then(function(data) {
-    console.log(`postAnalyticsUsersDetailsQuery success! data: ${data}`);
+    console.log(`postAnalyticsUsersDetailsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAnalyticsUsersDetailsQuery');
@@ -1512,7 +1513,7 @@ var body = new platformClient.ObservationQuery(); // ObservationQuery | query
 
 apiInstance.postAnalyticsUsersObservationsQuery(body)
   .then(function(data) {
-    console.log(`postAnalyticsUsersObservationsQuery success! data: ${data}`);
+    console.log(`postAnalyticsUsersObservationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAnalyticsUsersObservationsQuery');
@@ -1532,6 +1533,55 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 ### Return type
 
 [**ObservationQueryResponse**](ObservationQueryResponse.html)
+
+<a name="postUserInvite"></a>
+
+# null postUserInvite(userId, opts)
+
+POST /api/v2/users/{userId}/invite
+
+Send an activation email to the user
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var opts = { 
+  'force': false // Boolean | Resend the invitation even if one is already outstanding
+};
+apiInstance.postUserInvite(userId, opts)
+  .then(function() {
+    console.log('postUserInvite returned successfully.');
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling postUserInvite');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String**| User ID |  |
+ **force** | **Boolean**| Resend the invitation even if one is already outstanding | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
 
 <a name="postUserRoutingskills"></a>
 
@@ -1559,7 +1609,7 @@ var body = new platformClient.UserRoutingSkillPost(); // UserRoutingSkillPost | 
 
 apiInstance.postUserRoutingskills(userId, body)
   .then(function(data) {
-    console.log(`postUserRoutingskills success! data: ${data}`);
+    console.log(`postUserRoutingskills success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postUserRoutingskills');
@@ -1605,7 +1655,7 @@ var body = new platformClient.CreateUser(); // CreateUser | User
 
 apiInstance.postUsers(body)
   .then(function(data) {
-    console.log(`postUsers success! data: ${data}`);
+    console.log(`postUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postUsers');
@@ -1650,7 +1700,7 @@ var body = new platformClient.UserSearchRequest(); // UserSearchRequest | Search
 
 apiInstance.postUsersSearch(body)
   .then(function(data) {
-    console.log(`postUsersSearch success! data: ${data}`);
+    console.log(`postUsersSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postUsersSearch');
@@ -1697,7 +1747,7 @@ var body = new platformClient.CallForwarding(); // CallForwarding | Call forward
 
 apiInstance.putUserCallforwarding(userId, body)
   .then(function(data) {
-    console.log(`putUserCallforwarding success! data: ${data}`);
+    console.log(`putUserCallforwarding success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putUserCallforwarding');
@@ -1745,7 +1795,7 @@ var body = new platformClient.OutOfOffice(); // OutOfOffice | The updated UserPr
 
 apiInstance.putUserOutofoffice(userId, body)
   .then(function(data) {
-    console.log(`putUserOutofoffice success! data: ${data}`);
+    console.log(`putUserOutofoffice success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putUserOutofoffice');
@@ -1794,7 +1844,7 @@ var opts = {
 };
 apiInstance.putUserProfileskills(userId, opts)
   .then(function(data) {
-    console.log(`putUserProfileskills success! data: ${data}`);
+    console.log(`putUserProfileskills success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putUserProfileskills');
@@ -1842,7 +1892,7 @@ var body = [new platformClient.[String]()]; // [String] | List of roles
 
 apiInstance.putUserRoles(userId, body)
   .then(function(data) {
-    console.log(`putUserRoles success! data: ${data}`);
+    console.log(`putUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putUserRoles');
@@ -1892,7 +1942,7 @@ var body = new platformClient.UserRoutingSkill(); // UserRoutingSkill | Skill
 
 apiInstance.putUserRoutingskill(userId, skillId, body)
   .then(function(data) {
-    console.log(`putUserRoutingskill success! data: ${data}`);
+    console.log(`putUserRoutingskill success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putUserRoutingskill');
@@ -1941,7 +1991,7 @@ var body = new platformClient.RoutingStatus(); // RoutingStatus | Routing Status
 
 apiInstance.putUserRoutingstatus(userId, body)
   .then(function(data) {
-    console.log(`putUserRoutingstatus success! data: ${data}`);
+    console.log(`putUserRoutingstatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putUserRoutingstatus');

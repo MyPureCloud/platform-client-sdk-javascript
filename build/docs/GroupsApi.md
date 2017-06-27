@@ -91,7 +91,7 @@ var ids = "ids_example"; // String | Comma separated list of userIds to remove
 
 apiInstance.deleteGroupMembers(groupId, ids)
   .then(function(data) {
-    console.log(`deleteGroupMembers success! data: ${data}`);
+    console.log(`deleteGroupMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling deleteGroupMembers');
@@ -137,7 +137,7 @@ var type = "type_example"; // String | Field type
 
 apiInstance.getFieldconfig(type)
   .then(function(data) {
-    console.log(`getFieldconfig success! data: ${data}`);
+    console.log(`getFieldconfig success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getFieldconfig');
@@ -182,7 +182,7 @@ var groupId = "groupId_example"; // String | Group ID
 
 apiInstance.getGroup(groupId)
   .then(function(data) {
-    console.log(`getGroup success! data: ${data}`);
+    console.log(`getGroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getGroup');
@@ -233,7 +233,7 @@ var opts = {
 };
 apiInstance.getGroupMembers(groupId, opts)
   .then(function(data) {
-    console.log(`getGroupMembers success! data: ${data}`);
+    console.log(`getGroupMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getGroupMembers');
@@ -285,7 +285,7 @@ var opts = {
 };
 apiInstance.getGroups(opts)
   .then(function(data) {
-    console.log(`getGroups success! data: ${data}`);
+    console.log(`getGroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getGroups');
@@ -335,7 +335,7 @@ var opts = {
 };
 apiInstance.getGroupsSearch(q64, opts)
   .then(function(data) {
-    console.log(`getGroupsSearch success! data: ${data}`);
+    console.log(`getGroupsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getGroupsSearch');
@@ -383,7 +383,7 @@ var body = new platformClient.GroupMembersUpdate(); // GroupMembersUpdate | Add 
 
 apiInstance.postGroupMembers(groupId, body)
   .then(function(data) {
-    console.log(`postGroupMembers success! data: ${data}`);
+    console.log(`postGroupMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postGroupMembers');
@@ -429,7 +429,7 @@ var body = new platformClient.Group(); // Group | Group
 
 apiInstance.postGroups(body)
   .then(function(data) {
-    console.log(`postGroups success! data: ${data}`);
+    console.log(`postGroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postGroups');
@@ -474,7 +474,7 @@ var body = new platformClient.GroupSearchRequest(); // GroupSearchRequest | Sear
 
 apiInstance.postGroupsSearch(body)
   .then(function(data) {
-    console.log(`postGroupsSearch success! data: ${data}`);
+    console.log(`postGroupsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postGroupsSearch');
@@ -522,7 +522,7 @@ var opts = {
 };
 apiInstance.putGroup(groupId, opts)
   .then(function(data) {
-    console.log(`putGroup success! data: ${data}`);
+    console.log(`putGroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putGroup');

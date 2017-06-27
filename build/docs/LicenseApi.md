@@ -39,7 +39,7 @@ var licenseId = "licenseId_example"; // String | ID
 
 apiInstance.getLicenseDefinition(licenseId)
   .then(function(data) {
-    console.log(`getLicenseDefinition success! data: ${data}`);
+    console.log(`getLicenseDefinition success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getLicenseDefinition');
@@ -81,7 +81,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.LicenseApi();
 apiInstance.getLicenseDefinitions()
   .then(function(data) {
-    console.log(`getLicenseDefinitions success! data: ${data}`);
+    console.log(`getLicenseDefinitions success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getLicenseDefinitions');
@@ -120,7 +120,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.LicenseApi();
 apiInstance.getLicenseOrganization()
   .then(function(data) {
-    console.log(`getLicenseOrganization success! data: ${data}`);
+    console.log(`getLicenseOrganization success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getLicenseOrganization');
@@ -162,7 +162,7 @@ var userId = "userId_example"; // String | ID
 
 apiInstance.getLicenseUser(userId)
   .then(function(data) {
-    console.log(`getLicenseUser success! data: ${data}`);
+    console.log(`getLicenseUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getLicenseUser');
@@ -208,7 +208,7 @@ var opts = {
 };
 apiInstance.postLicenseOrganization(opts)
   .then(function(data) {
-    console.log(`postLicenseOrganization success! data: ${data}`);
+    console.log(`postLicenseOrganization success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postLicenseOrganization');
@@ -254,7 +254,7 @@ var opts = {
 };
 apiInstance.postLicenseUsers(opts)
   .then(function(data) {
-    console.log(`postLicenseUsers success! data: ${data}`);
+    console.log(`postLicenseUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postLicenseUsers');

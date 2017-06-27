@@ -41,7 +41,7 @@ var opts = {
 };
 apiInstance.getSearch(q64, opts)
   .then(function(data) {
-    console.log(`getSearch success! data: ${data}`);
+    console.log(`getSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getSearch');
@@ -92,7 +92,7 @@ var opts = {
 };
 apiInstance.getSearchSuggest(q64, opts)
   .then(function(data) {
-    console.log(`getSearchSuggest success! data: ${data}`);
+    console.log(`getSearchSuggest success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getSearchSuggest');
@@ -142,7 +142,7 @@ var opts = {
 };
 apiInstance.postSearch(body, opts)
   .then(function(data) {
-    console.log(`postSearch success! data: ${data}`);
+    console.log(`postSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postSearch');
@@ -191,7 +191,7 @@ var opts = {
 };
 apiInstance.postSearchSuggest(body, opts)
   .then(function(data) {
-    console.log(`postSearchSuggest success! data: ${data}`);
+    console.log(`postSearchSuggest success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postSearchSuggest');

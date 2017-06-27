@@ -84,7 +84,7 @@ var attributeId = "attributeId_example"; // String | Attribute ID
 
 apiInstance.getAttribute(attributeId)
   .then(function(data) {
-    console.log(`getAttribute success! data: ${data}`);
+    console.log(`getAttribute success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAttribute');
@@ -131,7 +131,7 @@ var opts = {
 };
 apiInstance.getAttributes(opts)
   .then(function(data) {
-    console.log(`getAttributes success! data: ${data}`);
+    console.log(`getAttributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getAttributes');
@@ -177,7 +177,7 @@ var body = new platformClient.Attribute(); // Attribute | Attribute
 
 apiInstance.postAttributes(body)
   .then(function(data) {
-    console.log(`postAttributes success! data: ${data}`);
+    console.log(`postAttributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAttributes');
@@ -222,7 +222,7 @@ var body = new platformClient.AttributeQueryRequest(); // AttributeQueryRequest 
 
 apiInstance.postAttributesQuery(body)
   .then(function(data) {
-    console.log(`postAttributesQuery success! data: ${data}`);
+    console.log(`postAttributesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postAttributesQuery');
@@ -269,7 +269,7 @@ var body = new platformClient.Attribute(); // Attribute | Attribute
 
 apiInstance.putAttribute(attributeId, body)
   .then(function(data) {
-    console.log(`putAttribute success! data: ${data}`);
+    console.log(`putAttribute success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putAttribute');

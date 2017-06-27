@@ -42,7 +42,7 @@ var scriptId = "scriptId_example"; // String | Script ID
 
 apiInstance.getScript(scriptId)
   .then(function(data) {
-    console.log(`getScript success! data: ${data}`);
+    console.log(`getScript success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getScript');
@@ -89,7 +89,7 @@ var pageId = "pageId_example"; // String | Page ID
 
 apiInstance.getScriptPage(scriptId, pageId)
   .then(function(data) {
-    console.log(`getScriptPage success! data: ${data}`);
+    console.log(`getScriptPage success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getScriptPage');
@@ -135,7 +135,7 @@ var scriptId = "scriptId_example"; // String | Script ID
 
 apiInstance.getScriptPages(scriptId)
   .then(function(data) {
-    console.log(`getScriptPages success! data: ${data}`);
+    console.log(`getScriptPages success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getScriptPages');
@@ -188,7 +188,7 @@ var opts = {
 };
 apiInstance.getScripts(opts)
   .then(function(data) {
-    console.log(`getScripts success! data: ${data}`);
+    console.log(`getScripts success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getScripts');
@@ -246,7 +246,7 @@ var opts = {
 };
 apiInstance.getScriptsPublished(opts)
   .then(function(data) {
-    console.log(`getScriptsPublished success! data: ${data}`);
+    console.log(`getScriptsPublished success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getScriptsPublished');
@@ -296,7 +296,7 @@ var scriptId = "scriptId_example"; // String | Script ID
 
 apiInstance.getScriptsPublishedScriptId(scriptId)
   .then(function(data) {
-    console.log(`getScriptsPublishedScriptId success! data: ${data}`);
+    console.log(`getScriptsPublishedScriptId success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getScriptsPublishedScriptId');
@@ -343,7 +343,7 @@ var pageId = "pageId_example"; // String | Page ID
 
 apiInstance.getScriptsPublishedScriptIdPage(scriptId, pageId)
   .then(function(data) {
-    console.log(`getScriptsPublishedScriptIdPage success! data: ${data}`);
+    console.log(`getScriptsPublishedScriptIdPage success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getScriptsPublishedScriptIdPage');
@@ -389,7 +389,7 @@ var scriptId = "scriptId_example"; // String | Script ID
 
 apiInstance.getScriptsPublishedScriptIdPages(scriptId)
   .then(function(data) {
-    console.log(`getScriptsPublishedScriptIdPages success! data: ${data}`);
+    console.log(`getScriptsPublishedScriptIdPages success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getScriptsPublishedScriptIdPages');
@@ -439,7 +439,7 @@ var opts = {
 };
 apiInstance.getScriptsPublishedScriptIdVariables(scriptId, opts)
   .then(function(data) {
-    console.log(`getScriptsPublishedScriptIdVariables success! data: ${data}`);
+    console.log(`getScriptsPublishedScriptIdVariables success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getScriptsPublishedScriptIdVariables');

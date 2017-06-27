@@ -792,7 +792,7 @@ var opts = {
 };
 apiInstance.getConfigurationSchemasEdgesVnext(opts)
   .then(function(data) {
-    console.log(`getConfigurationSchemasEdgesVnext success! data: ${data}`);
+    console.log(`getConfigurationSchemasEdgesVnext success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConfigurationSchemasEdgesVnext');
@@ -842,7 +842,7 @@ var opts = {
 };
 apiInstance.getConfigurationSchemasEdgesVnextSchemaCategory(schemaCategory, opts)
   .then(function(data) {
-    console.log(`getConfigurationSchemasEdgesVnextSchemaCategory success! data: ${data}`);
+    console.log(`getConfigurationSchemasEdgesVnextSchemaCategory success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategory');
@@ -895,7 +895,7 @@ var opts = {
 };
 apiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(schemaCategory, schemaType, opts)
   .then(function(data) {
-    console.log(`getConfigurationSchemasEdgesVnextSchemaCategorySchemaType success! data: ${data}`);
+    console.log(`getConfigurationSchemasEdgesVnextSchemaCategorySchemaType success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaType');
@@ -947,7 +947,7 @@ var schemaId = "schemaId_example"; // String | Schema ID
 
 apiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(schemaCategory, schemaType, schemaId)
   .then(function(data) {
-    console.log(`getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId success! data: ${data}`);
+    console.log(`getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId');
@@ -1005,7 +1005,7 @@ var opts = {
 };
 apiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(schemaCategory, schemaType, schemaId, extensionType, metadataId, opts)
   .then(function(data) {
-    console.log(`getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId success! data: ${data}`);
+    console.log(`getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId');
@@ -1058,7 +1058,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdge(edgeId, opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdge success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdge success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdge');
@@ -1106,7 +1106,7 @@ var lineId = "lineId_example"; // String | Line ID
 
 apiInstance.getTelephonyProvidersEdgeLine(edgeId, lineId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgeLine success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgeLine success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgeLine');
@@ -1156,7 +1156,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgeLines(edgeId, opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgeLines success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgeLines success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgeLines');
@@ -1208,7 +1208,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgeLogicalinterface success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgeLogicalinterface success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgeLogicalinterface');
@@ -1258,7 +1258,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgeLogicalinterfaces(edgeId, opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgeLogicalinterfaces success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgeLogicalinterfaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgeLogicalinterfaces');
@@ -1306,7 +1306,7 @@ var jobId = "jobId_example"; // String | Job ID
 
 apiInstance.getTelephonyProvidersEdgeLogsJob(edgeId, jobId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgeLogsJob success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgeLogsJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgeLogsJob');
@@ -1354,7 +1354,7 @@ var interfaceId = "interfaceId_example"; // String | Interface ID
 
 apiInstance.getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgePhysicalinterface success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgePhysicalinterface success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgePhysicalinterface');
@@ -1400,7 +1400,7 @@ var edgeId = "edgeId_example"; // String | Edge ID
 
 apiInstance.getTelephonyProvidersEdgePhysicalinterfaces(edgeId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgePhysicalinterfaces success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgePhysicalinterfaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgePhysicalinterfaces');
@@ -1445,7 +1445,7 @@ var edgeId = "edgeId_example"; // String | Edge ID
 
 apiInstance.getTelephonyProvidersEdgeSetuppackage(edgeId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgeSetuppackage success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgeSetuppackage success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgeSetuppackage');
@@ -1490,7 +1490,7 @@ var edgeId = "edgeId_example"; // String | Edge ID
 
 apiInstance.getTelephonyProvidersEdgeSoftwareupdate(edgeId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgeSoftwareupdate success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgeSoftwareupdate success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgeSoftwareupdate');
@@ -1535,7 +1535,7 @@ var edgeId = "edgeId_example"; // String | Edge ID
 
 apiInstance.getTelephonyProvidersEdgeSoftwareversions(edgeId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgeSoftwareversions success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgeSoftwareversions success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgeSoftwareversions');
@@ -1588,7 +1588,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgeTrunks(edgeId, opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgeTrunks success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgeTrunks success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgeTrunks');
@@ -1646,7 +1646,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdges(opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdges success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdges success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdges');
@@ -1694,7 +1694,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 apiInstance.getTelephonyProvidersEdgesAvailablelanguages()
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesAvailablelanguages success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesAvailablelanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesAvailablelanguages');
@@ -1733,7 +1733,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 apiInstance.getTelephonyProvidersEdgesCertificateauthorities()
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesCertificateauthorities success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesCertificateauthorities success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesCertificateauthorities');
@@ -1775,7 +1775,7 @@ var certificateId = "certificateId_example"; // String | Certificate ID
 
 apiInstance.getTelephonyProvidersEdgesCertificateauthority(certificateId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesCertificateauthority success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesCertificateauthority success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesCertificateauthority');
@@ -1820,7 +1820,7 @@ var didId = "didId_example"; // String | DID ID
 
 apiInstance.getTelephonyProvidersEdgesDid(didId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesDid success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesDid success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesDid');
@@ -1865,7 +1865,7 @@ var didPoolId = "didPoolId_example"; // String | DID pool ID
 
 apiInstance.getTelephonyProvidersEdgesDidpool(didPoolId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesDidpool success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesDidpool success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesDidpool');
@@ -1913,7 +1913,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesDidpools(opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesDidpools success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesDidpools success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesDidpools');
@@ -1965,7 +1965,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesDids(opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesDids success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesDids success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesDids');
@@ -2017,7 +2017,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesEdgegroup(edgeGroupId, opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesEdgegroup success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesEdgegroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesEdgegroup');
@@ -2065,7 +2065,7 @@ var edgetrunkbaseId = "edgetrunkbaseId_example"; // String | Edge Trunk Base ID
 
 apiInstance.getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(edgegroupId, edgetrunkbaseId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis');
@@ -2116,7 +2116,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesEdgegroups(opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesEdgegroups success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesEdgegroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesEdgegroups');
@@ -2162,7 +2162,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 apiInstance.getTelephonyProvidersEdgesEdgeversionreport()
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesEdgeversionreport success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesEdgeversionreport success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesEdgeversionreport');
@@ -2204,7 +2204,7 @@ var endpointId = "endpointId_example"; // String | Endpoint ID
 
 apiInstance.getTelephonyProvidersEdgesEndpoint(endpointId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesEndpoint success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesEndpoint success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesEndpoint');
@@ -2253,7 +2253,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesEndpoints(opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesEndpoints success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesEndpoints success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesEndpoints');
@@ -2301,7 +2301,7 @@ var extensionId = "extensionId_example"; // String | Extension ID
 
 apiInstance.getTelephonyProvidersEdgesExtension(extensionId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesExtension success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesExtension success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesExtension');
@@ -2346,7 +2346,7 @@ var extensionPoolId = "extensionPoolId_example"; // String | Extension pool ID
 
 apiInstance.getTelephonyProvidersEdgesExtensionpool(extensionPoolId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesExtensionpool success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesExtensionpool success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesExtensionpool');
@@ -2395,7 +2395,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesExtensionpools(opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesExtensionpools success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesExtensionpools success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesExtensionpools');
@@ -2448,7 +2448,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesExtensions(opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesExtensions success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesExtensions success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesExtensions');
@@ -2497,7 +2497,7 @@ var lineId = "lineId_example"; // String | Line ID
 
 apiInstance.getTelephonyProvidersEdgesLine(lineId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesLine success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesLine success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesLine');
@@ -2542,7 +2542,7 @@ var lineBaseId = "lineBaseId_example"; // String | Line base ID
 
 apiInstance.getTelephonyProvidersEdgesLinebasesetting(lineBaseId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesLinebasesetting success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesLinebasesetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesLinebasesetting');
@@ -2591,7 +2591,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesLinebasesettings(opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesLinebasesettings success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesLinebasesettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesLinebasesettings');
@@ -2644,7 +2644,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesLines(opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesLines success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesLines success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesLines');
@@ -2693,7 +2693,7 @@ var lineBaseSettingsId = "lineBaseSettingsId_example"; // String | The id of a L
 
 apiInstance.getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesLinesTemplate success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesLinesTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesLinesTemplate');
@@ -2741,7 +2741,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesLogicalinterfaces success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesLogicalinterfaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesLogicalinterfaces');
@@ -2787,7 +2787,7 @@ var outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
 
 apiInstance.getTelephonyProvidersEdgesOutboundroute(outboundRouteId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesOutboundroute success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesOutboundroute success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesOutboundroute');
@@ -2837,7 +2837,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesOutboundroutes(opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesOutboundroutes success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesOutboundroutes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesOutboundroutes');
@@ -2886,7 +2886,7 @@ var phoneId = "phoneId_example"; // String | Phone ID
 
 apiInstance.getTelephonyProvidersEdgesPhone(phoneId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesPhone success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesPhone success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesPhone');
@@ -2931,7 +2931,7 @@ var phoneBaseId = "phoneBaseId_example"; // String | Phone base ID
 
 apiInstance.getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesPhonebasesetting success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesPhonebasesetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesPhonebasesetting');
@@ -2982,7 +2982,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesPhonebasesettings(opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesPhonebasesettings success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesPhonebasesettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesPhonebasesettings');
@@ -3034,7 +3034,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases');
@@ -3080,7 +3080,7 @@ var phoneMetabaseId = "phoneMetabaseId_example"; // String | The id of a metabas
 
 apiInstance.getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesPhonebasesettingsTemplate success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesPhonebasesettingsTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesPhonebasesettingsTemplate');
@@ -3139,7 +3139,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesPhones(opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesPhones success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesPhones success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesPhones');
@@ -3197,7 +3197,7 @@ var phoneBaseSettingsId = "phoneBaseSettingsId_example"; // String | The id of a
 
 apiInstance.getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesPhonesTemplate success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesPhonesTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesPhonesTemplate');
@@ -3242,7 +3242,7 @@ var edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's
 
 apiInstance.getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesPhysicalinterfaces success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesPhysicalinterfaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesPhysicalinterfaces');
@@ -3287,7 +3287,7 @@ var siteId = "siteId_example"; // String | Site ID
 
 apiInstance.getTelephonyProvidersEdgesSite(siteId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesSite success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesSite success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesSite');
@@ -3334,7 +3334,7 @@ var numberPlanId = "numberPlanId_example"; // String | Number Plan ID
 
 apiInstance.getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesSiteNumberplan success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesSiteNumberplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesSiteNumberplan');
@@ -3380,7 +3380,7 @@ var siteId = "siteId_example"; // String | Site ID
 
 apiInstance.getTelephonyProvidersEdgesSiteNumberplans(siteId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesSiteNumberplans success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesSiteNumberplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesSiteNumberplans');
@@ -3428,7 +3428,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesSiteNumberplansClassifications(siteId, opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesSiteNumberplansClassifications success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesSiteNumberplansClassifications success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesSiteNumberplansClassifications');
@@ -3476,7 +3476,7 @@ var outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
 
 apiInstance.getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesSiteOutboundroute success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesSiteOutboundroute success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesSiteOutboundroute');
@@ -3528,7 +3528,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesSiteOutboundroutes(siteId, opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesSiteOutboundroutes success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesSiteOutboundroutes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesSiteOutboundroutes');
@@ -3584,7 +3584,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesSites(opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesSites success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesSites success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesSites');
@@ -3637,7 +3637,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesTimezones(opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesTimezones success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesTimezones success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesTimezones');
@@ -3683,7 +3683,7 @@ var trunkId = "trunkId_example"; // String | Trunk ID
 
 apiInstance.getTelephonyProvidersEdgesTrunk(trunkId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesTrunk success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesTrunk success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesTrunk');
@@ -3731,7 +3731,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesTrunkbasesetting success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesTrunkbasesetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesTrunkbasesetting');
@@ -3786,7 +3786,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesTrunkbasesettings(opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesTrunkbasesettings success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesTrunkbasesettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesTrunkbasesettings');
@@ -3842,7 +3842,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases');
@@ -3889,7 +3889,7 @@ var trunkMetabaseId = "trunkMetabaseId_example"; // String | The id of a metabas
 
 apiInstance.getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesTrunkbasesettingsTemplate success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesTrunkbasesettingsTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesTrunkbasesettingsTemplate');
@@ -3941,7 +3941,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesTrunks(opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesTrunks success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesTrunks success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesTrunks');
@@ -3993,7 +3993,7 @@ var opts = {
 };
 apiInstance.getTelephonyProvidersEdgesTrunkswithrecording(opts)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesTrunkswithrecording success! data: ${data}`);
+    console.log(`getTelephonyProvidersEdgesTrunkswithrecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesTrunkswithrecording');
@@ -4040,7 +4040,7 @@ var body = new platformClient.DomainLogicalInterface(); // DomainLogicalInterfac
 
 apiInstance.postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body)
   .then(function(data) {
-    console.log(`postTelephonyProvidersEdgeLogicalinterfaces success! data: ${data}`);
+    console.log(`postTelephonyProvidersEdgeLogicalinterfaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postTelephonyProvidersEdgeLogicalinterfaces');
@@ -4139,7 +4139,7 @@ var body = new platformClient.EdgeLogsJobRequest(); // EdgeLogsJobRequest | Edge
 
 apiInstance.postTelephonyProvidersEdgeLogsJobs(edgeId, body)
   .then(function(data) {
-    console.log(`postTelephonyProvidersEdgeLogsJobs success! data: ${data}`);
+    console.log(`postTelephonyProvidersEdgeLogsJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postTelephonyProvidersEdgeLogsJobs');
@@ -4188,7 +4188,7 @@ var opts = {
 };
 apiInstance.postTelephonyProvidersEdgeReboot(edgeId, opts)
   .then(function(data) {
-    console.log(`postTelephonyProvidersEdgeReboot success! data: ${data}`);
+    console.log(`postTelephonyProvidersEdgeReboot success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postTelephonyProvidersEdgeReboot');
@@ -4236,7 +4236,7 @@ var body = new platformClient.DomainEdgeSoftwareUpdateDto(); // DomainEdgeSoftwa
 
 apiInstance.postTelephonyProvidersEdgeSoftwareupdate(edgeId, body)
   .then(function(data) {
-    console.log(`postTelephonyProvidersEdgeSoftwareupdate success! data: ${data}`);
+    console.log(`postTelephonyProvidersEdgeSoftwareupdate success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postTelephonyProvidersEdgeSoftwareupdate');
@@ -4285,7 +4285,7 @@ var opts = {
 };
 apiInstance.postTelephonyProvidersEdgeStatuscode(edgeId, opts)
   .then(function(data) {
-    console.log(`postTelephonyProvidersEdgeStatuscode success! data: ${data}`);
+    console.log(`postTelephonyProvidersEdgeStatuscode success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postTelephonyProvidersEdgeStatuscode');
@@ -4331,7 +4331,7 @@ var edgeId = "edgeId_example"; // String | Edge Id
 
 apiInstance.postTelephonyProvidersEdgeUnpair(edgeId)
   .then(function(data) {
-    console.log(`postTelephonyProvidersEdgeUnpair success! data: ${data}`);
+    console.log(`postTelephonyProvidersEdgeUnpair success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postTelephonyProvidersEdgeUnpair');
@@ -4376,7 +4376,7 @@ var body = new platformClient.Edge(); // Edge | Edge
 
 apiInstance.postTelephonyProvidersEdges(body)
   .then(function(data) {
-    console.log(`postTelephonyProvidersEdges success! data: ${data}`);
+    console.log(`postTelephonyProvidersEdges success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postTelephonyProvidersEdges');
@@ -4421,7 +4421,7 @@ var body = new platformClient.ValidateAddressRequest(); // ValidateAddressReques
 
 apiInstance.postTelephonyProvidersEdgesAddressvalidation(body)
   .then(function(data) {
-    console.log(`postTelephonyProvidersEdgesAddressvalidation success! data: ${data}`);
+    console.log(`postTelephonyProvidersEdgesAddressvalidation success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesAddressvalidation');
@@ -4466,7 +4466,7 @@ var body = new platformClient.DomainCertificateAuthority(); // DomainCertificate
 
 apiInstance.postTelephonyProvidersEdgesCertificateauthorities(body)
   .then(function(data) {
-    console.log(`postTelephonyProvidersEdgesCertificateauthorities success! data: ${data}`);
+    console.log(`postTelephonyProvidersEdgesCertificateauthorities success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesCertificateauthorities');
@@ -4511,7 +4511,7 @@ var body = new platformClient.DIDPool(); // DIDPool | DID pool
 
 apiInstance.postTelephonyProvidersEdgesDidpools(body)
   .then(function(data) {
-    console.log(`postTelephonyProvidersEdgesDidpools success! data: ${data}`);
+    console.log(`postTelephonyProvidersEdgesDidpools success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesDidpools');
@@ -4556,7 +4556,7 @@ var body = new platformClient.EdgeGroup(); // EdgeGroup | EdgeGroup
 
 apiInstance.postTelephonyProvidersEdgesEdgegroups(body)
   .then(function(data) {
-    console.log(`postTelephonyProvidersEdgesEdgegroups success! data: ${data}`);
+    console.log(`postTelephonyProvidersEdgesEdgegroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesEdgegroups');
@@ -4601,7 +4601,7 @@ var body = new platformClient.Endpoint(); // Endpoint | EndpointTemplate
 
 apiInstance.postTelephonyProvidersEdgesEndpoints(body)
   .then(function(data) {
-    console.log(`postTelephonyProvidersEdgesEndpoints success! data: ${data}`);
+    console.log(`postTelephonyProvidersEdgesEndpoints success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesEndpoints');
@@ -4646,7 +4646,7 @@ var body = new platformClient.ExtensionPool(); // ExtensionPool | ExtensionPool
 
 apiInstance.postTelephonyProvidersEdgesExtensionpools(body)
   .then(function(data) {
-    console.log(`postTelephonyProvidersEdgesExtensionpools success! data: ${data}`);
+    console.log(`postTelephonyProvidersEdgesExtensionpools success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesExtensionpools');
@@ -4691,7 +4691,7 @@ var body = new platformClient.OutboundRoute(); // OutboundRoute | OutboundRoute
 
 apiInstance.postTelephonyProvidersEdgesOutboundroutes(body)
   .then(function(data) {
-    console.log(`postTelephonyProvidersEdgesOutboundroutes success! data: ${data}`);
+    console.log(`postTelephonyProvidersEdgesOutboundroutes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesOutboundroutes');
@@ -4781,7 +4781,7 @@ var body = new platformClient.PhoneBase(); // PhoneBase | Phone base settings
 
 apiInstance.postTelephonyProvidersEdgesPhonebasesettings(body)
   .then(function(data) {
-    console.log(`postTelephonyProvidersEdgesPhonebasesettings success! data: ${data}`);
+    console.log(`postTelephonyProvidersEdgesPhonebasesettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesPhonebasesettings');
@@ -4826,7 +4826,7 @@ var body = new platformClient.Phone(); // Phone | Phone
 
 apiInstance.postTelephonyProvidersEdgesPhones(body)
   .then(function(data) {
-    console.log(`postTelephonyProvidersEdgesPhones success! data: ${data}`);
+    console.log(`postTelephonyProvidersEdgesPhones success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesPhones');
@@ -4918,7 +4918,7 @@ var body = new platformClient.OutboundRouteBase(); // OutboundRouteBase | Outbou
 
 apiInstance.postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)
   .then(function(data) {
-    console.log(`postTelephonyProvidersEdgesSiteOutboundroutes success! data: ${data}`);
+    console.log(`postTelephonyProvidersEdgesSiteOutboundroutes success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesSiteOutboundroutes');
@@ -5009,7 +5009,7 @@ var body = new platformClient.Site(); // Site | Site
 
 apiInstance.postTelephonyProvidersEdgesSites(body)
   .then(function(data) {
-    console.log(`postTelephonyProvidersEdgesSites success! data: ${data}`);
+    console.log(`postTelephonyProvidersEdgesSites success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesSites');
@@ -5054,7 +5054,7 @@ var body = new platformClient.TrunkBase(); // TrunkBase | Trunk base settings
 
 apiInstance.postTelephonyProvidersEdgesTrunkbasesettings(body)
   .then(function(data) {
-    console.log(`postTelephonyProvidersEdgesTrunkbasesettings success! data: ${data}`);
+    console.log(`postTelephonyProvidersEdgesTrunkbasesettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesTrunkbasesettings');
@@ -5101,7 +5101,7 @@ var body = new platformClient.Edge(); // Edge | Edge
 
 apiInstance.putTelephonyProvidersEdge(edgeId, body)
   .then(function(data) {
-    console.log(`putTelephonyProvidersEdge success! data: ${data}`);
+    console.log(`putTelephonyProvidersEdge success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putTelephonyProvidersEdge');
@@ -5151,7 +5151,7 @@ var body = new platformClient.EdgeLine(); // EdgeLine | Line
 
 apiInstance.putTelephonyProvidersEdgeLine(edgeId, lineId, body)
   .then(function(data) {
-    console.log(`putTelephonyProvidersEdgeLine success! data: ${data}`);
+    console.log(`putTelephonyProvidersEdgeLine success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putTelephonyProvidersEdgeLine');
@@ -5202,7 +5202,7 @@ var body = new platformClient.DomainLogicalInterface(); // DomainLogicalInterfac
 
 apiInstance.putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body)
   .then(function(data) {
-    console.log(`putTelephonyProvidersEdgeLogicalinterface success! data: ${data}`);
+    console.log(`putTelephonyProvidersEdgeLogicalinterface success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putTelephonyProvidersEdgeLogicalinterface');
@@ -5251,7 +5251,7 @@ var body = new platformClient.DomainCertificateAuthority(); // DomainCertificate
 
 apiInstance.putTelephonyProvidersEdgesCertificateauthority(certificateId, body)
   .then(function(data) {
-    console.log(`putTelephonyProvidersEdgesCertificateauthority success! data: ${data}`);
+    console.log(`putTelephonyProvidersEdgesCertificateauthority success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesCertificateauthority');
@@ -5299,7 +5299,7 @@ var body = new platformClient.DID(); // DID | DID
 
 apiInstance.putTelephonyProvidersEdgesDid(didId, body)
   .then(function(data) {
-    console.log(`putTelephonyProvidersEdgesDid success! data: ${data}`);
+    console.log(`putTelephonyProvidersEdgesDid success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesDid');
@@ -5347,7 +5347,7 @@ var body = new platformClient.DIDPool(); // DIDPool | DID pool
 
 apiInstance.putTelephonyProvidersEdgesDidpool(didPoolId, body)
   .then(function(data) {
-    console.log(`putTelephonyProvidersEdgesDidpool success! data: ${data}`);
+    console.log(`putTelephonyProvidersEdgesDidpool success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesDidpool');
@@ -5395,7 +5395,7 @@ var body = new platformClient.EdgeGroup(); // EdgeGroup | EdgeGroup
 
 apiInstance.putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body)
   .then(function(data) {
-    console.log(`putTelephonyProvidersEdgesEdgegroup success! data: ${data}`);
+    console.log(`putTelephonyProvidersEdgesEdgegroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesEdgegroup');
@@ -5445,7 +5445,7 @@ var body = new platformClient.EdgeTrunkBase(); // EdgeTrunkBase | EdgeTrunkBase
 
 apiInstance.putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(edgegroupId, edgetrunkbaseId, body)
   .then(function(data) {
-    console.log(`putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis success! data: ${data}`);
+    console.log(`putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis');
@@ -5494,7 +5494,7 @@ var body = new platformClient.Endpoint(); // Endpoint | EndpointTemplate
 
 apiInstance.putTelephonyProvidersEdgesEndpoint(endpointId, body)
   .then(function(data) {
-    console.log(`putTelephonyProvidersEdgesEndpoint success! data: ${data}`);
+    console.log(`putTelephonyProvidersEdgesEndpoint success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesEndpoint');
@@ -5542,7 +5542,7 @@ var body = new platformClient.Extension(); // Extension | Extension
 
 apiInstance.putTelephonyProvidersEdgesExtension(extensionId, body)
   .then(function(data) {
-    console.log(`putTelephonyProvidersEdgesExtension success! data: ${data}`);
+    console.log(`putTelephonyProvidersEdgesExtension success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesExtension');
@@ -5590,7 +5590,7 @@ var body = new platformClient.ExtensionPool(); // ExtensionPool | ExtensionPool
 
 apiInstance.putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)
   .then(function(data) {
-    console.log(`putTelephonyProvidersEdgesExtensionpool success! data: ${data}`);
+    console.log(`putTelephonyProvidersEdgesExtensionpool success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesExtensionpool');
@@ -5638,7 +5638,7 @@ var body = new platformClient.OutboundRoute(); // OutboundRoute | OutboundRoute
 
 apiInstance.putTelephonyProvidersEdgesOutboundroute(outboundRouteId, body)
   .then(function(data) {
-    console.log(`putTelephonyProvidersEdgesOutboundroute success! data: ${data}`);
+    console.log(`putTelephonyProvidersEdgesOutboundroute success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesOutboundroute');
@@ -5686,7 +5686,7 @@ var body = new platformClient.Phone(); // Phone | Phone
 
 apiInstance.putTelephonyProvidersEdgesPhone(phoneId, body)
   .then(function(data) {
-    console.log(`putTelephonyProvidersEdgesPhone success! data: ${data}`);
+    console.log(`putTelephonyProvidersEdgesPhone success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesPhone');
@@ -5734,7 +5734,7 @@ var body = new platformClient.PhoneBase(); // PhoneBase | Phone base settings
 
 apiInstance.putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body)
   .then(function(data) {
-    console.log(`putTelephonyProvidersEdgesPhonebasesetting success! data: ${data}`);
+    console.log(`putTelephonyProvidersEdgesPhonebasesetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesPhonebasesetting');
@@ -5782,7 +5782,7 @@ var body = new platformClient.Site(); // Site | Site
 
 apiInstance.putTelephonyProvidersEdgesSite(siteId, body)
   .then(function(data) {
-    console.log(`putTelephonyProvidersEdgesSite success! data: ${data}`);
+    console.log(`putTelephonyProvidersEdgesSite success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesSite');
@@ -5830,7 +5830,7 @@ var body = [new platformClient.NumberPlan()]; // [NumberPlan] | List of number p
 
 apiInstance.putTelephonyProvidersEdgesSiteNumberplans(siteId, body)
   .then(function(data) {
-    console.log(`putTelephonyProvidersEdgesSiteNumberplans success! data: ${data}`);
+    console.log(`putTelephonyProvidersEdgesSiteNumberplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesSiteNumberplans');
@@ -5880,7 +5880,7 @@ var body = new platformClient.OutboundRouteBase(); // OutboundRouteBase | Outbou
 
 apiInstance.putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, body)
   .then(function(data) {
-    console.log(`putTelephonyProvidersEdgesSiteOutboundroute success! data: ${data}`);
+    console.log(`putTelephonyProvidersEdgesSiteOutboundroute success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesSiteOutboundroute');
@@ -5929,7 +5929,7 @@ var body = new platformClient.TrunkBase(); // TrunkBase | Trunk base settings
 
 apiInstance.putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body)
   .then(function(data) {
-    console.log(`putTelephonyProvidersEdgesTrunkbasesetting success! data: ${data}`);
+    console.log(`putTelephonyProvidersEdgesTrunkbasesetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesTrunkbasesetting');

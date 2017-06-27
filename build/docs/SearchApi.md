@@ -47,7 +47,7 @@ var q64 = "q64_example"; // String | q64
 
 apiInstance.getDocumentationSearch(q64)
   .then(function(data) {
-    console.log(`getDocumentationSearch success! data: ${data}`);
+    console.log(`getDocumentationSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getDocumentationSearch');
@@ -95,7 +95,7 @@ var opts = {
 };
 apiInstance.getGroupsSearch(q64, opts)
   .then(function(data) {
-    console.log(`getGroupsSearch success! data: ${data}`);
+    console.log(`getGroupsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getGroupsSearch');
@@ -144,7 +144,7 @@ var opts = {
 };
 apiInstance.getLocationsSearch(q64, opts)
   .then(function(data) {
-    console.log(`getLocationsSearch success! data: ${data}`);
+    console.log(`getLocationsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getLocationsSearch');
@@ -194,7 +194,7 @@ var opts = {
 };
 apiInstance.getSearch(q64, opts)
   .then(function(data) {
-    console.log(`getSearch success! data: ${data}`);
+    console.log(`getSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getSearch');
@@ -245,7 +245,7 @@ var opts = {
 };
 apiInstance.getSearchSuggest(q64, opts)
   .then(function(data) {
-    console.log(`getSearchSuggest success! data: ${data}`);
+    console.log(`getSearchSuggest success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getSearchSuggest');
@@ -295,7 +295,7 @@ var opts = {
 };
 apiInstance.getUsersSearch(q64, opts)
   .then(function(data) {
-    console.log(`getUsersSearch success! data: ${data}`);
+    console.log(`getUsersSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUsersSearch');
@@ -344,7 +344,7 @@ var opts = {
 };
 apiInstance.getVoicemailSearch(q64, opts)
   .then(function(data) {
-    console.log(`getVoicemailSearch success! data: ${data}`);
+    console.log(`getVoicemailSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getVoicemailSearch');
@@ -390,7 +390,7 @@ var body = new platformClient.DocumentationSearchRequest(); // DocumentationSear
 
 apiInstance.postDocumentationSearch(body)
   .then(function(data) {
-    console.log(`postDocumentationSearch success! data: ${data}`);
+    console.log(`postDocumentationSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postDocumentationSearch');
@@ -435,7 +435,7 @@ var body = new platformClient.GroupSearchRequest(); // GroupSearchRequest | Sear
 
 apiInstance.postGroupsSearch(body)
   .then(function(data) {
-    console.log(`postGroupsSearch success! data: ${data}`);
+    console.log(`postGroupsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postGroupsSearch');
@@ -480,7 +480,7 @@ var body = new platformClient.LocationSearchRequest(); // LocationSearchRequest 
 
 apiInstance.postLocationsSearch(body)
   .then(function(data) {
-    console.log(`postLocationsSearch success! data: ${data}`);
+    console.log(`postLocationsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postLocationsSearch');
@@ -528,7 +528,7 @@ var opts = {
 };
 apiInstance.postSearch(body, opts)
   .then(function(data) {
-    console.log(`postSearch success! data: ${data}`);
+    console.log(`postSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postSearch');
@@ -577,7 +577,7 @@ var opts = {
 };
 apiInstance.postSearchSuggest(body, opts)
   .then(function(data) {
-    console.log(`postSearchSuggest success! data: ${data}`);
+    console.log(`postSearchSuggest success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postSearchSuggest');
@@ -623,7 +623,7 @@ var body = new platformClient.UserSearchRequest(); // UserSearchRequest | Search
 
 apiInstance.postUsersSearch(body)
   .then(function(data) {
-    console.log(`postUsersSearch success! data: ${data}`);
+    console.log(`postUsersSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postUsersSearch');
@@ -668,7 +668,7 @@ var body = new platformClient.VoicemailSearchRequest(); // VoicemailSearchReques
 
 apiInstance.postVoicemailSearch(body)
   .then(function(data) {
-    console.log(`postVoicemailSearch success! data: ${data}`);
+    console.log(`postVoicemailSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postVoicemailSearch');

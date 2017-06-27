@@ -37,7 +37,7 @@ var locationId = "locationId_example"; // String | Location ID
 
 apiInstance.getLocation(locationId)
   .then(function(data) {
-    console.log(`getLocation success! data: ${data}`);
+    console.log(`getLocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getLocation');
@@ -85,7 +85,7 @@ var opts = {
 };
 apiInstance.getLocations(opts)
   .then(function(data) {
-    console.log(`getLocations success! data: ${data}`);
+    console.log(`getLocations success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getLocations');
@@ -135,7 +135,7 @@ var opts = {
 };
 apiInstance.getLocationsSearch(q64, opts)
   .then(function(data) {
-    console.log(`getLocationsSearch success! data: ${data}`);
+    console.log(`getLocationsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getLocationsSearch');
@@ -181,7 +181,7 @@ var body = new platformClient.LocationSearchRequest(); // LocationSearchRequest 
 
 apiInstance.postLocationsSearch(body)
   .then(function(data) {
-    console.log(`postLocationsSearch success! data: ${data}`);
+    console.log(`postLocationsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postLocationsSearch');

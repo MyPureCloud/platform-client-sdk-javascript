@@ -89,7 +89,7 @@ var opts = {
 };
 apiInstance.getPresencedefinition(presenceId, opts)
   .then(function(data) {
-    console.log(`getPresencedefinition success! data: ${data}`);
+    console.log(`getPresencedefinition success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getPresencedefinition');
@@ -139,7 +139,7 @@ var opts = {
 };
 apiInstance.getPresencedefinitions(opts)
   .then(function(data) {
-    console.log(`getPresencedefinitions success! data: ${data}`);
+    console.log(`getPresencedefinitions success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getPresencedefinitions');
@@ -184,7 +184,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.PresenceApi();
 apiInstance.getSystempresences()
   .then(function(data) {
-    console.log(`getSystempresences success! data: ${data}`);
+    console.log(`getSystempresences success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getSystempresences');
@@ -228,7 +228,7 @@ var sourceId = "sourceId_example"; // String | Source
 
 apiInstance.getUserPresence(userId, sourceId)
   .then(function(data) {
-    console.log(`getUserPresence success! data: ${data}`);
+    console.log(`getUserPresence success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getUserPresence');
@@ -278,7 +278,7 @@ var body = new platformClient.UserPresence(); // UserPresence | User presence
 
 apiInstance.patchUserPresence(userId, sourceId, body)
   .then(function(data) {
-    console.log(`patchUserPresence success! data: ${data}`);
+    console.log(`patchUserPresence success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchUserPresence');
@@ -325,7 +325,7 @@ var body = new platformClient.OrganizationPresence(); // OrganizationPresence | 
 
 apiInstance.postPresencedefinitions(body)
   .then(function(data) {
-    console.log(`postPresencedefinitions success! data: ${data}`);
+    console.log(`postPresencedefinitions success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postPresencedefinitions');
@@ -372,7 +372,7 @@ var body = new platformClient.OrganizationPresence(); // OrganizationPresence | 
 
 apiInstance.putPresencedefinition(presenceId, body)
   .then(function(data) {
-    console.log(`putPresencedefinition success! data: ${data}`);
+    console.log(`putPresencedefinition success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putPresencedefinition');

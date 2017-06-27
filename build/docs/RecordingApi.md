@@ -117,7 +117,7 @@ var orphanId = "orphanId_example"; // String | Orphan ID
 
 apiInstance.deleteOrphanrecording(orphanId)
   .then(function(data) {
-    console.log(`deleteOrphanrecording success! data: ${data}`);
+    console.log(`deleteOrphanrecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling deleteOrphanrecording');
@@ -259,7 +259,7 @@ var opts = {
 };
 apiInstance.getConversationRecording(conversationId, recordingId, opts)
   .then(function(data) {
-    console.log(`getConversationRecording success! data: ${data}`);
+    console.log(`getConversationRecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationRecording');
@@ -275,7 +275,7 @@ apiInstance.getConversationRecording(conversationId, recordingId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String**| Conversation ID |  |
  **recordingId** | **String**| Recording ID |  |
- **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE |
+ **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
  **download** | **Boolean**| requesting a download format of the recording | [optional] [default to false] |
  **fileName** | **String**| the name of the downloaded fileName | [optional]  |
 {: class="table table-striped"}
@@ -312,7 +312,7 @@ var annotationId = "annotationId_example"; // String | Annotation ID
 
 apiInstance.getConversationRecordingAnnotation(conversationId, recordingId, annotationId)
   .then(function(data) {
-    console.log(`getConversationRecordingAnnotation success! data: ${data}`);
+    console.log(`getConversationRecordingAnnotation success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationRecordingAnnotation');
@@ -361,7 +361,7 @@ var recordingId = "recordingId_example"; // String | Recording ID
 
 apiInstance.getConversationRecordingAnnotations(conversationId, recordingId)
   .then(function(data) {
-    console.log(`getConversationRecordingAnnotations success! data: ${data}`);
+    console.log(`getConversationRecordingAnnotations success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationRecordingAnnotations');
@@ -411,7 +411,7 @@ var opts = {
 };
 apiInstance.getConversationRecordings(conversationId, opts)
   .then(function(data) {
-    console.log(`getConversationRecordings success! data: ${data}`);
+    console.log(`getConversationRecordings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getConversationRecordings');
@@ -427,7 +427,7 @@ apiInstance.getConversationRecordings(conversationId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String**| Conversation ID |  |
  **maxWaitMs** | **Number**| The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] |
- **formatId** | **String**| The desired media format | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE |
+ **formatId** | **String**| The desired media format | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 {: class="table table-striped"}
 
 ### Return type
@@ -458,7 +458,7 @@ var orphanId = "orphanId_example"; // String | Orphan ID
 
 apiInstance.getOrphanrecording(orphanId)
   .then(function(data) {
-    console.log(`getOrphanrecording success! data: ${data}`);
+    console.log(`getOrphanrecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getOrphanrecording');
@@ -508,7 +508,7 @@ var opts = {
 };
 apiInstance.getOrphanrecordingMedia(orphanId, opts)
   .then(function(data) {
-    console.log(`getOrphanrecordingMedia success! data: ${data}`);
+    console.log(`getOrphanrecordingMedia success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getOrphanrecordingMedia');
@@ -523,7 +523,7 @@ apiInstance.getOrphanrecordingMedia(orphanId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **orphanId** | **String**| Orphan ID |  |
- **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE |
+ **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
  **download** | **Boolean**| requesting a download format of the recording | [optional] [default to false] |
  **fileName** | **String**| the name of the downloaded fileName | [optional]  |
 {: class="table table-striped"}
@@ -564,7 +564,7 @@ var opts = {
 };
 apiInstance.getOrphanrecordings(opts)
   .then(function(data) {
-    console.log(`getOrphanrecordings success! data: ${data}`);
+    console.log(`getOrphanrecordings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getOrphanrecordings');
@@ -616,7 +616,7 @@ var settingsId = "settingsId_example"; // String | Settings Id
 
 apiInstance.getRecordingLocalkeysSetting(settingsId)
   .then(function(data) {
-    console.log(`getRecordingLocalkeysSetting success! data: ${data}`);
+    console.log(`getRecordingLocalkeysSetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRecordingLocalkeysSetting');
@@ -658,7 +658,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.RecordingApi();
 apiInstance.getRecordingLocalkeysSettings()
   .then(function(data) {
-    console.log(`getRecordingLocalkeysSettings success! data: ${data}`);
+    console.log(`getRecordingLocalkeysSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRecordingLocalkeysSettings');
@@ -710,7 +710,7 @@ var opts = {
 };
 apiInstance.getRecordingMediaretentionpolicies(opts)
   .then(function(data) {
-    console.log(`getRecordingMediaretentionpolicies success! data: ${data}`);
+    console.log(`getRecordingMediaretentionpolicies success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRecordingMediaretentionpolicies');
@@ -764,7 +764,7 @@ var policyId = "policyId_example"; // String | Policy ID
 
 apiInstance.getRecordingMediaretentionpolicy(policyId)
   .then(function(data) {
-    console.log(`getRecordingMediaretentionpolicy success! data: ${data}`);
+    console.log(`getRecordingMediaretentionpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRecordingMediaretentionpolicy');
@@ -811,7 +811,7 @@ var opts = {
 };
 apiInstance.getRecordingRecordingkeys(opts)
   .then(function(data) {
-    console.log(`getRecordingRecordingkeys success! data: ${data}`);
+    console.log(`getRecordingRecordingkeys success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRecordingRecordingkeys');
@@ -854,7 +854,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.RecordingApi();
 apiInstance.getRecordingRecordingkeysRotationschedule()
   .then(function(data) {
-    console.log(`getRecordingRecordingkeysRotationschedule success! data: ${data}`);
+    console.log(`getRecordingRecordingkeysRotationschedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRecordingRecordingkeysRotationschedule');
@@ -897,7 +897,7 @@ var opts = {
 };
 apiInstance.getRecordingSettings(opts)
   .then(function(data) {
-    console.log(`getRecordingSettings success! data: ${data}`);
+    console.log(`getRecordingSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRecordingSettings');
@@ -944,7 +944,7 @@ var opts = {
 };
 apiInstance.getRecordingsScreensessions(opts)
   .then(function(data) {
-    console.log(`getRecordingsScreensessions success! data: ${data}`);
+    console.log(`getRecordingsScreensessions success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getRecordingsScreensessions');
@@ -992,7 +992,7 @@ var body = new platformClient.Policy(); // Policy | Policy
 
 apiInstance.patchRecordingMediaretentionpolicy(policyId, body)
   .then(function(data) {
-    console.log(`patchRecordingMediaretentionpolicy success! data: ${data}`);
+    console.log(`patchRecordingMediaretentionpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling patchRecordingMediaretentionpolicy');
@@ -1091,7 +1091,7 @@ var body = new platformClient.Annotation(); // Annotation | annotation
 
 apiInstance.postConversationRecordingAnnotations(conversationId, recordingId, body)
   .then(function(data) {
-    console.log(`postConversationRecordingAnnotations success! data: ${data}`);
+    console.log(`postConversationRecordingAnnotations success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postConversationRecordingAnnotations');
@@ -1138,7 +1138,7 @@ var body = new platformClient.LocalEncryptionKeyRequest(); // LocalEncryptionKey
 
 apiInstance.postRecordingLocalkeys(body)
   .then(function(data) {
-    console.log(`postRecordingLocalkeys success! data: ${data}`);
+    console.log(`postRecordingLocalkeys success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postRecordingLocalkeys');
@@ -1183,7 +1183,7 @@ var body = new platformClient.LocalEncryptionConfiguration(); // LocalEncryption
 
 apiInstance.postRecordingLocalkeysSettings(body)
   .then(function(data) {
-    console.log(`postRecordingLocalkeysSettings success! data: ${data}`);
+    console.log(`postRecordingLocalkeysSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postRecordingLocalkeysSettings');
@@ -1228,7 +1228,7 @@ var body = new platformClient.PolicyCreate(); // PolicyCreate | Policy
 
 apiInstance.postRecordingMediaretentionpolicies(body)
   .then(function(data) {
-    console.log(`postRecordingMediaretentionpolicies success! data: ${data}`);
+    console.log(`postRecordingMediaretentionpolicies success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postRecordingMediaretentionpolicies');
@@ -1270,7 +1270,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.RecordingApi();
 apiInstance.postRecordingRecordingkeys()
   .then(function(data) {
-    console.log(`postRecordingRecordingkeys success! data: ${data}`);
+    console.log(`postRecordingRecordingkeys success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling postRecordingRecordingkeys');
@@ -1316,7 +1316,7 @@ var body = new platformClient.Recording(); // Recording | recording
 
 apiInstance.putConversationRecording(conversationId, recordingId, body)
   .then(function(data) {
-    console.log(`putConversationRecording success! data: ${data}`);
+    console.log(`putConversationRecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putConversationRecording');
@@ -1369,7 +1369,7 @@ var body = new platformClient.Annotation(); // Annotation | annotation
 
 apiInstance.putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body)
   .then(function(data) {
-    console.log(`putConversationRecordingAnnotation success! data: ${data}`);
+    console.log(`putConversationRecordingAnnotation success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putConversationRecordingAnnotation');
@@ -1420,7 +1420,7 @@ var opts = {
 };
 apiInstance.putOrphanrecording(orphanId, opts)
   .then(function(data) {
-    console.log(`putOrphanrecording success! data: ${data}`);
+    console.log(`putOrphanrecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putOrphanrecording');
@@ -1468,7 +1468,7 @@ var body = new platformClient.LocalEncryptionConfiguration(); // LocalEncryption
 
 apiInstance.putRecordingLocalkeysSetting(settingsId, body)
   .then(function(data) {
-    console.log(`putRecordingLocalkeysSetting success! data: ${data}`);
+    console.log(`putRecordingLocalkeysSetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putRecordingLocalkeysSetting');
@@ -1516,7 +1516,7 @@ var body = new platformClient.Policy(); // Policy | Policy
 
 apiInstance.putRecordingMediaretentionpolicy(policyId, body)
   .then(function(data) {
-    console.log(`putRecordingMediaretentionpolicy success! data: ${data}`);
+    console.log(`putRecordingMediaretentionpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putRecordingMediaretentionpolicy');
@@ -1562,7 +1562,7 @@ var body = new platformClient.KeyRotationSchedule(); // KeyRotationSchedule | Ke
 
 apiInstance.putRecordingRecordingkeysRotationschedule(body)
   .then(function(data) {
-    console.log(`putRecordingRecordingkeysRotationschedule success! data: ${data}`);
+    console.log(`putRecordingRecordingkeysRotationschedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putRecordingRecordingkeysRotationschedule');
@@ -1607,7 +1607,7 @@ var body = new platformClient.RecordingSettings(); // RecordingSettings | Record
 
 apiInstance.putRecordingSettings(body)
   .then(function(data) {
-    console.log(`putRecordingSettings success! data: ${data}`);
+    console.log(`putRecordingSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putRecordingSettings');

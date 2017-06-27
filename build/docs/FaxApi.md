@@ -84,7 +84,7 @@ var documentId = "documentId_example"; // String | Document ID
 
 apiInstance.getFaxDocument(documentId)
   .then(function(data) {
-    console.log(`getFaxDocument success! data: ${data}`);
+    console.log(`getFaxDocument success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getFaxDocument');
@@ -129,7 +129,7 @@ var documentId = "documentId_example"; // String | Document ID
 
 apiInstance.getFaxDocumentContent(documentId)
   .then(function(data) {
-    console.log(`getFaxDocumentContent success! data: ${data}`);
+    console.log(`getFaxDocumentContent success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getFaxDocumentContent');
@@ -176,7 +176,7 @@ var opts = {
 };
 apiInstance.getFaxDocuments(opts)
   .then(function(data) {
-    console.log(`getFaxDocuments success! data: ${data}`);
+    console.log(`getFaxDocuments success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getFaxDocuments');
@@ -219,7 +219,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.FaxApi();
 apiInstance.getFaxSummary()
   .then(function(data) {
-    console.log(`getFaxSummary success! data: ${data}`);
+    console.log(`getFaxSummary success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getFaxSummary');
@@ -263,7 +263,7 @@ var body = new platformClient.FaxDocument(); // FaxDocument | Document
 
 apiInstance.putFaxDocument(documentId, body)
   .then(function(data) {
-    console.log(`putFaxDocument success! data: ${data}`);
+    console.log(`putFaxDocument success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putFaxDocument');

@@ -58,7 +58,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.deleteIdentityprovidersAdfs()
   .then(function(data) {
-    console.log(`deleteIdentityprovidersAdfs success! data: ${data}`);
+    console.log(`deleteIdentityprovidersAdfs success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling deleteIdentityprovidersAdfs');
@@ -97,7 +97,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.deleteIdentityprovidersCic()
   .then(function(data) {
-    console.log(`deleteIdentityprovidersCic success! data: ${data}`);
+    console.log(`deleteIdentityprovidersCic success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling deleteIdentityprovidersCic');
@@ -136,7 +136,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.deleteIdentityprovidersGsuite()
   .then(function(data) {
-    console.log(`deleteIdentityprovidersGsuite success! data: ${data}`);
+    console.log(`deleteIdentityprovidersGsuite success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling deleteIdentityprovidersGsuite');
@@ -175,7 +175,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.deleteIdentityprovidersIdentitynow()
   .then(function(data) {
-    console.log(`deleteIdentityprovidersIdentitynow success! data: ${data}`);
+    console.log(`deleteIdentityprovidersIdentitynow success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling deleteIdentityprovidersIdentitynow');
@@ -214,7 +214,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.deleteIdentityprovidersOkta()
   .then(function(data) {
-    console.log(`deleteIdentityprovidersOkta success! data: ${data}`);
+    console.log(`deleteIdentityprovidersOkta success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling deleteIdentityprovidersOkta');
@@ -253,7 +253,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.deleteIdentityprovidersOnelogin()
   .then(function(data) {
-    console.log(`deleteIdentityprovidersOnelogin success! data: ${data}`);
+    console.log(`deleteIdentityprovidersOnelogin success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling deleteIdentityprovidersOnelogin');
@@ -292,7 +292,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.deleteIdentityprovidersPing()
   .then(function(data) {
-    console.log(`deleteIdentityprovidersPing success! data: ${data}`);
+    console.log(`deleteIdentityprovidersPing success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling deleteIdentityprovidersPing');
@@ -331,7 +331,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.deleteIdentityprovidersPurecloud()
   .then(function(data) {
-    console.log(`deleteIdentityprovidersPurecloud success! data: ${data}`);
+    console.log(`deleteIdentityprovidersPurecloud success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling deleteIdentityprovidersPurecloud');
@@ -370,7 +370,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.deleteIdentityprovidersSalesforce()
   .then(function(data) {
-    console.log(`deleteIdentityprovidersSalesforce success! data: ${data}`);
+    console.log(`deleteIdentityprovidersSalesforce success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling deleteIdentityprovidersSalesforce');
@@ -409,7 +409,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityproviders()
   .then(function(data) {
-    console.log(`getIdentityproviders success! data: ${data}`);
+    console.log(`getIdentityproviders success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getIdentityproviders');
@@ -448,7 +448,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityprovidersAdfs()
   .then(function(data) {
-    console.log(`getIdentityprovidersAdfs success! data: ${data}`);
+    console.log(`getIdentityprovidersAdfs success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getIdentityprovidersAdfs');
@@ -487,7 +487,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityprovidersCic()
   .then(function(data) {
-    console.log(`getIdentityprovidersCic success! data: ${data}`);
+    console.log(`getIdentityprovidersCic success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getIdentityprovidersCic');
@@ -526,7 +526,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityprovidersGsuite()
   .then(function(data) {
-    console.log(`getIdentityprovidersGsuite success! data: ${data}`);
+    console.log(`getIdentityprovidersGsuite success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getIdentityprovidersGsuite');
@@ -565,7 +565,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityprovidersIdentitynow()
   .then(function(data) {
-    console.log(`getIdentityprovidersIdentitynow success! data: ${data}`);
+    console.log(`getIdentityprovidersIdentitynow success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getIdentityprovidersIdentitynow');
@@ -604,7 +604,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityprovidersOkta()
   .then(function(data) {
-    console.log(`getIdentityprovidersOkta success! data: ${data}`);
+    console.log(`getIdentityprovidersOkta success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getIdentityprovidersOkta');
@@ -643,7 +643,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityprovidersOnelogin()
   .then(function(data) {
-    console.log(`getIdentityprovidersOnelogin success! data: ${data}`);
+    console.log(`getIdentityprovidersOnelogin success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getIdentityprovidersOnelogin');
@@ -682,7 +682,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityprovidersPing()
   .then(function(data) {
-    console.log(`getIdentityprovidersPing success! data: ${data}`);
+    console.log(`getIdentityprovidersPing success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getIdentityprovidersPing');
@@ -721,7 +721,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityprovidersPurecloud()
   .then(function(data) {
-    console.log(`getIdentityprovidersPurecloud success! data: ${data}`);
+    console.log(`getIdentityprovidersPurecloud success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getIdentityprovidersPurecloud');
@@ -760,7 +760,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityprovidersSalesforce()
   .then(function(data) {
-    console.log(`getIdentityprovidersSalesforce success! data: ${data}`);
+    console.log(`getIdentityprovidersSalesforce success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling getIdentityprovidersSalesforce');
@@ -802,7 +802,7 @@ var body = new platformClient.ADFS(); // ADFS | Provider
 
 apiInstance.putIdentityprovidersAdfs(body)
   .then(function(data) {
-    console.log(`putIdentityprovidersAdfs success! data: ${data}`);
+    console.log(`putIdentityprovidersAdfs success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putIdentityprovidersAdfs');
@@ -847,7 +847,7 @@ var body = new platformClient.CustomerInteractionCenter(); // CustomerInteractio
 
 apiInstance.putIdentityprovidersCic(body)
   .then(function(data) {
-    console.log(`putIdentityprovidersCic success! data: ${data}`);
+    console.log(`putIdentityprovidersCic success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putIdentityprovidersCic');
@@ -892,7 +892,7 @@ var body = new platformClient.GSuite(); // GSuite | Provider
 
 apiInstance.putIdentityprovidersGsuite(body)
   .then(function(data) {
-    console.log(`putIdentityprovidersGsuite success! data: ${data}`);
+    console.log(`putIdentityprovidersGsuite success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putIdentityprovidersGsuite');
@@ -937,7 +937,7 @@ var body = new platformClient.IdentityNow(); // IdentityNow | Provider
 
 apiInstance.putIdentityprovidersIdentitynow(body)
   .then(function(data) {
-    console.log(`putIdentityprovidersIdentitynow success! data: ${data}`);
+    console.log(`putIdentityprovidersIdentitynow success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putIdentityprovidersIdentitynow');
@@ -982,7 +982,7 @@ var body = new platformClient.Okta(); // Okta | Provider
 
 apiInstance.putIdentityprovidersOkta(body)
   .then(function(data) {
-    console.log(`putIdentityprovidersOkta success! data: ${data}`);
+    console.log(`putIdentityprovidersOkta success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putIdentityprovidersOkta');
@@ -1027,7 +1027,7 @@ var body = new platformClient.OneLogin(); // OneLogin | Provider
 
 apiInstance.putIdentityprovidersOnelogin(body)
   .then(function(data) {
-    console.log(`putIdentityprovidersOnelogin success! data: ${data}`);
+    console.log(`putIdentityprovidersOnelogin success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putIdentityprovidersOnelogin');
@@ -1072,7 +1072,7 @@ var body = new platformClient.PingIdentity(); // PingIdentity | Provider
 
 apiInstance.putIdentityprovidersPing(body)
   .then(function(data) {
-    console.log(`putIdentityprovidersPing success! data: ${data}`);
+    console.log(`putIdentityprovidersPing success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putIdentityprovidersPing');
@@ -1117,7 +1117,7 @@ var body = new platformClient.PureCloud(); // PureCloud | Provider
 
 apiInstance.putIdentityprovidersPurecloud(body)
   .then(function(data) {
-    console.log(`putIdentityprovidersPurecloud success! data: ${data}`);
+    console.log(`putIdentityprovidersPurecloud success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putIdentityprovidersPurecloud');
@@ -1162,7 +1162,7 @@ var body = new platformClient.Salesforce(); // Salesforce | Provider
 
 apiInstance.putIdentityprovidersSalesforce(body)
   .then(function(data) {
-    console.log(`putIdentityprovidersSalesforce success! data: ${data}`);
+    console.log(`putIdentityprovidersSalesforce success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
   	console.log('There was a failure calling putIdentityprovidersSalesforce');
