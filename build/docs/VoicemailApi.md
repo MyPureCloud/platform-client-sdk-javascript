@@ -33,7 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteVoicemailMessage"></a>
 
-# null deleteVoicemailMessage(messageId)
+# void deleteVoicemailMessage(messageId)
 
 DELETE /api/v2/voicemail/messages/{messageId}
 
@@ -74,11 +74,11 @@ apiInstance.deleteVoicemailMessage(messageId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteVoicemailMessages"></a>
 
-# null deleteVoicemailMessages()
+# void deleteVoicemailMessages()
 
 DELETE /api/v2/voicemail/messages
 
@@ -113,7 +113,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getVoicemailGroupMailbox"></a>
 

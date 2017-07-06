@@ -451,7 +451,7 @@ apiInstance.getWorkforcemanagementTimeoffrequests(opts)
 
 <a name="patchWorkforcemanagementTimeoffrequest"></a>
 
-# null patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
+# void patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
 
 PATCH /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}
 
@@ -496,7 +496,7 @@ apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="postWorkforcemanagementManagementunitIntraday"></a>
 

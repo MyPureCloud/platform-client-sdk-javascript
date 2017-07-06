@@ -55,7 +55,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteRoutingEmailDomain"></a>
 
-# null deleteRoutingEmailDomain(domainId)
+# void deleteRoutingEmailDomain(domainId)
 
 DELETE /api/v2/routing/email/domains/{domainId}
 
@@ -96,11 +96,11 @@ apiInstance.deleteRoutingEmailDomain(domainId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteRoutingEmailDomainRoute"></a>
 
-# null deleteRoutingEmailDomainRoute(domainName, routeId)
+# void deleteRoutingEmailDomainRoute(domainName, routeId)
 
 DELETE /api/v2/routing/email/domains/{domainName}/routes/{routeId}
 
@@ -144,11 +144,11 @@ apiInstance.deleteRoutingEmailDomainRoute(domainName, routeId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteRoutingQueue"></a>
 
-# null deleteRoutingQueue(queueId, opts)
+# void deleteRoutingQueue(queueId, opts)
 
 DELETE /api/v2/routing/queues/{queueId}
 
@@ -193,11 +193,11 @@ apiInstance.deleteRoutingQueue(queueId, opts)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteRoutingQueueUser"></a>
 
-# null deleteRoutingQueueUser(queueId, memberId)
+# void deleteRoutingQueueUser(queueId, memberId)
 
 DELETE /api/v2/routing/queues/{queueId}/users/{memberId}
 
@@ -241,11 +241,11 @@ apiInstance.deleteRoutingQueueUser(queueId, memberId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteRoutingQueueWrapupcode"></a>
 
-# null deleteRoutingQueueWrapupcode(queueId, codeId)
+# void deleteRoutingQueueWrapupcode(queueId, codeId)
 
 DELETE /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId}
 
@@ -289,11 +289,11 @@ apiInstance.deleteRoutingQueueWrapupcode(queueId, codeId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteRoutingSkill"></a>
 
-# null deleteRoutingSkill(skillId)
+# void deleteRoutingSkill(skillId)
 
 DELETE /api/v2/routing/skills/{skillId}
 
@@ -334,11 +334,11 @@ apiInstance.deleteRoutingSkill(skillId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteRoutingUtilization"></a>
 
-# null deleteRoutingUtilization()
+# void deleteRoutingUtilization()
 
 DELETE /api/v2/routing/utilization
 
@@ -373,11 +373,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteRoutingWrapupcode"></a>
 
-# null deleteRoutingWrapupcode(codeId)
+# void deleteRoutingWrapupcode(codeId)
 
 DELETE /api/v2/routing/wrapupcodes/{codeId}
 
@@ -418,11 +418,11 @@ apiInstance.deleteRoutingWrapupcode(codeId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteUserRoutingskill"></a>
 
-# null deleteUserRoutingskill(userId, skillId)
+# void deleteUserRoutingskill(userId, skillId)
 
 DELETE /api/v2/users/{userId}/routingskills/{skillId}
 
@@ -466,7 +466,7 @@ apiInstance.deleteUserRoutingskill(userId, skillId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getRoutingEmailDomain"></a>
 

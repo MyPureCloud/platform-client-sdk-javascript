@@ -17,7 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteAttribute"></a>
 
-# null deleteAttribute(attributeId)
+# void deleteAttribute(attributeId)
 
 DELETE /api/v2/attributes/{attributeId}
 
@@ -58,7 +58,7 @@ apiInstance.deleteAttribute(attributeId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getAttribute"></a>
 

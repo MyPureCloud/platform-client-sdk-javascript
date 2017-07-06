@@ -17,7 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteOauthClient"></a>
 
-# null deleteOauthClient(clientId)
+# void deleteOauthClient(clientId)
 
 DELETE /api/v2/oauth/clients/{clientId}
 
@@ -58,7 +58,7 @@ apiInstance.deleteOauthClient(clientId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getOauthClient"></a>
 

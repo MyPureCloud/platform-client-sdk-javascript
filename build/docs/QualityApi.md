@@ -142,7 +142,7 @@ apiInstance.deleteQualityConversationEvaluation(conversationId, evaluationId, op
 
 <a name="deleteQualityForm"></a>
 
-# null deleteQualityForm(formId)
+# void deleteQualityForm(formId)
 
 DELETE /api/v2/quality/forms/{formId}
 
@@ -183,11 +183,11 @@ apiInstance.deleteQualityForm(formId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteQualityKeywordset"></a>
 
-# null deleteQualityKeywordset(keywordSetId)
+# void deleteQualityKeywordset(keywordSetId)
 
 DELETE /api/v2/quality/keywordsets/{keywordSetId}
 
@@ -228,11 +228,11 @@ apiInstance.deleteQualityKeywordset(keywordSetId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteQualityKeywordsets"></a>
 
-# null deleteQualityKeywordsets(ids)
+# void deleteQualityKeywordsets(ids)
 
 DELETE /api/v2/quality/keywordsets
 
@@ -273,7 +273,7 @@ apiInstance.deleteQualityKeywordsets(ids)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getQualityAgentsActivity"></a>
 

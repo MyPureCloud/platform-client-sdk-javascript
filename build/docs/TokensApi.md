@@ -13,7 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteTokensMe"></a>
 
-# null deleteTokensMe()
+# void deleteTokensMe()
 
 DELETE /api/v2/tokens/me
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getTokensMe"></a>
 

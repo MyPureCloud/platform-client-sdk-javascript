@@ -61,6 +61,10 @@
       "class": "CampaignProgressNotification"
     },
     {
+      "topic": "v2.outbound.campaigns.{id}.stats",
+      "class": "StatsNotificationNotification"
+    },
+    {
       "topic": "v2.outbound.contactlistfilters.{id}",
       "class": "ContactListFilterNotification"
     },
@@ -247,6 +251,10 @@
     {
       "topic": "v2.users.{id}.workforcemanagement.adherence",
       "class": "UserScheduleAdherenceUpdateNotification"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.historicaladherencequery",
+      "class": "WfmHistoricalAdherenceCalculationsCompleteNoticeNotification"
     },
     {
       "topic": "v2.users.{id}.workforcemanagement.timeoffrequests",

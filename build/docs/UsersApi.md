@@ -99,7 +99,7 @@ apiInstance.deleteUser(userId)
 
 <a name="deleteUserRoles"></a>
 
-# null deleteUserRoles(userId)
+# void deleteUserRoles(userId)
 
 DELETE /api/v2/users/{userId}/roles
 
@@ -140,11 +140,11 @@ apiInstance.deleteUserRoles(userId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteUserRoutingskill"></a>
 
-# null deleteUserRoutingskill(userId, skillId)
+# void deleteUserRoutingskill(userId, skillId)
 
 DELETE /api/v2/users/{userId}/routingskills/{skillId}
 
@@ -188,11 +188,11 @@ apiInstance.deleteUserRoutingskill(userId, skillId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteUserStationAssociatedstation"></a>
 
-# null deleteUserStationAssociatedstation(userId)
+# void deleteUserStationAssociatedstation(userId)
 
 DELETE /api/v2/users/{userId}/station/associatedstation
 
@@ -233,11 +233,11 @@ apiInstance.deleteUserStationAssociatedstation(userId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteUserStationDefaultstation"></a>
 
-# null deleteUserStationDefaultstation(userId)
+# void deleteUserStationDefaultstation(userId)
 
 DELETE /api/v2/users/{userId}/station/defaultstation
 
@@ -278,7 +278,7 @@ apiInstance.deleteUserStationDefaultstation(userId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getFieldconfig"></a>
 
@@ -1536,7 +1536,7 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 
 <a name="postUserInvite"></a>
 
-# null postUserInvite(userId, opts)
+# void postUserInvite(userId, opts)
 
 POST /api/v2/users/{userId}/invite
 
@@ -1581,7 +1581,7 @@ apiInstance.postUserInvite(userId, opts)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="postUserRoutingskills"></a>
 
@@ -2015,7 +2015,7 @@ apiInstance.putUserRoutingstatus(userId, body)
 
 <a name="putUserStationAssociatedstationStationId"></a>
 
-# null putUserStationAssociatedstationStationId(userId, stationId)
+# void putUserStationAssociatedstationStationId(userId, stationId)
 
 PUT /api/v2/users/{userId}/station/associatedstation/{stationId}
 
@@ -2059,11 +2059,11 @@ apiInstance.putUserStationAssociatedstationStationId(userId, stationId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="putUserStationDefaultstationStationId"></a>
 
-# null putUserStationDefaultstationStationId(userId, stationId)
+# void putUserStationDefaultstationStationId(userId, stationId)
 
 PUT /api/v2/users/{userId}/station/defaultstation/{stationId}
 
@@ -2107,5 +2107,5 @@ apiInstance.putUserStationDefaultstationStationId(userId, stationId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 

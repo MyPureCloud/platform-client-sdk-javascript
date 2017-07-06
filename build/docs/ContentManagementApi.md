@@ -49,7 +49,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteContentmanagementDocument"></a>
 
-# null deleteContentmanagementDocument(documentId, opts)
+# void deleteContentmanagementDocument(documentId, opts)
 
 DELETE /api/v2/contentmanagement/documents/{documentId}
 
@@ -94,11 +94,11 @@ apiInstance.deleteContentmanagementDocument(documentId, opts)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteContentmanagementShare"></a>
 
-# null deleteContentmanagementShare(shareId)
+# void deleteContentmanagementShare(shareId)
 
 DELETE /api/v2/contentmanagement/shares/{shareId}
 
@@ -139,11 +139,11 @@ apiInstance.deleteContentmanagementShare(shareId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteContentmanagementStatusStatusId"></a>
 
-# null deleteContentmanagementStatusStatusId(statusId)
+# void deleteContentmanagementStatusStatusId(statusId)
 
 DELETE /api/v2/contentmanagement/status/{statusId}
 
@@ -184,11 +184,11 @@ apiInstance.deleteContentmanagementStatusStatusId(statusId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteContentmanagementWorkspace"></a>
 
-# null deleteContentmanagementWorkspace(workspaceId, opts)
+# void deleteContentmanagementWorkspace(workspaceId, opts)
 
 DELETE /api/v2/contentmanagement/workspaces/{workspaceId}
 
@@ -233,11 +233,11 @@ apiInstance.deleteContentmanagementWorkspace(workspaceId, opts)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteContentmanagementWorkspaceMember"></a>
 
-# null deleteContentmanagementWorkspaceMember(workspaceId, memberId)
+# void deleteContentmanagementWorkspaceMember(workspaceId, memberId)
 
 DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}
 
@@ -281,11 +281,11 @@ apiInstance.deleteContentmanagementWorkspaceMember(workspaceId, memberId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteContentmanagementWorkspaceTagvalue"></a>
 
-# null deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId)
+# void deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId)
 
 DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}
 
@@ -329,7 +329,7 @@ apiInstance.deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getContentmanagementDocument"></a>
 

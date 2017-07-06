@@ -17,7 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteFaxDocument"></a>
 
-# null deleteFaxDocument(documentId)
+# void deleteFaxDocument(documentId)
 
 DELETE /api/v2/fax/documents/{documentId}
 
@@ -58,7 +58,7 @@ apiInstance.deleteFaxDocument(documentId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getFaxDocument"></a>
 

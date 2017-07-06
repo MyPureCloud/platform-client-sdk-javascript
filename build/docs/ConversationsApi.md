@@ -88,7 +88,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteConversationParticipantCode"></a>
 
-# null deleteConversationParticipantCode(conversationId, participantId, addCommunicationCode)
+# void deleteConversationParticipantCode(conversationId, participantId, addCommunicationCode)
 
 DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode}
 
@@ -135,11 +135,11 @@ apiInstance.deleteConversationParticipantCode(conversationId, participantId, add
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteConversationsCallParticipantConsult"></a>
 
-# null deleteConversationsCallParticipantConsult(conversationId, participantId)
+# void deleteConversationsCallParticipantConsult(conversationId, participantId)
 
 DELETE /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult
 
@@ -183,11 +183,11 @@ apiInstance.deleteConversationsCallParticipantConsult(conversationId, participan
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteConversationsEmailMessagesDraftAttachment"></a>
 
-# null deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId)
+# void deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId)
 
 DELETE /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId}
 
@@ -231,7 +231,7 @@ apiInstance.deleteConversationsEmailMessagesDraftAttachment(conversationId, atta
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getAnalyticsConversationDetails"></a>
 
@@ -1618,7 +1618,7 @@ This endpoint does not need any parameter.
 
 <a name="patchConversationParticipant"></a>
 
-# null patchConversationParticipant(conversationId, participantId, body)
+# void patchConversationParticipant(conversationId, participantId, body)
 
 PATCH /api/v2/conversations/{conversationId}/participants/{participantId}
 
@@ -1665,11 +1665,11 @@ apiInstance.patchConversationParticipant(conversationId, participantId, body)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="patchConversationParticipantAttributes"></a>
 
-# null patchConversationParticipantAttributes(conversationId, participantId, body)
+# void patchConversationParticipantAttributes(conversationId, participantId, body)
 
 PATCH /api/v2/conversations/{conversationId}/participants/{participantId}/attributes
 
@@ -1716,7 +1716,7 @@ apiInstance.patchConversationParticipantAttributes(conversationId, participantId
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="patchConversationsCall"></a>
 
@@ -1768,7 +1768,7 @@ apiInstance.patchConversationsCall(conversationId, body)
 
 <a name="patchConversationsCallParticipant"></a>
 
-# null patchConversationsCallParticipant(conversationId, participantId, body)
+# void patchConversationsCallParticipant(conversationId, participantId, body)
 
 PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}
 
@@ -1815,11 +1815,11 @@ apiInstance.patchConversationsCallParticipant(conversationId, participantId, bod
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="patchConversationsCallParticipantAttributes"></a>
 
-# null patchConversationsCallParticipantAttributes(conversationId, participantId, body)
+# void patchConversationsCallParticipantAttributes(conversationId, participantId, body)
 
 PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes
 
@@ -1866,7 +1866,7 @@ apiInstance.patchConversationsCallParticipantAttributes(conversationId, particip
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="patchConversationsCallParticipantCommunication"></a>
 
@@ -2023,7 +2023,7 @@ apiInstance.patchConversationsCallback(conversationId, body)
 
 <a name="patchConversationsCallbackParticipant"></a>
 
-# null patchConversationsCallbackParticipant(conversationId, participantId, body)
+# void patchConversationsCallbackParticipant(conversationId, participantId, body)
 
 PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}
 
@@ -2070,11 +2070,11 @@ apiInstance.patchConversationsCallbackParticipant(conversationId, participantId,
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="patchConversationsCallbackParticipantAttributes"></a>
 
-# null patchConversationsCallbackParticipantAttributes(conversationId, participantId, body)
+# void patchConversationsCallbackParticipantAttributes(conversationId, participantId, body)
 
 PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes
 
@@ -2121,7 +2121,7 @@ apiInstance.patchConversationsCallbackParticipantAttributes(conversationId, part
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="patchConversationsCallbackParticipantCommunication"></a>
 
@@ -2227,7 +2227,7 @@ apiInstance.patchConversationsChat(conversationId, body)
 
 <a name="patchConversationsChatParticipant"></a>
 
-# null patchConversationsChatParticipant(conversationId, participantId, body)
+# void patchConversationsChatParticipant(conversationId, participantId, body)
 
 PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}
 
@@ -2274,11 +2274,11 @@ apiInstance.patchConversationsChatParticipant(conversationId, participantId, bod
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="patchConversationsChatParticipantAttributes"></a>
 
-# null patchConversationsChatParticipantAttributes(conversationId, participantId, body)
+# void patchConversationsChatParticipantAttributes(conversationId, participantId, body)
 
 PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes
 
@@ -2325,7 +2325,7 @@ apiInstance.patchConversationsChatParticipantAttributes(conversationId, particip
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="patchConversationsChatParticipantCommunication"></a>
 
@@ -2431,7 +2431,7 @@ apiInstance.patchConversationsCobrowsesession(conversationId, body)
 
 <a name="patchConversationsCobrowsesessionParticipant"></a>
 
-# null patchConversationsCobrowsesessionParticipant(conversationId, participantId, opts)
+# void patchConversationsCobrowsesessionParticipant(conversationId, participantId, opts)
 
 PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}
 
@@ -2479,11 +2479,11 @@ apiInstance.patchConversationsCobrowsesessionParticipant(conversationId, partici
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="patchConversationsCobrowsesessionParticipantAttributes"></a>
 
-# null patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, opts)
+# void patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, opts)
 
 PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes
 
@@ -2531,7 +2531,7 @@ apiInstance.patchConversationsCobrowsesessionParticipantAttributes(conversationI
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="patchConversationsCobrowsesessionParticipantCommunication"></a>
 
@@ -2637,7 +2637,7 @@ apiInstance.patchConversationsEmail(conversationId, body)
 
 <a name="patchConversationsEmailParticipant"></a>
 
-# null patchConversationsEmailParticipant(conversationId, participantId, body)
+# void patchConversationsEmailParticipant(conversationId, participantId, body)
 
 PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}
 
@@ -2684,11 +2684,11 @@ apiInstance.patchConversationsEmailParticipant(conversationId, participantId, bo
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="patchConversationsEmailParticipantAttributes"></a>
 
-# null patchConversationsEmailParticipantAttributes(conversationId, participantId, body)
+# void patchConversationsEmailParticipantAttributes(conversationId, participantId, body)
 
 PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes
 
@@ -2735,7 +2735,7 @@ apiInstance.patchConversationsEmailParticipantAttributes(conversationId, partici
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="patchConversationsEmailParticipantCommunication"></a>
 
@@ -2931,7 +2931,7 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
 
 <a name="postConversationParticipantCallbacks"></a>
 
-# null postConversationParticipantCallbacks(conversationId, participantId, opts)
+# void postConversationParticipantCallbacks(conversationId, participantId, opts)
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks
 
@@ -2979,11 +2979,11 @@ apiInstance.postConversationParticipantCallbacks(conversationId, participantId, 
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="postConversationParticipantReplace"></a>
 
-# null postConversationParticipantReplace(conversationId, participantId, body)
+# void postConversationParticipantReplace(conversationId, participantId, body)
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace
 
@@ -3030,7 +3030,7 @@ apiInstance.postConversationParticipantReplace(conversationId, participantId, bo
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="postConversationsCall"></a>
 
@@ -3133,7 +3133,7 @@ apiInstance.postConversationsCallParticipantConsult(conversationId, participantI
 
 <a name="postConversationsCallParticipantMonitor"></a>
 
-# null postConversationsCallParticipantMonitor(conversationId, participantId)
+# void postConversationsCallParticipantMonitor(conversationId, participantId)
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor
 
@@ -3177,11 +3177,11 @@ apiInstance.postConversationsCallParticipantMonitor(conversationId, participantI
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="postConversationsCallParticipantReplace"></a>
 
-# null postConversationsCallParticipantReplace(conversationId, participantId, body)
+# void postConversationsCallParticipantReplace(conversationId, participantId, body)
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace
 
@@ -3228,7 +3228,7 @@ apiInstance.postConversationsCallParticipantReplace(conversationId, participantI
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="postConversationsCallParticipants"></a>
 
@@ -3280,7 +3280,7 @@ apiInstance.postConversationsCallParticipants(conversationId, body)
 
 <a name="postConversationsCallbackParticipantReplace"></a>
 
-# null postConversationsCallbackParticipantReplace(conversationId, participantId, body)
+# void postConversationsCallbackParticipantReplace(conversationId, participantId, body)
 
 POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace
 
@@ -3327,7 +3327,7 @@ apiInstance.postConversationsCallbackParticipantReplace(conversationId, particip
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="postConversationsCallbacks"></a>
 
@@ -3421,7 +3421,7 @@ apiInstance.postConversationsCalls(body)
 
 <a name="postConversationsChatParticipantReplace"></a>
 
-# null postConversationsChatParticipantReplace(conversationId, participantId, body)
+# void postConversationsChatParticipantReplace(conversationId, participantId, body)
 
 POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace
 
@@ -3468,7 +3468,7 @@ apiInstance.postConversationsChatParticipantReplace(conversationId, participantI
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="postConversationsChats"></a>
 
@@ -3517,7 +3517,7 @@ apiInstance.postConversationsChats(body)
 
 <a name="postConversationsCobrowsesessionParticipantReplace"></a>
 
-# null postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, opts)
+# void postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, opts)
 
 POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace
 
@@ -3565,7 +3565,7 @@ apiInstance.postConversationsCobrowsesessionParticipantReplace(conversationId, p
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="postConversationsEmailMessages"></a>
 
@@ -3617,7 +3617,7 @@ apiInstance.postConversationsEmailMessages(conversationId, body)
 
 <a name="postConversationsEmailParticipantReplace"></a>
 
-# null postConversationsEmailParticipantReplace(conversationId, participantId, body)
+# void postConversationsEmailParticipantReplace(conversationId, participantId, body)
 
 POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace
 
@@ -3664,7 +3664,7 @@ apiInstance.postConversationsEmailParticipantReplace(conversationId, participant
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="postConversationsEmails"></a>
 

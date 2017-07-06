@@ -96,7 +96,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteOutboundAttemptlimit"></a>
 
-# null deleteOutboundAttemptlimit(attemptLimitsId)
+# void deleteOutboundAttemptlimit(attemptLimitsId)
 
 DELETE /api/v2/outbound/attemptlimits/{attemptLimitsId}
 
@@ -137,11 +137,11 @@ apiInstance.deleteOutboundAttemptlimit(attemptLimitsId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteOutboundCallabletimeset"></a>
 
-# null deleteOutboundCallabletimeset(callableTimeSetId)
+# void deleteOutboundCallabletimeset(callableTimeSetId)
 
 DELETE /api/v2/outbound/callabletimesets/{callableTimeSetId}
 
@@ -182,11 +182,11 @@ apiInstance.deleteOutboundCallabletimeset(callableTimeSetId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteOutboundCallanalysisresponseset"></a>
 
-# null deleteOutboundCallanalysisresponseset(callAnalysisSetId)
+# void deleteOutboundCallanalysisresponseset(callAnalysisSetId)
 
 DELETE /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}
 
@@ -227,7 +227,7 @@ apiInstance.deleteOutboundCallanalysisresponseset(callAnalysisSetId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteOutboundCampaign"></a>
 
@@ -276,7 +276,7 @@ apiInstance.deleteOutboundCampaign(campaignId)
 
 <a name="deleteOutboundCampaignProgress"></a>
 
-# null deleteOutboundCampaignProgress(campaignId)
+# void deleteOutboundCampaignProgress(campaignId)
 
 DELETE /api/v2/outbound/campaigns/{campaignId}/progress
 
@@ -317,11 +317,11 @@ apiInstance.deleteOutboundCampaignProgress(campaignId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteOutboundCampaignrule"></a>
 
-# null deleteOutboundCampaignrule(campaignRuleId)
+# void deleteOutboundCampaignrule(campaignRuleId)
 
 DELETE /api/v2/outbound/campaignrules/{campaignRuleId}
 
@@ -362,11 +362,11 @@ apiInstance.deleteOutboundCampaignrule(campaignRuleId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteOutboundContactlist"></a>
 
-# null deleteOutboundContactlist(contactListId)
+# void deleteOutboundContactlist(contactListId)
 
 DELETE /api/v2/outbound/contactlists/{contactListId}
 
@@ -407,11 +407,11 @@ apiInstance.deleteOutboundContactlist(contactListId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteOutboundContactlistContact"></a>
 
-# null deleteOutboundContactlistContact(contactListId, contactId)
+# void deleteOutboundContactlistContact(contactListId, contactId)
 
 DELETE /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}
 
@@ -455,11 +455,11 @@ apiInstance.deleteOutboundContactlistContact(contactListId, contactId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteOutboundContactlistContacts"></a>
 
-# null deleteOutboundContactlistContacts(contactListId, contactIds)
+# void deleteOutboundContactlistContacts(contactListId, contactIds)
 
 DELETE /api/v2/outbound/contactlists/{contactListId}/contacts
 
@@ -503,11 +503,11 @@ apiInstance.deleteOutboundContactlistContacts(contactListId, contactIds)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteOutboundContactlistfilter"></a>
 
-# null deleteOutboundContactlistfilter(contactListFilterId)
+# void deleteOutboundContactlistfilter(contactListFilterId)
 
 DELETE /api/v2/outbound/contactlistfilters/{contactListFilterId}
 
@@ -548,11 +548,11 @@ apiInstance.deleteOutboundContactlistfilter(contactListFilterId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteOutboundDnclist"></a>
 
-# null deleteOutboundDnclist(dncListId)
+# void deleteOutboundDnclist(dncListId)
 
 DELETE /api/v2/outbound/dnclists/{dncListId}
 
@@ -593,11 +593,11 @@ apiInstance.deleteOutboundDnclist(dncListId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteOutboundRuleset"></a>
 
-# null deleteOutboundRuleset(ruleSetId)
+# void deleteOutboundRuleset(ruleSetId)
 
 DELETE /api/v2/outbound/rulesets/{ruleSetId}
 
@@ -638,11 +638,11 @@ apiInstance.deleteOutboundRuleset(ruleSetId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteOutboundSchedulesCampaign"></a>
 
-# null deleteOutboundSchedulesCampaign(campaignId)
+# void deleteOutboundSchedulesCampaign(campaignId)
 
 DELETE /api/v2/outbound/schedules/campaigns/{campaignId}
 
@@ -683,11 +683,11 @@ apiInstance.deleteOutboundSchedulesCampaign(campaignId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteOutboundSchedulesSequence"></a>
 
-# null deleteOutboundSchedulesSequence(sequenceId)
+# void deleteOutboundSchedulesSequence(sequenceId)
 
 DELETE /api/v2/outbound/schedules/sequences/{sequenceId}
 
@@ -728,11 +728,11 @@ apiInstance.deleteOutboundSchedulesSequence(sequenceId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteOutboundSequence"></a>
 
-# null deleteOutboundSequence(sequenceId)
+# void deleteOutboundSequence(sequenceId)
 
 DELETE /api/v2/outbound/sequences/{sequenceId}
 
@@ -773,7 +773,7 @@ apiInstance.deleteOutboundSequence(sequenceId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getOutboundAttemptlimit"></a>
 
@@ -3154,7 +3154,7 @@ apiInstance.postOutboundContactlists(body)
 
 <a name="postOutboundConversationDnc"></a>
 
-# null postOutboundConversationDnc(conversationId)
+# void postOutboundConversationDnc(conversationId)
 
 POST /api/v2/outbound/conversations/{conversationId}/dnc
 
@@ -3195,7 +3195,7 @@ apiInstance.postOutboundConversationDnc(conversationId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="postOutboundDnclistExport"></a>
 
@@ -3244,7 +3244,7 @@ apiInstance.postOutboundDnclistExport(dncListId)
 
 <a name="postOutboundDnclistPhonenumbers"></a>
 
-# null postOutboundDnclistPhonenumbers(dncListId, body)
+# void postOutboundDnclistPhonenumbers(dncListId, body)
 
 POST /api/v2/outbound/dnclists/{dncListId}/phonenumbers
 
@@ -3288,7 +3288,7 @@ apiInstance.postOutboundDnclistPhonenumbers(dncListId, body)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="postOutboundDnclists"></a>
 

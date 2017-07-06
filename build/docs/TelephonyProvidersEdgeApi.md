@@ -132,7 +132,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteTelephonyProvidersEdge"></a>
 
-# null deleteTelephonyProvidersEdge(edgeId)
+# void deleteTelephonyProvidersEdge(edgeId)
 
 DELETE /api/v2/telephony/providers/edges/{edgeId}
 
@@ -173,11 +173,11 @@ apiInstance.deleteTelephonyProvidersEdge(edgeId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteTelephonyProvidersEdgeLogicalinterface"></a>
 
-# null deleteTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId)
+# void deleteTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId)
 
 DELETE /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}
 
@@ -221,11 +221,11 @@ apiInstance.deleteTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteTelephonyProvidersEdgeSoftwareupdate"></a>
 
-# null deleteTelephonyProvidersEdgeSoftwareupdate(edgeId)
+# void deleteTelephonyProvidersEdgeSoftwareupdate(edgeId)
 
 DELETE /api/v2/telephony/providers/edges/{edgeId}/softwareupdate
 
@@ -266,11 +266,11 @@ apiInstance.deleteTelephonyProvidersEdgeSoftwareupdate(edgeId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteTelephonyProvidersEdgesCertificateauthority"></a>
 
-# null deleteTelephonyProvidersEdgesCertificateauthority(certificateId)
+# void deleteTelephonyProvidersEdgesCertificateauthority(certificateId)
 
 DELETE /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}
 
@@ -311,11 +311,11 @@ apiInstance.deleteTelephonyProvidersEdgesCertificateauthority(certificateId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteTelephonyProvidersEdgesDidpool"></a>
 
-# null deleteTelephonyProvidersEdgesDidpool(didPoolId)
+# void deleteTelephonyProvidersEdgesDidpool(didPoolId)
 
 DELETE /api/v2/telephony/providers/edges/didpools/{didPoolId}
 
@@ -356,11 +356,11 @@ apiInstance.deleteTelephonyProvidersEdgesDidpool(didPoolId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteTelephonyProvidersEdgesEdgegroup"></a>
 
-# null deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId)
+# void deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId)
 
 DELETE /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}
 
@@ -401,11 +401,11 @@ apiInstance.deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteTelephonyProvidersEdgesEndpoint"></a>
 
-# null deleteTelephonyProvidersEdgesEndpoint(endpointId)
+# void deleteTelephonyProvidersEdgesEndpoint(endpointId)
 
 DELETE /api/v2/telephony/providers/edges/endpoints/{endpointId}
 
@@ -446,11 +446,11 @@ apiInstance.deleteTelephonyProvidersEdgesEndpoint(endpointId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteTelephonyProvidersEdgesExtensionpool"></a>
 
-# null deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId)
+# void deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId)
 
 DELETE /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}
 
@@ -491,11 +491,11 @@ apiInstance.deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteTelephonyProvidersEdgesOutboundroute"></a>
 
-# null deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId)
+# void deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId)
 
 DELETE /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}
 
@@ -536,11 +536,11 @@ apiInstance.deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteTelephonyProvidersEdgesPhone"></a>
 
-# null deleteTelephonyProvidersEdgesPhone(phoneId)
+# void deleteTelephonyProvidersEdgesPhone(phoneId)
 
 DELETE /api/v2/telephony/providers/edges/phones/{phoneId}
 
@@ -581,11 +581,11 @@ apiInstance.deleteTelephonyProvidersEdgesPhone(phoneId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteTelephonyProvidersEdgesPhonebasesetting"></a>
 
-# null deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
+# void deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
 
 DELETE /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}
 
@@ -626,11 +626,11 @@ apiInstance.deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteTelephonyProvidersEdgesSite"></a>
 
-# null deleteTelephonyProvidersEdgesSite(siteId)
+# void deleteTelephonyProvidersEdgesSite(siteId)
 
 DELETE /api/v2/telephony/providers/edges/sites/{siteId}
 
@@ -671,11 +671,11 @@ apiInstance.deleteTelephonyProvidersEdgesSite(siteId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteTelephonyProvidersEdgesSiteOutboundroute"></a>
 
-# null deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
+# void deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
 
 DELETE /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}
 
@@ -719,11 +719,11 @@ apiInstance.deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRoute
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteTelephonyProvidersEdgesTrunkbasesetting"></a>
 
-# null deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId)
+# void deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId)
 
 DELETE /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}
 
@@ -764,7 +764,7 @@ apiInstance.deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getConfigurationSchemasEdgesVnext"></a>
 
@@ -4064,7 +4064,7 @@ apiInstance.postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body)
 
 <a name="postTelephonyProvidersEdgeLogsJobUpload"></a>
 
-# null postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body)
+# void postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body)
 
 POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload
 
@@ -4111,7 +4111,7 @@ apiInstance.postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="postTelephonyProvidersEdgeLogsJobs"></a>
 
@@ -4714,7 +4714,7 @@ apiInstance.postTelephonyProvidersEdgesOutboundroutes(body)
 
 <a name="postTelephonyProvidersEdgesPhoneReboot"></a>
 
-# null postTelephonyProvidersEdgesPhoneReboot(phoneId)
+# void postTelephonyProvidersEdgesPhoneReboot(phoneId)
 
 POST /api/v2/telephony/providers/edges/phones/{phoneId}/reboot
 
@@ -4755,7 +4755,7 @@ apiInstance.postTelephonyProvidersEdgesPhoneReboot(phoneId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="postTelephonyProvidersEdgesPhonebasesettings"></a>
 
@@ -4849,7 +4849,7 @@ apiInstance.postTelephonyProvidersEdgesPhones(body)
 
 <a name="postTelephonyProvidersEdgesPhonesReboot"></a>
 
-# null postTelephonyProvidersEdgesPhonesReboot(body)
+# void postTelephonyProvidersEdgesPhonesReboot(body)
 
 POST /api/v2/telephony/providers/edges/phones/reboot
 
@@ -4890,7 +4890,7 @@ apiInstance.postTelephonyProvidersEdgesPhonesReboot(body)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="postTelephonyProvidersEdgesSiteOutboundroutes"></a>
 
@@ -4942,7 +4942,7 @@ apiInstance.postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)
 
 <a name="postTelephonyProvidersEdgesSiteRebalance"></a>
 
-# null postTelephonyProvidersEdgesSiteRebalance(siteId)
+# void postTelephonyProvidersEdgesSiteRebalance(siteId)
 
 POST /api/v2/telephony/providers/edges/sites/{siteId}/rebalance
 
@@ -4983,7 +4983,7 @@ apiInstance.postTelephonyProvidersEdgesSiteRebalance(siteId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="postTelephonyProvidersEdgesSites"></a>
 

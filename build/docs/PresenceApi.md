@@ -19,7 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deletePresencedefinition"></a>
 
-# null deletePresencedefinition(presenceId)
+# void deletePresencedefinition(presenceId)
 
 DELETE /api/v2/presencedefinitions/{presenceId}
 
@@ -60,7 +60,7 @@ apiInstance.deletePresencedefinition(presenceId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getPresencedefinition"></a>
 

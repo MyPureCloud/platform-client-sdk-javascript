@@ -21,7 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteLanguage"></a>
 
-# null deleteLanguage(languageId)
+# void deleteLanguage(languageId)
 
 DELETE /api/v2/languages/{languageId}
 
@@ -62,11 +62,11 @@ apiInstance.deleteLanguage(languageId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteRoutingLanguage"></a>
 
-# null deleteRoutingLanguage(languageId)
+# void deleteRoutingLanguage(languageId)
 
 DELETE /api/v2/routing/languages/{languageId}
 
@@ -107,7 +107,7 @@ apiInstance.deleteRoutingLanguage(languageId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getLanguage"></a>
 

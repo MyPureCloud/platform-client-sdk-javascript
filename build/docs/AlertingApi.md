@@ -45,7 +45,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteAlertingHeartbeatAlert"></a>
 
-# null deleteAlertingHeartbeatAlert(alertId)
+# void deleteAlertingHeartbeatAlert(alertId)
 
 DELETE /api/v2/alerting/heartbeat/alerts/{alertId}
 
@@ -86,11 +86,11 @@ apiInstance.deleteAlertingHeartbeatAlert(alertId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteAlertingHeartbeatRule"></a>
 
-# null deleteAlertingHeartbeatRule(ruleId)
+# void deleteAlertingHeartbeatRule(ruleId)
 
 DELETE /api/v2/alerting/heartbeat/rules/{ruleId}
 
@@ -131,11 +131,11 @@ apiInstance.deleteAlertingHeartbeatRule(ruleId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteAlertingInteractionstatsAlert"></a>
 
-# null deleteAlertingInteractionstatsAlert(alertId)
+# void deleteAlertingInteractionstatsAlert(alertId)
 
 DELETE /api/v2/alerting/interactionstats/alerts/{alertId}
 
@@ -176,11 +176,11 @@ apiInstance.deleteAlertingInteractionstatsAlert(alertId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteAlertingInteractionstatsRule"></a>
 
-# null deleteAlertingInteractionstatsRule(ruleId)
+# void deleteAlertingInteractionstatsRule(ruleId)
 
 DELETE /api/v2/alerting/interactionstats/rules/{ruleId}
 
@@ -221,11 +221,11 @@ apiInstance.deleteAlertingInteractionstatsRule(ruleId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteAlertingRoutingstatusAlert"></a>
 
-# null deleteAlertingRoutingstatusAlert(alertId)
+# void deleteAlertingRoutingstatusAlert(alertId)
 
 DELETE /api/v2/alerting/routingstatus/alerts/{alertId}
 
@@ -266,11 +266,11 @@ apiInstance.deleteAlertingRoutingstatusAlert(alertId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteAlertingRoutingstatusRule"></a>
 
-# null deleteAlertingRoutingstatusRule(ruleId)
+# void deleteAlertingRoutingstatusRule(ruleId)
 
 DELETE /api/v2/alerting/routingstatus/rules/{ruleId}
 
@@ -311,11 +311,11 @@ apiInstance.deleteAlertingRoutingstatusRule(ruleId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteAlertingUserpresenceAlert"></a>
 
-# null deleteAlertingUserpresenceAlert(alertId)
+# void deleteAlertingUserpresenceAlert(alertId)
 
 DELETE /api/v2/alerting/userpresence/alerts/{alertId}
 
@@ -356,11 +356,11 @@ apiInstance.deleteAlertingUserpresenceAlert(alertId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteAlertingUserpresenceRule"></a>
 
-# null deleteAlertingUserpresenceRule(ruleId)
+# void deleteAlertingUserpresenceRule(ruleId)
 
 DELETE /api/v2/alerting/userpresence/rules/{ruleId}
 
@@ -401,7 +401,7 @@ apiInstance.deleteAlertingUserpresenceRule(ruleId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getAlertingHeartbeatAlert"></a>
 

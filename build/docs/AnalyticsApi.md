@@ -33,7 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteAnalyticsReportingSchedule"></a>
 
-# null deleteAnalyticsReportingSchedule(scheduleId)
+# void deleteAnalyticsReportingSchedule(scheduleId)
 
 DELETE /api/v2/analytics/reporting/schedules/{scheduleId}
 
@@ -74,7 +74,7 @@ apiInstance.deleteAnalyticsReportingSchedule(scheduleId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getAnalyticsConversationDetails"></a>
 

@@ -22,7 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteGroup"></a>
 
-# null deleteGroup(groupId)
+# void deleteGroup(groupId)
 
 DELETE /api/v2/groups/{groupId}
 
@@ -63,7 +63,7 @@ apiInstance.deleteGroup(groupId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteGroupMembers"></a>
 

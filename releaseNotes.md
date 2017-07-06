@@ -1,21 +1,14 @@
-
-# Major Changes (2 changes)
-
-**POST /api/v2/greetings** (1 change)
-
-* Response 200 type was changed from DefaultGreetingList to Greeting
-
-**GET /api/v2/routing/wrapupcodes** (1 change)
-
-* Parameter name was added
+Platform API version: 1336
 
 
-# Minor Changes (2 changes)
+# SDK Changes
 
-**/api/v2/users/{userId}/invite** (2 changes)
+* API-2711 - Remove enum name "common prefix" removal (this will cause breaking changes to enum member names)
 
-* Path was added
-* Operation POST was added
+# Major Changes (0 changes)
+
+
+# Minor Changes (0 changes)
 
 
 # Point Changes (0 changes)

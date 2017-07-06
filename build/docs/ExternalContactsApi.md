@@ -41,7 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteExternalcontactsContact"></a>
 
-# null deleteExternalcontactsContact(contactId)
+# void deleteExternalcontactsContact(contactId)
 
 DELETE /api/v2/externalcontacts/contacts/{contactId}
 
@@ -82,11 +82,11 @@ apiInstance.deleteExternalcontactsContact(contactId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteExternalcontactsContactNote"></a>
 
-# null deleteExternalcontactsContactNote(contactId, noteId)
+# void deleteExternalcontactsContactNote(contactId, noteId)
 
 DELETE /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}
 
@@ -130,11 +130,11 @@ apiInstance.deleteExternalcontactsContactNote(contactId, noteId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteExternalcontactsOrganization"></a>
 
-# null deleteExternalcontactsOrganization(externalOrganizationId)
+# void deleteExternalcontactsOrganization(externalOrganizationId)
 
 DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}
 
@@ -175,11 +175,11 @@ apiInstance.deleteExternalcontactsOrganization(externalOrganizationId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteExternalcontactsOrganizationNote"></a>
 
-# null deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId)
+# void deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId)
 
 DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}
 
@@ -223,11 +223,11 @@ apiInstance.deleteExternalcontactsOrganizationNote(externalOrganizationId, noteI
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteExternalcontactsOrganizationTrustor"></a>
 
-# null deleteExternalcontactsOrganizationTrustor(externalOrganizationId)
+# void deleteExternalcontactsOrganizationTrustor(externalOrganizationId)
 
 DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor
 
@@ -268,11 +268,11 @@ apiInstance.deleteExternalcontactsOrganizationTrustor(externalOrganizationId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteExternalcontactsRelationship"></a>
 
-# null deleteExternalcontactsRelationship(relationshipId)
+# void deleteExternalcontactsRelationship(relationshipId)
 
 DELETE /api/v2/externalcontacts/relationships/{relationshipId}
 
@@ -313,7 +313,7 @@ apiInstance.deleteExternalcontactsRelationship(relationshipId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getExternalcontactsContact"></a>
 
@@ -1288,7 +1288,7 @@ apiInstance.putExternalcontactsContactNote(contactId, noteId, opts)
 
 <a name="putExternalcontactsConversation"></a>
 
-# null putExternalcontactsConversation(conversationId, opts)
+# void putExternalcontactsConversation(conversationId, opts)
 
 PUT /api/v2/externalcontacts/conversations/{conversationId}
 
@@ -1333,7 +1333,7 @@ apiInstance.putExternalcontactsConversation(conversationId, opts)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="putExternalcontactsOrganization"></a>
 

@@ -44,7 +44,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteConversationRecordingAnnotation"></a>
 
-# null deleteConversationRecordingAnnotation(conversationId, recordingId, annotationId)
+# void deleteConversationRecordingAnnotation(conversationId, recordingId, annotationId)
 
 DELETE /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}
 
@@ -91,7 +91,7 @@ apiInstance.deleteConversationRecordingAnnotation(conversationId, recordingId, a
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteOrphanrecording"></a>
 
@@ -140,7 +140,7 @@ apiInstance.deleteOrphanrecording(orphanId)
 
 <a name="deleteRecordingMediaretentionpolicies"></a>
 
-# null deleteRecordingMediaretentionpolicies(ids)
+# void deleteRecordingMediaretentionpolicies(ids)
 
 DELETE /api/v2/recording/mediaretentionpolicies
 
@@ -181,11 +181,11 @@ apiInstance.deleteRecordingMediaretentionpolicies(ids)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteRecordingMediaretentionpolicy"></a>
 
-# null deleteRecordingMediaretentionpolicy(policyId)
+# void deleteRecordingMediaretentionpolicy(policyId)
 
 DELETE /api/v2/recording/mediaretentionpolicies/{policyId}
 
@@ -226,7 +226,7 @@ apiInstance.deleteRecordingMediaretentionpolicy(policyId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getConversationRecording"></a>
 
@@ -1016,7 +1016,7 @@ apiInstance.patchRecordingMediaretentionpolicy(policyId, body)
 
 <a name="patchRecordingsScreensession"></a>
 
-# null patchRecordingsScreensession(recordingSessionId, opts)
+# void patchRecordingsScreensession(recordingSessionId, opts)
 
 PATCH /api/v2/recordings/screensessions/{recordingSessionId}
 
@@ -1061,7 +1061,7 @@ apiInstance.patchRecordingsScreensession(recordingSessionId, opts)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="postConversationRecordingAnnotations"></a>
 

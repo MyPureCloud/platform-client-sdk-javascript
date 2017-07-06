@@ -14,7 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteStationAssociateduser"></a>
 
-# null deleteStationAssociateduser(stationId)
+# void deleteStationAssociateduser(stationId)
 
 DELETE /api/v2/stations/{stationId}/associateduser
 
@@ -55,7 +55,7 @@ apiInstance.deleteStationAssociateduser(stationId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getStation"></a>
 

@@ -28,7 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteAuthorizationRole"></a>
 
-# null deleteAuthorizationRole(roleId)
+# void deleteAuthorizationRole(roleId)
 
 DELETE /api/v2/authorization/roles/{roleId}
 
@@ -69,11 +69,11 @@ apiInstance.deleteAuthorizationRole(roleId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteUserRoles"></a>
 
-# null deleteUserRoles(userId)
+# void deleteUserRoles(userId)
 
 DELETE /api/v2/users/{userId}/roles
 
@@ -114,7 +114,7 @@ apiInstance.deleteUserRoles(userId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getAuthorizationPermissions"></a>
 

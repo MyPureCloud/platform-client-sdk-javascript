@@ -18,7 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteNotificationsChannelSubscriptions"></a>
 
-# null deleteNotificationsChannelSubscriptions(channelId)
+# void deleteNotificationsChannelSubscriptions(channelId)
 
 DELETE /api/v2/notifications/channels/{channelId}/subscriptions
 
@@ -59,7 +59,7 @@ apiInstance.deleteNotificationsChannelSubscriptions(channelId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getNotificationsAvailabletopics"></a>
 

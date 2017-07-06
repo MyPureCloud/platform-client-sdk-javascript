@@ -56,7 +56,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteArchitectPrompt"></a>
 
-# null deleteArchitectPrompt(promptId, opts)
+# void deleteArchitectPrompt(promptId, opts)
 
 DELETE /api/v2/architect/prompts/{promptId}
 
@@ -101,11 +101,11 @@ apiInstance.deleteArchitectPrompt(promptId, opts)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteArchitectPromptResource"></a>
 
-# null deleteArchitectPromptResource(promptId, languageCode)
+# void deleteArchitectPromptResource(promptId, languageCode)
 
 DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}
 
@@ -149,7 +149,7 @@ apiInstance.deleteArchitectPromptResource(promptId, languageCode)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteArchitectPrompts"></a>
 
@@ -198,7 +198,7 @@ apiInstance.deleteArchitectPrompts(id)
 
 <a name="deleteArchitectSystempromptResource"></a>
 
-# null deleteArchitectSystempromptResource(promptId, languageCode)
+# void deleteArchitectSystempromptResource(promptId, languageCode)
 
 DELETE /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}
 
@@ -242,11 +242,11 @@ apiInstance.deleteArchitectSystempromptResource(promptId, languageCode)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteFlow"></a>
 
-# null deleteFlow(flowId)
+# void deleteFlow(flowId)
 
 DELETE /api/v2/flows/{flowId}
 
@@ -287,7 +287,7 @@ apiInstance.deleteFlow(flowId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteFlows"></a>
 
@@ -1543,7 +1543,7 @@ apiInstance.getFlows(type, opts)
 
 <a name="postArchitectDependencytrackingBuild"></a>
 
-# null postArchitectDependencytrackingBuild()
+# void postArchitectDependencytrackingBuild()
 
 POST /api/v2/architect/dependencytracking/build
 
@@ -1578,7 +1578,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="postArchitectPromptResources"></a>
 

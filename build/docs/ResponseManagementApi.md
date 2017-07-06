@@ -22,7 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteResponsemanagementLibrary"></a>
 
-# null deleteResponsemanagementLibrary(libraryId)
+# void deleteResponsemanagementLibrary(libraryId)
 
 DELETE /api/v2/responsemanagement/libraries/{libraryId}
 
@@ -63,11 +63,11 @@ apiInstance.deleteResponsemanagementLibrary(libraryId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="deleteResponsemanagementResponse"></a>
 
-# null deleteResponsemanagementResponse(responseId)
+# void deleteResponsemanagementResponse(responseId)
 
 DELETE /api/v2/responsemanagement/responses/{responseId}
 
@@ -108,7 +108,7 @@ apiInstance.deleteResponsemanagementResponse(responseId)
 
 ### Return type
 
-null (empty response body)
+void (no response body)
 
 <a name="getResponsemanagementLibraries"></a>
 
