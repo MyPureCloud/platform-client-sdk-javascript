@@ -2943,7 +2943,7 @@ var contactListId = "contactListId_example"; // String | Contact List ID
 var body = [new platformClient.DialerContact()]; // [DialerContact] | Contact
 
 var opts = { 
-  'priority': true, // Boolean | Contact priority.  True means the contact(s) will go to the beginning of the list, false means at the end.
+  'priority': true, // Boolean | Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue.
   'clearSystemData': true // Boolean | Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won't.
 };
 apiInstance.postOutboundContactlistContacts(contactListId, body, opts)
@@ -2964,7 +2964,7 @@ apiInstance.postOutboundContactlistContacts(contactListId, body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String**| Contact List ID |  |
  **body** | [**[DialerContact]**](DialerContact.html)| Contact |  |
- **priority** | **Boolean**| Contact priority.  True means the contact(s) will go to the beginning of the list, false means at the end. | [optional]  |
+ **priority** | **Boolean**| Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue. | [optional]  |
  **clearSystemData** | **Boolean**| Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t. | [optional]  |
 {: class="table table-striped"}
 

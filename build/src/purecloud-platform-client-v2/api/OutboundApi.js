@@ -18,7 +18,7 @@
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -1751,7 +1751,7 @@
      * @param {String} contactListId Contact List ID
      * @param {Array.<module:purecloud-platform-client-v2/model/DialerContact>} body Contact
      * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.priority Contact priority.  True means the contact(s) will go to the beginning of the list, false means at the end.
+     * @param {Boolean} opts.priority Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue.
      * @param {Boolean} opts.clearSystemData Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t.
      */
     this.postOutboundContactlistContacts = function(contactListId, body, opts) { 

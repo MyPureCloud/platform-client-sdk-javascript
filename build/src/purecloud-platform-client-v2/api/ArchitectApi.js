@@ -18,7 +18,7 @@
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -777,6 +777,47 @@
         'GET', 
         { 'flowId': flowId }, 
         { 'deleted': opts['deleted'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get generated flow history
+     * 
+     * @param {String} flowId Flow ID
+     * @param {String} historyId History ID (generated history)
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {module:purecloud-platform-client-v2/model/String} opts.sortBy Sort by (default to timestamp)
+     * @param {String} opts.sortOrder Sort order (default to desc)
+     * @param {Array.<String>} opts.action Flow actions
+     */
+    this.getFlowHistoryHistoryId = function(flowId, historyId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'flowId' is set
+      if (flowId === undefined || flowId === null) {
+        throw "Missing the required parameter 'flowId' when calling getFlowHistoryHistoryId";
+      }
+
+      // verify the required parameter 'historyId' is set
+      if (historyId === undefined || historyId === null) {
+        throw "Missing the required parameter 'historyId' when calling getFlowHistoryHistoryId";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/{flowId}/history/{historyId}', 
+        'GET', 
+        { 'flowId': flowId,'historyId': historyId }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'action': this.apiClient.buildCollectionParam(opts['action'], 'multi') }, 
         {  }, 
         {  }, 
         null, 

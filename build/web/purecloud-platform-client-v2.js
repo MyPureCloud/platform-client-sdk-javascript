@@ -3234,7 +3234,7 @@ module.exports = request;
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -3998,7 +3998,7 @@ module.exports = request;
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -4011,62 +4011,6 @@ module.exports = request;
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
-
-
-    /**
-     * Delete a heart beat alert
-     * 
-     * @param {String} alertId Alert ID
-     */
-    this.deleteAlertingHeartbeatAlert = function(alertId) { 
-
-      // verify the required parameter 'alertId' is set
-      if (alertId === undefined || alertId === null) {
-        throw "Missing the required parameter 'alertId' when calling deleteAlertingHeartbeatAlert";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/heartbeat/alerts/{alertId}', 
-        'DELETE', 
-        { 'alertId': alertId }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Delete a heart beat rule.
-     * 
-     * @param {String} ruleId Rule ID
-     */
-    this.deleteAlertingHeartbeatRule = function(ruleId) { 
-
-      // verify the required parameter 'ruleId' is set
-      if (ruleId === undefined || ruleId === null) {
-        throw "Missing the required parameter 'ruleId' when calling deleteAlertingHeartbeatRule";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/heartbeat/rules/{ruleId}', 
-        'DELETE', 
-        { 'ruleId': ruleId }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
 
 
     /**
@@ -4115,230 +4059,6 @@ module.exports = request;
         'DELETE', 
         { 'ruleId': ruleId }, 
         {  }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Delete a routing status alert
-     * 
-     * @param {String} alertId Alert ID
-     */
-    this.deleteAlertingRoutingstatusAlert = function(alertId) { 
-
-      // verify the required parameter 'alertId' is set
-      if (alertId === undefined || alertId === null) {
-        throw "Missing the required parameter 'alertId' when calling deleteAlertingRoutingstatusAlert";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/routingstatus/alerts/{alertId}', 
-        'DELETE', 
-        { 'alertId': alertId }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Delete a routing status rule.
-     * 
-     * @param {String} ruleId Rule ID
-     */
-    this.deleteAlertingRoutingstatusRule = function(ruleId) { 
-
-      // verify the required parameter 'ruleId' is set
-      if (ruleId === undefined || ruleId === null) {
-        throw "Missing the required parameter 'ruleId' when calling deleteAlertingRoutingstatusRule";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/routingstatus/rules/{ruleId}', 
-        'DELETE', 
-        { 'ruleId': ruleId }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Delete a user presence alert
-     * 
-     * @param {String} alertId Alert ID
-     */
-    this.deleteAlertingUserpresenceAlert = function(alertId) { 
-
-      // verify the required parameter 'alertId' is set
-      if (alertId === undefined || alertId === null) {
-        throw "Missing the required parameter 'alertId' when calling deleteAlertingUserpresenceAlert";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/userpresence/alerts/{alertId}', 
-        'DELETE', 
-        { 'alertId': alertId }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Delete a user presence rule.
-     * 
-     * @param {String} ruleId Rule ID
-     */
-    this.deleteAlertingUserpresenceRule = function(ruleId) { 
-
-      // verify the required parameter 'ruleId' is set
-      if (ruleId === undefined || ruleId === null) {
-        throw "Missing the required parameter 'ruleId' when calling deleteAlertingUserpresenceRule";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/userpresence/rules/{ruleId}', 
-        'DELETE', 
-        { 'ruleId': ruleId }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Get a heart beat alert
-     * 
-     * @param {String} alertId Alert ID
-     * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     */
-    this.getAlertingHeartbeatAlert = function(alertId, opts) { 
-      opts = opts || {};
-
-      // verify the required parameter 'alertId' is set
-      if (alertId === undefined || alertId === null) {
-        throw "Missing the required parameter 'alertId' when calling getAlertingHeartbeatAlert";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/heartbeat/alerts/{alertId}', 
-        'GET', 
-        { 'alertId': alertId }, 
-        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Get heart beat alert list.
-     * 
-     * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     */
-    this.getAlertingHeartbeatAlerts = function(opts) { 
-      opts = opts || {};
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/heartbeat/alerts', 
-        'GET', 
-        {  }, 
-        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Get a heart beat rule.
-     * 
-     * @param {String} ruleId Rule ID
-     * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     */
-    this.getAlertingHeartbeatRule = function(ruleId, opts) { 
-      opts = opts || {};
-
-      // verify the required parameter 'ruleId' is set
-      if (ruleId === undefined || ruleId === null) {
-        throw "Missing the required parameter 'ruleId' when calling getAlertingHeartbeatRule";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/heartbeat/rules/{ruleId}', 
-        'GET', 
-        { 'ruleId': ruleId }, 
-        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Get a heart beat rule list.
-     * 
-     * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     */
-    this.getAlertingHeartbeatRules = function(opts) { 
-      opts = opts || {};
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/heartbeat/rules', 
-        'GET', 
-        {  }, 
-        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
         {  }, 
         {  }, 
         null, 
@@ -4484,261 +4204,6 @@ module.exports = request;
 
 
     /**
-     * Get a routing status alert
-     * 
-     * @param {String} alertId Alert ID
-     * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     */
-    this.getAlertingRoutingstatusAlert = function(alertId, opts) { 
-      opts = opts || {};
-
-      // verify the required parameter 'alertId' is set
-      if (alertId === undefined || alertId === null) {
-        throw "Missing the required parameter 'alertId' when calling getAlertingRoutingstatusAlert";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/routingstatus/alerts/{alertId}', 
-        'GET', 
-        { 'alertId': alertId }, 
-        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Get routing status alert list.
-     * 
-     * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     */
-    this.getAlertingRoutingstatusAlerts = function(opts) { 
-      opts = opts || {};
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/routingstatus/alerts', 
-        'GET', 
-        {  }, 
-        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Get a routing status rule.
-     * 
-     * @param {String} ruleId Rule ID
-     * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     */
-    this.getAlertingRoutingstatusRule = function(ruleId, opts) { 
-      opts = opts || {};
-
-      // verify the required parameter 'ruleId' is set
-      if (ruleId === undefined || ruleId === null) {
-        throw "Missing the required parameter 'ruleId' when calling getAlertingRoutingstatusRule";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/routingstatus/rules/{ruleId}', 
-        'GET', 
-        { 'ruleId': ruleId }, 
-        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Get a routing status rule list.
-     * 
-     * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     */
-    this.getAlertingRoutingstatusRules = function(opts) { 
-      opts = opts || {};
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/routingstatus/rules', 
-        'GET', 
-        {  }, 
-        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Get a user presence alert
-     * 
-     * @param {String} alertId Alert ID
-     * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     */
-    this.getAlertingUserpresenceAlert = function(alertId, opts) { 
-      opts = opts || {};
-
-      // verify the required parameter 'alertId' is set
-      if (alertId === undefined || alertId === null) {
-        throw "Missing the required parameter 'alertId' when calling getAlertingUserpresenceAlert";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/userpresence/alerts/{alertId}', 
-        'GET', 
-        { 'alertId': alertId }, 
-        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Get user presence alert list.
-     * 
-     * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     */
-    this.getAlertingUserpresenceAlerts = function(opts) { 
-      opts = opts || {};
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/userpresence/alerts', 
-        'GET', 
-        {  }, 
-        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Get a user presence rule.
-     * 
-     * @param {String} ruleId Rule ID
-     * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     */
-    this.getAlertingUserpresenceRule = function(ruleId, opts) { 
-      opts = opts || {};
-
-      // verify the required parameter 'ruleId' is set
-      if (ruleId === undefined || ruleId === null) {
-        throw "Missing the required parameter 'ruleId' when calling getAlertingUserpresenceRule";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/userpresence/rules/{ruleId}', 
-        'GET', 
-        { 'ruleId': ruleId }, 
-        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Get a user presence rule list.
-     * 
-     * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     */
-    this.getAlertingUserpresenceRules = function(opts) { 
-      opts = opts || {};
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/userpresence/rules', 
-        'GET', 
-        {  }, 
-        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Create a heart beat rule.
-     * 
-     * @param {module:purecloud-platform-client-v2/model/HeartBeatRule} body HeartBeatRule
-     * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     */
-    this.postAlertingHeartbeatRules = function(body, opts) { 
-      opts = opts || {};
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw "Missing the required parameter 'body' when calling postAlertingHeartbeatRules";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/heartbeat/rules', 
-        'POST', 
-        {  }, 
-        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-        {  }, 
-        {  }, 
-        body, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
      * Create an interaction stats rule.
      * 
      * @param {module:purecloud-platform-client-v2/model/InteractionStatsRule} body AlertingRule
@@ -4758,105 +4223,6 @@ module.exports = request;
         '/api/v2/alerting/interactionstats/rules', 
         'POST', 
         {  }, 
-        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-        {  }, 
-        {  }, 
-        body, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Create a routing status rule.
-     * 
-     * @param {module:purecloud-platform-client-v2/model/RoutingStatusRule} body RoutingStatusRule
-     * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     */
-    this.postAlertingRoutingstatusRules = function(body, opts) { 
-      opts = opts || {};
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw "Missing the required parameter 'body' when calling postAlertingRoutingstatusRules";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/routingstatus/rules', 
-        'POST', 
-        {  }, 
-        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-        {  }, 
-        {  }, 
-        body, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Create a user presence rule.
-     * 
-     * @param {module:purecloud-platform-client-v2/model/UserPresenceRule} body UserPresenceRule
-     * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     */
-    this.postAlertingUserpresenceRules = function(body, opts) { 
-      opts = opts || {};
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw "Missing the required parameter 'body' when calling postAlertingUserpresenceRules";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/userpresence/rules', 
-        'POST', 
-        {  }, 
-        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-        {  }, 
-        {  }, 
-        body, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Update a heart beat rule
-     * 
-     * @param {String} ruleId Rule ID
-     * @param {module:purecloud-platform-client-v2/model/HeartBeatRule} body HeartBeatRule
-     * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     */
-    this.putAlertingHeartbeatRule = function(ruleId, body, opts) { 
-      opts = opts || {};
-
-      // verify the required parameter 'ruleId' is set
-      if (ruleId === undefined || ruleId === null) {
-        throw "Missing the required parameter 'ruleId' when calling putAlertingHeartbeatRule";
-      }
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw "Missing the required parameter 'body' when calling putAlertingHeartbeatRule";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/heartbeat/rules/{ruleId}', 
-        'PUT', 
-        { 'ruleId': ruleId }, 
         { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
         {  }, 
         {  }, 
@@ -4940,80 +4306,6 @@ module.exports = request;
         ['application/json']
       );
     };
-
-
-    /**
-     * Update a routing status rule
-     * 
-     * @param {String} ruleId Rule ID
-     * @param {module:purecloud-platform-client-v2/model/RoutingStatusRule} body RoutingStatusRule
-     * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     */
-    this.putAlertingRoutingstatusRule = function(ruleId, body, opts) { 
-      opts = opts || {};
-
-      // verify the required parameter 'ruleId' is set
-      if (ruleId === undefined || ruleId === null) {
-        throw "Missing the required parameter 'ruleId' when calling putAlertingRoutingstatusRule";
-      }
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw "Missing the required parameter 'body' when calling putAlertingRoutingstatusRule";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/routingstatus/rules/{ruleId}', 
-        'PUT', 
-        { 'ruleId': ruleId }, 
-        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-        {  }, 
-        {  }, 
-        body, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Update a user presence rule
-     * 
-     * @param {String} ruleId Rule ID
-     * @param {module:purecloud-platform-client-v2/model/UserPresenceRule} body UserPresenceRule
-     * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     */
-    this.putAlertingUserpresenceRule = function(ruleId, body, opts) { 
-      opts = opts || {};
-
-      // verify the required parameter 'ruleId' is set
-      if (ruleId === undefined || ruleId === null) {
-        throw "Missing the required parameter 'ruleId' when calling putAlertingUserpresenceRule";
-      }
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw "Missing the required parameter 'body' when calling putAlertingUserpresenceRule";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/alerting/userpresence/rules/{ruleId}', 
-        'PUT', 
-        { 'ruleId': ruleId }, 
-        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-        {  }, 
-        {  }, 
-        body, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
   };
 
   return exports;
@@ -5040,7 +4332,7 @@ module.exports = request;
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -5705,7 +4997,7 @@ module.exports = request;
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -6475,6 +5767,47 @@ module.exports = request;
 
 
     /**
+     * Get generated flow history
+     * 
+     * @param {String} flowId Flow ID
+     * @param {String} historyId History ID (generated history)
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {module:purecloud-platform-client-v2/model/String} opts.sortBy Sort by (default to timestamp)
+     * @param {String} opts.sortOrder Sort order (default to desc)
+     * @param {Array.<String>} opts.action Flow actions
+     */
+    this.getFlowHistoryHistoryId = function(flowId, historyId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'flowId' is set
+      if (flowId === undefined || flowId === null) {
+        throw "Missing the required parameter 'flowId' when calling getFlowHistoryHistoryId";
+      }
+
+      // verify the required parameter 'historyId' is set
+      if (historyId === undefined || historyId === null) {
+        throw "Missing the required parameter 'historyId' when calling getFlowHistoryHistoryId";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/{flowId}/history/{historyId}', 
+        'GET', 
+        { 'flowId': flowId,'historyId': historyId }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'action': this.apiClient.buildCollectionParam(opts['action'], 'multi') }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get the latest configuration for flow
      * 
      * @param {String} flowId Flow ID
@@ -7152,7 +6485,7 @@ module.exports = request;
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -7363,7 +6696,7 @@ module.exports = request;
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -7920,7 +7253,7 @@ module.exports = request;
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -9177,7 +8510,7 @@ module.exports = request;
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -11848,7 +11181,7 @@ module.exports = request;
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -12353,6 +11686,7 @@ module.exports = request;
      * @param {Number} opts.pageSize Page size (default to 20)
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {String} opts.q Search query
+     * @param {Array.<String>} opts.trustorId Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested
      * @param {String} opts.sortOrder Sort order
      * @param {Array.<String>} opts.expand which fields, if any, to expand
      * @param {Boolean} opts.includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization
@@ -12365,7 +11699,7 @@ module.exports = request;
         '/api/v2/externalcontacts/organizations', 
         'GET', 
         {  }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'q': opts['q'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'includeTrustors': opts['includeTrustors'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'q': opts['q'],'trustorId': this.apiClient.buildCollectionParam(opts['trustorId'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'includeTrustors': opts['includeTrustors'] }, 
         {  }, 
         {  }, 
         null, 
@@ -12831,7 +12165,7 @@ module.exports = request;
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -13036,7 +12370,7 @@ module.exports = request;
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -13199,7 +12533,7 @@ module.exports = request;
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -13719,7 +13053,7 @@ module.exports = request;
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -14089,7 +13423,7 @@ module.exports = request;
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -14798,7 +14132,7 @@ module.exports = request;
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -15111,7 +14445,7 @@ module.exports = request;
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -15300,7 +14634,7 @@ module.exports = request;
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -15453,7 +14787,7 @@ module.exports = request;
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -15685,7 +15019,7 @@ module.exports = request;
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -15892,7 +15226,7 @@ module.exports = request;
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -16040,7 +15374,7 @@ module.exports = request;
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -17773,7 +17107,7 @@ module.exports = request;
      * @param {String} contactListId Contact List ID
      * @param {Array.<module:purecloud-platform-client-v2/model/DialerContact>} body Contact
      * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.priority Contact priority.  True means the contact(s) will go to the beginning of the list, false means at the end.
+     * @param {Boolean} opts.priority Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue.
      * @param {Boolean} opts.clearSystemData Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t.
      */
     this.postOutboundContactlistContacts = function(contactListId, body, opts) { 
@@ -18631,7 +17965,7 @@ module.exports = request;
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -18915,7 +18249,7 @@ module.exports = request;
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -19958,7 +19292,7 @@ module.exports = request;
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -21022,7 +20356,7 @@ module.exports = request;
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -21393,7 +20727,7 @@ module.exports = request;
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -22786,7 +22120,7 @@ module.exports = request;
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -23100,7 +22434,7 @@ module.exports = request;
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -23557,7 +22891,7 @@ module.exports = request;
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -23684,7 +23018,7 @@ module.exports = request;
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -23849,7 +23183,7 @@ module.exports = request;
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -27598,7 +26932,7 @@ module.exports = request;
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -27681,7 +27015,7 @@ module.exports = request;
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -27896,7 +27230,7 @@ module.exports = request;
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -29284,7 +28618,7 @@ module.exports = request;
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -29399,7 +28733,7 @@ module.exports = request;
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -30048,7 +29382,7 @@ module.exports = request;
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -30500,7 +29834,7 @@ module.exports = request;
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 4.0.0
+   * @version 5.0.0
    */
   var platformClient = {
     /**

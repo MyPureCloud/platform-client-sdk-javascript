@@ -18,7 +18,7 @@
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 4.0.0
+   * @version 5.0.0
    */
 
   /**
@@ -523,6 +523,7 @@
      * @param {Number} opts.pageSize Page size (default to 20)
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {String} opts.q Search query
+     * @param {Array.<String>} opts.trustorId Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested
      * @param {String} opts.sortOrder Sort order
      * @param {Array.<String>} opts.expand which fields, if any, to expand
      * @param {Boolean} opts.includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization
@@ -535,7 +536,7 @@
         '/api/v2/externalcontacts/organizations', 
         'GET', 
         {  }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'q': opts['q'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'includeTrustors': opts['includeTrustors'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'q': opts['q'],'trustorId': this.apiClient.buildCollectionParam(opts['trustorId'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'includeTrustors': opts['includeTrustors'] }, 
         {  }, 
         {  }, 
         null, 

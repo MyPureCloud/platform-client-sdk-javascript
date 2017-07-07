@@ -819,6 +819,7 @@ var opts = {
   'pageSize': 20, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'q': "q_example", // String | Search query
+  'trustorId': ["trustorId_example"], // [String] | Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested
   'sortOrder': "sortOrder_example", // String | Sort order
   'expand': ["expand_example"], // [String] | which fields, if any, to expand
   'includeTrustors': true // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
@@ -842,6 +843,7 @@ apiInstance.getExternalcontactsOrganizations(opts)
  **pageSize** | **Number**| Page size | [optional] [default to 20] |
  **pageNumber** | **Number**| Page number | [optional] [default to 1] |
  **q** | **String**| Search query | [optional]  |
+ **trustorId** | [**[String]**](String.html)| Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested | [optional]  |
  **sortOrder** | **String**| Sort order | [optional]  |
  **expand** | [**[String]**](String.html)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
  **includeTrustors** | **Boolean**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |

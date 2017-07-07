@@ -31,6 +31,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getArchitectSystempromptResources**](ArchitectApi.html#getArchitectSystempromptResources) | **GET** /api/v2/architect/systemprompts/{promptId}/resources | Get system prompt resources.
 [**getArchitectSystemprompts**](ArchitectApi.html#getArchitectSystemprompts) | **GET** /api/v2/architect/systemprompts | Get System Prompts
 [**getFlow**](ArchitectApi.html#getFlow) | **GET** /api/v2/flows/{flowId} | Get flow
+[**getFlowHistoryHistoryId**](ArchitectApi.html#getFlowHistoryHistoryId) | **GET** /api/v2/flows/{flowId}/history/{historyId} | Get generated flow history
 [**getFlowLatestconfiguration**](ArchitectApi.html#getFlowLatestconfiguration) | **GET** /api/v2/flows/{flowId}/latestconfiguration | Get the latest configuration for flow
 [**getFlowVersion**](ArchitectApi.html#getFlowVersion) | **GET** /api/v2/flows/{flowId}/versions/{versionId} | Get flow version
 [**getFlowVersionConfiguration**](ArchitectApi.html#getFlowVersionConfiguration) | **GET** /api/v2/flows/{flowId}/versions/{versionId}/configuration | Create flow version configuration
@@ -1259,6 +1260,66 @@ apiInstance.getFlow(flowId, opts)
 ### Return type
 
 [**Flow**](Flow.html)
+
+<a name="getFlowHistoryHistoryId"></a>
+
+# [**HistoryListing**](HistoryListing.html) getFlowHistoryHistoryId(flowId, historyId, opts)
+
+GET /api/v2/flows/{flowId}/history/{historyId}
+
+Get generated flow history
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var flowId = "flowId_example"; // String | Flow ID
+
+var historyId = "historyId_example"; // String | History ID (generated history)
+
+var opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortBy': "timestamp", // String | Sort by
+  'sortOrder': "desc", // String | Sort order
+  'action': ["action_example"] // [String] | Flow actions
+};
+apiInstance.getFlowHistoryHistoryId(flowId, historyId, opts)
+  .then(function(data) {
+    console.log(`getFlowHistoryHistoryId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getFlowHistoryHistoryId');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **flowId** | **String**| Flow ID |  |
+ **historyId** | **String**| History ID (generated history) |  |
+ **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **pageSize** | **Number**| Page size | [optional] [default to 25] |
+ **sortBy** | **String**| Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user |
+ **sortOrder** | **String**| Sort order | [optional] [default to desc] |
+ **action** | [**[String]**](String.html)| Flow actions | [optional] <br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save |
+{: class="table table-striped"}
+
+### Return type
+
+[**HistoryListing**](HistoryListing.html)
 
 <a name="getFlowLatestconfiguration"></a>
 
