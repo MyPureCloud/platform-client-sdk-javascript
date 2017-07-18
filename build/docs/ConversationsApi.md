@@ -83,6 +83,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsEmailParticipantReplace**](ConversationsApi.html#postConversationsEmailParticipantReplace) | **POST** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationsEmails**](ConversationsApi.html#postConversationsEmails) | **POST** /api/v2/conversations/emails | Create an email conversation
 [**postConversationsFaxes**](ConversationsApi.html#postConversationsFaxes) | **POST** /api/v2/conversations/faxes | Create Fax Conversation
+[**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | **PUT** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata | Set uuiData to be sent on future commands.
 [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | **PUT** /api/v2/conversations/emails/{conversationId}/messages/draft | Update conversation draft reply
 {: class="table table-striped"}
 
@@ -2954,7 +2955,7 @@ var conversationId = "conversationId_example"; // String | conversation ID
 var participantId = "participantId_example"; // String | participant ID
 
 var opts = { 
-  'body': new platformClient.CreateCallbackCommand() // CreateCallbackCommand | 
+  'body': new platformClient.CreateCallbackOnConversationCommand() // CreateCallbackOnConversationCommand | 
 };
 apiInstance.postConversationParticipantCallbacks(conversationId, participantId, opts)
   .then(function() {
@@ -2974,7 +2975,7 @@ apiInstance.postConversationParticipantCallbacks(conversationId, participantId, 
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String**| conversation ID |  |
  **participantId** | **String**| participant ID |  |
- **body** | [**CreateCallbackCommand**](CreateCallbackCommand.html)|  | [optional]  |
+ **body** | [**CreateCallbackOnConversationCommand**](CreateCallbackOnConversationCommand.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3755,6 +3756,60 @@ apiInstance.postConversationsFaxes(body)
 ### Return type
 
 [**FaxSendResponse**](FaxSendResponse.html)
+
+<a name="putConversationsCallParticipantCommunicationUuidata"></a>
+
+# [**Empty**](Empty.html) putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body)
+
+PUT /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata
+
+Set uuiData to be sent on future commands.
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ConversationsApi();
+
+var conversationId = "conversationId_example"; // String | conversationId
+
+var participantId = "participantId_example"; // String | participantId
+
+var communicationId = "communicationId_example"; // String | communicationId
+
+var body = new platformClient.SetUuiDataRequest(); // SetUuiDataRequest | UUIData Request
+
+apiInstance.putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body)
+  .then(function(data) {
+    console.log(`putConversationsCallParticipantCommunicationUuidata success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling putConversationsCallParticipantCommunicationUuidata');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String**| conversationId |  |
+ **participantId** | **String**| participantId |  |
+ **communicationId** | **String**| communicationId |  |
+ **body** | [**SetUuiDataRequest**](SetUuiDataRequest.html)| UUIData Request |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Empty**](Empty.html)
 
 <a name="putConversationsEmailMessagesDraft"></a>
 

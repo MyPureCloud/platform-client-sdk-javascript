@@ -7,9 +7,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteArchitectIvr**](ArchitectApi.html#deleteArchitectIvr) | **DELETE** /api/v2/architect/ivrs/{ivrId} | Delete an IVR Config.
 [**deleteArchitectPrompt**](ArchitectApi.html#deleteArchitectPrompt) | **DELETE** /api/v2/architect/prompts/{promptId} | Delete specified user prompt
 [**deleteArchitectPromptResource**](ArchitectApi.html#deleteArchitectPromptResource) | **DELETE** /api/v2/architect/prompts/{promptId}/resources/{languageCode} | Delete specified user prompt resource
 [**deleteArchitectPrompts**](ArchitectApi.html#deleteArchitectPrompts) | **DELETE** /api/v2/architect/prompts | Batch-delete a list of prompts
+[**deleteArchitectSchedule**](ArchitectApi.html#deleteArchitectSchedule) | **DELETE** /api/v2/architect/schedules/{scheduleId} | Delete a schedule by id
+[**deleteArchitectSchedulegroup**](ArchitectApi.html#deleteArchitectSchedulegroup) | **DELETE** /api/v2/architect/schedulegroups/{scheduleGroupId} | Deletes a schedule group by ID
 [**deleteArchitectSystempromptResource**](ArchitectApi.html#deleteArchitectSystempromptResource) | **DELETE** /api/v2/architect/systemprompts/{promptId}/resources/{languageCode} | Delete a system prompt resource override.
 [**deleteFlow**](ArchitectApi.html#deleteFlow) | **DELETE** /api/v2/flows/{flowId} | Delete flow
 [**deleteFlows**](ArchitectApi.html#deleteFlows) | **DELETE** /api/v2/flows | Batch-delete a list of flows
@@ -22,10 +25,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getArchitectDependencytrackingType**](ArchitectApi.html#getArchitectDependencytrackingType) | **GET** /api/v2/architect/dependencytracking/types/{typeId} | Get a Dependency Tracking type.
 [**getArchitectDependencytrackingTypes**](ArchitectApi.html#getArchitectDependencytrackingTypes) | **GET** /api/v2/architect/dependencytracking/types | Get Dependency Tracking types.
 [**getArchitectDependencytrackingUpdatedresourceconsumers**](ArchitectApi.html#getArchitectDependencytrackingUpdatedresourceconsumers) | **GET** /api/v2/architect/dependencytracking/updatedresourceconsumers | Get Dependency Tracking objects that depend on updated resources
+[**getArchitectIvr**](ArchitectApi.html#getArchitectIvr) | **GET** /api/v2/architect/ivrs/{ivrId} | Get an IVR config.
+[**getArchitectIvrs**](ArchitectApi.html#getArchitectIvrs) | **GET** /api/v2/architect/ivrs | Get IVR configs.
 [**getArchitectPrompt**](ArchitectApi.html#getArchitectPrompt) | **GET** /api/v2/architect/prompts/{promptId} | Get specified user prompt
 [**getArchitectPromptResource**](ArchitectApi.html#getArchitectPromptResource) | **GET** /api/v2/architect/prompts/{promptId}/resources/{languageCode} | Get specified user prompt resource
 [**getArchitectPromptResources**](ArchitectApi.html#getArchitectPromptResources) | **GET** /api/v2/architect/prompts/{promptId}/resources | Get a pageable list of user prompt resources
 [**getArchitectPrompts**](ArchitectApi.html#getArchitectPrompts) | **GET** /api/v2/architect/prompts | Get a pageable list of user prompts
+[**getArchitectSchedule**](ArchitectApi.html#getArchitectSchedule) | **GET** /api/v2/architect/schedules/{scheduleId} | Get a schedule by ID
+[**getArchitectSchedulegroup**](ArchitectApi.html#getArchitectSchedulegroup) | **GET** /api/v2/architect/schedulegroups/{scheduleGroupId} | Gets a schedule group by ID
+[**getArchitectSchedulegroups**](ArchitectApi.html#getArchitectSchedulegroups) | **GET** /api/v2/architect/schedulegroups | Get a list of schedule groups.
+[**getArchitectSchedules**](ArchitectApi.html#getArchitectSchedules) | **GET** /api/v2/architect/schedules | Get a list of schedules.
 [**getArchitectSystemprompt**](ArchitectApi.html#getArchitectSystemprompt) | **GET** /api/v2/architect/systemprompts/{promptId} | Get a system prompt
 [**getArchitectSystempromptResource**](ArchitectApi.html#getArchitectSystempromptResource) | **GET** /api/v2/architect/systemprompts/{promptId}/resources/{languageCode} | Get a system prompt resource.
 [**getArchitectSystempromptResources**](ArchitectApi.html#getArchitectSystempromptResources) | **GET** /api/v2/architect/systemprompts/{promptId}/resources | Get system prompt resources.
@@ -38,8 +47,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowVersions**](ArchitectApi.html#getFlowVersions) | **GET** /api/v2/flows/{flowId}/versions | Get flow version list
 [**getFlows**](ArchitectApi.html#getFlows) | **GET** /api/v2/flows | Get a pageable list of flows, filtered by query parameters
 [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | **POST** /api/v2/architect/dependencytracking/build | Rebuild Dependency Tracking data for an organization
+[**postArchitectIvrs**](ArchitectApi.html#postArchitectIvrs) | **POST** /api/v2/architect/ivrs | Create IVR config.
 [**postArchitectPromptResources**](ArchitectApi.html#postArchitectPromptResources) | **POST** /api/v2/architect/prompts/{promptId}/resources | Create a new user prompt resource
 [**postArchitectPrompts**](ArchitectApi.html#postArchitectPrompts) | **POST** /api/v2/architect/prompts | Create a new user prompt
+[**postArchitectSchedulegroups**](ArchitectApi.html#postArchitectSchedulegroups) | **POST** /api/v2/architect/schedulegroups | Creates a new schedule group
+[**postArchitectSchedules**](ArchitectApi.html#postArchitectSchedules) | **POST** /api/v2/architect/schedules | Create a new schedule.
 [**postArchitectSystempromptResources**](ArchitectApi.html#postArchitectSystempromptResources) | **POST** /api/v2/architect/systemprompts/{promptId}/resources | Create system prompt resource override.
 [**postFlowVersions**](ArchitectApi.html#postFlowVersions) | **POST** /api/v2/flows/{flowId}/versions | Create flow version
 [**postFlows**](ArchitectApi.html#postFlows) | **POST** /api/v2/flows | Create flow
@@ -49,11 +61,59 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postFlowsActionsPublish**](ArchitectApi.html#postFlowsActionsPublish) | **POST** /api/v2/flows/actions/publish | Publish flow
 [**postFlowsActionsRevert**](ArchitectApi.html#postFlowsActionsRevert) | **POST** /api/v2/flows/actions/revert | Revert flow
 [**postFlowsActionsUnlock**](ArchitectApi.html#postFlowsActionsUnlock) | **POST** /api/v2/flows/actions/unlock | Unlock flow
+[**putArchitectIvr**](ArchitectApi.html#putArchitectIvr) | **PUT** /api/v2/architect/ivrs/{ivrId} | Update an IVR Config.
 [**putArchitectPrompt**](ArchitectApi.html#putArchitectPrompt) | **PUT** /api/v2/architect/prompts/{promptId} | Update specified user prompt
 [**putArchitectPromptResource**](ArchitectApi.html#putArchitectPromptResource) | **PUT** /api/v2/architect/prompts/{promptId}/resources/{languageCode} | Update specified user prompt resource
+[**putArchitectSchedule**](ArchitectApi.html#putArchitectSchedule) | **PUT** /api/v2/architect/schedules/{scheduleId} | Update schedule by ID
+[**putArchitectSchedulegroup**](ArchitectApi.html#putArchitectSchedulegroup) | **PUT** /api/v2/architect/schedulegroups/{scheduleGroupId} | Updates a schedule group by ID
 [**putArchitectSystempromptResource**](ArchitectApi.html#putArchitectSystempromptResource) | **PUT** /api/v2/architect/systemprompts/{promptId}/resources/{languageCode} | Updates a system prompt resource override.
 [**putFlow**](ArchitectApi.html#putFlow) | **PUT** /api/v2/flows/{flowId} | Update flow
 {: class="table table-striped"}
+
+<a name="deleteArchitectIvr"></a>
+
+# void deleteArchitectIvr(ivrId)
+
+DELETE /api/v2/architect/ivrs/{ivrId}
+
+Delete an IVR Config.
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var ivrId = "ivrId_example"; // String | IVR id
+
+apiInstance.deleteArchitectIvr(ivrId)
+  .then(function() {
+    console.log('deleteArchitectIvr returned successfully.');
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling deleteArchitectIvr');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **ivrId** | **String**| IVR id |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deleteArchitectPrompt"></a>
 
@@ -196,6 +256,96 @@ apiInstance.deleteArchitectPrompts(id)
 ### Return type
 
 [**Operation**](Operation.html)
+
+<a name="deleteArchitectSchedule"></a>
+
+# void deleteArchitectSchedule(scheduleId)
+
+DELETE /api/v2/architect/schedules/{scheduleId}
+
+Delete a schedule by id
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var scheduleId = "scheduleId_example"; // String | Schedule ID
+
+apiInstance.deleteArchitectSchedule(scheduleId)
+  .then(function() {
+    console.log('deleteArchitectSchedule returned successfully.');
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling deleteArchitectSchedule');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **scheduleId** | **String**| Schedule ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteArchitectSchedulegroup"></a>
+
+# void deleteArchitectSchedulegroup(scheduleGroupId)
+
+DELETE /api/v2/architect/schedulegroups/{scheduleGroupId}
+
+Deletes a schedule group by ID
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var scheduleGroupId = "scheduleGroupId_example"; // String | Schedule group ID
+
+apiInstance.deleteArchitectSchedulegroup(scheduleGroupId)
+  .then(function() {
+    console.log('deleteArchitectSchedulegroup returned successfully.');
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling deleteArchitectSchedulegroup');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **scheduleGroupId** | **String**| Schedule group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deleteArchitectSystempromptResource"></a>
 
@@ -808,6 +958,103 @@ apiInstance.getArchitectDependencytrackingUpdatedresourceconsumers(opts)
 
 [**DependencyObjectEntityListing**](DependencyObjectEntityListing.html)
 
+<a name="getArchitectIvr"></a>
+
+# [**IVR**](IVR.html) getArchitectIvr(ivrId)
+
+GET /api/v2/architect/ivrs/{ivrId}
+
+Get an IVR config.
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var ivrId = "ivrId_example"; // String | IVR id
+
+apiInstance.getArchitectIvr(ivrId)
+  .then(function(data) {
+    console.log(`getArchitectIvr success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getArchitectIvr');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **ivrId** | **String**| IVR id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**IVR**](IVR.html)
+
+<a name="getArchitectIvrs"></a>
+
+# [**IVREntityListing**](IVREntityListing.html) getArchitectIvrs(opts)
+
+GET /api/v2/architect/ivrs
+
+Get IVR configs.
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortBy': "name", // String | Sort by
+  'sortOrder': "ASC" // String | Sort order
+};
+apiInstance.getArchitectIvrs(opts)
+  .then(function(data) {
+    console.log(`getArchitectIvrs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getArchitectIvrs');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **pageSize** | **Number**| Page size | [optional] [default to 25] |
+ **sortBy** | **String**| Sort by | [optional] [default to name] |
+ **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
+{: class="table table-striped"}
+
+### Return type
+
+[**IVREntityListing**](IVREntityListing.html)
+
 <a name="getArchitectPrompt"></a>
 
 # [**Prompt**](Prompt.html) getArchitectPrompt(promptId)
@@ -1005,6 +1252,200 @@ apiInstance.getArchitectPrompts(opts)
 ### Return type
 
 [**PromptEntityListing**](PromptEntityListing.html)
+
+<a name="getArchitectSchedule"></a>
+
+# [**Schedule**](Schedule.html) getArchitectSchedule(scheduleId)
+
+GET /api/v2/architect/schedules/{scheduleId}
+
+Get a schedule by ID
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var scheduleId = "scheduleId_example"; // String | Schedule ID
+
+apiInstance.getArchitectSchedule(scheduleId)
+  .then(function(data) {
+    console.log(`getArchitectSchedule success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getArchitectSchedule');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **scheduleId** | **String**| Schedule ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Schedule**](Schedule.html)
+
+<a name="getArchitectSchedulegroup"></a>
+
+# [**ScheduleGroup**](ScheduleGroup.html) getArchitectSchedulegroup(scheduleGroupId)
+
+GET /api/v2/architect/schedulegroups/{scheduleGroupId}
+
+Gets a schedule group by ID
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var scheduleGroupId = "scheduleGroupId_example"; // String | Schedule group ID
+
+apiInstance.getArchitectSchedulegroup(scheduleGroupId)
+  .then(function(data) {
+    console.log(`getArchitectSchedulegroup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getArchitectSchedulegroup');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **scheduleGroupId** | **String**| Schedule group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScheduleGroup**](ScheduleGroup.html)
+
+<a name="getArchitectSchedulegroups"></a>
+
+# [**ScheduleGroupEntityListing**](ScheduleGroupEntityListing.html) getArchitectSchedulegroups(opts)
+
+GET /api/v2/architect/schedulegroups
+
+Get a list of schedule groups.
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortBy': "name", // String | Sort by
+  'sortOrder': "ASC" // String | Sort order
+};
+apiInstance.getArchitectSchedulegroups(opts)
+  .then(function(data) {
+    console.log(`getArchitectSchedulegroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getArchitectSchedulegroups');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **pageSize** | **Number**| Page size | [optional] [default to 25] |
+ **sortBy** | **String**| Sort by | [optional] [default to name] |
+ **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScheduleGroupEntityListing**](ScheduleGroupEntityListing.html)
+
+<a name="getArchitectSchedules"></a>
+
+# [**ScheduleEntityListing**](ScheduleEntityListing.html) getArchitectSchedules(opts)
+
+GET /api/v2/architect/schedules
+
+Get a list of schedules.
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortBy': "name", // String | Sort by
+  'sortOrder': "ASC" // String | Sort order
+};
+apiInstance.getArchitectSchedules(opts)
+  .then(function(data) {
+    console.log(`getArchitectSchedules success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getArchitectSchedules');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **pageSize** | **Number**| Page size | [optional] [default to 25] |
+ **sortBy** | **String**| Sort by | [optional] [default to name] |
+ **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScheduleEntityListing**](ScheduleEntityListing.html)
 
 <a name="getArchitectSystemprompt"></a>
 
@@ -1641,6 +2082,52 @@ This endpoint does not need any parameter.
 
 void (no response body)
 
+<a name="postArchitectIvrs"></a>
+
+# [**IVR**](IVR.html) postArchitectIvrs(opts)
+
+POST /api/v2/architect/ivrs
+
+Create IVR config.
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var opts = { 
+  'body': new platformClient.IVR() // IVR | 
+};
+apiInstance.postArchitectIvrs(opts)
+  .then(function(data) {
+    console.log(`postArchitectIvrs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling postArchitectIvrs');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | [**IVR**](IVR.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**IVR**](IVR.html)
+
 <a name="postArchitectPromptResources"></a>
 
 # [**PromptAsset**](PromptAsset.html) postArchitectPromptResources(promptId, opts)
@@ -1735,6 +2222,98 @@ apiInstance.postArchitectPrompts(opts)
 ### Return type
 
 [**Prompt**](Prompt.html)
+
+<a name="postArchitectSchedulegroups"></a>
+
+# [**ScheduleGroup**](ScheduleGroup.html) postArchitectSchedulegroups(opts)
+
+POST /api/v2/architect/schedulegroups
+
+Creates a new schedule group
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var opts = { 
+  'body': new platformClient.ScheduleGroup() // ScheduleGroup | 
+};
+apiInstance.postArchitectSchedulegroups(opts)
+  .then(function(data) {
+    console.log(`postArchitectSchedulegroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling postArchitectSchedulegroups');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | [**ScheduleGroup**](ScheduleGroup.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScheduleGroup**](ScheduleGroup.html)
+
+<a name="postArchitectSchedules"></a>
+
+# [**Schedule**](Schedule.html) postArchitectSchedules(opts)
+
+POST /api/v2/architect/schedules
+
+Create a new schedule.
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var opts = { 
+  'body': new platformClient.Schedule() // Schedule | 
+};
+apiInstance.postArchitectSchedules(opts)
+  .then(function(data) {
+    console.log(`postArchitectSchedules success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling postArchitectSchedules');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | [**Schedule**](Schedule.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Schedule**](Schedule.html)
 
 <a name="postArchitectSystempromptResources"></a>
 
@@ -2154,6 +2733,55 @@ apiInstance.postFlowsActionsUnlock(flow)
 
 [**Flow**](Flow.html)
 
+<a name="putArchitectIvr"></a>
+
+# [**IVR**](IVR.html) putArchitectIvr(ivrId, opts)
+
+PUT /api/v2/architect/ivrs/{ivrId}
+
+Update an IVR Config.
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var ivrId = "ivrId_example"; // String | IVR id
+
+var opts = { 
+  'body': new platformClient.IVR() // IVR | 
+};
+apiInstance.putArchitectIvr(ivrId, opts)
+  .then(function(data) {
+    console.log(`putArchitectIvr success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling putArchitectIvr');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **ivrId** | **String**| IVR id |  |
+ **body** | [**IVR**](IVR.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**IVR**](IVR.html)
+
 <a name="putArchitectPrompt"></a>
 
 # [**Prompt**](Prompt.html) putArchitectPrompt(promptId, opts)
@@ -2254,6 +2882,104 @@ apiInstance.putArchitectPromptResource(promptId, languageCode, opts)
 ### Return type
 
 [**PromptAsset**](PromptAsset.html)
+
+<a name="putArchitectSchedule"></a>
+
+# [**Schedule**](Schedule.html) putArchitectSchedule(scheduleId, opts)
+
+PUT /api/v2/architect/schedules/{scheduleId}
+
+Update schedule by ID
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var scheduleId = "scheduleId_example"; // String | Schedule ID
+
+var opts = { 
+  'body': new platformClient.Schedule() // Schedule | 
+};
+apiInstance.putArchitectSchedule(scheduleId, opts)
+  .then(function(data) {
+    console.log(`putArchitectSchedule success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling putArchitectSchedule');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **scheduleId** | **String**| Schedule ID |  |
+ **body** | [**Schedule**](Schedule.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Schedule**](Schedule.html)
+
+<a name="putArchitectSchedulegroup"></a>
+
+# [**ScheduleGroup**](ScheduleGroup.html) putArchitectSchedulegroup(scheduleGroupId, opts)
+
+PUT /api/v2/architect/schedulegroups/{scheduleGroupId}
+
+Updates a schedule group by ID
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var scheduleGroupId = "scheduleGroupId_example"; // String | Schedule group ID
+
+var opts = { 
+  'body': new platformClient.ScheduleGroup() // ScheduleGroup | 
+};
+apiInstance.putArchitectSchedulegroup(scheduleGroupId, opts)
+  .then(function(data) {
+    console.log(`putArchitectSchedulegroup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling putArchitectSchedulegroup');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **scheduleGroupId** | **String**| Schedule group ID |  |
+ **body** | [**ScheduleGroup**](ScheduleGroup.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScheduleGroup**](ScheduleGroup.html)
 
 <a name="putArchitectSystempromptResource"></a>
 

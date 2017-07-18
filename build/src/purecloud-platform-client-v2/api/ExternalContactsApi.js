@@ -18,7 +18,7 @@
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 5.1.0
+   * @version 6.0.0
    */
 
   /**
@@ -385,7 +385,7 @@
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {String} opts.q User supplied search keywords (no special syntax is currently supported)
      * @param {String} opts.sortOrder Sort order
-     * @param {Array.<String>} opts.expand which fields, if any, to expand (externalOrganization)
+     * @param {Array.<String>} opts.expand which fields, if any, to expand
      */
     this.getExternalcontactsOrganizationContacts = function(externalOrganizationId, opts) { 
       opts = opts || {};

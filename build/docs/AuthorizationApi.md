@@ -323,6 +323,7 @@ var opts = {
   'expand': null, // [Object] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
+  'name': "name_example", // String | 
   'permission': null, // [Object] | 
   'defaultRoleId': null, // [Object] | 
   'userCount': true // Boolean | 
@@ -349,6 +350,7 @@ apiInstance.getAuthorizationRoles(opts)
  **expand** | [**[Object]**](Object.html)| variable name requested by expand list | [optional]  |
  **nextPage** | **String**| next page token | [optional]  |
  **previousPage** | **String**| Previous page token | [optional]  |
+ **name** | **String**|  | [optional]  |
  **permission** | [**[Object]**](Object.html)|  | [optional]  |
  **defaultRoleId** | [**[Object]**](Object.html)|  | [optional]  |
  **userCount** | **Boolean**|  | [optional] [default to true] |

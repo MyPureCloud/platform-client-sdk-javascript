@@ -18,7 +18,7 @@
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 5.1.0
+   * @version 6.0.0
    */
 
   /**
@@ -31,6 +31,34 @@
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
+
+
+    /**
+     * Delete an IVR Config.
+     * 
+     * @param {String} ivrId IVR id
+     */
+    this.deleteArchitectIvr = function(ivrId) { 
+
+      // verify the required parameter 'ivrId' is set
+      if (ivrId === undefined || ivrId === null) {
+        throw "Missing the required parameter 'ivrId' when calling deleteArchitectIvr";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/ivrs/{ivrId}', 
+        'DELETE', 
+        { 'ivrId': ivrId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
 
 
     /**
@@ -116,6 +144,62 @@
         'DELETE', 
         {  }, 
         { 'id': this.apiClient.buildCollectionParam(id, 'multi') }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Delete a schedule by id
+     * 
+     * @param {String} scheduleId Schedule ID
+     */
+    this.deleteArchitectSchedule = function(scheduleId) { 
+
+      // verify the required parameter 'scheduleId' is set
+      if (scheduleId === undefined || scheduleId === null) {
+        throw "Missing the required parameter 'scheduleId' when calling deleteArchitectSchedule";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/schedules/{scheduleId}', 
+        'DELETE', 
+        { 'scheduleId': scheduleId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Deletes a schedule group by ID
+     * 
+     * @param {String} scheduleGroupId Schedule group ID
+     */
+    this.deleteArchitectSchedulegroup = function(scheduleGroupId) { 
+
+      // verify the required parameter 'scheduleGroupId' is set
+      if (scheduleGroupId === undefined || scheduleGroupId === null) {
+        throw "Missing the required parameter 'scheduleGroupId' when calling deleteArchitectSchedulegroup";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/schedulegroups/{scheduleGroupId}', 
+        'DELETE', 
+        { 'scheduleGroupId': scheduleGroupId }, 
+        {  }, 
         {  }, 
         {  }, 
         null, 
@@ -507,6 +591,62 @@
 
 
     /**
+     * Get an IVR config.
+     * 
+     * @param {String} ivrId IVR id
+     */
+    this.getArchitectIvr = function(ivrId) { 
+
+      // verify the required parameter 'ivrId' is set
+      if (ivrId === undefined || ivrId === null) {
+        throw "Missing the required parameter 'ivrId' when calling getArchitectIvr";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/ivrs/{ivrId}', 
+        'GET', 
+        { 'ivrId': ivrId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get IVR configs.
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {String} opts.sortBy Sort by (default to name)
+     * @param {String} opts.sortOrder Sort order (default to ASC)
+     */
+    this.getArchitectIvrs = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/ivrs', 
+        'GET', 
+        {  }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get specified user prompt
      * 
      * @param {String} promptId Prompt ID
@@ -619,6 +759,118 @@
         'GET', 
         {  }, 
         { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a schedule by ID
+     * 
+     * @param {String} scheduleId Schedule ID
+     */
+    this.getArchitectSchedule = function(scheduleId) { 
+
+      // verify the required parameter 'scheduleId' is set
+      if (scheduleId === undefined || scheduleId === null) {
+        throw "Missing the required parameter 'scheduleId' when calling getArchitectSchedule";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/schedules/{scheduleId}', 
+        'GET', 
+        { 'scheduleId': scheduleId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Gets a schedule group by ID
+     * 
+     * @param {String} scheduleGroupId Schedule group ID
+     */
+    this.getArchitectSchedulegroup = function(scheduleGroupId) { 
+
+      // verify the required parameter 'scheduleGroupId' is set
+      if (scheduleGroupId === undefined || scheduleGroupId === null) {
+        throw "Missing the required parameter 'scheduleGroupId' when calling getArchitectSchedulegroup";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/schedulegroups/{scheduleGroupId}', 
+        'GET', 
+        { 'scheduleGroupId': scheduleGroupId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a list of schedule groups.
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {String} opts.sortBy Sort by (default to name)
+     * @param {String} opts.sortOrder Sort order (default to ASC)
+     */
+    this.getArchitectSchedulegroups = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/schedulegroups', 
+        'GET', 
+        {  }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a list of schedules.
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {String} opts.sortBy Sort by (default to name)
+     * @param {String} opts.sortOrder Sort order (default to ASC)
+     */
+    this.getArchitectSchedules = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/schedules', 
+        'GET', 
+        {  }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
         {  }, 
         {  }, 
         null, 
@@ -1033,6 +1285,31 @@
 
 
     /**
+     * Create IVR config.
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {module:purecloud-platform-client-v2/model/IVR} opts.body 
+     */
+    this.postArchitectIvrs = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/ivrs', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Create a new user prompt resource
      * 
      * @param {String} promptId Prompt ID
@@ -1075,6 +1352,56 @@
 
       return this.apiClient.callApi(
         '/api/v2/architect/prompts', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Creates a new schedule group
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {module:purecloud-platform-client-v2/model/ScheduleGroup} opts.body 
+     */
+    this.postArchitectSchedulegroups = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/schedulegroups', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Create a new schedule.
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {module:purecloud-platform-client-v2/model/Schedule} opts.body 
+     */
+    this.postArchitectSchedules = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/schedules', 
         'POST', 
         {  }, 
         {  }, 
@@ -1347,6 +1674,37 @@
 
 
     /**
+     * Update an IVR Config.
+     * 
+     * @param {String} ivrId IVR id
+     * @param {Object} opts Optional parameters
+     * @param {module:purecloud-platform-client-v2/model/IVR} opts.body 
+     */
+    this.putArchitectIvr = function(ivrId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'ivrId' is set
+      if (ivrId === undefined || ivrId === null) {
+        throw "Missing the required parameter 'ivrId' when calling putArchitectIvr";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/ivrs/{ivrId}', 
+        'PUT', 
+        { 'ivrId': ivrId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Update specified user prompt
      * 
      * @param {String} promptId Prompt ID
@@ -1403,6 +1761,68 @@
         '/api/v2/architect/prompts/{promptId}/resources/{languageCode}', 
         'PUT', 
         { 'promptId': promptId,'languageCode': languageCode }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update schedule by ID
+     * 
+     * @param {String} scheduleId Schedule ID
+     * @param {Object} opts Optional parameters
+     * @param {module:purecloud-platform-client-v2/model/Schedule} opts.body 
+     */
+    this.putArchitectSchedule = function(scheduleId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'scheduleId' is set
+      if (scheduleId === undefined || scheduleId === null) {
+        throw "Missing the required parameter 'scheduleId' when calling putArchitectSchedule";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/schedules/{scheduleId}', 
+        'PUT', 
+        { 'scheduleId': scheduleId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Updates a schedule group by ID
+     * 
+     * @param {String} scheduleGroupId Schedule group ID
+     * @param {Object} opts Optional parameters
+     * @param {module:purecloud-platform-client-v2/model/ScheduleGroup} opts.body 
+     */
+    this.putArchitectSchedulegroup = function(scheduleGroupId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'scheduleGroupId' is set
+      if (scheduleGroupId === undefined || scheduleGroupId === null) {
+        throw "Missing the required parameter 'scheduleGroupId' when calling putArchitectSchedulegroup";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/schedulegroups/{scheduleGroupId}', 
+        'PUT', 
+        { 'scheduleGroupId': scheduleGroupId }, 
         {  }, 
         {  }, 
         {  }, 

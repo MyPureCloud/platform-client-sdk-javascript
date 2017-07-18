@@ -18,7 +18,7 @@
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 5.1.0
+   * @version 6.0.0
    */
 
   /**
@@ -2047,7 +2047,7 @@
      * @param {String} conversationId conversation ID
      * @param {String} participantId participant ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/CreateCallbackCommand} opts.body 
+     * @param {module:purecloud-platform-client-v2/model/CreateCallbackOnConversationCommand} opts.body 
      */
     this.postConversationParticipantCallbacks = function(conversationId, participantId, opts) { 
       opts = opts || {};
@@ -2620,6 +2620,52 @@
         '/api/v2/conversations/faxes', 
         'POST', 
         {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Set uuiData to be sent on future commands.
+     * 
+     * @param {String} conversationId conversationId
+     * @param {String} participantId participantId
+     * @param {String} communicationId communicationId
+     * @param {module:purecloud-platform-client-v2/model/SetUuiDataRequest} body UUIData Request
+     */
+    this.putConversationsCallParticipantCommunicationUuidata = function(conversationId, participantId, communicationId, body) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling putConversationsCallParticipantCommunicationUuidata";
+      }
+
+      // verify the required parameter 'participantId' is set
+      if (participantId === undefined || participantId === null) {
+        throw "Missing the required parameter 'participantId' when calling putConversationsCallParticipantCommunicationUuidata";
+      }
+
+      // verify the required parameter 'communicationId' is set
+      if (communicationId === undefined || communicationId === null) {
+        throw "Missing the required parameter 'communicationId' when calling putConversationsCallParticipantCommunicationUuidata";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putConversationsCallParticipantCommunicationUuidata";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata', 
+        'PUT', 
+        { 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId }, 
         {  }, 
         {  }, 
         {  }, 

@@ -941,7 +941,7 @@ apiInstance.getRoutingQueueUsers(queueId, opts)
  **pageSize** | **Number**| Page size | [optional] [default to 25] |
  **pageNumber** | **Number**| Page number | [optional] [default to 1] |
  **sortBy** | **String**| Sort by | [optional] [default to name] |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token |
+ **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
  **joined** | **Boolean**| Filter by joined status | [optional]  |
  **name** | **String**| Filter by queue member name | [optional]  |
  **profileSkills** | [**[String]**](String.html)| Filter by profile skill | [optional]  |

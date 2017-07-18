@@ -18,7 +18,7 @@
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 5.1.0
+   * @version 6.0.0
    */
 
   /**

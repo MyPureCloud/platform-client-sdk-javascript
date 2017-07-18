@@ -603,7 +603,7 @@ var opts = {
   'pageNumber': 1, // Number | Page number
   'q': "q_example", // String | User supplied search keywords (no special syntax is currently supported)
   'sortOrder': "sortOrder_example", // String | Sort order
-  'expand': ["expand_example"] // [String] | which fields, if any, to expand (externalOrganization)
+  'expand': ["expand_example"] // [String] | which fields, if any, to expand
 };
 apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts)
   .then(function(data) {
@@ -626,7 +626,7 @@ apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts
  **pageNumber** | **Number**| Page number | [optional] [default to 1] |
  **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional]  |
  **sortOrder** | **String**| Sort order | [optional]  |
- **expand** | [**[String]**](String.html)| which fields, if any, to expand (externalOrganization) | [optional] <br />**Values**: externalOrganization |
+ **expand** | [**[String]**](String.html)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
