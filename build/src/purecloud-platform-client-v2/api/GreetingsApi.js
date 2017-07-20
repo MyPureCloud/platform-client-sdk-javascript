@@ -18,7 +18,7 @@
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 6.0.0
+   * @version 6.0.1
    */
 
   /**

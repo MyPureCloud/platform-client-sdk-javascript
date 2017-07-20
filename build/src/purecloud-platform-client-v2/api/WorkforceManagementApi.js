@@ -18,7 +18,7 @@
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 6.0.0
+   * @version 6.0.1
    */
 
   /**

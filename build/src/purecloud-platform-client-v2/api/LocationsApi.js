@@ -18,7 +18,7 @@
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 6.0.0
+   * @version 6.0.1
    */
 
   /**

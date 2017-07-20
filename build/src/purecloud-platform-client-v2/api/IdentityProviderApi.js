@@ -18,7 +18,7 @@
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 6.0.0
+   * @version 6.0.1
    */
 
   /**

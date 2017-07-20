@@ -17,7 +17,7 @@
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 6.0.0
+   * @version 6.0.1
    */
 
   /**
@@ -89,7 +89,7 @@
   exports.prototype.setPersistSettings = function setPersistSettings(doPersist, prefix) {
     this.persistSettings = doPersist;
     this.settingsPrefix = prefix ? prefix.replace(/\W+/g, '_') : 'purecloud';
-    console.log(`this.settingsPrefix=${this.settingsPrefix}`);
+    this._debugTrace(`this.settingsPrefix=${this.settingsPrefix}`);
   };
 
   /**
@@ -102,16 +102,16 @@
 
       // Ensure we can access local storage
       if (!exports.hasLocalStorage) {
-        console.log('Warning: Cannot access local storage. Settings will not be saved.');
+        this._debugTrace('Warning: Cannot access local storage. Settings will not be saved.');
         return;
       }
 
       // Save settings
       if (this.authentications['PureCloud Auth'].accessToken) {
         localStorage.setItem(`${this.settingsPrefix}_access_token`, this.authentications['PureCloud Auth'].accessToken);
-        console.log('Access token saved to local storage');
+        this._debugTrace('Access token saved to local storage');
       } else {
-        console.log('Access token cleared');
+        this._debugTrace('Access token cleared');
         localStorage.removeItem(`${this.settingsPrefix}_access_token`);
       }
     } catch (e) {
@@ -128,14 +128,14 @@
 
     // Ensure we can access local storage
     if (!exports.hasLocalStorage) {
-      console.log('Warning: Cannot access local storage. Settings will not be loaded.');
+      this._debugTrace('Warning: Cannot access local storage. Settings will not be loaded.');
       return;
     }
 
     var token = localStorage.getItem(`${this.settingsPrefix}_access_token`);
     if (token) {
       this.setAccessToken(token);
-      console.log('Access token retrieved from local storage');
+      this._debugTrace('Access token retrieved from local storage');
     }
   };
 
@@ -187,7 +187,7 @@
           };
 
           var url = self._buildAuthUrl('oauth/authorize', query);
-          console.log(`Implicit grant: redirecting to ${url} for authorization...`);
+          self._debugTrace(`Implicit grant: redirecting to ${url} for authorization...`);
           window.location.replace(url);
         });
     });
@@ -210,7 +210,6 @@
         return;
       }
 
-      console.log('Requesting token');
       // Build token request
       var request = superagent('POST', `https://login.${self.environment}/oauth/token`);
       request.set('Authorization', `Basic ${authHeader}`);
@@ -219,12 +218,10 @@
       // Execute request
       request.end(function(error, response) {
         if (error) {
-          console.log('Error authenticating!');
-          console.log(error);
           reject(error);
         } else {
           self.setAccessToken(response.body['access_token']);
-          console.log(`Access token expires in ${response.body['expires_in']} seconds`);
+          self._debugTrace(`Access token expires in ${response.body['expires_in']} seconds`);
           resolve();
         }
       });
@@ -644,7 +641,7 @@
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    request.set({ 'purecloud-sdk': '6.0.0' });
+    request.set({ 'purecloud-sdk': '6.0.1' });
 
     // set request timeout
     request.timeout(this.timeout);
