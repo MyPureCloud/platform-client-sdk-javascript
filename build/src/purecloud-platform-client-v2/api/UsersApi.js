@@ -18,7 +18,7 @@
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -1145,7 +1145,7 @@
      * Update an OutOfOffice
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/OutOfOffice} body The updated UserPresence
+     * @param {module:purecloud-platform-client-v2/model/OutOfOffice} body The updated OutOffOffice
      */
     this.putUserOutofoffice = function(userId, body) { 
 

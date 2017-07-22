@@ -3234,7 +3234,7 @@ module.exports = request;
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -3858,7 +3858,7 @@ module.exports = request;
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    request.set({ 'purecloud-sdk': '6.0.1' });
+    request.set({ 'purecloud-sdk': '6.1.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -3996,7 +3996,7 @@ module.exports = request;
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -4330,7 +4330,7 @@ module.exports = request;
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -4995,7 +4995,7 @@ module.exports = request;
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -6903,7 +6903,7 @@ module.exports = request;
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -7114,7 +7114,7 @@ module.exports = request;
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -7672,7 +7672,7 @@ module.exports = request;
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -8929,7 +8929,7 @@ module.exports = request;
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -11646,7 +11646,7 @@ module.exports = request;
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -12630,7 +12630,7 @@ module.exports = request;
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -12835,7 +12835,7 @@ module.exports = request;
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -12998,7 +12998,7 @@ module.exports = request;
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -13518,7 +13518,7 @@ module.exports = request;
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -13888,7 +13888,7 @@ module.exports = request;
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -14597,7 +14597,7 @@ module.exports = request;
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -14910,7 +14910,7 @@ module.exports = request;
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -14998,6 +14998,34 @@ module.exports = request;
 
 
     /**
+     * Get PureCloud license feature toggle value.
+     * 
+     * @param {String} featureName featureName
+     */
+    this.getLicenseToggle = function(featureName) { 
+
+      // verify the required parameter 'featureName' is set
+      if (featureName === undefined || featureName === null) {
+        throw "Missing the required parameter 'featureName' when calling getLicenseToggle";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/license/toggles/{featureName}', 
+        'GET', 
+        { 'featureName': featureName }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get licenses for specified user.
      * 
      * @param {String} userId ID
@@ -15043,6 +15071,34 @@ module.exports = request;
         {  }, 
         {  }, 
         opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Switch PureCloud license feature toggle value.
+     * 
+     * @param {String} featureName featureName
+     */
+    this.postLicenseToggle = function(featureName) { 
+
+      // verify the required parameter 'featureName' is set
+      if (featureName === undefined || featureName === null) {
+        throw "Missing the required parameter 'featureName' when calling postLicenseToggle";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/license/toggles/{featureName}', 
+        'POST', 
+        { 'featureName': featureName }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -15099,7 +15155,7 @@ module.exports = request;
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -15252,7 +15308,7 @@ module.exports = request;
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -15484,7 +15540,7 @@ module.exports = request;
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -15691,7 +15747,7 @@ module.exports = request;
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -15839,7 +15895,7 @@ module.exports = request;
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -16604,7 +16660,7 @@ module.exports = request;
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -19195,7 +19251,7 @@ module.exports = request;
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -19479,7 +19535,7 @@ module.exports = request;
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -20522,7 +20578,7 @@ module.exports = request;
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -21586,7 +21642,7 @@ module.exports = request;
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -21957,7 +22013,7 @@ module.exports = request;
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -23350,7 +23406,7 @@ module.exports = request;
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -23664,7 +23720,7 @@ module.exports = request;
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -24121,7 +24177,7 @@ module.exports = request;
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -24248,7 +24304,7 @@ module.exports = request;
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -24413,7 +24469,7 @@ module.exports = request;
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -28162,7 +28218,7 @@ module.exports = request;
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -28245,7 +28301,7 @@ module.exports = request;
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -28460,7 +28516,7 @@ module.exports = request;
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -29587,7 +29643,7 @@ module.exports = request;
      * Update an OutOfOffice
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/OutOfOffice} body The updated UserPresence
+     * @param {module:purecloud-platform-client-v2/model/OutOfOffice} body The updated OutOffOffice
      */
     this.putUserOutofoffice = function(userId, body) { 
 
@@ -29848,7 +29904,7 @@ module.exports = request;
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -29963,7 +30019,7 @@ module.exports = request;
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -29979,8 +30035,8 @@ module.exports = request;
 
 
     /**
-     * Delete a message.
-     * 
+     * Delete a voicemail message.
+     * A user voicemail can only be deleted by its associated user. A group voicemail can only be deleted by a user that is a member of the group. A queue voicemail can only be deleted by a user with the acd voicemail delete permission.
      * @param {String} messageId Message ID
      */
     this.deleteVoicemailMessage = function(messageId) { 
@@ -30209,7 +30265,7 @@ module.exports = request;
 
 
     /**
-     * Get message.
+     * Get a voicemail message
      * 
      * @param {String} messageId Message ID
      * @param {Object} opts Optional parameters
@@ -30240,7 +30296,7 @@ module.exports = request;
 
 
     /**
-     * Get media playback URI for this message
+     * Get media playback URI for this voicemail message
      * 
      * @param {String} messageId Message ID
      * @param {Object} opts Optional parameters
@@ -30440,6 +30496,40 @@ module.exports = request;
 
 
     /**
+     * Update a voicemail message
+     * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
+     * @param {String} messageId Message ID
+     * @param {module:purecloud-platform-client-v2/model/VoicemailMessage} body VoicemailMessage
+     */
+    this.patchVoicemailMessage = function(messageId, body) { 
+
+      // verify the required parameter 'messageId' is set
+      if (messageId === undefined || messageId === null) {
+        throw "Missing the required parameter 'messageId' when calling patchVoicemailMessage";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling patchVoicemailMessage";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/voicemail/messages/{messageId}', 
+        'PATCH', 
+        { 'messageId': messageId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Update a user&#39;s voicemail policy
      * 
      * @param {String} userId User ID
@@ -30527,8 +30617,8 @@ module.exports = request;
 
 
     /**
-     * Update a message.
-     * 
+     * Update a voicemail message
+     * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
      * @param {String} messageId Message ID
      * @param {module:purecloud-platform-client-v2/model/VoicemailMessage} body VoicemailMessage
      */
@@ -30612,7 +30702,7 @@ module.exports = request;
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -31064,7 +31154,7 @@ module.exports = request;
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 6.0.1
+   * @version 6.1.0
    */
   var platformClient = {
     /**

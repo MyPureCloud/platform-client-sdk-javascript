@@ -18,7 +18,7 @@
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -34,8 +34,8 @@
 
 
     /**
-     * Delete a message.
-     * 
+     * Delete a voicemail message.
+     * A user voicemail can only be deleted by its associated user. A group voicemail can only be deleted by a user that is a member of the group. A queue voicemail can only be deleted by a user with the acd voicemail delete permission.
      * @param {String} messageId Message ID
      */
     this.deleteVoicemailMessage = function(messageId) { 
@@ -264,7 +264,7 @@
 
 
     /**
-     * Get message.
+     * Get a voicemail message
      * 
      * @param {String} messageId Message ID
      * @param {Object} opts Optional parameters
@@ -295,7 +295,7 @@
 
 
     /**
-     * Get media playback URI for this message
+     * Get media playback URI for this voicemail message
      * 
      * @param {String} messageId Message ID
      * @param {Object} opts Optional parameters
@@ -495,6 +495,40 @@
 
 
     /**
+     * Update a voicemail message
+     * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
+     * @param {String} messageId Message ID
+     * @param {module:purecloud-platform-client-v2/model/VoicemailMessage} body VoicemailMessage
+     */
+    this.patchVoicemailMessage = function(messageId, body) { 
+
+      // verify the required parameter 'messageId' is set
+      if (messageId === undefined || messageId === null) {
+        throw "Missing the required parameter 'messageId' when calling patchVoicemailMessage";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling patchVoicemailMessage";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/voicemail/messages/{messageId}', 
+        'PATCH', 
+        { 'messageId': messageId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Update a user&#39;s voicemail policy
      * 
      * @param {String} userId User ID
@@ -582,8 +616,8 @@
 
 
     /**
-     * Update a message.
-     * 
+     * Update a voicemail message
+     * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
      * @param {String} messageId Message ID
      * @param {module:purecloud-platform-client-v2/model/VoicemailMessage} body VoicemailMessage
      */

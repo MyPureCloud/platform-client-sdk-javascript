@@ -10,8 +10,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getLicenseDefinition**](LicenseApi.html#getLicenseDefinition) | **GET** /api/v2/license/definitions/{licenseId} | Get PureCloud license definition.
 [**getLicenseDefinitions**](LicenseApi.html#getLicenseDefinitions) | **GET** /api/v2/license/definitions | Get all PureCloud license definitions available for the organization.
 [**getLicenseOrganization**](LicenseApi.html#getLicenseOrganization) | **GET** /api/v2/license/organization | Get license assignments for the organization.
+[**getLicenseToggle**](LicenseApi.html#getLicenseToggle) | **GET** /api/v2/license/toggles/{featureName} | Get PureCloud license feature toggle value.
 [**getLicenseUser**](LicenseApi.html#getLicenseUser) | **GET** /api/v2/license/users/{userId} | Get licenses for specified user.
 [**postLicenseOrganization**](LicenseApi.html#postLicenseOrganization) | **POST** /api/v2/license/organization | Update the organization&#39;s license assignments in a batch.
+[**postLicenseToggle**](LicenseApi.html#postLicenseToggle) | **POST** /api/v2/license/toggles/{featureName} | Switch PureCloud license feature toggle value.
 [**postLicenseUsers**](LicenseApi.html#postLicenseUsers) | **POST** /api/v2/license/users | Fetch user licenses in a batch.
 {: class="table table-striped"}
 
@@ -138,6 +140,51 @@ This endpoint does not need any parameter.
 
 [**LicenseOrganization**](LicenseOrganization.html)
 
+<a name="getLicenseToggle"></a>
+
+# [**LicenseOrgToggle**](LicenseOrgToggle.html) getLicenseToggle(featureName)
+
+GET /api/v2/license/toggles/{featureName}
+
+Get PureCloud license feature toggle value.
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.LicenseApi();
+
+var featureName = "featureName_example"; // String | featureName
+
+apiInstance.getLicenseToggle(featureName)
+  .then(function(data) {
+    console.log(`getLicenseToggle success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getLicenseToggle');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **featureName** | **String**| featureName |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LicenseOrgToggle**](LicenseOrgToggle.html)
+
 <a name="getLicenseUser"></a>
 
 # [**LicenseUser**](LicenseUser.html) getLicenseUser(userId)
@@ -228,6 +275,51 @@ apiInstance.postLicenseOrganization(opts)
 ### Return type
 
 [**[LicenseUpdateStatus]**](LicenseUpdateStatus.html)
+
+<a name="postLicenseToggle"></a>
+
+# [**LicenseOrgToggle**](LicenseOrgToggle.html) postLicenseToggle(featureName)
+
+POST /api/v2/license/toggles/{featureName}
+
+Switch PureCloud license feature toggle value.
+
+
+
+### Example
+
+~~~ javascript
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.LicenseApi();
+
+var featureName = "featureName_example"; // String | featureName
+
+apiInstance.postLicenseToggle(featureName)
+  .then(function(data) {
+    console.log(`postLicenseToggle success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling postLicenseToggle');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **featureName** | **String**| featureName |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LicenseOrgToggle**](LicenseOrgToggle.html)
 
 <a name="postLicenseUsers"></a>
 

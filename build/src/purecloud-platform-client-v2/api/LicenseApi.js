@@ -18,7 +18,7 @@
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 6.0.1
+   * @version 6.1.0
    */
 
   /**
@@ -106,6 +106,34 @@
 
 
     /**
+     * Get PureCloud license feature toggle value.
+     * 
+     * @param {String} featureName featureName
+     */
+    this.getLicenseToggle = function(featureName) { 
+
+      // verify the required parameter 'featureName' is set
+      if (featureName === undefined || featureName === null) {
+        throw "Missing the required parameter 'featureName' when calling getLicenseToggle";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/license/toggles/{featureName}', 
+        'GET', 
+        { 'featureName': featureName }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get licenses for specified user.
      * 
      * @param {String} userId ID
@@ -151,6 +179,34 @@
         {  }, 
         {  }, 
         opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Switch PureCloud license feature toggle value.
+     * 
+     * @param {String} featureName featureName
+     */
+    this.postLicenseToggle = function(featureName) { 
+
+      // verify the required parameter 'featureName' is set
+      if (featureName === undefined || featureName === null) {
+        throw "Missing the required parameter 'featureName' when calling postLicenseToggle";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/license/toggles/{featureName}', 
+        'POST', 
+        { 'featureName': featureName }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']

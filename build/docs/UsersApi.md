@@ -1791,7 +1791,7 @@ var apiInstance = new platformClient.UsersApi();
 
 var userId = "userId_example"; // String | User ID
 
-var body = new platformClient.OutOfOffice(); // OutOfOffice | The updated UserPresence
+var body = new platformClient.OutOfOffice(); // OutOfOffice | The updated OutOffOffice
 
 apiInstance.putUserOutofoffice(userId, body)
   .then(function(data) {
@@ -1810,7 +1810,7 @@ apiInstance.putUserOutofoffice(userId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String**| User ID |  |
- **body** | [**OutOfOffice**](OutOfOffice.html)| The updated UserPresence |  |
+ **body** | [**OutOfOffice**](OutOfOffice.html)| The updated OutOffOffice |  |
 {: class="table table-striped"}
 
 ### Return type
