@@ -17,7 +17,7 @@
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 6.1.0
+   * @version 6.1.1
    */
 
   /**
@@ -251,7 +251,7 @@
           resolve();
         })
         .catch(function(error) {
-          self.setAccessToken(undefined);
+          self.setAccessToken();
           reject(error);
         });
     });
@@ -339,7 +339,7 @@
    */
   exports.prototype.logout = function() {
     if(exports.hasLocalStorage) {
-        this.setAccessToken(null);
+        this.setAccessToken();
     }
 
     var query = {
@@ -377,7 +377,7 @@
    * @returns {String} The string representation of <code>param</code>.
    */
   exports.prototype.paramToString = function(param) {
-    if (param === undefined || param === null) {
+    if (!param) {
       return '';
     }
     if (param instanceof Date) {
@@ -423,7 +423,7 @@
    * @returns {Boolean} <code>true</code> if <code>contentType</code> represents JSON, otherwise <code>false</code>.
    */
   exports.prototype.isJsonMime = function(contentType) {
-    return Boolean(contentType !== null && contentType.match(/^application\/json(;.*)?$/i));
+    return Boolean(contentType && contentType.match(/^application\/json(;.*)?$/i));
   };
 
   /**
@@ -481,7 +481,7 @@
   exports.prototype.normalizeParams = function(params) {
     var newParams = {};
     for (var key in params) {
-      if (params.hasOwnProperty(key) && params[key] !== undefined && params[key] !== null) {
+      if (params.hasOwnProperty(key) && params[key]) {
         var value = params[key];
         if (this.isFileParam(value) || Array.isArray(value)) {
           newParams[key] = value;
@@ -534,9 +534,8 @@
    * <code>param</code> as is if <code>collectionFormat</code> is <code>multi</code>.
    */
   exports.prototype.buildCollectionParam = function buildCollectionParam(param, collectionFormat) {
-    if (param === null) {
-      return null;
-    }
+    if (!param) return;
+
     switch (collectionFormat) {
       case 'csv':
         return param.map(this.paramToString).join(',');
@@ -641,7 +640,7 @@
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    request.set({ 'purecloud-sdk': '6.1.0' });
+    request.set({ 'purecloud-sdk': '6.1.1' });
 
     // set request timeout
     request.timeout(this.timeout);

@@ -18,7 +18,7 @@
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 6.1.0
+   * @version 6.1.1
    */
 
   /**
