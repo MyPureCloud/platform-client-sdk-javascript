@@ -18,7 +18,7 @@
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 6.1.2
+   * @version 6.1.3
    */
 
   /**

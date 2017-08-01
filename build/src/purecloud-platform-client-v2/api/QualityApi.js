@@ -18,7 +18,7 @@
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 6.1.2
+   * @version 6.1.3
    */
 
   /**
