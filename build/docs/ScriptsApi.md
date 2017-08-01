@@ -56,12 +56,12 @@ apiInstance.getScript(scriptId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scriptId** | **String**| Script ID |  |
+ **scriptId** | **String** | Script ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Script**](Script.html)
+**Script**
 
 <a name="getScriptPage"></a>
 
@@ -103,13 +103,13 @@ apiInstance.getScriptPage(scriptId, pageId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scriptId** | **String**| Script ID |  |
- **pageId** | **String**| Page ID |  |
+ **scriptId** | **String** | Script ID |  |
+ **pageId** | **String** | Page ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Page**](Page.html)
+**Page**
 
 <a name="getScriptPages"></a>
 
@@ -149,12 +149,12 @@ apiInstance.getScriptPages(scriptId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scriptId** | **String**| Script ID |  |
+ **scriptId** | **String** | Script ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[Page]**](Page.html)
+**[Page]**
 
 <a name="getScripts"></a>
 
@@ -202,19 +202,19 @@ apiInstance.getScripts(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **expand** | **String**| Expand | [optional]  |
- **name** | **String**| Name filter | [optional]  |
- **feature** | **String**| Feature filter | [optional]  |
- **flowId** | **String**| Secure flow id filter | [optional]  |
- **sortBy** | **String**| SortBy | [optional] <br />**Values**: modifiedDate, createdDate |
- **sortOrder** | **String**| SortOrder | [optional] <br />**Values**: ascending, descending |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **expand** | **String** | Expand | [optional]  |
+ **name** | **String** | Name filter | [optional]  |
+ **feature** | **String** | Feature filter | [optional]  |
+ **flowId** | **String** | Secure flow id filter | [optional]  |
+ **sortBy** | **String** | SortBy | [optional] <br />**Values**: modifiedDate, createdDate |
+ **sortOrder** | **String** | SortOrder | [optional] <br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ScriptEntityListing**](ScriptEntityListing.html)
+**ScriptEntityListing**
 
 <a name="getScriptsPublished"></a>
 
@@ -260,17 +260,17 @@ apiInstance.getScriptsPublished(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **expand** | **String**| Expand | [optional]  |
- **name** | **String**| Name filter | [optional]  |
- **feature** | **String**| Feature filter | [optional]  |
- **flowId** | **String**| Secure flow id filter | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **expand** | **String** | Expand | [optional]  |
+ **name** | **String** | Name filter | [optional]  |
+ **feature** | **String** | Feature filter | [optional]  |
+ **flowId** | **String** | Secure flow id filter | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ScriptEntityListing**](ScriptEntityListing.html)
+**ScriptEntityListing**
 
 <a name="getScriptsPublishedScriptId"></a>
 
@@ -310,12 +310,12 @@ apiInstance.getScriptsPublishedScriptId(scriptId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scriptId** | **String**| Script ID |  |
+ **scriptId** | **String** | Script ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Script**](Script.html)
+**Script**
 
 <a name="getScriptsPublishedScriptIdPage"></a>
 
@@ -357,13 +357,13 @@ apiInstance.getScriptsPublishedScriptIdPage(scriptId, pageId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scriptId** | **String**| Script ID |  |
- **pageId** | **String**| Page ID |  |
+ **scriptId** | **String** | Script ID |  |
+ **pageId** | **String** | Page ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Page**](Page.html)
+**Page**
 
 <a name="getScriptsPublishedScriptIdPages"></a>
 
@@ -403,12 +403,12 @@ apiInstance.getScriptsPublishedScriptIdPages(scriptId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scriptId** | **String**| Script ID |  |
+ **scriptId** | **String** | Script ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[Page]**](Page.html)
+**[Page]**
 
 <a name="getScriptsPublishedScriptIdVariables"></a>
 
@@ -453,10 +453,10 @@ apiInstance.getScriptsPublishedScriptIdVariables(scriptId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scriptId** | **String**| Script ID |  |
- **input** | **String**| input | [optional]  |
- **output** | **String**| output | [optional]  |
- **type** | **String**| type | [optional]  |
+ **scriptId** | **String** | Script ID |  |
+ **input** | **String** | input | [optional]  |
+ **output** | **String** | output | [optional]  |
+ **type** | **String** | type | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

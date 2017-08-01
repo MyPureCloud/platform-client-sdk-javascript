@@ -87,5 +87,5 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**TokenInfo**](TokenInfo.html)
+**TokenInfo**
 

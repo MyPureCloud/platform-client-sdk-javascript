@@ -53,7 +53,7 @@ apiInstance.deleteFaxDocument(documentId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **documentId** | **String**| Document ID |  |
+ **documentId** | **String** | Document ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -98,12 +98,12 @@ apiInstance.getFaxDocument(documentId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **documentId** | **String**| Document ID |  |
+ **documentId** | **String** | Document ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**FaxDocument**](FaxDocument.html)
+**FaxDocument**
 
 <a name="getFaxDocumentContent"></a>
 
@@ -143,12 +143,12 @@ apiInstance.getFaxDocumentContent(documentId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **documentId** | **String**| Document ID |  |
+ **documentId** | **String** | Document ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DownloadResponse**](DownloadResponse.html)
+**DownloadResponse**
 
 <a name="getFaxDocuments"></a>
 
@@ -190,13 +190,13 @@ apiInstance.getFaxDocuments(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**FaxDocumentEntityListing**](FaxDocumentEntityListing.html)
+**FaxDocumentEntityListing**
 
 <a name="getFaxSummary"></a>
 
@@ -235,7 +235,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**FaxSummary**](FaxSummary.html)
+**FaxSummary**
 
 <a name="putFaxDocument"></a>
 
@@ -277,11 +277,11 @@ apiInstance.putFaxDocument(documentId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **documentId** | **String**| Document ID |  |
- **body** | [**FaxDocument**](FaxDocument.html)| Document |  |
+ **documentId** | **String** | Document ID |  |
+ **body** | **FaxDocument** | Document |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**FaxDocument**](FaxDocument.html)
+**FaxDocument**
 

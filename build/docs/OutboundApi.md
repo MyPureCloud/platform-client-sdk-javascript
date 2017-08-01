@@ -132,7 +132,7 @@ apiInstance.deleteOutboundAttemptlimit(attemptLimitsId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **attemptLimitsId** | **String**| Attempt limits ID |  |
+ **attemptLimitsId** | **String** | Attempt limits ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -177,7 +177,7 @@ apiInstance.deleteOutboundCallabletimeset(callableTimeSetId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **callableTimeSetId** | **String**| Callable Time Set ID |  |
+ **callableTimeSetId** | **String** | Callable Time Set ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -222,7 +222,7 @@ apiInstance.deleteOutboundCallanalysisresponseset(callAnalysisSetId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **callAnalysisSetId** | **String**| Call Analysis Response Set ID |  |
+ **callAnalysisSetId** | **String** | Call Analysis Response Set ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -267,12 +267,12 @@ apiInstance.deleteOutboundCampaign(campaignId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **campaignId** | **String**| Campaign ID |  |
+ **campaignId** | **String** | Campaign ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Campaign**](Campaign.html)
+**Campaign**
 
 <a name="deleteOutboundCampaignProgress"></a>
 
@@ -312,7 +312,7 @@ apiInstance.deleteOutboundCampaignProgress(campaignId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **campaignId** | **String**| Campaign ID |  |
+ **campaignId** | **String** | Campaign ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -357,7 +357,7 @@ apiInstance.deleteOutboundCampaignrule(campaignRuleId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **campaignRuleId** | **String**| Campaign Rule ID |  |
+ **campaignRuleId** | **String** | Campaign Rule ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -402,7 +402,7 @@ apiInstance.deleteOutboundContactlist(contactListId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactListId** | **String**| ContactList ID |  |
+ **contactListId** | **String** | ContactList ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -449,8 +449,8 @@ apiInstance.deleteOutboundContactlistContact(contactListId, contactId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactListId** | **String**| Contact List ID |  |
- **contactId** | **String**| Contact ID |  |
+ **contactListId** | **String** | Contact List ID |  |
+ **contactId** | **String** | Contact ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -497,8 +497,8 @@ apiInstance.deleteOutboundContactlistContacts(contactListId, contactIds)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactListId** | **String**| Contact List ID |  |
- **contactIds** | [**[String]**](String.html)| ContactIds to delete. |  |
+ **contactListId** | **String** | Contact List ID |  |
+ **contactIds** | **[String]** | ContactIds to delete. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -543,7 +543,7 @@ apiInstance.deleteOutboundContactlistfilter(contactListFilterId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactListFilterId** | **String**| Contact List Filter ID |  |
+ **contactListFilterId** | **String** | Contact List Filter ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -588,7 +588,7 @@ apiInstance.deleteOutboundDnclist(dncListId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **dncListId** | **String**| DncList ID |  |
+ **dncListId** | **String** | DncList ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -633,7 +633,7 @@ apiInstance.deleteOutboundRuleset(ruleSetId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **ruleSetId** | **String**| Rule Set ID |  |
+ **ruleSetId** | **String** | Rule Set ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -678,7 +678,7 @@ apiInstance.deleteOutboundSchedulesCampaign(campaignId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **campaignId** | **String**| Campaign ID |  |
+ **campaignId** | **String** | Campaign ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -723,7 +723,7 @@ apiInstance.deleteOutboundSchedulesSequence(sequenceId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **sequenceId** | **String**| Sequence ID |  |
+ **sequenceId** | **String** | Sequence ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -768,7 +768,7 @@ apiInstance.deleteOutboundSequence(sequenceId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **sequenceId** | **String**| Campaign Sequence ID |  |
+ **sequenceId** | **String** | Campaign Sequence ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -813,12 +813,12 @@ apiInstance.getOutboundAttemptlimit(attemptLimitsId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **attemptLimitsId** | **String**| Attempt limits ID |  |
+ **attemptLimitsId** | **String** | Attempt limits ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AttemptLimits**](AttemptLimits.html)
+**AttemptLimits**
 
 <a name="getOutboundAttemptlimits"></a>
 
@@ -864,17 +864,17 @@ apiInstance.getOutboundAttemptlimits(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
- **name** | **String**| Name | [optional]  |
- **sortBy** | **String**| Sort by | [optional]  |
- **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AttemptLimitsEntityListing**](AttemptLimitsEntityListing.html)
+**AttemptLimitsEntityListing**
 
 <a name="getOutboundCallabletimeset"></a>
 
@@ -914,12 +914,12 @@ apiInstance.getOutboundCallabletimeset(callableTimeSetId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **callableTimeSetId** | **String**| Callable Time Set ID |  |
+ **callableTimeSetId** | **String** | Callable Time Set ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CallableTimeSet**](CallableTimeSet.html)
+**CallableTimeSet**
 
 <a name="getOutboundCallabletimesets"></a>
 
@@ -965,17 +965,17 @@ apiInstance.getOutboundCallabletimesets(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
- **name** | **String**| Name | [optional]  |
- **sortBy** | **String**| Sort by | [optional]  |
- **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CallableTimeSetEntityListing**](CallableTimeSetEntityListing.html)
+**CallableTimeSetEntityListing**
 
 <a name="getOutboundCallanalysisresponseset"></a>
 
@@ -1015,12 +1015,12 @@ apiInstance.getOutboundCallanalysisresponseset(callAnalysisSetId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **callAnalysisSetId** | **String**| Call Analysis Response Set ID |  |
+ **callAnalysisSetId** | **String** | Call Analysis Response Set ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ResponseSet**](ResponseSet.html)
+**ResponseSet**
 
 <a name="getOutboundCallanalysisresponsesets"></a>
 
@@ -1066,17 +1066,17 @@ apiInstance.getOutboundCallanalysisresponsesets(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
- **name** | **String**| Name | [optional]  |
- **sortBy** | **String**| Sort by | [optional]  |
- **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ResponseSetEntityListing**](ResponseSetEntityListing.html)
+**ResponseSetEntityListing**
 
 <a name="getOutboundCampaign"></a>
 
@@ -1116,12 +1116,12 @@ apiInstance.getOutboundCampaign(campaignId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **campaignId** | **String**| Campaign ID |  |
+ **campaignId** | **String** | Campaign ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Campaign**](Campaign.html)
+**Campaign**
 
 <a name="getOutboundCampaignDiagnostics"></a>
 
@@ -1161,12 +1161,12 @@ apiInstance.getOutboundCampaignDiagnostics(campaignId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **campaignId** | **String**| Campaign ID |  |
+ **campaignId** | **String** | Campaign ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CampaignDiagnostics**](CampaignDiagnostics.html)
+**CampaignDiagnostics**
 
 <a name="getOutboundCampaignInteractions"></a>
 
@@ -1206,12 +1206,12 @@ apiInstance.getOutboundCampaignInteractions(campaignId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **campaignId** | **String**| Campaign ID |  |
+ **campaignId** | **String** | Campaign ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CampaignInteractions**](CampaignInteractions.html)
+**CampaignInteractions**
 
 <a name="getOutboundCampaignProgress"></a>
 
@@ -1251,12 +1251,12 @@ apiInstance.getOutboundCampaignProgress(campaignId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **campaignId** | **String**| Campaign ID |  |
+ **campaignId** | **String** | Campaign ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CampaignProgress**](CampaignProgress.html)
+**CampaignProgress**
 
 <a name="getOutboundCampaignStats"></a>
 
@@ -1296,12 +1296,12 @@ apiInstance.getOutboundCampaignStats(campaignId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **campaignId** | **String**| Campaign ID |  |
+ **campaignId** | **String** | Campaign ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CampaignStats**](CampaignStats.html)
+**CampaignStats**
 
 <a name="getOutboundCampaignrule"></a>
 
@@ -1341,12 +1341,12 @@ apiInstance.getOutboundCampaignrule(campaignRuleId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **campaignRuleId** | **String**| Campaign Rule ID |  |
+ **campaignRuleId** | **String** | Campaign Rule ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CampaignRule**](CampaignRule.html)
+**CampaignRule**
 
 <a name="getOutboundCampaignrules"></a>
 
@@ -1392,17 +1392,17 @@ apiInstance.getOutboundCampaignrules(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
- **name** | **String**| Name | [optional]  |
- **sortBy** | **String**| Sort by | [optional]  |
- **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CampaignRuleEntityListing**](CampaignRuleEntityListing.html)
+**CampaignRuleEntityListing**
 
 <a name="getOutboundCampaigns"></a>
 
@@ -1453,22 +1453,22 @@ apiInstance.getOutboundCampaigns(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
- **name** | **String**| Name | [optional]  |
- **contactListId** | **String**| Contact List ID | [optional]  |
- **dncListId** | **String**| DNC list ID | [optional]  |
- **distributionQueueId** | **String**| Distribution queue ID | [optional]  |
- **edgeGroupId** | **String**| Edge group ID | [optional]  |
- **callAnalysisResponseSetId** | **String**| Call analysis response set ID | [optional]  |
- **sortBy** | **String**| Sort by | [optional]  |
- **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+ **name** | **String** | Name | [optional]  |
+ **contactListId** | **String** | Contact List ID | [optional]  |
+ **dncListId** | **String** | DNC list ID | [optional]  |
+ **distributionQueueId** | **String** | Distribution queue ID | [optional]  |
+ **edgeGroupId** | **String** | Edge group ID | [optional]  |
+ **callAnalysisResponseSetId** | **String** | Call analysis response set ID | [optional]  |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CampaignEntityListing**](CampaignEntityListing.html)
+**CampaignEntityListing**
 
 <a name="getOutboundContactlist"></a>
 
@@ -1512,14 +1512,14 @@ apiInstance.getOutboundContactlist(contactListId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactListId** | **String**| ContactList ID |  |
- **includeImportStatus** | **Boolean**| Import status | [optional] [default to false] |
- **includeSize** | **Boolean**| Include size | [optional] [default to false] |
+ **contactListId** | **String** | ContactList ID |  |
+ **includeImportStatus** | **Boolean** | Import status | [optional] [default to false] |
+ **includeSize** | **Boolean** | Include size | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ContactList**](ContactList.html)
+**ContactList**
 
 <a name="getOutboundContactlistContact"></a>
 
@@ -1561,13 +1561,13 @@ apiInstance.getOutboundContactlistContact(contactListId, contactId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactListId** | **String**| Contact List ID |  |
- **contactId** | **String**| Contact ID |  |
+ **contactListId** | **String** | Contact List ID |  |
+ **contactId** | **String** | Contact ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DialerContact**](DialerContact.html)
+**DialerContact**
 
 <a name="getOutboundContactlistExport"></a>
 
@@ -1610,13 +1610,13 @@ apiInstance.getOutboundContactlistExport(contactListId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactListId** | **String**| ContactList ID |  |
- **download** | **String**| Redirect to download uri | [optional] [default to false] |
+ **contactListId** | **String** | ContactList ID |  |
+ **download** | **String** | Redirect to download uri | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ExportUri**](ExportUri.html)
+**ExportUri**
 
 <a name="getOutboundContactlistImportstatus"></a>
 
@@ -1656,12 +1656,12 @@ apiInstance.getOutboundContactlistImportstatus(contactListId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactListId** | **String**| ContactList ID |  |
+ **contactListId** | **String** | ContactList ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ImportStatus**](ImportStatus.html)
+**ImportStatus**
 
 <a name="getOutboundContactlistfilter"></a>
 
@@ -1701,12 +1701,12 @@ apiInstance.getOutboundContactlistfilter(contactListFilterId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactListFilterId** | **String**| Contact List Filter ID |  |
+ **contactListFilterId** | **String** | Contact List Filter ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ContactListFilter**](ContactListFilter.html)
+**ContactListFilter**
 
 <a name="getOutboundContactlistfilters"></a>
 
@@ -1753,18 +1753,18 @@ apiInstance.getOutboundContactlistfilters(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
- **name** | **String**| Name | [optional]  |
- **sortBy** | **String**| Sort by | [optional]  |
- **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
- **contactListId** | **String**| Contact List ID | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **contactListId** | **String** | Contact List ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ContactListFilterEntityListing**](ContactListFilterEntityListing.html)
+**ContactListFilterEntityListing**
 
 <a name="getOutboundContactlists"></a>
 
@@ -1812,19 +1812,19 @@ apiInstance.getOutboundContactlists(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **includeImportStatus** | **Boolean**| Include import status | [optional] [default to false] |
- **includeSize** | **Boolean**| Include size | [optional] [default to false] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
- **name** | **String**| Name | [optional]  |
- **sortBy** | **String**| Sort by | [optional]  |
- **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **includeImportStatus** | **Boolean** | Include import status | [optional] [default to false] |
+ **includeSize** | **Boolean** | Include size | [optional] [default to false] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ContactListEntityListing**](ContactListEntityListing.html)
+**ContactListEntityListing**
 
 <a name="getOutboundDnclist"></a>
 
@@ -1868,14 +1868,14 @@ apiInstance.getOutboundDnclist(dncListId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **dncListId** | **String**| DncList ID |  |
- **includeImportStatus** | **Boolean**| Import status | [optional] [default to false] |
- **includeSize** | **Boolean**| Include size | [optional] [default to false] |
+ **dncListId** | **String** | DncList ID |  |
+ **includeImportStatus** | **Boolean** | Import status | [optional] [default to false] |
+ **includeSize** | **Boolean** | Include size | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DncList**](DncList.html)
+**DncList**
 
 <a name="getOutboundDnclistExport"></a>
 
@@ -1918,13 +1918,13 @@ apiInstance.getOutboundDnclistExport(dncListId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **dncListId** | **String**| DncList ID |  |
- **download** | **String**| Redirect to download uri | [optional] [default to false] |
+ **dncListId** | **String** | DncList ID |  |
+ **download** | **String** | Redirect to download uri | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ExportUri**](ExportUri.html)
+**ExportUri**
 
 <a name="getOutboundDnclistImportstatus"></a>
 
@@ -1964,12 +1964,12 @@ apiInstance.getOutboundDnclistImportstatus(dncListId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **dncListId** | **String**| DncList ID |  |
+ **dncListId** | **String** | DncList ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ImportStatus**](ImportStatus.html)
+**ImportStatus**
 
 <a name="getOutboundDnclists"></a>
 
@@ -2017,19 +2017,19 @@ apiInstance.getOutboundDnclists(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **includeImportStatus** | **Boolean**| Import status | [optional] [default to false] |
- **includeSize** | **Boolean**| Include size | [optional] [default to false] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
- **name** | **String**| Name | [optional]  |
- **sortBy** | **String**| Sort by | [optional]  |
- **sortOrder** | **String**| Sort order | [optional] <br />**Values**: ascending, descending |
+ **includeImportStatus** | **Boolean** | Import status | [optional] [default to false] |
+ **includeSize** | **Boolean** | Include size | [optional] [default to false] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] <br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DncListEntityListing**](DncListEntityListing.html)
+**DncListEntityListing**
 
 <a name="getOutboundEvent"></a>
 
@@ -2069,12 +2069,12 @@ apiInstance.getOutboundEvent(eventId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **eventId** | **String**| Event Log ID |  |
+ **eventId** | **String** | Event Log ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EventLog**](EventLog.html)
+**EventLog**
 
 <a name="getOutboundEvents"></a>
 
@@ -2121,18 +2121,18 @@ apiInstance.getOutboundEvents(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
- **category** | **String**| Category | [optional]  |
- **level** | **String**| Level | [optional]  |
- **sortBy** | **String**| Sort by | [optional]  |
- **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+ **category** | **String** | Category | [optional]  |
+ **level** | **String** | Level | [optional]  |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DialerEventEntityListing**](DialerEventEntityListing.html)
+**DialerEventEntityListing**
 
 <a name="getOutboundRuleset"></a>
 
@@ -2172,12 +2172,12 @@ apiInstance.getOutboundRuleset(ruleSetId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **ruleSetId** | **String**| Rule Set ID |  |
+ **ruleSetId** | **String** | Rule Set ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**RuleSet**](RuleSet.html)
+**RuleSet**
 
 <a name="getOutboundRulesets"></a>
 
@@ -2223,17 +2223,17 @@ apiInstance.getOutboundRulesets(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
- **name** | **String**| Name | [optional]  |
- **sortBy** | **String**| Sort by | [optional]  |
- **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
 
-[**RuleSetEntityListing**](RuleSetEntityListing.html)
+**RuleSetEntityListing**
 
 <a name="getOutboundSchedulesCampaign"></a>
 
@@ -2273,12 +2273,12 @@ apiInstance.getOutboundSchedulesCampaign(campaignId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **campaignId** | **String**| Campaign ID |  |
+ **campaignId** | **String** | Campaign ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CampaignSchedule**](CampaignSchedule.html)
+**CampaignSchedule**
 
 <a name="getOutboundSchedulesCampaigns"></a>
 
@@ -2317,7 +2317,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[CampaignSchedule]**](CampaignSchedule.html)
+**[CampaignSchedule]**
 
 <a name="getOutboundSchedulesSequence"></a>
 
@@ -2357,12 +2357,12 @@ apiInstance.getOutboundSchedulesSequence(sequenceId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **sequenceId** | **String**| Sequence ID |  |
+ **sequenceId** | **String** | Sequence ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**SequenceSchedule**](SequenceSchedule.html)
+**SequenceSchedule**
 
 <a name="getOutboundSchedulesSequences"></a>
 
@@ -2401,7 +2401,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[SequenceSchedule]**](SequenceSchedule.html)
+**[SequenceSchedule]**
 
 <a name="getOutboundSequence"></a>
 
@@ -2441,12 +2441,12 @@ apiInstance.getOutboundSequence(sequenceId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **sequenceId** | **String**| Campaign Sequence ID |  |
+ **sequenceId** | **String** | Campaign Sequence ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CampaignSequence**](CampaignSequence.html)
+**CampaignSequence**
 
 <a name="getOutboundSequences"></a>
 
@@ -2492,17 +2492,17 @@ apiInstance.getOutboundSequences(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
- **name** | **String**| Name | [optional]  |
- **sortBy** | **String**| Sort by | [optional]  |
- **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CampaignSequenceEntityListing**](CampaignSequenceEntityListing.html)
+**CampaignSequenceEntityListing**
 
 <a name="getOutboundWrapupcodemappings"></a>
 
@@ -2541,7 +2541,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**WrapUpCodeMapping**](WrapUpCodeMapping.html)
+**WrapUpCodeMapping**
 
 <a name="postOutboundAttemptlimits"></a>
 
@@ -2581,12 +2581,12 @@ apiInstance.postOutboundAttemptlimits(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**AttemptLimits**](AttemptLimits.html)| AttemptLimits |  |
+ **body** | **AttemptLimits** | AttemptLimits |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AttemptLimits**](AttemptLimits.html)
+**AttemptLimits**
 
 <a name="postOutboundAudits"></a>
 
@@ -2633,17 +2633,17 @@ apiInstance.postOutboundAudits(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**DialerAuditRequest**](DialerAuditRequest.html)| AuditSearch |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortBy** | **String**| Sort by | [optional] [default to entity.name] |
- **sortOrder** | **String**| Sort order | [optional] [default to ascending] |
- **facetsOnly** | **Boolean**| Facets only | [optional] [default to false] |
+ **body** | **DialerAuditRequest** | AuditSearch |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | Sort by | [optional] [default to entity.name] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ascending] |
+ **facetsOnly** | **Boolean** | Facets only | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AuditSearchResult**](AuditSearchResult.html)
+**AuditSearchResult**
 
 <a name="postOutboundCallabletimesets"></a>
 
@@ -2683,12 +2683,12 @@ apiInstance.postOutboundCallabletimesets(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**CallableTimeSet**](CallableTimeSet.html)| DialerCallableTimeSet |  |
+ **body** | **CallableTimeSet** | DialerCallableTimeSet |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CallableTimeSet**](CallableTimeSet.html)
+**CallableTimeSet**
 
 <a name="postOutboundCallanalysisresponsesets"></a>
 
@@ -2728,12 +2728,12 @@ apiInstance.postOutboundCallanalysisresponsesets(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**ResponseSet**](ResponseSet.html)| ResponseSet |  |
+ **body** | **ResponseSet** | ResponseSet |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ResponseSet**](ResponseSet.html)
+**ResponseSet**
 
 <a name="postOutboundCampaignCallbackSchedule"></a>
 
@@ -2775,13 +2775,13 @@ apiInstance.postOutboundCampaignCallbackSchedule(campaignId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **campaignId** | **String**| Campaign ID |  |
- **body** | [**ContactCallbackRequest**](ContactCallbackRequest.html)| ContactCallbackRequest |  |
+ **campaignId** | **String** | Campaign ID |  |
+ **body** | **ContactCallbackRequest** | ContactCallbackRequest |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ContactCallbackRequest**](ContactCallbackRequest.html)
+**ContactCallbackRequest**
 
 <a name="postOutboundCampaignrules"></a>
 
@@ -2821,12 +2821,12 @@ apiInstance.postOutboundCampaignrules(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**CampaignRule**](CampaignRule.html)| CampaignRule |  |
+ **body** | **CampaignRule** | CampaignRule |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CampaignRule**](CampaignRule.html)
+**CampaignRule**
 
 <a name="postOutboundCampaigns"></a>
 
@@ -2866,12 +2866,12 @@ apiInstance.postOutboundCampaigns(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Campaign**](Campaign.html)| Campaign |  |
+ **body** | **Campaign** | Campaign |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Campaign**](Campaign.html)
+**Campaign**
 
 <a name="postOutboundCampaignsProgress"></a>
 
@@ -2911,12 +2911,12 @@ apiInstance.postOutboundCampaignsProgress(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **[String]**| Campaign IDs |  |
+ **body** | **[String]** | Campaign IDs |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[CampaignProgress]**](CampaignProgress.html)
+**[CampaignProgress]**
 
 <a name="postOutboundContactlistContacts"></a>
 
@@ -2962,15 +2962,15 @@ apiInstance.postOutboundContactlistContacts(contactListId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactListId** | **String**| Contact List ID |  |
- **body** | [**[DialerContact]**](DialerContact.html)| Contact |  |
- **priority** | **Boolean**| Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue. | [optional]  |
- **clearSystemData** | **Boolean**| Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t. | [optional]  |
+ **contactListId** | **String** | Contact List ID |  |
+ **body** | **[DialerContact]** | Contact |  |
+ **priority** | **Boolean** | Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue. | [optional]  |
+ **clearSystemData** | **Boolean** | Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[DialerContact]**](DialerContact.html)
+**[DialerContact]**
 
 <a name="postOutboundContactlistExport"></a>
 
@@ -3010,12 +3010,12 @@ apiInstance.postOutboundContactlistExport(contactListId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactListId** | **String**| ContactList ID |  |
+ **contactListId** | **String** | ContactList ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UriReference**](UriReference.html)
+**UriReference**
 
 <a name="postOutboundContactlistfilters"></a>
 
@@ -3055,12 +3055,12 @@ apiInstance.postOutboundContactlistfilters(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**ContactListFilter**](ContactListFilter.html)| ContactListFilter |  |
+ **body** | **ContactListFilter** | ContactListFilter |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ContactListFilter**](ContactListFilter.html)
+**ContactListFilter**
 
 <a name="postOutboundContactlistfiltersPreview"></a>
 
@@ -3100,12 +3100,12 @@ apiInstance.postOutboundContactlistfiltersPreview(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**ContactListFilter**](ContactListFilter.html)| ContactListFilter |  |
+ **body** | **ContactListFilter** | ContactListFilter |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**FilterPreviewResponse**](FilterPreviewResponse.html)
+**FilterPreviewResponse**
 
 <a name="postOutboundContactlists"></a>
 
@@ -3145,12 +3145,12 @@ apiInstance.postOutboundContactlists(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**ContactList**](ContactList.html)| ContactList |  |
+ **body** | **ContactList** | ContactList |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ContactList**](ContactList.html)
+**ContactList**
 
 <a name="postOutboundConversationDnc"></a>
 
@@ -3190,7 +3190,7 @@ apiInstance.postOutboundConversationDnc(conversationId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| Conversation ID |  |
+ **conversationId** | **String** | Conversation ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3235,12 +3235,12 @@ apiInstance.postOutboundDnclistExport(dncListId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **dncListId** | **String**| DncList ID |  |
+ **dncListId** | **String** | DncList ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UriReference**](UriReference.html)
+**UriReference**
 
 <a name="postOutboundDnclistPhonenumbers"></a>
 
@@ -3282,8 +3282,8 @@ apiInstance.postOutboundDnclistPhonenumbers(dncListId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **dncListId** | **String**| DncList ID |  |
- **body** | **[String]**| DNC Phone Numbers |  |
+ **dncListId** | **String** | DncList ID |  |
+ **body** | **[String]** | DNC Phone Numbers |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3328,12 +3328,12 @@ apiInstance.postOutboundDnclists(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**DncListCreate**](DncListCreate.html)| DncList |  |
+ **body** | **DncListCreate** | DncList |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DncList**](DncList.html)
+**DncList**
 
 <a name="postOutboundRulesets"></a>
 
@@ -3373,12 +3373,12 @@ apiInstance.postOutboundRulesets(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**RuleSet**](RuleSet.html)| RuleSet |  |
+ **body** | **RuleSet** | RuleSet |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**RuleSet**](RuleSet.html)
+**RuleSet**
 
 <a name="postOutboundSequences"></a>
 
@@ -3418,12 +3418,12 @@ apiInstance.postOutboundSequences(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**CampaignSequence**](CampaignSequence.html)| Organization |  |
+ **body** | **CampaignSequence** | Organization |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CampaignSequence**](CampaignSequence.html)
+**CampaignSequence**
 
 <a name="putOutboundAttemptlimit"></a>
 
@@ -3465,13 +3465,13 @@ apiInstance.putOutboundAttemptlimit(attemptLimitsId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **attemptLimitsId** | **String**| Attempt limits ID |  |
- **body** | [**AttemptLimits**](AttemptLimits.html)| AttemptLimits |  |
+ **attemptLimitsId** | **String** | Attempt limits ID |  |
+ **body** | **AttemptLimits** | AttemptLimits |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AttemptLimits**](AttemptLimits.html)
+**AttemptLimits**
 
 <a name="putOutboundCallabletimeset"></a>
 
@@ -3513,13 +3513,13 @@ apiInstance.putOutboundCallabletimeset(callableTimeSetId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **callableTimeSetId** | **String**| Callable Time Set ID |  |
- **body** | [**CallableTimeSet**](CallableTimeSet.html)| DialerCallableTimeSet |  |
+ **callableTimeSetId** | **String** | Callable Time Set ID |  |
+ **body** | **CallableTimeSet** | DialerCallableTimeSet |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CallableTimeSet**](CallableTimeSet.html)
+**CallableTimeSet**
 
 <a name="putOutboundCallanalysisresponseset"></a>
 
@@ -3561,13 +3561,13 @@ apiInstance.putOutboundCallanalysisresponseset(callAnalysisSetId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **callAnalysisSetId** | **String**| Call Analysis Response Set ID |  |
- **body** | [**ResponseSet**](ResponseSet.html)| ResponseSet |  |
+ **callAnalysisSetId** | **String** | Call Analysis Response Set ID |  |
+ **body** | **ResponseSet** | ResponseSet |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ResponseSet**](ResponseSet.html)
+**ResponseSet**
 
 <a name="putOutboundCampaign"></a>
 
@@ -3609,13 +3609,13 @@ apiInstance.putOutboundCampaign(campaignId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **campaignId** | **String**| Campaign ID |  |
- **body** | [**Campaign**](Campaign.html)| Campaign |  |
+ **campaignId** | **String** | Campaign ID |  |
+ **body** | **Campaign** | Campaign |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Campaign**](Campaign.html)
+**Campaign**
 
 <a name="putOutboundCampaignAgent"></a>
 
@@ -3659,9 +3659,9 @@ apiInstance.putOutboundCampaignAgent(campaignId, userId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **campaignId** | **String**| Campaign ID |  |
- **userId** | **String**| Agent&#39;s user ID |  |
- **body** | [**Agent**](Agent.html)| agent |  |
+ **campaignId** | **String** | Campaign ID |  |
+ **userId** | **String** | Agent&#39;s user ID |  |
+ **body** | **Agent** | agent |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3708,13 +3708,13 @@ apiInstance.putOutboundCampaignrule(campaignRuleId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **campaignRuleId** | **String**| Campaign Rule ID |  |
- **body** | [**CampaignRule**](CampaignRule.html)| CampaignRule |  |
+ **campaignRuleId** | **String** | Campaign Rule ID |  |
+ **body** | **CampaignRule** | CampaignRule |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CampaignRule**](CampaignRule.html)
+**CampaignRule**
 
 <a name="putOutboundContactlist"></a>
 
@@ -3756,13 +3756,13 @@ apiInstance.putOutboundContactlist(contactListId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactListId** | **String**| ContactList ID |  |
- **body** | [**ContactList**](ContactList.html)| ContactList |  |
+ **contactListId** | **String** | ContactList ID |  |
+ **body** | **ContactList** | ContactList |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ContactList**](ContactList.html)
+**ContactList**
 
 <a name="putOutboundContactlistContact"></a>
 
@@ -3806,14 +3806,14 @@ apiInstance.putOutboundContactlistContact(contactListId, contactId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactListId** | **String**| Contact List ID |  |
- **contactId** | **String**| Contact ID |  |
- **body** | [**DialerContact**](DialerContact.html)| Contact |  |
+ **contactListId** | **String** | Contact List ID |  |
+ **contactId** | **String** | Contact ID |  |
+ **body** | **DialerContact** | Contact |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DialerContact**](DialerContact.html)
+**DialerContact**
 
 <a name="putOutboundContactlistfilter"></a>
 
@@ -3855,13 +3855,13 @@ apiInstance.putOutboundContactlistfilter(contactListFilterId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactListFilterId** | **String**| Contact List Filter ID |  |
- **body** | [**ContactListFilter**](ContactListFilter.html)| ContactListFilter |  |
+ **contactListFilterId** | **String** | Contact List Filter ID |  |
+ **body** | **ContactListFilter** | ContactListFilter |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ContactListFilter**](ContactListFilter.html)
+**ContactListFilter**
 
 <a name="putOutboundDnclist"></a>
 
@@ -3903,13 +3903,13 @@ apiInstance.putOutboundDnclist(dncListId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **dncListId** | **String**| DncList ID |  |
- **body** | [**DncList**](DncList.html)| DncList |  |
+ **dncListId** | **String** | DncList ID |  |
+ **body** | **DncList** | DncList |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DncList**](DncList.html)
+**DncList**
 
 <a name="putOutboundRuleset"></a>
 
@@ -3951,13 +3951,13 @@ apiInstance.putOutboundRuleset(ruleSetId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **ruleSetId** | **String**| Rule Set ID |  |
- **body** | [**RuleSet**](RuleSet.html)| RuleSet |  |
+ **ruleSetId** | **String** | Rule Set ID |  |
+ **body** | **RuleSet** | RuleSet |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**RuleSet**](RuleSet.html)
+**RuleSet**
 
 <a name="putOutboundSchedulesCampaign"></a>
 
@@ -3999,13 +3999,13 @@ apiInstance.putOutboundSchedulesCampaign(campaignId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **campaignId** | **String**| Campaign ID |  |
- **body** | [**CampaignSchedule**](CampaignSchedule.html)| CampaignSchedule |  |
+ **campaignId** | **String** | Campaign ID |  |
+ **body** | **CampaignSchedule** | CampaignSchedule |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CampaignSchedule**](CampaignSchedule.html)
+**CampaignSchedule**
 
 <a name="putOutboundSchedulesSequence"></a>
 
@@ -4047,13 +4047,13 @@ apiInstance.putOutboundSchedulesSequence(sequenceId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **sequenceId** | **String**| Sequence ID |  |
- **body** | [**SequenceSchedule**](SequenceSchedule.html)| SequenceSchedule |  |
+ **sequenceId** | **String** | Sequence ID |  |
+ **body** | **SequenceSchedule** | SequenceSchedule |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**SequenceSchedule**](SequenceSchedule.html)
+**SequenceSchedule**
 
 <a name="putOutboundSequence"></a>
 
@@ -4095,13 +4095,13 @@ apiInstance.putOutboundSequence(sequenceId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **sequenceId** | **String**| Campaign Sequence ID |  |
- **body** | [**CampaignSequence**](CampaignSequence.html)| Organization |  |
+ **sequenceId** | **String** | Campaign Sequence ID |  |
+ **body** | **CampaignSequence** | Organization |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CampaignSequence**](CampaignSequence.html)
+**CampaignSequence**
 
 <a name="putOutboundWrapupcodemappings"></a>
 
@@ -4141,10 +4141,10 @@ apiInstance.putOutboundWrapupcodemappings(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**WrapUpCodeMapping**](WrapUpCodeMapping.html)| wrapUpCodeMapping |  |
+ **body** | **WrapUpCodeMapping** | wrapUpCodeMapping |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**WrapUpCodeMapping**](WrapUpCodeMapping.html)
+**WrapUpCodeMapping**
 

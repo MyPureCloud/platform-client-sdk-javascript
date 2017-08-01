@@ -57,7 +57,7 @@ apiInstance.deleteLanguage(languageId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **languageId** | **String**| Language ID |  |
+ **languageId** | **String** | Language ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -102,7 +102,7 @@ apiInstance.deleteRoutingLanguage(languageId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **languageId** | **String**| Language ID |  |
+ **languageId** | **String** | Language ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -147,12 +147,12 @@ apiInstance.getLanguage(languageId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **languageId** | **String**| Language ID |  |
+ **languageId** | **String** | Language ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Language**](Language.html)
+**Language**
 
 <a name="getLanguages"></a>
 
@@ -196,15 +196,15 @@ apiInstance.getLanguages(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
- **name** | **String**| Name | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+ **name** | **String** | Name | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LanguageEntityListing**](LanguageEntityListing.html)
+**LanguageEntityListing**
 
 <a name="getLanguagesTranslations"></a>
 
@@ -243,7 +243,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**AvailableTranslations**](AvailableTranslations.html)
+**AvailableTranslations**
 
 <a name="getLanguagesTranslationsBuiltin"></a>
 
@@ -283,7 +283,7 @@ apiInstance.getLanguagesTranslationsBuiltin(language)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **language** | **String**| The language of the builtin translation to retrieve |  |
+ **language** | **String** | The language of the builtin translation to retrieve |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -328,7 +328,7 @@ apiInstance.getLanguagesTranslationsOrganization(language)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **language** | **String**| The language of the translation to retrieve for the organization |  |
+ **language** | **String** | The language of the translation to retrieve for the organization |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -373,7 +373,7 @@ apiInstance.getLanguagesTranslationsUser(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| The user id |  |
+ **userId** | **String** | The user id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -418,12 +418,12 @@ apiInstance.getRoutingLanguage(languageId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **languageId** | **String**| Language ID |  |
+ **languageId** | **String** | Language ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Language**](Language.html)
+**Language**
 
 <a name="postLanguages"></a>
 
@@ -463,10 +463,10 @@ apiInstance.postLanguages(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Language**](Language.html)| Language |  |
+ **body** | **Language** | Language |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Language**](Language.html)
+**Language**
 

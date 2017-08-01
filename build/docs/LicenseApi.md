@@ -55,12 +55,12 @@ apiInstance.getLicenseDefinition(licenseId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **licenseId** | **String**| ID |  |
+ **licenseId** | **String** | ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LicenseDefinition**](LicenseDefinition.html)
+**LicenseDefinition**
 
 <a name="getLicenseDefinitions"></a>
 
@@ -99,7 +99,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[LicenseDefinition]**](LicenseDefinition.html)
+**[LicenseDefinition]**
 
 <a name="getLicenseOrganization"></a>
 
@@ -138,7 +138,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**LicenseOrganization**](LicenseOrganization.html)
+**LicenseOrganization**
 
 <a name="getLicenseToggle"></a>
 
@@ -178,12 +178,12 @@ apiInstance.getLicenseToggle(featureName)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **featureName** | **String**| featureName |  |
+ **featureName** | **String** | featureName |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LicenseOrgToggle**](LicenseOrgToggle.html)
+**LicenseOrgToggle**
 
 <a name="getLicenseUser"></a>
 
@@ -223,12 +223,12 @@ apiInstance.getLicenseUser(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| ID |  |
+ **userId** | **String** | ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LicenseUser**](LicenseUser.html)
+**LicenseUser**
 
 <a name="postLicenseOrganization"></a>
 
@@ -269,12 +269,12 @@ apiInstance.postLicenseOrganization(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**LicenseBatchAssignmentRequest**](LicenseBatchAssignmentRequest.html)| The license assignments to update. | [optional]  |
+ **body** | **LicenseBatchAssignmentRequest** | The license assignments to update. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[LicenseUpdateStatus]**](LicenseUpdateStatus.html)
+**[LicenseUpdateStatus]**
 
 <a name="postLicenseToggle"></a>
 
@@ -314,12 +314,12 @@ apiInstance.postLicenseToggle(featureName)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **featureName** | **String**| featureName |  |
+ **featureName** | **String** | featureName |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LicenseOrgToggle**](LicenseOrgToggle.html)
+**LicenseOrgToggle**
 
 <a name="postLicenseUsers"></a>
 
@@ -360,7 +360,7 @@ apiInstance.postLicenseUsers(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **[String]**| The user IDs to fetch. | [optional]  |
+ **body** | **[String]** | The user IDs to fetch. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

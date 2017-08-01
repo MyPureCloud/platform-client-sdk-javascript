@@ -58,7 +58,7 @@ apiInstance.deleteGroup(groupId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String**| Group ID |  |
+ **groupId** | **String** | Group ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -105,13 +105,13 @@ apiInstance.deleteGroupMembers(groupId, ids)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String**| Group ID |  |
- **ids** | **String**| Comma separated list of userIds to remove |  |
+ **groupId** | **String** | Group ID |  |
+ **ids** | **String** | Comma separated list of userIds to remove |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="getFieldconfig"></a>
 
@@ -151,12 +151,12 @@ apiInstance.getFieldconfig(type)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **type** | **String**| Field type | <br />**Values**: person, group, org, externalContact |
+ **type** | **String** | Field type | <br />**Values**: person, group, org, externalContact |
 {: class="table table-striped"}
 
 ### Return type
 
-[**FieldConfig**](FieldConfig.html)
+**FieldConfig**
 
 <a name="getGroup"></a>
 
@@ -196,12 +196,12 @@ apiInstance.getGroup(groupId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String**| Group ID |  |
+ **groupId** | **String** | Group ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Group**](Group.html)
+**Group**
 
 <a name="getGroupMembers"></a>
 
@@ -247,16 +247,16 @@ apiInstance.getGroupMembers(groupId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String**| Group ID |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+ **groupId** | **String** | Group ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserEntityListing**](UserEntityListing.html)
+**UserEntityListing**
 
 <a name="getGroups"></a>
 
@@ -299,14 +299,14 @@ apiInstance.getGroups(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
 
-[**GroupEntityListing**](GroupEntityListing.html)
+**GroupEntityListing**
 
 <a name="getGroupsSearch"></a>
 
@@ -349,13 +349,13 @@ apiInstance.getGroupsSearch(q64, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **q64** | **String**| q64 |  |
- **expand** | [**[String]**](String.html)| expand | [optional]  |
+ **q64** | **String** | q64 |  |
+ **expand** | **[String]** | expand | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**GroupsSearchResponse**](GroupsSearchResponse.html)
+**GroupsSearchResponse**
 
 <a name="postGroupMembers"></a>
 
@@ -397,13 +397,13 @@ apiInstance.postGroupMembers(groupId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String**| Group ID |  |
- **body** | [**GroupMembersUpdate**](GroupMembersUpdate.html)| Add members |  |
+ **groupId** | **String** | Group ID |  |
+ **body** | **GroupMembersUpdate** | Add members |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="postGroups"></a>
 
@@ -443,12 +443,12 @@ apiInstance.postGroups(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Group**](Group.html)| Group |  |
+ **body** | **Group** | Group |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Group**](Group.html)
+**Group**
 
 <a name="postGroupsSearch"></a>
 
@@ -488,12 +488,12 @@ apiInstance.postGroupsSearch(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**GroupSearchRequest**](GroupSearchRequest.html)| Search request options |  |
+ **body** | **GroupSearchRequest** | Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**GroupsSearchResponse**](GroupsSearchResponse.html)
+**GroupsSearchResponse**
 
 <a name="putGroup"></a>
 
@@ -536,11 +536,11 @@ apiInstance.putGroup(groupId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String**| Group ID |  |
- **body** | [**GroupUpdate**](GroupUpdate.html)| Group | [optional]  |
+ **groupId** | **String** | Group ID |  |
+ **body** | **GroupUpdate** | Group | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Group**](Group.html)
+**Group**
 

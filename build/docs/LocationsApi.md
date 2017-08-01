@@ -51,12 +51,12 @@ apiInstance.getLocation(locationId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **locationId** | **String**| Location ID |  |
+ **locationId** | **String** | Location ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LocationDefinition**](LocationDefinition.html)
+**LocationDefinition**
 
 <a name="getLocations"></a>
 
@@ -99,14 +99,14 @@ apiInstance.getLocations(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortOrder** | **String**| Sort order | [optional] <br />**Values**: asc, desc |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortOrder** | **String** | Sort order | [optional] <br />**Values**: asc, desc |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LocationEntityListing**](LocationEntityListing.html)
+**LocationEntityListing**
 
 <a name="getLocationsSearch"></a>
 
@@ -149,13 +149,13 @@ apiInstance.getLocationsSearch(q64, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **q64** | **String**| q64 |  |
- **expand** | [**[String]**](String.html)| expand | [optional]  |
+ **q64** | **String** | q64 |  |
+ **expand** | **[String]** | expand | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LocationsSearchResponse**](LocationsSearchResponse.html)
+**LocationsSearchResponse**
 
 <a name="postLocationsSearch"></a>
 
@@ -195,10 +195,10 @@ apiInstance.postLocationsSearch(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**LocationSearchRequest**](LocationSearchRequest.html)| Search request options |  |
+ **body** | **LocationSearchRequest** | Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LocationsSearchResponse**](LocationsSearchResponse.html)
+**LocationsSearchResponse**
 

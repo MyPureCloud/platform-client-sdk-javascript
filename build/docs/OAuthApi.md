@@ -53,7 +53,7 @@ apiInstance.deleteOauthClient(clientId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **clientId** | **String**| Client ID |  |
+ **clientId** | **String** | Client ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -98,12 +98,12 @@ apiInstance.getOauthClient(clientId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **clientId** | **String**| Client ID |  |
+ **clientId** | **String** | Client ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OAuthClient**](OAuthClient.html)
+**OAuthClient**
 
 <a name="getOauthClients"></a>
 
@@ -142,7 +142,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OAuthClientEntityListing**](OAuthClientEntityListing.html)
+**OAuthClientEntityListing**
 
 <a name="postOauthClientSecret"></a>
 
@@ -182,12 +182,12 @@ apiInstance.postOauthClientSecret(clientId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **clientId** | **String**| Client ID |  |
+ **clientId** | **String** | Client ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OAuthClient**](OAuthClient.html)
+**OAuthClient**
 
 <a name="postOauthClients"></a>
 
@@ -227,12 +227,12 @@ apiInstance.postOauthClients(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**OAuthClient**](OAuthClient.html)| Client |  |
+ **body** | **OAuthClient** | Client |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OAuthClient**](OAuthClient.html)
+**OAuthClient**
 
 <a name="putOauthClient"></a>
 
@@ -274,11 +274,11 @@ apiInstance.putOauthClient(clientId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **clientId** | **String**| Client ID |  |
- **body** | [**OAuthClient**](OAuthClient.html)| Client |  |
+ **clientId** | **String** | Client ID |  |
+ **body** | **OAuthClient** | Client |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OAuthClient**](OAuthClient.html)
+**OAuthClient**
 

@@ -55,7 +55,7 @@ apiInstance.deletePresencedefinition(presenceId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **presenceId** | **String**| Organization Presence ID |  |
+ **presenceId** | **String** | Organization Presence ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -103,13 +103,13 @@ apiInstance.getPresencedefinition(presenceId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **presenceId** | **String**| Organization Presence ID |  |
- **localeCode** | **String**| The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional]  |
+ **presenceId** | **String** | Organization Presence ID |  |
+ **localeCode** | **String** | The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OrganizationPresence**](OrganizationPresence.html)
+**OrganizationPresence**
 
 <a name="getPresencedefinitions"></a>
 
@@ -153,15 +153,15 @@ apiInstance.getPresencedefinitions(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **deleted** | **String**| Deleted query can be TRUE, FALSE or ALL | [optional] [default to false] |
- **localeCode** | **String**| The locale code to fetch for each presence definition. Use ALL to fetch everything. | [optional]  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **deleted** | **String** | Deleted query can be TRUE, FALSE or ALL | [optional] [default to false] |
+ **localeCode** | **String** | The locale code to fetch for each presence definition. Use ALL to fetch everything. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OrganizationPresenceEntityListing**](OrganizationPresenceEntityListing.html)
+**OrganizationPresenceEntityListing**
 
 <a name="getSystempresences"></a>
 
@@ -200,7 +200,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[SystemPresence]**](SystemPresence.html)
+**[SystemPresence]**
 
 <a name="getUserPresence"></a>
 
@@ -242,13 +242,13 @@ apiInstance.getUserPresence(userId, sourceId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| user Id |  |
- **sourceId** | **String**| Source |  |
+ **userId** | **String** | user Id |  |
+ **sourceId** | **String** | Source |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserPresence**](UserPresence.html)
+**UserPresence**
 
 <a name="patchUserPresence"></a>
 
@@ -292,14 +292,14 @@ apiInstance.patchUserPresence(userId, sourceId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| user Id |  |
- **sourceId** | **String**| Source |  |
- **body** | [**UserPresence**](UserPresence.html)| User presence |  |
+ **userId** | **String** | user Id |  |
+ **sourceId** | **String** | Source |  |
+ **body** | **UserPresence** | User presence |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserPresence**](UserPresence.html)
+**UserPresence**
 
 <a name="postPresencedefinitions"></a>
 
@@ -339,12 +339,12 @@ apiInstance.postPresencedefinitions(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**OrganizationPresence**](OrganizationPresence.html)| The Presence Definition to create |  |
+ **body** | **OrganizationPresence** | The Presence Definition to create |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OrganizationPresence**](OrganizationPresence.html)
+**OrganizationPresence**
 
 <a name="putPresencedefinition"></a>
 
@@ -386,11 +386,11 @@ apiInstance.putPresencedefinition(presenceId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **presenceId** | **String**| Organization Presence ID |  |
- **body** | [**OrganizationPresence**](OrganizationPresence.html)| The OrganizationPresence to update |  |
+ **presenceId** | **String** | Organization Presence ID |  |
+ **body** | **OrganizationPresence** | The OrganizationPresence to update |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OrganizationPresence**](OrganizationPresence.html)
+**OrganizationPresence**
 

@@ -129,9 +129,9 @@ apiInstance.deleteConversationParticipantCode(conversationId, participantId, add
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversation ID |  |
- **participantId** | **String**| participant ID |  |
- **addCommunicationCode** | **String**| addCommunicationCode |  |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
+ **addCommunicationCode** | **String** | addCommunicationCode |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -178,8 +178,8 @@ apiInstance.deleteConversationsCallParticipantConsult(conversationId, participan
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -226,8 +226,8 @@ apiInstance.deleteConversationsEmailMessagesDraftAttachment(conversationId, atta
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **attachmentId** | **String**| attachmentId |  |
+ **conversationId** | **String** | conversationId |  |
+ **attachmentId** | **String** | attachmentId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -272,12 +272,12 @@ apiInstance.getAnalyticsConversationDetails(conversationId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
+ **conversationId** | **String** | conversationId |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AnalyticsConversation**](AnalyticsConversation.html)
+**AnalyticsConversation**
 
 <a name="getConversation"></a>
 
@@ -317,12 +317,12 @@ apiInstance.getConversation(conversationId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversation ID |  |
+ **conversationId** | **String** | conversation ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+**Conversation**
 
 <a name="getConversationParticipantWrapup"></a>
 
@@ -367,14 +367,14 @@ apiInstance.getConversationParticipantWrapup(conversationId, participantId, opts
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversation ID |  |
- **participantId** | **String**| participant ID |  |
- **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
+ **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**WrapupCode**](WrapupCode.html)
+**WrapupCode**
 
 <a name="getConversationParticipantWrapupcodes"></a>
 
@@ -416,13 +416,13 @@ apiInstance.getConversationParticipantWrapupcodes(conversationId, participantId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversation ID |  |
- **participantId** | **String**| participant ID |  |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[WrapupCode]**](WrapupCode.html)
+**[WrapupCode]**
 
 <a name="getConversations"></a>
 
@@ -463,12 +463,12 @@ apiInstance.getConversations(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **communicationType** | **String**| Call or Chat communication filtering | [optional]  |
+ **communicationType** | **String** | Call or Chat communication filtering | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ConversationEntityListing**](ConversationEntityListing.html)
+**ConversationEntityListing**
 
 <a name="getConversationsCall"></a>
 
@@ -508,12 +508,12 @@ apiInstance.getConversationsCall(conversationId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
+ **conversationId** | **String** | conversationId |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CallConversation**](CallConversation.html)
+**CallConversation**
 
 <a name="getConversationsCallParticipantWrapup"></a>
 
@@ -558,14 +558,14 @@ apiInstance.getConversationsCallParticipantWrapup(conversationId, participantId,
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Wrapup**](Wrapup.html)
+**Wrapup**
 
 <a name="getConversationsCallParticipantWrapupcodes"></a>
 
@@ -607,13 +607,13 @@ apiInstance.getConversationsCallParticipantWrapupcodes(conversationId, participa
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[WrapupCode]**](WrapupCode.html)
+**[WrapupCode]**
 
 <a name="getConversationsCallback"></a>
 
@@ -653,12 +653,12 @@ apiInstance.getConversationsCallback(conversationId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
+ **conversationId** | **String** | conversationId |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CallbackConversation**](CallbackConversation.html)
+**CallbackConversation**
 
 <a name="getConversationsCallbackParticipantWrapup"></a>
 
@@ -703,14 +703,14 @@ apiInstance.getConversationsCallbackParticipantWrapup(conversationId, participan
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Wrapup**](Wrapup.html)
+**Wrapup**
 
 <a name="getConversationsCallbackParticipantWrapupcodes"></a>
 
@@ -752,13 +752,13 @@ apiInstance.getConversationsCallbackParticipantWrapupcodes(conversationId, parti
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[WrapupCode]**](WrapupCode.html)
+**[WrapupCode]**
 
 <a name="getConversationsCallbacks"></a>
 
@@ -797,7 +797,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**CallbackConversationEntityListing**](CallbackConversationEntityListing.html)
+**CallbackConversationEntityListing**
 
 <a name="getConversationsCalls"></a>
 
@@ -836,7 +836,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**CallConversationEntityListing**](CallConversationEntityListing.html)
+**CallConversationEntityListing**
 
 <a name="getConversationsCallsHistory"></a>
 
@@ -879,14 +879,14 @@ apiInstance.getConversationsCallsHistory(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **interval** | **String**| Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **interval** | **String** | Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CallConversationEntityListing**](CallConversationEntityListing.html)
+**CallConversationEntityListing**
 
 <a name="getConversationsCallsMaximumconferenceparties"></a>
 
@@ -925,7 +925,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**MaxParticipants**](MaxParticipants.html)
+**MaxParticipants**
 
 <a name="getConversationsChat"></a>
 
@@ -965,12 +965,12 @@ apiInstance.getConversationsChat(conversationId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
+ **conversationId** | **String** | conversationId |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ChatConversation**](ChatConversation.html)
+**ChatConversation**
 
 <a name="getConversationsChatParticipantWrapup"></a>
 
@@ -1015,14 +1015,14 @@ apiInstance.getConversationsChatParticipantWrapup(conversationId, participantId,
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Wrapup**](Wrapup.html)
+**Wrapup**
 
 <a name="getConversationsChatParticipantWrapupcodes"></a>
 
@@ -1064,13 +1064,13 @@ apiInstance.getConversationsChatParticipantWrapupcodes(conversationId, participa
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[WrapupCode]**](WrapupCode.html)
+**[WrapupCode]**
 
 <a name="getConversationsChats"></a>
 
@@ -1109,7 +1109,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ChatConversationEntityListing**](ChatConversationEntityListing.html)
+**ChatConversationEntityListing**
 
 <a name="getConversationsCobrowsesession"></a>
 
@@ -1149,12 +1149,12 @@ apiInstance.getConversationsCobrowsesession(conversationId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
+ **conversationId** | **String** | conversationId |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CobrowseConversation**](CobrowseConversation.html)
+**CobrowseConversation**
 
 <a name="getConversationsCobrowsesessionParticipantWrapup"></a>
 
@@ -1199,14 +1199,14 @@ apiInstance.getConversationsCobrowsesessionParticipantWrapup(conversationId, par
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Wrapup**](Wrapup.html)
+**Wrapup**
 
 <a name="getConversationsCobrowsesessionParticipantWrapupcodes"></a>
 
@@ -1248,13 +1248,13 @@ apiInstance.getConversationsCobrowsesessionParticipantWrapupcodes(conversationId
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[WrapupCode]**](WrapupCode.html)
+**[WrapupCode]**
 
 <a name="getConversationsCobrowsesessions"></a>
 
@@ -1293,7 +1293,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**CobrowseConversationEntityListing**](CobrowseConversationEntityListing.html)
+**CobrowseConversationEntityListing**
 
 <a name="getConversationsEmail"></a>
 
@@ -1333,12 +1333,12 @@ apiInstance.getConversationsEmail(conversationId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
+ **conversationId** | **String** | conversationId |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EmailConversation**](EmailConversation.html)
+**EmailConversation**
 
 <a name="getConversationsEmailMessage"></a>
 
@@ -1380,13 +1380,13 @@ apiInstance.getConversationsEmailMessage(conversationId, messageId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **messageId** | **String**| messageId |  |
+ **conversationId** | **String** | conversationId |  |
+ **messageId** | **String** | messageId |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EmailMessage**](EmailMessage.html)
+**EmailMessage**
 
 <a name="getConversationsEmailMessages"></a>
 
@@ -1426,12 +1426,12 @@ apiInstance.getConversationsEmailMessages(conversationId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
+ **conversationId** | **String** | conversationId |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EmailMessageListing**](EmailMessageListing.html)
+**EmailMessageListing**
 
 <a name="getConversationsEmailMessagesDraft"></a>
 
@@ -1471,12 +1471,12 @@ apiInstance.getConversationsEmailMessagesDraft(conversationId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
+ **conversationId** | **String** | conversationId |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EmailMessage**](EmailMessage.html)
+**EmailMessage**
 
 <a name="getConversationsEmailParticipantWrapup"></a>
 
@@ -1521,14 +1521,14 @@ apiInstance.getConversationsEmailParticipantWrapup(conversationId, participantId
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Wrapup**](Wrapup.html)
+**Wrapup**
 
 <a name="getConversationsEmailParticipantWrapupcodes"></a>
 
@@ -1570,13 +1570,13 @@ apiInstance.getConversationsEmailParticipantWrapupcodes(conversationId, particip
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[WrapupCode]**](WrapupCode.html)
+**[WrapupCode]**
 
 <a name="getConversationsEmails"></a>
 
@@ -1615,7 +1615,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**EmailConversationEntityListing**](EmailConversationEntityListing.html)
+**EmailConversationEntityListing**
 
 <a name="patchConversationParticipant"></a>
 
@@ -1659,9 +1659,9 @@ apiInstance.patchConversationParticipant(conversationId, participantId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversation ID |  |
- **participantId** | **String**| participant ID |  |
- **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request |  |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
+ **body** | **MediaParticipantRequest** | Update request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1710,9 +1710,9 @@ apiInstance.patchConversationParticipantAttributes(conversationId, participantId
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversation ID |  |
- **participantId** | **String**| participant ID |  |
- **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes |  |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
+ **body** | **ParticipantAttributes** | Participant attributes |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1759,13 +1759,13 @@ apiInstance.patchConversationsCall(conversationId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **body** | [**Conversation**](Conversation.html)| Conversation |  |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Conversation** | Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+**Conversation**
 
 <a name="patchConversationsCallParticipant"></a>
 
@@ -1809,9 +1809,9 @@ apiInstance.patchConversationsCallParticipant(conversationId, participantId, bod
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant request |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **MediaParticipantRequest** | Participant request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1860,9 +1860,9 @@ apiInstance.patchConversationsCallParticipantAttributes(conversationId, particip
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **ParticipantAttributes** | Participant attributes |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1913,15 +1913,15 @@ apiInstance.patchConversationsCallParticipantCommunication(conversationId, parti
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **communicationId** | **String**| communicationId |  |
- **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **communicationId** | **String** | communicationId |  |
+ **body** | **MediaParticipantRequest** | Participant |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="patchConversationsCallParticipantConsult"></a>
 
@@ -1965,14 +1965,14 @@ apiInstance.patchConversationsCallParticipantConsult(conversationId, participant
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **body** | [**ConsultTransferUpdate**](ConsultTransferUpdate.html)| new speak to |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **ConsultTransferUpdate** | new speak to |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ConsultTransferResponse**](ConsultTransferResponse.html)
+**ConsultTransferResponse**
 
 <a name="patchConversationsCallback"></a>
 
@@ -2014,13 +2014,13 @@ apiInstance.patchConversationsCallback(conversationId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **body** | [**Conversation**](Conversation.html)| Conversation |  |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Conversation** | Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+**Conversation**
 
 <a name="patchConversationsCallbackParticipant"></a>
 
@@ -2064,9 +2064,9 @@ apiInstance.patchConversationsCallbackParticipant(conversationId, participantId,
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **MediaParticipantRequest** | Participant |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2115,9 +2115,9 @@ apiInstance.patchConversationsCallbackParticipantAttributes(conversationId, part
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Attributes |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **ParticipantAttributes** | Attributes |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2168,15 +2168,15 @@ apiInstance.patchConversationsCallbackParticipantCommunication(conversationId, p
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **communicationId** | **String**| communicationId |  |
- **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **communicationId** | **String** | communicationId |  |
+ **body** | **MediaParticipantRequest** | Participant |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="patchConversationsChat"></a>
 
@@ -2218,13 +2218,13 @@ apiInstance.patchConversationsChat(conversationId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **body** | [**Conversation**](Conversation.html)| Conversation |  |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Conversation** | Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+**Conversation**
 
 <a name="patchConversationsChatParticipant"></a>
 
@@ -2268,9 +2268,9 @@ apiInstance.patchConversationsChatParticipant(conversationId, participantId, bod
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **MediaParticipantRequest** | Update request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2319,9 +2319,9 @@ apiInstance.patchConversationsChatParticipantAttributes(conversationId, particip
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **ParticipantAttributes** | Participant attributes |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2372,15 +2372,15 @@ apiInstance.patchConversationsChatParticipantCommunication(conversationId, parti
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **communicationId** | **String**| communicationId |  |
- **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **communicationId** | **String** | communicationId |  |
+ **body** | **MediaParticipantRequest** | Participant |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="patchConversationsCobrowsesession"></a>
 
@@ -2422,13 +2422,13 @@ apiInstance.patchConversationsCobrowsesession(conversationId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **body** | [**Conversation**](Conversation.html)| Conversation |  |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Conversation** | Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+**Conversation**
 
 <a name="patchConversationsCobrowsesessionParticipant"></a>
 
@@ -2473,9 +2473,9 @@ apiInstance.patchConversationsCobrowsesessionParticipant(conversationId, partici
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)|  | [optional]  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **MediaParticipantRequest** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2525,9 +2525,9 @@ apiInstance.patchConversationsCobrowsesessionParticipantAttributes(conversationI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **body** | [**ParticipantAttributes**](ParticipantAttributes.html)|  | [optional]  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **ParticipantAttributes** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2578,15 +2578,15 @@ apiInstance.patchConversationsCobrowsesessionParticipantCommunication(conversati
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **communicationId** | **String**| communicationId |  |
- **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **communicationId** | **String** | communicationId |  |
+ **body** | **MediaParticipantRequest** | Participant |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="patchConversationsEmail"></a>
 
@@ -2628,13 +2628,13 @@ apiInstance.patchConversationsEmail(conversationId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **body** | [**Conversation**](Conversation.html)| Conversation |  |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Conversation** | Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+**Conversation**
 
 <a name="patchConversationsEmailParticipant"></a>
 
@@ -2678,9 +2678,9 @@ apiInstance.patchConversationsEmailParticipant(conversationId, participantId, bo
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **MediaParticipantRequest** | Update request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2729,9 +2729,9 @@ apiInstance.patchConversationsEmailParticipantAttributes(conversationId, partici
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **ParticipantAttributes** | Participant attributes |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2782,15 +2782,15 @@ apiInstance.patchConversationsEmailParticipantCommunication(conversationId, part
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **communicationId** | **String**| communicationId |  |
- **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **communicationId** | **String** | communicationId |  |
+ **body** | **MediaParticipantRequest** | Participant |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="postAnalyticsConversationDetailsProperties"></a>
 
@@ -2832,13 +2832,13 @@ apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **body** | [**PropertyIndexRequest**](PropertyIndexRequest.html)| request |  |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **PropertyIndexRequest** | request |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PropertyIndexRequest**](PropertyIndexRequest.html)
+**PropertyIndexRequest**
 
 <a name="postAnalyticsConversationsAggregatesQuery"></a>
 
@@ -2878,12 +2878,12 @@ apiInstance.postAnalyticsConversationsAggregatesQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
+ **body** | **AggregationQuery** | query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+**AggregateQueryResponse**
 
 <a name="postAnalyticsConversationsDetailsQuery"></a>
 
@@ -2923,12 +2923,12 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**ConversationQuery**](ConversationQuery.html)| query |  |
+ **body** | **ConversationQuery** | query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse.html)
+**AnalyticsConversationQueryResponse**
 
 <a name="postConversationParticipantCallbacks"></a>
 
@@ -2973,9 +2973,9 @@ apiInstance.postConversationParticipantCallbacks(conversationId, participantId, 
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversation ID |  |
- **participantId** | **String**| participant ID |  |
- **body** | [**CreateCallbackOnConversationCommand**](CreateCallbackOnConversationCommand.html)|  | [optional]  |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
+ **body** | **CreateCallbackOnConversationCommand** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3024,9 +3024,9 @@ apiInstance.postConversationParticipantReplace(conversationId, participantId, bo
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversation ID |  |
- **participantId** | **String**| participant ID |  |
- **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
+ **body** | **TransferRequest** | Transfer request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3073,13 +3073,13 @@ apiInstance.postConversationsCall(conversationId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **body** | [**CallCommand**](CallCommand.html)| Conversation |  |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **CallCommand** | Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+**Conversation**
 
 <a name="postConversationsCallParticipantConsult"></a>
 
@@ -3123,14 +3123,14 @@ apiInstance.postConversationsCallParticipantConsult(conversationId, participantI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **body** | [**ConsultTransfer**](ConsultTransfer.html)| Destination address &amp; initial speak to |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **ConsultTransfer** | Destination address &amp; initial speak to |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ConsultTransferResponse**](ConsultTransferResponse.html)
+**ConsultTransferResponse**
 
 <a name="postConversationsCallParticipantMonitor"></a>
 
@@ -3172,8 +3172,8 @@ apiInstance.postConversationsCallParticipantMonitor(conversationId, participantI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3222,9 +3222,9 @@ apiInstance.postConversationsCallParticipantReplace(conversationId, participantI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **TransferRequest** | Transfer request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3271,13 +3271,13 @@ apiInstance.postConversationsCallParticipants(conversationId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **body** | [**Conversation**](Conversation.html)| Conversation |  |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Conversation** | Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+**Conversation**
 
 <a name="postConversationsCallbackParticipantReplace"></a>
 
@@ -3321,9 +3321,9 @@ apiInstance.postConversationsCallbackParticipantReplace(conversationId, particip
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **TransferRequest** | Transfer request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3368,12 +3368,12 @@ apiInstance.postConversationsCallbacks(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**CreateCallbackCommand**](CreateCallbackCommand.html)| Callback |  |
+ **body** | **CreateCallbackCommand** | Callback |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CreateCallbackResponse**](CreateCallbackResponse.html)
+**CreateCallbackResponse**
 
 <a name="postConversationsCalls"></a>
 
@@ -3413,12 +3413,12 @@ apiInstance.postConversationsCalls(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**CreateCallRequest**](CreateCallRequest.html)| Call request |  |
+ **body** | **CreateCallRequest** | Call request |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CreateCallResponse**](CreateCallResponse.html)
+**CreateCallResponse**
 
 <a name="postConversationsChatParticipantReplace"></a>
 
@@ -3462,9 +3462,9 @@ apiInstance.postConversationsChatParticipantReplace(conversationId, participantI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **TransferRequest** | Transfer request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3509,12 +3509,12 @@ apiInstance.postConversationsChats(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**CreateWebChatRequest**](CreateWebChatRequest.html)| Create web chat request |  |
+ **body** | **CreateWebChatRequest** | Create web chat request |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ChatConversation**](ChatConversation.html)
+**ChatConversation**
 
 <a name="postConversationsCobrowsesessionParticipantReplace"></a>
 
@@ -3559,9 +3559,9 @@ apiInstance.postConversationsCobrowsesessionParticipantReplace(conversationId, p
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **body** | [**TransferRequest**](TransferRequest.html)|  | [optional]  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **TransferRequest** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3608,13 +3608,13 @@ apiInstance.postConversationsEmailMessages(conversationId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **body** | [**EmailMessage**](EmailMessage.html)| Reply |  |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **EmailMessage** | Reply |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EmailMessage**](EmailMessage.html)
+**EmailMessage**
 
 <a name="postConversationsEmailParticipantReplace"></a>
 
@@ -3658,9 +3658,9 @@ apiInstance.postConversationsEmailParticipantReplace(conversationId, participant
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **TransferRequest** | Transfer request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3705,12 +3705,12 @@ apiInstance.postConversationsEmails(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**CreateEmailRequest**](CreateEmailRequest.html)| Create email request |  |
+ **body** | **CreateEmailRequest** | Create email request |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EmailConversation**](EmailConversation.html)
+**EmailConversation**
 
 <a name="postConversationsFaxes"></a>
 
@@ -3750,12 +3750,12 @@ apiInstance.postConversationsFaxes(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**FaxSendRequest**](FaxSendRequest.html)| Fax |  |
+ **body** | **FaxSendRequest** | Fax |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**FaxSendResponse**](FaxSendResponse.html)
+**FaxSendResponse**
 
 <a name="putConversationsCallParticipantCommunicationUuidata"></a>
 
@@ -3801,15 +3801,15 @@ apiInstance.putConversationsCallParticipantCommunicationUuidata(conversationId, 
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **participantId** | **String**| participantId |  |
- **communicationId** | **String**| communicationId |  |
- **body** | [**SetUuiDataRequest**](SetUuiDataRequest.html)| UUIData Request |  |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **communicationId** | **String** | communicationId |  |
+ **body** | **SetUuiDataRequest** | UUIData Request |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="putConversationsEmailMessagesDraft"></a>
 
@@ -3851,11 +3851,11 @@ apiInstance.putConversationsEmailMessagesDraft(conversationId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **body** | [**EmailMessage**](EmailMessage.html)| Draft |  |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **EmailMessage** | Draft |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EmailMessage**](EmailMessage.html)
+**EmailMessage**
 

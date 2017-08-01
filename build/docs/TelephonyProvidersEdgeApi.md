@@ -168,7 +168,7 @@ apiInstance.deleteTelephonyProvidersEdge(edgeId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
+ **edgeId** | **String** | Edge ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -215,8 +215,8 @@ apiInstance.deleteTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
- **interfaceId** | **String**| Interface ID |  |
+ **edgeId** | **String** | Edge ID |  |
+ **interfaceId** | **String** | Interface ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -261,7 +261,7 @@ apiInstance.deleteTelephonyProvidersEdgeSoftwareupdate(edgeId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
+ **edgeId** | **String** | Edge ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -306,7 +306,7 @@ apiInstance.deleteTelephonyProvidersEdgesCertificateauthority(certificateId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **certificateId** | **String**| Certificate ID |  |
+ **certificateId** | **String** | Certificate ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -351,7 +351,7 @@ apiInstance.deleteTelephonyProvidersEdgesDidpool(didPoolId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **didPoolId** | **String**| DID pool ID |  |
+ **didPoolId** | **String** | DID pool ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -396,7 +396,7 @@ apiInstance.deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeGroupId** | **String**| Edge group ID |  |
+ **edgeGroupId** | **String** | Edge group ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -441,7 +441,7 @@ apiInstance.deleteTelephonyProvidersEdgesEndpoint(endpointId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **endpointId** | **String**| Endpoint ID |  |
+ **endpointId** | **String** | Endpoint ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -486,7 +486,7 @@ apiInstance.deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **extensionPoolId** | **String**| Extension pool ID |  |
+ **extensionPoolId** | **String** | Extension pool ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -531,7 +531,7 @@ apiInstance.deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **outboundRouteId** | **String**| Outbound route ID |  |
+ **outboundRouteId** | **String** | Outbound route ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -576,7 +576,7 @@ apiInstance.deleteTelephonyProvidersEdgesPhone(phoneId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **phoneId** | **String**| Phone ID |  |
+ **phoneId** | **String** | Phone ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -621,7 +621,7 @@ apiInstance.deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **phoneBaseId** | **String**| Phone base ID |  |
+ **phoneBaseId** | **String** | Phone base ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -666,7 +666,7 @@ apiInstance.deleteTelephonyProvidersEdgesSite(siteId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **siteId** | **String**| Site ID |  |
+ **siteId** | **String** | Site ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -713,8 +713,8 @@ apiInstance.deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRoute
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **siteId** | **String**| Site ID |  |
- **outboundRouteId** | **String**| Outbound route ID |  |
+ **siteId** | **String** | Site ID |  |
+ **outboundRouteId** | **String** | Outbound route ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -759,7 +759,7 @@ apiInstance.deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trunkBaseSettingsId** | **String**| Trunk Base ID |  |
+ **trunkBaseSettingsId** | **String** | Trunk Base ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -806,13 +806,13 @@ apiInstance.getConfigurationSchemasEdgesVnext(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**SchemaCategoryEntityListing**](SchemaCategoryEntityListing.html)
+**SchemaCategoryEntityListing**
 
 <a name="getConfigurationSchemasEdgesVnextSchemaCategory"></a>
 
@@ -856,14 +856,14 @@ apiInstance.getConfigurationSchemasEdgesVnextSchemaCategory(schemaCategory, opts
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **schemaCategory** | **String**| Schema category |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **schemaCategory** | **String** | Schema category |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**SchemaReferenceEntityListing**](SchemaReferenceEntityListing.html)
+**SchemaReferenceEntityListing**
 
 <a name="getConfigurationSchemasEdgesVnextSchemaCategorySchemaType"></a>
 
@@ -909,15 +909,15 @@ apiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(schemaCate
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **schemaCategory** | **String**| Schema category |  |
- **schemaType** | **String**| Schema type |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **schemaCategory** | **String** | Schema category |  |
+ **schemaType** | **String** | Schema type |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**SchemaReferenceEntityListing**](SchemaReferenceEntityListing.html)
+**SchemaReferenceEntityListing**
 
 <a name="getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId"></a>
 
@@ -961,14 +961,14 @@ apiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(sc
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **schemaCategory** | **String**| Schema category |  |
- **schemaType** | **String**| Schema type |  |
- **schemaId** | **String**| Schema ID |  |
+ **schemaCategory** | **String** | Schema category |  |
+ **schemaType** | **String** | Schema type |  |
+ **schemaId** | **String** | Schema ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Organization**](Organization.html)
+**Organization**
 
 <a name="getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId"></a>
 
@@ -1019,17 +1019,17 @@ apiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExt
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **schemaCategory** | **String**| Schema category |  |
- **schemaType** | **String**| Schema type |  |
- **schemaId** | **String**| Schema ID |  |
- **extensionType** | **String**| extension |  |
- **metadataId** | **String**| Metadata ID |  |
- **type** | **String**| Type | [optional]  |
+ **schemaCategory** | **String** | Schema category |  |
+ **schemaType** | **String** | Schema type |  |
+ **schemaId** | **String** | Schema ID |  |
+ **extensionType** | **String** | extension |  |
+ **metadataId** | **String** | Metadata ID |  |
+ **type** | **String** | Type | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Organization**](Organization.html)
+**Organization**
 
 <a name="getTelephonyProvidersEdge"></a>
 
@@ -1072,13 +1072,13 @@ apiInstance.getTelephonyProvidersEdge(edgeId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
- **expand** | [**[String]**](String.html)| Fields to expand in the response, comma-separated | [optional] <br />**Values**: site |
+ **edgeId** | **String** | Edge ID |  |
+ **expand** | **[String]** | Fields to expand in the response, comma-separated | [optional] <br />**Values**: site |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Edge**](Edge.html)
+**Edge**
 
 <a name="getTelephonyProvidersEdgeLine"></a>
 
@@ -1120,13 +1120,13 @@ apiInstance.getTelephonyProvidersEdgeLine(edgeId, lineId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
- **lineId** | **String**| Line ID |  |
+ **edgeId** | **String** | Edge ID |  |
+ **lineId** | **String** | Line ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EdgeLine**](EdgeLine.html)
+**EdgeLine**
 
 <a name="getTelephonyProvidersEdgeLines"></a>
 
@@ -1170,14 +1170,14 @@ apiInstance.getTelephonyProvidersEdgeLines(edgeId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **edgeId** | **String** | Edge ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EdgeLineEntityListing**](EdgeLineEntityListing.html)
+**EdgeLineEntityListing**
 
 <a name="getTelephonyProvidersEdgeLogicalinterface"></a>
 
@@ -1222,14 +1222,14 @@ apiInstance.getTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
- **interfaceId** | **String**| Interface ID |  |
- **expand** | [**[String]**](String.html)| Field to expand in the response | [optional] <br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments |
+ **edgeId** | **String** | Edge ID |  |
+ **interfaceId** | **String** | Interface ID |  |
+ **expand** | **[String]** | Field to expand in the response | [optional] <br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DomainLogicalInterface**](DomainLogicalInterface.html)
+**DomainLogicalInterface**
 
 <a name="getTelephonyProvidersEdgeLogicalinterfaces"></a>
 
@@ -1272,13 +1272,13 @@ apiInstance.getTelephonyProvidersEdgeLogicalinterfaces(edgeId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
- **expand** | [**[String]**](String.html)| Field to expand in the response | [optional] <br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments |
+ **edgeId** | **String** | Edge ID |  |
+ **expand** | **[String]** | Field to expand in the response | [optional] <br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LogicalInterfaceEntityListing**](LogicalInterfaceEntityListing.html)
+**LogicalInterfaceEntityListing**
 
 <a name="getTelephonyProvidersEdgeLogsJob"></a>
 
@@ -1320,13 +1320,13 @@ apiInstance.getTelephonyProvidersEdgeLogsJob(edgeId, jobId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
- **jobId** | **String**| Job ID |  |
+ **edgeId** | **String** | Edge ID |  |
+ **jobId** | **String** | Job ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EdgeLogsJob**](EdgeLogsJob.html)
+**EdgeLogsJob**
 
 <a name="getTelephonyProvidersEdgePhysicalinterface"></a>
 
@@ -1368,13 +1368,13 @@ apiInstance.getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
- **interfaceId** | **String**| Interface ID |  |
+ **edgeId** | **String** | Edge ID |  |
+ **interfaceId** | **String** | Interface ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DomainPhysicalInterface**](DomainPhysicalInterface.html)
+**DomainPhysicalInterface**
 
 <a name="getTelephonyProvidersEdgePhysicalinterfaces"></a>
 
@@ -1414,12 +1414,12 @@ apiInstance.getTelephonyProvidersEdgePhysicalinterfaces(edgeId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
+ **edgeId** | **String** | Edge ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PhysicalInterfaceEntityListing**](PhysicalInterfaceEntityListing.html)
+**PhysicalInterfaceEntityListing**
 
 <a name="getTelephonyProvidersEdgeSetuppackage"></a>
 
@@ -1459,12 +1459,12 @@ apiInstance.getTelephonyProvidersEdgeSetuppackage(edgeId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
+ **edgeId** | **String** | Edge ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VmPairingInfo**](VmPairingInfo.html)
+**VmPairingInfo**
 
 <a name="getTelephonyProvidersEdgeSoftwareupdate"></a>
 
@@ -1504,12 +1504,12 @@ apiInstance.getTelephonyProvidersEdgeSoftwareupdate(edgeId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
+ **edgeId** | **String** | Edge ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DomainEdgeSoftwareUpdateDto**](DomainEdgeSoftwareUpdateDto.html)
+**DomainEdgeSoftwareUpdateDto**
 
 <a name="getTelephonyProvidersEdgeSoftwareversions"></a>
 
@@ -1549,12 +1549,12 @@ apiInstance.getTelephonyProvidersEdgeSoftwareversions(edgeId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
+ **edgeId** | **String** | Edge ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DomainEdgeSoftwareVersionDtoEntityListing**](DomainEdgeSoftwareVersionDtoEntityListing.html)
+**DomainEdgeSoftwareVersionDtoEntityListing**
 
 <a name="getTelephonyProvidersEdgeTrunks"></a>
 
@@ -1602,18 +1602,18 @@ apiInstance.getTelephonyProvidersEdgeTrunks(edgeId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **sortBy** | **String**| Value by which to sort | [optional] [default to name] |
- **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
- **trunkBaseId** | **String**| Filter by Trunk Base Ids | [optional]  |
- **trunkType** | **String**| Filter by a Trunk type | [optional] <br />**Values**: EXTERNAL, PHONE, EDGE |
+ **edgeId** | **String** | Edge ID |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Value by which to sort | [optional] [default to name] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
+ **trunkBaseId** | **String** | Filter by Trunk Base Ids | [optional]  |
+ **trunkType** | **String** | Filter by a Trunk type | [optional] <br />**Values**: EXTERNAL, PHONE, EDGE |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TrunkEntityListing**](TrunkEntityListing.html)
+**TrunkEntityListing**
 
 <a name="getTelephonyProvidersEdges"></a>
 
@@ -1660,18 +1660,18 @@ apiInstance.getTelephonyProvidersEdges(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **name** | **String**| Name | [optional]  |
- **siteId** | **String**| Filter by site.id | [optional]  |
- **edgeGroupId** | **String**| Filter by edgeGroup.id | [optional]  |
- **sortBy** | **String**| Sort by | [optional] [default to name] |
- **managed** | **Boolean**| Filter by managed | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **name** | **String** | Name | [optional]  |
+ **siteId** | **String** | Filter by site.id | [optional]  |
+ **edgeGroupId** | **String** | Filter by edgeGroup.id | [optional]  |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **managed** | **Boolean** | Filter by managed | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EdgeEntityListing**](EdgeEntityListing.html)
+**EdgeEntityListing**
 
 <a name="getTelephonyProvidersEdgesAvailablelanguages"></a>
 
@@ -1710,7 +1710,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**AvailableLanguageList**](AvailableLanguageList.html)
+**AvailableLanguageList**
 
 <a name="getTelephonyProvidersEdgesCertificateauthorities"></a>
 
@@ -1749,7 +1749,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**CertificateAuthorityEntityListing**](CertificateAuthorityEntityListing.html)
+**CertificateAuthorityEntityListing**
 
 <a name="getTelephonyProvidersEdgesCertificateauthority"></a>
 
@@ -1789,12 +1789,12 @@ apiInstance.getTelephonyProvidersEdgesCertificateauthority(certificateId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **certificateId** | **String**| Certificate ID |  |
+ **certificateId** | **String** | Certificate ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DomainCertificateAuthority**](DomainCertificateAuthority.html)
+**DomainCertificateAuthority**
 
 <a name="getTelephonyProvidersEdgesDid"></a>
 
@@ -1834,12 +1834,12 @@ apiInstance.getTelephonyProvidersEdgesDid(didId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **didId** | **String**| DID ID |  |
+ **didId** | **String** | DID ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DID**](DID.html)
+**DID**
 
 <a name="getTelephonyProvidersEdgesDidpool"></a>
 
@@ -1879,12 +1879,12 @@ apiInstance.getTelephonyProvidersEdgesDidpool(didPoolId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **didPoolId** | **String**| DID pool ID |  |
+ **didPoolId** | **String** | DID pool ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DIDPool**](DIDPool.html)
+**DIDPool**
 
 <a name="getTelephonyProvidersEdgesDidpools"></a>
 
@@ -1927,14 +1927,14 @@ apiInstance.getTelephonyProvidersEdgesDidpools(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortBy** | **String**| Sort by | [optional] [default to number] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | Sort by | [optional] [default to number] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DIDPoolEntityListing**](DIDPoolEntityListing.html)
+**DIDPoolEntityListing**
 
 <a name="getTelephonyProvidersEdgesDids"></a>
 
@@ -1979,16 +1979,16 @@ apiInstance.getTelephonyProvidersEdgesDids(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortBy** | **String**| Sort by | [optional] [default to number] |
- **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
- **phoneNumber** | **String**| Filter by phoneNumber | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | Sort by | [optional] [default to number] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
+ **phoneNumber** | **String** | Filter by phoneNumber | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DIDEntityListing**](DIDEntityListing.html)
+**DIDEntityListing**
 
 <a name="getTelephonyProvidersEdgesEdgegroup"></a>
 
@@ -2031,13 +2031,13 @@ apiInstance.getTelephonyProvidersEdgesEdgegroup(edgeGroupId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeGroupId** | **String**| Edge group ID |  |
- **expand** | [**[String]**](String.html)| Fields to expand in the response | [optional] <br />**Values**: phoneTrunkBases, edgeTrunkBaseAssignment |
+ **edgeGroupId** | **String** | Edge group ID |  |
+ **expand** | **[String]** | Fields to expand in the response | [optional] <br />**Values**: phoneTrunkBases, edgeTrunkBaseAssignment |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EdgeGroup**](EdgeGroup.html)
+**EdgeGroup**
 
 <a name="getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis"></a>
 
@@ -2079,13 +2079,13 @@ apiInstance.getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(edgegroupId, edget
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgegroupId** | **String**| Edge Group ID |  |
- **edgetrunkbaseId** | **String**| Edge Trunk Base ID |  |
+ **edgegroupId** | **String** | Edge Group ID |  |
+ **edgetrunkbaseId** | **String** | Edge Trunk Base ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EdgeTrunkBase**](EdgeTrunkBase.html)
+**EdgeTrunkBase**
 
 <a name="getTelephonyProvidersEdgesEdgegroups"></a>
 
@@ -2130,16 +2130,16 @@ apiInstance.getTelephonyProvidersEdgesEdgegroups(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **name** | **String**| Name | [optional]  |
- **sortBy** | **String**| Sort by | [optional] [default to name] |
- **managed** | **Boolean**| Filter by managed | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **managed** | **Boolean** | Filter by managed | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EdgeGroupEntityListing**](EdgeGroupEntityListing.html)
+**EdgeGroupEntityListing**
 
 <a name="getTelephonyProvidersEdgesEdgeversionreport"></a>
 
@@ -2178,7 +2178,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**EdgeVersionReport**](EdgeVersionReport.html)
+**EdgeVersionReport**
 
 <a name="getTelephonyProvidersEdgesEndpoint"></a>
 
@@ -2218,12 +2218,12 @@ apiInstance.getTelephonyProvidersEdgesEndpoint(endpointId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **endpointId** | **String**| Endpoint ID |  |
+ **endpointId** | **String** | Endpoint ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Endpoint**](Endpoint.html)
+**Endpoint**
 
 <a name="getTelephonyProvidersEdgesEndpoints"></a>
 
@@ -2267,15 +2267,15 @@ apiInstance.getTelephonyProvidersEdgesEndpoints(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **name** | **String**| Name | [optional]  |
- **sortBy** | **String**| Sort by | [optional] [default to name] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EndpointEntityListing**](EndpointEntityListing.html)
+**EndpointEntityListing**
 
 <a name="getTelephonyProvidersEdgesExtension"></a>
 
@@ -2315,12 +2315,12 @@ apiInstance.getTelephonyProvidersEdgesExtension(extensionId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **extensionId** | **String**| Extension ID |  |
+ **extensionId** | **String** | Extension ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Extension**](Extension.html)
+**Extension**
 
 <a name="getTelephonyProvidersEdgesExtensionpool"></a>
 
@@ -2360,12 +2360,12 @@ apiInstance.getTelephonyProvidersEdgesExtensionpool(extensionPoolId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **extensionPoolId** | **String**| Extension pool ID |  |
+ **extensionPoolId** | **String** | Extension pool ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ExtensionPool**](ExtensionPool.html)
+**ExtensionPool**
 
 <a name="getTelephonyProvidersEdgesExtensionpools"></a>
 
@@ -2409,15 +2409,15 @@ apiInstance.getTelephonyProvidersEdgesExtensionpools(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortBy** | **String**| Sort by | [optional] [default to startNumber] |
- **_number** | **String**| Number | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | Sort by | [optional] [default to startNumber] |
+ **_number** | **String** | Number | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ExtensionPoolEntityListing**](ExtensionPoolEntityListing.html)
+**ExtensionPoolEntityListing**
 
 <a name="getTelephonyProvidersEdgesExtensions"></a>
 
@@ -2462,16 +2462,16 @@ apiInstance.getTelephonyProvidersEdgesExtensions(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortBy** | **String**| Sort by | [optional] [default to number] |
- **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
- **_number** | **String**| Filter by number | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | Sort by | [optional] [default to number] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
+ **_number** | **String** | Filter by number | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ExtensionEntityListing**](ExtensionEntityListing.html)
+**ExtensionEntityListing**
 
 <a name="getTelephonyProvidersEdgesLine"></a>
 
@@ -2511,12 +2511,12 @@ apiInstance.getTelephonyProvidersEdgesLine(lineId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **lineId** | **String**| Line ID |  |
+ **lineId** | **String** | Line ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Line**](Line.html)
+**Line**
 
 <a name="getTelephonyProvidersEdgesLinebasesetting"></a>
 
@@ -2556,12 +2556,12 @@ apiInstance.getTelephonyProvidersEdgesLinebasesetting(lineBaseId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **lineBaseId** | **String**| Line base ID |  |
+ **lineBaseId** | **String** | Line base ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LineBase**](LineBase.html)
+**LineBase**
 
 <a name="getTelephonyProvidersEdgesLinebasesettings"></a>
 
@@ -2605,15 +2605,15 @@ apiInstance.getTelephonyProvidersEdgesLinebasesettings(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **sortBy** | **String**| Value by which to sort | [optional] [default to name] |
- **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Value by which to sort | [optional] [default to name] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LineBaseEntityListing**](LineBaseEntityListing.html)
+**LineBaseEntityListing**
 
 <a name="getTelephonyProvidersEdgesLines"></a>
 
@@ -2658,16 +2658,16 @@ apiInstance.getTelephonyProvidersEdgesLines(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **name** | **String**| Name | [optional]  |
- **sortBy** | **String**| Value by which to sort | [optional] [default to name] |
- **expand** | [**[String]**](String.html)| Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties, site, edgeGroup, primaryEdge, secondaryEdge, edges, assignedUser |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Value by which to sort | [optional] [default to name] |
+ **expand** | **[String]** | Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties, site, edgeGroup, primaryEdge, secondaryEdge, edges, assignedUser |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LineEntityListing**](LineEntityListing.html)
+**LineEntityListing**
 
 <a name="getTelephonyProvidersEdgesLinesTemplate"></a>
 
@@ -2707,12 +2707,12 @@ apiInstance.getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **lineBaseSettingsId** | **String**| The id of a Line Base Settings object upon which to base this Line |  |
+ **lineBaseSettingsId** | **String** | The id of a Line Base Settings object upon which to base this Line |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Line**](Line.html)
+**Line**
 
 <a name="getTelephonyProvidersEdgesLogicalinterfaces"></a>
 
@@ -2755,13 +2755,13 @@ apiInstance.getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeIds** | **String**| Comma separated list of Edge Id&#39;s |  |
- **expand** | [**[String]**](String.html)| Field to expand in the response | [optional] <br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments |
+ **edgeIds** | **String** | Comma separated list of Edge Id&#39;s |  |
+ **expand** | **[String]** | Field to expand in the response | [optional] <br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LogicalInterfaceEntityListing**](LogicalInterfaceEntityListing.html)
+**LogicalInterfaceEntityListing**
 
 <a name="getTelephonyProvidersEdgesOutboundroute"></a>
 
@@ -2801,12 +2801,12 @@ apiInstance.getTelephonyProvidersEdgesOutboundroute(outboundRouteId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **outboundRouteId** | **String**| Outbound route ID |  |
+ **outboundRouteId** | **String** | Outbound route ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OutboundRoute**](OutboundRoute.html)
+**OutboundRoute**
 
 <a name="getTelephonyProvidersEdgesOutboundroutes"></a>
 
@@ -2851,16 +2851,16 @@ apiInstance.getTelephonyProvidersEdgesOutboundroutes(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **name** | **String**| Name | [optional]  |
- **siteId** | **String**| Filter by site.id | [optional]  |
- **sortBy** | **String**| Sort by | [optional] [default to name] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **name** | **String** | Name | [optional]  |
+ **siteId** | **String** | Filter by site.id | [optional]  |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OutboundRouteEntityListing**](OutboundRouteEntityListing.html)
+**OutboundRouteEntityListing**
 
 <a name="getTelephonyProvidersEdgesPhone"></a>
 
@@ -2900,12 +2900,12 @@ apiInstance.getTelephonyProvidersEdgesPhone(phoneId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **phoneId** | **String**| Phone ID |  |
+ **phoneId** | **String** | Phone ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Phone**](Phone.html)
+**Phone**
 
 <a name="getTelephonyProvidersEdgesPhonebasesetting"></a>
 
@@ -2945,12 +2945,12 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **phoneBaseId** | **String**| Phone base ID |  |
+ **phoneBaseId** | **String** | Phone base ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PhoneBase**](PhoneBase.html)
+**PhoneBase**
 
 <a name="getTelephonyProvidersEdgesPhonebasesettings"></a>
 
@@ -2996,17 +2996,17 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesettings(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortBy** | **String**| Value by which to sort | [optional] [default to name] |
- **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
- **expand** | [**[String]**](String.html)| Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties, lines |
- **name** | **String**| Name | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | Value by which to sort | [optional] [default to name] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
+ **expand** | **[String]** | Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties, lines |
+ **name** | **String** | Name | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PhoneBaseEntityListing**](PhoneBaseEntityListing.html)
+**PhoneBaseEntityListing**
 
 <a name="getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases"></a>
 
@@ -3048,13 +3048,13 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PhoneMetaBaseEntityListing**](PhoneMetaBaseEntityListing.html)
+**PhoneMetaBaseEntityListing**
 
 <a name="getTelephonyProvidersEdgesPhonebasesettingsTemplate"></a>
 
@@ -3094,12 +3094,12 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **phoneMetabaseId** | **String**| The id of a metabase object upon which to base this Phone Base Settings |  |
+ **phoneMetabaseId** | **String** | The id of a metabase object upon which to base this Phone Base Settings |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PhoneBase**](PhoneBase.html)
+**PhoneBase**
 
 <a name="getTelephonyProvidersEdgesPhones"></a>
 
@@ -3153,25 +3153,25 @@ apiInstance.getTelephonyProvidersEdgesPhones(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **sortBy** | **String**| Value by which to sort | [optional] [default to name] |
- **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
- **siteId** | **String**| Filter by site.id | [optional]  |
- **webRtcUserId** | **String**| Filter by webRtcUser.id | [optional]  |
- **phoneBaseSettingsId** | **String**| Filter by phoneBaseSettings.id | [optional]  |
- **linesLoggedInUserId** | **String**| Filter by lines.loggedInUser.id | [optional]  |
- **linesDefaultForUserId** | **String**| Filter by lines.defaultForUser.id | [optional]  |
- **phoneHardwareId** | **String**| Filter by phone_hardwareId | [optional]  |
- **linesId** | **String**| Filter by lines.id | [optional]  |
- **linesName** | **String**| Filter by lines.name | [optional]  |
- **expand** | [**[String]**](String.html)| Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties, site, status, status.primaryEdgesStatus, status.secondaryEdgesStatus, phoneBaseSettings, lines |
- **fields** | [**[String]**](String.html)| Fields and properties to get, comma-separated | [optional] <br />**Values**: webRtcUser, properties.*, lines.loggedInUser, lines.defaultForUser |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Value by which to sort | [optional] [default to name] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
+ **siteId** | **String** | Filter by site.id | [optional]  |
+ **webRtcUserId** | **String** | Filter by webRtcUser.id | [optional]  |
+ **phoneBaseSettingsId** | **String** | Filter by phoneBaseSettings.id | [optional]  |
+ **linesLoggedInUserId** | **String** | Filter by lines.loggedInUser.id | [optional]  |
+ **linesDefaultForUserId** | **String** | Filter by lines.defaultForUser.id | [optional]  |
+ **phoneHardwareId** | **String** | Filter by phone_hardwareId | [optional]  |
+ **linesId** | **String** | Filter by lines.id | [optional]  |
+ **linesName** | **String** | Filter by lines.name | [optional]  |
+ **expand** | **[String]** | Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties, site, status, status.primaryEdgesStatus, status.secondaryEdgesStatus, phoneBaseSettings, lines |
+ **fields** | **[String]** | Fields and properties to get, comma-separated | [optional] <br />**Values**: webRtcUser, properties.*, lines.loggedInUser, lines.defaultForUser |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PhoneEntityListing**](PhoneEntityListing.html)
+**PhoneEntityListing**
 
 <a name="getTelephonyProvidersEdgesPhonesTemplate"></a>
 
@@ -3211,12 +3211,12 @@ apiInstance.getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **phoneBaseSettingsId** | **String**| The id of a Phone Base Settings object upon which to base this Phone |  |
+ **phoneBaseSettingsId** | **String** | The id of a Phone Base Settings object upon which to base this Phone |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Phone**](Phone.html)
+**Phone**
 
 <a name="getTelephonyProvidersEdgesPhysicalinterfaces"></a>
 
@@ -3256,12 +3256,12 @@ apiInstance.getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeIds** | **String**| Comma separated list of Edge Id&#39;s |  |
+ **edgeIds** | **String** | Comma separated list of Edge Id&#39;s |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PhysicalInterfaceEntityListing**](PhysicalInterfaceEntityListing.html)
+**PhysicalInterfaceEntityListing**
 
 <a name="getTelephonyProvidersEdgesSite"></a>
 
@@ -3301,12 +3301,12 @@ apiInstance.getTelephonyProvidersEdgesSite(siteId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **siteId** | **String**| Site ID |  |
+ **siteId** | **String** | Site ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Site**](Site.html)
+**Site**
 
 <a name="getTelephonyProvidersEdgesSiteNumberplan"></a>
 
@@ -3348,13 +3348,13 @@ apiInstance.getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **siteId** | **String**| Site ID |  |
- **numberPlanId** | **String**| Number Plan ID |  |
+ **siteId** | **String** | Site ID |  |
+ **numberPlanId** | **String** | Number Plan ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**NumberPlan**](NumberPlan.html)
+**NumberPlan**
 
 <a name="getTelephonyProvidersEdgesSiteNumberplans"></a>
 
@@ -3394,12 +3394,12 @@ apiInstance.getTelephonyProvidersEdgesSiteNumberplans(siteId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **siteId** | **String**| Site ID |  |
+ **siteId** | **String** | Site ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[NumberPlan]**](NumberPlan.html)
+**[NumberPlan]**
 
 <a name="getTelephonyProvidersEdgesSiteNumberplansClassifications"></a>
 
@@ -3442,8 +3442,8 @@ apiInstance.getTelephonyProvidersEdgesSiteNumberplansClassifications(siteId, opt
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **siteId** | **String**| Site ID |  |
- **classification** | **String**| Classification | [optional]  |
+ **siteId** | **String** | Site ID |  |
+ **classification** | **String** | Classification | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3490,13 +3490,13 @@ apiInstance.getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **siteId** | **String**| Site ID |  |
- **outboundRouteId** | **String**| Outbound route ID |  |
+ **siteId** | **String** | Site ID |  |
+ **outboundRouteId** | **String** | Outbound route ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OutboundRouteBase**](OutboundRouteBase.html)
+**OutboundRouteBase**
 
 <a name="getTelephonyProvidersEdgesSiteOutboundroutes"></a>
 
@@ -3542,16 +3542,16 @@ apiInstance.getTelephonyProvidersEdgesSiteOutboundroutes(siteId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **siteId** | **String**| Site ID |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **name** | **String**| Name | [optional]  |
- **sortBy** | **String**| Sort by | [optional] [default to name] |
+ **siteId** | **String** | Site ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OutboundRouteBaseEntityListing**](OutboundRouteBaseEntityListing.html)
+**OutboundRouteBaseEntityListing**
 
 <a name="getTelephonyProvidersEdgesSites"></a>
 
@@ -3598,18 +3598,18 @@ apiInstance.getTelephonyProvidersEdgesSites(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortBy** | **String**| Sort by | [optional] [default to name] |
- **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
- **name** | **String**| Name | [optional]  |
- **locationId** | **String**| Location Id | [optional]  |
- **managed** | **Boolean**| Filter by managed | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
+ **name** | **String** | Name | [optional]  |
+ **locationId** | **String** | Location Id | [optional]  |
+ **managed** | **Boolean** | Filter by managed | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**SiteEntityListing**](SiteEntityListing.html)
+**SiteEntityListing**
 
 <a name="getTelephonyProvidersEdgesTimezones"></a>
 
@@ -3651,13 +3651,13 @@ apiInstance.getTelephonyProvidersEdgesTimezones(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 1000] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 1000] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TimeZoneEntityListing**](TimeZoneEntityListing.html)
+**TimeZoneEntityListing**
 
 <a name="getTelephonyProvidersEdgesTrunk"></a>
 
@@ -3697,12 +3697,12 @@ apiInstance.getTelephonyProvidersEdgesTrunk(trunkId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trunkId** | **String**| Trunk ID |  |
+ **trunkId** | **String** | Trunk ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Trunk**](Trunk.html)
+**Trunk**
 
 <a name="getTelephonyProvidersEdgesTrunkbasesetting"></a>
 
@@ -3745,13 +3745,13 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, opts
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trunkBaseSettingsId** | **String**| Trunk Base ID |  |
- **ignoreHidden** | **Boolean**| Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. | [optional]  |
+ **trunkBaseSettingsId** | **String** | Trunk Base ID |  |
+ **ignoreHidden** | **Boolean** | Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TrunkBase**](TrunkBase.html)
+**TrunkBase**
 
 <a name="getTelephonyProvidersEdgesTrunkbasesettings"></a>
 
@@ -3800,20 +3800,20 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesettings(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **sortBy** | **String**| Value by which to sort | [optional] [default to name] |
- **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
- **recordingEnabled** | **Boolean**| Filter trunks by recording enabled | [optional]  |
- **ignoreHidden** | **Boolean**| Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. | [optional]  |
- **managed** | **Boolean**| Filter by managed | [optional]  |
- **expand** | [**[String]**](String.html)| Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties |
- **name** | **String**| Name of the TrunkBase to filter by | [optional]  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Value by which to sort | [optional] [default to name] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
+ **recordingEnabled** | **Boolean** | Filter trunks by recording enabled | [optional]  |
+ **ignoreHidden** | **Boolean** | Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. | [optional]  |
+ **managed** | **Boolean** | Filter by managed | [optional]  |
+ **expand** | **[String]** | Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties |
+ **name** | **String** | Name of the TrunkBase to filter by | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TrunkBaseEntityListing**](TrunkBaseEntityListing.html)
+**TrunkBaseEntityListing**
 
 <a name="getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases"></a>
 
@@ -3856,14 +3856,14 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **type** | **String**|  | [optional] <br />**Values**: EXTERNAL, PHONE, EDGE |
- **pageSize** | **Number**|  | [optional] [default to 25] |
- **pageNumber** | **Number**|  | [optional] [default to 1] |
+ **type** | **String** |  | [optional] <br />**Values**: EXTERNAL, PHONE, EDGE |
+ **pageSize** | **Number** |  | [optional] [default to 25] |
+ **pageNumber** | **Number** |  | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TrunkMetabaseEntityListing**](TrunkMetabaseEntityListing.html)
+**TrunkMetabaseEntityListing**
 
 <a name="getTelephonyProvidersEdgesTrunkbasesettingsTemplate"></a>
 
@@ -3903,12 +3903,12 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trunkMetabaseId** | **String**| The id of a metabase object upon which to base this Trunk Base Settings |  |
+ **trunkMetabaseId** | **String** | The id of a metabase object upon which to base this Trunk Base Settings |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TrunkBase**](TrunkBase.html)
+**TrunkBase**
 
 <a name="getTelephonyProvidersEdgesTrunks"></a>
 
@@ -3955,18 +3955,18 @@ apiInstance.getTelephonyProvidersEdgesTrunks(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **sortBy** | **String**| Value by which to sort | [optional] [default to name] |
- **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
- **edgeId** | **String**| Filter by Edge Ids | [optional]  |
- **trunkBaseId** | **String**| Filter by Trunk Base Ids | [optional]  |
- **trunkType** | **String**| Filter by a Trunk type | [optional] <br />**Values**: EXTERNAL, PHONE, EDGE |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Value by which to sort | [optional] [default to name] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
+ **edgeId** | **String** | Filter by Edge Ids | [optional]  |
+ **trunkBaseId** | **String** | Filter by Trunk Base Ids | [optional]  |
+ **trunkType** | **String** | Filter by a Trunk type | [optional] <br />**Values**: EXTERNAL, PHONE, EDGE |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TrunkEntityListing**](TrunkEntityListing.html)
+**TrunkEntityListing**
 
 <a name="getTelephonyProvidersEdgesTrunkswithrecording"></a>
 
@@ -4007,12 +4007,12 @@ apiInstance.getTelephonyProvidersEdgesTrunkswithrecording(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trunkType** | **String**| The type of this trunk base. | [optional] <br />**Values**: EXTERNAL, PHONE, EDGE |
+ **trunkType** | **String** | The type of this trunk base. | [optional] <br />**Values**: EXTERNAL, PHONE, EDGE |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TrunkRecordingEnabledCount**](TrunkRecordingEnabledCount.html)
+**TrunkRecordingEnabledCount**
 
 <a name="postTelephonyProvidersEdgeLogicalinterfaces"></a>
 
@@ -4054,13 +4054,13 @@ apiInstance.postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
- **body** | [**DomainLogicalInterface**](DomainLogicalInterface.html)| Logical interface |  |
+ **edgeId** | **String** | Edge ID |  |
+ **body** | **DomainLogicalInterface** | Logical interface |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DomainLogicalInterface**](DomainLogicalInterface.html)
+**DomainLogicalInterface**
 
 <a name="postTelephonyProvidersEdgeLogsJobUpload"></a>
 
@@ -4104,9 +4104,9 @@ apiInstance.postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
- **jobId** | **String**| Job ID |  |
- **body** | [**EdgeLogsJobUploadRequest**](EdgeLogsJobUploadRequest.html)| Log upload request |  |
+ **edgeId** | **String** | Edge ID |  |
+ **jobId** | **String** | Job ID |  |
+ **body** | **EdgeLogsJobUploadRequest** | Log upload request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4153,13 +4153,13 @@ apiInstance.postTelephonyProvidersEdgeLogsJobs(edgeId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
- **body** | [**EdgeLogsJobRequest**](EdgeLogsJobRequest.html)| EdgeLogsJobRequest |  |
+ **edgeId** | **String** | Edge ID |  |
+ **body** | **EdgeLogsJobRequest** | EdgeLogsJobRequest |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EdgeLogsJobResponse**](EdgeLogsJobResponse.html)
+**EdgeLogsJobResponse**
 
 <a name="postTelephonyProvidersEdgeReboot"></a>
 
@@ -4202,8 +4202,8 @@ apiInstance.postTelephonyProvidersEdgeReboot(edgeId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
- **body** | [**EdgeRebootParameters**](EdgeRebootParameters.html)| Parameters for the edge reboot | [optional]  |
+ **edgeId** | **String** | Edge ID |  |
+ **body** | **EdgeRebootParameters** | Parameters for the edge reboot | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4250,13 +4250,13 @@ apiInstance.postTelephonyProvidersEdgeSoftwareupdate(edgeId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
- **body** | [**DomainEdgeSoftwareUpdateDto**](DomainEdgeSoftwareUpdateDto.html)| Software update request |  |
+ **edgeId** | **String** | Edge ID |  |
+ **body** | **DomainEdgeSoftwareUpdateDto** | Software update request |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DomainEdgeSoftwareUpdateDto**](DomainEdgeSoftwareUpdateDto.html)
+**DomainEdgeSoftwareUpdateDto**
 
 <a name="postTelephonyProvidersEdgeStatuscode"></a>
 
@@ -4299,8 +4299,8 @@ apiInstance.postTelephonyProvidersEdgeStatuscode(edgeId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
- **body** | [**EdgeServiceStateRequest**](EdgeServiceStateRequest.html)| Edge Service State | [optional]  |
+ **edgeId** | **String** | Edge ID |  |
+ **body** | **EdgeServiceStateRequest** | Edge Service State | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4345,7 +4345,7 @@ apiInstance.postTelephonyProvidersEdgeUnpair(edgeId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge Id |  |
+ **edgeId** | **String** | Edge Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4390,12 +4390,12 @@ apiInstance.postTelephonyProvidersEdges(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Edge**](Edge.html)| Edge |  |
+ **body** | **Edge** | Edge |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Edge**](Edge.html)
+**Edge**
 
 <a name="postTelephonyProvidersEdgesAddressvalidation"></a>
 
@@ -4435,12 +4435,12 @@ apiInstance.postTelephonyProvidersEdgesAddressvalidation(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**ValidateAddressRequest**](ValidateAddressRequest.html)| Address |  |
+ **body** | **ValidateAddressRequest** | Address |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ValidateAddressResponse**](ValidateAddressResponse.html)
+**ValidateAddressResponse**
 
 <a name="postTelephonyProvidersEdgesCertificateauthorities"></a>
 
@@ -4480,12 +4480,12 @@ apiInstance.postTelephonyProvidersEdgesCertificateauthorities(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**DomainCertificateAuthority**](DomainCertificateAuthority.html)| CertificateAuthority |  |
+ **body** | **DomainCertificateAuthority** | CertificateAuthority |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DomainCertificateAuthority**](DomainCertificateAuthority.html)
+**DomainCertificateAuthority**
 
 <a name="postTelephonyProvidersEdgesDidpools"></a>
 
@@ -4525,12 +4525,12 @@ apiInstance.postTelephonyProvidersEdgesDidpools(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**DIDPool**](DIDPool.html)| DID pool |  |
+ **body** | **DIDPool** | DID pool |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DIDPool**](DIDPool.html)
+**DIDPool**
 
 <a name="postTelephonyProvidersEdgesEdgegroups"></a>
 
@@ -4570,12 +4570,12 @@ apiInstance.postTelephonyProvidersEdgesEdgegroups(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**EdgeGroup**](EdgeGroup.html)| EdgeGroup |  |
+ **body** | **EdgeGroup** | EdgeGroup |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EdgeGroup**](EdgeGroup.html)
+**EdgeGroup**
 
 <a name="postTelephonyProvidersEdgesEndpoints"></a>
 
@@ -4615,12 +4615,12 @@ apiInstance.postTelephonyProvidersEdgesEndpoints(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Endpoint**](Endpoint.html)| EndpointTemplate |  |
+ **body** | **Endpoint** | EndpointTemplate |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Endpoint**](Endpoint.html)
+**Endpoint**
 
 <a name="postTelephonyProvidersEdgesExtensionpools"></a>
 
@@ -4660,12 +4660,12 @@ apiInstance.postTelephonyProvidersEdgesExtensionpools(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**ExtensionPool**](ExtensionPool.html)| ExtensionPool |  |
+ **body** | **ExtensionPool** | ExtensionPool |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ExtensionPool**](ExtensionPool.html)
+**ExtensionPool**
 
 <a name="postTelephonyProvidersEdgesOutboundroutes"></a>
 
@@ -4705,12 +4705,12 @@ apiInstance.postTelephonyProvidersEdgesOutboundroutes(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**OutboundRoute**](OutboundRoute.html)| OutboundRoute |  |
+ **body** | **OutboundRoute** | OutboundRoute |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OutboundRoute**](OutboundRoute.html)
+**OutboundRoute**
 
 <a name="postTelephonyProvidersEdgesPhoneReboot"></a>
 
@@ -4750,7 +4750,7 @@ apiInstance.postTelephonyProvidersEdgesPhoneReboot(phoneId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **phoneId** | **String**| Phone Id |  |
+ **phoneId** | **String** | Phone Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4795,12 +4795,12 @@ apiInstance.postTelephonyProvidersEdgesPhonebasesettings(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**PhoneBase**](PhoneBase.html)| Phone base settings |  |
+ **body** | **PhoneBase** | Phone base settings |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PhoneBase**](PhoneBase.html)
+**PhoneBase**
 
 <a name="postTelephonyProvidersEdgesPhones"></a>
 
@@ -4840,12 +4840,12 @@ apiInstance.postTelephonyProvidersEdgesPhones(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Phone**](Phone.html)| Phone |  |
+ **body** | **Phone** | Phone |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Phone**](Phone.html)
+**Phone**
 
 <a name="postTelephonyProvidersEdgesPhonesReboot"></a>
 
@@ -4885,7 +4885,7 @@ apiInstance.postTelephonyProvidersEdgesPhonesReboot(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**PhonesReboot**](PhonesReboot.html)| Phones |  |
+ **body** | **PhonesReboot** | Phones |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4932,13 +4932,13 @@ apiInstance.postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **siteId** | **String**| Site ID |  |
- **body** | [**OutboundRouteBase**](OutboundRouteBase.html)| OutboundRoute |  |
+ **siteId** | **String** | Site ID |  |
+ **body** | **OutboundRouteBase** | OutboundRoute |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OutboundRouteBase**](OutboundRouteBase.html)
+**OutboundRouteBase**
 
 <a name="postTelephonyProvidersEdgesSiteRebalance"></a>
 
@@ -4978,7 +4978,7 @@ apiInstance.postTelephonyProvidersEdgesSiteRebalance(siteId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **siteId** | **String**| Site ID |  |
+ **siteId** | **String** | Site ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5023,12 +5023,12 @@ apiInstance.postTelephonyProvidersEdgesSites(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Site**](Site.html)| Site |  |
+ **body** | **Site** | Site |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Site**](Site.html)
+**Site**
 
 <a name="postTelephonyProvidersEdgesTrunkbasesettings"></a>
 
@@ -5068,12 +5068,12 @@ apiInstance.postTelephonyProvidersEdgesTrunkbasesettings(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**TrunkBase**](TrunkBase.html)| Trunk base settings |  |
+ **body** | **TrunkBase** | Trunk base settings |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TrunkBase**](TrunkBase.html)
+**TrunkBase**
 
 <a name="putTelephonyProvidersEdge"></a>
 
@@ -5115,13 +5115,13 @@ apiInstance.putTelephonyProvidersEdge(edgeId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
- **body** | [**Edge**](Edge.html)| Edge |  |
+ **edgeId** | **String** | Edge ID |  |
+ **body** | **Edge** | Edge |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Edge**](Edge.html)
+**Edge**
 
 <a name="putTelephonyProvidersEdgeLine"></a>
 
@@ -5165,14 +5165,14 @@ apiInstance.putTelephonyProvidersEdgeLine(edgeId, lineId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
- **lineId** | **String**| Line ID |  |
- **body** | [**EdgeLine**](EdgeLine.html)| Line |  |
+ **edgeId** | **String** | Edge ID |  |
+ **lineId** | **String** | Line ID |  |
+ **body** | **EdgeLine** | Line |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EdgeLine**](EdgeLine.html)
+**EdgeLine**
 
 <a name="putTelephonyProvidersEdgeLogicalinterface"></a>
 
@@ -5216,14 +5216,14 @@ apiInstance.putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeId** | **String**| Edge ID |  |
- **interfaceId** | **String**| Interface ID |  |
- **body** | [**DomainLogicalInterface**](DomainLogicalInterface.html)| Logical interface |  |
+ **edgeId** | **String** | Edge ID |  |
+ **interfaceId** | **String** | Interface ID |  |
+ **body** | **DomainLogicalInterface** | Logical interface |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DomainLogicalInterface**](DomainLogicalInterface.html)
+**DomainLogicalInterface**
 
 <a name="putTelephonyProvidersEdgesCertificateauthority"></a>
 
@@ -5265,13 +5265,13 @@ apiInstance.putTelephonyProvidersEdgesCertificateauthority(certificateId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **certificateId** | **String**| Certificate ID |  |
- **body** | [**DomainCertificateAuthority**](DomainCertificateAuthority.html)| Certificate authority |  |
+ **certificateId** | **String** | Certificate ID |  |
+ **body** | **DomainCertificateAuthority** | Certificate authority |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DomainCertificateAuthority**](DomainCertificateAuthority.html)
+**DomainCertificateAuthority**
 
 <a name="putTelephonyProvidersEdgesDid"></a>
 
@@ -5313,13 +5313,13 @@ apiInstance.putTelephonyProvidersEdgesDid(didId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **didId** | **String**| DID ID |  |
- **body** | [**DID**](DID.html)| DID |  |
+ **didId** | **String** | DID ID |  |
+ **body** | **DID** | DID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DID**](DID.html)
+**DID**
 
 <a name="putTelephonyProvidersEdgesDidpool"></a>
 
@@ -5361,13 +5361,13 @@ apiInstance.putTelephonyProvidersEdgesDidpool(didPoolId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **didPoolId** | **String**| DID pool ID |  |
- **body** | [**DIDPool**](DIDPool.html)| DID pool |  |
+ **didPoolId** | **String** | DID pool ID |  |
+ **body** | **DIDPool** | DID pool |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DIDPool**](DIDPool.html)
+**DIDPool**
 
 <a name="putTelephonyProvidersEdgesEdgegroup"></a>
 
@@ -5409,13 +5409,13 @@ apiInstance.putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeGroupId** | **String**| Edge group ID |  |
- **body** | [**EdgeGroup**](EdgeGroup.html)| EdgeGroup |  |
+ **edgeGroupId** | **String** | Edge group ID |  |
+ **body** | **EdgeGroup** | EdgeGroup |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EdgeGroup**](EdgeGroup.html)
+**EdgeGroup**
 
 <a name="putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis"></a>
 
@@ -5459,14 +5459,14 @@ apiInstance.putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(edgegroupId, edget
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgegroupId** | **String**| Edge Group ID |  |
- **edgetrunkbaseId** | **String**| Edge Trunk Base ID |  |
- **body** | [**EdgeTrunkBase**](EdgeTrunkBase.html)| EdgeTrunkBase |  |
+ **edgegroupId** | **String** | Edge Group ID |  |
+ **edgetrunkbaseId** | **String** | Edge Trunk Base ID |  |
+ **body** | **EdgeTrunkBase** | EdgeTrunkBase |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EdgeTrunkBase**](EdgeTrunkBase.html)
+**EdgeTrunkBase**
 
 <a name="putTelephonyProvidersEdgesEndpoint"></a>
 
@@ -5508,13 +5508,13 @@ apiInstance.putTelephonyProvidersEdgesEndpoint(endpointId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **endpointId** | **String**| Endpoint ID |  |
- **body** | [**Endpoint**](Endpoint.html)| EndpointTemplate |  |
+ **endpointId** | **String** | Endpoint ID |  |
+ **body** | **Endpoint** | EndpointTemplate |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Endpoint**](Endpoint.html)
+**Endpoint**
 
 <a name="putTelephonyProvidersEdgesExtension"></a>
 
@@ -5556,13 +5556,13 @@ apiInstance.putTelephonyProvidersEdgesExtension(extensionId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **extensionId** | **String**| Extension ID |  |
- **body** | [**Extension**](Extension.html)| Extension |  |
+ **extensionId** | **String** | Extension ID |  |
+ **body** | **Extension** | Extension |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Extension**](Extension.html)
+**Extension**
 
 <a name="putTelephonyProvidersEdgesExtensionpool"></a>
 
@@ -5604,13 +5604,13 @@ apiInstance.putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **extensionPoolId** | **String**| Extension pool ID |  |
- **body** | [**ExtensionPool**](ExtensionPool.html)| ExtensionPool |  |
+ **extensionPoolId** | **String** | Extension pool ID |  |
+ **body** | **ExtensionPool** | ExtensionPool |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ExtensionPool**](ExtensionPool.html)
+**ExtensionPool**
 
 <a name="putTelephonyProvidersEdgesOutboundroute"></a>
 
@@ -5652,13 +5652,13 @@ apiInstance.putTelephonyProvidersEdgesOutboundroute(outboundRouteId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **outboundRouteId** | **String**| Outbound route ID |  |
- **body** | [**OutboundRoute**](OutboundRoute.html)| OutboundRoute |  |
+ **outboundRouteId** | **String** | Outbound route ID |  |
+ **body** | **OutboundRoute** | OutboundRoute |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OutboundRoute**](OutboundRoute.html)
+**OutboundRoute**
 
 <a name="putTelephonyProvidersEdgesPhone"></a>
 
@@ -5700,13 +5700,13 @@ apiInstance.putTelephonyProvidersEdgesPhone(phoneId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **phoneId** | **String**| Phone ID |  |
- **body** | [**Phone**](Phone.html)| Phone |  |
+ **phoneId** | **String** | Phone ID |  |
+ **body** | **Phone** | Phone |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Phone**](Phone.html)
+**Phone**
 
 <a name="putTelephonyProvidersEdgesPhonebasesetting"></a>
 
@@ -5748,13 +5748,13 @@ apiInstance.putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **phoneBaseId** | **String**| Phone base ID |  |
- **body** | [**PhoneBase**](PhoneBase.html)| Phone base settings |  |
+ **phoneBaseId** | **String** | Phone base ID |  |
+ **body** | **PhoneBase** | Phone base settings |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PhoneBase**](PhoneBase.html)
+**PhoneBase**
 
 <a name="putTelephonyProvidersEdgesSite"></a>
 
@@ -5796,13 +5796,13 @@ apiInstance.putTelephonyProvidersEdgesSite(siteId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **siteId** | **String**| Site ID |  |
- **body** | [**Site**](Site.html)| Site |  |
+ **siteId** | **String** | Site ID |  |
+ **body** | **Site** | Site |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Site**](Site.html)
+**Site**
 
 <a name="putTelephonyProvidersEdgesSiteNumberplans"></a>
 
@@ -5844,13 +5844,13 @@ apiInstance.putTelephonyProvidersEdgesSiteNumberplans(siteId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **siteId** | **String**| Site ID |  |
- **body** | [**[NumberPlan]**](NumberPlan.html)| List of number plans |  |
+ **siteId** | **String** | Site ID |  |
+ **body** | **[NumberPlan]** | List of number plans |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[NumberPlan]**](NumberPlan.html)
+**[NumberPlan]**
 
 <a name="putTelephonyProvidersEdgesSiteOutboundroute"></a>
 
@@ -5894,14 +5894,14 @@ apiInstance.putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId,
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **siteId** | **String**| Site ID |  |
- **outboundRouteId** | **String**| Outbound route ID |  |
- **body** | [**OutboundRouteBase**](OutboundRouteBase.html)| OutboundRoute |  |
+ **siteId** | **String** | Site ID |  |
+ **outboundRouteId** | **String** | Outbound route ID |  |
+ **body** | **OutboundRouteBase** | OutboundRoute |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OutboundRouteBase**](OutboundRouteBase.html)
+**OutboundRouteBase**
 
 <a name="putTelephonyProvidersEdgesTrunkbasesetting"></a>
 
@@ -5943,11 +5943,11 @@ apiInstance.putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trunkBaseSettingsId** | **String**| Trunk Base ID |  |
- **body** | [**TrunkBase**](TrunkBase.html)| Trunk base settings |  |
+ **trunkBaseSettingsId** | **String** | Trunk Base ID |  |
+ **body** | **TrunkBase** | Trunk base settings |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TrunkBase**](TrunkBase.html)
+**TrunkBase**
 

@@ -50,7 +50,7 @@ apiInstance.deleteStationAssociateduser(stationId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **stationId** | **String**| Station ID |  |
+ **stationId** | **String** | Station ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -95,12 +95,12 @@ apiInstance.getStation(stationId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **stationId** | **String**| Station ID |  |
+ **stationId** | **String** | Station ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Station**](Station.html)
+**Station**
 
 <a name="getStations"></a>
 
@@ -148,17 +148,17 @@ apiInstance.getStations(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortBy** | **String**| Sort by | [optional] [default to name] |
- **name** | **String**| Name | [optional]  |
- **userSelectable** | **String**| True for stations that the user can select otherwise false | [optional]  |
- **webRtcUserId** | **String**| Filter for the webRtc station of the webRtcUserId | [optional]  |
- **id** | **String**| Comma separated list of stationIds | [optional]  |
- **lineAppearanceId** | **String**| lineAppearanceId | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **name** | **String** | Name | [optional]  |
+ **userSelectable** | **String** | True for stations that the user can select otherwise false | [optional]  |
+ **webRtcUserId** | **String** | Filter for the webRtc station of the webRtcUserId | [optional]  |
+ **id** | **String** | Comma separated list of stationIds | [optional]  |
+ **lineAppearanceId** | **String** | lineAppearanceId | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**StationEntityListing**](StationEntityListing.html)
+**StationEntityListing**
 

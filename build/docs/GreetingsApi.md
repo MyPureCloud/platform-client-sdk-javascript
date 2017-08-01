@@ -63,7 +63,7 @@ apiInstance.deleteGreeting(greetingId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **greetingId** | **String**| Greeting ID |  |
+ **greetingId** | **String** | Greeting ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -108,12 +108,12 @@ apiInstance.getGreeting(greetingId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **greetingId** | **String**| Greeting ID |  |
+ **greetingId** | **String** | Greeting ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Greeting**](Greeting.html)
+**Greeting**
 
 <a name="getGreetingMedia"></a>
 
@@ -156,13 +156,13 @@ apiInstance.getGreetingMedia(greetingId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **greetingId** | **String**| Greeting ID |  |
- **formatId** | **String**| The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+ **greetingId** | **String** | Greeting ID |  |
+ **formatId** | **String** | The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 {: class="table table-striped"}
 
 ### Return type
 
-[**GreetingMediaInfo**](GreetingMediaInfo.html)
+**GreetingMediaInfo**
 
 <a name="getGreetings"></a>
 
@@ -204,13 +204,13 @@ apiInstance.getGreetings(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DomainEntityListing**](DomainEntityListing.html)
+**DomainEntityListing**
 
 <a name="getGreetingsDefaults"></a>
 
@@ -249,7 +249,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+**DefaultGreetingList**
 
 <a name="getGroupGreetings"></a>
 
@@ -293,14 +293,14 @@ apiInstance.getGroupGreetings(groupId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String**| Group ID |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **groupId** | **String** | Group ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**GreetingListing**](GreetingListing.html)
+**GreetingListing**
 
 <a name="getGroupGreetingsDefaults"></a>
 
@@ -340,12 +340,12 @@ apiInstance.getGroupGreetingsDefaults(groupId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String**| Group ID |  |
+ **groupId** | **String** | Group ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+**DefaultGreetingList**
 
 <a name="getUserGreetings"></a>
 
@@ -389,14 +389,14 @@ apiInstance.getUserGreetings(userId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **userId** | **String** | User ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DomainEntityListing**](DomainEntityListing.html)
+**DomainEntityListing**
 
 <a name="getUserGreetingsDefaults"></a>
 
@@ -436,12 +436,12 @@ apiInstance.getUserGreetingsDefaults(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
+ **userId** | **String** | User ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+**DefaultGreetingList**
 
 <a name="postGreetings"></a>
 
@@ -481,12 +481,12 @@ apiInstance.postGreetings(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Greeting**](Greeting.html)| The Greeting to create |  |
+ **body** | **Greeting** | The Greeting to create |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Greeting**](Greeting.html)
+**Greeting**
 
 <a name="postGroupGreetings"></a>
 
@@ -528,13 +528,13 @@ apiInstance.postGroupGreetings(groupId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String**| Group ID |  |
- **body** | [**Greeting**](Greeting.html)| The Greeting to create |  |
+ **groupId** | **String** | Group ID |  |
+ **body** | **Greeting** | The Greeting to create |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Greeting**](Greeting.html)
+**Greeting**
 
 <a name="postUserGreetings"></a>
 
@@ -576,13 +576,13 @@ apiInstance.postUserGreetings(userId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **body** | [**Greeting**](Greeting.html)| The Greeting to create |  |
+ **userId** | **String** | User ID |  |
+ **body** | **Greeting** | The Greeting to create |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Greeting**](Greeting.html)
+**Greeting**
 
 <a name="putGreeting"></a>
 
@@ -624,13 +624,13 @@ apiInstance.putGreeting(greetingId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **greetingId** | **String**| Greeting ID |  |
- **body** | [**Greeting**](Greeting.html)| The updated Greeting |  |
+ **greetingId** | **String** | Greeting ID |  |
+ **body** | **Greeting** | The updated Greeting |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Greeting**](Greeting.html)
+**Greeting**
 
 <a name="putGreetingsDefaults"></a>
 
@@ -670,12 +670,12 @@ apiInstance.putGreetingsDefaults(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList |  |
+ **body** | **DefaultGreetingList** | The updated defaultGreetingList |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+**DefaultGreetingList**
 
 <a name="putGroupGreetingsDefaults"></a>
 
@@ -717,13 +717,13 @@ apiInstance.putGroupGreetingsDefaults(groupId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String**| Group ID |  |
- **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList |  |
+ **groupId** | **String** | Group ID |  |
+ **body** | **DefaultGreetingList** | The updated defaultGreetingList |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+**DefaultGreetingList**
 
 <a name="putUserGreetingsDefaults"></a>
 
@@ -765,11 +765,11 @@ apiInstance.putUserGreetingsDefaults(userId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList |  |
+ **userId** | **String** | User ID |  |
+ **body** | **DefaultGreetingList** | The updated defaultGreetingList |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+**DefaultGreetingList**
 

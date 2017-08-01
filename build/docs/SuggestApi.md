@@ -55,14 +55,14 @@ apiInstance.getSearch(q64, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **q64** | **String**| q64 |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
- **profile** | **Boolean**| profile | [optional] [default to true] |
+ **q64** | **String** | q64 |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
+ **profile** | **Boolean** | profile | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+**JsonNodeSearchResponse**
 
 <a name="getSearchSuggest"></a>
 
@@ -106,14 +106,14 @@ apiInstance.getSearchSuggest(q64, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **q64** | **String**| q64 |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
- **profile** | **Boolean**| profile | [optional] [default to true] |
+ **q64** | **String** | q64 |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
+ **profile** | **Boolean** | profile | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+**JsonNodeSearchResponse**
 
 <a name="postSearch"></a>
 
@@ -156,13 +156,13 @@ apiInstance.postSearch(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**SearchRequest**](SearchRequest.html)| Search request options |  |
- **profile** | **Boolean**| profile | [optional] [default to true] |
+ **body** | **SearchRequest** | Search request options |  |
+ **profile** | **Boolean** | profile | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+**JsonNodeSearchResponse**
 
 <a name="postSearchSuggest"></a>
 
@@ -205,11 +205,11 @@ apiInstance.postSearchSuggest(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**SuggestSearchRequest**](SuggestSearchRequest.html)| Search request options |  |
- **profile** | **Boolean**| profile | [optional] [default to true] |
+ **body** | **SuggestSearchRequest** | Search request options |  |
+ **profile** | **Boolean** | profile | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+**JsonNodeSearchResponse**
 

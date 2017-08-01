@@ -69,7 +69,7 @@ apiInstance.deleteAnalyticsReportingSchedule(scheduleId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String**| Schedule ID |  |
+ **scheduleId** | **String** | Schedule ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -114,12 +114,12 @@ apiInstance.getAnalyticsConversationDetails(conversationId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
+ **conversationId** | **String** | conversationId |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AnalyticsConversation**](AnalyticsConversation.html)
+**AnalyticsConversation**
 
 <a name="getAnalyticsReportingMetadata"></a>
 
@@ -162,14 +162,14 @@ apiInstance.getAnalyticsReportingMetadata(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **locale** | **String**| Locale | [optional]  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **locale** | **String** | Locale | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ReportMetaDataEntityListing**](ReportMetaDataEntityListing.html)
+**ReportMetaDataEntityListing**
 
 <a name="getAnalyticsReportingReportIdMetadata"></a>
 
@@ -212,13 +212,13 @@ apiInstance.getAnalyticsReportingReportIdMetadata(reportId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **reportId** | **String**| Report ID |  |
- **locale** | **String**| Locale | [optional]  |
+ **reportId** | **String** | Report ID |  |
+ **locale** | **String** | Locale | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ReportMetaData**](ReportMetaData.html)
+**ReportMetaData**
 
 <a name="getAnalyticsReportingReportformats"></a>
 
@@ -297,12 +297,12 @@ apiInstance.getAnalyticsReportingSchedule(scheduleId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String**| Schedule ID |  |
+ **scheduleId** | **String** | Schedule ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ReportSchedule**](ReportSchedule.html)
+**ReportSchedule**
 
 <a name="getAnalyticsReportingScheduleHistory"></a>
 
@@ -346,14 +346,14 @@ apiInstance.getAnalyticsReportingScheduleHistory(scheduleId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String**| Schedule ID |  |
- **pageNumber** | **Number**|  | [optional] [default to 1] |
- **pageSize** | **Number**|  | [optional] [default to 25] |
+ **scheduleId** | **String** | Schedule ID |  |
+ **pageNumber** | **Number** |  | [optional] [default to 1] |
+ **pageSize** | **Number** |  | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ReportRunEntryEntityDomainListing**](ReportRunEntryEntityDomainListing.html)
+**ReportRunEntryEntityDomainListing**
 
 <a name="getAnalyticsReportingScheduleHistoryLatest"></a>
 
@@ -393,12 +393,12 @@ apiInstance.getAnalyticsReportingScheduleHistoryLatest(scheduleId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String**| Schedule ID |  |
+ **scheduleId** | **String** | Schedule ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ReportRunEntry**](ReportRunEntry.html)
+**ReportRunEntry**
 
 <a name="getAnalyticsReportingScheduleHistoryRunId"></a>
 
@@ -440,13 +440,13 @@ apiInstance.getAnalyticsReportingScheduleHistoryRunId(runId, scheduleId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **runId** | **String**| Run ID |  |
- **scheduleId** | **String**| Schedule ID |  |
+ **runId** | **String** | Run ID |  |
+ **scheduleId** | **String** | Schedule ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ReportRunEntry**](ReportRunEntry.html)
+**ReportRunEntry**
 
 <a name="getAnalyticsReportingSchedules"></a>
 
@@ -488,13 +488,13 @@ apiInstance.getAnalyticsReportingSchedules(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ReportScheduleEntityListing**](ReportScheduleEntityListing.html)
+**ReportScheduleEntityListing**
 
 <a name="getAnalyticsReportingTimeperiods"></a>
 
@@ -575,13 +575,13 @@ apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **body** | [**PropertyIndexRequest**](PropertyIndexRequest.html)| request |  |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **PropertyIndexRequest** | request |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PropertyIndexRequest**](PropertyIndexRequest.html)
+**PropertyIndexRequest**
 
 <a name="postAnalyticsConversationsAggregatesQuery"></a>
 
@@ -621,12 +621,12 @@ apiInstance.postAnalyticsConversationsAggregatesQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
+ **body** | **AggregationQuery** | query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+**AggregateQueryResponse**
 
 <a name="postAnalyticsConversationsDetailsQuery"></a>
 
@@ -666,12 +666,12 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**ConversationQuery**](ConversationQuery.html)| query |  |
+ **body** | **ConversationQuery** | query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse.html)
+**AnalyticsConversationQueryResponse**
 
 <a name="postAnalyticsEvaluationsAggregatesQuery"></a>
 
@@ -711,12 +711,12 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
+ **body** | **AggregationQuery** | query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+**AggregateQueryResponse**
 
 <a name="postAnalyticsQueuesObservationsQuery"></a>
 
@@ -756,12 +756,12 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**ObservationQuery**](ObservationQuery.html)| query |  |
+ **body** | **ObservationQuery** | query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html)
+**QualifierMappingObservationQueryResponse**
 
 <a name="postAnalyticsReportingScheduleRunreport"></a>
 
@@ -801,12 +801,12 @@ apiInstance.postAnalyticsReportingScheduleRunreport(scheduleId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String**| Schedule ID |  |
+ **scheduleId** | **String** | Schedule ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**RunNowResponse**](RunNowResponse.html)
+**RunNowResponse**
 
 <a name="postAnalyticsReportingSchedules"></a>
 
@@ -846,12 +846,12 @@ apiInstance.postAnalyticsReportingSchedules(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**ReportSchedule**](ReportSchedule.html)| ReportSchedule |  |
+ **body** | **ReportSchedule** | ReportSchedule |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ReportSchedule**](ReportSchedule.html)
+**ReportSchedule**
 
 <a name="postAnalyticsUsersAggregatesQuery"></a>
 
@@ -891,12 +891,12 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
+ **body** | **AggregationQuery** | query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PresenceQueryResponse**](PresenceQueryResponse.html)
+**PresenceQueryResponse**
 
 <a name="postAnalyticsUsersDetailsQuery"></a>
 
@@ -936,12 +936,12 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**UserDetailsQuery**](UserDetailsQuery.html)| query |  |
+ **body** | **UserDetailsQuery** | query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AnalyticsUserDetailsQueryResponse**](AnalyticsUserDetailsQueryResponse.html)
+**AnalyticsUserDetailsQueryResponse**
 
 <a name="postAnalyticsUsersObservationsQuery"></a>
 
@@ -981,12 +981,12 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**ObservationQuery**](ObservationQuery.html)| query |  |
+ **body** | **ObservationQuery** | query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ObservationQueryResponse**](ObservationQueryResponse.html)
+**ObservationQueryResponse**
 
 <a name="putAnalyticsReportingSchedule"></a>
 
@@ -1028,11 +1028,11 @@ apiInstance.putAnalyticsReportingSchedule(scheduleId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String**| Schedule ID |  |
- **body** | [**ReportSchedule**](ReportSchedule.html)| ReportSchedule |  |
+ **scheduleId** | **String** | Schedule ID |  |
+ **body** | **ReportSchedule** | ReportSchedule |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ReportSchedule**](ReportSchedule.html)
+**ReportSchedule**
 

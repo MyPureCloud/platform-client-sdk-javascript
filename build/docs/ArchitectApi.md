@@ -108,7 +108,7 @@ apiInstance.deleteArchitectIvr(ivrId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **ivrId** | **String**| IVR id |  |
+ **ivrId** | **String** | IVR id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -156,8 +156,8 @@ apiInstance.deleteArchitectPrompt(promptId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **promptId** | **String**| Prompt ID |  |
- **allResources** | **Boolean**| Whether or not to delete all the prompt resources | [optional]  |
+ **promptId** | **String** | Prompt ID |  |
+ **allResources** | **Boolean** | Whether or not to delete all the prompt resources | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -204,8 +204,8 @@ apiInstance.deleteArchitectPromptResource(promptId, languageCode)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **promptId** | **String**| Prompt ID |  |
- **languageCode** | **String**| Language |  |
+ **promptId** | **String** | Prompt ID |  |
+ **languageCode** | **String** | Language |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -250,12 +250,12 @@ apiInstance.deleteArchitectPrompts(id)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **id** | [**[String]**](String.html)| List of Prompt IDs |  |
+ **id** | **[String]** | List of Prompt IDs |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Operation**](Operation.html)
+**Operation**
 
 <a name="deleteArchitectSchedule"></a>
 
@@ -295,7 +295,7 @@ apiInstance.deleteArchitectSchedule(scheduleId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String**| Schedule ID |  |
+ **scheduleId** | **String** | Schedule ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -340,7 +340,7 @@ apiInstance.deleteArchitectSchedulegroup(scheduleGroupId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scheduleGroupId** | **String**| Schedule group ID |  |
+ **scheduleGroupId** | **String** | Schedule group ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -387,8 +387,8 @@ apiInstance.deleteArchitectSystempromptResource(promptId, languageCode)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **promptId** | **String**| Prompt ID |  |
- **languageCode** | **String**| Language |  |
+ **promptId** | **String** | Prompt ID |  |
+ **languageCode** | **String** | Language |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -433,7 +433,7 @@ apiInstance.deleteFlow(flowId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **flowId** | **String**| Flow ID |  |
+ **flowId** | **String** | Flow ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -478,12 +478,12 @@ apiInstance.deleteFlows(id)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **id** | [**[String]**](String.html)| List of Flow IDs |  |
+ **id** | **[String]** | List of Flow IDs |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Operation**](Operation.html)
+**Operation**
 
 <a name="getArchitectDependencytracking"></a>
 
@@ -532,19 +532,19 @@ apiInstance.getArchitectDependencytracking(name, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **name** | **String**| Object name to search for |  |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **objectType** | [**[String]**](String.html)| Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
- **consumedResources** | **Boolean**| Include resources each result item consumes | [optional]  |
- **consumingResources** | **Boolean**| Include resources that consume each result item | [optional]  |
- **consumedResourceType** | [**[String]**](String.html)| Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
- **consumingResourceType** | [**[String]**](String.html)| Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **name** | **String** | Object name to search for |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **consumedResources** | **Boolean** | Include resources each result item consumes | [optional]  |
+ **consumingResources** | **Boolean** | Include resources that consume each result item | [optional]  |
+ **consumedResourceType** | **[String]** | Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **consumingResourceType** | **[String]** | Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DependencyObjectEntityListing**](DependencyObjectEntityListing.html)
+**DependencyObjectEntityListing**
 
 <a name="getArchitectDependencytrackingBuild"></a>
 
@@ -583,7 +583,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**DependencyStatus**](DependencyStatus.html)
+**DependencyStatus**
 
 <a name="getArchitectDependencytrackingConsumedresources"></a>
 
@@ -630,15 +630,15 @@ apiInstance.getArchitectDependencytrackingConsumedresources(id, version, objectT
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **id** | **String**| Consuming object ID |  |
- **version** | **String**| Consuming object version |  |
- **objectType** | **String**| Consuming object type | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
- **resourceType** | [**[String]**](String.html)| Types of consumed resources to show | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **id** | **String** | Consuming object ID |  |
+ **version** | **String** | Consuming object version |  |
+ **objectType** | **String** | Consuming object type | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **resourceType** | **[String]** | Types of consumed resources to show | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ConsumedResourcesEntityListing**](ConsumedResourcesEntityListing.html)
+**ConsumedResourcesEntityListing**
 
 <a name="getArchitectDependencytrackingConsumingresources"></a>
 
@@ -683,14 +683,14 @@ apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, opt
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **id** | **String**| Consumed object ID |  |
- **objectType** | **String**| Consumed object type (only versioned object types are valid) | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
- **resourceType** | [**[String]**](String.html)| Types of consuming resources to show | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **id** | **String** | Consumed object ID |  |
+ **objectType** | **String** | Consumed object type (only versioned object types are valid) | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **resourceType** | **[String]** | Types of consuming resources to show | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ConsumingResourcesEntityListing**](ConsumingResourcesEntityListing.html)
+**ConsumingResourcesEntityListing**
 
 <a name="getArchitectDependencytrackingDeletedresourceconsumers"></a>
 
@@ -737,18 +737,18 @@ apiInstance.getArchitectDependencytrackingDeletedresourceconsumers(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **name** | **String**| Name to search for | [optional]  |
- **objectType** | [**[String]**](String.html)| Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
- **flowFilter** | **String**| Show only checkedIn or published flows | [optional] <br />**Values**: checkedIn, published |
- **consumedResources** | **Boolean**| Return consumed resources? | [optional] [default to false] |
- **consumedResourceType** | [**[String]**](String.html)| Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
+ **name** | **String** | Name to search for | [optional]  |
+ **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **flowFilter** | **String** | Show only checkedIn or published flows | [optional] <br />**Values**: checkedIn, published |
+ **consumedResources** | **Boolean** | Return consumed resources? | [optional] [default to false] |
+ **consumedResourceType** | **[String]** | Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DependencyObjectEntityListing**](DependencyObjectEntityListing.html)
+**DependencyObjectEntityListing**
 
 <a name="getArchitectDependencytrackingObject"></a>
 
@@ -796,18 +796,18 @@ apiInstance.getArchitectDependencytrackingObject(id, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **id** | **String**| Object ID |  |
- **version** | **String**| Object version | [optional]  |
- **objectType** | **String**| Object type | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
- **consumedResources** | **Boolean**| Include resources this item consumes | [optional]  |
- **consumingResources** | **Boolean**| Include resources that consume this item | [optional]  |
- **consumedResourceType** | [**[String]**](String.html)| Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
- **consumingResourceType** | [**[String]**](String.html)| Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **id** | **String** | Object ID |  |
+ **version** | **String** | Object version | [optional]  |
+ **objectType** | **String** | Object type | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **consumedResources** | **Boolean** | Include resources this item consumes | [optional]  |
+ **consumingResources** | **Boolean** | Include resources that consume this item | [optional]  |
+ **consumedResourceType** | **[String]** | Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **consumingResourceType** | **[String]** | Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DependencyObject**](DependencyObject.html)
+**DependencyObject**
 
 <a name="getArchitectDependencytrackingType"></a>
 
@@ -847,12 +847,12 @@ apiInstance.getArchitectDependencytrackingType(typeId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **typeId** | **String**| Type ID |  |
+ **typeId** | **String** | Type ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DependencyType**](DependencyType.html)
+**DependencyType**
 
 <a name="getArchitectDependencytrackingTypes"></a>
 
@@ -894,13 +894,13 @@ apiInstance.getArchitectDependencytrackingTypes(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DependencyTypeEntityListing**](DependencyTypeEntityListing.html)
+**DependencyTypeEntityListing**
 
 <a name="getArchitectDependencytrackingUpdatedresourceconsumers"></a>
 
@@ -946,17 +946,17 @@ apiInstance.getArchitectDependencytrackingUpdatedresourceconsumers(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **name** | **String**| Name to search for | [optional]  |
- **objectType** | [**[String]**](String.html)| Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
- **consumedResources** | **Boolean**| Return consumed resources? | [optional] [default to false] |
- **consumedResourceType** | [**[String]**](String.html)| Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
+ **name** | **String** | Name to search for | [optional]  |
+ **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **consumedResources** | **Boolean** | Return consumed resources? | [optional] [default to false] |
+ **consumedResourceType** | **[String]** | Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DependencyObjectEntityListing**](DependencyObjectEntityListing.html)
+**DependencyObjectEntityListing**
 
 <a name="getArchitectIvr"></a>
 
@@ -996,12 +996,12 @@ apiInstance.getArchitectIvr(ivrId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **ivrId** | **String**| IVR id |  |
+ **ivrId** | **String** | IVR id |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**IVR**](IVR.html)
+**IVR**
 
 <a name="getArchitectIvrs"></a>
 
@@ -1045,15 +1045,15 @@ apiInstance.getArchitectIvrs(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **sortBy** | **String**| Sort by | [optional] [default to name] |
- **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**IVREntityListing**](IVREntityListing.html)
+**IVREntityListing**
 
 <a name="getArchitectPrompt"></a>
 
@@ -1093,12 +1093,12 @@ apiInstance.getArchitectPrompt(promptId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **promptId** | **String**| Prompt ID |  |
+ **promptId** | **String** | Prompt ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Prompt**](Prompt.html)
+**Prompt**
 
 <a name="getArchitectPromptResource"></a>
 
@@ -1140,13 +1140,13 @@ apiInstance.getArchitectPromptResource(promptId, languageCode)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **promptId** | **String**| Prompt ID |  |
- **languageCode** | **String**| Language |  |
+ **promptId** | **String** | Prompt ID |  |
+ **languageCode** | **String** | Language |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PromptAsset**](PromptAsset.html)
+**PromptAsset**
 
 <a name="getArchitectPromptResources"></a>
 
@@ -1190,14 +1190,14 @@ apiInstance.getArchitectPromptResources(promptId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **promptId** | **String**| Prompt ID |  |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
+ **promptId** | **String** | Prompt ID |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PromptAssetEntityListing**](PromptAssetEntityListing.html)
+**PromptAssetEntityListing**
 
 <a name="getArchitectPrompts"></a>
 
@@ -1242,16 +1242,16 @@ apiInstance.getArchitectPrompts(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **name** | **String**| Name | [optional]  |
- **description** | **String**| Description | [optional]  |
- **nameOrDescription** | **String**| Name or description | [optional]  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **name** | **String** | Name | [optional]  |
+ **description** | **String** | Description | [optional]  |
+ **nameOrDescription** | **String** | Name or description | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PromptEntityListing**](PromptEntityListing.html)
+**PromptEntityListing**
 
 <a name="getArchitectSchedule"></a>
 
@@ -1291,12 +1291,12 @@ apiInstance.getArchitectSchedule(scheduleId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String**| Schedule ID |  |
+ **scheduleId** | **String** | Schedule ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Schedule**](Schedule.html)
+**Schedule**
 
 <a name="getArchitectSchedulegroup"></a>
 
@@ -1336,12 +1336,12 @@ apiInstance.getArchitectSchedulegroup(scheduleGroupId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scheduleGroupId** | **String**| Schedule group ID |  |
+ **scheduleGroupId** | **String** | Schedule group ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ScheduleGroup**](ScheduleGroup.html)
+**ScheduleGroup**
 
 <a name="getArchitectSchedulegroups"></a>
 
@@ -1385,15 +1385,15 @@ apiInstance.getArchitectSchedulegroups(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **sortBy** | **String**| Sort by | [optional] [default to name] |
- **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ScheduleGroupEntityListing**](ScheduleGroupEntityListing.html)
+**ScheduleGroupEntityListing**
 
 <a name="getArchitectSchedules"></a>
 
@@ -1437,15 +1437,15 @@ apiInstance.getArchitectSchedules(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **sortBy** | **String**| Sort by | [optional] [default to name] |
- **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ScheduleEntityListing**](ScheduleEntityListing.html)
+**ScheduleEntityListing**
 
 <a name="getArchitectSystemprompt"></a>
 
@@ -1485,12 +1485,12 @@ apiInstance.getArchitectSystemprompt(promptId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **promptId** | **String**| promptId |  |
+ **promptId** | **String** | promptId |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**SystemPrompt**](SystemPrompt.html)
+**SystemPrompt**
 
 <a name="getArchitectSystempromptResource"></a>
 
@@ -1532,13 +1532,13 @@ apiInstance.getArchitectSystempromptResource(promptId, languageCode)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **promptId** | **String**| Prompt ID |  |
- **languageCode** | **String**| Language |  |
+ **promptId** | **String** | Prompt ID |  |
+ **languageCode** | **String** | Language |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**SystemPromptAsset**](SystemPromptAsset.html)
+**SystemPromptAsset**
 
 <a name="getArchitectSystempromptResources"></a>
 
@@ -1584,16 +1584,16 @@ apiInstance.getArchitectSystempromptResources(promptId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **promptId** | **String**| Prompt ID |  |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **sortBy** | **String**| Sort by | [optional] [default to id] |
- **sortOrder** | **String**| Sort order | [optional] [default to asc] |
+ **promptId** | **String** | Prompt ID |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to id] |
+ **sortOrder** | **String** | Sort order | [optional] [default to asc] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**SystemPromptAssetEntityListing**](SystemPromptAssetEntityListing.html)
+**SystemPromptAssetEntityListing**
 
 <a name="getArchitectSystemprompts"></a>
 
@@ -1640,18 +1640,18 @@ apiInstance.getArchitectSystemprompts(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **sortBy** | **String**| Sort by | [optional] [default to id] |
- **sortOrder** | **String**| Sort order | [optional] [default to asc] |
- **name** | **String**| Name | [optional]  |
- **description** | **String**| Description | [optional]  |
- **nameOrDescription** | **String**| Name or description | [optional]  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to id] |
+ **sortOrder** | **String** | Sort order | [optional] [default to asc] |
+ **name** | **String** | Name | [optional]  |
+ **description** | **String** | Description | [optional]  |
+ **nameOrDescription** | **String** | Name or description | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**SystemPromptEntityListing**](SystemPromptEntityListing.html)
+**SystemPromptEntityListing**
 
 <a name="getFlow"></a>
 
@@ -1694,13 +1694,13 @@ apiInstance.getFlow(flowId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **flowId** | **String**| Flow ID |  |
- **deleted** | **Boolean**| Include deleted flows | [optional] [default to false] |
+ **flowId** | **String** | Flow ID |  |
+ **deleted** | **Boolean** | Include deleted flows | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Flow**](Flow.html)
+**Flow**
 
 <a name="getFlowHistoryHistoryId"></a>
 
@@ -1749,18 +1749,18 @@ apiInstance.getFlowHistoryHistoryId(flowId, historyId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **flowId** | **String**| Flow ID |  |
- **historyId** | **String**| History ID (generated history) |  |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **sortBy** | **String**| Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user |
- **sortOrder** | **String**| Sort order | [optional] [default to desc] |
- **action** | [**[String]**](String.html)| Flow actions | [optional] <br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save |
+ **flowId** | **String** | Flow ID |  |
+ **historyId** | **String** | History ID (generated history) |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user |
+ **sortOrder** | **String** | Sort order | [optional] [default to desc] |
+ **action** | **[String]** | Flow actions | [optional] <br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save |
 {: class="table table-striped"}
 
 ### Return type
 
-[**HistoryListing**](HistoryListing.html)
+**HistoryListing**
 
 <a name="getFlowLatestconfiguration"></a>
 
@@ -1803,8 +1803,8 @@ apiInstance.getFlowLatestconfiguration(flowId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **flowId** | **String**| Flow ID |  |
- **deleted** | **Boolean**| Include deleted flows | [optional] [default to false] |
+ **flowId** | **String** | Flow ID |  |
+ **deleted** | **Boolean** | Include deleted flows | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1854,14 +1854,14 @@ apiInstance.getFlowVersion(flowId, versionId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **flowId** | **String**| Flow ID |  |
- **versionId** | **String**| Version ID |  |
- **deleted** | **String**| Include deleted flows | [optional]  |
+ **flowId** | **String** | Flow ID |  |
+ **versionId** | **String** | Version ID |  |
+ **deleted** | **String** | Include deleted flows | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**FlowVersion**](FlowVersion.html)
+**FlowVersion**
 
 <a name="getFlowVersionConfiguration"></a>
 
@@ -1906,9 +1906,9 @@ apiInstance.getFlowVersionConfiguration(flowId, versionId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **flowId** | **String**| Flow ID |  |
- **versionId** | **String**| Version ID |  |
- **deleted** | **String**| Include deleted flows | [optional]  |
+ **flowId** | **String** | Flow ID |  |
+ **versionId** | **String** | Version ID |  |
+ **deleted** | **String** | Include deleted flows | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1958,15 +1958,15 @@ apiInstance.getFlowVersions(flowId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **flowId** | **String**| Flow ID |  |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **deleted** | **Boolean**| Include deleted flows | [optional]  |
+ **flowId** | **String** | Flow ID |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **deleted** | **Boolean** | Include deleted flows | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**FlowVersionEntityListing**](FlowVersionEntityListing.html)
+**FlowVersionEntityListing**
 
 <a name="getFlows"></a>
 
@@ -2022,26 +2022,26 @@ apiInstance.getFlows(type, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **type** | **String**| Type |  |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **sortBy** | **String**| Sort by | [optional] [default to id] |
- **sortOrder** | **String**| Sort order | [optional] [default to asc] |
- **id** | [**[String]**](String.html)| ID | [optional]  |
- **name** | **String**| Name | [optional]  |
- **description** | **String**| Description | [optional]  |
- **nameOrDescription** | **String**| Name or description | [optional]  |
- **publishVersionId** | **String**| Publish version ID | [optional]  |
- **editableBy** | **String**| Editable by | [optional]  |
- **lockedBy** | **String**| Locked by | [optional]  |
- **secure** | **String**| Secure | [optional] <br />**Values**: any, checkedin, published |
- **deleted** | **Boolean**| Include deleted | [optional] [default to false] |
- **includeSchemas** | **Boolean**| Include variable schemas | [optional] [default to false] |
+ **type** | **String** | Type |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to id] |
+ **sortOrder** | **String** | Sort order | [optional] [default to asc] |
+ **id** | **[String]** | ID | [optional]  |
+ **name** | **String** | Name | [optional]  |
+ **description** | **String** | Description | [optional]  |
+ **nameOrDescription** | **String** | Name or description | [optional]  |
+ **publishVersionId** | **String** | Publish version ID | [optional]  |
+ **editableBy** | **String** | Editable by | [optional]  |
+ **lockedBy** | **String** | Locked by | [optional]  |
+ **secure** | **String** | Secure | [optional] <br />**Values**: any, checkedin, published |
+ **deleted** | **Boolean** | Include deleted | [optional] [default to false] |
+ **includeSchemas** | **Boolean** | Include variable schemas | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**FlowEntityListing**](FlowEntityListing.html)
+**FlowEntityListing**
 
 <a name="postArchitectDependencytrackingBuild"></a>
 
@@ -2121,12 +2121,12 @@ apiInstance.postArchitectIvrs(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**IVR**](IVR.html)|  | [optional]  |
+ **body** | **IVR** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**IVR**](IVR.html)
+**IVR**
 
 <a name="postArchitectPromptResources"></a>
 
@@ -2169,13 +2169,13 @@ apiInstance.postArchitectPromptResources(promptId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **promptId** | **String**| Prompt ID |  |
- **body** | [**PromptAssetCreate**](PromptAssetCreate.html)|  | [optional]  |
+ **promptId** | **String** | Prompt ID |  |
+ **body** | **PromptAssetCreate** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PromptAsset**](PromptAsset.html)
+**PromptAsset**
 
 <a name="postArchitectPrompts"></a>
 
@@ -2216,12 +2216,12 @@ apiInstance.postArchitectPrompts(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Prompt**](Prompt.html)|  | [optional]  |
+ **body** | **Prompt** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Prompt**](Prompt.html)
+**Prompt**
 
 <a name="postArchitectSchedulegroups"></a>
 
@@ -2262,12 +2262,12 @@ apiInstance.postArchitectSchedulegroups(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**ScheduleGroup**](ScheduleGroup.html)|  | [optional]  |
+ **body** | **ScheduleGroup** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ScheduleGroup**](ScheduleGroup.html)
+**ScheduleGroup**
 
 <a name="postArchitectSchedules"></a>
 
@@ -2308,12 +2308,12 @@ apiInstance.postArchitectSchedules(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Schedule**](Schedule.html)|  | [optional]  |
+ **body** | **Schedule** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Schedule**](Schedule.html)
+**Schedule**
 
 <a name="postArchitectSystempromptResources"></a>
 
@@ -2356,13 +2356,13 @@ apiInstance.postArchitectSystempromptResources(promptId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **promptId** | **String**| Prompt ID |  |
- **body** | [**SystemPromptAsset**](SystemPromptAsset.html)|  | [optional]  |
+ **promptId** | **String** | Prompt ID |  |
+ **body** | **SystemPromptAsset** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**SystemPromptAsset**](SystemPromptAsset.html)
+**SystemPromptAsset**
 
 <a name="postFlowVersions"></a>
 
@@ -2405,13 +2405,13 @@ apiInstance.postFlowVersions(flowId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **flowId** | **String**| Flow ID |  |
- **body** | **Object**|  | [optional]  |
+ **flowId** | **String** | Flow ID |  |
+ **body** | **Object** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**FlowVersion**](FlowVersion.html)
+**FlowVersion**
 
 <a name="postFlows"></a>
 
@@ -2452,12 +2452,12 @@ apiInstance.postFlows(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Flow**](Flow.html)|  | [optional]  |
+ **body** | **Flow** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Flow**](Flow.html)
+**Flow**
 
 <a name="postFlowsActionsCheckin"></a>
 
@@ -2497,12 +2497,12 @@ apiInstance.postFlowsActionsCheckin(flow)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **flow** | **String**| Flow ID |  |
+ **flow** | **String** | Flow ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Flow**](Flow.html)
+**Flow**
 
 <a name="postFlowsActionsCheckout"></a>
 
@@ -2542,12 +2542,12 @@ apiInstance.postFlowsActionsCheckout(flow)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **flow** | **String**| Flow ID |  |
+ **flow** | **String** | Flow ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Flow**](Flow.html)
+**Flow**
 
 <a name="postFlowsActionsDeactivate"></a>
 
@@ -2587,12 +2587,12 @@ apiInstance.postFlowsActionsDeactivate(flow)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **flow** | **String**| Flow ID |  |
+ **flow** | **String** | Flow ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Flow**](Flow.html)
+**Flow**
 
 <a name="postFlowsActionsPublish"></a>
 
@@ -2635,13 +2635,13 @@ apiInstance.postFlowsActionsPublish(flow, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **flow** | **String**| Flow ID |  |
- **version** | **String**| version | [optional]  |
+ **flow** | **String** | Flow ID |  |
+ **version** | **String** | version | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Operation**](Operation.html)
+**Operation**
 
 <a name="postFlowsActionsRevert"></a>
 
@@ -2681,12 +2681,12 @@ apiInstance.postFlowsActionsRevert(flow)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **flow** | **String**| Flow ID |  |
+ **flow** | **String** | Flow ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Flow**](Flow.html)
+**Flow**
 
 <a name="postFlowsActionsUnlock"></a>
 
@@ -2726,12 +2726,12 @@ apiInstance.postFlowsActionsUnlock(flow)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **flow** | **String**| Flow ID |  |
+ **flow** | **String** | Flow ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Flow**](Flow.html)
+**Flow**
 
 <a name="putArchitectIvr"></a>
 
@@ -2774,13 +2774,13 @@ apiInstance.putArchitectIvr(ivrId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **ivrId** | **String**| IVR id |  |
- **body** | [**IVR**](IVR.html)|  | [optional]  |
+ **ivrId** | **String** | IVR id |  |
+ **body** | **IVR** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**IVR**](IVR.html)
+**IVR**
 
 <a name="putArchitectPrompt"></a>
 
@@ -2823,13 +2823,13 @@ apiInstance.putArchitectPrompt(promptId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **promptId** | **String**| Prompt ID |  |
- **body** | [**Prompt**](Prompt.html)|  | [optional]  |
+ **promptId** | **String** | Prompt ID |  |
+ **body** | **Prompt** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Prompt**](Prompt.html)
+**Prompt**
 
 <a name="putArchitectPromptResource"></a>
 
@@ -2874,14 +2874,14 @@ apiInstance.putArchitectPromptResource(promptId, languageCode, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **promptId** | **String**| Prompt ID |  |
- **languageCode** | **String**| Language |  |
- **body** | [**PromptAsset**](PromptAsset.html)|  | [optional]  |
+ **promptId** | **String** | Prompt ID |  |
+ **languageCode** | **String** | Language |  |
+ **body** | **PromptAsset** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PromptAsset**](PromptAsset.html)
+**PromptAsset**
 
 <a name="putArchitectSchedule"></a>
 
@@ -2924,13 +2924,13 @@ apiInstance.putArchitectSchedule(scheduleId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String**| Schedule ID |  |
- **body** | [**Schedule**](Schedule.html)|  | [optional]  |
+ **scheduleId** | **String** | Schedule ID |  |
+ **body** | **Schedule** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Schedule**](Schedule.html)
+**Schedule**
 
 <a name="putArchitectSchedulegroup"></a>
 
@@ -2973,13 +2973,13 @@ apiInstance.putArchitectSchedulegroup(scheduleGroupId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scheduleGroupId** | **String**| Schedule group ID |  |
- **body** | [**ScheduleGroup**](ScheduleGroup.html)|  | [optional]  |
+ **scheduleGroupId** | **String** | Schedule group ID |  |
+ **body** | **ScheduleGroup** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ScheduleGroup**](ScheduleGroup.html)
+**ScheduleGroup**
 
 <a name="putArchitectSystempromptResource"></a>
 
@@ -3024,14 +3024,14 @@ apiInstance.putArchitectSystempromptResource(promptId, languageCode, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **promptId** | **String**| Prompt ID |  |
- **languageCode** | **String**| Language |  |
- **body** | [**SystemPromptAsset**](SystemPromptAsset.html)|  | [optional]  |
+ **promptId** | **String** | Prompt ID |  |
+ **languageCode** | **String** | Language |  |
+ **body** | **SystemPromptAsset** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**SystemPromptAsset**](SystemPromptAsset.html)
+**SystemPromptAsset**
 
 <a name="putFlow"></a>
 
@@ -3074,11 +3074,11 @@ apiInstance.putFlow(flowId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **flowId** | **String**| Flow ID |  |
- **body** | [**Flow**](Flow.html)|  | [optional]  |
+ **flowId** | **String** | Flow ID |  |
+ **body** | **Flow** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Flow**](Flow.html)
+**Flow**
 

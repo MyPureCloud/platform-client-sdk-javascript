@@ -57,7 +57,7 @@ apiInstance.deleteAlertingInteractionstatsAlert(alertId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **alertId** | **String**| Alert ID |  |
+ **alertId** | **String** | Alert ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -102,7 +102,7 @@ apiInstance.deleteAlertingInteractionstatsRule(ruleId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **ruleId** | **String**| Rule ID |  |
+ **ruleId** | **String** | Rule ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -150,13 +150,13 @@ apiInstance.getAlertingInteractionstatsAlert(alertId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **alertId** | **String**| Alert ID |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
+ **alertId** | **String** | Alert ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
 
-[**InteractionStatsAlert**](InteractionStatsAlert.html)
+**InteractionStatsAlert**
 
 <a name="getAlertingInteractionstatsAlerts"></a>
 
@@ -197,12 +197,12 @@ apiInstance.getAlertingInteractionstatsAlerts(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
 
-[**InteractionStatsAlertContainer**](InteractionStatsAlertContainer.html)
+**InteractionStatsAlertContainer**
 
 <a name="getAlertingInteractionstatsAlertsUnread"></a>
 
@@ -241,7 +241,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**UnreadMetric**](UnreadMetric.html)
+**UnreadMetric**
 
 <a name="getAlertingInteractionstatsRule"></a>
 
@@ -284,13 +284,13 @@ apiInstance.getAlertingInteractionstatsRule(ruleId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **ruleId** | **String**| Rule ID |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
+ **ruleId** | **String** | Rule ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
 
-[**InteractionStatsRule**](InteractionStatsRule.html)
+**InteractionStatsRule**
 
 <a name="getAlertingInteractionstatsRules"></a>
 
@@ -331,12 +331,12 @@ apiInstance.getAlertingInteractionstatsRules(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
 
-[**InteractionStatsRuleContainer**](InteractionStatsRuleContainer.html)
+**InteractionStatsRuleContainer**
 
 <a name="postAlertingInteractionstatsRules"></a>
 
@@ -379,13 +379,13 @@ apiInstance.postAlertingInteractionstatsRules(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**InteractionStatsRule**](InteractionStatsRule.html)| AlertingRule |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
+ **body** | **InteractionStatsRule** | AlertingRule |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
 
-[**InteractionStatsRule**](InteractionStatsRule.html)
+**InteractionStatsRule**
 
 <a name="putAlertingInteractionstatsAlert"></a>
 
@@ -430,14 +430,14 @@ apiInstance.putAlertingInteractionstatsAlert(alertId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **alertId** | **String**| Alert ID |  |
- **body** | [**UnreadStatus**](UnreadStatus.html)| InteractionStatsAlert |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
+ **alertId** | **String** | Alert ID |  |
+ **body** | **UnreadStatus** | InteractionStatsAlert |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UnreadStatus**](UnreadStatus.html)
+**UnreadStatus**
 
 <a name="putAlertingInteractionstatsRule"></a>
 
@@ -482,12 +482,12 @@ apiInstance.putAlertingInteractionstatsRule(ruleId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **ruleId** | **String**| Rule ID |  |
- **body** | [**InteractionStatsRule**](InteractionStatsRule.html)| AlertingRule |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
+ **ruleId** | **String** | Rule ID |  |
+ **body** | **InteractionStatsRule** | AlertingRule |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
 
-[**InteractionStatsRule**](InteractionStatsRule.html)
+**InteractionStatsRule**
 

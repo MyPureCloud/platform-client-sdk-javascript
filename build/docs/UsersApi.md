@@ -90,12 +90,12 @@ apiInstance.deleteUser(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
+ **userId** | **String** | User ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteUserRoles"></a>
 
@@ -135,7 +135,7 @@ apiInstance.deleteUserRoles(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
+ **userId** | **String** | User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -182,8 +182,8 @@ apiInstance.deleteUserRoutingskill(userId, skillId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **skillId** | **String**| skillId |  |
+ **userId** | **String** | User ID |  |
+ **skillId** | **String** | skillId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -228,7 +228,7 @@ apiInstance.deleteUserStationAssociatedstation(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
+ **userId** | **String** | User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -273,7 +273,7 @@ apiInstance.deleteUserStationDefaultstation(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
+ **userId** | **String** | User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -318,12 +318,12 @@ apiInstance.getFieldconfig(type)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **type** | **String**| Field type | <br />**Values**: person, group, org, externalContact |
+ **type** | **String** | Field type | <br />**Values**: person, group, org, externalContact |
 {: class="table table-striped"}
 
 ### Return type
 
-[**FieldConfig**](FieldConfig.html)
+**FieldConfig**
 
 <a name="getUser"></a>
 
@@ -367,14 +367,14 @@ apiInstance.getUser(userId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
- **state** | **String**| Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
+ **userId** | **String** | User ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+ **state** | **String** | Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
 {: class="table table-striped"}
 
 ### Return type
 
-[**User**](User.html)
+**User**
 
 <a name="getUserAdjacents"></a>
 
@@ -417,13 +417,13 @@ apiInstance.getUserAdjacents(userId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+ **userId** | **String** | User ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Adjacents**](Adjacents.html)
+**Adjacents**
 
 <a name="getUserCallforwarding"></a>
 
@@ -463,12 +463,12 @@ apiInstance.getUserCallforwarding(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
+ **userId** | **String** | User ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CallForwarding**](CallForwarding.html)
+**CallForwarding**
 
 <a name="getUserDirectreports"></a>
 
@@ -511,13 +511,13 @@ apiInstance.getUserDirectreports(userId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+ **userId** | **String** | User ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[User]**](User.html)
+**[User]**
 
 <a name="getUserFavorites"></a>
 
@@ -563,16 +563,16 @@ apiInstance.getUserFavorites(userId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+ **userId** | **String** | User ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserEntityListing**](UserEntityListing.html)
+**UserEntityListing**
 
 <a name="getUserGeolocation"></a>
 
@@ -614,13 +614,13 @@ apiInstance.getUserGeolocation(userId, clientId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| user Id |  |
- **clientId** | **String**| client Id |  |
+ **userId** | **String** | user Id |  |
+ **clientId** | **String** | client Id |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Geolocation**](Geolocation.html)
+**Geolocation**
 
 <a name="getUserOutofoffice"></a>
 
@@ -660,12 +660,12 @@ apiInstance.getUserOutofoffice(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
+ **userId** | **String** | User ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OutOfOffice**](OutOfOffice.html)
+**OutOfOffice**
 
 <a name="getUserProfileskills"></a>
 
@@ -705,7 +705,7 @@ apiInstance.getUserProfileskills(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
+ **userId** | **String** | User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -755,15 +755,15 @@ apiInstance.getUserQueues(userId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **joined** | **Boolean**| Is joined to the queue | [optional] [default to true] |
+ **userId** | **String** | User ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **joined** | **Boolean** | Is joined to the queue | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserQueueEntityListing**](UserQueueEntityListing.html)
+**UserQueueEntityListing**
 
 <a name="getUserRoles"></a>
 
@@ -803,12 +803,12 @@ apiInstance.getUserRoles(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
+ **userId** | **String** | User ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserAuthorization**](UserAuthorization.html)
+**UserAuthorization**
 
 <a name="getUserRoutingskills"></a>
 
@@ -853,15 +853,15 @@ apiInstance.getUserRoutingskills(userId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+ **userId** | **String** | User ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserSkillEntityListing**](UserSkillEntityListing.html)
+**UserSkillEntityListing**
 
 <a name="getUserRoutingstatus"></a>
 
@@ -901,12 +901,12 @@ apiInstance.getUserRoutingstatus(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
+ **userId** | **String** | User ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**RoutingStatus**](RoutingStatus.html)
+**RoutingStatus**
 
 <a name="getUserStation"></a>
 
@@ -946,12 +946,12 @@ apiInstance.getUserStation(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
+ **userId** | **String** | User ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserStations**](UserStations.html)
+**UserStations**
 
 <a name="getUserSuperiors"></a>
 
@@ -994,13 +994,13 @@ apiInstance.getUserSuperiors(userId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+ **userId** | **String** | User ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[User]**](User.html)
+**[User]**
 
 <a name="getUsers"></a>
 
@@ -1046,17 +1046,17 @@ apiInstance.getUsers(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **id** | [**[String]**](String.html)| id | [optional]  |
- **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
- **state** | **String**| Only list users of this state | [optional] [default to active]<br />**Values**: active, deleted |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **id** | **[String]** | id | [optional]  |
+ **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+ **state** | **String** | Only list users of this state | [optional] [default to active]<br />**Values**: active, deleted |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserEntityListing**](UserEntityListing.html)
+**UserEntityListing**
 
 <a name="getUsersMe"></a>
 
@@ -1097,12 +1097,12 @@ apiInstance.getUsersMe(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserMe**](UserMe.html)
+**UserMe**
 
 <a name="getUsersSearch"></a>
 
@@ -1145,13 +1145,13 @@ apiInstance.getUsersSearch(q64, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **q64** | **String**| q64 |  |
- **expand** | [**[String]**](String.html)| expand | [optional]  |
+ **q64** | **String** | q64 |  |
+ **expand** | **[String]** | expand | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UsersSearchResponse**](UsersSearchResponse.html)
+**UsersSearchResponse**
 
 <a name="patchUser"></a>
 
@@ -1193,13 +1193,13 @@ apiInstance.patchUser(userId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **body** | [**UpdateUser**](UpdateUser.html)| User |  |
+ **userId** | **String** | User ID |  |
+ **body** | **UpdateUser** | User |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**User**](User.html)
+**User**
 
 <a name="patchUserCallforwarding"></a>
 
@@ -1241,13 +1241,13 @@ apiInstance.patchUserCallforwarding(userId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **body** | [**CallForwarding**](CallForwarding.html)| Call forwarding |  |
+ **userId** | **String** | User ID |  |
+ **body** | **CallForwarding** | Call forwarding |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CallForwarding**](CallForwarding.html)
+**CallForwarding**
 
 <a name="patchUserGeolocation"></a>
 
@@ -1291,14 +1291,14 @@ apiInstance.patchUserGeolocation(userId, clientId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| user Id |  |
- **clientId** | **String**| client Id |  |
- **body** | [**Geolocation**](Geolocation.html)| Geolocation |  |
+ **userId** | **String** | user Id |  |
+ **clientId** | **String** | client Id |  |
+ **body** | **Geolocation** | Geolocation |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Geolocation**](Geolocation.html)
+**Geolocation**
 
 <a name="patchUserQueue"></a>
 
@@ -1342,14 +1342,14 @@ apiInstance.patchUserQueue(queueId, userId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String**| Queue ID |  |
- **userId** | **String**| User ID |  |
- **body** | [**UserQueue**](UserQueue.html)| Queue Member |  |
+ **queueId** | **String** | Queue ID |  |
+ **userId** | **String** | User ID |  |
+ **body** | **UserQueue** | Queue Member |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserQueue**](UserQueue.html)
+**UserQueue**
 
 <a name="patchUserQueues"></a>
 
@@ -1391,13 +1391,13 @@ apiInstance.patchUserQueues(userId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **body** | [**[UserQueue]**](UserQueue.html)| User Queues |  |
+ **userId** | **String** | User ID |  |
+ **body** | **[UserQueue]** | User Queues |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserQueueEntityListing**](UserQueueEntityListing.html)
+**UserQueueEntityListing**
 
 <a name="postAnalyticsUsersAggregatesQuery"></a>
 
@@ -1437,12 +1437,12 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
+ **body** | **AggregationQuery** | query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PresenceQueryResponse**](PresenceQueryResponse.html)
+**PresenceQueryResponse**
 
 <a name="postAnalyticsUsersDetailsQuery"></a>
 
@@ -1482,12 +1482,12 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**UserDetailsQuery**](UserDetailsQuery.html)| query |  |
+ **body** | **UserDetailsQuery** | query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AnalyticsUserDetailsQueryResponse**](AnalyticsUserDetailsQueryResponse.html)
+**AnalyticsUserDetailsQueryResponse**
 
 <a name="postAnalyticsUsersObservationsQuery"></a>
 
@@ -1527,12 +1527,12 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**ObservationQuery**](ObservationQuery.html)| query |  |
+ **body** | **ObservationQuery** | query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ObservationQueryResponse**](ObservationQueryResponse.html)
+**ObservationQueryResponse**
 
 <a name="postUserInvite"></a>
 
@@ -1575,8 +1575,8 @@ apiInstance.postUserInvite(userId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **force** | **Boolean**| Resend the invitation even if one is already outstanding | [optional] [default to false] |
+ **userId** | **String** | User ID |  |
+ **force** | **Boolean** | Resend the invitation even if one is already outstanding | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1623,13 +1623,13 @@ apiInstance.postUserRoutingskills(userId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **body** | [**UserRoutingSkillPost**](UserRoutingSkillPost.html)| Skill |  |
+ **userId** | **String** | User ID |  |
+ **body** | **UserRoutingSkillPost** | Skill |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserRoutingSkill**](UserRoutingSkill.html)
+**UserRoutingSkill**
 
 <a name="postUsers"></a>
 
@@ -1669,12 +1669,12 @@ apiInstance.postUsers(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**CreateUser**](CreateUser.html)| User |  |
+ **body** | **CreateUser** | User |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**User**](User.html)
+**User**
 
 <a name="postUsersSearch"></a>
 
@@ -1714,12 +1714,12 @@ apiInstance.postUsersSearch(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options |  |
+ **body** | **UserSearchRequest** | Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UsersSearchResponse**](UsersSearchResponse.html)
+**UsersSearchResponse**
 
 <a name="putUserCallforwarding"></a>
 
@@ -1761,13 +1761,13 @@ apiInstance.putUserCallforwarding(userId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **body** | [**CallForwarding**](CallForwarding.html)| Call forwarding |  |
+ **userId** | **String** | User ID |  |
+ **body** | **CallForwarding** | Call forwarding |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CallForwarding**](CallForwarding.html)
+**CallForwarding**
 
 <a name="putUserOutofoffice"></a>
 
@@ -1809,13 +1809,13 @@ apiInstance.putUserOutofoffice(userId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **body** | [**OutOfOffice**](OutOfOffice.html)| The updated OutOffOffice |  |
+ **userId** | **String** | User ID |  |
+ **body** | **OutOfOffice** | The updated OutOffOffice |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OutOfOffice**](OutOfOffice.html)
+**OutOfOffice**
 
 <a name="putUserProfileskills"></a>
 
@@ -1858,8 +1858,8 @@ apiInstance.putUserProfileskills(userId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **body** | **[String]**| Skills | [optional]  |
+ **userId** | **String** | User ID |  |
+ **body** | **[String]** | Skills | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1906,13 +1906,13 @@ apiInstance.putUserRoles(userId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **body** | **[String]**| List of roles |  |
+ **userId** | **String** | User ID |  |
+ **body** | **[String]** | List of roles |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserAuthorization**](UserAuthorization.html)
+**UserAuthorization**
 
 <a name="putUserRoutingskill"></a>
 
@@ -1956,14 +1956,14 @@ apiInstance.putUserRoutingskill(userId, skillId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **skillId** | **String**| skillId |  |
- **body** | [**UserRoutingSkill**](UserRoutingSkill.html)| Skill |  |
+ **userId** | **String** | User ID |  |
+ **skillId** | **String** | skillId |  |
+ **body** | **UserRoutingSkill** | Skill |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserRoutingSkill**](UserRoutingSkill.html)
+**UserRoutingSkill**
 
 <a name="putUserRoutingstatus"></a>
 
@@ -2005,13 +2005,13 @@ apiInstance.putUserRoutingstatus(userId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **body** | [**RoutingStatus**](RoutingStatus.html)| Routing Status |  |
+ **userId** | **String** | User ID |  |
+ **body** | **RoutingStatus** | Routing Status |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**RoutingStatus**](RoutingStatus.html)
+**RoutingStatus**
 
 <a name="putUserStationAssociatedstationStationId"></a>
 
@@ -2053,8 +2053,8 @@ apiInstance.putUserStationAssociatedstationStationId(userId, stationId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **stationId** | **String**| stationId |  |
+ **userId** | **String** | User ID |  |
+ **stationId** | **String** | stationId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2101,8 +2101,8 @@ apiInstance.putUserStationDefaultstationStationId(userId, stationId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **stationId** | **String**| stationId |  |
+ **userId** | **String** | User ID |  |
+ **stationId** | **String** | stationId |  |
 {: class="table table-striped"}
 
 ### Return type

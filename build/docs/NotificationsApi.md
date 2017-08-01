@@ -54,7 +54,7 @@ apiInstance.deleteNotificationsChannelSubscriptions(channelId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **channelId** | **String**| Channel ID |  |
+ **channelId** | **String** | Channel ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -100,12 +100,12 @@ apiInstance.getNotificationsAvailabletopics(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: description, requiresPermissions, schema |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: description, requiresPermissions, schema |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AvailableTopicEntityListing**](AvailableTopicEntityListing.html)
+**AvailableTopicEntityListing**
 
 <a name="getNotificationsChannelSubscriptions"></a>
 
@@ -145,12 +145,12 @@ apiInstance.getNotificationsChannelSubscriptions(channelId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **channelId** | **String**| Channel ID |  |
+ **channelId** | **String** | Channel ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ChannelTopicEntityListing**](ChannelTopicEntityListing.html)
+**ChannelTopicEntityListing**
 
 <a name="getNotificationsChannels"></a>
 
@@ -189,7 +189,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ChannelEntityListing**](ChannelEntityListing.html)
+**ChannelEntityListing**
 
 <a name="postNotificationsChannelSubscriptions"></a>
 
@@ -231,13 +231,13 @@ apiInstance.postNotificationsChannelSubscriptions(channelId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **channelId** | **String**| Channel ID |  |
- **body** | [**[ChannelTopic]**](ChannelTopic.html)| Body |  |
+ **channelId** | **String** | Channel ID |  |
+ **body** | **[ChannelTopic]** | Body |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ChannelTopicEntityListing**](ChannelTopicEntityListing.html)
+**ChannelTopicEntityListing**
 
 <a name="postNotificationsChannels"></a>
 
@@ -276,7 +276,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Channel**](Channel.html)
+**Channel**
 
 <a name="putNotificationsChannelSubscriptions"></a>
 
@@ -318,11 +318,11 @@ apiInstance.putNotificationsChannelSubscriptions(channelId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **channelId** | **String**| Channel ID |  |
- **body** | [**[ChannelTopic]**](ChannelTopic.html)| Body |  |
+ **channelId** | **String** | Channel ID |  |
+ **body** | **[ChannelTopic]** | Body |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ChannelTopicEntityListing**](ChannelTopicEntityListing.html)
+**ChannelTopicEntityListing**
 

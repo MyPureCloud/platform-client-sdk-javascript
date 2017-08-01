@@ -51,12 +51,12 @@ apiInstance.getFieldconfig(type)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **type** | **String**| Field type | <br />**Values**: person, group, org, externalContact |
+ **type** | **String** | Field type | <br />**Values**: person, group, org, externalContact |
 {: class="table table-striped"}
 
 ### Return type
 
-[**FieldConfig**](FieldConfig.html)
+**FieldConfig**
 
 <a name="getOrganizationsMe"></a>
 
@@ -95,7 +95,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Organization**](Organization.html)
+**Organization**
 
 <a name="patchOrganizationsFeature"></a>
 
@@ -137,13 +137,13 @@ apiInstance.patchOrganizationsFeature(featureName, enabled)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **featureName** | **String**| Organization feature | <br />**Values**: realtimeCIC, purecloud, hipaa, ucEnabled, pci, purecloudVoice, xmppFederation, chat, informalPhotos, directory, contactCenter, unifiedCommunications, custserv |
- **enabled** | [**FeatureState**](FeatureState.html)| New state of feature |  |
+ **featureName** | **String** | Organization feature | <br />**Values**: realtimeCIC, purecloud, hipaa, ucEnabled, pci, purecloudVoice, xmppFederation, chat, informalPhotos, directory, contactCenter, unifiedCommunications, custserv |
+ **enabled** | **FeatureState** | New state of feature |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OrganizationFeatures**](OrganizationFeatures.html)
+**OrganizationFeatures**
 
 <a name="putOrganizationsMe"></a>
 
@@ -184,10 +184,10 @@ apiInstance.putOrganizationsMe(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Organization**](Organization.html)| Organization | [optional]  |
+ **body** | **Organization** | Organization | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Organization**](Organization.html)
+**Organization**
 

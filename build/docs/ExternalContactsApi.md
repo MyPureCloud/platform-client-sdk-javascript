@@ -77,7 +77,7 @@ apiInstance.deleteExternalcontactsContact(contactId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactId** | **String**| ExternalContact ID |  |
+ **contactId** | **String** | ExternalContact ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -124,8 +124,8 @@ apiInstance.deleteExternalcontactsContactNote(contactId, noteId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactId** | **String**| ExternalContact Id |  |
- **noteId** | **String**| Note Id |  |
+ **contactId** | **String** | ExternalContact Id |  |
+ **noteId** | **String** | Note Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -170,7 +170,7 @@ apiInstance.deleteExternalcontactsOrganization(externalOrganizationId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **externalOrganizationId** | **String**| External Organization ID |  |
+ **externalOrganizationId** | **String** | External Organization ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -217,8 +217,8 @@ apiInstance.deleteExternalcontactsOrganizationNote(externalOrganizationId, noteI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **externalOrganizationId** | **String**| External Organization Id |  |
- **noteId** | **String**| Note Id |  |
+ **externalOrganizationId** | **String** | External Organization Id |  |
+ **noteId** | **String** | Note Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -263,7 +263,7 @@ apiInstance.deleteExternalcontactsOrganizationTrustor(externalOrganizationId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **externalOrganizationId** | **String**| External Organization ID |  |
+ **externalOrganizationId** | **String** | External Organization ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -308,7 +308,7 @@ apiInstance.deleteExternalcontactsRelationship(relationshipId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **relationshipId** | **String**| Relationship Id |  |
+ **relationshipId** | **String** | Relationship Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -356,13 +356,13 @@ apiInstance.getExternalcontactsContact(contactId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactId** | **String**| ExternalContact ID |  |
- **expand** | [**[String]**](String.html)| which fields, if any, to expand (externalOrganization,externalDataSources) | [optional] <br />**Values**: externalOrganization, externalDataSources |
+ **contactId** | **String** | ExternalContact ID |  |
+ **expand** | **[String]** | which fields, if any, to expand (externalOrganization,externalDataSources) | [optional] <br />**Values**: externalOrganization, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ExternalContact**](ExternalContact.html)
+**ExternalContact**
 
 <a name="getExternalcontactsContactNote"></a>
 
@@ -407,14 +407,14 @@ apiInstance.getExternalcontactsContactNote(contactId, noteId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactId** | **String**| ExternalContact Id |  |
- **noteId** | **String**| Note Id |  |
- **expand** | [**[String]**](String.html)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
+ **contactId** | **String** | ExternalContact Id |  |
+ **noteId** | **String** | Note Id |  |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Note**](Note.html)
+**Note**
 
 <a name="getExternalcontactsContactNotes"></a>
 
@@ -460,16 +460,16 @@ apiInstance.getExternalcontactsContactNotes(contactId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactId** | **String**| ExternalContact Id |  |
- **pageSize** | **Number**| Page size | [optional] [default to 20] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortOrder** | **String**| Sort order | [optional]  |
- **expand** | [**[String]**](String.html)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
+ **contactId** | **String** | ExternalContact Id |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 20] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortOrder** | **String** | Sort order | [optional]  |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
 
-[**NoteListing**](NoteListing.html)
+**NoteListing**
 
 <a name="getExternalcontactsContacts"></a>
 
@@ -514,16 +514,16 @@ apiInstance.getExternalcontactsContacts(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 20] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional]  |
- **sortOrder** | **String**| Sort order | [optional]  |
- **expand** | [**[String]**](String.html)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
+ **pageSize** | **Number** | Page size | [optional] [default to 20] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **q** | **String** | User supplied search keywords (no special syntax is currently supported) | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional]  |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ContactListing**](ContactListing.html)
+**ContactListing**
 
 <a name="getExternalcontactsOrganization"></a>
 
@@ -567,14 +567,14 @@ apiInstance.getExternalcontactsOrganization(externalOrganizationId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **externalOrganizationId** | **String**| External Organization ID |  |
- **expand** | **String**| which fields, if any, to expand (externalDataSources) | [optional] <br />**Values**: externalDataSources |
- **includeTrustors** | **Boolean**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
+ **externalOrganizationId** | **String** | External Organization ID |  |
+ **expand** | **String** | which fields, if any, to expand (externalDataSources) | [optional] <br />**Values**: externalDataSources |
+ **includeTrustors** | **Boolean** | (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ExternalOrganization**](ExternalOrganization.html)
+**ExternalOrganization**
 
 <a name="getExternalcontactsOrganizationContacts"></a>
 
@@ -621,17 +621,17 @@ apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **externalOrganizationId** | **String**| External Organization ID |  |
- **pageSize** | **Number**| Page size | [optional] [default to 20] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional]  |
- **sortOrder** | **String**| Sort order | [optional]  |
- **expand** | [**[String]**](String.html)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
+ **externalOrganizationId** | **String** | External Organization ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 20] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **q** | **String** | User supplied search keywords (no special syntax is currently supported) | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional]  |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ContactListing**](ContactListing.html)
+**ContactListing**
 
 <a name="getExternalcontactsOrganizationNote"></a>
 
@@ -676,14 +676,14 @@ apiInstance.getExternalcontactsOrganizationNote(externalOrganizationId, noteId, 
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **externalOrganizationId** | **String**| External Organization Id |  |
- **noteId** | **String**| Note Id |  |
- **expand** | [**[String]**](String.html)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
+ **externalOrganizationId** | **String** | External Organization Id |  |
+ **noteId** | **String** | Note Id |  |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Note**](Note.html)
+**Note**
 
 <a name="getExternalcontactsOrganizationNotes"></a>
 
@@ -729,16 +729,16 @@ apiInstance.getExternalcontactsOrganizationNotes(externalOrganizationId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **externalOrganizationId** | **String**| External Organization Id |  |
- **pageSize** | **Number**| Page size | [optional] [default to 20] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortOrder** | **String**| Sort order | [optional]  |
- **expand** | [**[String]**](String.html)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
+ **externalOrganizationId** | **String** | External Organization Id |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 20] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortOrder** | **String** | Sort order | [optional]  |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
 
-[**NoteListing**](NoteListing.html)
+**NoteListing**
 
 <a name="getExternalcontactsOrganizationRelationships"></a>
 
@@ -784,16 +784,16 @@ apiInstance.getExternalcontactsOrganizationRelationships(externalOrganizationId,
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **externalOrganizationId** | **String**| External Organization ID |  |
- **pageSize** | **Number**| Page size | [optional] [default to 20] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **expand** | **String**| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
- **sortOrder** | **String**| Sort order | [optional]  |
+ **externalOrganizationId** | **String** | External Organization ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 20] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **expand** | **String** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
+ **sortOrder** | **String** | Sort order | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**RelationshipListing**](RelationshipListing.html)
+**RelationshipListing**
 
 <a name="getExternalcontactsOrganizations"></a>
 
@@ -840,18 +840,18 @@ apiInstance.getExternalcontactsOrganizations(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 20] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **q** | **String**| Search query | [optional]  |
- **trustorId** | [**[String]**](String.html)| Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested | [optional]  |
- **sortOrder** | **String**| Sort order | [optional]  |
- **expand** | [**[String]**](String.html)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
- **includeTrustors** | **Boolean**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 20] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **q** | **String** | Search query | [optional]  |
+ **trustorId** | **[String]** | Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional]  |
+ **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
+ **includeTrustors** | **Boolean** | (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ExternalOrganizationListing**](ExternalOrganizationListing.html)
+**ExternalOrganizationListing**
 
 <a name="getExternalcontactsRelationship"></a>
 
@@ -894,13 +894,13 @@ apiInstance.getExternalcontactsRelationship(relationshipId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **relationshipId** | **String**| Relationship Id |  |
- **expand** | **String**| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
+ **relationshipId** | **String** | Relationship Id |  |
+ **expand** | **String** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Relationship**](Relationship.html)
+**Relationship**
 
 <a name="getExternalcontactsReversewhitepageslookup"></a>
 
@@ -943,13 +943,13 @@ apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **lookupVal** | **String**| User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) |  |
- **expand** | [**[String]**](String.html)| which field, if any, to expand | [optional] <br />**Values**: contacts.externalOrganization, externalDataSources |
+ **lookupVal** | **String** | User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) |  |
+ **expand** | **[String]** | which field, if any, to expand | [optional] <br />**Values**: contacts.externalOrganization, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ReverseWhitepagesLookupResult**](ReverseWhitepagesLookupResult.html)
+**ReverseWhitepagesLookupResult**
 
 <a name="postExternalcontactsContactNotes"></a>
 
@@ -992,13 +992,13 @@ apiInstance.postExternalcontactsContactNotes(contactId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactId** | **String**| ExternalContact Id |  |
- **body** | [**Note**](Note.html)| ExternalContact | [optional]  |
+ **contactId** | **String** | ExternalContact Id |  |
+ **body** | **Note** | ExternalContact | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Note**](Note.html)
+**Note**
 
 <a name="postExternalcontactsContacts"></a>
 
@@ -1039,12 +1039,12 @@ apiInstance.postExternalcontactsContacts(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact | [optional]  |
+ **body** | **ExternalContact** | ExternalContact | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ExternalContact**](ExternalContact.html)
+**ExternalContact**
 
 <a name="postExternalcontactsOrganizationNotes"></a>
 
@@ -1087,13 +1087,13 @@ apiInstance.postExternalcontactsOrganizationNotes(externalOrganizationId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **externalOrganizationId** | **String**| External Organization Id |  |
- **body** | [**Note**](Note.html)| ExternalContact | [optional]  |
+ **externalOrganizationId** | **String** | External Organization Id |  |
+ **body** | **Note** | ExternalContact | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Note**](Note.html)
+**Note**
 
 <a name="postExternalcontactsOrganizations"></a>
 
@@ -1134,12 +1134,12 @@ apiInstance.postExternalcontactsOrganizations(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization | [optional]  |
+ **body** | **ExternalOrganization** | ExternalOrganization | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ExternalOrganization**](ExternalOrganization.html)
+**ExternalOrganization**
 
 <a name="postExternalcontactsRelationships"></a>
 
@@ -1180,12 +1180,12 @@ apiInstance.postExternalcontactsRelationships(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Relationship**](Relationship.html)| Relationship | [optional]  |
+ **body** | **Relationship** | Relationship | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Relationship**](Relationship.html)
+**Relationship**
 
 <a name="putExternalcontactsContact"></a>
 
@@ -1228,13 +1228,13 @@ apiInstance.putExternalcontactsContact(contactId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactId** | **String**| ExternalContact ID |  |
- **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact | [optional]  |
+ **contactId** | **String** | ExternalContact ID |  |
+ **body** | **ExternalContact** | ExternalContact | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ExternalContact**](ExternalContact.html)
+**ExternalContact**
 
 <a name="putExternalcontactsContactNote"></a>
 
@@ -1279,14 +1279,14 @@ apiInstance.putExternalcontactsContactNote(contactId, noteId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contactId** | **String**| ExternalContact Id |  |
- **noteId** | **String**| Note Id |  |
- **body** | [**Note**](Note.html)| Note | [optional]  |
+ **contactId** | **String** | ExternalContact Id |  |
+ **noteId** | **String** | Note Id |  |
+ **body** | **Note** | Note | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Note**](Note.html)
+**Note**
 
 <a name="putExternalcontactsConversation"></a>
 
@@ -1329,8 +1329,8 @@ apiInstance.putExternalcontactsConversation(conversationId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| Conversation ID |  |
- **body** | [**ConversationAssociation**](ConversationAssociation.html)| ConversationAssociation | [optional]  |
+ **conversationId** | **String** | Conversation ID |  |
+ **body** | **ConversationAssociation** | ConversationAssociation | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1378,13 +1378,13 @@ apiInstance.putExternalcontactsOrganization(externalOrganizationId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **externalOrganizationId** | **String**| External Organization ID |  |
- **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization | [optional]  |
+ **externalOrganizationId** | **String** | External Organization ID |  |
+ **body** | **ExternalOrganization** | ExternalOrganization | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ExternalOrganization**](ExternalOrganization.html)
+**ExternalOrganization**
 
 <a name="putExternalcontactsOrganizationNote"></a>
 
@@ -1429,14 +1429,14 @@ apiInstance.putExternalcontactsOrganizationNote(externalOrganizationId, noteId, 
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **externalOrganizationId** | **String**| External Organization Id |  |
- **noteId** | **String**| Note Id |  |
- **body** | [**Note**](Note.html)| Note | [optional]  |
+ **externalOrganizationId** | **String** | External Organization Id |  |
+ **noteId** | **String** | Note Id |  |
+ **body** | **Note** | Note | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Note**](Note.html)
+**Note**
 
 <a name="putExternalcontactsOrganizationTrustorTrustorId"></a>
 
@@ -1478,13 +1478,13 @@ apiInstance.putExternalcontactsOrganizationTrustorTrustorId(externalOrganization
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **externalOrganizationId** | **String**| External Organization ID |  |
- **trustorId** | **String**| Trustor ID |  |
+ **externalOrganizationId** | **String** | External Organization ID |  |
+ **trustorId** | **String** | Trustor ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ExternalOrganization**](ExternalOrganization.html)
+**ExternalOrganization**
 
 <a name="putExternalcontactsRelationship"></a>
 
@@ -1527,11 +1527,11 @@ apiInstance.putExternalcontactsRelationship(relationshipId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **relationshipId** | **String**| Relationship Id |  |
- **body** | [**Relationship**](Relationship.html)| Relationship | [optional]  |
+ **relationshipId** | **String** | Relationship Id |  |
+ **body** | **Relationship** | Relationship | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Relationship**](Relationship.html)
+**Relationship**
 

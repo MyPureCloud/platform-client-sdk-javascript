@@ -50,7 +50,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**GeolocationSettings**](GeolocationSettings.html)
+**GeolocationSettings**
 
 <a name="getUserGeolocation"></a>
 
@@ -92,13 +92,13 @@ apiInstance.getUserGeolocation(userId, clientId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| user Id |  |
- **clientId** | **String**| client Id |  |
+ **userId** | **String** | user Id |  |
+ **clientId** | **String** | client Id |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Geolocation**](Geolocation.html)
+**Geolocation**
 
 <a name="patchGeolocationsSettings"></a>
 
@@ -138,12 +138,12 @@ apiInstance.patchGeolocationsSettings(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**GeolocationSettings**](GeolocationSettings.html)| Geolocation settings |  |
+ **body** | **GeolocationSettings** | Geolocation settings |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**GeolocationSettings**](GeolocationSettings.html)
+**GeolocationSettings**
 
 <a name="patchUserGeolocation"></a>
 
@@ -187,12 +187,12 @@ apiInstance.patchUserGeolocation(userId, clientId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| user Id |  |
- **clientId** | **String**| client Id |  |
- **body** | [**Geolocation**](Geolocation.html)| Geolocation |  |
+ **userId** | **String** | user Id |  |
+ **clientId** | **String** | client Id |  |
+ **body** | **Geolocation** | Geolocation |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Geolocation**](Geolocation.html)
+**Geolocation**
 

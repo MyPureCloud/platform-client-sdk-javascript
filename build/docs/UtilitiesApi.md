@@ -49,7 +49,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ServerDate**](ServerDate.html)
+**ServerDate**
 
 <a name="getTimezones"></a>
 
@@ -91,13 +91,13 @@ apiInstance.getTimezones(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TimeZoneEntityListing**](TimeZoneEntityListing.html)
+**TimeZoneEntityListing**
 
 <a name="postCertificateDetails"></a>
 
@@ -137,10 +137,10 @@ apiInstance.postCertificateDetails(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Certificate**](Certificate.html)| Certificate |  |
+ **body** | **Certificate** | Certificate |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ParsedCertificate**](ParsedCertificate.html)
+**ParsedCertificate**
 

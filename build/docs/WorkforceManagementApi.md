@@ -60,12 +60,12 @@ apiInstance.getWorkforcemanagementAdherence(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | [**[String]**](String.html)| User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request |  |
+ **userId** | **[String]** | User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[UserScheduleAdherence]**](UserScheduleAdherence.html)
+**[UserScheduleAdherence]**
 
 <a name="getWorkforcemanagementManagementunitActivitycodes"></a>
 
@@ -105,12 +105,12 @@ apiInstance.getWorkforcemanagementManagementunitActivitycodes(muId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ActivityCodeContainer**](ActivityCodeContainer.html)
+**ActivityCodeContainer**
 
 <a name="getWorkforcemanagementManagementunitIntradayQueues"></a>
 
@@ -152,13 +152,13 @@ apiInstance.getWorkforcemanagementManagementunitIntradayQueues(muId, _date)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
- **_date** | **String**| ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23 |  |
+ **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **_date** | **String** | ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23 |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**WfmIntradayQueueListing**](WfmIntradayQueueListing.html)
+**WfmIntradayQueueListing**
 
 <a name="getWorkforcemanagementManagementunitUserTimeoffrequest"></a>
 
@@ -202,14 +202,14 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId,
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
- **userId** | **String**| The userId to whom the Time Off Request applies. |  |
- **timeOffRequestId** | **String**| Time Off Request Id |  |
+ **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **userId** | **String** | The userId to whom the Time Off Request applies. |  |
+ **timeOffRequestId** | **String** | Time Off Request Id |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TimeOffRequest**](TimeOffRequest.html)
+**TimeOffRequest**
 
 <a name="getWorkforcemanagementManagementunitUserTimeoffrequests"></a>
 
@@ -254,14 +254,14 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(muId, userId
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
- **userId** | **String**| The userId to whom the Time Off Request applies. |  |
- **recentlyReviewed** | **Boolean**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
+ **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **userId** | **String** | The userId to whom the Time Off Request applies. |  |
+ **recentlyReviewed** | **Boolean** | Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TimeOffRequestList**](TimeOffRequestList.html)
+**TimeOffRequestList**
 
 <a name="getWorkforcemanagementManagementunitUsers"></a>
 
@@ -301,12 +301,12 @@ apiInstance.getWorkforcemanagementManagementunitUsers(muId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**WfmUserEntityListing**](WfmUserEntityListing.html)
+**WfmUserEntityListing**
 
 <a name="getWorkforcemanagementManagementunits"></a>
 
@@ -349,14 +349,14 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **selector** | **String**| Selector | [optional]  |
- **pageSize** | **Number**|  | [optional] [default to 25] |
- **pageNumber** | **Number**|  | [optional] [default to 1] |
+ **selector** | **String** | Selector | [optional]  |
+ **pageSize** | **Number** |  | [optional] [default to 25] |
+ **pageNumber** | **Number** |  | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[ManagementUnit]**](ManagementUnit.html)
+**[ManagementUnit]**
 
 <a name="getWorkforcemanagementTimeoffrequest"></a>
 
@@ -396,12 +396,12 @@ apiInstance.getWorkforcemanagementTimeoffrequest(timeOffRequestId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **timeOffRequestId** | **String**| Time Off Request Id |  |
+ **timeOffRequestId** | **String** | Time Off Request Id |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TimeOffRequest**](TimeOffRequest.html)
+**TimeOffRequest**
 
 <a name="getWorkforcemanagementTimeoffrequests"></a>
 
@@ -442,12 +442,12 @@ apiInstance.getWorkforcemanagementTimeoffrequests(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **recentlyReviewed** | **Boolean**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
+ **recentlyReviewed** | **Boolean** | Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TimeOffRequestList**](TimeOffRequestList.html)
+**TimeOffRequestList**
 
 <a name="patchWorkforcemanagementTimeoffrequest"></a>
 
@@ -490,8 +490,8 @@ apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **timeOffRequestId** | **String**| Time Off Request Id |  |
- **body** | [**TimeOffRequestPatch**](TimeOffRequestPatch.html)|  | [optional]  |
+ **timeOffRequestId** | **String** | Time Off Request Id |  |
+ **body** | **TimeOffRequestPatch** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -539,13 +539,13 @@ apiInstance.postWorkforcemanagementManagementunitIntraday(muId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
- **body** | [**IntradayQueryDataCommand**](IntradayQueryDataCommand.html)| body | [optional]  |
+ **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **body** | **IntradayQueryDataCommand** | body | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**IntradayResponse**](IntradayResponse.html)
+**IntradayResponse**
 
 <a name="postWorkforcemanagementManagementunitSchedulesSearch"></a>
 
@@ -588,13 +588,13 @@ apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(muId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
- **body** | [**UserListScheduleRequestBody**](UserListScheduleRequestBody.html)| body | [optional]  |
+ **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **body** | **UserListScheduleRequestBody** | body | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserScheduleContainer**](UserScheduleContainer.html)
+**UserScheduleContainer**
 
 <a name="postWorkforcemanagementSchedules"></a>
 
@@ -635,10 +635,10 @@ apiInstance.postWorkforcemanagementSchedules(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**CurrentUserScheduleRequestBody**](CurrentUserScheduleRequestBody.html)| body | [optional]  |
+ **body** | **CurrentUserScheduleRequestBody** | body | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserScheduleContainer**](UserScheduleContainer.html)
+**UserScheduleContainer**
 

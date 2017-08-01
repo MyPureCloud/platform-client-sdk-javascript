@@ -61,12 +61,12 @@ apiInstance.getDocumentationSearch(q64)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **q64** | **String**| q64 |  |
+ **q64** | **String** | q64 |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DocumentationSearchResponse**](DocumentationSearchResponse.html)
+**DocumentationSearchResponse**
 
 <a name="getGroupsSearch"></a>
 
@@ -109,13 +109,13 @@ apiInstance.getGroupsSearch(q64, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **q64** | **String**| q64 |  |
- **expand** | [**[String]**](String.html)| expand | [optional]  |
+ **q64** | **String** | q64 |  |
+ **expand** | **[String]** | expand | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**GroupsSearchResponse**](GroupsSearchResponse.html)
+**GroupsSearchResponse**
 
 <a name="getLocationsSearch"></a>
 
@@ -158,13 +158,13 @@ apiInstance.getLocationsSearch(q64, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **q64** | **String**| q64 |  |
- **expand** | [**[String]**](String.html)| expand | [optional]  |
+ **q64** | **String** | q64 |  |
+ **expand** | **[String]** | expand | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LocationsSearchResponse**](LocationsSearchResponse.html)
+**LocationsSearchResponse**
 
 <a name="getSearch"></a>
 
@@ -208,14 +208,14 @@ apiInstance.getSearch(q64, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **q64** | **String**| q64 |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
- **profile** | **Boolean**| profile | [optional] [default to true] |
+ **q64** | **String** | q64 |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
+ **profile** | **Boolean** | profile | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+**JsonNodeSearchResponse**
 
 <a name="getSearchSuggest"></a>
 
@@ -259,14 +259,14 @@ apiInstance.getSearchSuggest(q64, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **q64** | **String**| q64 |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
- **profile** | **Boolean**| profile | [optional] [default to true] |
+ **q64** | **String** | q64 |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
+ **profile** | **Boolean** | profile | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+**JsonNodeSearchResponse**
 
 <a name="getUsersSearch"></a>
 
@@ -309,13 +309,13 @@ apiInstance.getUsersSearch(q64, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **q64** | **String**| q64 |  |
- **expand** | [**[String]**](String.html)| expand | [optional]  |
+ **q64** | **String** | q64 |  |
+ **expand** | **[String]** | expand | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UsersSearchResponse**](UsersSearchResponse.html)
+**UsersSearchResponse**
 
 <a name="getVoicemailSearch"></a>
 
@@ -358,13 +358,13 @@ apiInstance.getVoicemailSearch(q64, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **q64** | **String**| q64 |  |
- **expand** | [**[String]**](String.html)| expand | [optional]  |
+ **q64** | **String** | q64 |  |
+ **expand** | **[String]** | expand | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VoicemailsSearchResponse**](VoicemailsSearchResponse.html)
+**VoicemailsSearchResponse**
 
 <a name="postDocumentationSearch"></a>
 
@@ -404,12 +404,12 @@ apiInstance.postDocumentationSearch(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**DocumentationSearchRequest**](DocumentationSearchRequest.html)| Search request options |  |
+ **body** | **DocumentationSearchRequest** | Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DocumentationSearchResponse**](DocumentationSearchResponse.html)
+**DocumentationSearchResponse**
 
 <a name="postGroupsSearch"></a>
 
@@ -449,12 +449,12 @@ apiInstance.postGroupsSearch(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**GroupSearchRequest**](GroupSearchRequest.html)| Search request options |  |
+ **body** | **GroupSearchRequest** | Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**GroupsSearchResponse**](GroupsSearchResponse.html)
+**GroupsSearchResponse**
 
 <a name="postLocationsSearch"></a>
 
@@ -494,12 +494,12 @@ apiInstance.postLocationsSearch(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**LocationSearchRequest**](LocationSearchRequest.html)| Search request options |  |
+ **body** | **LocationSearchRequest** | Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LocationsSearchResponse**](LocationsSearchResponse.html)
+**LocationsSearchResponse**
 
 <a name="postSearch"></a>
 
@@ -542,13 +542,13 @@ apiInstance.postSearch(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**SearchRequest**](SearchRequest.html)| Search request options |  |
- **profile** | **Boolean**| profile | [optional] [default to true] |
+ **body** | **SearchRequest** | Search request options |  |
+ **profile** | **Boolean** | profile | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+**JsonNodeSearchResponse**
 
 <a name="postSearchSuggest"></a>
 
@@ -591,13 +591,13 @@ apiInstance.postSearchSuggest(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**SuggestSearchRequest**](SuggestSearchRequest.html)| Search request options |  |
- **profile** | **Boolean**| profile | [optional] [default to true] |
+ **body** | **SuggestSearchRequest** | Search request options |  |
+ **profile** | **Boolean** | profile | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+**JsonNodeSearchResponse**
 
 <a name="postUsersSearch"></a>
 
@@ -637,12 +637,12 @@ apiInstance.postUsersSearch(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options |  |
+ **body** | **UserSearchRequest** | Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UsersSearchResponse**](UsersSearchResponse.html)
+**UsersSearchResponse**
 
 <a name="postVoicemailSearch"></a>
 
@@ -682,10 +682,10 @@ apiInstance.postVoicemailSearch(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**VoicemailSearchRequest**](VoicemailSearchRequest.html)| Search request options |  |
+ **body** | **VoicemailSearchRequest** | Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VoicemailsSearchResponse**](VoicemailsSearchResponse.html)
+**VoicemailsSearchResponse**
 

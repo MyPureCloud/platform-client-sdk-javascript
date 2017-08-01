@@ -64,7 +64,7 @@ apiInstance.deleteAuthorizationRole(roleId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **roleId** | **String**| Role ID |  |
+ **roleId** | **String** | Role ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -109,7 +109,7 @@ apiInstance.deleteUserRoles(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
+ **userId** | **String** | User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -156,13 +156,13 @@ apiInstance.getAuthorizationPermissions(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PermissionCollectionEntityListing**](PermissionCollectionEntityListing.html)
+**PermissionCollectionEntityListing**
 
 <a name="getAuthorizationProducts"></a>
 
@@ -201,7 +201,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OrganizationProductEntityListing**](OrganizationProductEntityListing.html)
+**OrganizationProductEntityListing**
 
 <a name="getAuthorizationRole"></a>
 
@@ -241,12 +241,12 @@ apiInstance.getAuthorizationRole(roleId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **roleId** | **String**| Role ID |  |
+ **roleId** | **String** | Role ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DomainOrganizationRole**](DomainOrganizationRole.html)
+**DomainOrganizationRole**
 
 <a name="getAuthorizationRoleComparedefaultRightRoleId"></a>
 
@@ -288,13 +288,13 @@ apiInstance.getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **leftRoleId** | **String**| Left Role ID |  |
- **rightRoleId** | **String**| Right Role id |  |
+ **leftRoleId** | **String** | Left Role ID |  |
+ **rightRoleId** | **String** | Right Role id |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DomainOrgRoleDifference**](DomainOrgRoleDifference.html)
+**DomainOrgRoleDifference**
 
 <a name="getAuthorizationRoles"></a>
 
@@ -344,21 +344,21 @@ apiInstance.getAuthorizationRoles(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| The total page size requested | [optional] [default to 25] |
- **pageNumber** | **Number**| The page number requested | [optional] [default to 1] |
- **sortBy** | **String**| variable name requested to sort by | [optional]  |
- **expand** | [**[Object]**](Object.html)| variable name requested by expand list | [optional]  |
- **nextPage** | **String**| next page token | [optional]  |
- **previousPage** | **String**| Previous page token | [optional]  |
- **name** | **String**|  | [optional]  |
- **permission** | [**[Object]**](Object.html)|  | [optional]  |
- **defaultRoleId** | [**[Object]**](Object.html)|  | [optional]  |
- **userCount** | **Boolean**|  | [optional] [default to true] |
+ **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
+ **sortBy** | **String** | variable name requested to sort by | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
+ **nextPage** | **String** | next page token | [optional]  |
+ **previousPage** | **String** | Previous page token | [optional]  |
+ **name** | **String** |  | [optional]  |
+ **permission** | **[Object]** |  | [optional]  |
+ **defaultRoleId** | **[Object]** |  | [optional]  |
+ **userCount** | **Boolean** |  | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html)
+**OrganizationRoleEntityListing**
 
 <a name="getUserRoles"></a>
 
@@ -398,12 +398,12 @@ apiInstance.getUserRoles(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
+ **userId** | **String** | User ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserAuthorization**](UserAuthorization.html)
+**UserAuthorization**
 
 <a name="patchAuthorizationRole"></a>
 
@@ -445,13 +445,13 @@ apiInstance.patchAuthorizationRole(roleId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **roleId** | **String**| Role ID |  |
- **body** | [**DomainOrganizationRole**](DomainOrganizationRole.html)| Organization role |  |
+ **roleId** | **String** | Role ID |  |
+ **body** | **DomainOrganizationRole** | Organization role |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DomainOrganizationRole**](DomainOrganizationRole.html)
+**DomainOrganizationRole**
 
 <a name="postAuthorizationRoleComparedefaultRightRoleId"></a>
 
@@ -495,14 +495,14 @@ apiInstance.postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRole
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **leftRoleId** | **String**| Left Role ID |  |
- **rightRoleId** | **String**| Right Role id |  |
- **body** | [**DomainOrganizationRole**](DomainOrganizationRole.html)| Organization role |  |
+ **leftRoleId** | **String** | Left Role ID |  |
+ **rightRoleId** | **String** | Right Role id |  |
+ **body** | **DomainOrganizationRole** | Organization role |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DomainOrgRoleDifference**](DomainOrgRoleDifference.html)
+**DomainOrgRoleDifference**
 
 <a name="postAuthorizationRoles"></a>
 
@@ -542,12 +542,12 @@ apiInstance.postAuthorizationRoles(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**DomainOrganizationRoleCreate**](DomainOrganizationRoleCreate.html)| Organization role |  |
+ **body** | **DomainOrganizationRoleCreate** | Organization role |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DomainOrganizationRole**](DomainOrganizationRole.html)
+**DomainOrganizationRole**
 
 <a name="postAuthorizationRolesDefault"></a>
 
@@ -588,12 +588,12 @@ apiInstance.postAuthorizationRolesDefault(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **force** | **Boolean**| Restore default roles | [optional] [default to false] |
+ **force** | **Boolean** | Restore default roles | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html)
+**OrganizationRoleEntityListing**
 
 <a name="putAuthorizationRole"></a>
 
@@ -635,13 +635,13 @@ apiInstance.putAuthorizationRole(roleId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **roleId** | **String**| Role ID |  |
- **body** | [**DomainOrganizationRoleUpdate**](DomainOrganizationRoleUpdate.html)| Organization role |  |
+ **roleId** | **String** | Role ID |  |
+ **body** | **DomainOrganizationRoleUpdate** | Organization role |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DomainOrganizationRole**](DomainOrganizationRole.html)
+**DomainOrganizationRole**
 
 <a name="putAuthorizationRoleUsersAdd"></a>
 
@@ -683,8 +683,8 @@ apiInstance.putAuthorizationRoleUsersAdd(roleId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **roleId** | **String**| Role ID |  |
- **body** | **[String]**| List of user IDs |  |
+ **roleId** | **String** | Role ID |  |
+ **body** | **[String]** | List of user IDs |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -731,8 +731,8 @@ apiInstance.putAuthorizationRoleUsersRemove(roleId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **roleId** | **String**| Role ID |  |
- **body** | **[String]**| List of user IDs |  |
+ **roleId** | **String** | Role ID |  |
+ **body** | **[String]** | List of user IDs |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -777,12 +777,12 @@ apiInstance.putAuthorizationRolesDefault(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**[DomainOrganizationRole]**](DomainOrganizationRole.html)| Organization roles list |  |
+ **body** | **[DomainOrganizationRole]** | Organization roles list |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html)
+**OrganizationRoleEntityListing**
 
 <a name="putUserRoles"></a>
 
@@ -824,11 +824,11 @@ apiInstance.putUserRoles(userId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **body** | **[String]**| List of roles |  |
+ **userId** | **String** | User ID |  |
+ **body** | **[String]** | List of roles |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserAuthorization**](UserAuthorization.html)
+**UserAuthorization**
 

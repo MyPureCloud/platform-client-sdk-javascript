@@ -3,7 +3,7 @@ Platform API version: 1387
 
 # SDK Changes
 
-* API-2742 use correct null/undefined checks
+*API-2672 clean up npm package
 
 # Major Changes (0 changes)
 

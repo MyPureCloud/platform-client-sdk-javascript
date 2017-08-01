@@ -70,7 +70,7 @@ apiInstance.deleteVoicemailMessage(messageId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **messageId** | **String**| Message ID |  |
+ **messageId** | **String** | Message ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -154,12 +154,12 @@ apiInstance.getVoicemailGroupMailbox(groupId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String**| groupId |  |
+ **groupId** | **String** | groupId |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VoicemailMailboxInfo**](VoicemailMailboxInfo.html)
+**VoicemailMailboxInfo**
 
 <a name="getVoicemailGroupMessages"></a>
 
@@ -203,14 +203,14 @@ apiInstance.getVoicemailGroupMessages(groupId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String**| Group ID |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **groupId** | **String** | Group ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html)
+**VoicemailMessageEntityListing**
 
 <a name="getVoicemailGroupPolicy"></a>
 
@@ -250,12 +250,12 @@ apiInstance.getVoicemailGroupPolicy(groupId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String**| Group ID |  |
+ **groupId** | **String** | Group ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VoicemailGroupPolicy**](VoicemailGroupPolicy.html)
+**VoicemailGroupPolicy**
 
 <a name="getVoicemailMailbox"></a>
 
@@ -294,7 +294,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VoicemailMailboxInfo**](VoicemailMailboxInfo.html)
+**VoicemailMailboxInfo**
 
 <a name="getVoicemailMeMailbox"></a>
 
@@ -333,7 +333,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VoicemailMailboxInfo**](VoicemailMailboxInfo.html)
+**VoicemailMailboxInfo**
 
 <a name="getVoicemailMeMessages"></a>
 
@@ -375,13 +375,13 @@ apiInstance.getVoicemailMeMessages(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html)
+**VoicemailMessageEntityListing**
 
 <a name="getVoicemailMePolicy"></a>
 
@@ -420,7 +420,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VoicemailUserPolicy**](VoicemailUserPolicy.html)
+**VoicemailUserPolicy**
 
 <a name="getVoicemailMessage"></a>
 
@@ -463,13 +463,13 @@ apiInstance.getVoicemailMessage(messageId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **messageId** | **String**| Message ID |  |
- **expand** | [**[String]**](String.html)| If the caller is a known user, which fields, if any, to expand | [optional] <br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
+ **messageId** | **String** | Message ID |  |
+ **expand** | **[String]** | If the caller is a known user, which fields, if any, to expand | [optional] <br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VoicemailMessage**](VoicemailMessage.html)
+**VoicemailMessage**
 
 <a name="getVoicemailMessageMedia"></a>
 
@@ -512,13 +512,13 @@ apiInstance.getVoicemailMessageMedia(messageId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **messageId** | **String**| Message ID |  |
- **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+ **messageId** | **String** | Message ID |  |
+ **formatId** | **String** | The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VoicemailMediaInfo**](VoicemailMediaInfo.html)
+**VoicemailMediaInfo**
 
 <a name="getVoicemailMessages"></a>
 
@@ -560,13 +560,13 @@ apiInstance.getVoicemailMessages(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **ids** | **String**| An optional comma separated list of VoicemailMessage ids | [optional]  |
- **expand** | [**[String]**](String.html)| If the caller is a known user, which fields, if any, to expand | [optional] <br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
+ **ids** | **String** | An optional comma separated list of VoicemailMessage ids | [optional]  |
+ **expand** | **[String]** | If the caller is a known user, which fields, if any, to expand | [optional] <br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html)
+**VoicemailMessageEntityListing**
 
 <a name="getVoicemailPolicy"></a>
 
@@ -605,7 +605,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html)
+**VoicemailOrganizationPolicy**
 
 <a name="getVoicemailSearch"></a>
 
@@ -648,13 +648,13 @@ apiInstance.getVoicemailSearch(q64, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **q64** | **String**| q64 |  |
- **expand** | [**[String]**](String.html)| expand | [optional]  |
+ **q64** | **String** | q64 |  |
+ **expand** | **[String]** | expand | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VoicemailsSearchResponse**](VoicemailsSearchResponse.html)
+**VoicemailsSearchResponse**
 
 <a name="getVoicemailUserpolicy"></a>
 
@@ -694,12 +694,12 @@ apiInstance.getVoicemailUserpolicy(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
+ **userId** | **String** | User ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VoicemailUserPolicy**](VoicemailUserPolicy.html)
+**VoicemailUserPolicy**
 
 <a name="patchVoicemailGroupPolicy"></a>
 
@@ -741,13 +741,13 @@ apiInstance.patchVoicemailGroupPolicy(groupId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String**| Group ID |  |
- **body** | [**VoicemailGroupPolicy**](VoicemailGroupPolicy.html)| The group&#39;s voicemail policy |  |
+ **groupId** | **String** | Group ID |  |
+ **body** | **VoicemailGroupPolicy** | The group&#39;s voicemail policy |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VoicemailGroupPolicy**](VoicemailGroupPolicy.html)
+**VoicemailGroupPolicy**
 
 <a name="patchVoicemailMePolicy"></a>
 
@@ -787,12 +787,12 @@ apiInstance.patchVoicemailMePolicy(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy.html)| The user&#39;s voicemail policy |  |
+ **body** | **VoicemailUserPolicy** | The user&#39;s voicemail policy |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VoicemailUserPolicy**](VoicemailUserPolicy.html)
+**VoicemailUserPolicy**
 
 <a name="patchVoicemailMessage"></a>
 
@@ -834,13 +834,13 @@ apiInstance.patchVoicemailMessage(messageId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **messageId** | **String**| Message ID |  |
- **body** | [**VoicemailMessage**](VoicemailMessage.html)| VoicemailMessage |  |
+ **messageId** | **String** | Message ID |  |
+ **body** | **VoicemailMessage** | VoicemailMessage |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VoicemailMessage**](VoicemailMessage.html)
+**VoicemailMessage**
 
 <a name="patchVoicemailUserpolicy"></a>
 
@@ -882,13 +882,13 @@ apiInstance.patchVoicemailUserpolicy(userId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy.html)| The user&#39;s voicemail policy |  |
+ **userId** | **String** | User ID |  |
+ **body** | **VoicemailUserPolicy** | The user&#39;s voicemail policy |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VoicemailUserPolicy**](VoicemailUserPolicy.html)
+**VoicemailUserPolicy**
 
 <a name="postVoicemailMessages"></a>
 
@@ -929,12 +929,12 @@ apiInstance.postVoicemailMessages(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**CopyVoicemailMessage**](CopyVoicemailMessage.html)|  | [optional]  |
+ **body** | **CopyVoicemailMessage** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VoicemailMessage**](VoicemailMessage.html)
+**VoicemailMessage**
 
 <a name="postVoicemailSearch"></a>
 
@@ -974,12 +974,12 @@ apiInstance.postVoicemailSearch(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**VoicemailSearchRequest**](VoicemailSearchRequest.html)| Search request options |  |
+ **body** | **VoicemailSearchRequest** | Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VoicemailsSearchResponse**](VoicemailsSearchResponse.html)
+**VoicemailsSearchResponse**
 
 <a name="putVoicemailMessage"></a>
 
@@ -1021,13 +1021,13 @@ apiInstance.putVoicemailMessage(messageId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **messageId** | **String**| Message ID |  |
- **body** | [**VoicemailMessage**](VoicemailMessage.html)| VoicemailMessage |  |
+ **messageId** | **String** | Message ID |  |
+ **body** | **VoicemailMessage** | VoicemailMessage |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VoicemailMessage**](VoicemailMessage.html)
+**VoicemailMessage**
 
 <a name="putVoicemailPolicy"></a>
 
@@ -1067,10 +1067,10 @@ apiInstance.putVoicemailPolicy(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html)| Policy |  |
+ **body** | **VoicemailOrganizationPolicy** | Policy |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html)
+**VoicemailOrganizationPolicy**
 

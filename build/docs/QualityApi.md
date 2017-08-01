@@ -80,13 +80,13 @@ apiInstance.deleteQualityCalibration(calibrationId, calibratorId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **calibrationId** | **String**| Calibration ID |  |
- **calibratorId** | **String**| calibratorId |  |
+ **calibrationId** | **String** | Calibration ID |  |
+ **calibratorId** | **String** | calibratorId |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Calibration**](Calibration.html)
+**Calibration**
 
 <a name="deleteQualityConversationEvaluation"></a>
 
@@ -131,14 +131,14 @@ apiInstance.deleteQualityConversationEvaluation(conversationId, evaluationId, op
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **evaluationId** | **String**| evaluationId |  |
- **expand** | **String**| evaluatorId | [optional]  |
+ **conversationId** | **String** | conversationId |  |
+ **evaluationId** | **String** | evaluationId |  |
+ **expand** | **String** | evaluatorId | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Evaluation**](Evaluation.html)
+**Evaluation**
 
 <a name="deleteQualityForm"></a>
 
@@ -178,7 +178,7 @@ apiInstance.deleteQualityForm(formId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **formId** | **String**| Form ID |  |
+ **formId** | **String** | Form ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -223,7 +223,7 @@ apiInstance.deleteQualityKeywordset(keywordSetId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **keywordSetId** | **String**| KeywordSet ID |  |
+ **keywordSetId** | **String** | KeywordSet ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -268,7 +268,7 @@ apiInstance.deleteQualityKeywordsets(ids)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **ids** | **String**| A comma-delimited list of valid KeywordSet ids |  |
+ **ids** | **String** | A comma-delimited list of valid KeywordSet ids |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -325,23 +325,23 @@ apiInstance.getQualityAgentsActivity(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| The total page size requested | [optional] [default to 25] |
- **pageNumber** | **Number**| The page number requested | [optional] [default to 1] |
- **sortBy** | **String**| variable name requested to sort by | [optional]  |
- **expand** | [**[Object]**](Object.html)| variable name requested by expand list | [optional]  |
- **nextPage** | **String**| next page token | [optional]  |
- **previousPage** | **String**| Previous page token | [optional]  |
- **startTime** | **Date**| Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
- **endTime** | **Date**| End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
- **agentUserId** | [**[Object]**](Object.html)| user id of agent requested | [optional]  |
- **evaluatorUserId** | **String**| user id of the evaluator | [optional]  |
- **name** | **String**| name | [optional]  |
- **group** | **String**| group id | [optional]  |
+ **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
+ **sortBy** | **String** | variable name requested to sort by | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
+ **nextPage** | **String** | next page token | [optional]  |
+ **previousPage** | **String** | Previous page token | [optional]  |
+ **startTime** | **Date** | Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
+ **endTime** | **Date** | End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
+ **agentUserId** | **[Object]** | user id of agent requested | [optional]  |
+ **evaluatorUserId** | **String** | user id of the evaluator | [optional]  |
+ **name** | **String** | name | [optional]  |
+ **group** | **String** | group id | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AgentActivityEntityListing**](AgentActivityEntityListing.html)
+**AgentActivityEntityListing**
 
 <a name="getQualityCalibration"></a>
 
@@ -383,13 +383,13 @@ apiInstance.getQualityCalibration(calibrationId, calibratorId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **calibrationId** | **String**| Calibration ID |  |
- **calibratorId** | **String**| calibratorId |  |
+ **calibrationId** | **String** | Calibration ID |  |
+ **calibratorId** | **String** | calibratorId |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Calibration**](Calibration.html)
+**Calibration**
 
 <a name="getQualityCalibrations"></a>
 
@@ -440,21 +440,21 @@ apiInstance.getQualityCalibrations(calibratorId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **calibratorId** | **String**| user id of calibrator |  |
- **pageSize** | **Number**| The total page size requested | [optional] [default to 25] |
- **pageNumber** | **Number**| The page number requested | [optional] [default to 1] |
- **sortBy** | **String**| variable name requested to sort by | [optional]  |
- **expand** | [**[Object]**](Object.html)| variable name requested by expand list | [optional]  |
- **nextPage** | **String**| next page token | [optional]  |
- **previousPage** | **String**| Previous page token | [optional]  |
- **conversationId** | **String**| conversation id | [optional]  |
- **startTime** | **Date**| Beginning of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
- **endTime** | **Date**| end of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
+ **calibratorId** | **String** | user id of calibrator |  |
+ **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
+ **sortBy** | **String** | variable name requested to sort by | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
+ **nextPage** | **String** | next page token | [optional]  |
+ **previousPage** | **String** | Previous page token | [optional]  |
+ **conversationId** | **String** | conversation id | [optional]  |
+ **startTime** | **Date** | Beginning of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
+ **endTime** | **Date** | end of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CalibrationEntityListing**](CalibrationEntityListing.html)
+**CalibrationEntityListing**
 
 <a name="getQualityConversationAudits"></a>
 
@@ -504,20 +504,20 @@ apiInstance.getQualityConversationAudits(conversationId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| Conversation ID |  |
- **pageSize** | **Number**| The total page size requested | [optional] [default to 25] |
- **pageNumber** | **Number**| The page number requested | [optional] [default to 1] |
- **sortBy** | **String**| variable name requested to sort by | [optional]  |
- **expand** | [**[Object]**](Object.html)| variable name requested by expand list | [optional]  |
- **nextPage** | **String**| next page token | [optional]  |
- **previousPage** | **String**| Previous page token | [optional]  |
- **recordingId** | **String**| id of the recording | [optional]  |
- **entityType** | **String**| entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording | [optional] [default to RECORDING] |
+ **conversationId** | **String** | Conversation ID |  |
+ **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
+ **sortBy** | **String** | variable name requested to sort by | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
+ **nextPage** | **String** | next page token | [optional]  |
+ **previousPage** | **String** | Previous page token | [optional]  |
+ **recordingId** | **String** | id of the recording | [optional]  |
+ **entityType** | **String** | entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording | [optional] [default to RECORDING] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**QualityAuditPage**](QualityAuditPage.html)
+**QualityAuditPage**
 
 <a name="getQualityConversationEvaluation"></a>
 
@@ -562,14 +562,14 @@ apiInstance.getQualityConversationEvaluation(conversationId, evaluationId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **evaluationId** | **String**| evaluationId |  |
- **expand** | **String**| agent, evaluator, evaluationForm | [optional]  |
+ **conversationId** | **String** | conversationId |  |
+ **evaluationId** | **String** | evaluationId |  |
+ **expand** | **String** | agent, evaluator, evaluationForm | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Evaluation**](Evaluation.html)
+**Evaluation**
 
 <a name="getQualityEvaluationsQuery"></a>
 
@@ -626,28 +626,28 @@ apiInstance.getQualityEvaluationsQuery(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| The total page size requested | [optional] [default to 25] |
- **pageNumber** | **Number**| The page number requested | [optional] [default to 1] |
- **sortBy** | **String**| variable name requested to sort by | [optional]  |
- **expand** | [**[Object]**](Object.html)| variable name requested by expand list | [optional]  |
- **nextPage** | **String**| next page token | [optional]  |
- **previousPage** | **String**| Previous page token | [optional]  |
- **conversationId** | **String**| conversationId specified | [optional]  |
- **agentUserId** | **String**| user id of the agent | [optional]  |
- **evaluatorUserId** | **String**| evaluator user id | [optional]  |
- **queueId** | **String**| queue id | [optional]  |
- **startTime** | **String**| start time of the evaluation query | [optional]  |
- **endTime** | **String**| end time of the evaluation query | [optional]  |
- **evaluationState** | [**[Object]**](Object.html)| evaluation state options: Pending, InProgress, Finished | [optional]  |
- **isReleased** | **Boolean**| the evaluation has been released | [optional]  |
- **agentHasRead** | **Boolean**| agent has the evaluation | [optional]  |
- **expandAnswerTotalScores** | **Boolean**| get the total scores for evaluations | [optional]  |
- **maximum** | **Number**| maximum | [optional]  |
+ **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
+ **sortBy** | **String** | variable name requested to sort by | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
+ **nextPage** | **String** | next page token | [optional]  |
+ **previousPage** | **String** | Previous page token | [optional]  |
+ **conversationId** | **String** | conversationId specified | [optional]  |
+ **agentUserId** | **String** | user id of the agent | [optional]  |
+ **evaluatorUserId** | **String** | evaluator user id | [optional]  |
+ **queueId** | **String** | queue id | [optional]  |
+ **startTime** | **String** | start time of the evaluation query | [optional]  |
+ **endTime** | **String** | end time of the evaluation query | [optional]  |
+ **evaluationState** | **[Object]** | evaluation state options: Pending, InProgress, Finished | [optional]  |
+ **isReleased** | **Boolean** | the evaluation has been released | [optional]  |
+ **agentHasRead** | **Boolean** | agent has the evaluation | [optional]  |
+ **expandAnswerTotalScores** | **Boolean** | get the total scores for evaluations | [optional]  |
+ **maximum** | **Number** | maximum | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationEntityListing**](EvaluationEntityListing.html)
+**EvaluationEntityListing**
 
 <a name="getQualityEvaluatorsActivity"></a>
 
@@ -698,22 +698,22 @@ apiInstance.getQualityEvaluatorsActivity(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| The total page size requested | [optional] [default to 25] |
- **pageNumber** | **Number**| The page number requested | [optional] [default to 1] |
- **sortBy** | **String**| variable name requested to sort by | [optional]  |
- **expand** | [**[Object]**](Object.html)| variable name requested by expand list | [optional]  |
- **nextPage** | **String**| next page token | [optional]  |
- **previousPage** | **String**| Previous page token | [optional]  |
- **startTime** | **Date**| The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
- **endTime** | **Date**| The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
- **name** | **String**| Evaluator name | [optional]  |
- **permission** | [**[Object]**](Object.html)| permission strings | [optional]  |
- **group** | **String**| group id | [optional]  |
+ **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
+ **sortBy** | **String** | variable name requested to sort by | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
+ **nextPage** | **String** | next page token | [optional]  |
+ **previousPage** | **String** | Previous page token | [optional]  |
+ **startTime** | **Date** | The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
+ **endTime** | **Date** | The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
+ **name** | **String** | Evaluator name | [optional]  |
+ **permission** | **[Object]** | permission strings | [optional]  |
+ **group** | **String** | group id | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EvaluatorActivityEntityListing**](EvaluatorActivityEntityListing.html)
+**EvaluatorActivityEntityListing**
 
 <a name="getQualityForm"></a>
 
@@ -753,12 +753,12 @@ apiInstance.getQualityForm(formId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **formId** | **String**| Form ID |  |
+ **formId** | **String** | Form ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+**EvaluationForm**
 
 <a name="getQualityFormVersions"></a>
 
@@ -802,14 +802,14 @@ apiInstance.getQualityFormVersions(formId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **formId** | **String**| Form ID |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **formId** | **String** | Form ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+**EvaluationFormEntityListing**
 
 <a name="getQualityForms"></a>
 
@@ -856,18 +856,18 @@ apiInstance.getQualityForms(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| The total page size requested | [optional] [default to 25] |
- **pageNumber** | **Number**| The page number requested | [optional] [default to 1] |
- **sortBy** | **String**| variable name requested to sort by | [optional]  |
- **nextPage** | **String**| next page token | [optional]  |
- **previousPage** | **String**| Previous page token | [optional]  |
- **expand** | **String**| Expand | [optional]  |
- **name** | **String**| Name | [optional]  |
+ **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
+ **sortBy** | **String** | variable name requested to sort by | [optional]  |
+ **nextPage** | **String** | next page token | [optional]  |
+ **previousPage** | **String** | Previous page token | [optional]  |
+ **expand** | **String** | Expand | [optional]  |
+ **name** | **String** | Name | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+**EvaluationFormEntityListing**
 
 <a name="getQualityKeywordset"></a>
 
@@ -907,12 +907,12 @@ apiInstance.getQualityKeywordset(keywordSetId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **keywordSetId** | **String**| KeywordSet ID |  |
+ **keywordSetId** | **String** | KeywordSet ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**KeywordSet**](KeywordSet.html)
+**KeywordSet**
 
 <a name="getQualityKeywordsets"></a>
 
@@ -962,21 +962,21 @@ apiInstance.getQualityKeywordsets(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| The total page size requested | [optional] [default to 25] |
- **pageNumber** | **Number**| The page number requested | [optional] [default to 1] |
- **sortBy** | **String**| variable name requested to sort by | [optional]  |
- **expand** | [**[Object]**](Object.html)| variable name requested by expand list | [optional]  |
- **nextPage** | **String**| next page token | [optional]  |
- **previousPage** | **String**| Previous page token | [optional]  |
- **name** | **String**| the keyword set name - used for filtering results in searches. | [optional]  |
- **queueId** | **String**| the queue id - used for filtering results in searches. | [optional]  |
- **agentId** | **String**| the agent id - used for filtering results in searches. | [optional]  |
- **operator** | **String**| If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters. | [optional] <br />**Values**: AND, OR |
+ **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
+ **sortBy** | **String** | variable name requested to sort by | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
+ **nextPage** | **String** | next page token | [optional]  |
+ **previousPage** | **String** | Previous page token | [optional]  |
+ **name** | **String** | the keyword set name - used for filtering results in searches. | [optional]  |
+ **queueId** | **String** | the queue id - used for filtering results in searches. | [optional]  |
+ **agentId** | **String** | the agent id - used for filtering results in searches. | [optional]  |
+ **operator** | **String** | If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters. | [optional] <br />**Values**: AND, OR |
 {: class="table table-striped"}
 
 ### Return type
 
-[**KeywordSetEntityListing**](KeywordSetEntityListing.html)
+**KeywordSetEntityListing**
 
 <a name="getQualityPublishedform"></a>
 
@@ -1016,12 +1016,12 @@ apiInstance.getQualityPublishedform(formId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **formId** | **String**| Form ID |  |
+ **formId** | **String** | Form ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+**EvaluationForm**
 
 <a name="getQualityPublishedforms"></a>
 
@@ -1064,14 +1064,14 @@ apiInstance.getQualityPublishedforms(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **name** | **String**| Name | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **name** | **String** | Name | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+**EvaluationFormEntityListing**
 
 <a name="postAnalyticsEvaluationsAggregatesQuery"></a>
 
@@ -1111,12 +1111,12 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**AggregationQuery**](AggregationQuery.html)| query |  |
+ **body** | **AggregationQuery** | query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+**AggregateQueryResponse**
 
 <a name="postQualityCalibrations"></a>
 
@@ -1159,13 +1159,13 @@ apiInstance.postQualityCalibrations(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**CalibrationCreate**](CalibrationCreate.html)| calibration |  |
- **expand** | **String**| calibratorId | [optional]  |
+ **body** | **CalibrationCreate** | calibration |  |
+ **expand** | **String** | calibratorId | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Calibration**](Calibration.html)
+**Calibration**
 
 <a name="postQualityConversationEvaluations"></a>
 
@@ -1210,14 +1210,14 @@ apiInstance.postQualityConversationEvaluations(conversationId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **body** | [**Evaluation**](Evaluation.html)| evaluation |  |
- **expand** | **String**| evaluatorId | [optional]  |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Evaluation** | evaluation |  |
+ **expand** | **String** | evaluatorId | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Evaluation**](Evaluation.html)
+**Evaluation**
 
 <a name="postQualityEvaluationsScoring"></a>
 
@@ -1257,12 +1257,12 @@ apiInstance.postQualityEvaluationsScoring(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**EvaluationFormAndScoringSet**](EvaluationFormAndScoringSet.html)| evaluationAndScoringSet |  |
+ **body** | **EvaluationFormAndScoringSet** | evaluationAndScoringSet |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationScoringSet**](EvaluationScoringSet.html)
+**EvaluationScoringSet**
 
 <a name="postQualityForms"></a>
 
@@ -1302,12 +1302,12 @@ apiInstance.postQualityForms(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form |  |
+ **body** | **EvaluationForm** | Evaluation form |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+**EvaluationForm**
 
 <a name="postQualityKeywordsets"></a>
 
@@ -1350,13 +1350,13 @@ apiInstance.postQualityKeywordsets(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**KeywordSet**](KeywordSet.html)| keywordSet |  |
- **expand** | **String**| queueId | [optional]  |
+ **body** | **KeywordSet** | keywordSet |  |
+ **expand** | **String** | queueId | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**KeywordSet**](KeywordSet.html)
+**KeywordSet**
 
 <a name="postQualityPublishedforms"></a>
 
@@ -1396,12 +1396,12 @@ apiInstance.postQualityPublishedforms(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form |  |
+ **body** | **EvaluationForm** | Evaluation form |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+**EvaluationForm**
 
 <a name="postQualitySpotability"></a>
 
@@ -1442,12 +1442,12 @@ apiInstance.postQualitySpotability(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**KeywordSet**](KeywordSet.html)| Keyword Set | [optional]  |
+ **body** | **KeywordSet** | Keyword Set | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**KeywordSet**](KeywordSet.html)
+**KeywordSet**
 
 <a name="putQualityCalibration"></a>
 
@@ -1489,13 +1489,13 @@ apiInstance.putQualityCalibration(calibrationId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **calibrationId** | **String**| Calibration ID |  |
- **body** | [**Calibration**](Calibration.html)| Calibration |  |
+ **calibrationId** | **String** | Calibration ID |  |
+ **body** | **Calibration** | Calibration |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Calibration**](Calibration.html)
+**Calibration**
 
 <a name="putQualityConversationEvaluation"></a>
 
@@ -1542,15 +1542,15 @@ apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body,
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| conversationId |  |
- **evaluationId** | **String**| evaluationId |  |
- **body** | [**Evaluation**](Evaluation.html)| evaluation |  |
- **expand** | **String**| evaluatorId | [optional]  |
+ **conversationId** | **String** | conversationId |  |
+ **evaluationId** | **String** | evaluationId |  |
+ **body** | **Evaluation** | evaluation |  |
+ **expand** | **String** | evaluatorId | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Evaluation**](Evaluation.html)
+**Evaluation**
 
 <a name="putQualityForm"></a>
 
@@ -1592,13 +1592,13 @@ apiInstance.putQualityForm(formId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **formId** | **String**| Form ID |  |
- **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form |  |
+ **formId** | **String** | Form ID |  |
+ **body** | **EvaluationForm** | Evaluation form |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+**EvaluationForm**
 
 <a name="putQualityKeywordset"></a>
 
@@ -1640,11 +1640,11 @@ apiInstance.putQualityKeywordset(keywordSetId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **keywordSetId** | **String**| KeywordSet ID |  |
- **body** | [**KeywordSet**](KeywordSet.html)| keywordSet |  |
+ **keywordSetId** | **String** | KeywordSet ID |  |
+ **body** | **KeywordSet** | keywordSet |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**KeywordSet**](KeywordSet.html)
+**KeywordSet**
 

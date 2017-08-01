@@ -84,9 +84,9 @@ apiInstance.deleteConversationRecordingAnnotation(conversationId, recordingId, a
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| Conversation ID |  |
- **recordingId** | **String**| Recording ID |  |
- **annotationId** | **String**| Annotation ID |  |
+ **conversationId** | **String** | Conversation ID |  |
+ **recordingId** | **String** | Recording ID |  |
+ **annotationId** | **String** | Annotation ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -131,12 +131,12 @@ apiInstance.deleteOrphanrecording(orphanId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **orphanId** | **String**| Orphan ID |  |
+ **orphanId** | **String** | Orphan ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OrphanRecording**](OrphanRecording.html)
+**OrphanRecording**
 
 <a name="deleteRecordingMediaretentionpolicies"></a>
 
@@ -176,7 +176,7 @@ apiInstance.deleteRecordingMediaretentionpolicies(ids)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **ids** | **String**|  |  |
+ **ids** | **String** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -221,7 +221,7 @@ apiInstance.deleteRecordingMediaretentionpolicy(policyId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **policyId** | **String**| Policy ID |  |
+ **policyId** | **String** | Policy ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -273,16 +273,16 @@ apiInstance.getConversationRecording(conversationId, recordingId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| Conversation ID |  |
- **recordingId** | **String**| Recording ID |  |
- **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
- **download** | **Boolean**| requesting a download format of the recording | [optional] [default to false] |
- **fileName** | **String**| the name of the downloaded fileName | [optional]  |
+ **conversationId** | **String** | Conversation ID |  |
+ **recordingId** | **String** | Recording ID |  |
+ **formatId** | **String** | The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+ **download** | **Boolean** | requesting a download format of the recording | [optional] [default to false] |
+ **fileName** | **String** | the name of the downloaded fileName | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Recording**](Recording.html)
+**Recording**
 
 <a name="getConversationRecordingAnnotation"></a>
 
@@ -326,14 +326,14 @@ apiInstance.getConversationRecordingAnnotation(conversationId, recordingId, anno
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| Conversation ID |  |
- **recordingId** | **String**| Recording ID |  |
- **annotationId** | **String**| Annotation ID |  |
+ **conversationId** | **String** | Conversation ID |  |
+ **recordingId** | **String** | Recording ID |  |
+ **annotationId** | **String** | Annotation ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Annotation**](Annotation.html)
+**Annotation**
 
 <a name="getConversationRecordingAnnotations"></a>
 
@@ -375,13 +375,13 @@ apiInstance.getConversationRecordingAnnotations(conversationId, recordingId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| Conversation ID |  |
- **recordingId** | **String**| Recording ID |  |
+ **conversationId** | **String** | Conversation ID |  |
+ **recordingId** | **String** | Recording ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[Annotation]**](Annotation.html)
+**[Annotation]**
 
 <a name="getConversationRecordings"></a>
 
@@ -425,14 +425,14 @@ apiInstance.getConversationRecordings(conversationId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| Conversation ID |  |
- **maxWaitMs** | **Number**| The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] |
- **formatId** | **String**| The desired media format | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+ **conversationId** | **String** | Conversation ID |  |
+ **maxWaitMs** | **Number** | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] |
+ **formatId** | **String** | The desired media format | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[Recording]**](Recording.html)
+**[Recording]**
 
 <a name="getOrphanrecording"></a>
 
@@ -472,12 +472,12 @@ apiInstance.getOrphanrecording(orphanId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **orphanId** | **String**| Orphan ID |  |
+ **orphanId** | **String** | Orphan ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OrphanRecording**](OrphanRecording.html)
+**OrphanRecording**
 
 <a name="getOrphanrecordingMedia"></a>
 
@@ -522,15 +522,15 @@ apiInstance.getOrphanrecordingMedia(orphanId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **orphanId** | **String**| Orphan ID |  |
- **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
- **download** | **Boolean**| requesting a download format of the recording | [optional] [default to false] |
- **fileName** | **String**| the name of the downloaded fileName | [optional]  |
+ **orphanId** | **String** | Orphan ID |  |
+ **formatId** | **String** | The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+ **download** | **Boolean** | requesting a download format of the recording | [optional] [default to false] |
+ **fileName** | **String** | the name of the downloaded fileName | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Recording**](Recording.html)
+**Recording**
 
 <a name="getOrphanrecordings"></a>
 
@@ -578,19 +578,19 @@ apiInstance.getOrphanrecordings(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| The total page size requested | [optional] [default to 25] |
- **pageNumber** | **Number**| The page number requested | [optional] [default to 1] |
- **sortBy** | **String**| variable name requested to sort by | [optional]  |
- **expand** | [**[Object]**](Object.html)| variable name requested by expand list | [optional]  |
- **nextPage** | **String**| next page token | [optional]  |
- **previousPage** | **String**| Previous page token | [optional]  |
- **hasConversation** | **Boolean**| Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to false] |
- **media** | **String**| Filter resulting orphans based on their media type | [optional] <br />**Values**: Call, Screen |
+ **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
+ **sortBy** | **String** | variable name requested to sort by | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
+ **nextPage** | **String** | next page token | [optional]  |
+ **previousPage** | **String** | Previous page token | [optional]  |
+ **hasConversation** | **Boolean** | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to false] |
+ **media** | **String** | Filter resulting orphans based on their media type | [optional] <br />**Values**: Call, Screen |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OrphanRecordingListing**](OrphanRecordingListing.html)
+**OrphanRecordingListing**
 
 <a name="getRecordingLocalkeysSetting"></a>
 
@@ -630,12 +630,12 @@ apiInstance.getRecordingLocalkeysSetting(settingsId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **settingsId** | **String**| Settings Id |  |
+ **settingsId** | **String** | Settings Id |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)
+**LocalEncryptionConfiguration**
 
 <a name="getRecordingLocalkeysSettings"></a>
 
@@ -674,7 +674,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**LocalEncryptionConfigurationListing**](LocalEncryptionConfigurationListing.html)
+**LocalEncryptionConfigurationListing**
 
 <a name="getRecordingMediaretentionpolicies"></a>
 
@@ -724,21 +724,21 @@ apiInstance.getRecordingMediaretentionpolicies(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| The total page size requested | [optional] [default to 25] |
- **pageNumber** | **Number**| The page number requested | [optional] [default to 1] |
- **sortBy** | **String**| variable name requested to sort by | [optional]  |
- **expand** | [**[Object]**](Object.html)| variable name requested by expand list | [optional]  |
- **nextPage** | **String**| next page token | [optional]  |
- **previousPage** | **String**| Previous page token | [optional]  |
- **name** | **String**| the policy name - used for filtering results in searches. | [optional]  |
- **enabled** | **Boolean**| checks to see if policy is enabled - use enabled = true or enabled = false | [optional]  |
- **summary** | **Boolean**| provides a less verbose response of policy lists. | [optional] [default to false] |
- **hasErrors** | **Boolean**| provides a way to fetch all policies with errors or policies that do not have errors | [optional]  |
+ **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
+ **sortBy** | **String** | variable name requested to sort by | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
+ **nextPage** | **String** | next page token | [optional]  |
+ **previousPage** | **String** | Previous page token | [optional]  |
+ **name** | **String** | the policy name - used for filtering results in searches. | [optional]  |
+ **enabled** | **Boolean** | checks to see if policy is enabled - use enabled = true or enabled = false | [optional]  |
+ **summary** | **Boolean** | provides a less verbose response of policy lists. | [optional] [default to false] |
+ **hasErrors** | **Boolean** | provides a way to fetch all policies with errors or policies that do not have errors | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**PolicyEntityListing**](PolicyEntityListing.html)
+**PolicyEntityListing**
 
 <a name="getRecordingMediaretentionpolicy"></a>
 
@@ -778,12 +778,12 @@ apiInstance.getRecordingMediaretentionpolicy(policyId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **policyId** | **String**| Policy ID |  |
+ **policyId** | **String** | Policy ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Policy**](Policy.html)
+**Policy**
 
 <a name="getRecordingRecordingkeys"></a>
 
@@ -825,13 +825,13 @@ apiInstance.getRecordingRecordingkeys(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EncryptionKeyEntityListing**](EncryptionKeyEntityListing.html)
+**EncryptionKeyEntityListing**
 
 <a name="getRecordingRecordingkeysRotationschedule"></a>
 
@@ -870,7 +870,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**KeyRotationSchedule**](KeyRotationSchedule.html)
+**KeyRotationSchedule**
 
 <a name="getRecordingSettings"></a>
 
@@ -911,12 +911,12 @@ apiInstance.getRecordingSettings(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **createDefault** | **Boolean**| If no settings are found, a new one is created with default values | [optional] [default to false] |
+ **createDefault** | **Boolean** | If no settings are found, a new one is created with default values | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**RecordingSettings**](RecordingSettings.html)
+**RecordingSettings**
 
 <a name="getRecordingsScreensessions"></a>
 
@@ -958,13 +958,13 @@ apiInstance.getRecordingsScreensessions(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ScreenRecordingSessionListing**](ScreenRecordingSessionListing.html)
+**ScreenRecordingSessionListing**
 
 <a name="patchRecordingMediaretentionpolicy"></a>
 
@@ -1006,13 +1006,13 @@ apiInstance.patchRecordingMediaretentionpolicy(policyId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **policyId** | **String**| Policy ID |  |
- **body** | [**Policy**](Policy.html)| Policy |  |
+ **policyId** | **String** | Policy ID |  |
+ **body** | **Policy** | Policy |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Policy**](Policy.html)
+**Policy**
 
 <a name="patchRecordingsScreensession"></a>
 
@@ -1055,8 +1055,8 @@ apiInstance.patchRecordingsScreensession(recordingSessionId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **recordingSessionId** | **String**| Screen recording session ID |  |
- **body** | [**ScreenRecordingSessionRequest**](ScreenRecordingSessionRequest.html)|  | [optional]  |
+ **recordingSessionId** | **String** | Screen recording session ID |  |
+ **body** | **ScreenRecordingSessionRequest** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1105,14 +1105,14 @@ apiInstance.postConversationRecordingAnnotations(conversationId, recordingId, bo
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| Conversation ID |  |
- **recordingId** | **String**| Recording ID |  |
- **body** | [**Annotation**](Annotation.html)| annotation |  |
+ **conversationId** | **String** | Conversation ID |  |
+ **recordingId** | **String** | Recording ID |  |
+ **body** | **Annotation** | annotation |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Annotation**](Annotation.html)
+**Annotation**
 
 <a name="postRecordingLocalkeys"></a>
 
@@ -1152,12 +1152,12 @@ apiInstance.postRecordingLocalkeys(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**LocalEncryptionKeyRequest**](LocalEncryptionKeyRequest.html)| Local Encryption body |  |
+ **body** | **LocalEncryptionKeyRequest** | Local Encryption body |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EncryptionKey**](EncryptionKey.html)
+**EncryptionKey**
 
 <a name="postRecordingLocalkeysSettings"></a>
 
@@ -1197,12 +1197,12 @@ apiInstance.postRecordingLocalkeysSettings(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)| Local Encryption Configuration |  |
+ **body** | **LocalEncryptionConfiguration** | Local Encryption Configuration |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)
+**LocalEncryptionConfiguration**
 
 <a name="postRecordingMediaretentionpolicies"></a>
 
@@ -1242,12 +1242,12 @@ apiInstance.postRecordingMediaretentionpolicies(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**PolicyCreate**](PolicyCreate.html)| Policy |  |
+ **body** | **PolicyCreate** | Policy |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Policy**](Policy.html)
+**Policy**
 
 <a name="postRecordingRecordingkeys"></a>
 
@@ -1286,7 +1286,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**EncryptionKey**](EncryptionKey.html)
+**EncryptionKey**
 
 <a name="putConversationRecording"></a>
 
@@ -1330,14 +1330,14 @@ apiInstance.putConversationRecording(conversationId, recordingId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| Conversation ID |  |
- **recordingId** | **String**| Recording ID |  |
- **body** | [**Recording**](Recording.html)| recording |  |
+ **conversationId** | **String** | Conversation ID |  |
+ **recordingId** | **String** | Recording ID |  |
+ **body** | **Recording** | recording |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Recording**](Recording.html)
+**Recording**
 
 <a name="putConversationRecordingAnnotation"></a>
 
@@ -1383,15 +1383,15 @@ apiInstance.putConversationRecordingAnnotation(conversationId, recordingId, anno
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String**| Conversation ID |  |
- **recordingId** | **String**| Recording ID |  |
- **annotationId** | **String**| Annotation ID |  |
- **body** | [**Annotation**](Annotation.html)| annotation |  |
+ **conversationId** | **String** | Conversation ID |  |
+ **recordingId** | **String** | Recording ID |  |
+ **annotationId** | **String** | Annotation ID |  |
+ **body** | **Annotation** | annotation |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Annotation**](Annotation.html)
+**Annotation**
 
 <a name="putOrphanrecording"></a>
 
@@ -1434,13 +1434,13 @@ apiInstance.putOrphanrecording(orphanId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **orphanId** | **String**| Orphan ID |  |
- **body** | [**OrphanUpdateRequest**](OrphanUpdateRequest.html)|  | [optional]  |
+ **orphanId** | **String** | Orphan ID |  |
+ **body** | **OrphanUpdateRequest** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Recording**](Recording.html)
+**Recording**
 
 <a name="putRecordingLocalkeysSetting"></a>
 
@@ -1482,13 +1482,13 @@ apiInstance.putRecordingLocalkeysSetting(settingsId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **settingsId** | **String**| Settings Id |  |
- **body** | [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)| Local Encryption metadata |  |
+ **settingsId** | **String** | Settings Id |  |
+ **body** | **LocalEncryptionConfiguration** | Local Encryption metadata |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)
+**LocalEncryptionConfiguration**
 
 <a name="putRecordingMediaretentionpolicy"></a>
 
@@ -1530,13 +1530,13 @@ apiInstance.putRecordingMediaretentionpolicy(policyId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **policyId** | **String**| Policy ID |  |
- **body** | [**Policy**](Policy.html)| Policy |  |
+ **policyId** | **String** | Policy ID |  |
+ **body** | **Policy** | Policy |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Policy**](Policy.html)
+**Policy**
 
 <a name="putRecordingRecordingkeysRotationschedule"></a>
 
@@ -1576,12 +1576,12 @@ apiInstance.putRecordingRecordingkeysRotationschedule(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**KeyRotationSchedule**](KeyRotationSchedule.html)| KeyRotationSchedule |  |
+ **body** | **KeyRotationSchedule** | KeyRotationSchedule |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**KeyRotationSchedule**](KeyRotationSchedule.html)
+**KeyRotationSchedule**
 
 <a name="putRecordingSettings"></a>
 
@@ -1621,10 +1621,10 @@ apiInstance.putRecordingSettings(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**RecordingSettings**](RecordingSettings.html)| Recording settings |  |
+ **body** | **RecordingSettings** | Recording settings |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**RecordingSettings**](RecordingSettings.html)
+**RecordingSettings**
 

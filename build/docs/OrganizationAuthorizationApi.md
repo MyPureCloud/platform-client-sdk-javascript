@@ -70,7 +70,7 @@ apiInstance.deleteOrgauthorizationTrustee(trusteeOrgId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trusteeOrgId** | **String**| Trustee Organization Id |  |
+ **trusteeOrgId** | **String** | Trustee Organization Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -117,8 +117,8 @@ apiInstance.deleteOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trusteeOrgId** | **String**| Trustee Organization Id |  |
- **trusteeUserId** | **String**| Trustee User Id |  |
+ **trusteeOrgId** | **String** | Trustee Organization Id |  |
+ **trusteeUserId** | **String** | Trustee User Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -165,8 +165,8 @@ apiInstance.deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trusteeOrgId** | **String**| Trustee Organization Id |  |
- **trusteeUserId** | **String**| Trustee User Id |  |
+ **trusteeOrgId** | **String** | Trustee Organization Id |  |
+ **trusteeUserId** | **String** | Trustee User Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -211,7 +211,7 @@ apiInstance.deleteOrgauthorizationTrustor(trustorOrgId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trustorOrgId** | **String**| Trustor Organization Id |  |
+ **trustorOrgId** | **String** | Trustor Organization Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -258,8 +258,8 @@ apiInstance.deleteOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trustorOrgId** | **String**| Trustor Organization Id |  |
- **trusteeUserId** | **String**| Trustee User Id |  |
+ **trustorOrgId** | **String** | Trustor Organization Id |  |
+ **trusteeUserId** | **String** | Trustee User Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -304,12 +304,12 @@ apiInstance.getOrgauthorizationPairing(pairingId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pairingId** | **String**| Pairing Id |  |
+ **pairingId** | **String** | Pairing Id |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TrustRequest**](TrustRequest.html)
+**TrustRequest**
 
 <a name="getOrgauthorizationTrustee"></a>
 
@@ -349,12 +349,12 @@ apiInstance.getOrgauthorizationTrustee(trusteeOrgId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trusteeOrgId** | **String**| Trustee Organization Id |  |
+ **trusteeOrgId** | **String** | Trustee Organization Id |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Trustee**](Trustee.html)
+**Trustee**
 
 <a name="getOrgauthorizationTrusteeUser"></a>
 
@@ -396,13 +396,13 @@ apiInstance.getOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trusteeOrgId** | **String**| Trustee Organization Id |  |
- **trusteeUserId** | **String**| Trustee User Id |  |
+ **trusteeOrgId** | **String** | Trustee Organization Id |  |
+ **trusteeUserId** | **String** | Trustee User Id |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TrustUser**](TrustUser.html)
+**TrustUser**
 
 <a name="getOrgauthorizationTrusteeUserRoles"></a>
 
@@ -444,13 +444,13 @@ apiInstance.getOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trusteeOrgId** | **String**| Trustee Organization Id |  |
- **trusteeUserId** | **String**| Trustee User Id |  |
+ **trusteeOrgId** | **String** | Trustee Organization Id |  |
+ **trusteeUserId** | **String** | Trustee User Id |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserAuthorization**](UserAuthorization.html)
+**UserAuthorization**
 
 <a name="getOrgauthorizationTrusteeUsers"></a>
 
@@ -494,14 +494,14 @@ apiInstance.getOrgauthorizationTrusteeUsers(trusteeOrgId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trusteeOrgId** | **String**| Trustee Organization Id |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **trusteeOrgId** | **String** | Trustee Organization Id |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TrustUserEntityListing**](TrustUserEntityListing.html)
+**TrustUserEntityListing**
 
 <a name="getOrgauthorizationTrustees"></a>
 
@@ -543,13 +543,13 @@ apiInstance.getOrgauthorizationTrustees(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TrustEntityListing**](TrustEntityListing.html)
+**TrustEntityListing**
 
 <a name="getOrgauthorizationTrustor"></a>
 
@@ -589,12 +589,12 @@ apiInstance.getOrgauthorizationTrustor(trustorOrgId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trustorOrgId** | **String**| Trustor Organization Id |  |
+ **trustorOrgId** | **String** | Trustor Organization Id |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Trustor**](Trustor.html)
+**Trustor**
 
 <a name="getOrgauthorizationTrustorUser"></a>
 
@@ -636,13 +636,13 @@ apiInstance.getOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trustorOrgId** | **String**| Trustor Organization Id |  |
- **trusteeUserId** | **String**| Trustee User Id |  |
+ **trustorOrgId** | **String** | Trustor Organization Id |  |
+ **trusteeUserId** | **String** | Trustee User Id |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TrustUser**](TrustUser.html)
+**TrustUser**
 
 <a name="getOrgauthorizationTrustorUsers"></a>
 
@@ -686,14 +686,14 @@ apiInstance.getOrgauthorizationTrustorUsers(trustorOrgId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trustorOrgId** | **String**| Trustee Organization Id |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **trustorOrgId** | **String** | Trustee Organization Id |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TrustUserEntityListing**](TrustUserEntityListing.html)
+**TrustUserEntityListing**
 
 <a name="getOrgauthorizationTrustors"></a>
 
@@ -735,13 +735,13 @@ apiInstance.getOrgauthorizationTrustors(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TrustorEntityListing**](TrustorEntityListing.html)
+**TrustorEntityListing**
 
 <a name="postOrgauthorizationPairings"></a>
 
@@ -781,12 +781,12 @@ apiInstance.postOrgauthorizationPairings(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**TrustRequestCreate**](TrustRequestCreate.html)| Pairing Info |  |
+ **body** | **TrustRequestCreate** | Pairing Info |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TrustRequest**](TrustRequest.html)
+**TrustRequest**
 
 <a name="postOrgauthorizationTrusteeUsers"></a>
 
@@ -828,13 +828,13 @@ apiInstance.postOrgauthorizationTrusteeUsers(trusteeOrgId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trusteeOrgId** | **String**| Trustee Organization Id |  |
- **body** | [**TrustUserCreate**](TrustUserCreate.html)| Trust |  |
+ **trusteeOrgId** | **String** | Trustee Organization Id |  |
+ **body** | **TrustUserCreate** | Trust |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TrustUser**](TrustUser.html)
+**TrustUser**
 
 <a name="postOrgauthorizationTrustees"></a>
 
@@ -874,12 +874,12 @@ apiInstance.postOrgauthorizationTrustees(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**TrustCreate**](TrustCreate.html)| Trust |  |
+ **body** | **TrustCreate** | Trust |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Trustee**](Trustee.html)
+**Trustee**
 
 <a name="postOrgauthorizationTrusteesAudits"></a>
 
@@ -925,16 +925,16 @@ apiInstance.postOrgauthorizationTrusteesAudits(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**TrusteeAuditQueryRequest**](TrusteeAuditQueryRequest.html)| Values to scope the request. |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortBy** | **String**| Sort by | [optional] [default to timestamp] |
- **sortOrder** | **String**| Sort order | [optional] [default to descending] |
+ **body** | **TrusteeAuditQueryRequest** | Values to scope the request. |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | Sort by | [optional] [default to timestamp] |
+ **sortOrder** | **String** | Sort order | [optional] [default to descending] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AuditQueryResponse**](AuditQueryResponse.html)
+**AuditQueryResponse**
 
 <a name="postOrgauthorizationTrustorAudits"></a>
 
@@ -980,16 +980,16 @@ apiInstance.postOrgauthorizationTrustorAudits(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**TrustorAuditQueryRequest**](TrustorAuditQueryRequest.html)| Values to scope the request. |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortBy** | **String**| Sort by | [optional] [default to timestamp] |
- **sortOrder** | **String**| Sort order | [optional] [default to descending] |
+ **body** | **TrustorAuditQueryRequest** | Values to scope the request. |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | Sort by | [optional] [default to timestamp] |
+ **sortOrder** | **String** | Sort order | [optional] [default to descending] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AuditQueryResponse**](AuditQueryResponse.html)
+**AuditQueryResponse**
 
 <a name="putOrgauthorizationTrustee"></a>
 
@@ -1031,13 +1031,13 @@ apiInstance.putOrgauthorizationTrustee(trusteeOrgId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trusteeOrgId** | **String**| Trustee Organization Id |  |
- **body** | [**Trustee**](Trustee.html)| Client |  |
+ **trusteeOrgId** | **String** | Trustee Organization Id |  |
+ **body** | **Trustee** | Client |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Trustee**](Trustee.html)
+**Trustee**
 
 <a name="putOrgauthorizationTrusteeUserRoles"></a>
 
@@ -1081,14 +1081,14 @@ apiInstance.putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, bod
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trusteeOrgId** | **String**| Trustee Organization Id |  |
- **trusteeUserId** | **String**| Trustee User Id |  |
- **body** | **[String]**| List of roles |  |
+ **trusteeOrgId** | **String** | Trustee Organization Id |  |
+ **trusteeUserId** | **String** | Trustee User Id |  |
+ **body** | **[String]** | List of roles |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserAuthorization**](UserAuthorization.html)
+**UserAuthorization**
 
 <a name="putOrgauthorizationTrustorUser"></a>
 
@@ -1130,11 +1130,11 @@ apiInstance.putOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trustorOrgId** | **String**| Trustor Organization Id |  |
- **trusteeUserId** | **String**| Trustee User Id |  |
+ **trustorOrgId** | **String** | Trustor Organization Id |  |
+ **trusteeUserId** | **String** | Trustee User Id |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TrustUser**](TrustUser.html)
+**TrustUser**
 

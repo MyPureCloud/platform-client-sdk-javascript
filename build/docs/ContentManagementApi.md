@@ -88,8 +88,8 @@ apiInstance.deleteContentmanagementDocument(documentId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **documentId** | **String**| Document ID |  |
- **override** | **Boolean**| Override any lock on the document | [optional]  |
+ **documentId** | **String** | Document ID |  |
+ **override** | **Boolean** | Override any lock on the document | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -134,7 +134,7 @@ apiInstance.deleteContentmanagementShare(shareId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **shareId** | **String**| Share ID |  |
+ **shareId** | **String** | Share ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -179,7 +179,7 @@ apiInstance.deleteContentmanagementStatusStatusId(statusId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **statusId** | **String**| Status ID |  |
+ **statusId** | **String** | Status ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -227,8 +227,8 @@ apiInstance.deleteContentmanagementWorkspace(workspaceId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **workspaceId** | **String**| Workspace ID |  |
- **moveChildrenToWorkspaceId** | **String**| New location for objects in deleted workspace. | [optional]  |
+ **workspaceId** | **String** | Workspace ID |  |
+ **moveChildrenToWorkspaceId** | **String** | New location for objects in deleted workspace. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -275,8 +275,8 @@ apiInstance.deleteContentmanagementWorkspaceMember(workspaceId, memberId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **workspaceId** | **String**| Workspace ID |  |
- **memberId** | **String**| Member ID |  |
+ **workspaceId** | **String** | Workspace ID |  |
+ **memberId** | **String** | Member ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -323,8 +323,8 @@ apiInstance.deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **workspaceId** | **String**| Workspace ID |  |
- **tagId** | **String**| Tag ID |  |
+ **workspaceId** | **String** | Workspace ID |  |
+ **tagId** | **String** | Tag ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -372,13 +372,13 @@ apiInstance.getContentmanagementDocument(documentId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **documentId** | **String**| Document ID |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: lockInfo, acl, workspace |
+ **documentId** | **String** | Document ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: lockInfo, acl, workspace |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Document**](Document.html)
+**Document**
 
 <a name="getContentmanagementDocumentAudits"></a>
 
@@ -426,18 +426,18 @@ apiInstance.getContentmanagementDocumentAudits(documentId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **documentId** | **String**| Document ID |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **transactionFilter** | **String**| Transaction filter | [optional]  |
- **level** | **String**| level | [optional] [default to USER] |
- **sortBy** | **String**| Sort by | [optional]  |
- **sortOrder** | **String**| Sort order | [optional] [default to ascending] |
+ **documentId** | **String** | Document ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **transactionFilter** | **String** | Transaction filter | [optional]  |
+ **level** | **String** | level | [optional] [default to USER] |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] [default to ascending] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DocumentAuditEntityListing**](DocumentAuditEntityListing.html)
+**DocumentAuditEntityListing**
 
 <a name="getContentmanagementDocumentContent"></a>
 
@@ -481,14 +481,14 @@ apiInstance.getContentmanagementDocumentContent(documentId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **documentId** | **String**| Document ID |  |
- **disposition** | **String**| Request how the content will be downloaded: a file attachment or inline. Default is attachment. | [optional] <br />**Values**: attachment, inline |
- **contentType** | **String**| The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav | [optional]  |
+ **documentId** | **String** | Document ID |  |
+ **disposition** | **String** | Request how the content will be downloaded: a file attachment or inline. Default is attachment. | [optional] <br />**Values**: attachment, inline |
+ **contentType** | **String** | The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DownloadResponse**](DownloadResponse.html)
+**DownloadResponse**
 
 <a name="getContentmanagementDocuments"></a>
 
@@ -536,18 +536,18 @@ apiInstance.getContentmanagementDocuments(workspaceId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **workspaceId** | **String**| Workspace ID |  |
- **name** | **String**| Name | [optional]  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: acl, workspace |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortBy** | **String**| name or dateCreated | [optional]  |
- **sortOrder** | **String**| ascending or descending | [optional] [default to ascending] |
+ **workspaceId** | **String** | Workspace ID |  |
+ **name** | **String** | Name | [optional]  |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: acl, workspace |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | name or dateCreated | [optional]  |
+ **sortOrder** | **String** | ascending or descending | [optional] [default to ascending] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DocumentEntityListing**](DocumentEntityListing.html)
+**DocumentEntityListing**
 
 <a name="getContentmanagementQuery"></a>
 
@@ -594,17 +594,17 @@ apiInstance.getContentmanagementQuery(queryPhrase, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **queryPhrase** | **String**| Phrase tokens are ANDed together over all searchable fields |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortBy** | **String**| name or dateCreated | [optional] [default to name] |
- **sortOrder** | **String**| ascending or descending | [optional] [default to ascending] |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: acl, workspace |
+ **queryPhrase** | **String** | Phrase tokens are ANDed together over all searchable fields |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | name or dateCreated | [optional] [default to name] |
+ **sortOrder** | **String** | ascending or descending | [optional] [default to ascending] |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: acl, workspace |
 {: class="table table-striped"}
 
 ### Return type
 
-[**QueryResults**](QueryResults.html)
+**QueryResults**
 
 <a name="getContentmanagementSecurityprofile"></a>
 
@@ -644,12 +644,12 @@ apiInstance.getContentmanagementSecurityprofile(securityProfileId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **securityProfileId** | **String**| Security Profile Id |  |
+ **securityProfileId** | **String** | Security Profile Id |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**SecurityProfile**](SecurityProfile.html)
+**SecurityProfile**
 
 <a name="getContentmanagementSecurityprofiles"></a>
 
@@ -688,7 +688,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**SecurityProfileEntityListing**](SecurityProfileEntityListing.html)
+**SecurityProfileEntityListing**
 
 <a name="getContentmanagementShare"></a>
 
@@ -731,13 +731,13 @@ apiInstance.getContentmanagementShare(shareId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **shareId** | **String**| Share ID |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: member |
+ **shareId** | **String** | Share ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: member |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Share**](Share.html)
+**Share**
 
 <a name="getContentmanagementSharedSharedId"></a>
 
@@ -783,16 +783,16 @@ apiInstance.getContentmanagementSharedSharedId(sharedId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **sharedId** | **String**| Shared ID |  |
- **redirect** | **Boolean**| Turn on or off redirect | [optional] [default to true] |
- **disposition** | **String**| Request how the share content will be downloaded: attached as a file or inline. Default is attachment. | [optional] [default to attachment]<br />**Values**: attachment, inline, none |
- **contentType** | **String**| The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav | [optional]  |
- **expand** | **String**| Expand some document fields | [optional] <br />**Values**: document.acl |
+ **sharedId** | **String** | Shared ID |  |
+ **redirect** | **Boolean** | Turn on or off redirect | [optional] [default to true] |
+ **disposition** | **String** | Request how the share content will be downloaded: attached as a file or inline. Default is attachment. | [optional] [default to attachment]<br />**Values**: attachment, inline, none |
+ **contentType** | **String** | The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav | [optional]  |
+ **expand** | **String** | Expand some document fields | [optional] <br />**Values**: document.acl |
 {: class="table table-striped"}
 
 ### Return type
 
-[**SharedResponse**](SharedResponse.html)
+**SharedResponse**
 
 <a name="getContentmanagementShares"></a>
 
@@ -836,15 +836,15 @@ apiInstance.getContentmanagementShares(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **entityId** | **String**| Filters the shares returned to only the entity specified by the value of this parameter. | [optional]  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: member |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **entityId** | **String** | Filters the shares returned to only the entity specified by the value of this parameter. | [optional]  |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: member |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ShareEntityListing**](ShareEntityListing.html)
+**ShareEntityListing**
 
 <a name="getContentmanagementStatus"></a>
 
@@ -886,13 +886,13 @@ apiInstance.getContentmanagementStatus(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CommandStatusEntityListing**](CommandStatusEntityListing.html)
+**CommandStatusEntityListing**
 
 <a name="getContentmanagementStatusStatusId"></a>
 
@@ -932,12 +932,12 @@ apiInstance.getContentmanagementStatusStatusId(statusId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **statusId** | **String**| Status ID |  |
+ **statusId** | **String** | Status ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CommandStatus**](CommandStatus.html)
+**CommandStatus**
 
 <a name="getContentmanagementUsage"></a>
 
@@ -976,7 +976,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Usage**](Usage.html)
+**Usage**
 
 <a name="getContentmanagementWorkspace"></a>
 
@@ -1019,13 +1019,13 @@ apiInstance.getContentmanagementWorkspace(workspaceId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **workspaceId** | **String**| Workspace ID |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: summary, acl |
+ **workspaceId** | **String** | Workspace ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: summary, acl |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Workspace**](Workspace.html)
+**Workspace**
 
 <a name="getContentmanagementWorkspaceDocuments"></a>
 
@@ -1072,17 +1072,17 @@ apiInstance.getContentmanagementWorkspaceDocuments(workspaceId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **workspaceId** | **String**| Workspace ID |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: acl, workspace |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortBy** | **String**| name or dateCreated | [optional]  |
- **sortOrder** | **String**| ascending or descending | [optional] [default to ascending] |
+ **workspaceId** | **String** | Workspace ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: acl, workspace |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | name or dateCreated | [optional]  |
+ **sortOrder** | **String** | ascending or descending | [optional] [default to ascending] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DocumentEntityListing**](DocumentEntityListing.html)
+**DocumentEntityListing**
 
 <a name="getContentmanagementWorkspaceMember"></a>
 
@@ -1127,14 +1127,14 @@ apiInstance.getContentmanagementWorkspaceMember(workspaceId, memberId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **workspaceId** | **String**| Workspace ID |  |
- **memberId** | **String**| Member ID |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: member |
+ **workspaceId** | **String** | Workspace ID |  |
+ **memberId** | **String** | Member ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: member |
 {: class="table table-striped"}
 
 ### Return type
 
-[**WorkspaceMember**](WorkspaceMember.html)
+**WorkspaceMember**
 
 <a name="getContentmanagementWorkspaceMembers"></a>
 
@@ -1179,15 +1179,15 @@ apiInstance.getContentmanagementWorkspaceMembers(workspaceId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **workspaceId** | **String**| Workspace ID |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: member |
+ **workspaceId** | **String** | Workspace ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: member |
 {: class="table table-striped"}
 
 ### Return type
 
-[**WorkspaceMemberEntityListing**](WorkspaceMemberEntityListing.html)
+**WorkspaceMemberEntityListing**
 
 <a name="getContentmanagementWorkspaceTagvalue"></a>
 
@@ -1232,14 +1232,14 @@ apiInstance.getContentmanagementWorkspaceTagvalue(workspaceId, tagId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **workspaceId** | **String**| Workspace ID |  |
- **tagId** | **String**| Tag ID |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: acl |
+ **workspaceId** | **String** | Workspace ID |  |
+ **tagId** | **String** | Tag ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: acl |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TagValue**](TagValue.html)
+**TagValue**
 
 <a name="getContentmanagementWorkspaceTagvalues"></a>
 
@@ -1285,16 +1285,16 @@ apiInstance.getContentmanagementWorkspaceTagvalues(workspaceId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **workspaceId** | **String**| Workspace ID |  |
- **value** | **String**| filter the list of tags returned | [optional]  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: acl |
+ **workspaceId** | **String** | Workspace ID |  |
+ **value** | **String** | filter the list of tags returned | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: acl |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TagValueEntityListing**](TagValueEntityListing.html)
+**TagValueEntityListing**
 
 <a name="getContentmanagementWorkspaces"></a>
 
@@ -1338,15 +1338,15 @@ apiInstance.getContentmanagementWorkspaces(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **access** | [**[String]**](String.html)| Requested access level. | [optional] <br />**Values**: content, admin, document:create, document:viewContent, document:viewMetadata, document:download, document:delete, document:update, document:share, document:shareView, document:email, document:print, document:auditView, document:replace, document:tag, tag:create, tag:view, tag:update, tag:apply, tag:remove, tag:delete |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: summary, acl |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **access** | **[String]** | Requested access level. | [optional] <br />**Values**: content, admin, document:create, document:viewContent, document:viewMetadata, document:download, document:delete, document:update, document:share, document:shareView, document:email, document:print, document:auditView, document:replace, document:tag, tag:create, tag:view, tag:update, tag:apply, tag:remove, tag:delete |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: summary, acl |
 {: class="table table-striped"}
 
 ### Return type
 
-[**WorkspaceEntityListing**](WorkspaceEntityListing.html)
+**WorkspaceEntityListing**
 
 <a name="postContentmanagementAuditquery"></a>
 
@@ -1386,12 +1386,12 @@ apiInstance.postContentmanagementAuditquery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**ContentQueryRequest**](ContentQueryRequest.html)| Allows for a filtered query returning facet information |  |
+ **body** | **ContentQueryRequest** | Allows for a filtered query returning facet information |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**QueryResults**](QueryResults.html)
+**QueryResults**
 
 <a name="postContentmanagementDocument"></a>
 
@@ -1437,15 +1437,15 @@ apiInstance.postContentmanagementDocument(documentId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **documentId** | **String**| Document ID |  |
- **body** | [**DocumentUpdate**](DocumentUpdate.html)| Document |  |
- **expand** | **String**| Expand some document fields | [optional] <br />**Values**: acl |
- **override** | **Boolean**| Override any lock on the document | [optional]  |
+ **documentId** | **String** | Document ID |  |
+ **body** | **DocumentUpdate** | Document |  |
+ **expand** | **String** | Expand some document fields | [optional] <br />**Values**: acl |
+ **override** | **Boolean** | Override any lock on the document | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Document**](Document.html)
+**Document**
 
 <a name="postContentmanagementDocumentContent"></a>
 
@@ -1490,14 +1490,14 @@ apiInstance.postContentmanagementDocumentContent(documentId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **documentId** | **String**| Document ID |  |
- **body** | [**ReplaceRequest**](ReplaceRequest.html)| Replace Request |  |
- **override** | **Boolean**| Override any lock on the document | [optional]  |
+ **documentId** | **String** | Document ID |  |
+ **body** | **ReplaceRequest** | Replace Request |  |
+ **override** | **Boolean** | Override any lock on the document | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ReplaceResponse**](ReplaceResponse.html)
+**ReplaceResponse**
 
 <a name="postContentmanagementDocuments"></a>
 
@@ -1542,15 +1542,15 @@ apiInstance.postContentmanagementDocuments(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**DocumentUpload**](DocumentUpload.html)| Document |  |
- **copySource** | **String**| Copy a document within a workspace or to a new workspace. Provide a document ID as the copy source. | [optional]  |
- **moveSource** | **String**| Move a document to a new workspace. Provide a document ID as the move source. | [optional]  |
- **override** | **Boolean**| Override any lock on the source document | [optional]  |
+ **body** | **DocumentUpload** | Document |  |
+ **copySource** | **String** | Copy a document within a workspace or to a new workspace. Provide a document ID as the copy source. | [optional]  |
+ **moveSource** | **String** | Move a document to a new workspace. Provide a document ID as the move source. | [optional]  |
+ **override** | **Boolean** | Override any lock on the source document | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Document**](Document.html)
+**Document**
 
 <a name="postContentmanagementQuery"></a>
 
@@ -1593,13 +1593,13 @@ apiInstance.postContentmanagementQuery(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**QueryRequest**](QueryRequest.html)| Allows for a filtered query returning facet information |  |
- **expand** | **String**| Expand some document fields | [optional] <br />**Values**: acl, workspace |
+ **body** | **QueryRequest** | Allows for a filtered query returning facet information |  |
+ **expand** | **String** | Expand some document fields | [optional] <br />**Values**: acl, workspace |
 {: class="table table-striped"}
 
 ### Return type
 
-[**QueryResults**](QueryResults.html)
+**QueryResults**
 
 <a name="postContentmanagementShares"></a>
 
@@ -1639,12 +1639,12 @@ apiInstance.postContentmanagementShares(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**CreateShareRequest**](CreateShareRequest.html)| CreateShareRequest - entity id and type and a single member or list of members are required |  |
+ **body** | **CreateShareRequest** | CreateShareRequest - entity id and type and a single member or list of members are required |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**CreateShareResponse**](CreateShareResponse.html)
+**CreateShareResponse**
 
 <a name="postContentmanagementWorkspaceTagvalues"></a>
 
@@ -1686,13 +1686,13 @@ apiInstance.postContentmanagementWorkspaceTagvalues(workspaceId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **workspaceId** | **String**| Workspace ID |  |
- **body** | [**TagValue**](TagValue.html)| tag |  |
+ **workspaceId** | **String** | Workspace ID |  |
+ **body** | **TagValue** | tag |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TagValue**](TagValue.html)
+**TagValue**
 
 <a name="postContentmanagementWorkspaceTagvaluesQuery"></a>
 
@@ -1737,14 +1737,14 @@ apiInstance.postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, opts
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **workspaceId** | **String**| Workspace ID |  |
- **body** | [**TagQueryRequest**](TagQueryRequest.html)| query |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: acl |
+ **workspaceId** | **String** | Workspace ID |  |
+ **body** | **TagQueryRequest** | query |  |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: acl |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TagValueEntityListing**](TagValueEntityListing.html)
+**TagValueEntityListing**
 
 <a name="postContentmanagementWorkspaces"></a>
 
@@ -1784,12 +1784,12 @@ apiInstance.postContentmanagementWorkspaces(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**WorkspaceCreate**](WorkspaceCreate.html)| Workspace |  |
+ **body** | **WorkspaceCreate** | Workspace |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Workspace**](Workspace.html)
+**Workspace**
 
 <a name="putContentmanagementWorkspace"></a>
 
@@ -1831,13 +1831,13 @@ apiInstance.putContentmanagementWorkspace(workspaceId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **workspaceId** | **String**| Workspace ID |  |
- **body** | [**Workspace**](Workspace.html)| Workspace |  |
+ **workspaceId** | **String** | Workspace ID |  |
+ **body** | **Workspace** | Workspace |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Workspace**](Workspace.html)
+**Workspace**
 
 <a name="putContentmanagementWorkspaceMember"></a>
 
@@ -1881,14 +1881,14 @@ apiInstance.putContentmanagementWorkspaceMember(workspaceId, memberId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **workspaceId** | **String**| Workspace ID |  |
- **memberId** | **String**| Member ID |  |
- **body** | [**WorkspaceMember**](WorkspaceMember.html)| Workspace Member |  |
+ **workspaceId** | **String** | Workspace ID |  |
+ **memberId** | **String** | Member ID |  |
+ **body** | **WorkspaceMember** | Workspace Member |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**WorkspaceMember**](WorkspaceMember.html)
+**WorkspaceMember**
 
 <a name="putContentmanagementWorkspaceTagvalue"></a>
 
@@ -1932,12 +1932,12 @@ apiInstance.putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **workspaceId** | **String**| Workspace ID |  |
- **tagId** | **String**| Tag ID |  |
- **body** | [**TagValue**](TagValue.html)| Workspace |  |
+ **workspaceId** | **String** | Workspace ID |  |
+ **tagId** | **String** | Tag ID |  |
+ **body** | **TagValue** | Workspace |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TagValue**](TagValue.html)
+**TagValue**
 

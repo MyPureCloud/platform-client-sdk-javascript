@@ -53,7 +53,7 @@ apiInstance.deleteAttribute(attributeId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **attributeId** | **String**| Attribute ID |  |
+ **attributeId** | **String** | Attribute ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -98,12 +98,12 @@ apiInstance.getAttribute(attributeId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **attributeId** | **String**| Attribute ID |  |
+ **attributeId** | **String** | Attribute ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Attribute**](Attribute.html)
+**Attribute**
 
 <a name="getAttributes"></a>
 
@@ -145,13 +145,13 @@ apiInstance.getAttributes(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AttributeEntityListing**](AttributeEntityListing.html)
+**AttributeEntityListing**
 
 <a name="postAttributes"></a>
 
@@ -191,12 +191,12 @@ apiInstance.postAttributes(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Attribute**](Attribute.html)| Attribute |  |
+ **body** | **Attribute** | Attribute |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Attribute**](Attribute.html)
+**Attribute**
 
 <a name="postAttributesQuery"></a>
 
@@ -236,12 +236,12 @@ apiInstance.postAttributesQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**AttributeQueryRequest**](AttributeQueryRequest.html)| query |  |
+ **body** | **AttributeQueryRequest** | query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AttributeEntityListing**](AttributeEntityListing.html)
+**AttributeEntityListing**
 
 <a name="putAttribute"></a>
 
@@ -283,11 +283,11 @@ apiInstance.putAttribute(attributeId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **attributeId** | **String**| Attribute ID |  |
- **body** | [**Attribute**](Attribute.html)| Attribute |  |
+ **attributeId** | **String** | Attribute ID |  |
+ **body** | **Attribute** | Attribute |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Attribute**](Attribute.html)
+**Attribute**
 

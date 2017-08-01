@@ -53,7 +53,7 @@ apiInstance.deleteUserrecording(recordingId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **recordingId** | **String**| User Recording ID |  |
+ **recordingId** | **String** | User Recording ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -101,13 +101,13 @@ apiInstance.getUserrecording(recordingId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **recordingId** | **String**| User Recording ID |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
+ **recordingId** | **String** | User Recording ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserRecording**](UserRecording.html)
+**UserRecording**
 
 <a name="getUserrecordingMedia"></a>
 
@@ -150,13 +150,13 @@ apiInstance.getUserrecordingMedia(recordingId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **recordingId** | **String**| User Recording ID |  |
- **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+ **recordingId** | **String** | User Recording ID |  |
+ **formatId** | **String** | The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 {: class="table table-striped"}
 
 ### Return type
 
-[**DownloadResponse**](DownloadResponse.html)
+**DownloadResponse**
 
 <a name="getUserrecordings"></a>
 
@@ -199,14 +199,14 @@ apiInstance.getUserrecordings(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserRecordingEntityListing**](UserRecordingEntityListing.html)
+**UserRecordingEntityListing**
 
 <a name="getUserrecordingsSummary"></a>
 
@@ -245,7 +245,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**FaxSummary**](FaxSummary.html)
+**FaxSummary**
 
 <a name="putUserrecording"></a>
 
@@ -290,12 +290,12 @@ apiInstance.putUserrecording(recordingId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **recordingId** | **String**| User Recording ID |  |
- **body** | [**UserRecording**](UserRecording.html)| UserRecording |  |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
+ **recordingId** | **String** | User Recording ID |  |
+ **body** | **UserRecording** | UserRecording |  |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserRecording**](UserRecording.html)
+**UserRecording**
 

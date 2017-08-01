@@ -74,7 +74,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteIdentityprovidersCic"></a>
 
@@ -113,7 +113,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteIdentityprovidersGsuite"></a>
 
@@ -152,7 +152,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteIdentityprovidersIdentitynow"></a>
 
@@ -191,7 +191,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteIdentityprovidersOkta"></a>
 
@@ -230,7 +230,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteIdentityprovidersOnelogin"></a>
 
@@ -269,7 +269,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteIdentityprovidersPing"></a>
 
@@ -308,7 +308,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteIdentityprovidersPurecloud"></a>
 
@@ -347,7 +347,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="deleteIdentityprovidersSalesforce"></a>
 
@@ -386,7 +386,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Empty**](Empty.html)
+**Empty**
 
 <a name="getIdentityproviders"></a>
 
@@ -425,7 +425,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OAuthProviderEntityListing**](OAuthProviderEntityListing.html)
+**OAuthProviderEntityListing**
 
 <a name="getIdentityprovidersAdfs"></a>
 
@@ -464,7 +464,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ADFS**](ADFS.html)
+**ADFS**
 
 <a name="getIdentityprovidersCic"></a>
 
@@ -503,7 +503,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**CustomerInteractionCenter**](CustomerInteractionCenter.html)
+**CustomerInteractionCenter**
 
 <a name="getIdentityprovidersGsuite"></a>
 
@@ -542,7 +542,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**GSuite**](GSuite.html)
+**GSuite**
 
 <a name="getIdentityprovidersIdentitynow"></a>
 
@@ -581,7 +581,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**IdentityNow**](IdentityNow.html)
+**IdentityNow**
 
 <a name="getIdentityprovidersOkta"></a>
 
@@ -620,7 +620,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Okta**](Okta.html)
+**Okta**
 
 <a name="getIdentityprovidersOnelogin"></a>
 
@@ -659,7 +659,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OneLogin**](OneLogin.html)
+**OneLogin**
 
 <a name="getIdentityprovidersPing"></a>
 
@@ -698,7 +698,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**PingIdentity**](PingIdentity.html)
+**PingIdentity**
 
 <a name="getIdentityprovidersPurecloud"></a>
 
@@ -737,7 +737,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**PureCloud**](PureCloud.html)
+**PureCloud**
 
 <a name="getIdentityprovidersSalesforce"></a>
 
@@ -776,7 +776,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Salesforce**](Salesforce.html)
+**Salesforce**
 
 <a name="putIdentityprovidersAdfs"></a>
 
@@ -816,12 +816,12 @@ apiInstance.putIdentityprovidersAdfs(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**ADFS**](ADFS.html)| Provider |  |
+ **body** | **ADFS** | Provider |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+**OAuthProvider**
 
 <a name="putIdentityprovidersCic"></a>
 
@@ -861,12 +861,12 @@ apiInstance.putIdentityprovidersCic(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**CustomerInteractionCenter**](CustomerInteractionCenter.html)| Provider |  |
+ **body** | **CustomerInteractionCenter** | Provider |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+**OAuthProvider**
 
 <a name="putIdentityprovidersGsuite"></a>
 
@@ -906,12 +906,12 @@ apiInstance.putIdentityprovidersGsuite(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**GSuite**](GSuite.html)| Provider |  |
+ **body** | **GSuite** | Provider |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+**OAuthProvider**
 
 <a name="putIdentityprovidersIdentitynow"></a>
 
@@ -951,12 +951,12 @@ apiInstance.putIdentityprovidersIdentitynow(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**IdentityNow**](IdentityNow.html)| Provider |  |
+ **body** | **IdentityNow** | Provider |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**IdentityNow**](IdentityNow.html)
+**IdentityNow**
 
 <a name="putIdentityprovidersOkta"></a>
 
@@ -996,12 +996,12 @@ apiInstance.putIdentityprovidersOkta(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Okta**](Okta.html)| Provider |  |
+ **body** | **Okta** | Provider |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+**OAuthProvider**
 
 <a name="putIdentityprovidersOnelogin"></a>
 
@@ -1041,12 +1041,12 @@ apiInstance.putIdentityprovidersOnelogin(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**OneLogin**](OneLogin.html)| Provider |  |
+ **body** | **OneLogin** | Provider |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+**OAuthProvider**
 
 <a name="putIdentityprovidersPing"></a>
 
@@ -1086,12 +1086,12 @@ apiInstance.putIdentityprovidersPing(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**PingIdentity**](PingIdentity.html)| Provider |  |
+ **body** | **PingIdentity** | Provider |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+**OAuthProvider**
 
 <a name="putIdentityprovidersPurecloud"></a>
 
@@ -1131,12 +1131,12 @@ apiInstance.putIdentityprovidersPurecloud(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**PureCloud**](PureCloud.html)| Provider |  |
+ **body** | **PureCloud** | Provider |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+**OAuthProvider**
 
 <a name="putIdentityprovidersSalesforce"></a>
 
@@ -1176,10 +1176,10 @@ apiInstance.putIdentityprovidersSalesforce(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Salesforce**](Salesforce.html)| Provider |  |
+ **body** | **Salesforce** | Provider |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+**OAuthProvider**
 

@@ -91,7 +91,7 @@ apiInstance.deleteRoutingEmailDomain(domainId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **domainId** | **String**| domain ID |  |
+ **domainId** | **String** | domain ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -138,8 +138,8 @@ apiInstance.deleteRoutingEmailDomainRoute(domainName, routeId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **domainName** | **String**| email domain |  |
- **routeId** | **String**| route ID |  |
+ **domainName** | **String** | email domain |  |
+ **routeId** | **String** | route ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -187,8 +187,8 @@ apiInstance.deleteRoutingQueue(queueId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String**| Queue ID |  |
- **forceDelete** | **Boolean**| forceDelete | [optional]  |
+ **queueId** | **String** | Queue ID |  |
+ **forceDelete** | **Boolean** | forceDelete | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -235,8 +235,8 @@ apiInstance.deleteRoutingQueueUser(queueId, memberId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String**| Queue ID |  |
- **memberId** | **String**| Member ID |  |
+ **queueId** | **String** | Queue ID |  |
+ **memberId** | **String** | Member ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -283,8 +283,8 @@ apiInstance.deleteRoutingQueueWrapupcode(queueId, codeId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String**| Queue ID |  |
- **codeId** | **String**| Code ID |  |
+ **queueId** | **String** | Queue ID |  |
+ **codeId** | **String** | Code ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -329,7 +329,7 @@ apiInstance.deleteRoutingSkill(skillId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **skillId** | **String**| Skill ID |  |
+ **skillId** | **String** | Skill ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -413,7 +413,7 @@ apiInstance.deleteRoutingWrapupcode(codeId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **codeId** | **String**| Wrapup Code ID |  |
+ **codeId** | **String** | Wrapup Code ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -460,8 +460,8 @@ apiInstance.deleteUserRoutingskill(userId, skillId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **skillId** | **String**| skillId |  |
+ **userId** | **String** | User ID |  |
+ **skillId** | **String** | skillId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -506,12 +506,12 @@ apiInstance.getRoutingEmailDomain(domainId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **domainId** | **String**| domain ID |  |
+ **domainId** | **String** | domain ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**InboundDomain**](InboundDomain.html)
+**InboundDomain**
 
 <a name="getRoutingEmailDomainRoute"></a>
 
@@ -553,13 +553,13 @@ apiInstance.getRoutingEmailDomainRoute(domainName, routeId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **domainName** | **String**| email domain |  |
- **routeId** | **String**| route ID |  |
+ **domainName** | **String** | email domain |  |
+ **routeId** | **String** | route ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**InboundRoute**](InboundRoute.html)
+**InboundRoute**
 
 <a name="getRoutingEmailDomainRoutes"></a>
 
@@ -604,15 +604,15 @@ apiInstance.getRoutingEmailDomainRoutes(domainName, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **domainName** | **String**| email domain |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pattern** | **String**| Filter routes by the route&#39;s pattern property | [optional]  |
+ **domainName** | **String** | email domain |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pattern** | **String** | Filter routes by the route&#39;s pattern property | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**InboundRouteEntityListing**](InboundRouteEntityListing.html)
+**InboundRouteEntityListing**
 
 <a name="getRoutingEmailDomains"></a>
 
@@ -651,7 +651,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InboundDomainEntityListing**](InboundDomainEntityListing.html)
+**InboundDomainEntityListing**
 
 <a name="getRoutingEmailSetup"></a>
 
@@ -690,7 +690,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**EmailSetup**](EmailSetup.html)
+**EmailSetup**
 
 <a name="getRoutingLanguages"></a>
 
@@ -734,15 +734,15 @@ apiInstance.getRoutingLanguages(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
- **name** | **String**| Name | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+ **name** | **String** | Name | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LanguageEntityListing**](LanguageEntityListing.html)
+**LanguageEntityListing**
 
 <a name="getRoutingQueue"></a>
 
@@ -782,12 +782,12 @@ apiInstance.getRoutingQueue(queueId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String**| Queue ID |  |
+ **queueId** | **String** | Queue ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Queue**](Queue.html)
+**Queue**
 
 <a name="getRoutingQueueEstimatedwaittime"></a>
 
@@ -830,13 +830,13 @@ apiInstance.getRoutingQueueEstimatedwaittime(queueId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String**| queueId |  |
- **conversationId** | **String**| conversationId | [optional]  |
+ **queueId** | **String** | queueId |  |
+ **conversationId** | **String** | conversationId | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions.html)
+**EstimatedWaitTimePredictions**
 
 <a name="getRoutingQueueMediatypeEstimatedwaittime"></a>
 
@@ -878,13 +878,13 @@ apiInstance.getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String**| queueId |  |
- **mediaType** | **String**| mediaType |  |
+ **queueId** | **String** | queueId |  |
+ **mediaType** | **String** | mediaType |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions.html)
+**EstimatedWaitTimePredictions**
 
 <a name="getRoutingQueueUsers"></a>
 
@@ -937,23 +937,23 @@ apiInstance.getRoutingQueueUsers(queueId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String**| Queue ID |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortBy** | **String**| Sort by | [optional] [default to name] |
- **expand** | [**[String]**](String.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
- **joined** | **Boolean**| Filter by joined status | [optional]  |
- **name** | **String**| Filter by queue member name | [optional]  |
- **profileSkills** | [**[String]**](String.html)| Filter by profile skill | [optional]  |
- **skills** | [**[String]**](String.html)| Filter by skill | [optional]  |
- **languages** | [**[String]**](String.html)| Filter by language | [optional]  |
- **routingStatus** | [**[String]**](String.html)| Filter by routing status | [optional]  |
- **presence** | [**[String]**](String.html)| Filter by presence | [optional]  |
+ **queueId** | **String** | Queue ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
+ **joined** | **Boolean** | Filter by joined status | [optional]  |
+ **name** | **String** | Filter by queue member name | [optional]  |
+ **profileSkills** | **[String]** | Filter by profile skill | [optional]  |
+ **skills** | **[String]** | Filter by skill | [optional]  |
+ **languages** | **[String]** | Filter by language | [optional]  |
+ **routingStatus** | **[String]** | Filter by routing status | [optional]  |
+ **presence** | **[String]** | Filter by presence | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**QueueMemberEntityListing**](QueueMemberEntityListing.html)
+**QueueMemberEntityListing**
 
 <a name="getRoutingQueueWrapupcodes"></a>
 
@@ -993,12 +993,12 @@ apiInstance.getRoutingQueueWrapupcodes(queueId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String**| Queue ID |  |
+ **queueId** | **String** | Queue ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**WrapupCodeEntityListing**](WrapupCodeEntityListing.html)
+**WrapupCodeEntityListing**
 
 <a name="getRoutingQueues"></a>
 
@@ -1043,16 +1043,16 @@ apiInstance.getRoutingQueues(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortBy** | **String**| Sort by | [optional] [default to name] |
- **name** | **String**| Name | [optional]  |
- **active** | **Boolean**| Active | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **name** | **String** | Name | [optional]  |
+ **active** | **Boolean** | Active | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**QueueEntityListing**](QueueEntityListing.html)
+**QueueEntityListing**
 
 <a name="getRoutingSkill"></a>
 
@@ -1092,12 +1092,12 @@ apiInstance.getRoutingSkill(skillId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **skillId** | **String**| Skill ID |  |
+ **skillId** | **String** | Skill ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**RoutingSkill**](RoutingSkill.html)
+**RoutingSkill**
 
 <a name="getRoutingSkills"></a>
 
@@ -1140,14 +1140,14 @@ apiInstance.getRoutingSkills(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **name** | **String**| Filter for results that start with this value | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **name** | **String** | Filter for results that start with this value | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**SkillEntityListing**](SkillEntityListing.html)
+**SkillEntityListing**
 
 <a name="getRoutingUtilization"></a>
 
@@ -1186,7 +1186,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Utilization**](Utilization.html)
+**Utilization**
 
 <a name="getRoutingWrapupcode"></a>
 
@@ -1226,12 +1226,12 @@ apiInstance.getRoutingWrapupcode(codeId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **codeId** | **String**| Wrapup Code ID |  |
+ **codeId** | **String** | Wrapup Code ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**WrapupCode**](WrapupCode.html)
+**WrapupCode**
 
 <a name="getRoutingWrapupcodes"></a>
 
@@ -1275,15 +1275,15 @@ apiInstance.getRoutingWrapupcodes(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **name** | **String**| Name | [optional]  |
- **sortBy** | **String**| Sort by | [optional] [default to name] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**WrapupCodeEntityListing**](WrapupCodeEntityListing.html)
+**WrapupCodeEntityListing**
 
 <a name="getUserRoutingskills"></a>
 
@@ -1328,15 +1328,15 @@ apiInstance.getUserRoutingskills(userId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+ **userId** | **String** | User ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserSkillEntityListing**](UserSkillEntityListing.html)
+**UserSkillEntityListing**
 
 <a name="patchRoutingQueueUser"></a>
 
@@ -1380,14 +1380,14 @@ apiInstance.patchRoutingQueueUser(queueId, memberId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String**| Queue ID |  |
- **memberId** | **String**| Member ID |  |
- **body** | [**QueueMember**](QueueMember.html)| Queue Member |  |
+ **queueId** | **String** | Queue ID |  |
+ **memberId** | **String** | Member ID |  |
+ **body** | **QueueMember** | Queue Member |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**QueueMember**](QueueMember.html)
+**QueueMember**
 
 <a name="patchRoutingQueueUsers"></a>
 
@@ -1429,13 +1429,13 @@ apiInstance.patchRoutingQueueUsers(queueId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String**| Queue ID |  |
- **body** | [**[QueueMember]**](QueueMember.html)| Queue Members |  |
+ **queueId** | **String** | Queue ID |  |
+ **body** | **[QueueMember]** | Queue Members |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**QueueMemberEntityListing**](QueueMemberEntityListing.html)
+**QueueMemberEntityListing**
 
 <a name="postAnalyticsQueuesObservationsQuery"></a>
 
@@ -1475,12 +1475,12 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**ObservationQuery**](ObservationQuery.html)| query |  |
+ **body** | **ObservationQuery** | query |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html)
+**QualifierMappingObservationQueryResponse**
 
 <a name="postRoutingEmailDomainRoutes"></a>
 
@@ -1522,13 +1522,13 @@ apiInstance.postRoutingEmailDomainRoutes(domainName, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **domainName** | **String**| email domain |  |
- **body** | [**InboundRoute**](InboundRoute.html)| Route |  |
+ **domainName** | **String** | email domain |  |
+ **body** | **InboundRoute** | Route |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**InboundRoute**](InboundRoute.html)
+**InboundRoute**
 
 <a name="postRoutingEmailDomains"></a>
 
@@ -1568,12 +1568,12 @@ apiInstance.postRoutingEmailDomains(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**InboundDomain**](InboundDomain.html)| Domain |  |
+ **body** | **InboundDomain** | Domain |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**InboundDomain**](InboundDomain.html)
+**InboundDomain**
 
 <a name="postRoutingLanguages"></a>
 
@@ -1613,12 +1613,12 @@ apiInstance.postRoutingLanguages(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Language**](Language.html)| Language |  |
+ **body** | **Language** | Language |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Language**](Language.html)
+**Language**
 
 <a name="postRoutingQueueUsers"></a>
 
@@ -1663,9 +1663,9 @@ apiInstance.postRoutingQueueUsers(queueId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String**| Queue ID |  |
- **body** | [**[QueueMember]**](QueueMember.html)| Queue Members |  |
- **_delete** | **Boolean**| True to delete queue members | [optional] [default to false] |
+ **queueId** | **String** | Queue ID |  |
+ **body** | **[QueueMember]** | Queue Members |  |
+ **_delete** | **Boolean** | True to delete queue members | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1712,13 +1712,13 @@ apiInstance.postRoutingQueueWrapupcodes(queueId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String**| Queue ID |  |
- **body** | [**[WrapupCode]**](WrapupCode.html)| List of wrapup codes |  |
+ **queueId** | **String** | Queue ID |  |
+ **body** | **[WrapupCode]** | List of wrapup codes |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**[WrapupCode]**](WrapupCode.html)
+**[WrapupCode]**
 
 <a name="postRoutingQueues"></a>
 
@@ -1758,12 +1758,12 @@ apiInstance.postRoutingQueues(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**CreateQueueRequest**](CreateQueueRequest.html)| Queue |  |
+ **body** | **CreateQueueRequest** | Queue |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Queue**](Queue.html)
+**Queue**
 
 <a name="postRoutingSkills"></a>
 
@@ -1803,12 +1803,12 @@ apiInstance.postRoutingSkills(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**RoutingSkill**](RoutingSkill.html)| Skill |  |
+ **body** | **RoutingSkill** | Skill |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**RoutingSkill**](RoutingSkill.html)
+**RoutingSkill**
 
 <a name="postRoutingWrapupcodes"></a>
 
@@ -1848,12 +1848,12 @@ apiInstance.postRoutingWrapupcodes(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**WrapupCode**](WrapupCode.html)| WrapupCode |  |
+ **body** | **WrapupCode** | WrapupCode |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**WrapupCode**](WrapupCode.html)
+**WrapupCode**
 
 <a name="postUserRoutingskills"></a>
 
@@ -1895,13 +1895,13 @@ apiInstance.postUserRoutingskills(userId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **body** | [**UserRoutingSkillPost**](UserRoutingSkillPost.html)| Skill |  |
+ **userId** | **String** | User ID |  |
+ **body** | **UserRoutingSkillPost** | Skill |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserRoutingSkill**](UserRoutingSkill.html)
+**UserRoutingSkill**
 
 <a name="putRoutingEmailDomainRoute"></a>
 
@@ -1945,14 +1945,14 @@ apiInstance.putRoutingEmailDomainRoute(domainName, routeId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **domainName** | **String**| email domain |  |
- **routeId** | **String**| route ID |  |
- **body** | [**InboundRoute**](InboundRoute.html)| Route |  |
+ **domainName** | **String** | email domain |  |
+ **routeId** | **String** | route ID |  |
+ **body** | **InboundRoute** | Route |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**InboundRoute**](InboundRoute.html)
+**InboundRoute**
 
 <a name="putRoutingQueue"></a>
 
@@ -1994,13 +1994,13 @@ apiInstance.putRoutingQueue(queueId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **queueId** | **String**| Queue ID |  |
- **body** | [**Queue**](Queue.html)| Queue |  |
+ **queueId** | **String** | Queue ID |  |
+ **body** | **Queue** | Queue |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Queue**](Queue.html)
+**Queue**
 
 <a name="putRoutingUtilization"></a>
 
@@ -2040,12 +2040,12 @@ apiInstance.putRoutingUtilization(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Utilization**](Utilization.html)| utilization |  |
+ **body** | **Utilization** | utilization |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Utilization**](Utilization.html)
+**Utilization**
 
 <a name="putRoutingWrapupcode"></a>
 
@@ -2087,13 +2087,13 @@ apiInstance.putRoutingWrapupcode(codeId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **codeId** | **String**| Wrapup Code ID |  |
- **body** | [**WrapupCode**](WrapupCode.html)| WrapupCode |  |
+ **codeId** | **String** | Wrapup Code ID |  |
+ **body** | **WrapupCode** | WrapupCode |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**WrapupCode**](WrapupCode.html)
+**WrapupCode**
 
 <a name="putUserRoutingskill"></a>
 
@@ -2137,12 +2137,12 @@ apiInstance.putUserRoutingskill(userId, skillId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String**| User ID |  |
- **skillId** | **String**| skillId |  |
- **body** | [**UserRoutingSkill**](UserRoutingSkill.html)| Skill |  |
+ **userId** | **String** | User ID |  |
+ **skillId** | **String** | skillId |  |
+ **body** | **UserRoutingSkill** | Skill |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**UserRoutingSkill**](UserRoutingSkill.html)
+**UserRoutingSkill**
 

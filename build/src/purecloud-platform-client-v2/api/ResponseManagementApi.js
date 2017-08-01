@@ -18,7 +18,7 @@
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 6.1.1
+   * @version 6.1.2
    */
 
   /**

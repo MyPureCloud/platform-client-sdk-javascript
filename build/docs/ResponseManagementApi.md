@@ -58,7 +58,7 @@ apiInstance.deleteResponsemanagementLibrary(libraryId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **libraryId** | **String**| Library ID |  |
+ **libraryId** | **String** | Library ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -103,7 +103,7 @@ apiInstance.deleteResponsemanagementResponse(responseId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **responseId** | **String**| Response ID |  |
+ **responseId** | **String** | Response ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -150,13 +150,13 @@ apiInstance.getResponsemanagementLibraries(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**LibraryEntityListing**](LibraryEntityListing.html)
+**LibraryEntityListing**
 
 <a name="getResponsemanagementLibrary"></a>
 
@@ -196,12 +196,12 @@ apiInstance.getResponsemanagementLibrary(libraryId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **libraryId** | **String**| Library ID |  |
+ **libraryId** | **String** | Library ID |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Library**](Library.html)
+**Library**
 
 <a name="getResponsemanagementResponse"></a>
 
@@ -244,13 +244,13 @@ apiInstance.getResponsemanagementResponse(responseId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **responseId** | **String**| Response ID |  |
- **expand** | **String**| Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
+ **responseId** | **String** | Response ID |  |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Response**](Response.html)
+**Response**
 
 <a name="getResponsemanagementResponses"></a>
 
@@ -295,15 +295,15 @@ apiInstance.getResponsemanagementResponses(libraryId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **libraryId** | **String**| Library ID |  |
- **pageNumber** | **Number**| Page number | [optional] [default to 1] |
- **pageSize** | **Number**| Page size | [optional] [default to 25] |
- **expand** | **String**| Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
+ **libraryId** | **String** | Library ID |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ResponseEntityListing**](ResponseEntityListing.html)
+**ResponseEntityListing**
 
 <a name="postResponsemanagementLibraries"></a>
 
@@ -343,12 +343,12 @@ apiInstance.postResponsemanagementLibraries(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Library**](Library.html)| Library |  |
+ **body** | **Library** | Library |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Library**](Library.html)
+**Library**
 
 <a name="postResponsemanagementResponses"></a>
 
@@ -391,13 +391,13 @@ apiInstance.postResponsemanagementResponses(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**Response**](Response.html)| Response |  |
- **expand** | **String**| Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
+ **body** | **Response** | Response |  |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Response**](Response.html)
+**Response**
 
 <a name="postResponsemanagementResponsesQuery"></a>
 
@@ -437,12 +437,12 @@ apiInstance.postResponsemanagementResponsesQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | [**ResponseQueryRequest**](ResponseQueryRequest.html)| Response |  |
+ **body** | **ResponseQueryRequest** | Response |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**ResponseQueryResults**](ResponseQueryResults.html)
+**ResponseQueryResults**
 
 <a name="putResponsemanagementLibrary"></a>
 
@@ -484,13 +484,13 @@ apiInstance.putResponsemanagementLibrary(libraryId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **libraryId** | **String**| Library ID |  |
- **body** | [**Library**](Library.html)| Library |  |
+ **libraryId** | **String** | Library ID |  |
+ **body** | **Library** | Library |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Library**](Library.html)
+**Library**
 
 <a name="putResponsemanagementResponse"></a>
 
@@ -535,12 +535,12 @@ apiInstance.putResponsemanagementResponse(responseId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **responseId** | **String**| Response ID |  |
- **body** | [**Response**](Response.html)| Response |  |
- **expand** | **String**| Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
+ **responseId** | **String** | Response ID |  |
+ **body** | **Response** | Response |  |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Response**](Response.html)
+**Response**
 
