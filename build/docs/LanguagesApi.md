@@ -32,7 +32,10 @@ This endpoint is deprecated. It has been moved to /routing/languages/{languageId
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -77,7 +80,10 @@ Delete Language
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -122,7 +128,10 @@ This endpoint is deprecated. It has been moved to /routing/languages/{languageId
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -167,7 +176,10 @@ This endpoint is deprecated. It has been moved to /routing/languages
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -219,7 +231,10 @@ Get all available languages for translation
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -258,7 +273,10 @@ Get the builtin translation for a language
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -303,7 +321,10 @@ Get effective translation for an organization by language
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -348,7 +369,10 @@ Get effective language translation for a user
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -393,7 +417,10 @@ Get language
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -438,7 +465,10 @@ This endpoint is deprecated. It has been moved to /routing/languages
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';

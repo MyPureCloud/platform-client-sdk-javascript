@@ -60,7 +60,10 @@ Delete a document.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -109,7 +112,10 @@ This revokes sharing rights specified in the share record
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -154,7 +160,10 @@ Cancel the command for this status
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -199,7 +208,10 @@ Delete a workspace
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -248,7 +260,10 @@ Delete a member from a workspace
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -296,7 +311,10 @@ Delete a tag from a workspace. Will remove this tag from all documents.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -344,7 +362,10 @@ Get a document.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -393,7 +414,10 @@ Get a list of audits for a document.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -452,7 +476,10 @@ Download a document.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -503,7 +530,10 @@ Get a list of documents.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -562,7 +592,10 @@ Query content
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -619,7 +652,10 @@ Get a Security Profile
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -664,7 +700,10 @@ Get a List of Security Profiles
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -703,7 +742,10 @@ Retrieve details about an existing share.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -752,7 +794,10 @@ This method requires the download sharing URI obtained in the get document respo
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -807,7 +852,10 @@ Failing to specify a filter will return 400.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -859,7 +907,10 @@ Get a list of statuses for pending operations
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -907,7 +958,10 @@ Get a status.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -952,7 +1006,10 @@ Get usage details.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -991,7 +1048,10 @@ Get a workspace.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1040,7 +1100,10 @@ Get a list of documents.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1097,7 +1160,10 @@ Get a workspace member
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1149,7 +1215,10 @@ Get a list workspace members
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1202,7 +1271,10 @@ Get a workspace tag
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1254,7 +1326,10 @@ Get a list of workspace tags
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1309,7 +1384,10 @@ Specifying &#39;content&#39; access will return all workspaces the user has docu
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1361,7 +1439,10 @@ Query audits
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1406,7 +1487,10 @@ Update a document.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1460,7 +1544,10 @@ Replace the contents of a document.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1512,7 +1599,10 @@ Add a document.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1565,7 +1655,10 @@ Query content
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1614,7 +1707,10 @@ Creates a new share or updates an existing share if the entity has already been 
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1659,7 +1755,10 @@ Create a workspace tag
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1707,7 +1806,10 @@ Perform a prefix query on tags in the workspace
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1759,7 +1861,10 @@ Create a group workspace
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1804,7 +1909,10 @@ Update a workspace
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1852,7 +1960,10 @@ Add a member to a workspace
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1903,7 +2014,10 @@ Update a workspace tag. Will update all documents with the new tag value.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';

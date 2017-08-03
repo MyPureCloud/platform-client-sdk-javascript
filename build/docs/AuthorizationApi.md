@@ -39,7 +39,10 @@ Delete an organization role.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -84,7 +87,10 @@ Removes all the roles from the user.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -129,7 +135,10 @@ Retrieve a list of all permission defined in the system.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -177,7 +186,10 @@ Gets the list of enabled products. Some example product names are: collaborateFr
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -216,7 +228,10 @@ Get the organization role specified by its ID.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -261,7 +276,10 @@ Compares any organization role to a default role id and show differences
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -309,7 +327,10 @@ Retrieve a list of all roles defined for the organization
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -373,7 +394,10 @@ Returns a listing of roles and permissions for a user.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -418,7 +442,10 @@ Patch Organization Role for needsUpdate Field
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -466,7 +493,10 @@ Allows users to compare their existing roles in an unsaved state to its default 
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -517,7 +547,10 @@ Create an organization role.
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -562,7 +595,10 @@ This endpoint serves several purposes. 1. It provides the org with default roles
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -608,7 +644,10 @@ Update
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -656,7 +695,10 @@ Sets the users for the role
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -704,7 +746,10 @@ Removes the users from the role
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -752,7 +797,10 @@ Restore specified default roles
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -797,7 +845,10 @@ Sets the user&#39;s roles
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';

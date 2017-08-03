@@ -33,7 +33,10 @@ Delete group
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -78,7 +81,10 @@ Remove members
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -126,7 +132,10 @@ Fetch field config for an entity type
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -171,7 +180,10 @@ Get group
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -216,7 +228,10 @@ Get group members
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -271,7 +286,10 @@ Get a group list
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -321,7 +339,10 @@ Search groups using the q64 value returned from a previous search
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -370,7 +391,10 @@ Add members
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -418,7 +442,10 @@ Create a group
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -463,7 +490,10 @@ Search groups
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -508,7 +538,10 @@ Update group
 ### Example
 
 ~~~ javascript
+// Browser
 const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';

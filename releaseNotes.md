@@ -5,6 +5,7 @@ Platform API version: 1387
 
 * remove purecloud-sdk header, API doesn't allow it yet
 * API-2761 Use correct module name in docs
+* Update docs with correct package usage
 
 # Major Changes (0 changes)
 
