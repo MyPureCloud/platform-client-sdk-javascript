@@ -45,7 +45,7 @@ Delete Org Trust
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -90,7 +90,7 @@ Delete Trustee User
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -138,7 +138,7 @@ Delete Trustee User Roles
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -186,7 +186,7 @@ Delete Org Trust
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -231,7 +231,7 @@ Delete Trustee User
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -279,7 +279,7 @@ Get Pairing Info
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -324,7 +324,7 @@ Get Org Trust
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -369,7 +369,7 @@ Get Trustee User
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -417,7 +417,7 @@ Get Trustee User Roles
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -465,7 +465,7 @@ The list of trustee users for this organization (i.e. users granted access to th
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -516,7 +516,7 @@ The list of trustees for this organization (i.e. organizations granted access to
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -564,7 +564,7 @@ Get Org Trust
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -609,7 +609,7 @@ Get Trustee User
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -657,7 +657,7 @@ The list of users in the trustor organization (i.e. users granted access).
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -708,7 +708,7 @@ The list of organizations that have authorized/trusted your organization.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -756,7 +756,7 @@ A pairing id is created by the trustee and given to the trustor to create a trus
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -801,7 +801,7 @@ Add a user to the trust.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -849,7 +849,7 @@ Create a new organization authorization trust. This is required to grant other o
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -894,7 +894,7 @@ Get Org Trustee Audits
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -949,7 +949,7 @@ Get Org Trustor Audits
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1004,7 +1004,7 @@ Update Org Trust
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1052,7 +1052,7 @@ Update Trustee User Roles
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1103,7 +1103,7 @@ Add a Trustee user to the trust.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';

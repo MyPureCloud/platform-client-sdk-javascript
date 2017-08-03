@@ -29,7 +29,7 @@ Remove all subscriptions
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -74,7 +74,7 @@ Get available notification topics.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -120,7 +120,7 @@ The list of all subscriptions for this channel
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -165,7 +165,7 @@ The list of existing channels
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -204,7 +204,7 @@ Add a list of subscriptions to the existing list of subscriptions
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -252,7 +252,7 @@ There is a limit of 10 channels. Creating an 11th channel will remove the channe
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -291,7 +291,7 @@ Replace the current list of subscriptions with a new list.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';

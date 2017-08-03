@@ -25,8 +25,8 @@ npm install purecloud-platform-client-v2
 Reference from the CDN:
 
 ~~~ html
-<!-- Replace `6.1.3` with the version you want to use. -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/6.1.3/purecloud-platform-client-v2.min.js"></script>
+<!-- Replace `6.1.4` with the version you want to use. -->
+<script src="https://sdk-cdn.mypurecloud.com/javascript/6.1.4/purecloud-platform-client-v2.min.js"></script>
 ~~~
 
 View the documentation on the [PureCloud Developer Center](https://developer.mypurecloud.com/api/rest/client-libraries/javascript/).
@@ -50,7 +50,7 @@ Reference the SDK in your HTML document. For convenience, all modules are bundle
 Require the SDK in your node app. All modules are obtained from the `purecloud-platform-client-v2` package.
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 ~~~
 
 
@@ -63,7 +63,7 @@ After authentication has completed, the access token is stored on the `ApiClient
 The Client Credentials grant only works when used in node.js. This is restricted intentionally because it is impossible for client credentials to be handled securely in a browser application.
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 var client = platformClient.ApiClient.instance;
 client.loginClientCredentialsGrant(clientId, clientSecret)
   .then(function() {
@@ -80,7 +80,7 @@ client.loginClientCredentialsGrant(clientId, clientSecret)
 The Implicit grant only works when used in a browser. This is because a node.js application does not have a browser interface that can display the PureCloud login window.
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 var client = platformClient.ApiClient.instance;
 client.loginImplicitGrant(clientId, redirectUri)
   .then(function() {
@@ -95,7 +95,7 @@ client.loginImplicitGrant(clientId, redirectUri)
 **Any platform** Provide an existing auth token
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 var client = platformClient.ApiClient.instance;
 client.setAccessToken(yourAccessToken);
 // Do authenticated things; no login function needed
@@ -107,7 +107,7 @@ client.setAccessToken(yourAccessToken);
 If connecting to a PureCloud environment other than mypurecloud.com (e.g. mypurecloud.ie), set the environment on the `ApiClient` instance.
 
 ~~~ js
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 var client = platformClient.ApiClient.instance;
 client.setEnvironment('mypurecloud.ie');
 ~~~
@@ -118,7 +118,7 @@ client.setEnvironment('mypurecloud.ie');
 In a web environment, it is possible to persist the access token to prevent an authentication request from being made on each page load. To enable this function, simply enable settings persistence prior to attempting a login. To maintain multiple auth tokens in storage, specify the prefix to use for storage/retrieval when enabling persistence. Otherwise, the prefix is optional and will default to `purecloud`.
 
 ~~~ js
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 var client = purecloud-platform-client-v2.ApiClient.instance;
 client.setPersistSettings(true, 'optional_prefix');
 ~~~
@@ -180,7 +180,7 @@ client.loginImplicitGrant(clientId, redirectUri)
 By default, the SDK will return only the response body as the result of an API function call. To retrieve additional information about the response, enable extended responses. This will return the extended response for all API function calls:
 
 ~~~ js
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 var client = purecloud-platform-client-v2.ApiClient.instance;
 client.setReturnExtendedResponses(true);
 ~~~
@@ -249,7 +249,7 @@ Example error response object:
 There are hooks to trace requests and responses.  To enable debug tracing, provide a log object. Optionally, specify a maximum number of lines. If specified, the response body trace will be truncated. If not specified, the entire response body will be traced out.
 
 ~~~ js
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 var client = purecloud-platform-client-v2.ApiClient.instance;
 client.setDebugLog(console.log, 25);
 ~~~

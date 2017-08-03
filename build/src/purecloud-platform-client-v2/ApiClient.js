@@ -17,7 +17,7 @@
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 6.1.3
+   * @version 6.1.4
    */
 
   /**
@@ -640,7 +640,7 @@
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    request.set({ 'purecloud-sdk': '6.1.3' });
+    //request.set({ 'purecloud-sdk': '6.1.4' });
 
     // set request timeout
     request.timeout(this.timeout);

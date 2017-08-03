@@ -25,7 +25,7 @@ Get the current system date/time
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -64,7 +64,7 @@ Get time zones list
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -112,7 +112,7 @@ Returns the information about an X509 PEM encoded certificate or certificate cha
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';

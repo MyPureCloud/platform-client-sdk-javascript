@@ -18,7 +18,7 @@
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 6.1.3
+   * @version 6.1.4
    */
 
   /**

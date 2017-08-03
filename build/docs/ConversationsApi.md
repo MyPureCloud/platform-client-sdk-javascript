@@ -100,7 +100,7 @@ Delete a code used to add a communication to this participant
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -151,7 +151,7 @@ Cancel the transfer
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -199,7 +199,7 @@ Delete attachment from draft
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -247,7 +247,7 @@ Get a conversation by id
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -292,7 +292,7 @@ Get conversation
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -337,7 +337,7 @@ Get the wrap-up for this conversation participant.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -389,7 +389,7 @@ Get list of wrapup codes for this conversation participant
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -437,7 +437,7 @@ Get conversations
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -483,7 +483,7 @@ Get call conversation
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -528,7 +528,7 @@ Get the wrap-up for this conversation participant.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -580,7 +580,7 @@ Get list of wrapup codes for this conversation participant
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -628,7 +628,7 @@ Get callback conversation
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -673,7 +673,7 @@ Get the wrap-up for this conversation participant.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -725,7 +725,7 @@ Get list of wrapup codes for this conversation participant
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -773,7 +773,7 @@ Get callback conversations
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -812,7 +812,7 @@ Get recent conversations
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -851,7 +851,7 @@ Get call history
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -901,7 +901,7 @@ Get the maximum number of participants that this user can have on a conference
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -940,7 +940,7 @@ Get chat conversation
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -985,7 +985,7 @@ Get the wrap-up for this conversation participant.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1037,7 +1037,7 @@ Get list of wrapup codes for this conversation participant
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1085,7 +1085,7 @@ Get recent chat conversations
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1124,7 +1124,7 @@ Get cobrowse conversation
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1169,7 +1169,7 @@ Get the wrap-up for this conversation participant.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1221,7 +1221,7 @@ Get list of wrapup codes for this conversation participant
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1269,7 +1269,7 @@ Get recent cobrowse conversations
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1308,7 +1308,7 @@ Get email conversation
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1353,7 +1353,7 @@ Get conversation message
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1401,7 +1401,7 @@ Get conversation messages
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1446,7 +1446,7 @@ Get conversation draft reply
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1491,7 +1491,7 @@ Get the wrap-up for this conversation participant.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1543,7 +1543,7 @@ Get list of wrapup codes for this conversation participant
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1591,7 +1591,7 @@ Get recent email conversations
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1630,7 +1630,7 @@ Update conversation participant.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1681,7 +1681,7 @@ Update the attributes on a conversation participant.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1732,7 +1732,7 @@ Update a conversation by setting it&#39;s recording state, merging in other conv
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1780,7 +1780,7 @@ Update conversation participant
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1831,7 +1831,7 @@ Update the attributes on a conversation participant.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1882,7 +1882,7 @@ Update conversation participant&#39;s communication by disconnecting it.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1936,7 +1936,7 @@ Change who can speak
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -1987,7 +1987,7 @@ Update a conversation by disconnecting all of the participants
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2035,7 +2035,7 @@ Update conversation participant
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2086,7 +2086,7 @@ Update the attributes on a conversation participant.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2137,7 +2137,7 @@ Update conversation participant&#39;s communication by disconnecting it.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2191,7 +2191,7 @@ Update a conversation by disconnecting all of the participants
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2239,7 +2239,7 @@ Update conversation participant
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2290,7 +2290,7 @@ Update the attributes on a conversation participant.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2341,7 +2341,7 @@ Update conversation participant&#39;s communication by disconnecting it.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2395,7 +2395,7 @@ Update a conversation by disconnecting all of the participants
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2443,7 +2443,7 @@ Update conversation participant
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2495,7 +2495,7 @@ Update the attributes on a conversation participant.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2547,7 +2547,7 @@ Update conversation participant&#39;s communication by disconnecting it.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2601,7 +2601,7 @@ Update a conversation by disconnecting all of the participants
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2649,7 +2649,7 @@ Update conversation participant
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2700,7 +2700,7 @@ Update the attributes on a conversation participant.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2751,7 +2751,7 @@ Update conversation participant&#39;s communication by disconnecting it.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2805,7 +2805,7 @@ Index conversation properties
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2853,7 +2853,7 @@ Query for conversation aggregates
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2898,7 +2898,7 @@ Query for conversation details
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2943,7 +2943,7 @@ Create a new callback for the specified participant on the conversation.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -2995,7 +2995,7 @@ Replace this participant with the specified user and/or address
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -3046,7 +3046,7 @@ Add a new call to a conversation
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -3094,7 +3094,7 @@ Initiate and update consult transfer
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -3145,7 +3145,7 @@ Listen in on the conversation from the point of view of a given participant.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -3193,7 +3193,7 @@ Replace this participant with the specified user and/or address
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -3244,7 +3244,7 @@ Add participants to a conversation
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -3292,7 +3292,7 @@ Replace this participant with the specified user and/or address
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -3343,7 +3343,7 @@ Create a Callback
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -3388,7 +3388,7 @@ Create a call conversation
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -3433,7 +3433,7 @@ Replace this participant with the specified user and/or address
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -3484,7 +3484,7 @@ Create a web chat conversation
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -3529,7 +3529,7 @@ Replace this participant with the specified user and/or address
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -3581,7 +3581,7 @@ Send an email reply
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -3629,7 +3629,7 @@ Replace this participant with the specified user and/or address
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -3680,7 +3680,7 @@ Create an email conversation
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -3725,7 +3725,7 @@ Create Fax Conversation
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -3770,7 +3770,7 @@ Set uuiData to be sent on future commands.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -3824,7 +3824,7 @@ Update conversation draft reply
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';

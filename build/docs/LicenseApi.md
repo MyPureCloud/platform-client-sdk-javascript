@@ -30,7 +30,7 @@ Get PureCloud license definition.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -75,7 +75,7 @@ Get all PureCloud license definitions available for the organization.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -114,7 +114,7 @@ Get license assignments for the organization.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -153,7 +153,7 @@ Get PureCloud license feature toggle value.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -198,7 +198,7 @@ Get licenses for specified user.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -243,7 +243,7 @@ Update the organization&#39;s license assignments in a batch.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -289,7 +289,7 @@ Switch PureCloud license feature toggle value.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
@@ -334,7 +334,7 @@ Fetch user licenses in a batch.
 ### Example
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
+const platformClient = require('platformClient');
 
 // Configure OAuth2 access token for authorization: PureCloud Auth
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';

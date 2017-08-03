@@ -3,7 +3,8 @@ Platform API version: 1387
 
 # SDK Changes
 
-*API-2672 clean up npm package
+* remove purecloud-sdk header, API doesn't allow it yet
+* API-2761 Use correct module name in docs
 
 # Major Changes (0 changes)
 
