@@ -299,6 +299,7 @@ var apiInstance = new platformClient.GroupsApi();
 var opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
+  'id': ["id_example"], // [String] | id
   'sortOrder': "ASC" // String | Ascending or descending sort order
 };
 apiInstance.getGroups(opts)
@@ -319,6 +320,7 @@ apiInstance.getGroups(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **id** | **[String]** | id | [optional]  |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 

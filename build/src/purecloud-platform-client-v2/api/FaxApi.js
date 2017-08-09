@@ -18,7 +18,7 @@
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**

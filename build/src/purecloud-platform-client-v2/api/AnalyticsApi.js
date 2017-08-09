@@ -18,7 +18,7 @@
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**

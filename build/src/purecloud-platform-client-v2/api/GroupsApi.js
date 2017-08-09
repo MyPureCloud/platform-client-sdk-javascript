@@ -18,7 +18,7 @@
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -191,6 +191,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Array.<String>} opts.id id
      * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Ascending or descending sort order (default to ASC)
      */
     this.getGroups = function(opts) { 
@@ -201,7 +202,7 @@
         '/api/v2/groups', 
         'GET', 
         {  }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortOrder': opts['sortOrder'] }, 
         {  }, 
         {  }, 
         null, 

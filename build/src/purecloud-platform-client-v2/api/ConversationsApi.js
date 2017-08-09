@@ -18,7 +18,7 @@
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -2494,6 +2494,40 @@
         {  }, 
         {  }, 
         opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+     * 
+     * @param {String} conversationId conversationId
+     * @param {module:purecloud-platform-client-v2/model/InboundMessageRequest} body Send external email reply
+     */
+    this.postConversationsEmailInboundmessages = function(conversationId, body) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling postConversationsEmailInboundmessages";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postConversationsEmailInboundmessages";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/emails/{conversationId}/inboundmessages', 
+        'POST', 
+        { 'conversationId': conversationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']

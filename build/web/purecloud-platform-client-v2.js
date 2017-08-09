@@ -223,7 +223,7 @@ function from (value, encodingOrOffset, length) {
     throw new TypeError('"value" argument must not be a number')
   }
 
-  if (value instanceof ArrayBuffer) {
+  if (isArrayBuffer(value)) {
     return fromArrayBuffer(value, encodingOrOffset, length)
   }
 
@@ -483,7 +483,7 @@ function byteLength (string, encoding) {
   if (Buffer.isBuffer(string)) {
     return string.length
   }
-  if (isArrayBufferView(string) || string instanceof ArrayBuffer) {
+  if (isArrayBufferView(string) || isArrayBuffer(string)) {
     return string.byteLength
   }
   if (typeof string !== 'string') {
@@ -1813,6 +1813,14 @@ function blitBuffer (src, dst, offset, length) {
     dst[i + offset] = src[i]
   }
   return i
+}
+
+// ArrayBuffers from another context (i.e. an iframe) do not pass the `instanceof` check
+// but they should be treated as valid. See: https://github.com/feross/buffer/issues/166
+function isArrayBuffer (obj) {
+  return obj instanceof ArrayBuffer ||
+    (obj != null && obj.constructor != null && obj.constructor.name === 'ArrayBuffer' &&
+      typeof obj.byteLength === 'number')
 }
 
 // Node 0.10 supports `ArrayBuffer` but lacks `ArrayBuffer.isView`
@@ -3234,7 +3242,7 @@ module.exports = request;
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -3857,7 +3865,7 @@ module.exports = request;
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '6.1.5' });
+    //request.set({ 'purecloud-sdk': '7.0.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -3995,7 +4003,7 @@ module.exports = request;
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -4329,7 +4337,7 @@ module.exports = request;
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -4994,7 +5002,7 @@ module.exports = request;
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -6902,7 +6910,7 @@ module.exports = request;
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -7113,7 +7121,7 @@ module.exports = request;
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -7671,7 +7679,7 @@ module.exports = request;
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -8928,7 +8936,7 @@ module.exports = request;
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -11412,6 +11420,40 @@ module.exports = request;
 
 
     /**
+     * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+     * 
+     * @param {String} conversationId conversationId
+     * @param {module:purecloud-platform-client-v2/model/InboundMessageRequest} body Send external email reply
+     */
+    this.postConversationsEmailInboundmessages = function(conversationId, body) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling postConversationsEmailInboundmessages";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postConversationsEmailInboundmessages";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/emails/{conversationId}/inboundmessages', 
+        'POST', 
+        { 'conversationId': conversationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Send an email reply
      * 
      * @param {String} conversationId conversationId
@@ -11645,7 +11687,7 @@ module.exports = request;
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -12629,7 +12671,7 @@ module.exports = request;
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -12834,7 +12876,7 @@ module.exports = request;
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -12997,7 +13039,7 @@ module.exports = request;
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -13517,7 +13559,7 @@ module.exports = request;
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -13690,6 +13732,7 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Array.<String>} opts.id id
      * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Ascending or descending sort order (default to ASC)
      */
     this.getGroups = function(opts) { 
@@ -13700,7 +13743,7 @@ module.exports = request;
         '/api/v2/groups', 
         'GET', 
         {  }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortOrder': opts['sortOrder'] }, 
         {  }, 
         {  }, 
         null, 
@@ -13887,7 +13930,7 @@ module.exports = request;
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -14596,7 +14639,7 @@ module.exports = request;
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -14909,7 +14952,7 @@ module.exports = request;
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -15154,7 +15197,7 @@ module.exports = request;
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -15307,7 +15350,7 @@ module.exports = request;
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -15539,7 +15582,7 @@ module.exports = request;
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -15746,7 +15789,7 @@ module.exports = request;
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -15894,7 +15937,7 @@ module.exports = request;
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -16659,7 +16702,7 @@ module.exports = request;
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -19250,7 +19293,7 @@ module.exports = request;
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -19534,7 +19577,7 @@ module.exports = request;
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -20577,7 +20620,7 @@ module.exports = request;
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -21641,7 +21684,7 @@ module.exports = request;
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -22012,7 +22055,7 @@ module.exports = request;
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -23405,7 +23448,7 @@ module.exports = request;
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -23719,7 +23762,7 @@ module.exports = request;
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -24176,7 +24219,7 @@ module.exports = request;
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -24303,7 +24346,7 @@ module.exports = request;
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -24468,7 +24511,7 @@ module.exports = request;
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -28217,7 +28260,7 @@ module.exports = request;
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -28300,7 +28343,7 @@ module.exports = request;
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -28515,7 +28558,7 @@ module.exports = request;
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -29903,7 +29946,7 @@ module.exports = request;
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -30018,7 +30061,7 @@ module.exports = request;
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -30374,6 +30417,38 @@ module.exports = request;
 
 
     /**
+     * List voicemail messages
+     * 
+     * @param {String} queueId Queue ID
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     */
+    this.getVoicemailQueueMessages = function(queueId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'queueId' is set
+      if (queueId === undefined || queueId === null) {
+        throw "Missing the required parameter 'queueId' when calling getVoicemailQueueMessages";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/voicemail/queues/{queueId}/messages', 
+        'GET', 
+        { 'queueId': queueId }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Search voicemails using the q64 value returned from a previous search
      * 
      * @param {String} q64 q64
@@ -30701,7 +30776,7 @@ module.exports = request;
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -31023,6 +31098,37 @@ module.exports = request;
 
 
     /**
+     * Request a historical adherence report
+     * 
+     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {Object} opts Optional parameters
+     * @param {module:purecloud-platform-client-v2/model/WfmHistoricalAdherenceQuery} opts.body body
+     */
+    this.postWorkforcemanagementManagementunitHistoricaladherencequery = function(muId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'muId' is set
+      if (muId === undefined || muId === null) {
+        throw "Missing the required parameter 'muId' when calling postWorkforcemanagementManagementunitHistoricaladherencequery";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/workforcemanagement/managementunits/{muId}/historicaladherencequery', 
+        'POST', 
+        { 'muId': muId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get intraday data for the given date for the requested queueIds
      * 
      * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
@@ -31153,7 +31259,7 @@ module.exports = request;
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 6.1.5
+   * @version 7.0.0
    */
   var platformClient = {
     /**

@@ -18,7 +18,7 @@
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -363,6 +363,38 @@
         'GET', 
         {  }, 
         {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * List voicemail messages
+     * 
+     * @param {String} queueId Queue ID
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     */
+    this.getVoicemailQueueMessages = function(queueId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'queueId' is set
+      if (queueId === undefined || queueId === null) {
+        throw "Missing the required parameter 'queueId' when calling getVoicemailQueueMessages";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/voicemail/queues/{queueId}/messages', 
+        'GET', 
+        { 'queueId': queueId }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
         {  }, 
         {  }, 
         null, 

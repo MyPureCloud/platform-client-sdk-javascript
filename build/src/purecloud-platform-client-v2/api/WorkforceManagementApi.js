@@ -18,7 +18,7 @@
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 6.1.5
+   * @version 7.0.0
    */
 
   /**
@@ -328,6 +328,37 @@
         '/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}', 
         'PATCH', 
         { 'timeOffRequestId': timeOffRequestId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Request a historical adherence report
+     * 
+     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {Object} opts Optional parameters
+     * @param {module:purecloud-platform-client-v2/model/WfmHistoricalAdherenceQuery} opts.body body
+     */
+    this.postWorkforcemanagementManagementunitHistoricaladherencequery = function(muId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'muId' is set
+      if (muId === undefined || muId === null) {
+        throw "Missing the required parameter 'muId' when calling postWorkforcemanagementManagementunitHistoricaladherencequery";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/workforcemanagement/managementunits/{muId}/historicaladherencequery', 
+        'POST', 
+        { 'muId': muId }, 
         {  }, 
         {  }, 
         {  }, 
