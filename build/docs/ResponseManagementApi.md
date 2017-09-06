@@ -346,7 +346,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ResponseManagementApi();
 
-var body = new platformClient.Library(); // Library | Library
+var body = {}; // Object | Library
 
 apiInstance.postResponsemanagementLibraries(body)
   .then(function(data) {
@@ -364,7 +364,7 @@ apiInstance.postResponsemanagementLibraries(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Library** | Library |  |
+ **body** | **Object** | Library |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -394,7 +394,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ResponseManagementApi();
 
-var body = new platformClient.Response(); // Response | Response
+var body = {}; // Object | Response
 
 var opts = { 
   'expand': "expand_example" // String | Expand instructions for the return value.
@@ -415,7 +415,7 @@ apiInstance.postResponsemanagementResponses(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Response** | Response |  |
+ **body** | **Object** | Response |  |
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
 {: class="table table-striped"}
 
@@ -446,7 +446,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ResponseManagementApi();
 
-var body = new platformClient.ResponseQueryRequest(); // ResponseQueryRequest | Response
+var body = {}; // Object | Response
 
 apiInstance.postResponsemanagementResponsesQuery(body)
   .then(function(data) {
@@ -464,7 +464,7 @@ apiInstance.postResponsemanagementResponsesQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **ResponseQueryRequest** | Response |  |
+ **body** | **Object** | Response |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -496,7 +496,7 @@ var apiInstance = new platformClient.ResponseManagementApi();
 
 var libraryId = "libraryId_example"; // String | Library ID
 
-var body = new platformClient.Library(); // Library | Library
+var body = {}; // Object | Library
 
 apiInstance.putResponsemanagementLibrary(libraryId, body)
   .then(function(data) {
@@ -515,7 +515,7 @@ apiInstance.putResponsemanagementLibrary(libraryId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **libraryId** | **String** | Library ID |  |
- **body** | **Library** | Library |  |
+ **body** | **Object** | Library |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -547,7 +547,7 @@ var apiInstance = new platformClient.ResponseManagementApi();
 
 var responseId = "responseId_example"; // String | Response ID
 
-var body = new platformClient.Response(); // Response | Response
+var body = {}; // Object | Response
 
 var opts = { 
   'expand': "expand_example" // String | Expand instructions for the return value.
@@ -569,7 +569,7 @@ apiInstance.putResponsemanagementResponse(responseId, body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **responseId** | **String** | Response ID |  |
- **body** | **Response** | Response |  |
+ **body** | **Object** | Response |  |
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
 {: class="table table-striped"}
 

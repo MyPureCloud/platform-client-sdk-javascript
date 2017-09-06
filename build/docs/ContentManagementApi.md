@@ -1449,7 +1449,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ContentManagementApi();
 
-var body = new platformClient.ContentQueryRequest(); // ContentQueryRequest | Allows for a filtered query returning facet information
+var body = {}; // Object | Allows for a filtered query returning facet information
 
 apiInstance.postContentmanagementAuditquery(body)
   .then(function(data) {
@@ -1467,7 +1467,7 @@ apiInstance.postContentmanagementAuditquery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **ContentQueryRequest** | Allows for a filtered query returning facet information |  |
+ **body** | **Object** | Allows for a filtered query returning facet information |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1499,7 +1499,7 @@ var apiInstance = new platformClient.ContentManagementApi();
 
 var documentId = "documentId_example"; // String | Document ID
 
-var body = new platformClient.DocumentUpdate(); // DocumentUpdate | Document
+var body = {}; // Object | Document
 
 var opts = { 
   'expand': "expand_example", // String | Expand some document fields
@@ -1522,7 +1522,7 @@ apiInstance.postContentmanagementDocument(documentId, body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
- **body** | **DocumentUpdate** | Document |  |
+ **body** | **Object** | Document |  |
  **expand** | **String** | Expand some document fields | [optional] <br />**Values**: acl |
  **override** | **Boolean** | Override any lock on the document | [optional]  |
 {: class="table table-striped"}
@@ -1556,7 +1556,7 @@ var apiInstance = new platformClient.ContentManagementApi();
 
 var documentId = "documentId_example"; // String | Document ID
 
-var body = new platformClient.ReplaceRequest(); // ReplaceRequest | Replace Request
+var body = {}; // Object | Replace Request
 
 var opts = { 
   'override': true // Boolean | Override any lock on the document
@@ -1578,7 +1578,7 @@ apiInstance.postContentmanagementDocumentContent(documentId, body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
- **body** | **ReplaceRequest** | Replace Request |  |
+ **body** | **Object** | Replace Request |  |
  **override** | **Boolean** | Override any lock on the document | [optional]  |
 {: class="table table-striped"}
 
@@ -1609,7 +1609,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ContentManagementApi();
 
-var body = new platformClient.DocumentUpload(); // DocumentUpload | Document
+var body = {}; // Object | Document
 
 var opts = { 
   'copySource': "copySource_example", // String | Copy a document within a workspace or to a new workspace. Provide a document ID as the copy source.
@@ -1632,7 +1632,7 @@ apiInstance.postContentmanagementDocuments(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **DocumentUpload** | Document |  |
+ **body** | **Object** | Document |  |
  **copySource** | **String** | Copy a document within a workspace or to a new workspace. Provide a document ID as the copy source. | [optional]  |
  **moveSource** | **String** | Move a document to a new workspace. Provide a document ID as the move source. | [optional]  |
  **override** | **Boolean** | Override any lock on the source document | [optional]  |
@@ -1665,7 +1665,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ContentManagementApi();
 
-var body = new platformClient.QueryRequest(); // QueryRequest | Allows for a filtered query returning facet information
+var body = {}; // Object | Allows for a filtered query returning facet information
 
 var opts = { 
   'expand': "expand_example" // String | Expand some document fields
@@ -1686,7 +1686,7 @@ apiInstance.postContentmanagementQuery(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **QueryRequest** | Allows for a filtered query returning facet information |  |
+ **body** | **Object** | Allows for a filtered query returning facet information |  |
  **expand** | **String** | Expand some document fields | [optional] <br />**Values**: acl, workspace |
 {: class="table table-striped"}
 
@@ -1717,7 +1717,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ContentManagementApi();
 
-var body = new platformClient.CreateShareRequest(); // CreateShareRequest | CreateShareRequest - entity id and type and a single member or list of members are required
+var body = {}; // Object | CreateShareRequest - entity id and type and a single member or list of members are required
 
 apiInstance.postContentmanagementShares(body)
   .then(function(data) {
@@ -1735,7 +1735,7 @@ apiInstance.postContentmanagementShares(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **CreateShareRequest** | CreateShareRequest - entity id and type and a single member or list of members are required |  |
+ **body** | **Object** | CreateShareRequest - entity id and type and a single member or list of members are required |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1767,7 +1767,7 @@ var apiInstance = new platformClient.ContentManagementApi();
 
 var workspaceId = "workspaceId_example"; // String | Workspace ID
 
-var body = new platformClient.TagValue(); // TagValue | tag
+var body = {}; // Object | tag
 
 apiInstance.postContentmanagementWorkspaceTagvalues(workspaceId, body)
   .then(function(data) {
@@ -1786,7 +1786,7 @@ apiInstance.postContentmanagementWorkspaceTagvalues(workspaceId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **workspaceId** | **String** | Workspace ID |  |
- **body** | **TagValue** | tag |  |
+ **body** | **Object** | tag |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1818,7 +1818,7 @@ var apiInstance = new platformClient.ContentManagementApi();
 
 var workspaceId = "workspaceId_example"; // String | Workspace ID
 
-var body = new platformClient.TagQueryRequest(); // TagQueryRequest | query
+var body = {}; // Object | query
 
 var opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
@@ -1840,7 +1840,7 @@ apiInstance.postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, opts
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **workspaceId** | **String** | Workspace ID |  |
- **body** | **TagQueryRequest** | query |  |
+ **body** | **Object** | query |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: acl |
 {: class="table table-striped"}
 
@@ -1871,7 +1871,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ContentManagementApi();
 
-var body = new platformClient.WorkspaceCreate(); // WorkspaceCreate | Workspace
+var body = {}; // Object | Workspace
 
 apiInstance.postContentmanagementWorkspaces(body)
   .then(function(data) {
@@ -1889,7 +1889,7 @@ apiInstance.postContentmanagementWorkspaces(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **WorkspaceCreate** | Workspace |  |
+ **body** | **Object** | Workspace |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1921,7 +1921,7 @@ var apiInstance = new platformClient.ContentManagementApi();
 
 var workspaceId = "workspaceId_example"; // String | Workspace ID
 
-var body = new platformClient.Workspace(); // Workspace | Workspace
+var body = {}; // Object | Workspace
 
 apiInstance.putContentmanagementWorkspace(workspaceId, body)
   .then(function(data) {
@@ -1940,7 +1940,7 @@ apiInstance.putContentmanagementWorkspace(workspaceId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **workspaceId** | **String** | Workspace ID |  |
- **body** | **Workspace** | Workspace |  |
+ **body** | **Object** | Workspace |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1974,7 +1974,7 @@ var workspaceId = "workspaceId_example"; // String | Workspace ID
 
 var memberId = "memberId_example"; // String | Member ID
 
-var body = new platformClient.WorkspaceMember(); // WorkspaceMember | Workspace Member
+var body = {}; // Object | Workspace Member
 
 apiInstance.putContentmanagementWorkspaceMember(workspaceId, memberId, body)
   .then(function(data) {
@@ -1994,7 +1994,7 @@ apiInstance.putContentmanagementWorkspaceMember(workspaceId, memberId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **workspaceId** | **String** | Workspace ID |  |
  **memberId** | **String** | Member ID |  |
- **body** | **WorkspaceMember** | Workspace Member |  |
+ **body** | **Object** | Workspace Member |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2028,7 +2028,7 @@ var workspaceId = "workspaceId_example"; // String | Workspace ID
 
 var tagId = "tagId_example"; // String | Tag ID
 
-var body = new platformClient.TagValue(); // TagValue | Workspace
+var body = {}; // Object | Workspace
 
 apiInstance.putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
   .then(function(data) {
@@ -2048,7 +2048,7 @@ apiInstance.putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **workspaceId** | **String** | Workspace ID |  |
  **tagId** | **String** | Tag ID |  |
- **body** | **TagValue** | Workspace |  |
+ **body** | **Object** | Workspace |  |
 {: class="table table-striped"}
 
 ### Return type

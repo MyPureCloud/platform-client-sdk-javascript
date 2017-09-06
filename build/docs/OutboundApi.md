@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteOutboundContactlistContact**](OutboundApi.html#deleteOutboundContactlistContact) | **DELETE** /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} | Delete a contact.
 [**deleteOutboundContactlistContacts**](OutboundApi.html#deleteOutboundContactlistContacts) | **DELETE** /api/v2/outbound/contactlists/{contactListId}/contacts | Delete contacts from a contact list.
 [**deleteOutboundContactlistfilter**](OutboundApi.html#deleteOutboundContactlistfilter) | **DELETE** /api/v2/outbound/contactlistfilters/{contactListFilterId} | Delete Contact List Filter
+[**deleteOutboundContactlists**](OutboundApi.html#deleteOutboundContactlists) | **DELETE** /api/v2/outbound/contactlists | Delete multiple contact lists.
 [**deleteOutboundDnclist**](OutboundApi.html#deleteOutboundDnclist) | **DELETE** /api/v2/outbound/dnclists/{dncListId} | Delete dialer DNC list
 [**deleteOutboundRuleset**](OutboundApi.html#deleteOutboundRuleset) | **DELETE** /api/v2/outbound/rulesets/{ruleSetId} | Delete a Rule set.
 [**deleteOutboundSchedulesCampaign**](OutboundApi.html#deleteOutboundSchedulesCampaign) | **DELETE** /api/v2/outbound/schedules/campaigns/{campaignId} | Delete a dialer campaign schedule.
@@ -574,6 +575,54 @@ apiInstance.deleteOutboundContactlistfilter(contactListFilterId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListFilterId** | **String** | Contact List Filter ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteOutboundContactlists"></a>
+
+# void deleteOutboundContactlists(id)
+
+DELETE /api/v2/outbound/contactlists
+
+Delete multiple contact lists.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.OutboundApi();
+
+var id = ["id_example"]; // [String] | contact list id(s) to delete
+
+apiInstance.deleteOutboundContactlists(id)
+  .then(function() {
+    console.log('deleteOutboundContactlists returned successfully.');
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling deleteOutboundContactlists');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **id** | **[String]** | contact list id(s) to delete |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2719,7 +2768,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.OutboundApi();
 
-var body = new platformClient.AttemptLimits(); // AttemptLimits | AttemptLimits
+var body = {}; // Object | AttemptLimits
 
 apiInstance.postOutboundAttemptlimits(body)
   .then(function(data) {
@@ -2737,7 +2786,7 @@ apiInstance.postOutboundAttemptlimits(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **AttemptLimits** | AttemptLimits |  |
+ **body** | **Object** | AttemptLimits |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2767,7 +2816,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.OutboundApi();
 
-var body = new platformClient.DialerAuditRequest(); // DialerAuditRequest | AuditSearch
+var body = {}; // Object | AuditSearch
 
 var opts = { 
   'pageSize': 25, // Number | Page size
@@ -2792,7 +2841,7 @@ apiInstance.postOutboundAudits(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **DialerAuditRequest** | AuditSearch |  |
+ **body** | **Object** | AuditSearch |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortBy** | **String** | Sort by | [optional] [default to entity.name] |
@@ -2827,7 +2876,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.OutboundApi();
 
-var body = new platformClient.CallableTimeSet(); // CallableTimeSet | DialerCallableTimeSet
+var body = {}; // Object | DialerCallableTimeSet
 
 apiInstance.postOutboundCallabletimesets(body)
   .then(function(data) {
@@ -2845,7 +2894,7 @@ apiInstance.postOutboundCallabletimesets(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **CallableTimeSet** | DialerCallableTimeSet |  |
+ **body** | **Object** | DialerCallableTimeSet |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2875,7 +2924,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.OutboundApi();
 
-var body = new platformClient.ResponseSet(); // ResponseSet | ResponseSet
+var body = {}; // Object | ResponseSet
 
 apiInstance.postOutboundCallanalysisresponsesets(body)
   .then(function(data) {
@@ -2893,7 +2942,7 @@ apiInstance.postOutboundCallanalysisresponsesets(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **ResponseSet** | ResponseSet |  |
+ **body** | **Object** | ResponseSet |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2925,7 +2974,7 @@ var apiInstance = new platformClient.OutboundApi();
 
 var campaignId = "campaignId_example"; // String | Campaign ID
 
-var body = new platformClient.ContactCallbackRequest(); // ContactCallbackRequest | ContactCallbackRequest
+var body = {}; // Object | ContactCallbackRequest
 
 apiInstance.postOutboundCampaignCallbackSchedule(campaignId, body)
   .then(function(data) {
@@ -2944,7 +2993,7 @@ apiInstance.postOutboundCampaignCallbackSchedule(campaignId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
- **body** | **ContactCallbackRequest** | ContactCallbackRequest |  |
+ **body** | **Object** | ContactCallbackRequest |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2974,7 +3023,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.OutboundApi();
 
-var body = new platformClient.CampaignRule(); // CampaignRule | CampaignRule
+var body = {}; // Object | CampaignRule
 
 apiInstance.postOutboundCampaignrules(body)
   .then(function(data) {
@@ -2992,7 +3041,7 @@ apiInstance.postOutboundCampaignrules(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **CampaignRule** | CampaignRule |  |
+ **body** | **Object** | CampaignRule |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3022,7 +3071,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.OutboundApi();
 
-var body = new platformClient.Campaign(); // Campaign | Campaign
+var body = {}; // Object | Campaign
 
 apiInstance.postOutboundCampaigns(body)
   .then(function(data) {
@@ -3040,7 +3089,7 @@ apiInstance.postOutboundCampaigns(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Campaign** | Campaign |  |
+ **body** | **Object** | Campaign |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3070,7 +3119,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.OutboundApi();
 
-var body = [new platformClient.[String]()]; // [String] | Campaign IDs
+var body = [{}]; // Object | Campaign IDs
 
 apiInstance.postOutboundCampaignsProgress(body)
   .then(function(data) {
@@ -3088,7 +3137,7 @@ apiInstance.postOutboundCampaignsProgress(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **[String]** | Campaign IDs |  |
+ **body** | **Object** | Campaign IDs |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3120,7 +3169,7 @@ var apiInstance = new platformClient.OutboundApi();
 
 var contactListId = "contactListId_example"; // String | Contact List ID
 
-var body = [new platformClient.DialerContact()]; // [DialerContact] | Contact
+var body = [{}]; // Object | Contact
 
 var opts = { 
   'priority': true, // Boolean | Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue.
@@ -3143,7 +3192,7 @@ apiInstance.postOutboundContactlistContacts(contactListId, body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | Contact List ID |  |
- **body** | **[DialerContact]** | Contact |  |
+ **body** | **Object** | Contact |  |
  **priority** | **Boolean** | Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue. | [optional]  |
  **clearSystemData** | **Boolean** | Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t. | [optional]  |
 {: class="table table-striped"}
@@ -3223,7 +3272,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.OutboundApi();
 
-var body = new platformClient.ContactListFilter(); // ContactListFilter | ContactListFilter
+var body = {}; // Object | ContactListFilter
 
 apiInstance.postOutboundContactlistfilters(body)
   .then(function(data) {
@@ -3241,7 +3290,7 @@ apiInstance.postOutboundContactlistfilters(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **ContactListFilter** | ContactListFilter |  |
+ **body** | **Object** | ContactListFilter |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3271,7 +3320,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.OutboundApi();
 
-var body = new platformClient.ContactListFilter(); // ContactListFilter | ContactListFilter
+var body = {}; // Object | ContactListFilter
 
 apiInstance.postOutboundContactlistfiltersPreview(body)
   .then(function(data) {
@@ -3289,7 +3338,7 @@ apiInstance.postOutboundContactlistfiltersPreview(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **ContactListFilter** | ContactListFilter |  |
+ **body** | **Object** | ContactListFilter |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3319,7 +3368,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.OutboundApi();
 
-var body = new platformClient.ContactList(); // ContactList | ContactList
+var body = {}; // Object | ContactList
 
 apiInstance.postOutboundContactlists(body)
   .then(function(data) {
@@ -3337,7 +3386,7 @@ apiInstance.postOutboundContactlists(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **ContactList** | ContactList |  |
+ **body** | **Object** | ContactList |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3465,7 +3514,7 @@ var apiInstance = new platformClient.OutboundApi();
 
 var dncListId = "dncListId_example"; // String | DncList ID
 
-var body = [new platformClient.[String]()]; // [String] | DNC Phone Numbers
+var body = [{}]; // Object | DNC Phone Numbers
 
 apiInstance.postOutboundDnclistPhonenumbers(dncListId, body)
   .then(function() {
@@ -3484,7 +3533,7 @@ apiInstance.postOutboundDnclistPhonenumbers(dncListId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
- **body** | **[String]** | DNC Phone Numbers |  |
+ **body** | **Object** | DNC Phone Numbers |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3514,7 +3563,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.OutboundApi();
 
-var body = new platformClient.DncListCreate(); // DncListCreate | DncList
+var body = {}; // Object | DncList
 
 apiInstance.postOutboundDnclists(body)
   .then(function(data) {
@@ -3532,7 +3581,7 @@ apiInstance.postOutboundDnclists(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **DncListCreate** | DncList |  |
+ **body** | **Object** | DncList |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3562,7 +3611,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.OutboundApi();
 
-var body = new platformClient.RuleSet(); // RuleSet | RuleSet
+var body = {}; // Object | RuleSet
 
 apiInstance.postOutboundRulesets(body)
   .then(function(data) {
@@ -3580,7 +3629,7 @@ apiInstance.postOutboundRulesets(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **RuleSet** | RuleSet |  |
+ **body** | **Object** | RuleSet |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3610,7 +3659,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.OutboundApi();
 
-var body = new platformClient.CampaignSequence(); // CampaignSequence | Organization
+var body = {}; // Object | Organization
 
 apiInstance.postOutboundSequences(body)
   .then(function(data) {
@@ -3628,7 +3677,7 @@ apiInstance.postOutboundSequences(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **CampaignSequence** | Organization |  |
+ **body** | **Object** | Organization |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3660,7 +3709,7 @@ var apiInstance = new platformClient.OutboundApi();
 
 var attemptLimitsId = "attemptLimitsId_example"; // String | Attempt limits ID
 
-var body = new platformClient.AttemptLimits(); // AttemptLimits | AttemptLimits
+var body = {}; // Object | AttemptLimits
 
 apiInstance.putOutboundAttemptlimit(attemptLimitsId, body)
   .then(function(data) {
@@ -3679,7 +3728,7 @@ apiInstance.putOutboundAttemptlimit(attemptLimitsId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **attemptLimitsId** | **String** | Attempt limits ID |  |
- **body** | **AttemptLimits** | AttemptLimits |  |
+ **body** | **Object** | AttemptLimits |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3711,7 +3760,7 @@ var apiInstance = new platformClient.OutboundApi();
 
 var callableTimeSetId = "callableTimeSetId_example"; // String | Callable Time Set ID
 
-var body = new platformClient.CallableTimeSet(); // CallableTimeSet | DialerCallableTimeSet
+var body = {}; // Object | DialerCallableTimeSet
 
 apiInstance.putOutboundCallabletimeset(callableTimeSetId, body)
   .then(function(data) {
@@ -3730,7 +3779,7 @@ apiInstance.putOutboundCallabletimeset(callableTimeSetId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **callableTimeSetId** | **String** | Callable Time Set ID |  |
- **body** | **CallableTimeSet** | DialerCallableTimeSet |  |
+ **body** | **Object** | DialerCallableTimeSet |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3762,7 +3811,7 @@ var apiInstance = new platformClient.OutboundApi();
 
 var callAnalysisSetId = "callAnalysisSetId_example"; // String | Call Analysis Response Set ID
 
-var body = new platformClient.ResponseSet(); // ResponseSet | ResponseSet
+var body = {}; // Object | ResponseSet
 
 apiInstance.putOutboundCallanalysisresponseset(callAnalysisSetId, body)
   .then(function(data) {
@@ -3781,7 +3830,7 @@ apiInstance.putOutboundCallanalysisresponseset(callAnalysisSetId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **callAnalysisSetId** | **String** | Call Analysis Response Set ID |  |
- **body** | **ResponseSet** | ResponseSet |  |
+ **body** | **Object** | ResponseSet |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3813,7 +3862,7 @@ var apiInstance = new platformClient.OutboundApi();
 
 var campaignId = "campaignId_example"; // String | Campaign ID
 
-var body = new platformClient.Campaign(); // Campaign | Campaign
+var body = {}; // Object | Campaign
 
 apiInstance.putOutboundCampaign(campaignId, body)
   .then(function(data) {
@@ -3832,7 +3881,7 @@ apiInstance.putOutboundCampaign(campaignId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
- **body** | **Campaign** | Campaign |  |
+ **body** | **Object** | Campaign |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3866,7 +3915,7 @@ var campaignId = "campaignId_example"; // String | Campaign ID
 
 var userId = "userId_example"; // String | Agent's user ID
 
-var body = new platformClient.Agent(); // Agent | agent
+var body = {}; // Object | agent
 
 apiInstance.putOutboundCampaignAgent(campaignId, userId, body)
   .then(function(data) {
@@ -3886,7 +3935,7 @@ apiInstance.putOutboundCampaignAgent(campaignId, userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
  **userId** | **String** | Agent&#39;s user ID |  |
- **body** | **Agent** | agent |  |
+ **body** | **Object** | agent |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3918,7 +3967,7 @@ var apiInstance = new platformClient.OutboundApi();
 
 var campaignRuleId = "campaignRuleId_example"; // String | Campaign Rule ID
 
-var body = new platformClient.CampaignRule(); // CampaignRule | CampaignRule
+var body = {}; // Object | CampaignRule
 
 apiInstance.putOutboundCampaignrule(campaignRuleId, body)
   .then(function(data) {
@@ -3937,7 +3986,7 @@ apiInstance.putOutboundCampaignrule(campaignRuleId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignRuleId** | **String** | Campaign Rule ID |  |
- **body** | **CampaignRule** | CampaignRule |  |
+ **body** | **Object** | CampaignRule |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3969,7 +4018,7 @@ var apiInstance = new platformClient.OutboundApi();
 
 var contactListId = "contactListId_example"; // String | ContactList ID
 
-var body = new platformClient.ContactList(); // ContactList | ContactList
+var body = {}; // Object | ContactList
 
 apiInstance.putOutboundContactlist(contactListId, body)
   .then(function(data) {
@@ -3988,7 +4037,7 @@ apiInstance.putOutboundContactlist(contactListId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | ContactList ID |  |
- **body** | **ContactList** | ContactList |  |
+ **body** | **Object** | ContactList |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4022,7 +4071,7 @@ var contactListId = "contactListId_example"; // String | Contact List ID
 
 var contactId = "contactId_example"; // String | Contact ID
 
-var body = new platformClient.DialerContact(); // DialerContact | Contact
+var body = {}; // Object | Contact
 
 apiInstance.putOutboundContactlistContact(contactListId, contactId, body)
   .then(function(data) {
@@ -4042,7 +4091,7 @@ apiInstance.putOutboundContactlistContact(contactListId, contactId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | Contact List ID |  |
  **contactId** | **String** | Contact ID |  |
- **body** | **DialerContact** | Contact |  |
+ **body** | **Object** | Contact |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4074,7 +4123,7 @@ var apiInstance = new platformClient.OutboundApi();
 
 var contactListFilterId = "contactListFilterId_example"; // String | Contact List Filter ID
 
-var body = new platformClient.ContactListFilter(); // ContactListFilter | ContactListFilter
+var body = {}; // Object | ContactListFilter
 
 apiInstance.putOutboundContactlistfilter(contactListFilterId, body)
   .then(function(data) {
@@ -4093,7 +4142,7 @@ apiInstance.putOutboundContactlistfilter(contactListFilterId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListFilterId** | **String** | Contact List Filter ID |  |
- **body** | **ContactListFilter** | ContactListFilter |  |
+ **body** | **Object** | ContactListFilter |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4125,7 +4174,7 @@ var apiInstance = new platformClient.OutboundApi();
 
 var dncListId = "dncListId_example"; // String | DncList ID
 
-var body = new platformClient.DncList(); // DncList | DncList
+var body = {}; // Object | DncList
 
 apiInstance.putOutboundDnclist(dncListId, body)
   .then(function(data) {
@@ -4144,7 +4193,7 @@ apiInstance.putOutboundDnclist(dncListId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
- **body** | **DncList** | DncList |  |
+ **body** | **Object** | DncList |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4176,7 +4225,7 @@ var apiInstance = new platformClient.OutboundApi();
 
 var ruleSetId = "ruleSetId_example"; // String | Rule Set ID
 
-var body = new platformClient.RuleSet(); // RuleSet | RuleSet
+var body = {}; // Object | RuleSet
 
 apiInstance.putOutboundRuleset(ruleSetId, body)
   .then(function(data) {
@@ -4195,7 +4244,7 @@ apiInstance.putOutboundRuleset(ruleSetId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ruleSetId** | **String** | Rule Set ID |  |
- **body** | **RuleSet** | RuleSet |  |
+ **body** | **Object** | RuleSet |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4227,7 +4276,7 @@ var apiInstance = new platformClient.OutboundApi();
 
 var campaignId = "campaignId_example"; // String | Campaign ID
 
-var body = new platformClient.CampaignSchedule(); // CampaignSchedule | CampaignSchedule
+var body = {}; // Object | CampaignSchedule
 
 apiInstance.putOutboundSchedulesCampaign(campaignId, body)
   .then(function(data) {
@@ -4246,7 +4295,7 @@ apiInstance.putOutboundSchedulesCampaign(campaignId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
- **body** | **CampaignSchedule** | CampaignSchedule |  |
+ **body** | **Object** | CampaignSchedule |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4278,7 +4327,7 @@ var apiInstance = new platformClient.OutboundApi();
 
 var sequenceId = "sequenceId_example"; // String | Sequence ID
 
-var body = new platformClient.SequenceSchedule(); // SequenceSchedule | SequenceSchedule
+var body = {}; // Object | SequenceSchedule
 
 apiInstance.putOutboundSchedulesSequence(sequenceId, body)
   .then(function(data) {
@@ -4297,7 +4346,7 @@ apiInstance.putOutboundSchedulesSequence(sequenceId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sequenceId** | **String** | Sequence ID |  |
- **body** | **SequenceSchedule** | SequenceSchedule |  |
+ **body** | **Object** | SequenceSchedule |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4329,7 +4378,7 @@ var apiInstance = new platformClient.OutboundApi();
 
 var sequenceId = "sequenceId_example"; // String | Campaign Sequence ID
 
-var body = new platformClient.CampaignSequence(); // CampaignSequence | Organization
+var body = {}; // Object | Organization
 
 apiInstance.putOutboundSequence(sequenceId, body)
   .then(function(data) {
@@ -4348,7 +4397,7 @@ apiInstance.putOutboundSequence(sequenceId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sequenceId** | **String** | Campaign Sequence ID |  |
- **body** | **CampaignSequence** | Organization |  |
+ **body** | **Object** | Organization |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4378,7 +4427,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.OutboundApi();
 
-var body = new platformClient.WrapUpCodeMapping(); // WrapUpCodeMapping | wrapUpCodeMapping
+var body = {}; // Object | wrapUpCodeMapping
 
 apiInstance.putOutboundWrapupcodemappings(body)
   .then(function(data) {
@@ -4396,7 +4445,7 @@ apiInstance.putOutboundWrapupcodemappings(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **WrapUpCodeMapping** | wrapUpCodeMapping |  |
+ **body** | **Object** | wrapUpCodeMapping |  |
 {: class="table table-striped"}
 
 ### Return type

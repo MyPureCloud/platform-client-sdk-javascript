@@ -18,7 +18,7 @@
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -580,7 +580,7 @@
      * @param {String} opts.name the keyword set name - used for filtering results in searches.
      * @param {String} opts.queueId the queue id - used for filtering results in searches.
      * @param {String} opts.agentId the agent id - used for filtering results in searches.
-     * @param {module:purecloud-platform-client-v2/model/String} opts.operator If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters.
+     * @param {Object} opts.operator If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters.
      */
     this.getQualityKeywordsets = function(opts) { 
       opts = opts || {};
@@ -659,7 +659,7 @@
     /**
      * Query for evaluation aggregates
      * 
-     * @param {module:purecloud-platform-client-v2/model/AggregationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsEvaluationsAggregatesQuery = function(body) { 
 
@@ -687,7 +687,7 @@
     /**
      * Create a calibration
      * 
-     * @param {module:purecloud-platform-client-v2/model/CalibrationCreate} body calibration
+     * @param {Object} body calibration
      * @param {Object} opts Optional parameters
      * @param {String} opts.expand calibratorId
      */
@@ -719,7 +719,7 @@
      * Create an evaluation
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/Evaluation} body evaluation
+     * @param {Object} body evaluation
      * @param {Object} opts Optional parameters
      * @param {String} opts.expand evaluatorId
      */
@@ -755,7 +755,7 @@
     /**
      * Score evaluation
      * 
-     * @param {module:purecloud-platform-client-v2/model/EvaluationFormAndScoringSet} body evaluationAndScoringSet
+     * @param {Object} body evaluationAndScoringSet
      */
     this.postQualityEvaluationsScoring = function(body) { 
 
@@ -783,7 +783,7 @@
     /**
      * Create an evaluation form.
      * 
-     * @param {module:purecloud-platform-client-v2/model/EvaluationForm} body Evaluation form
+     * @param {Object} body Evaluation form
      */
     this.postQualityForms = function(body) { 
 
@@ -811,7 +811,7 @@
     /**
      * Create a Keyword Set
      * 
-     * @param {module:purecloud-platform-client-v2/model/KeywordSet} body keywordSet
+     * @param {Object} body keywordSet
      * @param {Object} opts Optional parameters
      * @param {String} opts.expand queueId
      */
@@ -842,7 +842,7 @@
     /**
      * Publish an evaluation form.
      * 
-     * @param {module:purecloud-platform-client-v2/model/EvaluationForm} body Evaluation form
+     * @param {Object} body Evaluation form
      */
     this.postQualityPublishedforms = function(body) { 
 
@@ -871,7 +871,7 @@
      * Retrieve the spotability statistic
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/KeywordSet} opts.body Keyword Set
+     * @param {Object} opts.body Keyword Set
      */
     this.postQualitySpotability = function(opts) { 
       opts = opts || {};
@@ -896,7 +896,7 @@
      * Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
      * 
      * @param {String} calibrationId Calibration ID
-     * @param {module:purecloud-platform-client-v2/model/Calibration} body Calibration
+     * @param {Object} body Calibration
      */
     this.putQualityCalibration = function(calibrationId, body) { 
 
@@ -931,7 +931,7 @@
      * 
      * @param {String} conversationId conversationId
      * @param {String} evaluationId evaluationId
-     * @param {module:purecloud-platform-client-v2/model/Evaluation} body evaluation
+     * @param {Object} body evaluation
      * @param {Object} opts Optional parameters
      * @param {String} opts.expand evaluatorId
      */
@@ -973,7 +973,7 @@
      * Update an evaluation form.
      * 
      * @param {String} formId Form ID
-     * @param {module:purecloud-platform-client-v2/model/EvaluationForm} body Evaluation form
+     * @param {Object} body Evaluation form
      */
     this.putQualityForm = function(formId, body) { 
 
@@ -1007,7 +1007,7 @@
      * Update a keywordSet to the specified keywordSet via PUT.
      * 
      * @param {String} keywordSetId KeywordSet ID
-     * @param {module:purecloud-platform-client-v2/model/KeywordSet} body keywordSet
+     * @param {Object} body keywordSet
      */
     this.putQualityKeywordset = function(keywordSetId, body) { 
 

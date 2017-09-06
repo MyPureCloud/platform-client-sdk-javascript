@@ -18,7 +18,7 @@
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -451,7 +451,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Ascending or descending sort order (default to ASC)
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
      * @param {String} opts.name Name
      */
     this.getRoutingLanguages = function(opts) { 
@@ -804,7 +804,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Ascending or descending sort order (default to ASC)
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
      */
     this.getUserRoutingskills = function(userId, opts) { 
       opts = opts || {};
@@ -835,7 +835,7 @@
      * 
      * @param {String} queueId Queue ID
      * @param {String} memberId Member ID
-     * @param {module:purecloud-platform-client-v2/model/QueueMember} body Queue Member
+     * @param {Object} body Queue Member
      */
     this.patchRoutingQueueUser = function(queueId, memberId, body) { 
 
@@ -874,7 +874,7 @@
      * Join or unjoin a set of users for a queue
      * 
      * @param {String} queueId Queue ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/QueueMember>} body Queue Members
+     * @param {Array.<Object>} body Queue Members
      */
     this.patchRoutingQueueUsers = function(queueId, body) { 
 
@@ -907,7 +907,7 @@
     /**
      * Query for queue observations
      * 
-     * @param {module:purecloud-platform-client-v2/model/ObservationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsQueuesObservationsQuery = function(body) { 
 
@@ -936,7 +936,7 @@
      * Create a route
      * 
      * @param {String} domainName email domain
-     * @param {module:purecloud-platform-client-v2/model/InboundRoute} body Route
+     * @param {Object} body Route
      */
     this.postRoutingEmailDomainRoutes = function(domainName, body) { 
 
@@ -969,7 +969,7 @@
     /**
      * Create a domain
      * 
-     * @param {module:purecloud-platform-client-v2/model/InboundDomain} body Domain
+     * @param {Object} body Domain
      */
     this.postRoutingEmailDomains = function(body) { 
 
@@ -997,7 +997,7 @@
     /**
      * Create Language
      * 
-     * @param {module:purecloud-platform-client-v2/model/Language} body Language
+     * @param {Object} body Language
      */
     this.postRoutingLanguages = function(body) { 
 
@@ -1026,7 +1026,7 @@
      * Bulk add or delete up to 100 queue members
      * 
      * @param {String} queueId Queue ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/QueueMember>} body Queue Members
+     * @param {Array.<Object>} body Queue Members
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts._delete True to delete queue members (default to false)
      */
@@ -1063,7 +1063,7 @@
      * Add up to 100 wrap-up codes to a queue
      * 
      * @param {String} queueId Queue ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/WrapupCode>} body List of wrapup codes
+     * @param {Array.<Object>} body List of wrapup codes
      */
     this.postRoutingQueueWrapupcodes = function(queueId, body) { 
 
@@ -1096,7 +1096,7 @@
     /**
      * Create queue
      * 
-     * @param {module:purecloud-platform-client-v2/model/CreateQueueRequest} body Queue
+     * @param {Object} body Queue
      */
     this.postRoutingQueues = function(body) { 
 
@@ -1124,7 +1124,7 @@
     /**
      * Create Skill
      * 
-     * @param {module:purecloud-platform-client-v2/model/RoutingSkill} body Skill
+     * @param {Object} body Skill
      */
     this.postRoutingSkills = function(body) { 
 
@@ -1152,7 +1152,7 @@
     /**
      * Create a wrap-up code
      * 
-     * @param {module:purecloud-platform-client-v2/model/WrapupCode} body WrapupCode
+     * @param {Object} body WrapupCode
      */
     this.postRoutingWrapupcodes = function(body) { 
 
@@ -1181,7 +1181,7 @@
      * Add routing skill to user
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/UserRoutingSkillPost} body Skill
+     * @param {Object} body Skill
      */
     this.postUserRoutingskills = function(userId, body) { 
 
@@ -1216,7 +1216,7 @@
      * 
      * @param {String} domainName email domain
      * @param {String} routeId route ID
-     * @param {module:purecloud-platform-client-v2/model/InboundRoute} body Route
+     * @param {Object} body Route
      */
     this.putRoutingEmailDomainRoute = function(domainName, routeId, body) { 
 
@@ -1255,7 +1255,7 @@
      * Update a queue
      * 
      * @param {String} queueId Queue ID
-     * @param {module:purecloud-platform-client-v2/model/Queue} body Queue
+     * @param {Object} body Queue
      */
     this.putRoutingQueue = function(queueId, body) { 
 
@@ -1288,7 +1288,7 @@
     /**
      * Update the utilization settings.
      * 
-     * @param {module:purecloud-platform-client-v2/model/Utilization} body utilization
+     * @param {Object} body utilization
      */
     this.putRoutingUtilization = function(body) { 
 
@@ -1317,7 +1317,7 @@
      * Update wrap-up code
      * 
      * @param {String} codeId Wrapup Code ID
-     * @param {module:purecloud-platform-client-v2/model/WrapupCode} body WrapupCode
+     * @param {Object} body WrapupCode
      */
     this.putRoutingWrapupcode = function(codeId, body) { 
 
@@ -1352,7 +1352,7 @@
      * 
      * @param {String} userId User ID
      * @param {String} skillId skillId
-     * @param {module:purecloud-platform-client-v2/model/UserRoutingSkill} body Skill
+     * @param {Object} body Skill
      */
     this.putUserRoutingskill = function(userId, skillId, body) { 
 

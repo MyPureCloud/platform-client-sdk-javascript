@@ -14,6 +14,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationRecording**](RecordingApi.html#getConversationRecording) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId} | Gets a specific recording.
 [**getConversationRecordingAnnotation**](RecordingApi.html#getConversationRecordingAnnotation) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Get annotation
 [**getConversationRecordingAnnotations**](RecordingApi.html#getConversationRecordingAnnotations) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations | Get annotations for recording
+[**getConversationRecordingmetadata**](RecordingApi.html#getConversationRecordingmetadata) | **GET** /api/v2/conversations/{conversationId}/recordingmetadata | Get recording metadata for a conversation. Does not return playable media.
+[**getConversationRecordingmetadataRecordingId**](RecordingApi.html#getConversationRecordingmetadataRecordingId) | **GET** /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId} | Get metadata for a specific recording. Does not return playable media.
 [**getConversationRecordings**](RecordingApi.html#getConversationRecordings) | **GET** /api/v2/conversations/{conversationId}/recordings | Get all of a Conversation&#39;s Recordings.
 [**getOrphanrecording**](RecordingApi.html#getOrphanrecording) | **GET** /api/v2/orphanrecordings/{orphanId} | Gets a single orphan recording
 [**getOrphanrecordingMedia**](RecordingApi.html#getOrphanrecordingMedia) | **GET** /api/v2/orphanrecordings/{orphanId}/media | Gets the media of a single orphan recording
@@ -403,6 +405,105 @@ apiInstance.getConversationRecordingAnnotations(conversationId, recordingId)
 ### Return type
 
 **[Annotation]**
+
+<a name="getConversationRecordingmetadata"></a>
+
+# [**[Recording]**](Recording.html) getConversationRecordingmetadata(conversationId)
+
+GET /api/v2/conversations/{conversationId}/recordingmetadata
+
+Get recording metadata for a conversation. Does not return playable media.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RecordingApi();
+
+var conversationId = "conversationId_example"; // String | Conversation ID
+
+apiInstance.getConversationRecordingmetadata(conversationId)
+  .then(function(data) {
+    console.log(`getConversationRecordingmetadata success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getConversationRecordingmetadata');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**[Recording]**
+
+<a name="getConversationRecordingmetadataRecordingId"></a>
+
+# [**Recording**](Recording.html) getConversationRecordingmetadataRecordingId(conversationId, recordingId)
+
+GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}
+
+Get metadata for a specific recording. Does not return playable media.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RecordingApi();
+
+var conversationId = "conversationId_example"; // String | Conversation ID
+
+var recordingId = "recordingId_example"; // String | Recording ID
+
+apiInstance.getConversationRecordingmetadataRecordingId(conversationId, recordingId)
+  .then(function(data) {
+    console.log(`getConversationRecordingmetadataRecordingId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getConversationRecordingmetadataRecordingId');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **recordingId** | **String** | Recording ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Recording**
 
 <a name="getConversationRecordings"></a>
 
@@ -1048,7 +1149,7 @@ var apiInstance = new platformClient.RecordingApi();
 
 var policyId = "policyId_example"; // String | Policy ID
 
-var body = new platformClient.Policy(); // Policy | Policy
+var body = {}; // Object | Policy
 
 apiInstance.patchRecordingMediaretentionpolicy(policyId, body)
   .then(function(data) {
@@ -1067,7 +1168,7 @@ apiInstance.patchRecordingMediaretentionpolicy(policyId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
- **body** | **Policy** | Policy |  |
+ **body** | **Object** | Policy |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1100,7 +1201,7 @@ var apiInstance = new platformClient.RecordingApi();
 var recordingSessionId = "recordingSessionId_example"; // String | Screen recording session ID
 
 var opts = { 
-  'body': new platformClient.ScreenRecordingSessionRequest() // ScreenRecordingSessionRequest | 
+  'body': {} // Object | 
 };
 apiInstance.patchRecordingsScreensession(recordingSessionId, opts)
   .then(function() {
@@ -1119,7 +1220,7 @@ apiInstance.patchRecordingsScreensession(recordingSessionId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **recordingSessionId** | **String** | Screen recording session ID |  |
- **body** | **ScreenRecordingSessionRequest** |  | [optional]  |
+ **body** | **Object** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1153,7 +1254,7 @@ var conversationId = "conversationId_example"; // String | Conversation ID
 
 var recordingId = "recordingId_example"; // String | Recording ID
 
-var body = new platformClient.Annotation(); // Annotation | annotation
+var body = {}; // Object | annotation
 
 apiInstance.postConversationRecordingAnnotations(conversationId, recordingId, body)
   .then(function(data) {
@@ -1173,7 +1274,7 @@ apiInstance.postConversationRecordingAnnotations(conversationId, recordingId, bo
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
- **body** | **Annotation** | annotation |  |
+ **body** | **Object** | annotation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1203,7 +1304,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.RecordingApi();
 
-var body = new platformClient.LocalEncryptionKeyRequest(); // LocalEncryptionKeyRequest | Local Encryption body
+var body = {}; // Object | Local Encryption body
 
 apiInstance.postRecordingLocalkeys(body)
   .then(function(data) {
@@ -1221,7 +1322,7 @@ apiInstance.postRecordingLocalkeys(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **LocalEncryptionKeyRequest** | Local Encryption body |  |
+ **body** | **Object** | Local Encryption body |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1251,7 +1352,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.RecordingApi();
 
-var body = new platformClient.LocalEncryptionConfiguration(); // LocalEncryptionConfiguration | Local Encryption Configuration
+var body = {}; // Object | Local Encryption Configuration
 
 apiInstance.postRecordingLocalkeysSettings(body)
   .then(function(data) {
@@ -1269,7 +1370,7 @@ apiInstance.postRecordingLocalkeysSettings(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **LocalEncryptionConfiguration** | Local Encryption Configuration |  |
+ **body** | **Object** | Local Encryption Configuration |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1299,7 +1400,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.RecordingApi();
 
-var body = new platformClient.PolicyCreate(); // PolicyCreate | Policy
+var body = {}; // Object | Policy
 
 apiInstance.postRecordingMediaretentionpolicies(body)
   .then(function(data) {
@@ -1317,7 +1418,7 @@ apiInstance.postRecordingMediaretentionpolicies(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **PolicyCreate** | Policy |  |
+ **body** | **Object** | Policy |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1393,7 +1494,7 @@ var conversationId = "conversationId_example"; // String | Conversation ID
 
 var recordingId = "recordingId_example"; // String | Recording ID
 
-var body = new platformClient.Recording(); // Recording | recording
+var body = {}; // Object | recording
 
 apiInstance.putConversationRecording(conversationId, recordingId, body)
   .then(function(data) {
@@ -1413,7 +1514,7 @@ apiInstance.putConversationRecording(conversationId, recordingId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
- **body** | **Recording** | recording |  |
+ **body** | **Object** | recording |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1449,7 +1550,7 @@ var recordingId = "recordingId_example"; // String | Recording ID
 
 var annotationId = "annotationId_example"; // String | Annotation ID
 
-var body = new platformClient.Annotation(); // Annotation | annotation
+var body = {}; // Object | annotation
 
 apiInstance.putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body)
   .then(function(data) {
@@ -1470,7 +1571,7 @@ apiInstance.putConversationRecordingAnnotation(conversationId, recordingId, anno
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
  **annotationId** | **String** | Annotation ID |  |
- **body** | **Annotation** | annotation |  |
+ **body** | **Object** | annotation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1503,7 +1604,7 @@ var apiInstance = new platformClient.RecordingApi();
 var orphanId = "orphanId_example"; // String | Orphan ID
 
 var opts = { 
-  'body': new platformClient.OrphanUpdateRequest() // OrphanUpdateRequest | 
+  'body': {} // Object | 
 };
 apiInstance.putOrphanrecording(orphanId, opts)
   .then(function(data) {
@@ -1522,7 +1623,7 @@ apiInstance.putOrphanrecording(orphanId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **orphanId** | **String** | Orphan ID |  |
- **body** | **OrphanUpdateRequest** |  | [optional]  |
+ **body** | **Object** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1554,7 +1655,7 @@ var apiInstance = new platformClient.RecordingApi();
 
 var settingsId = "settingsId_example"; // String | Settings Id
 
-var body = new platformClient.LocalEncryptionConfiguration(); // LocalEncryptionConfiguration | Local Encryption metadata
+var body = {}; // Object | Local Encryption metadata
 
 apiInstance.putRecordingLocalkeysSetting(settingsId, body)
   .then(function(data) {
@@ -1573,7 +1674,7 @@ apiInstance.putRecordingLocalkeysSetting(settingsId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **settingsId** | **String** | Settings Id |  |
- **body** | **LocalEncryptionConfiguration** | Local Encryption metadata |  |
+ **body** | **Object** | Local Encryption metadata |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1605,7 +1706,7 @@ var apiInstance = new platformClient.RecordingApi();
 
 var policyId = "policyId_example"; // String | Policy ID
 
-var body = new platformClient.Policy(); // Policy | Policy
+var body = {}; // Object | Policy
 
 apiInstance.putRecordingMediaretentionpolicy(policyId, body)
   .then(function(data) {
@@ -1624,7 +1725,7 @@ apiInstance.putRecordingMediaretentionpolicy(policyId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
- **body** | **Policy** | Policy |  |
+ **body** | **Object** | Policy |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1654,7 +1755,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.RecordingApi();
 
-var body = new platformClient.KeyRotationSchedule(); // KeyRotationSchedule | KeyRotationSchedule
+var body = {}; // Object | KeyRotationSchedule
 
 apiInstance.putRecordingRecordingkeysRotationschedule(body)
   .then(function(data) {
@@ -1672,7 +1773,7 @@ apiInstance.putRecordingRecordingkeysRotationschedule(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **KeyRotationSchedule** | KeyRotationSchedule |  |
+ **body** | **Object** | KeyRotationSchedule |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1702,7 +1803,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.RecordingApi();
 
-var body = new platformClient.RecordingSettings(); // RecordingSettings | Recording settings
+var body = {}; // Object | Recording settings
 
 apiInstance.putRecordingSettings(body)
   .then(function(data) {
@@ -1720,7 +1821,7 @@ apiInstance.putRecordingSettings(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **RecordingSettings** | Recording settings |  |
+ **body** | **Object** | Recording settings |  |
 {: class="table table-striped"}
 
 ### Return type

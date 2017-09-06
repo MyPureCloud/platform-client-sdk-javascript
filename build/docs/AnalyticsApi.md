@@ -593,7 +593,7 @@ var apiInstance = new platformClient.AnalyticsApi();
 
 var conversationId = "conversationId_example"; // String | conversationId
 
-var body = new platformClient.PropertyIndexRequest(); // PropertyIndexRequest | request
+var body = {}; // Object | request
 
 apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
   .then(function(data) {
@@ -612,7 +612,7 @@ apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
- **body** | **PropertyIndexRequest** | request |  |
+ **body** | **Object** | request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -642,7 +642,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.AnalyticsApi();
 
-var body = new platformClient.AggregationQuery(); // AggregationQuery | query
+var body = {}; // Object | query
 
 apiInstance.postAnalyticsConversationsAggregatesQuery(body)
   .then(function(data) {
@@ -660,7 +660,7 @@ apiInstance.postAnalyticsConversationsAggregatesQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **AggregationQuery** | query |  |
+ **body** | **Object** | query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -690,7 +690,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.AnalyticsApi();
 
-var body = new platformClient.ConversationQuery(); // ConversationQuery | query
+var body = {}; // Object | query
 
 apiInstance.postAnalyticsConversationsDetailsQuery(body)
   .then(function(data) {
@@ -708,7 +708,7 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **ConversationQuery** | query |  |
+ **body** | **Object** | query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -738,7 +738,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.AnalyticsApi();
 
-var body = new platformClient.AggregationQuery(); // AggregationQuery | query
+var body = {}; // Object | query
 
 apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
   .then(function(data) {
@@ -756,7 +756,7 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **AggregationQuery** | query |  |
+ **body** | **Object** | query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -786,7 +786,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.AnalyticsApi();
 
-var body = new platformClient.ObservationQuery(); // ObservationQuery | query
+var body = {}; // Object | query
 
 apiInstance.postAnalyticsQueuesObservationsQuery(body)
   .then(function(data) {
@@ -804,7 +804,7 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **ObservationQuery** | query |  |
+ **body** | **Object** | query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -882,7 +882,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.AnalyticsApi();
 
-var body = new platformClient.ReportSchedule(); // ReportSchedule | ReportSchedule
+var body = {}; // Object | ReportSchedule
 
 apiInstance.postAnalyticsReportingSchedules(body)
   .then(function(data) {
@@ -900,7 +900,7 @@ apiInstance.postAnalyticsReportingSchedules(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **ReportSchedule** | ReportSchedule |  |
+ **body** | **Object** | ReportSchedule |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -930,7 +930,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.AnalyticsApi();
 
-var body = new platformClient.AggregationQuery(); // AggregationQuery | query
+var body = {}; // Object | query
 
 apiInstance.postAnalyticsUsersAggregatesQuery(body)
   .then(function(data) {
@@ -948,7 +948,7 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **AggregationQuery** | query |  |
+ **body** | **Object** | query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -978,7 +978,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.AnalyticsApi();
 
-var body = new platformClient.UserDetailsQuery(); // UserDetailsQuery | query
+var body = {}; // Object | query
 
 apiInstance.postAnalyticsUsersDetailsQuery(body)
   .then(function(data) {
@@ -996,7 +996,7 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **UserDetailsQuery** | query |  |
+ **body** | **Object** | query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1026,7 +1026,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.AnalyticsApi();
 
-var body = new platformClient.ObservationQuery(); // ObservationQuery | query
+var body = {}; // Object | query
 
 apiInstance.postAnalyticsUsersObservationsQuery(body)
   .then(function(data) {
@@ -1044,7 +1044,7 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **ObservationQuery** | query |  |
+ **body** | **Object** | query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1076,7 +1076,7 @@ var apiInstance = new platformClient.AnalyticsApi();
 
 var scheduleId = "scheduleId_example"; // String | Schedule ID
 
-var body = new platformClient.ReportSchedule(); // ReportSchedule | ReportSchedule
+var body = {}; // Object | ReportSchedule
 
 apiInstance.putAnalyticsReportingSchedule(scheduleId, body)
   .then(function(data) {
@@ -1095,7 +1095,7 @@ apiInstance.putAnalyticsReportingSchedule(scheduleId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **scheduleId** | **String** | Schedule ID |  |
- **body** | **ReportSchedule** | ReportSchedule |  |
+ **body** | **Object** | ReportSchedule |  |
 {: class="table table-striped"}
 
 ### Return type

@@ -68,7 +68,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsConversationsDetailsQuery**](ConversationsApi.html#postAnalyticsConversationsDetailsQuery) | **POST** /api/v2/analytics/conversations/details/query | Query for conversation details
 [**postConversationParticipantCallbacks**](ConversationsApi.html#postConversationParticipantCallbacks) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks | Create a new callback for the specified participant on the conversation.
 [**postConversationParticipantReplace**](ConversationsApi.html#postConversationParticipantReplace) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
-[**postConversationsCall**](ConversationsApi.html#postConversationsCall) | **POST** /api/v2/conversations/calls/{conversationId} | Add a new call to a conversation
+[**postConversationsCall**](ConversationsApi.html#postConversationsCall) | **POST** /api/v2/conversations/calls/{conversationId} | Place a new call as part of a callback conversation.
 [**postConversationsCallParticipantConsult**](ConversationsApi.html#postConversationsCallParticipantConsult) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Initiate and update consult transfer
 [**postConversationsCallParticipantMonitor**](ConversationsApi.html#postConversationsCallParticipantMonitor) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor | Listen in on the conversation from the point of view of a given participant.
 [**postConversationsCallParticipantReplace**](ConversationsApi.html#postConversationsCallParticipantReplace) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
@@ -1744,7 +1744,7 @@ var conversationId = "conversationId_example"; // String | conversation ID
 
 var participantId = "participantId_example"; // String | participant ID
 
-var body = new platformClient.MediaParticipantRequest(); // MediaParticipantRequest | Update request
+var body = {}; // Object | Update request
 
 apiInstance.patchConversationParticipant(conversationId, participantId, body)
   .then(function() {
@@ -1764,7 +1764,7 @@ apiInstance.patchConversationParticipant(conversationId, participantId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
- **body** | **MediaParticipantRequest** | Update request |  |
+ **body** | **Object** | Update request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1798,7 +1798,7 @@ var conversationId = "conversationId_example"; // String | conversation ID
 
 var participantId = "participantId_example"; // String | participant ID
 
-var body = new platformClient.ParticipantAttributes(); // ParticipantAttributes | Participant attributes
+var body = {}; // Object | Participant attributes
 
 apiInstance.patchConversationParticipantAttributes(conversationId, participantId, body)
   .then(function() {
@@ -1818,7 +1818,7 @@ apiInstance.patchConversationParticipantAttributes(conversationId, participantId
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
- **body** | **ParticipantAttributes** | Participant attributes |  |
+ **body** | **Object** | Participant attributes |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1850,7 +1850,7 @@ var apiInstance = new platformClient.ConversationsApi();
 
 var conversationId = "conversationId_example"; // String | conversationId
 
-var body = new platformClient.Conversation(); // Conversation | Conversation
+var body = {}; // Object | Conversation
 
 apiInstance.patchConversationsCall(conversationId, body)
   .then(function(data) {
@@ -1869,7 +1869,7 @@ apiInstance.patchConversationsCall(conversationId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
- **body** | **Conversation** | Conversation |  |
+ **body** | **Object** | Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1903,7 +1903,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 var participantId = "participantId_example"; // String | participantId
 
-var body = new platformClient.MediaParticipantRequest(); // MediaParticipantRequest | Participant request
+var body = {}; // Object | Participant request
 
 apiInstance.patchConversationsCallParticipant(conversationId, participantId, body)
   .then(function() {
@@ -1923,7 +1923,7 @@ apiInstance.patchConversationsCallParticipant(conversationId, participantId, bod
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **body** | **MediaParticipantRequest** | Participant request |  |
+ **body** | **Object** | Participant request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1957,7 +1957,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 var participantId = "participantId_example"; // String | participantId
 
-var body = new platformClient.ParticipantAttributes(); // ParticipantAttributes | Participant attributes
+var body = {}; // Object | Participant attributes
 
 apiInstance.patchConversationsCallParticipantAttributes(conversationId, participantId, body)
   .then(function() {
@@ -1977,7 +1977,7 @@ apiInstance.patchConversationsCallParticipantAttributes(conversationId, particip
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **body** | **ParticipantAttributes** | Participant attributes |  |
+ **body** | **Object** | Participant attributes |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2013,7 +2013,7 @@ var participantId = "participantId_example"; // String | participantId
 
 var communicationId = "communicationId_example"; // String | communicationId
 
-var body = new platformClient.MediaParticipantRequest(); // MediaParticipantRequest | Participant
+var body = {}; // Object | Participant
 
 apiInstance.patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body)
   .then(function(data) {
@@ -2034,7 +2034,7 @@ apiInstance.patchConversationsCallParticipantCommunication(conversationId, parti
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **body** | **MediaParticipantRequest** | Participant |  |
+ **body** | **Object** | Participant |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2068,7 +2068,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 var participantId = "participantId_example"; // String | participantId
 
-var body = new platformClient.ConsultTransferUpdate(); // ConsultTransferUpdate | new speak to
+var body = {}; // Object | new speak to
 
 apiInstance.patchConversationsCallParticipantConsult(conversationId, participantId, body)
   .then(function(data) {
@@ -2088,7 +2088,7 @@ apiInstance.patchConversationsCallParticipantConsult(conversationId, participant
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **body** | **ConsultTransferUpdate** | new speak to |  |
+ **body** | **Object** | new speak to |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2120,7 +2120,7 @@ var apiInstance = new platformClient.ConversationsApi();
 
 var conversationId = "conversationId_example"; // String | conversationId
 
-var body = new platformClient.Conversation(); // Conversation | Conversation
+var body = {}; // Object | Conversation
 
 apiInstance.patchConversationsCallback(conversationId, body)
   .then(function(data) {
@@ -2139,7 +2139,7 @@ apiInstance.patchConversationsCallback(conversationId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
- **body** | **Conversation** | Conversation |  |
+ **body** | **Object** | Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2173,7 +2173,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 var participantId = "participantId_example"; // String | participantId
 
-var body = new platformClient.MediaParticipantRequest(); // MediaParticipantRequest | Participant
+var body = {}; // Object | Participant
 
 apiInstance.patchConversationsCallbackParticipant(conversationId, participantId, body)
   .then(function() {
@@ -2193,7 +2193,7 @@ apiInstance.patchConversationsCallbackParticipant(conversationId, participantId,
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **body** | **MediaParticipantRequest** | Participant |  |
+ **body** | **Object** | Participant |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2227,7 +2227,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 var participantId = "participantId_example"; // String | participantId
 
-var body = new platformClient.ParticipantAttributes(); // ParticipantAttributes | Attributes
+var body = {}; // Object | Attributes
 
 apiInstance.patchConversationsCallbackParticipantAttributes(conversationId, participantId, body)
   .then(function() {
@@ -2247,7 +2247,7 @@ apiInstance.patchConversationsCallbackParticipantAttributes(conversationId, part
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **body** | **ParticipantAttributes** | Attributes |  |
+ **body** | **Object** | Attributes |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2283,7 +2283,7 @@ var participantId = "participantId_example"; // String | participantId
 
 var communicationId = "communicationId_example"; // String | communicationId
 
-var body = new platformClient.MediaParticipantRequest(); // MediaParticipantRequest | Participant
+var body = {}; // Object | Participant
 
 apiInstance.patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body)
   .then(function(data) {
@@ -2304,7 +2304,7 @@ apiInstance.patchConversationsCallbackParticipantCommunication(conversationId, p
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **body** | **MediaParticipantRequest** | Participant |  |
+ **body** | **Object** | Participant |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2336,7 +2336,7 @@ var apiInstance = new platformClient.ConversationsApi();
 
 var conversationId = "conversationId_example"; // String | conversationId
 
-var body = new platformClient.Conversation(); // Conversation | Conversation
+var body = {}; // Object | Conversation
 
 apiInstance.patchConversationsChat(conversationId, body)
   .then(function(data) {
@@ -2355,7 +2355,7 @@ apiInstance.patchConversationsChat(conversationId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
- **body** | **Conversation** | Conversation |  |
+ **body** | **Object** | Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2389,7 +2389,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 var participantId = "participantId_example"; // String | participantId
 
-var body = new platformClient.MediaParticipantRequest(); // MediaParticipantRequest | Update request
+var body = {}; // Object | Update request
 
 apiInstance.patchConversationsChatParticipant(conversationId, participantId, body)
   .then(function() {
@@ -2409,7 +2409,7 @@ apiInstance.patchConversationsChatParticipant(conversationId, participantId, bod
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **body** | **MediaParticipantRequest** | Update request |  |
+ **body** | **Object** | Update request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2443,7 +2443,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 var participantId = "participantId_example"; // String | participantId
 
-var body = new platformClient.ParticipantAttributes(); // ParticipantAttributes | Participant attributes
+var body = {}; // Object | Participant attributes
 
 apiInstance.patchConversationsChatParticipantAttributes(conversationId, participantId, body)
   .then(function() {
@@ -2463,7 +2463,7 @@ apiInstance.patchConversationsChatParticipantAttributes(conversationId, particip
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **body** | **ParticipantAttributes** | Participant attributes |  |
+ **body** | **Object** | Participant attributes |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2499,7 +2499,7 @@ var participantId = "participantId_example"; // String | participantId
 
 var communicationId = "communicationId_example"; // String | communicationId
 
-var body = new platformClient.MediaParticipantRequest(); // MediaParticipantRequest | Participant
+var body = {}; // Object | Participant
 
 apiInstance.patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body)
   .then(function(data) {
@@ -2520,7 +2520,7 @@ apiInstance.patchConversationsChatParticipantCommunication(conversationId, parti
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **body** | **MediaParticipantRequest** | Participant |  |
+ **body** | **Object** | Participant |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2552,7 +2552,7 @@ var apiInstance = new platformClient.ConversationsApi();
 
 var conversationId = "conversationId_example"; // String | conversationId
 
-var body = new platformClient.Conversation(); // Conversation | Conversation
+var body = {}; // Object | Conversation
 
 apiInstance.patchConversationsCobrowsesession(conversationId, body)
   .then(function(data) {
@@ -2571,7 +2571,7 @@ apiInstance.patchConversationsCobrowsesession(conversationId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
- **body** | **Conversation** | Conversation |  |
+ **body** | **Object** | Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2606,7 +2606,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 var participantId = "participantId_example"; // String | participantId
 
 var opts = { 
-  'body': new platformClient.MediaParticipantRequest() // MediaParticipantRequest | 
+  'body': {} // Object | 
 };
 apiInstance.patchConversationsCobrowsesessionParticipant(conversationId, participantId, opts)
   .then(function() {
@@ -2626,7 +2626,7 @@ apiInstance.patchConversationsCobrowsesessionParticipant(conversationId, partici
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **body** | **MediaParticipantRequest** |  | [optional]  |
+ **body** | **Object** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2661,7 +2661,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 var participantId = "participantId_example"; // String | participantId
 
 var opts = { 
-  'body': new platformClient.ParticipantAttributes() // ParticipantAttributes | 
+  'body': {} // Object | 
 };
 apiInstance.patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, opts)
   .then(function() {
@@ -2681,7 +2681,7 @@ apiInstance.patchConversationsCobrowsesessionParticipantAttributes(conversationI
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **body** | **ParticipantAttributes** |  | [optional]  |
+ **body** | **Object** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2717,7 +2717,7 @@ var participantId = "participantId_example"; // String | participantId
 
 var communicationId = "communicationId_example"; // String | communicationId
 
-var body = new platformClient.MediaParticipantRequest(); // MediaParticipantRequest | Participant
+var body = {}; // Object | Participant
 
 apiInstance.patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body)
   .then(function(data) {
@@ -2738,7 +2738,7 @@ apiInstance.patchConversationsCobrowsesessionParticipantCommunication(conversati
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **body** | **MediaParticipantRequest** | Participant |  |
+ **body** | **Object** | Participant |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2770,7 +2770,7 @@ var apiInstance = new platformClient.ConversationsApi();
 
 var conversationId = "conversationId_example"; // String | conversationId
 
-var body = new platformClient.Conversation(); // Conversation | Conversation
+var body = {}; // Object | Conversation
 
 apiInstance.patchConversationsEmail(conversationId, body)
   .then(function(data) {
@@ -2789,7 +2789,7 @@ apiInstance.patchConversationsEmail(conversationId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
- **body** | **Conversation** | Conversation |  |
+ **body** | **Object** | Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2823,7 +2823,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 var participantId = "participantId_example"; // String | participantId
 
-var body = new platformClient.MediaParticipantRequest(); // MediaParticipantRequest | Update request
+var body = {}; // Object | Update request
 
 apiInstance.patchConversationsEmailParticipant(conversationId, participantId, body)
   .then(function() {
@@ -2843,7 +2843,7 @@ apiInstance.patchConversationsEmailParticipant(conversationId, participantId, bo
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **body** | **MediaParticipantRequest** | Update request |  |
+ **body** | **Object** | Update request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2877,7 +2877,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 var participantId = "participantId_example"; // String | participantId
 
-var body = new platformClient.ParticipantAttributes(); // ParticipantAttributes | Participant attributes
+var body = {}; // Object | Participant attributes
 
 apiInstance.patchConversationsEmailParticipantAttributes(conversationId, participantId, body)
   .then(function() {
@@ -2897,7 +2897,7 @@ apiInstance.patchConversationsEmailParticipantAttributes(conversationId, partici
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **body** | **ParticipantAttributes** | Participant attributes |  |
+ **body** | **Object** | Participant attributes |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2933,7 +2933,7 @@ var participantId = "participantId_example"; // String | participantId
 
 var communicationId = "communicationId_example"; // String | communicationId
 
-var body = new platformClient.MediaParticipantRequest(); // MediaParticipantRequest | Participant
+var body = {}; // Object | Participant
 
 apiInstance.patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body)
   .then(function(data) {
@@ -2954,7 +2954,7 @@ apiInstance.patchConversationsEmailParticipantCommunication(conversationId, part
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **body** | **MediaParticipantRequest** | Participant |  |
+ **body** | **Object** | Participant |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2986,7 +2986,7 @@ var apiInstance = new platformClient.ConversationsApi();
 
 var conversationId = "conversationId_example"; // String | conversationId
 
-var body = new platformClient.PropertyIndexRequest(); // PropertyIndexRequest | request
+var body = {}; // Object | request
 
 apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
   .then(function(data) {
@@ -3005,7 +3005,7 @@ apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
- **body** | **PropertyIndexRequest** | request |  |
+ **body** | **Object** | request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3035,7 +3035,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ConversationsApi();
 
-var body = new platformClient.AggregationQuery(); // AggregationQuery | query
+var body = {}; // Object | query
 
 apiInstance.postAnalyticsConversationsAggregatesQuery(body)
   .then(function(data) {
@@ -3053,7 +3053,7 @@ apiInstance.postAnalyticsConversationsAggregatesQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **AggregationQuery** | query |  |
+ **body** | **Object** | query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3083,7 +3083,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ConversationsApi();
 
-var body = new platformClient.ConversationQuery(); // ConversationQuery | query
+var body = {}; // Object | query
 
 apiInstance.postAnalyticsConversationsDetailsQuery(body)
   .then(function(data) {
@@ -3101,7 +3101,7 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **ConversationQuery** | query |  |
+ **body** | **Object** | query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3136,7 +3136,7 @@ var conversationId = "conversationId_example"; // String | conversation ID
 var participantId = "participantId_example"; // String | participant ID
 
 var opts = { 
-  'body': new platformClient.CreateCallbackOnConversationCommand() // CreateCallbackOnConversationCommand | 
+  'body': {} // Object | 
 };
 apiInstance.postConversationParticipantCallbacks(conversationId, participantId, opts)
   .then(function() {
@@ -3156,7 +3156,7 @@ apiInstance.postConversationParticipantCallbacks(conversationId, participantId, 
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
- **body** | **CreateCallbackOnConversationCommand** |  | [optional]  |
+ **body** | **Object** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3190,7 +3190,7 @@ var conversationId = "conversationId_example"; // String | conversation ID
 
 var participantId = "participantId_example"; // String | participant ID
 
-var body = new platformClient.TransferRequest(); // TransferRequest | Transfer request
+var body = {}; // Object | Transfer request
 
 apiInstance.postConversationParticipantReplace(conversationId, participantId, body)
   .then(function() {
@@ -3210,7 +3210,7 @@ apiInstance.postConversationParticipantReplace(conversationId, participantId, bo
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
- **body** | **TransferRequest** | Transfer request |  |
+ **body** | **Object** | Transfer request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3223,7 +3223,7 @@ void (no response body)
 
 POST /api/v2/conversations/calls/{conversationId}
 
-Add a new call to a conversation
+Place a new call as part of a callback conversation.
 
 
 
@@ -3242,7 +3242,7 @@ var apiInstance = new platformClient.ConversationsApi();
 
 var conversationId = "conversationId_example"; // String | conversationId
 
-var body = new platformClient.CallCommand(); // CallCommand | Conversation
+var body = {}; // Object | Conversation
 
 apiInstance.postConversationsCall(conversationId, body)
   .then(function(data) {
@@ -3261,7 +3261,7 @@ apiInstance.postConversationsCall(conversationId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
- **body** | **CallCommand** | Conversation |  |
+ **body** | **Object** | Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3295,7 +3295,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 var participantId = "participantId_example"; // String | participantId
 
-var body = new platformClient.ConsultTransfer(); // ConsultTransfer | Destination address & initial speak to
+var body = {}; // Object | Destination address & initial speak to
 
 apiInstance.postConversationsCallParticipantConsult(conversationId, participantId, body)
   .then(function(data) {
@@ -3315,7 +3315,7 @@ apiInstance.postConversationsCallParticipantConsult(conversationId, participantI
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **body** | **ConsultTransfer** | Destination address &amp; initial speak to |  |
+ **body** | **Object** | Destination address &amp; initial speak to |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3400,7 +3400,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 var participantId = "participantId_example"; // String | participantId
 
-var body = new platformClient.TransferRequest(); // TransferRequest | Transfer request
+var body = {}; // Object | Transfer request
 
 apiInstance.postConversationsCallParticipantReplace(conversationId, participantId, body)
   .then(function() {
@@ -3420,7 +3420,7 @@ apiInstance.postConversationsCallParticipantReplace(conversationId, participantI
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **body** | **TransferRequest** | Transfer request |  |
+ **body** | **Object** | Transfer request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3452,7 +3452,7 @@ var apiInstance = new platformClient.ConversationsApi();
 
 var conversationId = "conversationId_example"; // String | conversationId
 
-var body = new platformClient.Conversation(); // Conversation | Conversation
+var body = {}; // Object | Conversation
 
 apiInstance.postConversationsCallParticipants(conversationId, body)
   .then(function(data) {
@@ -3471,7 +3471,7 @@ apiInstance.postConversationsCallParticipants(conversationId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
- **body** | **Conversation** | Conversation |  |
+ **body** | **Object** | Conversation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3505,7 +3505,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 var participantId = "participantId_example"; // String | participantId
 
-var body = new platformClient.TransferRequest(); // TransferRequest | Transfer request
+var body = {}; // Object | Transfer request
 
 apiInstance.postConversationsCallbackParticipantReplace(conversationId, participantId, body)
   .then(function() {
@@ -3525,7 +3525,7 @@ apiInstance.postConversationsCallbackParticipantReplace(conversationId, particip
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **body** | **TransferRequest** | Transfer request |  |
+ **body** | **Object** | Transfer request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3555,7 +3555,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ConversationsApi();
 
-var body = new platformClient.CreateCallbackCommand(); // CreateCallbackCommand | Callback
+var body = {}; // Object | Callback
 
 apiInstance.postConversationsCallbacks(body)
   .then(function(data) {
@@ -3573,7 +3573,7 @@ apiInstance.postConversationsCallbacks(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **CreateCallbackCommand** | Callback |  |
+ **body** | **Object** | Callback |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3603,7 +3603,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ConversationsApi();
 
-var body = new platformClient.CreateCallRequest(); // CreateCallRequest | Call request
+var body = {}; // Object | Call request
 
 apiInstance.postConversationsCalls(body)
   .then(function(data) {
@@ -3621,7 +3621,7 @@ apiInstance.postConversationsCalls(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **CreateCallRequest** | Call request |  |
+ **body** | **Object** | Call request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3655,7 +3655,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 var participantId = "participantId_example"; // String | participantId
 
-var body = new platformClient.TransferRequest(); // TransferRequest | Transfer request
+var body = {}; // Object | Transfer request
 
 apiInstance.postConversationsChatParticipantReplace(conversationId, participantId, body)
   .then(function() {
@@ -3675,7 +3675,7 @@ apiInstance.postConversationsChatParticipantReplace(conversationId, participantI
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **body** | **TransferRequest** | Transfer request |  |
+ **body** | **Object** | Transfer request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3705,7 +3705,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ConversationsApi();
 
-var body = new platformClient.CreateWebChatRequest(); // CreateWebChatRequest | Create web chat request
+var body = {}; // Object | Create web chat request
 
 apiInstance.postConversationsChats(body)
   .then(function(data) {
@@ -3723,7 +3723,7 @@ apiInstance.postConversationsChats(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **CreateWebChatRequest** | Create web chat request |  |
+ **body** | **Object** | Create web chat request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3758,7 +3758,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 var participantId = "participantId_example"; // String | participantId
 
 var opts = { 
-  'body': new platformClient.TransferRequest() // TransferRequest | 
+  'body': {} // Object | 
 };
 apiInstance.postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, opts)
   .then(function() {
@@ -3778,7 +3778,7 @@ apiInstance.postConversationsCobrowsesessionParticipantReplace(conversationId, p
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **body** | **TransferRequest** |  | [optional]  |
+ **body** | **Object** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3810,7 +3810,7 @@ var apiInstance = new platformClient.ConversationsApi();
 
 var conversationId = "conversationId_example"; // String | conversationId
 
-var body = new platformClient.InboundMessageRequest(); // InboundMessageRequest | Send external email reply
+var body = {}; // Object | Send external email reply
 
 apiInstance.postConversationsEmailInboundmessages(conversationId, body)
   .then(function(data) {
@@ -3829,7 +3829,7 @@ apiInstance.postConversationsEmailInboundmessages(conversationId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
- **body** | **InboundMessageRequest** | Send external email reply |  |
+ **body** | **Object** | Send external email reply |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3861,7 +3861,7 @@ var apiInstance = new platformClient.ConversationsApi();
 
 var conversationId = "conversationId_example"; // String | conversationId
 
-var body = new platformClient.EmailMessage(); // EmailMessage | Reply
+var body = {}; // Object | Reply
 
 apiInstance.postConversationsEmailMessages(conversationId, body)
   .then(function(data) {
@@ -3880,7 +3880,7 @@ apiInstance.postConversationsEmailMessages(conversationId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
- **body** | **EmailMessage** | Reply |  |
+ **body** | **Object** | Reply |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3914,7 +3914,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 var participantId = "participantId_example"; // String | participantId
 
-var body = new platformClient.TransferRequest(); // TransferRequest | Transfer request
+var body = {}; // Object | Transfer request
 
 apiInstance.postConversationsEmailParticipantReplace(conversationId, participantId, body)
   .then(function() {
@@ -3934,7 +3934,7 @@ apiInstance.postConversationsEmailParticipantReplace(conversationId, participant
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **body** | **TransferRequest** | Transfer request |  |
+ **body** | **Object** | Transfer request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3964,7 +3964,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ConversationsApi();
 
-var body = new platformClient.CreateEmailRequest(); // CreateEmailRequest | Create email request
+var body = {}; // Object | Create email request
 
 apiInstance.postConversationsEmails(body)
   .then(function(data) {
@@ -3982,7 +3982,7 @@ apiInstance.postConversationsEmails(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **CreateEmailRequest** | Create email request |  |
+ **body** | **Object** | Create email request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4012,7 +4012,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ConversationsApi();
 
-var body = new platformClient.FaxSendRequest(); // FaxSendRequest | Fax
+var body = {}; // Object | Fax
 
 apiInstance.postConversationsFaxes(body)
   .then(function(data) {
@@ -4030,7 +4030,7 @@ apiInstance.postConversationsFaxes(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **FaxSendRequest** | Fax |  |
+ **body** | **Object** | Fax |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4066,7 +4066,7 @@ var participantId = "participantId_example"; // String | participantId
 
 var communicationId = "communicationId_example"; // String | communicationId
 
-var body = new platformClient.SetUuiDataRequest(); // SetUuiDataRequest | UUIData Request
+var body = {}; // Object | UUIData Request
 
 apiInstance.putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body)
   .then(function(data) {
@@ -4087,7 +4087,7 @@ apiInstance.putConversationsCallParticipantCommunicationUuidata(conversationId, 
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **body** | **SetUuiDataRequest** | UUIData Request |  |
+ **body** | **Object** | UUIData Request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4119,7 +4119,7 @@ var apiInstance = new platformClient.ConversationsApi();
 
 var conversationId = "conversationId_example"; // String | conversationId
 
-var body = new platformClient.EmailMessage(); // EmailMessage | Draft
+var body = {}; // Object | Draft
 
 apiInstance.putConversationsEmailMessagesDraft(conversationId, body)
   .then(function(data) {
@@ -4138,7 +4138,7 @@ apiInstance.putConversationsEmailMessagesDraft(conversationId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
- **body** | **EmailMessage** | Draft |  |
+ **body** | **Object** | Draft |  |
 {: class="table table-striped"}
 
 ### Return type

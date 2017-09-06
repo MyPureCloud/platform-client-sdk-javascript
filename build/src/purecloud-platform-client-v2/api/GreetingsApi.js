@@ -18,7 +18,7 @@
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -94,7 +94,7 @@
      * 
      * @param {String} greetingId Greeting ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.formatId The desired media format. (default to WAV)
+     * @param {Object} opts.formatId The desired media format. (default to WAV)
      */
     this.getGreetingMedia = function(greetingId, opts) { 
       opts = opts || {};
@@ -291,7 +291,7 @@
     /**
      * Create a Greeting for an Organization
      * 
-     * @param {module:purecloud-platform-client-v2/model/Greeting} body The Greeting to create
+     * @param {Object} body The Greeting to create
      */
     this.postGreetings = function(body) { 
 
@@ -320,7 +320,7 @@
      * Creates a Greeting for a Group
      * 
      * @param {String} groupId Group ID
-     * @param {module:purecloud-platform-client-v2/model/Greeting} body The Greeting to create
+     * @param {Object} body The Greeting to create
      */
     this.postGroupGreetings = function(groupId, body) { 
 
@@ -354,7 +354,7 @@
      * Creates a Greeting for a User
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/Greeting} body The Greeting to create
+     * @param {Object} body The Greeting to create
      */
     this.postUserGreetings = function(userId, body) { 
 
@@ -388,7 +388,7 @@
      * Updates the Greeting with the given GreetingId
      * 
      * @param {String} greetingId Greeting ID
-     * @param {module:purecloud-platform-client-v2/model/Greeting} body The updated Greeting
+     * @param {Object} body The updated Greeting
      */
     this.putGreeting = function(greetingId, body) { 
 
@@ -421,7 +421,7 @@
     /**
      * Update an Organization&#39;s DefaultGreetingList
      * 
-     * @param {module:purecloud-platform-client-v2/model/DefaultGreetingList} body The updated defaultGreetingList
+     * @param {Object} body The updated defaultGreetingList
      */
     this.putGreetingsDefaults = function(body) { 
 
@@ -450,7 +450,7 @@
      * Updates the DefaultGreetingList of the specified Group
      * 
      * @param {String} groupId Group ID
-     * @param {module:purecloud-platform-client-v2/model/DefaultGreetingList} body The updated defaultGreetingList
+     * @param {Object} body The updated defaultGreetingList
      */
     this.putGroupGreetingsDefaults = function(groupId, body) { 
 
@@ -484,7 +484,7 @@
      * Updates the DefaultGreetingList of the specified User
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/DefaultGreetingList} body The updated defaultGreetingList
+     * @param {Object} body The updated defaultGreetingList
      */
     this.putUserGreetingsDefaults = function(userId, body) { 
 

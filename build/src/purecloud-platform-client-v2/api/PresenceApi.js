@@ -18,7 +18,7 @@
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -181,7 +181,7 @@
      * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
      * @param {String} userId user Id
      * @param {String} sourceId Source
-     * @param {module:purecloud-platform-client-v2/model/UserPresence} body User presence
+     * @param {Object} body User presence
      */
     this.patchUserPresence = function(userId, sourceId, body) { 
 
@@ -219,7 +219,7 @@
     /**
      * Create a Presence Definition
      * 
-     * @param {module:purecloud-platform-client-v2/model/OrganizationPresence} body The Presence Definition to create
+     * @param {Object} body The Presence Definition to create
      */
     this.postPresencedefinitions = function(body) { 
 
@@ -248,7 +248,7 @@
      * Update a Presence Definition
      * 
      * @param {String} presenceId Organization Presence ID
-     * @param {module:purecloud-platform-client-v2/model/OrganizationPresence} body The OrganizationPresence to update
+     * @param {Object} body The OrganizationPresence to update
      */
     this.putPresencedefinition = function(presenceId, body) { 
 

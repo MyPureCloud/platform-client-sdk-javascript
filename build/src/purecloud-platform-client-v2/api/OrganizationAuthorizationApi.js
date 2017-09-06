@@ -18,7 +18,7 @@
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -496,7 +496,7 @@
     /**
      * A pairing id is created by the trustee and given to the trustor to create a trust.
      * 
-     * @param {module:purecloud-platform-client-v2/model/TrustRequestCreate} body Pairing Info
+     * @param {Object} body Pairing Info
      */
     this.postOrgauthorizationPairings = function(body) { 
 
@@ -525,7 +525,7 @@
      * Add a user to the trust.
      * 
      * @param {String} trusteeOrgId Trustee Organization Id
-     * @param {module:purecloud-platform-client-v2/model/TrustUserCreate} body Trust
+     * @param {Object} body Trust
      */
     this.postOrgauthorizationTrusteeUsers = function(trusteeOrgId, body) { 
 
@@ -558,7 +558,7 @@
     /**
      * Create a new organization authorization trust. This is required to grant other organizations access to your organization.
      * 
-     * @param {module:purecloud-platform-client-v2/model/TrustCreate} body Trust
+     * @param {Object} body Trust
      */
     this.postOrgauthorizationTrustees = function(body) { 
 
@@ -586,7 +586,7 @@
     /**
      * Get Org Trustee Audits
      * 
-     * @param {module:purecloud-platform-client-v2/model/TrusteeAuditQueryRequest} body Values to scope the request.
+     * @param {Object} body Values to scope the request.
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
@@ -620,7 +620,7 @@
     /**
      * Get Org Trustor Audits
      * 
-     * @param {module:purecloud-platform-client-v2/model/TrustorAuditQueryRequest} body Values to scope the request.
+     * @param {Object} body Values to scope the request.
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
@@ -655,7 +655,7 @@
      * Update Org Trust
      * 
      * @param {String} trusteeOrgId Trustee Organization Id
-     * @param {module:purecloud-platform-client-v2/model/Trustee} body Client
+     * @param {Object} body Client
      */
     this.putOrgauthorizationTrustee = function(trusteeOrgId, body) { 
 
@@ -690,7 +690,7 @@
      * 
      * @param {String} trusteeOrgId Trustee Organization Id
      * @param {String} trusteeUserId Trustee User Id
-     * @param {Array.<module:purecloud-platform-client-v2/model/String>} body List of roles
+     * @param {Array.<Object>} body List of roles
      */
     this.putOrgauthorizationTrusteeUserRoles = function(trusteeOrgId, trusteeUserId, body) { 
 

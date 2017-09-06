@@ -18,7 +18,7 @@
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -232,7 +232,6 @@
      * Get management units
      * 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.selector Selector
      * @param {Number} opts.pageSize  (default to 25)
      * @param {Number} opts.pageNumber  (default to 1)
      */
@@ -244,7 +243,7 @@
         '/api/v2/workforcemanagement/managementunits', 
         'GET', 
         {  }, 
-        { 'selector': opts['selector'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
         {  }, 
         {  }, 
         null, 
@@ -313,7 +312,7 @@
      * 
      * @param {String} timeOffRequestId Time Off Request Id
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/TimeOffRequestPatch} opts.body 
+     * @param {Object} opts.body 
      */
     this.patchWorkforcemanagementTimeoffrequest = function(timeOffRequestId, opts) { 
       opts = opts || {};
@@ -344,7 +343,7 @@
      * 
      * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/WfmHistoricalAdherenceQuery} opts.body body
+     * @param {Object} opts.body body
      */
     this.postWorkforcemanagementManagementunitHistoricaladherencequery = function(muId, opts) { 
       opts = opts || {};
@@ -375,7 +374,7 @@
      * 
      * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/IntradayQueryDataCommand} opts.body body
+     * @param {Object} opts.body body
      */
     this.postWorkforcemanagementManagementunitIntraday = function(muId, opts) { 
       opts = opts || {};
@@ -406,7 +405,7 @@
      * 
      * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/UserListScheduleRequestBody} opts.body body
+     * @param {Object} opts.body body
      */
     this.postWorkforcemanagementManagementunitSchedulesSearch = function(muId, opts) { 
       opts = opts || {};
@@ -436,7 +435,7 @@
      * Get a schedule for the current user
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/CurrentUserScheduleRequestBody} opts.body body
+     * @param {Object} opts.body body
      */
     this.postWorkforcemanagementSchedules = function(opts) { 
       opts = opts || {};

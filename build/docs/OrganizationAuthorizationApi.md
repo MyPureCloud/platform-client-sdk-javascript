@@ -811,7 +811,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var body = new platformClient.TrustRequestCreate(); // TrustRequestCreate | Pairing Info
+var body = {}; // Object | Pairing Info
 
 apiInstance.postOrgauthorizationPairings(body)
   .then(function(data) {
@@ -829,7 +829,7 @@ apiInstance.postOrgauthorizationPairings(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **TrustRequestCreate** | Pairing Info |  |
+ **body** | **Object** | Pairing Info |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -861,7 +861,7 @@ var apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 var trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 
-var body = new platformClient.TrustUserCreate(); // TrustUserCreate | Trust
+var body = {}; // Object | Trust
 
 apiInstance.postOrgauthorizationTrusteeUsers(trusteeOrgId, body)
   .then(function(data) {
@@ -880,7 +880,7 @@ apiInstance.postOrgauthorizationTrusteeUsers(trusteeOrgId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
- **body** | **TrustUserCreate** | Trust |  |
+ **body** | **Object** | Trust |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -910,7 +910,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var body = new platformClient.TrustCreate(); // TrustCreate | Trust
+var body = {}; // Object | Trust
 
 apiInstance.postOrgauthorizationTrustees(body)
   .then(function(data) {
@@ -928,7 +928,7 @@ apiInstance.postOrgauthorizationTrustees(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **TrustCreate** | Trust |  |
+ **body** | **Object** | Trust |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -958,7 +958,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var body = new platformClient.TrusteeAuditQueryRequest(); // TrusteeAuditQueryRequest | Values to scope the request.
+var body = {}; // Object | Values to scope the request.
 
 var opts = { 
   'pageSize': 25, // Number | Page size
@@ -982,7 +982,7 @@ apiInstance.postOrgauthorizationTrusteesAudits(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **TrusteeAuditQueryRequest** | Values to scope the request. |  |
+ **body** | **Object** | Values to scope the request. |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortBy** | **String** | Sort by | [optional] [default to timestamp] |
@@ -1016,7 +1016,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var body = new platformClient.TrustorAuditQueryRequest(); // TrustorAuditQueryRequest | Values to scope the request.
+var body = {}; // Object | Values to scope the request.
 
 var opts = { 
   'pageSize': 25, // Number | Page size
@@ -1040,7 +1040,7 @@ apiInstance.postOrgauthorizationTrustorAudits(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **TrustorAuditQueryRequest** | Values to scope the request. |  |
+ **body** | **Object** | Values to scope the request. |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortBy** | **String** | Sort by | [optional] [default to timestamp] |
@@ -1076,7 +1076,7 @@ var apiInstance = new platformClient.OrganizationAuthorizationApi();
 
 var trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 
-var body = new platformClient.Trustee(); // Trustee | Client
+var body = {}; // Object | Client
 
 apiInstance.putOrgauthorizationTrustee(trusteeOrgId, body)
   .then(function(data) {
@@ -1095,7 +1095,7 @@ apiInstance.putOrgauthorizationTrustee(trusteeOrgId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
- **body** | **Trustee** | Client |  |
+ **body** | **Object** | Client |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1129,7 +1129,7 @@ var trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 
 var trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
 
-var body = [new platformClient.[String]()]; // [String] | List of roles
+var body = [{}]; // Object | List of roles
 
 apiInstance.putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, body)
   .then(function(data) {
@@ -1149,7 +1149,7 @@ apiInstance.putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, bod
 | ------------- | ------------- | ------------- | ------------- |
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
  **trusteeUserId** | **String** | Trustee User Id |  |
- **body** | **[String]** | List of roles |  |
+ **body** | **Object** | List of roles |  |
 {: class="table table-striped"}
 
 ### Return type

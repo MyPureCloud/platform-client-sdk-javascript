@@ -18,7 +18,7 @@
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -182,7 +182,7 @@
     /**
      * Fetch field config for an entity type
      * 
-     * @param {module:purecloud-platform-client-v2/model/String} type Field type
+     * @param {Object} type Field type
      */
     this.getFieldconfig = function(type) { 
 
@@ -213,7 +213,7 @@
      * @param {String} userId User ID
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     * @param {module:purecloud-platform-client-v2/model/String} opts.state Search for a user with this state (default to active)
+     * @param {Object} opts.state Search for a user with this state (default to active)
      */
     this.getUser = function(userId, opts) { 
       opts = opts || {};
@@ -521,7 +521,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Ascending or descending sort order (default to ASC)
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
      */
     this.getUserRoutingskills = function(userId, opts) { 
       opts = opts || {};
@@ -641,9 +641,9 @@
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Array.<String>} opts.id id
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Ascending or descending sort order (default to ASC)
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
      * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     * @param {module:purecloud-platform-client-v2/model/String} opts.state Only list users of this state (default to active)
+     * @param {Object} opts.state Only list users of this state (default to active)
      */
     this.getUsers = function(opts) { 
       opts = opts || {};
@@ -724,7 +724,7 @@
      * Update user
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/UpdateUser} body User
+     * @param {Object} body User
      */
     this.patchUser = function(userId, body) { 
 
@@ -758,7 +758,7 @@
      * Patch a user&#39;s CallForwarding
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/CallForwarding} body Call forwarding
+     * @param {Object} body Call forwarding
      */
     this.patchUserCallforwarding = function(userId, body) { 
 
@@ -793,7 +793,7 @@
      * The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
      * @param {String} userId user Id
      * @param {String} clientId client Id
-     * @param {module:purecloud-platform-client-v2/model/Geolocation} body Geolocation
+     * @param {Object} body Geolocation
      */
     this.patchUserGeolocation = function(userId, clientId, body) { 
 
@@ -833,7 +833,7 @@
      * 
      * @param {String} queueId Queue ID
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/UserQueue} body Queue Member
+     * @param {Object} body Queue Member
      */
     this.patchUserQueue = function(queueId, userId, body) { 
 
@@ -872,7 +872,7 @@
      * Join or unjoin a set of queues for a user
      * 
      * @param {String} userId User ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/UserQueue>} body User Queues
+     * @param {Array.<Object>} body User Queues
      */
     this.patchUserQueues = function(userId, body) { 
 
@@ -905,7 +905,7 @@
     /**
      * Query for user aggregates
      * 
-     * @param {module:purecloud-platform-client-v2/model/AggregationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsUsersAggregatesQuery = function(body) { 
 
@@ -933,7 +933,7 @@
     /**
      * Query for user details
      * 
-     * @param {module:purecloud-platform-client-v2/model/UserDetailsQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsUsersDetailsQuery = function(body) { 
 
@@ -961,7 +961,7 @@
     /**
      * Query for user observations
      * 
-     * @param {module:purecloud-platform-client-v2/model/ObservationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsUsersObservationsQuery = function(body) { 
 
@@ -1021,7 +1021,7 @@
      * Add routing skill to user
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/UserRoutingSkillPost} body Skill
+     * @param {Object} body Skill
      */
     this.postUserRoutingskills = function(userId, body) { 
 
@@ -1054,7 +1054,7 @@
     /**
      * Create user
      * 
-     * @param {module:purecloud-platform-client-v2/model/CreateUser} body User
+     * @param {Object} body User
      */
     this.postUsers = function(body) { 
 
@@ -1082,7 +1082,7 @@
     /**
      * Search users
      * 
-     * @param {module:purecloud-platform-client-v2/model/UserSearchRequest} body Search request options
+     * @param {Object} body Search request options
      */
     this.postUsersSearch = function(body) { 
 
@@ -1111,7 +1111,7 @@
      * Update a user&#39;s CallForwarding
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/CallForwarding} body Call forwarding
+     * @param {Object} body Call forwarding
      */
     this.putUserCallforwarding = function(userId, body) { 
 
@@ -1145,7 +1145,7 @@
      * Update an OutOfOffice
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/OutOfOffice} body The updated OutOffOffice
+     * @param {Object} body The updated OutOffOffice
      */
     this.putUserOutofoffice = function(userId, body) { 
 
@@ -1180,7 +1180,7 @@
      * 
      * @param {String} userId User ID
      * @param {Object} opts Optional parameters
-     * @param {Array.<module:purecloud-platform-client-v2/model/String>} opts.body Skills
+     * @param {Array.<Object>} opts.body Skills
      */
     this.putUserProfileskills = function(userId, opts) { 
       opts = opts || {};
@@ -1210,7 +1210,7 @@
      * Sets the user&#39;s roles
      * 
      * @param {String} userId User ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/String>} body List of roles
+     * @param {Array.<Object>} body List of roles
      */
     this.putUserRoles = function(userId, body) { 
 
@@ -1245,7 +1245,7 @@
      * 
      * @param {String} userId User ID
      * @param {String} skillId skillId
-     * @param {module:purecloud-platform-client-v2/model/UserRoutingSkill} body Skill
+     * @param {Object} body Skill
      */
     this.putUserRoutingskill = function(userId, skillId, body) { 
 
@@ -1284,7 +1284,7 @@
      * Update the routing status of a user
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/RoutingStatus} body Routing Status
+     * @param {Object} body Routing Status
      */
     this.putUserRoutingstatus = function(userId, body) { 
 

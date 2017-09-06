@@ -18,7 +18,7 @@
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -100,7 +100,7 @@
     /**
      * Search resources.
      * 
-     * @param {module:purecloud-platform-client-v2/model/SearchRequest} body Search request options
+     * @param {Object} body Search request options
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.profile profile (default to true)
      */
@@ -131,7 +131,7 @@
     /**
      * Suggest resources.
      * 
-     * @param {module:purecloud-platform-client-v2/model/SuggestSearchRequest} body Search request options
+     * @param {Object} body Search request options
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.profile profile (default to true)
      */

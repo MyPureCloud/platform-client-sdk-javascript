@@ -18,7 +18,7 @@
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -140,7 +140,7 @@
      * Add a list of subscriptions to the existing list of subscriptions
      * 
      * @param {String} channelId Channel ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/ChannelTopic>} body Body
+     * @param {Array.<Object>} body Body
      */
     this.postNotificationsChannelSubscriptions = function(channelId, body) { 
 
@@ -196,7 +196,7 @@
      * Replace the current list of subscriptions with a new list.
      * 
      * @param {String} channelId Channel ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/ChannelTopic>} body Body
+     * @param {Array.<Object>} body Body
      */
     this.putNotificationsChannelSubscriptions = function(channelId, body) { 
 

@@ -18,7 +18,7 @@
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -163,7 +163,7 @@
      * @param {String} conversationId Conversation ID
      * @param {String} recordingId Recording ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.formatId The desired media format. (default to WEBM)
+     * @param {Object} opts.formatId The desired media format. (default to WEBM)
      * @param {Boolean} opts.download requesting a download format of the recording (default to false)
      * @param {String} opts.fileName the name of the downloaded fileName
      */
@@ -271,12 +271,74 @@
 
 
     /**
+     * Get recording metadata for a conversation. Does not return playable media.
+     * 
+     * @param {String} conversationId Conversation ID
+     */
+    this.getConversationRecordingmetadata = function(conversationId) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling getConversationRecordingmetadata";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/{conversationId}/recordingmetadata', 
+        'GET', 
+        { 'conversationId': conversationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get metadata for a specific recording. Does not return playable media.
+     * 
+     * @param {String} conversationId Conversation ID
+     * @param {String} recordingId Recording ID
+     */
+    this.getConversationRecordingmetadataRecordingId = function(conversationId, recordingId) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling getConversationRecordingmetadataRecordingId";
+      }
+
+      // verify the required parameter 'recordingId' is set
+      if (recordingId === undefined || recordingId === null) {
+        throw "Missing the required parameter 'recordingId' when calling getConversationRecordingmetadataRecordingId";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}', 
+        'GET', 
+        { 'conversationId': conversationId,'recordingId': recordingId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get all of a Conversation&#39;s Recordings.
      * 
      * @param {String} conversationId Conversation ID
      * @param {Object} opts Optional parameters
      * @param {Number} opts.maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (default to 5000)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.formatId The desired media format (default to WEBM)
+     * @param {Object} opts.formatId The desired media format (default to WEBM)
      */
     this.getConversationRecordings = function(conversationId, opts) { 
       opts = opts || {};
@@ -335,7 +397,7 @@
      * A 202 response means the orphaned media is currently transcoding and will be available shortly.A 200 response denotes the transcoded orphan media is available now and is contained in the response body.
      * @param {String} orphanId Orphan ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.formatId The desired media format. (default to WEBM)
+     * @param {Object} opts.formatId The desired media format. (default to WEBM)
      * @param {Boolean} opts.download requesting a download format of the recording (default to false)
      * @param {String} opts.fileName the name of the downloaded fileName
      */
@@ -374,7 +436,7 @@
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      * @param {Boolean} opts.hasConversation Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. (default to false)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.media Filter resulting orphans based on their media type
+     * @param {Object} opts.media Filter resulting orphans based on their media type
      */
     this.getOrphanrecordings = function(opts) { 
       opts = opts || {};
@@ -610,7 +672,7 @@
      * Patch a media retention policy
      * 
      * @param {String} policyId Policy ID
-     * @param {module:purecloud-platform-client-v2/model/Policy} body Policy
+     * @param {Object} body Policy
      */
     this.patchRecordingMediaretentionpolicy = function(policyId, body) { 
 
@@ -645,7 +707,7 @@
      * 
      * @param {String} recordingSessionId Screen recording session ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/ScreenRecordingSessionRequest} opts.body 
+     * @param {Object} opts.body 
      */
     this.patchRecordingsScreensession = function(recordingSessionId, opts) { 
       opts = opts || {};
@@ -676,7 +738,7 @@
      * 
      * @param {String} conversationId Conversation ID
      * @param {String} recordingId Recording ID
-     * @param {module:purecloud-platform-client-v2/model/Annotation} body annotation
+     * @param {Object} body annotation
      */
     this.postConversationRecordingAnnotations = function(conversationId, recordingId, body) { 
 
@@ -714,7 +776,7 @@
     /**
      * create a local recording key
      * 
-     * @param {module:purecloud-platform-client-v2/model/LocalEncryptionKeyRequest} body Local Encryption body
+     * @param {Object} body Local Encryption body
      */
     this.postRecordingLocalkeys = function(body) { 
 
@@ -742,7 +804,7 @@
     /**
      * create settings for local key creation
      * 
-     * @param {module:purecloud-platform-client-v2/model/LocalEncryptionConfiguration} body Local Encryption Configuration
+     * @param {Object} body Local Encryption Configuration
      */
     this.postRecordingLocalkeysSettings = function(body) { 
 
@@ -770,7 +832,7 @@
     /**
      * Create media retention policy
      * 
-     * @param {module:purecloud-platform-client-v2/model/PolicyCreate} body Policy
+     * @param {Object} body Policy
      */
     this.postRecordingMediaretentionpolicies = function(body) { 
 
@@ -822,7 +884,7 @@
      * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. 
      * @param {String} conversationId Conversation ID
      * @param {String} recordingId Recording ID
-     * @param {module:purecloud-platform-client-v2/model/Recording} body recording
+     * @param {Object} body recording
      */
     this.putConversationRecording = function(conversationId, recordingId, body) { 
 
@@ -863,7 +925,7 @@
      * @param {String} conversationId Conversation ID
      * @param {String} recordingId Recording ID
      * @param {String} annotationId Annotation ID
-     * @param {module:purecloud-platform-client-v2/model/Annotation} body annotation
+     * @param {Object} body annotation
      */
     this.putConversationRecordingAnnotation = function(conversationId, recordingId, annotationId, body) { 
 
@@ -908,7 +970,7 @@
      * If this operation is successful the orphan will no longer exist. It will be replaced by the resulting recording in the response. This replacement recording is accessible by the normal Recording api.
      * @param {String} orphanId Orphan ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/OrphanUpdateRequest} opts.body 
+     * @param {Object} opts.body 
      */
     this.putOrphanrecording = function(orphanId, opts) { 
       opts = opts || {};
@@ -938,7 +1000,7 @@
      * Update the local encryption settings
      * 
      * @param {String} settingsId Settings Id
-     * @param {module:purecloud-platform-client-v2/model/LocalEncryptionConfiguration} body Local Encryption metadata
+     * @param {Object} body Local Encryption metadata
      */
     this.putRecordingLocalkeysSetting = function(settingsId, body) { 
 
@@ -972,7 +1034,7 @@
      * Update a media retention policy
      * 
      * @param {String} policyId Policy ID
-     * @param {module:purecloud-platform-client-v2/model/Policy} body Policy
+     * @param {Object} body Policy
      */
     this.putRecordingMediaretentionpolicy = function(policyId, body) { 
 
@@ -1005,7 +1067,7 @@
     /**
      * Update key rotation schedule
      * 
-     * @param {module:purecloud-platform-client-v2/model/KeyRotationSchedule} body KeyRotationSchedule
+     * @param {Object} body KeyRotationSchedule
      */
     this.putRecordingRecordingkeysRotationschedule = function(body) { 
 
@@ -1033,7 +1095,7 @@
     /**
      * Update the Recording Settings for the Organization
      * 
-     * @param {module:purecloud-platform-client-v2/model/RecordingSettings} body Recording settings
+     * @param {Object} body Recording settings
      */
     this.putRecordingSettings = function(body) { 
 

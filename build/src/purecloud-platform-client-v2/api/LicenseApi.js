@@ -18,7 +18,7 @@
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -165,7 +165,7 @@
      * Update the organization&#39;s license assignments in a batch.
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/LicenseBatchAssignmentRequest} opts.body The license assignments to update.
+     * @param {Object} opts.body The license assignments to update.
      */
     this.postLicenseOrganization = function(opts) { 
       opts = opts || {};
@@ -218,7 +218,7 @@
      * Fetch user licenses in a batch.
      * 
      * @param {Object} opts Optional parameters
-     * @param {Array.<module:purecloud-platform-client-v2/model/String>} opts.body The user IDs to fetch.
+     * @param {Array.<Object>} opts.body The user IDs to fetch.
      */
     this.postLicenseUsers = function(opts) { 
       opts = opts || {};

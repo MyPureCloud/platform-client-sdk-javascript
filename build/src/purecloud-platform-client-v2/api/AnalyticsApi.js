@@ -18,7 +18,7 @@
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -343,7 +343,7 @@
      * Index conversation properties
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/PropertyIndexRequest} body request
+     * @param {Object} body request
      */
     this.postAnalyticsConversationDetailsProperties = function(conversationId, body) { 
 
@@ -376,7 +376,7 @@
     /**
      * Query for conversation aggregates
      * 
-     * @param {module:purecloud-platform-client-v2/model/AggregationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsConversationsAggregatesQuery = function(body) { 
 
@@ -404,7 +404,7 @@
     /**
      * Query for conversation details
      * 
-     * @param {module:purecloud-platform-client-v2/model/ConversationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsConversationsDetailsQuery = function(body) { 
 
@@ -432,7 +432,7 @@
     /**
      * Query for evaluation aggregates
      * 
-     * @param {module:purecloud-platform-client-v2/model/AggregationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsEvaluationsAggregatesQuery = function(body) { 
 
@@ -460,7 +460,7 @@
     /**
      * Query for queue observations
      * 
-     * @param {module:purecloud-platform-client-v2/model/ObservationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsQueuesObservationsQuery = function(body) { 
 
@@ -516,7 +516,7 @@
     /**
      * Create a scheduled report job
      * Create a scheduled report job.
-     * @param {module:purecloud-platform-client-v2/model/ReportSchedule} body ReportSchedule
+     * @param {Object} body ReportSchedule
      */
     this.postAnalyticsReportingSchedules = function(body) { 
 
@@ -544,7 +544,7 @@
     /**
      * Query for user aggregates
      * 
-     * @param {module:purecloud-platform-client-v2/model/AggregationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsUsersAggregatesQuery = function(body) { 
 
@@ -572,7 +572,7 @@
     /**
      * Query for user details
      * 
-     * @param {module:purecloud-platform-client-v2/model/UserDetailsQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsUsersDetailsQuery = function(body) { 
 
@@ -600,7 +600,7 @@
     /**
      * Query for user observations
      * 
-     * @param {module:purecloud-platform-client-v2/model/ObservationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsUsersObservationsQuery = function(body) { 
 
@@ -629,7 +629,7 @@
      * Update a scheduled report job.
      * 
      * @param {String} scheduleId Schedule ID
-     * @param {module:purecloud-platform-client-v2/model/ReportSchedule} body ReportSchedule
+     * @param {Object} body ReportSchedule
      */
     this.putAnalyticsReportingSchedule = function(scheduleId, body) { 
 

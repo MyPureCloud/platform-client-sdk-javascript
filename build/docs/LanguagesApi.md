@@ -475,7 +475,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.LanguagesApi();
 
-var body = new platformClient.Language(); // Language | Language
+var body = {}; // Object | Language
 
 apiInstance.postLanguages(body)
   .then(function(data) {
@@ -493,7 +493,7 @@ apiInstance.postLanguages(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Language** | Language |  |
+ **body** | **Object** | Language |  |
 {: class="table table-striped"}
 
 ### Return type

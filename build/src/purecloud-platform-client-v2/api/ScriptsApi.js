@@ -18,7 +18,7 @@
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -133,8 +133,8 @@
      * @param {String} opts.name Name filter
      * @param {String} opts.feature Feature filter
      * @param {String} opts.flowId Secure flow id filter
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortBy SortBy
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder SortOrder
+     * @param {Object} opts.sortBy SortBy
+     * @param {Object} opts.sortOrder SortOrder
      */
     this.getScripts = function(opts) { 
       opts = opts || {};

@@ -144,7 +144,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.SuggestApi();
 
-var body = new platformClient.SearchRequest(); // SearchRequest | Search request options
+var body = {}; // Object | Search request options
 
 var opts = { 
   'profile': true // Boolean | profile
@@ -165,7 +165,7 @@ apiInstance.postSearch(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **SearchRequest** | Search request options |  |
+ **body** | **Object** | Search request options |  |
  **profile** | **Boolean** | profile | [optional] [default to true] |
 {: class="table table-striped"}
 
@@ -196,7 +196,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.SuggestApi();
 
-var body = new platformClient.SuggestSearchRequest(); // SuggestSearchRequest | Search request options
+var body = {}; // Object | Search request options
 
 var opts = { 
   'profile': true // Boolean | profile
@@ -217,7 +217,7 @@ apiInstance.postSearchSuggest(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **SuggestSearchRequest** | Search request options |  |
+ **body** | **Object** | Search request options |  |
  **profile** | **Boolean** | profile | [optional] [default to true] |
 {: class="table table-striped"}
 

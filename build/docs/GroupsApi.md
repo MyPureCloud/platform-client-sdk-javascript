@@ -405,7 +405,7 @@ var apiInstance = new platformClient.GroupsApi();
 
 var groupId = "groupId_example"; // String | Group ID
 
-var body = new platformClient.GroupMembersUpdate(); // GroupMembersUpdate | Add members
+var body = {}; // Object | Add members
 
 apiInstance.postGroupMembers(groupId, body)
   .then(function(data) {
@@ -424,7 +424,7 @@ apiInstance.postGroupMembers(groupId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
- **body** | **GroupMembersUpdate** | Add members |  |
+ **body** | **Object** | Add members |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -454,7 +454,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.GroupsApi();
 
-var body = new platformClient.Group(); // Group | Group
+var body = {}; // Object | Group
 
 apiInstance.postGroups(body)
   .then(function(data) {
@@ -472,7 +472,7 @@ apiInstance.postGroups(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Group** | Group |  |
+ **body** | **Object** | Group |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -502,7 +502,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.GroupsApi();
 
-var body = new platformClient.GroupSearchRequest(); // GroupSearchRequest | Search request options
+var body = {}; // Object | Search request options
 
 apiInstance.postGroupsSearch(body)
   .then(function(data) {
@@ -520,7 +520,7 @@ apiInstance.postGroupsSearch(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **GroupSearchRequest** | Search request options |  |
+ **body** | **Object** | Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -553,7 +553,7 @@ var apiInstance = new platformClient.GroupsApi();
 var groupId = "groupId_example"; // String | Group ID
 
 var opts = { 
-  'body': new platformClient.GroupUpdate() // GroupUpdate | Group
+  'body': {} // Object | Group
 };
 apiInstance.putGroup(groupId, opts)
   .then(function(data) {
@@ -572,7 +572,7 @@ apiInstance.putGroup(groupId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
- **body** | **GroupUpdate** | Group | [optional]  |
+ **body** | **Object** | Group | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

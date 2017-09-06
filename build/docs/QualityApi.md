@@ -1153,7 +1153,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.QualityApi();
 
-var body = new platformClient.AggregationQuery(); // AggregationQuery | query
+var body = {}; // Object | query
 
 apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
   .then(function(data) {
@@ -1171,7 +1171,7 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **AggregationQuery** | query |  |
+ **body** | **Object** | query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1201,7 +1201,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.QualityApi();
 
-var body = new platformClient.CalibrationCreate(); // CalibrationCreate | calibration
+var body = {}; // Object | calibration
 
 var opts = { 
   'expand': "expand_example" // String | calibratorId
@@ -1222,7 +1222,7 @@ apiInstance.postQualityCalibrations(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **CalibrationCreate** | calibration |  |
+ **body** | **Object** | calibration |  |
  **expand** | **String** | calibratorId | [optional]  |
 {: class="table table-striped"}
 
@@ -1255,7 +1255,7 @@ var apiInstance = new platformClient.QualityApi();
 
 var conversationId = "conversationId_example"; // String | conversationId
 
-var body = new platformClient.Evaluation(); // Evaluation | evaluation
+var body = {}; // Object | evaluation
 
 var opts = { 
   'expand': "expand_example" // String | evaluatorId
@@ -1277,7 +1277,7 @@ apiInstance.postQualityConversationEvaluations(conversationId, body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
- **body** | **Evaluation** | evaluation |  |
+ **body** | **Object** | evaluation |  |
  **expand** | **String** | evaluatorId | [optional]  |
 {: class="table table-striped"}
 
@@ -1308,7 +1308,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.QualityApi();
 
-var body = new platformClient.EvaluationFormAndScoringSet(); // EvaluationFormAndScoringSet | evaluationAndScoringSet
+var body = {}; // Object | evaluationAndScoringSet
 
 apiInstance.postQualityEvaluationsScoring(body)
   .then(function(data) {
@@ -1326,7 +1326,7 @@ apiInstance.postQualityEvaluationsScoring(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **EvaluationFormAndScoringSet** | evaluationAndScoringSet |  |
+ **body** | **Object** | evaluationAndScoringSet |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1356,7 +1356,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.QualityApi();
 
-var body = new platformClient.EvaluationForm(); // EvaluationForm | Evaluation form
+var body = {}; // Object | Evaluation form
 
 apiInstance.postQualityForms(body)
   .then(function(data) {
@@ -1374,7 +1374,7 @@ apiInstance.postQualityForms(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **EvaluationForm** | Evaluation form |  |
+ **body** | **Object** | Evaluation form |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1404,7 +1404,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.QualityApi();
 
-var body = new platformClient.KeywordSet(); // KeywordSet | keywordSet
+var body = {}; // Object | keywordSet
 
 var opts = { 
   'expand': "expand_example" // String | queueId
@@ -1425,7 +1425,7 @@ apiInstance.postQualityKeywordsets(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **KeywordSet** | keywordSet |  |
+ **body** | **Object** | keywordSet |  |
  **expand** | **String** | queueId | [optional]  |
 {: class="table table-striped"}
 
@@ -1456,7 +1456,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.QualityApi();
 
-var body = new platformClient.EvaluationForm(); // EvaluationForm | Evaluation form
+var body = {}; // Object | Evaluation form
 
 apiInstance.postQualityPublishedforms(body)
   .then(function(data) {
@@ -1474,7 +1474,7 @@ apiInstance.postQualityPublishedforms(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **EvaluationForm** | Evaluation form |  |
+ **body** | **Object** | Evaluation form |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1505,7 +1505,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.QualityApi();
 
 var opts = { 
-  'body': new platformClient.KeywordSet() // KeywordSet | Keyword Set
+  'body': {} // Object | Keyword Set
 };
 apiInstance.postQualitySpotability(opts)
   .then(function(data) {
@@ -1523,7 +1523,7 @@ apiInstance.postQualitySpotability(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **KeywordSet** | Keyword Set | [optional]  |
+ **body** | **Object** | Keyword Set | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1555,7 +1555,7 @@ var apiInstance = new platformClient.QualityApi();
 
 var calibrationId = "calibrationId_example"; // String | Calibration ID
 
-var body = new platformClient.Calibration(); // Calibration | Calibration
+var body = {}; // Object | Calibration
 
 apiInstance.putQualityCalibration(calibrationId, body)
   .then(function(data) {
@@ -1574,7 +1574,7 @@ apiInstance.putQualityCalibration(calibrationId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **calibrationId** | **String** | Calibration ID |  |
- **body** | **Calibration** | Calibration |  |
+ **body** | **Object** | Calibration |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1608,7 +1608,7 @@ var conversationId = "conversationId_example"; // String | conversationId
 
 var evaluationId = "evaluationId_example"; // String | evaluationId
 
-var body = new platformClient.Evaluation(); // Evaluation | evaluation
+var body = {}; // Object | evaluation
 
 var opts = { 
   'expand': "expand_example" // String | evaluatorId
@@ -1631,7 +1631,7 @@ apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body,
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **evaluationId** | **String** | evaluationId |  |
- **body** | **Evaluation** | evaluation |  |
+ **body** | **Object** | evaluation |  |
  **expand** | **String** | evaluatorId | [optional]  |
 {: class="table table-striped"}
 
@@ -1664,7 +1664,7 @@ var apiInstance = new platformClient.QualityApi();
 
 var formId = "formId_example"; // String | Form ID
 
-var body = new platformClient.EvaluationForm(); // EvaluationForm | Evaluation form
+var body = {}; // Object | Evaluation form
 
 apiInstance.putQualityForm(formId, body)
   .then(function(data) {
@@ -1683,7 +1683,7 @@ apiInstance.putQualityForm(formId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **formId** | **String** | Form ID |  |
- **body** | **EvaluationForm** | Evaluation form |  |
+ **body** | **Object** | Evaluation form |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1715,7 +1715,7 @@ var apiInstance = new platformClient.QualityApi();
 
 var keywordSetId = "keywordSetId_example"; // String | KeywordSet ID
 
-var body = new platformClient.KeywordSet(); // KeywordSet | keywordSet
+var body = {}; // Object | keywordSet
 
 apiInstance.putQualityKeywordset(keywordSetId, body)
   .then(function(data) {
@@ -1734,7 +1734,7 @@ apiInstance.putQualityKeywordset(keywordSetId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **keywordSetId** | **String** | KeywordSet ID |  |
- **body** | **KeywordSet** | keywordSet |  |
+ **body** | **Object** | keywordSet |  |
 {: class="table table-striped"}
 
 ### Return type

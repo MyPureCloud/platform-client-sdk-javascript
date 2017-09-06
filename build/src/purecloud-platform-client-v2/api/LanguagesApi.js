@@ -18,7 +18,7 @@
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -123,7 +123,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Ascending or descending sort order (default to ASC)
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
      * @param {String} opts.name Name
      */
     this.getLanguages = function(opts) { 
@@ -282,7 +282,7 @@
     /**
      * Create Language (Deprecated)
      * This endpoint is deprecated. It has been moved to /routing/languages
-     * @param {module:purecloud-platform-client-v2/model/Language} body Language
+     * @param {Object} body Language
      */
     this.postLanguages = function(body) { 
 

@@ -128,7 +128,7 @@ var apiInstance = new platformClient.OrganizationApi();
 
 var featureName = "featureName_example"; // String | Organization feature
 
-var enabled = new platformClient.FeatureState(); // FeatureState | New state of feature
+var enabled = {}; // Object | New state of feature
 
 apiInstance.patchOrganizationsFeature(featureName, enabled)
   .then(function(data) {
@@ -147,7 +147,7 @@ apiInstance.patchOrganizationsFeature(featureName, enabled)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **featureName** | **String** | Organization feature | <br />**Values**: realtimeCIC, purecloud, hipaa, ucEnabled, pci, purecloudVoice, xmppFederation, chat, informalPhotos, directory, contactCenter, unifiedCommunications, custserv |
- **enabled** | **FeatureState** | New state of feature |  |
+ **enabled** | **Object** | New state of feature |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -178,7 +178,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.OrganizationApi();
 
 var opts = { 
-  'body': new platformClient.Organization() // Organization | Organization
+  'body': {} // Object | Organization
 };
 apiInstance.putOrganizationsMe(opts)
   .then(function(data) {
@@ -196,7 +196,7 @@ apiInstance.putOrganizationsMe(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Organization** | Organization | [optional]  |
+ **body** | **Object** | Organization | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

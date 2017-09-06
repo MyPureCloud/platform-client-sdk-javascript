@@ -1446,7 +1446,7 @@ var queueId = "queueId_example"; // String | Queue ID
 
 var memberId = "memberId_example"; // String | Member ID
 
-var body = new platformClient.QueueMember(); // QueueMember | Queue Member
+var body = {}; // Object | Queue Member
 
 apiInstance.patchRoutingQueueUser(queueId, memberId, body)
   .then(function(data) {
@@ -1466,7 +1466,7 @@ apiInstance.patchRoutingQueueUser(queueId, memberId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
  **memberId** | **String** | Member ID |  |
- **body** | **QueueMember** | Queue Member |  |
+ **body** | **Object** | Queue Member |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1498,7 +1498,7 @@ var apiInstance = new platformClient.RoutingApi();
 
 var queueId = "queueId_example"; // String | Queue ID
 
-var body = [new platformClient.QueueMember()]; // [QueueMember] | Queue Members
+var body = [{}]; // Object | Queue Members
 
 apiInstance.patchRoutingQueueUsers(queueId, body)
   .then(function(data) {
@@ -1517,7 +1517,7 @@ apiInstance.patchRoutingQueueUsers(queueId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
- **body** | **[QueueMember]** | Queue Members |  |
+ **body** | **Object** | Queue Members |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1547,7 +1547,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.RoutingApi();
 
-var body = new platformClient.ObservationQuery(); // ObservationQuery | query
+var body = {}; // Object | query
 
 apiInstance.postAnalyticsQueuesObservationsQuery(body)
   .then(function(data) {
@@ -1565,7 +1565,7 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **ObservationQuery** | query |  |
+ **body** | **Object** | query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1597,7 +1597,7 @@ var apiInstance = new platformClient.RoutingApi();
 
 var domainName = "domainName_example"; // String | email domain
 
-var body = new platformClient.InboundRoute(); // InboundRoute | Route
+var body = {}; // Object | Route
 
 apiInstance.postRoutingEmailDomainRoutes(domainName, body)
   .then(function(data) {
@@ -1616,7 +1616,7 @@ apiInstance.postRoutingEmailDomainRoutes(domainName, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainName** | **String** | email domain |  |
- **body** | **InboundRoute** | Route |  |
+ **body** | **Object** | Route |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1646,7 +1646,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.RoutingApi();
 
-var body = new platformClient.InboundDomain(); // InboundDomain | Domain
+var body = {}; // Object | Domain
 
 apiInstance.postRoutingEmailDomains(body)
   .then(function(data) {
@@ -1664,7 +1664,7 @@ apiInstance.postRoutingEmailDomains(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **InboundDomain** | Domain |  |
+ **body** | **Object** | Domain |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1694,7 +1694,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.RoutingApi();
 
-var body = new platformClient.Language(); // Language | Language
+var body = {}; // Object | Language
 
 apiInstance.postRoutingLanguages(body)
   .then(function(data) {
@@ -1712,7 +1712,7 @@ apiInstance.postRoutingLanguages(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Language** | Language |  |
+ **body** | **Object** | Language |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1744,7 +1744,7 @@ var apiInstance = new platformClient.RoutingApi();
 
 var queueId = "queueId_example"; // String | Queue ID
 
-var body = [new platformClient.QueueMember()]; // [QueueMember] | Queue Members
+var body = [{}]; // Object | Queue Members
 
 var opts = { 
   '_delete': false // Boolean | True to delete queue members
@@ -1766,7 +1766,7 @@ apiInstance.postRoutingQueueUsers(queueId, body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
- **body** | **[QueueMember]** | Queue Members |  |
+ **body** | **Object** | Queue Members |  |
  **_delete** | **Boolean** | True to delete queue members | [optional] [default to false] |
 {: class="table table-striped"}
 
@@ -1799,7 +1799,7 @@ var apiInstance = new platformClient.RoutingApi();
 
 var queueId = "queueId_example"; // String | Queue ID
 
-var body = [new platformClient.WrapupCode()]; // [WrapupCode] | List of wrapup codes
+var body = [{}]; // Object | List of wrapup codes
 
 apiInstance.postRoutingQueueWrapupcodes(queueId, body)
   .then(function(data) {
@@ -1818,7 +1818,7 @@ apiInstance.postRoutingQueueWrapupcodes(queueId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
- **body** | **[WrapupCode]** | List of wrapup codes |  |
+ **body** | **Object** | List of wrapup codes |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1848,7 +1848,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.RoutingApi();
 
-var body = new platformClient.CreateQueueRequest(); // CreateQueueRequest | Queue
+var body = {}; // Object | Queue
 
 apiInstance.postRoutingQueues(body)
   .then(function(data) {
@@ -1866,7 +1866,7 @@ apiInstance.postRoutingQueues(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **CreateQueueRequest** | Queue |  |
+ **body** | **Object** | Queue |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1896,7 +1896,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.RoutingApi();
 
-var body = new platformClient.RoutingSkill(); // RoutingSkill | Skill
+var body = {}; // Object | Skill
 
 apiInstance.postRoutingSkills(body)
   .then(function(data) {
@@ -1914,7 +1914,7 @@ apiInstance.postRoutingSkills(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **RoutingSkill** | Skill |  |
+ **body** | **Object** | Skill |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1944,7 +1944,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.RoutingApi();
 
-var body = new platformClient.WrapupCode(); // WrapupCode | WrapupCode
+var body = {}; // Object | WrapupCode
 
 apiInstance.postRoutingWrapupcodes(body)
   .then(function(data) {
@@ -1962,7 +1962,7 @@ apiInstance.postRoutingWrapupcodes(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **WrapupCode** | WrapupCode |  |
+ **body** | **Object** | WrapupCode |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1994,7 +1994,7 @@ var apiInstance = new platformClient.RoutingApi();
 
 var userId = "userId_example"; // String | User ID
 
-var body = new platformClient.UserRoutingSkillPost(); // UserRoutingSkillPost | Skill
+var body = {}; // Object | Skill
 
 apiInstance.postUserRoutingskills(userId, body)
   .then(function(data) {
@@ -2013,7 +2013,7 @@ apiInstance.postUserRoutingskills(userId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **body** | **UserRoutingSkillPost** | Skill |  |
+ **body** | **Object** | Skill |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2047,7 +2047,7 @@ var domainName = "domainName_example"; // String | email domain
 
 var routeId = "routeId_example"; // String | route ID
 
-var body = new platformClient.InboundRoute(); // InboundRoute | Route
+var body = {}; // Object | Route
 
 apiInstance.putRoutingEmailDomainRoute(domainName, routeId, body)
   .then(function(data) {
@@ -2067,7 +2067,7 @@ apiInstance.putRoutingEmailDomainRoute(domainName, routeId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **domainName** | **String** | email domain |  |
  **routeId** | **String** | route ID |  |
- **body** | **InboundRoute** | Route |  |
+ **body** | **Object** | Route |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2099,7 +2099,7 @@ var apiInstance = new platformClient.RoutingApi();
 
 var queueId = "queueId_example"; // String | Queue ID
 
-var body = new platformClient.Queue(); // Queue | Queue
+var body = {}; // Object | Queue
 
 apiInstance.putRoutingQueue(queueId, body)
   .then(function(data) {
@@ -2118,7 +2118,7 @@ apiInstance.putRoutingQueue(queueId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
- **body** | **Queue** | Queue |  |
+ **body** | **Object** | Queue |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2148,7 +2148,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.RoutingApi();
 
-var body = new platformClient.Utilization(); // Utilization | utilization
+var body = {}; // Object | utilization
 
 apiInstance.putRoutingUtilization(body)
   .then(function(data) {
@@ -2166,7 +2166,7 @@ apiInstance.putRoutingUtilization(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Utilization** | utilization |  |
+ **body** | **Object** | utilization |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2198,7 +2198,7 @@ var apiInstance = new platformClient.RoutingApi();
 
 var codeId = "codeId_example"; // String | Wrapup Code ID
 
-var body = new platformClient.WrapupCode(); // WrapupCode | WrapupCode
+var body = {}; // Object | WrapupCode
 
 apiInstance.putRoutingWrapupcode(codeId, body)
   .then(function(data) {
@@ -2217,7 +2217,7 @@ apiInstance.putRoutingWrapupcode(codeId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **codeId** | **String** | Wrapup Code ID |  |
- **body** | **WrapupCode** | WrapupCode |  |
+ **body** | **Object** | WrapupCode |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2251,7 +2251,7 @@ var userId = "userId_example"; // String | User ID
 
 var skillId = "skillId_example"; // String | skillId
 
-var body = new platformClient.UserRoutingSkill(); // UserRoutingSkill | Skill
+var body = {}; // Object | Skill
 
 apiInstance.putUserRoutingskill(userId, skillId, body)
   .then(function(data) {
@@ -2271,7 +2271,7 @@ apiInstance.putUserRoutingskill(userId, skillId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **skillId** | **String** | skillId |  |
- **body** | **UserRoutingSkill** | Skill |  |
+ **body** | **Object** | Skill |  |
 {: class="table table-striped"}
 
 ### Return type

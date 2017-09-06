@@ -18,7 +18,7 @@
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -84,7 +84,7 @@
     /**
      * Returns the information about an X509 PEM encoded certificate or certificate chain.
      * 
-     * @param {module:purecloud-platform-client-v2/model/Certificate} body Certificate
+     * @param {Object} body Certificate
      */
     this.postCertificateDetails = function(body) { 
 

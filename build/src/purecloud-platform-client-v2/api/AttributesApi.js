@@ -18,7 +18,7 @@
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -118,7 +118,7 @@
     /**
      * Create an attribute.
      * 
-     * @param {module:purecloud-platform-client-v2/model/Attribute} body Attribute
+     * @param {Object} body Attribute
      */
     this.postAttributes = function(body) { 
 
@@ -146,7 +146,7 @@
     /**
      * Query attributes
      * 
-     * @param {module:purecloud-platform-client-v2/model/AttributeQueryRequest} body query
+     * @param {Object} body query
      */
     this.postAttributesQuery = function(body) { 
 
@@ -175,7 +175,7 @@
      * Update an existing attribute.
      * Fields that can be updated: name, description. The most recent version is required for updates.
      * @param {String} attributeId Attribute ID
-     * @param {module:purecloud-platform-client-v2/model/Attribute} body Attribute
+     * @param {Object} body Attribute
      */
     this.putAttribute = function(attributeId, body) { 
 

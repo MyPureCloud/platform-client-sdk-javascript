@@ -18,7 +18,7 @@
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -97,7 +97,7 @@
      * 
      * @param {String} recordingId User Recording ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.formatId The desired media format. (default to WEBM)
+     * @param {Object} opts.formatId The desired media format. (default to WEBM)
      */
     this.getUserrecordingMedia = function(recordingId, opts) { 
       opts = opts || {};
@@ -176,7 +176,7 @@
      * Update a user recording.
      * 
      * @param {String} recordingId User Recording ID
-     * @param {module:purecloud-platform-client-v2/model/UserRecording} body UserRecording
+     * @param {Object} body UserRecording
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand Which fields, if any, to expand.
      */

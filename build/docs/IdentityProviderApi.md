@@ -858,7 +858,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.IdentityProviderApi();
 
-var body = new platformClient.ADFS(); // ADFS | Provider
+var body = {}; // Object | Provider
 
 apiInstance.putIdentityprovidersAdfs(body)
   .then(function(data) {
@@ -876,7 +876,7 @@ apiInstance.putIdentityprovidersAdfs(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **ADFS** | Provider |  |
+ **body** | **Object** | Provider |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -906,7 +906,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.IdentityProviderApi();
 
-var body = new platformClient.CustomerInteractionCenter(); // CustomerInteractionCenter | Provider
+var body = {}; // Object | Provider
 
 apiInstance.putIdentityprovidersCic(body)
   .then(function(data) {
@@ -924,7 +924,7 @@ apiInstance.putIdentityprovidersCic(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **CustomerInteractionCenter** | Provider |  |
+ **body** | **Object** | Provider |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -954,7 +954,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.IdentityProviderApi();
 
-var body = new platformClient.GSuite(); // GSuite | Provider
+var body = {}; // Object | Provider
 
 apiInstance.putIdentityprovidersGsuite(body)
   .then(function(data) {
@@ -972,7 +972,7 @@ apiInstance.putIdentityprovidersGsuite(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **GSuite** | Provider |  |
+ **body** | **Object** | Provider |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1002,7 +1002,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.IdentityProviderApi();
 
-var body = new platformClient.IdentityNow(); // IdentityNow | Provider
+var body = {}; // Object | Provider
 
 apiInstance.putIdentityprovidersIdentitynow(body)
   .then(function(data) {
@@ -1020,7 +1020,7 @@ apiInstance.putIdentityprovidersIdentitynow(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **IdentityNow** | Provider |  |
+ **body** | **Object** | Provider |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1050,7 +1050,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.IdentityProviderApi();
 
-var body = new platformClient.Okta(); // Okta | Provider
+var body = {}; // Object | Provider
 
 apiInstance.putIdentityprovidersOkta(body)
   .then(function(data) {
@@ -1068,7 +1068,7 @@ apiInstance.putIdentityprovidersOkta(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Okta** | Provider |  |
+ **body** | **Object** | Provider |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1098,7 +1098,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.IdentityProviderApi();
 
-var body = new platformClient.OneLogin(); // OneLogin | Provider
+var body = {}; // Object | Provider
 
 apiInstance.putIdentityprovidersOnelogin(body)
   .then(function(data) {
@@ -1116,7 +1116,7 @@ apiInstance.putIdentityprovidersOnelogin(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **OneLogin** | Provider |  |
+ **body** | **Object** | Provider |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1146,7 +1146,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.IdentityProviderApi();
 
-var body = new platformClient.PingIdentity(); // PingIdentity | Provider
+var body = {}; // Object | Provider
 
 apiInstance.putIdentityprovidersPing(body)
   .then(function(data) {
@@ -1164,7 +1164,7 @@ apiInstance.putIdentityprovidersPing(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **PingIdentity** | Provider |  |
+ **body** | **Object** | Provider |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1194,7 +1194,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.IdentityProviderApi();
 
-var body = new platformClient.PureCloud(); // PureCloud | Provider
+var body = {}; // Object | Provider
 
 apiInstance.putIdentityprovidersPurecloud(body)
   .then(function(data) {
@@ -1212,7 +1212,7 @@ apiInstance.putIdentityprovidersPurecloud(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **PureCloud** | Provider |  |
+ **body** | **Object** | Provider |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1242,7 +1242,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.IdentityProviderApi();
 
-var body = new platformClient.Salesforce(); // Salesforce | Provider
+var body = {}; // Object | Provider
 
 apiInstance.putIdentityprovidersSalesforce(body)
   .then(function(data) {
@@ -1260,7 +1260,7 @@ apiInstance.putIdentityprovidersSalesforce(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Salesforce** | Provider |  |
+ **body** | **Object** | Provider |  |
 {: class="table table-striped"}
 
 ### Return type

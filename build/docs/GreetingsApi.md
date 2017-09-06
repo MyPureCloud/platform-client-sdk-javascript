@@ -493,7 +493,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.GreetingsApi();
 
-var body = new platformClient.Greeting(); // Greeting | The Greeting to create
+var body = {}; // Object | The Greeting to create
 
 apiInstance.postGreetings(body)
   .then(function(data) {
@@ -511,7 +511,7 @@ apiInstance.postGreetings(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Greeting** | The Greeting to create |  |
+ **body** | **Object** | The Greeting to create |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -543,7 +543,7 @@ var apiInstance = new platformClient.GreetingsApi();
 
 var groupId = "groupId_example"; // String | Group ID
 
-var body = new platformClient.Greeting(); // Greeting | The Greeting to create
+var body = {}; // Object | The Greeting to create
 
 apiInstance.postGroupGreetings(groupId, body)
   .then(function(data) {
@@ -562,7 +562,7 @@ apiInstance.postGroupGreetings(groupId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
- **body** | **Greeting** | The Greeting to create |  |
+ **body** | **Object** | The Greeting to create |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -594,7 +594,7 @@ var apiInstance = new platformClient.GreetingsApi();
 
 var userId = "userId_example"; // String | User ID
 
-var body = new platformClient.Greeting(); // Greeting | The Greeting to create
+var body = {}; // Object | The Greeting to create
 
 apiInstance.postUserGreetings(userId, body)
   .then(function(data) {
@@ -613,7 +613,7 @@ apiInstance.postUserGreetings(userId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **body** | **Greeting** | The Greeting to create |  |
+ **body** | **Object** | The Greeting to create |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -645,7 +645,7 @@ var apiInstance = new platformClient.GreetingsApi();
 
 var greetingId = "greetingId_example"; // String | Greeting ID
 
-var body = new platformClient.Greeting(); // Greeting | The updated Greeting
+var body = {}; // Object | The updated Greeting
 
 apiInstance.putGreeting(greetingId, body)
   .then(function(data) {
@@ -664,7 +664,7 @@ apiInstance.putGreeting(greetingId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **greetingId** | **String** | Greeting ID |  |
- **body** | **Greeting** | The updated Greeting |  |
+ **body** | **Object** | The updated Greeting |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -694,7 +694,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.GreetingsApi();
 
-var body = new platformClient.DefaultGreetingList(); // DefaultGreetingList | The updated defaultGreetingList
+var body = {}; // Object | The updated defaultGreetingList
 
 apiInstance.putGreetingsDefaults(body)
   .then(function(data) {
@@ -712,7 +712,7 @@ apiInstance.putGreetingsDefaults(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **DefaultGreetingList** | The updated defaultGreetingList |  |
+ **body** | **Object** | The updated defaultGreetingList |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -744,7 +744,7 @@ var apiInstance = new platformClient.GreetingsApi();
 
 var groupId = "groupId_example"; // String | Group ID
 
-var body = new platformClient.DefaultGreetingList(); // DefaultGreetingList | The updated defaultGreetingList
+var body = {}; // Object | The updated defaultGreetingList
 
 apiInstance.putGroupGreetingsDefaults(groupId, body)
   .then(function(data) {
@@ -763,7 +763,7 @@ apiInstance.putGroupGreetingsDefaults(groupId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
- **body** | **DefaultGreetingList** | The updated defaultGreetingList |  |
+ **body** | **Object** | The updated defaultGreetingList |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -795,7 +795,7 @@ var apiInstance = new platformClient.GreetingsApi();
 
 var userId = "userId_example"; // String | User ID
 
-var body = new platformClient.DefaultGreetingList(); // DefaultGreetingList | The updated defaultGreetingList
+var body = {}; // Object | The updated defaultGreetingList
 
 apiInstance.putUserGreetingsDefaults(userId, body)
   .then(function(data) {
@@ -814,7 +814,7 @@ apiInstance.putUserGreetingsDefaults(userId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **body** | **DefaultGreetingList** | The updated defaultGreetingList |  |
+ **body** | **Object** | The updated defaultGreetingList |  |
 {: class="table table-striped"}
 
 ### Return type

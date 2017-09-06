@@ -18,7 +18,7 @@
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -326,6 +326,34 @@
 
 
     /**
+     * Delete multiple contact lists.
+     * 
+     * @param {Array.<String>} id contact list id(s) to delete
+     */
+    this.deleteOutboundContactlists = function(id) { 
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw "Missing the required parameter 'id' when calling deleteOutboundContactlists";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/outbound/contactlists', 
+        'DELETE', 
+        {  }, 
+        { 'id': this.apiClient.buildCollectionParam(id, 'multi') }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Delete dialer DNC list
      * 
      * @param {String} dncListId DncList ID
@@ -499,10 +527,10 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      */
     this.getOutboundAttemptlimits = function(opts) { 
       opts = opts || {};
@@ -557,10 +585,10 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      */
     this.getOutboundCallabletimesets = function(opts) { 
       opts = opts || {};
@@ -615,10 +643,10 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      */
     this.getOutboundCallanalysisresponsesets = function(opts) { 
       opts = opts || {};
@@ -813,10 +841,10 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      */
     this.getOutboundCampaignrules = function(opts) { 
       opts = opts || {};
@@ -843,7 +871,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.contactListId Contact List ID
      * @param {String} opts.dncListId DNC list ID
@@ -851,7 +879,7 @@
      * @param {String} opts.edgeGroupId Edge group ID
      * @param {String} opts.callAnalysisResponseSetId Call analysis response set ID
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      */
     this.getOutboundCampaigns = function(opts) { 
       opts = opts || {};
@@ -1031,10 +1059,10 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      * @param {String} opts.contactListId Contact List ID
      */
     this.getOutboundContactlistfilters = function(opts) { 
@@ -1064,10 +1092,10 @@
      * @param {Boolean} opts.includeSize Include size (default to false)
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      */
     this.getOutboundContactlists = function(opts) { 
       opts = opts || {};
@@ -1187,10 +1215,10 @@
      * @param {Boolean} opts.includeSize Include size (default to false)
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order
+     * @param {Object} opts.sortOrder Sort order
      */
     this.getOutboundDnclists = function(opts) { 
       opts = opts || {};
@@ -1245,11 +1273,11 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.category Category
      * @param {String} opts.level Level
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      */
     this.getOutboundEvents = function(opts) { 
       opts = opts || {};
@@ -1304,10 +1332,10 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      */
     this.getOutboundRulesets = function(opts) { 
       opts = opts || {};
@@ -1462,10 +1490,10 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      */
     this.getOutboundSequences = function(opts) { 
       opts = opts || {};
@@ -1511,7 +1539,7 @@
     /**
      * Create attempt limits
      * 
-     * @param {module:purecloud-platform-client-v2/model/AttemptLimits} body AttemptLimits
+     * @param {Object} body AttemptLimits
      */
     this.postOutboundAttemptlimits = function(body) { 
 
@@ -1539,7 +1567,7 @@
     /**
      * Retrieves audits for dialer.
      * 
-     * @param {module:purecloud-platform-client-v2/model/DialerAuditRequest} body AuditSearch
+     * @param {Object} body AuditSearch
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
@@ -1574,7 +1602,7 @@
     /**
      * Create callable time set
      * 
-     * @param {module:purecloud-platform-client-v2/model/CallableTimeSet} body DialerCallableTimeSet
+     * @param {Object} body DialerCallableTimeSet
      */
     this.postOutboundCallabletimesets = function(body) { 
 
@@ -1602,7 +1630,7 @@
     /**
      * Create a dialer call analysis response set.
      * 
-     * @param {module:purecloud-platform-client-v2/model/ResponseSet} body ResponseSet
+     * @param {Object} body ResponseSet
      */
     this.postOutboundCallanalysisresponsesets = function(body) { 
 
@@ -1631,7 +1659,7 @@
      * Schedule a Callback for a Dialer Campaign (Deprecated)
      * This endpoint is deprecated and may have unexpected results. Please use \&quot;/conversations/{conversationId}/participants/{participantId}/callbacks instead.\&quot;
      * @param {String} campaignId Campaign ID
-     * @param {module:purecloud-platform-client-v2/model/ContactCallbackRequest} body ContactCallbackRequest
+     * @param {Object} body ContactCallbackRequest
      */
     this.postOutboundCampaignCallbackSchedule = function(campaignId, body) { 
 
@@ -1664,7 +1692,7 @@
     /**
      * Create Campaign Rule
      * 
-     * @param {module:purecloud-platform-client-v2/model/CampaignRule} body CampaignRule
+     * @param {Object} body CampaignRule
      */
     this.postOutboundCampaignrules = function(body) { 
 
@@ -1692,7 +1720,7 @@
     /**
      * Create a campaign.
      * 
-     * @param {module:purecloud-platform-client-v2/model/Campaign} body Campaign
+     * @param {Object} body Campaign
      */
     this.postOutboundCampaigns = function(body) { 
 
@@ -1720,7 +1748,7 @@
     /**
      * Get progress for a list of campaigns
      * 
-     * @param {Array.<module:purecloud-platform-client-v2/model/String>} body Campaign IDs
+     * @param {Array.<Object>} body Campaign IDs
      */
     this.postOutboundCampaignsProgress = function(body) { 
 
@@ -1749,7 +1777,7 @@
      * Add contacts to a contact list.
      * 
      * @param {String} contactListId Contact List ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/DialerContact>} body Contact
+     * @param {Array.<Object>} body Contact
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.priority Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue.
      * @param {Boolean} opts.clearSystemData Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t.
@@ -1814,7 +1842,7 @@
     /**
      * Create Contact List Filter
      * 
-     * @param {module:purecloud-platform-client-v2/model/ContactListFilter} body ContactListFilter
+     * @param {Object} body ContactListFilter
      */
     this.postOutboundContactlistfilters = function(body) { 
 
@@ -1842,7 +1870,7 @@
     /**
      * Get a preview of the output of a contact list filter
      * 
-     * @param {module:purecloud-platform-client-v2/model/ContactListFilter} body ContactListFilter
+     * @param {Object} body ContactListFilter
      */
     this.postOutboundContactlistfiltersPreview = function(body) { 
 
@@ -1870,7 +1898,7 @@
     /**
      * Create a contact List.
      * 
-     * @param {module:purecloud-platform-client-v2/model/ContactList} body ContactList
+     * @param {Object} body ContactList
      */
     this.postOutboundContactlists = function(body) { 
 
@@ -1955,7 +1983,7 @@
      * Add phone numbers to a Dialer DNC list.
      * Only Internal DNC lists may be appended to
      * @param {String} dncListId DncList ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/String>} body DNC Phone Numbers
+     * @param {Array.<Object>} body DNC Phone Numbers
      */
     this.postOutboundDnclistPhonenumbers = function(dncListId, body) { 
 
@@ -1988,7 +2016,7 @@
     /**
      * Create dialer DNC list
      * 
-     * @param {module:purecloud-platform-client-v2/model/DncListCreate} body DncList
+     * @param {Object} body DncList
      */
     this.postOutboundDnclists = function(body) { 
 
@@ -2016,7 +2044,7 @@
     /**
      * Create a Dialer Call Analysis Response Set.
      * 
-     * @param {module:purecloud-platform-client-v2/model/RuleSet} body RuleSet
+     * @param {Object} body RuleSet
      */
     this.postOutboundRulesets = function(body) { 
 
@@ -2044,7 +2072,7 @@
     /**
      * Create a new campaign sequence.
      * 
-     * @param {module:purecloud-platform-client-v2/model/CampaignSequence} body Organization
+     * @param {Object} body Organization
      */
     this.postOutboundSequences = function(body) { 
 
@@ -2073,7 +2101,7 @@
      * Update attempt limits
      * 
      * @param {String} attemptLimitsId Attempt limits ID
-     * @param {module:purecloud-platform-client-v2/model/AttemptLimits} body AttemptLimits
+     * @param {Object} body AttemptLimits
      */
     this.putOutboundAttemptlimit = function(attemptLimitsId, body) { 
 
@@ -2107,7 +2135,7 @@
      * Update callable time set
      * 
      * @param {String} callableTimeSetId Callable Time Set ID
-     * @param {module:purecloud-platform-client-v2/model/CallableTimeSet} body DialerCallableTimeSet
+     * @param {Object} body DialerCallableTimeSet
      */
     this.putOutboundCallabletimeset = function(callableTimeSetId, body) { 
 
@@ -2141,7 +2169,7 @@
      * Update a dialer call analysis response set.
      * 
      * @param {String} callAnalysisSetId Call Analysis Response Set ID
-     * @param {module:purecloud-platform-client-v2/model/ResponseSet} body ResponseSet
+     * @param {Object} body ResponseSet
      */
     this.putOutboundCallanalysisresponseset = function(callAnalysisSetId, body) { 
 
@@ -2175,7 +2203,7 @@
      * Update a campaign.
      * 
      * @param {String} campaignId Campaign ID
-     * @param {module:purecloud-platform-client-v2/model/Campaign} body Campaign
+     * @param {Object} body Campaign
      */
     this.putOutboundCampaign = function(campaignId, body) { 
 
@@ -2210,7 +2238,7 @@
      * New agent state.
      * @param {String} campaignId Campaign ID
      * @param {String} userId Agent&#39;s user ID
-     * @param {module:purecloud-platform-client-v2/model/Agent} body agent
+     * @param {Object} body agent
      */
     this.putOutboundCampaignAgent = function(campaignId, userId, body) { 
 
@@ -2249,7 +2277,7 @@
      * Update Campaign Rule
      * 
      * @param {String} campaignRuleId Campaign Rule ID
-     * @param {module:purecloud-platform-client-v2/model/CampaignRule} body CampaignRule
+     * @param {Object} body CampaignRule
      */
     this.putOutboundCampaignrule = function(campaignRuleId, body) { 
 
@@ -2283,7 +2311,7 @@
      * Update a contact list.
      * 
      * @param {String} contactListId ContactList ID
-     * @param {module:purecloud-platform-client-v2/model/ContactList} body ContactList
+     * @param {Object} body ContactList
      */
     this.putOutboundContactlist = function(contactListId, body) { 
 
@@ -2318,7 +2346,7 @@
      * 
      * @param {String} contactListId Contact List ID
      * @param {String} contactId Contact ID
-     * @param {module:purecloud-platform-client-v2/model/DialerContact} body Contact
+     * @param {Object} body Contact
      */
     this.putOutboundContactlistContact = function(contactListId, contactId, body) { 
 
@@ -2357,7 +2385,7 @@
      * Update Contact List Filter
      * 
      * @param {String} contactListFilterId Contact List Filter ID
-     * @param {module:purecloud-platform-client-v2/model/ContactListFilter} body ContactListFilter
+     * @param {Object} body ContactListFilter
      */
     this.putOutboundContactlistfilter = function(contactListFilterId, body) { 
 
@@ -2391,7 +2419,7 @@
      * Update dialer DNC list
      * 
      * @param {String} dncListId DncList ID
-     * @param {module:purecloud-platform-client-v2/model/DncList} body DncList
+     * @param {Object} body DncList
      */
     this.putOutboundDnclist = function(dncListId, body) { 
 
@@ -2425,7 +2453,7 @@
      * Update a RuleSet.
      * 
      * @param {String} ruleSetId Rule Set ID
-     * @param {module:purecloud-platform-client-v2/model/RuleSet} body RuleSet
+     * @param {Object} body RuleSet
      */
     this.putOutboundRuleset = function(ruleSetId, body) { 
 
@@ -2459,7 +2487,7 @@
      * Update a new campaign schedule.
      * 
      * @param {String} campaignId Campaign ID
-     * @param {module:purecloud-platform-client-v2/model/CampaignSchedule} body CampaignSchedule
+     * @param {Object} body CampaignSchedule
      */
     this.putOutboundSchedulesCampaign = function(campaignId, body) { 
 
@@ -2493,7 +2521,7 @@
      * Update a new sequence schedule.
      * 
      * @param {String} sequenceId Sequence ID
-     * @param {module:purecloud-platform-client-v2/model/SequenceSchedule} body SequenceSchedule
+     * @param {Object} body SequenceSchedule
      */
     this.putOutboundSchedulesSequence = function(sequenceId, body) { 
 
@@ -2527,7 +2555,7 @@
      * Update a new campaign sequence.
      * 
      * @param {String} sequenceId Campaign Sequence ID
-     * @param {module:purecloud-platform-client-v2/model/CampaignSequence} body Organization
+     * @param {Object} body Organization
      */
     this.putOutboundSequence = function(sequenceId, body) { 
 
@@ -2560,7 +2588,7 @@
     /**
      * Update the Dialer wrap up code mapping.
      * 
-     * @param {module:purecloud-platform-client-v2/model/WrapUpCodeMapping} body wrapUpCodeMapping
+     * @param {Object} body wrapUpCodeMapping
      */
     this.putOutboundWrapupcodemappings = function(body) { 
 

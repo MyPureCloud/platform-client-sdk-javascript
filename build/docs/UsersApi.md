@@ -1247,7 +1247,7 @@ var apiInstance = new platformClient.UsersApi();
 
 var userId = "userId_example"; // String | User ID
 
-var body = new platformClient.UpdateUser(); // UpdateUser | User
+var body = {}; // Object | User
 
 apiInstance.patchUser(userId, body)
   .then(function(data) {
@@ -1266,7 +1266,7 @@ apiInstance.patchUser(userId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **body** | **UpdateUser** | User |  |
+ **body** | **Object** | User |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1298,7 +1298,7 @@ var apiInstance = new platformClient.UsersApi();
 
 var userId = "userId_example"; // String | User ID
 
-var body = new platformClient.CallForwarding(); // CallForwarding | Call forwarding
+var body = {}; // Object | Call forwarding
 
 apiInstance.patchUserCallforwarding(userId, body)
   .then(function(data) {
@@ -1317,7 +1317,7 @@ apiInstance.patchUserCallforwarding(userId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **body** | **CallForwarding** | Call forwarding |  |
+ **body** | **Object** | Call forwarding |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1351,7 +1351,7 @@ var userId = "userId_example"; // String | user Id
 
 var clientId = "clientId_example"; // String | client Id
 
-var body = new platformClient.Geolocation(); // Geolocation | Geolocation
+var body = {}; // Object | Geolocation
 
 apiInstance.patchUserGeolocation(userId, clientId, body)
   .then(function(data) {
@@ -1371,7 +1371,7 @@ apiInstance.patchUserGeolocation(userId, clientId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user Id |  |
  **clientId** | **String** | client Id |  |
- **body** | **Geolocation** | Geolocation |  |
+ **body** | **Object** | Geolocation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1405,7 +1405,7 @@ var queueId = "queueId_example"; // String | Queue ID
 
 var userId = "userId_example"; // String | User ID
 
-var body = new platformClient.UserQueue(); // UserQueue | Queue Member
+var body = {}; // Object | Queue Member
 
 apiInstance.patchUserQueue(queueId, userId, body)
   .then(function(data) {
@@ -1425,7 +1425,7 @@ apiInstance.patchUserQueue(queueId, userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
  **userId** | **String** | User ID |  |
- **body** | **UserQueue** | Queue Member |  |
+ **body** | **Object** | Queue Member |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1457,7 +1457,7 @@ var apiInstance = new platformClient.UsersApi();
 
 var userId = "userId_example"; // String | User ID
 
-var body = [new platformClient.UserQueue()]; // [UserQueue] | User Queues
+var body = [{}]; // Object | User Queues
 
 apiInstance.patchUserQueues(userId, body)
   .then(function(data) {
@@ -1476,7 +1476,7 @@ apiInstance.patchUserQueues(userId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **body** | **[UserQueue]** | User Queues |  |
+ **body** | **Object** | User Queues |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1506,7 +1506,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.UsersApi();
 
-var body = new platformClient.AggregationQuery(); // AggregationQuery | query
+var body = {}; // Object | query
 
 apiInstance.postAnalyticsUsersAggregatesQuery(body)
   .then(function(data) {
@@ -1524,7 +1524,7 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **AggregationQuery** | query |  |
+ **body** | **Object** | query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1554,7 +1554,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.UsersApi();
 
-var body = new platformClient.UserDetailsQuery(); // UserDetailsQuery | query
+var body = {}; // Object | query
 
 apiInstance.postAnalyticsUsersDetailsQuery(body)
   .then(function(data) {
@@ -1572,7 +1572,7 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **UserDetailsQuery** | query |  |
+ **body** | **Object** | query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1602,7 +1602,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.UsersApi();
 
-var body = new platformClient.ObservationQuery(); // ObservationQuery | query
+var body = {}; // Object | query
 
 apiInstance.postAnalyticsUsersObservationsQuery(body)
   .then(function(data) {
@@ -1620,7 +1620,7 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **ObservationQuery** | query |  |
+ **body** | **Object** | query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1704,7 +1704,7 @@ var apiInstance = new platformClient.UsersApi();
 
 var userId = "userId_example"; // String | User ID
 
-var body = new platformClient.UserRoutingSkillPost(); // UserRoutingSkillPost | Skill
+var body = {}; // Object | Skill
 
 apiInstance.postUserRoutingskills(userId, body)
   .then(function(data) {
@@ -1723,7 +1723,7 @@ apiInstance.postUserRoutingskills(userId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **body** | **UserRoutingSkillPost** | Skill |  |
+ **body** | **Object** | Skill |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1753,7 +1753,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.UsersApi();
 
-var body = new platformClient.CreateUser(); // CreateUser | User
+var body = {}; // Object | User
 
 apiInstance.postUsers(body)
   .then(function(data) {
@@ -1771,7 +1771,7 @@ apiInstance.postUsers(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **CreateUser** | User |  |
+ **body** | **Object** | User |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1801,7 +1801,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.UsersApi();
 
-var body = new platformClient.UserSearchRequest(); // UserSearchRequest | Search request options
+var body = {}; // Object | Search request options
 
 apiInstance.postUsersSearch(body)
   .then(function(data) {
@@ -1819,7 +1819,7 @@ apiInstance.postUsersSearch(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **UserSearchRequest** | Search request options |  |
+ **body** | **Object** | Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1851,7 +1851,7 @@ var apiInstance = new platformClient.UsersApi();
 
 var userId = "userId_example"; // String | User ID
 
-var body = new platformClient.CallForwarding(); // CallForwarding | Call forwarding
+var body = {}; // Object | Call forwarding
 
 apiInstance.putUserCallforwarding(userId, body)
   .then(function(data) {
@@ -1870,7 +1870,7 @@ apiInstance.putUserCallforwarding(userId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **body** | **CallForwarding** | Call forwarding |  |
+ **body** | **Object** | Call forwarding |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1902,7 +1902,7 @@ var apiInstance = new platformClient.UsersApi();
 
 var userId = "userId_example"; // String | User ID
 
-var body = new platformClient.OutOfOffice(); // OutOfOffice | The updated OutOffOffice
+var body = {}; // Object | The updated OutOffOffice
 
 apiInstance.putUserOutofoffice(userId, body)
   .then(function(data) {
@@ -1921,7 +1921,7 @@ apiInstance.putUserOutofoffice(userId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **body** | **OutOfOffice** | The updated OutOffOffice |  |
+ **body** | **Object** | The updated OutOffOffice |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1954,7 +1954,7 @@ var apiInstance = new platformClient.UsersApi();
 var userId = "userId_example"; // String | User ID
 
 var opts = { 
-  'body': [new platformClient.[String]()] // [String] | Skills
+  'body': [{}] // Object | Skills
 };
 apiInstance.putUserProfileskills(userId, opts)
   .then(function(data) {
@@ -1973,7 +1973,7 @@ apiInstance.putUserProfileskills(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **body** | **[String]** | Skills | [optional]  |
+ **body** | **Object** | Skills | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2005,7 +2005,7 @@ var apiInstance = new platformClient.UsersApi();
 
 var userId = "userId_example"; // String | User ID
 
-var body = [new platformClient.[String]()]; // [String] | List of roles
+var body = [{}]; // Object | List of roles
 
 apiInstance.putUserRoles(userId, body)
   .then(function(data) {
@@ -2024,7 +2024,7 @@ apiInstance.putUserRoles(userId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **body** | **[String]** | List of roles |  |
+ **body** | **Object** | List of roles |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2058,7 +2058,7 @@ var userId = "userId_example"; // String | User ID
 
 var skillId = "skillId_example"; // String | skillId
 
-var body = new platformClient.UserRoutingSkill(); // UserRoutingSkill | Skill
+var body = {}; // Object | Skill
 
 apiInstance.putUserRoutingskill(userId, skillId, body)
   .then(function(data) {
@@ -2078,7 +2078,7 @@ apiInstance.putUserRoutingskill(userId, skillId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **skillId** | **String** | skillId |  |
- **body** | **UserRoutingSkill** | Skill |  |
+ **body** | **Object** | Skill |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2110,7 +2110,7 @@ var apiInstance = new platformClient.UsersApi();
 
 var userId = "userId_example"; // String | User ID
 
-var body = new platformClient.RoutingStatus(); // RoutingStatus | Routing Status
+var body = {}; // Object | Routing Status
 
 apiInstance.putUserRoutingstatus(userId, body)
   .then(function(data) {
@@ -2129,7 +2129,7 @@ apiInstance.putUserRoutingstatus(userId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **body** | **RoutingStatus** | Routing Status |  |
+ **body** | **Object** | Routing Status |  |
 {: class="table table-striped"}
 
 ### Return type

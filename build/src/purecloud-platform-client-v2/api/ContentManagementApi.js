@@ -18,7 +18,7 @@
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -291,7 +291,7 @@
      * 
      * @param {String} documentId Document ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.disposition Request how the content will be downloaded: a file attachment or inline. Default is attachment.
+     * @param {Object} opts.disposition Request how the content will be downloaded: a file attachment or inline. Default is attachment.
      * @param {String} opts.contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav
      */
     this.getContentmanagementDocumentContent = function(documentId, opts) { 
@@ -476,9 +476,9 @@
      * @param {String} sharedId Shared ID
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.redirect Turn on or off redirect (default to true)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.disposition Request how the share content will be downloaded: attached as a file or inline. Default is attachment. (default to attachment)
+     * @param {Object} opts.disposition Request how the share content will be downloaded: attached as a file or inline. Default is attachment. (default to attachment)
      * @param {String} opts.contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand Expand some document fields
+     * @param {Object} opts.expand Expand some document fields
      */
     this.getContentmanagementSharedSharedId = function(sharedId, opts) { 
       opts = opts || {};
@@ -846,7 +846,7 @@
     /**
      * Query audits
      * 
-     * @param {module:purecloud-platform-client-v2/model/ContentQueryRequest} body Allows for a filtered query returning facet information
+     * @param {Object} body Allows for a filtered query returning facet information
      */
     this.postContentmanagementAuditquery = function(body) { 
 
@@ -875,9 +875,9 @@
      * Update a document.
      * 
      * @param {String} documentId Document ID
-     * @param {module:purecloud-platform-client-v2/model/DocumentUpdate} body Document
+     * @param {Object} body Document
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand Expand some document fields
+     * @param {Object} opts.expand Expand some document fields
      * @param {Boolean} opts.override Override any lock on the document
      */
     this.postContentmanagementDocument = function(documentId, body, opts) { 
@@ -913,7 +913,7 @@
      * Replace the contents of a document.
      * 
      * @param {String} documentId Document ID
-     * @param {module:purecloud-platform-client-v2/model/ReplaceRequest} body Replace Request
+     * @param {Object} body Replace Request
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.override Override any lock on the document
      */
@@ -949,7 +949,7 @@
     /**
      * Add a document.
      * 
-     * @param {module:purecloud-platform-client-v2/model/DocumentUpload} body Document
+     * @param {Object} body Document
      * @param {Object} opts Optional parameters
      * @param {String} opts.copySource Copy a document within a workspace or to a new workspace. Provide a document ID as the copy source.
      * @param {String} opts.moveSource Move a document to a new workspace. Provide a document ID as the move source.
@@ -982,9 +982,9 @@
     /**
      * Query content
      * 
-     * @param {module:purecloud-platform-client-v2/model/QueryRequest} body Allows for a filtered query returning facet information
+     * @param {Object} body Allows for a filtered query returning facet information
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand Expand some document fields
+     * @param {Object} opts.expand Expand some document fields
      */
     this.postContentmanagementQuery = function(body, opts) { 
       opts = opts || {};
@@ -1013,7 +1013,7 @@
     /**
      * Creates a new share or updates an existing share if the entity has already been shared
      * 
-     * @param {module:purecloud-platform-client-v2/model/CreateShareRequest} body CreateShareRequest - entity id and type and a single member or list of members are required
+     * @param {Object} body CreateShareRequest - entity id and type and a single member or list of members are required
      */
     this.postContentmanagementShares = function(body) { 
 
@@ -1042,7 +1042,7 @@
      * Create a workspace tag
      * 
      * @param {String} workspaceId Workspace ID
-     * @param {module:purecloud-platform-client-v2/model/TagValue} body tag
+     * @param {Object} body tag
      */
     this.postContentmanagementWorkspaceTagvalues = function(workspaceId, body) { 
 
@@ -1076,7 +1076,7 @@
      * Perform a prefix query on tags in the workspace
      * 
      * @param {String} workspaceId Workspace ID
-     * @param {module:purecloud-platform-client-v2/model/TagQueryRequest} body query
+     * @param {Object} body query
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand Which fields, if any, to expand.
      */
@@ -1112,7 +1112,7 @@
     /**
      * Create a group workspace
      * 
-     * @param {module:purecloud-platform-client-v2/model/WorkspaceCreate} body Workspace
+     * @param {Object} body Workspace
      */
     this.postContentmanagementWorkspaces = function(body) { 
 
@@ -1141,7 +1141,7 @@
      * Update a workspace
      * 
      * @param {String} workspaceId Workspace ID
-     * @param {module:purecloud-platform-client-v2/model/Workspace} body Workspace
+     * @param {Object} body Workspace
      */
     this.putContentmanagementWorkspace = function(workspaceId, body) { 
 
@@ -1176,7 +1176,7 @@
      * 
      * @param {String} workspaceId Workspace ID
      * @param {String} memberId Member ID
-     * @param {module:purecloud-platform-client-v2/model/WorkspaceMember} body Workspace Member
+     * @param {Object} body Workspace Member
      */
     this.putContentmanagementWorkspaceMember = function(workspaceId, memberId, body) { 
 
@@ -1216,7 +1216,7 @@
      * 
      * @param {String} workspaceId Workspace ID
      * @param {String} tagId Tag ID
-     * @param {module:purecloud-platform-client-v2/model/TagValue} body Workspace
+     * @param {Object} body Workspace
      */
     this.putContentmanagementWorkspaceTagvalue = function(workspaceId, tagId, body) { 
 

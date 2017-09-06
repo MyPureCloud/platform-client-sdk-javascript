@@ -18,7 +18,7 @@
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -169,7 +169,7 @@
      * Update a fax document.
      * 
      * @param {String} documentId Document ID
-     * @param {module:purecloud-platform-client-v2/model/FaxDocument} body Document
+     * @param {Object} body Document
      */
     this.putFaxDocument = function(documentId, body) { 
 

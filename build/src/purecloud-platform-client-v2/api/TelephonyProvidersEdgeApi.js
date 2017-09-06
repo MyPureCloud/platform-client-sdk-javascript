@@ -18,7 +18,7 @@
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -983,7 +983,7 @@
      * @param {String} opts.sortBy Value by which to sort (default to name)
      * @param {String} opts.sortOrder Sort order (default to ASC)
      * @param {String} opts.trunkBaseId Filter by Trunk Base Ids
-     * @param {module:purecloud-platform-client-v2/model/String} opts.trunkType Filter by a Trunk type
+     * @param {Object} opts.trunkType Filter by a Trunk type
      */
     this.getTelephonyProvidersEdgeTrunks = function(edgeId, opts) { 
       opts = opts || {};
@@ -2314,7 +2314,7 @@
      * Get a list of available makes and models to create a new Trunk Base Settings
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.type 
+     * @param {Object} opts.type 
      * @param {Number} opts.pageSize  (default to 25)
      * @param {Number} opts.pageNumber  (default to 1)
      */
@@ -2375,7 +2375,7 @@
      * @param {String} opts.sortOrder Sort order (default to ASC)
      * @param {String} opts.edgeId Filter by Edge Ids
      * @param {String} opts.trunkBaseId Filter by Trunk Base Ids
-     * @param {module:purecloud-platform-client-v2/model/String} opts.trunkType Filter by a Trunk type
+     * @param {Object} opts.trunkType Filter by a Trunk type
      */
     this.getTelephonyProvidersEdgesTrunks = function(opts) { 
       opts = opts || {};
@@ -2400,7 +2400,7 @@
      * Get Counts of trunks that have recording disabled or enabled
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.trunkType The type of this trunk base.
+     * @param {Object} opts.trunkType The type of this trunk base.
      */
     this.getTelephonyProvidersEdgesTrunkswithrecording = function(opts) { 
       opts = opts || {};
@@ -2425,7 +2425,7 @@
      * Create an edge logical interface.
      * Create
      * @param {String} edgeId Edge ID
-     * @param {module:purecloud-platform-client-v2/model/DomainLogicalInterface} body Logical interface
+     * @param {Object} body Logical interface
      */
     this.postTelephonyProvidersEdgeLogicalinterfaces = function(edgeId, body) { 
 
@@ -2460,7 +2460,7 @@
      * 
      * @param {String} edgeId Edge ID
      * @param {String} jobId Job ID
-     * @param {module:purecloud-platform-client-v2/model/EdgeLogsJobUploadRequest} body Log upload request
+     * @param {Object} body Log upload request
      */
     this.postTelephonyProvidersEdgeLogsJobUpload = function(edgeId, jobId, body) { 
 
@@ -2499,7 +2499,7 @@
      * Create a job to upload a list of Edge logs.
      * 
      * @param {String} edgeId Edge ID
-     * @param {module:purecloud-platform-client-v2/model/EdgeLogsJobRequest} body EdgeLogsJobRequest
+     * @param {Object} body EdgeLogsJobRequest
      */
     this.postTelephonyProvidersEdgeLogsJobs = function(edgeId, body) { 
 
@@ -2534,7 +2534,7 @@
      * 
      * @param {String} edgeId Edge ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/EdgeRebootParameters} opts.body Parameters for the edge reboot
+     * @param {Object} opts.body Parameters for the edge reboot
      */
     this.postTelephonyProvidersEdgeReboot = function(edgeId, opts) { 
       opts = opts || {};
@@ -2564,7 +2564,7 @@
      * Starts a software update for this edge.
      * 
      * @param {String} edgeId Edge ID
-     * @param {module:purecloud-platform-client-v2/model/DomainEdgeSoftwareUpdateDto} body Software update request
+     * @param {Object} body Software update request
      */
     this.postTelephonyProvidersEdgeSoftwareupdate = function(edgeId, body) { 
 
@@ -2599,7 +2599,7 @@
      * 
      * @param {String} edgeId Edge ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/EdgeServiceStateRequest} opts.body Edge Service State
+     * @param {Object} opts.body Edge Service State
      */
     this.postTelephonyProvidersEdgeStatuscode = function(edgeId, opts) { 
       opts = opts || {};
@@ -2656,7 +2656,7 @@
     /**
      * Create an edge.
      * 
-     * @param {module:purecloud-platform-client-v2/model/Edge} body Edge
+     * @param {Object} body Edge
      */
     this.postTelephonyProvidersEdges = function(body) { 
 
@@ -2684,7 +2684,7 @@
     /**
      * Validates a street address
      * 
-     * @param {module:purecloud-platform-client-v2/model/ValidateAddressRequest} body Address
+     * @param {Object} body Address
      */
     this.postTelephonyProvidersEdgesAddressvalidation = function(body) { 
 
@@ -2712,7 +2712,7 @@
     /**
      * Create a certificate authority.
      * 
-     * @param {module:purecloud-platform-client-v2/model/DomainCertificateAuthority} body CertificateAuthority
+     * @param {Object} body CertificateAuthority
      */
     this.postTelephonyProvidersEdgesCertificateauthorities = function(body) { 
 
@@ -2740,7 +2740,7 @@
     /**
      * Create a new DID pool
      * 
-     * @param {module:purecloud-platform-client-v2/model/DIDPool} body DID pool
+     * @param {Object} body DID pool
      */
     this.postTelephonyProvidersEdgesDidpools = function(body) { 
 
@@ -2768,7 +2768,7 @@
     /**
      * Create an edge group.
      * 
-     * @param {module:purecloud-platform-client-v2/model/EdgeGroup} body EdgeGroup
+     * @param {Object} body EdgeGroup
      */
     this.postTelephonyProvidersEdgesEdgegroups = function(body) { 
 
@@ -2796,7 +2796,7 @@
     /**
      * Create endpoint
      * 
-     * @param {module:purecloud-platform-client-v2/model/Endpoint} body EndpointTemplate
+     * @param {Object} body EndpointTemplate
      */
     this.postTelephonyProvidersEdgesEndpoints = function(body) { 
 
@@ -2824,7 +2824,7 @@
     /**
      * Create a new extension pool
      * 
-     * @param {module:purecloud-platform-client-v2/model/ExtensionPool} body ExtensionPool
+     * @param {Object} body ExtensionPool
      */
     this.postTelephonyProvidersEdgesExtensionpools = function(body) { 
 
@@ -2852,7 +2852,7 @@
     /**
      * Create outbound rule
      * 
-     * @param {module:purecloud-platform-client-v2/model/OutboundRoute} body OutboundRoute
+     * @param {Object} body OutboundRoute
      */
     this.postTelephonyProvidersEdgesOutboundroutes = function(body) { 
 
@@ -2908,7 +2908,7 @@
     /**
      * Create a new Phone Base Settings object
      * 
-     * @param {module:purecloud-platform-client-v2/model/PhoneBase} body Phone base settings
+     * @param {Object} body Phone base settings
      */
     this.postTelephonyProvidersEdgesPhonebasesettings = function(body) { 
 
@@ -2936,7 +2936,7 @@
     /**
      * Create a new Phone
      * 
-     * @param {module:purecloud-platform-client-v2/model/Phone} body Phone
+     * @param {Object} body Phone
      */
     this.postTelephonyProvidersEdgesPhones = function(body) { 
 
@@ -2964,7 +2964,7 @@
     /**
      * Reboot Multiple Phones
      * 
-     * @param {module:purecloud-platform-client-v2/model/PhonesReboot} body Phones
+     * @param {Object} body Phones
      */
     this.postTelephonyProvidersEdgesPhonesReboot = function(body) { 
 
@@ -2993,7 +2993,7 @@
      * Create outbound route
      * 
      * @param {String} siteId Site ID
-     * @param {module:purecloud-platform-client-v2/model/OutboundRouteBase} body OutboundRoute
+     * @param {Object} body OutboundRoute
      */
     this.postTelephonyProvidersEdgesSiteOutboundroutes = function(siteId, body) { 
 
@@ -3054,7 +3054,7 @@
     /**
      * Create a Site.
      * 
-     * @param {module:purecloud-platform-client-v2/model/Site} body Site
+     * @param {Object} body Site
      */
     this.postTelephonyProvidersEdgesSites = function(body) { 
 
@@ -3082,7 +3082,7 @@
     /**
      * Create a Trunk Base Settings object
      * 
-     * @param {module:purecloud-platform-client-v2/model/TrunkBase} body Trunk base settings
+     * @param {Object} body Trunk base settings
      */
     this.postTelephonyProvidersEdgesTrunkbasesettings = function(body) { 
 
@@ -3111,7 +3111,7 @@
      * Update a edge.
      * 
      * @param {String} edgeId Edge ID
-     * @param {module:purecloud-platform-client-v2/model/Edge} body Edge
+     * @param {Object} body Edge
      */
     this.putTelephonyProvidersEdge = function(edgeId, body) { 
 
@@ -3146,7 +3146,7 @@
      * 
      * @param {String} edgeId Edge ID
      * @param {String} lineId Line ID
-     * @param {module:purecloud-platform-client-v2/model/EdgeLine} body Line
+     * @param {Object} body Line
      */
     this.putTelephonyProvidersEdgeLine = function(edgeId, lineId, body) { 
 
@@ -3186,7 +3186,7 @@
      * 
      * @param {String} edgeId Edge ID
      * @param {String} interfaceId Interface ID
-     * @param {module:purecloud-platform-client-v2/model/DomainLogicalInterface} body Logical interface
+     * @param {Object} body Logical interface
      */
     this.putTelephonyProvidersEdgeLogicalinterface = function(edgeId, interfaceId, body) { 
 
@@ -3225,7 +3225,7 @@
      * Update a certificate authority.
      * 
      * @param {String} certificateId Certificate ID
-     * @param {module:purecloud-platform-client-v2/model/DomainCertificateAuthority} body Certificate authority
+     * @param {Object} body Certificate authority
      */
     this.putTelephonyProvidersEdgesCertificateauthority = function(certificateId, body) { 
 
@@ -3259,7 +3259,7 @@
      * Update a DID by ID.
      * 
      * @param {String} didId DID ID
-     * @param {module:purecloud-platform-client-v2/model/DID} body DID
+     * @param {Object} body DID
      */
     this.putTelephonyProvidersEdgesDid = function(didId, body) { 
 
@@ -3293,7 +3293,7 @@
      * Update a DID Pool by ID.
      * 
      * @param {String} didPoolId DID pool ID
-     * @param {module:purecloud-platform-client-v2/model/DIDPool} body DID pool
+     * @param {Object} body DID pool
      */
     this.putTelephonyProvidersEdgesDidpool = function(didPoolId, body) { 
 
@@ -3327,7 +3327,7 @@
      * Update an edge group.
      * 
      * @param {String} edgeGroupId Edge group ID
-     * @param {module:purecloud-platform-client-v2/model/EdgeGroup} body EdgeGroup
+     * @param {Object} body EdgeGroup
      */
     this.putTelephonyProvidersEdgesEdgegroup = function(edgeGroupId, body) { 
 
@@ -3362,7 +3362,7 @@
      * 
      * @param {String} edgegroupId Edge Group ID
      * @param {String} edgetrunkbaseId Edge Trunk Base ID
-     * @param {module:purecloud-platform-client-v2/model/EdgeTrunkBase} body EdgeTrunkBase
+     * @param {Object} body EdgeTrunkBase
      */
     this.putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis = function(edgegroupId, edgetrunkbaseId, body) { 
 
@@ -3401,7 +3401,7 @@
      * Update endpoint
      * 
      * @param {String} endpointId Endpoint ID
-     * @param {module:purecloud-platform-client-v2/model/Endpoint} body EndpointTemplate
+     * @param {Object} body EndpointTemplate
      */
     this.putTelephonyProvidersEdgesEndpoint = function(endpointId, body) { 
 
@@ -3435,7 +3435,7 @@
      * Update an extension by ID.
      * 
      * @param {String} extensionId Extension ID
-     * @param {module:purecloud-platform-client-v2/model/Extension} body Extension
+     * @param {Object} body Extension
      */
     this.putTelephonyProvidersEdgesExtension = function(extensionId, body) { 
 
@@ -3469,7 +3469,7 @@
      * Update an extension pool by ID
      * 
      * @param {String} extensionPoolId Extension pool ID
-     * @param {module:purecloud-platform-client-v2/model/ExtensionPool} body ExtensionPool
+     * @param {Object} body ExtensionPool
      */
     this.putTelephonyProvidersEdgesExtensionpool = function(extensionPoolId, body) { 
 
@@ -3503,7 +3503,7 @@
      * Update outbound route
      * 
      * @param {String} outboundRouteId Outbound route ID
-     * @param {module:purecloud-platform-client-v2/model/OutboundRoute} body OutboundRoute
+     * @param {Object} body OutboundRoute
      */
     this.putTelephonyProvidersEdgesOutboundroute = function(outboundRouteId, body) { 
 
@@ -3537,7 +3537,7 @@
      * Update a Phone by ID
      * 
      * @param {String} phoneId Phone ID
-     * @param {module:purecloud-platform-client-v2/model/Phone} body Phone
+     * @param {Object} body Phone
      */
     this.putTelephonyProvidersEdgesPhone = function(phoneId, body) { 
 
@@ -3571,7 +3571,7 @@
      * Update a Phone Base Settings by ID
      * 
      * @param {String} phoneBaseId Phone base ID
-     * @param {module:purecloud-platform-client-v2/model/PhoneBase} body Phone base settings
+     * @param {Object} body Phone base settings
      */
     this.putTelephonyProvidersEdgesPhonebasesetting = function(phoneBaseId, body) { 
 
@@ -3605,7 +3605,7 @@
      * Update a Site by ID.
      * 
      * @param {String} siteId Site ID
-     * @param {module:purecloud-platform-client-v2/model/Site} body Site
+     * @param {Object} body Site
      */
     this.putTelephonyProvidersEdgesSite = function(siteId, body) { 
 
@@ -3639,7 +3639,7 @@
      * Update the list of Number Plans.
      * 
      * @param {String} siteId Site ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/NumberPlan>} body List of number plans
+     * @param {Array.<Object>} body List of number plans
      */
     this.putTelephonyProvidersEdgesSiteNumberplans = function(siteId, body) { 
 
@@ -3674,7 +3674,7 @@
      * 
      * @param {String} siteId Site ID
      * @param {String} outboundRouteId Outbound route ID
-     * @param {module:purecloud-platform-client-v2/model/OutboundRouteBase} body OutboundRoute
+     * @param {Object} body OutboundRoute
      */
     this.putTelephonyProvidersEdgesSiteOutboundroute = function(siteId, outboundRouteId, body) { 
 
@@ -3713,7 +3713,7 @@
      * Update a Trunk Base Settings object by ID
      * 
      * @param {String} trunkBaseSettingsId Trunk Base ID
-     * @param {module:purecloud-platform-client-v2/model/TrunkBase} body Trunk base settings
+     * @param {Object} body Trunk base settings
      */
     this.putTelephonyProvidersEdgesTrunkbasesetting = function(trunkBaseSettingsId, body) { 
 

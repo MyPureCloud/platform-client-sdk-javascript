@@ -128,7 +128,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.UtilitiesApi();
 
-var body = new platformClient.Certificate(); // Certificate | Certificate
+var body = {}; // Object | Certificate
 
 apiInstance.postCertificateDetails(body)
   .then(function(data) {
@@ -146,7 +146,7 @@ apiInstance.postCertificateDetails(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Certificate** | Certificate |  |
+ **body** | **Object** | Certificate |  |
 {: class="table table-striped"}
 
 ### Return type

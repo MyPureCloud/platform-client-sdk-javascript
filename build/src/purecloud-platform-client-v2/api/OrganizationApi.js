@@ -18,7 +18,7 @@
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -36,7 +36,7 @@
     /**
      * Fetch field config for an entity type
      * 
-     * @param {module:purecloud-platform-client-v2/model/String} type Field type
+     * @param {Object} type Field type
      */
     this.getFieldconfig = function(type) { 
 
@@ -86,8 +86,8 @@
     /**
      * Update organization
      * 
-     * @param {module:purecloud-platform-client-v2/model/String} featureName Organization feature
-     * @param {module:purecloud-platform-client-v2/model/FeatureState} enabled New state of feature
+     * @param {Object} featureName Organization feature
+     * @param {Object} enabled New state of feature
      */
     this.patchOrganizationsFeature = function(featureName, enabled) { 
 
@@ -121,7 +121,7 @@
      * Update organization.
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Organization} opts.body Organization
+     * @param {Object} opts.body Organization
      */
     this.putOrganizationsMe = function(opts) { 
       opts = opts || {};

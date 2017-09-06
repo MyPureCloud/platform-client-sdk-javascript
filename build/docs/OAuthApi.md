@@ -224,7 +224,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.OAuthApi();
 
-var body = new platformClient.OAuthClient(); // OAuthClient | Client
+var body = {}; // Object | Client
 
 apiInstance.postOauthClients(body)
   .then(function(data) {
@@ -242,7 +242,7 @@ apiInstance.postOauthClients(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **OAuthClient** | Client |  |
+ **body** | **Object** | Client |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -274,7 +274,7 @@ var apiInstance = new platformClient.OAuthApi();
 
 var clientId = "clientId_example"; // String | Client ID
 
-var body = new platformClient.OAuthClient(); // OAuthClient | Client
+var body = {}; // Object | Client
 
 apiInstance.putOauthClient(clientId, body)
   .then(function(data) {
@@ -293,7 +293,7 @@ apiInstance.putOauthClient(clientId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | Client ID |  |
- **body** | **OAuthClient** | Client |  |
+ **body** | **Object** | Client |  |
 {: class="table table-striped"}
 
 ### Return type

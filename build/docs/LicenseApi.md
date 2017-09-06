@@ -269,7 +269,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.LicenseApi();
 
 var opts = { 
-  'body': new platformClient.LicenseBatchAssignmentRequest() // LicenseBatchAssignmentRequest | The license assignments to update.
+  'body': {} // Object | The license assignments to update.
 };
 apiInstance.postLicenseOrganization(opts)
   .then(function(data) {
@@ -287,7 +287,7 @@ apiInstance.postLicenseOrganization(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **LicenseBatchAssignmentRequest** | The license assignments to update. | [optional]  |
+ **body** | **Object** | The license assignments to update. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -366,7 +366,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.LicenseApi();
 
 var opts = { 
-  'body': [new platformClient.[String]()] // [String] | The user IDs to fetch.
+  'body': [{}] // Object | The user IDs to fetch.
 };
 apiInstance.postLicenseUsers(opts)
   .then(function(data) {
@@ -384,7 +384,7 @@ apiInstance.postLicenseUsers(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **[String]** | The user IDs to fetch. | [optional]  |
+ **body** | **Object** | The user IDs to fetch. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

@@ -18,7 +18,7 @@
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -148,7 +148,7 @@
      * 
      * @param {String} responseId Response ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand Expand instructions for the return value.
+     * @param {Object} opts.expand Expand instructions for the return value.
      */
     this.getResponsemanagementResponse = function(responseId, opts) { 
       opts = opts || {};
@@ -181,7 +181,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Number} opts.pageSize Page size (default to 25)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand Expand instructions for the return value.
+     * @param {Object} opts.expand Expand instructions for the return value.
      */
     this.getResponsemanagementResponses = function(libraryId, opts) { 
       opts = opts || {};
@@ -210,7 +210,7 @@
     /**
      * Create a response library.
      * 
-     * @param {module:purecloud-platform-client-v2/model/Library} body Library
+     * @param {Object} body Library
      */
     this.postResponsemanagementLibraries = function(body) { 
 
@@ -238,9 +238,9 @@
     /**
      * Create a response.
      * 
-     * @param {module:purecloud-platform-client-v2/model/Response} body Response
+     * @param {Object} body Response
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand Expand instructions for the return value.
+     * @param {Object} opts.expand Expand instructions for the return value.
      */
     this.postResponsemanagementResponses = function(body, opts) { 
       opts = opts || {};
@@ -269,7 +269,7 @@
     /**
      * Query responses
      * 
-     * @param {module:purecloud-platform-client-v2/model/ResponseQueryRequest} body Response
+     * @param {Object} body Response
      */
     this.postResponsemanagementResponsesQuery = function(body) { 
 
@@ -298,7 +298,7 @@
      * Update an existing response library.
      * Fields that can be updated: name. The most recent version is required for updates.
      * @param {String} libraryId Library ID
-     * @param {module:purecloud-platform-client-v2/model/Library} body Library
+     * @param {Object} body Library
      */
     this.putResponsemanagementLibrary = function(libraryId, body) { 
 
@@ -332,9 +332,9 @@
      * Update an existing response.
      * Fields that can be updated: name, libraries, and texts. The most recent version is required for updates.
      * @param {String} responseId Response ID
-     * @param {module:purecloud-platform-client-v2/model/Response} body Response
+     * @param {Object} body Response
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand Expand instructions for the return value.
+     * @param {Object} opts.expand Expand instructions for the return value.
      */
     this.putResponsemanagementResponse = function(responseId, body, opts) { 
       opts = opts || {};

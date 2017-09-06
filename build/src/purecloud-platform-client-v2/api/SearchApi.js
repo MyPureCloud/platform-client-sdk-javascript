@@ -18,7 +18,7 @@
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -252,7 +252,7 @@
     /**
      * Search documentation
      * 
-     * @param {module:purecloud-platform-client-v2/model/DocumentationSearchRequest} body Search request options
+     * @param {Object} body Search request options
      */
     this.postDocumentationSearch = function(body) { 
 
@@ -280,7 +280,7 @@
     /**
      * Search groups
      * 
-     * @param {module:purecloud-platform-client-v2/model/GroupSearchRequest} body Search request options
+     * @param {Object} body Search request options
      */
     this.postGroupsSearch = function(body) { 
 
@@ -308,7 +308,7 @@
     /**
      * Search locations
      * 
-     * @param {module:purecloud-platform-client-v2/model/LocationSearchRequest} body Search request options
+     * @param {Object} body Search request options
      */
     this.postLocationsSearch = function(body) { 
 
@@ -336,7 +336,7 @@
     /**
      * Search resources.
      * 
-     * @param {module:purecloud-platform-client-v2/model/SearchRequest} body Search request options
+     * @param {Object} body Search request options
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.profile profile (default to true)
      */
@@ -367,7 +367,7 @@
     /**
      * Suggest resources.
      * 
-     * @param {module:purecloud-platform-client-v2/model/SuggestSearchRequest} body Search request options
+     * @param {Object} body Search request options
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.profile profile (default to true)
      */
@@ -398,7 +398,7 @@
     /**
      * Search users
      * 
-     * @param {module:purecloud-platform-client-v2/model/UserSearchRequest} body Search request options
+     * @param {Object} body Search request options
      */
     this.postUsersSearch = function(body) { 
 
@@ -426,7 +426,7 @@
     /**
      * Search voicemails
      * 
-     * @param {module:purecloud-platform-client-v2/model/VoicemailSearchRequest} body Search request options
+     * @param {Object} body Search request options
      */
     this.postVoicemailSearch = function(body) { 
 

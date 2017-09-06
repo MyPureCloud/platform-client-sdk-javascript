@@ -5,10 +5,6 @@
       "class": "DependencyTrackingBuildNotificationNotification"
     },
     {
-      "topic": "v2.architect.flows.{id}.generation.{id}",
-      "class": "PublishFlowNotificationNotification"
-    },
-    {
       "topic": "v2.architect.prompts.{id}",
       "class": "PromptNotificationNotification"
     },

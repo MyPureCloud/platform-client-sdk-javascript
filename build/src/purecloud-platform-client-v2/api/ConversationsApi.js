@@ -18,7 +18,7 @@
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -1042,7 +1042,7 @@
      * Update conversation participant.
      * @param {String} conversationId conversation ID
      * @param {String} participantId participant ID
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Update request
+     * @param {Object} body Update request
      */
     this.patchConversationParticipant = function(conversationId, participantId, body) { 
 
@@ -1082,7 +1082,7 @@
      * 
      * @param {String} conversationId conversation ID
      * @param {String} participantId participant ID
-     * @param {module:purecloud-platform-client-v2/model/ParticipantAttributes} body Participant attributes
+     * @param {Object} body Participant attributes
      */
     this.patchConversationParticipantAttributes = function(conversationId, participantId, body) { 
 
@@ -1121,7 +1121,7 @@
      * Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/Conversation} body Conversation
+     * @param {Object} body Conversation
      */
     this.patchConversationsCall = function(conversationId, body) { 
 
@@ -1156,7 +1156,7 @@
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Participant request
+     * @param {Object} body Participant request
      */
     this.patchConversationsCallParticipant = function(conversationId, participantId, body) { 
 
@@ -1196,7 +1196,7 @@
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/ParticipantAttributes} body Participant attributes
+     * @param {Object} body Participant attributes
      */
     this.patchConversationsCallParticipantAttributes = function(conversationId, participantId, body) { 
 
@@ -1237,7 +1237,7 @@
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
      * @param {String} communicationId communicationId
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Participant
+     * @param {Object} body Participant
      */
     this.patchConversationsCallParticipantCommunication = function(conversationId, participantId, communicationId, body) { 
 
@@ -1282,7 +1282,7 @@
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/ConsultTransferUpdate} body new speak to
+     * @param {Object} body new speak to
      */
     this.patchConversationsCallParticipantConsult = function(conversationId, participantId, body) { 
 
@@ -1321,7 +1321,7 @@
      * Update a conversation by disconnecting all of the participants
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/Conversation} body Conversation
+     * @param {Object} body Conversation
      */
     this.patchConversationsCallback = function(conversationId, body) { 
 
@@ -1356,7 +1356,7 @@
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Participant
+     * @param {Object} body Participant
      */
     this.patchConversationsCallbackParticipant = function(conversationId, participantId, body) { 
 
@@ -1396,7 +1396,7 @@
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/ParticipantAttributes} body Attributes
+     * @param {Object} body Attributes
      */
     this.patchConversationsCallbackParticipantAttributes = function(conversationId, participantId, body) { 
 
@@ -1437,7 +1437,7 @@
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
      * @param {String} communicationId communicationId
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Participant
+     * @param {Object} body Participant
      */
     this.patchConversationsCallbackParticipantCommunication = function(conversationId, participantId, communicationId, body) { 
 
@@ -1481,7 +1481,7 @@
      * Update a conversation by disconnecting all of the participants
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/Conversation} body Conversation
+     * @param {Object} body Conversation
      */
     this.patchConversationsChat = function(conversationId, body) { 
 
@@ -1516,7 +1516,7 @@
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Update request
+     * @param {Object} body Update request
      */
     this.patchConversationsChatParticipant = function(conversationId, participantId, body) { 
 
@@ -1556,7 +1556,7 @@
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/ParticipantAttributes} body Participant attributes
+     * @param {Object} body Participant attributes
      */
     this.patchConversationsChatParticipantAttributes = function(conversationId, participantId, body) { 
 
@@ -1597,7 +1597,7 @@
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
      * @param {String} communicationId communicationId
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Participant
+     * @param {Object} body Participant
      */
     this.patchConversationsChatParticipantCommunication = function(conversationId, participantId, communicationId, body) { 
 
@@ -1641,7 +1641,7 @@
      * Update a conversation by disconnecting all of the participants
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/Conversation} body Conversation
+     * @param {Object} body Conversation
      */
     this.patchConversationsCobrowsesession = function(conversationId, body) { 
 
@@ -1677,7 +1677,7 @@
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} opts.body 
+     * @param {Object} opts.body 
      */
     this.patchConversationsCobrowsesessionParticipant = function(conversationId, participantId, opts) { 
       opts = opts || {};
@@ -1714,7 +1714,7 @@
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/ParticipantAttributes} opts.body 
+     * @param {Object} opts.body 
      */
     this.patchConversationsCobrowsesessionParticipantAttributes = function(conversationId, participantId, opts) { 
       opts = opts || {};
@@ -1751,7 +1751,7 @@
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
      * @param {String} communicationId communicationId
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Participant
+     * @param {Object} body Participant
      */
     this.patchConversationsCobrowsesessionParticipantCommunication = function(conversationId, participantId, communicationId, body) { 
 
@@ -1795,7 +1795,7 @@
      * Update a conversation by disconnecting all of the participants
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/Conversation} body Conversation
+     * @param {Object} body Conversation
      */
     this.patchConversationsEmail = function(conversationId, body) { 
 
@@ -1830,7 +1830,7 @@
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Update request
+     * @param {Object} body Update request
      */
     this.patchConversationsEmailParticipant = function(conversationId, participantId, body) { 
 
@@ -1870,7 +1870,7 @@
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/ParticipantAttributes} body Participant attributes
+     * @param {Object} body Participant attributes
      */
     this.patchConversationsEmailParticipantAttributes = function(conversationId, participantId, body) { 
 
@@ -1911,7 +1911,7 @@
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
      * @param {String} communicationId communicationId
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Participant
+     * @param {Object} body Participant
      */
     this.patchConversationsEmailParticipantCommunication = function(conversationId, participantId, communicationId, body) { 
 
@@ -1955,7 +1955,7 @@
      * Index conversation properties
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/PropertyIndexRequest} body request
+     * @param {Object} body request
      */
     this.postAnalyticsConversationDetailsProperties = function(conversationId, body) { 
 
@@ -1988,7 +1988,7 @@
     /**
      * Query for conversation aggregates
      * 
-     * @param {module:purecloud-platform-client-v2/model/AggregationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsConversationsAggregatesQuery = function(body) { 
 
@@ -2016,7 +2016,7 @@
     /**
      * Query for conversation details
      * 
-     * @param {module:purecloud-platform-client-v2/model/ConversationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsConversationsDetailsQuery = function(body) { 
 
@@ -2047,7 +2047,7 @@
      * @param {String} conversationId conversation ID
      * @param {String} participantId participant ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/CreateCallbackOnConversationCommand} opts.body 
+     * @param {Object} opts.body 
      */
     this.postConversationParticipantCallbacks = function(conversationId, participantId, opts) { 
       opts = opts || {};
@@ -2083,7 +2083,7 @@
      * 
      * @param {String} conversationId conversation ID
      * @param {String} participantId participant ID
-     * @param {module:purecloud-platform-client-v2/model/TransferRequest} body Transfer request
+     * @param {Object} body Transfer request
      */
     this.postConversationParticipantReplace = function(conversationId, participantId, body) { 
 
@@ -2119,10 +2119,10 @@
 
 
     /**
-     * Add a new call to a conversation
+     * Place a new call as part of a callback conversation.
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/CallCommand} body Conversation
+     * @param {Object} body Conversation
      */
     this.postConversationsCall = function(conversationId, body) { 
 
@@ -2157,7 +2157,7 @@
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/ConsultTransfer} body Destination address &amp; initial speak to
+     * @param {Object} body Destination address &amp; initial speak to
      */
     this.postConversationsCallParticipantConsult = function(conversationId, participantId, body) { 
 
@@ -2231,7 +2231,7 @@
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/TransferRequest} body Transfer request
+     * @param {Object} body Transfer request
      */
     this.postConversationsCallParticipantReplace = function(conversationId, participantId, body) { 
 
@@ -2270,7 +2270,7 @@
      * Add participants to a conversation
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/Conversation} body Conversation
+     * @param {Object} body Conversation
      */
     this.postConversationsCallParticipants = function(conversationId, body) { 
 
@@ -2305,7 +2305,7 @@
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/TransferRequest} body Transfer request
+     * @param {Object} body Transfer request
      */
     this.postConversationsCallbackParticipantReplace = function(conversationId, participantId, body) { 
 
@@ -2343,7 +2343,7 @@
     /**
      * Create a Callback
      * 
-     * @param {module:purecloud-platform-client-v2/model/CreateCallbackCommand} body Callback
+     * @param {Object} body Callback
      */
     this.postConversationsCallbacks = function(body) { 
 
@@ -2371,7 +2371,7 @@
     /**
      * Create a call conversation
      * 
-     * @param {module:purecloud-platform-client-v2/model/CreateCallRequest} body Call request
+     * @param {Object} body Call request
      */
     this.postConversationsCalls = function(body) { 
 
@@ -2401,7 +2401,7 @@
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/TransferRequest} body Transfer request
+     * @param {Object} body Transfer request
      */
     this.postConversationsChatParticipantReplace = function(conversationId, participantId, body) { 
 
@@ -2439,7 +2439,7 @@
     /**
      * Create a web chat conversation
      * 
-     * @param {module:purecloud-platform-client-v2/model/CreateWebChatRequest} body Create web chat request
+     * @param {Object} body Create web chat request
      */
     this.postConversationsChats = function(body) { 
 
@@ -2470,7 +2470,7 @@
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/TransferRequest} opts.body 
+     * @param {Object} opts.body 
      */
     this.postConversationsCobrowsesessionParticipantReplace = function(conversationId, participantId, opts) { 
       opts = opts || {};
@@ -2505,7 +2505,7 @@
      * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/InboundMessageRequest} body Send external email reply
+     * @param {Object} body Send external email reply
      */
     this.postConversationsEmailInboundmessages = function(conversationId, body) { 
 
@@ -2539,7 +2539,7 @@
      * Send an email reply
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/EmailMessage} body Reply
+     * @param {Object} body Reply
      */
     this.postConversationsEmailMessages = function(conversationId, body) { 
 
@@ -2574,7 +2574,7 @@
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/TransferRequest} body Transfer request
+     * @param {Object} body Transfer request
      */
     this.postConversationsEmailParticipantReplace = function(conversationId, participantId, body) { 
 
@@ -2612,7 +2612,7 @@
     /**
      * Create an email conversation
      * 
-     * @param {module:purecloud-platform-client-v2/model/CreateEmailRequest} body Create email request
+     * @param {Object} body Create email request
      */
     this.postConversationsEmails = function(body) { 
 
@@ -2640,7 +2640,7 @@
     /**
      * Create Fax Conversation
      * 
-     * @param {module:purecloud-platform-client-v2/model/FaxSendRequest} body Fax
+     * @param {Object} body Fax
      */
     this.postConversationsFaxes = function(body) { 
 
@@ -2671,7 +2671,7 @@
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
      * @param {String} communicationId communicationId
-     * @param {module:purecloud-platform-client-v2/model/SetUuiDataRequest} body UUIData Request
+     * @param {Object} body UUIData Request
      */
     this.putConversationsCallParticipantCommunicationUuidata = function(conversationId, participantId, communicationId, body) { 
 
@@ -2715,7 +2715,7 @@
      * Update conversation draft reply
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/EmailMessage} body Draft
+     * @param {Object} body Draft
      */
     this.putConversationsEmailMessagesDraft = function(conversationId, body) { 
 

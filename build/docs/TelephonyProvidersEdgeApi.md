@@ -4279,7 +4279,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 var edgeId = "edgeId_example"; // String | Edge ID
 
-var body = new platformClient.DomainLogicalInterface(); // DomainLogicalInterface | Logical interface
+var body = {}; // Object | Logical interface
 
 apiInstance.postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body)
   .then(function(data) {
@@ -4298,7 +4298,7 @@ apiInstance.postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
- **body** | **DomainLogicalInterface** | Logical interface |  |
+ **body** | **Object** | Logical interface |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4332,7 +4332,7 @@ var edgeId = "edgeId_example"; // String | Edge ID
 
 var jobId = "jobId_example"; // String | Job ID
 
-var body = new platformClient.EdgeLogsJobUploadRequest(); // EdgeLogsJobUploadRequest | Log upload request
+var body = {}; // Object | Log upload request
 
 apiInstance.postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body)
   .then(function() {
@@ -4352,7 +4352,7 @@ apiInstance.postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
  **jobId** | **String** | Job ID |  |
- **body** | **EdgeLogsJobUploadRequest** | Log upload request |  |
+ **body** | **Object** | Log upload request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4384,7 +4384,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 var edgeId = "edgeId_example"; // String | Edge ID
 
-var body = new platformClient.EdgeLogsJobRequest(); // EdgeLogsJobRequest | EdgeLogsJobRequest
+var body = {}; // Object | EdgeLogsJobRequest
 
 apiInstance.postTelephonyProvidersEdgeLogsJobs(edgeId, body)
   .then(function(data) {
@@ -4403,7 +4403,7 @@ apiInstance.postTelephonyProvidersEdgeLogsJobs(edgeId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
- **body** | **EdgeLogsJobRequest** | EdgeLogsJobRequest |  |
+ **body** | **Object** | EdgeLogsJobRequest |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4436,7 +4436,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 var edgeId = "edgeId_example"; // String | Edge ID
 
 var opts = { 
-  'body': new platformClient.EdgeRebootParameters() // EdgeRebootParameters | Parameters for the edge reboot
+  'body': {} // Object | Parameters for the edge reboot
 };
 apiInstance.postTelephonyProvidersEdgeReboot(edgeId, opts)
   .then(function(data) {
@@ -4455,7 +4455,7 @@ apiInstance.postTelephonyProvidersEdgeReboot(edgeId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
- **body** | **EdgeRebootParameters** | Parameters for the edge reboot | [optional]  |
+ **body** | **Object** | Parameters for the edge reboot | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4487,7 +4487,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 var edgeId = "edgeId_example"; // String | Edge ID
 
-var body = new platformClient.DomainEdgeSoftwareUpdateDto(); // DomainEdgeSoftwareUpdateDto | Software update request
+var body = {}; // Object | Software update request
 
 apiInstance.postTelephonyProvidersEdgeSoftwareupdate(edgeId, body)
   .then(function(data) {
@@ -4506,7 +4506,7 @@ apiInstance.postTelephonyProvidersEdgeSoftwareupdate(edgeId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
- **body** | **DomainEdgeSoftwareUpdateDto** | Software update request |  |
+ **body** | **Object** | Software update request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4539,7 +4539,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 var edgeId = "edgeId_example"; // String | Edge ID
 
 var opts = { 
-  'body': new platformClient.EdgeServiceStateRequest() // EdgeServiceStateRequest | Edge Service State
+  'body': {} // Object | Edge Service State
 };
 apiInstance.postTelephonyProvidersEdgeStatuscode(edgeId, opts)
   .then(function(data) {
@@ -4558,7 +4558,7 @@ apiInstance.postTelephonyProvidersEdgeStatuscode(edgeId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
- **body** | **EdgeServiceStateRequest** | Edge Service State | [optional]  |
+ **body** | **Object** | Edge Service State | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4636,7 +4636,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = new platformClient.Edge(); // Edge | Edge
+var body = {}; // Object | Edge
 
 apiInstance.postTelephonyProvidersEdges(body)
   .then(function(data) {
@@ -4654,7 +4654,7 @@ apiInstance.postTelephonyProvidersEdges(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Edge** | Edge |  |
+ **body** | **Object** | Edge |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4684,7 +4684,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = new platformClient.ValidateAddressRequest(); // ValidateAddressRequest | Address
+var body = {}; // Object | Address
 
 apiInstance.postTelephonyProvidersEdgesAddressvalidation(body)
   .then(function(data) {
@@ -4702,7 +4702,7 @@ apiInstance.postTelephonyProvidersEdgesAddressvalidation(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **ValidateAddressRequest** | Address |  |
+ **body** | **Object** | Address |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4732,7 +4732,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = new platformClient.DomainCertificateAuthority(); // DomainCertificateAuthority | CertificateAuthority
+var body = {}; // Object | CertificateAuthority
 
 apiInstance.postTelephonyProvidersEdgesCertificateauthorities(body)
   .then(function(data) {
@@ -4750,7 +4750,7 @@ apiInstance.postTelephonyProvidersEdgesCertificateauthorities(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **DomainCertificateAuthority** | CertificateAuthority |  |
+ **body** | **Object** | CertificateAuthority |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4780,7 +4780,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = new platformClient.DIDPool(); // DIDPool | DID pool
+var body = {}; // Object | DID pool
 
 apiInstance.postTelephonyProvidersEdgesDidpools(body)
   .then(function(data) {
@@ -4798,7 +4798,7 @@ apiInstance.postTelephonyProvidersEdgesDidpools(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **DIDPool** | DID pool |  |
+ **body** | **Object** | DID pool |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4828,7 +4828,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = new platformClient.EdgeGroup(); // EdgeGroup | EdgeGroup
+var body = {}; // Object | EdgeGroup
 
 apiInstance.postTelephonyProvidersEdgesEdgegroups(body)
   .then(function(data) {
@@ -4846,7 +4846,7 @@ apiInstance.postTelephonyProvidersEdgesEdgegroups(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **EdgeGroup** | EdgeGroup |  |
+ **body** | **Object** | EdgeGroup |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4876,7 +4876,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = new platformClient.Endpoint(); // Endpoint | EndpointTemplate
+var body = {}; // Object | EndpointTemplate
 
 apiInstance.postTelephonyProvidersEdgesEndpoints(body)
   .then(function(data) {
@@ -4894,7 +4894,7 @@ apiInstance.postTelephonyProvidersEdgesEndpoints(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Endpoint** | EndpointTemplate |  |
+ **body** | **Object** | EndpointTemplate |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4924,7 +4924,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = new platformClient.ExtensionPool(); // ExtensionPool | ExtensionPool
+var body = {}; // Object | ExtensionPool
 
 apiInstance.postTelephonyProvidersEdgesExtensionpools(body)
   .then(function(data) {
@@ -4942,7 +4942,7 @@ apiInstance.postTelephonyProvidersEdgesExtensionpools(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **ExtensionPool** | ExtensionPool |  |
+ **body** | **Object** | ExtensionPool |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4972,7 +4972,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = new platformClient.OutboundRoute(); // OutboundRoute | OutboundRoute
+var body = {}; // Object | OutboundRoute
 
 apiInstance.postTelephonyProvidersEdgesOutboundroutes(body)
   .then(function(data) {
@@ -4990,7 +4990,7 @@ apiInstance.postTelephonyProvidersEdgesOutboundroutes(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **OutboundRoute** | OutboundRoute |  |
+ **body** | **Object** | OutboundRoute |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5068,7 +5068,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = new platformClient.PhoneBase(); // PhoneBase | Phone base settings
+var body = {}; // Object | Phone base settings
 
 apiInstance.postTelephonyProvidersEdgesPhonebasesettings(body)
   .then(function(data) {
@@ -5086,7 +5086,7 @@ apiInstance.postTelephonyProvidersEdgesPhonebasesettings(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **PhoneBase** | Phone base settings |  |
+ **body** | **Object** | Phone base settings |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5116,7 +5116,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = new platformClient.Phone(); // Phone | Phone
+var body = {}; // Object | Phone
 
 apiInstance.postTelephonyProvidersEdgesPhones(body)
   .then(function(data) {
@@ -5134,7 +5134,7 @@ apiInstance.postTelephonyProvidersEdgesPhones(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Phone** | Phone |  |
+ **body** | **Object** | Phone |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5164,7 +5164,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = new platformClient.PhonesReboot(); // PhonesReboot | Phones
+var body = {}; // Object | Phones
 
 apiInstance.postTelephonyProvidersEdgesPhonesReboot(body)
   .then(function() {
@@ -5182,7 +5182,7 @@ apiInstance.postTelephonyProvidersEdgesPhonesReboot(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **PhonesReboot** | Phones |  |
+ **body** | **Object** | Phones |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5214,7 +5214,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 var siteId = "siteId_example"; // String | Site ID
 
-var body = new platformClient.OutboundRouteBase(); // OutboundRouteBase | OutboundRoute
+var body = {}; // Object | OutboundRoute
 
 apiInstance.postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)
   .then(function(data) {
@@ -5233,7 +5233,7 @@ apiInstance.postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **siteId** | **String** | Site ID |  |
- **body** | **OutboundRouteBase** | OutboundRoute |  |
+ **body** | **Object** | OutboundRoute |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5311,7 +5311,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = new platformClient.Site(); // Site | Site
+var body = {}; // Object | Site
 
 apiInstance.postTelephonyProvidersEdgesSites(body)
   .then(function(data) {
@@ -5329,7 +5329,7 @@ apiInstance.postTelephonyProvidersEdgesSites(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Site** | Site |  |
+ **body** | **Object** | Site |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5359,7 +5359,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = new platformClient.TrunkBase(); // TrunkBase | Trunk base settings
+var body = {}; // Object | Trunk base settings
 
 apiInstance.postTelephonyProvidersEdgesTrunkbasesettings(body)
   .then(function(data) {
@@ -5377,7 +5377,7 @@ apiInstance.postTelephonyProvidersEdgesTrunkbasesettings(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **TrunkBase** | Trunk base settings |  |
+ **body** | **Object** | Trunk base settings |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5409,7 +5409,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 var edgeId = "edgeId_example"; // String | Edge ID
 
-var body = new platformClient.Edge(); // Edge | Edge
+var body = {}; // Object | Edge
 
 apiInstance.putTelephonyProvidersEdge(edgeId, body)
   .then(function(data) {
@@ -5428,7 +5428,7 @@ apiInstance.putTelephonyProvidersEdge(edgeId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
- **body** | **Edge** | Edge |  |
+ **body** | **Object** | Edge |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5462,7 +5462,7 @@ var edgeId = "edgeId_example"; // String | Edge ID
 
 var lineId = "lineId_example"; // String | Line ID
 
-var body = new platformClient.EdgeLine(); // EdgeLine | Line
+var body = {}; // Object | Line
 
 apiInstance.putTelephonyProvidersEdgeLine(edgeId, lineId, body)
   .then(function(data) {
@@ -5482,7 +5482,7 @@ apiInstance.putTelephonyProvidersEdgeLine(edgeId, lineId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
  **lineId** | **String** | Line ID |  |
- **body** | **EdgeLine** | Line |  |
+ **body** | **Object** | Line |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5516,7 +5516,7 @@ var edgeId = "edgeId_example"; // String | Edge ID
 
 var interfaceId = "interfaceId_example"; // String | Interface ID
 
-var body = new platformClient.DomainLogicalInterface(); // DomainLogicalInterface | Logical interface
+var body = {}; // Object | Logical interface
 
 apiInstance.putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body)
   .then(function(data) {
@@ -5536,7 +5536,7 @@ apiInstance.putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
  **interfaceId** | **String** | Interface ID |  |
- **body** | **DomainLogicalInterface** | Logical interface |  |
+ **body** | **Object** | Logical interface |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5568,7 +5568,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 var certificateId = "certificateId_example"; // String | Certificate ID
 
-var body = new platformClient.DomainCertificateAuthority(); // DomainCertificateAuthority | Certificate authority
+var body = {}; // Object | Certificate authority
 
 apiInstance.putTelephonyProvidersEdgesCertificateauthority(certificateId, body)
   .then(function(data) {
@@ -5587,7 +5587,7 @@ apiInstance.putTelephonyProvidersEdgesCertificateauthority(certificateId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **certificateId** | **String** | Certificate ID |  |
- **body** | **DomainCertificateAuthority** | Certificate authority |  |
+ **body** | **Object** | Certificate authority |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5619,7 +5619,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 var didId = "didId_example"; // String | DID ID
 
-var body = new platformClient.DID(); // DID | DID
+var body = {}; // Object | DID
 
 apiInstance.putTelephonyProvidersEdgesDid(didId, body)
   .then(function(data) {
@@ -5638,7 +5638,7 @@ apiInstance.putTelephonyProvidersEdgesDid(didId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **didId** | **String** | DID ID |  |
- **body** | **DID** | DID |  |
+ **body** | **Object** | DID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5670,7 +5670,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 var didPoolId = "didPoolId_example"; // String | DID pool ID
 
-var body = new platformClient.DIDPool(); // DIDPool | DID pool
+var body = {}; // Object | DID pool
 
 apiInstance.putTelephonyProvidersEdgesDidpool(didPoolId, body)
   .then(function(data) {
@@ -5689,7 +5689,7 @@ apiInstance.putTelephonyProvidersEdgesDidpool(didPoolId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **didPoolId** | **String** | DID pool ID |  |
- **body** | **DIDPool** | DID pool |  |
+ **body** | **Object** | DID pool |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5721,7 +5721,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 var edgeGroupId = "edgeGroupId_example"; // String | Edge group ID
 
-var body = new platformClient.EdgeGroup(); // EdgeGroup | EdgeGroup
+var body = {}; // Object | EdgeGroup
 
 apiInstance.putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body)
   .then(function(data) {
@@ -5740,7 +5740,7 @@ apiInstance.putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeGroupId** | **String** | Edge group ID |  |
- **body** | **EdgeGroup** | EdgeGroup |  |
+ **body** | **Object** | EdgeGroup |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5774,7 +5774,7 @@ var edgegroupId = "edgegroupId_example"; // String | Edge Group ID
 
 var edgetrunkbaseId = "edgetrunkbaseId_example"; // String | Edge Trunk Base ID
 
-var body = new platformClient.EdgeTrunkBase(); // EdgeTrunkBase | EdgeTrunkBase
+var body = {}; // Object | EdgeTrunkBase
 
 apiInstance.putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(edgegroupId, edgetrunkbaseId, body)
   .then(function(data) {
@@ -5794,7 +5794,7 @@ apiInstance.putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(edgegroupId, edget
 | ------------- | ------------- | ------------- | ------------- |
  **edgegroupId** | **String** | Edge Group ID |  |
  **edgetrunkbaseId** | **String** | Edge Trunk Base ID |  |
- **body** | **EdgeTrunkBase** | EdgeTrunkBase |  |
+ **body** | **Object** | EdgeTrunkBase |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5826,7 +5826,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 var endpointId = "endpointId_example"; // String | Endpoint ID
 
-var body = new platformClient.Endpoint(); // Endpoint | EndpointTemplate
+var body = {}; // Object | EndpointTemplate
 
 apiInstance.putTelephonyProvidersEdgesEndpoint(endpointId, body)
   .then(function(data) {
@@ -5845,7 +5845,7 @@ apiInstance.putTelephonyProvidersEdgesEndpoint(endpointId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **endpointId** | **String** | Endpoint ID |  |
- **body** | **Endpoint** | EndpointTemplate |  |
+ **body** | **Object** | EndpointTemplate |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5877,7 +5877,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 var extensionId = "extensionId_example"; // String | Extension ID
 
-var body = new platformClient.Extension(); // Extension | Extension
+var body = {}; // Object | Extension
 
 apiInstance.putTelephonyProvidersEdgesExtension(extensionId, body)
   .then(function(data) {
@@ -5896,7 +5896,7 @@ apiInstance.putTelephonyProvidersEdgesExtension(extensionId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **extensionId** | **String** | Extension ID |  |
- **body** | **Extension** | Extension |  |
+ **body** | **Object** | Extension |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5928,7 +5928,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 var extensionPoolId = "extensionPoolId_example"; // String | Extension pool ID
 
-var body = new platformClient.ExtensionPool(); // ExtensionPool | ExtensionPool
+var body = {}; // Object | ExtensionPool
 
 apiInstance.putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)
   .then(function(data) {
@@ -5947,7 +5947,7 @@ apiInstance.putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **extensionPoolId** | **String** | Extension pool ID |  |
- **body** | **ExtensionPool** | ExtensionPool |  |
+ **body** | **Object** | ExtensionPool |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5979,7 +5979,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 var outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
 
-var body = new platformClient.OutboundRoute(); // OutboundRoute | OutboundRoute
+var body = {}; // Object | OutboundRoute
 
 apiInstance.putTelephonyProvidersEdgesOutboundroute(outboundRouteId, body)
   .then(function(data) {
@@ -5998,7 +5998,7 @@ apiInstance.putTelephonyProvidersEdgesOutboundroute(outboundRouteId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **outboundRouteId** | **String** | Outbound route ID |  |
- **body** | **OutboundRoute** | OutboundRoute |  |
+ **body** | **Object** | OutboundRoute |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -6030,7 +6030,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 var phoneId = "phoneId_example"; // String | Phone ID
 
-var body = new platformClient.Phone(); // Phone | Phone
+var body = {}; // Object | Phone
 
 apiInstance.putTelephonyProvidersEdgesPhone(phoneId, body)
   .then(function(data) {
@@ -6049,7 +6049,7 @@ apiInstance.putTelephonyProvidersEdgesPhone(phoneId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **phoneId** | **String** | Phone ID |  |
- **body** | **Phone** | Phone |  |
+ **body** | **Object** | Phone |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -6081,7 +6081,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 var phoneBaseId = "phoneBaseId_example"; // String | Phone base ID
 
-var body = new platformClient.PhoneBase(); // PhoneBase | Phone base settings
+var body = {}; // Object | Phone base settings
 
 apiInstance.putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body)
   .then(function(data) {
@@ -6100,7 +6100,7 @@ apiInstance.putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **phoneBaseId** | **String** | Phone base ID |  |
- **body** | **PhoneBase** | Phone base settings |  |
+ **body** | **Object** | Phone base settings |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -6132,7 +6132,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 var siteId = "siteId_example"; // String | Site ID
 
-var body = new platformClient.Site(); // Site | Site
+var body = {}; // Object | Site
 
 apiInstance.putTelephonyProvidersEdgesSite(siteId, body)
   .then(function(data) {
@@ -6151,7 +6151,7 @@ apiInstance.putTelephonyProvidersEdgesSite(siteId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **siteId** | **String** | Site ID |  |
- **body** | **Site** | Site |  |
+ **body** | **Object** | Site |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -6183,7 +6183,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 var siteId = "siteId_example"; // String | Site ID
 
-var body = [new platformClient.NumberPlan()]; // [NumberPlan] | List of number plans
+var body = [{}]; // Object | List of number plans
 
 apiInstance.putTelephonyProvidersEdgesSiteNumberplans(siteId, body)
   .then(function(data) {
@@ -6202,7 +6202,7 @@ apiInstance.putTelephonyProvidersEdgesSiteNumberplans(siteId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **siteId** | **String** | Site ID |  |
- **body** | **[NumberPlan]** | List of number plans |  |
+ **body** | **Object** | List of number plans |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -6236,7 +6236,7 @@ var siteId = "siteId_example"; // String | Site ID
 
 var outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
 
-var body = new platformClient.OutboundRouteBase(); // OutboundRouteBase | OutboundRoute
+var body = {}; // Object | OutboundRoute
 
 apiInstance.putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, body)
   .then(function(data) {
@@ -6256,7 +6256,7 @@ apiInstance.putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId,
 | ------------- | ------------- | ------------- | ------------- |
  **siteId** | **String** | Site ID |  |
  **outboundRouteId** | **String** | Outbound route ID |  |
- **body** | **OutboundRouteBase** | OutboundRoute |  |
+ **body** | **Object** | OutboundRoute |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -6288,7 +6288,7 @@ var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 var trunkBaseSettingsId = "trunkBaseSettingsId_example"; // String | Trunk Base ID
 
-var body = new platformClient.TrunkBase(); // TrunkBase | Trunk base settings
+var body = {}; // Object | Trunk base settings
 
 apiInstance.putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body)
   .then(function(data) {
@@ -6307,7 +6307,7 @@ apiInstance.putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **trunkBaseSettingsId** | **String** | Trunk Base ID |  |
- **body** | **TrunkBase** | Trunk base settings |  |
+ **body** | **Object** | Trunk base settings |  |
 {: class="table table-striped"}
 
 ### Return type

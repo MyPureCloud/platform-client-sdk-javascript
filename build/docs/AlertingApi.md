@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteAlertingInteractionstatsAlert**](AlertingApi.html#deleteAlertingInteractionstatsAlert) | **DELETE** /api/v2/alerting/interactionstats/alerts/{alertId} | Delete an interaction stats alert
 [**deleteAlertingInteractionstatsRule**](AlertingApi.html#deleteAlertingInteractionstatsRule) | **DELETE** /api/v2/alerting/interactionstats/rules/{ruleId} | Delete an interaction stats rule.
+[**getAlertingAlertsActive**](AlertingApi.html#getAlertingAlertsActive) | **GET** /api/v2/alerting/alerts/active | Gets active alert count for a user.
 [**getAlertingInteractionstatsAlert**](AlertingApi.html#getAlertingInteractionstatsAlert) | **GET** /api/v2/alerting/interactionstats/alerts/{alertId} | Get an interaction stats alert
 [**getAlertingInteractionstatsAlerts**](AlertingApi.html#getAlertingInteractionstatsAlerts) | **GET** /api/v2/alerting/interactionstats/alerts | Get interaction stats alert list.
 [**getAlertingInteractionstatsAlertsUnread**](AlertingApi.html#getAlertingInteractionstatsAlertsUnread) | **GET** /api/v2/alerting/interactionstats/alerts/unread | Gets user unread count of interaction stats alerts.
@@ -114,6 +115,48 @@ apiInstance.deleteAlertingInteractionstatsRule(ruleId)
 ### Return type
 
 void (no response body)
+
+<a name="getAlertingAlertsActive"></a>
+
+# [**ActiveAlertCount**](ActiveAlertCount.html) getAlertingAlertsActive()
+
+GET /api/v2/alerting/alerts/active
+
+Gets active alert count for a user.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AlertingApi();
+apiInstance.getAlertingAlertsActive()
+  .then(function(data) {
+    console.log(`getAlertingAlertsActive success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getAlertingAlertsActive');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**ActiveAlertCount**
 
 <a name="getAlertingInteractionstatsAlert"></a>
 
@@ -382,7 +425,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.AlertingApi();
 
-var body = new platformClient.InteractionStatsRule(); // InteractionStatsRule | AlertingRule
+var body = {}; // Object | AlertingRule
 
 var opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand
@@ -403,7 +446,7 @@ apiInstance.postAlertingInteractionstatsRules(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **InteractionStatsRule** | AlertingRule |  |
+ **body** | **Object** | AlertingRule |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
@@ -436,7 +479,7 @@ var apiInstance = new platformClient.AlertingApi();
 
 var alertId = "alertId_example"; // String | Alert ID
 
-var body = new platformClient.UnreadStatus(); // UnreadStatus | InteractionStatsAlert
+var body = {}; // Object | InteractionStatsAlert
 
 var opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand
@@ -458,7 +501,7 @@ apiInstance.putAlertingInteractionstatsAlert(alertId, body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **alertId** | **String** | Alert ID |  |
- **body** | **UnreadStatus** | InteractionStatsAlert |  |
+ **body** | **Object** | InteractionStatsAlert |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
@@ -491,7 +534,7 @@ var apiInstance = new platformClient.AlertingApi();
 
 var ruleId = "ruleId_example"; // String | Rule ID
 
-var body = new platformClient.InteractionStatsRule(); // InteractionStatsRule | AlertingRule
+var body = {}; // Object | AlertingRule
 
 var opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand
@@ -513,7 +556,7 @@ apiInstance.putAlertingInteractionstatsRule(ruleId, body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ruleId** | **String** | Rule ID |  |
- **body** | **InteractionStatsRule** | AlertingRule |  |
+ **body** | **Object** | AlertingRule |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: notificationUsers |
 {: class="table table-striped"}
 

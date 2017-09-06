@@ -410,7 +410,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.SearchApi();
 
-var body = new platformClient.DocumentationSearchRequest(); // DocumentationSearchRequest | Search request options
+var body = {}; // Object | Search request options
 
 apiInstance.postDocumentationSearch(body)
   .then(function(data) {
@@ -428,7 +428,7 @@ apiInstance.postDocumentationSearch(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **DocumentationSearchRequest** | Search request options |  |
+ **body** | **Object** | Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -458,7 +458,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.SearchApi();
 
-var body = new platformClient.GroupSearchRequest(); // GroupSearchRequest | Search request options
+var body = {}; // Object | Search request options
 
 apiInstance.postGroupsSearch(body)
   .then(function(data) {
@@ -476,7 +476,7 @@ apiInstance.postGroupsSearch(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **GroupSearchRequest** | Search request options |  |
+ **body** | **Object** | Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -506,7 +506,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.SearchApi();
 
-var body = new platformClient.LocationSearchRequest(); // LocationSearchRequest | Search request options
+var body = {}; // Object | Search request options
 
 apiInstance.postLocationsSearch(body)
   .then(function(data) {
@@ -524,7 +524,7 @@ apiInstance.postLocationsSearch(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **LocationSearchRequest** | Search request options |  |
+ **body** | **Object** | Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -554,7 +554,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.SearchApi();
 
-var body = new platformClient.SearchRequest(); // SearchRequest | Search request options
+var body = {}; // Object | Search request options
 
 var opts = { 
   'profile': true // Boolean | profile
@@ -575,7 +575,7 @@ apiInstance.postSearch(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **SearchRequest** | Search request options |  |
+ **body** | **Object** | Search request options |  |
  **profile** | **Boolean** | profile | [optional] [default to true] |
 {: class="table table-striped"}
 
@@ -606,7 +606,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.SearchApi();
 
-var body = new platformClient.SuggestSearchRequest(); // SuggestSearchRequest | Search request options
+var body = {}; // Object | Search request options
 
 var opts = { 
   'profile': true // Boolean | profile
@@ -627,7 +627,7 @@ apiInstance.postSearchSuggest(body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **SuggestSearchRequest** | Search request options |  |
+ **body** | **Object** | Search request options |  |
  **profile** | **Boolean** | profile | [optional] [default to true] |
 {: class="table table-striped"}
 
@@ -658,7 +658,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.SearchApi();
 
-var body = new platformClient.UserSearchRequest(); // UserSearchRequest | Search request options
+var body = {}; // Object | Search request options
 
 apiInstance.postUsersSearch(body)
   .then(function(data) {
@@ -676,7 +676,7 @@ apiInstance.postUsersSearch(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **UserSearchRequest** | Search request options |  |
+ **body** | **Object** | Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -706,7 +706,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.SearchApi();
 
-var body = new platformClient.VoicemailSearchRequest(); // VoicemailSearchRequest | Search request options
+var body = {}; // Object | Search request options
 
 apiInstance.postVoicemailSearch(body)
   .then(function(data) {
@@ -724,7 +724,7 @@ apiInstance.postVoicemailSearch(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **VoicemailSearchRequest** | Search request options |  |
+ **body** | **Object** | Search request options |  |
 {: class="table table-striped"}
 
 ### Return type

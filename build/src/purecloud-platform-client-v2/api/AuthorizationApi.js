@@ -18,7 +18,7 @@
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -265,7 +265,7 @@
      * Patch Organization Role for needsUpdate Field
      * Patch Organization Role for needsUpdate Field
      * @param {String} roleId Role ID
-     * @param {module:purecloud-platform-client-v2/model/DomainOrganizationRole} body Organization role
+     * @param {Object} body Organization role
      */
     this.patchAuthorizationRole = function(roleId, body) { 
 
@@ -300,7 +300,7 @@
      * Allows users to compare their existing roles in an unsaved state to its default role
      * @param {String} leftRoleId Left Role ID
      * @param {String} rightRoleId Right Role id
-     * @param {module:purecloud-platform-client-v2/model/DomainOrganizationRole} body Organization role
+     * @param {Object} body Organization role
      */
     this.postAuthorizationRoleComparedefaultRightRoleId = function(leftRoleId, rightRoleId, body) { 
 
@@ -338,7 +338,7 @@
     /**
      * Create an organization role.
      * 
-     * @param {module:purecloud-platform-client-v2/model/DomainOrganizationRoleCreate} body Organization role
+     * @param {Object} body Organization role
      */
     this.postAuthorizationRoles = function(body) { 
 
@@ -392,7 +392,7 @@
      * Update an organization role.
      * Update
      * @param {String} roleId Role ID
-     * @param {module:purecloud-platform-client-v2/model/DomainOrganizationRoleUpdate} body Organization role
+     * @param {Object} body Organization role
      */
     this.putAuthorizationRole = function(roleId, body) { 
 
@@ -426,7 +426,7 @@
      * Sets the users for the role
      * 
      * @param {String} roleId Role ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/String>} body List of user IDs
+     * @param {Array.<Object>} body List of user IDs
      */
     this.putAuthorizationRoleUsersAdd = function(roleId, body) { 
 
@@ -460,7 +460,7 @@
      * Removes the users from the role
      * 
      * @param {String} roleId Role ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/String>} body List of user IDs
+     * @param {Array.<Object>} body List of user IDs
      */
     this.putAuthorizationRoleUsersRemove = function(roleId, body) { 
 
@@ -493,7 +493,7 @@
     /**
      * Restore specified default roles
      * 
-     * @param {Array.<module:purecloud-platform-client-v2/model/DomainOrganizationRole>} body Organization roles list
+     * @param {Array.<Object>} body Organization roles list
      */
     this.putAuthorizationRolesDefault = function(body) { 
 
@@ -522,7 +522,7 @@
      * Sets the user&#39;s roles
      * 
      * @param {String} userId User ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/String>} body List of roles
+     * @param {Array.<Object>} body List of roles
      */
     this.putUserRoles = function(userId, body) { 
 

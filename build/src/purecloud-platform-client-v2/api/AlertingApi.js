@@ -18,7 +18,7 @@
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -78,6 +78,28 @@
         '/api/v2/alerting/interactionstats/rules/{ruleId}', 
         'DELETE', 
         { 'ruleId': ruleId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Gets active alert count for a user.
+     * 
+     */
+    this.getAlertingAlertsActive = function() { 
+
+
+      return this.apiClient.callApi(
+        '/api/v2/alerting/alerts/active', 
+        'GET', 
+        {  }, 
         {  }, 
         {  }, 
         {  }, 
@@ -226,7 +248,7 @@
     /**
      * Create an interaction stats rule.
      * 
-     * @param {module:purecloud-platform-client-v2/model/InteractionStatsRule} body AlertingRule
+     * @param {Object} body AlertingRule
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand Which fields, if any, to expand
      */
@@ -258,7 +280,7 @@
      * Update an interaction stats alert read status
      * 
      * @param {String} alertId Alert ID
-     * @param {module:purecloud-platform-client-v2/model/UnreadStatus} body InteractionStatsAlert
+     * @param {Object} body InteractionStatsAlert
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand Which fields, if any, to expand
      */
@@ -295,7 +317,7 @@
      * Update an interaction stats rule
      * 
      * @param {String} ruleId Rule ID
-     * @param {module:purecloud-platform-client-v2/model/InteractionStatsRule} body AlertingRule
+     * @param {Object} body AlertingRule
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand Which fields, if any, to expand
      */

@@ -228,7 +228,7 @@ var apiInstance = new platformClient.NotificationsApi();
 
 var channelId = "channelId_example"; // String | Channel ID
 
-var body = [new platformClient.ChannelTopic()]; // [ChannelTopic] | Body
+var body = [{}]; // Object | Body
 
 apiInstance.postNotificationsChannelSubscriptions(channelId, body)
   .then(function(data) {
@@ -247,7 +247,7 @@ apiInstance.postNotificationsChannelSubscriptions(channelId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **channelId** | **String** | Channel ID |  |
- **body** | **[ChannelTopic]** | Body |  |
+ **body** | **Object** | Body |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -321,7 +321,7 @@ var apiInstance = new platformClient.NotificationsApi();
 
 var channelId = "channelId_example"; // String | Channel ID
 
-var body = [new platformClient.ChannelTopic()]; // [ChannelTopic] | Body
+var body = [{}]; // Object | Body
 
 apiInstance.putNotificationsChannelSubscriptions(channelId, body)
   .then(function(data) {
@@ -340,7 +340,7 @@ apiInstance.putNotificationsChannelSubscriptions(channelId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **channelId** | **String** | Channel ID |  |
- **body** | **[ChannelTopic]** | Body |  |
+ **body** | **Object** | Body |  |
 {: class="table table-striped"}
 
 ### Return type

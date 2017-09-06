@@ -1031,7 +1031,7 @@ var apiInstance = new platformClient.ExternalContactsApi();
 var contactId = "contactId_example"; // String | ExternalContact Id
 
 var opts = { 
-  'body': new platformClient.Note() // Note | ExternalContact
+  'body': {} // Object | ExternalContact
 };
 apiInstance.postExternalcontactsContactNotes(contactId, opts)
   .then(function(data) {
@@ -1050,7 +1050,7 @@ apiInstance.postExternalcontactsContactNotes(contactId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact Id |  |
- **body** | **Note** | ExternalContact | [optional]  |
+ **body** | **Object** | ExternalContact | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1081,7 +1081,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.ExternalContactsApi();
 
 var opts = { 
-  'body': new platformClient.ExternalContact() // ExternalContact | ExternalContact
+  'body': {} // Object | ExternalContact
 };
 apiInstance.postExternalcontactsContacts(opts)
   .then(function(data) {
@@ -1099,7 +1099,7 @@ apiInstance.postExternalcontactsContacts(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **ExternalContact** | ExternalContact | [optional]  |
+ **body** | **Object** | ExternalContact | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1132,7 +1132,7 @@ var apiInstance = new platformClient.ExternalContactsApi();
 var externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
 
 var opts = { 
-  'body': new platformClient.Note() // Note | ExternalContact
+  'body': {} // Object | ExternalContact
 };
 apiInstance.postExternalcontactsOrganizationNotes(externalOrganizationId, opts)
   .then(function(data) {
@@ -1151,7 +1151,7 @@ apiInstance.postExternalcontactsOrganizationNotes(externalOrganizationId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization Id |  |
- **body** | **Note** | ExternalContact | [optional]  |
+ **body** | **Object** | ExternalContact | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1182,7 +1182,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.ExternalContactsApi();
 
 var opts = { 
-  'body': new platformClient.ExternalOrganization() // ExternalOrganization | ExternalOrganization
+  'body': {} // Object | ExternalOrganization
 };
 apiInstance.postExternalcontactsOrganizations(opts)
   .then(function(data) {
@@ -1200,7 +1200,7 @@ apiInstance.postExternalcontactsOrganizations(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **ExternalOrganization** | ExternalOrganization | [optional]  |
+ **body** | **Object** | ExternalOrganization | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1231,7 +1231,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.ExternalContactsApi();
 
 var opts = { 
-  'body': new platformClient.Relationship() // Relationship | Relationship
+  'body': {} // Object | Relationship
 };
 apiInstance.postExternalcontactsRelationships(opts)
   .then(function(data) {
@@ -1249,7 +1249,7 @@ apiInstance.postExternalcontactsRelationships(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Relationship** | Relationship | [optional]  |
+ **body** | **Object** | Relationship | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1282,7 +1282,7 @@ var apiInstance = new platformClient.ExternalContactsApi();
 var contactId = "contactId_example"; // String | ExternalContact ID
 
 var opts = { 
-  'body': new platformClient.ExternalContact() // ExternalContact | ExternalContact
+  'body': {} // Object | ExternalContact
 };
 apiInstance.putExternalcontactsContact(contactId, opts)
   .then(function(data) {
@@ -1301,7 +1301,7 @@ apiInstance.putExternalcontactsContact(contactId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
- **body** | **ExternalContact** | ExternalContact | [optional]  |
+ **body** | **Object** | ExternalContact | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1336,7 +1336,7 @@ var contactId = "contactId_example"; // String | ExternalContact Id
 var noteId = "noteId_example"; // String | Note Id
 
 var opts = { 
-  'body': new platformClient.Note() // Note | Note
+  'body': {} // Object | Note
 };
 apiInstance.putExternalcontactsContactNote(contactId, noteId, opts)
   .then(function(data) {
@@ -1356,7 +1356,7 @@ apiInstance.putExternalcontactsContactNote(contactId, noteId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact Id |  |
  **noteId** | **String** | Note Id |  |
- **body** | **Note** | Note | [optional]  |
+ **body** | **Object** | Note | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1389,7 +1389,7 @@ var apiInstance = new platformClient.ExternalContactsApi();
 var conversationId = "conversationId_example"; // String | Conversation ID
 
 var opts = { 
-  'body': new platformClient.ConversationAssociation() // ConversationAssociation | ConversationAssociation
+  'body': {} // Object | ConversationAssociation
 };
 apiInstance.putExternalcontactsConversation(conversationId, opts)
   .then(function() {
@@ -1408,7 +1408,7 @@ apiInstance.putExternalcontactsConversation(conversationId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
- **body** | **ConversationAssociation** | ConversationAssociation | [optional]  |
+ **body** | **Object** | ConversationAssociation | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1441,7 +1441,7 @@ var apiInstance = new platformClient.ExternalContactsApi();
 var externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
 
 var opts = { 
-  'body': new platformClient.ExternalOrganization() // ExternalOrganization | ExternalOrganization
+  'body': {} // Object | ExternalOrganization
 };
 apiInstance.putExternalcontactsOrganization(externalOrganizationId, opts)
   .then(function(data) {
@@ -1460,7 +1460,7 @@ apiInstance.putExternalcontactsOrganization(externalOrganizationId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization ID |  |
- **body** | **ExternalOrganization** | ExternalOrganization | [optional]  |
+ **body** | **Object** | ExternalOrganization | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1495,7 +1495,7 @@ var externalOrganizationId = "externalOrganizationId_example"; // String | Exter
 var noteId = "noteId_example"; // String | Note Id
 
 var opts = { 
-  'body': new platformClient.Note() // Note | Note
+  'body': {} // Object | Note
 };
 apiInstance.putExternalcontactsOrganizationNote(externalOrganizationId, noteId, opts)
   .then(function(data) {
@@ -1515,7 +1515,7 @@ apiInstance.putExternalcontactsOrganizationNote(externalOrganizationId, noteId, 
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization Id |  |
  **noteId** | **String** | Note Id |  |
- **body** | **Note** | Note | [optional]  |
+ **body** | **Object** | Note | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1599,7 +1599,7 @@ var apiInstance = new platformClient.ExternalContactsApi();
 var relationshipId = "relationshipId_example"; // String | Relationship Id
 
 var opts = { 
-  'body': new platformClient.Relationship() // Relationship | Relationship
+  'body': {} // Object | Relationship
 };
 apiInstance.putExternalcontactsRelationship(relationshipId, opts)
   .then(function(data) {
@@ -1618,7 +1618,7 @@ apiInstance.putExternalcontactsRelationship(relationshipId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **relationshipId** | **String** | Relationship Id |  |
- **body** | **Relationship** | Relationship | [optional]  |
+ **body** | **Object** | Relationship | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

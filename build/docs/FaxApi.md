@@ -277,7 +277,7 @@ var apiInstance = new platformClient.FaxApi();
 
 var documentId = "documentId_example"; // String | Document ID
 
-var body = new platformClient.FaxDocument(); // FaxDocument | Document
+var body = {}; // Object | Document
 
 apiInstance.putFaxDocument(documentId, body)
   .then(function(data) {
@@ -296,7 +296,7 @@ apiInstance.putFaxDocument(documentId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
- **body** | **FaxDocument** | Document |  |
+ **body** | **Object** | Document |  |
 {: class="table table-striped"}
 
 ### Return type

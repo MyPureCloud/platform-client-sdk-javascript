@@ -292,7 +292,7 @@ var userId = "userId_example"; // String | user Id
 
 var sourceId = "sourceId_example"; // String | Source
 
-var body = new platformClient.UserPresence(); // UserPresence | User presence
+var body = {}; // Object | User presence
 
 apiInstance.patchUserPresence(userId, sourceId, body)
   .then(function(data) {
@@ -312,7 +312,7 @@ apiInstance.patchUserPresence(userId, sourceId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user Id |  |
  **sourceId** | **String** | Source |  |
- **body** | **UserPresence** | User presence |  |
+ **body** | **Object** | User presence |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -342,7 +342,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.PresenceApi();
 
-var body = new platformClient.OrganizationPresence(); // OrganizationPresence | The Presence Definition to create
+var body = {}; // Object | The Presence Definition to create
 
 apiInstance.postPresencedefinitions(body)
   .then(function(data) {
@@ -360,7 +360,7 @@ apiInstance.postPresencedefinitions(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **OrganizationPresence** | The Presence Definition to create |  |
+ **body** | **Object** | The Presence Definition to create |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -392,7 +392,7 @@ var apiInstance = new platformClient.PresenceApi();
 
 var presenceId = "presenceId_example"; // String | Organization Presence ID
 
-var body = new platformClient.OrganizationPresence(); // OrganizationPresence | The OrganizationPresence to update
+var body = {}; // Object | The OrganizationPresence to update
 
 apiInstance.putPresencedefinition(presenceId, body)
   .then(function(data) {
@@ -411,7 +411,7 @@ apiInstance.putPresencedefinition(presenceId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **presenceId** | **String** | Organization Presence ID |  |
- **body** | **OrganizationPresence** | The OrganizationPresence to update |  |
+ **body** | **Object** | The OrganizationPresence to update |  |
 {: class="table table-striped"}
 
 ### Return type

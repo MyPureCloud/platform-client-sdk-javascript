@@ -454,7 +454,7 @@ var apiInstance = new platformClient.AuthorizationApi();
 
 var roleId = "roleId_example"; // String | Role ID
 
-var body = new platformClient.DomainOrganizationRole(); // DomainOrganizationRole | Organization role
+var body = {}; // Object | Organization role
 
 apiInstance.patchAuthorizationRole(roleId, body)
   .then(function(data) {
@@ -473,7 +473,7 @@ apiInstance.patchAuthorizationRole(roleId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
- **body** | **DomainOrganizationRole** | Organization role |  |
+ **body** | **Object** | Organization role |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -507,7 +507,7 @@ var leftRoleId = "leftRoleId_example"; // String | Left Role ID
 
 var rightRoleId = "rightRoleId_example"; // String | Right Role id
 
-var body = new platformClient.DomainOrganizationRole(); // DomainOrganizationRole | Organization role
+var body = {}; // Object | Organization role
 
 apiInstance.postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body)
   .then(function(data) {
@@ -527,7 +527,7 @@ apiInstance.postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRole
 | ------------- | ------------- | ------------- | ------------- |
  **leftRoleId** | **String** | Left Role ID |  |
  **rightRoleId** | **String** | Right Role id |  |
- **body** | **DomainOrganizationRole** | Organization role |  |
+ **body** | **Object** | Organization role |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -557,7 +557,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.AuthorizationApi();
 
-var body = new platformClient.DomainOrganizationRoleCreate(); // DomainOrganizationRoleCreate | Organization role
+var body = {}; // Object | Organization role
 
 apiInstance.postAuthorizationRoles(body)
   .then(function(data) {
@@ -575,7 +575,7 @@ apiInstance.postAuthorizationRoles(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **DomainOrganizationRoleCreate** | Organization role |  |
+ **body** | **Object** | Organization role |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -656,7 +656,7 @@ var apiInstance = new platformClient.AuthorizationApi();
 
 var roleId = "roleId_example"; // String | Role ID
 
-var body = new platformClient.DomainOrganizationRoleUpdate(); // DomainOrganizationRoleUpdate | Organization role
+var body = {}; // Object | Organization role
 
 apiInstance.putAuthorizationRole(roleId, body)
   .then(function(data) {
@@ -675,7 +675,7 @@ apiInstance.putAuthorizationRole(roleId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
- **body** | **DomainOrganizationRoleUpdate** | Organization role |  |
+ **body** | **Object** | Organization role |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -707,7 +707,7 @@ var apiInstance = new platformClient.AuthorizationApi();
 
 var roleId = "roleId_example"; // String | Role ID
 
-var body = [new platformClient.[String]()]; // [String] | List of user IDs
+var body = [{}]; // Object | List of user IDs
 
 apiInstance.putAuthorizationRoleUsersAdd(roleId, body)
   .then(function(data) {
@@ -726,7 +726,7 @@ apiInstance.putAuthorizationRoleUsersAdd(roleId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
- **body** | **[String]** | List of user IDs |  |
+ **body** | **Object** | List of user IDs |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -758,7 +758,7 @@ var apiInstance = new platformClient.AuthorizationApi();
 
 var roleId = "roleId_example"; // String | Role ID
 
-var body = [new platformClient.[String]()]; // [String] | List of user IDs
+var body = [{}]; // Object | List of user IDs
 
 apiInstance.putAuthorizationRoleUsersRemove(roleId, body)
   .then(function(data) {
@@ -777,7 +777,7 @@ apiInstance.putAuthorizationRoleUsersRemove(roleId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
- **body** | **[String]** | List of user IDs |  |
+ **body** | **Object** | List of user IDs |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -807,7 +807,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.AuthorizationApi();
 
-var body = [new platformClient.DomainOrganizationRole()]; // [DomainOrganizationRole] | Organization roles list
+var body = [{}]; // Object | Organization roles list
 
 apiInstance.putAuthorizationRolesDefault(body)
   .then(function(data) {
@@ -825,7 +825,7 @@ apiInstance.putAuthorizationRolesDefault(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **[DomainOrganizationRole]** | Organization roles list |  |
+ **body** | **Object** | Organization roles list |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -857,7 +857,7 @@ var apiInstance = new platformClient.AuthorizationApi();
 
 var userId = "userId_example"; // String | User ID
 
-var body = [new platformClient.[String]()]; // [String] | List of roles
+var body = [{}]; // Object | List of roles
 
 apiInstance.putUserRoles(userId, body)
   .then(function(data) {
@@ -876,7 +876,7 @@ apiInstance.putUserRoles(userId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **body** | **[String]** | List of roles |  |
+ **body** | **Object** | List of roles |  |
 {: class="table table-striped"}
 
 ### Return type

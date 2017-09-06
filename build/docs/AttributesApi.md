@@ -185,7 +185,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.AttributesApi();
 
-var body = new platformClient.Attribute(); // Attribute | Attribute
+var body = {}; // Object | Attribute
 
 apiInstance.postAttributes(body)
   .then(function(data) {
@@ -203,7 +203,7 @@ apiInstance.postAttributes(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Attribute** | Attribute |  |
+ **body** | **Object** | Attribute |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -233,7 +233,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.AttributesApi();
 
-var body = new platformClient.AttributeQueryRequest(); // AttributeQueryRequest | query
+var body = {}; // Object | query
 
 apiInstance.postAttributesQuery(body)
   .then(function(data) {
@@ -251,7 +251,7 @@ apiInstance.postAttributesQuery(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **AttributeQueryRequest** | query |  |
+ **body** | **Object** | query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -283,7 +283,7 @@ var apiInstance = new platformClient.AttributesApi();
 
 var attributeId = "attributeId_example"; // String | Attribute ID
 
-var body = new platformClient.Attribute(); // Attribute | Attribute
+var body = {}; // Object | Attribute
 
 apiInstance.putAttribute(attributeId, body)
   .then(function(data) {
@@ -302,7 +302,7 @@ apiInstance.putAttribute(attributeId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **attributeId** | **String** | Attribute ID |  |
- **body** | **Attribute** | Attribute |  |
+ **body** | **Object** | Attribute |  |
 {: class="table table-striped"}
 
 ### Return type

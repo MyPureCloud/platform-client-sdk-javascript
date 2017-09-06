@@ -129,7 +129,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.GeolocationApi();
 
-var body = new platformClient.GeolocationSettings(); // GeolocationSettings | Geolocation settings
+var body = {}; // Object | Geolocation settings
 
 apiInstance.patchGeolocationsSettings(body)
   .then(function(data) {
@@ -147,7 +147,7 @@ apiInstance.patchGeolocationsSettings(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **GeolocationSettings** | Geolocation settings |  |
+ **body** | **Object** | Geolocation settings |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -181,7 +181,7 @@ var userId = "userId_example"; // String | user Id
 
 var clientId = "clientId_example"; // String | client Id
 
-var body = new platformClient.Geolocation(); // Geolocation | Geolocation
+var body = {}; // Object | Geolocation
 
 apiInstance.patchUserGeolocation(userId, clientId, body)
   .then(function(data) {
@@ -201,7 +201,7 @@ apiInstance.patchUserGeolocation(userId, clientId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user Id |  |
  **clientId** | **String** | client Id |  |
- **body** | **Geolocation** | Geolocation |  |
+ **body** | **Object** | Geolocation |  |
 {: class="table table-striped"}
 
 ### Return type

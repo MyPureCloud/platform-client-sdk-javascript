@@ -189,7 +189,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.LocationsApi();
 
-var body = new platformClient.LocationSearchRequest(); // LocationSearchRequest | Search request options
+var body = {}; // Object | Search request options
 
 apiInstance.postLocationsSearch(body)
   .then(function(data) {
@@ -207,7 +207,7 @@ apiInstance.postLocationsSearch(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **LocationSearchRequest** | Search request options |  |
+ **body** | **Object** | Search request options |  |
 {: class="table table-striped"}
 
 ### Return type

@@ -18,7 +18,7 @@
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -364,7 +364,7 @@
      * 
      * @param {String} id Consuming object ID
      * @param {String} version Consuming object version
-     * @param {module:purecloud-platform-client-v2/model/String} objectType Consuming object type
+     * @param {Object} objectType Consuming object type.  Only versioned types are allowed here.
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.resourceType Types of consumed resources to show
      */
@@ -406,9 +406,9 @@
      * Get resources that consume a given Dependency Tracking object
      * 
      * @param {String} id Consumed object ID
-     * @param {module:purecloud-platform-client-v2/model/String} objectType Consumed object type (only versioned object types are valid)
+     * @param {Object} objectType Consumed object type
      * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.resourceType Types of consuming resources to show
+     * @param {Array.<String>} opts.resourceType Types of consuming resources to show.  Only versioned types are allowed here.
      */
     this.getArchitectDependencytrackingConsumingresources = function(id, objectType, opts) { 
       opts = opts || {};
@@ -445,7 +445,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Name to search for
      * @param {Array.<String>} opts.objectType Object type(s) to search for
-     * @param {module:purecloud-platform-client-v2/model/String} opts.flowFilter Show only checkedIn or published flows
+     * @param {Object} opts.flowFilter Show only checkedIn or published flows
      * @param {Boolean} opts.consumedResources Return consumed resources? (default to false)
      * @param {Array.<String>} opts.consumedResourceType Resource type(s) to return
      * @param {Number} opts.pageNumber Page number (default to 1)
@@ -476,7 +476,7 @@
      * @param {String} id Object ID
      * @param {Object} opts Optional parameters
      * @param {String} opts.version Object version
-     * @param {module:purecloud-platform-client-v2/model/String} opts.objectType Object type
+     * @param {Object} opts.objectType Object type
      * @param {Boolean} opts.consumedResources Include resources this item consumes
      * @param {Boolean} opts.consumingResources Include resources that consume this item
      * @param {Array.<String>} opts.consumedResourceType Types of consumed resources to return, if consumed resources are requested
@@ -626,6 +626,7 @@
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {String} opts.sortBy Sort by (default to name)
      * @param {String} opts.sortOrder Sort order (default to ASC)
+     * @param {String} opts.name Name of the IVR to filter by.
      */
     this.getArchitectIvrs = function(opts) { 
       opts = opts || {};
@@ -635,7 +636,7 @@
         '/api/v2/architect/ivrs', 
         'GET', 
         {  }, 
-        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'] }, 
         {  }, 
         {  }, 
         null, 
@@ -833,6 +834,7 @@
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {String} opts.sortBy Sort by (default to name)
      * @param {String} opts.sortOrder Sort order (default to ASC)
+     * @param {String} opts.name Name of the Schedule Group to filter by.
      */
     this.getArchitectSchedulegroups = function(opts) { 
       opts = opts || {};
@@ -842,7 +844,7 @@
         '/api/v2/architect/schedulegroups', 
         'GET', 
         {  }, 
-        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'] }, 
         {  }, 
         {  }, 
         null, 
@@ -861,6 +863,7 @@
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {String} opts.sortBy Sort by (default to name)
      * @param {String} opts.sortOrder Sort order (default to ASC)
+     * @param {String} opts.name Name of the Schedule to filter by.
      */
     this.getArchitectSchedules = function(opts) { 
       opts = opts || {};
@@ -870,7 +873,7 @@
         '/api/v2/architect/schedules', 
         'GET', 
         {  }, 
-        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'] }, 
         {  }, 
         {  }, 
         null, 
@@ -1047,9 +1050,9 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Number} opts.pageSize Page size (default to 25)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortBy Sort by (default to timestamp)
      * @param {String} opts.sortOrder Sort order (default to desc)
-     * @param {Array.<String>} opts.action Flow actions
+     * @param {Object} opts.sortBy Sort by (default to timestamp)
+     * @param {Array.<String>} opts.action Flow actions to include (omit to include all)
      */
     this.getFlowHistoryHistoryId = function(flowId, historyId, opts) { 
       opts = opts || {};
@@ -1069,7 +1072,7 @@
         '/api/v2/flows/{flowId}/history/{historyId}', 
         'GET', 
         { 'flowId': flowId,'historyId': historyId }, 
-        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'action': this.apiClient.buildCollectionParam(opts['action'], 'multi') }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'action': this.apiClient.buildCollectionParam(opts['action'], 'multi') }, 
         {  }, 
         {  }, 
         null, 
@@ -1221,7 +1224,7 @@
     /**
      * Get a pageable list of flows, filtered by query parameters
      * Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
-     * @param {String} type Type
+     * @param {Object} type Type
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Number} opts.pageSize Page size (default to 25)
@@ -1234,7 +1237,7 @@
      * @param {String} opts.publishVersionId Publish version ID
      * @param {String} opts.editableBy Editable by
      * @param {String} opts.lockedBy Locked by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.secure Secure
+     * @param {Object} opts.secure Secure
      * @param {Boolean} opts.deleted Include deleted (default to false)
      * @param {Boolean} opts.includeSchemas Include variable schemas (default to false)
      */
@@ -1288,7 +1291,7 @@
      * Create IVR config.
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/IVR} opts.body 
+     * @param {Object} opts.body 
      */
     this.postArchitectIvrs = function(opts) { 
       opts = opts || {};
@@ -1314,7 +1317,7 @@
      * 
      * @param {String} promptId Prompt ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/PromptAssetCreate} opts.body 
+     * @param {Object} opts.body 
      */
     this.postArchitectPromptResources = function(promptId, opts) { 
       opts = opts || {};
@@ -1344,7 +1347,7 @@
      * Create a new user prompt
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Prompt} opts.body 
+     * @param {Object} opts.body 
      */
     this.postArchitectPrompts = function(opts) { 
       opts = opts || {};
@@ -1369,7 +1372,7 @@
      * Creates a new schedule group
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/ScheduleGroup} opts.body 
+     * @param {Object} opts.body 
      */
     this.postArchitectSchedulegroups = function(opts) { 
       opts = opts || {};
@@ -1394,7 +1397,7 @@
      * Create a new schedule.
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Schedule} opts.body 
+     * @param {Object} opts.body 
      */
     this.postArchitectSchedules = function(opts) { 
       opts = opts || {};
@@ -1420,7 +1423,7 @@
      * 
      * @param {String} promptId Prompt ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/SystemPromptAsset} opts.body 
+     * @param {Object} opts.body 
      */
     this.postArchitectSystempromptResources = function(promptId, opts) { 
       opts = opts || {};
@@ -1481,7 +1484,7 @@
      * Create flow
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Flow} opts.body 
+     * @param {Object} opts.body 
      */
     this.postFlows = function(opts) { 
       opts = opts || {};
@@ -1678,7 +1681,7 @@
      * 
      * @param {String} ivrId IVR id
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/IVR} opts.body 
+     * @param {Object} opts.body 
      */
     this.putArchitectIvr = function(ivrId, opts) { 
       opts = opts || {};
@@ -1709,7 +1712,7 @@
      * 
      * @param {String} promptId Prompt ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Prompt} opts.body 
+     * @param {Object} opts.body 
      */
     this.putArchitectPrompt = function(promptId, opts) { 
       opts = opts || {};
@@ -1741,7 +1744,7 @@
      * @param {String} promptId Prompt ID
      * @param {String} languageCode Language
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/PromptAsset} opts.body 
+     * @param {Object} opts.body 
      */
     this.putArchitectPromptResource = function(promptId, languageCode, opts) { 
       opts = opts || {};
@@ -1777,7 +1780,7 @@
      * 
      * @param {String} scheduleId Schedule ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Schedule} opts.body 
+     * @param {Object} opts.body 
      */
     this.putArchitectSchedule = function(scheduleId, opts) { 
       opts = opts || {};
@@ -1808,7 +1811,7 @@
      * 
      * @param {String} scheduleGroupId Schedule group ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/ScheduleGroup} opts.body 
+     * @param {Object} opts.body 
      */
     this.putArchitectSchedulegroup = function(scheduleGroupId, opts) { 
       opts = opts || {};
@@ -1840,7 +1843,7 @@
      * @param {String} promptId Prompt ID
      * @param {String} languageCode Language
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/SystemPromptAsset} opts.body 
+     * @param {Object} opts.body 
      */
     this.putArchitectSystempromptResource = function(promptId, languageCode, opts) { 
       opts = opts || {};
@@ -1876,7 +1879,7 @@
      * 
      * @param {String} flowId Flow ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Flow} opts.body 
+     * @param {Object} opts.body 
      */
     this.putFlow = function(flowId, opts) { 
       opts = opts || {};

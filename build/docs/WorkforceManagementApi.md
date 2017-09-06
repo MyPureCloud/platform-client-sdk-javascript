@@ -329,7 +329,7 @@ apiInstance.getWorkforcemanagementManagementunitUsers(muId)
 
 <a name="getWorkforcemanagementManagementunits"></a>
 
-# [**[ManagementUnit]**](ManagementUnit.html) getWorkforcemanagementManagementunits(opts)
+# [**ManagementUnitListing**](ManagementUnitListing.html) getWorkforcemanagementManagementunits(opts)
 
 GET /api/v2/workforcemanagement/managementunits
 
@@ -351,7 +351,6 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.WorkforceManagementApi();
 
 var opts = { 
-  'selector': "selector_example", // String | Selector
   'pageSize': 25, // Number | 
   'pageNumber': 1 // Number | 
 };
@@ -371,14 +370,13 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **selector** | **String** | Selector | [optional]  |
  **pageSize** | **Number** |  | [optional] [default to 25] |
  **pageNumber** | **Number** |  | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type
 
-**[ManagementUnit]**
+**ManagementUnitListing**
 
 <a name="getWorkforcemanagementTimeoffrequest"></a>
 
@@ -503,7 +501,7 @@ var apiInstance = new platformClient.WorkforceManagementApi();
 var timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
 
 var opts = { 
-  'body': new platformClient.TimeOffRequestPatch() // TimeOffRequestPatch | 
+  'body': {} // Object | 
 };
 apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
   .then(function() {
@@ -522,7 +520,7 @@ apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **timeOffRequestId** | **String** | Time Off Request Id |  |
- **body** | **TimeOffRequestPatch** |  | [optional]  |
+ **body** | **Object** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -555,7 +553,7 @@ var apiInstance = new platformClient.WorkforceManagementApi();
 var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 
 var opts = { 
-  'body': new platformClient.WfmHistoricalAdherenceQuery() // WfmHistoricalAdherenceQuery | body
+  'body': {} // Object | body
 };
 apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(muId, opts)
   .then(function(data) {
@@ -574,7 +572,7 @@ apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(muId, 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
- **body** | **WfmHistoricalAdherenceQuery** | body | [optional]  |
+ **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -607,7 +605,7 @@ var apiInstance = new platformClient.WorkforceManagementApi();
 var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 
 var opts = { 
-  'body': new platformClient.IntradayQueryDataCommand() // IntradayQueryDataCommand | body
+  'body': {} // Object | body
 };
 apiInstance.postWorkforcemanagementManagementunitIntraday(muId, opts)
   .then(function(data) {
@@ -626,7 +624,7 @@ apiInstance.postWorkforcemanagementManagementunitIntraday(muId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
- **body** | **IntradayQueryDataCommand** | body | [optional]  |
+ **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -659,7 +657,7 @@ var apiInstance = new platformClient.WorkforceManagementApi();
 var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 
 var opts = { 
-  'body': new platformClient.UserListScheduleRequestBody() // UserListScheduleRequestBody | body
+  'body': {} // Object | body
 };
 apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(muId, opts)
   .then(function(data) {
@@ -678,7 +676,7 @@ apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(muId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
- **body** | **UserListScheduleRequestBody** | body | [optional]  |
+ **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -709,7 +707,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.WorkforceManagementApi();
 
 var opts = { 
-  'body': new platformClient.CurrentUserScheduleRequestBody() // CurrentUserScheduleRequestBody | body
+  'body': {} // Object | body
 };
 apiInstance.postWorkforcemanagementSchedules(opts)
   .then(function(data) {
@@ -727,7 +725,7 @@ apiInstance.postWorkforcemanagementSchedules(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **CurrentUserScheduleRequestBody** | body | [optional]  |
+ **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

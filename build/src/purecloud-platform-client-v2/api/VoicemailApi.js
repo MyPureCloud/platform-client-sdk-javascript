@@ -18,7 +18,7 @@
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -299,7 +299,7 @@
      * 
      * @param {String} messageId Message ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.formatId The desired media format. (default to WEBM)
+     * @param {Object} opts.formatId The desired media format. (default to WEBM)
      */
     this.getVoicemailMessageMedia = function(messageId, opts) { 
       opts = opts || {};
@@ -468,7 +468,7 @@
      * Update a group&#39;s voicemail policy
      * 
      * @param {String} groupId Group ID
-     * @param {module:purecloud-platform-client-v2/model/VoicemailGroupPolicy} body The group&#39;s voicemail policy
+     * @param {Object} body The group&#39;s voicemail policy
      */
     this.patchVoicemailGroupPolicy = function(groupId, body) { 
 
@@ -501,7 +501,7 @@
     /**
      * Update the current user&#39;s voicemail policy
      * 
-     * @param {module:purecloud-platform-client-v2/model/VoicemailUserPolicy} body The user&#39;s voicemail policy
+     * @param {Object} body The user&#39;s voicemail policy
      */
     this.patchVoicemailMePolicy = function(body) { 
 
@@ -530,7 +530,7 @@
      * Update a voicemail message
      * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
      * @param {String} messageId Message ID
-     * @param {module:purecloud-platform-client-v2/model/VoicemailMessage} body VoicemailMessage
+     * @param {Object} body VoicemailMessage
      */
     this.patchVoicemailMessage = function(messageId, body) { 
 
@@ -564,7 +564,7 @@
      * Update a user&#39;s voicemail policy
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/VoicemailUserPolicy} body The user&#39;s voicemail policy
+     * @param {Object} body The user&#39;s voicemail policy
      */
     this.patchVoicemailUserpolicy = function(userId, body) { 
 
@@ -598,7 +598,7 @@
      * Copy a voicemail message to a user or group
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/CopyVoicemailMessage} opts.body 
+     * @param {Object} opts.body 
      */
     this.postVoicemailMessages = function(opts) { 
       opts = opts || {};
@@ -622,7 +622,7 @@
     /**
      * Search voicemails
      * 
-     * @param {module:purecloud-platform-client-v2/model/VoicemailSearchRequest} body Search request options
+     * @param {Object} body Search request options
      */
     this.postVoicemailSearch = function(body) { 
 
@@ -651,7 +651,7 @@
      * Update a voicemail message
      * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
      * @param {String} messageId Message ID
-     * @param {module:purecloud-platform-client-v2/model/VoicemailMessage} body VoicemailMessage
+     * @param {Object} body VoicemailMessage
      */
     this.putVoicemailMessage = function(messageId, body) { 
 
@@ -684,7 +684,7 @@
     /**
      * Update a policy
      * 
-     * @param {module:purecloud-platform-client-v2/model/VoicemailOrganizationPolicy} body Policy
+     * @param {Object} body Policy
      */
     this.putVoicemailPolicy = function(body) { 
 

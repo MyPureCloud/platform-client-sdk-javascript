@@ -287,7 +287,7 @@ var apiInstance = new platformClient.UserRecordingsApi();
 
 var recordingId = "recordingId_example"; // String | User Recording ID
 
-var body = new platformClient.UserRecording(); // UserRecording | UserRecording
+var body = {}; // Object | UserRecording
 
 var opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
@@ -309,7 +309,7 @@ apiInstance.putUserrecording(recordingId, body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **recordingId** | **String** | User Recording ID |  |
- **body** | **UserRecording** | UserRecording |  |
+ **body** | **Object** | UserRecording |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
 {: class="table table-striped"}
 

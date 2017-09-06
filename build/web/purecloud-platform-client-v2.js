@@ -3242,7 +3242,7 @@ module.exports = request;
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -3865,7 +3865,7 @@ module.exports = request;
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '7.0.0' });
+    //request.set({ 'purecloud-sdk': '8.0.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -4003,7 +4003,7 @@ module.exports = request;
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -4063,6 +4063,28 @@ module.exports = request;
         '/api/v2/alerting/interactionstats/rules/{ruleId}', 
         'DELETE', 
         { 'ruleId': ruleId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Gets active alert count for a user.
+     * 
+     */
+    this.getAlertingAlertsActive = function() { 
+
+
+      return this.apiClient.callApi(
+        '/api/v2/alerting/alerts/active', 
+        'GET', 
+        {  }, 
         {  }, 
         {  }, 
         {  }, 
@@ -4211,7 +4233,7 @@ module.exports = request;
     /**
      * Create an interaction stats rule.
      * 
-     * @param {module:purecloud-platform-client-v2/model/InteractionStatsRule} body AlertingRule
+     * @param {Object} body AlertingRule
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand Which fields, if any, to expand
      */
@@ -4243,7 +4265,7 @@ module.exports = request;
      * Update an interaction stats alert read status
      * 
      * @param {String} alertId Alert ID
-     * @param {module:purecloud-platform-client-v2/model/UnreadStatus} body InteractionStatsAlert
+     * @param {Object} body InteractionStatsAlert
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand Which fields, if any, to expand
      */
@@ -4280,7 +4302,7 @@ module.exports = request;
      * Update an interaction stats rule
      * 
      * @param {String} ruleId Rule ID
-     * @param {module:purecloud-platform-client-v2/model/InteractionStatsRule} body AlertingRule
+     * @param {Object} body AlertingRule
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand Which fields, if any, to expand
      */
@@ -4337,7 +4359,7 @@ module.exports = request;
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -4662,7 +4684,7 @@ module.exports = request;
      * Index conversation properties
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/PropertyIndexRequest} body request
+     * @param {Object} body request
      */
     this.postAnalyticsConversationDetailsProperties = function(conversationId, body) { 
 
@@ -4695,7 +4717,7 @@ module.exports = request;
     /**
      * Query for conversation aggregates
      * 
-     * @param {module:purecloud-platform-client-v2/model/AggregationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsConversationsAggregatesQuery = function(body) { 
 
@@ -4723,7 +4745,7 @@ module.exports = request;
     /**
      * Query for conversation details
      * 
-     * @param {module:purecloud-platform-client-v2/model/ConversationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsConversationsDetailsQuery = function(body) { 
 
@@ -4751,7 +4773,7 @@ module.exports = request;
     /**
      * Query for evaluation aggregates
      * 
-     * @param {module:purecloud-platform-client-v2/model/AggregationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsEvaluationsAggregatesQuery = function(body) { 
 
@@ -4779,7 +4801,7 @@ module.exports = request;
     /**
      * Query for queue observations
      * 
-     * @param {module:purecloud-platform-client-v2/model/ObservationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsQueuesObservationsQuery = function(body) { 
 
@@ -4835,7 +4857,7 @@ module.exports = request;
     /**
      * Create a scheduled report job
      * Create a scheduled report job.
-     * @param {module:purecloud-platform-client-v2/model/ReportSchedule} body ReportSchedule
+     * @param {Object} body ReportSchedule
      */
     this.postAnalyticsReportingSchedules = function(body) { 
 
@@ -4863,7 +4885,7 @@ module.exports = request;
     /**
      * Query for user aggregates
      * 
-     * @param {module:purecloud-platform-client-v2/model/AggregationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsUsersAggregatesQuery = function(body) { 
 
@@ -4891,7 +4913,7 @@ module.exports = request;
     /**
      * Query for user details
      * 
-     * @param {module:purecloud-platform-client-v2/model/UserDetailsQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsUsersDetailsQuery = function(body) { 
 
@@ -4919,7 +4941,7 @@ module.exports = request;
     /**
      * Query for user observations
      * 
-     * @param {module:purecloud-platform-client-v2/model/ObservationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsUsersObservationsQuery = function(body) { 
 
@@ -4948,7 +4970,7 @@ module.exports = request;
      * Update a scheduled report job.
      * 
      * @param {String} scheduleId Schedule ID
-     * @param {module:purecloud-platform-client-v2/model/ReportSchedule} body ReportSchedule
+     * @param {Object} body ReportSchedule
      */
     this.putAnalyticsReportingSchedule = function(scheduleId, body) { 
 
@@ -5002,7 +5024,7 @@ module.exports = request;
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -5348,7 +5370,7 @@ module.exports = request;
      * 
      * @param {String} id Consuming object ID
      * @param {String} version Consuming object version
-     * @param {module:purecloud-platform-client-v2/model/String} objectType Consuming object type
+     * @param {Object} objectType Consuming object type.  Only versioned types are allowed here.
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.resourceType Types of consumed resources to show
      */
@@ -5390,9 +5412,9 @@ module.exports = request;
      * Get resources that consume a given Dependency Tracking object
      * 
      * @param {String} id Consumed object ID
-     * @param {module:purecloud-platform-client-v2/model/String} objectType Consumed object type (only versioned object types are valid)
+     * @param {Object} objectType Consumed object type
      * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.resourceType Types of consuming resources to show
+     * @param {Array.<String>} opts.resourceType Types of consuming resources to show.  Only versioned types are allowed here.
      */
     this.getArchitectDependencytrackingConsumingresources = function(id, objectType, opts) { 
       opts = opts || {};
@@ -5429,7 +5451,7 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Name to search for
      * @param {Array.<String>} opts.objectType Object type(s) to search for
-     * @param {module:purecloud-platform-client-v2/model/String} opts.flowFilter Show only checkedIn or published flows
+     * @param {Object} opts.flowFilter Show only checkedIn or published flows
      * @param {Boolean} opts.consumedResources Return consumed resources? (default to false)
      * @param {Array.<String>} opts.consumedResourceType Resource type(s) to return
      * @param {Number} opts.pageNumber Page number (default to 1)
@@ -5460,7 +5482,7 @@ module.exports = request;
      * @param {String} id Object ID
      * @param {Object} opts Optional parameters
      * @param {String} opts.version Object version
-     * @param {module:purecloud-platform-client-v2/model/String} opts.objectType Object type
+     * @param {Object} opts.objectType Object type
      * @param {Boolean} opts.consumedResources Include resources this item consumes
      * @param {Boolean} opts.consumingResources Include resources that consume this item
      * @param {Array.<String>} opts.consumedResourceType Types of consumed resources to return, if consumed resources are requested
@@ -5610,6 +5632,7 @@ module.exports = request;
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {String} opts.sortBy Sort by (default to name)
      * @param {String} opts.sortOrder Sort order (default to ASC)
+     * @param {String} opts.name Name of the IVR to filter by.
      */
     this.getArchitectIvrs = function(opts) { 
       opts = opts || {};
@@ -5619,7 +5642,7 @@ module.exports = request;
         '/api/v2/architect/ivrs', 
         'GET', 
         {  }, 
-        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'] }, 
         {  }, 
         {  }, 
         null, 
@@ -5817,6 +5840,7 @@ module.exports = request;
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {String} opts.sortBy Sort by (default to name)
      * @param {String} opts.sortOrder Sort order (default to ASC)
+     * @param {String} opts.name Name of the Schedule Group to filter by.
      */
     this.getArchitectSchedulegroups = function(opts) { 
       opts = opts || {};
@@ -5826,7 +5850,7 @@ module.exports = request;
         '/api/v2/architect/schedulegroups', 
         'GET', 
         {  }, 
-        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'] }, 
         {  }, 
         {  }, 
         null, 
@@ -5845,6 +5869,7 @@ module.exports = request;
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {String} opts.sortBy Sort by (default to name)
      * @param {String} opts.sortOrder Sort order (default to ASC)
+     * @param {String} opts.name Name of the Schedule to filter by.
      */
     this.getArchitectSchedules = function(opts) { 
       opts = opts || {};
@@ -5854,7 +5879,7 @@ module.exports = request;
         '/api/v2/architect/schedules', 
         'GET', 
         {  }, 
-        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'] }, 
         {  }, 
         {  }, 
         null, 
@@ -6031,9 +6056,9 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Number} opts.pageSize Page size (default to 25)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortBy Sort by (default to timestamp)
      * @param {String} opts.sortOrder Sort order (default to desc)
-     * @param {Array.<String>} opts.action Flow actions
+     * @param {Object} opts.sortBy Sort by (default to timestamp)
+     * @param {Array.<String>} opts.action Flow actions to include (omit to include all)
      */
     this.getFlowHistoryHistoryId = function(flowId, historyId, opts) { 
       opts = opts || {};
@@ -6053,7 +6078,7 @@ module.exports = request;
         '/api/v2/flows/{flowId}/history/{historyId}', 
         'GET', 
         { 'flowId': flowId,'historyId': historyId }, 
-        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'action': this.apiClient.buildCollectionParam(opts['action'], 'multi') }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'action': this.apiClient.buildCollectionParam(opts['action'], 'multi') }, 
         {  }, 
         {  }, 
         null, 
@@ -6205,7 +6230,7 @@ module.exports = request;
     /**
      * Get a pageable list of flows, filtered by query parameters
      * Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
-     * @param {String} type Type
+     * @param {Object} type Type
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Number} opts.pageSize Page size (default to 25)
@@ -6218,7 +6243,7 @@ module.exports = request;
      * @param {String} opts.publishVersionId Publish version ID
      * @param {String} opts.editableBy Editable by
      * @param {String} opts.lockedBy Locked by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.secure Secure
+     * @param {Object} opts.secure Secure
      * @param {Boolean} opts.deleted Include deleted (default to false)
      * @param {Boolean} opts.includeSchemas Include variable schemas (default to false)
      */
@@ -6272,7 +6297,7 @@ module.exports = request;
      * Create IVR config.
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/IVR} opts.body 
+     * @param {Object} opts.body 
      */
     this.postArchitectIvrs = function(opts) { 
       opts = opts || {};
@@ -6298,7 +6323,7 @@ module.exports = request;
      * 
      * @param {String} promptId Prompt ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/PromptAssetCreate} opts.body 
+     * @param {Object} opts.body 
      */
     this.postArchitectPromptResources = function(promptId, opts) { 
       opts = opts || {};
@@ -6328,7 +6353,7 @@ module.exports = request;
      * Create a new user prompt
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Prompt} opts.body 
+     * @param {Object} opts.body 
      */
     this.postArchitectPrompts = function(opts) { 
       opts = opts || {};
@@ -6353,7 +6378,7 @@ module.exports = request;
      * Creates a new schedule group
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/ScheduleGroup} opts.body 
+     * @param {Object} opts.body 
      */
     this.postArchitectSchedulegroups = function(opts) { 
       opts = opts || {};
@@ -6378,7 +6403,7 @@ module.exports = request;
      * Create a new schedule.
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Schedule} opts.body 
+     * @param {Object} opts.body 
      */
     this.postArchitectSchedules = function(opts) { 
       opts = opts || {};
@@ -6404,7 +6429,7 @@ module.exports = request;
      * 
      * @param {String} promptId Prompt ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/SystemPromptAsset} opts.body 
+     * @param {Object} opts.body 
      */
     this.postArchitectSystempromptResources = function(promptId, opts) { 
       opts = opts || {};
@@ -6465,7 +6490,7 @@ module.exports = request;
      * Create flow
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Flow} opts.body 
+     * @param {Object} opts.body 
      */
     this.postFlows = function(opts) { 
       opts = opts || {};
@@ -6662,7 +6687,7 @@ module.exports = request;
      * 
      * @param {String} ivrId IVR id
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/IVR} opts.body 
+     * @param {Object} opts.body 
      */
     this.putArchitectIvr = function(ivrId, opts) { 
       opts = opts || {};
@@ -6693,7 +6718,7 @@ module.exports = request;
      * 
      * @param {String} promptId Prompt ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Prompt} opts.body 
+     * @param {Object} opts.body 
      */
     this.putArchitectPrompt = function(promptId, opts) { 
       opts = opts || {};
@@ -6725,7 +6750,7 @@ module.exports = request;
      * @param {String} promptId Prompt ID
      * @param {String} languageCode Language
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/PromptAsset} opts.body 
+     * @param {Object} opts.body 
      */
     this.putArchitectPromptResource = function(promptId, languageCode, opts) { 
       opts = opts || {};
@@ -6761,7 +6786,7 @@ module.exports = request;
      * 
      * @param {String} scheduleId Schedule ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Schedule} opts.body 
+     * @param {Object} opts.body 
      */
     this.putArchitectSchedule = function(scheduleId, opts) { 
       opts = opts || {};
@@ -6792,7 +6817,7 @@ module.exports = request;
      * 
      * @param {String} scheduleGroupId Schedule group ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/ScheduleGroup} opts.body 
+     * @param {Object} opts.body 
      */
     this.putArchitectSchedulegroup = function(scheduleGroupId, opts) { 
       opts = opts || {};
@@ -6824,7 +6849,7 @@ module.exports = request;
      * @param {String} promptId Prompt ID
      * @param {String} languageCode Language
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/SystemPromptAsset} opts.body 
+     * @param {Object} opts.body 
      */
     this.putArchitectSystempromptResource = function(promptId, languageCode, opts) { 
       opts = opts || {};
@@ -6860,7 +6885,7 @@ module.exports = request;
      * 
      * @param {String} flowId Flow ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Flow} opts.body 
+     * @param {Object} opts.body 
      */
     this.putFlow = function(flowId, opts) { 
       opts = opts || {};
@@ -6910,7 +6935,7 @@ module.exports = request;
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -7010,7 +7035,7 @@ module.exports = request;
     /**
      * Create an attribute.
      * 
-     * @param {module:purecloud-platform-client-v2/model/Attribute} body Attribute
+     * @param {Object} body Attribute
      */
     this.postAttributes = function(body) { 
 
@@ -7038,7 +7063,7 @@ module.exports = request;
     /**
      * Query attributes
      * 
-     * @param {module:purecloud-platform-client-v2/model/AttributeQueryRequest} body query
+     * @param {Object} body query
      */
     this.postAttributesQuery = function(body) { 
 
@@ -7067,7 +7092,7 @@ module.exports = request;
      * Update an existing attribute.
      * Fields that can be updated: name, description. The most recent version is required for updates.
      * @param {String} attributeId Attribute ID
-     * @param {module:purecloud-platform-client-v2/model/Attribute} body Attribute
+     * @param {Object} body Attribute
      */
     this.putAttribute = function(attributeId, body) { 
 
@@ -7121,7 +7146,7 @@ module.exports = request;
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -7368,7 +7393,7 @@ module.exports = request;
      * Patch Organization Role for needsUpdate Field
      * Patch Organization Role for needsUpdate Field
      * @param {String} roleId Role ID
-     * @param {module:purecloud-platform-client-v2/model/DomainOrganizationRole} body Organization role
+     * @param {Object} body Organization role
      */
     this.patchAuthorizationRole = function(roleId, body) { 
 
@@ -7403,7 +7428,7 @@ module.exports = request;
      * Allows users to compare their existing roles in an unsaved state to its default role
      * @param {String} leftRoleId Left Role ID
      * @param {String} rightRoleId Right Role id
-     * @param {module:purecloud-platform-client-v2/model/DomainOrganizationRole} body Organization role
+     * @param {Object} body Organization role
      */
     this.postAuthorizationRoleComparedefaultRightRoleId = function(leftRoleId, rightRoleId, body) { 
 
@@ -7441,7 +7466,7 @@ module.exports = request;
     /**
      * Create an organization role.
      * 
-     * @param {module:purecloud-platform-client-v2/model/DomainOrganizationRoleCreate} body Organization role
+     * @param {Object} body Organization role
      */
     this.postAuthorizationRoles = function(body) { 
 
@@ -7495,7 +7520,7 @@ module.exports = request;
      * Update an organization role.
      * Update
      * @param {String} roleId Role ID
-     * @param {module:purecloud-platform-client-v2/model/DomainOrganizationRoleUpdate} body Organization role
+     * @param {Object} body Organization role
      */
     this.putAuthorizationRole = function(roleId, body) { 
 
@@ -7529,7 +7554,7 @@ module.exports = request;
      * Sets the users for the role
      * 
      * @param {String} roleId Role ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/String>} body List of user IDs
+     * @param {Array.<Object>} body List of user IDs
      */
     this.putAuthorizationRoleUsersAdd = function(roleId, body) { 
 
@@ -7563,7 +7588,7 @@ module.exports = request;
      * Removes the users from the role
      * 
      * @param {String} roleId Role ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/String>} body List of user IDs
+     * @param {Array.<Object>} body List of user IDs
      */
     this.putAuthorizationRoleUsersRemove = function(roleId, body) { 
 
@@ -7596,7 +7621,7 @@ module.exports = request;
     /**
      * Restore specified default roles
      * 
-     * @param {Array.<module:purecloud-platform-client-v2/model/DomainOrganizationRole>} body Organization roles list
+     * @param {Array.<Object>} body Organization roles list
      */
     this.putAuthorizationRolesDefault = function(body) { 
 
@@ -7625,7 +7650,7 @@ module.exports = request;
      * Sets the user&#39;s roles
      * 
      * @param {String} userId User ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/String>} body List of roles
+     * @param {Array.<Object>} body List of roles
      */
     this.putUserRoles = function(userId, body) { 
 
@@ -7679,7 +7704,7 @@ module.exports = request;
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -7952,7 +7977,7 @@ module.exports = request;
      * 
      * @param {String} documentId Document ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.disposition Request how the content will be downloaded: a file attachment or inline. Default is attachment.
+     * @param {Object} opts.disposition Request how the content will be downloaded: a file attachment or inline. Default is attachment.
      * @param {String} opts.contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav
      */
     this.getContentmanagementDocumentContent = function(documentId, opts) { 
@@ -8137,9 +8162,9 @@ module.exports = request;
      * @param {String} sharedId Shared ID
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.redirect Turn on or off redirect (default to true)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.disposition Request how the share content will be downloaded: attached as a file or inline. Default is attachment. (default to attachment)
+     * @param {Object} opts.disposition Request how the share content will be downloaded: attached as a file or inline. Default is attachment. (default to attachment)
      * @param {String} opts.contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand Expand some document fields
+     * @param {Object} opts.expand Expand some document fields
      */
     this.getContentmanagementSharedSharedId = function(sharedId, opts) { 
       opts = opts || {};
@@ -8507,7 +8532,7 @@ module.exports = request;
     /**
      * Query audits
      * 
-     * @param {module:purecloud-platform-client-v2/model/ContentQueryRequest} body Allows for a filtered query returning facet information
+     * @param {Object} body Allows for a filtered query returning facet information
      */
     this.postContentmanagementAuditquery = function(body) { 
 
@@ -8536,9 +8561,9 @@ module.exports = request;
      * Update a document.
      * 
      * @param {String} documentId Document ID
-     * @param {module:purecloud-platform-client-v2/model/DocumentUpdate} body Document
+     * @param {Object} body Document
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand Expand some document fields
+     * @param {Object} opts.expand Expand some document fields
      * @param {Boolean} opts.override Override any lock on the document
      */
     this.postContentmanagementDocument = function(documentId, body, opts) { 
@@ -8574,7 +8599,7 @@ module.exports = request;
      * Replace the contents of a document.
      * 
      * @param {String} documentId Document ID
-     * @param {module:purecloud-platform-client-v2/model/ReplaceRequest} body Replace Request
+     * @param {Object} body Replace Request
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.override Override any lock on the document
      */
@@ -8610,7 +8635,7 @@ module.exports = request;
     /**
      * Add a document.
      * 
-     * @param {module:purecloud-platform-client-v2/model/DocumentUpload} body Document
+     * @param {Object} body Document
      * @param {Object} opts Optional parameters
      * @param {String} opts.copySource Copy a document within a workspace or to a new workspace. Provide a document ID as the copy source.
      * @param {String} opts.moveSource Move a document to a new workspace. Provide a document ID as the move source.
@@ -8643,9 +8668,9 @@ module.exports = request;
     /**
      * Query content
      * 
-     * @param {module:purecloud-platform-client-v2/model/QueryRequest} body Allows for a filtered query returning facet information
+     * @param {Object} body Allows for a filtered query returning facet information
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand Expand some document fields
+     * @param {Object} opts.expand Expand some document fields
      */
     this.postContentmanagementQuery = function(body, opts) { 
       opts = opts || {};
@@ -8674,7 +8699,7 @@ module.exports = request;
     /**
      * Creates a new share or updates an existing share if the entity has already been shared
      * 
-     * @param {module:purecloud-platform-client-v2/model/CreateShareRequest} body CreateShareRequest - entity id and type and a single member or list of members are required
+     * @param {Object} body CreateShareRequest - entity id and type and a single member or list of members are required
      */
     this.postContentmanagementShares = function(body) { 
 
@@ -8703,7 +8728,7 @@ module.exports = request;
      * Create a workspace tag
      * 
      * @param {String} workspaceId Workspace ID
-     * @param {module:purecloud-platform-client-v2/model/TagValue} body tag
+     * @param {Object} body tag
      */
     this.postContentmanagementWorkspaceTagvalues = function(workspaceId, body) { 
 
@@ -8737,7 +8762,7 @@ module.exports = request;
      * Perform a prefix query on tags in the workspace
      * 
      * @param {String} workspaceId Workspace ID
-     * @param {module:purecloud-platform-client-v2/model/TagQueryRequest} body query
+     * @param {Object} body query
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand Which fields, if any, to expand.
      */
@@ -8773,7 +8798,7 @@ module.exports = request;
     /**
      * Create a group workspace
      * 
-     * @param {module:purecloud-platform-client-v2/model/WorkspaceCreate} body Workspace
+     * @param {Object} body Workspace
      */
     this.postContentmanagementWorkspaces = function(body) { 
 
@@ -8802,7 +8827,7 @@ module.exports = request;
      * Update a workspace
      * 
      * @param {String} workspaceId Workspace ID
-     * @param {module:purecloud-platform-client-v2/model/Workspace} body Workspace
+     * @param {Object} body Workspace
      */
     this.putContentmanagementWorkspace = function(workspaceId, body) { 
 
@@ -8837,7 +8862,7 @@ module.exports = request;
      * 
      * @param {String} workspaceId Workspace ID
      * @param {String} memberId Member ID
-     * @param {module:purecloud-platform-client-v2/model/WorkspaceMember} body Workspace Member
+     * @param {Object} body Workspace Member
      */
     this.putContentmanagementWorkspaceMember = function(workspaceId, memberId, body) { 
 
@@ -8877,7 +8902,7 @@ module.exports = request;
      * 
      * @param {String} workspaceId Workspace ID
      * @param {String} tagId Tag ID
-     * @param {module:purecloud-platform-client-v2/model/TagValue} body Workspace
+     * @param {Object} body Workspace
      */
     this.putContentmanagementWorkspaceTagvalue = function(workspaceId, tagId, body) { 
 
@@ -8936,7 +8961,7 @@ module.exports = request;
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -9960,7 +9985,7 @@ module.exports = request;
      * Update conversation participant.
      * @param {String} conversationId conversation ID
      * @param {String} participantId participant ID
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Update request
+     * @param {Object} body Update request
      */
     this.patchConversationParticipant = function(conversationId, participantId, body) { 
 
@@ -10000,7 +10025,7 @@ module.exports = request;
      * 
      * @param {String} conversationId conversation ID
      * @param {String} participantId participant ID
-     * @param {module:purecloud-platform-client-v2/model/ParticipantAttributes} body Participant attributes
+     * @param {Object} body Participant attributes
      */
     this.patchConversationParticipantAttributes = function(conversationId, participantId, body) { 
 
@@ -10039,7 +10064,7 @@ module.exports = request;
      * Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/Conversation} body Conversation
+     * @param {Object} body Conversation
      */
     this.patchConversationsCall = function(conversationId, body) { 
 
@@ -10074,7 +10099,7 @@ module.exports = request;
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Participant request
+     * @param {Object} body Participant request
      */
     this.patchConversationsCallParticipant = function(conversationId, participantId, body) { 
 
@@ -10114,7 +10139,7 @@ module.exports = request;
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/ParticipantAttributes} body Participant attributes
+     * @param {Object} body Participant attributes
      */
     this.patchConversationsCallParticipantAttributes = function(conversationId, participantId, body) { 
 
@@ -10155,7 +10180,7 @@ module.exports = request;
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
      * @param {String} communicationId communicationId
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Participant
+     * @param {Object} body Participant
      */
     this.patchConversationsCallParticipantCommunication = function(conversationId, participantId, communicationId, body) { 
 
@@ -10200,7 +10225,7 @@ module.exports = request;
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/ConsultTransferUpdate} body new speak to
+     * @param {Object} body new speak to
      */
     this.patchConversationsCallParticipantConsult = function(conversationId, participantId, body) { 
 
@@ -10239,7 +10264,7 @@ module.exports = request;
      * Update a conversation by disconnecting all of the participants
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/Conversation} body Conversation
+     * @param {Object} body Conversation
      */
     this.patchConversationsCallback = function(conversationId, body) { 
 
@@ -10274,7 +10299,7 @@ module.exports = request;
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Participant
+     * @param {Object} body Participant
      */
     this.patchConversationsCallbackParticipant = function(conversationId, participantId, body) { 
 
@@ -10314,7 +10339,7 @@ module.exports = request;
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/ParticipantAttributes} body Attributes
+     * @param {Object} body Attributes
      */
     this.patchConversationsCallbackParticipantAttributes = function(conversationId, participantId, body) { 
 
@@ -10355,7 +10380,7 @@ module.exports = request;
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
      * @param {String} communicationId communicationId
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Participant
+     * @param {Object} body Participant
      */
     this.patchConversationsCallbackParticipantCommunication = function(conversationId, participantId, communicationId, body) { 
 
@@ -10399,7 +10424,7 @@ module.exports = request;
      * Update a conversation by disconnecting all of the participants
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/Conversation} body Conversation
+     * @param {Object} body Conversation
      */
     this.patchConversationsChat = function(conversationId, body) { 
 
@@ -10434,7 +10459,7 @@ module.exports = request;
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Update request
+     * @param {Object} body Update request
      */
     this.patchConversationsChatParticipant = function(conversationId, participantId, body) { 
 
@@ -10474,7 +10499,7 @@ module.exports = request;
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/ParticipantAttributes} body Participant attributes
+     * @param {Object} body Participant attributes
      */
     this.patchConversationsChatParticipantAttributes = function(conversationId, participantId, body) { 
 
@@ -10515,7 +10540,7 @@ module.exports = request;
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
      * @param {String} communicationId communicationId
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Participant
+     * @param {Object} body Participant
      */
     this.patchConversationsChatParticipantCommunication = function(conversationId, participantId, communicationId, body) { 
 
@@ -10559,7 +10584,7 @@ module.exports = request;
      * Update a conversation by disconnecting all of the participants
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/Conversation} body Conversation
+     * @param {Object} body Conversation
      */
     this.patchConversationsCobrowsesession = function(conversationId, body) { 
 
@@ -10595,7 +10620,7 @@ module.exports = request;
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} opts.body 
+     * @param {Object} opts.body 
      */
     this.patchConversationsCobrowsesessionParticipant = function(conversationId, participantId, opts) { 
       opts = opts || {};
@@ -10632,7 +10657,7 @@ module.exports = request;
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/ParticipantAttributes} opts.body 
+     * @param {Object} opts.body 
      */
     this.patchConversationsCobrowsesessionParticipantAttributes = function(conversationId, participantId, opts) { 
       opts = opts || {};
@@ -10669,7 +10694,7 @@ module.exports = request;
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
      * @param {String} communicationId communicationId
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Participant
+     * @param {Object} body Participant
      */
     this.patchConversationsCobrowsesessionParticipantCommunication = function(conversationId, participantId, communicationId, body) { 
 
@@ -10713,7 +10738,7 @@ module.exports = request;
      * Update a conversation by disconnecting all of the participants
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/Conversation} body Conversation
+     * @param {Object} body Conversation
      */
     this.patchConversationsEmail = function(conversationId, body) { 
 
@@ -10748,7 +10773,7 @@ module.exports = request;
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Update request
+     * @param {Object} body Update request
      */
     this.patchConversationsEmailParticipant = function(conversationId, participantId, body) { 
 
@@ -10788,7 +10813,7 @@ module.exports = request;
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/ParticipantAttributes} body Participant attributes
+     * @param {Object} body Participant attributes
      */
     this.patchConversationsEmailParticipantAttributes = function(conversationId, participantId, body) { 
 
@@ -10829,7 +10854,7 @@ module.exports = request;
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
      * @param {String} communicationId communicationId
-     * @param {module:purecloud-platform-client-v2/model/MediaParticipantRequest} body Participant
+     * @param {Object} body Participant
      */
     this.patchConversationsEmailParticipantCommunication = function(conversationId, participantId, communicationId, body) { 
 
@@ -10873,7 +10898,7 @@ module.exports = request;
      * Index conversation properties
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/PropertyIndexRequest} body request
+     * @param {Object} body request
      */
     this.postAnalyticsConversationDetailsProperties = function(conversationId, body) { 
 
@@ -10906,7 +10931,7 @@ module.exports = request;
     /**
      * Query for conversation aggregates
      * 
-     * @param {module:purecloud-platform-client-v2/model/AggregationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsConversationsAggregatesQuery = function(body) { 
 
@@ -10934,7 +10959,7 @@ module.exports = request;
     /**
      * Query for conversation details
      * 
-     * @param {module:purecloud-platform-client-v2/model/ConversationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsConversationsDetailsQuery = function(body) { 
 
@@ -10965,7 +10990,7 @@ module.exports = request;
      * @param {String} conversationId conversation ID
      * @param {String} participantId participant ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/CreateCallbackOnConversationCommand} opts.body 
+     * @param {Object} opts.body 
      */
     this.postConversationParticipantCallbacks = function(conversationId, participantId, opts) { 
       opts = opts || {};
@@ -11001,7 +11026,7 @@ module.exports = request;
      * 
      * @param {String} conversationId conversation ID
      * @param {String} participantId participant ID
-     * @param {module:purecloud-platform-client-v2/model/TransferRequest} body Transfer request
+     * @param {Object} body Transfer request
      */
     this.postConversationParticipantReplace = function(conversationId, participantId, body) { 
 
@@ -11037,10 +11062,10 @@ module.exports = request;
 
 
     /**
-     * Add a new call to a conversation
+     * Place a new call as part of a callback conversation.
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/CallCommand} body Conversation
+     * @param {Object} body Conversation
      */
     this.postConversationsCall = function(conversationId, body) { 
 
@@ -11075,7 +11100,7 @@ module.exports = request;
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/ConsultTransfer} body Destination address &amp; initial speak to
+     * @param {Object} body Destination address &amp; initial speak to
      */
     this.postConversationsCallParticipantConsult = function(conversationId, participantId, body) { 
 
@@ -11149,7 +11174,7 @@ module.exports = request;
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/TransferRequest} body Transfer request
+     * @param {Object} body Transfer request
      */
     this.postConversationsCallParticipantReplace = function(conversationId, participantId, body) { 
 
@@ -11188,7 +11213,7 @@ module.exports = request;
      * Add participants to a conversation
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/Conversation} body Conversation
+     * @param {Object} body Conversation
      */
     this.postConversationsCallParticipants = function(conversationId, body) { 
 
@@ -11223,7 +11248,7 @@ module.exports = request;
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/TransferRequest} body Transfer request
+     * @param {Object} body Transfer request
      */
     this.postConversationsCallbackParticipantReplace = function(conversationId, participantId, body) { 
 
@@ -11261,7 +11286,7 @@ module.exports = request;
     /**
      * Create a Callback
      * 
-     * @param {module:purecloud-platform-client-v2/model/CreateCallbackCommand} body Callback
+     * @param {Object} body Callback
      */
     this.postConversationsCallbacks = function(body) { 
 
@@ -11289,7 +11314,7 @@ module.exports = request;
     /**
      * Create a call conversation
      * 
-     * @param {module:purecloud-platform-client-v2/model/CreateCallRequest} body Call request
+     * @param {Object} body Call request
      */
     this.postConversationsCalls = function(body) { 
 
@@ -11319,7 +11344,7 @@ module.exports = request;
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/TransferRequest} body Transfer request
+     * @param {Object} body Transfer request
      */
     this.postConversationsChatParticipantReplace = function(conversationId, participantId, body) { 
 
@@ -11357,7 +11382,7 @@ module.exports = request;
     /**
      * Create a web chat conversation
      * 
-     * @param {module:purecloud-platform-client-v2/model/CreateWebChatRequest} body Create web chat request
+     * @param {Object} body Create web chat request
      */
     this.postConversationsChats = function(body) { 
 
@@ -11388,7 +11413,7 @@ module.exports = request;
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/TransferRequest} opts.body 
+     * @param {Object} opts.body 
      */
     this.postConversationsCobrowsesessionParticipantReplace = function(conversationId, participantId, opts) { 
       opts = opts || {};
@@ -11423,7 +11448,7 @@ module.exports = request;
      * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/InboundMessageRequest} body Send external email reply
+     * @param {Object} body Send external email reply
      */
     this.postConversationsEmailInboundmessages = function(conversationId, body) { 
 
@@ -11457,7 +11482,7 @@ module.exports = request;
      * Send an email reply
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/EmailMessage} body Reply
+     * @param {Object} body Reply
      */
     this.postConversationsEmailMessages = function(conversationId, body) { 
 
@@ -11492,7 +11517,7 @@ module.exports = request;
      * 
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
-     * @param {module:purecloud-platform-client-v2/model/TransferRequest} body Transfer request
+     * @param {Object} body Transfer request
      */
     this.postConversationsEmailParticipantReplace = function(conversationId, participantId, body) { 
 
@@ -11530,7 +11555,7 @@ module.exports = request;
     /**
      * Create an email conversation
      * 
-     * @param {module:purecloud-platform-client-v2/model/CreateEmailRequest} body Create email request
+     * @param {Object} body Create email request
      */
     this.postConversationsEmails = function(body) { 
 
@@ -11558,7 +11583,7 @@ module.exports = request;
     /**
      * Create Fax Conversation
      * 
-     * @param {module:purecloud-platform-client-v2/model/FaxSendRequest} body Fax
+     * @param {Object} body Fax
      */
     this.postConversationsFaxes = function(body) { 
 
@@ -11589,7 +11614,7 @@ module.exports = request;
      * @param {String} conversationId conversationId
      * @param {String} participantId participantId
      * @param {String} communicationId communicationId
-     * @param {module:purecloud-platform-client-v2/model/SetUuiDataRequest} body UUIData Request
+     * @param {Object} body UUIData Request
      */
     this.putConversationsCallParticipantCommunicationUuidata = function(conversationId, participantId, communicationId, body) { 
 
@@ -11633,7 +11658,7 @@ module.exports = request;
      * Update conversation draft reply
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/EmailMessage} body Draft
+     * @param {Object} body Draft
      */
     this.putConversationsEmailMessagesDraft = function(conversationId, body) { 
 
@@ -11687,7 +11712,7 @@ module.exports = request;
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -12018,7 +12043,7 @@ module.exports = request;
      * 
      * @param {String} externalOrganizationId External Organization ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand which fields, if any, to expand (externalDataSources)
+     * @param {Object} opts.expand which fields, if any, to expand (externalDataSources)
      * @param {Boolean} opts.includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization
      */
     this.getExternalcontactsOrganization = function(externalOrganizationId, opts) { 
@@ -12158,7 +12183,7 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 20)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand which fields, if any, to expand
+     * @param {Object} opts.expand which fields, if any, to expand
      * @param {String} opts.sortOrder Sort order
      */
     this.getExternalcontactsOrganizationRelationships = function(externalOrganizationId, opts) { 
@@ -12221,7 +12246,7 @@ module.exports = request;
      * 
      * @param {String} relationshipId Relationship Id
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand which fields, if any, to expand
+     * @param {Object} opts.expand which fields, if any, to expand
      */
     this.getExternalcontactsRelationship = function(relationshipId, opts) { 
       opts = opts || {};
@@ -12283,7 +12308,7 @@ module.exports = request;
      * 
      * @param {String} contactId ExternalContact Id
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Note} opts.body ExternalContact
+     * @param {Object} opts.body ExternalContact
      */
     this.postExternalcontactsContactNotes = function(contactId, opts) { 
       opts = opts || {};
@@ -12313,7 +12338,7 @@ module.exports = request;
      * Create an external contact
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/ExternalContact} opts.body ExternalContact
+     * @param {Object} opts.body ExternalContact
      */
     this.postExternalcontactsContacts = function(opts) { 
       opts = opts || {};
@@ -12339,7 +12364,7 @@ module.exports = request;
      * 
      * @param {String} externalOrganizationId External Organization Id
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Note} opts.body ExternalContact
+     * @param {Object} opts.body ExternalContact
      */
     this.postExternalcontactsOrganizationNotes = function(externalOrganizationId, opts) { 
       opts = opts || {};
@@ -12369,7 +12394,7 @@ module.exports = request;
      * Create an external organization
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/ExternalOrganization} opts.body ExternalOrganization
+     * @param {Object} opts.body ExternalOrganization
      */
     this.postExternalcontactsOrganizations = function(opts) { 
       opts = opts || {};
@@ -12394,7 +12419,7 @@ module.exports = request;
      * Create a relationship
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Relationship} opts.body Relationship
+     * @param {Object} opts.body Relationship
      */
     this.postExternalcontactsRelationships = function(opts) { 
       opts = opts || {};
@@ -12420,7 +12445,7 @@ module.exports = request;
      * 
      * @param {String} contactId ExternalContact ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/ExternalContact} opts.body ExternalContact
+     * @param {Object} opts.body ExternalContact
      */
     this.putExternalcontactsContact = function(contactId, opts) { 
       opts = opts || {};
@@ -12452,7 +12477,7 @@ module.exports = request;
      * @param {String} contactId ExternalContact Id
      * @param {String} noteId Note Id
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Note} opts.body Note
+     * @param {Object} opts.body Note
      */
     this.putExternalcontactsContactNote = function(contactId, noteId, opts) { 
       opts = opts || {};
@@ -12488,7 +12513,7 @@ module.exports = request;
      * 
      * @param {String} conversationId Conversation ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/ConversationAssociation} opts.body ConversationAssociation
+     * @param {Object} opts.body ConversationAssociation
      */
     this.putExternalcontactsConversation = function(conversationId, opts) { 
       opts = opts || {};
@@ -12519,7 +12544,7 @@ module.exports = request;
      * 
      * @param {String} externalOrganizationId External Organization ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/ExternalOrganization} opts.body ExternalOrganization
+     * @param {Object} opts.body ExternalOrganization
      */
     this.putExternalcontactsOrganization = function(externalOrganizationId, opts) { 
       opts = opts || {};
@@ -12551,7 +12576,7 @@ module.exports = request;
      * @param {String} externalOrganizationId External Organization Id
      * @param {String} noteId Note Id
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Note} opts.body Note
+     * @param {Object} opts.body Note
      */
     this.putExternalcontactsOrganizationNote = function(externalOrganizationId, noteId, opts) { 
       opts = opts || {};
@@ -12621,7 +12646,7 @@ module.exports = request;
      * 
      * @param {String} relationshipId Relationship Id
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Relationship} opts.body Relationship
+     * @param {Object} opts.body Relationship
      */
     this.putExternalcontactsRelationship = function(relationshipId, opts) { 
       opts = opts || {};
@@ -12671,7 +12696,7 @@ module.exports = request;
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -12822,7 +12847,7 @@ module.exports = request;
      * Update a fax document.
      * 
      * @param {String} documentId Document ID
-     * @param {module:purecloud-platform-client-v2/model/FaxDocument} body Document
+     * @param {Object} body Document
      */
     this.putFaxDocument = function(documentId, body) { 
 
@@ -12876,7 +12901,7 @@ module.exports = request;
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -12950,7 +12975,7 @@ module.exports = request;
     /**
      * Patch a organization&#39;s GeolocationSettings
      * 
-     * @param {module:purecloud-platform-client-v2/model/GeolocationSettings} body Geolocation settings
+     * @param {Object} body Geolocation settings
      */
     this.patchGeolocationsSettings = function(body) { 
 
@@ -12980,7 +13005,7 @@ module.exports = request;
      * The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
      * @param {String} userId user Id
      * @param {String} clientId client Id
-     * @param {module:purecloud-platform-client-v2/model/Geolocation} body Geolocation
+     * @param {Object} body Geolocation
      */
     this.patchUserGeolocation = function(userId, clientId, body) { 
 
@@ -13039,7 +13064,7 @@ module.exports = request;
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -13115,7 +13140,7 @@ module.exports = request;
      * 
      * @param {String} greetingId Greeting ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.formatId The desired media format. (default to WAV)
+     * @param {Object} opts.formatId The desired media format. (default to WAV)
      */
     this.getGreetingMedia = function(greetingId, opts) { 
       opts = opts || {};
@@ -13312,7 +13337,7 @@ module.exports = request;
     /**
      * Create a Greeting for an Organization
      * 
-     * @param {module:purecloud-platform-client-v2/model/Greeting} body The Greeting to create
+     * @param {Object} body The Greeting to create
      */
     this.postGreetings = function(body) { 
 
@@ -13341,7 +13366,7 @@ module.exports = request;
      * Creates a Greeting for a Group
      * 
      * @param {String} groupId Group ID
-     * @param {module:purecloud-platform-client-v2/model/Greeting} body The Greeting to create
+     * @param {Object} body The Greeting to create
      */
     this.postGroupGreetings = function(groupId, body) { 
 
@@ -13375,7 +13400,7 @@ module.exports = request;
      * Creates a Greeting for a User
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/Greeting} body The Greeting to create
+     * @param {Object} body The Greeting to create
      */
     this.postUserGreetings = function(userId, body) { 
 
@@ -13409,7 +13434,7 @@ module.exports = request;
      * Updates the Greeting with the given GreetingId
      * 
      * @param {String} greetingId Greeting ID
-     * @param {module:purecloud-platform-client-v2/model/Greeting} body The updated Greeting
+     * @param {Object} body The updated Greeting
      */
     this.putGreeting = function(greetingId, body) { 
 
@@ -13442,7 +13467,7 @@ module.exports = request;
     /**
      * Update an Organization&#39;s DefaultGreetingList
      * 
-     * @param {module:purecloud-platform-client-v2/model/DefaultGreetingList} body The updated defaultGreetingList
+     * @param {Object} body The updated defaultGreetingList
      */
     this.putGreetingsDefaults = function(body) { 
 
@@ -13471,7 +13496,7 @@ module.exports = request;
      * Updates the DefaultGreetingList of the specified Group
      * 
      * @param {String} groupId Group ID
-     * @param {module:purecloud-platform-client-v2/model/DefaultGreetingList} body The updated defaultGreetingList
+     * @param {Object} body The updated defaultGreetingList
      */
     this.putGroupGreetingsDefaults = function(groupId, body) { 
 
@@ -13505,7 +13530,7 @@ module.exports = request;
      * Updates the DefaultGreetingList of the specified User
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/DefaultGreetingList} body The updated defaultGreetingList
+     * @param {Object} body The updated defaultGreetingList
      */
     this.putUserGreetingsDefaults = function(userId, body) { 
 
@@ -13559,7 +13584,7 @@ module.exports = request;
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -13639,7 +13664,7 @@ module.exports = request;
     /**
      * Fetch field config for an entity type
      * 
-     * @param {module:purecloud-platform-client-v2/model/String} type Field type
+     * @param {Object} type Field type
      */
     this.getFieldconfig = function(type) { 
 
@@ -13699,7 +13724,7 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Ascending or descending sort order (default to ASC)
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
      * @param {Array.<String>} opts.expand Which fields, if any, to expand
      */
     this.getGroupMembers = function(groupId, opts) { 
@@ -13733,7 +13758,7 @@ module.exports = request;
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Array.<String>} opts.id id
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Ascending or descending sort order (default to ASC)
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
      */
     this.getGroups = function(opts) { 
       opts = opts || {};
@@ -13789,7 +13814,7 @@ module.exports = request;
      * Add members
      * 
      * @param {String} groupId Group ID
-     * @param {module:purecloud-platform-client-v2/model/GroupMembersUpdate} body Add members
+     * @param {Object} body Add members
      */
     this.postGroupMembers = function(groupId, body) { 
 
@@ -13822,7 +13847,7 @@ module.exports = request;
     /**
      * Create a group
      * 
-     * @param {module:purecloud-platform-client-v2/model/Group} body Group
+     * @param {Object} body Group
      */
     this.postGroups = function(body) { 
 
@@ -13850,7 +13875,7 @@ module.exports = request;
     /**
      * Search groups
      * 
-     * @param {module:purecloud-platform-client-v2/model/GroupSearchRequest} body Search request options
+     * @param {Object} body Search request options
      */
     this.postGroupsSearch = function(body) { 
 
@@ -13880,7 +13905,7 @@ module.exports = request;
      * 
      * @param {String} groupId Group ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/GroupUpdate} opts.body Group
+     * @param {Object} opts.body Group
      */
     this.putGroup = function(groupId, opts) { 
       opts = opts || {};
@@ -13930,7 +13955,7 @@ module.exports = request;
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -14366,7 +14391,7 @@ module.exports = request;
     /**
      * Update/Create ADFS Identity Provider
      * 
-     * @param {module:purecloud-platform-client-v2/model/ADFS} body Provider
+     * @param {Object} body Provider
      */
     this.putIdentityprovidersAdfs = function(body) { 
 
@@ -14394,7 +14419,7 @@ module.exports = request;
     /**
      * Update/Create Customer Interaction Center (CIC) Identity Provider
      * 
-     * @param {module:purecloud-platform-client-v2/model/CustomerInteractionCenter} body Provider
+     * @param {Object} body Provider
      */
     this.putIdentityprovidersCic = function(body) { 
 
@@ -14422,7 +14447,7 @@ module.exports = request;
     /**
      * Update/Create G Suite Identity Provider
      * 
-     * @param {module:purecloud-platform-client-v2/model/GSuite} body Provider
+     * @param {Object} body Provider
      */
     this.putIdentityprovidersGsuite = function(body) { 
 
@@ -14450,7 +14475,7 @@ module.exports = request;
     /**
      * Update/Create IdentityNow Provider
      * 
-     * @param {module:purecloud-platform-client-v2/model/IdentityNow} body Provider
+     * @param {Object} body Provider
      */
     this.putIdentityprovidersIdentitynow = function(body) { 
 
@@ -14478,7 +14503,7 @@ module.exports = request;
     /**
      * Update/Create Okta Identity Provider
      * 
-     * @param {module:purecloud-platform-client-v2/model/Okta} body Provider
+     * @param {Object} body Provider
      */
     this.putIdentityprovidersOkta = function(body) { 
 
@@ -14506,7 +14531,7 @@ module.exports = request;
     /**
      * Update/Create OneLogin Identity Provider
      * 
-     * @param {module:purecloud-platform-client-v2/model/OneLogin} body Provider
+     * @param {Object} body Provider
      */
     this.putIdentityprovidersOnelogin = function(body) { 
 
@@ -14534,7 +14559,7 @@ module.exports = request;
     /**
      * Update/Create Ping Identity Provider
      * 
-     * @param {module:purecloud-platform-client-v2/model/PingIdentity} body Provider
+     * @param {Object} body Provider
      */
     this.putIdentityprovidersPing = function(body) { 
 
@@ -14562,7 +14587,7 @@ module.exports = request;
     /**
      * Update/Create PureCloud Identity Provider
      * 
-     * @param {module:purecloud-platform-client-v2/model/PureCloud} body Provider
+     * @param {Object} body Provider
      */
     this.putIdentityprovidersPurecloud = function(body) { 
 
@@ -14590,7 +14615,7 @@ module.exports = request;
     /**
      * Update/Create Salesforce Identity Provider
      * 
-     * @param {module:purecloud-platform-client-v2/model/Salesforce} body Provider
+     * @param {Object} body Provider
      */
     this.putIdentityprovidersSalesforce = function(body) { 
 
@@ -14631,6 +14656,712 @@ module.exports = request;
     if (!root.platformClient) {
       root.platformClient = {};
     }
+    root.platformClient.IntegrationsApi = factory(root.platformClient.ApiClient);
+  }
+}(this, function(ApiClient) {
+  'use strict';
+
+  /**
+   * Integrations service.
+   * @module purecloud-platform-client-v2/api/IntegrationsApi
+   * @version 8.0.0
+   */
+
+  /**
+   * Constructs a new IntegrationsApi. 
+   * @alias module:purecloud-platform-client-v2/api/IntegrationsApi
+   * @class
+   * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+   * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+   */
+  var exports = function(apiClient) {
+    this.apiClient = apiClient || ApiClient.instance;
+
+
+
+    /**
+     * Delete an Action
+     * 
+     * @param {String} actionId actionId
+     */
+    this.deleteIntegrationsAction = function(actionId) { 
+
+      // verify the required parameter 'actionId' is set
+      if (actionId === undefined || actionId === null) {
+        throw "Missing the required parameter 'actionId' when calling deleteIntegrationsAction";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions/{actionId}', 
+        'DELETE', 
+        { 'actionId': actionId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Delete a Draft
+     * 
+     * @param {String} actionId actionId
+     */
+    this.deleteIntegrationsActionDraft = function(actionId) { 
+
+      // verify the required parameter 'actionId' is set
+      if (actionId === undefined || actionId === null) {
+        throw "Missing the required parameter 'actionId' when calling deleteIntegrationsActionDraft";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions/{actionId}/draft', 
+        'DELETE', 
+        { 'actionId': actionId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Retrieves a single Action matching id.
+     * 
+     * @param {String} actionId actionId
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.expand Indicates fields of the response which should be expanded.
+     * @param {Boolean} opts.includeConfig Show config when available (default to false)
+     */
+    this.getIntegrationsAction = function(actionId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'actionId' is set
+      if (actionId === undefined || actionId === null) {
+        throw "Missing the required parameter 'actionId' when calling getIntegrationsAction";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions/{actionId}', 
+        'GET', 
+        { 'actionId': actionId }, 
+        { 'expand': opts['expand'],'includeConfig': opts['includeConfig'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Retrieve a Draft
+     * 
+     * @param {String} actionId actionId
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.expand Indicates fields of the response which should be expanded.
+     * @param {Boolean} opts.includeConfig Show config when available (default to false)
+     */
+    this.getIntegrationsActionDraft = function(actionId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'actionId' is set
+      if (actionId === undefined || actionId === null) {
+        throw "Missing the required parameter 'actionId' when calling getIntegrationsActionDraft";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions/{actionId}/draft', 
+        'GET', 
+        { 'actionId': actionId }, 
+        { 'expand': opts['expand'],'includeConfig': opts['includeConfig'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Retrieve schema for a Draft based on filename.
+     * 
+     * @param {String} actionId actionId
+     * @param {String} fileName Name of schema file to be retrieved for this draft.
+     */
+    this.getIntegrationsActionDraftSchema = function(actionId, fileName) { 
+
+      // verify the required parameter 'actionId' is set
+      if (actionId === undefined || actionId === null) {
+        throw "Missing the required parameter 'actionId' when calling getIntegrationsActionDraftSchema";
+      }
+
+      // verify the required parameter 'fileName' is set
+      if (fileName === undefined || fileName === null) {
+        throw "Missing the required parameter 'fileName' when calling getIntegrationsActionDraftSchema";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions/{actionId}/draft/schemas/{fileName}', 
+        'GET', 
+        { 'actionId': actionId,'fileName': fileName }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Retrieve templates for a Draft based on filename.
+     * 
+     * @param {String} actionId actionId
+     * @param {String} fileName Name of template file to be retrieved for this action draft.
+     */
+    this.getIntegrationsActionDraftTemplate = function(actionId, fileName) { 
+
+      // verify the required parameter 'actionId' is set
+      if (actionId === undefined || actionId === null) {
+        throw "Missing the required parameter 'actionId' when calling getIntegrationsActionDraftTemplate";
+      }
+
+      // verify the required parameter 'fileName' is set
+      if (fileName === undefined || fileName === null) {
+        throw "Missing the required parameter 'fileName' when calling getIntegrationsActionDraftTemplate";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions/{actionId}/draft/templates/{fileName}', 
+        'GET', 
+        { 'actionId': actionId,'fileName': fileName }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['text/plain']
+      );
+    };
+
+
+    /**
+     * Validate current Draft configuration.
+     * 
+     * @param {String} actionId actionId
+     */
+    this.getIntegrationsActionDraftValidation = function(actionId) { 
+
+      // verify the required parameter 'actionId' is set
+      if (actionId === undefined || actionId === null) {
+        throw "Missing the required parameter 'actionId' when calling getIntegrationsActionDraftValidation";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions/{actionId}/draft/validation', 
+        'GET', 
+        { 'actionId': actionId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Retrieve schema for an action based on filename.
+     * 
+     * @param {String} actionId actionId
+     * @param {String} fileName Name of schema file to be retrieved for this action.
+     */
+    this.getIntegrationsActionSchema = function(actionId, fileName) { 
+
+      // verify the required parameter 'actionId' is set
+      if (actionId === undefined || actionId === null) {
+        throw "Missing the required parameter 'actionId' when calling getIntegrationsActionSchema";
+      }
+
+      // verify the required parameter 'fileName' is set
+      if (fileName === undefined || fileName === null) {
+        throw "Missing the required parameter 'fileName' when calling getIntegrationsActionSchema";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions/{actionId}/schemas/{fileName}', 
+        'GET', 
+        { 'actionId': actionId,'fileName': fileName }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Retrieve text of templates for an action based on filename.
+     * 
+     * @param {String} actionId actionId
+     * @param {String} fileName Name of template file to be retrieved for this action.
+     */
+    this.getIntegrationsActionTemplate = function(actionId, fileName) { 
+
+      // verify the required parameter 'actionId' is set
+      if (actionId === undefined || actionId === null) {
+        throw "Missing the required parameter 'actionId' when calling getIntegrationsActionTemplate";
+      }
+
+      // verify the required parameter 'fileName' is set
+      if (fileName === undefined || fileName === null) {
+        throw "Missing the required parameter 'fileName' when calling getIntegrationsActionTemplate";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions/{actionId}/templates/{fileName}', 
+        'GET', 
+        { 'actionId': actionId,'fileName': fileName }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['text/plain']
+      );
+    };
+
+
+    /**
+     * Retrieves all actions associated with filters passed in via query param.
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.category Filter by category name
+     * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+     * @param {Number} opts.pageSize The total page size requested (default to 25)
+     * @param {Number} opts.pageNumber The page number requested (default to 1)
+     * @param {String} opts.sortBy variable name requested to sort by
+     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {String} opts.nextPage next page token
+     * @param {String} opts.previousPage Previous page token
+     */
+    this.getIntegrationsActions = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions', 
+        'GET', 
+        {  }, 
+        { 'category': opts['category'],'secure': opts['secure'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Retrieves all categories of available Actions
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.secure Filter to only include/exclude Action categories based on if they are considered secure. True will only include categories with Actions marked secured. False will only include categories of unsecured Actions.
+     * @param {Number} opts.pageSize The total page size requested (default to 25)
+     * @param {Number} opts.pageNumber The page number requested (default to 1)
+     * @param {String} opts.sortBy variable name requested to sort by
+     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {String} opts.nextPage next page token
+     * @param {String} opts.previousPage Previous page token
+     */
+    this.getIntegrationsActionsCategories = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions/categories', 
+        'GET', 
+        {  }, 
+        { 'secure': opts['secure'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Retrieves all action drafts associated with the filters passed in via query param.
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.category Filter by category name
+     * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+     * @param {Number} opts.pageSize The total page size requested (default to 25)
+     * @param {Number} opts.pageNumber The page number requested (default to 1)
+     * @param {String} opts.sortBy variable name requested to sort by
+     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {String} opts.nextPage next page token
+     * @param {String} opts.previousPage Previous page token
+     */
+    this.getIntegrationsActionsDrafts = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions/drafts', 
+        'GET', 
+        {  }, 
+        { 'category': opts['category'],'secure': opts['secure'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Patch an Action
+     * 
+     * @param {String} actionId actionId
+     * @param {Object} body Input used to patch the Action.
+     */
+    this.patchIntegrationsAction = function(actionId, body) { 
+
+      // verify the required parameter 'actionId' is set
+      if (actionId === undefined || actionId === null) {
+        throw "Missing the required parameter 'actionId' when calling patchIntegrationsAction";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling patchIntegrationsAction";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions/{actionId}', 
+        'PATCH', 
+        { 'actionId': actionId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update an existing Draft
+     * 
+     * @param {String} actionId actionId
+     * @param {Object} body Input used to patch the Action Draft.
+     */
+    this.patchIntegrationsActionDraft = function(actionId, body) { 
+
+      // verify the required parameter 'actionId' is set
+      if (actionId === undefined || actionId === null) {
+        throw "Missing the required parameter 'actionId' when calling patchIntegrationsActionDraft";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling patchIntegrationsActionDraft";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions/{actionId}/draft', 
+        'PATCH', 
+        { 'actionId': actionId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Create a new Draft from existing Action
+     * 
+     * @param {String} actionId actionId
+     */
+    this.postIntegrationsActionDraft = function(actionId) { 
+
+      // verify the required parameter 'actionId' is set
+      if (actionId === undefined || actionId === null) {
+        throw "Missing the required parameter 'actionId' when calling postIntegrationsActionDraft";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions/{actionId}/draft', 
+        'POST', 
+        { 'actionId': actionId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Publish a Draft and make it the active Action configuration
+     * 
+     * @param {String} actionId actionId
+     * @param {Object} body Input used to patch the Action.
+     */
+    this.postIntegrationsActionDraftPublish = function(actionId, body) { 
+
+      // verify the required parameter 'actionId' is set
+      if (actionId === undefined || actionId === null) {
+        throw "Missing the required parameter 'actionId' when calling postIntegrationsActionDraftPublish";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postIntegrationsActionDraftPublish";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions/{actionId}/draft/publish', 
+        'POST', 
+        { 'actionId': actionId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.
+     * 
+     * @param {String} actionId actionId
+     * @param {Object} body Map of parameters used for variable substitution.
+     */
+    this.postIntegrationsActionDraftTest = function(actionId, body) { 
+
+      // verify the required parameter 'actionId' is set
+      if (actionId === undefined || actionId === null) {
+        throw "Missing the required parameter 'actionId' when calling postIntegrationsActionDraftTest";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postIntegrationsActionDraftTest";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions/{actionId}/draft/test', 
+        'POST', 
+        { 'actionId': actionId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
+     * 
+     * @param {String} actionId actionId
+     * @param {Object} body Map of parameters used for variable substitution.
+     */
+    this.postIntegrationsActionExecute = function(actionId, body) { 
+
+      // verify the required parameter 'actionId' is set
+      if (actionId === undefined || actionId === null) {
+        throw "Missing the required parameter 'actionId' when calling postIntegrationsActionExecute";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postIntegrationsActionExecute";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions/{actionId}/execute', 
+        'POST', 
+        { 'actionId': actionId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
+     * 
+     * @param {String} actionId actionId
+     * @param {Object} body Map of parameters used for variable substitution.
+     */
+    this.postIntegrationsActionTest = function(actionId, body) { 
+
+      // verify the required parameter 'actionId' is set
+      if (actionId === undefined || actionId === null) {
+        throw "Missing the required parameter 'actionId' when calling postIntegrationsActionTest";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postIntegrationsActionTest";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions/{actionId}/test', 
+        'POST', 
+        { 'actionId': actionId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Create a new Action
+     * 
+     * @param {Object} body Input used to create Action.
+     */
+    this.postIntegrationsActions = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postIntegrationsActions";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Create a new Draft
+     * 
+     * @param {Object} body Input used to create Action Draft.
+     */
+    this.postIntegrationsActionsDrafts = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postIntegrationsActionsDrafts";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/actions/drafts', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+  };
+
+  return exports;
+}));
+
+},{"../ApiClient":8}],23:[function(require,module,exports){
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['purecloud-platform-client-v2/ApiClient'], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    module.exports = factory(require('../ApiClient'));
+  } else {
+    // Browser globals (root is window)
+    if (!root.platformClient) {
+      root.platformClient = {};
+    }
     root.platformClient.LanguagesApi = factory(root.platformClient.ApiClient);
   }
 }(this, function(ApiClient) {
@@ -14639,7 +15370,7 @@ module.exports = request;
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -14744,7 +15475,7 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Ascending or descending sort order (default to ASC)
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
      * @param {String} opts.name Name
      */
     this.getLanguages = function(opts) { 
@@ -14903,7 +15634,7 @@ module.exports = request;
     /**
      * Create Language (Deprecated)
      * This endpoint is deprecated. It has been moved to /routing/languages
-     * @param {module:purecloud-platform-client-v2/model/Language} body Language
+     * @param {Object} body Language
      */
     this.postLanguages = function(body) { 
 
@@ -14931,7 +15662,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],23:[function(require,module,exports){
+},{"../ApiClient":8}],24:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -14952,7 +15683,7 @@ module.exports = request;
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -15099,7 +15830,7 @@ module.exports = request;
      * Update the organization&#39;s license assignments in a batch.
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/LicenseBatchAssignmentRequest} opts.body The license assignments to update.
+     * @param {Object} opts.body The license assignments to update.
      */
     this.postLicenseOrganization = function(opts) { 
       opts = opts || {};
@@ -15152,7 +15883,7 @@ module.exports = request;
      * Fetch user licenses in a batch.
      * 
      * @param {Object} opts Optional parameters
-     * @param {Array.<module:purecloud-platform-client-v2/model/String>} opts.body The user IDs to fetch.
+     * @param {Array.<Object>} opts.body The user IDs to fetch.
      */
     this.postLicenseUsers = function(opts) { 
       opts = opts || {};
@@ -15176,7 +15907,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],24:[function(require,module,exports){
+},{"../ApiClient":8}],25:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -15197,7 +15928,7 @@ module.exports = request;
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -15246,7 +15977,7 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order
+     * @param {Object} opts.sortOrder Sort order
      */
     this.getLocations = function(opts) { 
       opts = opts || {};
@@ -15301,7 +16032,7 @@ module.exports = request;
     /**
      * Search locations
      * 
-     * @param {module:purecloud-platform-client-v2/model/LocationSearchRequest} body Search request options
+     * @param {Object} body Search request options
      */
     this.postLocationsSearch = function(body) { 
 
@@ -15329,7 +16060,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],25:[function(require,module,exports){
+},{"../ApiClient":8}],26:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -15350,7 +16081,7 @@ module.exports = request;
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -15472,7 +16203,7 @@ module.exports = request;
      * Add a list of subscriptions to the existing list of subscriptions
      * 
      * @param {String} channelId Channel ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/ChannelTopic>} body Body
+     * @param {Array.<Object>} body Body
      */
     this.postNotificationsChannelSubscriptions = function(channelId, body) { 
 
@@ -15528,7 +16259,7 @@ module.exports = request;
      * Replace the current list of subscriptions with a new list.
      * 
      * @param {String} channelId Channel ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/ChannelTopic>} body Body
+     * @param {Array.<Object>} body Body
      */
     this.putNotificationsChannelSubscriptions = function(channelId, body) { 
 
@@ -15561,7 +16292,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],26:[function(require,module,exports){
+},{"../ApiClient":8}],27:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -15582,7 +16313,7 @@ module.exports = request;
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -15706,7 +16437,7 @@ module.exports = request;
     /**
      * Create OAuth client
      * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is &#39;CODE&#39; which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the &#39;TOKEN&#39; grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the &#39;CLIENT-CREDENTIALS&#39; grant may be used. In this case the client must be granted roles  via the &#39;roleIds&#39; field.
-     * @param {module:purecloud-platform-client-v2/model/OAuthClient} body Client
+     * @param {Object} body Client
      */
     this.postOauthClients = function(body) { 
 
@@ -15735,7 +16466,7 @@ module.exports = request;
      * Update OAuth Client
      * 
      * @param {String} clientId Client ID
-     * @param {module:purecloud-platform-client-v2/model/OAuthClient} body Client
+     * @param {Object} body Client
      */
     this.putOauthClient = function(clientId, body) { 
 
@@ -15768,7 +16499,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],27:[function(require,module,exports){
+},{"../ApiClient":8}],28:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -15789,7 +16520,7 @@ module.exports = request;
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -15807,7 +16538,7 @@ module.exports = request;
     /**
      * Fetch field config for an entity type
      * 
-     * @param {module:purecloud-platform-client-v2/model/String} type Field type
+     * @param {Object} type Field type
      */
     this.getFieldconfig = function(type) { 
 
@@ -15857,8 +16588,8 @@ module.exports = request;
     /**
      * Update organization
      * 
-     * @param {module:purecloud-platform-client-v2/model/String} featureName Organization feature
-     * @param {module:purecloud-platform-client-v2/model/FeatureState} enabled New state of feature
+     * @param {Object} featureName Organization feature
+     * @param {Object} enabled New state of feature
      */
     this.patchOrganizationsFeature = function(featureName, enabled) { 
 
@@ -15892,7 +16623,7 @@ module.exports = request;
      * Update organization.
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Organization} opts.body Organization
+     * @param {Object} opts.body Organization
      */
     this.putOrganizationsMe = function(opts) { 
       opts = opts || {};
@@ -15916,7 +16647,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],28:[function(require,module,exports){
+},{"../ApiClient":8}],29:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -15937,7 +16668,7 @@ module.exports = request;
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -16415,7 +17146,7 @@ module.exports = request;
     /**
      * A pairing id is created by the trustee and given to the trustor to create a trust.
      * 
-     * @param {module:purecloud-platform-client-v2/model/TrustRequestCreate} body Pairing Info
+     * @param {Object} body Pairing Info
      */
     this.postOrgauthorizationPairings = function(body) { 
 
@@ -16444,7 +17175,7 @@ module.exports = request;
      * Add a user to the trust.
      * 
      * @param {String} trusteeOrgId Trustee Organization Id
-     * @param {module:purecloud-platform-client-v2/model/TrustUserCreate} body Trust
+     * @param {Object} body Trust
      */
     this.postOrgauthorizationTrusteeUsers = function(trusteeOrgId, body) { 
 
@@ -16477,7 +17208,7 @@ module.exports = request;
     /**
      * Create a new organization authorization trust. This is required to grant other organizations access to your organization.
      * 
-     * @param {module:purecloud-platform-client-v2/model/TrustCreate} body Trust
+     * @param {Object} body Trust
      */
     this.postOrgauthorizationTrustees = function(body) { 
 
@@ -16505,7 +17236,7 @@ module.exports = request;
     /**
      * Get Org Trustee Audits
      * 
-     * @param {module:purecloud-platform-client-v2/model/TrusteeAuditQueryRequest} body Values to scope the request.
+     * @param {Object} body Values to scope the request.
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
@@ -16539,7 +17270,7 @@ module.exports = request;
     /**
      * Get Org Trustor Audits
      * 
-     * @param {module:purecloud-platform-client-v2/model/TrustorAuditQueryRequest} body Values to scope the request.
+     * @param {Object} body Values to scope the request.
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
@@ -16574,7 +17305,7 @@ module.exports = request;
      * Update Org Trust
      * 
      * @param {String} trusteeOrgId Trustee Organization Id
-     * @param {module:purecloud-platform-client-v2/model/Trustee} body Client
+     * @param {Object} body Client
      */
     this.putOrgauthorizationTrustee = function(trusteeOrgId, body) { 
 
@@ -16609,7 +17340,7 @@ module.exports = request;
      * 
      * @param {String} trusteeOrgId Trustee Organization Id
      * @param {String} trusteeUserId Trustee User Id
-     * @param {Array.<module:purecloud-platform-client-v2/model/String>} body List of roles
+     * @param {Array.<Object>} body List of roles
      */
     this.putOrgauthorizationTrusteeUserRoles = function(trusteeOrgId, trusteeUserId, body) { 
 
@@ -16681,7 +17412,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],29:[function(require,module,exports){
+},{"../ApiClient":8}],30:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -16702,7 +17433,7 @@ module.exports = request;
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -17010,6 +17741,34 @@ module.exports = request;
 
 
     /**
+     * Delete multiple contact lists.
+     * 
+     * @param {Array.<String>} id contact list id(s) to delete
+     */
+    this.deleteOutboundContactlists = function(id) { 
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw "Missing the required parameter 'id' when calling deleteOutboundContactlists";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/outbound/contactlists', 
+        'DELETE', 
+        {  }, 
+        { 'id': this.apiClient.buildCollectionParam(id, 'multi') }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Delete dialer DNC list
      * 
      * @param {String} dncListId DncList ID
@@ -17183,10 +17942,10 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      */
     this.getOutboundAttemptlimits = function(opts) { 
       opts = opts || {};
@@ -17241,10 +18000,10 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      */
     this.getOutboundCallabletimesets = function(opts) { 
       opts = opts || {};
@@ -17299,10 +18058,10 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      */
     this.getOutboundCallanalysisresponsesets = function(opts) { 
       opts = opts || {};
@@ -17497,10 +18256,10 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      */
     this.getOutboundCampaignrules = function(opts) { 
       opts = opts || {};
@@ -17527,7 +18286,7 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.contactListId Contact List ID
      * @param {String} opts.dncListId DNC list ID
@@ -17535,7 +18294,7 @@ module.exports = request;
      * @param {String} opts.edgeGroupId Edge group ID
      * @param {String} opts.callAnalysisResponseSetId Call analysis response set ID
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      */
     this.getOutboundCampaigns = function(opts) { 
       opts = opts || {};
@@ -17715,10 +18474,10 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      * @param {String} opts.contactListId Contact List ID
      */
     this.getOutboundContactlistfilters = function(opts) { 
@@ -17748,10 +18507,10 @@ module.exports = request;
      * @param {Boolean} opts.includeSize Include size (default to false)
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      */
     this.getOutboundContactlists = function(opts) { 
       opts = opts || {};
@@ -17871,10 +18630,10 @@ module.exports = request;
      * @param {Boolean} opts.includeSize Include size (default to false)
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order
+     * @param {Object} opts.sortOrder Sort order
      */
     this.getOutboundDnclists = function(opts) { 
       opts = opts || {};
@@ -17929,11 +18688,11 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.category Category
      * @param {String} opts.level Level
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      */
     this.getOutboundEvents = function(opts) { 
       opts = opts || {};
@@ -17988,10 +18747,10 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      */
     this.getOutboundRulesets = function(opts) { 
       opts = opts || {};
@@ -18146,10 +18905,10 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.filterType Filter type (default to Prefix)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
      * @param {String} opts.sortBy Sort by
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order (default to a)
+     * @param {Object} opts.sortOrder Sort order (default to a)
      */
     this.getOutboundSequences = function(opts) { 
       opts = opts || {};
@@ -18195,7 +18954,7 @@ module.exports = request;
     /**
      * Create attempt limits
      * 
-     * @param {module:purecloud-platform-client-v2/model/AttemptLimits} body AttemptLimits
+     * @param {Object} body AttemptLimits
      */
     this.postOutboundAttemptlimits = function(body) { 
 
@@ -18223,7 +18982,7 @@ module.exports = request;
     /**
      * Retrieves audits for dialer.
      * 
-     * @param {module:purecloud-platform-client-v2/model/DialerAuditRequest} body AuditSearch
+     * @param {Object} body AuditSearch
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
@@ -18258,7 +19017,7 @@ module.exports = request;
     /**
      * Create callable time set
      * 
-     * @param {module:purecloud-platform-client-v2/model/CallableTimeSet} body DialerCallableTimeSet
+     * @param {Object} body DialerCallableTimeSet
      */
     this.postOutboundCallabletimesets = function(body) { 
 
@@ -18286,7 +19045,7 @@ module.exports = request;
     /**
      * Create a dialer call analysis response set.
      * 
-     * @param {module:purecloud-platform-client-v2/model/ResponseSet} body ResponseSet
+     * @param {Object} body ResponseSet
      */
     this.postOutboundCallanalysisresponsesets = function(body) { 
 
@@ -18315,7 +19074,7 @@ module.exports = request;
      * Schedule a Callback for a Dialer Campaign (Deprecated)
      * This endpoint is deprecated and may have unexpected results. Please use \&quot;/conversations/{conversationId}/participants/{participantId}/callbacks instead.\&quot;
      * @param {String} campaignId Campaign ID
-     * @param {module:purecloud-platform-client-v2/model/ContactCallbackRequest} body ContactCallbackRequest
+     * @param {Object} body ContactCallbackRequest
      */
     this.postOutboundCampaignCallbackSchedule = function(campaignId, body) { 
 
@@ -18348,7 +19107,7 @@ module.exports = request;
     /**
      * Create Campaign Rule
      * 
-     * @param {module:purecloud-platform-client-v2/model/CampaignRule} body CampaignRule
+     * @param {Object} body CampaignRule
      */
     this.postOutboundCampaignrules = function(body) { 
 
@@ -18376,7 +19135,7 @@ module.exports = request;
     /**
      * Create a campaign.
      * 
-     * @param {module:purecloud-platform-client-v2/model/Campaign} body Campaign
+     * @param {Object} body Campaign
      */
     this.postOutboundCampaigns = function(body) { 
 
@@ -18404,7 +19163,7 @@ module.exports = request;
     /**
      * Get progress for a list of campaigns
      * 
-     * @param {Array.<module:purecloud-platform-client-v2/model/String>} body Campaign IDs
+     * @param {Array.<Object>} body Campaign IDs
      */
     this.postOutboundCampaignsProgress = function(body) { 
 
@@ -18433,7 +19192,7 @@ module.exports = request;
      * Add contacts to a contact list.
      * 
      * @param {String} contactListId Contact List ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/DialerContact>} body Contact
+     * @param {Array.<Object>} body Contact
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.priority Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue.
      * @param {Boolean} opts.clearSystemData Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t.
@@ -18498,7 +19257,7 @@ module.exports = request;
     /**
      * Create Contact List Filter
      * 
-     * @param {module:purecloud-platform-client-v2/model/ContactListFilter} body ContactListFilter
+     * @param {Object} body ContactListFilter
      */
     this.postOutboundContactlistfilters = function(body) { 
 
@@ -18526,7 +19285,7 @@ module.exports = request;
     /**
      * Get a preview of the output of a contact list filter
      * 
-     * @param {module:purecloud-platform-client-v2/model/ContactListFilter} body ContactListFilter
+     * @param {Object} body ContactListFilter
      */
     this.postOutboundContactlistfiltersPreview = function(body) { 
 
@@ -18554,7 +19313,7 @@ module.exports = request;
     /**
      * Create a contact List.
      * 
-     * @param {module:purecloud-platform-client-v2/model/ContactList} body ContactList
+     * @param {Object} body ContactList
      */
     this.postOutboundContactlists = function(body) { 
 
@@ -18639,7 +19398,7 @@ module.exports = request;
      * Add phone numbers to a Dialer DNC list.
      * Only Internal DNC lists may be appended to
      * @param {String} dncListId DncList ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/String>} body DNC Phone Numbers
+     * @param {Array.<Object>} body DNC Phone Numbers
      */
     this.postOutboundDnclistPhonenumbers = function(dncListId, body) { 
 
@@ -18672,7 +19431,7 @@ module.exports = request;
     /**
      * Create dialer DNC list
      * 
-     * @param {module:purecloud-platform-client-v2/model/DncListCreate} body DncList
+     * @param {Object} body DncList
      */
     this.postOutboundDnclists = function(body) { 
 
@@ -18700,7 +19459,7 @@ module.exports = request;
     /**
      * Create a Dialer Call Analysis Response Set.
      * 
-     * @param {module:purecloud-platform-client-v2/model/RuleSet} body RuleSet
+     * @param {Object} body RuleSet
      */
     this.postOutboundRulesets = function(body) { 
 
@@ -18728,7 +19487,7 @@ module.exports = request;
     /**
      * Create a new campaign sequence.
      * 
-     * @param {module:purecloud-platform-client-v2/model/CampaignSequence} body Organization
+     * @param {Object} body Organization
      */
     this.postOutboundSequences = function(body) { 
 
@@ -18757,7 +19516,7 @@ module.exports = request;
      * Update attempt limits
      * 
      * @param {String} attemptLimitsId Attempt limits ID
-     * @param {module:purecloud-platform-client-v2/model/AttemptLimits} body AttemptLimits
+     * @param {Object} body AttemptLimits
      */
     this.putOutboundAttemptlimit = function(attemptLimitsId, body) { 
 
@@ -18791,7 +19550,7 @@ module.exports = request;
      * Update callable time set
      * 
      * @param {String} callableTimeSetId Callable Time Set ID
-     * @param {module:purecloud-platform-client-v2/model/CallableTimeSet} body DialerCallableTimeSet
+     * @param {Object} body DialerCallableTimeSet
      */
     this.putOutboundCallabletimeset = function(callableTimeSetId, body) { 
 
@@ -18825,7 +19584,7 @@ module.exports = request;
      * Update a dialer call analysis response set.
      * 
      * @param {String} callAnalysisSetId Call Analysis Response Set ID
-     * @param {module:purecloud-platform-client-v2/model/ResponseSet} body ResponseSet
+     * @param {Object} body ResponseSet
      */
     this.putOutboundCallanalysisresponseset = function(callAnalysisSetId, body) { 
 
@@ -18859,7 +19618,7 @@ module.exports = request;
      * Update a campaign.
      * 
      * @param {String} campaignId Campaign ID
-     * @param {module:purecloud-platform-client-v2/model/Campaign} body Campaign
+     * @param {Object} body Campaign
      */
     this.putOutboundCampaign = function(campaignId, body) { 
 
@@ -18894,7 +19653,7 @@ module.exports = request;
      * New agent state.
      * @param {String} campaignId Campaign ID
      * @param {String} userId Agent&#39;s user ID
-     * @param {module:purecloud-platform-client-v2/model/Agent} body agent
+     * @param {Object} body agent
      */
     this.putOutboundCampaignAgent = function(campaignId, userId, body) { 
 
@@ -18933,7 +19692,7 @@ module.exports = request;
      * Update Campaign Rule
      * 
      * @param {String} campaignRuleId Campaign Rule ID
-     * @param {module:purecloud-platform-client-v2/model/CampaignRule} body CampaignRule
+     * @param {Object} body CampaignRule
      */
     this.putOutboundCampaignrule = function(campaignRuleId, body) { 
 
@@ -18967,7 +19726,7 @@ module.exports = request;
      * Update a contact list.
      * 
      * @param {String} contactListId ContactList ID
-     * @param {module:purecloud-platform-client-v2/model/ContactList} body ContactList
+     * @param {Object} body ContactList
      */
     this.putOutboundContactlist = function(contactListId, body) { 
 
@@ -19002,7 +19761,7 @@ module.exports = request;
      * 
      * @param {String} contactListId Contact List ID
      * @param {String} contactId Contact ID
-     * @param {module:purecloud-platform-client-v2/model/DialerContact} body Contact
+     * @param {Object} body Contact
      */
     this.putOutboundContactlistContact = function(contactListId, contactId, body) { 
 
@@ -19041,7 +19800,7 @@ module.exports = request;
      * Update Contact List Filter
      * 
      * @param {String} contactListFilterId Contact List Filter ID
-     * @param {module:purecloud-platform-client-v2/model/ContactListFilter} body ContactListFilter
+     * @param {Object} body ContactListFilter
      */
     this.putOutboundContactlistfilter = function(contactListFilterId, body) { 
 
@@ -19075,7 +19834,7 @@ module.exports = request;
      * Update dialer DNC list
      * 
      * @param {String} dncListId DncList ID
-     * @param {module:purecloud-platform-client-v2/model/DncList} body DncList
+     * @param {Object} body DncList
      */
     this.putOutboundDnclist = function(dncListId, body) { 
 
@@ -19109,7 +19868,7 @@ module.exports = request;
      * Update a RuleSet.
      * 
      * @param {String} ruleSetId Rule Set ID
-     * @param {module:purecloud-platform-client-v2/model/RuleSet} body RuleSet
+     * @param {Object} body RuleSet
      */
     this.putOutboundRuleset = function(ruleSetId, body) { 
 
@@ -19143,7 +19902,7 @@ module.exports = request;
      * Update a new campaign schedule.
      * 
      * @param {String} campaignId Campaign ID
-     * @param {module:purecloud-platform-client-v2/model/CampaignSchedule} body CampaignSchedule
+     * @param {Object} body CampaignSchedule
      */
     this.putOutboundSchedulesCampaign = function(campaignId, body) { 
 
@@ -19177,7 +19936,7 @@ module.exports = request;
      * Update a new sequence schedule.
      * 
      * @param {String} sequenceId Sequence ID
-     * @param {module:purecloud-platform-client-v2/model/SequenceSchedule} body SequenceSchedule
+     * @param {Object} body SequenceSchedule
      */
     this.putOutboundSchedulesSequence = function(sequenceId, body) { 
 
@@ -19211,7 +19970,7 @@ module.exports = request;
      * Update a new campaign sequence.
      * 
      * @param {String} sequenceId Campaign Sequence ID
-     * @param {module:purecloud-platform-client-v2/model/CampaignSequence} body Organization
+     * @param {Object} body Organization
      */
     this.putOutboundSequence = function(sequenceId, body) { 
 
@@ -19244,7 +20003,7 @@ module.exports = request;
     /**
      * Update the Dialer wrap up code mapping.
      * 
-     * @param {module:purecloud-platform-client-v2/model/WrapUpCodeMapping} body wrapUpCodeMapping
+     * @param {Object} body wrapUpCodeMapping
      */
     this.putOutboundWrapupcodemappings = function(body) { 
 
@@ -19272,7 +20031,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],30:[function(require,module,exports){
+},{"../ApiClient":8}],31:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -19293,7 +20052,7 @@ module.exports = request;
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -19456,7 +20215,7 @@ module.exports = request;
      * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
      * @param {String} userId user Id
      * @param {String} sourceId Source
-     * @param {module:purecloud-platform-client-v2/model/UserPresence} body User presence
+     * @param {Object} body User presence
      */
     this.patchUserPresence = function(userId, sourceId, body) { 
 
@@ -19494,7 +20253,7 @@ module.exports = request;
     /**
      * Create a Presence Definition
      * 
-     * @param {module:purecloud-platform-client-v2/model/OrganizationPresence} body The Presence Definition to create
+     * @param {Object} body The Presence Definition to create
      */
     this.postPresencedefinitions = function(body) { 
 
@@ -19523,7 +20282,7 @@ module.exports = request;
      * Update a Presence Definition
      * 
      * @param {String} presenceId Organization Presence ID
-     * @param {module:purecloud-platform-client-v2/model/OrganizationPresence} body The OrganizationPresence to update
+     * @param {Object} body The OrganizationPresence to update
      */
     this.putPresencedefinition = function(presenceId, body) { 
 
@@ -19556,7 +20315,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],31:[function(require,module,exports){
+},{"../ApiClient":8}],32:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -19577,7 +20336,7 @@ module.exports = request;
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -20139,7 +20898,7 @@ module.exports = request;
      * @param {String} opts.name the keyword set name - used for filtering results in searches.
      * @param {String} opts.queueId the queue id - used for filtering results in searches.
      * @param {String} opts.agentId the agent id - used for filtering results in searches.
-     * @param {module:purecloud-platform-client-v2/model/String} opts.operator If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters.
+     * @param {Object} opts.operator If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters.
      */
     this.getQualityKeywordsets = function(opts) { 
       opts = opts || {};
@@ -20218,7 +20977,7 @@ module.exports = request;
     /**
      * Query for evaluation aggregates
      * 
-     * @param {module:purecloud-platform-client-v2/model/AggregationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsEvaluationsAggregatesQuery = function(body) { 
 
@@ -20246,7 +21005,7 @@ module.exports = request;
     /**
      * Create a calibration
      * 
-     * @param {module:purecloud-platform-client-v2/model/CalibrationCreate} body calibration
+     * @param {Object} body calibration
      * @param {Object} opts Optional parameters
      * @param {String} opts.expand calibratorId
      */
@@ -20278,7 +21037,7 @@ module.exports = request;
      * Create an evaluation
      * 
      * @param {String} conversationId conversationId
-     * @param {module:purecloud-platform-client-v2/model/Evaluation} body evaluation
+     * @param {Object} body evaluation
      * @param {Object} opts Optional parameters
      * @param {String} opts.expand evaluatorId
      */
@@ -20314,7 +21073,7 @@ module.exports = request;
     /**
      * Score evaluation
      * 
-     * @param {module:purecloud-platform-client-v2/model/EvaluationFormAndScoringSet} body evaluationAndScoringSet
+     * @param {Object} body evaluationAndScoringSet
      */
     this.postQualityEvaluationsScoring = function(body) { 
 
@@ -20342,7 +21101,7 @@ module.exports = request;
     /**
      * Create an evaluation form.
      * 
-     * @param {module:purecloud-platform-client-v2/model/EvaluationForm} body Evaluation form
+     * @param {Object} body Evaluation form
      */
     this.postQualityForms = function(body) { 
 
@@ -20370,7 +21129,7 @@ module.exports = request;
     /**
      * Create a Keyword Set
      * 
-     * @param {module:purecloud-platform-client-v2/model/KeywordSet} body keywordSet
+     * @param {Object} body keywordSet
      * @param {Object} opts Optional parameters
      * @param {String} opts.expand queueId
      */
@@ -20401,7 +21160,7 @@ module.exports = request;
     /**
      * Publish an evaluation form.
      * 
-     * @param {module:purecloud-platform-client-v2/model/EvaluationForm} body Evaluation form
+     * @param {Object} body Evaluation form
      */
     this.postQualityPublishedforms = function(body) { 
 
@@ -20430,7 +21189,7 @@ module.exports = request;
      * Retrieve the spotability statistic
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/KeywordSet} opts.body Keyword Set
+     * @param {Object} opts.body Keyword Set
      */
     this.postQualitySpotability = function(opts) { 
       opts = opts || {};
@@ -20455,7 +21214,7 @@ module.exports = request;
      * Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
      * 
      * @param {String} calibrationId Calibration ID
-     * @param {module:purecloud-platform-client-v2/model/Calibration} body Calibration
+     * @param {Object} body Calibration
      */
     this.putQualityCalibration = function(calibrationId, body) { 
 
@@ -20490,7 +21249,7 @@ module.exports = request;
      * 
      * @param {String} conversationId conversationId
      * @param {String} evaluationId evaluationId
-     * @param {module:purecloud-platform-client-v2/model/Evaluation} body evaluation
+     * @param {Object} body evaluation
      * @param {Object} opts Optional parameters
      * @param {String} opts.expand evaluatorId
      */
@@ -20532,7 +21291,7 @@ module.exports = request;
      * Update an evaluation form.
      * 
      * @param {String} formId Form ID
-     * @param {module:purecloud-platform-client-v2/model/EvaluationForm} body Evaluation form
+     * @param {Object} body Evaluation form
      */
     this.putQualityForm = function(formId, body) { 
 
@@ -20566,7 +21325,7 @@ module.exports = request;
      * Update a keywordSet to the specified keywordSet via PUT.
      * 
      * @param {String} keywordSetId KeywordSet ID
-     * @param {module:purecloud-platform-client-v2/model/KeywordSet} body keywordSet
+     * @param {Object} body keywordSet
      */
     this.putQualityKeywordset = function(keywordSetId, body) { 
 
@@ -20599,7 +21358,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],32:[function(require,module,exports){
+},{"../ApiClient":8}],33:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -20620,7 +21379,7 @@ module.exports = request;
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -20765,7 +21524,7 @@ module.exports = request;
      * @param {String} conversationId Conversation ID
      * @param {String} recordingId Recording ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.formatId The desired media format. (default to WEBM)
+     * @param {Object} opts.formatId The desired media format. (default to WEBM)
      * @param {Boolean} opts.download requesting a download format of the recording (default to false)
      * @param {String} opts.fileName the name of the downloaded fileName
      */
@@ -20873,12 +21632,74 @@ module.exports = request;
 
 
     /**
+     * Get recording metadata for a conversation. Does not return playable media.
+     * 
+     * @param {String} conversationId Conversation ID
+     */
+    this.getConversationRecordingmetadata = function(conversationId) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling getConversationRecordingmetadata";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/{conversationId}/recordingmetadata', 
+        'GET', 
+        { 'conversationId': conversationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get metadata for a specific recording. Does not return playable media.
+     * 
+     * @param {String} conversationId Conversation ID
+     * @param {String} recordingId Recording ID
+     */
+    this.getConversationRecordingmetadataRecordingId = function(conversationId, recordingId) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling getConversationRecordingmetadataRecordingId";
+      }
+
+      // verify the required parameter 'recordingId' is set
+      if (recordingId === undefined || recordingId === null) {
+        throw "Missing the required parameter 'recordingId' when calling getConversationRecordingmetadataRecordingId";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}', 
+        'GET', 
+        { 'conversationId': conversationId,'recordingId': recordingId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get all of a Conversation&#39;s Recordings.
      * 
      * @param {String} conversationId Conversation ID
      * @param {Object} opts Optional parameters
      * @param {Number} opts.maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (default to 5000)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.formatId The desired media format (default to WEBM)
+     * @param {Object} opts.formatId The desired media format (default to WEBM)
      */
     this.getConversationRecordings = function(conversationId, opts) { 
       opts = opts || {};
@@ -20937,7 +21758,7 @@ module.exports = request;
      * A 202 response means the orphaned media is currently transcoding and will be available shortly.A 200 response denotes the transcoded orphan media is available now and is contained in the response body.
      * @param {String} orphanId Orphan ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.formatId The desired media format. (default to WEBM)
+     * @param {Object} opts.formatId The desired media format. (default to WEBM)
      * @param {Boolean} opts.download requesting a download format of the recording (default to false)
      * @param {String} opts.fileName the name of the downloaded fileName
      */
@@ -20976,7 +21797,7 @@ module.exports = request;
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      * @param {Boolean} opts.hasConversation Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. (default to false)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.media Filter resulting orphans based on their media type
+     * @param {Object} opts.media Filter resulting orphans based on their media type
      */
     this.getOrphanrecordings = function(opts) { 
       opts = opts || {};
@@ -21212,7 +22033,7 @@ module.exports = request;
      * Patch a media retention policy
      * 
      * @param {String} policyId Policy ID
-     * @param {module:purecloud-platform-client-v2/model/Policy} body Policy
+     * @param {Object} body Policy
      */
     this.patchRecordingMediaretentionpolicy = function(policyId, body) { 
 
@@ -21247,7 +22068,7 @@ module.exports = request;
      * 
      * @param {String} recordingSessionId Screen recording session ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/ScreenRecordingSessionRequest} opts.body 
+     * @param {Object} opts.body 
      */
     this.patchRecordingsScreensession = function(recordingSessionId, opts) { 
       opts = opts || {};
@@ -21278,7 +22099,7 @@ module.exports = request;
      * 
      * @param {String} conversationId Conversation ID
      * @param {String} recordingId Recording ID
-     * @param {module:purecloud-platform-client-v2/model/Annotation} body annotation
+     * @param {Object} body annotation
      */
     this.postConversationRecordingAnnotations = function(conversationId, recordingId, body) { 
 
@@ -21316,7 +22137,7 @@ module.exports = request;
     /**
      * create a local recording key
      * 
-     * @param {module:purecloud-platform-client-v2/model/LocalEncryptionKeyRequest} body Local Encryption body
+     * @param {Object} body Local Encryption body
      */
     this.postRecordingLocalkeys = function(body) { 
 
@@ -21344,7 +22165,7 @@ module.exports = request;
     /**
      * create settings for local key creation
      * 
-     * @param {module:purecloud-platform-client-v2/model/LocalEncryptionConfiguration} body Local Encryption Configuration
+     * @param {Object} body Local Encryption Configuration
      */
     this.postRecordingLocalkeysSettings = function(body) { 
 
@@ -21372,7 +22193,7 @@ module.exports = request;
     /**
      * Create media retention policy
      * 
-     * @param {module:purecloud-platform-client-v2/model/PolicyCreate} body Policy
+     * @param {Object} body Policy
      */
     this.postRecordingMediaretentionpolicies = function(body) { 
 
@@ -21424,7 +22245,7 @@ module.exports = request;
      * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. 
      * @param {String} conversationId Conversation ID
      * @param {String} recordingId Recording ID
-     * @param {module:purecloud-platform-client-v2/model/Recording} body recording
+     * @param {Object} body recording
      */
     this.putConversationRecording = function(conversationId, recordingId, body) { 
 
@@ -21465,7 +22286,7 @@ module.exports = request;
      * @param {String} conversationId Conversation ID
      * @param {String} recordingId Recording ID
      * @param {String} annotationId Annotation ID
-     * @param {module:purecloud-platform-client-v2/model/Annotation} body annotation
+     * @param {Object} body annotation
      */
     this.putConversationRecordingAnnotation = function(conversationId, recordingId, annotationId, body) { 
 
@@ -21510,7 +22331,7 @@ module.exports = request;
      * If this operation is successful the orphan will no longer exist. It will be replaced by the resulting recording in the response. This replacement recording is accessible by the normal Recording api.
      * @param {String} orphanId Orphan ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/OrphanUpdateRequest} opts.body 
+     * @param {Object} opts.body 
      */
     this.putOrphanrecording = function(orphanId, opts) { 
       opts = opts || {};
@@ -21540,7 +22361,7 @@ module.exports = request;
      * Update the local encryption settings
      * 
      * @param {String} settingsId Settings Id
-     * @param {module:purecloud-platform-client-v2/model/LocalEncryptionConfiguration} body Local Encryption metadata
+     * @param {Object} body Local Encryption metadata
      */
     this.putRecordingLocalkeysSetting = function(settingsId, body) { 
 
@@ -21574,7 +22395,7 @@ module.exports = request;
      * Update a media retention policy
      * 
      * @param {String} policyId Policy ID
-     * @param {module:purecloud-platform-client-v2/model/Policy} body Policy
+     * @param {Object} body Policy
      */
     this.putRecordingMediaretentionpolicy = function(policyId, body) { 
 
@@ -21607,7 +22428,7 @@ module.exports = request;
     /**
      * Update key rotation schedule
      * 
-     * @param {module:purecloud-platform-client-v2/model/KeyRotationSchedule} body KeyRotationSchedule
+     * @param {Object} body KeyRotationSchedule
      */
     this.putRecordingRecordingkeysRotationschedule = function(body) { 
 
@@ -21635,7 +22456,7 @@ module.exports = request;
     /**
      * Update the Recording Settings for the Organization
      * 
-     * @param {module:purecloud-platform-client-v2/model/RecordingSettings} body Recording settings
+     * @param {Object} body Recording settings
      */
     this.putRecordingSettings = function(body) { 
 
@@ -21663,7 +22484,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],33:[function(require,module,exports){
+},{"../ApiClient":8}],34:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -21684,7 +22505,7 @@ module.exports = request;
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -21814,7 +22635,7 @@ module.exports = request;
      * 
      * @param {String} responseId Response ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand Expand instructions for the return value.
+     * @param {Object} opts.expand Expand instructions for the return value.
      */
     this.getResponsemanagementResponse = function(responseId, opts) { 
       opts = opts || {};
@@ -21847,7 +22668,7 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Number} opts.pageSize Page size (default to 25)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand Expand instructions for the return value.
+     * @param {Object} opts.expand Expand instructions for the return value.
      */
     this.getResponsemanagementResponses = function(libraryId, opts) { 
       opts = opts || {};
@@ -21876,7 +22697,7 @@ module.exports = request;
     /**
      * Create a response library.
      * 
-     * @param {module:purecloud-platform-client-v2/model/Library} body Library
+     * @param {Object} body Library
      */
     this.postResponsemanagementLibraries = function(body) { 
 
@@ -21904,9 +22725,9 @@ module.exports = request;
     /**
      * Create a response.
      * 
-     * @param {module:purecloud-platform-client-v2/model/Response} body Response
+     * @param {Object} body Response
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand Expand instructions for the return value.
+     * @param {Object} opts.expand Expand instructions for the return value.
      */
     this.postResponsemanagementResponses = function(body, opts) { 
       opts = opts || {};
@@ -21935,7 +22756,7 @@ module.exports = request;
     /**
      * Query responses
      * 
-     * @param {module:purecloud-platform-client-v2/model/ResponseQueryRequest} body Response
+     * @param {Object} body Response
      */
     this.postResponsemanagementResponsesQuery = function(body) { 
 
@@ -21964,7 +22785,7 @@ module.exports = request;
      * Update an existing response library.
      * Fields that can be updated: name. The most recent version is required for updates.
      * @param {String} libraryId Library ID
-     * @param {module:purecloud-platform-client-v2/model/Library} body Library
+     * @param {Object} body Library
      */
     this.putResponsemanagementLibrary = function(libraryId, body) { 
 
@@ -21998,9 +22819,9 @@ module.exports = request;
      * Update an existing response.
      * Fields that can be updated: name, libraries, and texts. The most recent version is required for updates.
      * @param {String} responseId Response ID
-     * @param {module:purecloud-platform-client-v2/model/Response} body Response
+     * @param {Object} body Response
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand Expand instructions for the return value.
+     * @param {Object} opts.expand Expand instructions for the return value.
      */
     this.putResponsemanagementResponse = function(responseId, body, opts) { 
       opts = opts || {};
@@ -22034,7 +22855,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],34:[function(require,module,exports){
+},{"../ApiClient":8}],35:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -22055,7 +22876,7 @@ module.exports = request;
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -22488,7 +23309,7 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Ascending or descending sort order (default to ASC)
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
      * @param {String} opts.name Name
      */
     this.getRoutingLanguages = function(opts) { 
@@ -22841,7 +23662,7 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Ascending or descending sort order (default to ASC)
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
      */
     this.getUserRoutingskills = function(userId, opts) { 
       opts = opts || {};
@@ -22872,7 +23693,7 @@ module.exports = request;
      * 
      * @param {String} queueId Queue ID
      * @param {String} memberId Member ID
-     * @param {module:purecloud-platform-client-v2/model/QueueMember} body Queue Member
+     * @param {Object} body Queue Member
      */
     this.patchRoutingQueueUser = function(queueId, memberId, body) { 
 
@@ -22911,7 +23732,7 @@ module.exports = request;
      * Join or unjoin a set of users for a queue
      * 
      * @param {String} queueId Queue ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/QueueMember>} body Queue Members
+     * @param {Array.<Object>} body Queue Members
      */
     this.patchRoutingQueueUsers = function(queueId, body) { 
 
@@ -22944,7 +23765,7 @@ module.exports = request;
     /**
      * Query for queue observations
      * 
-     * @param {module:purecloud-platform-client-v2/model/ObservationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsQueuesObservationsQuery = function(body) { 
 
@@ -22973,7 +23794,7 @@ module.exports = request;
      * Create a route
      * 
      * @param {String} domainName email domain
-     * @param {module:purecloud-platform-client-v2/model/InboundRoute} body Route
+     * @param {Object} body Route
      */
     this.postRoutingEmailDomainRoutes = function(domainName, body) { 
 
@@ -23006,7 +23827,7 @@ module.exports = request;
     /**
      * Create a domain
      * 
-     * @param {module:purecloud-platform-client-v2/model/InboundDomain} body Domain
+     * @param {Object} body Domain
      */
     this.postRoutingEmailDomains = function(body) { 
 
@@ -23034,7 +23855,7 @@ module.exports = request;
     /**
      * Create Language
      * 
-     * @param {module:purecloud-platform-client-v2/model/Language} body Language
+     * @param {Object} body Language
      */
     this.postRoutingLanguages = function(body) { 
 
@@ -23063,7 +23884,7 @@ module.exports = request;
      * Bulk add or delete up to 100 queue members
      * 
      * @param {String} queueId Queue ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/QueueMember>} body Queue Members
+     * @param {Array.<Object>} body Queue Members
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts._delete True to delete queue members (default to false)
      */
@@ -23100,7 +23921,7 @@ module.exports = request;
      * Add up to 100 wrap-up codes to a queue
      * 
      * @param {String} queueId Queue ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/WrapupCode>} body List of wrapup codes
+     * @param {Array.<Object>} body List of wrapup codes
      */
     this.postRoutingQueueWrapupcodes = function(queueId, body) { 
 
@@ -23133,7 +23954,7 @@ module.exports = request;
     /**
      * Create queue
      * 
-     * @param {module:purecloud-platform-client-v2/model/CreateQueueRequest} body Queue
+     * @param {Object} body Queue
      */
     this.postRoutingQueues = function(body) { 
 
@@ -23161,7 +23982,7 @@ module.exports = request;
     /**
      * Create Skill
      * 
-     * @param {module:purecloud-platform-client-v2/model/RoutingSkill} body Skill
+     * @param {Object} body Skill
      */
     this.postRoutingSkills = function(body) { 
 
@@ -23189,7 +24010,7 @@ module.exports = request;
     /**
      * Create a wrap-up code
      * 
-     * @param {module:purecloud-platform-client-v2/model/WrapupCode} body WrapupCode
+     * @param {Object} body WrapupCode
      */
     this.postRoutingWrapupcodes = function(body) { 
 
@@ -23218,7 +24039,7 @@ module.exports = request;
      * Add routing skill to user
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/UserRoutingSkillPost} body Skill
+     * @param {Object} body Skill
      */
     this.postUserRoutingskills = function(userId, body) { 
 
@@ -23253,7 +24074,7 @@ module.exports = request;
      * 
      * @param {String} domainName email domain
      * @param {String} routeId route ID
-     * @param {module:purecloud-platform-client-v2/model/InboundRoute} body Route
+     * @param {Object} body Route
      */
     this.putRoutingEmailDomainRoute = function(domainName, routeId, body) { 
 
@@ -23292,7 +24113,7 @@ module.exports = request;
      * Update a queue
      * 
      * @param {String} queueId Queue ID
-     * @param {module:purecloud-platform-client-v2/model/Queue} body Queue
+     * @param {Object} body Queue
      */
     this.putRoutingQueue = function(queueId, body) { 
 
@@ -23325,7 +24146,7 @@ module.exports = request;
     /**
      * Update the utilization settings.
      * 
-     * @param {module:purecloud-platform-client-v2/model/Utilization} body utilization
+     * @param {Object} body utilization
      */
     this.putRoutingUtilization = function(body) { 
 
@@ -23354,7 +24175,7 @@ module.exports = request;
      * Update wrap-up code
      * 
      * @param {String} codeId Wrapup Code ID
-     * @param {module:purecloud-platform-client-v2/model/WrapupCode} body WrapupCode
+     * @param {Object} body WrapupCode
      */
     this.putRoutingWrapupcode = function(codeId, body) { 
 
@@ -23389,7 +24210,7 @@ module.exports = request;
      * 
      * @param {String} userId User ID
      * @param {String} skillId skillId
-     * @param {module:purecloud-platform-client-v2/model/UserRoutingSkill} body Skill
+     * @param {Object} body Skill
      */
     this.putUserRoutingskill = function(userId, skillId, body) { 
 
@@ -23427,7 +24248,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],35:[function(require,module,exports){
+},{"../ApiClient":8}],36:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -23448,7 +24269,7 @@ module.exports = request;
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -23563,8 +24384,8 @@ module.exports = request;
      * @param {String} opts.name Name filter
      * @param {String} opts.feature Feature filter
      * @param {String} opts.flowId Secure flow id filter
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortBy SortBy
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder SortOrder
+     * @param {Object} opts.sortBy SortBy
+     * @param {Object} opts.sortOrder SortOrder
      */
     this.getScripts = function(opts) { 
       opts = opts || {};
@@ -23741,7 +24562,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],36:[function(require,module,exports){
+},{"../ApiClient":8}],37:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -23762,7 +24583,7 @@ module.exports = request;
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -23996,7 +24817,7 @@ module.exports = request;
     /**
      * Search documentation
      * 
-     * @param {module:purecloud-platform-client-v2/model/DocumentationSearchRequest} body Search request options
+     * @param {Object} body Search request options
      */
     this.postDocumentationSearch = function(body) { 
 
@@ -24024,7 +24845,7 @@ module.exports = request;
     /**
      * Search groups
      * 
-     * @param {module:purecloud-platform-client-v2/model/GroupSearchRequest} body Search request options
+     * @param {Object} body Search request options
      */
     this.postGroupsSearch = function(body) { 
 
@@ -24052,7 +24873,7 @@ module.exports = request;
     /**
      * Search locations
      * 
-     * @param {module:purecloud-platform-client-v2/model/LocationSearchRequest} body Search request options
+     * @param {Object} body Search request options
      */
     this.postLocationsSearch = function(body) { 
 
@@ -24080,7 +24901,7 @@ module.exports = request;
     /**
      * Search resources.
      * 
-     * @param {module:purecloud-platform-client-v2/model/SearchRequest} body Search request options
+     * @param {Object} body Search request options
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.profile profile (default to true)
      */
@@ -24111,7 +24932,7 @@ module.exports = request;
     /**
      * Suggest resources.
      * 
-     * @param {module:purecloud-platform-client-v2/model/SuggestSearchRequest} body Search request options
+     * @param {Object} body Search request options
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.profile profile (default to true)
      */
@@ -24142,7 +24963,7 @@ module.exports = request;
     /**
      * Search users
      * 
-     * @param {module:purecloud-platform-client-v2/model/UserSearchRequest} body Search request options
+     * @param {Object} body Search request options
      */
     this.postUsersSearch = function(body) { 
 
@@ -24170,7 +24991,7 @@ module.exports = request;
     /**
      * Search voicemails
      * 
-     * @param {module:purecloud-platform-client-v2/model/VoicemailSearchRequest} body Search request options
+     * @param {Object} body Search request options
      */
     this.postVoicemailSearch = function(body) { 
 
@@ -24198,7 +25019,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],37:[function(require,module,exports){
+},{"../ApiClient":8}],38:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -24219,7 +25040,7 @@ module.exports = request;
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -24325,7 +25146,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],38:[function(require,module,exports){
+},{"../ApiClient":8}],39:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -24346,7 +25167,7 @@ module.exports = request;
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -24428,7 +25249,7 @@ module.exports = request;
     /**
      * Search resources.
      * 
-     * @param {module:purecloud-platform-client-v2/model/SearchRequest} body Search request options
+     * @param {Object} body Search request options
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.profile profile (default to true)
      */
@@ -24459,7 +25280,7 @@ module.exports = request;
     /**
      * Suggest resources.
      * 
-     * @param {module:purecloud-platform-client-v2/model/SuggestSearchRequest} body Search request options
+     * @param {Object} body Search request options
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.profile profile (default to true)
      */
@@ -24490,7 +25311,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],39:[function(require,module,exports){
+},{"../ApiClient":8}],40:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -24511,7 +25332,7 @@ module.exports = request;
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -25476,7 +26297,7 @@ module.exports = request;
      * @param {String} opts.sortBy Value by which to sort (default to name)
      * @param {String} opts.sortOrder Sort order (default to ASC)
      * @param {String} opts.trunkBaseId Filter by Trunk Base Ids
-     * @param {module:purecloud-platform-client-v2/model/String} opts.trunkType Filter by a Trunk type
+     * @param {Object} opts.trunkType Filter by a Trunk type
      */
     this.getTelephonyProvidersEdgeTrunks = function(edgeId, opts) { 
       opts = opts || {};
@@ -26807,7 +27628,7 @@ module.exports = request;
      * Get a list of available makes and models to create a new Trunk Base Settings
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.type 
+     * @param {Object} opts.type 
      * @param {Number} opts.pageSize  (default to 25)
      * @param {Number} opts.pageNumber  (default to 1)
      */
@@ -26868,7 +27689,7 @@ module.exports = request;
      * @param {String} opts.sortOrder Sort order (default to ASC)
      * @param {String} opts.edgeId Filter by Edge Ids
      * @param {String} opts.trunkBaseId Filter by Trunk Base Ids
-     * @param {module:purecloud-platform-client-v2/model/String} opts.trunkType Filter by a Trunk type
+     * @param {Object} opts.trunkType Filter by a Trunk type
      */
     this.getTelephonyProvidersEdgesTrunks = function(opts) { 
       opts = opts || {};
@@ -26893,7 +27714,7 @@ module.exports = request;
      * Get Counts of trunks that have recording disabled or enabled
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.trunkType The type of this trunk base.
+     * @param {Object} opts.trunkType The type of this trunk base.
      */
     this.getTelephonyProvidersEdgesTrunkswithrecording = function(opts) { 
       opts = opts || {};
@@ -26918,7 +27739,7 @@ module.exports = request;
      * Create an edge logical interface.
      * Create
      * @param {String} edgeId Edge ID
-     * @param {module:purecloud-platform-client-v2/model/DomainLogicalInterface} body Logical interface
+     * @param {Object} body Logical interface
      */
     this.postTelephonyProvidersEdgeLogicalinterfaces = function(edgeId, body) { 
 
@@ -26953,7 +27774,7 @@ module.exports = request;
      * 
      * @param {String} edgeId Edge ID
      * @param {String} jobId Job ID
-     * @param {module:purecloud-platform-client-v2/model/EdgeLogsJobUploadRequest} body Log upload request
+     * @param {Object} body Log upload request
      */
     this.postTelephonyProvidersEdgeLogsJobUpload = function(edgeId, jobId, body) { 
 
@@ -26992,7 +27813,7 @@ module.exports = request;
      * Create a job to upload a list of Edge logs.
      * 
      * @param {String} edgeId Edge ID
-     * @param {module:purecloud-platform-client-v2/model/EdgeLogsJobRequest} body EdgeLogsJobRequest
+     * @param {Object} body EdgeLogsJobRequest
      */
     this.postTelephonyProvidersEdgeLogsJobs = function(edgeId, body) { 
 
@@ -27027,7 +27848,7 @@ module.exports = request;
      * 
      * @param {String} edgeId Edge ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/EdgeRebootParameters} opts.body Parameters for the edge reboot
+     * @param {Object} opts.body Parameters for the edge reboot
      */
     this.postTelephonyProvidersEdgeReboot = function(edgeId, opts) { 
       opts = opts || {};
@@ -27057,7 +27878,7 @@ module.exports = request;
      * Starts a software update for this edge.
      * 
      * @param {String} edgeId Edge ID
-     * @param {module:purecloud-platform-client-v2/model/DomainEdgeSoftwareUpdateDto} body Software update request
+     * @param {Object} body Software update request
      */
     this.postTelephonyProvidersEdgeSoftwareupdate = function(edgeId, body) { 
 
@@ -27092,7 +27913,7 @@ module.exports = request;
      * 
      * @param {String} edgeId Edge ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/EdgeServiceStateRequest} opts.body Edge Service State
+     * @param {Object} opts.body Edge Service State
      */
     this.postTelephonyProvidersEdgeStatuscode = function(edgeId, opts) { 
       opts = opts || {};
@@ -27149,7 +27970,7 @@ module.exports = request;
     /**
      * Create an edge.
      * 
-     * @param {module:purecloud-platform-client-v2/model/Edge} body Edge
+     * @param {Object} body Edge
      */
     this.postTelephonyProvidersEdges = function(body) { 
 
@@ -27177,7 +27998,7 @@ module.exports = request;
     /**
      * Validates a street address
      * 
-     * @param {module:purecloud-platform-client-v2/model/ValidateAddressRequest} body Address
+     * @param {Object} body Address
      */
     this.postTelephonyProvidersEdgesAddressvalidation = function(body) { 
 
@@ -27205,7 +28026,7 @@ module.exports = request;
     /**
      * Create a certificate authority.
      * 
-     * @param {module:purecloud-platform-client-v2/model/DomainCertificateAuthority} body CertificateAuthority
+     * @param {Object} body CertificateAuthority
      */
     this.postTelephonyProvidersEdgesCertificateauthorities = function(body) { 
 
@@ -27233,7 +28054,7 @@ module.exports = request;
     /**
      * Create a new DID pool
      * 
-     * @param {module:purecloud-platform-client-v2/model/DIDPool} body DID pool
+     * @param {Object} body DID pool
      */
     this.postTelephonyProvidersEdgesDidpools = function(body) { 
 
@@ -27261,7 +28082,7 @@ module.exports = request;
     /**
      * Create an edge group.
      * 
-     * @param {module:purecloud-platform-client-v2/model/EdgeGroup} body EdgeGroup
+     * @param {Object} body EdgeGroup
      */
     this.postTelephonyProvidersEdgesEdgegroups = function(body) { 
 
@@ -27289,7 +28110,7 @@ module.exports = request;
     /**
      * Create endpoint
      * 
-     * @param {module:purecloud-platform-client-v2/model/Endpoint} body EndpointTemplate
+     * @param {Object} body EndpointTemplate
      */
     this.postTelephonyProvidersEdgesEndpoints = function(body) { 
 
@@ -27317,7 +28138,7 @@ module.exports = request;
     /**
      * Create a new extension pool
      * 
-     * @param {module:purecloud-platform-client-v2/model/ExtensionPool} body ExtensionPool
+     * @param {Object} body ExtensionPool
      */
     this.postTelephonyProvidersEdgesExtensionpools = function(body) { 
 
@@ -27345,7 +28166,7 @@ module.exports = request;
     /**
      * Create outbound rule
      * 
-     * @param {module:purecloud-platform-client-v2/model/OutboundRoute} body OutboundRoute
+     * @param {Object} body OutboundRoute
      */
     this.postTelephonyProvidersEdgesOutboundroutes = function(body) { 
 
@@ -27401,7 +28222,7 @@ module.exports = request;
     /**
      * Create a new Phone Base Settings object
      * 
-     * @param {module:purecloud-platform-client-v2/model/PhoneBase} body Phone base settings
+     * @param {Object} body Phone base settings
      */
     this.postTelephonyProvidersEdgesPhonebasesettings = function(body) { 
 
@@ -27429,7 +28250,7 @@ module.exports = request;
     /**
      * Create a new Phone
      * 
-     * @param {module:purecloud-platform-client-v2/model/Phone} body Phone
+     * @param {Object} body Phone
      */
     this.postTelephonyProvidersEdgesPhones = function(body) { 
 
@@ -27457,7 +28278,7 @@ module.exports = request;
     /**
      * Reboot Multiple Phones
      * 
-     * @param {module:purecloud-platform-client-v2/model/PhonesReboot} body Phones
+     * @param {Object} body Phones
      */
     this.postTelephonyProvidersEdgesPhonesReboot = function(body) { 
 
@@ -27486,7 +28307,7 @@ module.exports = request;
      * Create outbound route
      * 
      * @param {String} siteId Site ID
-     * @param {module:purecloud-platform-client-v2/model/OutboundRouteBase} body OutboundRoute
+     * @param {Object} body OutboundRoute
      */
     this.postTelephonyProvidersEdgesSiteOutboundroutes = function(siteId, body) { 
 
@@ -27547,7 +28368,7 @@ module.exports = request;
     /**
      * Create a Site.
      * 
-     * @param {module:purecloud-platform-client-v2/model/Site} body Site
+     * @param {Object} body Site
      */
     this.postTelephonyProvidersEdgesSites = function(body) { 
 
@@ -27575,7 +28396,7 @@ module.exports = request;
     /**
      * Create a Trunk Base Settings object
      * 
-     * @param {module:purecloud-platform-client-v2/model/TrunkBase} body Trunk base settings
+     * @param {Object} body Trunk base settings
      */
     this.postTelephonyProvidersEdgesTrunkbasesettings = function(body) { 
 
@@ -27604,7 +28425,7 @@ module.exports = request;
      * Update a edge.
      * 
      * @param {String} edgeId Edge ID
-     * @param {module:purecloud-platform-client-v2/model/Edge} body Edge
+     * @param {Object} body Edge
      */
     this.putTelephonyProvidersEdge = function(edgeId, body) { 
 
@@ -27639,7 +28460,7 @@ module.exports = request;
      * 
      * @param {String} edgeId Edge ID
      * @param {String} lineId Line ID
-     * @param {module:purecloud-platform-client-v2/model/EdgeLine} body Line
+     * @param {Object} body Line
      */
     this.putTelephonyProvidersEdgeLine = function(edgeId, lineId, body) { 
 
@@ -27679,7 +28500,7 @@ module.exports = request;
      * 
      * @param {String} edgeId Edge ID
      * @param {String} interfaceId Interface ID
-     * @param {module:purecloud-platform-client-v2/model/DomainLogicalInterface} body Logical interface
+     * @param {Object} body Logical interface
      */
     this.putTelephonyProvidersEdgeLogicalinterface = function(edgeId, interfaceId, body) { 
 
@@ -27718,7 +28539,7 @@ module.exports = request;
      * Update a certificate authority.
      * 
      * @param {String} certificateId Certificate ID
-     * @param {module:purecloud-platform-client-v2/model/DomainCertificateAuthority} body Certificate authority
+     * @param {Object} body Certificate authority
      */
     this.putTelephonyProvidersEdgesCertificateauthority = function(certificateId, body) { 
 
@@ -27752,7 +28573,7 @@ module.exports = request;
      * Update a DID by ID.
      * 
      * @param {String} didId DID ID
-     * @param {module:purecloud-platform-client-v2/model/DID} body DID
+     * @param {Object} body DID
      */
     this.putTelephonyProvidersEdgesDid = function(didId, body) { 
 
@@ -27786,7 +28607,7 @@ module.exports = request;
      * Update a DID Pool by ID.
      * 
      * @param {String} didPoolId DID pool ID
-     * @param {module:purecloud-platform-client-v2/model/DIDPool} body DID pool
+     * @param {Object} body DID pool
      */
     this.putTelephonyProvidersEdgesDidpool = function(didPoolId, body) { 
 
@@ -27820,7 +28641,7 @@ module.exports = request;
      * Update an edge group.
      * 
      * @param {String} edgeGroupId Edge group ID
-     * @param {module:purecloud-platform-client-v2/model/EdgeGroup} body EdgeGroup
+     * @param {Object} body EdgeGroup
      */
     this.putTelephonyProvidersEdgesEdgegroup = function(edgeGroupId, body) { 
 
@@ -27855,7 +28676,7 @@ module.exports = request;
      * 
      * @param {String} edgegroupId Edge Group ID
      * @param {String} edgetrunkbaseId Edge Trunk Base ID
-     * @param {module:purecloud-platform-client-v2/model/EdgeTrunkBase} body EdgeTrunkBase
+     * @param {Object} body EdgeTrunkBase
      */
     this.putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis = function(edgegroupId, edgetrunkbaseId, body) { 
 
@@ -27894,7 +28715,7 @@ module.exports = request;
      * Update endpoint
      * 
      * @param {String} endpointId Endpoint ID
-     * @param {module:purecloud-platform-client-v2/model/Endpoint} body EndpointTemplate
+     * @param {Object} body EndpointTemplate
      */
     this.putTelephonyProvidersEdgesEndpoint = function(endpointId, body) { 
 
@@ -27928,7 +28749,7 @@ module.exports = request;
      * Update an extension by ID.
      * 
      * @param {String} extensionId Extension ID
-     * @param {module:purecloud-platform-client-v2/model/Extension} body Extension
+     * @param {Object} body Extension
      */
     this.putTelephonyProvidersEdgesExtension = function(extensionId, body) { 
 
@@ -27962,7 +28783,7 @@ module.exports = request;
      * Update an extension pool by ID
      * 
      * @param {String} extensionPoolId Extension pool ID
-     * @param {module:purecloud-platform-client-v2/model/ExtensionPool} body ExtensionPool
+     * @param {Object} body ExtensionPool
      */
     this.putTelephonyProvidersEdgesExtensionpool = function(extensionPoolId, body) { 
 
@@ -27996,7 +28817,7 @@ module.exports = request;
      * Update outbound route
      * 
      * @param {String} outboundRouteId Outbound route ID
-     * @param {module:purecloud-platform-client-v2/model/OutboundRoute} body OutboundRoute
+     * @param {Object} body OutboundRoute
      */
     this.putTelephonyProvidersEdgesOutboundroute = function(outboundRouteId, body) { 
 
@@ -28030,7 +28851,7 @@ module.exports = request;
      * Update a Phone by ID
      * 
      * @param {String} phoneId Phone ID
-     * @param {module:purecloud-platform-client-v2/model/Phone} body Phone
+     * @param {Object} body Phone
      */
     this.putTelephonyProvidersEdgesPhone = function(phoneId, body) { 
 
@@ -28064,7 +28885,7 @@ module.exports = request;
      * Update a Phone Base Settings by ID
      * 
      * @param {String} phoneBaseId Phone base ID
-     * @param {module:purecloud-platform-client-v2/model/PhoneBase} body Phone base settings
+     * @param {Object} body Phone base settings
      */
     this.putTelephonyProvidersEdgesPhonebasesetting = function(phoneBaseId, body) { 
 
@@ -28098,7 +28919,7 @@ module.exports = request;
      * Update a Site by ID.
      * 
      * @param {String} siteId Site ID
-     * @param {module:purecloud-platform-client-v2/model/Site} body Site
+     * @param {Object} body Site
      */
     this.putTelephonyProvidersEdgesSite = function(siteId, body) { 
 
@@ -28132,7 +28953,7 @@ module.exports = request;
      * Update the list of Number Plans.
      * 
      * @param {String} siteId Site ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/NumberPlan>} body List of number plans
+     * @param {Array.<Object>} body List of number plans
      */
     this.putTelephonyProvidersEdgesSiteNumberplans = function(siteId, body) { 
 
@@ -28167,7 +28988,7 @@ module.exports = request;
      * 
      * @param {String} siteId Site ID
      * @param {String} outboundRouteId Outbound route ID
-     * @param {module:purecloud-platform-client-v2/model/OutboundRouteBase} body OutboundRoute
+     * @param {Object} body OutboundRoute
      */
     this.putTelephonyProvidersEdgesSiteOutboundroute = function(siteId, outboundRouteId, body) { 
 
@@ -28206,7 +29027,7 @@ module.exports = request;
      * Update a Trunk Base Settings object by ID
      * 
      * @param {String} trunkBaseSettingsId Trunk Base ID
-     * @param {module:purecloud-platform-client-v2/model/TrunkBase} body Trunk base settings
+     * @param {Object} body Trunk base settings
      */
     this.putTelephonyProvidersEdgesTrunkbasesetting = function(trunkBaseSettingsId, body) { 
 
@@ -28239,7 +29060,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],40:[function(require,module,exports){
+},{"../ApiClient":8}],41:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -28260,7 +29081,7 @@ module.exports = request;
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -28322,7 +29143,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],41:[function(require,module,exports){
+},{"../ApiClient":8}],42:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -28343,7 +29164,7 @@ module.exports = request;
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -28422,7 +29243,7 @@ module.exports = request;
      * 
      * @param {String} recordingId User Recording ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.formatId The desired media format. (default to WEBM)
+     * @param {Object} opts.formatId The desired media format. (default to WEBM)
      */
     this.getUserrecordingMedia = function(recordingId, opts) { 
       opts = opts || {};
@@ -28501,7 +29322,7 @@ module.exports = request;
      * Update a user recording.
      * 
      * @param {String} recordingId User Recording ID
-     * @param {module:purecloud-platform-client-v2/model/UserRecording} body UserRecording
+     * @param {Object} body UserRecording
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand Which fields, if any, to expand.
      */
@@ -28537,7 +29358,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],42:[function(require,module,exports){
+},{"../ApiClient":8}],43:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -28558,7 +29379,7 @@ module.exports = request;
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -28722,7 +29543,7 @@ module.exports = request;
     /**
      * Fetch field config for an entity type
      * 
-     * @param {module:purecloud-platform-client-v2/model/String} type Field type
+     * @param {Object} type Field type
      */
     this.getFieldconfig = function(type) { 
 
@@ -28753,7 +29574,7 @@ module.exports = request;
      * @param {String} userId User ID
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     * @param {module:purecloud-platform-client-v2/model/String} opts.state Search for a user with this state (default to active)
+     * @param {Object} opts.state Search for a user with this state (default to active)
      */
     this.getUser = function(userId, opts) { 
       opts = opts || {};
@@ -29061,7 +29882,7 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Ascending or descending sort order (default to ASC)
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
      */
     this.getUserRoutingskills = function(userId, opts) { 
       opts = opts || {};
@@ -29181,9 +30002,9 @@ module.exports = request;
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Array.<String>} opts.id id
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Ascending or descending sort order (default to ASC)
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
      * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     * @param {module:purecloud-platform-client-v2/model/String} opts.state Only list users of this state (default to active)
+     * @param {Object} opts.state Only list users of this state (default to active)
      */
     this.getUsers = function(opts) { 
       opts = opts || {};
@@ -29264,7 +30085,7 @@ module.exports = request;
      * Update user
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/UpdateUser} body User
+     * @param {Object} body User
      */
     this.patchUser = function(userId, body) { 
 
@@ -29298,7 +30119,7 @@ module.exports = request;
      * Patch a user&#39;s CallForwarding
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/CallForwarding} body Call forwarding
+     * @param {Object} body Call forwarding
      */
     this.patchUserCallforwarding = function(userId, body) { 
 
@@ -29333,7 +30154,7 @@ module.exports = request;
      * The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
      * @param {String} userId user Id
      * @param {String} clientId client Id
-     * @param {module:purecloud-platform-client-v2/model/Geolocation} body Geolocation
+     * @param {Object} body Geolocation
      */
     this.patchUserGeolocation = function(userId, clientId, body) { 
 
@@ -29373,7 +30194,7 @@ module.exports = request;
      * 
      * @param {String} queueId Queue ID
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/UserQueue} body Queue Member
+     * @param {Object} body Queue Member
      */
     this.patchUserQueue = function(queueId, userId, body) { 
 
@@ -29412,7 +30233,7 @@ module.exports = request;
      * Join or unjoin a set of queues for a user
      * 
      * @param {String} userId User ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/UserQueue>} body User Queues
+     * @param {Array.<Object>} body User Queues
      */
     this.patchUserQueues = function(userId, body) { 
 
@@ -29445,7 +30266,7 @@ module.exports = request;
     /**
      * Query for user aggregates
      * 
-     * @param {module:purecloud-platform-client-v2/model/AggregationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsUsersAggregatesQuery = function(body) { 
 
@@ -29473,7 +30294,7 @@ module.exports = request;
     /**
      * Query for user details
      * 
-     * @param {module:purecloud-platform-client-v2/model/UserDetailsQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsUsersDetailsQuery = function(body) { 
 
@@ -29501,7 +30322,7 @@ module.exports = request;
     /**
      * Query for user observations
      * 
-     * @param {module:purecloud-platform-client-v2/model/ObservationQuery} body query
+     * @param {Object} body query
      */
     this.postAnalyticsUsersObservationsQuery = function(body) { 
 
@@ -29561,7 +30382,7 @@ module.exports = request;
      * Add routing skill to user
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/UserRoutingSkillPost} body Skill
+     * @param {Object} body Skill
      */
     this.postUserRoutingskills = function(userId, body) { 
 
@@ -29594,7 +30415,7 @@ module.exports = request;
     /**
      * Create user
      * 
-     * @param {module:purecloud-platform-client-v2/model/CreateUser} body User
+     * @param {Object} body User
      */
     this.postUsers = function(body) { 
 
@@ -29622,7 +30443,7 @@ module.exports = request;
     /**
      * Search users
      * 
-     * @param {module:purecloud-platform-client-v2/model/UserSearchRequest} body Search request options
+     * @param {Object} body Search request options
      */
     this.postUsersSearch = function(body) { 
 
@@ -29651,7 +30472,7 @@ module.exports = request;
      * Update a user&#39;s CallForwarding
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/CallForwarding} body Call forwarding
+     * @param {Object} body Call forwarding
      */
     this.putUserCallforwarding = function(userId, body) { 
 
@@ -29685,7 +30506,7 @@ module.exports = request;
      * Update an OutOfOffice
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/OutOfOffice} body The updated OutOffOffice
+     * @param {Object} body The updated OutOffOffice
      */
     this.putUserOutofoffice = function(userId, body) { 
 
@@ -29720,7 +30541,7 @@ module.exports = request;
      * 
      * @param {String} userId User ID
      * @param {Object} opts Optional parameters
-     * @param {Array.<module:purecloud-platform-client-v2/model/String>} opts.body Skills
+     * @param {Array.<Object>} opts.body Skills
      */
     this.putUserProfileskills = function(userId, opts) { 
       opts = opts || {};
@@ -29750,7 +30571,7 @@ module.exports = request;
      * Sets the user&#39;s roles
      * 
      * @param {String} userId User ID
-     * @param {Array.<module:purecloud-platform-client-v2/model/String>} body List of roles
+     * @param {Array.<Object>} body List of roles
      */
     this.putUserRoles = function(userId, body) { 
 
@@ -29785,7 +30606,7 @@ module.exports = request;
      * 
      * @param {String} userId User ID
      * @param {String} skillId skillId
-     * @param {module:purecloud-platform-client-v2/model/UserRoutingSkill} body Skill
+     * @param {Object} body Skill
      */
     this.putUserRoutingskill = function(userId, skillId, body) { 
 
@@ -29824,7 +30645,7 @@ module.exports = request;
      * Update the routing status of a user
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/RoutingStatus} body Routing Status
+     * @param {Object} body Routing Status
      */
     this.putUserRoutingstatus = function(userId, body) { 
 
@@ -29925,7 +30746,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],43:[function(require,module,exports){
+},{"../ApiClient":8}],44:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -29946,7 +30767,7 @@ module.exports = request;
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -30012,7 +30833,7 @@ module.exports = request;
     /**
      * Returns the information about an X509 PEM encoded certificate or certificate chain.
      * 
-     * @param {module:purecloud-platform-client-v2/model/Certificate} body Certificate
+     * @param {Object} body Certificate
      */
     this.postCertificateDetails = function(body) { 
 
@@ -30040,7 +30861,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],44:[function(require,module,exports){
+},{"../ApiClient":8}],45:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -30061,7 +30882,7 @@ module.exports = request;
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -30342,7 +31163,7 @@ module.exports = request;
      * 
      * @param {String} messageId Message ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.formatId The desired media format. (default to WEBM)
+     * @param {Object} opts.formatId The desired media format. (default to WEBM)
      */
     this.getVoicemailMessageMedia = function(messageId, opts) { 
       opts = opts || {};
@@ -30511,7 +31332,7 @@ module.exports = request;
      * Update a group&#39;s voicemail policy
      * 
      * @param {String} groupId Group ID
-     * @param {module:purecloud-platform-client-v2/model/VoicemailGroupPolicy} body The group&#39;s voicemail policy
+     * @param {Object} body The group&#39;s voicemail policy
      */
     this.patchVoicemailGroupPolicy = function(groupId, body) { 
 
@@ -30544,7 +31365,7 @@ module.exports = request;
     /**
      * Update the current user&#39;s voicemail policy
      * 
-     * @param {module:purecloud-platform-client-v2/model/VoicemailUserPolicy} body The user&#39;s voicemail policy
+     * @param {Object} body The user&#39;s voicemail policy
      */
     this.patchVoicemailMePolicy = function(body) { 
 
@@ -30573,7 +31394,7 @@ module.exports = request;
      * Update a voicemail message
      * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
      * @param {String} messageId Message ID
-     * @param {module:purecloud-platform-client-v2/model/VoicemailMessage} body VoicemailMessage
+     * @param {Object} body VoicemailMessage
      */
     this.patchVoicemailMessage = function(messageId, body) { 
 
@@ -30607,7 +31428,7 @@ module.exports = request;
      * Update a user&#39;s voicemail policy
      * 
      * @param {String} userId User ID
-     * @param {module:purecloud-platform-client-v2/model/VoicemailUserPolicy} body The user&#39;s voicemail policy
+     * @param {Object} body The user&#39;s voicemail policy
      */
     this.patchVoicemailUserpolicy = function(userId, body) { 
 
@@ -30641,7 +31462,7 @@ module.exports = request;
      * Copy a voicemail message to a user or group
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/CopyVoicemailMessage} opts.body 
+     * @param {Object} opts.body 
      */
     this.postVoicemailMessages = function(opts) { 
       opts = opts || {};
@@ -30665,7 +31486,7 @@ module.exports = request;
     /**
      * Search voicemails
      * 
-     * @param {module:purecloud-platform-client-v2/model/VoicemailSearchRequest} body Search request options
+     * @param {Object} body Search request options
      */
     this.postVoicemailSearch = function(body) { 
 
@@ -30694,7 +31515,7 @@ module.exports = request;
      * Update a voicemail message
      * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
      * @param {String} messageId Message ID
-     * @param {module:purecloud-platform-client-v2/model/VoicemailMessage} body VoicemailMessage
+     * @param {Object} body VoicemailMessage
      */
     this.putVoicemailMessage = function(messageId, body) { 
 
@@ -30727,7 +31548,7 @@ module.exports = request;
     /**
      * Update a policy
      * 
-     * @param {module:purecloud-platform-client-v2/model/VoicemailOrganizationPolicy} body Policy
+     * @param {Object} body Policy
      */
     this.putVoicemailPolicy = function(body) { 
 
@@ -30755,7 +31576,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],45:[function(require,module,exports){
+},{"../ApiClient":8}],46:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -30776,7 +31597,7 @@ module.exports = request;
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -30990,7 +31811,6 @@ module.exports = request;
      * Get management units
      * 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.selector Selector
      * @param {Number} opts.pageSize  (default to 25)
      * @param {Number} opts.pageNumber  (default to 1)
      */
@@ -31002,7 +31822,7 @@ module.exports = request;
         '/api/v2/workforcemanagement/managementunits', 
         'GET', 
         {  }, 
-        { 'selector': opts['selector'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
         {  }, 
         {  }, 
         null, 
@@ -31071,7 +31891,7 @@ module.exports = request;
      * 
      * @param {String} timeOffRequestId Time Off Request Id
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/TimeOffRequestPatch} opts.body 
+     * @param {Object} opts.body 
      */
     this.patchWorkforcemanagementTimeoffrequest = function(timeOffRequestId, opts) { 
       opts = opts || {};
@@ -31102,7 +31922,7 @@ module.exports = request;
      * 
      * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/WfmHistoricalAdherenceQuery} opts.body body
+     * @param {Object} opts.body body
      */
     this.postWorkforcemanagementManagementunitHistoricaladherencequery = function(muId, opts) { 
       opts = opts || {};
@@ -31133,7 +31953,7 @@ module.exports = request;
      * 
      * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/IntradayQueryDataCommand} opts.body body
+     * @param {Object} opts.body body
      */
     this.postWorkforcemanagementManagementunitIntraday = function(muId, opts) { 
       opts = opts || {};
@@ -31164,7 +31984,7 @@ module.exports = request;
      * 
      * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/UserListScheduleRequestBody} opts.body body
+     * @param {Object} opts.body body
      */
     this.postWorkforcemanagementManagementunitSchedulesSearch = function(muId, opts) { 
       opts = opts || {};
@@ -31194,7 +32014,7 @@ module.exports = request;
      * Get a schedule for the current user
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/CurrentUserScheduleRequestBody} opts.body body
+     * @param {Object} opts.body body
      */
     this.postWorkforcemanagementSchedules = function(opts) { 
       opts = opts || {};
@@ -31222,12 +32042,12 @@ module.exports = request;
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['purecloud-platform-client-v2/ApiClient', 'purecloud-platform-client-v2/api/AlertingApi', 'purecloud-platform-client-v2/api/AnalyticsApi', 'purecloud-platform-client-v2/api/ArchitectApi', 'purecloud-platform-client-v2/api/AttributesApi', 'purecloud-platform-client-v2/api/AuthorizationApi', 'purecloud-platform-client-v2/api/ContentManagementApi', 'purecloud-platform-client-v2/api/ConversationsApi', 'purecloud-platform-client-v2/api/ExternalContactsApi', 'purecloud-platform-client-v2/api/FaxApi', 'purecloud-platform-client-v2/api/GeolocationApi', 'purecloud-platform-client-v2/api/GreetingsApi', 'purecloud-platform-client-v2/api/GroupsApi', 'purecloud-platform-client-v2/api/IdentityProviderApi', 'purecloud-platform-client-v2/api/LanguagesApi', 'purecloud-platform-client-v2/api/LicenseApi', 'purecloud-platform-client-v2/api/LocationsApi', 'purecloud-platform-client-v2/api/NotificationsApi', 'purecloud-platform-client-v2/api/OAuthApi', 'purecloud-platform-client-v2/api/OrganizationApi', 'purecloud-platform-client-v2/api/OrganizationAuthorizationApi', 'purecloud-platform-client-v2/api/OutboundApi', 'purecloud-platform-client-v2/api/PresenceApi', 'purecloud-platform-client-v2/api/QualityApi', 'purecloud-platform-client-v2/api/RecordingApi', 'purecloud-platform-client-v2/api/ResponseManagementApi', 'purecloud-platform-client-v2/api/RoutingApi', 'purecloud-platform-client-v2/api/ScriptsApi', 'purecloud-platform-client-v2/api/SearchApi', 'purecloud-platform-client-v2/api/StationsApi', 'purecloud-platform-client-v2/api/SuggestApi', 'purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi', 'purecloud-platform-client-v2/api/TokensApi', 'purecloud-platform-client-v2/api/UserRecordingsApi', 'purecloud-platform-client-v2/api/UsersApi', 'purecloud-platform-client-v2/api/UtilitiesApi', 'purecloud-platform-client-v2/api/VoicemailApi', 'purecloud-platform-client-v2/api/WorkforceManagementApi'], factory);
+    define(['purecloud-platform-client-v2/ApiClient', 'purecloud-platform-client-v2/api/AlertingApi', 'purecloud-platform-client-v2/api/AnalyticsApi', 'purecloud-platform-client-v2/api/ArchitectApi', 'purecloud-platform-client-v2/api/AttributesApi', 'purecloud-platform-client-v2/api/AuthorizationApi', 'purecloud-platform-client-v2/api/ContentManagementApi', 'purecloud-platform-client-v2/api/ConversationsApi', 'purecloud-platform-client-v2/api/ExternalContactsApi', 'purecloud-platform-client-v2/api/FaxApi', 'purecloud-platform-client-v2/api/GeolocationApi', 'purecloud-platform-client-v2/api/GreetingsApi', 'purecloud-platform-client-v2/api/GroupsApi', 'purecloud-platform-client-v2/api/IdentityProviderApi', 'purecloud-platform-client-v2/api/IntegrationsApi', 'purecloud-platform-client-v2/api/LanguagesApi', 'purecloud-platform-client-v2/api/LicenseApi', 'purecloud-platform-client-v2/api/LocationsApi', 'purecloud-platform-client-v2/api/NotificationsApi', 'purecloud-platform-client-v2/api/OAuthApi', 'purecloud-platform-client-v2/api/OrganizationApi', 'purecloud-platform-client-v2/api/OrganizationAuthorizationApi', 'purecloud-platform-client-v2/api/OutboundApi', 'purecloud-platform-client-v2/api/PresenceApi', 'purecloud-platform-client-v2/api/QualityApi', 'purecloud-platform-client-v2/api/RecordingApi', 'purecloud-platform-client-v2/api/ResponseManagementApi', 'purecloud-platform-client-v2/api/RoutingApi', 'purecloud-platform-client-v2/api/ScriptsApi', 'purecloud-platform-client-v2/api/SearchApi', 'purecloud-platform-client-v2/api/StationsApi', 'purecloud-platform-client-v2/api/SuggestApi', 'purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi', 'purecloud-platform-client-v2/api/TokensApi', 'purecloud-platform-client-v2/api/UserRecordingsApi', 'purecloud-platform-client-v2/api/UsersApi', 'purecloud-platform-client-v2/api/UtilitiesApi', 'purecloud-platform-client-v2/api/VoicemailApi', 'purecloud-platform-client-v2/api/WorkforceManagementApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./api/AlertingApi'), require('./api/AnalyticsApi'), require('./api/ArchitectApi'), require('./api/AttributesApi'), require('./api/AuthorizationApi'), require('./api/ContentManagementApi'), require('./api/ConversationsApi'), require('./api/ExternalContactsApi'), require('./api/FaxApi'), require('./api/GeolocationApi'), require('./api/GreetingsApi'), require('./api/GroupsApi'), require('./api/IdentityProviderApi'), require('./api/LanguagesApi'), require('./api/LicenseApi'), require('./api/LocationsApi'), require('./api/NotificationsApi'), require('./api/OAuthApi'), require('./api/OrganizationApi'), require('./api/OrganizationAuthorizationApi'), require('./api/OutboundApi'), require('./api/PresenceApi'), require('./api/QualityApi'), require('./api/RecordingApi'), require('./api/ResponseManagementApi'), require('./api/RoutingApi'), require('./api/ScriptsApi'), require('./api/SearchApi'), require('./api/StationsApi'), require('./api/SuggestApi'), require('./api/TelephonyProvidersEdgeApi'), require('./api/TokensApi'), require('./api/UserRecordingsApi'), require('./api/UsersApi'), require('./api/UtilitiesApi'), require('./api/VoicemailApi'), require('./api/WorkforceManagementApi'));
+    module.exports = factory(require('./ApiClient'), require('./api/AlertingApi'), require('./api/AnalyticsApi'), require('./api/ArchitectApi'), require('./api/AttributesApi'), require('./api/AuthorizationApi'), require('./api/ContentManagementApi'), require('./api/ConversationsApi'), require('./api/ExternalContactsApi'), require('./api/FaxApi'), require('./api/GeolocationApi'), require('./api/GreetingsApi'), require('./api/GroupsApi'), require('./api/IdentityProviderApi'), require('./api/IntegrationsApi'), require('./api/LanguagesApi'), require('./api/LicenseApi'), require('./api/LocationsApi'), require('./api/NotificationsApi'), require('./api/OAuthApi'), require('./api/OrganizationApi'), require('./api/OrganizationAuthorizationApi'), require('./api/OutboundApi'), require('./api/PresenceApi'), require('./api/QualityApi'), require('./api/RecordingApi'), require('./api/ResponseManagementApi'), require('./api/RoutingApi'), require('./api/ScriptsApi'), require('./api/SearchApi'), require('./api/StationsApi'), require('./api/SuggestApi'), require('./api/TelephonyProvidersEdgeApi'), require('./api/TokensApi'), require('./api/UserRecordingsApi'), require('./api/UsersApi'), require('./api/UtilitiesApi'), require('./api/VoicemailApi'), require('./api/WorkforceManagementApi'));
   }
-}(function(ApiClient, AlertingApi, AnalyticsApi, ArchitectApi, AttributesApi, AuthorizationApi, ContentManagementApi, ConversationsApi, ExternalContactsApi, FaxApi, GeolocationApi, GreetingsApi, GroupsApi, IdentityProviderApi, LanguagesApi, LicenseApi, LocationsApi, NotificationsApi, OAuthApi, OrganizationApi, OrganizationAuthorizationApi, OutboundApi, PresenceApi, QualityApi, RecordingApi, ResponseManagementApi, RoutingApi, ScriptsApi, SearchApi, StationsApi, SuggestApi, TelephonyProvidersEdgeApi, TokensApi, UserRecordingsApi, UsersApi, UtilitiesApi, VoicemailApi, WorkforceManagementApi) {
+}(function(ApiClient, AlertingApi, AnalyticsApi, ArchitectApi, AttributesApi, AuthorizationApi, ContentManagementApi, ConversationsApi, ExternalContactsApi, FaxApi, GeolocationApi, GreetingsApi, GroupsApi, IdentityProviderApi, IntegrationsApi, LanguagesApi, LicenseApi, LocationsApi, NotificationsApi, OAuthApi, OrganizationApi, OrganizationAuthorizationApi, OutboundApi, PresenceApi, QualityApi, RecordingApi, ResponseManagementApi, RoutingApi, ScriptsApi, SearchApi, StationsApi, SuggestApi, TelephonyProvidersEdgeApi, TokensApi, UserRecordingsApi, UsersApi, UtilitiesApi, VoicemailApi, WorkforceManagementApi) {
   'use strict';
 
   /**
@@ -31259,7 +32079,7 @@ module.exports = request;
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 7.0.0
+   * @version 8.0.0
    */
   var platformClient = {
     /**
@@ -31332,6 +32152,11 @@ module.exports = request;
      * @property {module:purecloud-platform-client-v2/api/IdentityProviderApi}
      */
     IdentityProviderApi: IdentityProviderApi,
+    /**
+     * The IntegrationsApi service constructor.
+     * @property {module:purecloud-platform-client-v2/api/IntegrationsApi}
+     */
+    IntegrationsApi: IntegrationsApi,
     /**
      * The LanguagesApi service constructor.
      * @property {module:purecloud-platform-client-v2/api/LanguagesApi}
@@ -31457,4 +32282,4 @@ module.exports = request;
   return platformClient;
 }));
 
-},{"./ApiClient":8,"./api/AlertingApi":9,"./api/AnalyticsApi":10,"./api/ArchitectApi":11,"./api/AttributesApi":12,"./api/AuthorizationApi":13,"./api/ContentManagementApi":14,"./api/ConversationsApi":15,"./api/ExternalContactsApi":16,"./api/FaxApi":17,"./api/GeolocationApi":18,"./api/GreetingsApi":19,"./api/GroupsApi":20,"./api/IdentityProviderApi":21,"./api/LanguagesApi":22,"./api/LicenseApi":23,"./api/LocationsApi":24,"./api/NotificationsApi":25,"./api/OAuthApi":26,"./api/OrganizationApi":27,"./api/OrganizationAuthorizationApi":28,"./api/OutboundApi":29,"./api/PresenceApi":30,"./api/QualityApi":31,"./api/RecordingApi":32,"./api/ResponseManagementApi":33,"./api/RoutingApi":34,"./api/ScriptsApi":35,"./api/SearchApi":36,"./api/StationsApi":37,"./api/SuggestApi":38,"./api/TelephonyProvidersEdgeApi":39,"./api/TokensApi":40,"./api/UserRecordingsApi":41,"./api/UsersApi":42,"./api/UtilitiesApi":43,"./api/VoicemailApi":44,"./api/WorkforceManagementApi":45}]},{},[]);
+},{"./ApiClient":8,"./api/AlertingApi":9,"./api/AnalyticsApi":10,"./api/ArchitectApi":11,"./api/AttributesApi":12,"./api/AuthorizationApi":13,"./api/ContentManagementApi":14,"./api/ConversationsApi":15,"./api/ExternalContactsApi":16,"./api/FaxApi":17,"./api/GeolocationApi":18,"./api/GreetingsApi":19,"./api/GroupsApi":20,"./api/IdentityProviderApi":21,"./api/IntegrationsApi":22,"./api/LanguagesApi":23,"./api/LicenseApi":24,"./api/LocationsApi":25,"./api/NotificationsApi":26,"./api/OAuthApi":27,"./api/OrganizationApi":28,"./api/OrganizationAuthorizationApi":29,"./api/OutboundApi":30,"./api/PresenceApi":31,"./api/QualityApi":32,"./api/RecordingApi":33,"./api/ResponseManagementApi":34,"./api/RoutingApi":35,"./api/ScriptsApi":36,"./api/SearchApi":37,"./api/StationsApi":38,"./api/SuggestApi":39,"./api/TelephonyProvidersEdgeApi":40,"./api/TokensApi":41,"./api/UserRecordingsApi":42,"./api/UsersApi":43,"./api/UtilitiesApi":44,"./api/VoicemailApi":45,"./api/WorkforceManagementApi":46}]},{},[]);

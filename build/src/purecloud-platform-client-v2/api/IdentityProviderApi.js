@@ -18,7 +18,7 @@
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -454,7 +454,7 @@
     /**
      * Update/Create ADFS Identity Provider
      * 
-     * @param {module:purecloud-platform-client-v2/model/ADFS} body Provider
+     * @param {Object} body Provider
      */
     this.putIdentityprovidersAdfs = function(body) { 
 
@@ -482,7 +482,7 @@
     /**
      * Update/Create Customer Interaction Center (CIC) Identity Provider
      * 
-     * @param {module:purecloud-platform-client-v2/model/CustomerInteractionCenter} body Provider
+     * @param {Object} body Provider
      */
     this.putIdentityprovidersCic = function(body) { 
 
@@ -510,7 +510,7 @@
     /**
      * Update/Create G Suite Identity Provider
      * 
-     * @param {module:purecloud-platform-client-v2/model/GSuite} body Provider
+     * @param {Object} body Provider
      */
     this.putIdentityprovidersGsuite = function(body) { 
 
@@ -538,7 +538,7 @@
     /**
      * Update/Create IdentityNow Provider
      * 
-     * @param {module:purecloud-platform-client-v2/model/IdentityNow} body Provider
+     * @param {Object} body Provider
      */
     this.putIdentityprovidersIdentitynow = function(body) { 
 
@@ -566,7 +566,7 @@
     /**
      * Update/Create Okta Identity Provider
      * 
-     * @param {module:purecloud-platform-client-v2/model/Okta} body Provider
+     * @param {Object} body Provider
      */
     this.putIdentityprovidersOkta = function(body) { 
 
@@ -594,7 +594,7 @@
     /**
      * Update/Create OneLogin Identity Provider
      * 
-     * @param {module:purecloud-platform-client-v2/model/OneLogin} body Provider
+     * @param {Object} body Provider
      */
     this.putIdentityprovidersOnelogin = function(body) { 
 
@@ -622,7 +622,7 @@
     /**
      * Update/Create Ping Identity Provider
      * 
-     * @param {module:purecloud-platform-client-v2/model/PingIdentity} body Provider
+     * @param {Object} body Provider
      */
     this.putIdentityprovidersPing = function(body) { 
 
@@ -650,7 +650,7 @@
     /**
      * Update/Create PureCloud Identity Provider
      * 
-     * @param {module:purecloud-platform-client-v2/model/PureCloud} body Provider
+     * @param {Object} body Provider
      */
     this.putIdentityprovidersPurecloud = function(body) { 
 
@@ -678,7 +678,7 @@
     /**
      * Update/Create Salesforce Identity Provider
      * 
-     * @param {module:purecloud-platform-client-v2/model/Salesforce} body Provider
+     * @param {Object} body Provider
      */
     this.putIdentityprovidersSalesforce = function(body) { 
 

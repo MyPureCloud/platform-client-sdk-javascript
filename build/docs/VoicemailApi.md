@@ -826,7 +826,7 @@ var apiInstance = new platformClient.VoicemailApi();
 
 var groupId = "groupId_example"; // String | Group ID
 
-var body = new platformClient.VoicemailGroupPolicy(); // VoicemailGroupPolicy | The group's voicemail policy
+var body = {}; // Object | The group's voicemail policy
 
 apiInstance.patchVoicemailGroupPolicy(groupId, body)
   .then(function(data) {
@@ -845,7 +845,7 @@ apiInstance.patchVoicemailGroupPolicy(groupId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
- **body** | **VoicemailGroupPolicy** | The group&#39;s voicemail policy |  |
+ **body** | **Object** | The group&#39;s voicemail policy |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -875,7 +875,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.VoicemailApi();
 
-var body = new platformClient.VoicemailUserPolicy(); // VoicemailUserPolicy | The user's voicemail policy
+var body = {}; // Object | The user's voicemail policy
 
 apiInstance.patchVoicemailMePolicy(body)
   .then(function(data) {
@@ -893,7 +893,7 @@ apiInstance.patchVoicemailMePolicy(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **VoicemailUserPolicy** | The user&#39;s voicemail policy |  |
+ **body** | **Object** | The user&#39;s voicemail policy |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -925,7 +925,7 @@ var apiInstance = new platformClient.VoicemailApi();
 
 var messageId = "messageId_example"; // String | Message ID
 
-var body = new platformClient.VoicemailMessage(); // VoicemailMessage | VoicemailMessage
+var body = {}; // Object | VoicemailMessage
 
 apiInstance.patchVoicemailMessage(messageId, body)
   .then(function(data) {
@@ -944,7 +944,7 @@ apiInstance.patchVoicemailMessage(messageId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | Message ID |  |
- **body** | **VoicemailMessage** | VoicemailMessage |  |
+ **body** | **Object** | VoicemailMessage |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -976,7 +976,7 @@ var apiInstance = new platformClient.VoicemailApi();
 
 var userId = "userId_example"; // String | User ID
 
-var body = new platformClient.VoicemailUserPolicy(); // VoicemailUserPolicy | The user's voicemail policy
+var body = {}; // Object | The user's voicemail policy
 
 apiInstance.patchVoicemailUserpolicy(userId, body)
   .then(function(data) {
@@ -995,7 +995,7 @@ apiInstance.patchVoicemailUserpolicy(userId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **body** | **VoicemailUserPolicy** | The user&#39;s voicemail policy |  |
+ **body** | **Object** | The user&#39;s voicemail policy |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1026,7 +1026,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.VoicemailApi();
 
 var opts = { 
-  'body': new platformClient.CopyVoicemailMessage() // CopyVoicemailMessage | 
+  'body': {} // Object | 
 };
 apiInstance.postVoicemailMessages(opts)
   .then(function(data) {
@@ -1044,7 +1044,7 @@ apiInstance.postVoicemailMessages(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **CopyVoicemailMessage** |  | [optional]  |
+ **body** | **Object** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1074,7 +1074,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.VoicemailApi();
 
-var body = new platformClient.VoicemailSearchRequest(); // VoicemailSearchRequest | Search request options
+var body = {}; // Object | Search request options
 
 apiInstance.postVoicemailSearch(body)
   .then(function(data) {
@@ -1092,7 +1092,7 @@ apiInstance.postVoicemailSearch(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **VoicemailSearchRequest** | Search request options |  |
+ **body** | **Object** | Search request options |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1124,7 +1124,7 @@ var apiInstance = new platformClient.VoicemailApi();
 
 var messageId = "messageId_example"; // String | Message ID
 
-var body = new platformClient.VoicemailMessage(); // VoicemailMessage | VoicemailMessage
+var body = {}; // Object | VoicemailMessage
 
 apiInstance.putVoicemailMessage(messageId, body)
   .then(function(data) {
@@ -1143,7 +1143,7 @@ apiInstance.putVoicemailMessage(messageId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | Message ID |  |
- **body** | **VoicemailMessage** | VoicemailMessage |  |
+ **body** | **Object** | VoicemailMessage |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1173,7 +1173,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.VoicemailApi();
 
-var body = new platformClient.VoicemailOrganizationPolicy(); // VoicemailOrganizationPolicy | Policy
+var body = {}; // Object | Policy
 
 apiInstance.putVoicemailPolicy(body)
   .then(function(data) {
@@ -1191,7 +1191,7 @@ apiInstance.putVoicemailPolicy(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **VoicemailOrganizationPolicy** | Policy |  |
+ **body** | **Object** | Policy |  |
 {: class="table table-striped"}
 
 ### Return type

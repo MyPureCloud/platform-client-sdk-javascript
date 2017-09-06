@@ -18,7 +18,7 @@
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -98,7 +98,7 @@
     /**
      * Fetch field config for an entity type
      * 
-     * @param {module:purecloud-platform-client-v2/model/String} type Field type
+     * @param {Object} type Field type
      */
     this.getFieldconfig = function(type) { 
 
@@ -158,7 +158,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Ascending or descending sort order (default to ASC)
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
      * @param {Array.<String>} opts.expand Which fields, if any, to expand
      */
     this.getGroupMembers = function(groupId, opts) { 
@@ -192,7 +192,7 @@
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Array.<String>} opts.id id
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Ascending or descending sort order (default to ASC)
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
      */
     this.getGroups = function(opts) { 
       opts = opts || {};
@@ -248,7 +248,7 @@
      * Add members
      * 
      * @param {String} groupId Group ID
-     * @param {module:purecloud-platform-client-v2/model/GroupMembersUpdate} body Add members
+     * @param {Object} body Add members
      */
     this.postGroupMembers = function(groupId, body) { 
 
@@ -281,7 +281,7 @@
     /**
      * Create a group
      * 
-     * @param {module:purecloud-platform-client-v2/model/Group} body Group
+     * @param {Object} body Group
      */
     this.postGroups = function(body) { 
 
@@ -309,7 +309,7 @@
     /**
      * Search groups
      * 
-     * @param {module:purecloud-platform-client-v2/model/GroupSearchRequest} body Search request options
+     * @param {Object} body Search request options
      */
     this.postGroupsSearch = function(body) { 
 
@@ -339,7 +339,7 @@
      * 
      * @param {String} groupId Group ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/GroupUpdate} opts.body Group
+     * @param {Object} opts.body Group
      */
     this.putGroup = function(groupId, opts) { 
       opts = opts || {};

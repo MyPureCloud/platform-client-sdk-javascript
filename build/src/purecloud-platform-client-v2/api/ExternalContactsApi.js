@@ -18,7 +18,7 @@
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -349,7 +349,7 @@
      * 
      * @param {String} externalOrganizationId External Organization ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand which fields, if any, to expand (externalDataSources)
+     * @param {Object} opts.expand which fields, if any, to expand (externalDataSources)
      * @param {Boolean} opts.includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization
      */
     this.getExternalcontactsOrganization = function(externalOrganizationId, opts) { 
@@ -489,7 +489,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 20)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand which fields, if any, to expand
+     * @param {Object} opts.expand which fields, if any, to expand
      * @param {String} opts.sortOrder Sort order
      */
     this.getExternalcontactsOrganizationRelationships = function(externalOrganizationId, opts) { 
@@ -552,7 +552,7 @@
      * 
      * @param {String} relationshipId Relationship Id
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/String} opts.expand which fields, if any, to expand
+     * @param {Object} opts.expand which fields, if any, to expand
      */
     this.getExternalcontactsRelationship = function(relationshipId, opts) { 
       opts = opts || {};
@@ -614,7 +614,7 @@
      * 
      * @param {String} contactId ExternalContact Id
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Note} opts.body ExternalContact
+     * @param {Object} opts.body ExternalContact
      */
     this.postExternalcontactsContactNotes = function(contactId, opts) { 
       opts = opts || {};
@@ -644,7 +644,7 @@
      * Create an external contact
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/ExternalContact} opts.body ExternalContact
+     * @param {Object} opts.body ExternalContact
      */
     this.postExternalcontactsContacts = function(opts) { 
       opts = opts || {};
@@ -670,7 +670,7 @@
      * 
      * @param {String} externalOrganizationId External Organization Id
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Note} opts.body ExternalContact
+     * @param {Object} opts.body ExternalContact
      */
     this.postExternalcontactsOrganizationNotes = function(externalOrganizationId, opts) { 
       opts = opts || {};
@@ -700,7 +700,7 @@
      * Create an external organization
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/ExternalOrganization} opts.body ExternalOrganization
+     * @param {Object} opts.body ExternalOrganization
      */
     this.postExternalcontactsOrganizations = function(opts) { 
       opts = opts || {};
@@ -725,7 +725,7 @@
      * Create a relationship
      * 
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Relationship} opts.body Relationship
+     * @param {Object} opts.body Relationship
      */
     this.postExternalcontactsRelationships = function(opts) { 
       opts = opts || {};
@@ -751,7 +751,7 @@
      * 
      * @param {String} contactId ExternalContact ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/ExternalContact} opts.body ExternalContact
+     * @param {Object} opts.body ExternalContact
      */
     this.putExternalcontactsContact = function(contactId, opts) { 
       opts = opts || {};
@@ -783,7 +783,7 @@
      * @param {String} contactId ExternalContact Id
      * @param {String} noteId Note Id
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Note} opts.body Note
+     * @param {Object} opts.body Note
      */
     this.putExternalcontactsContactNote = function(contactId, noteId, opts) { 
       opts = opts || {};
@@ -819,7 +819,7 @@
      * 
      * @param {String} conversationId Conversation ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/ConversationAssociation} opts.body ConversationAssociation
+     * @param {Object} opts.body ConversationAssociation
      */
     this.putExternalcontactsConversation = function(conversationId, opts) { 
       opts = opts || {};
@@ -850,7 +850,7 @@
      * 
      * @param {String} externalOrganizationId External Organization ID
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/ExternalOrganization} opts.body ExternalOrganization
+     * @param {Object} opts.body ExternalOrganization
      */
     this.putExternalcontactsOrganization = function(externalOrganizationId, opts) { 
       opts = opts || {};
@@ -882,7 +882,7 @@
      * @param {String} externalOrganizationId External Organization Id
      * @param {String} noteId Note Id
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Note} opts.body Note
+     * @param {Object} opts.body Note
      */
     this.putExternalcontactsOrganizationNote = function(externalOrganizationId, noteId, opts) { 
       opts = opts || {};
@@ -952,7 +952,7 @@
      * 
      * @param {String} relationshipId Relationship Id
      * @param {Object} opts Optional parameters
-     * @param {module:purecloud-platform-client-v2/model/Relationship} opts.body Relationship
+     * @param {Object} opts.body Relationship
      */
     this.putExternalcontactsRelationship = function(relationshipId, opts) { 
       opts = opts || {};

@@ -18,7 +18,7 @@
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 7.0.0
+   * @version 8.0.0
    */
 
   /**
@@ -67,7 +67,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
-     * @param {module:purecloud-platform-client-v2/model/String} opts.sortOrder Sort order
+     * @param {Object} opts.sortOrder Sort order
      */
     this.getLocations = function(opts) { 
       opts = opts || {};
@@ -122,7 +122,7 @@
     /**
      * Search locations
      * 
-     * @param {module:purecloud-platform-client-v2/model/LocationSearchRequest} body Search request options
+     * @param {Object} body Search request options
      */
     this.postLocationsSearch = function(body) { 
 
