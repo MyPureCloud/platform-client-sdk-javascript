@@ -889,7 +889,7 @@ This endpoint does not need any parameter.
 
 <a name="getConversationsCallsHistory"></a>
 
-# [**CallConversationEntityListing**](CallConversationEntityListing.html) getConversationsCallsHistory(opts)
+# [**CallHistoryConversationEntityListing**](CallHistoryConversationEntityListing.html) getConversationsCallsHistory(opts)
 
 GET /api/v2/conversations/calls/history
 
@@ -938,7 +938,7 @@ apiInstance.getConversationsCallsHistory(opts)
 
 ### Return type
 
-**CallConversationEntityListing**
+**CallHistoryConversationEntityListing**
 
 <a name="getConversationsCallsMaximumconferenceparties"></a>
 
