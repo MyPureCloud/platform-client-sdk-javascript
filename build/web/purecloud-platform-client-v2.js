@@ -3242,7 +3242,7 @@ module.exports = request;
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -3865,7 +3865,7 @@ module.exports = request;
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '9.0.0' });
+    //request.set({ 'purecloud-sdk': '10.0.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -4003,7 +4003,7 @@ module.exports = request;
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -4359,7 +4359,7 @@ module.exports = request;
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -5024,7 +5024,7 @@ module.exports = request;
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -6935,7 +6935,7 @@ module.exports = request;
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -7146,7 +7146,7 @@ module.exports = request;
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -7696,6 +7696,79 @@ module.exports = request;
     if (!root.platformClient) {
       root.platformClient = {};
     }
+    root.platformClient.BillingApi = factory(root.platformClient.ApiClient);
+  }
+}(this, function(ApiClient) {
+  'use strict';
+
+  /**
+   * Billing service.
+   * @module purecloud-platform-client-v2/api/BillingApi
+   * @version 10.0.0
+   */
+
+  /**
+   * Constructs a new BillingApi. 
+   * @alias module:purecloud-platform-client-v2/api/BillingApi
+   * @class
+   * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+   * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+   */
+  var exports = function(apiClient) {
+    this.apiClient = apiClient || ApiClient.instance;
+
+
+
+    /**
+     * Get a report of the billable usages (e.g. licenses and devices utilized) for a given period.
+     * 
+     * @param {Date} startDate The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+     * @param {Date} endDate The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+     */
+    this.getBillingReportsBillableusage = function(startDate, endDate) { 
+
+      // verify the required parameter 'startDate' is set
+      if (startDate === undefined || startDate === null) {
+        throw "Missing the required parameter 'startDate' when calling getBillingReportsBillableusage";
+      }
+
+      // verify the required parameter 'endDate' is set
+      if (endDate === undefined || endDate === null) {
+        throw "Missing the required parameter 'endDate' when calling getBillingReportsBillableusage";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/billing/reports/billableusage', 
+        'GET', 
+        {  }, 
+        { 'startDate': startDate,'endDate': endDate }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+  };
+
+  return exports;
+}));
+
+},{"../ApiClient":8}],15:[function(require,module,exports){
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['purecloud-platform-client-v2/ApiClient'], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    module.exports = factory(require('../ApiClient'));
+  } else {
+    // Browser globals (root is window)
+    if (!root.platformClient) {
+      root.platformClient = {};
+    }
     root.platformClient.ContentManagementApi = factory(root.platformClient.ApiClient);
   }
 }(this, function(ApiClient) {
@@ -7704,7 +7777,7 @@ module.exports = request;
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -8940,7 +9013,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],15:[function(require,module,exports){
+},{"../ApiClient":8}],16:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -8961,7 +9034,7 @@ module.exports = request;
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -11691,7 +11764,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],16:[function(require,module,exports){
+},{"../ApiClient":8}],17:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -11712,7 +11785,7 @@ module.exports = request;
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -12675,7 +12748,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],17:[function(require,module,exports){
+},{"../ApiClient":8}],18:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -12696,7 +12769,7 @@ module.exports = request;
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -12880,7 +12953,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],18:[function(require,module,exports){
+},{"../ApiClient":8}],19:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -12901,7 +12974,7 @@ module.exports = request;
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -13043,7 +13116,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],19:[function(require,module,exports){
+},{"../ApiClient":8}],20:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -13064,7 +13137,7 @@ module.exports = request;
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -13563,7 +13636,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],20:[function(require,module,exports){
+},{"../ApiClient":8}],21:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -13584,7 +13657,7 @@ module.exports = request;
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -13934,7 +14007,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],21:[function(require,module,exports){
+},{"../ApiClient":8}],22:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -13955,7 +14028,7 @@ module.exports = request;
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -14643,7 +14716,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],22:[function(require,module,exports){
+},{"../ApiClient":8}],23:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -14664,7 +14737,7 @@ module.exports = request;
   /**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -15349,7 +15422,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],23:[function(require,module,exports){
+},{"../ApiClient":8}],24:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -15370,7 +15443,7 @@ module.exports = request;
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -15662,7 +15735,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],24:[function(require,module,exports){
+},{"../ApiClient":8}],25:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -15683,7 +15756,7 @@ module.exports = request;
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -15907,7 +15980,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],25:[function(require,module,exports){
+},{"../ApiClient":8}],26:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -15928,7 +16001,7 @@ module.exports = request;
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -16060,7 +16133,188 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],26:[function(require,module,exports){
+},{"../ApiClient":8}],27:[function(require,module,exports){
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['purecloud-platform-client-v2/ApiClient'], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    module.exports = factory(require('../ApiClient'));
+  } else {
+    // Browser globals (root is window)
+    if (!root.platformClient) {
+      root.platformClient = {};
+    }
+    root.platformClient.MobileDevicesApi = factory(root.platformClient.ApiClient);
+  }
+}(this, function(ApiClient) {
+  'use strict';
+
+  /**
+   * MobileDevices service.
+   * @module purecloud-platform-client-v2/api/MobileDevicesApi
+   * @version 10.0.0
+   */
+
+  /**
+   * Constructs a new MobileDevicesApi. 
+   * @alias module:purecloud-platform-client-v2/api/MobileDevicesApi
+   * @class
+   * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+   * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+   */
+  var exports = function(apiClient) {
+    this.apiClient = apiClient || ApiClient.instance;
+
+
+
+    /**
+     * Delete device
+     * 
+     * @param {String} deviceId Device ID
+     */
+    this.deleteMobiledevice = function(deviceId) { 
+
+      // verify the required parameter 'deviceId' is set
+      if (deviceId === undefined || deviceId === null) {
+        throw "Missing the required parameter 'deviceId' when calling deleteMobiledevice";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/mobiledevices/{deviceId}', 
+        'DELETE', 
+        { 'deviceId': deviceId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get device
+     * 
+     * @param {String} deviceId Device ID
+     */
+    this.getMobiledevice = function(deviceId) { 
+
+      // verify the required parameter 'deviceId' is set
+      if (deviceId === undefined || deviceId === null) {
+        throw "Missing the required parameter 'deviceId' when calling getMobiledevice";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/mobiledevices/{deviceId}', 
+        'GET', 
+        { 'deviceId': deviceId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a list of all devices.
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ascending)
+     */
+    this.getMobiledevices = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/mobiledevices', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Create User device
+     * 
+     * @param {Object} body Device
+     */
+    this.postMobiledevices = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postMobiledevices";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/mobiledevices', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update device
+     * 
+     * @param {String} deviceId Device ID
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body Device
+     */
+    this.putMobiledevice = function(deviceId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'deviceId' is set
+      if (deviceId === undefined || deviceId === null) {
+        throw "Missing the required parameter 'deviceId' when calling putMobiledevice";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/mobiledevices/{deviceId}', 
+        'PUT', 
+        { 'deviceId': deviceId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+  };
+
+  return exports;
+}));
+
+},{"../ApiClient":8}],28:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -16081,7 +16335,7 @@ module.exports = request;
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -16292,7 +16546,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],27:[function(require,module,exports){
+},{"../ApiClient":8}],29:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -16313,7 +16567,7 @@ module.exports = request;
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -16499,7 +16753,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],28:[function(require,module,exports){
+},{"../ApiClient":8}],30:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -16520,7 +16774,7 @@ module.exports = request;
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -16647,7 +16901,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],29:[function(require,module,exports){
+},{"../ApiClient":8}],31:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -16668,7 +16922,7 @@ module.exports = request;
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -17412,7 +17666,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],30:[function(require,module,exports){
+},{"../ApiClient":8}],32:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -17433,7 +17687,7 @@ module.exports = request;
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -18930,6 +19184,28 @@ module.exports = request;
 
 
     /**
+     * Get the outbound settings for this organization
+     * 
+     */
+    this.getOutboundSettings = function() { 
+
+
+      return this.apiClient.callApi(
+        '/api/v2/outbound/settings', 
+        'GET', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get the Dialer wrap up code mapping.
      * 
      */
@@ -18944,6 +19220,34 @@ module.exports = request;
         {  }, 
         {  }, 
         null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update the outbound settings for this organization
+     * 
+     * @param {Object} body outboundSettings
+     */
+    this.patchOutboundSettings = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling patchOutboundSettings";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/outbound/settings', 
+        'PATCH', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -20031,7 +20335,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],31:[function(require,module,exports){
+},{"../ApiClient":8}],33:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -20052,7 +20356,7 @@ module.exports = request;
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -20315,7 +20619,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],32:[function(require,module,exports){
+},{"../ApiClient":8}],34:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -20336,7 +20640,7 @@ module.exports = request;
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -21358,7 +21662,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],33:[function(require,module,exports){
+},{"../ApiClient":8}],35:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -21379,7 +21683,7 @@ module.exports = request;
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -22484,7 +22788,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],34:[function(require,module,exports){
+},{"../ApiClient":8}],36:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -22505,7 +22809,7 @@ module.exports = request;
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -22855,7 +23159,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],35:[function(require,module,exports){
+},{"../ApiClient":8}],37:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -22876,7 +23180,7 @@ module.exports = request;
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -24248,7 +24552,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],36:[function(require,module,exports){
+},{"../ApiClient":8}],38:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -24269,7 +24573,7 @@ module.exports = request;
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -24562,7 +24866,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],37:[function(require,module,exports){
+},{"../ApiClient":8}],39:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -24583,7 +24887,7 @@ module.exports = request;
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -25019,7 +25323,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],38:[function(require,module,exports){
+},{"../ApiClient":8}],40:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -25040,7 +25344,7 @@ module.exports = request;
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -25146,7 +25450,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],39:[function(require,module,exports){
+},{"../ApiClient":8}],41:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -25167,7 +25471,7 @@ module.exports = request;
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -25311,7 +25615,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],40:[function(require,module,exports){
+},{"../ApiClient":8}],42:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -25332,7 +25636,7 @@ module.exports = request;
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -29060,7 +29364,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],41:[function(require,module,exports){
+},{"../ApiClient":8}],43:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -29081,7 +29385,7 @@ module.exports = request;
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -29143,7 +29447,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],42:[function(require,module,exports){
+},{"../ApiClient":8}],44:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -29164,7 +29468,7 @@ module.exports = request;
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -29358,7 +29662,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],43:[function(require,module,exports){
+},{"../ApiClient":8}],45:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -29379,7 +29683,7 @@ module.exports = request;
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -30746,7 +31050,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],44:[function(require,module,exports){
+},{"../ApiClient":8}],46:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -30767,7 +31071,7 @@ module.exports = request;
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -30861,7 +31165,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],45:[function(require,module,exports){
+},{"../ApiClient":8}],47:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -30882,7 +31186,7 @@ module.exports = request;
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -31576,7 +31880,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],46:[function(require,module,exports){
+},{"../ApiClient":8}],48:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -31597,7 +31901,7 @@ module.exports = request;
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -32042,12 +32346,12 @@ module.exports = request;
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['purecloud-platform-client-v2/ApiClient', 'purecloud-platform-client-v2/api/AlertingApi', 'purecloud-platform-client-v2/api/AnalyticsApi', 'purecloud-platform-client-v2/api/ArchitectApi', 'purecloud-platform-client-v2/api/AttributesApi', 'purecloud-platform-client-v2/api/AuthorizationApi', 'purecloud-platform-client-v2/api/ContentManagementApi', 'purecloud-platform-client-v2/api/ConversationsApi', 'purecloud-platform-client-v2/api/ExternalContactsApi', 'purecloud-platform-client-v2/api/FaxApi', 'purecloud-platform-client-v2/api/GeolocationApi', 'purecloud-platform-client-v2/api/GreetingsApi', 'purecloud-platform-client-v2/api/GroupsApi', 'purecloud-platform-client-v2/api/IdentityProviderApi', 'purecloud-platform-client-v2/api/IntegrationsApi', 'purecloud-platform-client-v2/api/LanguagesApi', 'purecloud-platform-client-v2/api/LicenseApi', 'purecloud-platform-client-v2/api/LocationsApi', 'purecloud-platform-client-v2/api/NotificationsApi', 'purecloud-platform-client-v2/api/OAuthApi', 'purecloud-platform-client-v2/api/OrganizationApi', 'purecloud-platform-client-v2/api/OrganizationAuthorizationApi', 'purecloud-platform-client-v2/api/OutboundApi', 'purecloud-platform-client-v2/api/PresenceApi', 'purecloud-platform-client-v2/api/QualityApi', 'purecloud-platform-client-v2/api/RecordingApi', 'purecloud-platform-client-v2/api/ResponseManagementApi', 'purecloud-platform-client-v2/api/RoutingApi', 'purecloud-platform-client-v2/api/ScriptsApi', 'purecloud-platform-client-v2/api/SearchApi', 'purecloud-platform-client-v2/api/StationsApi', 'purecloud-platform-client-v2/api/SuggestApi', 'purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi', 'purecloud-platform-client-v2/api/TokensApi', 'purecloud-platform-client-v2/api/UserRecordingsApi', 'purecloud-platform-client-v2/api/UsersApi', 'purecloud-platform-client-v2/api/UtilitiesApi', 'purecloud-platform-client-v2/api/VoicemailApi', 'purecloud-platform-client-v2/api/WorkforceManagementApi'], factory);
+    define(['purecloud-platform-client-v2/ApiClient', 'purecloud-platform-client-v2/api/AlertingApi', 'purecloud-platform-client-v2/api/AnalyticsApi', 'purecloud-platform-client-v2/api/ArchitectApi', 'purecloud-platform-client-v2/api/AttributesApi', 'purecloud-platform-client-v2/api/AuthorizationApi', 'purecloud-platform-client-v2/api/BillingApi', 'purecloud-platform-client-v2/api/ContentManagementApi', 'purecloud-platform-client-v2/api/ConversationsApi', 'purecloud-platform-client-v2/api/ExternalContactsApi', 'purecloud-platform-client-v2/api/FaxApi', 'purecloud-platform-client-v2/api/GeolocationApi', 'purecloud-platform-client-v2/api/GreetingsApi', 'purecloud-platform-client-v2/api/GroupsApi', 'purecloud-platform-client-v2/api/IdentityProviderApi', 'purecloud-platform-client-v2/api/IntegrationsApi', 'purecloud-platform-client-v2/api/LanguagesApi', 'purecloud-platform-client-v2/api/LicenseApi', 'purecloud-platform-client-v2/api/LocationsApi', 'purecloud-platform-client-v2/api/MobileDevicesApi', 'purecloud-platform-client-v2/api/NotificationsApi', 'purecloud-platform-client-v2/api/OAuthApi', 'purecloud-platform-client-v2/api/OrganizationApi', 'purecloud-platform-client-v2/api/OrganizationAuthorizationApi', 'purecloud-platform-client-v2/api/OutboundApi', 'purecloud-platform-client-v2/api/PresenceApi', 'purecloud-platform-client-v2/api/QualityApi', 'purecloud-platform-client-v2/api/RecordingApi', 'purecloud-platform-client-v2/api/ResponseManagementApi', 'purecloud-platform-client-v2/api/RoutingApi', 'purecloud-platform-client-v2/api/ScriptsApi', 'purecloud-platform-client-v2/api/SearchApi', 'purecloud-platform-client-v2/api/StationsApi', 'purecloud-platform-client-v2/api/SuggestApi', 'purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi', 'purecloud-platform-client-v2/api/TokensApi', 'purecloud-platform-client-v2/api/UserRecordingsApi', 'purecloud-platform-client-v2/api/UsersApi', 'purecloud-platform-client-v2/api/UtilitiesApi', 'purecloud-platform-client-v2/api/VoicemailApi', 'purecloud-platform-client-v2/api/WorkforceManagementApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./api/AlertingApi'), require('./api/AnalyticsApi'), require('./api/ArchitectApi'), require('./api/AttributesApi'), require('./api/AuthorizationApi'), require('./api/ContentManagementApi'), require('./api/ConversationsApi'), require('./api/ExternalContactsApi'), require('./api/FaxApi'), require('./api/GeolocationApi'), require('./api/GreetingsApi'), require('./api/GroupsApi'), require('./api/IdentityProviderApi'), require('./api/IntegrationsApi'), require('./api/LanguagesApi'), require('./api/LicenseApi'), require('./api/LocationsApi'), require('./api/NotificationsApi'), require('./api/OAuthApi'), require('./api/OrganizationApi'), require('./api/OrganizationAuthorizationApi'), require('./api/OutboundApi'), require('./api/PresenceApi'), require('./api/QualityApi'), require('./api/RecordingApi'), require('./api/ResponseManagementApi'), require('./api/RoutingApi'), require('./api/ScriptsApi'), require('./api/SearchApi'), require('./api/StationsApi'), require('./api/SuggestApi'), require('./api/TelephonyProvidersEdgeApi'), require('./api/TokensApi'), require('./api/UserRecordingsApi'), require('./api/UsersApi'), require('./api/UtilitiesApi'), require('./api/VoicemailApi'), require('./api/WorkforceManagementApi'));
+    module.exports = factory(require('./ApiClient'), require('./api/AlertingApi'), require('./api/AnalyticsApi'), require('./api/ArchitectApi'), require('./api/AttributesApi'), require('./api/AuthorizationApi'), require('./api/BillingApi'), require('./api/ContentManagementApi'), require('./api/ConversationsApi'), require('./api/ExternalContactsApi'), require('./api/FaxApi'), require('./api/GeolocationApi'), require('./api/GreetingsApi'), require('./api/GroupsApi'), require('./api/IdentityProviderApi'), require('./api/IntegrationsApi'), require('./api/LanguagesApi'), require('./api/LicenseApi'), require('./api/LocationsApi'), require('./api/MobileDevicesApi'), require('./api/NotificationsApi'), require('./api/OAuthApi'), require('./api/OrganizationApi'), require('./api/OrganizationAuthorizationApi'), require('./api/OutboundApi'), require('./api/PresenceApi'), require('./api/QualityApi'), require('./api/RecordingApi'), require('./api/ResponseManagementApi'), require('./api/RoutingApi'), require('./api/ScriptsApi'), require('./api/SearchApi'), require('./api/StationsApi'), require('./api/SuggestApi'), require('./api/TelephonyProvidersEdgeApi'), require('./api/TokensApi'), require('./api/UserRecordingsApi'), require('./api/UsersApi'), require('./api/UtilitiesApi'), require('./api/VoicemailApi'), require('./api/WorkforceManagementApi'));
   }
-}(function(ApiClient, AlertingApi, AnalyticsApi, ArchitectApi, AttributesApi, AuthorizationApi, ContentManagementApi, ConversationsApi, ExternalContactsApi, FaxApi, GeolocationApi, GreetingsApi, GroupsApi, IdentityProviderApi, IntegrationsApi, LanguagesApi, LicenseApi, LocationsApi, NotificationsApi, OAuthApi, OrganizationApi, OrganizationAuthorizationApi, OutboundApi, PresenceApi, QualityApi, RecordingApi, ResponseManagementApi, RoutingApi, ScriptsApi, SearchApi, StationsApi, SuggestApi, TelephonyProvidersEdgeApi, TokensApi, UserRecordingsApi, UsersApi, UtilitiesApi, VoicemailApi, WorkforceManagementApi) {
+}(function(ApiClient, AlertingApi, AnalyticsApi, ArchitectApi, AttributesApi, AuthorizationApi, BillingApi, ContentManagementApi, ConversationsApi, ExternalContactsApi, FaxApi, GeolocationApi, GreetingsApi, GroupsApi, IdentityProviderApi, IntegrationsApi, LanguagesApi, LicenseApi, LocationsApi, MobileDevicesApi, NotificationsApi, OAuthApi, OrganizationApi, OrganizationAuthorizationApi, OutboundApi, PresenceApi, QualityApi, RecordingApi, ResponseManagementApi, RoutingApi, ScriptsApi, SearchApi, StationsApi, SuggestApi, TelephonyProvidersEdgeApi, TokensApi, UserRecordingsApi, UsersApi, UtilitiesApi, VoicemailApi, WorkforceManagementApi) {
   'use strict';
 
   /**
@@ -32079,7 +32383,7 @@ module.exports = request;
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 9.0.0
+   * @version 10.0.0
    */
   var platformClient = {
     /**
@@ -32112,6 +32416,11 @@ module.exports = request;
      * @property {module:purecloud-platform-client-v2/api/AuthorizationApi}
      */
     AuthorizationApi: AuthorizationApi,
+    /**
+     * The BillingApi service constructor.
+     * @property {module:purecloud-platform-client-v2/api/BillingApi}
+     */
+    BillingApi: BillingApi,
     /**
      * The ContentManagementApi service constructor.
      * @property {module:purecloud-platform-client-v2/api/ContentManagementApi}
@@ -32172,6 +32481,11 @@ module.exports = request;
      * @property {module:purecloud-platform-client-v2/api/LocationsApi}
      */
     LocationsApi: LocationsApi,
+    /**
+     * The MobileDevicesApi service constructor.
+     * @property {module:purecloud-platform-client-v2/api/MobileDevicesApi}
+     */
+    MobileDevicesApi: MobileDevicesApi,
     /**
      * The NotificationsApi service constructor.
      * @property {module:purecloud-platform-client-v2/api/NotificationsApi}
@@ -32282,4 +32596,4 @@ module.exports = request;
   return platformClient;
 }));
 
-},{"./ApiClient":8,"./api/AlertingApi":9,"./api/AnalyticsApi":10,"./api/ArchitectApi":11,"./api/AttributesApi":12,"./api/AuthorizationApi":13,"./api/ContentManagementApi":14,"./api/ConversationsApi":15,"./api/ExternalContactsApi":16,"./api/FaxApi":17,"./api/GeolocationApi":18,"./api/GreetingsApi":19,"./api/GroupsApi":20,"./api/IdentityProviderApi":21,"./api/IntegrationsApi":22,"./api/LanguagesApi":23,"./api/LicenseApi":24,"./api/LocationsApi":25,"./api/NotificationsApi":26,"./api/OAuthApi":27,"./api/OrganizationApi":28,"./api/OrganizationAuthorizationApi":29,"./api/OutboundApi":30,"./api/PresenceApi":31,"./api/QualityApi":32,"./api/RecordingApi":33,"./api/ResponseManagementApi":34,"./api/RoutingApi":35,"./api/ScriptsApi":36,"./api/SearchApi":37,"./api/StationsApi":38,"./api/SuggestApi":39,"./api/TelephonyProvidersEdgeApi":40,"./api/TokensApi":41,"./api/UserRecordingsApi":42,"./api/UsersApi":43,"./api/UtilitiesApi":44,"./api/VoicemailApi":45,"./api/WorkforceManagementApi":46}]},{},[]);
+},{"./ApiClient":8,"./api/AlertingApi":9,"./api/AnalyticsApi":10,"./api/ArchitectApi":11,"./api/AttributesApi":12,"./api/AuthorizationApi":13,"./api/BillingApi":14,"./api/ContentManagementApi":15,"./api/ConversationsApi":16,"./api/ExternalContactsApi":17,"./api/FaxApi":18,"./api/GeolocationApi":19,"./api/GreetingsApi":20,"./api/GroupsApi":21,"./api/IdentityProviderApi":22,"./api/IntegrationsApi":23,"./api/LanguagesApi":24,"./api/LicenseApi":25,"./api/LocationsApi":26,"./api/MobileDevicesApi":27,"./api/NotificationsApi":28,"./api/OAuthApi":29,"./api/OrganizationApi":30,"./api/OrganizationAuthorizationApi":31,"./api/OutboundApi":32,"./api/PresenceApi":33,"./api/QualityApi":34,"./api/RecordingApi":35,"./api/ResponseManagementApi":36,"./api/RoutingApi":37,"./api/ScriptsApi":38,"./api/SearchApi":39,"./api/StationsApi":40,"./api/SuggestApi":41,"./api/TelephonyProvidersEdgeApi":42,"./api/TokensApi":43,"./api/UserRecordingsApi":44,"./api/UsersApi":45,"./api/UtilitiesApi":46,"./api/VoicemailApi":47,"./api/WorkforceManagementApi":48}]},{},[]);

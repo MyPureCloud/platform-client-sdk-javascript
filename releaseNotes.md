@@ -1,40 +1,96 @@
-Platform API version: 1482
+Platform API version: 1524
 
 
-# Major Changes (3 changes)
+# Major Changes (1 change)
 
-**GET /api/v2/conversations/calls/history** (1 change)
+**AnalyticsSession** (1 change)
 
-* Response 200 type was changed from CallConversationEntityListing to CallHistoryConversationEntityListing
-
-**Dependency** (1 change)
-
-* Enum value INBOUNDSHORTMESSAGE was removed from property type
-
-**DependencyObject** (1 change)
-
-* Enum value INBOUNDSHORTMESSAGE was removed from property type
+* Values are now constrained by enum members
 
 
-# Minor Changes (5 changes)
+# Minor Changes (27 changes)
 
-**Dependency** (1 change)
+**PUT /api/v2/users/{userId}/routingskills/{skillId}** (1 change)
 
-* Enum value INBOUNDSHORTMESSAGEFLOW was added to property type
+* Response 409 was added
 
-**DependencyObject** (1 change)
+**/api/v2/mobiledevices/{deviceId}** (4 changes)
 
-* Enum value INBOUNDSHORTMESSAGEFLOW was added to property type
+* Path was added
+* Operation GET was added
+* Operation PUT was added
+* Operation DELETE was added
 
-**CallHistoryConversation** (1 change)
+**/api/v2/billing/reports/billableusage** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**PUT /api/v2/groups/{groupId}** (1 change)
+
+* Response 409 was added
+
+**/api/v2/outbound/settings** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PATCH was added
+
+**POST /api/v2/groups/{groupId}/members** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/organizations/me** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/users/{userId}** (1 change)
+
+* Response 409 was added
+
+**/api/v2/mobiledevices** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**UserDevice** (1 change)
 
 * Model was added
 
-**CallHistoryConversationEntityListing** (1 change)
+**BillingUsage** (1 change)
 
 * Model was added
 
-**CallHistoryParticipant** (1 change)
+**BillingUsageReport** (1 change)
+
+* Model was added
+
+**BillingUsageResource** (1 change)
+
+* Model was added
+
+**IntradayQueue** (1 change)
+
+* Enum value Callback was added to property mediaTypes
+
+**IntradayDataGroup** (1 change)
+
+* Enum value Callback was added to property mediaType
+
+**Recording** (1 change)
+
+* Enum value ERROR was added to property fileState
+
+**OutboundSettings** (1 change)
+
+* Model was added
+
+**CallCommand** (1 change)
+
+* Optional property phoneColumn was added
+
+**DirectoryUserDevicesListing** (1 change)
 
 * Model was added
 

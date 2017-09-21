@@ -18,7 +18,7 @@
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 9.0.0
+   * @version 10.0.0
    */
 
   /**
@@ -1515,6 +1515,28 @@
 
 
     /**
+     * Get the outbound settings for this organization
+     * 
+     */
+    this.getOutboundSettings = function() { 
+
+
+      return this.apiClient.callApi(
+        '/api/v2/outbound/settings', 
+        'GET', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get the Dialer wrap up code mapping.
      * 
      */
@@ -1529,6 +1551,34 @@
         {  }, 
         {  }, 
         null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update the outbound settings for this organization
+     * 
+     * @param {Object} body outboundSettings
+     */
+    this.patchOutboundSettings = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling patchOutboundSettings";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/outbound/settings', 
+        'PATCH', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']

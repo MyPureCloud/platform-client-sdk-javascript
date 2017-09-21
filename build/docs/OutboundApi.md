@@ -58,7 +58,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundSchedulesSequences**](OutboundApi.html#getOutboundSchedulesSequences) | **GET** /api/v2/outbound/schedules/sequences | Query for a list of dialer sequence schedules.
 [**getOutboundSequence**](OutboundApi.html#getOutboundSequence) | **GET** /api/v2/outbound/sequences/{sequenceId} | Get a dialer campaign sequence.
 [**getOutboundSequences**](OutboundApi.html#getOutboundSequences) | **GET** /api/v2/outbound/sequences | Query a list of dialer campaign sequences.
+[**getOutboundSettings**](OutboundApi.html#getOutboundSettings) | **GET** /api/v2/outbound/settings | Get the outbound settings for this organization
 [**getOutboundWrapupcodemappings**](OutboundApi.html#getOutboundWrapupcodemappings) | **GET** /api/v2/outbound/wrapupcodemappings | Get the Dialer wrap up code mapping.
+[**patchOutboundSettings**](OutboundApi.html#patchOutboundSettings) | **PATCH** /api/v2/outbound/settings | Update the outbound settings for this organization
 [**postOutboundAttemptlimits**](OutboundApi.html#postOutboundAttemptlimits) | **POST** /api/v2/outbound/attemptlimits | Create attempt limits
 [**postOutboundAudits**](OutboundApi.html#postOutboundAudits) | **POST** /api/v2/outbound/audits | Retrieves audits for dialer.
 [**postOutboundCallabletimesets**](OutboundApi.html#postOutboundCallabletimesets) | **POST** /api/v2/outbound/callabletimesets | Create callable time set
@@ -2703,6 +2705,48 @@ apiInstance.getOutboundSequences(opts)
 
 **CampaignSequenceEntityListing**
 
+<a name="getOutboundSettings"></a>
+
+# [**OutboundSettings**](OutboundSettings.html) getOutboundSettings()
+
+GET /api/v2/outbound/settings
+
+Get the outbound settings for this organization
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.OutboundApi();
+apiInstance.getOutboundSettings()
+  .then(function(data) {
+    console.log(`getOutboundSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getOutboundSettings');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**OutboundSettings**
+
 <a name="getOutboundWrapupcodemappings"></a>
 
 # [**WrapUpCodeMapping**](WrapUpCodeMapping.html) getOutboundWrapupcodemappings()
@@ -2744,6 +2788,54 @@ This endpoint does not need any parameter.
 ### Return type
 
 **WrapUpCodeMapping**
+
+<a name="patchOutboundSettings"></a>
+
+# void patchOutboundSettings(body)
+
+PATCH /api/v2/outbound/settings
+
+Update the outbound settings for this organization
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.OutboundApi();
+
+var body = {}; // Object | outboundSettings
+
+apiInstance.patchOutboundSettings(body)
+  .then(function() {
+    console.log('patchOutboundSettings returned successfully.');
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling patchOutboundSettings');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | outboundSettings |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="postOutboundAttemptlimits"></a>
 
