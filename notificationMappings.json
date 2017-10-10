@@ -1,6 +1,14 @@
 {
   "notifications": [
     {
+      "topic": "v2.analytics.queues.{id}.observations",
+      "class": "StatsNotificationNotification"
+    },
+    {
+      "topic": "v2.analytics.users.{id}.aggregates",
+      "class": "StatsNotificationNotification"
+    },
+    {
       "topic": "v2.architect.dependencytracking.build",
       "class": "DependencyTrackingBuildNotificationNotification"
     },
@@ -101,6 +109,10 @@
       "class": "CampaignSequenceNotification"
     },
     {
+      "topic": "v2.outbound.settings",
+      "class": "OutboundSettingsNotification"
+    },
+    {
       "topic": "v2.outbound.wrapupcodemappings.{id}",
       "class": "WrapUpCodeMappingNotification"
     },
@@ -143,6 +155,10 @@
     {
       "topic": "v2.routing.queues.{id}.users",
       "class": "QueueMemberNotification"
+    },
+    {
+      "topic": "v2.users.{id}.activity",
+      "class": "AgentActivityNotification"
     },
     {
       "topic": "v2.users.{id}.alerting.heartbeat.alerts",

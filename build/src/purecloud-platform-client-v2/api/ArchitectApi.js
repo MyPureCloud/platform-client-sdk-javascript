@@ -18,7 +18,7 @@
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 10.0.0
+   * @version 11.0.0
    */
 
   /**
@@ -1240,6 +1240,8 @@
      * @param {Object} opts.secure Secure
      * @param {Boolean} opts.deleted Include deleted (default to false)
      * @param {Boolean} opts.includeSchemas Include variable schemas (default to false)
+     * @param {String} opts.publishedAfter Published after
+     * @param {String} opts.publishedBefore Published before
      */
     this.getFlows = function(type, opts) { 
       opts = opts || {};
@@ -1254,7 +1256,7 @@
         '/api/v2/flows', 
         'GET', 
         {  }, 
-        { 'type': type,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'publishVersionId': opts['publishVersionId'],'editableBy': opts['editableBy'],'lockedBy': opts['lockedBy'],'secure': opts['secure'],'deleted': opts['deleted'],'includeSchemas': opts['includeSchemas'] }, 
+        { 'type': type,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'publishVersionId': opts['publishVersionId'],'editableBy': opts['editableBy'],'lockedBy': opts['lockedBy'],'secure': opts['secure'],'deleted': opts['deleted'],'includeSchemas': opts['includeSchemas'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'] }, 
         {  }, 
         {  }, 
         null, 

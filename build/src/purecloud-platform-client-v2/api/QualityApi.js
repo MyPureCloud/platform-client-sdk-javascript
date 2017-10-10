@@ -18,7 +18,7 @@
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 10.0.0
+   * @version 11.0.0
    */
 
   /**
@@ -225,21 +225,19 @@
 
 
     /**
-     * Get a calibration by id.
+     * Get a calibration by id.  Requires either calibrator id or conversation id
      * 
      * @param {String} calibrationId Calibration ID
-     * @param {String} calibratorId calibratorId
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.calibratorId calibratorId
+     * @param {String} opts.conversationId conversationId
      */
-    this.getQualityCalibration = function(calibrationId, calibratorId) { 
+    this.getQualityCalibration = function(calibrationId, opts) { 
+      opts = opts || {};
 
       // verify the required parameter 'calibrationId' is set
       if (calibrationId === undefined || calibrationId === null) {
         throw "Missing the required parameter 'calibrationId' when calling getQualityCalibration";
-      }
-
-      // verify the required parameter 'calibratorId' is set
-      if (calibratorId === undefined || calibratorId === null) {
-        throw "Missing the required parameter 'calibratorId' when calling getQualityCalibration";
       }
 
 
@@ -247,7 +245,7 @@
         '/api/v2/quality/calibrations/{calibrationId}', 
         'GET', 
         { 'calibrationId': calibrationId }, 
-        { 'calibratorId': calibratorId }, 
+        { 'calibratorId': opts['calibratorId'],'conversationId': opts['conversationId'] }, 
         {  }, 
         {  }, 
         null, 

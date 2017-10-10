@@ -1,98 +1,137 @@
-Platform API version: 1524
+Platform API version: 1587
 
 
-# Major Changes (1 change)
+# Major Changes (9 changes)
 
-**AnalyticsSession** (1 change)
+**GET /api/v2/conversations/calls/history** (1 change)
 
-* Values are now constrained by enum members
+* Parameter expand was added
+
+**GET /api/v2/flows** (2 changes)
+
+* Parameter publishedAfter was added
+* Parameter publishedBefore was added
+
+**GET /api/v2/quality/calibrations/{calibrationId}** (1 change)
+
+* Parameter conversationId was added
+
+**CallHistoryParticipant** (5 changes)
+
+* Property user was changed from UriReference to User
+* Property queue was changed from UriReference to Queue
+* Property group was changed from UriReference to Group
+* Property externalContact was changed from UriReference to ExternalContact
+* Property externalOrganization was changed from UriReference to ExternalOrganization
 
 
-# Minor Changes (27 changes)
+# Minor Changes (32 changes)
 
-**PUT /api/v2/users/{userId}/routingskills/{skillId}** (1 change)
-
-* Response 409 was added
-
-**/api/v2/mobiledevices/{deviceId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/billing/reports/billableusage** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**PUT /api/v2/groups/{groupId}** (1 change)
-
-* Response 409 was added
-
-**/api/v2/outbound/settings** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**POST /api/v2/groups/{groupId}/members** (1 change)
-
-* Response 409 was added
-
-**PUT /api/v2/organizations/me** (1 change)
-
-* Response 409 was added
-
-**PATCH /api/v2/users/{userId}** (1 change)
-
-* Response 409 was added
-
-**/api/v2/mobiledevices** (3 changes)
+**/api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups** (3 changes)
 
 * Path was added
 * Operation GET was added
 * Operation POST was added
 
-**UserDevice** (1 change)
+**/api/v2/telephony/providers/edges/metrics** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/telephony/providers/edges/trunks/{trunkId}/metrics** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/telephony/providers/edges/trunks/metrics** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/telephony/providers/edges/{edgeId}/metrics** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/conversations/{conversationId}/participants/{participantId}/digits** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**GET /api/v2/quality/calibrations/{calibrationId}** (1 change)
+
+* Parameter calibratorId was made optional
+
+**CreateAsgRequest** (1 change)
 
 * Model was added
 
-**BillingUsage** (1 change)
+**EdgeMetrics** (1 change)
 
 * Model was added
 
-**BillingUsageReport** (1 change)
+**EdgeMetricsDisk** (1 change)
 
 * Model was added
 
-**BillingUsageResource** (1 change)
+**EdgeMetricsMemory** (1 change)
 
 * Model was added
 
-**IntradayQueue** (1 change)
-
-* Enum value Callback was added to property mediaTypes
-
-**IntradayDataGroup** (1 change)
-
-* Enum value Callback was added to property mediaType
-
-**Recording** (1 change)
-
-* Enum value ERROR was added to property fileState
-
-**OutboundSettings** (1 change)
+**EdgeMetricsNetwork** (1 change)
 
 * Model was added
 
-**CallCommand** (1 change)
+**EdgeMetricsProcessor** (1 change)
 
-* Optional property phoneColumn was added
+* Model was added
 
-**DirectoryUserDevicesListing** (1 change)
+**EdgeMetricsSubsystem** (1 change)
+
+* Model was added
+
+**Annotation** (4 changes)
+
+* Optional property absoluteLocation was added
+* Optional property absoluteDurationMs was added
+* Optional property recordingLocation was added
+* Optional property recordingDurationMs was added
+
+**AsgInfoResponse** (1 change)
+
+* Model was added
+
+**InstanceInfo** (1 change)
+
+* Model was added
+
+**TrunkMetrics** (1 change)
+
+* Model was added
+
+**TrunkMetricsCalls** (1 change)
+
+* Model was added
+
+**TrunkMetricsQoS** (1 change)
+
+* Model was added
+
+**Campaign** (1 change)
+
+* Optional property alwaysRunning was added
+
+**Digits** (1 change)
 
 * Model was added
 
 
-# Point Changes (0 changes)
+# Point Changes (2 changes)
+
+**GET /api/v2/conversations/calls/history** (1 change)
+
+* Description was changed for parameter pageSize
+
+**GET /api/v2/quality/calibrations/{calibrationId}** (1 change)
+
+* Summary was changed

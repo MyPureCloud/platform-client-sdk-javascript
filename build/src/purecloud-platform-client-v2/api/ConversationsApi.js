@@ -18,7 +18,7 @@
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 10.0.0
+   * @version 11.0.0
    */
 
   /**
@@ -539,9 +539,10 @@
      * Get call history
      * 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageSize Page size, maximum 50 (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {String} opts.interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39;
+     * @param {Array.<String>} opts.expand Which fields, if any, to expand.
      */
     this.getConversationsCallsHistory = function(opts) { 
       opts = opts || {};
@@ -551,7 +552,7 @@
         '/api/v2/conversations/calls/history', 
         'GET', 
         {  }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'interval': opts['interval'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'interval': opts['interval'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
         {  }, 
         {  }, 
         null, 
@@ -2065,6 +2066,43 @@
 
       return this.apiClient.callApi(
         '/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks', 
+        'POST', 
+        { 'conversationId': conversationId,'participantId': participantId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Sends DTMF to the participant
+     * 
+     * @param {String} conversationId conversation ID
+     * @param {String} participantId participant ID
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body Digits
+     */
+    this.postConversationParticipantDigits = function(conversationId, participantId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling postConversationParticipantDigits";
+      }
+
+      // verify the required parameter 'participantId' is set
+      if (participantId === undefined || participantId === null) {
+        throw "Missing the required parameter 'participantId' when calling postConversationParticipantDigits";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/{conversationId}/participants/{participantId}/digits', 
         'POST', 
         { 'conversationId': conversationId,'participantId': participantId }, 
         {  }, 

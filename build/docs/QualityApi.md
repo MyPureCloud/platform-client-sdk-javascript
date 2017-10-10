@@ -13,7 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteQualityKeywordset**](QualityApi.html#deleteQualityKeywordset) | **DELETE** /api/v2/quality/keywordsets/{keywordSetId} | Delete a keywordSet by id.
 [**deleteQualityKeywordsets**](QualityApi.html#deleteQualityKeywordsets) | **DELETE** /api/v2/quality/keywordsets | Delete keyword sets
 [**getQualityAgentsActivity**](QualityApi.html#getQualityAgentsActivity) | **GET** /api/v2/quality/agents/activity | Gets a list of Agent Activities
-[**getQualityCalibration**](QualityApi.html#getQualityCalibration) | **GET** /api/v2/quality/calibrations/{calibrationId} | Get a calibration by id.
+[**getQualityCalibration**](QualityApi.html#getQualityCalibration) | **GET** /api/v2/quality/calibrations/{calibrationId} | Get a calibration by id.  Requires either calibrator id or conversation id
 [**getQualityCalibrations**](QualityApi.html#getQualityCalibrations) | **GET** /api/v2/quality/calibrations | Get the list of calibrations
 [**getQualityConversationAudits**](QualityApi.html#getQualityConversationAudits) | **GET** /api/v2/quality/conversations/{conversationId}/audits | Get audits for conversation or recording
 [**getQualityConversationEvaluation**](QualityApi.html#getQualityConversationEvaluation) | **GET** /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId} | Get an evaluation
@@ -363,11 +363,11 @@ apiInstance.getQualityAgentsActivity(opts)
 
 <a name="getQualityCalibration"></a>
 
-# [**Calibration**](Calibration.html) getQualityCalibration(calibrationId, calibratorId)
+# [**Calibration**](Calibration.html) getQualityCalibration(calibrationId, opts)
 
 GET /api/v2/quality/calibrations/{calibrationId}
 
-Get a calibration by id.
+Get a calibration by id.  Requires either calibrator id or conversation id
 
 
 
@@ -386,9 +386,11 @@ var apiInstance = new platformClient.QualityApi();
 
 var calibrationId = "calibrationId_example"; // String | Calibration ID
 
-var calibratorId = "calibratorId_example"; // String | calibratorId
-
-apiInstance.getQualityCalibration(calibrationId, calibratorId)
+var opts = { 
+  'calibratorId': "calibratorId_example", // String | calibratorId
+  'conversationId': "conversationId_example" // String | conversationId
+};
+apiInstance.getQualityCalibration(calibrationId, opts)
   .then(function(data) {
     console.log(`getQualityCalibration success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -405,7 +407,8 @@ apiInstance.getQualityCalibration(calibrationId, calibratorId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **calibrationId** | **String** | Calibration ID |  |
- **calibratorId** | **String** | calibratorId |  |
+ **calibratorId** | **String** | calibratorId | [optional]  |
+ **conversationId** | **String** | conversationId | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

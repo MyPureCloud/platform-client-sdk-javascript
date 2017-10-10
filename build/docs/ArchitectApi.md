@@ -2127,7 +2127,9 @@ var opts = {
   'lockedBy': "lockedBy_example", // String | Locked by
   'secure': "secure_example", // String | Secure
   'deleted': false, // Boolean | Include deleted
-  'includeSchemas': false // Boolean | Include variable schemas
+  'includeSchemas': false, // Boolean | Include variable schemas
+  'publishedAfter': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01", // String | Published after
+  'publishedBefore': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01" // String | Published before
 };
 apiInstance.getFlows(type, opts)
   .then(function(data) {
@@ -2160,6 +2162,8 @@ apiInstance.getFlows(type, opts)
  **secure** | **String** | Secure | [optional] <br />**Values**: any, checkedin, published |
  **deleted** | **Boolean** | Include deleted | [optional] [default to false] |
  **includeSchemas** | **Boolean** | Include variable schemas | [optional] [default to false] |
+ **publishedAfter** | **String** | Published after | [optional]  |
+ **publishedBefore** | **String** | Published before | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

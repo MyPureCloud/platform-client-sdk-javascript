@@ -67,6 +67,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsConversationsAggregatesQuery**](ConversationsApi.html#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
 [**postAnalyticsConversationsDetailsQuery**](ConversationsApi.html#postAnalyticsConversationsDetailsQuery) | **POST** /api/v2/analytics/conversations/details/query | Query for conversation details
 [**postConversationParticipantCallbacks**](ConversationsApi.html#postConversationParticipantCallbacks) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks | Create a new callback for the specified participant on the conversation.
+[**postConversationParticipantDigits**](ConversationsApi.html#postConversationParticipantDigits) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/digits | Sends DTMF to the participant
 [**postConversationParticipantReplace**](ConversationsApi.html#postConversationParticipantReplace) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationsCall**](ConversationsApi.html#postConversationsCall) | **POST** /api/v2/conversations/calls/{conversationId} | Place a new call as part of a callback conversation.
 [**postConversationsCallParticipantConsult**](ConversationsApi.html#postConversationsCallParticipantConsult) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Initiate and update consult transfer
@@ -911,9 +912,10 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.ConversationsApi();
 
 var opts = { 
-  'pageSize': 25, // Number | Page size
+  'pageSize': 25, // Number | Page size, maximum 50
   'pageNumber': 1, // Number | Page number
-  'interval': "interval_example" // String | Interval string; format is ISO-8601. Separate start and end times with forward slash '/'
+  'interval': "interval_example", // String | Interval string; format is ISO-8601. Separate start and end times with forward slash '/'
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
 apiInstance.getConversationsCallsHistory(opts)
   .then(function(data) {
@@ -931,9 +933,10 @@ apiInstance.getConversationsCallsHistory(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageSize** | **Number** | Page size, maximum 50 | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **interval** | **String** | Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; | [optional]  |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: externalorganization, externalcontact, user, queue, group |
 {: class="table table-striped"}
 
 ### Return type
@@ -3157,6 +3160,61 @@ apiInstance.postConversationParticipantCallbacks(conversationId, participantId, 
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="postConversationParticipantDigits"></a>
+
+# void postConversationParticipantDigits(conversationId, participantId, opts)
+
+POST /api/v2/conversations/{conversationId}/participants/{participantId}/digits
+
+Sends DTMF to the participant
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ConversationsApi();
+
+var conversationId = "conversationId_example"; // String | conversation ID
+
+var participantId = "participantId_example"; // String | participant ID
+
+var opts = { 
+  'body': {} // Object | Digits
+};
+apiInstance.postConversationParticipantDigits(conversationId, participantId, opts)
+  .then(function() {
+    console.log('postConversationParticipantDigits returned successfully.');
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling postConversationParticipantDigits');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
+ **body** | **Object** | Digits | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

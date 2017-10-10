@@ -32,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTelephonyProvidersEdgeLogicalinterface**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeLogicalinterface) | **GET** /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId} | Get an edge logical interface
 [**getTelephonyProvidersEdgeLogicalinterfaces**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeLogicalinterfaces) | **GET** /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces | Get edge logical interfaces.
 [**getTelephonyProvidersEdgeLogsJob**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeLogsJob) | **GET** /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId} | Get an Edge logs job.
+[**getTelephonyProvidersEdgeMetrics**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeMetrics) | **GET** /api/v2/telephony/providers/edges/{edgeId}/metrics | Get the edge metrics.
 [**getTelephonyProvidersEdgePhysicalinterface**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgePhysicalinterface) | **GET** /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces/{interfaceId} | Get edge physical interface.
 [**getTelephonyProvidersEdgePhysicalinterfaces**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgePhysicalinterfaces) | **GET** /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces | Retrieve a list of all configured physical interfaces from a specific edge.
 [**getTelephonyProvidersEdgeSetuppackage**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeSetuppackage) | **GET** /api/v2/telephony/providers/edges/{edgeId}/setuppackage | Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge.
@@ -62,6 +63,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTelephonyProvidersEdgesLines**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesLines) | **GET** /api/v2/telephony/providers/edges/lines | Get a list of Lines
 [**getTelephonyProvidersEdgesLinesTemplate**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesLinesTemplate) | **GET** /api/v2/telephony/providers/edges/lines/template | Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance
 [**getTelephonyProvidersEdgesLogicalinterfaces**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesLogicalinterfaces) | **GET** /api/v2/telephony/providers/edges/logicalinterfaces | Get edge logical interfaces.
+[**getTelephonyProvidersEdgesMetrics**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesMetrics) | **GET** /api/v2/telephony/providers/edges/metrics | Get the metrics for a list of edges.
 [**getTelephonyProvidersEdgesOutboundroute**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesOutboundroute) | **GET** /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} | Get outbound route
 [**getTelephonyProvidersEdgesOutboundroutes**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesOutboundroutes) | **GET** /api/v2/telephony/providers/edges/outboundroutes | Get outbound routes
 [**getTelephonyProvidersEdgesPhone**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesPhone) | **GET** /api/v2/telephony/providers/edges/phones/{phoneId} | Get a Phone by ID
@@ -73,6 +75,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTelephonyProvidersEdgesPhonesTemplate**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesPhonesTemplate) | **GET** /api/v2/telephony/providers/edges/phones/template | Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance
 [**getTelephonyProvidersEdgesPhysicalinterfaces**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesPhysicalinterfaces) | **GET** /api/v2/telephony/providers/edges/physicalinterfaces | Get physical interfaces for edges.
 [**getTelephonyProvidersEdgesSite**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSite) | **GET** /api/v2/telephony/providers/edges/sites/{siteId} | Get a Site by ID.
+[**getTelephonyProvidersEdgesSiteAutoscalinggroups**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteAutoscalinggroups) | **GET** /api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups | Gets the basic information about an asg in a specified site
 [**getTelephonyProvidersEdgesSiteNumberplan**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteNumberplan) | **GET** /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/{numberPlanId} | Get a Number Plan by ID.
 [**getTelephonyProvidersEdgesSiteNumberplans**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteNumberplans) | **GET** /api/v2/telephony/providers/edges/sites/{siteId}/numberplans | Get the list of Number Plans for this Site.
 [**getTelephonyProvidersEdgesSiteNumberplansClassifications**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteNumberplansClassifications) | **GET** /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/classifications | Get a list of Classifications for this Site
@@ -81,11 +84,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTelephonyProvidersEdgesSites**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSites) | **GET** /api/v2/telephony/providers/edges/sites | Get the list of Sites.
 [**getTelephonyProvidersEdgesTimezones**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTimezones) | **GET** /api/v2/telephony/providers/edges/timezones | Get a list of Edge-compatible time zones
 [**getTelephonyProvidersEdgesTrunk**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunk) | **GET** /api/v2/telephony/providers/edges/trunks/{trunkId} | Get a Trunk by ID
+[**getTelephonyProvidersEdgesTrunkMetrics**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunkMetrics) | **GET** /api/v2/telephony/providers/edges/trunks/{trunkId}/metrics | Get the trunk metrics.
 [**getTelephonyProvidersEdgesTrunkbasesetting**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunkbasesetting) | **GET** /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId} | Get a Trunk Base Settings object by ID
 [**getTelephonyProvidersEdgesTrunkbasesettings**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunkbasesettings) | **GET** /api/v2/telephony/providers/edges/trunkbasesettings | Get Trunk Base Settings listing
 [**getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases) | **GET** /api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases | Get a list of available makes and models to create a new Trunk Base Settings
 [**getTelephonyProvidersEdgesTrunkbasesettingsTemplate**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunkbasesettingsTemplate) | **GET** /api/v2/telephony/providers/edges/trunkbasesettings/template | Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
 [**getTelephonyProvidersEdgesTrunks**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunks) | **GET** /api/v2/telephony/providers/edges/trunks | Get the list of available trunks.
+[**getTelephonyProvidersEdgesTrunksMetrics**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunksMetrics) | **GET** /api/v2/telephony/providers/edges/trunks/metrics | Get the metrics for a list of trunks.
 [**getTelephonyProvidersEdgesTrunkswithrecording**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunkswithrecording) | **GET** /api/v2/telephony/providers/edges/trunkswithrecording | Get Counts of trunks that have recording disabled or enabled
 [**postTelephonyProvidersEdgeLogicalinterfaces**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeLogicalinterfaces) | **POST** /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces | Create an edge logical interface.
 [**postTelephonyProvidersEdgeLogsJobUpload**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeLogsJobUpload) | **POST** /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload | Request that the specified fileIds be uploaded from the Edge.
@@ -106,6 +111,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postTelephonyProvidersEdgesPhonebasesettings**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesPhonebasesettings) | **POST** /api/v2/telephony/providers/edges/phonebasesettings | Create a new Phone Base Settings object
 [**postTelephonyProvidersEdgesPhones**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesPhones) | **POST** /api/v2/telephony/providers/edges/phones | Create a new Phone
 [**postTelephonyProvidersEdgesPhonesReboot**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesPhonesReboot) | **POST** /api/v2/telephony/providers/edges/phones/reboot | Reboot Multiple Phones
+[**postTelephonyProvidersEdgesSiteAutoscalinggroups**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSiteAutoscalinggroups) | **POST** /api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups | Creates an ASG for the specified site
 [**postTelephonyProvidersEdgesSiteOutboundroutes**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSiteOutboundroutes) | **POST** /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes | Create outbound route
 [**postTelephonyProvidersEdgesSiteRebalance**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSiteRebalance) | **POST** /api/v2/telephony/providers/edges/sites/{siteId}/rebalance | Triggers the rebalance operation.
 [**postTelephonyProvidersEdgesSites**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSites) | **POST** /api/v2/telephony/providers/edges/sites | Create a Site.
@@ -1402,6 +1408,54 @@ apiInstance.getTelephonyProvidersEdgeLogsJob(edgeId, jobId)
 ### Return type
 
 **EdgeLogsJob**
+
+<a name="getTelephonyProvidersEdgeMetrics"></a>
+
+# [**EdgeMetrics**](EdgeMetrics.html) getTelephonyProvidersEdgeMetrics(edgeId)
+
+GET /api/v2/telephony/providers/edges/{edgeId}/metrics
+
+Get the edge metrics.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+var edgeId = "edgeId_example"; // String | Edge Id
+
+apiInstance.getTelephonyProvidersEdgeMetrics(edgeId)
+  .then(function(data) {
+    console.log(`getTelephonyProvidersEdgeMetrics success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getTelephonyProvidersEdgeMetrics');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **edgeId** | **String** | Edge Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EdgeMetrics**
 
 <a name="getTelephonyProvidersEdgePhysicalinterface"></a>
 
@@ -2928,6 +2982,54 @@ apiInstance.getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, opts)
 
 **LogicalInterfaceEntityListing**
 
+<a name="getTelephonyProvidersEdgesMetrics"></a>
+
+# [**[EdgeMetrics]**](EdgeMetrics.html) getTelephonyProvidersEdgesMetrics(edgeIds)
+
+GET /api/v2/telephony/providers/edges/metrics
+
+Get the metrics for a list of edges.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+var edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's
+
+apiInstance.getTelephonyProvidersEdgesMetrics(edgeIds)
+  .then(function(data) {
+    console.log(`getTelephonyProvidersEdgesMetrics success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getTelephonyProvidersEdgesMetrics');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **edgeIds** | **String** | Comma separated list of Edge Id&#39;s |  |
+{: class="table table-striped"}
+
+### Return type
+
+**[EdgeMetrics]**
+
 <a name="getTelephonyProvidersEdgesOutboundroute"></a>
 
 # [**OutboundRoute**](OutboundRoute.html) getTelephonyProvidersEdgesOutboundroute(outboundRouteId)
@@ -3506,6 +3608,54 @@ apiInstance.getTelephonyProvidersEdgesSite(siteId)
 
 **Site**
 
+<a name="getTelephonyProvidersEdgesSiteAutoscalinggroups"></a>
+
+# [**AsgInfoResponse**](AsgInfoResponse.html) getTelephonyProvidersEdgesSiteAutoscalinggroups(siteId)
+
+GET /api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups
+
+Gets the basic information about an asg in a specified site
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+var siteId = "siteId_example"; // String | Site id associated with the asg
+
+apiInstance.getTelephonyProvidersEdgesSiteAutoscalinggroups(siteId)
+  .then(function(data) {
+    console.log(`getTelephonyProvidersEdgesSiteAutoscalinggroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getTelephonyProvidersEdgesSiteAutoscalinggroups');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **siteId** | **String** | Site id associated with the asg |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsgInfoResponse**
+
 <a name="getTelephonyProvidersEdgesSiteNumberplan"></a>
 
 # [**NumberPlan**](NumberPlan.html) getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId)
@@ -3926,6 +4076,54 @@ apiInstance.getTelephonyProvidersEdgesTrunk(trunkId)
 
 **Trunk**
 
+<a name="getTelephonyProvidersEdgesTrunkMetrics"></a>
+
+# [**TrunkMetrics**](TrunkMetrics.html) getTelephonyProvidersEdgesTrunkMetrics(trunkId)
+
+GET /api/v2/telephony/providers/edges/trunks/{trunkId}/metrics
+
+Get the trunk metrics.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+var trunkId = "trunkId_example"; // String | Trunk Id
+
+apiInstance.getTelephonyProvidersEdgesTrunkMetrics(trunkId)
+  .then(function(data) {
+    console.log(`getTelephonyProvidersEdgesTrunkMetrics success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getTelephonyProvidersEdgesTrunkMetrics');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **trunkId** | **String** | Trunk Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**TrunkMetrics**
+
 <a name="getTelephonyProvidersEdgesTrunkbasesetting"></a>
 
 # [**TrunkBase**](TrunkBase.html) getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, opts)
@@ -4204,6 +4402,54 @@ apiInstance.getTelephonyProvidersEdgesTrunks(opts)
 ### Return type
 
 **TrunkEntityListing**
+
+<a name="getTelephonyProvidersEdgesTrunksMetrics"></a>
+
+# [**[TrunkMetrics]**](TrunkMetrics.html) getTelephonyProvidersEdgesTrunksMetrics(trunkIds)
+
+GET /api/v2/telephony/providers/edges/trunks/metrics
+
+Get the metrics for a list of trunks.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+var trunkIds = "trunkIds_example"; // String | Comma separated list of Trunk Id's
+
+apiInstance.getTelephonyProvidersEdgesTrunksMetrics(trunkIds)
+  .then(function(data) {
+    console.log(`getTelephonyProvidersEdgesTrunksMetrics success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getTelephonyProvidersEdgesTrunksMetrics');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **trunkIds** | **String** | Comma separated list of Trunk Id&#39;s |  |
+{: class="table table-striped"}
+
+### Return type
+
+**[TrunkMetrics]**
 
 <a name="getTelephonyProvidersEdgesTrunkswithrecording"></a>
 
@@ -5188,6 +5434,57 @@ apiInstance.postTelephonyProvidersEdgesPhonesReboot(body)
 ### Return type
 
 void (no response body)
+
+<a name="postTelephonyProvidersEdgesSiteAutoscalinggroups"></a>
+
+# **&#39;String&#39;** postTelephonyProvidersEdgesSiteAutoscalinggroups(siteId, body)
+
+POST /api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups
+
+Creates an ASG for the specified site
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+var siteId = "siteId_example"; // String | Site that will be associated with the asg
+
+var body = {}; // Object | CreateAsgRequest
+
+apiInstance.postTelephonyProvidersEdgesSiteAutoscalinggroups(siteId, body)
+  .then(function(data) {
+    console.log(`postTelephonyProvidersEdgesSiteAutoscalinggroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling postTelephonyProvidersEdgesSiteAutoscalinggroups');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **siteId** | **String** | Site that will be associated with the asg |  |
+ **body** | **Object** | CreateAsgRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**&#39;String&#39;**
 
 <a name="postTelephonyProvidersEdgesSiteOutboundroutes"></a>
 

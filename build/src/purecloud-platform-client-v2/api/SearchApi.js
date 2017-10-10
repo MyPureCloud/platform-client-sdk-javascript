@@ -18,7 +18,7 @@
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 10.0.0
+   * @version 11.0.0
    */
 
   /**

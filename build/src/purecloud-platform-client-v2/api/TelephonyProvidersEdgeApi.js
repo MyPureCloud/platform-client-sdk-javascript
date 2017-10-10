@@ -18,7 +18,7 @@
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 10.0.0
+   * @version 11.0.0
    */
 
   /**
@@ -816,6 +816,34 @@
         '/api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}', 
         'GET', 
         { 'edgeId': edgeId,'jobId': jobId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get the edge metrics.
+     * 
+     * @param {String} edgeId Edge Id
+     */
+    this.getTelephonyProvidersEdgeMetrics = function(edgeId) { 
+
+      // verify the required parameter 'edgeId' is set
+      if (edgeId === undefined || edgeId === null) {
+        throw "Missing the required parameter 'edgeId' when calling getTelephonyProvidersEdgeMetrics";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/telephony/providers/edges/{edgeId}/metrics', 
+        'GET', 
+        { 'edgeId': edgeId }, 
         {  }, 
         {  }, 
         {  }, 
@@ -1682,6 +1710,34 @@
 
 
     /**
+     * Get the metrics for a list of edges.
+     * 
+     * @param {String} edgeIds Comma separated list of Edge Id&#39;s
+     */
+    this.getTelephonyProvidersEdgesMetrics = function(edgeIds) { 
+
+      // verify the required parameter 'edgeIds' is set
+      if (edgeIds === undefined || edgeIds === null) {
+        throw "Missing the required parameter 'edgeIds' when calling getTelephonyProvidersEdgesMetrics";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/telephony/providers/edges/metrics', 
+        'GET', 
+        {  }, 
+        { 'edgeIds': edgeIds }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get outbound route
      * 
      * @param {String} outboundRouteId Outbound route ID
@@ -2001,6 +2057,34 @@
 
 
     /**
+     * Gets the basic information about an asg in a specified site
+     * 
+     * @param {String} siteId Site id associated with the asg
+     */
+    this.getTelephonyProvidersEdgesSiteAutoscalinggroups = function(siteId) { 
+
+      // verify the required parameter 'siteId' is set
+      if (siteId === undefined || siteId === null) {
+        throw "Missing the required parameter 'siteId' when calling getTelephonyProvidersEdgesSiteAutoscalinggroups";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups', 
+        'GET', 
+        { 'siteId': siteId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get a Number Plan by ID.
      * 
      * @param {String} siteId Site ID
@@ -2247,6 +2331,34 @@
 
 
     /**
+     * Get the trunk metrics.
+     * 
+     * @param {String} trunkId Trunk Id
+     */
+    this.getTelephonyProvidersEdgesTrunkMetrics = function(trunkId) { 
+
+      // verify the required parameter 'trunkId' is set
+      if (trunkId === undefined || trunkId === null) {
+        throw "Missing the required parameter 'trunkId' when calling getTelephonyProvidersEdgesTrunkMetrics";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/telephony/providers/edges/trunks/{trunkId}/metrics', 
+        'GET', 
+        { 'trunkId': trunkId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get a Trunk Base Settings object by ID
      * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
      * @param {String} trunkBaseSettingsId Trunk Base ID
@@ -2386,6 +2498,34 @@
         'GET', 
         {  }, 
         { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'edge.id': opts['edgeId'],'trunkBase.id': opts['trunkBaseId'],'trunkType': opts['trunkType'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get the metrics for a list of trunks.
+     * 
+     * @param {String} trunkIds Comma separated list of Trunk Id&#39;s
+     */
+    this.getTelephonyProvidersEdgesTrunksMetrics = function(trunkIds) { 
+
+      // verify the required parameter 'trunkIds' is set
+      if (trunkIds === undefined || trunkIds === null) {
+        throw "Missing the required parameter 'trunkIds' when calling getTelephonyProvidersEdgesTrunksMetrics";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/telephony/providers/edges/trunks/metrics', 
+        'GET', 
+        {  }, 
+        { 'trunkIds': trunkIds }, 
         {  }, 
         {  }, 
         null, 
@@ -2978,6 +3118,40 @@
         '/api/v2/telephony/providers/edges/phones/reboot', 
         'POST', 
         {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Creates an ASG for the specified site
+     * 
+     * @param {String} siteId Site that will be associated with the asg
+     * @param {Object} body CreateAsgRequest
+     */
+    this.postTelephonyProvidersEdgesSiteAutoscalinggroups = function(siteId, body) { 
+
+      // verify the required parameter 'siteId' is set
+      if (siteId === undefined || siteId === null) {
+        throw "Missing the required parameter 'siteId' when calling postTelephonyProvidersEdgesSiteAutoscalinggroups";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postTelephonyProvidersEdgesSiteAutoscalinggroups";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups', 
+        'POST', 
+        { 'siteId': siteId }, 
         {  }, 
         {  }, 
         {  }, 
