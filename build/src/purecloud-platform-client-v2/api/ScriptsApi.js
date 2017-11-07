@@ -18,7 +18,7 @@
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -66,8 +66,11 @@
      * 
      * @param {String} scriptId Script ID
      * @param {String} pageId Page ID
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
      */
-    this.getScriptPage = function(scriptId, pageId) { 
+    this.getScriptPage = function(scriptId, pageId, opts) { 
+      opts = opts || {};
 
       // verify the required parameter 'scriptId' is set
       if (scriptId === undefined || scriptId === null) {
@@ -84,7 +87,7 @@
         '/api/v2/scripts/{scriptId}/pages/{pageId}', 
         'GET', 
         { 'scriptId': scriptId,'pageId': pageId }, 
-        {  }, 
+        { 'scriptDataVersion': opts['scriptDataVersion'] }, 
         {  }, 
         {  }, 
         null, 
@@ -99,8 +102,11 @@
      * Get the list of pages
      * 
      * @param {String} scriptId Script ID
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
      */
-    this.getScriptPages = function(scriptId) { 
+    this.getScriptPages = function(scriptId, opts) { 
+      opts = opts || {};
 
       // verify the required parameter 'scriptId' is set
       if (scriptId === undefined || scriptId === null) {
@@ -112,7 +118,7 @@
         '/api/v2/scripts/{scriptId}/pages', 
         'GET', 
         { 'scriptId': scriptId }, 
-        {  }, 
+        { 'scriptDataVersion': opts['scriptDataVersion'] }, 
         {  }, 
         {  }, 
         null, 
@@ -135,6 +141,7 @@
      * @param {String} opts.flowId Secure flow id filter
      * @param {Object} opts.sortBy SortBy
      * @param {Object} opts.sortOrder SortOrder
+     * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
      */
     this.getScripts = function(opts) { 
       opts = opts || {};
@@ -144,7 +151,7 @@
         '/api/v2/scripts', 
         'GET', 
         {  }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'scriptDataVersion': opts['scriptDataVersion'] }, 
         {  }, 
         {  }, 
         null, 
@@ -158,6 +165,7 @@
     /**
      * Get the published scripts.
      * 
+     * @param {String} scriptId Script ID
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
@@ -165,16 +173,22 @@
      * @param {String} opts.name Name filter
      * @param {String} opts.feature Feature filter
      * @param {String} opts.flowId Secure flow id filter
+     * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
      */
-    this.getScriptsPublished = function(opts) { 
+    this.getScriptsPublished = function(scriptId, opts) { 
       opts = opts || {};
+
+      // verify the required parameter 'scriptId' is set
+      if (scriptId === undefined || scriptId === null) {
+        throw "Missing the required parameter 'scriptId' when calling getScriptsPublished";
+      }
 
 
       return this.apiClient.callApi(
         '/api/v2/scripts/published', 
         'GET', 
-        {  }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'] }, 
+        { 'scriptId': scriptId }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'] }, 
         {  }, 
         {  }, 
         null, 
@@ -189,8 +203,11 @@
      * Get the published script.
      * 
      * @param {String} scriptId Script ID
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
      */
-    this.getScriptsPublishedScriptId = function(scriptId) { 
+    this.getScriptsPublishedScriptId = function(scriptId, opts) { 
+      opts = opts || {};
 
       // verify the required parameter 'scriptId' is set
       if (scriptId === undefined || scriptId === null) {
@@ -202,7 +219,7 @@
         '/api/v2/scripts/published/{scriptId}', 
         'GET', 
         { 'scriptId': scriptId }, 
-        {  }, 
+        { 'scriptDataVersion': opts['scriptDataVersion'] }, 
         {  }, 
         {  }, 
         null, 
@@ -218,8 +235,11 @@
      * 
      * @param {String} scriptId Script ID
      * @param {String} pageId Page ID
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
      */
-    this.getScriptsPublishedScriptIdPage = function(scriptId, pageId) { 
+    this.getScriptsPublishedScriptIdPage = function(scriptId, pageId, opts) { 
+      opts = opts || {};
 
       // verify the required parameter 'scriptId' is set
       if (scriptId === undefined || scriptId === null) {
@@ -236,7 +256,7 @@
         '/api/v2/scripts/published/{scriptId}/pages/{pageId}', 
         'GET', 
         { 'scriptId': scriptId,'pageId': pageId }, 
-        {  }, 
+        { 'scriptDataVersion': opts['scriptDataVersion'] }, 
         {  }, 
         {  }, 
         null, 
@@ -251,8 +271,12 @@
      * Get the list of published pages
      * 
      * @param {String} scriptId Script ID
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.foo  (default to 25)
+     * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
      */
-    this.getScriptsPublishedScriptIdPages = function(scriptId) { 
+    this.getScriptsPublishedScriptIdPages = function(scriptId, opts) { 
+      opts = opts || {};
 
       // verify the required parameter 'scriptId' is set
       if (scriptId === undefined || scriptId === null) {
@@ -264,7 +288,7 @@
         '/api/v2/scripts/published/{scriptId}/pages', 
         'GET', 
         { 'scriptId': scriptId }, 
-        {  }, 
+        { 'foo': opts['foo'],'scriptDataVersion': opts['scriptDataVersion'] }, 
         {  }, 
         {  }, 
         null, 
@@ -283,6 +307,7 @@
      * @param {String} opts.input input
      * @param {String} opts.output output
      * @param {String} opts.type type
+     * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
      */
     this.getScriptsPublishedScriptIdVariables = function(scriptId, opts) { 
       opts = opts || {};
@@ -297,7 +322,7 @@
         '/api/v2/scripts/published/{scriptId}/variables', 
         'GET', 
         { 'scriptId': scriptId }, 
-        { 'input': opts['input'],'output': opts['output'],'type': opts['type'] }, 
+        { 'input': opts['input'],'output': opts['output'],'type': opts['type'],'scriptDataVersion': opts['scriptDataVersion'] }, 
         {  }, 
         {  }, 
         null, 

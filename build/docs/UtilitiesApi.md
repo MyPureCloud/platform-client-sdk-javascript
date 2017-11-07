@@ -14,7 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="getDate"></a>
 
-# [**ServerDate**](ServerDate.html) getDate()
+# ServerDate getDate()
 
 GET /api/v2/date
 
@@ -56,7 +56,7 @@ This endpoint does not need any parameter.
 
 <a name="getTimezones"></a>
 
-# [**TimeZoneEntityListing**](TimeZoneEntityListing.html) getTimezones(opts)
+# TimeZoneEntityListing getTimezones(opts)
 
 GET /api/v2/timezones
 
@@ -107,7 +107,7 @@ apiInstance.getTimezones(opts)
 
 <a name="postCertificateDetails"></a>
 
-# [**ParsedCertificate**](ParsedCertificate.html) postCertificateDetails(body)
+# ParsedCertificate postCertificateDetails(body)
 
 POST /api/v2/certificate/details
 

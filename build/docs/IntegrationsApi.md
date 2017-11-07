@@ -128,7 +128,7 @@ void (no response body)
 
 <a name="getIntegrationsAction"></a>
 
-# [**Action**](Action.html) getIntegrationsAction(actionId, opts)
+# Action getIntegrationsAction(actionId, opts)
 
 GET /api/v2/integrations/actions/{actionId}
 
@@ -182,7 +182,7 @@ apiInstance.getIntegrationsAction(actionId, opts)
 
 <a name="getIntegrationsActionDraft"></a>
 
-# [**Action**](Action.html) getIntegrationsActionDraft(actionId, opts)
+# Action getIntegrationsActionDraft(actionId, opts)
 
 GET /api/v2/integrations/actions/{actionId}/draft
 
@@ -236,7 +236,7 @@ apiInstance.getIntegrationsActionDraft(actionId, opts)
 
 <a name="getIntegrationsActionDraftSchema"></a>
 
-# [**JsonSchemaDocument**](JsonSchemaDocument.html) getIntegrationsActionDraftSchema(actionId, fileName)
+# JsonSchemaDocument getIntegrationsActionDraftSchema(actionId, fileName)
 
 GET /api/v2/integrations/actions/{actionId}/draft/schemas/{fileName}
 
@@ -338,7 +338,7 @@ apiInstance.getIntegrationsActionDraftTemplate(actionId, fileName)
 
 <a name="getIntegrationsActionDraftValidation"></a>
 
-# [**DraftValidationResult**](DraftValidationResult.html) getIntegrationsActionDraftValidation(actionId)
+# DraftValidationResult getIntegrationsActionDraftValidation(actionId)
 
 GET /api/v2/integrations/actions/{actionId}/draft/validation
 
@@ -386,7 +386,7 @@ apiInstance.getIntegrationsActionDraftValidation(actionId)
 
 <a name="getIntegrationsActionSchema"></a>
 
-# [**JsonSchemaDocument**](JsonSchemaDocument.html) getIntegrationsActionSchema(actionId, fileName)
+# JsonSchemaDocument getIntegrationsActionSchema(actionId, fileName)
 
 GET /api/v2/integrations/actions/{actionId}/schemas/{fileName}
 
@@ -488,7 +488,7 @@ apiInstance.getIntegrationsActionTemplate(actionId, fileName)
 
 <a name="getIntegrationsActions"></a>
 
-# [**ActionEntityListing**](ActionEntityListing.html) getIntegrationsActions(opts)
+# ActionEntityListing getIntegrationsActions(opts)
 
 GET /api/v2/integrations/actions
 
@@ -512,6 +512,7 @@ var apiInstance = new platformClient.IntegrationsApi();
 var opts = { 
   'category': "category_example", // String | Filter by category name
   'secure': "secure_example", // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+  'includeAuthActions': "includeAuthActions_example", // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
@@ -537,6 +538,7 @@ apiInstance.getIntegrationsActions(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **category** | **String** | Filter by category name | [optional]  |
  **secure** | **String** | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
+ **includeAuthActions** | **String** | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] <br />**Values**: true, false |
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
@@ -551,7 +553,7 @@ apiInstance.getIntegrationsActions(opts)
 
 <a name="getIntegrationsActionsCategories"></a>
 
-# [**CategoryEntityListing**](CategoryEntityListing.html) getIntegrationsActionsCategories(opts)
+# CategoryEntityListing getIntegrationsActionsCategories(opts)
 
 GET /api/v2/integrations/actions/categories
 
@@ -612,7 +614,7 @@ apiInstance.getIntegrationsActionsCategories(opts)
 
 <a name="getIntegrationsActionsDrafts"></a>
 
-# [**ActionEntityListing**](ActionEntityListing.html) getIntegrationsActionsDrafts(opts)
+# ActionEntityListing getIntegrationsActionsDrafts(opts)
 
 GET /api/v2/integrations/actions/drafts
 
@@ -636,6 +638,7 @@ var apiInstance = new platformClient.IntegrationsApi();
 var opts = { 
   'category': "category_example", // String | Filter by category name
   'secure': "secure_example", // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+  'includeAuthActions': "includeAuthActions_example", // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
@@ -661,6 +664,7 @@ apiInstance.getIntegrationsActionsDrafts(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **category** | **String** | Filter by category name | [optional]  |
  **secure** | **String** | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
+ **includeAuthActions** | **String** | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] <br />**Values**: true, false |
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
@@ -675,7 +679,7 @@ apiInstance.getIntegrationsActionsDrafts(opts)
 
 <a name="patchIntegrationsAction"></a>
 
-# [**Action**](Action.html) patchIntegrationsAction(actionId, body)
+# Action patchIntegrationsAction(actionId, body)
 
 PATCH /api/v2/integrations/actions/{actionId}
 
@@ -726,7 +730,7 @@ apiInstance.patchIntegrationsAction(actionId, body)
 
 <a name="patchIntegrationsActionDraft"></a>
 
-# [**Action**](Action.html) patchIntegrationsActionDraft(actionId, body)
+# Action patchIntegrationsActionDraft(actionId, body)
 
 PATCH /api/v2/integrations/actions/{actionId}/draft
 
@@ -777,7 +781,7 @@ apiInstance.patchIntegrationsActionDraft(actionId, body)
 
 <a name="postIntegrationsActionDraft"></a>
 
-# [**Action**](Action.html) postIntegrationsActionDraft(actionId)
+# Action postIntegrationsActionDraft(actionId)
 
 POST /api/v2/integrations/actions/{actionId}/draft
 
@@ -825,7 +829,7 @@ apiInstance.postIntegrationsActionDraft(actionId)
 
 <a name="postIntegrationsActionDraftPublish"></a>
 
-# [**Action**](Action.html) postIntegrationsActionDraftPublish(actionId, body)
+# Action postIntegrationsActionDraftPublish(actionId, body)
 
 POST /api/v2/integrations/actions/{actionId}/draft/publish
 
@@ -876,7 +880,7 @@ apiInstance.postIntegrationsActionDraftPublish(actionId, body)
 
 <a name="postIntegrationsActionDraftTest"></a>
 
-# [**TestExecutionResult**](TestExecutionResult.html) postIntegrationsActionDraftTest(actionId, body)
+# TestExecutionResult postIntegrationsActionDraftTest(actionId, body)
 
 POST /api/v2/integrations/actions/{actionId}/draft/test
 
@@ -978,7 +982,7 @@ apiInstance.postIntegrationsActionExecute(actionId, body)
 
 <a name="postIntegrationsActionTest"></a>
 
-# [**TestExecutionResult**](TestExecutionResult.html) postIntegrationsActionTest(actionId, body)
+# TestExecutionResult postIntegrationsActionTest(actionId, body)
 
 POST /api/v2/integrations/actions/{actionId}/test
 
@@ -1029,7 +1033,7 @@ apiInstance.postIntegrationsActionTest(actionId, body)
 
 <a name="postIntegrationsActions"></a>
 
-# [**Action**](Action.html) postIntegrationsActions(body)
+# Action postIntegrationsActions(body)
 
 POST /api/v2/integrations/actions
 
@@ -1077,7 +1081,7 @@ apiInstance.postIntegrationsActions(body)
 
 <a name="postIntegrationsActionsDrafts"></a>
 
-# [**Action**](Action.html) postIntegrationsActionsDrafts(body)
+# Action postIntegrationsActionsDrafts(body)
 
 POST /api/v2/integrations/actions/drafts
 

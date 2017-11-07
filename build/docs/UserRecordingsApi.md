@@ -65,7 +65,7 @@ void (no response body)
 
 <a name="getUserrecording"></a>
 
-# [**UserRecording**](UserRecording.html) getUserrecording(recordingId, opts)
+# UserRecording getUserrecording(recordingId, opts)
 
 GET /api/v2/userrecordings/{recordingId}
 
@@ -117,7 +117,7 @@ apiInstance.getUserrecording(recordingId, opts)
 
 <a name="getUserrecordingMedia"></a>
 
-# [**DownloadResponse**](DownloadResponse.html) getUserrecordingMedia(recordingId, opts)
+# DownloadResponse getUserrecordingMedia(recordingId, opts)
 
 GET /api/v2/userrecordings/{recordingId}/media
 
@@ -169,7 +169,7 @@ apiInstance.getUserrecordingMedia(recordingId, opts)
 
 <a name="getUserrecordings"></a>
 
-# [**UserRecordingEntityListing**](UserRecordingEntityListing.html) getUserrecordings(opts)
+# UserRecordingEntityListing getUserrecordings(opts)
 
 GET /api/v2/userrecordings
 
@@ -222,7 +222,7 @@ apiInstance.getUserrecordings(opts)
 
 <a name="getUserrecordingsSummary"></a>
 
-# [**FaxSummary**](FaxSummary.html) getUserrecordingsSummary()
+# FaxSummary getUserrecordingsSummary()
 
 GET /api/v2/userrecordings/summary
 
@@ -264,7 +264,7 @@ This endpoint does not need any parameter.
 
 <a name="putUserrecording"></a>
 
-# [**UserRecording**](UserRecording.html) putUserrecording(recordingId, body, opts)
+# UserRecording putUserrecording(recordingId, body, opts)
 
 PUT /api/v2/userrecordings/{recordingId}
 

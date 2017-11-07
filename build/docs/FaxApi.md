@@ -65,7 +65,7 @@ void (no response body)
 
 <a name="getFaxDocument"></a>
 
-# [**FaxDocument**](FaxDocument.html) getFaxDocument(documentId)
+# FaxDocument getFaxDocument(documentId)
 
 GET /api/v2/fax/documents/{documentId}
 
@@ -113,7 +113,7 @@ apiInstance.getFaxDocument(documentId)
 
 <a name="getFaxDocumentContent"></a>
 
-# [**DownloadResponse**](DownloadResponse.html) getFaxDocumentContent(documentId)
+# DownloadResponse getFaxDocumentContent(documentId)
 
 GET /api/v2/fax/documents/{documentId}/content
 
@@ -161,7 +161,7 @@ apiInstance.getFaxDocumentContent(documentId)
 
 <a name="getFaxDocuments"></a>
 
-# [**FaxDocumentEntityListing**](FaxDocumentEntityListing.html) getFaxDocuments(opts)
+# FaxDocumentEntityListing getFaxDocuments(opts)
 
 GET /api/v2/fax/documents
 
@@ -212,7 +212,7 @@ apiInstance.getFaxDocuments(opts)
 
 <a name="getFaxSummary"></a>
 
-# [**FaxSummary**](FaxSummary.html) getFaxSummary()
+# FaxSummary getFaxSummary()
 
 GET /api/v2/fax/summary
 
@@ -254,7 +254,7 @@ This endpoint does not need any parameter.
 
 <a name="putFaxDocument"></a>
 
-# [**FaxDocument**](FaxDocument.html) putFaxDocument(documentId, body)
+# FaxDocument putFaxDocument(documentId, body)
 
 PUT /api/v2/fax/documents/{documentId}
 

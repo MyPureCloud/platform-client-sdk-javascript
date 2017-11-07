@@ -65,7 +65,7 @@ void (no response body)
 
 <a name="getOauthClient"></a>
 
-# [**OAuthClient**](OAuthClient.html) getOauthClient(clientId)
+# OAuthClient getOauthClient(clientId)
 
 GET /api/v2/oauth/clients/{clientId}
 
@@ -113,7 +113,7 @@ apiInstance.getOauthClient(clientId)
 
 <a name="getOauthClients"></a>
 
-# [**OAuthClientEntityListing**](OAuthClientEntityListing.html) getOauthClients()
+# OAuthClientEntityListing getOauthClients()
 
 GET /api/v2/oauth/clients
 
@@ -155,7 +155,7 @@ This endpoint does not need any parameter.
 
 <a name="postOauthClientSecret"></a>
 
-# [**OAuthClient**](OAuthClient.html) postOauthClientSecret(clientId)
+# OAuthClient postOauthClientSecret(clientId)
 
 POST /api/v2/oauth/clients/{clientId}/secret
 
@@ -203,7 +203,7 @@ apiInstance.postOauthClientSecret(clientId)
 
 <a name="postOauthClients"></a>
 
-# [**OAuthClient**](OAuthClient.html) postOauthClients(body)
+# OAuthClient postOauthClients(body)
 
 POST /api/v2/oauth/clients
 
@@ -251,7 +251,7 @@ apiInstance.postOauthClients(body)
 
 <a name="putOauthClient"></a>
 
-# [**OAuthClient**](OAuthClient.html) putOauthClient(clientId, body)
+# OAuthClient putOauthClient(clientId, body)
 
 PUT /api/v2/oauth/clients/{clientId}
 

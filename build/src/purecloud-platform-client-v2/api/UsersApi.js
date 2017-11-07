@@ -18,7 +18,7 @@
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**

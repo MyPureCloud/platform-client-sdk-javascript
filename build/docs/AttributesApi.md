@@ -65,7 +65,7 @@ void (no response body)
 
 <a name="getAttribute"></a>
 
-# [**Attribute**](Attribute.html) getAttribute(attributeId)
+# Attribute getAttribute(attributeId)
 
 GET /api/v2/attributes/{attributeId}
 
@@ -113,7 +113,7 @@ apiInstance.getAttribute(attributeId)
 
 <a name="getAttributes"></a>
 
-# [**AttributeEntityListing**](AttributeEntityListing.html) getAttributes(opts)
+# AttributeEntityListing getAttributes(opts)
 
 GET /api/v2/attributes
 
@@ -164,7 +164,7 @@ apiInstance.getAttributes(opts)
 
 <a name="postAttributes"></a>
 
-# [**Attribute**](Attribute.html) postAttributes(body)
+# Attribute postAttributes(body)
 
 POST /api/v2/attributes
 
@@ -212,7 +212,7 @@ apiInstance.postAttributes(body)
 
 <a name="postAttributesQuery"></a>
 
-# [**AttributeEntityListing**](AttributeEntityListing.html) postAttributesQuery(body)
+# AttributeEntityListing postAttributesQuery(body)
 
 POST /api/v2/attributes/query
 
@@ -260,7 +260,7 @@ apiInstance.postAttributesQuery(body)
 
 <a name="putAttribute"></a>
 
-# [**Attribute**](Attribute.html) putAttribute(attributeId, body)
+# Attribute putAttribute(attributeId, body)
 
 PUT /api/v2/attributes/{attributeId}
 

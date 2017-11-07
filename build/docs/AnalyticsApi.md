@@ -81,7 +81,7 @@ void (no response body)
 
 <a name="getAnalyticsConversationDetails"></a>
 
-# [**AnalyticsConversation**](AnalyticsConversation.html) getAnalyticsConversationDetails(conversationId)
+# AnalyticsConversation getAnalyticsConversationDetails(conversationId)
 
 GET /api/v2/analytics/conversations/{conversationId}/details
 
@@ -129,7 +129,7 @@ apiInstance.getAnalyticsConversationDetails(conversationId)
 
 <a name="getAnalyticsReportingMetadata"></a>
 
-# [**ReportMetaDataEntityListing**](ReportMetaDataEntityListing.html) getAnalyticsReportingMetadata(opts)
+# ReportMetaDataEntityListing getAnalyticsReportingMetadata(opts)
 
 GET /api/v2/analytics/reporting/metadata
 
@@ -182,7 +182,7 @@ apiInstance.getAnalyticsReportingMetadata(opts)
 
 <a name="getAnalyticsReportingReportIdMetadata"></a>
 
-# [**ReportMetaData**](ReportMetaData.html) getAnalyticsReportingReportIdMetadata(reportId, opts)
+# ReportMetaData getAnalyticsReportingReportIdMetadata(reportId, opts)
 
 GET /api/v2/analytics/reporting/{reportId}/metadata
 
@@ -276,7 +276,7 @@ This endpoint does not need any parameter.
 
 <a name="getAnalyticsReportingSchedule"></a>
 
-# [**ReportSchedule**](ReportSchedule.html) getAnalyticsReportingSchedule(scheduleId)
+# ReportSchedule getAnalyticsReportingSchedule(scheduleId)
 
 GET /api/v2/analytics/reporting/schedules/{scheduleId}
 
@@ -324,7 +324,7 @@ apiInstance.getAnalyticsReportingSchedule(scheduleId)
 
 <a name="getAnalyticsReportingScheduleHistory"></a>
 
-# [**ReportRunEntryEntityDomainListing**](ReportRunEntryEntityDomainListing.html) getAnalyticsReportingScheduleHistory(scheduleId, opts)
+# ReportRunEntryEntityDomainListing getAnalyticsReportingScheduleHistory(scheduleId, opts)
 
 GET /api/v2/analytics/reporting/schedules/{scheduleId}/history
 
@@ -378,7 +378,7 @@ apiInstance.getAnalyticsReportingScheduleHistory(scheduleId, opts)
 
 <a name="getAnalyticsReportingScheduleHistoryLatest"></a>
 
-# [**ReportRunEntry**](ReportRunEntry.html) getAnalyticsReportingScheduleHistoryLatest(scheduleId)
+# ReportRunEntry getAnalyticsReportingScheduleHistoryLatest(scheduleId)
 
 GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/latest
 
@@ -426,7 +426,7 @@ apiInstance.getAnalyticsReportingScheduleHistoryLatest(scheduleId)
 
 <a name="getAnalyticsReportingScheduleHistoryRunId"></a>
 
-# [**ReportRunEntry**](ReportRunEntry.html) getAnalyticsReportingScheduleHistoryRunId(runId, scheduleId)
+# ReportRunEntry getAnalyticsReportingScheduleHistoryRunId(runId, scheduleId)
 
 GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId}
 
@@ -477,7 +477,7 @@ apiInstance.getAnalyticsReportingScheduleHistoryRunId(runId, scheduleId)
 
 <a name="getAnalyticsReportingSchedules"></a>
 
-# [**ReportScheduleEntityListing**](ReportScheduleEntityListing.html) getAnalyticsReportingSchedules(opts)
+# ReportScheduleEntityListing getAnalyticsReportingSchedules(opts)
 
 GET /api/v2/analytics/reporting/schedules
 
@@ -570,7 +570,7 @@ This endpoint does not need any parameter.
 
 <a name="postAnalyticsConversationDetailsProperties"></a>
 
-# [**PropertyIndexRequest**](PropertyIndexRequest.html) postAnalyticsConversationDetailsProperties(conversationId, body)
+# PropertyIndexRequest postAnalyticsConversationDetailsProperties(conversationId, body)
 
 POST /api/v2/analytics/conversations/{conversationId}/details/properties
 
@@ -621,7 +621,7 @@ apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
 
 <a name="postAnalyticsConversationsAggregatesQuery"></a>
 
-# [**AggregateQueryResponse**](AggregateQueryResponse.html) postAnalyticsConversationsAggregatesQuery(body)
+# AggregateQueryResponse postAnalyticsConversationsAggregatesQuery(body)
 
 POST /api/v2/analytics/conversations/aggregates/query
 
@@ -669,7 +669,7 @@ apiInstance.postAnalyticsConversationsAggregatesQuery(body)
 
 <a name="postAnalyticsConversationsDetailsQuery"></a>
 
-# [**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse.html) postAnalyticsConversationsDetailsQuery(body)
+# AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(body)
 
 POST /api/v2/analytics/conversations/details/query
 
@@ -717,7 +717,7 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
 
 <a name="postAnalyticsEvaluationsAggregatesQuery"></a>
 
-# [**AggregateQueryResponse**](AggregateQueryResponse.html) postAnalyticsEvaluationsAggregatesQuery(body)
+# AggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(body)
 
 POST /api/v2/analytics/evaluations/aggregates/query
 
@@ -765,7 +765,7 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
 
 <a name="postAnalyticsQueuesObservationsQuery"></a>
 
-# [**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html) postAnalyticsQueuesObservationsQuery(body)
+# QualifierMappingObservationQueryResponse postAnalyticsQueuesObservationsQuery(body)
 
 POST /api/v2/analytics/queues/observations/query
 
@@ -813,7 +813,7 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 
 <a name="postAnalyticsReportingScheduleRunreport"></a>
 
-# [**RunNowResponse**](RunNowResponse.html) postAnalyticsReportingScheduleRunreport(scheduleId)
+# RunNowResponse postAnalyticsReportingScheduleRunreport(scheduleId)
 
 POST /api/v2/analytics/reporting/schedules/{scheduleId}/runreport
 
@@ -861,7 +861,7 @@ apiInstance.postAnalyticsReportingScheduleRunreport(scheduleId)
 
 <a name="postAnalyticsReportingSchedules"></a>
 
-# [**ReportSchedule**](ReportSchedule.html) postAnalyticsReportingSchedules(body)
+# ReportSchedule postAnalyticsReportingSchedules(body)
 
 POST /api/v2/analytics/reporting/schedules
 
@@ -909,7 +909,7 @@ apiInstance.postAnalyticsReportingSchedules(body)
 
 <a name="postAnalyticsUsersAggregatesQuery"></a>
 
-# [**PresenceQueryResponse**](PresenceQueryResponse.html) postAnalyticsUsersAggregatesQuery(body)
+# PresenceQueryResponse postAnalyticsUsersAggregatesQuery(body)
 
 POST /api/v2/analytics/users/aggregates/query
 
@@ -957,7 +957,7 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 
 <a name="postAnalyticsUsersDetailsQuery"></a>
 
-# [**AnalyticsUserDetailsQueryResponse**](AnalyticsUserDetailsQueryResponse.html) postAnalyticsUsersDetailsQuery(body)
+# AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(body)
 
 POST /api/v2/analytics/users/details/query
 
@@ -1005,7 +1005,7 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
 
 <a name="postAnalyticsUsersObservationsQuery"></a>
 
-# [**ObservationQueryResponse**](ObservationQueryResponse.html) postAnalyticsUsersObservationsQuery(body)
+# ObservationQueryResponse postAnalyticsUsersObservationsQuery(body)
 
 POST /api/v2/analytics/users/observations/query
 
@@ -1053,7 +1053,7 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 
 <a name="putAnalyticsReportingSchedule"></a>
 
-# [**ReportSchedule**](ReportSchedule.html) putAnalyticsReportingSchedule(scheduleId, body)
+# ReportSchedule putAnalyticsReportingSchedule(scheduleId, body)
 
 PUT /api/v2/analytics/reporting/schedules/{scheduleId}
 

@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="getGeolocationsSettings"></a>
 
-# [**GeolocationSettings**](GeolocationSettings.html) getGeolocationsSettings()
+# GeolocationSettings getGeolocationsSettings()
 
 GET /api/v2/geolocations/settings
 
@@ -57,7 +57,7 @@ This endpoint does not need any parameter.
 
 <a name="getUserGeolocation"></a>
 
-# [**Geolocation**](Geolocation.html) getUserGeolocation(userId, clientId)
+# Geolocation getUserGeolocation(userId, clientId)
 
 GET /api/v2/users/{userId}/geolocations/{clientId}
 
@@ -108,7 +108,7 @@ apiInstance.getUserGeolocation(userId, clientId)
 
 <a name="patchGeolocationsSettings"></a>
 
-# [**GeolocationSettings**](GeolocationSettings.html) patchGeolocationsSettings(body)
+# GeolocationSettings patchGeolocationsSettings(body)
 
 PATCH /api/v2/geolocations/settings
 
@@ -156,7 +156,7 @@ apiInstance.patchGeolocationsSettings(body)
 
 <a name="patchUserGeolocation"></a>
 
-# [**Geolocation**](Geolocation.html) patchUserGeolocation(userId, clientId, body)
+# Geolocation patchUserGeolocation(userId, clientId, body)
 
 PATCH /api/v2/users/{userId}/geolocations/{clientId}
 

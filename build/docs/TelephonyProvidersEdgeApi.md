@@ -48,7 +48,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTelephonyProvidersEdgesDidpools**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesDidpools) | **GET** /api/v2/telephony/providers/edges/didpools | Get a listing of DID Pools
 [**getTelephonyProvidersEdgesDids**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesDids) | **GET** /api/v2/telephony/providers/edges/dids | Get a listing of DIDs
 [**getTelephonyProvidersEdgesEdgegroup**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgegroup) | **GET** /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId} | Get edge group.
-[**getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis) | **GET** /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId} | Gets the edge trunk base associated with the edge group
+[**getTelephonyProvidersEdgesEdgegroupEdgetrunkbase**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgegroupEdgetrunkbase) | **GET** /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId} | Gets the edge trunk base associated with the edge group
 [**getTelephonyProvidersEdgesEdgegroups**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgegroups) | **GET** /api/v2/telephony/providers/edges/edgegroups | Get the list of edge groups.
 [**getTelephonyProvidersEdgesEdgeversionreport**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgeversionreport) | **GET** /api/v2/telephony/providers/edges/edgeversionreport | Get the edge version report.
 [**getTelephonyProvidersEdgesEndpoint**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEndpoint) | **GET** /api/v2/telephony/providers/edges/endpoints/{endpointId} | Get endpoint
@@ -123,7 +123,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putTelephonyProvidersEdgesDid**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesDid) | **PUT** /api/v2/telephony/providers/edges/dids/{didId} | Update a DID by ID.
 [**putTelephonyProvidersEdgesDidpool**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesDidpool) | **PUT** /api/v2/telephony/providers/edges/didpools/{didPoolId} | Update a DID Pool by ID.
 [**putTelephonyProvidersEdgesEdgegroup**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesEdgegroup) | **PUT** /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId} | Update an edge group.
-[**putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis) | **PUT** /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId} | Update the edge trunk base associated with the edge group
+[**putTelephonyProvidersEdgesEdgegroupEdgetrunkbase**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesEdgegroupEdgetrunkbase) | **PUT** /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId} | Update the edge trunk base associated with the edge group
 [**putTelephonyProvidersEdgesEndpoint**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesEndpoint) | **PUT** /api/v2/telephony/providers/edges/endpoints/{endpointId} | Update endpoint
 [**putTelephonyProvidersEdgesExtension**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesExtension) | **PUT** /api/v2/telephony/providers/edges/extensions/{extensionId} | Update an extension by ID.
 [**putTelephonyProvidersEdgesExtensionpool**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesExtensionpool) | **PUT** /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId} | Update an extension pool by ID
@@ -816,7 +816,7 @@ void (no response body)
 
 <a name="getConfigurationSchemasEdgesVnext"></a>
 
-# [**SchemaCategoryEntityListing**](SchemaCategoryEntityListing.html) getConfigurationSchemasEdgesVnext(opts)
+# SchemaCategoryEntityListing getConfigurationSchemasEdgesVnext(opts)
 
 GET /api/v2/configuration/schemas/edges/vnext
 
@@ -867,7 +867,7 @@ apiInstance.getConfigurationSchemasEdgesVnext(opts)
 
 <a name="getConfigurationSchemasEdgesVnextSchemaCategory"></a>
 
-# [**SchemaReferenceEntityListing**](SchemaReferenceEntityListing.html) getConfigurationSchemasEdgesVnextSchemaCategory(schemaCategory, opts)
+# SchemaReferenceEntityListing getConfigurationSchemasEdgesVnextSchemaCategory(schemaCategory, opts)
 
 GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}
 
@@ -921,7 +921,7 @@ apiInstance.getConfigurationSchemasEdgesVnextSchemaCategory(schemaCategory, opts
 
 <a name="getConfigurationSchemasEdgesVnextSchemaCategorySchemaType"></a>
 
-# [**SchemaReferenceEntityListing**](SchemaReferenceEntityListing.html) getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(schemaCategory, schemaType, opts)
+# SchemaReferenceEntityListing getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(schemaCategory, schemaType, opts)
 
 GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}
 
@@ -978,7 +978,7 @@ apiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(schemaCate
 
 <a name="getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId"></a>
 
-# [**Organization**](Organization.html) getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(schemaCategory, schemaType, schemaId)
+# Organization getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(schemaCategory, schemaType, schemaId)
 
 GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}
 
@@ -1032,7 +1032,7 @@ apiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(sc
 
 <a name="getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId"></a>
 
-# [**Organization**](Organization.html) getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(schemaCategory, schemaType, schemaId, extensionType, metadataId, opts)
+# Organization getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(schemaCategory, schemaType, schemaId, extensionType, metadataId, opts)
 
 GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId}
 
@@ -1096,7 +1096,7 @@ apiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExt
 
 <a name="getTelephonyProvidersEdge"></a>
 
-# [**Edge**](Edge.html) getTelephonyProvidersEdge(edgeId, opts)
+# Edge getTelephonyProvidersEdge(edgeId, opts)
 
 GET /api/v2/telephony/providers/edges/{edgeId}
 
@@ -1148,7 +1148,7 @@ apiInstance.getTelephonyProvidersEdge(edgeId, opts)
 
 <a name="getTelephonyProvidersEdgeLine"></a>
 
-# [**EdgeLine**](EdgeLine.html) getTelephonyProvidersEdgeLine(edgeId, lineId)
+# EdgeLine getTelephonyProvidersEdgeLine(edgeId, lineId)
 
 GET /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}
 
@@ -1199,7 +1199,7 @@ apiInstance.getTelephonyProvidersEdgeLine(edgeId, lineId)
 
 <a name="getTelephonyProvidersEdgeLines"></a>
 
-# [**EdgeLineEntityListing**](EdgeLineEntityListing.html) getTelephonyProvidersEdgeLines(edgeId, opts)
+# EdgeLineEntityListing getTelephonyProvidersEdgeLines(edgeId, opts)
 
 GET /api/v2/telephony/providers/edges/{edgeId}/lines
 
@@ -1253,7 +1253,7 @@ apiInstance.getTelephonyProvidersEdgeLines(edgeId, opts)
 
 <a name="getTelephonyProvidersEdgeLogicalinterface"></a>
 
-# [**DomainLogicalInterface**](DomainLogicalInterface.html) getTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, opts)
+# DomainLogicalInterface getTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, opts)
 
 GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}
 
@@ -1308,7 +1308,7 @@ apiInstance.getTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, opts)
 
 <a name="getTelephonyProvidersEdgeLogicalinterfaces"></a>
 
-# [**LogicalInterfaceEntityListing**](LogicalInterfaceEntityListing.html) getTelephonyProvidersEdgeLogicalinterfaces(edgeId, opts)
+# LogicalInterfaceEntityListing getTelephonyProvidersEdgeLogicalinterfaces(edgeId, opts)
 
 GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces
 
@@ -1360,7 +1360,7 @@ apiInstance.getTelephonyProvidersEdgeLogicalinterfaces(edgeId, opts)
 
 <a name="getTelephonyProvidersEdgeLogsJob"></a>
 
-# [**EdgeLogsJob**](EdgeLogsJob.html) getTelephonyProvidersEdgeLogsJob(edgeId, jobId)
+# EdgeLogsJob getTelephonyProvidersEdgeLogsJob(edgeId, jobId)
 
 GET /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}
 
@@ -1411,7 +1411,7 @@ apiInstance.getTelephonyProvidersEdgeLogsJob(edgeId, jobId)
 
 <a name="getTelephonyProvidersEdgeMetrics"></a>
 
-# [**EdgeMetrics**](EdgeMetrics.html) getTelephonyProvidersEdgeMetrics(edgeId)
+# EdgeMetrics getTelephonyProvidersEdgeMetrics(edgeId)
 
 GET /api/v2/telephony/providers/edges/{edgeId}/metrics
 
@@ -1459,7 +1459,7 @@ apiInstance.getTelephonyProvidersEdgeMetrics(edgeId)
 
 <a name="getTelephonyProvidersEdgePhysicalinterface"></a>
 
-# [**DomainPhysicalInterface**](DomainPhysicalInterface.html) getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId)
+# DomainPhysicalInterface getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId)
 
 GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces/{interfaceId}
 
@@ -1510,7 +1510,7 @@ apiInstance.getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId)
 
 <a name="getTelephonyProvidersEdgePhysicalinterfaces"></a>
 
-# [**PhysicalInterfaceEntityListing**](PhysicalInterfaceEntityListing.html) getTelephonyProvidersEdgePhysicalinterfaces(edgeId)
+# PhysicalInterfaceEntityListing getTelephonyProvidersEdgePhysicalinterfaces(edgeId)
 
 GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces
 
@@ -1558,7 +1558,7 @@ apiInstance.getTelephonyProvidersEdgePhysicalinterfaces(edgeId)
 
 <a name="getTelephonyProvidersEdgeSetuppackage"></a>
 
-# [**VmPairingInfo**](VmPairingInfo.html) getTelephonyProvidersEdgeSetuppackage(edgeId)
+# VmPairingInfo getTelephonyProvidersEdgeSetuppackage(edgeId)
 
 GET /api/v2/telephony/providers/edges/{edgeId}/setuppackage
 
@@ -1606,7 +1606,7 @@ apiInstance.getTelephonyProvidersEdgeSetuppackage(edgeId)
 
 <a name="getTelephonyProvidersEdgeSoftwareupdate"></a>
 
-# [**DomainEdgeSoftwareUpdateDto**](DomainEdgeSoftwareUpdateDto.html) getTelephonyProvidersEdgeSoftwareupdate(edgeId)
+# DomainEdgeSoftwareUpdateDto getTelephonyProvidersEdgeSoftwareupdate(edgeId)
 
 GET /api/v2/telephony/providers/edges/{edgeId}/softwareupdate
 
@@ -1654,7 +1654,7 @@ apiInstance.getTelephonyProvidersEdgeSoftwareupdate(edgeId)
 
 <a name="getTelephonyProvidersEdgeSoftwareversions"></a>
 
-# [**DomainEdgeSoftwareVersionDtoEntityListing**](DomainEdgeSoftwareVersionDtoEntityListing.html) getTelephonyProvidersEdgeSoftwareversions(edgeId)
+# DomainEdgeSoftwareVersionDtoEntityListing getTelephonyProvidersEdgeSoftwareversions(edgeId)
 
 GET /api/v2/telephony/providers/edges/{edgeId}/softwareversions
 
@@ -1702,7 +1702,7 @@ apiInstance.getTelephonyProvidersEdgeSoftwareversions(edgeId)
 
 <a name="getTelephonyProvidersEdgeTrunks"></a>
 
-# [**TrunkEntityListing**](TrunkEntityListing.html) getTelephonyProvidersEdgeTrunks(edgeId, opts)
+# TrunkEntityListing getTelephonyProvidersEdgeTrunks(edgeId, opts)
 
 GET /api/v2/telephony/providers/edges/{edgeId}/trunks
 
@@ -1764,7 +1764,7 @@ apiInstance.getTelephonyProvidersEdgeTrunks(edgeId, opts)
 
 <a name="getTelephonyProvidersEdges"></a>
 
-# [**EdgeEntityListing**](EdgeEntityListing.html) getTelephonyProvidersEdges(opts)
+# EdgeEntityListing getTelephonyProvidersEdges(opts)
 
 GET /api/v2/telephony/providers/edges
 
@@ -1825,7 +1825,7 @@ apiInstance.getTelephonyProvidersEdges(opts)
 
 <a name="getTelephonyProvidersEdgesAvailablelanguages"></a>
 
-# [**AvailableLanguageList**](AvailableLanguageList.html) getTelephonyProvidersEdgesAvailablelanguages()
+# AvailableLanguageList getTelephonyProvidersEdgesAvailablelanguages()
 
 GET /api/v2/telephony/providers/edges/availablelanguages
 
@@ -1867,7 +1867,7 @@ This endpoint does not need any parameter.
 
 <a name="getTelephonyProvidersEdgesCertificateauthorities"></a>
 
-# [**CertificateAuthorityEntityListing**](CertificateAuthorityEntityListing.html) getTelephonyProvidersEdgesCertificateauthorities()
+# CertificateAuthorityEntityListing getTelephonyProvidersEdgesCertificateauthorities()
 
 GET /api/v2/telephony/providers/edges/certificateauthorities
 
@@ -1909,7 +1909,7 @@ This endpoint does not need any parameter.
 
 <a name="getTelephonyProvidersEdgesCertificateauthority"></a>
 
-# [**DomainCertificateAuthority**](DomainCertificateAuthority.html) getTelephonyProvidersEdgesCertificateauthority(certificateId)
+# DomainCertificateAuthority getTelephonyProvidersEdgesCertificateauthority(certificateId)
 
 GET /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}
 
@@ -1957,7 +1957,7 @@ apiInstance.getTelephonyProvidersEdgesCertificateauthority(certificateId)
 
 <a name="getTelephonyProvidersEdgesDid"></a>
 
-# [**DID**](DID.html) getTelephonyProvidersEdgesDid(didId)
+# DID getTelephonyProvidersEdgesDid(didId)
 
 GET /api/v2/telephony/providers/edges/dids/{didId}
 
@@ -2005,7 +2005,7 @@ apiInstance.getTelephonyProvidersEdgesDid(didId)
 
 <a name="getTelephonyProvidersEdgesDidpool"></a>
 
-# [**DIDPool**](DIDPool.html) getTelephonyProvidersEdgesDidpool(didPoolId)
+# DIDPool getTelephonyProvidersEdgesDidpool(didPoolId)
 
 GET /api/v2/telephony/providers/edges/didpools/{didPoolId}
 
@@ -2053,7 +2053,7 @@ apiInstance.getTelephonyProvidersEdgesDidpool(didPoolId)
 
 <a name="getTelephonyProvidersEdgesDidpools"></a>
 
-# [**DIDPoolEntityListing**](DIDPoolEntityListing.html) getTelephonyProvidersEdgesDidpools(opts)
+# DIDPoolEntityListing getTelephonyProvidersEdgesDidpools(opts)
 
 GET /api/v2/telephony/providers/edges/didpools
 
@@ -2106,7 +2106,7 @@ apiInstance.getTelephonyProvidersEdgesDidpools(opts)
 
 <a name="getTelephonyProvidersEdgesDids"></a>
 
-# [**DIDEntityListing**](DIDEntityListing.html) getTelephonyProvidersEdgesDids(opts)
+# DIDEntityListing getTelephonyProvidersEdgesDids(opts)
 
 GET /api/v2/telephony/providers/edges/dids
 
@@ -2163,7 +2163,7 @@ apiInstance.getTelephonyProvidersEdgesDids(opts)
 
 <a name="getTelephonyProvidersEdgesEdgegroup"></a>
 
-# [**EdgeGroup**](EdgeGroup.html) getTelephonyProvidersEdgesEdgegroup(edgeGroupId, opts)
+# EdgeGroup getTelephonyProvidersEdgesEdgegroup(edgeGroupId, opts)
 
 GET /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}
 
@@ -2213,9 +2213,9 @@ apiInstance.getTelephonyProvidersEdgesEdgegroup(edgeGroupId, opts)
 
 **EdgeGroup**
 
-<a name="getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis"></a>
+<a name="getTelephonyProvidersEdgesEdgegroupEdgetrunkbase"></a>
 
-# [**EdgeTrunkBase**](EdgeTrunkBase.html) getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(edgegroupId, edgetrunkbaseId)
+# EdgeTrunkBase getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId)
 
 GET /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}
 
@@ -2240,12 +2240,12 @@ var edgegroupId = "edgegroupId_example"; // String | Edge Group ID
 
 var edgetrunkbaseId = "edgetrunkbaseId_example"; // String | Edge Trunk Base ID
 
-apiInstance.getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(edgegroupId, edgetrunkbaseId)
+apiInstance.getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId)
   .then(function(data) {
-    console.log(`getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis success! data: ${JSON.stringify(data, null, 2)}`);
+    console.log(`getTelephonyProvidersEdgesEdgegroupEdgetrunkbase success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis');
+  	console.log('There was a failure calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbase');
     console.error(error);
   });
 
@@ -2266,7 +2266,7 @@ apiInstance.getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(edgegroupId, edget
 
 <a name="getTelephonyProvidersEdgesEdgegroups"></a>
 
-# [**EdgeGroupEntityListing**](EdgeGroupEntityListing.html) getTelephonyProvidersEdgesEdgegroups(opts)
+# EdgeGroupEntityListing getTelephonyProvidersEdgesEdgegroups(opts)
 
 GET /api/v2/telephony/providers/edges/edgegroups
 
@@ -2323,7 +2323,7 @@ apiInstance.getTelephonyProvidersEdgesEdgegroups(opts)
 
 <a name="getTelephonyProvidersEdgesEdgeversionreport"></a>
 
-# [**EdgeVersionReport**](EdgeVersionReport.html) getTelephonyProvidersEdgesEdgeversionreport()
+# EdgeVersionReport getTelephonyProvidersEdgesEdgeversionreport()
 
 GET /api/v2/telephony/providers/edges/edgeversionreport
 
@@ -2365,7 +2365,7 @@ This endpoint does not need any parameter.
 
 <a name="getTelephonyProvidersEdgesEndpoint"></a>
 
-# [**Endpoint**](Endpoint.html) getTelephonyProvidersEdgesEndpoint(endpointId)
+# Endpoint getTelephonyProvidersEdgesEndpoint(endpointId)
 
 GET /api/v2/telephony/providers/edges/endpoints/{endpointId}
 
@@ -2413,7 +2413,7 @@ apiInstance.getTelephonyProvidersEdgesEndpoint(endpointId)
 
 <a name="getTelephonyProvidersEdgesEndpoints"></a>
 
-# [**EndpointEntityListing**](EndpointEntityListing.html) getTelephonyProvidersEdgesEndpoints(opts)
+# EndpointEntityListing getTelephonyProvidersEdgesEndpoints(opts)
 
 GET /api/v2/telephony/providers/edges/endpoints
 
@@ -2468,7 +2468,7 @@ apiInstance.getTelephonyProvidersEdgesEndpoints(opts)
 
 <a name="getTelephonyProvidersEdgesExtension"></a>
 
-# [**Extension**](Extension.html) getTelephonyProvidersEdgesExtension(extensionId)
+# Extension getTelephonyProvidersEdgesExtension(extensionId)
 
 GET /api/v2/telephony/providers/edges/extensions/{extensionId}
 
@@ -2516,7 +2516,7 @@ apiInstance.getTelephonyProvidersEdgesExtension(extensionId)
 
 <a name="getTelephonyProvidersEdgesExtensionpool"></a>
 
-# [**ExtensionPool**](ExtensionPool.html) getTelephonyProvidersEdgesExtensionpool(extensionPoolId)
+# ExtensionPool getTelephonyProvidersEdgesExtensionpool(extensionPoolId)
 
 GET /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}
 
@@ -2564,7 +2564,7 @@ apiInstance.getTelephonyProvidersEdgesExtensionpool(extensionPoolId)
 
 <a name="getTelephonyProvidersEdgesExtensionpools"></a>
 
-# [**ExtensionPoolEntityListing**](ExtensionPoolEntityListing.html) getTelephonyProvidersEdgesExtensionpools(opts)
+# ExtensionPoolEntityListing getTelephonyProvidersEdgesExtensionpools(opts)
 
 GET /api/v2/telephony/providers/edges/extensionpools
 
@@ -2619,7 +2619,7 @@ apiInstance.getTelephonyProvidersEdgesExtensionpools(opts)
 
 <a name="getTelephonyProvidersEdgesExtensions"></a>
 
-# [**ExtensionEntityListing**](ExtensionEntityListing.html) getTelephonyProvidersEdgesExtensions(opts)
+# ExtensionEntityListing getTelephonyProvidersEdgesExtensions(opts)
 
 GET /api/v2/telephony/providers/edges/extensions
 
@@ -2676,7 +2676,7 @@ apiInstance.getTelephonyProvidersEdgesExtensions(opts)
 
 <a name="getTelephonyProvidersEdgesLine"></a>
 
-# [**Line**](Line.html) getTelephonyProvidersEdgesLine(lineId)
+# Line getTelephonyProvidersEdgesLine(lineId)
 
 GET /api/v2/telephony/providers/edges/lines/{lineId}
 
@@ -2724,7 +2724,7 @@ apiInstance.getTelephonyProvidersEdgesLine(lineId)
 
 <a name="getTelephonyProvidersEdgesLinebasesetting"></a>
 
-# [**LineBase**](LineBase.html) getTelephonyProvidersEdgesLinebasesetting(lineBaseId)
+# LineBase getTelephonyProvidersEdgesLinebasesetting(lineBaseId)
 
 GET /api/v2/telephony/providers/edges/linebasesettings/{lineBaseId}
 
@@ -2772,7 +2772,7 @@ apiInstance.getTelephonyProvidersEdgesLinebasesetting(lineBaseId)
 
 <a name="getTelephonyProvidersEdgesLinebasesettings"></a>
 
-# [**LineBaseEntityListing**](LineBaseEntityListing.html) getTelephonyProvidersEdgesLinebasesettings(opts)
+# LineBaseEntityListing getTelephonyProvidersEdgesLinebasesettings(opts)
 
 GET /api/v2/telephony/providers/edges/linebasesettings
 
@@ -2827,7 +2827,7 @@ apiInstance.getTelephonyProvidersEdgesLinebasesettings(opts)
 
 <a name="getTelephonyProvidersEdgesLines"></a>
 
-# [**LineEntityListing**](LineEntityListing.html) getTelephonyProvidersEdgesLines(opts)
+# LineEntityListing getTelephonyProvidersEdgesLines(opts)
 
 GET /api/v2/telephony/providers/edges/lines
 
@@ -2884,7 +2884,7 @@ apiInstance.getTelephonyProvidersEdgesLines(opts)
 
 <a name="getTelephonyProvidersEdgesLinesTemplate"></a>
 
-# [**Line**](Line.html) getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId)
+# Line getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId)
 
 GET /api/v2/telephony/providers/edges/lines/template
 
@@ -2932,7 +2932,7 @@ apiInstance.getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId)
 
 <a name="getTelephonyProvidersEdgesLogicalinterfaces"></a>
 
-# [**LogicalInterfaceEntityListing**](LogicalInterfaceEntityListing.html) getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, opts)
+# LogicalInterfaceEntityListing getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, opts)
 
 GET /api/v2/telephony/providers/edges/logicalinterfaces
 
@@ -2984,7 +2984,7 @@ apiInstance.getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, opts)
 
 <a name="getTelephonyProvidersEdgesMetrics"></a>
 
-# [**[EdgeMetrics]**](EdgeMetrics.html) getTelephonyProvidersEdgesMetrics(edgeIds)
+# [EdgeMetrics] getTelephonyProvidersEdgesMetrics(edgeIds)
 
 GET /api/v2/telephony/providers/edges/metrics
 
@@ -3032,7 +3032,7 @@ apiInstance.getTelephonyProvidersEdgesMetrics(edgeIds)
 
 <a name="getTelephonyProvidersEdgesOutboundroute"></a>
 
-# [**OutboundRoute**](OutboundRoute.html) getTelephonyProvidersEdgesOutboundroute(outboundRouteId)
+# OutboundRoute getTelephonyProvidersEdgesOutboundroute(outboundRouteId)
 
 GET /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}
 
@@ -3080,7 +3080,7 @@ apiInstance.getTelephonyProvidersEdgesOutboundroute(outboundRouteId)
 
 <a name="getTelephonyProvidersEdgesOutboundroutes"></a>
 
-# [**OutboundRouteEntityListing**](OutboundRouteEntityListing.html) getTelephonyProvidersEdgesOutboundroutes(opts)
+# OutboundRouteEntityListing getTelephonyProvidersEdgesOutboundroutes(opts)
 
 GET /api/v2/telephony/providers/edges/outboundroutes
 
@@ -3137,7 +3137,7 @@ apiInstance.getTelephonyProvidersEdgesOutboundroutes(opts)
 
 <a name="getTelephonyProvidersEdgesPhone"></a>
 
-# [**Phone**](Phone.html) getTelephonyProvidersEdgesPhone(phoneId)
+# Phone getTelephonyProvidersEdgesPhone(phoneId)
 
 GET /api/v2/telephony/providers/edges/phones/{phoneId}
 
@@ -3185,7 +3185,7 @@ apiInstance.getTelephonyProvidersEdgesPhone(phoneId)
 
 <a name="getTelephonyProvidersEdgesPhonebasesetting"></a>
 
-# [**PhoneBase**](PhoneBase.html) getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
+# PhoneBase getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
 
 GET /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}
 
@@ -3233,7 +3233,7 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
 
 <a name="getTelephonyProvidersEdgesPhonebasesettings"></a>
 
-# [**PhoneBaseEntityListing**](PhoneBaseEntityListing.html) getTelephonyProvidersEdgesPhonebasesettings(opts)
+# PhoneBaseEntityListing getTelephonyProvidersEdgesPhonebasesettings(opts)
 
 GET /api/v2/telephony/providers/edges/phonebasesettings
 
@@ -3292,7 +3292,7 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesettings(opts)
 
 <a name="getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases"></a>
 
-# [**PhoneMetaBaseEntityListing**](PhoneMetaBaseEntityListing.html) getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(opts)
+# PhoneMetaBaseEntityListing getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(opts)
 
 GET /api/v2/telephony/providers/edges/phonebasesettings/availablemetabases
 
@@ -3343,7 +3343,7 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(opts)
 
 <a name="getTelephonyProvidersEdgesPhonebasesettingsTemplate"></a>
 
-# [**PhoneBase**](PhoneBase.html) getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId)
+# PhoneBase getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId)
 
 GET /api/v2/telephony/providers/edges/phonebasesettings/template
 
@@ -3391,7 +3391,7 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId)
 
 <a name="getTelephonyProvidersEdgesPhones"></a>
 
-# [**PhoneEntityListing**](PhoneEntityListing.html) getTelephonyProvidersEdgesPhones(opts)
+# PhoneEntityListing getTelephonyProvidersEdgesPhones(opts)
 
 GET /api/v2/telephony/providers/edges/phones
 
@@ -3466,7 +3466,7 @@ apiInstance.getTelephonyProvidersEdgesPhones(opts)
 
 <a name="getTelephonyProvidersEdgesPhonesTemplate"></a>
 
-# [**Phone**](Phone.html) getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId)
+# Phone getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId)
 
 GET /api/v2/telephony/providers/edges/phones/template
 
@@ -3514,7 +3514,7 @@ apiInstance.getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId)
 
 <a name="getTelephonyProvidersEdgesPhysicalinterfaces"></a>
 
-# [**PhysicalInterfaceEntityListing**](PhysicalInterfaceEntityListing.html) getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)
+# PhysicalInterfaceEntityListing getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)
 
 GET /api/v2/telephony/providers/edges/physicalinterfaces
 
@@ -3562,7 +3562,7 @@ apiInstance.getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)
 
 <a name="getTelephonyProvidersEdgesSite"></a>
 
-# [**Site**](Site.html) getTelephonyProvidersEdgesSite(siteId)
+# Site getTelephonyProvidersEdgesSite(siteId)
 
 GET /api/v2/telephony/providers/edges/sites/{siteId}
 
@@ -3610,7 +3610,7 @@ apiInstance.getTelephonyProvidersEdgesSite(siteId)
 
 <a name="getTelephonyProvidersEdgesSiteAutoscalinggroups"></a>
 
-# [**AsgInfoResponse**](AsgInfoResponse.html) getTelephonyProvidersEdgesSiteAutoscalinggroups(siteId)
+# AsgInfoResponse getTelephonyProvidersEdgesSiteAutoscalinggroups(siteId)
 
 GET /api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups
 
@@ -3658,7 +3658,7 @@ apiInstance.getTelephonyProvidersEdgesSiteAutoscalinggroups(siteId)
 
 <a name="getTelephonyProvidersEdgesSiteNumberplan"></a>
 
-# [**NumberPlan**](NumberPlan.html) getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId)
+# NumberPlan getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId)
 
 GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/{numberPlanId}
 
@@ -3709,7 +3709,7 @@ apiInstance.getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId)
 
 <a name="getTelephonyProvidersEdgesSiteNumberplans"></a>
 
-# [**[NumberPlan]**](NumberPlan.html) getTelephonyProvidersEdgesSiteNumberplans(siteId)
+# [NumberPlan] getTelephonyProvidersEdgesSiteNumberplans(siteId)
 
 GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans
 
@@ -3809,7 +3809,7 @@ apiInstance.getTelephonyProvidersEdgesSiteNumberplansClassifications(siteId, opt
 
 <a name="getTelephonyProvidersEdgesSiteOutboundroute"></a>
 
-# [**OutboundRouteBase**](OutboundRouteBase.html) getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
+# OutboundRouteBase getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
 
 GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}
 
@@ -3860,7 +3860,7 @@ apiInstance.getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
 
 <a name="getTelephonyProvidersEdgesSiteOutboundroutes"></a>
 
-# [**OutboundRouteBaseEntityListing**](OutboundRouteBaseEntityListing.html) getTelephonyProvidersEdgesSiteOutboundroutes(siteId, opts)
+# OutboundRouteBaseEntityListing getTelephonyProvidersEdgesSiteOutboundroutes(siteId, opts)
 
 GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes
 
@@ -3918,7 +3918,7 @@ apiInstance.getTelephonyProvidersEdgesSiteOutboundroutes(siteId, opts)
 
 <a name="getTelephonyProvidersEdgesSites"></a>
 
-# [**SiteEntityListing**](SiteEntityListing.html) getTelephonyProvidersEdgesSites(opts)
+# SiteEntityListing getTelephonyProvidersEdgesSites(opts)
 
 GET /api/v2/telephony/providers/edges/sites
 
@@ -3979,7 +3979,7 @@ apiInstance.getTelephonyProvidersEdgesSites(opts)
 
 <a name="getTelephonyProvidersEdgesTimezones"></a>
 
-# [**TimeZoneEntityListing**](TimeZoneEntityListing.html) getTelephonyProvidersEdgesTimezones(opts)
+# TimeZoneEntityListing getTelephonyProvidersEdgesTimezones(opts)
 
 GET /api/v2/telephony/providers/edges/timezones
 
@@ -4030,7 +4030,7 @@ apiInstance.getTelephonyProvidersEdgesTimezones(opts)
 
 <a name="getTelephonyProvidersEdgesTrunk"></a>
 
-# [**Trunk**](Trunk.html) getTelephonyProvidersEdgesTrunk(trunkId)
+# Trunk getTelephonyProvidersEdgesTrunk(trunkId)
 
 GET /api/v2/telephony/providers/edges/trunks/{trunkId}
 
@@ -4078,7 +4078,7 @@ apiInstance.getTelephonyProvidersEdgesTrunk(trunkId)
 
 <a name="getTelephonyProvidersEdgesTrunkMetrics"></a>
 
-# [**TrunkMetrics**](TrunkMetrics.html) getTelephonyProvidersEdgesTrunkMetrics(trunkId)
+# TrunkMetrics getTelephonyProvidersEdgesTrunkMetrics(trunkId)
 
 GET /api/v2/telephony/providers/edges/trunks/{trunkId}/metrics
 
@@ -4126,7 +4126,7 @@ apiInstance.getTelephonyProvidersEdgesTrunkMetrics(trunkId)
 
 <a name="getTelephonyProvidersEdgesTrunkbasesetting"></a>
 
-# [**TrunkBase**](TrunkBase.html) getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, opts)
+# TrunkBase getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, opts)
 
 GET /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}
 
@@ -4178,7 +4178,7 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, opts
 
 <a name="getTelephonyProvidersEdgesTrunkbasesettings"></a>
 
-# [**TrunkBaseEntityListing**](TrunkBaseEntityListing.html) getTelephonyProvidersEdgesTrunkbasesettings(opts)
+# TrunkBaseEntityListing getTelephonyProvidersEdgesTrunkbasesettings(opts)
 
 GET /api/v2/telephony/providers/edges/trunkbasesettings
 
@@ -4243,7 +4243,7 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesettings(opts)
 
 <a name="getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases"></a>
 
-# [**TrunkMetabaseEntityListing**](TrunkMetabaseEntityListing.html) getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(opts)
+# TrunkMetabaseEntityListing getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(opts)
 
 GET /api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases
 
@@ -4296,7 +4296,7 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(opts)
 
 <a name="getTelephonyProvidersEdgesTrunkbasesettingsTemplate"></a>
 
-# [**TrunkBase**](TrunkBase.html) getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId)
+# TrunkBase getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId)
 
 GET /api/v2/telephony/providers/edges/trunkbasesettings/template
 
@@ -4344,7 +4344,7 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId)
 
 <a name="getTelephonyProvidersEdgesTrunks"></a>
 
-# [**TrunkEntityListing**](TrunkEntityListing.html) getTelephonyProvidersEdgesTrunks(opts)
+# TrunkEntityListing getTelephonyProvidersEdgesTrunks(opts)
 
 GET /api/v2/telephony/providers/edges/trunks
 
@@ -4405,7 +4405,7 @@ apiInstance.getTelephonyProvidersEdgesTrunks(opts)
 
 <a name="getTelephonyProvidersEdgesTrunksMetrics"></a>
 
-# [**[TrunkMetrics]**](TrunkMetrics.html) getTelephonyProvidersEdgesTrunksMetrics(trunkIds)
+# [TrunkMetrics] getTelephonyProvidersEdgesTrunksMetrics(trunkIds)
 
 GET /api/v2/telephony/providers/edges/trunks/metrics
 
@@ -4453,7 +4453,7 @@ apiInstance.getTelephonyProvidersEdgesTrunksMetrics(trunkIds)
 
 <a name="getTelephonyProvidersEdgesTrunkswithrecording"></a>
 
-# [**TrunkRecordingEnabledCount**](TrunkRecordingEnabledCount.html) getTelephonyProvidersEdgesTrunkswithrecording(opts)
+# TrunkRecordingEnabledCount getTelephonyProvidersEdgesTrunkswithrecording(opts)
 
 GET /api/v2/telephony/providers/edges/trunkswithrecording
 
@@ -4502,7 +4502,7 @@ apiInstance.getTelephonyProvidersEdgesTrunkswithrecording(opts)
 
 <a name="postTelephonyProvidersEdgeLogicalinterfaces"></a>
 
-# [**DomainLogicalInterface**](DomainLogicalInterface.html) postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body)
+# DomainLogicalInterface postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body)
 
 POST /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces
 
@@ -4607,7 +4607,7 @@ void (no response body)
 
 <a name="postTelephonyProvidersEdgeLogsJobs"></a>
 
-# [**EdgeLogsJobResponse**](EdgeLogsJobResponse.html) postTelephonyProvidersEdgeLogsJobs(edgeId, body)
+# EdgeLogsJobResponse postTelephonyProvidersEdgeLogsJobs(edgeId, body)
 
 POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs
 
@@ -4710,7 +4710,7 @@ apiInstance.postTelephonyProvidersEdgeReboot(edgeId, opts)
 
 <a name="postTelephonyProvidersEdgeSoftwareupdate"></a>
 
-# [**DomainEdgeSoftwareUpdateDto**](DomainEdgeSoftwareUpdateDto.html) postTelephonyProvidersEdgeSoftwareupdate(edgeId, body)
+# DomainEdgeSoftwareUpdateDto postTelephonyProvidersEdgeSoftwareupdate(edgeId, body)
 
 POST /api/v2/telephony/providers/edges/{edgeId}/softwareupdate
 
@@ -4861,7 +4861,7 @@ apiInstance.postTelephonyProvidersEdgeUnpair(edgeId)
 
 <a name="postTelephonyProvidersEdges"></a>
 
-# [**Edge**](Edge.html) postTelephonyProvidersEdges(body)
+# Edge postTelephonyProvidersEdges(body)
 
 POST /api/v2/telephony/providers/edges
 
@@ -4909,7 +4909,7 @@ apiInstance.postTelephonyProvidersEdges(body)
 
 <a name="postTelephonyProvidersEdgesAddressvalidation"></a>
 
-# [**ValidateAddressResponse**](ValidateAddressResponse.html) postTelephonyProvidersEdgesAddressvalidation(body)
+# ValidateAddressResponse postTelephonyProvidersEdgesAddressvalidation(body)
 
 POST /api/v2/telephony/providers/edges/addressvalidation
 
@@ -4957,7 +4957,7 @@ apiInstance.postTelephonyProvidersEdgesAddressvalidation(body)
 
 <a name="postTelephonyProvidersEdgesCertificateauthorities"></a>
 
-# [**DomainCertificateAuthority**](DomainCertificateAuthority.html) postTelephonyProvidersEdgesCertificateauthorities(body)
+# DomainCertificateAuthority postTelephonyProvidersEdgesCertificateauthorities(body)
 
 POST /api/v2/telephony/providers/edges/certificateauthorities
 
@@ -5005,7 +5005,7 @@ apiInstance.postTelephonyProvidersEdgesCertificateauthorities(body)
 
 <a name="postTelephonyProvidersEdgesDidpools"></a>
 
-# [**DIDPool**](DIDPool.html) postTelephonyProvidersEdgesDidpools(body)
+# DIDPool postTelephonyProvidersEdgesDidpools(body)
 
 POST /api/v2/telephony/providers/edges/didpools
 
@@ -5053,7 +5053,7 @@ apiInstance.postTelephonyProvidersEdgesDidpools(body)
 
 <a name="postTelephonyProvidersEdgesEdgegroups"></a>
 
-# [**EdgeGroup**](EdgeGroup.html) postTelephonyProvidersEdgesEdgegroups(body)
+# EdgeGroup postTelephonyProvidersEdgesEdgegroups(body)
 
 POST /api/v2/telephony/providers/edges/edgegroups
 
@@ -5101,7 +5101,7 @@ apiInstance.postTelephonyProvidersEdgesEdgegroups(body)
 
 <a name="postTelephonyProvidersEdgesEndpoints"></a>
 
-# [**Endpoint**](Endpoint.html) postTelephonyProvidersEdgesEndpoints(body)
+# Endpoint postTelephonyProvidersEdgesEndpoints(body)
 
 POST /api/v2/telephony/providers/edges/endpoints
 
@@ -5149,7 +5149,7 @@ apiInstance.postTelephonyProvidersEdgesEndpoints(body)
 
 <a name="postTelephonyProvidersEdgesExtensionpools"></a>
 
-# [**ExtensionPool**](ExtensionPool.html) postTelephonyProvidersEdgesExtensionpools(body)
+# ExtensionPool postTelephonyProvidersEdgesExtensionpools(body)
 
 POST /api/v2/telephony/providers/edges/extensionpools
 
@@ -5197,7 +5197,7 @@ apiInstance.postTelephonyProvidersEdgesExtensionpools(body)
 
 <a name="postTelephonyProvidersEdgesOutboundroutes"></a>
 
-# [**OutboundRoute**](OutboundRoute.html) postTelephonyProvidersEdgesOutboundroutes(body)
+# OutboundRoute postTelephonyProvidersEdgesOutboundroutes(body)
 
 POST /api/v2/telephony/providers/edges/outboundroutes
 
@@ -5293,7 +5293,7 @@ void (no response body)
 
 <a name="postTelephonyProvidersEdgesPhonebasesettings"></a>
 
-# [**PhoneBase**](PhoneBase.html) postTelephonyProvidersEdgesPhonebasesettings(body)
+# PhoneBase postTelephonyProvidersEdgesPhonebasesettings(body)
 
 POST /api/v2/telephony/providers/edges/phonebasesettings
 
@@ -5341,7 +5341,7 @@ apiInstance.postTelephonyProvidersEdgesPhonebasesettings(body)
 
 <a name="postTelephonyProvidersEdgesPhones"></a>
 
-# [**Phone**](Phone.html) postTelephonyProvidersEdgesPhones(body)
+# Phone postTelephonyProvidersEdgesPhones(body)
 
 POST /api/v2/telephony/providers/edges/phones
 
@@ -5488,7 +5488,7 @@ apiInstance.postTelephonyProvidersEdgesSiteAutoscalinggroups(siteId, body)
 
 <a name="postTelephonyProvidersEdgesSiteOutboundroutes"></a>
 
-# [**OutboundRouteBase**](OutboundRouteBase.html) postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)
+# OutboundRouteBase postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)
 
 POST /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes
 
@@ -5587,7 +5587,7 @@ void (no response body)
 
 <a name="postTelephonyProvidersEdgesSites"></a>
 
-# [**Site**](Site.html) postTelephonyProvidersEdgesSites(body)
+# Site postTelephonyProvidersEdgesSites(body)
 
 POST /api/v2/telephony/providers/edges/sites
 
@@ -5635,7 +5635,7 @@ apiInstance.postTelephonyProvidersEdgesSites(body)
 
 <a name="postTelephonyProvidersEdgesTrunkbasesettings"></a>
 
-# [**TrunkBase**](TrunkBase.html) postTelephonyProvidersEdgesTrunkbasesettings(body)
+# TrunkBase postTelephonyProvidersEdgesTrunkbasesettings(body)
 
 POST /api/v2/telephony/providers/edges/trunkbasesettings
 
@@ -5683,7 +5683,7 @@ apiInstance.postTelephonyProvidersEdgesTrunkbasesettings(body)
 
 <a name="putTelephonyProvidersEdge"></a>
 
-# [**Edge**](Edge.html) putTelephonyProvidersEdge(edgeId, body)
+# Edge putTelephonyProvidersEdge(edgeId, body)
 
 PUT /api/v2/telephony/providers/edges/{edgeId}
 
@@ -5734,7 +5734,7 @@ apiInstance.putTelephonyProvidersEdge(edgeId, body)
 
 <a name="putTelephonyProvidersEdgeLine"></a>
 
-# [**EdgeLine**](EdgeLine.html) putTelephonyProvidersEdgeLine(edgeId, lineId, body)
+# EdgeLine putTelephonyProvidersEdgeLine(edgeId, lineId, body)
 
 PUT /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}
 
@@ -5788,7 +5788,7 @@ apiInstance.putTelephonyProvidersEdgeLine(edgeId, lineId, body)
 
 <a name="putTelephonyProvidersEdgeLogicalinterface"></a>
 
-# [**DomainLogicalInterface**](DomainLogicalInterface.html) putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body)
+# DomainLogicalInterface putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body)
 
 PUT /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}
 
@@ -5842,7 +5842,7 @@ apiInstance.putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body)
 
 <a name="putTelephonyProvidersEdgesCertificateauthority"></a>
 
-# [**DomainCertificateAuthority**](DomainCertificateAuthority.html) putTelephonyProvidersEdgesCertificateauthority(certificateId, body)
+# DomainCertificateAuthority putTelephonyProvidersEdgesCertificateauthority(certificateId, body)
 
 PUT /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}
 
@@ -5893,7 +5893,7 @@ apiInstance.putTelephonyProvidersEdgesCertificateauthority(certificateId, body)
 
 <a name="putTelephonyProvidersEdgesDid"></a>
 
-# [**DID**](DID.html) putTelephonyProvidersEdgesDid(didId, body)
+# DID putTelephonyProvidersEdgesDid(didId, body)
 
 PUT /api/v2/telephony/providers/edges/dids/{didId}
 
@@ -5944,7 +5944,7 @@ apiInstance.putTelephonyProvidersEdgesDid(didId, body)
 
 <a name="putTelephonyProvidersEdgesDidpool"></a>
 
-# [**DIDPool**](DIDPool.html) putTelephonyProvidersEdgesDidpool(didPoolId, body)
+# DIDPool putTelephonyProvidersEdgesDidpool(didPoolId, body)
 
 PUT /api/v2/telephony/providers/edges/didpools/{didPoolId}
 
@@ -5995,7 +5995,7 @@ apiInstance.putTelephonyProvidersEdgesDidpool(didPoolId, body)
 
 <a name="putTelephonyProvidersEdgesEdgegroup"></a>
 
-# [**EdgeGroup**](EdgeGroup.html) putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body)
+# EdgeGroup putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body)
 
 PUT /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}
 
@@ -6044,9 +6044,9 @@ apiInstance.putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body)
 
 **EdgeGroup**
 
-<a name="putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis"></a>
+<a name="putTelephonyProvidersEdgesEdgegroupEdgetrunkbase"></a>
 
-# [**EdgeTrunkBase**](EdgeTrunkBase.html) putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(edgegroupId, edgetrunkbaseId, body)
+# EdgeTrunkBase putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, body)
 
 PUT /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}
 
@@ -6073,12 +6073,12 @@ var edgetrunkbaseId = "edgetrunkbaseId_example"; // String | Edge Trunk Base ID
 
 var body = {}; // Object | EdgeTrunkBase
 
-apiInstance.putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(edgegroupId, edgetrunkbaseId, body)
+apiInstance.putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, body)
   .then(function(data) {
-    console.log(`putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis success! data: ${JSON.stringify(data, null, 2)}`);
+    console.log(`putTelephonyProvidersEdgesEdgegroupEdgetrunkbase success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(error) {
-  	console.log('There was a failure calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis');
+  	console.log('There was a failure calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbase');
     console.error(error);
   });
 
@@ -6100,7 +6100,7 @@ apiInstance.putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(edgegroupId, edget
 
 <a name="putTelephonyProvidersEdgesEndpoint"></a>
 
-# [**Endpoint**](Endpoint.html) putTelephonyProvidersEdgesEndpoint(endpointId, body)
+# Endpoint putTelephonyProvidersEdgesEndpoint(endpointId, body)
 
 PUT /api/v2/telephony/providers/edges/endpoints/{endpointId}
 
@@ -6151,7 +6151,7 @@ apiInstance.putTelephonyProvidersEdgesEndpoint(endpointId, body)
 
 <a name="putTelephonyProvidersEdgesExtension"></a>
 
-# [**Extension**](Extension.html) putTelephonyProvidersEdgesExtension(extensionId, body)
+# Extension putTelephonyProvidersEdgesExtension(extensionId, body)
 
 PUT /api/v2/telephony/providers/edges/extensions/{extensionId}
 
@@ -6202,7 +6202,7 @@ apiInstance.putTelephonyProvidersEdgesExtension(extensionId, body)
 
 <a name="putTelephonyProvidersEdgesExtensionpool"></a>
 
-# [**ExtensionPool**](ExtensionPool.html) putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)
+# ExtensionPool putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)
 
 PUT /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}
 
@@ -6253,7 +6253,7 @@ apiInstance.putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)
 
 <a name="putTelephonyProvidersEdgesOutboundroute"></a>
 
-# [**OutboundRoute**](OutboundRoute.html) putTelephonyProvidersEdgesOutboundroute(outboundRouteId, body)
+# OutboundRoute putTelephonyProvidersEdgesOutboundroute(outboundRouteId, body)
 
 PUT /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}
 
@@ -6304,7 +6304,7 @@ apiInstance.putTelephonyProvidersEdgesOutboundroute(outboundRouteId, body)
 
 <a name="putTelephonyProvidersEdgesPhone"></a>
 
-# [**Phone**](Phone.html) putTelephonyProvidersEdgesPhone(phoneId, body)
+# Phone putTelephonyProvidersEdgesPhone(phoneId, body)
 
 PUT /api/v2/telephony/providers/edges/phones/{phoneId}
 
@@ -6355,7 +6355,7 @@ apiInstance.putTelephonyProvidersEdgesPhone(phoneId, body)
 
 <a name="putTelephonyProvidersEdgesPhonebasesetting"></a>
 
-# [**PhoneBase**](PhoneBase.html) putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body)
+# PhoneBase putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body)
 
 PUT /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}
 
@@ -6406,7 +6406,7 @@ apiInstance.putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body)
 
 <a name="putTelephonyProvidersEdgesSite"></a>
 
-# [**Site**](Site.html) putTelephonyProvidersEdgesSite(siteId, body)
+# Site putTelephonyProvidersEdgesSite(siteId, body)
 
 PUT /api/v2/telephony/providers/edges/sites/{siteId}
 
@@ -6457,7 +6457,7 @@ apiInstance.putTelephonyProvidersEdgesSite(siteId, body)
 
 <a name="putTelephonyProvidersEdgesSiteNumberplans"></a>
 
-# [**[NumberPlan]**](NumberPlan.html) putTelephonyProvidersEdgesSiteNumberplans(siteId, body)
+# [NumberPlan] putTelephonyProvidersEdgesSiteNumberplans(siteId, body)
 
 PUT /api/v2/telephony/providers/edges/sites/{siteId}/numberplans
 
@@ -6508,7 +6508,7 @@ apiInstance.putTelephonyProvidersEdgesSiteNumberplans(siteId, body)
 
 <a name="putTelephonyProvidersEdgesSiteOutboundroute"></a>
 
-# [**OutboundRouteBase**](OutboundRouteBase.html) putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, body)
+# OutboundRouteBase putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, body)
 
 PUT /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}
 
@@ -6562,7 +6562,7 @@ apiInstance.putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId,
 
 <a name="putTelephonyProvidersEdgesTrunkbasesetting"></a>
 
-# [**TrunkBase**](TrunkBase.html) putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body)
+# TrunkBase putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body)
 
 PUT /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}
 

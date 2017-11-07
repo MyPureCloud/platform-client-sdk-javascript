@@ -118,7 +118,7 @@ void (no response body)
 
 <a name="getAlertingAlertsActive"></a>
 
-# [**ActiveAlertCount**](ActiveAlertCount.html) getAlertingAlertsActive()
+# ActiveAlertCount getAlertingAlertsActive()
 
 GET /api/v2/alerting/alerts/active
 
@@ -160,7 +160,7 @@ This endpoint does not need any parameter.
 
 <a name="getAlertingInteractionstatsAlert"></a>
 
-# [**InteractionStatsAlert**](InteractionStatsAlert.html) getAlertingInteractionstatsAlert(alertId, opts)
+# InteractionStatsAlert getAlertingInteractionstatsAlert(alertId, opts)
 
 GET /api/v2/alerting/interactionstats/alerts/{alertId}
 
@@ -212,7 +212,7 @@ apiInstance.getAlertingInteractionstatsAlert(alertId, opts)
 
 <a name="getAlertingInteractionstatsAlerts"></a>
 
-# [**InteractionStatsAlertContainer**](InteractionStatsAlertContainer.html) getAlertingInteractionstatsAlerts(opts)
+# InteractionStatsAlertContainer getAlertingInteractionstatsAlerts(opts)
 
 GET /api/v2/alerting/interactionstats/alerts
 
@@ -261,7 +261,7 @@ apiInstance.getAlertingInteractionstatsAlerts(opts)
 
 <a name="getAlertingInteractionstatsAlertsUnread"></a>
 
-# [**UnreadMetric**](UnreadMetric.html) getAlertingInteractionstatsAlertsUnread()
+# UnreadMetric getAlertingInteractionstatsAlertsUnread()
 
 GET /api/v2/alerting/interactionstats/alerts/unread
 
@@ -303,7 +303,7 @@ This endpoint does not need any parameter.
 
 <a name="getAlertingInteractionstatsRule"></a>
 
-# [**InteractionStatsRule**](InteractionStatsRule.html) getAlertingInteractionstatsRule(ruleId, opts)
+# InteractionStatsRule getAlertingInteractionstatsRule(ruleId, opts)
 
 GET /api/v2/alerting/interactionstats/rules/{ruleId}
 
@@ -355,7 +355,7 @@ apiInstance.getAlertingInteractionstatsRule(ruleId, opts)
 
 <a name="getAlertingInteractionstatsRules"></a>
 
-# [**InteractionStatsRuleContainer**](InteractionStatsRuleContainer.html) getAlertingInteractionstatsRules(opts)
+# InteractionStatsRuleContainer getAlertingInteractionstatsRules(opts)
 
 GET /api/v2/alerting/interactionstats/rules
 
@@ -404,7 +404,7 @@ apiInstance.getAlertingInteractionstatsRules(opts)
 
 <a name="postAlertingInteractionstatsRules"></a>
 
-# [**InteractionStatsRule**](InteractionStatsRule.html) postAlertingInteractionstatsRules(body, opts)
+# InteractionStatsRule postAlertingInteractionstatsRules(body, opts)
 
 POST /api/v2/alerting/interactionstats/rules
 
@@ -456,7 +456,7 @@ apiInstance.postAlertingInteractionstatsRules(body, opts)
 
 <a name="putAlertingInteractionstatsAlert"></a>
 
-# [**UnreadStatus**](UnreadStatus.html) putAlertingInteractionstatsAlert(alertId, body, opts)
+# UnreadStatus putAlertingInteractionstatsAlert(alertId, body, opts)
 
 PUT /api/v2/alerting/interactionstats/alerts/{alertId}
 
@@ -511,7 +511,7 @@ apiInstance.putAlertingInteractionstatsAlert(alertId, body, opts)
 
 <a name="putAlertingInteractionstatsRule"></a>
 
-# [**InteractionStatsRule**](InteractionStatsRule.html) putAlertingInteractionstatsRule(ruleId, body, opts)
+# InteractionStatsRule putAlertingInteractionstatsRule(ruleId, body, opts)
 
 PUT /api/v2/alerting/interactionstats/rules/{ruleId}
 

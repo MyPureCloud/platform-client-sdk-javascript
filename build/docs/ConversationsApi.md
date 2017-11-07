@@ -247,7 +247,7 @@ void (no response body)
 
 <a name="getAnalyticsConversationDetails"></a>
 
-# [**AnalyticsConversation**](AnalyticsConversation.html) getAnalyticsConversationDetails(conversationId)
+# AnalyticsConversation getAnalyticsConversationDetails(conversationId)
 
 GET /api/v2/analytics/conversations/{conversationId}/details
 
@@ -295,7 +295,7 @@ apiInstance.getAnalyticsConversationDetails(conversationId)
 
 <a name="getConversation"></a>
 
-# [**Conversation**](Conversation.html) getConversation(conversationId)
+# Conversation getConversation(conversationId)
 
 GET /api/v2/conversations/{conversationId}
 
@@ -343,7 +343,7 @@ apiInstance.getConversation(conversationId)
 
 <a name="getConversationParticipantWrapup"></a>
 
-# [**WrapupCode**](WrapupCode.html) getConversationParticipantWrapup(conversationId, participantId, opts)
+# WrapupCode getConversationParticipantWrapup(conversationId, participantId, opts)
 
 GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup
 
@@ -398,7 +398,7 @@ apiInstance.getConversationParticipantWrapup(conversationId, participantId, opts
 
 <a name="getConversationParticipantWrapupcodes"></a>
 
-# [**[WrapupCode]**](WrapupCode.html) getConversationParticipantWrapupcodes(conversationId, participantId)
+# [WrapupCode] getConversationParticipantWrapupcodes(conversationId, participantId)
 
 GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes
 
@@ -449,7 +449,7 @@ apiInstance.getConversationParticipantWrapupcodes(conversationId, participantId)
 
 <a name="getConversations"></a>
 
-# [**ConversationEntityListing**](ConversationEntityListing.html) getConversations(opts)
+# ConversationEntityListing getConversations(opts)
 
 GET /api/v2/conversations
 
@@ -498,7 +498,7 @@ apiInstance.getConversations(opts)
 
 <a name="getConversationsCall"></a>
 
-# [**CallConversation**](CallConversation.html) getConversationsCall(conversationId)
+# CallConversation getConversationsCall(conversationId)
 
 GET /api/v2/conversations/calls/{conversationId}
 
@@ -546,7 +546,7 @@ apiInstance.getConversationsCall(conversationId)
 
 <a name="getConversationsCallParticipantWrapup"></a>
 
-# [**Wrapup**](Wrapup.html) getConversationsCallParticipantWrapup(conversationId, participantId, opts)
+# Wrapup getConversationsCallParticipantWrapup(conversationId, participantId, opts)
 
 GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup
 
@@ -601,7 +601,7 @@ apiInstance.getConversationsCallParticipantWrapup(conversationId, participantId,
 
 <a name="getConversationsCallParticipantWrapupcodes"></a>
 
-# [**[WrapupCode]**](WrapupCode.html) getConversationsCallParticipantWrapupcodes(conversationId, participantId)
+# [WrapupCode] getConversationsCallParticipantWrapupcodes(conversationId, participantId)
 
 GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes
 
@@ -652,7 +652,7 @@ apiInstance.getConversationsCallParticipantWrapupcodes(conversationId, participa
 
 <a name="getConversationsCallback"></a>
 
-# [**CallbackConversation**](CallbackConversation.html) getConversationsCallback(conversationId)
+# CallbackConversation getConversationsCallback(conversationId)
 
 GET /api/v2/conversations/callbacks/{conversationId}
 
@@ -700,7 +700,7 @@ apiInstance.getConversationsCallback(conversationId)
 
 <a name="getConversationsCallbackParticipantWrapup"></a>
 
-# [**Wrapup**](Wrapup.html) getConversationsCallbackParticipantWrapup(conversationId, participantId, opts)
+# Wrapup getConversationsCallbackParticipantWrapup(conversationId, participantId, opts)
 
 GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup
 
@@ -755,7 +755,7 @@ apiInstance.getConversationsCallbackParticipantWrapup(conversationId, participan
 
 <a name="getConversationsCallbackParticipantWrapupcodes"></a>
 
-# [**[WrapupCode]**](WrapupCode.html) getConversationsCallbackParticipantWrapupcodes(conversationId, participantId)
+# [WrapupCode] getConversationsCallbackParticipantWrapupcodes(conversationId, participantId)
 
 GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes
 
@@ -806,7 +806,7 @@ apiInstance.getConversationsCallbackParticipantWrapupcodes(conversationId, parti
 
 <a name="getConversationsCallbacks"></a>
 
-# [**CallbackConversationEntityListing**](CallbackConversationEntityListing.html) getConversationsCallbacks()
+# CallbackConversationEntityListing getConversationsCallbacks()
 
 GET /api/v2/conversations/callbacks
 
@@ -848,7 +848,7 @@ This endpoint does not need any parameter.
 
 <a name="getConversationsCalls"></a>
 
-# [**CallConversationEntityListing**](CallConversationEntityListing.html) getConversationsCalls()
+# CallConversationEntityListing getConversationsCalls()
 
 GET /api/v2/conversations/calls
 
@@ -890,7 +890,7 @@ This endpoint does not need any parameter.
 
 <a name="getConversationsCallsHistory"></a>
 
-# [**CallHistoryConversationEntityListing**](CallHistoryConversationEntityListing.html) getConversationsCallsHistory(opts)
+# CallHistoryConversationEntityListing getConversationsCallsHistory(opts)
 
 GET /api/v2/conversations/calls/history
 
@@ -945,7 +945,7 @@ apiInstance.getConversationsCallsHistory(opts)
 
 <a name="getConversationsCallsMaximumconferenceparties"></a>
 
-# [**MaxParticipants**](MaxParticipants.html) getConversationsCallsMaximumconferenceparties()
+# MaxParticipants getConversationsCallsMaximumconferenceparties()
 
 GET /api/v2/conversations/calls/maximumconferenceparties
 
@@ -987,7 +987,7 @@ This endpoint does not need any parameter.
 
 <a name="getConversationsChat"></a>
 
-# [**ChatConversation**](ChatConversation.html) getConversationsChat(conversationId)
+# ChatConversation getConversationsChat(conversationId)
 
 GET /api/v2/conversations/chats/{conversationId}
 
@@ -1035,7 +1035,7 @@ apiInstance.getConversationsChat(conversationId)
 
 <a name="getConversationsChatParticipantWrapup"></a>
 
-# [**Wrapup**](Wrapup.html) getConversationsChatParticipantWrapup(conversationId, participantId, opts)
+# Wrapup getConversationsChatParticipantWrapup(conversationId, participantId, opts)
 
 GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup
 
@@ -1090,7 +1090,7 @@ apiInstance.getConversationsChatParticipantWrapup(conversationId, participantId,
 
 <a name="getConversationsChatParticipantWrapupcodes"></a>
 
-# [**[WrapupCode]**](WrapupCode.html) getConversationsChatParticipantWrapupcodes(conversationId, participantId)
+# [WrapupCode] getConversationsChatParticipantWrapupcodes(conversationId, participantId)
 
 GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes
 
@@ -1141,7 +1141,7 @@ apiInstance.getConversationsChatParticipantWrapupcodes(conversationId, participa
 
 <a name="getConversationsChats"></a>
 
-# [**ChatConversationEntityListing**](ChatConversationEntityListing.html) getConversationsChats()
+# ChatConversationEntityListing getConversationsChats()
 
 GET /api/v2/conversations/chats
 
@@ -1183,7 +1183,7 @@ This endpoint does not need any parameter.
 
 <a name="getConversationsCobrowsesession"></a>
 
-# [**CobrowseConversation**](CobrowseConversation.html) getConversationsCobrowsesession(conversationId)
+# CobrowseConversation getConversationsCobrowsesession(conversationId)
 
 GET /api/v2/conversations/cobrowsesessions/{conversationId}
 
@@ -1231,7 +1231,7 @@ apiInstance.getConversationsCobrowsesession(conversationId)
 
 <a name="getConversationsCobrowsesessionParticipantWrapup"></a>
 
-# [**Wrapup**](Wrapup.html) getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, opts)
+# Wrapup getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, opts)
 
 GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup
 
@@ -1286,7 +1286,7 @@ apiInstance.getConversationsCobrowsesessionParticipantWrapup(conversationId, par
 
 <a name="getConversationsCobrowsesessionParticipantWrapupcodes"></a>
 
-# [**[WrapupCode]**](WrapupCode.html) getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId)
+# [WrapupCode] getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId)
 
 GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes
 
@@ -1337,7 +1337,7 @@ apiInstance.getConversationsCobrowsesessionParticipantWrapupcodes(conversationId
 
 <a name="getConversationsCobrowsesessions"></a>
 
-# [**CobrowseConversationEntityListing**](CobrowseConversationEntityListing.html) getConversationsCobrowsesessions()
+# CobrowseConversationEntityListing getConversationsCobrowsesessions()
 
 GET /api/v2/conversations/cobrowsesessions
 
@@ -1379,7 +1379,7 @@ This endpoint does not need any parameter.
 
 <a name="getConversationsEmail"></a>
 
-# [**EmailConversation**](EmailConversation.html) getConversationsEmail(conversationId)
+# EmailConversation getConversationsEmail(conversationId)
 
 GET /api/v2/conversations/emails/{conversationId}
 
@@ -1427,7 +1427,7 @@ apiInstance.getConversationsEmail(conversationId)
 
 <a name="getConversationsEmailMessage"></a>
 
-# [**EmailMessage**](EmailMessage.html) getConversationsEmailMessage(conversationId, messageId)
+# EmailMessage getConversationsEmailMessage(conversationId, messageId)
 
 GET /api/v2/conversations/emails/{conversationId}/messages/{messageId}
 
@@ -1478,7 +1478,7 @@ apiInstance.getConversationsEmailMessage(conversationId, messageId)
 
 <a name="getConversationsEmailMessages"></a>
 
-# [**EmailMessageListing**](EmailMessageListing.html) getConversationsEmailMessages(conversationId)
+# EmailMessageListing getConversationsEmailMessages(conversationId)
 
 GET /api/v2/conversations/emails/{conversationId}/messages
 
@@ -1526,7 +1526,7 @@ apiInstance.getConversationsEmailMessages(conversationId)
 
 <a name="getConversationsEmailMessagesDraft"></a>
 
-# [**EmailMessage**](EmailMessage.html) getConversationsEmailMessagesDraft(conversationId)
+# EmailMessage getConversationsEmailMessagesDraft(conversationId)
 
 GET /api/v2/conversations/emails/{conversationId}/messages/draft
 
@@ -1574,7 +1574,7 @@ apiInstance.getConversationsEmailMessagesDraft(conversationId)
 
 <a name="getConversationsEmailParticipantWrapup"></a>
 
-# [**Wrapup**](Wrapup.html) getConversationsEmailParticipantWrapup(conversationId, participantId, opts)
+# Wrapup getConversationsEmailParticipantWrapup(conversationId, participantId, opts)
 
 GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup
 
@@ -1629,7 +1629,7 @@ apiInstance.getConversationsEmailParticipantWrapup(conversationId, participantId
 
 <a name="getConversationsEmailParticipantWrapupcodes"></a>
 
-# [**[WrapupCode]**](WrapupCode.html) getConversationsEmailParticipantWrapupcodes(conversationId, participantId)
+# [WrapupCode] getConversationsEmailParticipantWrapupcodes(conversationId, participantId)
 
 GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes
 
@@ -1680,7 +1680,7 @@ apiInstance.getConversationsEmailParticipantWrapupcodes(conversationId, particip
 
 <a name="getConversationsEmails"></a>
 
-# [**EmailConversationEntityListing**](EmailConversationEntityListing.html) getConversationsEmails()
+# EmailConversationEntityListing getConversationsEmails()
 
 GET /api/v2/conversations/emails
 
@@ -1830,7 +1830,7 @@ void (no response body)
 
 <a name="patchConversationsCall"></a>
 
-# [**Conversation**](Conversation.html) patchConversationsCall(conversationId, body)
+# Conversation patchConversationsCall(conversationId, body)
 
 PATCH /api/v2/conversations/calls/{conversationId}
 
@@ -1989,7 +1989,7 @@ void (no response body)
 
 <a name="patchConversationsCallParticipantCommunication"></a>
 
-# [**Empty**](Empty.html) patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body)
+# Empty patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body)
 
 PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}
 
@@ -2046,7 +2046,7 @@ apiInstance.patchConversationsCallParticipantCommunication(conversationId, parti
 
 <a name="patchConversationsCallParticipantConsult"></a>
 
-# [**ConsultTransferResponse**](ConsultTransferResponse.html) patchConversationsCallParticipantConsult(conversationId, participantId, body)
+# ConsultTransferResponse patchConversationsCallParticipantConsult(conversationId, participantId, body)
 
 PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult
 
@@ -2100,7 +2100,7 @@ apiInstance.patchConversationsCallParticipantConsult(conversationId, participant
 
 <a name="patchConversationsCallback"></a>
 
-# [**Conversation**](Conversation.html) patchConversationsCallback(conversationId, body)
+# Conversation patchConversationsCallback(conversationId, body)
 
 PATCH /api/v2/conversations/callbacks/{conversationId}
 
@@ -2259,7 +2259,7 @@ void (no response body)
 
 <a name="patchConversationsCallbackParticipantCommunication"></a>
 
-# [**Empty**](Empty.html) patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body)
+# Empty patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body)
 
 PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}
 
@@ -2316,7 +2316,7 @@ apiInstance.patchConversationsCallbackParticipantCommunication(conversationId, p
 
 <a name="patchConversationsChat"></a>
 
-# [**Conversation**](Conversation.html) patchConversationsChat(conversationId, body)
+# Conversation patchConversationsChat(conversationId, body)
 
 PATCH /api/v2/conversations/chats/{conversationId}
 
@@ -2475,7 +2475,7 @@ void (no response body)
 
 <a name="patchConversationsChatParticipantCommunication"></a>
 
-# [**Empty**](Empty.html) patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body)
+# Empty patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body)
 
 PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}
 
@@ -2532,7 +2532,7 @@ apiInstance.patchConversationsChatParticipantCommunication(conversationId, parti
 
 <a name="patchConversationsCobrowsesession"></a>
 
-# [**Conversation**](Conversation.html) patchConversationsCobrowsesession(conversationId, body)
+# Conversation patchConversationsCobrowsesession(conversationId, body)
 
 PATCH /api/v2/conversations/cobrowsesessions/{conversationId}
 
@@ -2693,7 +2693,7 @@ void (no response body)
 
 <a name="patchConversationsCobrowsesessionParticipantCommunication"></a>
 
-# [**Empty**](Empty.html) patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body)
+# Empty patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body)
 
 PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}
 
@@ -2750,7 +2750,7 @@ apiInstance.patchConversationsCobrowsesessionParticipantCommunication(conversati
 
 <a name="patchConversationsEmail"></a>
 
-# [**Conversation**](Conversation.html) patchConversationsEmail(conversationId, body)
+# Conversation patchConversationsEmail(conversationId, body)
 
 PATCH /api/v2/conversations/emails/{conversationId}
 
@@ -2909,7 +2909,7 @@ void (no response body)
 
 <a name="patchConversationsEmailParticipantCommunication"></a>
 
-# [**Empty**](Empty.html) patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body)
+# Empty patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body)
 
 PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}
 
@@ -2966,7 +2966,7 @@ apiInstance.patchConversationsEmailParticipantCommunication(conversationId, part
 
 <a name="postAnalyticsConversationDetailsProperties"></a>
 
-# [**PropertyIndexRequest**](PropertyIndexRequest.html) postAnalyticsConversationDetailsProperties(conversationId, body)
+# PropertyIndexRequest postAnalyticsConversationDetailsProperties(conversationId, body)
 
 POST /api/v2/analytics/conversations/{conversationId}/details/properties
 
@@ -3017,7 +3017,7 @@ apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
 
 <a name="postAnalyticsConversationsAggregatesQuery"></a>
 
-# [**AggregateQueryResponse**](AggregateQueryResponse.html) postAnalyticsConversationsAggregatesQuery(body)
+# AggregateQueryResponse postAnalyticsConversationsAggregatesQuery(body)
 
 POST /api/v2/analytics/conversations/aggregates/query
 
@@ -3065,7 +3065,7 @@ apiInstance.postAnalyticsConversationsAggregatesQuery(body)
 
 <a name="postAnalyticsConversationsDetailsQuery"></a>
 
-# [**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse.html) postAnalyticsConversationsDetailsQuery(body)
+# AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(body)
 
 POST /api/v2/analytics/conversations/details/query
 
@@ -3277,7 +3277,7 @@ void (no response body)
 
 <a name="postConversationsCall"></a>
 
-# [**Conversation**](Conversation.html) postConversationsCall(conversationId, body)
+# Conversation postConversationsCall(conversationId, body)
 
 POST /api/v2/conversations/calls/{conversationId}
 
@@ -3328,7 +3328,7 @@ apiInstance.postConversationsCall(conversationId, body)
 
 <a name="postConversationsCallParticipantConsult"></a>
 
-# [**ConsultTransferResponse**](ConsultTransferResponse.html) postConversationsCallParticipantConsult(conversationId, participantId, body)
+# ConsultTransferResponse postConversationsCallParticipantConsult(conversationId, participantId, body)
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult
 
@@ -3487,7 +3487,7 @@ void (no response body)
 
 <a name="postConversationsCallParticipants"></a>
 
-# [**Conversation**](Conversation.html) postConversationsCallParticipants(conversationId, body)
+# Conversation postConversationsCallParticipants(conversationId, body)
 
 POST /api/v2/conversations/calls/{conversationId}/participants
 
@@ -3592,7 +3592,7 @@ void (no response body)
 
 <a name="postConversationsCallbacks"></a>
 
-# [**CreateCallbackResponse**](CreateCallbackResponse.html) postConversationsCallbacks(body)
+# CreateCallbackResponse postConversationsCallbacks(body)
 
 POST /api/v2/conversations/callbacks
 
@@ -3640,7 +3640,7 @@ apiInstance.postConversationsCallbacks(body)
 
 <a name="postConversationsCalls"></a>
 
-# [**CreateCallResponse**](CreateCallResponse.html) postConversationsCalls(body)
+# CreateCallResponse postConversationsCalls(body)
 
 POST /api/v2/conversations/calls
 
@@ -3742,7 +3742,7 @@ void (no response body)
 
 <a name="postConversationsChats"></a>
 
-# [**ChatConversation**](ChatConversation.html) postConversationsChats(body)
+# ChatConversation postConversationsChats(body)
 
 POST /api/v2/conversations/chats
 
@@ -3845,7 +3845,7 @@ void (no response body)
 
 <a name="postConversationsEmailInboundmessages"></a>
 
-# [**EmailConversation**](EmailConversation.html) postConversationsEmailInboundmessages(conversationId, body)
+# EmailConversation postConversationsEmailInboundmessages(conversationId, body)
 
 POST /api/v2/conversations/emails/{conversationId}/inboundmessages
 
@@ -3896,7 +3896,7 @@ apiInstance.postConversationsEmailInboundmessages(conversationId, body)
 
 <a name="postConversationsEmailMessages"></a>
 
-# [**EmailMessage**](EmailMessage.html) postConversationsEmailMessages(conversationId, body)
+# EmailMessage postConversationsEmailMessages(conversationId, body)
 
 POST /api/v2/conversations/emails/{conversationId}/messages
 
@@ -4001,7 +4001,7 @@ void (no response body)
 
 <a name="postConversationsEmails"></a>
 
-# [**EmailConversation**](EmailConversation.html) postConversationsEmails(body)
+# EmailConversation postConversationsEmails(body)
 
 POST /api/v2/conversations/emails
 
@@ -4049,7 +4049,7 @@ apiInstance.postConversationsEmails(body)
 
 <a name="postConversationsFaxes"></a>
 
-# [**FaxSendResponse**](FaxSendResponse.html) postConversationsFaxes(body)
+# FaxSendResponse postConversationsFaxes(body)
 
 POST /api/v2/conversations/faxes
 
@@ -4097,7 +4097,7 @@ apiInstance.postConversationsFaxes(body)
 
 <a name="putConversationsCallParticipantCommunicationUuidata"></a>
 
-# [**Empty**](Empty.html) putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body)
+# Empty putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body)
 
 PUT /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata
 
@@ -4154,7 +4154,7 @@ apiInstance.putConversationsCallParticipantCommunicationUuidata(conversationId, 
 
 <a name="putConversationsEmailMessagesDraft"></a>
 
-# [**EmailMessage**](EmailMessage.html) putConversationsEmailMessagesDraft(conversationId, body)
+# EmailMessage putConversationsEmailMessagesDraft(conversationId, body)
 
 PUT /api/v2/conversations/emails/{conversationId}/messages/draft
 

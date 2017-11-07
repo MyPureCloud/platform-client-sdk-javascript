@@ -497,7 +497,7 @@ void (no response body)
 
 <a name="getRoutingEmailDomain"></a>
 
-# [**InboundDomain**](InboundDomain.html) getRoutingEmailDomain(domainId)
+# InboundDomain getRoutingEmailDomain(domainId)
 
 GET /api/v2/routing/email/domains/{domainId}
 
@@ -545,7 +545,7 @@ apiInstance.getRoutingEmailDomain(domainId)
 
 <a name="getRoutingEmailDomainRoute"></a>
 
-# [**InboundRoute**](InboundRoute.html) getRoutingEmailDomainRoute(domainName, routeId)
+# InboundRoute getRoutingEmailDomainRoute(domainName, routeId)
 
 GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}
 
@@ -596,7 +596,7 @@ apiInstance.getRoutingEmailDomainRoute(domainName, routeId)
 
 <a name="getRoutingEmailDomainRoutes"></a>
 
-# [**InboundRouteEntityListing**](InboundRouteEntityListing.html) getRoutingEmailDomainRoutes(domainName, opts)
+# InboundRouteEntityListing getRoutingEmailDomainRoutes(domainName, opts)
 
 GET /api/v2/routing/email/domains/{domainName}/routes
 
@@ -652,7 +652,7 @@ apiInstance.getRoutingEmailDomainRoutes(domainName, opts)
 
 <a name="getRoutingEmailDomains"></a>
 
-# [**InboundDomainEntityListing**](InboundDomainEntityListing.html) getRoutingEmailDomains()
+# InboundDomainEntityListing getRoutingEmailDomains()
 
 GET /api/v2/routing/email/domains
 
@@ -694,7 +694,7 @@ This endpoint does not need any parameter.
 
 <a name="getRoutingEmailSetup"></a>
 
-# [**EmailSetup**](EmailSetup.html) getRoutingEmailSetup()
+# EmailSetup getRoutingEmailSetup()
 
 GET /api/v2/routing/email/setup
 
@@ -736,7 +736,7 @@ This endpoint does not need any parameter.
 
 <a name="getRoutingLanguages"></a>
 
-# [**LanguageEntityListing**](LanguageEntityListing.html) getRoutingLanguages(opts)
+# LanguageEntityListing getRoutingLanguages(opts)
 
 GET /api/v2/routing/languages
 
@@ -791,7 +791,7 @@ apiInstance.getRoutingLanguages(opts)
 
 <a name="getRoutingQueue"></a>
 
-# [**Queue**](Queue.html) getRoutingQueue(queueId)
+# Queue getRoutingQueue(queueId)
 
 GET /api/v2/routing/queues/{queueId}
 
@@ -839,7 +839,7 @@ apiInstance.getRoutingQueue(queueId)
 
 <a name="getRoutingQueueEstimatedwaittime"></a>
 
-# [**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions.html) getRoutingQueueEstimatedwaittime(queueId, opts)
+# EstimatedWaitTimePredictions getRoutingQueueEstimatedwaittime(queueId, opts)
 
 GET /api/v2/routing/queues/{queueId}/estimatedwaittime
 
@@ -891,7 +891,7 @@ apiInstance.getRoutingQueueEstimatedwaittime(queueId, opts)
 
 <a name="getRoutingQueueMediatypeEstimatedwaittime"></a>
 
-# [**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions.html) getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType)
+# EstimatedWaitTimePredictions getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType)
 
 GET /api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime
 
@@ -942,7 +942,7 @@ apiInstance.getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType)
 
 <a name="getRoutingQueueUsers"></a>
 
-# [**QueueMemberEntityListing**](QueueMemberEntityListing.html) getRoutingQueueUsers(queueId, opts)
+# QueueMemberEntityListing getRoutingQueueUsers(queueId, opts)
 
 GET /api/v2/routing/queues/{queueId}/users
 
@@ -1014,7 +1014,7 @@ apiInstance.getRoutingQueueUsers(queueId, opts)
 
 <a name="getRoutingQueueWrapupcodes"></a>
 
-# [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) getRoutingQueueWrapupcodes(queueId)
+# WrapupCodeEntityListing getRoutingQueueWrapupcodes(queueId)
 
 GET /api/v2/routing/queues/{queueId}/wrapupcodes
 
@@ -1062,7 +1062,7 @@ apiInstance.getRoutingQueueWrapupcodes(queueId)
 
 <a name="getRoutingQueues"></a>
 
-# [**QueueEntityListing**](QueueEntityListing.html) getRoutingQueues(opts)
+# QueueEntityListing getRoutingQueues(opts)
 
 GET /api/v2/routing/queues
 
@@ -1119,7 +1119,7 @@ apiInstance.getRoutingQueues(opts)
 
 <a name="getRoutingSkill"></a>
 
-# [**RoutingSkill**](RoutingSkill.html) getRoutingSkill(skillId)
+# RoutingSkill getRoutingSkill(skillId)
 
 GET /api/v2/routing/skills/{skillId}
 
@@ -1167,7 +1167,7 @@ apiInstance.getRoutingSkill(skillId)
 
 <a name="getRoutingSkills"></a>
 
-# [**SkillEntityListing**](SkillEntityListing.html) getRoutingSkills(opts)
+# SkillEntityListing getRoutingSkills(opts)
 
 GET /api/v2/routing/skills
 
@@ -1220,7 +1220,7 @@ apiInstance.getRoutingSkills(opts)
 
 <a name="getRoutingUtilization"></a>
 
-# [**Utilization**](Utilization.html) getRoutingUtilization()
+# Utilization getRoutingUtilization()
 
 GET /api/v2/routing/utilization
 
@@ -1262,7 +1262,7 @@ This endpoint does not need any parameter.
 
 <a name="getRoutingWrapupcode"></a>
 
-# [**WrapupCode**](WrapupCode.html) getRoutingWrapupcode(codeId)
+# WrapupCode getRoutingWrapupcode(codeId)
 
 GET /api/v2/routing/wrapupcodes/{codeId}
 
@@ -1310,7 +1310,7 @@ apiInstance.getRoutingWrapupcode(codeId)
 
 <a name="getRoutingWrapupcodes"></a>
 
-# [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) getRoutingWrapupcodes(opts)
+# WrapupCodeEntityListing getRoutingWrapupcodes(opts)
 
 GET /api/v2/routing/wrapupcodes
 
@@ -1365,7 +1365,7 @@ apiInstance.getRoutingWrapupcodes(opts)
 
 <a name="getUserRoutingskills"></a>
 
-# [**UserSkillEntityListing**](UserSkillEntityListing.html) getUserRoutingskills(userId, opts)
+# UserSkillEntityListing getUserRoutingskills(userId, opts)
 
 GET /api/v2/users/{userId}/routingskills
 
@@ -1421,7 +1421,7 @@ apiInstance.getUserRoutingskills(userId, opts)
 
 <a name="patchRoutingQueueUser"></a>
 
-# [**QueueMember**](QueueMember.html) patchRoutingQueueUser(queueId, memberId, body)
+# QueueMember patchRoutingQueueUser(queueId, memberId, body)
 
 PATCH /api/v2/routing/queues/{queueId}/users/{memberId}
 
@@ -1475,7 +1475,7 @@ apiInstance.patchRoutingQueueUser(queueId, memberId, body)
 
 <a name="patchRoutingQueueUsers"></a>
 
-# [**QueueMemberEntityListing**](QueueMemberEntityListing.html) patchRoutingQueueUsers(queueId, body)
+# QueueMemberEntityListing patchRoutingQueueUsers(queueId, body)
 
 PATCH /api/v2/routing/queues/{queueId}/users
 
@@ -1526,7 +1526,7 @@ apiInstance.patchRoutingQueueUsers(queueId, body)
 
 <a name="postAnalyticsQueuesObservationsQuery"></a>
 
-# [**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html) postAnalyticsQueuesObservationsQuery(body)
+# QualifierMappingObservationQueryResponse postAnalyticsQueuesObservationsQuery(body)
 
 POST /api/v2/analytics/queues/observations/query
 
@@ -1574,7 +1574,7 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 
 <a name="postRoutingEmailDomainRoutes"></a>
 
-# [**InboundRoute**](InboundRoute.html) postRoutingEmailDomainRoutes(domainName, body)
+# InboundRoute postRoutingEmailDomainRoutes(domainName, body)
 
 POST /api/v2/routing/email/domains/{domainName}/routes
 
@@ -1625,7 +1625,7 @@ apiInstance.postRoutingEmailDomainRoutes(domainName, body)
 
 <a name="postRoutingEmailDomains"></a>
 
-# [**InboundDomain**](InboundDomain.html) postRoutingEmailDomains(body)
+# InboundDomain postRoutingEmailDomains(body)
 
 POST /api/v2/routing/email/domains
 
@@ -1673,7 +1673,7 @@ apiInstance.postRoutingEmailDomains(body)
 
 <a name="postRoutingLanguages"></a>
 
-# [**Language**](Language.html) postRoutingLanguages(body)
+# Language postRoutingLanguages(body)
 
 POST /api/v2/routing/languages
 
@@ -1776,7 +1776,7 @@ apiInstance.postRoutingQueueUsers(queueId, body, opts)
 
 <a name="postRoutingQueueWrapupcodes"></a>
 
-# [**[WrapupCode]**](WrapupCode.html) postRoutingQueueWrapupcodes(queueId, body)
+# [WrapupCode] postRoutingQueueWrapupcodes(queueId, body)
 
 POST /api/v2/routing/queues/{queueId}/wrapupcodes
 
@@ -1827,7 +1827,7 @@ apiInstance.postRoutingQueueWrapupcodes(queueId, body)
 
 <a name="postRoutingQueues"></a>
 
-# [**Queue**](Queue.html) postRoutingQueues(body)
+# Queue postRoutingQueues(body)
 
 POST /api/v2/routing/queues
 
@@ -1875,7 +1875,7 @@ apiInstance.postRoutingQueues(body)
 
 <a name="postRoutingSkills"></a>
 
-# [**RoutingSkill**](RoutingSkill.html) postRoutingSkills(body)
+# RoutingSkill postRoutingSkills(body)
 
 POST /api/v2/routing/skills
 
@@ -1923,7 +1923,7 @@ apiInstance.postRoutingSkills(body)
 
 <a name="postRoutingWrapupcodes"></a>
 
-# [**WrapupCode**](WrapupCode.html) postRoutingWrapupcodes(body)
+# WrapupCode postRoutingWrapupcodes(body)
 
 POST /api/v2/routing/wrapupcodes
 
@@ -1971,7 +1971,7 @@ apiInstance.postRoutingWrapupcodes(body)
 
 <a name="postUserRoutingskills"></a>
 
-# [**UserRoutingSkill**](UserRoutingSkill.html) postUserRoutingskills(userId, body)
+# UserRoutingSkill postUserRoutingskills(userId, body)
 
 POST /api/v2/users/{userId}/routingskills
 
@@ -2022,7 +2022,7 @@ apiInstance.postUserRoutingskills(userId, body)
 
 <a name="putRoutingEmailDomainRoute"></a>
 
-# [**InboundRoute**](InboundRoute.html) putRoutingEmailDomainRoute(domainName, routeId, body)
+# InboundRoute putRoutingEmailDomainRoute(domainName, routeId, body)
 
 PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}
 
@@ -2076,7 +2076,7 @@ apiInstance.putRoutingEmailDomainRoute(domainName, routeId, body)
 
 <a name="putRoutingQueue"></a>
 
-# [**Queue**](Queue.html) putRoutingQueue(queueId, body)
+# Queue putRoutingQueue(queueId, body)
 
 PUT /api/v2/routing/queues/{queueId}
 
@@ -2127,7 +2127,7 @@ apiInstance.putRoutingQueue(queueId, body)
 
 <a name="putRoutingUtilization"></a>
 
-# [**Utilization**](Utilization.html) putRoutingUtilization(body)
+# Utilization putRoutingUtilization(body)
 
 PUT /api/v2/routing/utilization
 
@@ -2175,7 +2175,7 @@ apiInstance.putRoutingUtilization(body)
 
 <a name="putRoutingWrapupcode"></a>
 
-# [**WrapupCode**](WrapupCode.html) putRoutingWrapupcode(codeId, body)
+# WrapupCode putRoutingWrapupcode(codeId, body)
 
 PUT /api/v2/routing/wrapupcodes/{codeId}
 
@@ -2226,7 +2226,7 @@ apiInstance.putRoutingWrapupcode(codeId, body)
 
 <a name="putUserRoutingskill"></a>
 
-# [**UserRoutingSkill**](UserRoutingSkill.html) putUserRoutingskill(userId, skillId, body)
+# UserRoutingSkill putUserRoutingskill(userId, skillId, body)
 
 PUT /api/v2/users/{userId}/routingskills/{skillId}
 

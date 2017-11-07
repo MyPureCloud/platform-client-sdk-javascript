@@ -351,7 +351,7 @@ void (no response body)
 
 <a name="getContentmanagementDocument"></a>
 
-# [**Document**](Document.html) getContentmanagementDocument(documentId, opts)
+# Document getContentmanagementDocument(documentId, opts)
 
 GET /api/v2/contentmanagement/documents/{documentId}
 
@@ -403,7 +403,7 @@ apiInstance.getContentmanagementDocument(documentId, opts)
 
 <a name="getContentmanagementDocumentAudits"></a>
 
-# [**DocumentAuditEntityListing**](DocumentAuditEntityListing.html) getContentmanagementDocumentAudits(documentId, opts)
+# DocumentAuditEntityListing getContentmanagementDocumentAudits(documentId, opts)
 
 GET /api/v2/contentmanagement/documents/{documentId}/audits
 
@@ -465,7 +465,7 @@ apiInstance.getContentmanagementDocumentAudits(documentId, opts)
 
 <a name="getContentmanagementDocumentContent"></a>
 
-# [**DownloadResponse**](DownloadResponse.html) getContentmanagementDocumentContent(documentId, opts)
+# DownloadResponse getContentmanagementDocumentContent(documentId, opts)
 
 GET /api/v2/contentmanagement/documents/{documentId}/content
 
@@ -519,7 +519,7 @@ apiInstance.getContentmanagementDocumentContent(documentId, opts)
 
 <a name="getContentmanagementDocuments"></a>
 
-# [**DocumentEntityListing**](DocumentEntityListing.html) getContentmanagementDocuments(workspaceId, opts)
+# DocumentEntityListing getContentmanagementDocuments(workspaceId, opts)
 
 GET /api/v2/contentmanagement/documents
 
@@ -581,7 +581,7 @@ apiInstance.getContentmanagementDocuments(workspaceId, opts)
 
 <a name="getContentmanagementQuery"></a>
 
-# [**QueryResults**](QueryResults.html) getContentmanagementQuery(queryPhrase, opts)
+# QueryResults getContentmanagementQuery(queryPhrase, opts)
 
 GET /api/v2/contentmanagement/query
 
@@ -641,7 +641,7 @@ apiInstance.getContentmanagementQuery(queryPhrase, opts)
 
 <a name="getContentmanagementSecurityprofile"></a>
 
-# [**SecurityProfile**](SecurityProfile.html) getContentmanagementSecurityprofile(securityProfileId)
+# SecurityProfile getContentmanagementSecurityprofile(securityProfileId)
 
 GET /api/v2/contentmanagement/securityprofiles/{securityProfileId}
 
@@ -689,7 +689,7 @@ apiInstance.getContentmanagementSecurityprofile(securityProfileId)
 
 <a name="getContentmanagementSecurityprofiles"></a>
 
-# [**SecurityProfileEntityListing**](SecurityProfileEntityListing.html) getContentmanagementSecurityprofiles()
+# SecurityProfileEntityListing getContentmanagementSecurityprofiles()
 
 GET /api/v2/contentmanagement/securityprofiles
 
@@ -731,7 +731,7 @@ This endpoint does not need any parameter.
 
 <a name="getContentmanagementShare"></a>
 
-# [**Share**](Share.html) getContentmanagementShare(shareId, opts)
+# Share getContentmanagementShare(shareId, opts)
 
 GET /api/v2/contentmanagement/shares/{shareId}
 
@@ -783,7 +783,7 @@ apiInstance.getContentmanagementShare(shareId, opts)
 
 <a name="getContentmanagementSharedSharedId"></a>
 
-# [**SharedResponse**](SharedResponse.html) getContentmanagementSharedSharedId(sharedId, opts)
+# SharedResponse getContentmanagementSharedSharedId(sharedId, opts)
 
 GET /api/v2/contentmanagement/shared/{sharedId}
 
@@ -841,7 +841,7 @@ apiInstance.getContentmanagementSharedSharedId(sharedId, opts)
 
 <a name="getContentmanagementShares"></a>
 
-# [**ShareEntityListing**](ShareEntityListing.html) getContentmanagementShares(opts)
+# ShareEntityListing getContentmanagementShares(opts)
 
 GET /api/v2/contentmanagement/shares
 
@@ -896,7 +896,7 @@ apiInstance.getContentmanagementShares(opts)
 
 <a name="getContentmanagementStatus"></a>
 
-# [**CommandStatusEntityListing**](CommandStatusEntityListing.html) getContentmanagementStatus(opts)
+# CommandStatusEntityListing getContentmanagementStatus(opts)
 
 GET /api/v2/contentmanagement/status
 
@@ -947,7 +947,7 @@ apiInstance.getContentmanagementStatus(opts)
 
 <a name="getContentmanagementStatusStatusId"></a>
 
-# [**CommandStatus**](CommandStatus.html) getContentmanagementStatusStatusId(statusId)
+# CommandStatus getContentmanagementStatusStatusId(statusId)
 
 GET /api/v2/contentmanagement/status/{statusId}
 
@@ -995,7 +995,7 @@ apiInstance.getContentmanagementStatusStatusId(statusId)
 
 <a name="getContentmanagementUsage"></a>
 
-# [**Usage**](Usage.html) getContentmanagementUsage()
+# Usage getContentmanagementUsage()
 
 GET /api/v2/contentmanagement/usage
 
@@ -1037,7 +1037,7 @@ This endpoint does not need any parameter.
 
 <a name="getContentmanagementWorkspace"></a>
 
-# [**Workspace**](Workspace.html) getContentmanagementWorkspace(workspaceId, opts)
+# Workspace getContentmanagementWorkspace(workspaceId, opts)
 
 GET /api/v2/contentmanagement/workspaces/{workspaceId}
 
@@ -1089,7 +1089,7 @@ apiInstance.getContentmanagementWorkspace(workspaceId, opts)
 
 <a name="getContentmanagementWorkspaceDocuments"></a>
 
-# [**DocumentEntityListing**](DocumentEntityListing.html) getContentmanagementWorkspaceDocuments(workspaceId, opts)
+# DocumentEntityListing getContentmanagementWorkspaceDocuments(workspaceId, opts)
 
 GET /api/v2/contentmanagement/workspaces/{workspaceId}/documents
 
@@ -1149,7 +1149,7 @@ apiInstance.getContentmanagementWorkspaceDocuments(workspaceId, opts)
 
 <a name="getContentmanagementWorkspaceMember"></a>
 
-# [**WorkspaceMember**](WorkspaceMember.html) getContentmanagementWorkspaceMember(workspaceId, memberId, opts)
+# WorkspaceMember getContentmanagementWorkspaceMember(workspaceId, memberId, opts)
 
 GET /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}
 
@@ -1204,7 +1204,7 @@ apiInstance.getContentmanagementWorkspaceMember(workspaceId, memberId, opts)
 
 <a name="getContentmanagementWorkspaceMembers"></a>
 
-# [**WorkspaceMemberEntityListing**](WorkspaceMemberEntityListing.html) getContentmanagementWorkspaceMembers(workspaceId, opts)
+# WorkspaceMemberEntityListing getContentmanagementWorkspaceMembers(workspaceId, opts)
 
 GET /api/v2/contentmanagement/workspaces/{workspaceId}/members
 
@@ -1260,7 +1260,7 @@ apiInstance.getContentmanagementWorkspaceMembers(workspaceId, opts)
 
 <a name="getContentmanagementWorkspaceTagvalue"></a>
 
-# [**TagValue**](TagValue.html) getContentmanagementWorkspaceTagvalue(workspaceId, tagId, opts)
+# TagValue getContentmanagementWorkspaceTagvalue(workspaceId, tagId, opts)
 
 GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}
 
@@ -1315,7 +1315,7 @@ apiInstance.getContentmanagementWorkspaceTagvalue(workspaceId, tagId, opts)
 
 <a name="getContentmanagementWorkspaceTagvalues"></a>
 
-# [**TagValueEntityListing**](TagValueEntityListing.html) getContentmanagementWorkspaceTagvalues(workspaceId, opts)
+# TagValueEntityListing getContentmanagementWorkspaceTagvalues(workspaceId, opts)
 
 GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues
 
@@ -1373,7 +1373,7 @@ apiInstance.getContentmanagementWorkspaceTagvalues(workspaceId, opts)
 
 <a name="getContentmanagementWorkspaces"></a>
 
-# [**WorkspaceEntityListing**](WorkspaceEntityListing.html) getContentmanagementWorkspaces(opts)
+# WorkspaceEntityListing getContentmanagementWorkspaces(opts)
 
 GET /api/v2/contentmanagement/workspaces
 
@@ -1428,7 +1428,7 @@ apiInstance.getContentmanagementWorkspaces(opts)
 
 <a name="postContentmanagementAuditquery"></a>
 
-# [**QueryResults**](QueryResults.html) postContentmanagementAuditquery(body)
+# QueryResults postContentmanagementAuditquery(body)
 
 POST /api/v2/contentmanagement/auditquery
 
@@ -1476,7 +1476,7 @@ apiInstance.postContentmanagementAuditquery(body)
 
 <a name="postContentmanagementDocument"></a>
 
-# [**Document**](Document.html) postContentmanagementDocument(documentId, body, opts)
+# Document postContentmanagementDocument(documentId, body, opts)
 
 POST /api/v2/contentmanagement/documents/{documentId}
 
@@ -1533,7 +1533,7 @@ apiInstance.postContentmanagementDocument(documentId, body, opts)
 
 <a name="postContentmanagementDocumentContent"></a>
 
-# [**ReplaceResponse**](ReplaceResponse.html) postContentmanagementDocumentContent(documentId, body, opts)
+# ReplaceResponse postContentmanagementDocumentContent(documentId, body, opts)
 
 POST /api/v2/contentmanagement/documents/{documentId}/content
 
@@ -1588,7 +1588,7 @@ apiInstance.postContentmanagementDocumentContent(documentId, body, opts)
 
 <a name="postContentmanagementDocuments"></a>
 
-# [**Document**](Document.html) postContentmanagementDocuments(body, opts)
+# Document postContentmanagementDocuments(body, opts)
 
 POST /api/v2/contentmanagement/documents
 
@@ -1644,7 +1644,7 @@ apiInstance.postContentmanagementDocuments(body, opts)
 
 <a name="postContentmanagementQuery"></a>
 
-# [**QueryResults**](QueryResults.html) postContentmanagementQuery(body, opts)
+# QueryResults postContentmanagementQuery(body, opts)
 
 POST /api/v2/contentmanagement/query
 
@@ -1696,7 +1696,7 @@ apiInstance.postContentmanagementQuery(body, opts)
 
 <a name="postContentmanagementShares"></a>
 
-# [**CreateShareResponse**](CreateShareResponse.html) postContentmanagementShares(body)
+# CreateShareResponse postContentmanagementShares(body)
 
 POST /api/v2/contentmanagement/shares
 
@@ -1744,7 +1744,7 @@ apiInstance.postContentmanagementShares(body)
 
 <a name="postContentmanagementWorkspaceTagvalues"></a>
 
-# [**TagValue**](TagValue.html) postContentmanagementWorkspaceTagvalues(workspaceId, body)
+# TagValue postContentmanagementWorkspaceTagvalues(workspaceId, body)
 
 POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues
 
@@ -1795,7 +1795,7 @@ apiInstance.postContentmanagementWorkspaceTagvalues(workspaceId, body)
 
 <a name="postContentmanagementWorkspaceTagvaluesQuery"></a>
 
-# [**TagValueEntityListing**](TagValueEntityListing.html) postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, opts)
+# TagValueEntityListing postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, opts)
 
 POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query
 
@@ -1850,7 +1850,7 @@ apiInstance.postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, opts
 
 <a name="postContentmanagementWorkspaces"></a>
 
-# [**Workspace**](Workspace.html) postContentmanagementWorkspaces(body)
+# Workspace postContentmanagementWorkspaces(body)
 
 POST /api/v2/contentmanagement/workspaces
 
@@ -1898,7 +1898,7 @@ apiInstance.postContentmanagementWorkspaces(body)
 
 <a name="putContentmanagementWorkspace"></a>
 
-# [**Workspace**](Workspace.html) putContentmanagementWorkspace(workspaceId, body)
+# Workspace putContentmanagementWorkspace(workspaceId, body)
 
 PUT /api/v2/contentmanagement/workspaces/{workspaceId}
 
@@ -1949,7 +1949,7 @@ apiInstance.putContentmanagementWorkspace(workspaceId, body)
 
 <a name="putContentmanagementWorkspaceMember"></a>
 
-# [**WorkspaceMember**](WorkspaceMember.html) putContentmanagementWorkspaceMember(workspaceId, memberId, body)
+# WorkspaceMember putContentmanagementWorkspaceMember(workspaceId, memberId, body)
 
 PUT /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}
 
@@ -2003,7 +2003,7 @@ apiInstance.putContentmanagementWorkspaceMember(workspaceId, memberId, body)
 
 <a name="putContentmanagementWorkspaceTagvalue"></a>
 
-# [**TagValue**](TagValue.html) putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
+# TagValue putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
 
 PUT /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}
 

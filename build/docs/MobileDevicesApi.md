@@ -64,7 +64,7 @@ void (no response body)
 
 <a name="getMobiledevice"></a>
 
-# [**UserDevice**](UserDevice.html) getMobiledevice(deviceId)
+# UserDevice getMobiledevice(deviceId)
 
 GET /api/v2/mobiledevices/{deviceId}
 
@@ -112,7 +112,7 @@ apiInstance.getMobiledevice(deviceId)
 
 <a name="getMobiledevices"></a>
 
-# [**DirectoryUserDevicesListing**](DirectoryUserDevicesListing.html) getMobiledevices(opts)
+# DirectoryUserDevicesListing getMobiledevices(opts)
 
 GET /api/v2/mobiledevices
 
@@ -165,7 +165,7 @@ apiInstance.getMobiledevices(opts)
 
 <a name="postMobiledevices"></a>
 
-# [**UserDevice**](UserDevice.html) postMobiledevices(body)
+# UserDevice postMobiledevices(body)
 
 POST /api/v2/mobiledevices
 
@@ -213,7 +213,7 @@ apiInstance.postMobiledevices(body)
 
 <a name="putMobiledevice"></a>
 
-# [**UserDevice**](UserDevice.html) putMobiledevice(deviceId, opts)
+# UserDevice putMobiledevice(deviceId, opts)
 
 PUT /api/v2/mobiledevices/{deviceId}
 

@@ -118,7 +118,7 @@ void (no response body)
 
 <a name="getResponsemanagementLibraries"></a>
 
-# [**LibraryEntityListing**](LibraryEntityListing.html) getResponsemanagementLibraries(opts)
+# LibraryEntityListing getResponsemanagementLibraries(opts)
 
 GET /api/v2/responsemanagement/libraries
 
@@ -169,7 +169,7 @@ apiInstance.getResponsemanagementLibraries(opts)
 
 <a name="getResponsemanagementLibrary"></a>
 
-# [**Library**](Library.html) getResponsemanagementLibrary(libraryId)
+# Library getResponsemanagementLibrary(libraryId)
 
 GET /api/v2/responsemanagement/libraries/{libraryId}
 
@@ -217,7 +217,7 @@ apiInstance.getResponsemanagementLibrary(libraryId)
 
 <a name="getResponsemanagementResponse"></a>
 
-# [**Response**](Response.html) getResponsemanagementResponse(responseId, opts)
+# Response getResponsemanagementResponse(responseId, opts)
 
 GET /api/v2/responsemanagement/responses/{responseId}
 
@@ -269,7 +269,7 @@ apiInstance.getResponsemanagementResponse(responseId, opts)
 
 <a name="getResponsemanagementResponses"></a>
 
-# [**ResponseEntityListing**](ResponseEntityListing.html) getResponsemanagementResponses(libraryId, opts)
+# ResponseEntityListing getResponsemanagementResponses(libraryId, opts)
 
 GET /api/v2/responsemanagement/responses
 
@@ -325,7 +325,7 @@ apiInstance.getResponsemanagementResponses(libraryId, opts)
 
 <a name="postResponsemanagementLibraries"></a>
 
-# [**Library**](Library.html) postResponsemanagementLibraries(body)
+# Library postResponsemanagementLibraries(body)
 
 POST /api/v2/responsemanagement/libraries
 
@@ -373,7 +373,7 @@ apiInstance.postResponsemanagementLibraries(body)
 
 <a name="postResponsemanagementResponses"></a>
 
-# [**Response**](Response.html) postResponsemanagementResponses(body, opts)
+# Response postResponsemanagementResponses(body, opts)
 
 POST /api/v2/responsemanagement/responses
 
@@ -425,7 +425,7 @@ apiInstance.postResponsemanagementResponses(body, opts)
 
 <a name="postResponsemanagementResponsesQuery"></a>
 
-# [**ResponseQueryResults**](ResponseQueryResults.html) postResponsemanagementResponsesQuery(body)
+# ResponseQueryResults postResponsemanagementResponsesQuery(body)
 
 POST /api/v2/responsemanagement/responses/query
 
@@ -473,7 +473,7 @@ apiInstance.postResponsemanagementResponsesQuery(body)
 
 <a name="putResponsemanagementLibrary"></a>
 
-# [**Library**](Library.html) putResponsemanagementLibrary(libraryId, body)
+# Library putResponsemanagementLibrary(libraryId, body)
 
 PUT /api/v2/responsemanagement/libraries/{libraryId}
 
@@ -524,7 +524,7 @@ apiInstance.putResponsemanagementLibrary(libraryId, body)
 
 <a name="putResponsemanagementResponse"></a>
 
-# [**Response**](Response.html) putResponsemanagementResponse(responseId, body, opts)
+# Response putResponsemanagementResponse(responseId, body, opts)
 
 PUT /api/v2/responsemanagement/responses/{responseId}
 

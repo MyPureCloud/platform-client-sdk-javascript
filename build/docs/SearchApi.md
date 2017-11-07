@@ -25,7 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="getDocumentationSearch"></a>
 
-# [**DocumentationSearchResponse**](DocumentationSearchResponse.html) getDocumentationSearch(q64)
+# DocumentationSearchResponse getDocumentationSearch(q64)
 
 GET /api/v2/documentation/search
 
@@ -73,7 +73,7 @@ apiInstance.getDocumentationSearch(q64)
 
 <a name="getGroupsSearch"></a>
 
-# [**GroupsSearchResponse**](GroupsSearchResponse.html) getGroupsSearch(q64, opts)
+# GroupsSearchResponse getGroupsSearch(q64, opts)
 
 GET /api/v2/groups/search
 
@@ -125,7 +125,7 @@ apiInstance.getGroupsSearch(q64, opts)
 
 <a name="getLocationsSearch"></a>
 
-# [**LocationsSearchResponse**](LocationsSearchResponse.html) getLocationsSearch(q64, opts)
+# LocationsSearchResponse getLocationsSearch(q64, opts)
 
 GET /api/v2/locations/search
 
@@ -177,7 +177,7 @@ apiInstance.getLocationsSearch(q64, opts)
 
 <a name="getSearch"></a>
 
-# [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) getSearch(q64, opts)
+# JsonNodeSearchResponse getSearch(q64, opts)
 
 GET /api/v2/search
 
@@ -231,7 +231,7 @@ apiInstance.getSearch(q64, opts)
 
 <a name="getSearchSuggest"></a>
 
-# [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) getSearchSuggest(q64, opts)
+# JsonNodeSearchResponse getSearchSuggest(q64, opts)
 
 GET /api/v2/search/suggest
 
@@ -285,7 +285,7 @@ apiInstance.getSearchSuggest(q64, opts)
 
 <a name="getUsersSearch"></a>
 
-# [**UsersSearchResponse**](UsersSearchResponse.html) getUsersSearch(q64, opts)
+# UsersSearchResponse getUsersSearch(q64, opts)
 
 GET /api/v2/users/search
 
@@ -337,7 +337,7 @@ apiInstance.getUsersSearch(q64, opts)
 
 <a name="getVoicemailSearch"></a>
 
-# [**VoicemailsSearchResponse**](VoicemailsSearchResponse.html) getVoicemailSearch(q64, opts)
+# VoicemailsSearchResponse getVoicemailSearch(q64, opts)
 
 GET /api/v2/voicemail/search
 
@@ -389,7 +389,7 @@ apiInstance.getVoicemailSearch(q64, opts)
 
 <a name="postDocumentationSearch"></a>
 
-# [**DocumentationSearchResponse**](DocumentationSearchResponse.html) postDocumentationSearch(body)
+# DocumentationSearchResponse postDocumentationSearch(body)
 
 POST /api/v2/documentation/search
 
@@ -437,7 +437,7 @@ apiInstance.postDocumentationSearch(body)
 
 <a name="postGroupsSearch"></a>
 
-# [**GroupsSearchResponse**](GroupsSearchResponse.html) postGroupsSearch(body)
+# GroupsSearchResponse postGroupsSearch(body)
 
 POST /api/v2/groups/search
 
@@ -485,7 +485,7 @@ apiInstance.postGroupsSearch(body)
 
 <a name="postLocationsSearch"></a>
 
-# [**LocationsSearchResponse**](LocationsSearchResponse.html) postLocationsSearch(body)
+# LocationsSearchResponse postLocationsSearch(body)
 
 POST /api/v2/locations/search
 
@@ -533,7 +533,7 @@ apiInstance.postLocationsSearch(body)
 
 <a name="postSearch"></a>
 
-# [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) postSearch(body, opts)
+# JsonNodeSearchResponse postSearch(body, opts)
 
 POST /api/v2/search
 
@@ -585,7 +585,7 @@ apiInstance.postSearch(body, opts)
 
 <a name="postSearchSuggest"></a>
 
-# [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) postSearchSuggest(body, opts)
+# JsonNodeSearchResponse postSearchSuggest(body, opts)
 
 POST /api/v2/search/suggest
 
@@ -637,7 +637,7 @@ apiInstance.postSearchSuggest(body, opts)
 
 <a name="postUsersSearch"></a>
 
-# [**UsersSearchResponse**](UsersSearchResponse.html) postUsersSearch(body)
+# UsersSearchResponse postUsersSearch(body)
 
 POST /api/v2/users/search
 
@@ -685,7 +685,7 @@ apiInstance.postUsersSearch(body)
 
 <a name="postVoicemailSearch"></a>
 
-# [**VoicemailsSearchResponse**](VoicemailsSearchResponse.html) postVoicemailSearch(body)
+# VoicemailsSearchResponse postVoicemailSearch(body)
 
 POST /api/v2/voicemail/search
 

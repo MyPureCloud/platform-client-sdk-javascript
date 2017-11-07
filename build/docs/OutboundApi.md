@@ -243,7 +243,7 @@ void (no response body)
 
 <a name="deleteOutboundCampaign"></a>
 
-# [**Campaign**](Campaign.html) deleteOutboundCampaign(campaignId)
+# Campaign deleteOutboundCampaign(campaignId)
 
 DELETE /api/v2/outbound/campaigns/{campaignId}
 
@@ -873,7 +873,7 @@ void (no response body)
 
 <a name="getOutboundAttemptlimit"></a>
 
-# [**AttemptLimits**](AttemptLimits.html) getOutboundAttemptlimit(attemptLimitsId)
+# AttemptLimits getOutboundAttemptlimit(attemptLimitsId)
 
 GET /api/v2/outbound/attemptlimits/{attemptLimitsId}
 
@@ -921,7 +921,7 @@ apiInstance.getOutboundAttemptlimit(attemptLimitsId)
 
 <a name="getOutboundAttemptlimits"></a>
 
-# [**AttemptLimitsEntityListing**](AttemptLimitsEntityListing.html) getOutboundAttemptlimits(opts)
+# AttemptLimitsEntityListing getOutboundAttemptlimits(opts)
 
 GET /api/v2/outbound/attemptlimits
 
@@ -980,7 +980,7 @@ apiInstance.getOutboundAttemptlimits(opts)
 
 <a name="getOutboundCallabletimeset"></a>
 
-# [**CallableTimeSet**](CallableTimeSet.html) getOutboundCallabletimeset(callableTimeSetId)
+# CallableTimeSet getOutboundCallabletimeset(callableTimeSetId)
 
 GET /api/v2/outbound/callabletimesets/{callableTimeSetId}
 
@@ -1028,7 +1028,7 @@ apiInstance.getOutboundCallabletimeset(callableTimeSetId)
 
 <a name="getOutboundCallabletimesets"></a>
 
-# [**CallableTimeSetEntityListing**](CallableTimeSetEntityListing.html) getOutboundCallabletimesets(opts)
+# CallableTimeSetEntityListing getOutboundCallabletimesets(opts)
 
 GET /api/v2/outbound/callabletimesets
 
@@ -1087,7 +1087,7 @@ apiInstance.getOutboundCallabletimesets(opts)
 
 <a name="getOutboundCallanalysisresponseset"></a>
 
-# [**ResponseSet**](ResponseSet.html) getOutboundCallanalysisresponseset(callAnalysisSetId)
+# ResponseSet getOutboundCallanalysisresponseset(callAnalysisSetId)
 
 GET /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}
 
@@ -1135,7 +1135,7 @@ apiInstance.getOutboundCallanalysisresponseset(callAnalysisSetId)
 
 <a name="getOutboundCallanalysisresponsesets"></a>
 
-# [**ResponseSetEntityListing**](ResponseSetEntityListing.html) getOutboundCallanalysisresponsesets(opts)
+# ResponseSetEntityListing getOutboundCallanalysisresponsesets(opts)
 
 GET /api/v2/outbound/callanalysisresponsesets
 
@@ -1194,7 +1194,7 @@ apiInstance.getOutboundCallanalysisresponsesets(opts)
 
 <a name="getOutboundCampaign"></a>
 
-# [**Campaign**](Campaign.html) getOutboundCampaign(campaignId)
+# Campaign getOutboundCampaign(campaignId)
 
 GET /api/v2/outbound/campaigns/{campaignId}
 
@@ -1242,7 +1242,7 @@ apiInstance.getOutboundCampaign(campaignId)
 
 <a name="getOutboundCampaignDiagnostics"></a>
 
-# [**CampaignDiagnostics**](CampaignDiagnostics.html) getOutboundCampaignDiagnostics(campaignId)
+# CampaignDiagnostics getOutboundCampaignDiagnostics(campaignId)
 
 GET /api/v2/outbound/campaigns/{campaignId}/diagnostics
 
@@ -1290,7 +1290,7 @@ apiInstance.getOutboundCampaignDiagnostics(campaignId)
 
 <a name="getOutboundCampaignInteractions"></a>
 
-# [**CampaignInteractions**](CampaignInteractions.html) getOutboundCampaignInteractions(campaignId)
+# CampaignInteractions getOutboundCampaignInteractions(campaignId)
 
 GET /api/v2/outbound/campaigns/{campaignId}/interactions
 
@@ -1338,7 +1338,7 @@ apiInstance.getOutboundCampaignInteractions(campaignId)
 
 <a name="getOutboundCampaignProgress"></a>
 
-# [**CampaignProgress**](CampaignProgress.html) getOutboundCampaignProgress(campaignId)
+# CampaignProgress getOutboundCampaignProgress(campaignId)
 
 GET /api/v2/outbound/campaigns/{campaignId}/progress
 
@@ -1386,7 +1386,7 @@ apiInstance.getOutboundCampaignProgress(campaignId)
 
 <a name="getOutboundCampaignStats"></a>
 
-# [**CampaignStats**](CampaignStats.html) getOutboundCampaignStats(campaignId)
+# CampaignStats getOutboundCampaignStats(campaignId)
 
 GET /api/v2/outbound/campaigns/{campaignId}/stats
 
@@ -1434,7 +1434,7 @@ apiInstance.getOutboundCampaignStats(campaignId)
 
 <a name="getOutboundCampaignrule"></a>
 
-# [**CampaignRule**](CampaignRule.html) getOutboundCampaignrule(campaignRuleId)
+# CampaignRule getOutboundCampaignrule(campaignRuleId)
 
 GET /api/v2/outbound/campaignrules/{campaignRuleId}
 
@@ -1482,7 +1482,7 @@ apiInstance.getOutboundCampaignrule(campaignRuleId)
 
 <a name="getOutboundCampaignrules"></a>
 
-# [**CampaignRuleEntityListing**](CampaignRuleEntityListing.html) getOutboundCampaignrules(opts)
+# CampaignRuleEntityListing getOutboundCampaignrules(opts)
 
 GET /api/v2/outbound/campaignrules
 
@@ -1541,7 +1541,7 @@ apiInstance.getOutboundCampaignrules(opts)
 
 <a name="getOutboundCampaigns"></a>
 
-# [**CampaignEntityListing**](CampaignEntityListing.html) getOutboundCampaigns(opts)
+# CampaignEntityListing getOutboundCampaigns(opts)
 
 GET /api/v2/outbound/campaigns
 
@@ -1610,7 +1610,7 @@ apiInstance.getOutboundCampaigns(opts)
 
 <a name="getOutboundContactlist"></a>
 
-# [**ContactList**](ContactList.html) getOutboundContactlist(contactListId, opts)
+# ContactList getOutboundContactlist(contactListId, opts)
 
 GET /api/v2/outbound/contactlists/{contactListId}
 
@@ -1664,7 +1664,7 @@ apiInstance.getOutboundContactlist(contactListId, opts)
 
 <a name="getOutboundContactlistContact"></a>
 
-# [**DialerContact**](DialerContact.html) getOutboundContactlistContact(contactListId, contactId)
+# DialerContact getOutboundContactlistContact(contactListId, contactId)
 
 GET /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}
 
@@ -1715,7 +1715,7 @@ apiInstance.getOutboundContactlistContact(contactListId, contactId)
 
 <a name="getOutboundContactlistExport"></a>
 
-# [**ExportUri**](ExportUri.html) getOutboundContactlistExport(contactListId, opts)
+# ExportUri getOutboundContactlistExport(contactListId, opts)
 
 GET /api/v2/outbound/contactlists/{contactListId}/export
 
@@ -1767,7 +1767,7 @@ apiInstance.getOutboundContactlistExport(contactListId, opts)
 
 <a name="getOutboundContactlistImportstatus"></a>
 
-# [**ImportStatus**](ImportStatus.html) getOutboundContactlistImportstatus(contactListId)
+# ImportStatus getOutboundContactlistImportstatus(contactListId)
 
 GET /api/v2/outbound/contactlists/{contactListId}/importstatus
 
@@ -1815,7 +1815,7 @@ apiInstance.getOutboundContactlistImportstatus(contactListId)
 
 <a name="getOutboundContactlistfilter"></a>
 
-# [**ContactListFilter**](ContactListFilter.html) getOutboundContactlistfilter(contactListFilterId)
+# ContactListFilter getOutboundContactlistfilter(contactListFilterId)
 
 GET /api/v2/outbound/contactlistfilters/{contactListFilterId}
 
@@ -1863,7 +1863,7 @@ apiInstance.getOutboundContactlistfilter(contactListFilterId)
 
 <a name="getOutboundContactlistfilters"></a>
 
-# [**ContactListFilterEntityListing**](ContactListFilterEntityListing.html) getOutboundContactlistfilters(opts)
+# ContactListFilterEntityListing getOutboundContactlistfilters(opts)
 
 GET /api/v2/outbound/contactlistfilters
 
@@ -1924,7 +1924,7 @@ apiInstance.getOutboundContactlistfilters(opts)
 
 <a name="getOutboundContactlists"></a>
 
-# [**ContactListEntityListing**](ContactListEntityListing.html) getOutboundContactlists(opts)
+# ContactListEntityListing getOutboundContactlists(opts)
 
 GET /api/v2/outbound/contactlists
 
@@ -1987,7 +1987,7 @@ apiInstance.getOutboundContactlists(opts)
 
 <a name="getOutboundDnclist"></a>
 
-# [**DncList**](DncList.html) getOutboundDnclist(dncListId, opts)
+# DncList getOutboundDnclist(dncListId, opts)
 
 GET /api/v2/outbound/dnclists/{dncListId}
 
@@ -2041,7 +2041,7 @@ apiInstance.getOutboundDnclist(dncListId, opts)
 
 <a name="getOutboundDnclistExport"></a>
 
-# [**ExportUri**](ExportUri.html) getOutboundDnclistExport(dncListId, opts)
+# ExportUri getOutboundDnclistExport(dncListId, opts)
 
 GET /api/v2/outbound/dnclists/{dncListId}/export
 
@@ -2093,7 +2093,7 @@ apiInstance.getOutboundDnclistExport(dncListId, opts)
 
 <a name="getOutboundDnclistImportstatus"></a>
 
-# [**ImportStatus**](ImportStatus.html) getOutboundDnclistImportstatus(dncListId)
+# ImportStatus getOutboundDnclistImportstatus(dncListId)
 
 GET /api/v2/outbound/dnclists/{dncListId}/importstatus
 
@@ -2141,7 +2141,7 @@ apiInstance.getOutboundDnclistImportstatus(dncListId)
 
 <a name="getOutboundDnclists"></a>
 
-# [**DncListEntityListing**](DncListEntityListing.html) getOutboundDnclists(opts)
+# DncListEntityListing getOutboundDnclists(opts)
 
 GET /api/v2/outbound/dnclists
 
@@ -2204,7 +2204,7 @@ apiInstance.getOutboundDnclists(opts)
 
 <a name="getOutboundEvent"></a>
 
-# [**EventLog**](EventLog.html) getOutboundEvent(eventId)
+# EventLog getOutboundEvent(eventId)
 
 GET /api/v2/outbound/events/{eventId}
 
@@ -2252,7 +2252,7 @@ apiInstance.getOutboundEvent(eventId)
 
 <a name="getOutboundEvents"></a>
 
-# [**DialerEventEntityListing**](DialerEventEntityListing.html) getOutboundEvents(opts)
+# DialerEventEntityListing getOutboundEvents(opts)
 
 GET /api/v2/outbound/events
 
@@ -2313,7 +2313,7 @@ apiInstance.getOutboundEvents(opts)
 
 <a name="getOutboundRuleset"></a>
 
-# [**RuleSet**](RuleSet.html) getOutboundRuleset(ruleSetId)
+# RuleSet getOutboundRuleset(ruleSetId)
 
 GET /api/v2/outbound/rulesets/{ruleSetId}
 
@@ -2361,7 +2361,7 @@ apiInstance.getOutboundRuleset(ruleSetId)
 
 <a name="getOutboundRulesets"></a>
 
-# [**RuleSetEntityListing**](RuleSetEntityListing.html) getOutboundRulesets(opts)
+# RuleSetEntityListing getOutboundRulesets(opts)
 
 GET /api/v2/outbound/rulesets
 
@@ -2420,7 +2420,7 @@ apiInstance.getOutboundRulesets(opts)
 
 <a name="getOutboundSchedulesCampaign"></a>
 
-# [**CampaignSchedule**](CampaignSchedule.html) getOutboundSchedulesCampaign(campaignId)
+# CampaignSchedule getOutboundSchedulesCampaign(campaignId)
 
 GET /api/v2/outbound/schedules/campaigns/{campaignId}
 
@@ -2468,7 +2468,7 @@ apiInstance.getOutboundSchedulesCampaign(campaignId)
 
 <a name="getOutboundSchedulesCampaigns"></a>
 
-# [**[CampaignSchedule]**](CampaignSchedule.html) getOutboundSchedulesCampaigns()
+# [CampaignSchedule] getOutboundSchedulesCampaigns()
 
 GET /api/v2/outbound/schedules/campaigns
 
@@ -2510,7 +2510,7 @@ This endpoint does not need any parameter.
 
 <a name="getOutboundSchedulesSequence"></a>
 
-# [**SequenceSchedule**](SequenceSchedule.html) getOutboundSchedulesSequence(sequenceId)
+# SequenceSchedule getOutboundSchedulesSequence(sequenceId)
 
 GET /api/v2/outbound/schedules/sequences/{sequenceId}
 
@@ -2558,7 +2558,7 @@ apiInstance.getOutboundSchedulesSequence(sequenceId)
 
 <a name="getOutboundSchedulesSequences"></a>
 
-# [**[SequenceSchedule]**](SequenceSchedule.html) getOutboundSchedulesSequences()
+# [SequenceSchedule] getOutboundSchedulesSequences()
 
 GET /api/v2/outbound/schedules/sequences
 
@@ -2600,7 +2600,7 @@ This endpoint does not need any parameter.
 
 <a name="getOutboundSequence"></a>
 
-# [**CampaignSequence**](CampaignSequence.html) getOutboundSequence(sequenceId)
+# CampaignSequence getOutboundSequence(sequenceId)
 
 GET /api/v2/outbound/sequences/{sequenceId}
 
@@ -2648,7 +2648,7 @@ apiInstance.getOutboundSequence(sequenceId)
 
 <a name="getOutboundSequences"></a>
 
-# [**CampaignSequenceEntityListing**](CampaignSequenceEntityListing.html) getOutboundSequences(opts)
+# CampaignSequenceEntityListing getOutboundSequences(opts)
 
 GET /api/v2/outbound/sequences
 
@@ -2707,7 +2707,7 @@ apiInstance.getOutboundSequences(opts)
 
 <a name="getOutboundSettings"></a>
 
-# [**OutboundSettings**](OutboundSettings.html) getOutboundSettings()
+# OutboundSettings getOutboundSettings()
 
 GET /api/v2/outbound/settings
 
@@ -2749,7 +2749,7 @@ This endpoint does not need any parameter.
 
 <a name="getOutboundWrapupcodemappings"></a>
 
-# [**WrapUpCodeMapping**](WrapUpCodeMapping.html) getOutboundWrapupcodemappings()
+# WrapUpCodeMapping getOutboundWrapupcodemappings()
 
 GET /api/v2/outbound/wrapupcodemappings
 
@@ -2839,7 +2839,7 @@ void (no response body)
 
 <a name="postOutboundAttemptlimits"></a>
 
-# [**AttemptLimits**](AttemptLimits.html) postOutboundAttemptlimits(body)
+# AttemptLimits postOutboundAttemptlimits(body)
 
 POST /api/v2/outbound/attemptlimits
 
@@ -2887,7 +2887,7 @@ apiInstance.postOutboundAttemptlimits(body)
 
 <a name="postOutboundAudits"></a>
 
-# [**AuditSearchResult**](AuditSearchResult.html) postOutboundAudits(body, opts)
+# AuditSearchResult postOutboundAudits(body, opts)
 
 POST /api/v2/outbound/audits
 
@@ -2947,7 +2947,7 @@ apiInstance.postOutboundAudits(body, opts)
 
 <a name="postOutboundCallabletimesets"></a>
 
-# [**CallableTimeSet**](CallableTimeSet.html) postOutboundCallabletimesets(body)
+# CallableTimeSet postOutboundCallabletimesets(body)
 
 POST /api/v2/outbound/callabletimesets
 
@@ -2995,7 +2995,7 @@ apiInstance.postOutboundCallabletimesets(body)
 
 <a name="postOutboundCallanalysisresponsesets"></a>
 
-# [**ResponseSet**](ResponseSet.html) postOutboundCallanalysisresponsesets(body)
+# ResponseSet postOutboundCallanalysisresponsesets(body)
 
 POST /api/v2/outbound/callanalysisresponsesets
 
@@ -3043,7 +3043,7 @@ apiInstance.postOutboundCallanalysisresponsesets(body)
 
 <a name="postOutboundCampaignCallbackSchedule"></a>
 
-# [**ContactCallbackRequest**](ContactCallbackRequest.html) postOutboundCampaignCallbackSchedule(campaignId, body)
+# ContactCallbackRequest postOutboundCampaignCallbackSchedule(campaignId, body)
 
 POST /api/v2/outbound/campaigns/{campaignId}/callback/schedule
 
@@ -3094,7 +3094,7 @@ apiInstance.postOutboundCampaignCallbackSchedule(campaignId, body)
 
 <a name="postOutboundCampaignrules"></a>
 
-# [**CampaignRule**](CampaignRule.html) postOutboundCampaignrules(body)
+# CampaignRule postOutboundCampaignrules(body)
 
 POST /api/v2/outbound/campaignrules
 
@@ -3142,7 +3142,7 @@ apiInstance.postOutboundCampaignrules(body)
 
 <a name="postOutboundCampaigns"></a>
 
-# [**Campaign**](Campaign.html) postOutboundCampaigns(body)
+# Campaign postOutboundCampaigns(body)
 
 POST /api/v2/outbound/campaigns
 
@@ -3190,7 +3190,7 @@ apiInstance.postOutboundCampaigns(body)
 
 <a name="postOutboundCampaignsProgress"></a>
 
-# [**[CampaignProgress]**](CampaignProgress.html) postOutboundCampaignsProgress(body)
+# [CampaignProgress] postOutboundCampaignsProgress(body)
 
 POST /api/v2/outbound/campaigns/progress
 
@@ -3238,7 +3238,7 @@ apiInstance.postOutboundCampaignsProgress(body)
 
 <a name="postOutboundContactlistContacts"></a>
 
-# [**[DialerContact]**](DialerContact.html) postOutboundContactlistContacts(contactListId, body, opts)
+# [DialerContact] postOutboundContactlistContacts(contactListId, body, opts)
 
 POST /api/v2/outbound/contactlists/{contactListId}/contacts
 
@@ -3295,7 +3295,7 @@ apiInstance.postOutboundContactlistContacts(contactListId, body, opts)
 
 <a name="postOutboundContactlistExport"></a>
 
-# [**UriReference**](UriReference.html) postOutboundContactlistExport(contactListId)
+# UriReference postOutboundContactlistExport(contactListId)
 
 POST /api/v2/outbound/contactlists/{contactListId}/export
 
@@ -3343,7 +3343,7 @@ apiInstance.postOutboundContactlistExport(contactListId)
 
 <a name="postOutboundContactlistfilters"></a>
 
-# [**ContactListFilter**](ContactListFilter.html) postOutboundContactlistfilters(body)
+# ContactListFilter postOutboundContactlistfilters(body)
 
 POST /api/v2/outbound/contactlistfilters
 
@@ -3391,7 +3391,7 @@ apiInstance.postOutboundContactlistfilters(body)
 
 <a name="postOutboundContactlistfiltersPreview"></a>
 
-# [**FilterPreviewResponse**](FilterPreviewResponse.html) postOutboundContactlistfiltersPreview(body)
+# FilterPreviewResponse postOutboundContactlistfiltersPreview(body)
 
 POST /api/v2/outbound/contactlistfilters/preview
 
@@ -3439,7 +3439,7 @@ apiInstance.postOutboundContactlistfiltersPreview(body)
 
 <a name="postOutboundContactlists"></a>
 
-# [**ContactList**](ContactList.html) postOutboundContactlists(body)
+# ContactList postOutboundContactlists(body)
 
 POST /api/v2/outbound/contactlists
 
@@ -3535,7 +3535,7 @@ void (no response body)
 
 <a name="postOutboundDnclistExport"></a>
 
-# [**UriReference**](UriReference.html) postOutboundDnclistExport(dncListId)
+# UriReference postOutboundDnclistExport(dncListId)
 
 POST /api/v2/outbound/dnclists/{dncListId}/export
 
@@ -3634,7 +3634,7 @@ void (no response body)
 
 <a name="postOutboundDnclists"></a>
 
-# [**DncList**](DncList.html) postOutboundDnclists(body)
+# DncList postOutboundDnclists(body)
 
 POST /api/v2/outbound/dnclists
 
@@ -3682,7 +3682,7 @@ apiInstance.postOutboundDnclists(body)
 
 <a name="postOutboundRulesets"></a>
 
-# [**RuleSet**](RuleSet.html) postOutboundRulesets(body)
+# RuleSet postOutboundRulesets(body)
 
 POST /api/v2/outbound/rulesets
 
@@ -3730,7 +3730,7 @@ apiInstance.postOutboundRulesets(body)
 
 <a name="postOutboundSequences"></a>
 
-# [**CampaignSequence**](CampaignSequence.html) postOutboundSequences(body)
+# CampaignSequence postOutboundSequences(body)
 
 POST /api/v2/outbound/sequences
 
@@ -3778,7 +3778,7 @@ apiInstance.postOutboundSequences(body)
 
 <a name="putOutboundAttemptlimit"></a>
 
-# [**AttemptLimits**](AttemptLimits.html) putOutboundAttemptlimit(attemptLimitsId, body)
+# AttemptLimits putOutboundAttemptlimit(attemptLimitsId, body)
 
 PUT /api/v2/outbound/attemptlimits/{attemptLimitsId}
 
@@ -3829,7 +3829,7 @@ apiInstance.putOutboundAttemptlimit(attemptLimitsId, body)
 
 <a name="putOutboundCallabletimeset"></a>
 
-# [**CallableTimeSet**](CallableTimeSet.html) putOutboundCallabletimeset(callableTimeSetId, body)
+# CallableTimeSet putOutboundCallabletimeset(callableTimeSetId, body)
 
 PUT /api/v2/outbound/callabletimesets/{callableTimeSetId}
 
@@ -3880,7 +3880,7 @@ apiInstance.putOutboundCallabletimeset(callableTimeSetId, body)
 
 <a name="putOutboundCallanalysisresponseset"></a>
 
-# [**ResponseSet**](ResponseSet.html) putOutboundCallanalysisresponseset(callAnalysisSetId, body)
+# ResponseSet putOutboundCallanalysisresponseset(callAnalysisSetId, body)
 
 PUT /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}
 
@@ -3931,7 +3931,7 @@ apiInstance.putOutboundCallanalysisresponseset(callAnalysisSetId, body)
 
 <a name="putOutboundCampaign"></a>
 
-# [**Campaign**](Campaign.html) putOutboundCampaign(campaignId, body)
+# Campaign putOutboundCampaign(campaignId, body)
 
 PUT /api/v2/outbound/campaigns/{campaignId}
 
@@ -4036,7 +4036,7 @@ apiInstance.putOutboundCampaignAgent(campaignId, userId, body)
 
 <a name="putOutboundCampaignrule"></a>
 
-# [**CampaignRule**](CampaignRule.html) putOutboundCampaignrule(campaignRuleId, body)
+# CampaignRule putOutboundCampaignrule(campaignRuleId, body)
 
 PUT /api/v2/outbound/campaignrules/{campaignRuleId}
 
@@ -4087,7 +4087,7 @@ apiInstance.putOutboundCampaignrule(campaignRuleId, body)
 
 <a name="putOutboundContactlist"></a>
 
-# [**ContactList**](ContactList.html) putOutboundContactlist(contactListId, body)
+# ContactList putOutboundContactlist(contactListId, body)
 
 PUT /api/v2/outbound/contactlists/{contactListId}
 
@@ -4138,7 +4138,7 @@ apiInstance.putOutboundContactlist(contactListId, body)
 
 <a name="putOutboundContactlistContact"></a>
 
-# [**DialerContact**](DialerContact.html) putOutboundContactlistContact(contactListId, contactId, body)
+# DialerContact putOutboundContactlistContact(contactListId, contactId, body)
 
 PUT /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}
 
@@ -4192,7 +4192,7 @@ apiInstance.putOutboundContactlistContact(contactListId, contactId, body)
 
 <a name="putOutboundContactlistfilter"></a>
 
-# [**ContactListFilter**](ContactListFilter.html) putOutboundContactlistfilter(contactListFilterId, body)
+# ContactListFilter putOutboundContactlistfilter(contactListFilterId, body)
 
 PUT /api/v2/outbound/contactlistfilters/{contactListFilterId}
 
@@ -4243,7 +4243,7 @@ apiInstance.putOutboundContactlistfilter(contactListFilterId, body)
 
 <a name="putOutboundDnclist"></a>
 
-# [**DncList**](DncList.html) putOutboundDnclist(dncListId, body)
+# DncList putOutboundDnclist(dncListId, body)
 
 PUT /api/v2/outbound/dnclists/{dncListId}
 
@@ -4294,7 +4294,7 @@ apiInstance.putOutboundDnclist(dncListId, body)
 
 <a name="putOutboundRuleset"></a>
 
-# [**RuleSet**](RuleSet.html) putOutboundRuleset(ruleSetId, body)
+# RuleSet putOutboundRuleset(ruleSetId, body)
 
 PUT /api/v2/outbound/rulesets/{ruleSetId}
 
@@ -4345,7 +4345,7 @@ apiInstance.putOutboundRuleset(ruleSetId, body)
 
 <a name="putOutboundSchedulesCampaign"></a>
 
-# [**CampaignSchedule**](CampaignSchedule.html) putOutboundSchedulesCampaign(campaignId, body)
+# CampaignSchedule putOutboundSchedulesCampaign(campaignId, body)
 
 PUT /api/v2/outbound/schedules/campaigns/{campaignId}
 
@@ -4396,7 +4396,7 @@ apiInstance.putOutboundSchedulesCampaign(campaignId, body)
 
 <a name="putOutboundSchedulesSequence"></a>
 
-# [**SequenceSchedule**](SequenceSchedule.html) putOutboundSchedulesSequence(sequenceId, body)
+# SequenceSchedule putOutboundSchedulesSequence(sequenceId, body)
 
 PUT /api/v2/outbound/schedules/sequences/{sequenceId}
 
@@ -4447,7 +4447,7 @@ apiInstance.putOutboundSchedulesSequence(sequenceId, body)
 
 <a name="putOutboundSequence"></a>
 
-# [**CampaignSequence**](CampaignSequence.html) putOutboundSequence(sequenceId, body)
+# CampaignSequence putOutboundSequence(sequenceId, body)
 
 PUT /api/v2/outbound/sequences/{sequenceId}
 
@@ -4498,7 +4498,7 @@ apiInstance.putOutboundSequence(sequenceId, body)
 
 <a name="putOutboundWrapupcodemappings"></a>
 
-# [**WrapUpCodeMapping**](WrapUpCodeMapping.html) putOutboundWrapupcodemappings(body)
+# WrapUpCodeMapping putOutboundWrapupcodemappings(body)
 
 PUT /api/v2/outbound/wrapupcodemappings
 

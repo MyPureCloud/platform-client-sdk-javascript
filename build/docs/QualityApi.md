@@ -42,7 +42,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteQualityCalibration"></a>
 
-# [**Calibration**](Calibration.html) deleteQualityCalibration(calibrationId, calibratorId)
+# Calibration deleteQualityCalibration(calibrationId, calibratorId)
 
 DELETE /api/v2/quality/calibrations/{calibrationId}
 
@@ -93,7 +93,7 @@ apiInstance.deleteQualityCalibration(calibrationId, calibratorId)
 
 <a name="deleteQualityConversationEvaluation"></a>
 
-# [**Evaluation**](Evaluation.html) deleteQualityConversationEvaluation(conversationId, evaluationId, opts)
+# Evaluation deleteQualityConversationEvaluation(conversationId, evaluationId, opts)
 
 DELETE /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}
 
@@ -292,7 +292,7 @@ void (no response body)
 
 <a name="getQualityAgentsActivity"></a>
 
-# [**AgentActivityEntityListing**](AgentActivityEntityListing.html) getQualityAgentsActivity(opts)
+# AgentActivityEntityListing getQualityAgentsActivity(opts)
 
 GET /api/v2/quality/agents/activity
 
@@ -363,7 +363,7 @@ apiInstance.getQualityAgentsActivity(opts)
 
 <a name="getQualityCalibration"></a>
 
-# [**Calibration**](Calibration.html) getQualityCalibration(calibrationId, opts)
+# Calibration getQualityCalibration(calibrationId, opts)
 
 GET /api/v2/quality/calibrations/{calibrationId}
 
@@ -417,7 +417,7 @@ apiInstance.getQualityCalibration(calibrationId, opts)
 
 <a name="getQualityCalibrations"></a>
 
-# [**CalibrationEntityListing**](CalibrationEntityListing.html) getQualityCalibrations(calibratorId, opts)
+# CalibrationEntityListing getQualityCalibrations(calibratorId, opts)
 
 GET /api/v2/quality/calibrations
 
@@ -485,7 +485,7 @@ apiInstance.getQualityCalibrations(calibratorId, opts)
 
 <a name="getQualityConversationAudits"></a>
 
-# [**QualityAuditPage**](QualityAuditPage.html) getQualityConversationAudits(conversationId, opts)
+# QualityAuditPage getQualityConversationAudits(conversationId, opts)
 
 GET /api/v2/quality/conversations/{conversationId}/audits
 
@@ -551,7 +551,7 @@ apiInstance.getQualityConversationAudits(conversationId, opts)
 
 <a name="getQualityConversationEvaluation"></a>
 
-# [**Evaluation**](Evaluation.html) getQualityConversationEvaluation(conversationId, evaluationId, opts)
+# Evaluation getQualityConversationEvaluation(conversationId, evaluationId, opts)
 
 GET /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}
 
@@ -606,7 +606,7 @@ apiInstance.getQualityConversationEvaluation(conversationId, evaluationId, opts)
 
 <a name="getQualityEvaluationsQuery"></a>
 
-# [**EvaluationEntityListing**](EvaluationEntityListing.html) getQualityEvaluationsQuery(opts)
+# EvaluationEntityListing getQualityEvaluationsQuery(opts)
 
 GET /api/v2/quality/evaluations/query
 
@@ -640,7 +640,7 @@ var opts = {
   'queueId': "queueId_example", // String | queue id
   'startTime': "startTime_example", // String | start time of the evaluation query
   'endTime': "endTime_example", // String | end time of the evaluation query
-  'evaluationState': null, // [Object] | evaluation state options: Pending, InProgress, Finished
+  'evaluationState': null, // [Object] | 
   'isReleased': true, // Boolean | the evaluation has been released
   'agentHasRead': true, // Boolean | agent has the evaluation
   'expandAnswerTotalScores': true, // Boolean | get the total scores for evaluations
@@ -674,7 +674,7 @@ apiInstance.getQualityEvaluationsQuery(opts)
  **queueId** | **String** | queue id | [optional]  |
  **startTime** | **String** | start time of the evaluation query | [optional]  |
  **endTime** | **String** | end time of the evaluation query | [optional]  |
- **evaluationState** | **[Object]** | evaluation state options: Pending, InProgress, Finished | [optional]  |
+ **evaluationState** | **[Object]** |  | [optional]  |
  **isReleased** | **Boolean** | the evaluation has been released | [optional]  |
  **agentHasRead** | **Boolean** | agent has the evaluation | [optional]  |
  **expandAnswerTotalScores** | **Boolean** | get the total scores for evaluations | [optional]  |
@@ -687,7 +687,7 @@ apiInstance.getQualityEvaluationsQuery(opts)
 
 <a name="getQualityEvaluatorsActivity"></a>
 
-# [**EvaluatorActivityEntityListing**](EvaluatorActivityEntityListing.html) getQualityEvaluatorsActivity(opts)
+# EvaluatorActivityEntityListing getQualityEvaluatorsActivity(opts)
 
 GET /api/v2/quality/evaluators/activity
 
@@ -756,7 +756,7 @@ apiInstance.getQualityEvaluatorsActivity(opts)
 
 <a name="getQualityForm"></a>
 
-# [**EvaluationForm**](EvaluationForm.html) getQualityForm(formId)
+# EvaluationForm getQualityForm(formId)
 
 GET /api/v2/quality/forms/{formId}
 
@@ -804,7 +804,7 @@ apiInstance.getQualityForm(formId)
 
 <a name="getQualityFormVersions"></a>
 
-# [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) getQualityFormVersions(formId, opts)
+# EvaluationFormEntityListing getQualityFormVersions(formId, opts)
 
 GET /api/v2/quality/forms/{formId}/versions
 
@@ -858,7 +858,7 @@ apiInstance.getQualityFormVersions(formId, opts)
 
 <a name="getQualityForms"></a>
 
-# [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) getQualityForms(opts)
+# EvaluationFormEntityListing getQualityForms(opts)
 
 GET /api/v2/quality/forms
 
@@ -919,7 +919,7 @@ apiInstance.getQualityForms(opts)
 
 <a name="getQualityKeywordset"></a>
 
-# [**KeywordSet**](KeywordSet.html) getQualityKeywordset(keywordSetId)
+# KeywordSet getQualityKeywordset(keywordSetId)
 
 GET /api/v2/quality/keywordsets/{keywordSetId}
 
@@ -967,7 +967,7 @@ apiInstance.getQualityKeywordset(keywordSetId)
 
 <a name="getQualityKeywordsets"></a>
 
-# [**KeywordSetEntityListing**](KeywordSetEntityListing.html) getQualityKeywordsets(opts)
+# KeywordSetEntityListing getQualityKeywordsets(opts)
 
 GET /api/v2/quality/keywordsets
 
@@ -1034,7 +1034,7 @@ apiInstance.getQualityKeywordsets(opts)
 
 <a name="getQualityPublishedform"></a>
 
-# [**EvaluationForm**](EvaluationForm.html) getQualityPublishedform(formId)
+# EvaluationForm getQualityPublishedform(formId)
 
 GET /api/v2/quality/publishedforms/{formId}
 
@@ -1082,7 +1082,7 @@ apiInstance.getQualityPublishedform(formId)
 
 <a name="getQualityPublishedforms"></a>
 
-# [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) getQualityPublishedforms(opts)
+# EvaluationFormEntityListing getQualityPublishedforms(opts)
 
 GET /api/v2/quality/publishedforms
 
@@ -1135,7 +1135,7 @@ apiInstance.getQualityPublishedforms(opts)
 
 <a name="postAnalyticsEvaluationsAggregatesQuery"></a>
 
-# [**AggregateQueryResponse**](AggregateQueryResponse.html) postAnalyticsEvaluationsAggregatesQuery(body)
+# AggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(body)
 
 POST /api/v2/analytics/evaluations/aggregates/query
 
@@ -1183,7 +1183,7 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
 
 <a name="postQualityCalibrations"></a>
 
-# [**Calibration**](Calibration.html) postQualityCalibrations(body, opts)
+# Calibration postQualityCalibrations(body, opts)
 
 POST /api/v2/quality/calibrations
 
@@ -1235,7 +1235,7 @@ apiInstance.postQualityCalibrations(body, opts)
 
 <a name="postQualityConversationEvaluations"></a>
 
-# [**Evaluation**](Evaluation.html) postQualityConversationEvaluations(conversationId, body, opts)
+# Evaluation postQualityConversationEvaluations(conversationId, body, opts)
 
 POST /api/v2/quality/conversations/{conversationId}/evaluations
 
@@ -1290,7 +1290,7 @@ apiInstance.postQualityConversationEvaluations(conversationId, body, opts)
 
 <a name="postQualityEvaluationsScoring"></a>
 
-# [**EvaluationScoringSet**](EvaluationScoringSet.html) postQualityEvaluationsScoring(body)
+# EvaluationScoringSet postQualityEvaluationsScoring(body)
 
 POST /api/v2/quality/evaluations/scoring
 
@@ -1338,7 +1338,7 @@ apiInstance.postQualityEvaluationsScoring(body)
 
 <a name="postQualityForms"></a>
 
-# [**EvaluationForm**](EvaluationForm.html) postQualityForms(body)
+# EvaluationForm postQualityForms(body)
 
 POST /api/v2/quality/forms
 
@@ -1386,7 +1386,7 @@ apiInstance.postQualityForms(body)
 
 <a name="postQualityKeywordsets"></a>
 
-# [**KeywordSet**](KeywordSet.html) postQualityKeywordsets(body, opts)
+# KeywordSet postQualityKeywordsets(body, opts)
 
 POST /api/v2/quality/keywordsets
 
@@ -1438,7 +1438,7 @@ apiInstance.postQualityKeywordsets(body, opts)
 
 <a name="postQualityPublishedforms"></a>
 
-# [**EvaluationForm**](EvaluationForm.html) postQualityPublishedforms(body)
+# EvaluationForm postQualityPublishedforms(body)
 
 POST /api/v2/quality/publishedforms
 
@@ -1486,7 +1486,7 @@ apiInstance.postQualityPublishedforms(body)
 
 <a name="postQualitySpotability"></a>
 
-# [**KeywordSet**](KeywordSet.html) postQualitySpotability(opts)
+# KeywordSet postQualitySpotability(opts)
 
 POST /api/v2/quality/spotability
 
@@ -1535,7 +1535,7 @@ apiInstance.postQualitySpotability(opts)
 
 <a name="putQualityCalibration"></a>
 
-# [**Calibration**](Calibration.html) putQualityCalibration(calibrationId, body)
+# Calibration putQualityCalibration(calibrationId, body)
 
 PUT /api/v2/quality/calibrations/{calibrationId}
 
@@ -1586,7 +1586,7 @@ apiInstance.putQualityCalibration(calibrationId, body)
 
 <a name="putQualityConversationEvaluation"></a>
 
-# [**Evaluation**](Evaluation.html) putQualityConversationEvaluation(conversationId, evaluationId, body, opts)
+# Evaluation putQualityConversationEvaluation(conversationId, evaluationId, body, opts)
 
 PUT /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}
 
@@ -1644,7 +1644,7 @@ apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body,
 
 <a name="putQualityForm"></a>
 
-# [**EvaluationForm**](EvaluationForm.html) putQualityForm(formId, body)
+# EvaluationForm putQualityForm(formId, body)
 
 PUT /api/v2/quality/forms/{formId}
 
@@ -1695,7 +1695,7 @@ apiInstance.putQualityForm(formId, body)
 
 <a name="putQualityKeywordset"></a>
 
-# [**KeywordSet**](KeywordSet.html) putQualityKeywordset(keywordSetId, body)
+# KeywordSet putQualityKeywordset(keywordSetId, body)
 
 PUT /api/v2/quality/keywordsets/{keywordSetId}
 

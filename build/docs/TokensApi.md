@@ -55,7 +55,7 @@ void (no response body)
 
 <a name="getTokensMe"></a>
 
-# [**TokenInfo**](TokenInfo.html) getTokensMe()
+# TokenInfo getTokensMe()
 
 GET /api/v2/tokens/me
 

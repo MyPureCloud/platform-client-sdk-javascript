@@ -18,7 +18,7 @@
   /**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -323,6 +323,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.category Filter by category name
      * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+     * @param {Object} opts.includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
@@ -338,7 +339,7 @@
         '/api/v2/integrations/actions', 
         'GET', 
         {  }, 
-        { 'category': opts['category'],'secure': opts['secure'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+        { 'category': opts['category'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
         {  }, 
         {  }, 
         null, 
@@ -386,6 +387,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.category Filter by category name
      * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+     * @param {Object} opts.includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
@@ -401,7 +403,7 @@
         '/api/v2/integrations/actions/drafts', 
         'GET', 
         {  }, 
-        { 'category': opts['category'],'secure': opts['secure'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+        { 'category': opts['category'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
         {  }, 
         {  }, 
         null, 

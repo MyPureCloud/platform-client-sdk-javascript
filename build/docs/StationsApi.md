@@ -62,7 +62,7 @@ void (no response body)
 
 <a name="getStation"></a>
 
-# [**Station**](Station.html) getStation(stationId)
+# Station getStation(stationId)
 
 GET /api/v2/stations/{stationId}
 
@@ -110,7 +110,7 @@ apiInstance.getStation(stationId)
 
 <a name="getStations"></a>
 
-# [**StationEntityListing**](StationEntityListing.html) getStations(opts)
+# StationEntityListing getStations(opts)
 
 GET /api/v2/stations
 

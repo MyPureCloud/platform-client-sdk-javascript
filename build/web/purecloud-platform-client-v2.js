@@ -3242,7 +3242,7 @@ module.exports = request;
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -3865,7 +3865,7 @@ module.exports = request;
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '11.0.0' });
+    //request.set({ 'purecloud-sdk': '12.0.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -4003,7 +4003,7 @@ module.exports = request;
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -4359,7 +4359,7 @@ module.exports = request;
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -5024,7 +5024,7 @@ module.exports = request;
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -5682,6 +5682,47 @@ module.exports = request;
 
 
     /**
+     * Get generated prompt history
+     * 
+     * @param {String} promptId Prompt ID
+     * @param {String} historyId History request ID
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {String} opts.sortOrder Sort order (default to desc)
+     * @param {Object} opts.sortBy Sort by (default to timestamp)
+     * @param {Array.<String>} opts.action Flow actions to include (omit to include all)
+     */
+    this.getArchitectPromptHistoryHistoryId = function(promptId, historyId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'promptId' is set
+      if (promptId === undefined || promptId === null) {
+        throw "Missing the required parameter 'promptId' when calling getArchitectPromptHistoryHistoryId";
+      }
+
+      // verify the required parameter 'historyId' is set
+      if (historyId === undefined || historyId === null) {
+        throw "Missing the required parameter 'historyId' when calling getArchitectPromptHistoryHistoryId";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/prompts/{promptId}/history/{historyId}', 
+        'GET', 
+        { 'promptId': promptId,'historyId': historyId }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'action': this.apiClient.buildCollectionParam(opts['action'], 'multi') }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get specified user prompt resource
      * 
      * @param {String} promptId Prompt ID
@@ -5919,6 +5960,47 @@ module.exports = request;
 
 
     /**
+     * Get generated prompt history
+     * 
+     * @param {String} promptId promptId
+     * @param {String} historyId History request ID
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {String} opts.sortOrder Sort order (default to desc)
+     * @param {Object} opts.sortBy Sort by (default to timestamp)
+     * @param {Array.<String>} opts.action Flow actions to include (omit to include all)
+     */
+    this.getArchitectSystempromptHistoryHistoryId = function(promptId, historyId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'promptId' is set
+      if (promptId === undefined || promptId === null) {
+        throw "Missing the required parameter 'promptId' when calling getArchitectSystempromptHistoryHistoryId";
+      }
+
+      // verify the required parameter 'historyId' is set
+      if (historyId === undefined || historyId === null) {
+        throw "Missing the required parameter 'historyId' when calling getArchitectSystempromptHistoryHistoryId";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/systemprompts/{promptId}/history/{historyId}', 
+        'GET', 
+        { 'promptId': promptId,'historyId': historyId }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'action': this.apiClient.buildCollectionParam(opts['action'], 'multi') }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get a system prompt resource.
      * 
      * @param {String} promptId Prompt ID
@@ -6052,7 +6134,7 @@ module.exports = request;
      * Get generated flow history
      * 
      * @param {String} flowId Flow ID
-     * @param {String} historyId History ID (generated history)
+     * @param {String} historyId History request ID
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Number} opts.pageSize Page size (default to 25)
@@ -6321,6 +6403,34 @@ module.exports = request;
 
 
     /**
+     * Generate prompt history
+     * Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
+     * @param {String} promptId Prompt ID
+     */
+    this.postArchitectPromptHistory = function(promptId) { 
+
+      // verify the required parameter 'promptId' is set
+      if (promptId === undefined || promptId === null) {
+        throw "Missing the required parameter 'promptId' when calling postArchitectPromptHistory";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/prompts/{promptId}/history', 
+        'POST', 
+        { 'promptId': promptId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Create a new user prompt resource
      * 
      * @param {String} promptId Prompt ID
@@ -6419,6 +6529,34 @@ module.exports = request;
         {  }, 
         {  }, 
         opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Generate system prompt history
+     * Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
+     * @param {String} promptId promptId
+     */
+    this.postArchitectSystempromptHistory = function(promptId) { 
+
+      // verify the required parameter 'promptId' is set
+      if (promptId === undefined || promptId === null) {
+        throw "Missing the required parameter 'promptId' when calling postArchitectSystempromptHistory";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/systemprompts/{promptId}/history', 
+        'POST', 
+        { 'promptId': promptId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -6937,7 +7075,7 @@ module.exports = request;
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -7148,7 +7286,7 @@ module.exports = request;
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -7706,7 +7844,7 @@ module.exports = request;
   /**
    * Billing service.
    * @module purecloud-platform-client-v2/api/BillingApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -7779,7 +7917,7 @@ module.exports = request;
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -9036,7 +9174,7 @@ module.exports = request;
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -11825,7 +11963,7 @@ module.exports = request;
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -12809,7 +12947,7 @@ module.exports = request;
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -13014,7 +13152,7 @@ module.exports = request;
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -13177,7 +13315,7 @@ module.exports = request;
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -13697,7 +13835,7 @@ module.exports = request;
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -14068,7 +14206,7 @@ module.exports = request;
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -14777,7 +14915,7 @@ module.exports = request;
   /**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -15082,6 +15220,7 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {String} opts.category Filter by category name
      * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+     * @param {Object} opts.includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
@@ -15097,7 +15236,7 @@ module.exports = request;
         '/api/v2/integrations/actions', 
         'GET', 
         {  }, 
-        { 'category': opts['category'],'secure': opts['secure'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+        { 'category': opts['category'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
         {  }, 
         {  }, 
         null, 
@@ -15145,6 +15284,7 @@ module.exports = request;
      * @param {Object} opts Optional parameters
      * @param {String} opts.category Filter by category name
      * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+     * @param {Object} opts.includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
@@ -15160,7 +15300,7 @@ module.exports = request;
         '/api/v2/integrations/actions/drafts', 
         'GET', 
         {  }, 
-        { 'category': opts['category'],'secure': opts['secure'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+        { 'category': opts['category'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
         {  }, 
         {  }, 
         null, 
@@ -15483,7 +15623,7 @@ module.exports = request;
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -15796,7 +15936,7 @@ module.exports = request;
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -16041,7 +16181,7 @@ module.exports = request;
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -16194,7 +16334,7 @@ module.exports = request;
   /**
    * MobileDevices service.
    * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -16375,7 +16515,7 @@ module.exports = request;
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -16607,7 +16747,7 @@ module.exports = request;
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -16814,7 +16954,7 @@ module.exports = request;
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -16962,7 +17102,7 @@ module.exports = request;
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -17727,7 +17867,7 @@ module.exports = request;
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -20396,7 +20536,7 @@ module.exports = request;
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -20680,7 +20820,7 @@ module.exports = request;
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -21048,7 +21188,7 @@ module.exports = request;
      * @param {String} opts.queueId queue id
      * @param {String} opts.startTime start time of the evaluation query
      * @param {String} opts.endTime end time of the evaluation query
-     * @param {Array.<Object>} opts.evaluationState evaluation state options: Pending, InProgress, Finished
+     * @param {Array.<Object>} opts.evaluationState 
      * @param {Boolean} opts.isReleased the evaluation has been released
      * @param {Boolean} opts.agentHasRead agent has the evaluation
      * @param {Boolean} opts.expandAnswerTotalScores get the total scores for evaluations
@@ -21721,7 +21861,7 @@ module.exports = request;
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -22847,7 +22987,7 @@ module.exports = request;
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -23218,7 +23358,7 @@ module.exports = request;
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -24611,7 +24751,7 @@ module.exports = request;
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -24659,8 +24799,11 @@ module.exports = request;
      * 
      * @param {String} scriptId Script ID
      * @param {String} pageId Page ID
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
      */
-    this.getScriptPage = function(scriptId, pageId) { 
+    this.getScriptPage = function(scriptId, pageId, opts) { 
+      opts = opts || {};
 
       // verify the required parameter 'scriptId' is set
       if (scriptId === undefined || scriptId === null) {
@@ -24677,7 +24820,7 @@ module.exports = request;
         '/api/v2/scripts/{scriptId}/pages/{pageId}', 
         'GET', 
         { 'scriptId': scriptId,'pageId': pageId }, 
-        {  }, 
+        { 'scriptDataVersion': opts['scriptDataVersion'] }, 
         {  }, 
         {  }, 
         null, 
@@ -24692,8 +24835,11 @@ module.exports = request;
      * Get the list of pages
      * 
      * @param {String} scriptId Script ID
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
      */
-    this.getScriptPages = function(scriptId) { 
+    this.getScriptPages = function(scriptId, opts) { 
+      opts = opts || {};
 
       // verify the required parameter 'scriptId' is set
       if (scriptId === undefined || scriptId === null) {
@@ -24705,7 +24851,7 @@ module.exports = request;
         '/api/v2/scripts/{scriptId}/pages', 
         'GET', 
         { 'scriptId': scriptId }, 
-        {  }, 
+        { 'scriptDataVersion': opts['scriptDataVersion'] }, 
         {  }, 
         {  }, 
         null, 
@@ -24728,6 +24874,7 @@ module.exports = request;
      * @param {String} opts.flowId Secure flow id filter
      * @param {Object} opts.sortBy SortBy
      * @param {Object} opts.sortOrder SortOrder
+     * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
      */
     this.getScripts = function(opts) { 
       opts = opts || {};
@@ -24737,7 +24884,7 @@ module.exports = request;
         '/api/v2/scripts', 
         'GET', 
         {  }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'scriptDataVersion': opts['scriptDataVersion'] }, 
         {  }, 
         {  }, 
         null, 
@@ -24751,6 +24898,7 @@ module.exports = request;
     /**
      * Get the published scripts.
      * 
+     * @param {String} scriptId Script ID
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
@@ -24758,16 +24906,22 @@ module.exports = request;
      * @param {String} opts.name Name filter
      * @param {String} opts.feature Feature filter
      * @param {String} opts.flowId Secure flow id filter
+     * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
      */
-    this.getScriptsPublished = function(opts) { 
+    this.getScriptsPublished = function(scriptId, opts) { 
       opts = opts || {};
+
+      // verify the required parameter 'scriptId' is set
+      if (scriptId === undefined || scriptId === null) {
+        throw "Missing the required parameter 'scriptId' when calling getScriptsPublished";
+      }
 
 
       return this.apiClient.callApi(
         '/api/v2/scripts/published', 
         'GET', 
-        {  }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'] }, 
+        { 'scriptId': scriptId }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'] }, 
         {  }, 
         {  }, 
         null, 
@@ -24782,8 +24936,11 @@ module.exports = request;
      * Get the published script.
      * 
      * @param {String} scriptId Script ID
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
      */
-    this.getScriptsPublishedScriptId = function(scriptId) { 
+    this.getScriptsPublishedScriptId = function(scriptId, opts) { 
+      opts = opts || {};
 
       // verify the required parameter 'scriptId' is set
       if (scriptId === undefined || scriptId === null) {
@@ -24795,7 +24952,7 @@ module.exports = request;
         '/api/v2/scripts/published/{scriptId}', 
         'GET', 
         { 'scriptId': scriptId }, 
-        {  }, 
+        { 'scriptDataVersion': opts['scriptDataVersion'] }, 
         {  }, 
         {  }, 
         null, 
@@ -24811,8 +24968,11 @@ module.exports = request;
      * 
      * @param {String} scriptId Script ID
      * @param {String} pageId Page ID
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
      */
-    this.getScriptsPublishedScriptIdPage = function(scriptId, pageId) { 
+    this.getScriptsPublishedScriptIdPage = function(scriptId, pageId, opts) { 
+      opts = opts || {};
 
       // verify the required parameter 'scriptId' is set
       if (scriptId === undefined || scriptId === null) {
@@ -24829,7 +24989,7 @@ module.exports = request;
         '/api/v2/scripts/published/{scriptId}/pages/{pageId}', 
         'GET', 
         { 'scriptId': scriptId,'pageId': pageId }, 
-        {  }, 
+        { 'scriptDataVersion': opts['scriptDataVersion'] }, 
         {  }, 
         {  }, 
         null, 
@@ -24844,8 +25004,12 @@ module.exports = request;
      * Get the list of published pages
      * 
      * @param {String} scriptId Script ID
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.foo  (default to 25)
+     * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
      */
-    this.getScriptsPublishedScriptIdPages = function(scriptId) { 
+    this.getScriptsPublishedScriptIdPages = function(scriptId, opts) { 
+      opts = opts || {};
 
       // verify the required parameter 'scriptId' is set
       if (scriptId === undefined || scriptId === null) {
@@ -24857,7 +25021,7 @@ module.exports = request;
         '/api/v2/scripts/published/{scriptId}/pages', 
         'GET', 
         { 'scriptId': scriptId }, 
-        {  }, 
+        { 'foo': opts['foo'],'scriptDataVersion': opts['scriptDataVersion'] }, 
         {  }, 
         {  }, 
         null, 
@@ -24876,6 +25040,7 @@ module.exports = request;
      * @param {String} opts.input input
      * @param {String} opts.output output
      * @param {String} opts.type type
+     * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
      */
     this.getScriptsPublishedScriptIdVariables = function(scriptId, opts) { 
       opts = opts || {};
@@ -24890,7 +25055,7 @@ module.exports = request;
         '/api/v2/scripts/published/{scriptId}/variables', 
         'GET', 
         { 'scriptId': scriptId }, 
-        { 'input': opts['input'],'output': opts['output'],'type': opts['type'] }, 
+        { 'input': opts['input'],'output': opts['output'],'type': opts['type'],'scriptDataVersion': opts['scriptDataVersion'] }, 
         {  }, 
         {  }, 
         null, 
@@ -24925,7 +25090,7 @@ module.exports = request;
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -25382,7 +25547,7 @@ module.exports = request;
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -25509,7 +25674,7 @@ module.exports = request;
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -25674,7 +25839,7 @@ module.exports = request;
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -26945,16 +27110,16 @@ module.exports = request;
      * @param {String} edgegroupId Edge Group ID
      * @param {String} edgetrunkbaseId Edge Trunk Base ID
      */
-    this.getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis = function(edgegroupId, edgetrunkbaseId) { 
+    this.getTelephonyProvidersEdgesEdgegroupEdgetrunkbase = function(edgegroupId, edgetrunkbaseId) { 
 
       // verify the required parameter 'edgegroupId' is set
       if (edgegroupId === undefined || edgegroupId === null) {
-        throw "Missing the required parameter 'edgegroupId' when calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis";
+        throw "Missing the required parameter 'edgegroupId' when calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbase";
       }
 
       // verify the required parameter 'edgetrunkbaseId' is set
       if (edgetrunkbaseId === undefined || edgetrunkbaseId === null) {
-        throw "Missing the required parameter 'edgetrunkbaseId' when calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis";
+        throw "Missing the required parameter 'edgetrunkbaseId' when calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbase";
       }
 
 
@@ -29194,21 +29359,21 @@ module.exports = request;
      * @param {String} edgetrunkbaseId Edge Trunk Base ID
      * @param {Object} body EdgeTrunkBase
      */
-    this.putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis = function(edgegroupId, edgetrunkbaseId, body) { 
+    this.putTelephonyProvidersEdgesEdgegroupEdgetrunkbase = function(edgegroupId, edgetrunkbaseId, body) { 
 
       // verify the required parameter 'edgegroupId' is set
       if (edgegroupId === undefined || edgegroupId === null) {
-        throw "Missing the required parameter 'edgegroupId' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis";
+        throw "Missing the required parameter 'edgegroupId' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbase";
       }
 
       // verify the required parameter 'edgetrunkbaseId' is set
       if (edgetrunkbaseId === undefined || edgetrunkbaseId === null) {
-        throw "Missing the required parameter 'edgetrunkbaseId' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis";
+        throw "Missing the required parameter 'edgetrunkbaseId' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbase";
       }
 
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw "Missing the required parameter 'body' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis";
+        throw "Missing the required parameter 'body' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbase";
       }
 
 
@@ -29597,7 +29762,7 @@ module.exports = request;
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -29680,7 +29845,7 @@ module.exports = request;
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -29895,7 +30060,7 @@ module.exports = request;
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -31283,7 +31448,7 @@ module.exports = request;
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -31398,7 +31563,7 @@ module.exports = request;
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -32113,7 +32278,7 @@ module.exports = request;
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -32595,7 +32760,7 @@ module.exports = request;
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 11.0.0
+   * @version 12.0.0
    */
   var platformClient = {
     /**

@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="getLocation"></a>
 
-# [**LocationDefinition**](LocationDefinition.html) getLocation(locationId)
+# LocationDefinition getLocation(locationId)
 
 GET /api/v2/locations/{locationId}
 
@@ -63,7 +63,7 @@ apiInstance.getLocation(locationId)
 
 <a name="getLocations"></a>
 
-# [**LocationEntityListing**](LocationEntityListing.html) getLocations(opts)
+# LocationEntityListing getLocations(opts)
 
 GET /api/v2/locations
 
@@ -116,7 +116,7 @@ apiInstance.getLocations(opts)
 
 <a name="getLocationsSearch"></a>
 
-# [**LocationsSearchResponse**](LocationsSearchResponse.html) getLocationsSearch(q64, opts)
+# LocationsSearchResponse getLocationsSearch(q64, opts)
 
 GET /api/v2/locations/search
 
@@ -168,7 +168,7 @@ apiInstance.getLocationsSearch(q64, opts)
 
 <a name="postLocationsSearch"></a>
 
-# [**LocationsSearchResponse**](LocationsSearchResponse.html) postLocationsSearch(body)
+# LocationsSearchResponse postLocationsSearch(body)
 
 POST /api/v2/locations/search
 

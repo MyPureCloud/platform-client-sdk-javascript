@@ -20,7 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="getScript"></a>
 
-# [**Script**](Script.html) getScript(scriptId)
+# Script getScript(scriptId)
 
 GET /api/v2/scripts/{scriptId}
 
@@ -68,7 +68,7 @@ apiInstance.getScript(scriptId)
 
 <a name="getScriptPage"></a>
 
-# [**Page**](Page.html) getScriptPage(scriptId, pageId)
+# Page getScriptPage(scriptId, pageId, opts)
 
 GET /api/v2/scripts/{scriptId}/pages/{pageId}
 
@@ -93,7 +93,10 @@ var scriptId = "scriptId_example"; // String | Script ID
 
 var pageId = "pageId_example"; // String | Page ID
 
-apiInstance.getScriptPage(scriptId, pageId)
+var opts = { 
+  'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
+};
+apiInstance.getScriptPage(scriptId, pageId, opts)
   .then(function(data) {
     console.log(`getScriptPage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -111,6 +114,7 @@ apiInstance.getScriptPage(scriptId, pageId)
 | ------------- | ------------- | ------------- | ------------- |
  **scriptId** | **String** | Script ID |  |
  **pageId** | **String** | Page ID |  |
+ **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -119,7 +123,7 @@ apiInstance.getScriptPage(scriptId, pageId)
 
 <a name="getScriptPages"></a>
 
-# [**[Page]**](Page.html) getScriptPages(scriptId)
+# [Page] getScriptPages(scriptId, opts)
 
 GET /api/v2/scripts/{scriptId}/pages
 
@@ -142,7 +146,10 @@ var apiInstance = new platformClient.ScriptsApi();
 
 var scriptId = "scriptId_example"; // String | Script ID
 
-apiInstance.getScriptPages(scriptId)
+var opts = { 
+  'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
+};
+apiInstance.getScriptPages(scriptId, opts)
   .then(function(data) {
     console.log(`getScriptPages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -159,6 +166,7 @@ apiInstance.getScriptPages(scriptId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **scriptId** | **String** | Script ID |  |
+ **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -167,7 +175,7 @@ apiInstance.getScriptPages(scriptId)
 
 <a name="getScripts"></a>
 
-# [**ScriptEntityListing**](ScriptEntityListing.html) getScripts(opts)
+# ScriptEntityListing getScripts(opts)
 
 GET /api/v2/scripts
 
@@ -196,7 +204,8 @@ var opts = {
   'feature': "feature_example", // String | Feature filter
   'flowId': "flowId_example", // String | Secure flow id filter
   'sortBy': "sortBy_example", // String | SortBy
-  'sortOrder': "sortOrder_example" // String | SortOrder
+  'sortOrder': "sortOrder_example", // String | SortOrder
+  'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
 };
 apiInstance.getScripts(opts)
   .then(function(data) {
@@ -222,6 +231,7 @@ apiInstance.getScripts(opts)
  **flowId** | **String** | Secure flow id filter | [optional]  |
  **sortBy** | **String** | SortBy | [optional] <br />**Values**: modifiedDate, createdDate |
  **sortOrder** | **String** | SortOrder | [optional] <br />**Values**: ascending, descending |
+ **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -230,7 +240,7 @@ apiInstance.getScripts(opts)
 
 <a name="getScriptsPublished"></a>
 
-# [**ScriptEntityListing**](ScriptEntityListing.html) getScriptsPublished(opts)
+# ScriptEntityListing getScriptsPublished(scriptId, opts)
 
 GET /api/v2/scripts/published
 
@@ -251,15 +261,18 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ScriptsApi();
 
+var scriptId = "scriptId_example"; // String | Script ID
+
 var opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'expand': "expand_example", // String | Expand
   'name': "name_example", // String | Name filter
   'feature': "feature_example", // String | Feature filter
-  'flowId': "flowId_example" // String | Secure flow id filter
+  'flowId': "flowId_example", // String | Secure flow id filter
+  'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
 };
-apiInstance.getScriptsPublished(opts)
+apiInstance.getScriptsPublished(scriptId, opts)
   .then(function(data) {
     console.log(`getScriptsPublished success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -275,12 +288,14 @@ apiInstance.getScriptsPublished(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+ **scriptId** | **String** | Script ID |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **expand** | **String** | Expand | [optional]  |
  **name** | **String** | Name filter | [optional]  |
  **feature** | **String** | Feature filter | [optional]  |
  **flowId** | **String** | Secure flow id filter | [optional]  |
+ **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -289,7 +304,7 @@ apiInstance.getScriptsPublished(opts)
 
 <a name="getScriptsPublishedScriptId"></a>
 
-# [**Script**](Script.html) getScriptsPublishedScriptId(scriptId)
+# Script getScriptsPublishedScriptId(scriptId, opts)
 
 GET /api/v2/scripts/published/{scriptId}
 
@@ -312,7 +327,10 @@ var apiInstance = new platformClient.ScriptsApi();
 
 var scriptId = "scriptId_example"; // String | Script ID
 
-apiInstance.getScriptsPublishedScriptId(scriptId)
+var opts = { 
+  'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
+};
+apiInstance.getScriptsPublishedScriptId(scriptId, opts)
   .then(function(data) {
     console.log(`getScriptsPublishedScriptId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -329,6 +347,7 @@ apiInstance.getScriptsPublishedScriptId(scriptId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **scriptId** | **String** | Script ID |  |
+ **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -337,7 +356,7 @@ apiInstance.getScriptsPublishedScriptId(scriptId)
 
 <a name="getScriptsPublishedScriptIdPage"></a>
 
-# [**Page**](Page.html) getScriptsPublishedScriptIdPage(scriptId, pageId)
+# Page getScriptsPublishedScriptIdPage(scriptId, pageId, opts)
 
 GET /api/v2/scripts/published/{scriptId}/pages/{pageId}
 
@@ -362,7 +381,10 @@ var scriptId = "scriptId_example"; // String | Script ID
 
 var pageId = "pageId_example"; // String | Page ID
 
-apiInstance.getScriptsPublishedScriptIdPage(scriptId, pageId)
+var opts = { 
+  'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
+};
+apiInstance.getScriptsPublishedScriptIdPage(scriptId, pageId, opts)
   .then(function(data) {
     console.log(`getScriptsPublishedScriptIdPage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -380,6 +402,7 @@ apiInstance.getScriptsPublishedScriptIdPage(scriptId, pageId)
 | ------------- | ------------- | ------------- | ------------- |
  **scriptId** | **String** | Script ID |  |
  **pageId** | **String** | Page ID |  |
+ **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -388,7 +411,7 @@ apiInstance.getScriptsPublishedScriptIdPage(scriptId, pageId)
 
 <a name="getScriptsPublishedScriptIdPages"></a>
 
-# [**[Page]**](Page.html) getScriptsPublishedScriptIdPages(scriptId)
+# [Page] getScriptsPublishedScriptIdPages(scriptId, opts)
 
 GET /api/v2/scripts/published/{scriptId}/pages
 
@@ -411,7 +434,11 @@ var apiInstance = new platformClient.ScriptsApi();
 
 var scriptId = "scriptId_example"; // String | Script ID
 
-apiInstance.getScriptsPublishedScriptIdPages(scriptId)
+var opts = { 
+  'foo': 25, // Number | 
+  'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
+};
+apiInstance.getScriptsPublishedScriptIdPages(scriptId, opts)
   .then(function(data) {
     console.log(`getScriptsPublishedScriptIdPages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -428,6 +455,8 @@ apiInstance.getScriptsPublishedScriptIdPages(scriptId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **scriptId** | **String** | Script ID |  |
+ **foo** | **Number** |  | [optional] [default to 25] |
+ **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -462,7 +491,8 @@ var scriptId = "scriptId_example"; // String | Script ID
 var opts = { 
   'input': "input_example", // String | input
   'output': "output_example", // String | output
-  'type': "type_example" // String | type
+  'type': "type_example", // String | type
+  'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
 };
 apiInstance.getScriptsPublishedScriptIdVariables(scriptId, opts)
   .then(function(data) {
@@ -484,6 +514,7 @@ apiInstance.getScriptsPublishedScriptIdVariables(scriptId, opts)
  **input** | **String** | input | [optional]  |
  **output** | **String** | output | [optional]  |
  **type** | **String** | type | [optional]  |
+ **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

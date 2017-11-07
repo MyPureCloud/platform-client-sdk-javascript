@@ -18,7 +18,7 @@
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -386,7 +386,7 @@
      * @param {String} opts.queueId queue id
      * @param {String} opts.startTime start time of the evaluation query
      * @param {String} opts.endTime end time of the evaluation query
-     * @param {Array.<Object>} opts.evaluationState evaluation state options: Pending, InProgress, Finished
+     * @param {Array.<Object>} opts.evaluationState 
      * @param {Boolean} opts.isReleased the evaluation has been released
      * @param {Boolean} opts.agentHasRead agent has the evaluation
      * @param {Boolean} opts.expandAnswerTotalScores get the total scores for evaluations

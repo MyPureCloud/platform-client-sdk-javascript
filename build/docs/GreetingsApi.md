@@ -75,7 +75,7 @@ void (no response body)
 
 <a name="getGreeting"></a>
 
-# [**Greeting**](Greeting.html) getGreeting(greetingId)
+# Greeting getGreeting(greetingId)
 
 GET /api/v2/greetings/{greetingId}
 
@@ -123,7 +123,7 @@ apiInstance.getGreeting(greetingId)
 
 <a name="getGreetingMedia"></a>
 
-# [**GreetingMediaInfo**](GreetingMediaInfo.html) getGreetingMedia(greetingId, opts)
+# GreetingMediaInfo getGreetingMedia(greetingId, opts)
 
 GET /api/v2/greetings/{greetingId}/media
 
@@ -175,7 +175,7 @@ apiInstance.getGreetingMedia(greetingId, opts)
 
 <a name="getGreetings"></a>
 
-# [**DomainEntityListing**](DomainEntityListing.html) getGreetings(opts)
+# DomainEntityListing getGreetings(opts)
 
 GET /api/v2/greetings
 
@@ -226,7 +226,7 @@ apiInstance.getGreetings(opts)
 
 <a name="getGreetingsDefaults"></a>
 
-# [**DefaultGreetingList**](DefaultGreetingList.html) getGreetingsDefaults()
+# DefaultGreetingList getGreetingsDefaults()
 
 GET /api/v2/greetings/defaults
 
@@ -268,7 +268,7 @@ This endpoint does not need any parameter.
 
 <a name="getGroupGreetings"></a>
 
-# [**GreetingListing**](GreetingListing.html) getGroupGreetings(groupId, opts)
+# GreetingListing getGroupGreetings(groupId, opts)
 
 GET /api/v2/groups/{groupId}/greetings
 
@@ -322,7 +322,7 @@ apiInstance.getGroupGreetings(groupId, opts)
 
 <a name="getGroupGreetingsDefaults"></a>
 
-# [**DefaultGreetingList**](DefaultGreetingList.html) getGroupGreetingsDefaults(groupId)
+# DefaultGreetingList getGroupGreetingsDefaults(groupId)
 
 GET /api/v2/groups/{groupId}/greetings/defaults
 
@@ -370,7 +370,7 @@ apiInstance.getGroupGreetingsDefaults(groupId)
 
 <a name="getUserGreetings"></a>
 
-# [**DomainEntityListing**](DomainEntityListing.html) getUserGreetings(userId, opts)
+# DomainEntityListing getUserGreetings(userId, opts)
 
 GET /api/v2/users/{userId}/greetings
 
@@ -424,7 +424,7 @@ apiInstance.getUserGreetings(userId, opts)
 
 <a name="getUserGreetingsDefaults"></a>
 
-# [**DefaultGreetingList**](DefaultGreetingList.html) getUserGreetingsDefaults(userId)
+# DefaultGreetingList getUserGreetingsDefaults(userId)
 
 GET /api/v2/users/{userId}/greetings/defaults
 
@@ -472,7 +472,7 @@ apiInstance.getUserGreetingsDefaults(userId)
 
 <a name="postGreetings"></a>
 
-# [**Greeting**](Greeting.html) postGreetings(body)
+# Greeting postGreetings(body)
 
 POST /api/v2/greetings
 
@@ -520,7 +520,7 @@ apiInstance.postGreetings(body)
 
 <a name="postGroupGreetings"></a>
 
-# [**Greeting**](Greeting.html) postGroupGreetings(groupId, body)
+# Greeting postGroupGreetings(groupId, body)
 
 POST /api/v2/groups/{groupId}/greetings
 
@@ -571,7 +571,7 @@ apiInstance.postGroupGreetings(groupId, body)
 
 <a name="postUserGreetings"></a>
 
-# [**Greeting**](Greeting.html) postUserGreetings(userId, body)
+# Greeting postUserGreetings(userId, body)
 
 POST /api/v2/users/{userId}/greetings
 
@@ -622,7 +622,7 @@ apiInstance.postUserGreetings(userId, body)
 
 <a name="putGreeting"></a>
 
-# [**Greeting**](Greeting.html) putGreeting(greetingId, body)
+# Greeting putGreeting(greetingId, body)
 
 PUT /api/v2/greetings/{greetingId}
 
@@ -673,7 +673,7 @@ apiInstance.putGreeting(greetingId, body)
 
 <a name="putGreetingsDefaults"></a>
 
-# [**DefaultGreetingList**](DefaultGreetingList.html) putGreetingsDefaults(body)
+# DefaultGreetingList putGreetingsDefaults(body)
 
 PUT /api/v2/greetings/defaults
 
@@ -721,7 +721,7 @@ apiInstance.putGreetingsDefaults(body)
 
 <a name="putGroupGreetingsDefaults"></a>
 
-# [**DefaultGreetingList**](DefaultGreetingList.html) putGroupGreetingsDefaults(groupId, body)
+# DefaultGreetingList putGroupGreetingsDefaults(groupId, body)
 
 PUT /api/v2/groups/{groupId}/greetings/defaults
 
@@ -772,7 +772,7 @@ apiInstance.putGroupGreetingsDefaults(groupId, body)
 
 <a name="putUserGreetingsDefaults"></a>
 
-# [**DefaultGreetingList**](DefaultGreetingList.html) putUserGreetingsDefaults(userId, body)
+# DefaultGreetingList putUserGreetingsDefaults(userId, body)
 
 PUT /api/v2/users/{userId}/greetings/defaults
 

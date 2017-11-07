@@ -18,7 +18,7 @@
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -1289,16 +1289,16 @@
      * @param {String} edgegroupId Edge Group ID
      * @param {String} edgetrunkbaseId Edge Trunk Base ID
      */
-    this.getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis = function(edgegroupId, edgetrunkbaseId) { 
+    this.getTelephonyProvidersEdgesEdgegroupEdgetrunkbase = function(edgegroupId, edgetrunkbaseId) { 
 
       // verify the required parameter 'edgegroupId' is set
       if (edgegroupId === undefined || edgegroupId === null) {
-        throw "Missing the required parameter 'edgegroupId' when calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis";
+        throw "Missing the required parameter 'edgegroupId' when calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbase";
       }
 
       // verify the required parameter 'edgetrunkbaseId' is set
       if (edgetrunkbaseId === undefined || edgetrunkbaseId === null) {
-        throw "Missing the required parameter 'edgetrunkbaseId' when calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis";
+        throw "Missing the required parameter 'edgetrunkbaseId' when calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbase";
       }
 
 
@@ -3538,21 +3538,21 @@
      * @param {String} edgetrunkbaseId Edge Trunk Base ID
      * @param {Object} body EdgeTrunkBase
      */
-    this.putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis = function(edgegroupId, edgetrunkbaseId, body) { 
+    this.putTelephonyProvidersEdgesEdgegroupEdgetrunkbase = function(edgegroupId, edgetrunkbaseId, body) { 
 
       // verify the required parameter 'edgegroupId' is set
       if (edgegroupId === undefined || edgegroupId === null) {
-        throw "Missing the required parameter 'edgegroupId' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis";
+        throw "Missing the required parameter 'edgegroupId' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbase";
       }
 
       // verify the required parameter 'edgetrunkbaseId' is set
       if (edgetrunkbaseId === undefined || edgetrunkbaseId === null) {
-        throw "Missing the required parameter 'edgetrunkbaseId' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis";
+        throw "Missing the required parameter 'edgetrunkbaseId' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbase";
       }
 
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
-        throw "Missing the required parameter 'body' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis";
+        throw "Missing the required parameter 'body' when calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbase";
       }
 
 

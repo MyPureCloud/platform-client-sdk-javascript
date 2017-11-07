@@ -335,7 +335,7 @@ void (no response body)
 
 <a name="getExternalcontactsContact"></a>
 
-# [**ExternalContact**](ExternalContact.html) getExternalcontactsContact(contactId, opts)
+# ExternalContact getExternalcontactsContact(contactId, opts)
 
 GET /api/v2/externalcontacts/contacts/{contactId}
 
@@ -387,7 +387,7 @@ apiInstance.getExternalcontactsContact(contactId, opts)
 
 <a name="getExternalcontactsContactNote"></a>
 
-# [**Note**](Note.html) getExternalcontactsContactNote(contactId, noteId, opts)
+# Note getExternalcontactsContactNote(contactId, noteId, opts)
 
 GET /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}
 
@@ -442,7 +442,7 @@ apiInstance.getExternalcontactsContactNote(contactId, noteId, opts)
 
 <a name="getExternalcontactsContactNotes"></a>
 
-# [**NoteListing**](NoteListing.html) getExternalcontactsContactNotes(contactId, opts)
+# NoteListing getExternalcontactsContactNotes(contactId, opts)
 
 GET /api/v2/externalcontacts/contacts/{contactId}/notes
 
@@ -500,7 +500,7 @@ apiInstance.getExternalcontactsContactNotes(contactId, opts)
 
 <a name="getExternalcontactsContacts"></a>
 
-# [**ContactListing**](ContactListing.html) getExternalcontactsContacts(opts)
+# ContactListing getExternalcontactsContacts(opts)
 
 GET /api/v2/externalcontacts/contacts
 
@@ -557,7 +557,7 @@ apiInstance.getExternalcontactsContacts(opts)
 
 <a name="getExternalcontactsOrganization"></a>
 
-# [**ExternalOrganization**](ExternalOrganization.html) getExternalcontactsOrganization(externalOrganizationId, opts)
+# ExternalOrganization getExternalcontactsOrganization(externalOrganizationId, opts)
 
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}
 
@@ -611,7 +611,7 @@ apiInstance.getExternalcontactsOrganization(externalOrganizationId, opts)
 
 <a name="getExternalcontactsOrganizationContacts"></a>
 
-# [**ContactListing**](ContactListing.html) getExternalcontactsOrganizationContacts(externalOrganizationId, opts)
+# ContactListing getExternalcontactsOrganizationContacts(externalOrganizationId, opts)
 
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts
 
@@ -671,7 +671,7 @@ apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts
 
 <a name="getExternalcontactsOrganizationNote"></a>
 
-# [**Note**](Note.html) getExternalcontactsOrganizationNote(externalOrganizationId, noteId, opts)
+# Note getExternalcontactsOrganizationNote(externalOrganizationId, noteId, opts)
 
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}
 
@@ -726,7 +726,7 @@ apiInstance.getExternalcontactsOrganizationNote(externalOrganizationId, noteId, 
 
 <a name="getExternalcontactsOrganizationNotes"></a>
 
-# [**NoteListing**](NoteListing.html) getExternalcontactsOrganizationNotes(externalOrganizationId, opts)
+# NoteListing getExternalcontactsOrganizationNotes(externalOrganizationId, opts)
 
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes
 
@@ -784,7 +784,7 @@ apiInstance.getExternalcontactsOrganizationNotes(externalOrganizationId, opts)
 
 <a name="getExternalcontactsOrganizationRelationships"></a>
 
-# [**RelationshipListing**](RelationshipListing.html) getExternalcontactsOrganizationRelationships(externalOrganizationId, opts)
+# RelationshipListing getExternalcontactsOrganizationRelationships(externalOrganizationId, opts)
 
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships
 
@@ -842,7 +842,7 @@ apiInstance.getExternalcontactsOrganizationRelationships(externalOrganizationId,
 
 <a name="getExternalcontactsOrganizations"></a>
 
-# [**ExternalOrganizationListing**](ExternalOrganizationListing.html) getExternalcontactsOrganizations(opts)
+# ExternalOrganizationListing getExternalcontactsOrganizations(opts)
 
 GET /api/v2/externalcontacts/organizations
 
@@ -903,7 +903,7 @@ apiInstance.getExternalcontactsOrganizations(opts)
 
 <a name="getExternalcontactsRelationship"></a>
 
-# [**Relationship**](Relationship.html) getExternalcontactsRelationship(relationshipId, opts)
+# Relationship getExternalcontactsRelationship(relationshipId, opts)
 
 GET /api/v2/externalcontacts/relationships/{relationshipId}
 
@@ -955,7 +955,7 @@ apiInstance.getExternalcontactsRelationship(relationshipId, opts)
 
 <a name="getExternalcontactsReversewhitepageslookup"></a>
 
-# [**ReverseWhitepagesLookupResult**](ReverseWhitepagesLookupResult.html) getExternalcontactsReversewhitepageslookup(lookupVal, opts)
+# ReverseWhitepagesLookupResult getExternalcontactsReversewhitepageslookup(lookupVal, opts)
 
 GET /api/v2/externalcontacts/reversewhitepageslookup
 
@@ -1007,7 +1007,7 @@ apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, opts)
 
 <a name="postExternalcontactsContactNotes"></a>
 
-# [**Note**](Note.html) postExternalcontactsContactNotes(contactId, opts)
+# Note postExternalcontactsContactNotes(contactId, opts)
 
 POST /api/v2/externalcontacts/contacts/{contactId}/notes
 
@@ -1059,7 +1059,7 @@ apiInstance.postExternalcontactsContactNotes(contactId, opts)
 
 <a name="postExternalcontactsContacts"></a>
 
-# [**ExternalContact**](ExternalContact.html) postExternalcontactsContacts(opts)
+# ExternalContact postExternalcontactsContacts(opts)
 
 POST /api/v2/externalcontacts/contacts
 
@@ -1108,7 +1108,7 @@ apiInstance.postExternalcontactsContacts(opts)
 
 <a name="postExternalcontactsOrganizationNotes"></a>
 
-# [**Note**](Note.html) postExternalcontactsOrganizationNotes(externalOrganizationId, opts)
+# Note postExternalcontactsOrganizationNotes(externalOrganizationId, opts)
 
 POST /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes
 
@@ -1160,7 +1160,7 @@ apiInstance.postExternalcontactsOrganizationNotes(externalOrganizationId, opts)
 
 <a name="postExternalcontactsOrganizations"></a>
 
-# [**ExternalOrganization**](ExternalOrganization.html) postExternalcontactsOrganizations(opts)
+# ExternalOrganization postExternalcontactsOrganizations(opts)
 
 POST /api/v2/externalcontacts/organizations
 
@@ -1209,7 +1209,7 @@ apiInstance.postExternalcontactsOrganizations(opts)
 
 <a name="postExternalcontactsRelationships"></a>
 
-# [**Relationship**](Relationship.html) postExternalcontactsRelationships(opts)
+# Relationship postExternalcontactsRelationships(opts)
 
 POST /api/v2/externalcontacts/relationships
 
@@ -1258,7 +1258,7 @@ apiInstance.postExternalcontactsRelationships(opts)
 
 <a name="putExternalcontactsContact"></a>
 
-# [**ExternalContact**](ExternalContact.html) putExternalcontactsContact(contactId, opts)
+# ExternalContact putExternalcontactsContact(contactId, opts)
 
 PUT /api/v2/externalcontacts/contacts/{contactId}
 
@@ -1310,7 +1310,7 @@ apiInstance.putExternalcontactsContact(contactId, opts)
 
 <a name="putExternalcontactsContactNote"></a>
 
-# [**Note**](Note.html) putExternalcontactsContactNote(contactId, noteId, opts)
+# Note putExternalcontactsContactNote(contactId, noteId, opts)
 
 PUT /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}
 
@@ -1417,7 +1417,7 @@ void (no response body)
 
 <a name="putExternalcontactsOrganization"></a>
 
-# [**ExternalOrganization**](ExternalOrganization.html) putExternalcontactsOrganization(externalOrganizationId, opts)
+# ExternalOrganization putExternalcontactsOrganization(externalOrganizationId, opts)
 
 PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}
 
@@ -1469,7 +1469,7 @@ apiInstance.putExternalcontactsOrganization(externalOrganizationId, opts)
 
 <a name="putExternalcontactsOrganizationNote"></a>
 
-# [**Note**](Note.html) putExternalcontactsOrganizationNote(externalOrganizationId, noteId, opts)
+# Note putExternalcontactsOrganizationNote(externalOrganizationId, noteId, opts)
 
 PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}
 
@@ -1524,7 +1524,7 @@ apiInstance.putExternalcontactsOrganizationNote(externalOrganizationId, noteId, 
 
 <a name="putExternalcontactsOrganizationTrustorTrustorId"></a>
 
-# [**ExternalOrganization**](ExternalOrganization.html) putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId)
+# ExternalOrganization putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId)
 
 PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}
 
@@ -1575,7 +1575,7 @@ apiInstance.putExternalcontactsOrganizationTrustorTrustorId(externalOrganization
 
 <a name="putExternalcontactsRelationship"></a>
 
-# [**Relationship**](Relationship.html) putExternalcontactsRelationship(relationshipId, opts)
+# Relationship putExternalcontactsRelationship(relationshipId, opts)
 
 PUT /api/v2/externalcontacts/relationships/{relationshipId}
 

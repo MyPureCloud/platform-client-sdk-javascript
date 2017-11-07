@@ -70,7 +70,7 @@ void (no response body)
 
 <a name="deleteGroupMembers"></a>
 
-# [**Empty**](Empty.html) deleteGroupMembers(groupId, ids)
+# Empty deleteGroupMembers(groupId, ids)
 
 DELETE /api/v2/groups/{groupId}/members
 
@@ -121,7 +121,7 @@ apiInstance.deleteGroupMembers(groupId, ids)
 
 <a name="getFieldconfig"></a>
 
-# [**FieldConfig**](FieldConfig.html) getFieldconfig(type)
+# FieldConfig getFieldconfig(type)
 
 GET /api/v2/fieldconfig
 
@@ -169,7 +169,7 @@ apiInstance.getFieldconfig(type)
 
 <a name="getGroup"></a>
 
-# [**Group**](Group.html) getGroup(groupId)
+# Group getGroup(groupId)
 
 GET /api/v2/groups/{groupId}
 
@@ -217,7 +217,7 @@ apiInstance.getGroup(groupId)
 
 <a name="getGroupMembers"></a>
 
-# [**UserEntityListing**](UserEntityListing.html) getGroupMembers(groupId, opts)
+# UserEntityListing getGroupMembers(groupId, opts)
 
 GET /api/v2/groups/{groupId}/members
 
@@ -275,7 +275,7 @@ apiInstance.getGroupMembers(groupId, opts)
 
 <a name="getGroups"></a>
 
-# [**GroupEntityListing**](GroupEntityListing.html) getGroups(opts)
+# GroupEntityListing getGroups(opts)
 
 GET /api/v2/groups
 
@@ -330,7 +330,7 @@ apiInstance.getGroups(opts)
 
 <a name="getGroupsSearch"></a>
 
-# [**GroupsSearchResponse**](GroupsSearchResponse.html) getGroupsSearch(q64, opts)
+# GroupsSearchResponse getGroupsSearch(q64, opts)
 
 GET /api/v2/groups/search
 
@@ -382,7 +382,7 @@ apiInstance.getGroupsSearch(q64, opts)
 
 <a name="postGroupMembers"></a>
 
-# [**Empty**](Empty.html) postGroupMembers(groupId, body)
+# Empty postGroupMembers(groupId, body)
 
 POST /api/v2/groups/{groupId}/members
 
@@ -433,7 +433,7 @@ apiInstance.postGroupMembers(groupId, body)
 
 <a name="postGroups"></a>
 
-# [**Group**](Group.html) postGroups(body)
+# Group postGroups(body)
 
 POST /api/v2/groups
 
@@ -481,7 +481,7 @@ apiInstance.postGroups(body)
 
 <a name="postGroupsSearch"></a>
 
-# [**GroupsSearchResponse**](GroupsSearchResponse.html) postGroupsSearch(body)
+# GroupsSearchResponse postGroupsSearch(body)
 
 POST /api/v2/groups/search
 
@@ -529,7 +529,7 @@ apiInstance.postGroupsSearch(body)
 
 <a name="putGroup"></a>
 
-# [**Group**](Group.html) putGroup(groupId, opts)
+# Group putGroup(groupId, opts)
 
 PUT /api/v2/groups/{groupId}
 

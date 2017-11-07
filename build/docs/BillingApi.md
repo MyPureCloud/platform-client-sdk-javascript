@@ -12,7 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="getBillingReportsBillableusage"></a>
 
-# [**BillingUsageReport**](BillingUsageReport.html) getBillingReportsBillableusage(startDate, endDate)
+# BillingUsageReport getBillingReportsBillableusage(startDate, endDate)
 
 GET /api/v2/billing/reports/billableusage
 

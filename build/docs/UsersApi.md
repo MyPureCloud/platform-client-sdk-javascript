@@ -54,7 +54,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteUser"></a>
 
-# [**Empty**](Empty.html) deleteUser(userId)
+# Empty deleteUser(userId)
 
 DELETE /api/v2/users/{userId}
 
@@ -297,7 +297,7 @@ void (no response body)
 
 <a name="getFieldconfig"></a>
 
-# [**FieldConfig**](FieldConfig.html) getFieldconfig(type)
+# FieldConfig getFieldconfig(type)
 
 GET /api/v2/fieldconfig
 
@@ -345,7 +345,7 @@ apiInstance.getFieldconfig(type)
 
 <a name="getUser"></a>
 
-# [**User**](User.html) getUser(userId, opts)
+# User getUser(userId, opts)
 
 GET /api/v2/users/{userId}
 
@@ -399,7 +399,7 @@ apiInstance.getUser(userId, opts)
 
 <a name="getUserAdjacents"></a>
 
-# [**Adjacents**](Adjacents.html) getUserAdjacents(userId, opts)
+# Adjacents getUserAdjacents(userId, opts)
 
 GET /api/v2/users/{userId}/adjacents
 
@@ -451,7 +451,7 @@ apiInstance.getUserAdjacents(userId, opts)
 
 <a name="getUserCallforwarding"></a>
 
-# [**CallForwarding**](CallForwarding.html) getUserCallforwarding(userId)
+# CallForwarding getUserCallforwarding(userId)
 
 GET /api/v2/users/{userId}/callforwarding
 
@@ -499,7 +499,7 @@ apiInstance.getUserCallforwarding(userId)
 
 <a name="getUserDirectreports"></a>
 
-# [**[User]**](User.html) getUserDirectreports(userId, opts)
+# [User] getUserDirectreports(userId, opts)
 
 GET /api/v2/users/{userId}/directreports
 
@@ -551,7 +551,7 @@ apiInstance.getUserDirectreports(userId, opts)
 
 <a name="getUserFavorites"></a>
 
-# [**UserEntityListing**](UserEntityListing.html) getUserFavorites(userId, opts)
+# UserEntityListing getUserFavorites(userId, opts)
 
 GET /api/v2/users/{userId}/favorites
 
@@ -609,7 +609,7 @@ apiInstance.getUserFavorites(userId, opts)
 
 <a name="getUserGeolocation"></a>
 
-# [**Geolocation**](Geolocation.html) getUserGeolocation(userId, clientId)
+# Geolocation getUserGeolocation(userId, clientId)
 
 GET /api/v2/users/{userId}/geolocations/{clientId}
 
@@ -660,7 +660,7 @@ apiInstance.getUserGeolocation(userId, clientId)
 
 <a name="getUserOutofoffice"></a>
 
-# [**OutOfOffice**](OutOfOffice.html) getUserOutofoffice(userId)
+# OutOfOffice getUserOutofoffice(userId)
 
 GET /api/v2/users/{userId}/outofoffice
 
@@ -756,7 +756,7 @@ apiInstance.getUserProfileskills(userId)
 
 <a name="getUserQueues"></a>
 
-# [**UserQueueEntityListing**](UserQueueEntityListing.html) getUserQueues(userId, opts)
+# UserQueueEntityListing getUserQueues(userId, opts)
 
 GET /api/v2/users/{userId}/queues
 
@@ -812,7 +812,7 @@ apiInstance.getUserQueues(userId, opts)
 
 <a name="getUserRoles"></a>
 
-# [**UserAuthorization**](UserAuthorization.html) getUserRoles(userId)
+# UserAuthorization getUserRoles(userId)
 
 GET /api/v2/users/{userId}/roles
 
@@ -860,7 +860,7 @@ apiInstance.getUserRoles(userId)
 
 <a name="getUserRoutingskills"></a>
 
-# [**UserSkillEntityListing**](UserSkillEntityListing.html) getUserRoutingskills(userId, opts)
+# UserSkillEntityListing getUserRoutingskills(userId, opts)
 
 GET /api/v2/users/{userId}/routingskills
 
@@ -916,7 +916,7 @@ apiInstance.getUserRoutingskills(userId, opts)
 
 <a name="getUserRoutingstatus"></a>
 
-# [**RoutingStatus**](RoutingStatus.html) getUserRoutingstatus(userId)
+# RoutingStatus getUserRoutingstatus(userId)
 
 GET /api/v2/users/{userId}/routingstatus
 
@@ -964,7 +964,7 @@ apiInstance.getUserRoutingstatus(userId)
 
 <a name="getUserStation"></a>
 
-# [**UserStations**](UserStations.html) getUserStation(userId)
+# UserStations getUserStation(userId)
 
 GET /api/v2/users/{userId}/station
 
@@ -1012,7 +1012,7 @@ apiInstance.getUserStation(userId)
 
 <a name="getUserSuperiors"></a>
 
-# [**[User]**](User.html) getUserSuperiors(userId, opts)
+# [User] getUserSuperiors(userId, opts)
 
 GET /api/v2/users/{userId}/superiors
 
@@ -1064,7 +1064,7 @@ apiInstance.getUserSuperiors(userId, opts)
 
 <a name="getUsers"></a>
 
-# [**UserEntityListing**](UserEntityListing.html) getUsers(opts)
+# UserEntityListing getUsers(opts)
 
 GET /api/v2/users
 
@@ -1123,7 +1123,7 @@ apiInstance.getUsers(opts)
 
 <a name="getUsersMe"></a>
 
-# [**UserMe**](UserMe.html) getUsersMe(opts)
+# UserMe getUsersMe(opts)
 
 GET /api/v2/users/me
 
@@ -1172,7 +1172,7 @@ apiInstance.getUsersMe(opts)
 
 <a name="getUsersSearch"></a>
 
-# [**UsersSearchResponse**](UsersSearchResponse.html) getUsersSearch(q64, opts)
+# UsersSearchResponse getUsersSearch(q64, opts)
 
 GET /api/v2/users/search
 
@@ -1224,7 +1224,7 @@ apiInstance.getUsersSearch(q64, opts)
 
 <a name="patchUser"></a>
 
-# [**User**](User.html) patchUser(userId, body)
+# User patchUser(userId, body)
 
 PATCH /api/v2/users/{userId}
 
@@ -1275,7 +1275,7 @@ apiInstance.patchUser(userId, body)
 
 <a name="patchUserCallforwarding"></a>
 
-# [**CallForwarding**](CallForwarding.html) patchUserCallforwarding(userId, body)
+# CallForwarding patchUserCallforwarding(userId, body)
 
 PATCH /api/v2/users/{userId}/callforwarding
 
@@ -1326,7 +1326,7 @@ apiInstance.patchUserCallforwarding(userId, body)
 
 <a name="patchUserGeolocation"></a>
 
-# [**Geolocation**](Geolocation.html) patchUserGeolocation(userId, clientId, body)
+# Geolocation patchUserGeolocation(userId, clientId, body)
 
 PATCH /api/v2/users/{userId}/geolocations/{clientId}
 
@@ -1380,7 +1380,7 @@ apiInstance.patchUserGeolocation(userId, clientId, body)
 
 <a name="patchUserQueue"></a>
 
-# [**UserQueue**](UserQueue.html) patchUserQueue(queueId, userId, body)
+# UserQueue patchUserQueue(queueId, userId, body)
 
 PATCH /api/v2/users/{userId}/queues/{queueId}
 
@@ -1434,7 +1434,7 @@ apiInstance.patchUserQueue(queueId, userId, body)
 
 <a name="patchUserQueues"></a>
 
-# [**UserQueueEntityListing**](UserQueueEntityListing.html) patchUserQueues(userId, body)
+# UserQueueEntityListing patchUserQueues(userId, body)
 
 PATCH /api/v2/users/{userId}/queues
 
@@ -1485,7 +1485,7 @@ apiInstance.patchUserQueues(userId, body)
 
 <a name="postAnalyticsUsersAggregatesQuery"></a>
 
-# [**PresenceQueryResponse**](PresenceQueryResponse.html) postAnalyticsUsersAggregatesQuery(body)
+# PresenceQueryResponse postAnalyticsUsersAggregatesQuery(body)
 
 POST /api/v2/analytics/users/aggregates/query
 
@@ -1533,7 +1533,7 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 
 <a name="postAnalyticsUsersDetailsQuery"></a>
 
-# [**AnalyticsUserDetailsQueryResponse**](AnalyticsUserDetailsQueryResponse.html) postAnalyticsUsersDetailsQuery(body)
+# AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(body)
 
 POST /api/v2/analytics/users/details/query
 
@@ -1581,7 +1581,7 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
 
 <a name="postAnalyticsUsersObservationsQuery"></a>
 
-# [**ObservationQueryResponse**](ObservationQueryResponse.html) postAnalyticsUsersObservationsQuery(body)
+# ObservationQueryResponse postAnalyticsUsersObservationsQuery(body)
 
 POST /api/v2/analytics/users/observations/query
 
@@ -1681,7 +1681,7 @@ void (no response body)
 
 <a name="postUserRoutingskills"></a>
 
-# [**UserRoutingSkill**](UserRoutingSkill.html) postUserRoutingskills(userId, body)
+# UserRoutingSkill postUserRoutingskills(userId, body)
 
 POST /api/v2/users/{userId}/routingskills
 
@@ -1732,7 +1732,7 @@ apiInstance.postUserRoutingskills(userId, body)
 
 <a name="postUsers"></a>
 
-# [**User**](User.html) postUsers(body)
+# User postUsers(body)
 
 POST /api/v2/users
 
@@ -1780,7 +1780,7 @@ apiInstance.postUsers(body)
 
 <a name="postUsersSearch"></a>
 
-# [**UsersSearchResponse**](UsersSearchResponse.html) postUsersSearch(body)
+# UsersSearchResponse postUsersSearch(body)
 
 POST /api/v2/users/search
 
@@ -1828,7 +1828,7 @@ apiInstance.postUsersSearch(body)
 
 <a name="putUserCallforwarding"></a>
 
-# [**CallForwarding**](CallForwarding.html) putUserCallforwarding(userId, body)
+# CallForwarding putUserCallforwarding(userId, body)
 
 PUT /api/v2/users/{userId}/callforwarding
 
@@ -1879,7 +1879,7 @@ apiInstance.putUserCallforwarding(userId, body)
 
 <a name="putUserOutofoffice"></a>
 
-# [**OutOfOffice**](OutOfOffice.html) putUserOutofoffice(userId, body)
+# OutOfOffice putUserOutofoffice(userId, body)
 
 PUT /api/v2/users/{userId}/outofoffice
 
@@ -1982,7 +1982,7 @@ apiInstance.putUserProfileskills(userId, opts)
 
 <a name="putUserRoles"></a>
 
-# [**UserAuthorization**](UserAuthorization.html) putUserRoles(userId, body)
+# UserAuthorization putUserRoles(userId, body)
 
 PUT /api/v2/users/{userId}/roles
 
@@ -2033,7 +2033,7 @@ apiInstance.putUserRoles(userId, body)
 
 <a name="putUserRoutingskill"></a>
 
-# [**UserRoutingSkill**](UserRoutingSkill.html) putUserRoutingskill(userId, skillId, body)
+# UserRoutingSkill putUserRoutingskill(userId, skillId, body)
 
 PUT /api/v2/users/{userId}/routingskills/{skillId}
 
@@ -2087,7 +2087,7 @@ apiInstance.putUserRoutingskill(userId, skillId, body)
 
 <a name="putUserRoutingstatus"></a>
 
-# [**RoutingStatus**](RoutingStatus.html) putUserRoutingstatus(userId, body)
+# RoutingStatus putUserRoutingstatus(userId, body)
 
 PUT /api/v2/users/{userId}/routingstatus
 

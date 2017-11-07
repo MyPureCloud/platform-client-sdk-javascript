@@ -141,6 +141,10 @@
       "class": "EmailConversationNotification"
     },
     {
+      "topic": "v2.routing.queues.{id}.conversations.messages",
+      "class": "MessageConversationNotification"
+    },
+    {
       "topic": "v2.routing.queues.{id}.conversations.screenshares",
       "class": "ScreenShareConversationNotification"
     },
@@ -199,6 +203,10 @@
     {
       "topic": "v2.users.{id}.conversations.emails",
       "class": "EmailConversationNotification"
+    },
+    {
+      "topic": "v2.users.{id}.conversations.messages",
+      "class": "MessageConversationNotification"
     },
     {
       "topic": "v2.users.{id}.conversations.screenshares",

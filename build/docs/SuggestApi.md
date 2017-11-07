@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="getSearch"></a>
 
-# [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) getSearch(q64, opts)
+# JsonNodeSearchResponse getSearch(q64, opts)
 
 GET /api/v2/search
 
@@ -69,7 +69,7 @@ apiInstance.getSearch(q64, opts)
 
 <a name="getSearchSuggest"></a>
 
-# [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) getSearchSuggest(q64, opts)
+# JsonNodeSearchResponse getSearchSuggest(q64, opts)
 
 GET /api/v2/search/suggest
 
@@ -123,7 +123,7 @@ apiInstance.getSearchSuggest(q64, opts)
 
 <a name="postSearch"></a>
 
-# [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) postSearch(body, opts)
+# JsonNodeSearchResponse postSearch(body, opts)
 
 POST /api/v2/search
 
@@ -175,7 +175,7 @@ apiInstance.postSearch(body, opts)
 
 <a name="postSearchSuggest"></a>
 
-# [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) postSearchSuggest(body, opts)
+# JsonNodeSearchResponse postSearchSuggest(body, opts)
 
 POST /api/v2/search/suggest
 

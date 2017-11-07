@@ -67,7 +67,7 @@ void (no response body)
 
 <a name="getPresencedefinition"></a>
 
-# [**OrganizationPresence**](OrganizationPresence.html) getPresencedefinition(presenceId, opts)
+# OrganizationPresence getPresencedefinition(presenceId, opts)
 
 GET /api/v2/presencedefinitions/{presenceId}
 
@@ -119,7 +119,7 @@ apiInstance.getPresencedefinition(presenceId, opts)
 
 <a name="getPresencedefinitions"></a>
 
-# [**OrganizationPresenceEntityListing**](OrganizationPresenceEntityListing.html) getPresencedefinitions(opts)
+# OrganizationPresenceEntityListing getPresencedefinitions(opts)
 
 GET /api/v2/presencedefinitions
 
@@ -174,7 +174,7 @@ apiInstance.getPresencedefinitions(opts)
 
 <a name="getSystempresences"></a>
 
-# [**[SystemPresence]**](SystemPresence.html) getSystempresences()
+# [SystemPresence] getSystempresences()
 
 GET /api/v2/systempresences
 
@@ -216,7 +216,7 @@ This endpoint does not need any parameter.
 
 <a name="getUserPresence"></a>
 
-# [**UserPresence**](UserPresence.html) getUserPresence(userId, sourceId)
+# UserPresence getUserPresence(userId, sourceId)
 
 GET /api/v2/users/{userId}/presences/{sourceId}
 
@@ -267,7 +267,7 @@ apiInstance.getUserPresence(userId, sourceId)
 
 <a name="patchUserPresence"></a>
 
-# [**UserPresence**](UserPresence.html) patchUserPresence(userId, sourceId, body)
+# UserPresence patchUserPresence(userId, sourceId, body)
 
 PATCH /api/v2/users/{userId}/presences/{sourceId}
 
@@ -321,7 +321,7 @@ apiInstance.patchUserPresence(userId, sourceId, body)
 
 <a name="postPresencedefinitions"></a>
 
-# [**OrganizationPresence**](OrganizationPresence.html) postPresencedefinitions(body)
+# OrganizationPresence postPresencedefinitions(body)
 
 POST /api/v2/presencedefinitions
 
@@ -369,7 +369,7 @@ apiInstance.postPresencedefinitions(body)
 
 <a name="putPresencedefinition"></a>
 
-# [**OrganizationPresence**](OrganizationPresence.html) putPresencedefinition(presenceId, body)
+# OrganizationPresence putPresencedefinition(presenceId, body)
 
 PUT /api/v2/presencedefinitions/{presenceId}
 

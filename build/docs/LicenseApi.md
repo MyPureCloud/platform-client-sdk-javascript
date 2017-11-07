@@ -19,7 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="getLicenseDefinition"></a>
 
-# [**LicenseDefinition**](LicenseDefinition.html) getLicenseDefinition(licenseId)
+# LicenseDefinition getLicenseDefinition(licenseId)
 
 GET /api/v2/license/definitions/{licenseId}
 
@@ -67,7 +67,7 @@ apiInstance.getLicenseDefinition(licenseId)
 
 <a name="getLicenseDefinitions"></a>
 
-# [**[LicenseDefinition]**](LicenseDefinition.html) getLicenseDefinitions()
+# [LicenseDefinition] getLicenseDefinitions()
 
 GET /api/v2/license/definitions
 
@@ -109,7 +109,7 @@ This endpoint does not need any parameter.
 
 <a name="getLicenseOrganization"></a>
 
-# [**LicenseOrganization**](LicenseOrganization.html) getLicenseOrganization()
+# LicenseOrganization getLicenseOrganization()
 
 GET /api/v2/license/organization
 
@@ -151,7 +151,7 @@ This endpoint does not need any parameter.
 
 <a name="getLicenseToggle"></a>
 
-# [**LicenseOrgToggle**](LicenseOrgToggle.html) getLicenseToggle(featureName)
+# LicenseOrgToggle getLicenseToggle(featureName)
 
 GET /api/v2/license/toggles/{featureName}
 
@@ -199,7 +199,7 @@ apiInstance.getLicenseToggle(featureName)
 
 <a name="getLicenseUser"></a>
 
-# [**LicenseUser**](LicenseUser.html) getLicenseUser(userId)
+# LicenseUser getLicenseUser(userId)
 
 GET /api/v2/license/users/{userId}
 
@@ -247,7 +247,7 @@ apiInstance.getLicenseUser(userId)
 
 <a name="postLicenseOrganization"></a>
 
-# [**[LicenseUpdateStatus]**](LicenseUpdateStatus.html) postLicenseOrganization(opts)
+# [LicenseUpdateStatus] postLicenseOrganization(opts)
 
 POST /api/v2/license/organization
 
@@ -296,7 +296,7 @@ apiInstance.postLicenseOrganization(opts)
 
 <a name="postLicenseToggle"></a>
 
-# [**LicenseOrgToggle**](LicenseOrgToggle.html) postLicenseToggle(featureName)
+# LicenseOrgToggle postLicenseToggle(featureName)
 
 POST /api/v2/license/toggles/{featureName}
 

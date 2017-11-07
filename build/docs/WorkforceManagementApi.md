@@ -25,7 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="getWorkforcemanagementAdherence"></a>
 
-# [**[UserScheduleAdherence]**](UserScheduleAdherence.html) getWorkforcemanagementAdherence(userId)
+# [UserScheduleAdherence] getWorkforcemanagementAdherence(userId)
 
 GET /api/v2/workforcemanagement/adherence
 
@@ -73,7 +73,7 @@ apiInstance.getWorkforcemanagementAdherence(userId)
 
 <a name="getWorkforcemanagementManagementunitActivitycodes"></a>
 
-# [**ActivityCodeContainer**](ActivityCodeContainer.html) getWorkforcemanagementManagementunitActivitycodes(muId)
+# ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(muId)
 
 GET /api/v2/workforcemanagement/managementunits/{muId}/activitycodes
 
@@ -121,7 +121,7 @@ apiInstance.getWorkforcemanagementManagementunitActivitycodes(muId)
 
 <a name="getWorkforcemanagementManagementunitIntradayQueues"></a>
 
-# [**WfmIntradayQueueListing**](WfmIntradayQueueListing.html) getWorkforcemanagementManagementunitIntradayQueues(muId, _date)
+# WfmIntradayQueueListing getWorkforcemanagementManagementunitIntradayQueues(muId, _date)
 
 GET /api/v2/workforcemanagement/managementunits/{muId}/intraday/queues
 
@@ -172,7 +172,7 @@ apiInstance.getWorkforcemanagementManagementunitIntradayQueues(muId, _date)
 
 <a name="getWorkforcemanagementManagementunitUserTimeoffrequest"></a>
 
-# [**TimeOffRequest**](TimeOffRequest.html) getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId)
+# TimeOffRequest getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId)
 
 GET /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}
 
@@ -226,7 +226,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId,
 
 <a name="getWorkforcemanagementManagementunitUserTimeoffrequests"></a>
 
-# [**TimeOffRequestList**](TimeOffRequestList.html) getWorkforcemanagementManagementunitUserTimeoffrequests(muId, userId, opts)
+# TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(muId, userId, opts)
 
 GET /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests
 
@@ -281,7 +281,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(muId, userId
 
 <a name="getWorkforcemanagementManagementunitUsers"></a>
 
-# [**WfmUserEntityListing**](WfmUserEntityListing.html) getWorkforcemanagementManagementunitUsers(muId)
+# WfmUserEntityListing getWorkforcemanagementManagementunitUsers(muId)
 
 GET /api/v2/workforcemanagement/managementunits/{muId}/users
 
@@ -329,7 +329,7 @@ apiInstance.getWorkforcemanagementManagementunitUsers(muId)
 
 <a name="getWorkforcemanagementManagementunits"></a>
 
-# [**ManagementUnitListing**](ManagementUnitListing.html) getWorkforcemanagementManagementunits(opts)
+# ManagementUnitListing getWorkforcemanagementManagementunits(opts)
 
 GET /api/v2/workforcemanagement/managementunits
 
@@ -380,7 +380,7 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
 
 <a name="getWorkforcemanagementTimeoffrequest"></a>
 
-# [**TimeOffRequest**](TimeOffRequest.html) getWorkforcemanagementTimeoffrequest(timeOffRequestId)
+# TimeOffRequest getWorkforcemanagementTimeoffrequest(timeOffRequestId)
 
 GET /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}
 
@@ -428,7 +428,7 @@ apiInstance.getWorkforcemanagementTimeoffrequest(timeOffRequestId)
 
 <a name="getWorkforcemanagementTimeoffrequests"></a>
 
-# [**TimeOffRequestList**](TimeOffRequestList.html) getWorkforcemanagementTimeoffrequests(opts)
+# TimeOffRequestList getWorkforcemanagementTimeoffrequests(opts)
 
 GET /api/v2/workforcemanagement/timeoffrequests
 
@@ -529,7 +529,7 @@ void (no response body)
 
 <a name="postWorkforcemanagementManagementunitHistoricaladherencequery"></a>
 
-# [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html) postWorkforcemanagementManagementunitHistoricaladherencequery(muId, opts)
+# WfmHistoricalAdherenceResponse postWorkforcemanagementManagementunitHistoricaladherencequery(muId, opts)
 
 POST /api/v2/workforcemanagement/managementunits/{muId}/historicaladherencequery
 
@@ -581,7 +581,7 @@ apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(muId, 
 
 <a name="postWorkforcemanagementManagementunitIntraday"></a>
 
-# [**IntradayResponse**](IntradayResponse.html) postWorkforcemanagementManagementunitIntraday(muId, opts)
+# IntradayResponse postWorkforcemanagementManagementunitIntraday(muId, opts)
 
 POST /api/v2/workforcemanagement/managementunits/{muId}/intraday
 
@@ -633,7 +633,7 @@ apiInstance.postWorkforcemanagementManagementunitIntraday(muId, opts)
 
 <a name="postWorkforcemanagementManagementunitSchedulesSearch"></a>
 
-# [**UserScheduleContainer**](UserScheduleContainer.html) postWorkforcemanagementManagementunitSchedulesSearch(muId, opts)
+# UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(muId, opts)
 
 POST /api/v2/workforcemanagement/managementunits/{muId}/schedules/search
 
@@ -685,7 +685,7 @@ apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(muId, opts)
 
 <a name="postWorkforcemanagementSchedules"></a>
 
-# [**UserScheduleContainer**](UserScheduleContainer.html) postWorkforcemanagementSchedules(opts)
+# UserScheduleContainer postWorkforcemanagementSchedules(opts)
 
 POST /api/v2/workforcemanagement/schedules
 

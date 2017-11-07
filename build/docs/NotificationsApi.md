@@ -66,7 +66,7 @@ void (no response body)
 
 <a name="getNotificationsAvailabletopics"></a>
 
-# [**AvailableTopicEntityListing**](AvailableTopicEntityListing.html) getNotificationsAvailabletopics(opts)
+# AvailableTopicEntityListing getNotificationsAvailabletopics(opts)
 
 GET /api/v2/notifications/availabletopics
 
@@ -115,7 +115,7 @@ apiInstance.getNotificationsAvailabletopics(opts)
 
 <a name="getNotificationsChannelSubscriptions"></a>
 
-# [**ChannelTopicEntityListing**](ChannelTopicEntityListing.html) getNotificationsChannelSubscriptions(channelId)
+# ChannelTopicEntityListing getNotificationsChannelSubscriptions(channelId)
 
 GET /api/v2/notifications/channels/{channelId}/subscriptions
 
@@ -163,7 +163,7 @@ apiInstance.getNotificationsChannelSubscriptions(channelId)
 
 <a name="getNotificationsChannels"></a>
 
-# [**ChannelEntityListing**](ChannelEntityListing.html) getNotificationsChannels()
+# ChannelEntityListing getNotificationsChannels()
 
 GET /api/v2/notifications/channels
 
@@ -205,7 +205,7 @@ This endpoint does not need any parameter.
 
 <a name="postNotificationsChannelSubscriptions"></a>
 
-# [**ChannelTopicEntityListing**](ChannelTopicEntityListing.html) postNotificationsChannelSubscriptions(channelId, body)
+# ChannelTopicEntityListing postNotificationsChannelSubscriptions(channelId, body)
 
 POST /api/v2/notifications/channels/{channelId}/subscriptions
 
@@ -256,7 +256,7 @@ apiInstance.postNotificationsChannelSubscriptions(channelId, body)
 
 <a name="postNotificationsChannels"></a>
 
-# [**Channel**](Channel.html) postNotificationsChannels()
+# Channel postNotificationsChannels()
 
 POST /api/v2/notifications/channels
 
@@ -298,7 +298,7 @@ This endpoint does not need any parameter.
 
 <a name="putNotificationsChannelSubscriptions"></a>
 
-# [**ChannelTopicEntityListing**](ChannelTopicEntityListing.html) putNotificationsChannelSubscriptions(channelId, body)
+# ChannelTopicEntityListing putNotificationsChannelSubscriptions(channelId, body)
 
 PUT /api/v2/notifications/channels/{channelId}/subscriptions
 

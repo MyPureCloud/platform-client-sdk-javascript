@@ -18,7 +18,7 @@
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 11.0.0
+   * @version 12.0.0
    */
 
   /**
@@ -676,6 +676,47 @@
 
 
     /**
+     * Get generated prompt history
+     * 
+     * @param {String} promptId Prompt ID
+     * @param {String} historyId History request ID
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {String} opts.sortOrder Sort order (default to desc)
+     * @param {Object} opts.sortBy Sort by (default to timestamp)
+     * @param {Array.<String>} opts.action Flow actions to include (omit to include all)
+     */
+    this.getArchitectPromptHistoryHistoryId = function(promptId, historyId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'promptId' is set
+      if (promptId === undefined || promptId === null) {
+        throw "Missing the required parameter 'promptId' when calling getArchitectPromptHistoryHistoryId";
+      }
+
+      // verify the required parameter 'historyId' is set
+      if (historyId === undefined || historyId === null) {
+        throw "Missing the required parameter 'historyId' when calling getArchitectPromptHistoryHistoryId";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/prompts/{promptId}/history/{historyId}', 
+        'GET', 
+        { 'promptId': promptId,'historyId': historyId }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'action': this.apiClient.buildCollectionParam(opts['action'], 'multi') }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get specified user prompt resource
      * 
      * @param {String} promptId Prompt ID
@@ -913,6 +954,47 @@
 
 
     /**
+     * Get generated prompt history
+     * 
+     * @param {String} promptId promptId
+     * @param {String} historyId History request ID
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {String} opts.sortOrder Sort order (default to desc)
+     * @param {Object} opts.sortBy Sort by (default to timestamp)
+     * @param {Array.<String>} opts.action Flow actions to include (omit to include all)
+     */
+    this.getArchitectSystempromptHistoryHistoryId = function(promptId, historyId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'promptId' is set
+      if (promptId === undefined || promptId === null) {
+        throw "Missing the required parameter 'promptId' when calling getArchitectSystempromptHistoryHistoryId";
+      }
+
+      // verify the required parameter 'historyId' is set
+      if (historyId === undefined || historyId === null) {
+        throw "Missing the required parameter 'historyId' when calling getArchitectSystempromptHistoryHistoryId";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/systemprompts/{promptId}/history/{historyId}', 
+        'GET', 
+        { 'promptId': promptId,'historyId': historyId }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'action': this.apiClient.buildCollectionParam(opts['action'], 'multi') }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get a system prompt resource.
      * 
      * @param {String} promptId Prompt ID
@@ -1046,7 +1128,7 @@
      * Get generated flow history
      * 
      * @param {String} flowId Flow ID
-     * @param {String} historyId History ID (generated history)
+     * @param {String} historyId History request ID
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Number} opts.pageSize Page size (default to 25)
@@ -1315,6 +1397,34 @@
 
 
     /**
+     * Generate prompt history
+     * Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
+     * @param {String} promptId Prompt ID
+     */
+    this.postArchitectPromptHistory = function(promptId) { 
+
+      // verify the required parameter 'promptId' is set
+      if (promptId === undefined || promptId === null) {
+        throw "Missing the required parameter 'promptId' when calling postArchitectPromptHistory";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/prompts/{promptId}/history', 
+        'POST', 
+        { 'promptId': promptId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Create a new user prompt resource
      * 
      * @param {String} promptId Prompt ID
@@ -1413,6 +1523,34 @@
         {  }, 
         {  }, 
         opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Generate system prompt history
+     * Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
+     * @param {String} promptId promptId
+     */
+    this.postArchitectSystempromptHistory = function(promptId) { 
+
+      // verify the required parameter 'promptId' is set
+      if (promptId === undefined || promptId === null) {
+        throw "Missing the required parameter 'promptId' when calling postArchitectSystempromptHistory";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/systemprompts/{promptId}/history', 
+        'POST', 
+        { 'promptId': promptId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']

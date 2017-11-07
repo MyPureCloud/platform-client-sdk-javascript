@@ -283,7 +283,7 @@ void (no response body)
 
 <a name="getOrgauthorizationPairing"></a>
 
-# [**TrustRequest**](TrustRequest.html) getOrgauthorizationPairing(pairingId)
+# TrustRequest getOrgauthorizationPairing(pairingId)
 
 GET /api/v2/orgauthorization/pairings/{pairingId}
 
@@ -331,7 +331,7 @@ apiInstance.getOrgauthorizationPairing(pairingId)
 
 <a name="getOrgauthorizationTrustee"></a>
 
-# [**Trustee**](Trustee.html) getOrgauthorizationTrustee(trusteeOrgId)
+# Trustee getOrgauthorizationTrustee(trusteeOrgId)
 
 GET /api/v2/orgauthorization/trustees/{trusteeOrgId}
 
@@ -379,7 +379,7 @@ apiInstance.getOrgauthorizationTrustee(trusteeOrgId)
 
 <a name="getOrgauthorizationTrusteeUser"></a>
 
-# [**TrustUser**](TrustUser.html) getOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)
+# TrustUser getOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)
 
 GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}
 
@@ -430,7 +430,7 @@ apiInstance.getOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)
 
 <a name="getOrgauthorizationTrusteeUserRoles"></a>
 
-# [**UserAuthorization**](UserAuthorization.html) getOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)
+# UserAuthorization getOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)
 
 GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles
 
@@ -481,7 +481,7 @@ apiInstance.getOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)
 
 <a name="getOrgauthorizationTrusteeUsers"></a>
 
-# [**TrustUserEntityListing**](TrustUserEntityListing.html) getOrgauthorizationTrusteeUsers(trusteeOrgId, opts)
+# TrustUserEntityListing getOrgauthorizationTrusteeUsers(trusteeOrgId, opts)
 
 GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users
 
@@ -535,7 +535,7 @@ apiInstance.getOrgauthorizationTrusteeUsers(trusteeOrgId, opts)
 
 <a name="getOrgauthorizationTrustees"></a>
 
-# [**TrustEntityListing**](TrustEntityListing.html) getOrgauthorizationTrustees(opts)
+# TrustEntityListing getOrgauthorizationTrustees(opts)
 
 GET /api/v2/orgauthorization/trustees
 
@@ -586,7 +586,7 @@ apiInstance.getOrgauthorizationTrustees(opts)
 
 <a name="getOrgauthorizationTrustor"></a>
 
-# [**Trustor**](Trustor.html) getOrgauthorizationTrustor(trustorOrgId)
+# Trustor getOrgauthorizationTrustor(trustorOrgId)
 
 GET /api/v2/orgauthorization/trustors/{trustorOrgId}
 
@@ -634,7 +634,7 @@ apiInstance.getOrgauthorizationTrustor(trustorOrgId)
 
 <a name="getOrgauthorizationTrustorUser"></a>
 
-# [**TrustUser**](TrustUser.html) getOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
+# TrustUser getOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
 
 GET /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}
 
@@ -685,7 +685,7 @@ apiInstance.getOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
 
 <a name="getOrgauthorizationTrustorUsers"></a>
 
-# [**TrustUserEntityListing**](TrustUserEntityListing.html) getOrgauthorizationTrustorUsers(trustorOrgId, opts)
+# TrustUserEntityListing getOrgauthorizationTrustorUsers(trustorOrgId, opts)
 
 GET /api/v2/orgauthorization/trustors/{trustorOrgId}/users
 
@@ -739,7 +739,7 @@ apiInstance.getOrgauthorizationTrustorUsers(trustorOrgId, opts)
 
 <a name="getOrgauthorizationTrustors"></a>
 
-# [**TrustorEntityListing**](TrustorEntityListing.html) getOrgauthorizationTrustors(opts)
+# TrustorEntityListing getOrgauthorizationTrustors(opts)
 
 GET /api/v2/orgauthorization/trustors
 
@@ -790,7 +790,7 @@ apiInstance.getOrgauthorizationTrustors(opts)
 
 <a name="postOrgauthorizationPairings"></a>
 
-# [**TrustRequest**](TrustRequest.html) postOrgauthorizationPairings(body)
+# TrustRequest postOrgauthorizationPairings(body)
 
 POST /api/v2/orgauthorization/pairings
 
@@ -838,7 +838,7 @@ apiInstance.postOrgauthorizationPairings(body)
 
 <a name="postOrgauthorizationTrusteeUsers"></a>
 
-# [**TrustUser**](TrustUser.html) postOrgauthorizationTrusteeUsers(trusteeOrgId, body)
+# TrustUser postOrgauthorizationTrusteeUsers(trusteeOrgId, body)
 
 POST /api/v2/orgauthorization/trustees/{trusteeOrgId}/users
 
@@ -889,7 +889,7 @@ apiInstance.postOrgauthorizationTrusteeUsers(trusteeOrgId, body)
 
 <a name="postOrgauthorizationTrustees"></a>
 
-# [**Trustee**](Trustee.html) postOrgauthorizationTrustees(body)
+# Trustee postOrgauthorizationTrustees(body)
 
 POST /api/v2/orgauthorization/trustees
 
@@ -937,7 +937,7 @@ apiInstance.postOrgauthorizationTrustees(body)
 
 <a name="postOrgauthorizationTrusteesAudits"></a>
 
-# [**AuditQueryResponse**](AuditQueryResponse.html) postOrgauthorizationTrusteesAudits(body, opts)
+# AuditQueryResponse postOrgauthorizationTrusteesAudits(body, opts)
 
 POST /api/v2/orgauthorization/trustees/audits
 
@@ -995,7 +995,7 @@ apiInstance.postOrgauthorizationTrusteesAudits(body, opts)
 
 <a name="postOrgauthorizationTrustorAudits"></a>
 
-# [**AuditQueryResponse**](AuditQueryResponse.html) postOrgauthorizationTrustorAudits(body, opts)
+# AuditQueryResponse postOrgauthorizationTrustorAudits(body, opts)
 
 POST /api/v2/orgauthorization/trustor/audits
 
@@ -1053,7 +1053,7 @@ apiInstance.postOrgauthorizationTrustorAudits(body, opts)
 
 <a name="putOrgauthorizationTrustee"></a>
 
-# [**Trustee**](Trustee.html) putOrgauthorizationTrustee(trusteeOrgId, body)
+# Trustee putOrgauthorizationTrustee(trusteeOrgId, body)
 
 PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}
 
@@ -1104,7 +1104,7 @@ apiInstance.putOrgauthorizationTrustee(trusteeOrgId, body)
 
 <a name="putOrgauthorizationTrusteeUserRoles"></a>
 
-# [**UserAuthorization**](UserAuthorization.html) putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, body)
+# UserAuthorization putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, body)
 
 PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles
 
@@ -1158,7 +1158,7 @@ apiInstance.putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, bod
 
 <a name="putOrgauthorizationTrustorUser"></a>
 
-# [**TrustUser**](TrustUser.html) putOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
+# TrustUser putOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
 
 PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}
 

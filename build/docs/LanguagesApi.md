@@ -117,7 +117,7 @@ void (no response body)
 
 <a name="getLanguage"></a>
 
-# [**Language**](Language.html) getLanguage(languageId)
+# Language getLanguage(languageId)
 
 GET /api/v2/languages/{languageId}
 
@@ -165,7 +165,7 @@ apiInstance.getLanguage(languageId)
 
 <a name="getLanguages"></a>
 
-# [**LanguageEntityListing**](LanguageEntityListing.html) getLanguages(opts)
+# LanguageEntityListing getLanguages(opts)
 
 GET /api/v2/languages
 
@@ -220,7 +220,7 @@ apiInstance.getLanguages(opts)
 
 <a name="getLanguagesTranslations"></a>
 
-# [**AvailableTranslations**](AvailableTranslations.html) getLanguagesTranslations()
+# AvailableTranslations getLanguagesTranslations()
 
 GET /api/v2/languages/translations
 
@@ -406,7 +406,7 @@ apiInstance.getLanguagesTranslationsUser(userId)
 
 <a name="getRoutingLanguage"></a>
 
-# [**Language**](Language.html) getRoutingLanguage(languageId)
+# Language getRoutingLanguage(languageId)
 
 GET /api/v2/routing/languages/{languageId}
 
@@ -454,7 +454,7 @@ apiInstance.getRoutingLanguage(languageId)
 
 <a name="postLanguages"></a>
 
-# [**Language**](Language.html) postLanguages(body)
+# Language postLanguages(body)
 
 POST /api/v2/languages
 

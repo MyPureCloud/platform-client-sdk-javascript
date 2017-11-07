@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="getFieldconfig"></a>
 
-# [**FieldConfig**](FieldConfig.html) getFieldconfig(type)
+# FieldConfig getFieldconfig(type)
 
 GET /api/v2/fieldconfig
 
@@ -63,7 +63,7 @@ apiInstance.getFieldconfig(type)
 
 <a name="getOrganizationsMe"></a>
 
-# [**Organization**](Organization.html) getOrganizationsMe()
+# Organization getOrganizationsMe()
 
 GET /api/v2/organizations/me
 
@@ -105,7 +105,7 @@ This endpoint does not need any parameter.
 
 <a name="patchOrganizationsFeature"></a>
 
-# [**OrganizationFeatures**](OrganizationFeatures.html) patchOrganizationsFeature(featureName, enabled)
+# OrganizationFeatures patchOrganizationsFeature(featureName, enabled)
 
 PATCH /api/v2/organizations/features/{featureName}
 
@@ -156,7 +156,7 @@ apiInstance.patchOrganizationsFeature(featureName, enabled)
 
 <a name="putOrganizationsMe"></a>
 
-# [**Organization**](Organization.html) putOrganizationsMe(opts)
+# Organization putOrganizationsMe(opts)
 
 PUT /api/v2/organizations/me
 

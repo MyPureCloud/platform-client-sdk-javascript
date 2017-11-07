@@ -125,7 +125,7 @@ void (no response body)
 
 <a name="getVoicemailGroupMailbox"></a>
 
-# [**VoicemailMailboxInfo**](VoicemailMailboxInfo.html) getVoicemailGroupMailbox(groupId)
+# VoicemailMailboxInfo getVoicemailGroupMailbox(groupId)
 
 GET /api/v2/voicemail/groups/{groupId}/mailbox
 
@@ -173,7 +173,7 @@ apiInstance.getVoicemailGroupMailbox(groupId)
 
 <a name="getVoicemailGroupMessages"></a>
 
-# [**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html) getVoicemailGroupMessages(groupId, opts)
+# VoicemailMessageEntityListing getVoicemailGroupMessages(groupId, opts)
 
 GET /api/v2/voicemail/groups/{groupId}/messages
 
@@ -227,7 +227,7 @@ apiInstance.getVoicemailGroupMessages(groupId, opts)
 
 <a name="getVoicemailGroupPolicy"></a>
 
-# [**VoicemailGroupPolicy**](VoicemailGroupPolicy.html) getVoicemailGroupPolicy(groupId)
+# VoicemailGroupPolicy getVoicemailGroupPolicy(groupId)
 
 GET /api/v2/voicemail/groups/{groupId}/policy
 
@@ -275,7 +275,7 @@ apiInstance.getVoicemailGroupPolicy(groupId)
 
 <a name="getVoicemailMailbox"></a>
 
-# [**VoicemailMailboxInfo**](VoicemailMailboxInfo.html) getVoicemailMailbox()
+# VoicemailMailboxInfo getVoicemailMailbox()
 
 GET /api/v2/voicemail/mailbox
 
@@ -317,7 +317,7 @@ This endpoint does not need any parameter.
 
 <a name="getVoicemailMeMailbox"></a>
 
-# [**VoicemailMailboxInfo**](VoicemailMailboxInfo.html) getVoicemailMeMailbox()
+# VoicemailMailboxInfo getVoicemailMeMailbox()
 
 GET /api/v2/voicemail/me/mailbox
 
@@ -359,7 +359,7 @@ This endpoint does not need any parameter.
 
 <a name="getVoicemailMeMessages"></a>
 
-# [**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html) getVoicemailMeMessages(opts)
+# VoicemailMessageEntityListing getVoicemailMeMessages(opts)
 
 GET /api/v2/voicemail/me/messages
 
@@ -410,7 +410,7 @@ apiInstance.getVoicemailMeMessages(opts)
 
 <a name="getVoicemailMePolicy"></a>
 
-# [**VoicemailUserPolicy**](VoicemailUserPolicy.html) getVoicemailMePolicy()
+# VoicemailUserPolicy getVoicemailMePolicy()
 
 GET /api/v2/voicemail/me/policy
 
@@ -452,7 +452,7 @@ This endpoint does not need any parameter.
 
 <a name="getVoicemailMessage"></a>
 
-# [**VoicemailMessage**](VoicemailMessage.html) getVoicemailMessage(messageId, opts)
+# VoicemailMessage getVoicemailMessage(messageId, opts)
 
 GET /api/v2/voicemail/messages/{messageId}
 
@@ -504,7 +504,7 @@ apiInstance.getVoicemailMessage(messageId, opts)
 
 <a name="getVoicemailMessageMedia"></a>
 
-# [**VoicemailMediaInfo**](VoicemailMediaInfo.html) getVoicemailMessageMedia(messageId, opts)
+# VoicemailMediaInfo getVoicemailMessageMedia(messageId, opts)
 
 GET /api/v2/voicemail/messages/{messageId}/media
 
@@ -556,7 +556,7 @@ apiInstance.getVoicemailMessageMedia(messageId, opts)
 
 <a name="getVoicemailMessages"></a>
 
-# [**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html) getVoicemailMessages(opts)
+# VoicemailMessageEntityListing getVoicemailMessages(opts)
 
 GET /api/v2/voicemail/messages
 
@@ -607,7 +607,7 @@ apiInstance.getVoicemailMessages(opts)
 
 <a name="getVoicemailPolicy"></a>
 
-# [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html) getVoicemailPolicy()
+# VoicemailOrganizationPolicy getVoicemailPolicy()
 
 GET /api/v2/voicemail/policy
 
@@ -649,7 +649,7 @@ This endpoint does not need any parameter.
 
 <a name="getVoicemailQueueMessages"></a>
 
-# [**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html) getVoicemailQueueMessages(queueId, opts)
+# VoicemailMessageEntityListing getVoicemailQueueMessages(queueId, opts)
 
 GET /api/v2/voicemail/queues/{queueId}/messages
 
@@ -703,7 +703,7 @@ apiInstance.getVoicemailQueueMessages(queueId, opts)
 
 <a name="getVoicemailSearch"></a>
 
-# [**VoicemailsSearchResponse**](VoicemailsSearchResponse.html) getVoicemailSearch(q64, opts)
+# VoicemailsSearchResponse getVoicemailSearch(q64, opts)
 
 GET /api/v2/voicemail/search
 
@@ -755,7 +755,7 @@ apiInstance.getVoicemailSearch(q64, opts)
 
 <a name="getVoicemailUserpolicy"></a>
 
-# [**VoicemailUserPolicy**](VoicemailUserPolicy.html) getVoicemailUserpolicy(userId)
+# VoicemailUserPolicy getVoicemailUserpolicy(userId)
 
 GET /api/v2/voicemail/userpolicies/{userId}
 
@@ -803,7 +803,7 @@ apiInstance.getVoicemailUserpolicy(userId)
 
 <a name="patchVoicemailGroupPolicy"></a>
 
-# [**VoicemailGroupPolicy**](VoicemailGroupPolicy.html) patchVoicemailGroupPolicy(groupId, body)
+# VoicemailGroupPolicy patchVoicemailGroupPolicy(groupId, body)
 
 PATCH /api/v2/voicemail/groups/{groupId}/policy
 
@@ -854,7 +854,7 @@ apiInstance.patchVoicemailGroupPolicy(groupId, body)
 
 <a name="patchVoicemailMePolicy"></a>
 
-# [**VoicemailUserPolicy**](VoicemailUserPolicy.html) patchVoicemailMePolicy(body)
+# VoicemailUserPolicy patchVoicemailMePolicy(body)
 
 PATCH /api/v2/voicemail/me/policy
 
@@ -902,7 +902,7 @@ apiInstance.patchVoicemailMePolicy(body)
 
 <a name="patchVoicemailMessage"></a>
 
-# [**VoicemailMessage**](VoicemailMessage.html) patchVoicemailMessage(messageId, body)
+# VoicemailMessage patchVoicemailMessage(messageId, body)
 
 PATCH /api/v2/voicemail/messages/{messageId}
 
@@ -953,7 +953,7 @@ apiInstance.patchVoicemailMessage(messageId, body)
 
 <a name="patchVoicemailUserpolicy"></a>
 
-# [**VoicemailUserPolicy**](VoicemailUserPolicy.html) patchVoicemailUserpolicy(userId, body)
+# VoicemailUserPolicy patchVoicemailUserpolicy(userId, body)
 
 PATCH /api/v2/voicemail/userpolicies/{userId}
 
@@ -1004,7 +1004,7 @@ apiInstance.patchVoicemailUserpolicy(userId, body)
 
 <a name="postVoicemailMessages"></a>
 
-# [**VoicemailMessage**](VoicemailMessage.html) postVoicemailMessages(opts)
+# VoicemailMessage postVoicemailMessages(opts)
 
 POST /api/v2/voicemail/messages
 
@@ -1053,7 +1053,7 @@ apiInstance.postVoicemailMessages(opts)
 
 <a name="postVoicemailSearch"></a>
 
-# [**VoicemailsSearchResponse**](VoicemailsSearchResponse.html) postVoicemailSearch(body)
+# VoicemailsSearchResponse postVoicemailSearch(body)
 
 POST /api/v2/voicemail/search
 
@@ -1101,7 +1101,7 @@ apiInstance.postVoicemailSearch(body)
 
 <a name="putVoicemailMessage"></a>
 
-# [**VoicemailMessage**](VoicemailMessage.html) putVoicemailMessage(messageId, body)
+# VoicemailMessage putVoicemailMessage(messageId, body)
 
 PUT /api/v2/voicemail/messages/{messageId}
 
@@ -1152,7 +1152,7 @@ apiInstance.putVoicemailMessage(messageId, body)
 
 <a name="putVoicemailPolicy"></a>
 
-# [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html) putVoicemailPolicy(body)
+# VoicemailOrganizationPolicy putVoicemailPolicy(body)
 
 PUT /api/v2/voicemail/policy
 

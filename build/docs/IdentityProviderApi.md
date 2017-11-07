@@ -39,7 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteIdentityprovidersAdfs"></a>
 
-# [**Empty**](Empty.html) deleteIdentityprovidersAdfs()
+# Empty deleteIdentityprovidersAdfs()
 
 DELETE /api/v2/identityproviders/adfs
 
@@ -81,7 +81,7 @@ This endpoint does not need any parameter.
 
 <a name="deleteIdentityprovidersCic"></a>
 
-# [**Empty**](Empty.html) deleteIdentityprovidersCic()
+# Empty deleteIdentityprovidersCic()
 
 DELETE /api/v2/identityproviders/cic
 
@@ -123,7 +123,7 @@ This endpoint does not need any parameter.
 
 <a name="deleteIdentityprovidersGsuite"></a>
 
-# [**Empty**](Empty.html) deleteIdentityprovidersGsuite()
+# Empty deleteIdentityprovidersGsuite()
 
 DELETE /api/v2/identityproviders/gsuite
 
@@ -165,7 +165,7 @@ This endpoint does not need any parameter.
 
 <a name="deleteIdentityprovidersIdentitynow"></a>
 
-# [**Empty**](Empty.html) deleteIdentityprovidersIdentitynow()
+# Empty deleteIdentityprovidersIdentitynow()
 
 DELETE /api/v2/identityproviders/identitynow
 
@@ -207,7 +207,7 @@ This endpoint does not need any parameter.
 
 <a name="deleteIdentityprovidersOkta"></a>
 
-# [**Empty**](Empty.html) deleteIdentityprovidersOkta()
+# Empty deleteIdentityprovidersOkta()
 
 DELETE /api/v2/identityproviders/okta
 
@@ -249,7 +249,7 @@ This endpoint does not need any parameter.
 
 <a name="deleteIdentityprovidersOnelogin"></a>
 
-# [**Empty**](Empty.html) deleteIdentityprovidersOnelogin()
+# Empty deleteIdentityprovidersOnelogin()
 
 DELETE /api/v2/identityproviders/onelogin
 
@@ -291,7 +291,7 @@ This endpoint does not need any parameter.
 
 <a name="deleteIdentityprovidersPing"></a>
 
-# [**Empty**](Empty.html) deleteIdentityprovidersPing()
+# Empty deleteIdentityprovidersPing()
 
 DELETE /api/v2/identityproviders/ping
 
@@ -333,7 +333,7 @@ This endpoint does not need any parameter.
 
 <a name="deleteIdentityprovidersPurecloud"></a>
 
-# [**Empty**](Empty.html) deleteIdentityprovidersPurecloud()
+# Empty deleteIdentityprovidersPurecloud()
 
 DELETE /api/v2/identityproviders/purecloud
 
@@ -375,7 +375,7 @@ This endpoint does not need any parameter.
 
 <a name="deleteIdentityprovidersSalesforce"></a>
 
-# [**Empty**](Empty.html) deleteIdentityprovidersSalesforce()
+# Empty deleteIdentityprovidersSalesforce()
 
 DELETE /api/v2/identityproviders/salesforce
 
@@ -417,7 +417,7 @@ This endpoint does not need any parameter.
 
 <a name="getIdentityproviders"></a>
 
-# [**OAuthProviderEntityListing**](OAuthProviderEntityListing.html) getIdentityproviders()
+# OAuthProviderEntityListing getIdentityproviders()
 
 GET /api/v2/identityproviders
 
@@ -459,7 +459,7 @@ This endpoint does not need any parameter.
 
 <a name="getIdentityprovidersAdfs"></a>
 
-# [**ADFS**](ADFS.html) getIdentityprovidersAdfs()
+# ADFS getIdentityprovidersAdfs()
 
 GET /api/v2/identityproviders/adfs
 
@@ -501,7 +501,7 @@ This endpoint does not need any parameter.
 
 <a name="getIdentityprovidersCic"></a>
 
-# [**CustomerInteractionCenter**](CustomerInteractionCenter.html) getIdentityprovidersCic()
+# CustomerInteractionCenter getIdentityprovidersCic()
 
 GET /api/v2/identityproviders/cic
 
@@ -543,7 +543,7 @@ This endpoint does not need any parameter.
 
 <a name="getIdentityprovidersGsuite"></a>
 
-# [**GSuite**](GSuite.html) getIdentityprovidersGsuite()
+# GSuite getIdentityprovidersGsuite()
 
 GET /api/v2/identityproviders/gsuite
 
@@ -585,7 +585,7 @@ This endpoint does not need any parameter.
 
 <a name="getIdentityprovidersIdentitynow"></a>
 
-# [**IdentityNow**](IdentityNow.html) getIdentityprovidersIdentitynow()
+# IdentityNow getIdentityprovidersIdentitynow()
 
 GET /api/v2/identityproviders/identitynow
 
@@ -627,7 +627,7 @@ This endpoint does not need any parameter.
 
 <a name="getIdentityprovidersOkta"></a>
 
-# [**Okta**](Okta.html) getIdentityprovidersOkta()
+# Okta getIdentityprovidersOkta()
 
 GET /api/v2/identityproviders/okta
 
@@ -669,7 +669,7 @@ This endpoint does not need any parameter.
 
 <a name="getIdentityprovidersOnelogin"></a>
 
-# [**OneLogin**](OneLogin.html) getIdentityprovidersOnelogin()
+# OneLogin getIdentityprovidersOnelogin()
 
 GET /api/v2/identityproviders/onelogin
 
@@ -711,7 +711,7 @@ This endpoint does not need any parameter.
 
 <a name="getIdentityprovidersPing"></a>
 
-# [**PingIdentity**](PingIdentity.html) getIdentityprovidersPing()
+# PingIdentity getIdentityprovidersPing()
 
 GET /api/v2/identityproviders/ping
 
@@ -753,7 +753,7 @@ This endpoint does not need any parameter.
 
 <a name="getIdentityprovidersPurecloud"></a>
 
-# [**PureCloud**](PureCloud.html) getIdentityprovidersPurecloud()
+# PureCloud getIdentityprovidersPurecloud()
 
 GET /api/v2/identityproviders/purecloud
 
@@ -795,7 +795,7 @@ This endpoint does not need any parameter.
 
 <a name="getIdentityprovidersSalesforce"></a>
 
-# [**Salesforce**](Salesforce.html) getIdentityprovidersSalesforce()
+# Salesforce getIdentityprovidersSalesforce()
 
 GET /api/v2/identityproviders/salesforce
 
@@ -837,7 +837,7 @@ This endpoint does not need any parameter.
 
 <a name="putIdentityprovidersAdfs"></a>
 
-# [**OAuthProvider**](OAuthProvider.html) putIdentityprovidersAdfs(body)
+# OAuthProvider putIdentityprovidersAdfs(body)
 
 PUT /api/v2/identityproviders/adfs
 
@@ -885,7 +885,7 @@ apiInstance.putIdentityprovidersAdfs(body)
 
 <a name="putIdentityprovidersCic"></a>
 
-# [**OAuthProvider**](OAuthProvider.html) putIdentityprovidersCic(body)
+# OAuthProvider putIdentityprovidersCic(body)
 
 PUT /api/v2/identityproviders/cic
 
@@ -933,7 +933,7 @@ apiInstance.putIdentityprovidersCic(body)
 
 <a name="putIdentityprovidersGsuite"></a>
 
-# [**OAuthProvider**](OAuthProvider.html) putIdentityprovidersGsuite(body)
+# OAuthProvider putIdentityprovidersGsuite(body)
 
 PUT /api/v2/identityproviders/gsuite
 
@@ -981,7 +981,7 @@ apiInstance.putIdentityprovidersGsuite(body)
 
 <a name="putIdentityprovidersIdentitynow"></a>
 
-# [**IdentityNow**](IdentityNow.html) putIdentityprovidersIdentitynow(body)
+# IdentityNow putIdentityprovidersIdentitynow(body)
 
 PUT /api/v2/identityproviders/identitynow
 
@@ -1029,7 +1029,7 @@ apiInstance.putIdentityprovidersIdentitynow(body)
 
 <a name="putIdentityprovidersOkta"></a>
 
-# [**OAuthProvider**](OAuthProvider.html) putIdentityprovidersOkta(body)
+# OAuthProvider putIdentityprovidersOkta(body)
 
 PUT /api/v2/identityproviders/okta
 
@@ -1077,7 +1077,7 @@ apiInstance.putIdentityprovidersOkta(body)
 
 <a name="putIdentityprovidersOnelogin"></a>
 
-# [**OAuthProvider**](OAuthProvider.html) putIdentityprovidersOnelogin(body)
+# OAuthProvider putIdentityprovidersOnelogin(body)
 
 PUT /api/v2/identityproviders/onelogin
 
@@ -1125,7 +1125,7 @@ apiInstance.putIdentityprovidersOnelogin(body)
 
 <a name="putIdentityprovidersPing"></a>
 
-# [**OAuthProvider**](OAuthProvider.html) putIdentityprovidersPing(body)
+# OAuthProvider putIdentityprovidersPing(body)
 
 PUT /api/v2/identityproviders/ping
 
@@ -1173,7 +1173,7 @@ apiInstance.putIdentityprovidersPing(body)
 
 <a name="putIdentityprovidersPurecloud"></a>
 
-# [**OAuthProvider**](OAuthProvider.html) putIdentityprovidersPurecloud(body)
+# OAuthProvider putIdentityprovidersPurecloud(body)
 
 PUT /api/v2/identityproviders/purecloud
 
@@ -1221,7 +1221,7 @@ apiInstance.putIdentityprovidersPurecloud(body)
 
 <a name="putIdentityprovidersSalesforce"></a>
 
-# [**OAuthProvider**](OAuthProvider.html) putIdentityprovidersSalesforce(body)
+# OAuthProvider putIdentityprovidersSalesforce(body)
 
 PUT /api/v2/identityproviders/salesforce
 

@@ -100,7 +100,7 @@ void (no response body)
 
 <a name="deleteOrphanrecording"></a>
 
-# [**OrphanRecording**](OrphanRecording.html) deleteOrphanrecording(orphanId)
+# OrphanRecording deleteOrphanrecording(orphanId)
 
 DELETE /api/v2/orphanrecordings/{orphanId}
 
@@ -244,7 +244,7 @@ void (no response body)
 
 <a name="getConversationRecording"></a>
 
-# [**Recording**](Recording.html) getConversationRecording(conversationId, recordingId, opts)
+# Recording getConversationRecording(conversationId, recordingId, opts)
 
 GET /api/v2/conversations/{conversationId}/recordings/{recordingId}
 
@@ -303,7 +303,7 @@ apiInstance.getConversationRecording(conversationId, recordingId, opts)
 
 <a name="getConversationRecordingAnnotation"></a>
 
-# [**Annotation**](Annotation.html) getConversationRecordingAnnotation(conversationId, recordingId, annotationId)
+# Annotation getConversationRecordingAnnotation(conversationId, recordingId, annotationId)
 
 GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}
 
@@ -357,7 +357,7 @@ apiInstance.getConversationRecordingAnnotation(conversationId, recordingId, anno
 
 <a name="getConversationRecordingAnnotations"></a>
 
-# [**[Annotation]**](Annotation.html) getConversationRecordingAnnotations(conversationId, recordingId)
+# [Annotation] getConversationRecordingAnnotations(conversationId, recordingId)
 
 GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations
 
@@ -408,7 +408,7 @@ apiInstance.getConversationRecordingAnnotations(conversationId, recordingId)
 
 <a name="getConversationRecordingmetadata"></a>
 
-# [**[Recording]**](Recording.html) getConversationRecordingmetadata(conversationId)
+# [Recording] getConversationRecordingmetadata(conversationId)
 
 GET /api/v2/conversations/{conversationId}/recordingmetadata
 
@@ -456,7 +456,7 @@ apiInstance.getConversationRecordingmetadata(conversationId)
 
 <a name="getConversationRecordingmetadataRecordingId"></a>
 
-# [**Recording**](Recording.html) getConversationRecordingmetadataRecordingId(conversationId, recordingId)
+# Recording getConversationRecordingmetadataRecordingId(conversationId, recordingId)
 
 GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}
 
@@ -507,7 +507,7 @@ apiInstance.getConversationRecordingmetadataRecordingId(conversationId, recordin
 
 <a name="getConversationRecordings"></a>
 
-# [**[Recording]**](Recording.html) getConversationRecordings(conversationId, opts)
+# [Recording] getConversationRecordings(conversationId, opts)
 
 GET /api/v2/conversations/{conversationId}/recordings
 
@@ -561,7 +561,7 @@ apiInstance.getConversationRecordings(conversationId, opts)
 
 <a name="getOrphanrecording"></a>
 
-# [**OrphanRecording**](OrphanRecording.html) getOrphanrecording(orphanId)
+# OrphanRecording getOrphanrecording(orphanId)
 
 GET /api/v2/orphanrecordings/{orphanId}
 
@@ -609,7 +609,7 @@ apiInstance.getOrphanrecording(orphanId)
 
 <a name="getOrphanrecordingMedia"></a>
 
-# [**Recording**](Recording.html) getOrphanrecordingMedia(orphanId, opts)
+# Recording getOrphanrecordingMedia(orphanId, opts)
 
 GET /api/v2/orphanrecordings/{orphanId}/media
 
@@ -665,7 +665,7 @@ apiInstance.getOrphanrecordingMedia(orphanId, opts)
 
 <a name="getOrphanrecordings"></a>
 
-# [**OrphanRecordingListing**](OrphanRecordingListing.html) getOrphanrecordings(opts)
+# OrphanRecordingListing getOrphanrecordings(opts)
 
 GET /api/v2/orphanrecordings
 
@@ -728,7 +728,7 @@ apiInstance.getOrphanrecordings(opts)
 
 <a name="getRecordingLocalkeysSetting"></a>
 
-# [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html) getRecordingLocalkeysSetting(settingsId)
+# LocalEncryptionConfiguration getRecordingLocalkeysSetting(settingsId)
 
 GET /api/v2/recording/localkeys/settings/{settingsId}
 
@@ -776,7 +776,7 @@ apiInstance.getRecordingLocalkeysSetting(settingsId)
 
 <a name="getRecordingLocalkeysSettings"></a>
 
-# [**LocalEncryptionConfigurationListing**](LocalEncryptionConfigurationListing.html) getRecordingLocalkeysSettings()
+# LocalEncryptionConfigurationListing getRecordingLocalkeysSettings()
 
 GET /api/v2/recording/localkeys/settings
 
@@ -818,7 +818,7 @@ This endpoint does not need any parameter.
 
 <a name="getRecordingMediaretentionpolicies"></a>
 
-# [**PolicyEntityListing**](PolicyEntityListing.html) getRecordingMediaretentionpolicies(opts)
+# PolicyEntityListing getRecordingMediaretentionpolicies(opts)
 
 GET /api/v2/recording/mediaretentionpolicies
 
@@ -885,7 +885,7 @@ apiInstance.getRecordingMediaretentionpolicies(opts)
 
 <a name="getRecordingMediaretentionpolicy"></a>
 
-# [**Policy**](Policy.html) getRecordingMediaretentionpolicy(policyId)
+# Policy getRecordingMediaretentionpolicy(policyId)
 
 GET /api/v2/recording/mediaretentionpolicies/{policyId}
 
@@ -933,7 +933,7 @@ apiInstance.getRecordingMediaretentionpolicy(policyId)
 
 <a name="getRecordingRecordingkeys"></a>
 
-# [**EncryptionKeyEntityListing**](EncryptionKeyEntityListing.html) getRecordingRecordingkeys(opts)
+# EncryptionKeyEntityListing getRecordingRecordingkeys(opts)
 
 GET /api/v2/recording/recordingkeys
 
@@ -984,7 +984,7 @@ apiInstance.getRecordingRecordingkeys(opts)
 
 <a name="getRecordingRecordingkeysRotationschedule"></a>
 
-# [**KeyRotationSchedule**](KeyRotationSchedule.html) getRecordingRecordingkeysRotationschedule()
+# KeyRotationSchedule getRecordingRecordingkeysRotationschedule()
 
 GET /api/v2/recording/recordingkeys/rotationschedule
 
@@ -1026,7 +1026,7 @@ This endpoint does not need any parameter.
 
 <a name="getRecordingSettings"></a>
 
-# [**RecordingSettings**](RecordingSettings.html) getRecordingSettings(opts)
+# RecordingSettings getRecordingSettings(opts)
 
 GET /api/v2/recording/settings
 
@@ -1075,7 +1075,7 @@ apiInstance.getRecordingSettings(opts)
 
 <a name="getRecordingsScreensessions"></a>
 
-# [**ScreenRecordingSessionListing**](ScreenRecordingSessionListing.html) getRecordingsScreensessions(opts)
+# ScreenRecordingSessionListing getRecordingsScreensessions(opts)
 
 GET /api/v2/recordings/screensessions
 
@@ -1126,7 +1126,7 @@ apiInstance.getRecordingsScreensessions(opts)
 
 <a name="patchRecordingMediaretentionpolicy"></a>
 
-# [**Policy**](Policy.html) patchRecordingMediaretentionpolicy(policyId, body)
+# Policy patchRecordingMediaretentionpolicy(policyId, body)
 
 PATCH /api/v2/recording/mediaretentionpolicies/{policyId}
 
@@ -1229,7 +1229,7 @@ void (no response body)
 
 <a name="postConversationRecordingAnnotations"></a>
 
-# [**Annotation**](Annotation.html) postConversationRecordingAnnotations(conversationId, recordingId, body)
+# Annotation postConversationRecordingAnnotations(conversationId, recordingId, body)
 
 POST /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations
 
@@ -1283,7 +1283,7 @@ apiInstance.postConversationRecordingAnnotations(conversationId, recordingId, bo
 
 <a name="postRecordingLocalkeys"></a>
 
-# [**EncryptionKey**](EncryptionKey.html) postRecordingLocalkeys(body)
+# EncryptionKey postRecordingLocalkeys(body)
 
 POST /api/v2/recording/localkeys
 
@@ -1331,7 +1331,7 @@ apiInstance.postRecordingLocalkeys(body)
 
 <a name="postRecordingLocalkeysSettings"></a>
 
-# [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html) postRecordingLocalkeysSettings(body)
+# LocalEncryptionConfiguration postRecordingLocalkeysSettings(body)
 
 POST /api/v2/recording/localkeys/settings
 
@@ -1379,7 +1379,7 @@ apiInstance.postRecordingLocalkeysSettings(body)
 
 <a name="postRecordingMediaretentionpolicies"></a>
 
-# [**Policy**](Policy.html) postRecordingMediaretentionpolicies(body)
+# Policy postRecordingMediaretentionpolicies(body)
 
 POST /api/v2/recording/mediaretentionpolicies
 
@@ -1427,7 +1427,7 @@ apiInstance.postRecordingMediaretentionpolicies(body)
 
 <a name="postRecordingRecordingkeys"></a>
 
-# [**EncryptionKey**](EncryptionKey.html) postRecordingRecordingkeys()
+# EncryptionKey postRecordingRecordingkeys()
 
 POST /api/v2/recording/recordingkeys
 
@@ -1469,7 +1469,7 @@ This endpoint does not need any parameter.
 
 <a name="putConversationRecording"></a>
 
-# [**Recording**](Recording.html) putConversationRecording(conversationId, recordingId, body)
+# Recording putConversationRecording(conversationId, recordingId, body)
 
 PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}
 
@@ -1523,7 +1523,7 @@ apiInstance.putConversationRecording(conversationId, recordingId, body)
 
 <a name="putConversationRecordingAnnotation"></a>
 
-# [**Annotation**](Annotation.html) putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body)
+# Annotation putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body)
 
 PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}
 
@@ -1580,7 +1580,7 @@ apiInstance.putConversationRecordingAnnotation(conversationId, recordingId, anno
 
 <a name="putOrphanrecording"></a>
 
-# [**Recording**](Recording.html) putOrphanrecording(orphanId, opts)
+# Recording putOrphanrecording(orphanId, opts)
 
 PUT /api/v2/orphanrecordings/{orphanId}
 
@@ -1632,7 +1632,7 @@ apiInstance.putOrphanrecording(orphanId, opts)
 
 <a name="putRecordingLocalkeysSetting"></a>
 
-# [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html) putRecordingLocalkeysSetting(settingsId, body)
+# LocalEncryptionConfiguration putRecordingLocalkeysSetting(settingsId, body)
 
 PUT /api/v2/recording/localkeys/settings/{settingsId}
 
@@ -1683,7 +1683,7 @@ apiInstance.putRecordingLocalkeysSetting(settingsId, body)
 
 <a name="putRecordingMediaretentionpolicy"></a>
 
-# [**Policy**](Policy.html) putRecordingMediaretentionpolicy(policyId, body)
+# Policy putRecordingMediaretentionpolicy(policyId, body)
 
 PUT /api/v2/recording/mediaretentionpolicies/{policyId}
 
@@ -1734,7 +1734,7 @@ apiInstance.putRecordingMediaretentionpolicy(policyId, body)
 
 <a name="putRecordingRecordingkeysRotationschedule"></a>
 
-# [**KeyRotationSchedule**](KeyRotationSchedule.html) putRecordingRecordingkeysRotationschedule(body)
+# KeyRotationSchedule putRecordingRecordingkeysRotationschedule(body)
 
 PUT /api/v2/recording/recordingkeys/rotationschedule
 
@@ -1782,7 +1782,7 @@ apiInstance.putRecordingRecordingkeysRotationschedule(body)
 
 <a name="putRecordingSettings"></a>
 
-# [**RecordingSettings**](RecordingSettings.html) putRecordingSettings(body)
+# RecordingSettings putRecordingSettings(body)
 
 PUT /api/v2/recording/settings
 

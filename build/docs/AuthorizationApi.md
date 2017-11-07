@@ -124,7 +124,7 @@ void (no response body)
 
 <a name="getAuthorizationPermissions"></a>
 
-# [**PermissionCollectionEntityListing**](PermissionCollectionEntityListing.html) getAuthorizationPermissions(opts)
+# PermissionCollectionEntityListing getAuthorizationPermissions(opts)
 
 GET /api/v2/authorization/permissions
 
@@ -175,7 +175,7 @@ apiInstance.getAuthorizationPermissions(opts)
 
 <a name="getAuthorizationProducts"></a>
 
-# [**OrganizationProductEntityListing**](OrganizationProductEntityListing.html) getAuthorizationProducts()
+# OrganizationProductEntityListing getAuthorizationProducts()
 
 GET /api/v2/authorization/products
 
@@ -217,7 +217,7 @@ This endpoint does not need any parameter.
 
 <a name="getAuthorizationRole"></a>
 
-# [**DomainOrganizationRole**](DomainOrganizationRole.html) getAuthorizationRole(roleId)
+# DomainOrganizationRole getAuthorizationRole(roleId)
 
 GET /api/v2/authorization/roles/{roleId}
 
@@ -265,7 +265,7 @@ apiInstance.getAuthorizationRole(roleId)
 
 <a name="getAuthorizationRoleComparedefaultRightRoleId"></a>
 
-# [**DomainOrgRoleDifference**](DomainOrgRoleDifference.html) getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId)
+# DomainOrgRoleDifference getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId)
 
 GET /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}
 
@@ -316,7 +316,7 @@ apiInstance.getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleI
 
 <a name="getAuthorizationRoles"></a>
 
-# [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html) getAuthorizationRoles(opts)
+# OrganizationRoleEntityListing getAuthorizationRoles(opts)
 
 GET /api/v2/authorization/roles
 
@@ -383,7 +383,7 @@ apiInstance.getAuthorizationRoles(opts)
 
 <a name="getUserRoles"></a>
 
-# [**UserAuthorization**](UserAuthorization.html) getUserRoles(userId)
+# UserAuthorization getUserRoles(userId)
 
 GET /api/v2/users/{userId}/roles
 
@@ -431,7 +431,7 @@ apiInstance.getUserRoles(userId)
 
 <a name="patchAuthorizationRole"></a>
 
-# [**DomainOrganizationRole**](DomainOrganizationRole.html) patchAuthorizationRole(roleId, body)
+# DomainOrganizationRole patchAuthorizationRole(roleId, body)
 
 PATCH /api/v2/authorization/roles/{roleId}
 
@@ -482,7 +482,7 @@ apiInstance.patchAuthorizationRole(roleId, body)
 
 <a name="postAuthorizationRoleComparedefaultRightRoleId"></a>
 
-# [**DomainOrgRoleDifference**](DomainOrgRoleDifference.html) postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body)
+# DomainOrgRoleDifference postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body)
 
 POST /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}
 
@@ -536,7 +536,7 @@ apiInstance.postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRole
 
 <a name="postAuthorizationRoles"></a>
 
-# [**DomainOrganizationRole**](DomainOrganizationRole.html) postAuthorizationRoles(body)
+# DomainOrganizationRole postAuthorizationRoles(body)
 
 POST /api/v2/authorization/roles
 
@@ -584,7 +584,7 @@ apiInstance.postAuthorizationRoles(body)
 
 <a name="postAuthorizationRolesDefault"></a>
 
-# [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html) postAuthorizationRolesDefault(opts)
+# OrganizationRoleEntityListing postAuthorizationRolesDefault(opts)
 
 POST /api/v2/authorization/roles/default
 
@@ -633,7 +633,7 @@ apiInstance.postAuthorizationRolesDefault(opts)
 
 <a name="putAuthorizationRole"></a>
 
-# [**DomainOrganizationRole**](DomainOrganizationRole.html) putAuthorizationRole(roleId, body)
+# DomainOrganizationRole putAuthorizationRole(roleId, body)
 
 PUT /api/v2/authorization/roles/{roleId}
 
@@ -786,7 +786,7 @@ apiInstance.putAuthorizationRoleUsersRemove(roleId, body)
 
 <a name="putAuthorizationRolesDefault"></a>
 
-# [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html) putAuthorizationRolesDefault(body)
+# OrganizationRoleEntityListing putAuthorizationRolesDefault(body)
 
 PUT /api/v2/authorization/roles/default
 
@@ -834,7 +834,7 @@ apiInstance.putAuthorizationRolesDefault(body)
 
 <a name="putUserRoles"></a>
 
-# [**UserAuthorization**](UserAuthorization.html) putUserRoles(userId, body)
+# UserAuthorization putUserRoles(userId, body)
 
 PUT /api/v2/users/{userId}/roles
 

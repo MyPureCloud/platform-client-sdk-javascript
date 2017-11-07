@@ -28,6 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getArchitectIvr**](ArchitectApi.html#getArchitectIvr) | **GET** /api/v2/architect/ivrs/{ivrId} | Get an IVR config.
 [**getArchitectIvrs**](ArchitectApi.html#getArchitectIvrs) | **GET** /api/v2/architect/ivrs | Get IVR configs.
 [**getArchitectPrompt**](ArchitectApi.html#getArchitectPrompt) | **GET** /api/v2/architect/prompts/{promptId} | Get specified user prompt
+[**getArchitectPromptHistoryHistoryId**](ArchitectApi.html#getArchitectPromptHistoryHistoryId) | **GET** /api/v2/architect/prompts/{promptId}/history/{historyId} | Get generated prompt history
 [**getArchitectPromptResource**](ArchitectApi.html#getArchitectPromptResource) | **GET** /api/v2/architect/prompts/{promptId}/resources/{languageCode} | Get specified user prompt resource
 [**getArchitectPromptResources**](ArchitectApi.html#getArchitectPromptResources) | **GET** /api/v2/architect/prompts/{promptId}/resources | Get a pageable list of user prompt resources
 [**getArchitectPrompts**](ArchitectApi.html#getArchitectPrompts) | **GET** /api/v2/architect/prompts | Get a pageable list of user prompts
@@ -36,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getArchitectSchedulegroups**](ArchitectApi.html#getArchitectSchedulegroups) | **GET** /api/v2/architect/schedulegroups | Get a list of schedule groups.
 [**getArchitectSchedules**](ArchitectApi.html#getArchitectSchedules) | **GET** /api/v2/architect/schedules | Get a list of schedules.
 [**getArchitectSystemprompt**](ArchitectApi.html#getArchitectSystemprompt) | **GET** /api/v2/architect/systemprompts/{promptId} | Get a system prompt
+[**getArchitectSystempromptHistoryHistoryId**](ArchitectApi.html#getArchitectSystempromptHistoryHistoryId) | **GET** /api/v2/architect/systemprompts/{promptId}/history/{historyId} | Get generated prompt history
 [**getArchitectSystempromptResource**](ArchitectApi.html#getArchitectSystempromptResource) | **GET** /api/v2/architect/systemprompts/{promptId}/resources/{languageCode} | Get a system prompt resource.
 [**getArchitectSystempromptResources**](ArchitectApi.html#getArchitectSystempromptResources) | **GET** /api/v2/architect/systemprompts/{promptId}/resources | Get system prompt resources.
 [**getArchitectSystemprompts**](ArchitectApi.html#getArchitectSystemprompts) | **GET** /api/v2/architect/systemprompts | Get System Prompts
@@ -48,10 +50,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlows**](ArchitectApi.html#getFlows) | **GET** /api/v2/flows | Get a pageable list of flows, filtered by query parameters
 [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | **POST** /api/v2/architect/dependencytracking/build | Rebuild Dependency Tracking data for an organization
 [**postArchitectIvrs**](ArchitectApi.html#postArchitectIvrs) | **POST** /api/v2/architect/ivrs | Create IVR config.
+[**postArchitectPromptHistory**](ArchitectApi.html#postArchitectPromptHistory) | **POST** /api/v2/architect/prompts/{promptId}/history | Generate prompt history
 [**postArchitectPromptResources**](ArchitectApi.html#postArchitectPromptResources) | **POST** /api/v2/architect/prompts/{promptId}/resources | Create a new user prompt resource
 [**postArchitectPrompts**](ArchitectApi.html#postArchitectPrompts) | **POST** /api/v2/architect/prompts | Create a new user prompt
 [**postArchitectSchedulegroups**](ArchitectApi.html#postArchitectSchedulegroups) | **POST** /api/v2/architect/schedulegroups | Creates a new schedule group
 [**postArchitectSchedules**](ArchitectApi.html#postArchitectSchedules) | **POST** /api/v2/architect/schedules | Create a new schedule.
+[**postArchitectSystempromptHistory**](ArchitectApi.html#postArchitectSystempromptHistory) | **POST** /api/v2/architect/systemprompts/{promptId}/history | Generate system prompt history
 [**postArchitectSystempromptResources**](ArchitectApi.html#postArchitectSystempromptResources) | **POST** /api/v2/architect/systemprompts/{promptId}/resources | Create system prompt resource override.
 [**postFlowVersions**](ArchitectApi.html#postFlowVersions) | **POST** /api/v2/flows/{flowId}/versions | Create flow version
 [**postFlows**](ArchitectApi.html#postFlows) | **POST** /api/v2/flows | Create flow
@@ -223,7 +227,7 @@ void (no response body)
 
 <a name="deleteArchitectPrompts"></a>
 
-# [**Operation**](Operation.html) deleteArchitectPrompts(id)
+# Operation deleteArchitectPrompts(id)
 
 DELETE /api/v2/architect/prompts
 
@@ -466,7 +470,7 @@ void (no response body)
 
 <a name="deleteFlows"></a>
 
-# [**Operation**](Operation.html) deleteFlows(id)
+# Operation deleteFlows(id)
 
 DELETE /api/v2/flows
 
@@ -514,7 +518,7 @@ apiInstance.deleteFlows(id)
 
 <a name="getArchitectDependencytracking"></a>
 
-# [**DependencyObjectEntityListing**](DependencyObjectEntityListing.html) getArchitectDependencytracking(name, opts)
+# DependencyObjectEntityListing getArchitectDependencytracking(name, opts)
 
 GET /api/v2/architect/dependencytracking
 
@@ -578,7 +582,7 @@ apiInstance.getArchitectDependencytracking(name, opts)
 
 <a name="getArchitectDependencytrackingBuild"></a>
 
-# [**DependencyStatus**](DependencyStatus.html) getArchitectDependencytrackingBuild()
+# DependencyStatus getArchitectDependencytrackingBuild()
 
 GET /api/v2/architect/dependencytracking/build
 
@@ -620,7 +624,7 @@ This endpoint does not need any parameter.
 
 <a name="getArchitectDependencytrackingConsumedresources"></a>
 
-# [**ConsumedResourcesEntityListing**](ConsumedResourcesEntityListing.html) getArchitectDependencytrackingConsumedresources(id, version, objectType, opts)
+# ConsumedResourcesEntityListing getArchitectDependencytrackingConsumedresources(id, version, objectType, opts)
 
 GET /api/v2/architect/dependencytracking/consumedresources
 
@@ -678,7 +682,7 @@ apiInstance.getArchitectDependencytrackingConsumedresources(id, version, objectT
 
 <a name="getArchitectDependencytrackingConsumingresources"></a>
 
-# [**ConsumingResourcesEntityListing**](ConsumingResourcesEntityListing.html) getArchitectDependencytrackingConsumingresources(id, objectType, opts)
+# ConsumingResourcesEntityListing getArchitectDependencytrackingConsumingresources(id, objectType, opts)
 
 GET /api/v2/architect/dependencytracking/consumingresources
 
@@ -733,7 +737,7 @@ apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, opt
 
 <a name="getArchitectDependencytrackingDeletedresourceconsumers"></a>
 
-# [**DependencyObjectEntityListing**](DependencyObjectEntityListing.html) getArchitectDependencytrackingDeletedresourceconsumers(opts)
+# DependencyObjectEntityListing getArchitectDependencytrackingDeletedresourceconsumers(opts)
 
 GET /api/v2/architect/dependencytracking/deletedresourceconsumers
 
@@ -794,7 +798,7 @@ apiInstance.getArchitectDependencytrackingDeletedresourceconsumers(opts)
 
 <a name="getArchitectDependencytrackingObject"></a>
 
-# [**DependencyObject**](DependencyObject.html) getArchitectDependencytrackingObject(id, opts)
+# DependencyObject getArchitectDependencytrackingObject(id, opts)
 
 GET /api/v2/architect/dependencytracking/object
 
@@ -856,7 +860,7 @@ apiInstance.getArchitectDependencytrackingObject(id, opts)
 
 <a name="getArchitectDependencytrackingType"></a>
 
-# [**DependencyType**](DependencyType.html) getArchitectDependencytrackingType(typeId)
+# DependencyType getArchitectDependencytrackingType(typeId)
 
 GET /api/v2/architect/dependencytracking/types/{typeId}
 
@@ -904,7 +908,7 @@ apiInstance.getArchitectDependencytrackingType(typeId)
 
 <a name="getArchitectDependencytrackingTypes"></a>
 
-# [**DependencyTypeEntityListing**](DependencyTypeEntityListing.html) getArchitectDependencytrackingTypes(opts)
+# DependencyTypeEntityListing getArchitectDependencytrackingTypes(opts)
 
 GET /api/v2/architect/dependencytracking/types
 
@@ -955,7 +959,7 @@ apiInstance.getArchitectDependencytrackingTypes(opts)
 
 <a name="getArchitectDependencytrackingUpdatedresourceconsumers"></a>
 
-# [**DependencyObjectEntityListing**](DependencyObjectEntityListing.html) getArchitectDependencytrackingUpdatedresourceconsumers(opts)
+# DependencyObjectEntityListing getArchitectDependencytrackingUpdatedresourceconsumers(opts)
 
 GET /api/v2/architect/dependencytracking/updatedresourceconsumers
 
@@ -1014,7 +1018,7 @@ apiInstance.getArchitectDependencytrackingUpdatedresourceconsumers(opts)
 
 <a name="getArchitectIvr"></a>
 
-# [**IVR**](IVR.html) getArchitectIvr(ivrId)
+# IVR getArchitectIvr(ivrId)
 
 GET /api/v2/architect/ivrs/{ivrId}
 
@@ -1062,7 +1066,7 @@ apiInstance.getArchitectIvr(ivrId)
 
 <a name="getArchitectIvrs"></a>
 
-# [**IVREntityListing**](IVREntityListing.html) getArchitectIvrs(opts)
+# IVREntityListing getArchitectIvrs(opts)
 
 GET /api/v2/architect/ivrs
 
@@ -1119,7 +1123,7 @@ apiInstance.getArchitectIvrs(opts)
 
 <a name="getArchitectPrompt"></a>
 
-# [**Prompt**](Prompt.html) getArchitectPrompt(promptId)
+# Prompt getArchitectPrompt(promptId)
 
 GET /api/v2/architect/prompts/{promptId}
 
@@ -1165,9 +1169,72 @@ apiInstance.getArchitectPrompt(promptId)
 
 **Prompt**
 
+<a name="getArchitectPromptHistoryHistoryId"></a>
+
+# HistoryListing getArchitectPromptHistoryHistoryId(promptId, historyId, opts)
+
+GET /api/v2/architect/prompts/{promptId}/history/{historyId}
+
+Get generated prompt history
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var promptId = "promptId_example"; // String | Prompt ID
+
+var historyId = "historyId_example"; // String | History request ID
+
+var opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortOrder': "desc", // String | Sort order
+  'sortBy': "timestamp", // String | Sort by
+  'action': ["action_example"] // [String] | Flow actions to include (omit to include all)
+};
+apiInstance.getArchitectPromptHistoryHistoryId(promptId, historyId, opts)
+  .then(function(data) {
+    console.log(`getArchitectPromptHistoryHistoryId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getArchitectPromptHistoryHistoryId');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **promptId** | **String** | Prompt ID |  |
+ **historyId** | **String** | History request ID |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortOrder** | **String** | Sort order | [optional] [default to desc] |
+ **sortBy** | **String** | Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user |
+ **action** | **[String]** | Flow actions to include (omit to include all) | [optional] <br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save |
+{: class="table table-striped"}
+
+### Return type
+
+**HistoryListing**
+
 <a name="getArchitectPromptResource"></a>
 
-# [**PromptAsset**](PromptAsset.html) getArchitectPromptResource(promptId, languageCode)
+# PromptAsset getArchitectPromptResource(promptId, languageCode)
 
 GET /api/v2/architect/prompts/{promptId}/resources/{languageCode}
 
@@ -1218,7 +1285,7 @@ apiInstance.getArchitectPromptResource(promptId, languageCode)
 
 <a name="getArchitectPromptResources"></a>
 
-# [**PromptAssetEntityListing**](PromptAssetEntityListing.html) getArchitectPromptResources(promptId, opts)
+# PromptAssetEntityListing getArchitectPromptResources(promptId, opts)
 
 GET /api/v2/architect/prompts/{promptId}/resources
 
@@ -1272,7 +1339,7 @@ apiInstance.getArchitectPromptResources(promptId, opts)
 
 <a name="getArchitectPrompts"></a>
 
-# [**PromptEntityListing**](PromptEntityListing.html) getArchitectPrompts(opts)
+# PromptEntityListing getArchitectPrompts(opts)
 
 GET /api/v2/architect/prompts
 
@@ -1329,7 +1396,7 @@ apiInstance.getArchitectPrompts(opts)
 
 <a name="getArchitectSchedule"></a>
 
-# [**Schedule**](Schedule.html) getArchitectSchedule(scheduleId)
+# Schedule getArchitectSchedule(scheduleId)
 
 GET /api/v2/architect/schedules/{scheduleId}
 
@@ -1377,7 +1444,7 @@ apiInstance.getArchitectSchedule(scheduleId)
 
 <a name="getArchitectSchedulegroup"></a>
 
-# [**ScheduleGroup**](ScheduleGroup.html) getArchitectSchedulegroup(scheduleGroupId)
+# ScheduleGroup getArchitectSchedulegroup(scheduleGroupId)
 
 GET /api/v2/architect/schedulegroups/{scheduleGroupId}
 
@@ -1425,7 +1492,7 @@ apiInstance.getArchitectSchedulegroup(scheduleGroupId)
 
 <a name="getArchitectSchedulegroups"></a>
 
-# [**ScheduleGroupEntityListing**](ScheduleGroupEntityListing.html) getArchitectSchedulegroups(opts)
+# ScheduleGroupEntityListing getArchitectSchedulegroups(opts)
 
 GET /api/v2/architect/schedulegroups
 
@@ -1482,7 +1549,7 @@ apiInstance.getArchitectSchedulegroups(opts)
 
 <a name="getArchitectSchedules"></a>
 
-# [**ScheduleEntityListing**](ScheduleEntityListing.html) getArchitectSchedules(opts)
+# ScheduleEntityListing getArchitectSchedules(opts)
 
 GET /api/v2/architect/schedules
 
@@ -1539,7 +1606,7 @@ apiInstance.getArchitectSchedules(opts)
 
 <a name="getArchitectSystemprompt"></a>
 
-# [**SystemPrompt**](SystemPrompt.html) getArchitectSystemprompt(promptId)
+# SystemPrompt getArchitectSystemprompt(promptId)
 
 GET /api/v2/architect/systemprompts/{promptId}
 
@@ -1585,9 +1652,72 @@ apiInstance.getArchitectSystemprompt(promptId)
 
 **SystemPrompt**
 
+<a name="getArchitectSystempromptHistoryHistoryId"></a>
+
+# HistoryListing getArchitectSystempromptHistoryHistoryId(promptId, historyId, opts)
+
+GET /api/v2/architect/systemprompts/{promptId}/history/{historyId}
+
+Get generated prompt history
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var promptId = "promptId_example"; // String | promptId
+
+var historyId = "historyId_example"; // String | History request ID
+
+var opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortOrder': "desc", // String | Sort order
+  'sortBy': "timestamp", // String | Sort by
+  'action': ["action_example"] // [String] | Flow actions to include (omit to include all)
+};
+apiInstance.getArchitectSystempromptHistoryHistoryId(promptId, historyId, opts)
+  .then(function(data) {
+    console.log(`getArchitectSystempromptHistoryHistoryId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling getArchitectSystempromptHistoryHistoryId');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **promptId** | **String** | promptId |  |
+ **historyId** | **String** | History request ID |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortOrder** | **String** | Sort order | [optional] [default to desc] |
+ **sortBy** | **String** | Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user |
+ **action** | **[String]** | Flow actions to include (omit to include all) | [optional] <br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save |
+{: class="table table-striped"}
+
+### Return type
+
+**HistoryListing**
+
 <a name="getArchitectSystempromptResource"></a>
 
-# [**SystemPromptAsset**](SystemPromptAsset.html) getArchitectSystempromptResource(promptId, languageCode)
+# SystemPromptAsset getArchitectSystempromptResource(promptId, languageCode)
 
 GET /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}
 
@@ -1638,7 +1768,7 @@ apiInstance.getArchitectSystempromptResource(promptId, languageCode)
 
 <a name="getArchitectSystempromptResources"></a>
 
-# [**SystemPromptAssetEntityListing**](SystemPromptAssetEntityListing.html) getArchitectSystempromptResources(promptId, opts)
+# SystemPromptAssetEntityListing getArchitectSystempromptResources(promptId, opts)
 
 GET /api/v2/architect/systemprompts/{promptId}/resources
 
@@ -1696,7 +1826,7 @@ apiInstance.getArchitectSystempromptResources(promptId, opts)
 
 <a name="getArchitectSystemprompts"></a>
 
-# [**SystemPromptEntityListing**](SystemPromptEntityListing.html) getArchitectSystemprompts(opts)
+# SystemPromptEntityListing getArchitectSystemprompts(opts)
 
 GET /api/v2/architect/systemprompts
 
@@ -1757,7 +1887,7 @@ apiInstance.getArchitectSystemprompts(opts)
 
 <a name="getFlow"></a>
 
-# [**Flow**](Flow.html) getFlow(flowId, opts)
+# Flow getFlow(flowId, opts)
 
 GET /api/v2/flows/{flowId}
 
@@ -1809,7 +1939,7 @@ apiInstance.getFlow(flowId, opts)
 
 <a name="getFlowHistoryHistoryId"></a>
 
-# [**HistoryListing**](HistoryListing.html) getFlowHistoryHistoryId(flowId, historyId, opts)
+# HistoryListing getFlowHistoryHistoryId(flowId, historyId, opts)
 
 GET /api/v2/flows/{flowId}/history/{historyId}
 
@@ -1832,7 +1962,7 @@ var apiInstance = new platformClient.ArchitectApi();
 
 var flowId = "flowId_example"; // String | Flow ID
 
-var historyId = "historyId_example"; // String | History ID (generated history)
+var historyId = "historyId_example"; // String | History request ID
 
 var opts = { 
   'pageNumber': 1, // Number | Page number
@@ -1858,7 +1988,7 @@ apiInstance.getFlowHistoryHistoryId(flowId, historyId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **flowId** | **String** | Flow ID |  |
- **historyId** | **String** | History ID (generated history) |  |
+ **historyId** | **String** | History request ID |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **sortOrder** | **String** | Sort order | [optional] [default to desc] |
@@ -1924,7 +2054,7 @@ apiInstance.getFlowLatestconfiguration(flowId, opts)
 
 <a name="getFlowVersion"></a>
 
-# [**FlowVersion**](FlowVersion.html) getFlowVersion(flowId, versionId, opts)
+# FlowVersion getFlowVersion(flowId, versionId, opts)
 
 GET /api/v2/flows/{flowId}/versions/{versionId}
 
@@ -2034,7 +2164,7 @@ apiInstance.getFlowVersionConfiguration(flowId, versionId, opts)
 
 <a name="getFlowVersions"></a>
 
-# [**FlowVersionEntityListing**](FlowVersionEntityListing.html) getFlowVersions(flowId, opts)
+# FlowVersionEntityListing getFlowVersions(flowId, opts)
 
 GET /api/v2/flows/{flowId}/versions
 
@@ -2090,7 +2220,7 @@ apiInstance.getFlowVersions(flowId, opts)
 
 <a name="getFlows"></a>
 
-# [**FlowEntityListing**](FlowEntityListing.html) getFlows(type, opts)
+# FlowEntityListing getFlows(type, opts)
 
 GET /api/v2/flows
 
@@ -2214,7 +2344,7 @@ void (no response body)
 
 <a name="postArchitectIvrs"></a>
 
-# [**IVR**](IVR.html) postArchitectIvrs(opts)
+# IVR postArchitectIvrs(opts)
 
 POST /api/v2/architect/ivrs
 
@@ -2261,9 +2391,57 @@ apiInstance.postArchitectIvrs(opts)
 
 **IVR**
 
+<a name="postArchitectPromptHistory"></a>
+
+# Operation postArchitectPromptHistory(promptId)
+
+POST /api/v2/architect/prompts/{promptId}/history
+
+Generate prompt history
+
+Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var promptId = "promptId_example"; // String | Prompt ID
+
+apiInstance.postArchitectPromptHistory(promptId)
+  .then(function(data) {
+    console.log(`postArchitectPromptHistory success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling postArchitectPromptHistory');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **promptId** | **String** | Prompt ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Operation**
+
 <a name="postArchitectPromptResources"></a>
 
-# [**PromptAsset**](PromptAsset.html) postArchitectPromptResources(promptId, opts)
+# PromptAsset postArchitectPromptResources(promptId, opts)
 
 POST /api/v2/architect/prompts/{promptId}/resources
 
@@ -2315,7 +2493,7 @@ apiInstance.postArchitectPromptResources(promptId, opts)
 
 <a name="postArchitectPrompts"></a>
 
-# [**Prompt**](Prompt.html) postArchitectPrompts(opts)
+# Prompt postArchitectPrompts(opts)
 
 POST /api/v2/architect/prompts
 
@@ -2364,7 +2542,7 @@ apiInstance.postArchitectPrompts(opts)
 
 <a name="postArchitectSchedulegroups"></a>
 
-# [**ScheduleGroup**](ScheduleGroup.html) postArchitectSchedulegroups(opts)
+# ScheduleGroup postArchitectSchedulegroups(opts)
 
 POST /api/v2/architect/schedulegroups
 
@@ -2413,7 +2591,7 @@ apiInstance.postArchitectSchedulegroups(opts)
 
 <a name="postArchitectSchedules"></a>
 
-# [**Schedule**](Schedule.html) postArchitectSchedules(opts)
+# Schedule postArchitectSchedules(opts)
 
 POST /api/v2/architect/schedules
 
@@ -2460,9 +2638,57 @@ apiInstance.postArchitectSchedules(opts)
 
 **Schedule**
 
+<a name="postArchitectSystempromptHistory"></a>
+
+# Operation postArchitectSystempromptHistory(promptId)
+
+POST /api/v2/architect/systemprompts/{promptId}/history
+
+Generate system prompt history
+
+Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var promptId = "promptId_example"; // String | promptId
+
+apiInstance.postArchitectSystempromptHistory(promptId)
+  .then(function(data) {
+    console.log(`postArchitectSystempromptHistory success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(error) {
+  	console.log('There was a failure calling postArchitectSystempromptHistory');
+    console.error(error);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **promptId** | **String** | promptId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Operation**
+
 <a name="postArchitectSystempromptResources"></a>
 
-# [**SystemPromptAsset**](SystemPromptAsset.html) postArchitectSystempromptResources(promptId, opts)
+# SystemPromptAsset postArchitectSystempromptResources(promptId, opts)
 
 POST /api/v2/architect/systemprompts/{promptId}/resources
 
@@ -2514,7 +2740,7 @@ apiInstance.postArchitectSystempromptResources(promptId, opts)
 
 <a name="postFlowVersions"></a>
 
-# [**FlowVersion**](FlowVersion.html) postFlowVersions(flowId, opts)
+# FlowVersion postFlowVersions(flowId, opts)
 
 POST /api/v2/flows/{flowId}/versions
 
@@ -2566,7 +2792,7 @@ apiInstance.postFlowVersions(flowId, opts)
 
 <a name="postFlows"></a>
 
-# [**Flow**](Flow.html) postFlows(opts)
+# Flow postFlows(opts)
 
 POST /api/v2/flows
 
@@ -2615,7 +2841,7 @@ apiInstance.postFlows(opts)
 
 <a name="postFlowsActionsCheckin"></a>
 
-# [**Flow**](Flow.html) postFlowsActionsCheckin(flow)
+# Flow postFlowsActionsCheckin(flow)
 
 POST /api/v2/flows/actions/checkin
 
@@ -2663,7 +2889,7 @@ apiInstance.postFlowsActionsCheckin(flow)
 
 <a name="postFlowsActionsCheckout"></a>
 
-# [**Flow**](Flow.html) postFlowsActionsCheckout(flow)
+# Flow postFlowsActionsCheckout(flow)
 
 POST /api/v2/flows/actions/checkout
 
@@ -2711,7 +2937,7 @@ apiInstance.postFlowsActionsCheckout(flow)
 
 <a name="postFlowsActionsDeactivate"></a>
 
-# [**Flow**](Flow.html) postFlowsActionsDeactivate(flow)
+# Flow postFlowsActionsDeactivate(flow)
 
 POST /api/v2/flows/actions/deactivate
 
@@ -2759,7 +2985,7 @@ apiInstance.postFlowsActionsDeactivate(flow)
 
 <a name="postFlowsActionsPublish"></a>
 
-# [**Operation**](Operation.html) postFlowsActionsPublish(flow, opts)
+# Operation postFlowsActionsPublish(flow, opts)
 
 POST /api/v2/flows/actions/publish
 
@@ -2811,7 +3037,7 @@ apiInstance.postFlowsActionsPublish(flow, opts)
 
 <a name="postFlowsActionsRevert"></a>
 
-# [**Flow**](Flow.html) postFlowsActionsRevert(flow)
+# Flow postFlowsActionsRevert(flow)
 
 POST /api/v2/flows/actions/revert
 
@@ -2859,7 +3085,7 @@ apiInstance.postFlowsActionsRevert(flow)
 
 <a name="postFlowsActionsUnlock"></a>
 
-# [**Flow**](Flow.html) postFlowsActionsUnlock(flow)
+# Flow postFlowsActionsUnlock(flow)
 
 POST /api/v2/flows/actions/unlock
 
@@ -2907,7 +3133,7 @@ apiInstance.postFlowsActionsUnlock(flow)
 
 <a name="putArchitectIvr"></a>
 
-# [**IVR**](IVR.html) putArchitectIvr(ivrId, opts)
+# IVR putArchitectIvr(ivrId, opts)
 
 PUT /api/v2/architect/ivrs/{ivrId}
 
@@ -2959,7 +3185,7 @@ apiInstance.putArchitectIvr(ivrId, opts)
 
 <a name="putArchitectPrompt"></a>
 
-# [**Prompt**](Prompt.html) putArchitectPrompt(promptId, opts)
+# Prompt putArchitectPrompt(promptId, opts)
 
 PUT /api/v2/architect/prompts/{promptId}
 
@@ -3011,7 +3237,7 @@ apiInstance.putArchitectPrompt(promptId, opts)
 
 <a name="putArchitectPromptResource"></a>
 
-# [**PromptAsset**](PromptAsset.html) putArchitectPromptResource(promptId, languageCode, opts)
+# PromptAsset putArchitectPromptResource(promptId, languageCode, opts)
 
 PUT /api/v2/architect/prompts/{promptId}/resources/{languageCode}
 
@@ -3066,7 +3292,7 @@ apiInstance.putArchitectPromptResource(promptId, languageCode, opts)
 
 <a name="putArchitectSchedule"></a>
 
-# [**Schedule**](Schedule.html) putArchitectSchedule(scheduleId, opts)
+# Schedule putArchitectSchedule(scheduleId, opts)
 
 PUT /api/v2/architect/schedules/{scheduleId}
 
@@ -3118,7 +3344,7 @@ apiInstance.putArchitectSchedule(scheduleId, opts)
 
 <a name="putArchitectSchedulegroup"></a>
 
-# [**ScheduleGroup**](ScheduleGroup.html) putArchitectSchedulegroup(scheduleGroupId, opts)
+# ScheduleGroup putArchitectSchedulegroup(scheduleGroupId, opts)
 
 PUT /api/v2/architect/schedulegroups/{scheduleGroupId}
 
@@ -3170,7 +3396,7 @@ apiInstance.putArchitectSchedulegroup(scheduleGroupId, opts)
 
 <a name="putArchitectSystempromptResource"></a>
 
-# [**SystemPromptAsset**](SystemPromptAsset.html) putArchitectSystempromptResource(promptId, languageCode, opts)
+# SystemPromptAsset putArchitectSystempromptResource(promptId, languageCode, opts)
 
 PUT /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}
 
@@ -3225,7 +3451,7 @@ apiInstance.putArchitectSystempromptResource(promptId, languageCode, opts)
 
 <a name="putFlow"></a>
 
-# [**Flow**](Flow.html) putFlow(flowId, opts)
+# Flow putFlow(flowId, opts)
 
 PUT /api/v2/flows/{flowId}
 
