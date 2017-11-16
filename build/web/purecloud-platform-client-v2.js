@@ -3242,7 +3242,7 @@ module.exports = request;
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -3865,7 +3865,7 @@ module.exports = request;
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '12.0.0' });
+    //request.set({ 'purecloud-sdk': '13.0.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -3902,6 +3902,21 @@ module.exports = request;
 
     return new Promise(function(resolve, reject) {
       request.end(function(error, response) {
+      	if (error) {
+	      	console.log(error);
+	      	if (!response) {
+		      	console.log('Response object was not defined!');
+		      	reject({
+              status: 0,
+              statusText: 'error',
+              headers: [],
+              body: {},
+              text: 'error',
+              error: error
+            });
+            return;
+		      }
+	      }
 
         // Build response object
         var data = (_this.returnExtended === true || error) ? {
@@ -4003,7 +4018,7 @@ module.exports = request;
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -4359,7 +4374,7 @@ module.exports = request;
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -5024,7 +5039,7 @@ module.exports = request;
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -5797,6 +5812,8 @@ module.exports = request;
      * @param {String} opts.name Name
      * @param {String} opts.description Description
      * @param {String} opts.nameOrDescription Name or description
+     * @param {String} opts.sortBy Sort by (default to id)
+     * @param {String} opts.sortOrder Sort order (default to asc)
      */
     this.getArchitectPrompts = function(opts) { 
       opts = opts || {};
@@ -5806,7 +5823,7 @@ module.exports = request;
         '/api/v2/architect/prompts', 
         'GET', 
         {  }, 
-        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'] }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
         {  }, 
         {  }, 
         null, 
@@ -7075,7 +7092,7 @@ module.exports = request;
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -7286,7 +7303,7 @@ module.exports = request;
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -7844,7 +7861,7 @@ module.exports = request;
   /**
    * Billing service.
    * @module purecloud-platform-client-v2/api/BillingApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -7917,7 +7934,7 @@ module.exports = request;
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -9174,7 +9191,7 @@ module.exports = request;
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -11963,7 +11980,7 @@ module.exports = request;
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -12947,7 +12964,7 @@ module.exports = request;
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -13152,7 +13169,7 @@ module.exports = request;
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -13315,7 +13332,7 @@ module.exports = request;
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -13835,7 +13852,7 @@ module.exports = request;
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -14206,7 +14223,7 @@ module.exports = request;
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -14915,7 +14932,7 @@ module.exports = request;
   /**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -15623,7 +15640,7 @@ module.exports = request;
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -15936,7 +15953,7 @@ module.exports = request;
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -16181,7 +16198,7 @@ module.exports = request;
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -16334,7 +16351,7 @@ module.exports = request;
   /**
    * MobileDevices service.
    * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -16515,7 +16532,7 @@ module.exports = request;
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -16747,7 +16764,7 @@ module.exports = request;
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -16954,7 +16971,7 @@ module.exports = request;
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -17102,7 +17119,7 @@ module.exports = request;
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -17867,7 +17884,7 @@ module.exports = request;
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -20536,7 +20553,7 @@ module.exports = request;
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -20820,7 +20837,7 @@ module.exports = request;
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -21861,7 +21878,7 @@ module.exports = request;
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -22987,7 +23004,7 @@ module.exports = request;
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -23358,7 +23375,7 @@ module.exports = request;
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -24751,7 +24768,7 @@ module.exports = request;
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -25090,7 +25107,7 @@ module.exports = request;
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -25547,7 +25564,7 @@ module.exports = request;
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -25674,7 +25691,7 @@ module.exports = request;
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -25839,7 +25856,7 @@ module.exports = request;
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -29762,7 +29779,7 @@ module.exports = request;
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -29845,7 +29862,7 @@ module.exports = request;
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -30060,7 +30077,7 @@ module.exports = request;
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -31448,7 +31465,7 @@ module.exports = request;
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -31563,7 +31580,7 @@ module.exports = request;
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -32278,7 +32295,7 @@ module.exports = request;
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -32760,7 +32777,7 @@ module.exports = request;
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 12.0.0
+   * @version 13.0.0
    */
   var platformClient = {
     /**

@@ -1365,7 +1365,9 @@ var opts = {
   'pageSize': 25, // Number | Page size
   'name': "name_example", // String | Name
   'description': "description_example", // String | Description
-  'nameOrDescription': "nameOrDescription_example" // String | Name or description
+  'nameOrDescription': "nameOrDescription_example", // String | Name or description
+  'sortBy': "id", // String | Sort by
+  'sortOrder': "asc" // String | Sort order
 };
 apiInstance.getArchitectPrompts(opts)
   .then(function(data) {
@@ -1388,6 +1390,8 @@ apiInstance.getArchitectPrompts(opts)
  **name** | **String** | Name | [optional]  |
  **description** | **String** | Description | [optional]  |
  **nameOrDescription** | **String** | Name or description | [optional]  |
+ **sortBy** | **String** | Sort by | [optional] [default to id] |
+ **sortOrder** | **String** | Sort order | [optional] [default to asc] |
 {: class="table table-striped"}
 
 ### Return type

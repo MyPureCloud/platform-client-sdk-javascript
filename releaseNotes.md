@@ -1,159 +1,116 @@
-Platform API version: 1643
+Platform API version: 1686
 
 
-# Major Changes (14 changes)
+# SDK Changes
 
-**GET /api/v2/scripts/published/{scriptId}/pages/{pageId}** (1 change)
+* Added additional tracing and error handling in ApiClient to handle missing response object
 
-* Parameter scriptDataVersion was added
+# Major Changes (3 changes)
 
-**GET /api/v2/scripts/published** (2 changes)
+**GET /api/v2/architect/prompts** (2 changes)
 
-* Parameter scriptId was added
-* Parameter scriptDataVersion was added
+* Parameter sortBy was added
+* Parameter sortOrder was added
 
-**GET /api/v2/scripts** (1 change)
+**UpdateUser** (1 change)
 
-* Parameter scriptDataVersion was added
-
-**GET /api/v2/scripts/published/{scriptId}/pages** (2 changes)
-
-* Parameter foo was added
-* Parameter scriptDataVersion was added
-
-**GET /api/v2/integrations/actions** (1 change)
-
-* Parameter includeAuthActions was added
-
-**GET /api/v2/integrations/actions/drafts** (1 change)
-
-* Parameter includeAuthActions was added
-
-**GET /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}** (1 change)
-
-* Operation x-purecloud-method-name was changed from getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis to getTelephonyProvidersEdgesEdgegroupEdgetrunkbase
-
-**PUT /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}** (1 change)
-
-* Operation x-purecloud-method-name was changed from putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis to putTelephonyProvidersEdgesEdgegroupEdgetrunkbase
-
-**GET /api/v2/scripts/{scriptId}/pages/{pageId}** (1 change)
-
-* Parameter scriptDataVersion was added
-
-**GET /api/v2/scripts/{scriptId}/pages** (1 change)
-
-* Parameter scriptDataVersion was added
-
-**GET /api/v2/scripts/published/{scriptId}** (1 change)
-
-* Parameter scriptDataVersion was added
-
-**GET /api/v2/scripts/published/{scriptId}/variables** (1 change)
-
-* Parameter scriptDataVersion was added
+* primaryContactInfo has been made readonly
 
 
-# Minor Changes (40 changes)
-
-**/api/v2/architect/systemprompts/{promptId}/history** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/architect/systemprompts/{promptId}/history/{historyId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/architect/prompts/{promptId}/history** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/architect/prompts/{promptId}/history/{historyId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**Message** (1 change)
-
-* Model was added
-
-**MessageDetails** (1 change)
-
-* Model was added
+# Minor Changes (27 changes)
 
 **Participant** (1 change)
 
-* Optional property messages was added
+* Enum value timeout was added to property screenRecordingState
 
-**AggregateMetricData** (2 changes)
+**Queue** (2 changes)
 
-* Enum value tVoicemail was added to property metric
-* Enum value nStateTransitionError was added to property metric
+* Optional property whisperAudio was added
+* Optional property autoAnswerOnly was added
 
-**AggregationQuery** (7 changes)
+**AdherenceSettings** (1 change)
 
-* Enum value requestedRoutingUserIds was added to property groupBy
-* Enum value convertedFrom was added to property groupBy
-* Enum value convertedTo was added to property groupBy
-* Enum value addressSelf was added to property groupBy
-* Enum value addressOther was added to property groupBy
-* Enum value tVoicemail was added to property metrics
-* Enum value nStateTransitionError was added to property metrics
+* Model was added
 
-**AnalyticsQueryPredicate** (7 changes)
+**ManagementUnit** (2 changes)
 
-* Enum value requestedRoutingUserIds was added to property dimension
-* Enum value convertedFrom was added to property dimension
-* Enum value convertedTo was added to property dimension
-* Enum value addressSelf was added to property dimension
-* Enum value addressOther was added to property dimension
-* Enum value tVoicemail was added to property metric
-* Enum value nStateTransitionError was added to property metric
+* Optional property settings was added
+* Optional property modifiedBy was added
 
-**AnalyticsConversationSegment** (1 change)
+**ManagementUnitSettings** (1 change)
 
-* Enum value uncallable was added to property disconnectType
+* Model was added
 
-**AnalyticsParticipant** (2 changes)
+**SchedulingSettings** (1 change)
 
-* Enum value fax was added to property purpose
-* Enum value workflow was added to property purpose
+* Model was added
 
-**AnalyticsSession** (4 changes)
+**ShortTermForecastingSettings** (1 change)
 
-* Enum value message was added to property mediaType
-* Optional property addressFrom was added
-* Optional property addressTo was added
-* Optional property peerId was added
+* Model was added
 
-**CallHistoryParticipant** (2 changes)
+**TimeOffRequestSettings** (1 change)
 
-* Optional property didInteract was added
-* Optional property sipResponseCodes was added
+* Model was added
 
-**ConversationAssociation** (1 change)
+**UserQueue** (2 changes)
 
-* Enum value MESSAGE was added to property mediaType
+* Optional property whisperAudio was added
+* Optional property autoAnswerOnly was added
 
-**ObservationQuery** (2 changes)
+**CallForwarding** (2 changes)
 
-* Enum value tVoicemail was added to property metrics
-* Enum value nStateTransitionError was added to property metrics
+* Optional property calls was added
+* Optional property voicemail was added
+
+**CallRoute** (1 change)
+
+* Model was added
+
+**CallTarget** (1 change)
+
+* Model was added
+
+**ExternalContact** (1 change)
+
+* Optional property surveyOptOut was added
+
+**AnalyticsQueryPredicate** (1 change)
+
+* Enum value tFlowOut was added to property metric
+
+**AggregateMetricData** (1 change)
+
+* Enum value tFlowOut was added to property metric
+
+**AggregationQuery** (1 change)
+
+* Enum value tFlowOut was added to property metrics
+
+**IntradayQueue** (1 change)
+
+* Enum value Message was added to property mediaTypes
+
+**IntradayDataGroup** (1 change)
+
+* Enum value Message was added to property mediaType
+
+**CreateQueueRequest** (2 changes)
+
+* Optional property whisperAudio was added
+* Optional property autoAnswerOnly was added
+
+**ObservationQuery** (1 change)
+
+* Enum value tFlowOut was added to property metrics
 
 **ParticipantBasic** (1 change)
 
-* Optional property messages was added
+* Enum value timeout was added to property screenRecordingState
+
+**CallMediaParticipant** (1 change)
+
+* Optional property uuiData was added
 
 
-# Point Changes (2 changes)
-
-**GET /api/v2/flows/{flowId}/history/{historyId}** (1 change)
-
-* Description was changed for parameter historyId
-
-**GET /api/v2/quality/evaluations/query** (1 change)
-
-* Description was changed for parameter evaluationState
+# Point Changes (0 changes)

@@ -18,7 +18,7 @@
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -791,6 +791,8 @@
      * @param {String} opts.name Name
      * @param {String} opts.description Description
      * @param {String} opts.nameOrDescription Name or description
+     * @param {String} opts.sortBy Sort by (default to id)
+     * @param {String} opts.sortOrder Sort order (default to asc)
      */
     this.getArchitectPrompts = function(opts) { 
       opts = opts || {};
@@ -800,7 +802,7 @@
         '/api/v2/architect/prompts', 
         'GET', 
         {  }, 
-        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'] }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
         {  }, 
         {  }, 
         null, 

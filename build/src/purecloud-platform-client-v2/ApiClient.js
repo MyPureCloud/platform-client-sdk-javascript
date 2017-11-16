@@ -17,7 +17,7 @@
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 12.0.0
+   * @version 13.0.0
    */
 
   /**
@@ -640,7 +640,7 @@
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '12.0.0' });
+    //request.set({ 'purecloud-sdk': '13.0.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -677,6 +677,21 @@
 
     return new Promise(function(resolve, reject) {
       request.end(function(error, response) {
+      	if (error) {
+	      	console.log(error);
+	      	if (!response) {
+		      	console.log('Response object was not defined!');
+		      	reject({
+              status: 0,
+              statusText: 'error',
+              headers: [],
+              body: {},
+              text: 'error',
+              error: error
+            });
+            return;
+		      }
+	      }
 
         // Build response object
         var data = (_this.returnExtended === true || error) ? {
