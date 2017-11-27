@@ -103,9 +103,9 @@ apiInstance.deleteArchitectIvr(ivrId)
   .then(function() {
     console.log('deleteArchitectIvr returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteArchitectIvr');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -154,9 +154,9 @@ apiInstance.deleteArchitectPrompt(promptId, opts)
   .then(function() {
     console.log('deleteArchitectPrompt returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteArchitectPrompt');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -205,9 +205,9 @@ apiInstance.deleteArchitectPromptResource(promptId, languageCode)
   .then(function() {
     console.log('deleteArchitectPromptResource returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteArchitectPromptResource');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -254,9 +254,9 @@ apiInstance.deleteArchitectPrompts(id)
   .then(function(data) {
     console.log(`deleteArchitectPrompts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteArchitectPrompts');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -302,9 +302,9 @@ apiInstance.deleteArchitectSchedule(scheduleId)
   .then(function() {
     console.log('deleteArchitectSchedule returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteArchitectSchedule');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -350,9 +350,9 @@ apiInstance.deleteArchitectSchedulegroup(scheduleGroupId)
   .then(function() {
     console.log('deleteArchitectSchedulegroup returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteArchitectSchedulegroup');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -400,9 +400,9 @@ apiInstance.deleteArchitectSystempromptResource(promptId, languageCode)
   .then(function() {
     console.log('deleteArchitectSystempromptResource returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteArchitectSystempromptResource');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -449,9 +449,9 @@ apiInstance.deleteFlow(flowId)
   .then(function() {
     console.log('deleteFlow returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteFlow');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -497,9 +497,9 @@ apiInstance.deleteFlows(id)
   .then(function(data) {
     console.log(`deleteFlows success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteFlows');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -554,9 +554,9 @@ apiInstance.getArchitectDependencytracking(name, opts)
   .then(function(data) {
     console.log(`getArchitectDependencytracking success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectDependencytracking');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -569,11 +569,11 @@ apiInstance.getArchitectDependencytracking(name, opts)
  **name** | **String** | Object name to search for |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
  **consumedResources** | **Boolean** | Include resources each result item consumes | [optional]  |
  **consumingResources** | **Boolean** | Include resources that consume each result item | [optional]  |
- **consumedResourceType** | **[String]** | Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
- **consumingResourceType** | **[String]** | Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **consumedResourceType** | **[String]** | Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **consumingResourceType** | **[String]** | Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 {: class="table table-striped"}
 
 ### Return type
@@ -606,9 +606,9 @@ apiInstance.getArchitectDependencytrackingBuild()
   .then(function(data) {
     console.log(`getArchitectDependencytrackingBuild success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectDependencytrackingBuild');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -658,9 +658,9 @@ apiInstance.getArchitectDependencytrackingConsumedresources(id, version, objectT
   .then(function(data) {
     console.log(`getArchitectDependencytrackingConsumedresources success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectDependencytrackingConsumedresources');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -672,8 +672,8 @@ apiInstance.getArchitectDependencytrackingConsumedresources(id, version, objectT
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **String** | Consuming object ID |  |
  **version** | **String** | Consuming object version |  |
- **objectType** | **String** | Consuming object type.  Only versioned types are allowed here. | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
- **resourceType** | **[String]** | Types of consumed resources to show | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **objectType** | **String** | Consuming object type.  Only versioned types are allowed here. | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **resourceType** | **[String]** | Types of consumed resources to show | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 {: class="table table-striped"}
 
 ### Return type
@@ -714,9 +714,9 @@ apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, opt
   .then(function(data) {
     console.log(`getArchitectDependencytrackingConsumingresources success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectDependencytrackingConsumingresources');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -727,8 +727,8 @@ apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, opt
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **String** | Consumed object ID |  |
- **objectType** | **String** | Consumed object type | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
- **resourceType** | **[String]** | Types of consuming resources to show.  Only versioned types are allowed here. | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **objectType** | **String** | Consumed object type | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **resourceType** | **[String]** | Types of consuming resources to show.  Only versioned types are allowed here. | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 {: class="table table-striped"}
 
 ### Return type
@@ -771,9 +771,9 @@ apiInstance.getArchitectDependencytrackingDeletedresourceconsumers(opts)
   .then(function(data) {
     console.log(`getArchitectDependencytrackingDeletedresourceconsumers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectDependencytrackingDeletedresourceconsumers');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -784,10 +784,10 @@ apiInstance.getArchitectDependencytrackingDeletedresourceconsumers(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **name** | **String** | Name to search for | [optional]  |
- **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
  **flowFilter** | **String** | Show only checkedIn or published flows | [optional] <br />**Values**: checkedIn, published |
  **consumedResources** | **Boolean** | Return consumed resources? | [optional] [default to false] |
- **consumedResourceType** | **[String]** | Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **consumedResourceType** | **[String]** | Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
 {: class="table table-striped"}
@@ -833,9 +833,9 @@ apiInstance.getArchitectDependencytrackingObject(id, opts)
   .then(function(data) {
     console.log(`getArchitectDependencytrackingObject success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectDependencytrackingObject');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -847,11 +847,11 @@ apiInstance.getArchitectDependencytrackingObject(id, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **String** | Object ID |  |
  **version** | **String** | Object version | [optional]  |
- **objectType** | **String** | Object type | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **objectType** | **String** | Object type | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
  **consumedResources** | **Boolean** | Include resources this item consumes | [optional]  |
  **consumingResources** | **Boolean** | Include resources that consume this item | [optional]  |
- **consumedResourceType** | **[String]** | Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
- **consumingResourceType** | **[String]** | Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **consumedResourceType** | **[String]** | Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **consumingResourceType** | **[String]** | Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 {: class="table table-striped"}
 
 ### Return type
@@ -887,9 +887,9 @@ apiInstance.getArchitectDependencytrackingType(typeId)
   .then(function(data) {
     console.log(`getArchitectDependencytrackingType success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectDependencytrackingType');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -937,9 +937,9 @@ apiInstance.getArchitectDependencytrackingTypes(opts)
   .then(function(data) {
     console.log(`getArchitectDependencytrackingTypes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectDependencytrackingTypes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -992,9 +992,9 @@ apiInstance.getArchitectDependencytrackingUpdatedresourceconsumers(opts)
   .then(function(data) {
     console.log(`getArchitectDependencytrackingUpdatedresourceconsumers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectDependencytrackingUpdatedresourceconsumers');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1005,9 +1005,9 @@ apiInstance.getArchitectDependencytrackingUpdatedresourceconsumers(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **name** | **String** | Name to search for | [optional]  |
- **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
  **consumedResources** | **Boolean** | Return consumed resources? | [optional] [default to false] |
- **consumedResourceType** | **[String]** | Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+ **consumedResourceType** | **[String]** | Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
 {: class="table table-striped"}
@@ -1045,9 +1045,9 @@ apiInstance.getArchitectIvr(ivrId)
   .then(function(data) {
     console.log(`getArchitectIvr success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectIvr');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1098,9 +1098,9 @@ apiInstance.getArchitectIvrs(opts)
   .then(function(data) {
     console.log(`getArchitectIvrs success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectIvrs');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1150,9 +1150,9 @@ apiInstance.getArchitectPrompt(promptId)
   .then(function(data) {
     console.log(`getArchitectPrompt success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectPrompt');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1207,9 +1207,9 @@ apiInstance.getArchitectPromptHistoryHistoryId(promptId, historyId, opts)
   .then(function(data) {
     console.log(`getArchitectPromptHistoryHistoryId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectPromptHistoryHistoryId');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1263,9 +1263,9 @@ apiInstance.getArchitectPromptResource(promptId, languageCode)
   .then(function(data) {
     console.log(`getArchitectPromptResource success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectPromptResource');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1316,9 +1316,9 @@ apiInstance.getArchitectPromptResources(promptId, opts)
   .then(function(data) {
     console.log(`getArchitectPromptResources success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectPromptResources');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1373,9 +1373,9 @@ apiInstance.getArchitectPrompts(opts)
   .then(function(data) {
     console.log(`getArchitectPrompts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectPrompts');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1427,9 +1427,9 @@ apiInstance.getArchitectSchedule(scheduleId)
   .then(function(data) {
     console.log(`getArchitectSchedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectSchedule');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1475,9 +1475,9 @@ apiInstance.getArchitectSchedulegroup(scheduleGroupId)
   .then(function(data) {
     console.log(`getArchitectSchedulegroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectSchedulegroup');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1528,9 +1528,9 @@ apiInstance.getArchitectSchedulegroups(opts)
   .then(function(data) {
     console.log(`getArchitectSchedulegroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectSchedulegroups');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1585,9 +1585,9 @@ apiInstance.getArchitectSchedules(opts)
   .then(function(data) {
     console.log(`getArchitectSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectSchedules');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1637,9 +1637,9 @@ apiInstance.getArchitectSystemprompt(promptId)
   .then(function(data) {
     console.log(`getArchitectSystemprompt success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectSystemprompt');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1694,9 +1694,9 @@ apiInstance.getArchitectSystempromptHistoryHistoryId(promptId, historyId, opts)
   .then(function(data) {
     console.log(`getArchitectSystempromptHistoryHistoryId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectSystempromptHistoryHistoryId');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1750,9 +1750,9 @@ apiInstance.getArchitectSystempromptResource(promptId, languageCode)
   .then(function(data) {
     console.log(`getArchitectSystempromptResource success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectSystempromptResource');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1805,9 +1805,9 @@ apiInstance.getArchitectSystempromptResources(promptId, opts)
   .then(function(data) {
     console.log(`getArchitectSystempromptResources success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectSystempromptResources');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1864,9 +1864,9 @@ apiInstance.getArchitectSystemprompts(opts)
   .then(function(data) {
     console.log(`getArchitectSystemprompts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getArchitectSystemprompts');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1921,9 +1921,9 @@ apiInstance.getFlow(flowId, opts)
   .then(function(data) {
     console.log(`getFlow success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getFlow');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1979,9 +1979,9 @@ apiInstance.getFlowHistoryHistoryId(flowId, historyId, opts)
   .then(function(data) {
     console.log(`getFlowHistoryHistoryId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getFlowHistoryHistoryId');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2036,9 +2036,9 @@ apiInstance.getFlowLatestconfiguration(flowId, opts)
   .then(function(data) {
     console.log(`getFlowLatestconfiguration success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getFlowLatestconfiguration');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2090,9 +2090,9 @@ apiInstance.getFlowVersion(flowId, versionId, opts)
   .then(function(data) {
     console.log(`getFlowVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getFlowVersion');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2145,9 +2145,9 @@ apiInstance.getFlowVersionConfiguration(flowId, versionId, opts)
   .then(function(data) {
     console.log(`getFlowVersionConfiguration success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getFlowVersionConfiguration');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2200,9 +2200,9 @@ apiInstance.getFlowVersions(flowId, opts)
   .then(function(data) {
     console.log(`getFlowVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getFlowVersions');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2269,9 +2269,9 @@ apiInstance.getFlows(type, opts)
   .then(function(data) {
     console.log(`getFlows success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getFlows');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2330,9 +2330,9 @@ apiInstance.postArchitectDependencytrackingBuild()
   .then(function() {
     console.log('postArchitectDependencytrackingBuild returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postArchitectDependencytrackingBuild');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2376,9 +2376,9 @@ apiInstance.postArchitectIvrs(opts)
   .then(function(data) {
     console.log(`postArchitectIvrs success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postArchitectIvrs');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2424,9 +2424,9 @@ apiInstance.postArchitectPromptHistory(promptId)
   .then(function(data) {
     console.log(`postArchitectPromptHistory success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postArchitectPromptHistory');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2475,9 +2475,9 @@ apiInstance.postArchitectPromptResources(promptId, opts)
   .then(function(data) {
     console.log(`postArchitectPromptResources success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postArchitectPromptResources');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2525,9 +2525,9 @@ apiInstance.postArchitectPrompts(opts)
   .then(function(data) {
     console.log(`postArchitectPrompts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postArchitectPrompts');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2574,9 +2574,9 @@ apiInstance.postArchitectSchedulegroups(opts)
   .then(function(data) {
     console.log(`postArchitectSchedulegroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postArchitectSchedulegroups');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2623,9 +2623,9 @@ apiInstance.postArchitectSchedules(opts)
   .then(function(data) {
     console.log(`postArchitectSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postArchitectSchedules');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2671,9 +2671,9 @@ apiInstance.postArchitectSystempromptHistory(promptId)
   .then(function(data) {
     console.log(`postArchitectSystempromptHistory success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postArchitectSystempromptHistory');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2722,9 +2722,9 @@ apiInstance.postArchitectSystempromptResources(promptId, opts)
   .then(function(data) {
     console.log(`postArchitectSystempromptResources success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postArchitectSystempromptResources');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2774,9 +2774,9 @@ apiInstance.postFlowVersions(flowId, opts)
   .then(function(data) {
     console.log(`postFlowVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postFlowVersions');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2824,9 +2824,9 @@ apiInstance.postFlows(opts)
   .then(function(data) {
     console.log(`postFlows success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postFlows');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2872,9 +2872,9 @@ apiInstance.postFlowsActionsCheckin(flow)
   .then(function(data) {
     console.log(`postFlowsActionsCheckin success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postFlowsActionsCheckin');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2920,9 +2920,9 @@ apiInstance.postFlowsActionsCheckout(flow)
   .then(function(data) {
     console.log(`postFlowsActionsCheckout success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postFlowsActionsCheckout');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2968,9 +2968,9 @@ apiInstance.postFlowsActionsDeactivate(flow)
   .then(function(data) {
     console.log(`postFlowsActionsDeactivate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postFlowsActionsDeactivate');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3019,9 +3019,9 @@ apiInstance.postFlowsActionsPublish(flow, opts)
   .then(function(data) {
     console.log(`postFlowsActionsPublish success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postFlowsActionsPublish');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3068,9 +3068,9 @@ apiInstance.postFlowsActionsRevert(flow)
   .then(function(data) {
     console.log(`postFlowsActionsRevert success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postFlowsActionsRevert');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3116,9 +3116,9 @@ apiInstance.postFlowsActionsUnlock(flow)
   .then(function(data) {
     console.log(`postFlowsActionsUnlock success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postFlowsActionsUnlock');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3167,9 +3167,9 @@ apiInstance.putArchitectIvr(ivrId, opts)
   .then(function(data) {
     console.log(`putArchitectIvr success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putArchitectIvr');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3219,9 +3219,9 @@ apiInstance.putArchitectPrompt(promptId, opts)
   .then(function(data) {
     console.log(`putArchitectPrompt success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putArchitectPrompt');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3273,9 +3273,9 @@ apiInstance.putArchitectPromptResource(promptId, languageCode, opts)
   .then(function(data) {
     console.log(`putArchitectPromptResource success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putArchitectPromptResource');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3326,9 +3326,9 @@ apiInstance.putArchitectSchedule(scheduleId, opts)
   .then(function(data) {
     console.log(`putArchitectSchedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putArchitectSchedule');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3378,9 +3378,9 @@ apiInstance.putArchitectSchedulegroup(scheduleGroupId, opts)
   .then(function(data) {
     console.log(`putArchitectSchedulegroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putArchitectSchedulegroup');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3432,9 +3432,9 @@ apiInstance.putArchitectSystempromptResource(promptId, languageCode, opts)
   .then(function(data) {
     console.log(`putArchitectSystempromptResource success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putArchitectSystempromptResource');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3485,9 +3485,9 @@ apiInstance.putFlow(flowId, opts)
   .then(function(data) {
     console.log(`putFlow success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putFlow');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

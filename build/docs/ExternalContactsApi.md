@@ -68,9 +68,9 @@ apiInstance.deleteExternalcontactsContact(contactId)
   .then(function() {
     console.log('deleteExternalcontactsContact returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteExternalcontactsContact');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -118,9 +118,9 @@ apiInstance.deleteExternalcontactsContactNote(contactId, noteId)
   .then(function() {
     console.log('deleteExternalcontactsContactNote returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteExternalcontactsContactNote');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -167,9 +167,9 @@ apiInstance.deleteExternalcontactsOrganization(externalOrganizationId)
   .then(function() {
     console.log('deleteExternalcontactsOrganization returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteExternalcontactsOrganization');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -217,9 +217,9 @@ apiInstance.deleteExternalcontactsOrganizationNote(externalOrganizationId, noteI
   .then(function() {
     console.log('deleteExternalcontactsOrganizationNote returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteExternalcontactsOrganizationNote');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -266,9 +266,9 @@ apiInstance.deleteExternalcontactsOrganizationTrustor(externalOrganizationId)
   .then(function() {
     console.log('deleteExternalcontactsOrganizationTrustor returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteExternalcontactsOrganizationTrustor');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -314,9 +314,9 @@ apiInstance.deleteExternalcontactsRelationship(relationshipId)
   .then(function() {
     console.log('deleteExternalcontactsRelationship returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteExternalcontactsRelationship');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -365,9 +365,9 @@ apiInstance.getExternalcontactsContact(contactId, opts)
   .then(function(data) {
     console.log(`getExternalcontactsContact success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getExternalcontactsContact');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -419,9 +419,9 @@ apiInstance.getExternalcontactsContactNote(contactId, noteId, opts)
   .then(function(data) {
     console.log(`getExternalcontactsContactNote success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getExternalcontactsContactNote');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -475,9 +475,9 @@ apiInstance.getExternalcontactsContactNotes(contactId, opts)
   .then(function(data) {
     console.log(`getExternalcontactsContactNotes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getExternalcontactsContactNotes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -532,9 +532,9 @@ apiInstance.getExternalcontactsContacts(opts)
   .then(function(data) {
     console.log(`getExternalcontactsContacts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getExternalcontactsContacts');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -588,9 +588,9 @@ apiInstance.getExternalcontactsOrganization(externalOrganizationId, opts)
   .then(function(data) {
     console.log(`getExternalcontactsOrganization success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getExternalcontactsOrganization');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -645,9 +645,9 @@ apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts
   .then(function(data) {
     console.log(`getExternalcontactsOrganizationContacts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getExternalcontactsOrganizationContacts');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -703,9 +703,9 @@ apiInstance.getExternalcontactsOrganizationNote(externalOrganizationId, noteId, 
   .then(function(data) {
     console.log(`getExternalcontactsOrganizationNote success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getExternalcontactsOrganizationNote');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -759,9 +759,9 @@ apiInstance.getExternalcontactsOrganizationNotes(externalOrganizationId, opts)
   .then(function(data) {
     console.log(`getExternalcontactsOrganizationNotes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getExternalcontactsOrganizationNotes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -817,9 +817,9 @@ apiInstance.getExternalcontactsOrganizationRelationships(externalOrganizationId,
   .then(function(data) {
     console.log(`getExternalcontactsOrganizationRelationships success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getExternalcontactsOrganizationRelationships');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -876,9 +876,9 @@ apiInstance.getExternalcontactsOrganizations(opts)
   .then(function(data) {
     console.log(`getExternalcontactsOrganizations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getExternalcontactsOrganizations');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -933,9 +933,9 @@ apiInstance.getExternalcontactsRelationship(relationshipId, opts)
   .then(function(data) {
     console.log(`getExternalcontactsRelationship success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getExternalcontactsRelationship');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -985,9 +985,9 @@ apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, opts)
   .then(function(data) {
     console.log(`getExternalcontactsReversewhitepageslookup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getExternalcontactsReversewhitepageslookup');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1037,9 +1037,9 @@ apiInstance.postExternalcontactsContactNotes(contactId, opts)
   .then(function(data) {
     console.log(`postExternalcontactsContactNotes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postExternalcontactsContactNotes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1087,9 +1087,9 @@ apiInstance.postExternalcontactsContacts(opts)
   .then(function(data) {
     console.log(`postExternalcontactsContacts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postExternalcontactsContacts');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1138,9 +1138,9 @@ apiInstance.postExternalcontactsOrganizationNotes(externalOrganizationId, opts)
   .then(function(data) {
     console.log(`postExternalcontactsOrganizationNotes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postExternalcontactsOrganizationNotes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1188,9 +1188,9 @@ apiInstance.postExternalcontactsOrganizations(opts)
   .then(function(data) {
     console.log(`postExternalcontactsOrganizations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postExternalcontactsOrganizations');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1237,9 +1237,9 @@ apiInstance.postExternalcontactsRelationships(opts)
   .then(function(data) {
     console.log(`postExternalcontactsRelationships success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postExternalcontactsRelationships');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1288,9 +1288,9 @@ apiInstance.putExternalcontactsContact(contactId, opts)
   .then(function(data) {
     console.log(`putExternalcontactsContact success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putExternalcontactsContact');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1342,9 +1342,9 @@ apiInstance.putExternalcontactsContactNote(contactId, noteId, opts)
   .then(function(data) {
     console.log(`putExternalcontactsContactNote success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putExternalcontactsContactNote');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1395,9 +1395,9 @@ apiInstance.putExternalcontactsConversation(conversationId, opts)
   .then(function() {
     console.log('putExternalcontactsConversation returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putExternalcontactsConversation');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1447,9 +1447,9 @@ apiInstance.putExternalcontactsOrganization(externalOrganizationId, opts)
   .then(function(data) {
     console.log(`putExternalcontactsOrganization success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putExternalcontactsOrganization');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1501,9 +1501,9 @@ apiInstance.putExternalcontactsOrganizationNote(externalOrganizationId, noteId, 
   .then(function(data) {
     console.log(`putExternalcontactsOrganizationNote success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putExternalcontactsOrganizationNote');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1553,9 +1553,9 @@ apiInstance.putExternalcontactsOrganizationTrustorTrustorId(externalOrganization
   .then(function(data) {
     console.log(`putExternalcontactsOrganizationTrustorTrustorId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putExternalcontactsOrganizationTrustorTrustorId');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1605,9 +1605,9 @@ apiInstance.putExternalcontactsRelationship(relationshipId, opts)
   .then(function(data) {
     console.log(`putExternalcontactsRelationship success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putExternalcontactsRelationship');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

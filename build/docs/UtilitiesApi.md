@@ -38,9 +38,9 @@ apiInstance.getDate()
   .then(function(data) {
     console.log(`getDate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getDate');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -85,9 +85,9 @@ apiInstance.getTimezones(opts)
   .then(function(data) {
     console.log(`getTimezones success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTimezones');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -134,9 +134,9 @@ apiInstance.postCertificateDetails(body)
   .then(function(data) {
     console.log(`postCertificateDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postCertificateDetails');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

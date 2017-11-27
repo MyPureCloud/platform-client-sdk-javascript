@@ -18,7 +18,7 @@
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 13.0.0
+   * @version 14.0.0
    */
 
   /**
@@ -186,6 +186,80 @@
         '/api/v2/conversations/{conversationId}', 
         'GET', 
         { 'conversationId': conversationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Fetch info on a secure session
+     * 
+     * @param {String} conversationId conversation ID
+     * @param {String} participantId participant ID
+     * @param {String} secureSessionId secure IVR session ID
+     */
+    this.getConversationParticipantSecureivrsession = function(conversationId, participantId, secureSessionId) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling getConversationParticipantSecureivrsession";
+      }
+
+      // verify the required parameter 'participantId' is set
+      if (participantId === undefined || participantId === null) {
+        throw "Missing the required parameter 'participantId' when calling getConversationParticipantSecureivrsession";
+      }
+
+      // verify the required parameter 'secureSessionId' is set
+      if (secureSessionId === undefined || secureSessionId === null) {
+        throw "Missing the required parameter 'secureSessionId' when calling getConversationParticipantSecureivrsession";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId}', 
+        'GET', 
+        { 'conversationId': conversationId,'participantId': participantId,'secureSessionId': secureSessionId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a list of secure sessions for this participant.
+     * 
+     * @param {String} conversationId conversation ID
+     * @param {String} participantId participant ID
+     */
+    this.getConversationParticipantSecureivrsessions = function(conversationId, participantId) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling getConversationParticipantSecureivrsessions";
+      }
+
+      // verify the required parameter 'participantId' is set
+      if (participantId === undefined || participantId === null) {
+        throw "Missing the required parameter 'participantId' when calling getConversationParticipantSecureivrsessions";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions', 
+        'GET', 
+        { 'conversationId': conversationId,'participantId': participantId }, 
         {  }, 
         {  }, 
         {  }, 
@@ -2149,6 +2223,43 @@
         {  }, 
         {  }, 
         body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
+     * 
+     * @param {String} conversationId conversation ID
+     * @param {String} participantId participant ID
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body 
+     */
+    this.postConversationParticipantSecureivrsessions = function(conversationId, participantId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling postConversationParticipantSecureivrsessions";
+      }
+
+      // verify the required parameter 'participantId' is set
+      if (participantId === undefined || participantId === null) {
+        throw "Missing the required parameter 'participantId' when calling postConversationParticipantSecureivrsessions";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions', 
+        'POST', 
+        { 'conversationId': conversationId,'participantId': participantId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']

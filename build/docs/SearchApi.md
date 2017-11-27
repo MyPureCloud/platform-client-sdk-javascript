@@ -52,9 +52,9 @@ apiInstance.getDocumentationSearch(q64)
   .then(function(data) {
     console.log(`getDocumentationSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getDocumentationSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -103,9 +103,9 @@ apiInstance.getGroupsSearch(q64, opts)
   .then(function(data) {
     console.log(`getGroupsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getGroupsSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -155,9 +155,9 @@ apiInstance.getLocationsSearch(q64, opts)
   .then(function(data) {
     console.log(`getLocationsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getLocationsSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -208,9 +208,9 @@ apiInstance.getSearch(q64, opts)
   .then(function(data) {
     console.log(`getSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -262,9 +262,9 @@ apiInstance.getSearchSuggest(q64, opts)
   .then(function(data) {
     console.log(`getSearchSuggest success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getSearchSuggest');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -315,9 +315,9 @@ apiInstance.getUsersSearch(q64, opts)
   .then(function(data) {
     console.log(`getUsersSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUsersSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -367,9 +367,9 @@ apiInstance.getVoicemailSearch(q64, opts)
   .then(function(data) {
     console.log(`getVoicemailSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getVoicemailSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -416,9 +416,9 @@ apiInstance.postDocumentationSearch(body)
   .then(function(data) {
     console.log(`postDocumentationSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postDocumentationSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -464,9 +464,9 @@ apiInstance.postGroupsSearch(body)
   .then(function(data) {
     console.log(`postGroupsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postGroupsSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -512,9 +512,9 @@ apiInstance.postLocationsSearch(body)
   .then(function(data) {
     console.log(`postLocationsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postLocationsSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -563,9 +563,9 @@ apiInstance.postSearch(body, opts)
   .then(function(data) {
     console.log(`postSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -615,9 +615,9 @@ apiInstance.postSearchSuggest(body, opts)
   .then(function(data) {
     console.log(`postSearchSuggest success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postSearchSuggest');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -664,9 +664,9 @@ apiInstance.postUsersSearch(body)
   .then(function(data) {
     console.log(`postUsersSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postUsersSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -712,9 +712,9 @@ apiInstance.postVoicemailSearch(body)
   .then(function(data) {
     console.log(`postVoicemailSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postVoicemailSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

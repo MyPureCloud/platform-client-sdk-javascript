@@ -18,7 +18,7 @@
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 13.0.0
+   * @version 14.0.0
    */
 
   /**
@@ -323,6 +323,37 @@
         'GET', 
         { 'scriptId': scriptId }, 
         { 'input': opts['input'],'output': opts['output'],'type': opts['type'],'scriptDataVersion': opts['scriptDataVersion'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get the upload status of an imported script
+     * 
+     * @param {String} uploadId Upload ID
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.longPoll Enable longPolling endpoint (default to false)
+     */
+    this.getScriptsUploadStatus = function(uploadId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'uploadId' is set
+      if (uploadId === undefined || uploadId === null) {
+        throw "Missing the required parameter 'uploadId' when calling getScriptsUploadStatus";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/scripts/uploads/{uploadId}/status', 
+        'GET', 
+        { 'uploadId': uploadId }, 
+        { 'longPoll': opts['longPoll'] }, 
         {  }, 
         {  }, 
         null, 

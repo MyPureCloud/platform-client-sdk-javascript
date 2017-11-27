@@ -42,9 +42,9 @@ apiInstance.getFieldconfig(type)
   .then(function(data) {
     console.log(`getFieldconfig success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getFieldconfig');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -87,9 +87,9 @@ apiInstance.getOrganizationsMe()
   .then(function(data) {
     console.log(`getOrganizationsMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOrganizationsMe');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -134,9 +134,9 @@ apiInstance.patchOrganizationsFeature(featureName, enabled)
   .then(function(data) {
     console.log(`patchOrganizationsFeature success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchOrganizationsFeature');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -184,9 +184,9 @@ apiInstance.putOrganizationsMe(opts)
   .then(function(data) {
     console.log(`putOrganizationsMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOrganizationsMe');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

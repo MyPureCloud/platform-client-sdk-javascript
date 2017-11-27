@@ -46,9 +46,9 @@ apiInstance.deletePresencedefinition(presenceId)
   .then(function() {
     console.log('deletePresencedefinition returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deletePresencedefinition');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -97,9 +97,9 @@ apiInstance.getPresencedefinition(presenceId, opts)
   .then(function(data) {
     console.log(`getPresencedefinition success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getPresencedefinition');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -150,9 +150,9 @@ apiInstance.getPresencedefinitions(opts)
   .then(function(data) {
     console.log(`getPresencedefinitions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getPresencedefinitions');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -198,9 +198,9 @@ apiInstance.getSystempresences()
   .then(function(data) {
     console.log(`getSystempresences success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getSystempresences');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -245,9 +245,9 @@ apiInstance.getUserPresence(userId, sourceId)
   .then(function(data) {
     console.log(`getUserPresence success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserPresence');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -298,9 +298,9 @@ apiInstance.patchUserPresence(userId, sourceId, body)
   .then(function(data) {
     console.log(`patchUserPresence success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchUserPresence');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -348,9 +348,9 @@ apiInstance.postPresencedefinitions(body)
   .then(function(data) {
     console.log(`postPresencedefinitions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postPresencedefinitions');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -398,9 +398,9 @@ apiInstance.putPresencedefinition(presenceId, body)
   .then(function(data) {
     console.log(`putPresencedefinition success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putPresencedefinition');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

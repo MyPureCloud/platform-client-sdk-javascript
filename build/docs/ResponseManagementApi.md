@@ -49,9 +49,9 @@ apiInstance.deleteResponsemanagementLibrary(libraryId)
   .then(function() {
     console.log('deleteResponsemanagementLibrary returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteResponsemanagementLibrary');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -97,9 +97,9 @@ apiInstance.deleteResponsemanagementResponse(responseId)
   .then(function() {
     console.log('deleteResponsemanagementResponse returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteResponsemanagementResponse');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -147,9 +147,9 @@ apiInstance.getResponsemanagementLibraries(opts)
   .then(function(data) {
     console.log(`getResponsemanagementLibraries success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getResponsemanagementLibraries');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -196,9 +196,9 @@ apiInstance.getResponsemanagementLibrary(libraryId)
   .then(function(data) {
     console.log(`getResponsemanagementLibrary success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getResponsemanagementLibrary');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -247,9 +247,9 @@ apiInstance.getResponsemanagementResponse(responseId, opts)
   .then(function(data) {
     console.log(`getResponsemanagementResponse success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getResponsemanagementResponse');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -301,9 +301,9 @@ apiInstance.getResponsemanagementResponses(libraryId, opts)
   .then(function(data) {
     console.log(`getResponsemanagementResponses success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getResponsemanagementResponses');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -352,9 +352,9 @@ apiInstance.postResponsemanagementLibraries(body)
   .then(function(data) {
     console.log(`postResponsemanagementLibraries success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postResponsemanagementLibraries');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -403,9 +403,9 @@ apiInstance.postResponsemanagementResponses(body, opts)
   .then(function(data) {
     console.log(`postResponsemanagementResponses success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postResponsemanagementResponses');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -452,9 +452,9 @@ apiInstance.postResponsemanagementResponsesQuery(body)
   .then(function(data) {
     console.log(`postResponsemanagementResponsesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postResponsemanagementResponsesQuery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -502,9 +502,9 @@ apiInstance.putResponsemanagementLibrary(libraryId, body)
   .then(function(data) {
     console.log(`putResponsemanagementLibrary success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putResponsemanagementLibrary');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -556,9 +556,9 @@ apiInstance.putResponsemanagementResponse(responseId, body, opts)
   .then(function(data) {
     console.log(`putResponsemanagementResponse success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putResponsemanagementResponse');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

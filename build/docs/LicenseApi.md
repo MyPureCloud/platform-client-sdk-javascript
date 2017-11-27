@@ -46,9 +46,9 @@ apiInstance.getLicenseDefinition(licenseId)
   .then(function(data) {
     console.log(`getLicenseDefinition success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getLicenseDefinition');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -91,9 +91,9 @@ apiInstance.getLicenseDefinitions()
   .then(function(data) {
     console.log(`getLicenseDefinitions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getLicenseDefinitions');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -133,9 +133,9 @@ apiInstance.getLicenseOrganization()
   .then(function(data) {
     console.log(`getLicenseOrganization success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getLicenseOrganization');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -178,9 +178,9 @@ apiInstance.getLicenseToggle(featureName)
   .then(function(data) {
     console.log(`getLicenseToggle success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getLicenseToggle');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -226,9 +226,9 @@ apiInstance.getLicenseUser(userId)
   .then(function(data) {
     console.log(`getLicenseUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getLicenseUser');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -275,9 +275,9 @@ apiInstance.postLicenseOrganization(opts)
   .then(function(data) {
     console.log(`postLicenseOrganization success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postLicenseOrganization');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -323,9 +323,9 @@ apiInstance.postLicenseToggle(featureName)
   .then(function(data) {
     console.log(`postLicenseToggle success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postLicenseToggle');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -372,9 +372,9 @@ apiInstance.postLicenseUsers(opts)
   .then(function(data) {
     console.log(`postLicenseUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postLicenseUsers');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

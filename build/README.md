@@ -25,8 +25,8 @@ npm install purecloud-platform-client-v2
 Reference from the CDN:
 
 ~~~ html
-<!-- Replace `13.0.0` with the version you want to use. -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/13.0.0/purecloud-platform-client-v2.min.js"></script>
+<!-- Replace `14.0.0` with the version you want to use. -->
+<script src="https://sdk-cdn.mypurecloud.com/javascript/14.0.0/purecloud-platform-client-v2.min.js"></script>
 ~~~
 
 View the documentation on the [PureCloud Developer Center](https://developer.mypurecloud.com/api/rest/client-libraries/javascript/).
@@ -41,7 +41,7 @@ Reference the SDK in your HTML document. For convenience, all modules are bundle
 
 ~~~ html
 <!-- Include the full library -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/13.0.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/14.0.0/purecloud-platform-client-v2.min.js"></script>
 ~~~
 
 
@@ -69,9 +69,9 @@ client.loginClientCredentialsGrant(clientId, clientSecret)
   .then(function() {
     // Do authenticated things
   })
-  .catch(function(response) {
-    console.log(`${response.status} - ${response.error.message}`);
-    console.log(response.error);
+  .catch(function(err) {
+    // Handle failure response
+    console.log(err);
   });
 ~~~
 
@@ -86,9 +86,9 @@ client.loginImplicitGrant(clientId, redirectUri)
   .then(function() {
     // Do authenticated things
   })
-  .catch(function(response) {
-    console.log(`${response.status} - ${response.error.message}`);
-    console.log(response.error);
+  .catch(function(err) {
+    // Handle failure response
+    console.log(err);
   });
 ~~~
 
@@ -154,10 +154,9 @@ client.loginClientCredentialsGrant(clientId, clientSecret)
     // Handle successful result
     console.log(permissions);
   })
-  .catch(function(response) {
+  .catch(function(err) {
     // Handle failure response
-    console.log(`${response.status} - ${response.error.message}`);
-    console.log(response.error);
+    console.log(err);
   });
 ~~~
 
@@ -179,10 +178,9 @@ client.loginImplicitGrant(clientId, redirectUri)
     // Handle successful result
     console.log(`Hello, ${userMe.name}!`);
   })
-  .catch(function(response) {
+  .catch(function(err) {
     // Handle failure response
-    console.log(`${response.status} - ${response.error.message}`);
-    console.log(response.error);
+    console.log(err);
   });
 ~~~
 
@@ -221,6 +219,32 @@ Extended response object example (`body` and `text` have been truncated):
   "text": "",
   "error": null
 }
+~~~
+
+
+### Using a Proxy (Node.js only)
+
+Using a proxy is accomplished in two steps:
+
+1. Apply the `superagent-proxy` package to the `client.superagent` object
+2. Set proxy settings on the `client` object
+
+After both steps have been completed, the configured proxy server will be used for all requests.
+
+NOTE: SDK proxy configuration is only available in the node.js package due to `superagent-proxy`'s incompatibility with browserify. Additionally, `superagent-proxy` is not included a dependency of the SDK and must be provided by your node application's dependencies.
+
+~~~ js
+const platformClient = require('purecloud-platform-client-v2');
+
+var client = purecloud-platform-client-v2.ApiClient.instance;
+require('superagent-proxy')(client.superagent);
+// Configure settings for your proxy here
+// Documentation: https://www.npmjs.com/package/proxy-agent
+client.proxy = {
+	host: '172.1.1.100',
+	port: 443,
+	protocol: 'https',
+};
 ~~~
 
 

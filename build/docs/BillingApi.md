@@ -41,9 +41,9 @@ apiInstance.getBillingReportsBillableusage(startDate, endDate)
   .then(function(data) {
     console.log(`getBillingReportsBillableusage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getBillingReportsBillableusage');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

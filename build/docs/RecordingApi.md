@@ -77,9 +77,9 @@ apiInstance.deleteConversationRecordingAnnotation(conversationId, recordingId, a
   .then(function() {
     console.log('deleteConversationRecordingAnnotation returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteConversationRecordingAnnotation');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -127,9 +127,9 @@ apiInstance.deleteOrphanrecording(orphanId)
   .then(function(data) {
     console.log(`deleteOrphanrecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOrphanrecording');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -175,9 +175,9 @@ apiInstance.deleteRecordingMediaretentionpolicies(ids)
   .then(function() {
     console.log('deleteRecordingMediaretentionpolicies returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteRecordingMediaretentionpolicies');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -223,9 +223,9 @@ apiInstance.deleteRecordingMediaretentionpolicy(policyId)
   .then(function() {
     console.log('deleteRecordingMediaretentionpolicy returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteRecordingMediaretentionpolicy');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -278,9 +278,9 @@ apiInstance.getConversationRecording(conversationId, recordingId, opts)
   .then(function(data) {
     console.log(`getConversationRecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationRecording');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -334,9 +334,9 @@ apiInstance.getConversationRecordingAnnotation(conversationId, recordingId, anno
   .then(function(data) {
     console.log(`getConversationRecordingAnnotation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationRecordingAnnotation');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -386,9 +386,9 @@ apiInstance.getConversationRecordingAnnotations(conversationId, recordingId)
   .then(function(data) {
     console.log(`getConversationRecordingAnnotations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationRecordingAnnotations');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -435,9 +435,9 @@ apiInstance.getConversationRecordingmetadata(conversationId)
   .then(function(data) {
     console.log(`getConversationRecordingmetadata success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationRecordingmetadata');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -485,9 +485,9 @@ apiInstance.getConversationRecordingmetadataRecordingId(conversationId, recordin
   .then(function(data) {
     console.log(`getConversationRecordingmetadataRecordingId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationRecordingmetadataRecordingId');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -538,9 +538,9 @@ apiInstance.getConversationRecordings(conversationId, opts)
   .then(function(data) {
     console.log(`getConversationRecordings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationRecordings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -588,9 +588,9 @@ apiInstance.getOrphanrecording(orphanId)
   .then(function(data) {
     console.log(`getOrphanrecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOrphanrecording');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -641,9 +641,9 @@ apiInstance.getOrphanrecordingMedia(orphanId, opts)
   .then(function(data) {
     console.log(`getOrphanrecordingMedia success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOrphanrecordingMedia');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -700,9 +700,9 @@ apiInstance.getOrphanrecordings(opts)
   .then(function(data) {
     console.log(`getOrphanrecordings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOrphanrecordings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -755,9 +755,9 @@ apiInstance.getRecordingLocalkeysSetting(settingsId)
   .then(function(data) {
     console.log(`getRecordingLocalkeysSetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getRecordingLocalkeysSetting');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -800,9 +800,9 @@ apiInstance.getRecordingLocalkeysSettings()
   .then(function(data) {
     console.log(`getRecordingLocalkeysSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getRecordingLocalkeysSettings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -855,9 +855,9 @@ apiInstance.getRecordingMediaretentionpolicies(opts)
   .then(function(data) {
     console.log(`getRecordingMediaretentionpolicies success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getRecordingMediaretentionpolicies');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -912,9 +912,9 @@ apiInstance.getRecordingMediaretentionpolicy(policyId)
   .then(function(data) {
     console.log(`getRecordingMediaretentionpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getRecordingMediaretentionpolicy');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -962,9 +962,9 @@ apiInstance.getRecordingRecordingkeys(opts)
   .then(function(data) {
     console.log(`getRecordingRecordingkeys success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getRecordingRecordingkeys');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1008,9 +1008,9 @@ apiInstance.getRecordingRecordingkeysRotationschedule()
   .then(function(data) {
     console.log(`getRecordingRecordingkeysRotationschedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getRecordingRecordingkeysRotationschedule');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1054,9 +1054,9 @@ apiInstance.getRecordingSettings(opts)
   .then(function(data) {
     console.log(`getRecordingSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getRecordingSettings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1104,9 +1104,9 @@ apiInstance.getRecordingsScreensessions(opts)
   .then(function(data) {
     console.log(`getRecordingsScreensessions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getRecordingsScreensessions');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1155,9 +1155,9 @@ apiInstance.patchRecordingMediaretentionpolicy(policyId, body)
   .then(function(data) {
     console.log(`patchRecordingMediaretentionpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchRecordingMediaretentionpolicy');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1207,9 +1207,9 @@ apiInstance.patchRecordingsScreensession(recordingSessionId, opts)
   .then(function() {
     console.log('patchRecordingsScreensession returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchRecordingsScreensession');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1260,9 +1260,9 @@ apiInstance.postConversationRecordingAnnotations(conversationId, recordingId, bo
   .then(function(data) {
     console.log(`postConversationRecordingAnnotations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationRecordingAnnotations');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1310,9 +1310,9 @@ apiInstance.postRecordingLocalkeys(body)
   .then(function(data) {
     console.log(`postRecordingLocalkeys success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postRecordingLocalkeys');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1358,9 +1358,9 @@ apiInstance.postRecordingLocalkeysSettings(body)
   .then(function(data) {
     console.log(`postRecordingLocalkeysSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postRecordingLocalkeysSettings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1406,9 +1406,9 @@ apiInstance.postRecordingMediaretentionpolicies(body)
   .then(function(data) {
     console.log(`postRecordingMediaretentionpolicies success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postRecordingMediaretentionpolicies');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1451,9 +1451,9 @@ apiInstance.postRecordingRecordingkeys()
   .then(function(data) {
     console.log(`postRecordingRecordingkeys success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postRecordingRecordingkeys');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1500,9 +1500,9 @@ apiInstance.putConversationRecording(conversationId, recordingId, body)
   .then(function(data) {
     console.log(`putConversationRecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putConversationRecording');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1556,9 +1556,9 @@ apiInstance.putConversationRecordingAnnotation(conversationId, recordingId, anno
   .then(function(data) {
     console.log(`putConversationRecordingAnnotation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putConversationRecordingAnnotation');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1610,9 +1610,9 @@ apiInstance.putOrphanrecording(orphanId, opts)
   .then(function(data) {
     console.log(`putOrphanrecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOrphanrecording');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1661,9 +1661,9 @@ apiInstance.putRecordingLocalkeysSetting(settingsId, body)
   .then(function(data) {
     console.log(`putRecordingLocalkeysSetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putRecordingLocalkeysSetting');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1712,9 +1712,9 @@ apiInstance.putRecordingMediaretentionpolicy(policyId, body)
   .then(function(data) {
     console.log(`putRecordingMediaretentionpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putRecordingMediaretentionpolicy');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1761,9 +1761,9 @@ apiInstance.putRecordingRecordingkeysRotationschedule(body)
   .then(function(data) {
     console.log(`putRecordingRecordingkeysRotationschedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putRecordingRecordingkeysRotationschedule');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1809,9 +1809,9 @@ apiInstance.putRecordingSettings(body)
   .then(function(data) {
     console.log(`putRecordingSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putRecordingSettings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

@@ -49,9 +49,9 @@ apiInstance.deleteGroup(groupId)
   .then(function() {
     console.log('deleteGroup returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteGroup');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -99,9 +99,9 @@ apiInstance.deleteGroupMembers(groupId, ids)
   .then(function(data) {
     console.log(`deleteGroupMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteGroupMembers');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -148,9 +148,9 @@ apiInstance.getFieldconfig(type)
   .then(function(data) {
     console.log(`getFieldconfig success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getFieldconfig');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -196,9 +196,9 @@ apiInstance.getGroup(groupId)
   .then(function(data) {
     console.log(`getGroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getGroup');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -250,9 +250,9 @@ apiInstance.getGroupMembers(groupId, opts)
   .then(function(data) {
     console.log(`getGroupMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getGroupMembers');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -306,9 +306,9 @@ apiInstance.getGroups(opts)
   .then(function(data) {
     console.log(`getGroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getGroups');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -360,9 +360,9 @@ apiInstance.getGroupsSearch(q64, opts)
   .then(function(data) {
     console.log(`getGroupsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getGroupsSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -411,9 +411,9 @@ apiInstance.postGroupMembers(groupId, body)
   .then(function(data) {
     console.log(`postGroupMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postGroupMembers');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -460,9 +460,9 @@ apiInstance.postGroups(body)
   .then(function(data) {
     console.log(`postGroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postGroups');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -508,9 +508,9 @@ apiInstance.postGroupsSearch(body)
   .then(function(data) {
     console.log(`postGroupsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postGroupsSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -559,9 +559,9 @@ apiInstance.putGroup(groupId, opts)
   .then(function(data) {
     console.log(`putGroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putGroup');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

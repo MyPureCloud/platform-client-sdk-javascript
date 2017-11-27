@@ -41,9 +41,9 @@ apiInstance.deleteStationAssociateduser(stationId)
   .then(function() {
     console.log('deleteStationAssociateduser returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteStationAssociateduser');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -89,9 +89,9 @@ apiInstance.getStation(stationId)
   .then(function(data) {
     console.log(`getStation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getStation');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -145,9 +145,9 @@ apiInstance.getStations(opts)
   .then(function(data) {
     console.log(`getStations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getStations');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

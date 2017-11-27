@@ -44,9 +44,9 @@ apiInstance.deleteAttribute(attributeId)
   .then(function() {
     console.log('deleteAttribute returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteAttribute');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -92,9 +92,9 @@ apiInstance.getAttribute(attributeId)
   .then(function(data) {
     console.log(`getAttribute success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAttribute');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -142,9 +142,9 @@ apiInstance.getAttributes(opts)
   .then(function(data) {
     console.log(`getAttributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAttributes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -191,9 +191,9 @@ apiInstance.postAttributes(body)
   .then(function(data) {
     console.log(`postAttributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAttributes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -239,9 +239,9 @@ apiInstance.postAttributesQuery(body)
   .then(function(data) {
     console.log(`postAttributesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAttributesQuery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -289,9 +289,9 @@ apiInstance.putAttribute(attributeId, body)
   .then(function(data) {
     console.log(`putAttribute success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putAttribute');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

@@ -1,6 +1,6 @@
 {
   "name": "purecloud-platform-client-v2",
-  "version": "13.0.0",
+  "version": "14.0.0",
   "description": "A JavaScript library to interface with the PureCloud Platform API",
   "license": "MIT",
   "main": "src/purecloud-platform-client-v2/index.js",
@@ -18,7 +18,7 @@
     "url": "https://developer.mypurecloud.com"
   },
   "dependencies": {
-    "superagent": "1.7.1"
+    "superagent": "^3.8.1"
   },
   "devDependencies": {
     "mocha": "~2.3.4",

@@ -59,9 +59,9 @@ apiInstance.deleteIntegrationsAction(actionId)
   .then(function() {
     console.log('deleteIntegrationsAction returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteIntegrationsAction');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -107,9 +107,9 @@ apiInstance.deleteIntegrationsActionDraft(actionId)
   .then(function() {
     console.log('deleteIntegrationsActionDraft returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteIntegrationsActionDraft');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -159,9 +159,9 @@ apiInstance.getIntegrationsAction(actionId, opts)
   .then(function(data) {
     console.log(`getIntegrationsAction success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIntegrationsAction');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -213,9 +213,9 @@ apiInstance.getIntegrationsActionDraft(actionId, opts)
   .then(function(data) {
     console.log(`getIntegrationsActionDraft success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIntegrationsActionDraft');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -265,9 +265,9 @@ apiInstance.getIntegrationsActionDraftSchema(actionId, fileName)
   .then(function(data) {
     console.log(`getIntegrationsActionDraftSchema success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIntegrationsActionDraftSchema');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -316,9 +316,9 @@ apiInstance.getIntegrationsActionDraftTemplate(actionId, fileName)
   .then(function(data) {
     console.log(`getIntegrationsActionDraftTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIntegrationsActionDraftTemplate');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -365,9 +365,9 @@ apiInstance.getIntegrationsActionDraftValidation(actionId)
   .then(function(data) {
     console.log(`getIntegrationsActionDraftValidation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIntegrationsActionDraftValidation');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -415,9 +415,9 @@ apiInstance.getIntegrationsActionSchema(actionId, fileName)
   .then(function(data) {
     console.log(`getIntegrationsActionSchema success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIntegrationsActionSchema');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -466,9 +466,9 @@ apiInstance.getIntegrationsActionTemplate(actionId, fileName)
   .then(function(data) {
     console.log(`getIntegrationsActionTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIntegrationsActionTemplate');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -524,9 +524,9 @@ apiInstance.getIntegrationsActions(opts)
   .then(function(data) {
     console.log(`getIntegrationsActions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIntegrationsActions');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -587,9 +587,9 @@ apiInstance.getIntegrationsActionsCategories(opts)
   .then(function(data) {
     console.log(`getIntegrationsActionsCategories success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIntegrationsActionsCategories');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -650,9 +650,9 @@ apiInstance.getIntegrationsActionsDrafts(opts)
   .then(function(data) {
     console.log(`getIntegrationsActionsDrafts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIntegrationsActionsDrafts');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -708,9 +708,9 @@ apiInstance.patchIntegrationsAction(actionId, body)
   .then(function(data) {
     console.log(`patchIntegrationsAction success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchIntegrationsAction');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -759,9 +759,9 @@ apiInstance.patchIntegrationsActionDraft(actionId, body)
   .then(function(data) {
     console.log(`patchIntegrationsActionDraft success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchIntegrationsActionDraft');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -808,9 +808,9 @@ apiInstance.postIntegrationsActionDraft(actionId)
   .then(function(data) {
     console.log(`postIntegrationsActionDraft success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postIntegrationsActionDraft');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -858,9 +858,9 @@ apiInstance.postIntegrationsActionDraftPublish(actionId, body)
   .then(function(data) {
     console.log(`postIntegrationsActionDraftPublish success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postIntegrationsActionDraftPublish');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -909,9 +909,9 @@ apiInstance.postIntegrationsActionDraftTest(actionId, body)
   .then(function(data) {
     console.log(`postIntegrationsActionDraftTest success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postIntegrationsActionDraftTest');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -960,9 +960,9 @@ apiInstance.postIntegrationsActionExecute(actionId, body)
   .then(function(data) {
     console.log(`postIntegrationsActionExecute success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postIntegrationsActionExecute');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1011,9 +1011,9 @@ apiInstance.postIntegrationsActionTest(actionId, body)
   .then(function(data) {
     console.log(`postIntegrationsActionTest success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postIntegrationsActionTest');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1060,9 +1060,9 @@ apiInstance.postIntegrationsActions(body)
   .then(function(data) {
     console.log(`postIntegrationsActions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postIntegrationsActions');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1108,9 +1108,9 @@ apiInstance.postIntegrationsActionsDrafts(body)
   .then(function(data) {
     console.log(`postIntegrationsActionsDrafts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postIntegrationsActionsDrafts');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

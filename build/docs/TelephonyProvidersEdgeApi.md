@@ -165,9 +165,9 @@ apiInstance.deleteTelephonyProvidersEdge(edgeId)
   .then(function() {
     console.log('deleteTelephonyProvidersEdge returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteTelephonyProvidersEdge');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -215,9 +215,9 @@ apiInstance.deleteTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId)
   .then(function() {
     console.log('deleteTelephonyProvidersEdgeLogicalinterface returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteTelephonyProvidersEdgeLogicalinterface');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -264,9 +264,9 @@ apiInstance.deleteTelephonyProvidersEdgeSoftwareupdate(edgeId)
   .then(function() {
     console.log('deleteTelephonyProvidersEdgeSoftwareupdate returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteTelephonyProvidersEdgeSoftwareupdate');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -312,9 +312,9 @@ apiInstance.deleteTelephonyProvidersEdgesCertificateauthority(certificateId)
   .then(function() {
     console.log('deleteTelephonyProvidersEdgesCertificateauthority returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteTelephonyProvidersEdgesCertificateauthority');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -360,9 +360,9 @@ apiInstance.deleteTelephonyProvidersEdgesDidpool(didPoolId)
   .then(function() {
     console.log('deleteTelephonyProvidersEdgesDidpool returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteTelephonyProvidersEdgesDidpool');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -408,9 +408,9 @@ apiInstance.deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId)
   .then(function() {
     console.log('deleteTelephonyProvidersEdgesEdgegroup returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteTelephonyProvidersEdgesEdgegroup');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -456,9 +456,9 @@ apiInstance.deleteTelephonyProvidersEdgesEndpoint(endpointId)
   .then(function() {
     console.log('deleteTelephonyProvidersEdgesEndpoint returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteTelephonyProvidersEdgesEndpoint');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -504,9 +504,9 @@ apiInstance.deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId)
   .then(function() {
     console.log('deleteTelephonyProvidersEdgesExtensionpool returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteTelephonyProvidersEdgesExtensionpool');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -552,9 +552,9 @@ apiInstance.deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId)
   .then(function() {
     console.log('deleteTelephonyProvidersEdgesOutboundroute returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteTelephonyProvidersEdgesOutboundroute');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -600,9 +600,9 @@ apiInstance.deleteTelephonyProvidersEdgesPhone(phoneId)
   .then(function() {
     console.log('deleteTelephonyProvidersEdgesPhone returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteTelephonyProvidersEdgesPhone');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -648,9 +648,9 @@ apiInstance.deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
   .then(function() {
     console.log('deleteTelephonyProvidersEdgesPhonebasesetting returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteTelephonyProvidersEdgesPhonebasesetting');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -696,9 +696,9 @@ apiInstance.deleteTelephonyProvidersEdgesSite(siteId)
   .then(function() {
     console.log('deleteTelephonyProvidersEdgesSite returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteTelephonyProvidersEdgesSite');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -746,9 +746,9 @@ apiInstance.deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRoute
   .then(function() {
     console.log('deleteTelephonyProvidersEdgesSiteOutboundroute returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteTelephonyProvidersEdgesSiteOutboundroute');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -795,9 +795,9 @@ apiInstance.deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId)
   .then(function() {
     console.log('deleteTelephonyProvidersEdgesTrunkbasesetting returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteTelephonyProvidersEdgesTrunkbasesetting');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -845,9 +845,9 @@ apiInstance.getConfigurationSchemasEdgesVnext(opts)
   .then(function(data) {
     console.log(`getConfigurationSchemasEdgesVnext success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConfigurationSchemasEdgesVnext');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -898,9 +898,9 @@ apiInstance.getConfigurationSchemasEdgesVnextSchemaCategory(schemaCategory, opts
   .then(function(data) {
     console.log(`getConfigurationSchemasEdgesVnextSchemaCategory success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategory');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -954,9 +954,9 @@ apiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(schemaCate
   .then(function(data) {
     console.log(`getConfigurationSchemasEdgesVnextSchemaCategorySchemaType success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaType');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1009,9 +1009,9 @@ apiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(sc
   .then(function(data) {
     console.log(`getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1070,9 +1070,9 @@ apiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExt
   .then(function(data) {
     console.log(`getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1126,9 +1126,9 @@ apiInstance.getTelephonyProvidersEdge(edgeId, opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdge success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdge');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1177,9 +1177,9 @@ apiInstance.getTelephonyProvidersEdgeLine(edgeId, lineId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgeLine success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgeLine');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1230,9 +1230,9 @@ apiInstance.getTelephonyProvidersEdgeLines(edgeId, opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgeLines success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgeLines');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1285,9 +1285,9 @@ apiInstance.getTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgeLogicalinterface success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgeLogicalinterface');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1338,9 +1338,9 @@ apiInstance.getTelephonyProvidersEdgeLogicalinterfaces(edgeId, opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgeLogicalinterfaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgeLogicalinterfaces');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1389,9 +1389,9 @@ apiInstance.getTelephonyProvidersEdgeLogsJob(edgeId, jobId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgeLogsJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgeLogsJob');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1438,9 +1438,9 @@ apiInstance.getTelephonyProvidersEdgeMetrics(edgeId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgeMetrics success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgeMetrics');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1488,9 +1488,9 @@ apiInstance.getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgePhysicalinterface success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgePhysicalinterface');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1537,9 +1537,9 @@ apiInstance.getTelephonyProvidersEdgePhysicalinterfaces(edgeId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgePhysicalinterfaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgePhysicalinterfaces');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1585,9 +1585,9 @@ apiInstance.getTelephonyProvidersEdgeSetuppackage(edgeId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgeSetuppackage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgeSetuppackage');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1633,9 +1633,9 @@ apiInstance.getTelephonyProvidersEdgeSoftwareupdate(edgeId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgeSoftwareupdate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgeSoftwareupdate');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1681,9 +1681,9 @@ apiInstance.getTelephonyProvidersEdgeSoftwareversions(edgeId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgeSoftwareversions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgeSoftwareversions');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1737,9 +1737,9 @@ apiInstance.getTelephonyProvidersEdgeTrunks(edgeId, opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgeTrunks success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgeTrunks');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1798,9 +1798,9 @@ apiInstance.getTelephonyProvidersEdges(opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdges success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdges');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1849,9 +1849,9 @@ apiInstance.getTelephonyProvidersEdgesAvailablelanguages()
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesAvailablelanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesAvailablelanguages');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1891,9 +1891,9 @@ apiInstance.getTelephonyProvidersEdgesCertificateauthorities()
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesCertificateauthorities success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesCertificateauthorities');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1936,9 +1936,9 @@ apiInstance.getTelephonyProvidersEdgesCertificateauthority(certificateId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesCertificateauthority success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesCertificateauthority');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1984,9 +1984,9 @@ apiInstance.getTelephonyProvidersEdgesDid(didId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesDid success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesDid');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2032,9 +2032,9 @@ apiInstance.getTelephonyProvidersEdgesDidpool(didPoolId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesDidpool success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesDidpool');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2083,9 +2083,9 @@ apiInstance.getTelephonyProvidersEdgesDidpools(opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesDidpools success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesDidpools');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2138,9 +2138,9 @@ apiInstance.getTelephonyProvidersEdgesDids(opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesDids success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesDids');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2193,9 +2193,9 @@ apiInstance.getTelephonyProvidersEdgesEdgegroup(edgeGroupId, opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesEdgegroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesEdgegroup');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2244,9 +2244,9 @@ apiInstance.getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetr
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesEdgegroupEdgetrunkbase success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbase');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2298,9 +2298,9 @@ apiInstance.getTelephonyProvidersEdgesEdgegroups(opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesEdgegroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesEdgegroups');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2347,9 +2347,9 @@ apiInstance.getTelephonyProvidersEdgesEdgeversionreport()
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesEdgeversionreport success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesEdgeversionreport');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2392,9 +2392,9 @@ apiInstance.getTelephonyProvidersEdgesEndpoint(endpointId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesEndpoint success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesEndpoint');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2444,9 +2444,9 @@ apiInstance.getTelephonyProvidersEdgesEndpoints(opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesEndpoints success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesEndpoints');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2495,9 +2495,9 @@ apiInstance.getTelephonyProvidersEdgesExtension(extensionId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesExtension success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesExtension');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2543,9 +2543,9 @@ apiInstance.getTelephonyProvidersEdgesExtensionpool(extensionPoolId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesExtensionpool success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesExtensionpool');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2595,9 +2595,9 @@ apiInstance.getTelephonyProvidersEdgesExtensionpools(opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesExtensionpools success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesExtensionpools');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2651,9 +2651,9 @@ apiInstance.getTelephonyProvidersEdgesExtensions(opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesExtensions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesExtensions');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2703,9 +2703,9 @@ apiInstance.getTelephonyProvidersEdgesLine(lineId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesLine success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesLine');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2751,9 +2751,9 @@ apiInstance.getTelephonyProvidersEdgesLinebasesetting(lineBaseId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesLinebasesetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesLinebasesetting');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2803,9 +2803,9 @@ apiInstance.getTelephonyProvidersEdgesLinebasesettings(opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesLinebasesettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesLinebasesettings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2859,9 +2859,9 @@ apiInstance.getTelephonyProvidersEdgesLines(opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesLines success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesLines');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2911,9 +2911,9 @@ apiInstance.getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesLinesTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesLinesTemplate');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2962,9 +2962,9 @@ apiInstance.getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesLogicalinterfaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesLogicalinterfaces');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3011,9 +3011,9 @@ apiInstance.getTelephonyProvidersEdgesMetrics(edgeIds)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesMetrics success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesMetrics');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3059,9 +3059,9 @@ apiInstance.getTelephonyProvidersEdgesOutboundroute(outboundRouteId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesOutboundroute success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesOutboundroute');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3112,9 +3112,9 @@ apiInstance.getTelephonyProvidersEdgesOutboundroutes(opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesOutboundroutes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesOutboundroutes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3164,9 +3164,9 @@ apiInstance.getTelephonyProvidersEdgesPhone(phoneId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesPhone success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesPhone');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3212,9 +3212,9 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesPhonebasesetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesPhonebasesetting');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3266,9 +3266,9 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesettings(opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesPhonebasesettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesPhonebasesettings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3321,9 +3321,9 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3370,9 +3370,9 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesPhonebasesettingsTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesPhonebasesettingsTemplate');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3432,9 +3432,9 @@ apiInstance.getTelephonyProvidersEdgesPhones(opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesPhones success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesPhones');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3493,9 +3493,9 @@ apiInstance.getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesPhonesTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesPhonesTemplate');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3541,9 +3541,9 @@ apiInstance.getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesPhysicalinterfaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesPhysicalinterfaces');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3589,9 +3589,9 @@ apiInstance.getTelephonyProvidersEdgesSite(siteId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesSite success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesSite');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3637,9 +3637,9 @@ apiInstance.getTelephonyProvidersEdgesSiteAutoscalinggroups(siteId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesSiteAutoscalinggroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesSiteAutoscalinggroups');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3687,9 +3687,9 @@ apiInstance.getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesSiteNumberplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesSiteNumberplan');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3736,9 +3736,9 @@ apiInstance.getTelephonyProvidersEdgesSiteNumberplans(siteId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesSiteNumberplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesSiteNumberplans');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3787,9 +3787,9 @@ apiInstance.getTelephonyProvidersEdgesSiteNumberplansClassifications(siteId, opt
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesSiteNumberplansClassifications success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesSiteNumberplansClassifications');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3838,9 +3838,9 @@ apiInstance.getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesSiteOutboundroute success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesSiteOutboundroute');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3893,9 +3893,9 @@ apiInstance.getTelephonyProvidersEdgesSiteOutboundroutes(siteId, opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesSiteOutboundroutes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesSiteOutboundroutes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3952,9 +3952,9 @@ apiInstance.getTelephonyProvidersEdgesSites(opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesSites success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesSites');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4008,9 +4008,9 @@ apiInstance.getTelephonyProvidersEdgesTimezones(opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesTimezones success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesTimezones');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4057,9 +4057,9 @@ apiInstance.getTelephonyProvidersEdgesTrunk(trunkId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesTrunk success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesTrunk');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4105,9 +4105,9 @@ apiInstance.getTelephonyProvidersEdgesTrunkMetrics(trunkId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesTrunkMetrics success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesTrunkMetrics');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4156,9 +4156,9 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, opts
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesTrunkbasesetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesTrunkbasesetting');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4214,9 +4214,9 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesettings(opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesTrunkbasesettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesTrunkbasesettings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4273,9 +4273,9 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4323,9 +4323,9 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesTrunkbasesettingsTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesTrunkbasesettingsTemplate');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4378,9 +4378,9 @@ apiInstance.getTelephonyProvidersEdgesTrunks(opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesTrunks success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesTrunks');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4432,9 +4432,9 @@ apiInstance.getTelephonyProvidersEdgesTrunksMetrics(trunkIds)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesTrunksMetrics success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesTrunksMetrics');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4481,9 +4481,9 @@ apiInstance.getTelephonyProvidersEdgesTrunkswithrecording(opts)
   .then(function(data) {
     console.log(`getTelephonyProvidersEdgesTrunkswithrecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTelephonyProvidersEdgesTrunkswithrecording');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4531,9 +4531,9 @@ apiInstance.postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdgeLogicalinterfaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgeLogicalinterfaces');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4584,9 +4584,9 @@ apiInstance.postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body)
   .then(function() {
     console.log('postTelephonyProvidersEdgeLogsJobUpload returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgeLogsJobUpload');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4636,9 +4636,9 @@ apiInstance.postTelephonyProvidersEdgeLogsJobs(edgeId, body)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdgeLogsJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgeLogsJobs');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4688,9 +4688,9 @@ apiInstance.postTelephonyProvidersEdgeReboot(edgeId, opts)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdgeReboot success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgeReboot');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4739,9 +4739,9 @@ apiInstance.postTelephonyProvidersEdgeSoftwareupdate(edgeId, body)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdgeSoftwareupdate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgeSoftwareupdate');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4791,9 +4791,9 @@ apiInstance.postTelephonyProvidersEdgeStatuscode(edgeId, opts)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdgeStatuscode success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgeStatuscode');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4840,9 +4840,9 @@ apiInstance.postTelephonyProvidersEdgeUnpair(edgeId)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdgeUnpair success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgeUnpair');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4888,9 +4888,9 @@ apiInstance.postTelephonyProvidersEdges(body)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdges success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdges');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4936,9 +4936,9 @@ apiInstance.postTelephonyProvidersEdgesAddressvalidation(body)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdgesAddressvalidation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesAddressvalidation');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4984,9 +4984,9 @@ apiInstance.postTelephonyProvidersEdgesCertificateauthorities(body)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdgesCertificateauthorities success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesCertificateauthorities');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5032,9 +5032,9 @@ apiInstance.postTelephonyProvidersEdgesDidpools(body)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdgesDidpools success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesDidpools');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5080,9 +5080,9 @@ apiInstance.postTelephonyProvidersEdgesEdgegroups(body)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdgesEdgegroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesEdgegroups');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5128,9 +5128,9 @@ apiInstance.postTelephonyProvidersEdgesEndpoints(body)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdgesEndpoints success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesEndpoints');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5176,9 +5176,9 @@ apiInstance.postTelephonyProvidersEdgesExtensionpools(body)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdgesExtensionpools success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesExtensionpools');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5224,9 +5224,9 @@ apiInstance.postTelephonyProvidersEdgesOutboundroutes(body)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdgesOutboundroutes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesOutboundroutes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5272,9 +5272,9 @@ apiInstance.postTelephonyProvidersEdgesPhoneReboot(phoneId)
   .then(function() {
     console.log('postTelephonyProvidersEdgesPhoneReboot returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesPhoneReboot');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5320,9 +5320,9 @@ apiInstance.postTelephonyProvidersEdgesPhonebasesettings(body)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdgesPhonebasesettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesPhonebasesettings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5368,9 +5368,9 @@ apiInstance.postTelephonyProvidersEdgesPhones(body)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdgesPhones success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesPhones');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5416,9 +5416,9 @@ apiInstance.postTelephonyProvidersEdgesPhonesReboot(body)
   .then(function() {
     console.log('postTelephonyProvidersEdgesPhonesReboot returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesPhonesReboot');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5466,9 +5466,9 @@ apiInstance.postTelephonyProvidersEdgesSiteAutoscalinggroups(siteId, body)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdgesSiteAutoscalinggroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesSiteAutoscalinggroups');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5517,9 +5517,9 @@ apiInstance.postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdgesSiteOutboundroutes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesSiteOutboundroutes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5566,9 +5566,9 @@ apiInstance.postTelephonyProvidersEdgesSiteRebalance(siteId)
   .then(function() {
     console.log('postTelephonyProvidersEdgesSiteRebalance returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesSiteRebalance');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5614,9 +5614,9 @@ apiInstance.postTelephonyProvidersEdgesSites(body)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdgesSites success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesSites');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5662,9 +5662,9 @@ apiInstance.postTelephonyProvidersEdgesTrunkbasesettings(body)
   .then(function(data) {
     console.log(`postTelephonyProvidersEdgesTrunkbasesettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postTelephonyProvidersEdgesTrunkbasesettings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5712,9 +5712,9 @@ apiInstance.putTelephonyProvidersEdge(edgeId, body)
   .then(function(data) {
     console.log(`putTelephonyProvidersEdge success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putTelephonyProvidersEdge');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5765,9 +5765,9 @@ apiInstance.putTelephonyProvidersEdgeLine(edgeId, lineId, body)
   .then(function(data) {
     console.log(`putTelephonyProvidersEdgeLine success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putTelephonyProvidersEdgeLine');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5819,9 +5819,9 @@ apiInstance.putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body)
   .then(function(data) {
     console.log(`putTelephonyProvidersEdgeLogicalinterface success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putTelephonyProvidersEdgeLogicalinterface');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5871,9 +5871,9 @@ apiInstance.putTelephonyProvidersEdgesCertificateauthority(certificateId, body)
   .then(function(data) {
     console.log(`putTelephonyProvidersEdgesCertificateauthority success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesCertificateauthority');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5922,9 +5922,9 @@ apiInstance.putTelephonyProvidersEdgesDid(didId, body)
   .then(function(data) {
     console.log(`putTelephonyProvidersEdgesDid success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesDid');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -5973,9 +5973,9 @@ apiInstance.putTelephonyProvidersEdgesDidpool(didPoolId, body)
   .then(function(data) {
     console.log(`putTelephonyProvidersEdgesDidpool success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesDidpool');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -6024,9 +6024,9 @@ apiInstance.putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body)
   .then(function(data) {
     console.log(`putTelephonyProvidersEdgesEdgegroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesEdgegroup');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -6077,9 +6077,9 @@ apiInstance.putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetr
   .then(function(data) {
     console.log(`putTelephonyProvidersEdgesEdgegroupEdgetrunkbase success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbase');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -6129,9 +6129,9 @@ apiInstance.putTelephonyProvidersEdgesEndpoint(endpointId, body)
   .then(function(data) {
     console.log(`putTelephonyProvidersEdgesEndpoint success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesEndpoint');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -6180,9 +6180,9 @@ apiInstance.putTelephonyProvidersEdgesExtension(extensionId, body)
   .then(function(data) {
     console.log(`putTelephonyProvidersEdgesExtension success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesExtension');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -6231,9 +6231,9 @@ apiInstance.putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)
   .then(function(data) {
     console.log(`putTelephonyProvidersEdgesExtensionpool success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesExtensionpool');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -6282,9 +6282,9 @@ apiInstance.putTelephonyProvidersEdgesOutboundroute(outboundRouteId, body)
   .then(function(data) {
     console.log(`putTelephonyProvidersEdgesOutboundroute success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesOutboundroute');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -6333,9 +6333,9 @@ apiInstance.putTelephonyProvidersEdgesPhone(phoneId, body)
   .then(function(data) {
     console.log(`putTelephonyProvidersEdgesPhone success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesPhone');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -6384,9 +6384,9 @@ apiInstance.putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body)
   .then(function(data) {
     console.log(`putTelephonyProvidersEdgesPhonebasesetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesPhonebasesetting');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -6435,9 +6435,9 @@ apiInstance.putTelephonyProvidersEdgesSite(siteId, body)
   .then(function(data) {
     console.log(`putTelephonyProvidersEdgesSite success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesSite');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -6486,9 +6486,9 @@ apiInstance.putTelephonyProvidersEdgesSiteNumberplans(siteId, body)
   .then(function(data) {
     console.log(`putTelephonyProvidersEdgesSiteNumberplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesSiteNumberplans');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -6539,9 +6539,9 @@ apiInstance.putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId,
   .then(function(data) {
     console.log(`putTelephonyProvidersEdgesSiteOutboundroute success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesSiteOutboundroute');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -6591,9 +6591,9 @@ apiInstance.putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body
   .then(function(data) {
     console.log(`putTelephonyProvidersEdgesTrunkbasesetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putTelephonyProvidersEdgesTrunkbasesetting');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

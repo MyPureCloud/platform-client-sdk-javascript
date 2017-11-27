@@ -44,9 +44,9 @@ apiInstance.deleteFaxDocument(documentId)
   .then(function() {
     console.log('deleteFaxDocument returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteFaxDocument');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -92,9 +92,9 @@ apiInstance.getFaxDocument(documentId)
   .then(function(data) {
     console.log(`getFaxDocument success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getFaxDocument');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -140,9 +140,9 @@ apiInstance.getFaxDocumentContent(documentId)
   .then(function(data) {
     console.log(`getFaxDocumentContent success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getFaxDocumentContent');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -190,9 +190,9 @@ apiInstance.getFaxDocuments(opts)
   .then(function(data) {
     console.log(`getFaxDocuments success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getFaxDocuments');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -236,9 +236,9 @@ apiInstance.getFaxSummary()
   .then(function(data) {
     console.log(`getFaxSummary success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getFaxSummary');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -283,9 +283,9 @@ apiInstance.putFaxDocument(documentId, body)
   .then(function(data) {
     console.log(`putFaxDocument success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putFaxDocument');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

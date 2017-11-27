@@ -42,9 +42,9 @@ apiInstance.getLocation(locationId)
   .then(function(data) {
     console.log(`getLocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getLocation');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -93,9 +93,9 @@ apiInstance.getLocations(opts)
   .then(function(data) {
     console.log(`getLocations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getLocations');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -146,9 +146,9 @@ apiInstance.getLocationsSearch(q64, opts)
   .then(function(data) {
     console.log(`getLocationsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getLocationsSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -195,9 +195,9 @@ apiInstance.postLocationsSearch(body)
   .then(function(data) {
     console.log(`postLocationsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postLocationsSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

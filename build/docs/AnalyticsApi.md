@@ -60,9 +60,9 @@ apiInstance.deleteAnalyticsReportingSchedule(scheduleId)
   .then(function() {
     console.log('deleteAnalyticsReportingSchedule returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteAnalyticsReportingSchedule');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -108,9 +108,9 @@ apiInstance.getAnalyticsConversationDetails(conversationId)
   .then(function(data) {
     console.log(`getAnalyticsConversationDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAnalyticsConversationDetails');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -159,9 +159,9 @@ apiInstance.getAnalyticsReportingMetadata(opts)
   .then(function(data) {
     console.log(`getAnalyticsReportingMetadata success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAnalyticsReportingMetadata');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -212,9 +212,9 @@ apiInstance.getAnalyticsReportingReportIdMetadata(reportId, opts)
   .then(function(data) {
     console.log(`getAnalyticsReportingReportIdMetadata success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAnalyticsReportingReportIdMetadata');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -258,9 +258,9 @@ apiInstance.getAnalyticsReportingReportformats()
   .then(function(data) {
     console.log(`getAnalyticsReportingReportformats success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAnalyticsReportingReportformats');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -303,9 +303,9 @@ apiInstance.getAnalyticsReportingSchedule(scheduleId)
   .then(function(data) {
     console.log(`getAnalyticsReportingSchedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAnalyticsReportingSchedule');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -355,9 +355,9 @@ apiInstance.getAnalyticsReportingScheduleHistory(scheduleId, opts)
   .then(function(data) {
     console.log(`getAnalyticsReportingScheduleHistory success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAnalyticsReportingScheduleHistory');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -405,9 +405,9 @@ apiInstance.getAnalyticsReportingScheduleHistoryLatest(scheduleId)
   .then(function(data) {
     console.log(`getAnalyticsReportingScheduleHistoryLatest success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAnalyticsReportingScheduleHistoryLatest');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -455,9 +455,9 @@ apiInstance.getAnalyticsReportingScheduleHistoryRunId(runId, scheduleId)
   .then(function(data) {
     console.log(`getAnalyticsReportingScheduleHistoryRunId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAnalyticsReportingScheduleHistoryRunId');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -506,9 +506,9 @@ apiInstance.getAnalyticsReportingSchedules(opts)
   .then(function(data) {
     console.log(`getAnalyticsReportingSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAnalyticsReportingSchedules');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -552,9 +552,9 @@ apiInstance.getAnalyticsReportingTimeperiods()
   .then(function(data) {
     console.log(`getAnalyticsReportingTimeperiods success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAnalyticsReportingTimeperiods');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -599,9 +599,9 @@ apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
   .then(function(data) {
     console.log(`postAnalyticsConversationDetailsProperties success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAnalyticsConversationDetailsProperties');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -648,9 +648,9 @@ apiInstance.postAnalyticsConversationsAggregatesQuery(body)
   .then(function(data) {
     console.log(`postAnalyticsConversationsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAnalyticsConversationsAggregatesQuery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -696,9 +696,9 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
   .then(function(data) {
     console.log(`postAnalyticsConversationsDetailsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAnalyticsConversationsDetailsQuery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -744,9 +744,9 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
   .then(function(data) {
     console.log(`postAnalyticsEvaluationsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAnalyticsEvaluationsAggregatesQuery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -792,9 +792,9 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
   .then(function(data) {
     console.log(`postAnalyticsQueuesObservationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAnalyticsQueuesObservationsQuery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -840,9 +840,9 @@ apiInstance.postAnalyticsReportingScheduleRunreport(scheduleId)
   .then(function(data) {
     console.log(`postAnalyticsReportingScheduleRunreport success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAnalyticsReportingScheduleRunreport');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -888,9 +888,9 @@ apiInstance.postAnalyticsReportingSchedules(body)
   .then(function(data) {
     console.log(`postAnalyticsReportingSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAnalyticsReportingSchedules');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -936,9 +936,9 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
   .then(function(data) {
     console.log(`postAnalyticsUsersAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAnalyticsUsersAggregatesQuery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -984,9 +984,9 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
   .then(function(data) {
     console.log(`postAnalyticsUsersDetailsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAnalyticsUsersDetailsQuery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1032,9 +1032,9 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
   .then(function(data) {
     console.log(`postAnalyticsUsersObservationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAnalyticsUsersObservationsQuery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1082,9 +1082,9 @@ apiInstance.putAnalyticsReportingSchedule(scheduleId, body)
   .then(function(data) {
     console.log(`putAnalyticsReportingSchedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putAnalyticsReportingSchedule');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

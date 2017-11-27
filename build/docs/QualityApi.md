@@ -71,9 +71,9 @@ apiInstance.deleteQualityCalibration(calibrationId, calibratorId)
   .then(function(data) {
     console.log(`deleteQualityCalibration success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteQualityCalibration');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -125,9 +125,9 @@ apiInstance.deleteQualityConversationEvaluation(conversationId, evaluationId, op
   .then(function(data) {
     console.log(`deleteQualityConversationEvaluation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteQualityConversationEvaluation');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -175,9 +175,9 @@ apiInstance.deleteQualityForm(formId)
   .then(function() {
     console.log('deleteQualityForm returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteQualityForm');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -223,9 +223,9 @@ apiInstance.deleteQualityKeywordset(keywordSetId)
   .then(function() {
     console.log('deleteQualityKeywordset returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteQualityKeywordset');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -271,9 +271,9 @@ apiInstance.deleteQualityKeywordsets(ids)
   .then(function() {
     console.log('deleteQualityKeywordsets returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteQualityKeywordsets');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -331,9 +331,9 @@ apiInstance.getQualityAgentsActivity(opts)
   .then(function(data) {
     console.log(`getQualityAgentsActivity success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getQualityAgentsActivity');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -394,9 +394,9 @@ apiInstance.getQualityCalibration(calibrationId, opts)
   .then(function(data) {
     console.log(`getQualityCalibration success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getQualityCalibration');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -455,9 +455,9 @@ apiInstance.getQualityCalibrations(calibratorId, opts)
   .then(function(data) {
     console.log(`getQualityCalibrations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getQualityCalibrations');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -522,9 +522,9 @@ apiInstance.getQualityConversationAudits(conversationId, opts)
   .then(function(data) {
     console.log(`getQualityConversationAudits success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getQualityConversationAudits');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -583,9 +583,9 @@ apiInstance.getQualityConversationEvaluation(conversationId, evaluationId, opts)
   .then(function(data) {
     console.log(`getQualityConversationEvaluation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getQualityConversationEvaluation');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -644,15 +644,16 @@ var opts = {
   'isReleased': true, // Boolean | the evaluation has been released
   'agentHasRead': true, // Boolean | agent has the evaluation
   'expandAnswerTotalScores': true, // Boolean | get the total scores for evaluations
-  'maximum': 56 // Number | maximum
+  'maximum': 56, // Number | maximum
+  'sortOrder': "sortOrder_example" // String | sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'
 };
 apiInstance.getQualityEvaluationsQuery(opts)
   .then(function(data) {
     console.log(`getQualityEvaluationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getQualityEvaluationsQuery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -679,6 +680,7 @@ apiInstance.getQualityEvaluationsQuery(opts)
  **agentHasRead** | **Boolean** | agent has the evaluation | [optional]  |
  **expandAnswerTotalScores** | **Boolean** | get the total scores for evaluations | [optional]  |
  **maximum** | **Number** | maximum | [optional]  |
+ **sortOrder** | **String** | sort order options for agentUserId or evaluatorUserId query. Valid options are &#39;a&#39;, &#39;asc&#39;, &#39;ascending&#39;, &#39;d&#39;, &#39;desc&#39;, &#39;descending&#39; | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -725,9 +727,9 @@ apiInstance.getQualityEvaluatorsActivity(opts)
   .then(function(data) {
     console.log(`getQualityEvaluatorsActivity success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getQualityEvaluatorsActivity');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -783,9 +785,9 @@ apiInstance.getQualityForm(formId)
   .then(function(data) {
     console.log(`getQualityForm success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getQualityForm');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -835,9 +837,9 @@ apiInstance.getQualityFormVersions(formId, opts)
   .then(function(data) {
     console.log(`getQualityFormVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getQualityFormVersions');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -892,9 +894,9 @@ apiInstance.getQualityForms(opts)
   .then(function(data) {
     console.log(`getQualityForms success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getQualityForms');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -946,9 +948,9 @@ apiInstance.getQualityKeywordset(keywordSetId)
   .then(function(data) {
     console.log(`getQualityKeywordset success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getQualityKeywordset');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1004,9 +1006,9 @@ apiInstance.getQualityKeywordsets(opts)
   .then(function(data) {
     console.log(`getQualityKeywordsets success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getQualityKeywordsets');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1061,9 +1063,9 @@ apiInstance.getQualityPublishedform(formId)
   .then(function(data) {
     console.log(`getQualityPublishedform success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getQualityPublishedform');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1112,9 +1114,9 @@ apiInstance.getQualityPublishedforms(opts)
   .then(function(data) {
     console.log(`getQualityPublishedforms success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getQualityPublishedforms');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1162,9 +1164,9 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
   .then(function(data) {
     console.log(`postAnalyticsEvaluationsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAnalyticsEvaluationsAggregatesQuery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1213,9 +1215,9 @@ apiInstance.postQualityCalibrations(body, opts)
   .then(function(data) {
     console.log(`postQualityCalibrations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postQualityCalibrations');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1267,9 +1269,9 @@ apiInstance.postQualityConversationEvaluations(conversationId, body, opts)
   .then(function(data) {
     console.log(`postQualityConversationEvaluations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postQualityConversationEvaluations');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1317,9 +1319,9 @@ apiInstance.postQualityEvaluationsScoring(body)
   .then(function(data) {
     console.log(`postQualityEvaluationsScoring success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postQualityEvaluationsScoring');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1365,9 +1367,9 @@ apiInstance.postQualityForms(body)
   .then(function(data) {
     console.log(`postQualityForms success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postQualityForms');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1416,9 +1418,9 @@ apiInstance.postQualityKeywordsets(body, opts)
   .then(function(data) {
     console.log(`postQualityKeywordsets success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postQualityKeywordsets');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1465,9 +1467,9 @@ apiInstance.postQualityPublishedforms(body)
   .then(function(data) {
     console.log(`postQualityPublishedforms success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postQualityPublishedforms');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1514,9 +1516,9 @@ apiInstance.postQualitySpotability(opts)
   .then(function(data) {
     console.log(`postQualitySpotability success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postQualitySpotability');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1564,9 +1566,9 @@ apiInstance.putQualityCalibration(calibrationId, body)
   .then(function(data) {
     console.log(`putQualityCalibration success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putQualityCalibration');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1620,9 +1622,9 @@ apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body,
   .then(function(data) {
     console.log(`putQualityConversationEvaluation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putQualityConversationEvaluation');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1673,9 +1675,9 @@ apiInstance.putQualityForm(formId, body)
   .then(function(data) {
     console.log(`putQualityForm success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putQualityForm');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1724,9 +1726,9 @@ apiInstance.putQualityKeywordset(keywordSetId, body)
   .then(function(data) {
     console.log(`putQualityKeywordset success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putQualityKeywordset');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

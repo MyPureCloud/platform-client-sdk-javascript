@@ -54,9 +54,9 @@ apiInstance.deleteGreeting(greetingId)
   .then(function() {
     console.log('deleteGreeting returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteGreeting');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -102,9 +102,9 @@ apiInstance.getGreeting(greetingId)
   .then(function(data) {
     console.log(`getGreeting success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getGreeting');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -153,9 +153,9 @@ apiInstance.getGreetingMedia(greetingId, opts)
   .then(function(data) {
     console.log(`getGreetingMedia success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getGreetingMedia');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -204,9 +204,9 @@ apiInstance.getGreetings(opts)
   .then(function(data) {
     console.log(`getGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getGreetings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -250,9 +250,9 @@ apiInstance.getGreetingsDefaults()
   .then(function(data) {
     console.log(`getGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getGreetingsDefaults');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -299,9 +299,9 @@ apiInstance.getGroupGreetings(groupId, opts)
   .then(function(data) {
     console.log(`getGroupGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getGroupGreetings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -349,9 +349,9 @@ apiInstance.getGroupGreetingsDefaults(groupId)
   .then(function(data) {
     console.log(`getGroupGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getGroupGreetingsDefaults');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -401,9 +401,9 @@ apiInstance.getUserGreetings(userId, opts)
   .then(function(data) {
     console.log(`getUserGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserGreetings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -451,9 +451,9 @@ apiInstance.getUserGreetingsDefaults(userId)
   .then(function(data) {
     console.log(`getUserGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserGreetingsDefaults');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -499,9 +499,9 @@ apiInstance.postGreetings(body)
   .then(function(data) {
     console.log(`postGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postGreetings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -549,9 +549,9 @@ apiInstance.postGroupGreetings(groupId, body)
   .then(function(data) {
     console.log(`postGroupGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postGroupGreetings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -600,9 +600,9 @@ apiInstance.postUserGreetings(userId, body)
   .then(function(data) {
     console.log(`postUserGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postUserGreetings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -651,9 +651,9 @@ apiInstance.putGreeting(greetingId, body)
   .then(function(data) {
     console.log(`putGreeting success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putGreeting');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -700,9 +700,9 @@ apiInstance.putGreetingsDefaults(body)
   .then(function(data) {
     console.log(`putGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putGreetingsDefaults');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -750,9 +750,9 @@ apiInstance.putGroupGreetingsDefaults(groupId, body)
   .then(function(data) {
     console.log(`putGroupGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putGroupGreetingsDefaults');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -801,9 +801,9 @@ apiInstance.putUserGreetingsDefaults(userId, body)
   .then(function(data) {
     console.log(`putUserGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putUserGreetingsDefaults');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

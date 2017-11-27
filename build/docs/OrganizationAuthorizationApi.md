@@ -61,9 +61,9 @@ apiInstance.deleteOrgauthorizationTrustee(trusteeOrgId)
   .then(function() {
     console.log('deleteOrgauthorizationTrustee returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOrgauthorizationTrustee');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -111,9 +111,9 @@ apiInstance.deleteOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)
   .then(function() {
     console.log('deleteOrgauthorizationTrusteeUser returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOrgauthorizationTrusteeUser');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -162,9 +162,9 @@ apiInstance.deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)
   .then(function() {
     console.log('deleteOrgauthorizationTrusteeUserRoles returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOrgauthorizationTrusteeUserRoles');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -211,9 +211,9 @@ apiInstance.deleteOrgauthorizationTrustor(trustorOrgId)
   .then(function() {
     console.log('deleteOrgauthorizationTrustor returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOrgauthorizationTrustor');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -261,9 +261,9 @@ apiInstance.deleteOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
   .then(function() {
     console.log('deleteOrgauthorizationTrustorUser returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOrgauthorizationTrustorUser');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -310,9 +310,9 @@ apiInstance.getOrgauthorizationPairing(pairingId)
   .then(function(data) {
     console.log(`getOrgauthorizationPairing success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOrgauthorizationPairing');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -358,9 +358,9 @@ apiInstance.getOrgauthorizationTrustee(trusteeOrgId)
   .then(function(data) {
     console.log(`getOrgauthorizationTrustee success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOrgauthorizationTrustee');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -408,9 +408,9 @@ apiInstance.getOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)
   .then(function(data) {
     console.log(`getOrgauthorizationTrusteeUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOrgauthorizationTrusteeUser');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -459,9 +459,9 @@ apiInstance.getOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)
   .then(function(data) {
     console.log(`getOrgauthorizationTrusteeUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOrgauthorizationTrusteeUserRoles');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -512,9 +512,9 @@ apiInstance.getOrgauthorizationTrusteeUsers(trusteeOrgId, opts)
   .then(function(data) {
     console.log(`getOrgauthorizationTrusteeUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOrgauthorizationTrusteeUsers');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -564,9 +564,9 @@ apiInstance.getOrgauthorizationTrustees(opts)
   .then(function(data) {
     console.log(`getOrgauthorizationTrustees success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOrgauthorizationTrustees');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -613,9 +613,9 @@ apiInstance.getOrgauthorizationTrustor(trustorOrgId)
   .then(function(data) {
     console.log(`getOrgauthorizationTrustor success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOrgauthorizationTrustor');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -663,9 +663,9 @@ apiInstance.getOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
   .then(function(data) {
     console.log(`getOrgauthorizationTrustorUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOrgauthorizationTrustorUser');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -716,9 +716,9 @@ apiInstance.getOrgauthorizationTrustorUsers(trustorOrgId, opts)
   .then(function(data) {
     console.log(`getOrgauthorizationTrustorUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOrgauthorizationTrustorUsers');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -768,9 +768,9 @@ apiInstance.getOrgauthorizationTrustors(opts)
   .then(function(data) {
     console.log(`getOrgauthorizationTrustors success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOrgauthorizationTrustors');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -817,9 +817,9 @@ apiInstance.postOrgauthorizationPairings(body)
   .then(function(data) {
     console.log(`postOrgauthorizationPairings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOrgauthorizationPairings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -867,9 +867,9 @@ apiInstance.postOrgauthorizationTrusteeUsers(trusteeOrgId, body)
   .then(function(data) {
     console.log(`postOrgauthorizationTrusteeUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOrgauthorizationTrusteeUsers');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -916,9 +916,9 @@ apiInstance.postOrgauthorizationTrustees(body)
   .then(function(data) {
     console.log(`postOrgauthorizationTrustees success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOrgauthorizationTrustees');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -970,9 +970,9 @@ apiInstance.postOrgauthorizationTrusteesAudits(body, opts)
   .then(function(data) {
     console.log(`postOrgauthorizationTrusteesAudits success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOrgauthorizationTrusteesAudits');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1028,9 +1028,9 @@ apiInstance.postOrgauthorizationTrustorAudits(body, opts)
   .then(function(data) {
     console.log(`postOrgauthorizationTrustorAudits success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOrgauthorizationTrustorAudits');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1082,9 +1082,9 @@ apiInstance.putOrgauthorizationTrustee(trusteeOrgId, body)
   .then(function(data) {
     console.log(`putOrgauthorizationTrustee success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOrgauthorizationTrustee');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1135,9 +1135,9 @@ apiInstance.putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, bod
   .then(function(data) {
     console.log(`putOrgauthorizationTrusteeUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOrgauthorizationTrusteeUserRoles');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1187,9 +1187,9 @@ apiInstance.putOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
   .then(function(data) {
     console.log(`putOrgauthorizationTrustorUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOrgauthorizationTrustorUser');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

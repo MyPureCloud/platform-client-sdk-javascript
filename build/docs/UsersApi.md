@@ -81,9 +81,9 @@ apiInstance.deleteUser(userId)
   .then(function(data) {
     console.log(`deleteUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteUser');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -129,9 +129,9 @@ apiInstance.deleteUserRoles(userId)
   .then(function() {
     console.log('deleteUserRoles returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteUserRoles');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -179,9 +179,9 @@ apiInstance.deleteUserRoutingskill(userId, skillId)
   .then(function() {
     console.log('deleteUserRoutingskill returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteUserRoutingskill');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -228,9 +228,9 @@ apiInstance.deleteUserStationAssociatedstation(userId)
   .then(function() {
     console.log('deleteUserStationAssociatedstation returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteUserStationAssociatedstation');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -276,9 +276,9 @@ apiInstance.deleteUserStationDefaultstation(userId)
   .then(function() {
     console.log('deleteUserStationDefaultstation returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteUserStationDefaultstation');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -324,9 +324,9 @@ apiInstance.getFieldconfig(type)
   .then(function(data) {
     console.log(`getFieldconfig success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getFieldconfig');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -376,9 +376,9 @@ apiInstance.getUser(userId, opts)
   .then(function(data) {
     console.log(`getUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUser');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -429,9 +429,9 @@ apiInstance.getUserAdjacents(userId, opts)
   .then(function(data) {
     console.log(`getUserAdjacents success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserAdjacents');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -478,9 +478,9 @@ apiInstance.getUserCallforwarding(userId)
   .then(function(data) {
     console.log(`getUserCallforwarding success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserCallforwarding');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -529,9 +529,9 @@ apiInstance.getUserDirectreports(userId, opts)
   .then(function(data) {
     console.log(`getUserDirectreports success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserDirectreports');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -584,9 +584,9 @@ apiInstance.getUserFavorites(userId, opts)
   .then(function(data) {
     console.log(`getUserFavorites success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserFavorites');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -638,9 +638,9 @@ apiInstance.getUserGeolocation(userId, clientId)
   .then(function(data) {
     console.log(`getUserGeolocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserGeolocation');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -687,9 +687,9 @@ apiInstance.getUserOutofoffice(userId)
   .then(function(data) {
     console.log(`getUserOutofoffice success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserOutofoffice');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -735,9 +735,9 @@ apiInstance.getUserProfileskills(userId)
   .then(function(data) {
     console.log(`getUserProfileskills success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserProfileskills');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -788,9 +788,9 @@ apiInstance.getUserQueues(userId, opts)
   .then(function(data) {
     console.log(`getUserQueues success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserQueues');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -839,9 +839,9 @@ apiInstance.getUserRoles(userId)
   .then(function(data) {
     console.log(`getUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserRoles');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -892,9 +892,9 @@ apiInstance.getUserRoutingskills(userId, opts)
   .then(function(data) {
     console.log(`getUserRoutingskills success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserRoutingskills');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -943,9 +943,9 @@ apiInstance.getUserRoutingstatus(userId)
   .then(function(data) {
     console.log(`getUserRoutingstatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserRoutingstatus');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -991,9 +991,9 @@ apiInstance.getUserStation(userId)
   .then(function(data) {
     console.log(`getUserStation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserStation');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1042,9 +1042,9 @@ apiInstance.getUserSuperiors(userId, opts)
   .then(function(data) {
     console.log(`getUserSuperiors success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserSuperiors');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1097,9 +1097,9 @@ apiInstance.getUsers(opts)
   .then(function(data) {
     console.log(`getUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUsers');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1151,9 +1151,9 @@ apiInstance.getUsersMe(opts)
   .then(function(data) {
     console.log(`getUsersMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUsersMe');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1202,9 +1202,9 @@ apiInstance.getUsersSearch(q64, opts)
   .then(function(data) {
     console.log(`getUsersSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUsersSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1253,9 +1253,9 @@ apiInstance.patchUser(userId, body)
   .then(function(data) {
     console.log(`patchUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchUser');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1304,9 +1304,9 @@ apiInstance.patchUserCallforwarding(userId, body)
   .then(function(data) {
     console.log(`patchUserCallforwarding success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchUserCallforwarding');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1357,9 +1357,9 @@ apiInstance.patchUserGeolocation(userId, clientId, body)
   .then(function(data) {
     console.log(`patchUserGeolocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchUserGeolocation');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1411,9 +1411,9 @@ apiInstance.patchUserQueue(queueId, userId, body)
   .then(function(data) {
     console.log(`patchUserQueue success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchUserQueue');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1463,9 +1463,9 @@ apiInstance.patchUserQueues(userId, body)
   .then(function(data) {
     console.log(`patchUserQueues success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchUserQueues');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1512,9 +1512,9 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
   .then(function(data) {
     console.log(`postAnalyticsUsersAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAnalyticsUsersAggregatesQuery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1560,9 +1560,9 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
   .then(function(data) {
     console.log(`postAnalyticsUsersDetailsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAnalyticsUsersDetailsQuery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1608,9 +1608,9 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
   .then(function(data) {
     console.log(`postAnalyticsUsersObservationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAnalyticsUsersObservationsQuery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1659,9 +1659,9 @@ apiInstance.postUserInvite(userId, opts)
   .then(function() {
     console.log('postUserInvite returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postUserInvite');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1710,9 +1710,9 @@ apiInstance.postUserRoutingskills(userId, body)
   .then(function(data) {
     console.log(`postUserRoutingskills success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postUserRoutingskills');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1759,9 +1759,9 @@ apiInstance.postUsers(body)
   .then(function(data) {
     console.log(`postUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postUsers');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1807,9 +1807,9 @@ apiInstance.postUsersSearch(body)
   .then(function(data) {
     console.log(`postUsersSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postUsersSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1857,9 +1857,9 @@ apiInstance.putUserCallforwarding(userId, body)
   .then(function(data) {
     console.log(`putUserCallforwarding success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putUserCallforwarding');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1908,9 +1908,9 @@ apiInstance.putUserOutofoffice(userId, body)
   .then(function(data) {
     console.log(`putUserOutofoffice success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putUserOutofoffice');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1960,9 +1960,9 @@ apiInstance.putUserProfileskills(userId, opts)
   .then(function(data) {
     console.log(`putUserProfileskills success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putUserProfileskills');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2011,9 +2011,9 @@ apiInstance.putUserRoles(userId, body)
   .then(function(data) {
     console.log(`putUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putUserRoles');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2064,9 +2064,9 @@ apiInstance.putUserRoutingskill(userId, skillId, body)
   .then(function(data) {
     console.log(`putUserRoutingskill success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putUserRoutingskill');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2116,9 +2116,9 @@ apiInstance.putUserRoutingstatus(userId, body)
   .then(function(data) {
     console.log(`putUserRoutingstatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putUserRoutingstatus');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2167,9 +2167,9 @@ apiInstance.putUserStationAssociatedstationStationId(userId, stationId)
   .then(function() {
     console.log('putUserStationAssociatedstationStationId returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putUserStationAssociatedstationStationId');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2218,9 +2218,9 @@ apiInstance.putUserStationDefaultstationStationId(userId, stationId)
   .then(function() {
     console.log('putUserStationDefaultstationStationId returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putUserStationDefaultstationStationId');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

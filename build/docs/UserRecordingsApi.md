@@ -44,9 +44,9 @@ apiInstance.deleteUserrecording(recordingId)
   .then(function() {
     console.log('deleteUserrecording returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteUserrecording');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -95,9 +95,9 @@ apiInstance.getUserrecording(recordingId, opts)
   .then(function(data) {
     console.log(`getUserrecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserrecording');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -147,9 +147,9 @@ apiInstance.getUserrecordingMedia(recordingId, opts)
   .then(function(data) {
     console.log(`getUserrecordingMedia success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserrecordingMedia');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -199,9 +199,9 @@ apiInstance.getUserrecordings(opts)
   .then(function(data) {
     console.log(`getUserrecordings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserrecordings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -246,9 +246,9 @@ apiInstance.getUserrecordingsSummary()
   .then(function(data) {
     console.log(`getUserrecordingsSummary success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserrecordingsSummary');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -296,9 +296,9 @@ apiInstance.putUserrecording(recordingId, body, opts)
   .then(function(data) {
     console.log(`putUserrecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putUserrecording');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

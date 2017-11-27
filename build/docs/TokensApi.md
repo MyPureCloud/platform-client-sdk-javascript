@@ -37,9 +37,9 @@ apiInstance.deleteTokensMe()
   .then(function() {
     console.log('deleteTokensMe returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteTokensMe');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -79,9 +79,9 @@ apiInstance.getTokensMe()
   .then(function(data) {
     console.log(`getTokensMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getTokensMe');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

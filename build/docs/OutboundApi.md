@@ -126,9 +126,9 @@ apiInstance.deleteOutboundAttemptlimit(attemptLimitsId)
   .then(function() {
     console.log('deleteOutboundAttemptlimit returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOutboundAttemptlimit');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -174,9 +174,9 @@ apiInstance.deleteOutboundCallabletimeset(callableTimeSetId)
   .then(function() {
     console.log('deleteOutboundCallabletimeset returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOutboundCallabletimeset');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -222,9 +222,9 @@ apiInstance.deleteOutboundCallanalysisresponseset(callAnalysisSetId)
   .then(function() {
     console.log('deleteOutboundCallanalysisresponseset returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOutboundCallanalysisresponseset');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -270,9 +270,9 @@ apiInstance.deleteOutboundCampaign(campaignId)
   .then(function(data) {
     console.log(`deleteOutboundCampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOutboundCampaign');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -318,9 +318,9 @@ apiInstance.deleteOutboundCampaignProgress(campaignId)
   .then(function() {
     console.log('deleteOutboundCampaignProgress returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOutboundCampaignProgress');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -366,9 +366,9 @@ apiInstance.deleteOutboundCampaignrule(campaignRuleId)
   .then(function() {
     console.log('deleteOutboundCampaignrule returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOutboundCampaignrule');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -414,9 +414,9 @@ apiInstance.deleteOutboundContactlist(contactListId)
   .then(function() {
     console.log('deleteOutboundContactlist returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOutboundContactlist');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -464,9 +464,9 @@ apiInstance.deleteOutboundContactlistContact(contactListId, contactId)
   .then(function() {
     console.log('deleteOutboundContactlistContact returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOutboundContactlistContact');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -515,9 +515,9 @@ apiInstance.deleteOutboundContactlistContacts(contactListId, contactIds)
   .then(function() {
     console.log('deleteOutboundContactlistContacts returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOutboundContactlistContacts');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -564,9 +564,9 @@ apiInstance.deleteOutboundContactlistfilter(contactListFilterId)
   .then(function() {
     console.log('deleteOutboundContactlistfilter returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOutboundContactlistfilter');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -612,9 +612,9 @@ apiInstance.deleteOutboundContactlists(id)
   .then(function() {
     console.log('deleteOutboundContactlists returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOutboundContactlists');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -660,9 +660,9 @@ apiInstance.deleteOutboundDnclist(dncListId)
   .then(function() {
     console.log('deleteOutboundDnclist returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOutboundDnclist');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -708,9 +708,9 @@ apiInstance.deleteOutboundRuleset(ruleSetId)
   .then(function() {
     console.log('deleteOutboundRuleset returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOutboundRuleset');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -756,9 +756,9 @@ apiInstance.deleteOutboundSchedulesCampaign(campaignId)
   .then(function() {
     console.log('deleteOutboundSchedulesCampaign returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOutboundSchedulesCampaign');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -804,9 +804,9 @@ apiInstance.deleteOutboundSchedulesSequence(sequenceId)
   .then(function() {
     console.log('deleteOutboundSchedulesSequence returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOutboundSchedulesSequence');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -852,9 +852,9 @@ apiInstance.deleteOutboundSequence(sequenceId)
   .then(function() {
     console.log('deleteOutboundSequence returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOutboundSequence');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -900,9 +900,9 @@ apiInstance.getOutboundAttemptlimit(attemptLimitsId)
   .then(function(data) {
     console.log(`getOutboundAttemptlimit success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundAttemptlimit');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -954,9 +954,9 @@ apiInstance.getOutboundAttemptlimits(opts)
   .then(function(data) {
     console.log(`getOutboundAttemptlimits success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundAttemptlimits');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1007,9 +1007,9 @@ apiInstance.getOutboundCallabletimeset(callableTimeSetId)
   .then(function(data) {
     console.log(`getOutboundCallabletimeset success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundCallabletimeset');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1061,9 +1061,9 @@ apiInstance.getOutboundCallabletimesets(opts)
   .then(function(data) {
     console.log(`getOutboundCallabletimesets success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundCallabletimesets');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1114,9 +1114,9 @@ apiInstance.getOutboundCallanalysisresponseset(callAnalysisSetId)
   .then(function(data) {
     console.log(`getOutboundCallanalysisresponseset success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundCallanalysisresponseset');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1168,9 +1168,9 @@ apiInstance.getOutboundCallanalysisresponsesets(opts)
   .then(function(data) {
     console.log(`getOutboundCallanalysisresponsesets success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundCallanalysisresponsesets');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1221,9 +1221,9 @@ apiInstance.getOutboundCampaign(campaignId)
   .then(function(data) {
     console.log(`getOutboundCampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundCampaign');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1269,9 +1269,9 @@ apiInstance.getOutboundCampaignDiagnostics(campaignId)
   .then(function(data) {
     console.log(`getOutboundCampaignDiagnostics success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundCampaignDiagnostics');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1317,9 +1317,9 @@ apiInstance.getOutboundCampaignInteractions(campaignId)
   .then(function(data) {
     console.log(`getOutboundCampaignInteractions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundCampaignInteractions');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1365,9 +1365,9 @@ apiInstance.getOutboundCampaignProgress(campaignId)
   .then(function(data) {
     console.log(`getOutboundCampaignProgress success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundCampaignProgress');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1413,9 +1413,9 @@ apiInstance.getOutboundCampaignStats(campaignId)
   .then(function(data) {
     console.log(`getOutboundCampaignStats success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundCampaignStats');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1461,9 +1461,9 @@ apiInstance.getOutboundCampaignrule(campaignRuleId)
   .then(function(data) {
     console.log(`getOutboundCampaignrule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundCampaignrule');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1515,9 +1515,9 @@ apiInstance.getOutboundCampaignrules(opts)
   .then(function(data) {
     console.log(`getOutboundCampaignrules success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundCampaignrules');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1579,9 +1579,9 @@ apiInstance.getOutboundCampaigns(opts)
   .then(function(data) {
     console.log(`getOutboundCampaigns success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundCampaigns');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1641,9 +1641,9 @@ apiInstance.getOutboundContactlist(contactListId, opts)
   .then(function(data) {
     console.log(`getOutboundContactlist success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundContactlist');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1693,9 +1693,9 @@ apiInstance.getOutboundContactlistContact(contactListId, contactId)
   .then(function(data) {
     console.log(`getOutboundContactlistContact success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundContactlistContact');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1745,9 +1745,9 @@ apiInstance.getOutboundContactlistExport(contactListId, opts)
   .then(function(data) {
     console.log(`getOutboundContactlistExport success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundContactlistExport');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1794,9 +1794,9 @@ apiInstance.getOutboundContactlistImportstatus(contactListId)
   .then(function(data) {
     console.log(`getOutboundContactlistImportstatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundContactlistImportstatus');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1842,9 +1842,9 @@ apiInstance.getOutboundContactlistfilter(contactListFilterId)
   .then(function(data) {
     console.log(`getOutboundContactlistfilter success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundContactlistfilter');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1897,9 +1897,9 @@ apiInstance.getOutboundContactlistfilters(opts)
   .then(function(data) {
     console.log(`getOutboundContactlistfilters success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundContactlistfilters');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1959,9 +1959,9 @@ apiInstance.getOutboundContactlists(opts)
   .then(function(data) {
     console.log(`getOutboundContactlists success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundContactlists');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2018,9 +2018,9 @@ apiInstance.getOutboundDnclist(dncListId, opts)
   .then(function(data) {
     console.log(`getOutboundDnclist success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundDnclist');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2071,9 +2071,9 @@ apiInstance.getOutboundDnclistExport(dncListId, opts)
   .then(function(data) {
     console.log(`getOutboundDnclistExport success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundDnclistExport');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2120,9 +2120,9 @@ apiInstance.getOutboundDnclistImportstatus(dncListId)
   .then(function(data) {
     console.log(`getOutboundDnclistImportstatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundDnclistImportstatus');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2176,9 +2176,9 @@ apiInstance.getOutboundDnclists(opts)
   .then(function(data) {
     console.log(`getOutboundDnclists success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundDnclists');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2231,9 +2231,9 @@ apiInstance.getOutboundEvent(eventId)
   .then(function(data) {
     console.log(`getOutboundEvent success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundEvent');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2286,9 +2286,9 @@ apiInstance.getOutboundEvents(opts)
   .then(function(data) {
     console.log(`getOutboundEvents success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundEvents');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2340,9 +2340,9 @@ apiInstance.getOutboundRuleset(ruleSetId)
   .then(function(data) {
     console.log(`getOutboundRuleset success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundRuleset');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2394,9 +2394,9 @@ apiInstance.getOutboundRulesets(opts)
   .then(function(data) {
     console.log(`getOutboundRulesets success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundRulesets');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2447,9 +2447,9 @@ apiInstance.getOutboundSchedulesCampaign(campaignId)
   .then(function(data) {
     console.log(`getOutboundSchedulesCampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundSchedulesCampaign');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2492,9 +2492,9 @@ apiInstance.getOutboundSchedulesCampaigns()
   .then(function(data) {
     console.log(`getOutboundSchedulesCampaigns success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundSchedulesCampaigns');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2537,9 +2537,9 @@ apiInstance.getOutboundSchedulesSequence(sequenceId)
   .then(function(data) {
     console.log(`getOutboundSchedulesSequence success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundSchedulesSequence');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2582,9 +2582,9 @@ apiInstance.getOutboundSchedulesSequences()
   .then(function(data) {
     console.log(`getOutboundSchedulesSequences success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundSchedulesSequences');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2627,9 +2627,9 @@ apiInstance.getOutboundSequence(sequenceId)
   .then(function(data) {
     console.log(`getOutboundSequence success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundSequence');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2681,9 +2681,9 @@ apiInstance.getOutboundSequences(opts)
   .then(function(data) {
     console.log(`getOutboundSequences success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundSequences');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2731,9 +2731,9 @@ apiInstance.getOutboundSettings()
   .then(function(data) {
     console.log(`getOutboundSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundSettings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2773,9 +2773,9 @@ apiInstance.getOutboundWrapupcodemappings()
   .then(function(data) {
     console.log(`getOutboundWrapupcodemappings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOutboundWrapupcodemappings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2818,9 +2818,9 @@ apiInstance.patchOutboundSettings(body)
   .then(function() {
     console.log('patchOutboundSettings returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchOutboundSettings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2866,9 +2866,9 @@ apiInstance.postOutboundAttemptlimits(body)
   .then(function(data) {
     console.log(`postOutboundAttemptlimits success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOutboundAttemptlimits');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2921,9 +2921,9 @@ apiInstance.postOutboundAudits(body, opts)
   .then(function(data) {
     console.log(`postOutboundAudits success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOutboundAudits');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2974,9 +2974,9 @@ apiInstance.postOutboundCallabletimesets(body)
   .then(function(data) {
     console.log(`postOutboundCallabletimesets success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOutboundCallabletimesets');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3022,9 +3022,9 @@ apiInstance.postOutboundCallanalysisresponsesets(body)
   .then(function(data) {
     console.log(`postOutboundCallanalysisresponsesets success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOutboundCallanalysisresponsesets');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3072,9 +3072,9 @@ apiInstance.postOutboundCampaignCallbackSchedule(campaignId, body)
   .then(function(data) {
     console.log(`postOutboundCampaignCallbackSchedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOutboundCampaignCallbackSchedule');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3121,9 +3121,9 @@ apiInstance.postOutboundCampaignrules(body)
   .then(function(data) {
     console.log(`postOutboundCampaignrules success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOutboundCampaignrules');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3169,9 +3169,9 @@ apiInstance.postOutboundCampaigns(body)
   .then(function(data) {
     console.log(`postOutboundCampaigns success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOutboundCampaigns');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3217,9 +3217,9 @@ apiInstance.postOutboundCampaignsProgress(body)
   .then(function(data) {
     console.log(`postOutboundCampaignsProgress success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOutboundCampaignsProgress');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3271,9 +3271,9 @@ apiInstance.postOutboundContactlistContacts(contactListId, body, opts)
   .then(function(data) {
     console.log(`postOutboundContactlistContacts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOutboundContactlistContacts');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3322,9 +3322,9 @@ apiInstance.postOutboundContactlistExport(contactListId)
   .then(function(data) {
     console.log(`postOutboundContactlistExport success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOutboundContactlistExport');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3370,9 +3370,9 @@ apiInstance.postOutboundContactlistfilters(body)
   .then(function(data) {
     console.log(`postOutboundContactlistfilters success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOutboundContactlistfilters');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3418,9 +3418,9 @@ apiInstance.postOutboundContactlistfiltersPreview(body)
   .then(function(data) {
     console.log(`postOutboundContactlistfiltersPreview success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOutboundContactlistfiltersPreview');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3466,9 +3466,9 @@ apiInstance.postOutboundContactlists(body)
   .then(function(data) {
     console.log(`postOutboundContactlists success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOutboundContactlists');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3514,9 +3514,9 @@ apiInstance.postOutboundConversationDnc(conversationId)
   .then(function() {
     console.log('postOutboundConversationDnc returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOutboundConversationDnc');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3562,9 +3562,9 @@ apiInstance.postOutboundDnclistExport(dncListId)
   .then(function(data) {
     console.log(`postOutboundDnclistExport success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOutboundDnclistExport');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3612,9 +3612,9 @@ apiInstance.postOutboundDnclistPhonenumbers(dncListId, body)
   .then(function() {
     console.log('postOutboundDnclistPhonenumbers returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOutboundDnclistPhonenumbers');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3661,9 +3661,9 @@ apiInstance.postOutboundDnclists(body)
   .then(function(data) {
     console.log(`postOutboundDnclists success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOutboundDnclists');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3709,9 +3709,9 @@ apiInstance.postOutboundRulesets(body)
   .then(function(data) {
     console.log(`postOutboundRulesets success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOutboundRulesets');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3757,9 +3757,9 @@ apiInstance.postOutboundSequences(body)
   .then(function(data) {
     console.log(`postOutboundSequences success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOutboundSequences');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3807,9 +3807,9 @@ apiInstance.putOutboundAttemptlimit(attemptLimitsId, body)
   .then(function(data) {
     console.log(`putOutboundAttemptlimit success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOutboundAttemptlimit');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3858,9 +3858,9 @@ apiInstance.putOutboundCallabletimeset(callableTimeSetId, body)
   .then(function(data) {
     console.log(`putOutboundCallabletimeset success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOutboundCallabletimeset');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3909,9 +3909,9 @@ apiInstance.putOutboundCallanalysisresponseset(callAnalysisSetId, body)
   .then(function(data) {
     console.log(`putOutboundCallanalysisresponseset success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOutboundCallanalysisresponseset');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3960,9 +3960,9 @@ apiInstance.putOutboundCampaign(campaignId, body)
   .then(function(data) {
     console.log(`putOutboundCampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOutboundCampaign');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4013,9 +4013,9 @@ apiInstance.putOutboundCampaignAgent(campaignId, userId, body)
   .then(function(data) {
     console.log(`putOutboundCampaignAgent success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOutboundCampaignAgent');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4065,9 +4065,9 @@ apiInstance.putOutboundCampaignrule(campaignRuleId, body)
   .then(function(data) {
     console.log(`putOutboundCampaignrule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOutboundCampaignrule');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4116,9 +4116,9 @@ apiInstance.putOutboundContactlist(contactListId, body)
   .then(function(data) {
     console.log(`putOutboundContactlist success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOutboundContactlist');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4169,9 +4169,9 @@ apiInstance.putOutboundContactlistContact(contactListId, contactId, body)
   .then(function(data) {
     console.log(`putOutboundContactlistContact success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOutboundContactlistContact');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4221,9 +4221,9 @@ apiInstance.putOutboundContactlistfilter(contactListFilterId, body)
   .then(function(data) {
     console.log(`putOutboundContactlistfilter success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOutboundContactlistfilter');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4272,9 +4272,9 @@ apiInstance.putOutboundDnclist(dncListId, body)
   .then(function(data) {
     console.log(`putOutboundDnclist success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOutboundDnclist');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4323,9 +4323,9 @@ apiInstance.putOutboundRuleset(ruleSetId, body)
   .then(function(data) {
     console.log(`putOutboundRuleset success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOutboundRuleset');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4374,9 +4374,9 @@ apiInstance.putOutboundSchedulesCampaign(campaignId, body)
   .then(function(data) {
     console.log(`putOutboundSchedulesCampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOutboundSchedulesCampaign');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4425,9 +4425,9 @@ apiInstance.putOutboundSchedulesSequence(sequenceId, body)
   .then(function(data) {
     console.log(`putOutboundSchedulesSequence success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOutboundSchedulesSequence');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4476,9 +4476,9 @@ apiInstance.putOutboundSequence(sequenceId, body)
   .then(function(data) {
     console.log(`putOutboundSequence success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOutboundSequence');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4525,9 +4525,9 @@ apiInstance.putOutboundWrapupcodemappings(body)
   .then(function(data) {
     console.log(`putOutboundWrapupcodemappings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOutboundWrapupcodemappings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

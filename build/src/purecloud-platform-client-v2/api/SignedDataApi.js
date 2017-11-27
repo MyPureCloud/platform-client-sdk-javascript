@@ -10,20 +10,20 @@
     if (!root.platformClient) {
       root.platformClient = {};
     }
-    root.platformClient.TokensApi = factory(root.platformClient.ApiClient);
+    root.platformClient.SignedDataApi = factory(root.platformClient.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
 
   /**
-   * Tokens service.
-   * @module purecloud-platform-client-v2/api/TokensApi
+   * SignedData service.
+   * @module purecloud-platform-client-v2/api/SignedDataApi
    * @version 14.0.0
    */
 
   /**
-   * Constructs a new TokensApi. 
-   * @alias module:purecloud-platform-client-v2/api/TokensApi
+   * Constructs a new SignedDataApi. 
+   * @alias module:purecloud-platform-client-v2/api/SignedDataApi
    * @class
    * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
@@ -34,42 +34,23 @@
 
 
     /**
-     * Delete  auth token used to make the request.
+     * Sign identifying information
      * 
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body 
      */
-    this.deleteTokensMe = function() { 
+    this.postSigneddata = function(opts) { 
+      opts = opts || {};
 
 
       return this.apiClient.callApi(
-        '/api/v2/tokens/me', 
-        'DELETE', 
+        '/api/v2/signeddata', 
+        'POST', 
         {  }, 
         {  }, 
         {  }, 
         {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Fetch information about the current token
-     * 
-     */
-    this.getTokensMe = function() { 
-
-
-      return this.apiClient.callApi(
-        '/api/v2/tokens/me', 
-        'GET', 
-        {  }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        null, 
+        opts['body'], 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']

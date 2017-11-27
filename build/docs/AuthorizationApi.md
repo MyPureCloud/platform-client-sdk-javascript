@@ -55,9 +55,9 @@ apiInstance.deleteAuthorizationRole(roleId)
   .then(function() {
     console.log('deleteAuthorizationRole returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteAuthorizationRole');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -103,9 +103,9 @@ apiInstance.deleteUserRoles(userId)
   .then(function() {
     console.log('deleteUserRoles returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteUserRoles');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -153,9 +153,9 @@ apiInstance.getAuthorizationPermissions(opts)
   .then(function(data) {
     console.log(`getAuthorizationPermissions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAuthorizationPermissions');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -199,9 +199,9 @@ apiInstance.getAuthorizationProducts()
   .then(function(data) {
     console.log(`getAuthorizationProducts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAuthorizationProducts');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -244,9 +244,9 @@ apiInstance.getAuthorizationRole(roleId)
   .then(function(data) {
     console.log(`getAuthorizationRole success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAuthorizationRole');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -294,9 +294,9 @@ apiInstance.getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleI
   .then(function(data) {
     console.log(`getAuthorizationRoleComparedefaultRightRoleId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAuthorizationRoleComparedefaultRightRoleId');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -353,9 +353,9 @@ apiInstance.getAuthorizationRoles(opts)
   .then(function(data) {
     console.log(`getAuthorizationRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAuthorizationRoles');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -410,9 +410,9 @@ apiInstance.getUserRoles(userId)
   .then(function(data) {
     console.log(`getUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserRoles');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -460,9 +460,9 @@ apiInstance.patchAuthorizationRole(roleId, body)
   .then(function(data) {
     console.log(`patchAuthorizationRole success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchAuthorizationRole');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -513,9 +513,9 @@ apiInstance.postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRole
   .then(function(data) {
     console.log(`postAuthorizationRoleComparedefaultRightRoleId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAuthorizationRoleComparedefaultRightRoleId');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -563,9 +563,9 @@ apiInstance.postAuthorizationRoles(body)
   .then(function(data) {
     console.log(`postAuthorizationRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAuthorizationRoles');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -612,9 +612,9 @@ apiInstance.postAuthorizationRolesDefault(opts)
   .then(function(data) {
     console.log(`postAuthorizationRolesDefault success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAuthorizationRolesDefault');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -662,9 +662,9 @@ apiInstance.putAuthorizationRole(roleId, body)
   .then(function(data) {
     console.log(`putAuthorizationRole success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putAuthorizationRole');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -713,9 +713,9 @@ apiInstance.putAuthorizationRoleUsersAdd(roleId, body)
   .then(function(data) {
     console.log(`putAuthorizationRoleUsersAdd success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putAuthorizationRoleUsersAdd');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -764,9 +764,9 @@ apiInstance.putAuthorizationRoleUsersRemove(roleId, body)
   .then(function(data) {
     console.log(`putAuthorizationRoleUsersRemove success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putAuthorizationRoleUsersRemove');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -813,9 +813,9 @@ apiInstance.putAuthorizationRolesDefault(body)
   .then(function(data) {
     console.log(`putAuthorizationRolesDefault success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putAuthorizationRolesDefault');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -863,9 +863,9 @@ apiInstance.putUserRoles(userId, body)
   .then(function(data) {
     console.log(`putUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putUserRoles');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

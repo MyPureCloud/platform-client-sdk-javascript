@@ -63,9 +63,9 @@ apiInstance.deleteIdentityprovidersAdfs()
   .then(function(data) {
     console.log(`deleteIdentityprovidersAdfs success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteIdentityprovidersAdfs');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -105,9 +105,9 @@ apiInstance.deleteIdentityprovidersCic()
   .then(function(data) {
     console.log(`deleteIdentityprovidersCic success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteIdentityprovidersCic');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -147,9 +147,9 @@ apiInstance.deleteIdentityprovidersGsuite()
   .then(function(data) {
     console.log(`deleteIdentityprovidersGsuite success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteIdentityprovidersGsuite');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -189,9 +189,9 @@ apiInstance.deleteIdentityprovidersIdentitynow()
   .then(function(data) {
     console.log(`deleteIdentityprovidersIdentitynow success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteIdentityprovidersIdentitynow');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -231,9 +231,9 @@ apiInstance.deleteIdentityprovidersOkta()
   .then(function(data) {
     console.log(`deleteIdentityprovidersOkta success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteIdentityprovidersOkta');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -273,9 +273,9 @@ apiInstance.deleteIdentityprovidersOnelogin()
   .then(function(data) {
     console.log(`deleteIdentityprovidersOnelogin success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteIdentityprovidersOnelogin');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -315,9 +315,9 @@ apiInstance.deleteIdentityprovidersPing()
   .then(function(data) {
     console.log(`deleteIdentityprovidersPing success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteIdentityprovidersPing');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -357,9 +357,9 @@ apiInstance.deleteIdentityprovidersPurecloud()
   .then(function(data) {
     console.log(`deleteIdentityprovidersPurecloud success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteIdentityprovidersPurecloud');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -399,9 +399,9 @@ apiInstance.deleteIdentityprovidersSalesforce()
   .then(function(data) {
     console.log(`deleteIdentityprovidersSalesforce success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteIdentityprovidersSalesforce');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -441,9 +441,9 @@ apiInstance.getIdentityproviders()
   .then(function(data) {
     console.log(`getIdentityproviders success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIdentityproviders');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -483,9 +483,9 @@ apiInstance.getIdentityprovidersAdfs()
   .then(function(data) {
     console.log(`getIdentityprovidersAdfs success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIdentityprovidersAdfs');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -525,9 +525,9 @@ apiInstance.getIdentityprovidersCic()
   .then(function(data) {
     console.log(`getIdentityprovidersCic success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIdentityprovidersCic');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -567,9 +567,9 @@ apiInstance.getIdentityprovidersGsuite()
   .then(function(data) {
     console.log(`getIdentityprovidersGsuite success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIdentityprovidersGsuite');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -609,9 +609,9 @@ apiInstance.getIdentityprovidersIdentitynow()
   .then(function(data) {
     console.log(`getIdentityprovidersIdentitynow success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIdentityprovidersIdentitynow');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -651,9 +651,9 @@ apiInstance.getIdentityprovidersOkta()
   .then(function(data) {
     console.log(`getIdentityprovidersOkta success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIdentityprovidersOkta');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -693,9 +693,9 @@ apiInstance.getIdentityprovidersOnelogin()
   .then(function(data) {
     console.log(`getIdentityprovidersOnelogin success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIdentityprovidersOnelogin');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -735,9 +735,9 @@ apiInstance.getIdentityprovidersPing()
   .then(function(data) {
     console.log(`getIdentityprovidersPing success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIdentityprovidersPing');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -777,9 +777,9 @@ apiInstance.getIdentityprovidersPurecloud()
   .then(function(data) {
     console.log(`getIdentityprovidersPurecloud success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIdentityprovidersPurecloud');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -819,9 +819,9 @@ apiInstance.getIdentityprovidersSalesforce()
   .then(function(data) {
     console.log(`getIdentityprovidersSalesforce success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getIdentityprovidersSalesforce');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -864,9 +864,9 @@ apiInstance.putIdentityprovidersAdfs(body)
   .then(function(data) {
     console.log(`putIdentityprovidersAdfs success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putIdentityprovidersAdfs');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -912,9 +912,9 @@ apiInstance.putIdentityprovidersCic(body)
   .then(function(data) {
     console.log(`putIdentityprovidersCic success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putIdentityprovidersCic');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -960,9 +960,9 @@ apiInstance.putIdentityprovidersGsuite(body)
   .then(function(data) {
     console.log(`putIdentityprovidersGsuite success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putIdentityprovidersGsuite');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1008,9 +1008,9 @@ apiInstance.putIdentityprovidersIdentitynow(body)
   .then(function(data) {
     console.log(`putIdentityprovidersIdentitynow success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putIdentityprovidersIdentitynow');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1056,9 +1056,9 @@ apiInstance.putIdentityprovidersOkta(body)
   .then(function(data) {
     console.log(`putIdentityprovidersOkta success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putIdentityprovidersOkta');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1104,9 +1104,9 @@ apiInstance.putIdentityprovidersOnelogin(body)
   .then(function(data) {
     console.log(`putIdentityprovidersOnelogin success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putIdentityprovidersOnelogin');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1152,9 +1152,9 @@ apiInstance.putIdentityprovidersPing(body)
   .then(function(data) {
     console.log(`putIdentityprovidersPing success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putIdentityprovidersPing');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1200,9 +1200,9 @@ apiInstance.putIdentityprovidersPurecloud(body)
   .then(function(data) {
     console.log(`putIdentityprovidersPurecloud success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putIdentityprovidersPurecloud');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1248,9 +1248,9 @@ apiInstance.putIdentityprovidersSalesforce(body)
   .then(function(data) {
     console.log(`putIdentityprovidersSalesforce success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putIdentityprovidersSalesforce');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

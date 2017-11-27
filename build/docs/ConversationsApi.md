@@ -12,6 +12,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteConversationsEmailMessagesDraftAttachment**](ConversationsApi.html#deleteConversationsEmailMessagesDraftAttachment) | **DELETE** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId} | Delete attachment from draft
 [**getAnalyticsConversationDetails**](ConversationsApi.html#getAnalyticsConversationDetails) | **GET** /api/v2/analytics/conversations/{conversationId}/details | Get a conversation by id
 [**getConversation**](ConversationsApi.html#getConversation) | **GET** /api/v2/conversations/{conversationId} | Get conversation
+[**getConversationParticipantSecureivrsession**](ConversationsApi.html#getConversationParticipantSecureivrsession) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId} | Fetch info on a secure session
+[**getConversationParticipantSecureivrsessions**](ConversationsApi.html#getConversationParticipantSecureivrsessions) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Get a list of secure sessions for this participant.
 [**getConversationParticipantWrapup**](ConversationsApi.html#getConversationParticipantWrapup) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
 [**getConversationParticipantWrapupcodes**](ConversationsApi.html#getConversationParticipantWrapupcodes) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
 [**getConversations**](ConversationsApi.html#getConversations) | **GET** /api/v2/conversations | Get conversations
@@ -69,6 +71,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationParticipantCallbacks**](ConversationsApi.html#postConversationParticipantCallbacks) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks | Create a new callback for the specified participant on the conversation.
 [**postConversationParticipantDigits**](ConversationsApi.html#postConversationParticipantDigits) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/digits | Sends DTMF to the participant
 [**postConversationParticipantReplace**](ConversationsApi.html#postConversationParticipantReplace) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
+[**postConversationParticipantSecureivrsessions**](ConversationsApi.html#postConversationParticipantSecureivrsessions) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
 [**postConversationsCall**](ConversationsApi.html#postConversationsCall) | **POST** /api/v2/conversations/calls/{conversationId} | Place a new call as part of a callback conversation.
 [**postConversationsCallParticipantConsult**](ConversationsApi.html#postConversationsCallParticipantConsult) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Initiate and update consult transfer
 [**postConversationsCallParticipantMonitor**](ConversationsApi.html#postConversationsCallParticipantMonitor) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor | Listen in on the conversation from the point of view of a given participant.
@@ -122,9 +125,9 @@ apiInstance.deleteConversationParticipantCode(conversationId, participantId, add
   .then(function() {
     console.log('deleteConversationParticipantCode returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteConversationParticipantCode');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -174,9 +177,9 @@ apiInstance.deleteConversationsCallParticipantConsult(conversationId, participan
   .then(function() {
     console.log('deleteConversationsCallParticipantConsult returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteConversationsCallParticipantConsult');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -225,9 +228,9 @@ apiInstance.deleteConversationsEmailMessagesDraftAttachment(conversationId, atta
   .then(function() {
     console.log('deleteConversationsEmailMessagesDraftAttachment returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteConversationsEmailMessagesDraftAttachment');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -274,9 +277,9 @@ apiInstance.getAnalyticsConversationDetails(conversationId)
   .then(function(data) {
     console.log(`getAnalyticsConversationDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAnalyticsConversationDetails');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -322,9 +325,9 @@ apiInstance.getConversation(conversationId)
   .then(function(data) {
     console.log(`getConversation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversation');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -340,6 +343,111 @@ apiInstance.getConversation(conversationId)
 ### Return type
 
 **Conversation**
+
+<a name="getConversationParticipantSecureivrsession"></a>
+
+# SecureSession getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId)
+
+GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId}
+
+Fetch info on a secure session
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ConversationsApi();
+
+var conversationId = "conversationId_example"; // String | conversation ID
+
+var participantId = "participantId_example"; // String | participant ID
+
+var secureSessionId = "secureSessionId_example"; // String | secure IVR session ID
+
+apiInstance.getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId)
+  .then(function(data) {
+    console.log(`getConversationParticipantSecureivrsession success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getConversationParticipantSecureivrsession');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
+ **secureSessionId** | **String** | secure IVR session ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SecureSession**
+
+<a name="getConversationParticipantSecureivrsessions"></a>
+
+# SecureSessionEntityListing getConversationParticipantSecureivrsessions(conversationId, participantId)
+
+GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions
+
+Get a list of secure sessions for this participant.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ConversationsApi();
+
+var conversationId = "conversationId_example"; // String | conversation ID
+
+var participantId = "participantId_example"; // String | participant ID
+
+apiInstance.getConversationParticipantSecureivrsessions(conversationId, participantId)
+  .then(function(data) {
+    console.log(`getConversationParticipantSecureivrsessions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getConversationParticipantSecureivrsessions');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SecureSessionEntityListing**
 
 <a name="getConversationParticipantWrapup"></a>
 
@@ -375,9 +483,9 @@ apiInstance.getConversationParticipantWrapup(conversationId, participantId, opts
   .then(function(data) {
     console.log(`getConversationParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationParticipantWrapup');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -427,9 +535,9 @@ apiInstance.getConversationParticipantWrapupcodes(conversationId, participantId)
   .then(function(data) {
     console.log(`getConversationParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationParticipantWrapupcodes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -477,9 +585,9 @@ apiInstance.getConversations(opts)
   .then(function(data) {
     console.log(`getConversations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversations');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -525,9 +633,9 @@ apiInstance.getConversationsCall(conversationId)
   .then(function(data) {
     console.log(`getConversationsCall success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsCall');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -578,9 +686,9 @@ apiInstance.getConversationsCallParticipantWrapup(conversationId, participantId,
   .then(function(data) {
     console.log(`getConversationsCallParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsCallParticipantWrapup');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -630,9 +738,9 @@ apiInstance.getConversationsCallParticipantWrapupcodes(conversationId, participa
   .then(function(data) {
     console.log(`getConversationsCallParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsCallParticipantWrapupcodes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -679,9 +787,9 @@ apiInstance.getConversationsCallback(conversationId)
   .then(function(data) {
     console.log(`getConversationsCallback success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsCallback');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -732,9 +840,9 @@ apiInstance.getConversationsCallbackParticipantWrapup(conversationId, participan
   .then(function(data) {
     console.log(`getConversationsCallbackParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsCallbackParticipantWrapup');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -784,9 +892,9 @@ apiInstance.getConversationsCallbackParticipantWrapupcodes(conversationId, parti
   .then(function(data) {
     console.log(`getConversationsCallbackParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsCallbackParticipantWrapupcodes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -830,9 +938,9 @@ apiInstance.getConversationsCallbacks()
   .then(function(data) {
     console.log(`getConversationsCallbacks success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsCallbacks');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -872,9 +980,9 @@ apiInstance.getConversationsCalls()
   .then(function(data) {
     console.log(`getConversationsCalls success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsCalls');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -921,9 +1029,9 @@ apiInstance.getConversationsCallsHistory(opts)
   .then(function(data) {
     console.log(`getConversationsCallsHistory success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsCallsHistory');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -969,9 +1077,9 @@ apiInstance.getConversationsCallsMaximumconferenceparties()
   .then(function(data) {
     console.log(`getConversationsCallsMaximumconferenceparties success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsCallsMaximumconferenceparties');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1014,9 +1122,9 @@ apiInstance.getConversationsChat(conversationId)
   .then(function(data) {
     console.log(`getConversationsChat success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsChat');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1067,9 +1175,9 @@ apiInstance.getConversationsChatParticipantWrapup(conversationId, participantId,
   .then(function(data) {
     console.log(`getConversationsChatParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsChatParticipantWrapup');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1119,9 +1227,9 @@ apiInstance.getConversationsChatParticipantWrapupcodes(conversationId, participa
   .then(function(data) {
     console.log(`getConversationsChatParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsChatParticipantWrapupcodes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1165,9 +1273,9 @@ apiInstance.getConversationsChats()
   .then(function(data) {
     console.log(`getConversationsChats success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsChats');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1210,9 +1318,9 @@ apiInstance.getConversationsCobrowsesession(conversationId)
   .then(function(data) {
     console.log(`getConversationsCobrowsesession success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsCobrowsesession');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1263,9 +1371,9 @@ apiInstance.getConversationsCobrowsesessionParticipantWrapup(conversationId, par
   .then(function(data) {
     console.log(`getConversationsCobrowsesessionParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsCobrowsesessionParticipantWrapup');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1315,9 +1423,9 @@ apiInstance.getConversationsCobrowsesessionParticipantWrapupcodes(conversationId
   .then(function(data) {
     console.log(`getConversationsCobrowsesessionParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsCobrowsesessionParticipantWrapupcodes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1361,9 +1469,9 @@ apiInstance.getConversationsCobrowsesessions()
   .then(function(data) {
     console.log(`getConversationsCobrowsesessions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsCobrowsesessions');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1406,9 +1514,9 @@ apiInstance.getConversationsEmail(conversationId)
   .then(function(data) {
     console.log(`getConversationsEmail success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsEmail');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1456,9 +1564,9 @@ apiInstance.getConversationsEmailMessage(conversationId, messageId)
   .then(function(data) {
     console.log(`getConversationsEmailMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsEmailMessage');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1505,9 +1613,9 @@ apiInstance.getConversationsEmailMessages(conversationId)
   .then(function(data) {
     console.log(`getConversationsEmailMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsEmailMessages');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1553,9 +1661,9 @@ apiInstance.getConversationsEmailMessagesDraft(conversationId)
   .then(function(data) {
     console.log(`getConversationsEmailMessagesDraft success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsEmailMessagesDraft');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1606,9 +1714,9 @@ apiInstance.getConversationsEmailParticipantWrapup(conversationId, participantId
   .then(function(data) {
     console.log(`getConversationsEmailParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsEmailParticipantWrapup');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1658,9 +1766,9 @@ apiInstance.getConversationsEmailParticipantWrapupcodes(conversationId, particip
   .then(function(data) {
     console.log(`getConversationsEmailParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsEmailParticipantWrapupcodes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1704,9 +1812,9 @@ apiInstance.getConversationsEmails()
   .then(function(data) {
     console.log(`getConversationsEmails success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getConversationsEmails');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1753,9 +1861,9 @@ apiInstance.patchConversationParticipant(conversationId, participantId, body)
   .then(function() {
     console.log('patchConversationParticipant returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationParticipant');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1807,9 +1915,9 @@ apiInstance.patchConversationParticipantAttributes(conversationId, participantId
   .then(function() {
     console.log('patchConversationParticipantAttributes returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationParticipantAttributes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1859,9 +1967,9 @@ apiInstance.patchConversationsCall(conversationId, body)
   .then(function(data) {
     console.log(`patchConversationsCall success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsCall');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1912,9 +2020,9 @@ apiInstance.patchConversationsCallParticipant(conversationId, participantId, bod
   .then(function() {
     console.log('patchConversationsCallParticipant returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsCallParticipant');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1966,9 +2074,9 @@ apiInstance.patchConversationsCallParticipantAttributes(conversationId, particip
   .then(function() {
     console.log('patchConversationsCallParticipantAttributes returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsCallParticipantAttributes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2022,9 +2130,9 @@ apiInstance.patchConversationsCallParticipantCommunication(conversationId, parti
   .then(function(data) {
     console.log(`patchConversationsCallParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsCallParticipantCommunication');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2077,9 +2185,9 @@ apiInstance.patchConversationsCallParticipantConsult(conversationId, participant
   .then(function(data) {
     console.log(`patchConversationsCallParticipantConsult success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsCallParticipantConsult');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2129,9 +2237,9 @@ apiInstance.patchConversationsCallback(conversationId, body)
   .then(function(data) {
     console.log(`patchConversationsCallback success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsCallback');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2182,9 +2290,9 @@ apiInstance.patchConversationsCallbackParticipant(conversationId, participantId,
   .then(function() {
     console.log('patchConversationsCallbackParticipant returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsCallbackParticipant');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2236,9 +2344,9 @@ apiInstance.patchConversationsCallbackParticipantAttributes(conversationId, part
   .then(function() {
     console.log('patchConversationsCallbackParticipantAttributes returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsCallbackParticipantAttributes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2292,9 +2400,9 @@ apiInstance.patchConversationsCallbackParticipantCommunication(conversationId, p
   .then(function(data) {
     console.log(`patchConversationsCallbackParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsCallbackParticipantCommunication');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2345,9 +2453,9 @@ apiInstance.patchConversationsChat(conversationId, body)
   .then(function(data) {
     console.log(`patchConversationsChat success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsChat');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2398,9 +2506,9 @@ apiInstance.patchConversationsChatParticipant(conversationId, participantId, bod
   .then(function() {
     console.log('patchConversationsChatParticipant returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsChatParticipant');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2452,9 +2560,9 @@ apiInstance.patchConversationsChatParticipantAttributes(conversationId, particip
   .then(function() {
     console.log('patchConversationsChatParticipantAttributes returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsChatParticipantAttributes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2508,9 +2616,9 @@ apiInstance.patchConversationsChatParticipantCommunication(conversationId, parti
   .then(function(data) {
     console.log(`patchConversationsChatParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsChatParticipantCommunication');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2561,9 +2669,9 @@ apiInstance.patchConversationsCobrowsesession(conversationId, body)
   .then(function(data) {
     console.log(`patchConversationsCobrowsesession success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsCobrowsesession');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2615,9 +2723,9 @@ apiInstance.patchConversationsCobrowsesessionParticipant(conversationId, partici
   .then(function() {
     console.log('patchConversationsCobrowsesessionParticipant returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsCobrowsesessionParticipant');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2670,9 +2778,9 @@ apiInstance.patchConversationsCobrowsesessionParticipantAttributes(conversationI
   .then(function() {
     console.log('patchConversationsCobrowsesessionParticipantAttributes returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsCobrowsesessionParticipantAttributes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2726,9 +2834,9 @@ apiInstance.patchConversationsCobrowsesessionParticipantCommunication(conversati
   .then(function(data) {
     console.log(`patchConversationsCobrowsesessionParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsCobrowsesessionParticipantCommunication');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2779,9 +2887,9 @@ apiInstance.patchConversationsEmail(conversationId, body)
   .then(function(data) {
     console.log(`patchConversationsEmail success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsEmail');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2832,9 +2940,9 @@ apiInstance.patchConversationsEmailParticipant(conversationId, participantId, bo
   .then(function() {
     console.log('patchConversationsEmailParticipant returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsEmailParticipant');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2886,9 +2994,9 @@ apiInstance.patchConversationsEmailParticipantAttributes(conversationId, partici
   .then(function() {
     console.log('patchConversationsEmailParticipantAttributes returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsEmailParticipantAttributes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2942,9 +3050,9 @@ apiInstance.patchConversationsEmailParticipantCommunication(conversationId, part
   .then(function(data) {
     console.log(`patchConversationsEmailParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchConversationsEmailParticipantCommunication');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2995,9 +3103,9 @@ apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
   .then(function(data) {
     console.log(`postAnalyticsConversationDetailsProperties success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAnalyticsConversationDetailsProperties');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3044,9 +3152,9 @@ apiInstance.postAnalyticsConversationsAggregatesQuery(body)
   .then(function(data) {
     console.log(`postAnalyticsConversationsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAnalyticsConversationsAggregatesQuery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3092,9 +3200,9 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
   .then(function(data) {
     console.log(`postAnalyticsConversationsDetailsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAnalyticsConversationsDetailsQuery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3145,9 +3253,9 @@ apiInstance.postConversationParticipantCallbacks(conversationId, participantId, 
   .then(function() {
     console.log('postConversationParticipantCallbacks returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationParticipantCallbacks');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3200,9 +3308,9 @@ apiInstance.postConversationParticipantDigits(conversationId, participantId, opt
   .then(function() {
     console.log('postConversationParticipantDigits returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationParticipantDigits');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3254,9 +3362,9 @@ apiInstance.postConversationParticipantReplace(conversationId, participantId, bo
   .then(function() {
     console.log('postConversationParticipantReplace returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationParticipantReplace');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3274,6 +3382,61 @@ apiInstance.postConversationParticipantReplace(conversationId, participantId, bo
 ### Return type
 
 void (no response body)
+
+<a name="postConversationParticipantSecureivrsessions"></a>
+
+# SecureSession postConversationParticipantSecureivrsessions(conversationId, participantId, opts)
+
+POST /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions
+
+Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ConversationsApi();
+
+var conversationId = "conversationId_example"; // String | conversation ID
+
+var participantId = "participantId_example"; // String | participant ID
+
+var opts = { 
+  'body': {} // Object | 
+};
+apiInstance.postConversationParticipantSecureivrsessions(conversationId, participantId, opts)
+  .then(function(data) {
+    console.log(`postConversationParticipantSecureivrsessions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postConversationParticipantSecureivrsessions');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**SecureSession**
 
 <a name="postConversationsCall"></a>
 
@@ -3306,9 +3469,9 @@ apiInstance.postConversationsCall(conversationId, body)
   .then(function(data) {
     console.log(`postConversationsCall success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationsCall');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3359,9 +3522,9 @@ apiInstance.postConversationsCallParticipantConsult(conversationId, participantI
   .then(function(data) {
     console.log(`postConversationsCallParticipantConsult success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationsCallParticipantConsult');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3411,9 +3574,9 @@ apiInstance.postConversationsCallParticipantMonitor(conversationId, participantI
   .then(function() {
     console.log('postConversationsCallParticipantMonitor returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationsCallParticipantMonitor');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3464,9 +3627,9 @@ apiInstance.postConversationsCallParticipantReplace(conversationId, participantI
   .then(function() {
     console.log('postConversationsCallParticipantReplace returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationsCallParticipantReplace');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3516,9 +3679,9 @@ apiInstance.postConversationsCallParticipants(conversationId, body)
   .then(function(data) {
     console.log(`postConversationsCallParticipants success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationsCallParticipants');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3569,9 +3732,9 @@ apiInstance.postConversationsCallbackParticipantReplace(conversationId, particip
   .then(function() {
     console.log('postConversationsCallbackParticipantReplace returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationsCallbackParticipantReplace');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3619,9 +3782,9 @@ apiInstance.postConversationsCallbacks(body)
   .then(function(data) {
     console.log(`postConversationsCallbacks success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationsCallbacks');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3667,9 +3830,9 @@ apiInstance.postConversationsCalls(body)
   .then(function(data) {
     console.log(`postConversationsCalls success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationsCalls');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3719,9 +3882,9 @@ apiInstance.postConversationsChatParticipantReplace(conversationId, participantI
   .then(function() {
     console.log('postConversationsChatParticipantReplace returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationsChatParticipantReplace');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3769,9 +3932,9 @@ apiInstance.postConversationsChats(body)
   .then(function(data) {
     console.log(`postConversationsChats success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationsChats');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3822,9 +3985,9 @@ apiInstance.postConversationsCobrowsesessionParticipantReplace(conversationId, p
   .then(function() {
     console.log('postConversationsCobrowsesessionParticipantReplace returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationsCobrowsesessionParticipantReplace');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3874,9 +4037,9 @@ apiInstance.postConversationsEmailInboundmessages(conversationId, body)
   .then(function(data) {
     console.log(`postConversationsEmailInboundmessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationsEmailInboundmessages');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3925,9 +4088,9 @@ apiInstance.postConversationsEmailMessages(conversationId, body)
   .then(function(data) {
     console.log(`postConversationsEmailMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationsEmailMessages');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -3978,9 +4141,9 @@ apiInstance.postConversationsEmailParticipantReplace(conversationId, participant
   .then(function() {
     console.log('postConversationsEmailParticipantReplace returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationsEmailParticipantReplace');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4028,9 +4191,9 @@ apiInstance.postConversationsEmails(body)
   .then(function(data) {
     console.log(`postConversationsEmails success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationsEmails');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4076,9 +4239,9 @@ apiInstance.postConversationsFaxes(body)
   .then(function(data) {
     console.log(`postConversationsFaxes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postConversationsFaxes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4130,9 +4293,9 @@ apiInstance.putConversationsCallParticipantCommunicationUuidata(conversationId, 
   .then(function(data) {
     console.log(`putConversationsCallParticipantCommunicationUuidata success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putConversationsCallParticipantCommunicationUuidata');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -4183,9 +4346,9 @@ apiInstance.putConversationsEmailMessagesDraft(conversationId, body)
   .then(function(data) {
     console.log(`putConversationsEmailMessagesDraft success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putConversationsEmailMessagesDraft');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

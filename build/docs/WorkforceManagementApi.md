@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequest) | **GET** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Get a time off request for the current user by id
 [**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequests) | **GET** /api/v2/workforcemanagement/timeoffrequests | Get a list of time off requests for the current user
 [**patchWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementTimeoffrequest) | **PATCH** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Mark a time off request for the current user as read or unread
+[**postWorkforcemanagementAgentsManagementunits**](WorkforceManagementApi.html#postWorkforcemanagementAgentsManagementunits) | **POST** /api/v2/workforcemanagement/agents/managementunits | Get the management units to which the agents belong
 [**postWorkforcemanagementManagementunitHistoricaladherencequery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitHistoricaladherencequery) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/historicaladherencequery | Request a historical adherence report
 [**postWorkforcemanagementManagementunitIntraday**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitIntraday) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/intraday | Get intraday data for the given date for the requested queueIds
 [**postWorkforcemanagementManagementunitSchedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitSchedulesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/schedules/search | Get user schedules within the given time range
@@ -52,9 +53,9 @@ apiInstance.getWorkforcemanagementAdherence(userId)
   .then(function(data) {
     console.log(`getWorkforcemanagementAdherence success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getWorkforcemanagementAdherence');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -100,9 +101,9 @@ apiInstance.getWorkforcemanagementManagementunitActivitycodes(muId)
   .then(function(data) {
     console.log(`getWorkforcemanagementManagementunitActivitycodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getWorkforcemanagementManagementunitActivitycodes');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -150,9 +151,9 @@ apiInstance.getWorkforcemanagementManagementunitIntradayQueues(muId, _date)
   .then(function(data) {
     console.log(`getWorkforcemanagementManagementunitIntradayQueues success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getWorkforcemanagementManagementunitIntradayQueues');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -203,9 +204,9 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId,
   .then(function(data) {
     console.log(`getWorkforcemanagementManagementunitUserTimeoffrequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getWorkforcemanagementManagementunitUserTimeoffrequest');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -258,9 +259,9 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(muId, userId
   .then(function(data) {
     console.log(`getWorkforcemanagementManagementunitUserTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getWorkforcemanagementManagementunitUserTimeoffrequests');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -308,9 +309,9 @@ apiInstance.getWorkforcemanagementManagementunitUsers(muId)
   .then(function(data) {
     console.log(`getWorkforcemanagementManagementunitUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getWorkforcemanagementManagementunitUsers');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -358,9 +359,9 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
   .then(function(data) {
     console.log(`getWorkforcemanagementManagementunits success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getWorkforcemanagementManagementunits');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -407,9 +408,9 @@ apiInstance.getWorkforcemanagementTimeoffrequest(timeOffRequestId)
   .then(function(data) {
     console.log(`getWorkforcemanagementTimeoffrequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getWorkforcemanagementTimeoffrequest');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -456,9 +457,9 @@ apiInstance.getWorkforcemanagementTimeoffrequests(opts)
   .then(function(data) {
     console.log(`getWorkforcemanagementTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getWorkforcemanagementTimeoffrequests');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -507,9 +508,9 @@ apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
   .then(function() {
     console.log('patchWorkforcemanagementTimeoffrequest returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchWorkforcemanagementTimeoffrequest');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -526,6 +527,55 @@ apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
 ### Return type
 
 void (no response body)
+
+<a name="postWorkforcemanagementAgentsManagementunits"></a>
+
+# [AgentManagementUnitReference] postWorkforcemanagementAgentsManagementunits(opts)
+
+POST /api/v2/workforcemanagement/agents/managementunits
+
+Get the management units to which the agents belong
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var opts = { 
+  'body': [{}] // Object | body
+};
+apiInstance.postWorkforcemanagementAgentsManagementunits(opts)
+  .then(function(data) {
+    console.log(`postWorkforcemanagementAgentsManagementunits success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postWorkforcemanagementAgentsManagementunits');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**[AgentManagementUnitReference]**
 
 <a name="postWorkforcemanagementManagementunitHistoricaladherencequery"></a>
 
@@ -559,9 +609,9 @@ apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(muId, 
   .then(function(data) {
     console.log(`postWorkforcemanagementManagementunitHistoricaladherencequery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postWorkforcemanagementManagementunitHistoricaladherencequery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -611,9 +661,9 @@ apiInstance.postWorkforcemanagementManagementunitIntraday(muId, opts)
   .then(function(data) {
     console.log(`postWorkforcemanagementManagementunitIntraday success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postWorkforcemanagementManagementunitIntraday');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -663,9 +713,9 @@ apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(muId, opts)
   .then(function(data) {
     console.log(`postWorkforcemanagementManagementunitSchedulesSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postWorkforcemanagementManagementunitSchedulesSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -713,9 +763,9 @@ apiInstance.postWorkforcemanagementSchedules(opts)
   .then(function(data) {
     console.log(`postWorkforcemanagementSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postWorkforcemanagementSchedules');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

@@ -45,9 +45,9 @@ apiInstance.deleteNotificationsChannelSubscriptions(channelId)
   .then(function() {
     console.log('deleteNotificationsChannelSubscriptions returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteNotificationsChannelSubscriptions');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -94,9 +94,9 @@ apiInstance.getNotificationsAvailabletopics(opts)
   .then(function(data) {
     console.log(`getNotificationsAvailabletopics success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getNotificationsAvailabletopics');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -142,9 +142,9 @@ apiInstance.getNotificationsChannelSubscriptions(channelId)
   .then(function(data) {
     console.log(`getNotificationsChannelSubscriptions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getNotificationsChannelSubscriptions');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -187,9 +187,9 @@ apiInstance.getNotificationsChannels()
   .then(function(data) {
     console.log(`getNotificationsChannels success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getNotificationsChannels');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -234,9 +234,9 @@ apiInstance.postNotificationsChannelSubscriptions(channelId, body)
   .then(function(data) {
     console.log(`postNotificationsChannelSubscriptions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postNotificationsChannelSubscriptions');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -280,9 +280,9 @@ apiInstance.postNotificationsChannels()
   .then(function(data) {
     console.log(`postNotificationsChannels success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postNotificationsChannels');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -327,9 +327,9 @@ apiInstance.putNotificationsChannelSubscriptions(channelId, body)
   .then(function(data) {
     console.log(`putNotificationsChannelSubscriptions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putNotificationsChannelSubscriptions');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

@@ -1,116 +1,164 @@
-Platform API version: 1686
+Platform API version: 1704
 
 
 # SDK Changes
 
-* Added additional tracing and error handling in ApiClient to handle missing response object
+* API-2820 - Adding support for using `superagent-proxy` with the node.js SDK
+* API-2820 - `superagent` dependency version updated from 1.7.1 to 3.8.1
 
-# Major Changes (3 changes)
+# Major Changes (4 changes)
 
-**GET /api/v2/architect/prompts** (2 changes)
+**GET /api/v2/quality/evaluations/query** (1 change)
 
-* Parameter sortBy was added
 * Parameter sortOrder was added
 
-**UpdateUser** (1 change)
+**UserQueue** (1 change)
 
-* primaryContactInfo has been made readonly
+* Property whisperAudio was removed
+
+**Queue** (1 change)
+
+* Property whisperAudio was removed
+
+**CreateQueueRequest** (1 change)
+
+* Property whisperAudio was removed
 
 
-# Minor Changes (27 changes)
+# Minor Changes (46 changes)
 
-**Participant** (1 change)
+**/api/v2/workforcemanagement/agents/managementunits** (2 changes)
 
-* Enum value timeout was added to property screenRecordingState
+* Path was added
+* Operation POST was added
 
-**Queue** (2 changes)
+**/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions** (3 changes)
 
-* Optional property whisperAudio was added
-* Optional property autoAnswerOnly was added
+* Path was added
+* Operation GET was added
+* Operation POST was added
 
-**AdherenceSettings** (1 change)
+**/api/v2/signeddata** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/scripts/uploads/{uploadId}/status** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**InboundRoute** (1 change)
+
+* Optional property replyRoute was added
+
+**UserQueue** (1 change)
+
+* Optional property whisper was added
+
+**Message** (3 changes)
+
+* Optional property type was added
+* Optional property recipientCountry was added
+* Optional property recipientType was added
+
+**MessageDetails** (2 changes)
+
+* Optional property messageStatus was added
+* Optional property messageSegmentCount was added
+
+**Queue** (1 change)
+
+* Optional property whisper was added
+
+**CreateEmailRequest** (2 changes)
+
+* Optional property htmlBody was added
+* Optional property textBody was added
+
+**Dependency** (2 changes)
+
+* Enum value LEXBOT was added to property type
+* Enum value LEXBOTALIAS was added to property type
+
+**DependencyObject** (2 changes)
+
+* Enum value LEXBOT was added to property type
+* Enum value LEXBOTALIAS was added to property type
+
+**AgentManagementUnitReference** (1 change)
 
 * Model was added
 
-**ManagementUnit** (2 changes)
-
-* Optional property settings was added
-* Optional property modifiedBy was added
-
-**ManagementUnitSettings** (1 change)
+**ManagementUnitReference** (1 change)
 
 * Model was added
 
-**SchedulingSettings** (1 change)
+**UserReference** (1 change)
 
 * Model was added
 
-**ShortTermForecastingSettings** (1 change)
+**SecureSession** (1 change)
 
 * Model was added
 
-**TimeOffRequestSettings** (1 change)
+**SecureSessionEntityListing** (1 change)
 
 * Model was added
 
-**UserQueue** (2 changes)
-
-* Optional property whisperAudio was added
-* Optional property autoAnswerOnly was added
-
-**CallForwarding** (2 changes)
-
-* Optional property calls was added
-* Optional property voicemail was added
-
-**CallRoute** (1 change)
+**CreateSecureSession** (1 change)
 
 * Model was added
 
-**CallTarget** (1 change)
+**SignedData** (1 change)
 
 * Model was added
 
-**ExternalContact** (1 change)
+**EventMessage** (2 changes)
 
-* Optional property surveyOptOut was added
-
-**AnalyticsQueryPredicate** (1 change)
-
-* Enum value tFlowOut was added to property metric
-
-**AggregateMetricData** (1 change)
-
-* Enum value tFlowOut was added to property metric
+* Enum value APPROACHING_CONTACT_LIMIT was added to property code
+* Enum value EXCEEDED_CONTACT_LIMIT was added to property code
 
 **AggregationQuery** (1 change)
 
-* Enum value tFlowOut was added to property metrics
+* Enum value messageType was added to property groupBy
 
-**IntradayQueue** (1 change)
+**AnalyticsQueryPredicate** (1 change)
 
-* Enum value Message was added to property mediaTypes
+* Enum value messageType was added to property dimension
 
-**IntradayDataGroup** (1 change)
+**AnalyticsConversationSegment** (5 changes)
 
-* Enum value Message was added to property mediaType
+* Enum value contacting was added to property segmentType
+* Enum value transmitting was added to property segmentType
+* Enum value converting was added to property segmentType
+* Enum value uploading was added to property segmentType
+* Enum value sharing was added to property segmentType
 
-**CreateQueueRequest** (2 changes)
+**AnalyticsSession** (1 change)
 
-* Optional property whisperAudio was added
-* Optional property autoAnswerOnly was added
+* Optional property messageType was added
 
-**ObservationQuery** (1 change)
+**InteractionStatsAlert** (1 change)
 
-* Enum value tFlowOut was added to property metrics
+* Enum value message was added to property mediaType
 
-**ParticipantBasic** (1 change)
+**CreateQueueRequest** (1 change)
 
-* Enum value timeout was added to property screenRecordingState
+* Optional property whisper was added
 
-**CallMediaParticipant** (1 change)
+**InteractionStatsRule** (1 change)
 
-* Optional property uuiData was added
+* Enum value message was added to property mediaType
+
+**ImportScriptStatusResponse** (1 change)
+
+* Model was added
 
 
 # Point Changes (0 changes)

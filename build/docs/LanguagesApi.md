@@ -48,9 +48,9 @@ apiInstance.deleteLanguage(languageId)
   .then(function() {
     console.log('deleteLanguage returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteLanguage');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -96,9 +96,9 @@ apiInstance.deleteRoutingLanguage(languageId)
   .then(function() {
     console.log('deleteRoutingLanguage returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteRoutingLanguage');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -144,9 +144,9 @@ apiInstance.getLanguage(languageId)
   .then(function(data) {
     console.log(`getLanguage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getLanguage');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -196,9 +196,9 @@ apiInstance.getLanguages(opts)
   .then(function(data) {
     console.log(`getLanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getLanguages');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -244,9 +244,9 @@ apiInstance.getLanguagesTranslations()
   .then(function(data) {
     console.log(`getLanguagesTranslations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getLanguagesTranslations');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -289,9 +289,9 @@ apiInstance.getLanguagesTranslationsBuiltin(language)
   .then(function(data) {
     console.log(`getLanguagesTranslationsBuiltin success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getLanguagesTranslationsBuiltin');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -337,9 +337,9 @@ apiInstance.getLanguagesTranslationsOrganization(language)
   .then(function(data) {
     console.log(`getLanguagesTranslationsOrganization success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getLanguagesTranslationsOrganization');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -385,9 +385,9 @@ apiInstance.getLanguagesTranslationsUser(userId)
   .then(function(data) {
     console.log(`getLanguagesTranslationsUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getLanguagesTranslationsUser');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -433,9 +433,9 @@ apiInstance.getRoutingLanguage(languageId)
   .then(function(data) {
     console.log(`getRoutingLanguage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getRoutingLanguage');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -481,9 +481,9 @@ apiInstance.postLanguages(body)
   .then(function(data) {
     console.log(`postLanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postLanguages');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

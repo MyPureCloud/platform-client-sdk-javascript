@@ -62,9 +62,9 @@ apiInstance.deleteVoicemailMessage(messageId)
   .then(function() {
     console.log('deleteVoicemailMessage returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteVoicemailMessage');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -107,9 +107,9 @@ apiInstance.deleteVoicemailMessages()
   .then(function() {
     console.log('deleteVoicemailMessages returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteVoicemailMessages');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -152,9 +152,9 @@ apiInstance.getVoicemailGroupMailbox(groupId)
   .then(function(data) {
     console.log(`getVoicemailGroupMailbox success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getVoicemailGroupMailbox');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -204,9 +204,9 @@ apiInstance.getVoicemailGroupMessages(groupId, opts)
   .then(function(data) {
     console.log(`getVoicemailGroupMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getVoicemailGroupMessages');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -254,9 +254,9 @@ apiInstance.getVoicemailGroupPolicy(groupId)
   .then(function(data) {
     console.log(`getVoicemailGroupPolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getVoicemailGroupPolicy');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -299,9 +299,9 @@ apiInstance.getVoicemailMailbox()
   .then(function(data) {
     console.log(`getVoicemailMailbox success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getVoicemailMailbox');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -341,9 +341,9 @@ apiInstance.getVoicemailMeMailbox()
   .then(function(data) {
     console.log(`getVoicemailMeMailbox success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getVoicemailMeMailbox');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -388,9 +388,9 @@ apiInstance.getVoicemailMeMessages(opts)
   .then(function(data) {
     console.log(`getVoicemailMeMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getVoicemailMeMessages');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -434,9 +434,9 @@ apiInstance.getVoicemailMePolicy()
   .then(function(data) {
     console.log(`getVoicemailMePolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getVoicemailMePolicy');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -482,9 +482,9 @@ apiInstance.getVoicemailMessage(messageId, opts)
   .then(function(data) {
     console.log(`getVoicemailMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getVoicemailMessage');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -534,9 +534,9 @@ apiInstance.getVoicemailMessageMedia(messageId, opts)
   .then(function(data) {
     console.log(`getVoicemailMessageMedia success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getVoicemailMessageMedia');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -585,9 +585,9 @@ apiInstance.getVoicemailMessages(opts)
   .then(function(data) {
     console.log(`getVoicemailMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getVoicemailMessages');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -631,9 +631,9 @@ apiInstance.getVoicemailPolicy()
   .then(function(data) {
     console.log(`getVoicemailPolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getVoicemailPolicy');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -680,9 +680,9 @@ apiInstance.getVoicemailQueueMessages(queueId, opts)
   .then(function(data) {
     console.log(`getVoicemailQueueMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getVoicemailQueueMessages');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -733,9 +733,9 @@ apiInstance.getVoicemailSearch(q64, opts)
   .then(function(data) {
     console.log(`getVoicemailSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getVoicemailSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -782,9 +782,9 @@ apiInstance.getVoicemailUserpolicy(userId)
   .then(function(data) {
     console.log(`getVoicemailUserpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getVoicemailUserpolicy');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -832,9 +832,9 @@ apiInstance.patchVoicemailGroupPolicy(groupId, body)
   .then(function(data) {
     console.log(`patchVoicemailGroupPolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchVoicemailGroupPolicy');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -881,9 +881,9 @@ apiInstance.patchVoicemailMePolicy(body)
   .then(function(data) {
     console.log(`patchVoicemailMePolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchVoicemailMePolicy');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -931,9 +931,9 @@ apiInstance.patchVoicemailMessage(messageId, body)
   .then(function(data) {
     console.log(`patchVoicemailMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchVoicemailMessage');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -982,9 +982,9 @@ apiInstance.patchVoicemailUserpolicy(userId, body)
   .then(function(data) {
     console.log(`patchVoicemailUserpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchVoicemailUserpolicy');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1032,9 +1032,9 @@ apiInstance.postVoicemailMessages(opts)
   .then(function(data) {
     console.log(`postVoicemailMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postVoicemailMessages');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1080,9 +1080,9 @@ apiInstance.postVoicemailSearch(body)
   .then(function(data) {
     console.log(`postVoicemailSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postVoicemailSearch');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1130,9 +1130,9 @@ apiInstance.putVoicemailMessage(messageId, body)
   .then(function(data) {
     console.log(`putVoicemailMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putVoicemailMessage');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1179,9 +1179,9 @@ apiInstance.putVoicemailPolicy(body)
   .then(function(data) {
     console.log(`putVoicemailPolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putVoicemailPolicy');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

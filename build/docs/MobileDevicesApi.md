@@ -43,9 +43,9 @@ apiInstance.deleteMobiledevice(deviceId)
   .then(function() {
     console.log('deleteMobiledevice returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteMobiledevice');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -91,9 +91,9 @@ apiInstance.getMobiledevice(deviceId)
   .then(function(data) {
     console.log(`getMobiledevice success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getMobiledevice');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -142,9 +142,9 @@ apiInstance.getMobiledevices(opts)
   .then(function(data) {
     console.log(`getMobiledevices success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getMobiledevices');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -192,9 +192,9 @@ apiInstance.postMobiledevices(body)
   .then(function(data) {
     console.log(`postMobiledevices success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postMobiledevices');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -243,9 +243,9 @@ apiInstance.putMobiledevice(deviceId, opts)
   .then(function(data) {
     console.log(`putMobiledevice success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putMobiledevice');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

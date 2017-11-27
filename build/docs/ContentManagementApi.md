@@ -79,9 +79,9 @@ apiInstance.deleteContentmanagementDocument(documentId, opts)
   .then(function() {
     console.log('deleteContentmanagementDocument returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteContentmanagementDocument');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -128,9 +128,9 @@ apiInstance.deleteContentmanagementShare(shareId)
   .then(function() {
     console.log('deleteContentmanagementShare returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteContentmanagementShare');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -176,9 +176,9 @@ apiInstance.deleteContentmanagementStatusStatusId(statusId)
   .then(function() {
     console.log('deleteContentmanagementStatusStatusId returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteContentmanagementStatusStatusId');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -227,9 +227,9 @@ apiInstance.deleteContentmanagementWorkspace(workspaceId, opts)
   .then(function() {
     console.log('deleteContentmanagementWorkspace returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteContentmanagementWorkspace');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -278,9 +278,9 @@ apiInstance.deleteContentmanagementWorkspaceMember(workspaceId, memberId)
   .then(function() {
     console.log('deleteContentmanagementWorkspaceMember returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteContentmanagementWorkspaceMember');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -329,9 +329,9 @@ apiInstance.deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId)
   .then(function() {
     console.log('deleteContentmanagementWorkspaceTagvalue returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteContentmanagementWorkspaceTagvalue');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -381,9 +381,9 @@ apiInstance.getContentmanagementDocument(documentId, opts)
   .then(function(data) {
     console.log(`getContentmanagementDocument success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementDocument');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -438,9 +438,9 @@ apiInstance.getContentmanagementDocumentAudits(documentId, opts)
   .then(function(data) {
     console.log(`getContentmanagementDocumentAudits success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementDocumentAudits');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -496,9 +496,9 @@ apiInstance.getContentmanagementDocumentContent(documentId, opts)
   .then(function(data) {
     console.log(`getContentmanagementDocumentContent success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementDocumentContent');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -554,9 +554,9 @@ apiInstance.getContentmanagementDocuments(workspaceId, opts)
   .then(function(data) {
     console.log(`getContentmanagementDocuments success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementDocuments');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -615,9 +615,9 @@ apiInstance.getContentmanagementQuery(queryPhrase, opts)
   .then(function(data) {
     console.log(`getContentmanagementQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementQuery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -668,9 +668,9 @@ apiInstance.getContentmanagementSecurityprofile(securityProfileId)
   .then(function(data) {
     console.log(`getContentmanagementSecurityprofile success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementSecurityprofile');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -713,9 +713,9 @@ apiInstance.getContentmanagementSecurityprofiles()
   .then(function(data) {
     console.log(`getContentmanagementSecurityprofiles success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementSecurityprofiles');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -761,9 +761,9 @@ apiInstance.getContentmanagementShare(shareId, opts)
   .then(function(data) {
     console.log(`getContentmanagementShare success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementShare');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -816,9 +816,9 @@ apiInstance.getContentmanagementSharedSharedId(sharedId, opts)
   .then(function(data) {
     console.log(`getContentmanagementSharedSharedId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementSharedSharedId');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -872,9 +872,9 @@ apiInstance.getContentmanagementShares(opts)
   .then(function(data) {
     console.log(`getContentmanagementShares success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementShares');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -925,9 +925,9 @@ apiInstance.getContentmanagementStatus(opts)
   .then(function(data) {
     console.log(`getContentmanagementStatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementStatus');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -974,9 +974,9 @@ apiInstance.getContentmanagementStatusStatusId(statusId)
   .then(function(data) {
     console.log(`getContentmanagementStatusStatusId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementStatusStatusId');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1019,9 +1019,9 @@ apiInstance.getContentmanagementUsage()
   .then(function(data) {
     console.log(`getContentmanagementUsage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementUsage');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1067,9 +1067,9 @@ apiInstance.getContentmanagementWorkspace(workspaceId, opts)
   .then(function(data) {
     console.log(`getContentmanagementWorkspace success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementWorkspace');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1123,9 +1123,9 @@ apiInstance.getContentmanagementWorkspaceDocuments(workspaceId, opts)
   .then(function(data) {
     console.log(`getContentmanagementWorkspaceDocuments success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementWorkspaceDocuments');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1181,9 +1181,9 @@ apiInstance.getContentmanagementWorkspaceMember(workspaceId, memberId, opts)
   .then(function(data) {
     console.log(`getContentmanagementWorkspaceMember success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementWorkspaceMember');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1236,9 +1236,9 @@ apiInstance.getContentmanagementWorkspaceMembers(workspaceId, opts)
   .then(function(data) {
     console.log(`getContentmanagementWorkspaceMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementWorkspaceMembers');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1292,9 +1292,9 @@ apiInstance.getContentmanagementWorkspaceTagvalue(workspaceId, tagId, opts)
   .then(function(data) {
     console.log(`getContentmanagementWorkspaceTagvalue success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementWorkspaceTagvalue');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1348,9 +1348,9 @@ apiInstance.getContentmanagementWorkspaceTagvalues(workspaceId, opts)
   .then(function(data) {
     console.log(`getContentmanagementWorkspaceTagvalues success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementWorkspaceTagvalues');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1404,9 +1404,9 @@ apiInstance.getContentmanagementWorkspaces(opts)
   .then(function(data) {
     console.log(`getContentmanagementWorkspaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getContentmanagementWorkspaces');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1455,9 +1455,9 @@ apiInstance.postContentmanagementAuditquery(body)
   .then(function(data) {
     console.log(`postContentmanagementAuditquery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postContentmanagementAuditquery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1509,9 +1509,9 @@ apiInstance.postContentmanagementDocument(documentId, body, opts)
   .then(function(data) {
     console.log(`postContentmanagementDocument success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postContentmanagementDocument');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1565,9 +1565,9 @@ apiInstance.postContentmanagementDocumentContent(documentId, body, opts)
   .then(function(data) {
     console.log(`postContentmanagementDocumentContent success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postContentmanagementDocumentContent');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1620,9 +1620,9 @@ apiInstance.postContentmanagementDocuments(body, opts)
   .then(function(data) {
     console.log(`postContentmanagementDocuments success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postContentmanagementDocuments');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1674,9 +1674,9 @@ apiInstance.postContentmanagementQuery(body, opts)
   .then(function(data) {
     console.log(`postContentmanagementQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postContentmanagementQuery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1723,9 +1723,9 @@ apiInstance.postContentmanagementShares(body)
   .then(function(data) {
     console.log(`postContentmanagementShares success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postContentmanagementShares');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1773,9 +1773,9 @@ apiInstance.postContentmanagementWorkspaceTagvalues(workspaceId, body)
   .then(function(data) {
     console.log(`postContentmanagementWorkspaceTagvalues success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postContentmanagementWorkspaceTagvalues');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1827,9 +1827,9 @@ apiInstance.postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, opts
   .then(function(data) {
     console.log(`postContentmanagementWorkspaceTagvaluesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postContentmanagementWorkspaceTagvaluesQuery');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1877,9 +1877,9 @@ apiInstance.postContentmanagementWorkspaces(body)
   .then(function(data) {
     console.log(`postContentmanagementWorkspaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postContentmanagementWorkspaces');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1927,9 +1927,9 @@ apiInstance.putContentmanagementWorkspace(workspaceId, body)
   .then(function(data) {
     console.log(`putContentmanagementWorkspace success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putContentmanagementWorkspace');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -1980,9 +1980,9 @@ apiInstance.putContentmanagementWorkspaceMember(workspaceId, memberId, body)
   .then(function(data) {
     console.log(`putContentmanagementWorkspaceMember success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putContentmanagementWorkspaceMember');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -2034,9 +2034,9 @@ apiInstance.putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
   .then(function(data) {
     console.log(`putContentmanagementWorkspaceTagvalue success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putContentmanagementWorkspaceTagvalue');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

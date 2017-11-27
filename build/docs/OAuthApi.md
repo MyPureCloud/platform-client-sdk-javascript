@@ -44,9 +44,9 @@ apiInstance.deleteOauthClient(clientId)
   .then(function() {
     console.log('deleteOauthClient returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteOauthClient');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -92,9 +92,9 @@ apiInstance.getOauthClient(clientId)
   .then(function(data) {
     console.log(`getOauthClient success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOauthClient');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -137,9 +137,9 @@ apiInstance.getOauthClients()
   .then(function(data) {
     console.log(`getOauthClients success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getOauthClients');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -182,9 +182,9 @@ apiInstance.postOauthClientSecret(clientId)
   .then(function(data) {
     console.log(`postOauthClientSecret success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOauthClientSecret');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -230,9 +230,9 @@ apiInstance.postOauthClients(body)
   .then(function(data) {
     console.log(`postOauthClients success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postOauthClients');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -280,9 +280,9 @@ apiInstance.putOauthClient(clientId, body)
   .then(function(data) {
     console.log(`putOauthClient success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putOauthClient');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

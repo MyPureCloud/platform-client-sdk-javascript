@@ -18,7 +18,7 @@
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 13.0.0
+   * @version 14.0.0
    */
 
   /**
@@ -327,6 +327,31 @@
         '/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}', 
         'PATCH', 
         { 'timeOffRequestId': timeOffRequestId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get the management units to which the agents belong
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Array.<Object>} opts.body body
+     */
+    this.postWorkforcemanagementAgentsManagementunits = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/workforcemanagement/agents/managementunits', 
+        'POST', 
+        {  }, 
         {  }, 
         {  }, 
         {  }, 

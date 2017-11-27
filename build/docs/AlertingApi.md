@@ -49,9 +49,9 @@ apiInstance.deleteAlertingInteractionstatsAlert(alertId)
   .then(function() {
     console.log('deleteAlertingInteractionstatsAlert returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteAlertingInteractionstatsAlert');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -97,9 +97,9 @@ apiInstance.deleteAlertingInteractionstatsRule(ruleId)
   .then(function() {
     console.log('deleteAlertingInteractionstatsRule returned successfully.');
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling deleteAlertingInteractionstatsRule');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -142,9 +142,9 @@ apiInstance.getAlertingAlertsActive()
   .then(function(data) {
     console.log(`getAlertingAlertsActive success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAlertingAlertsActive');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -190,9 +190,9 @@ apiInstance.getAlertingInteractionstatsAlert(alertId, opts)
   .then(function(data) {
     console.log(`getAlertingInteractionstatsAlert success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAlertingInteractionstatsAlert');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -240,9 +240,9 @@ apiInstance.getAlertingInteractionstatsAlerts(opts)
   .then(function(data) {
     console.log(`getAlertingInteractionstatsAlerts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAlertingInteractionstatsAlerts');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -285,9 +285,9 @@ apiInstance.getAlertingInteractionstatsAlertsUnread()
   .then(function(data) {
     console.log(`getAlertingInteractionstatsAlertsUnread success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAlertingInteractionstatsAlertsUnread');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -333,9 +333,9 @@ apiInstance.getAlertingInteractionstatsRule(ruleId, opts)
   .then(function(data) {
     console.log(`getAlertingInteractionstatsRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAlertingInteractionstatsRule');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -383,9 +383,9 @@ apiInstance.getAlertingInteractionstatsRules(opts)
   .then(function(data) {
     console.log(`getAlertingInteractionstatsRules success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getAlertingInteractionstatsRules');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -434,9 +434,9 @@ apiInstance.postAlertingInteractionstatsRules(body, opts)
   .then(function(data) {
     console.log(`postAlertingInteractionstatsRules success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling postAlertingInteractionstatsRules');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -488,9 +488,9 @@ apiInstance.putAlertingInteractionstatsAlert(alertId, body, opts)
   .then(function(data) {
     console.log(`putAlertingInteractionstatsAlert success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putAlertingInteractionstatsAlert');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -543,9 +543,9 @@ apiInstance.putAlertingInteractionstatsRule(ruleId, body, opts)
   .then(function(data) {
     console.log(`putAlertingInteractionstatsRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling putAlertingInteractionstatsRule');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

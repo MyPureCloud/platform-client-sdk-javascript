@@ -39,9 +39,9 @@ apiInstance.getGeolocationsSettings()
   .then(function(data) {
     console.log(`getGeolocationsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getGeolocationsSettings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -86,9 +86,9 @@ apiInstance.getUserGeolocation(userId, clientId)
   .then(function(data) {
     console.log(`getUserGeolocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getUserGeolocation');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -135,9 +135,9 @@ apiInstance.patchGeolocationsSettings(body)
   .then(function(data) {
     console.log(`patchGeolocationsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchGeolocationsSettings');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -187,9 +187,9 @@ apiInstance.patchUserGeolocation(userId, clientId, body)
   .then(function(data) {
     console.log(`patchUserGeolocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling patchUserGeolocation');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~

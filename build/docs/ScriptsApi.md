@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getScriptsPublishedScriptIdPage**](ScriptsApi.html#getScriptsPublishedScriptIdPage) | **GET** /api/v2/scripts/published/{scriptId}/pages/{pageId} | Get the published page.
 [**getScriptsPublishedScriptIdPages**](ScriptsApi.html#getScriptsPublishedScriptIdPages) | **GET** /api/v2/scripts/published/{scriptId}/pages | Get the list of published pages
 [**getScriptsPublishedScriptIdVariables**](ScriptsApi.html#getScriptsPublishedScriptIdVariables) | **GET** /api/v2/scripts/published/{scriptId}/variables | Get the published variables
+[**getScriptsUploadStatus**](ScriptsApi.html#getScriptsUploadStatus) | **GET** /api/v2/scripts/uploads/{uploadId}/status | Get the upload status of an imported script
 {: class="table table-striped"}
 
 <a name="getScript"></a>
@@ -47,9 +48,9 @@ apiInstance.getScript(scriptId)
   .then(function(data) {
     console.log(`getScript success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getScript');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -100,9 +101,9 @@ apiInstance.getScriptPage(scriptId, pageId, opts)
   .then(function(data) {
     console.log(`getScriptPage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getScriptPage');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -153,9 +154,9 @@ apiInstance.getScriptPages(scriptId, opts)
   .then(function(data) {
     console.log(`getScriptPages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getScriptPages');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -211,9 +212,9 @@ apiInstance.getScripts(opts)
   .then(function(data) {
     console.log(`getScripts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getScripts');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -276,9 +277,9 @@ apiInstance.getScriptsPublished(scriptId, opts)
   .then(function(data) {
     console.log(`getScriptsPublished success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getScriptsPublished');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -334,9 +335,9 @@ apiInstance.getScriptsPublishedScriptId(scriptId, opts)
   .then(function(data) {
     console.log(`getScriptsPublishedScriptId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getScriptsPublishedScriptId');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -388,9 +389,9 @@ apiInstance.getScriptsPublishedScriptIdPage(scriptId, pageId, opts)
   .then(function(data) {
     console.log(`getScriptsPublishedScriptIdPage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getScriptsPublishedScriptIdPage');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -442,9 +443,9 @@ apiInstance.getScriptsPublishedScriptIdPages(scriptId, opts)
   .then(function(data) {
     console.log(`getScriptsPublishedScriptIdPages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getScriptsPublishedScriptIdPages');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -498,9 +499,9 @@ apiInstance.getScriptsPublishedScriptIdVariables(scriptId, opts)
   .then(function(data) {
     console.log(`getScriptsPublishedScriptIdVariables success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(error) {
+  .catch(function(err) {
   	console.log('There was a failure calling getScriptsPublishedScriptIdVariables');
-    console.error(error);
+    console.error(err);
   });
 
 ~~~
@@ -520,4 +521,56 @@ apiInstance.getScriptsPublishedScriptIdVariables(scriptId, opts)
 ### Return type
 
 **Object**
+
+<a name="getScriptsUploadStatus"></a>
+
+# ImportScriptStatusResponse getScriptsUploadStatus(uploadId, opts)
+
+GET /api/v2/scripts/uploads/{uploadId}/status
+
+Get the upload status of an imported script
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ScriptsApi();
+
+var uploadId = "uploadId_example"; // String | Upload ID
+
+var opts = { 
+  'longPoll': false // Boolean | Enable longPolling endpoint
+};
+apiInstance.getScriptsUploadStatus(uploadId, opts)
+  .then(function(data) {
+    console.log(`getScriptsUploadStatus success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getScriptsUploadStatus');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **uploadId** | **String** | Upload ID |  |
+ **longPoll** | **Boolean** | Enable longPolling endpoint | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+**ImportScriptStatusResponse**
 
