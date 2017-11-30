@@ -17,7 +17,7 @@
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 14.0.0
+   * @version 14.0.1
    */
 
   /**
@@ -215,8 +215,8 @@
 
       // Build token request
       var request = superagent('POST', `https://login.${self.environment}/oauth/token`);
-      if (this.proxy && request.proxy) {
-		    request.proxy(this.proxy);
+      if (self.proxy && request.proxy) {
+		    request.proxy(self.proxy);
 		  }
       request.set('Authorization', `Basic ${authHeader}`);
       request.send('grant_type=client_credentials');
@@ -650,7 +650,7 @@
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '14.0.0' });
+    //request.set({ 'purecloud-sdk': '14.0.1' });
 
     // set request timeout
     request.timeout(this.timeout);

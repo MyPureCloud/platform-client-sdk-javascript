@@ -38,7 +38,7 @@
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 14.0.0
+   * @version 14.0.1
    */
   var platformClient = {
     /**

@@ -18,7 +18,7 @@
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 14.0.0
+   * @version 14.0.1
    */
 
   /**
