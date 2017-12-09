@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteUserStationAssociatedstation**](UsersApi.html#deleteUserStationAssociatedstation) | **DELETE** /api/v2/users/{userId}/station/associatedstation | Clear associated station
 [**deleteUserStationDefaultstation**](UsersApi.html#deleteUserStationDefaultstation) | **DELETE** /api/v2/users/{userId}/station/defaultstation | Clear default station
 [**getFieldconfig**](UsersApi.html#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
+[**getProfilesUsers**](UsersApi.html#getProfilesUsers) | **GET** /api/v2/profiles/users | Get a user profile listing
 [**getUser**](UsersApi.html#getUser) | **GET** /api/v2/users/{userId} | Get user.
 [**getUserAdjacents**](UsersApi.html#getUserAdjacents) | **GET** /api/v2/users/{userId}/adjacents | Get adjacents
 [**getUserCallforwarding**](UsersApi.html#getUserCallforwarding) | **GET** /api/v2/users/{userId}/callforwarding | Get a user&#39;s CallForwarding
@@ -20,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUserFavorites**](UsersApi.html#getUserFavorites) | **GET** /api/v2/users/{userId}/favorites | Get favorites
 [**getUserGeolocation**](UsersApi.html#getUserGeolocation) | **GET** /api/v2/users/{userId}/geolocations/{clientId} | Get a user&#39;s Geolocation
 [**getUserOutofoffice**](UsersApi.html#getUserOutofoffice) | **GET** /api/v2/users/{userId}/outofoffice | Get a OutOfOffice
+[**getUserProfile**](UsersApi.html#getUserProfile) | **GET** /api/v2/users/{userId}/profile | Get user profile
 [**getUserProfileskills**](UsersApi.html#getUserProfileskills) | **GET** /api/v2/users/{userId}/profileskills | List profile skills for a user
 [**getUserQueues**](UsersApi.html#getUserQueues) | **GET** /api/v2/users/{userId}/queues | Get queues for user
 [**getUserRoles**](UsersApi.html#getUserRoles) | **GET** /api/v2/users/{userId}/roles | Returns a listing of roles and permissions for a user.
@@ -342,6 +344,67 @@ apiInstance.getFieldconfig(type)
 ### Return type
 
 **FieldConfig**
+
+<a name="getProfilesUsers"></a>
+
+# UserProfileEntityListing getProfilesUsers(opts)
+
+GET /api/v2/profiles/users
+
+Get a user profile listing
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'id': ["id_example"], // [String] | id
+  'jid': ["jid_example"], // [String] | jid
+  'sortOrder': "ASC", // String | Ascending or descending sort order
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'state': "active" // String | Only list users of this state
+};
+apiInstance.getProfilesUsers(opts)
+  .then(function(data) {
+    console.log(`getProfilesUsers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getProfilesUsers');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **id** | **[String]** | id | [optional]  |
+ **jid** | **[String]** | jid | [optional]  |
+ **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization |
+ **state** | **String** | Only list users of this state | [optional] [default to active]<br />**Values**: active, deleted |
+{: class="table table-striped"}
+
+### Return type
+
+**UserProfileEntityListing**
 
 <a name="getUser"></a>
 
@@ -705,6 +768,58 @@ apiInstance.getUserOutofoffice(userId)
 ### Return type
 
 **OutOfOffice**
+
+<a name="getUserProfile"></a>
+
+# UserProfile getUserProfile(userId, opts)
+
+GET /api/v2/users/{userId}/profile
+
+Get user profile
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | userId
+
+var opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+};
+apiInstance.getUserProfile(userId, opts)
+  .then(function(data) {
+    console.log(`getUserProfile success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getUserProfile');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | userId |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+{: class="table table-striped"}
+
+### Return type
+
+**UserProfile**
 
 <a name="getUserProfileskills"></a>
 

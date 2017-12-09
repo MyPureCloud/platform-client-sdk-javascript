@@ -18,7 +18,7 @@
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -175,6 +175,34 @@
         'GET', 
         { 'groupId': groupId }, 
         { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get group profile
+     * 
+     * @param {String} groupId groupId
+     */
+    this.getGroupProfile = function(groupId) { 
+
+      // verify the required parameter 'groupId' is set
+      if (groupId === undefined || groupId === null) {
+        throw "Missing the required parameter 'groupId' when calling getGroupProfile";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/groups/{groupId}/profile', 
+        'GET', 
+        { 'groupId': groupId }, 
+        {  }, 
         {  }, 
         {  }, 
         null, 

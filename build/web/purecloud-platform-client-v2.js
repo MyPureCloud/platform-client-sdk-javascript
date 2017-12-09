@@ -3242,7 +3242,7 @@ module.exports = request;
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -3875,7 +3875,7 @@ module.exports = request;
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '14.0.1' });
+    //request.set({ 'purecloud-sdk': '15.0.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -4028,7 +4028,7 @@ module.exports = request;
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -4384,7 +4384,7 @@ module.exports = request;
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -5049,7 +5049,7 @@ module.exports = request;
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -7102,7 +7102,7 @@ module.exports = request;
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -7313,7 +7313,7 @@ module.exports = request;
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -7871,7 +7871,7 @@ module.exports = request;
   /**
    * Billing service.
    * @module purecloud-platform-client-v2/api/BillingApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -7944,7 +7944,7 @@ module.exports = request;
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -9201,7 +9201,7 @@ module.exports = request;
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -12101,7 +12101,7 @@ module.exports = request;
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -13085,7 +13085,7 @@ module.exports = request;
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -13290,7 +13290,7 @@ module.exports = request;
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -13453,7 +13453,7 @@ module.exports = request;
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -13973,7 +13973,7 @@ module.exports = request;
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -14130,6 +14130,34 @@ module.exports = request;
         'GET', 
         { 'groupId': groupId }, 
         { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get group profile
+     * 
+     * @param {String} groupId groupId
+     */
+    this.getGroupProfile = function(groupId) { 
+
+      // verify the required parameter 'groupId' is set
+      if (groupId === undefined || groupId === null) {
+        throw "Missing the required parameter 'groupId' when calling getGroupProfile";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/groups/{groupId}/profile', 
+        'GET', 
+        { 'groupId': groupId }, 
+        {  }, 
         {  }, 
         {  }, 
         null, 
@@ -14344,7 +14372,7 @@ module.exports = request;
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -15053,7 +15081,7 @@ module.exports = request;
   /**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -15761,7 +15789,7 @@ module.exports = request;
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -16074,7 +16102,7 @@ module.exports = request;
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -16319,7 +16347,7 @@ module.exports = request;
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -16472,7 +16500,7 @@ module.exports = request;
   /**
    * MobileDevices service.
    * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -16653,7 +16681,7 @@ module.exports = request;
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -16885,7 +16913,7 @@ module.exports = request;
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -17092,7 +17120,7 @@ module.exports = request;
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -17240,7 +17268,7 @@ module.exports = request;
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -18005,7 +18033,7 @@ module.exports = request;
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -20674,7 +20702,7 @@ module.exports = request;
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -20958,7 +20986,7 @@ module.exports = request;
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -22000,7 +22028,7 @@ module.exports = request;
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -23126,7 +23154,7 @@ module.exports = request;
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -23497,7 +23525,7 @@ module.exports = request;
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -24890,7 +24918,7 @@ module.exports = request;
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -25260,7 +25288,7 @@ module.exports = request;
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -25717,7 +25745,7 @@ module.exports = request;
   /**
    * SignedData service.
    * @module purecloud-platform-client-v2/api/SignedDataApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -25781,7 +25809,7 @@ module.exports = request;
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -25908,7 +25936,7 @@ module.exports = request;
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -26073,7 +26101,7 @@ module.exports = request;
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -29996,7 +30024,7 @@ module.exports = request;
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -30079,7 +30107,7 @@ module.exports = request;
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -30294,7 +30322,7 @@ module.exports = request;
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -30473,6 +30501,37 @@ module.exports = request;
         'GET', 
         {  }, 
         { 'type': type }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a user profile listing
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Array.<String>} opts.id id
+     * @param {Array.<String>} opts.jid jid
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
+     * @param {Array.<String>} opts.expand Which fields, if any, to expand
+     * @param {Object} opts.state Only list users of this state (default to active)
+     */
+    this.getProfilesUsers = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/profiles/users', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jid': this.apiClient.buildCollectionParam(opts['jid'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'state': opts['state'] }, 
         {  }, 
         {  }, 
         null, 
@@ -30691,6 +30750,37 @@ module.exports = request;
         'GET', 
         { 'userId': userId }, 
         {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get user profile
+     * 
+     * @param {String} userId userId
+     * @param {Object} opts Optional parameters
+     * @param {Array.<String>} opts.expand Which fields, if any, to expand
+     */
+    this.getUserProfile = function(userId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling getUserProfile";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/{userId}/profile', 
+        'GET', 
+        { 'userId': userId }, 
+        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
         {  }, 
         {  }, 
         null, 
@@ -31682,7 +31772,7 @@ module.exports = request;
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -31797,7 +31887,7 @@ module.exports = request;
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -32512,7 +32602,7 @@ module.exports = request;
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -32726,8 +32816,9 @@ module.exports = request;
      * Get management units
      * 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize  (default to 25)
+     * @param {Number} opts.pageSize 
      * @param {Number} opts.pageNumber  (default to 1)
+     * @param {Object} opts.expand 
      */
     this.getWorkforcemanagementManagementunits = function(opts) { 
       opts = opts || {};
@@ -32737,7 +32828,7 @@ module.exports = request;
         '/api/v2/workforcemanagement/managementunits', 
         'GET', 
         {  }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'] }, 
         {  }, 
         {  }, 
         null, 
@@ -33019,7 +33110,7 @@ module.exports = request;
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 14.0.1
+   * @version 15.0.0
    */
   var platformClient = {
     /**

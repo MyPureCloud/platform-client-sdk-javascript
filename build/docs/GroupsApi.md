@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFieldconfig**](GroupsApi.html#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
 [**getGroup**](GroupsApi.html#getGroup) | **GET** /api/v2/groups/{groupId} | Get group
 [**getGroupMembers**](GroupsApi.html#getGroupMembers) | **GET** /api/v2/groups/{groupId}/members | Get group members
+[**getGroupProfile**](GroupsApi.html#getGroupProfile) | **GET** /api/v2/groups/{groupId}/profile | Get group profile
 [**getGroups**](GroupsApi.html#getGroups) | **GET** /api/v2/groups | Get a group list
 [**getGroupsSearch**](GroupsApi.html#getGroupsSearch) | **GET** /api/v2/groups/search | Search groups using the q64 value returned from a previous search
 [**postGroupMembers**](GroupsApi.html#postGroupMembers) | **POST** /api/v2/groups/{groupId}/members | Add members
@@ -272,6 +273,54 @@ apiInstance.getGroupMembers(groupId, opts)
 ### Return type
 
 **UserEntityListing**
+
+<a name="getGroupProfile"></a>
+
+# GroupProfile getGroupProfile(groupId)
+
+GET /api/v2/groups/{groupId}/profile
+
+Get group profile
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.GroupsApi();
+
+var groupId = "groupId_example"; // String | groupId
+
+apiInstance.getGroupProfile(groupId)
+  .then(function(data) {
+    console.log(`getGroupProfile success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getGroupProfile');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **groupId** | **String** | groupId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**GroupProfile**
 
 <a name="getGroups"></a>
 

@@ -352,8 +352,9 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.WorkforceManagementApi();
 
 var opts = { 
-  'pageSize': 25, // Number | 
-  'pageNumber': 1 // Number | 
+  'pageSize': 56, // Number | 
+  'pageNumber': 1, // Number | 
+  'expand': "expand_example" // String | 
 };
 apiInstance.getWorkforcemanagementManagementunits(opts)
   .then(function(data) {
@@ -371,8 +372,9 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** |  | [optional] [default to 25] |
+ **pageSize** | **Number** |  | [optional]  |
  **pageNumber** | **Number** |  | [optional] [default to 1] |
+ **expand** | **String** |  | [optional] <br />**Values**: details |
 {: class="table table-striped"}
 
 ### Return type

@@ -18,7 +18,7 @@
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
@@ -197,6 +197,37 @@
         'GET', 
         {  }, 
         { 'type': type }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a user profile listing
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Array.<String>} opts.id id
+     * @param {Array.<String>} opts.jid jid
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
+     * @param {Array.<String>} opts.expand Which fields, if any, to expand
+     * @param {Object} opts.state Only list users of this state (default to active)
+     */
+    this.getProfilesUsers = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/profiles/users', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jid': this.apiClient.buildCollectionParam(opts['jid'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'state': opts['state'] }, 
         {  }, 
         {  }, 
         null, 
@@ -415,6 +446,37 @@
         'GET', 
         { 'userId': userId }, 
         {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get user profile
+     * 
+     * @param {String} userId userId
+     * @param {Object} opts Optional parameters
+     * @param {Array.<String>} opts.expand Which fields, if any, to expand
+     */
+    this.getUserProfile = function(userId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling getUserProfile";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/{userId}/profile', 
+        'GET', 
+        { 'userId': userId }, 
+        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
         {  }, 
         {  }, 
         null, 

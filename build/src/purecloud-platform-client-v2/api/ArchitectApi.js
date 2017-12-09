@@ -18,7 +18,7 @@
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 14.0.1
+   * @version 15.0.0
    */
 
   /**
