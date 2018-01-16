@@ -20,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOrphanrecording**](RecordingApi.html#getOrphanrecording) | **GET** /api/v2/orphanrecordings/{orphanId} | Gets a single orphan recording
 [**getOrphanrecordingMedia**](RecordingApi.html#getOrphanrecordingMedia) | **GET** /api/v2/orphanrecordings/{orphanId}/media | Gets the media of a single orphan recording
 [**getOrphanrecordings**](RecordingApi.html#getOrphanrecordings) | **GET** /api/v2/orphanrecordings | Gets all orphan recordings
+[**getRecordingBatchrequest**](RecordingApi.html#getRecordingBatchrequest) | **GET** /api/v2/recording/batchrequests/{jobId} | Get the status and results for a batch request job, only the user that submitted the job may retrieve results
 [**getRecordingLocalkeysSetting**](RecordingApi.html#getRecordingLocalkeysSetting) | **GET** /api/v2/recording/localkeys/settings/{settingsId} | Get the local encryption settings
 [**getRecordingLocalkeysSettings**](RecordingApi.html#getRecordingLocalkeysSettings) | **GET** /api/v2/recording/localkeys/settings | gets a list local key settings data
 [**getRecordingMediaretentionpolicies**](RecordingApi.html#getRecordingMediaretentionpolicies) | **GET** /api/v2/recording/mediaretentionpolicies | Gets media retention policy list with query options to filter on name and enabled.
@@ -31,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchRecordingMediaretentionpolicy**](RecordingApi.html#patchRecordingMediaretentionpolicy) | **PATCH** /api/v2/recording/mediaretentionpolicies/{policyId} | Patch a media retention policy
 [**patchRecordingsScreensession**](RecordingApi.html#patchRecordingsScreensession) | **PATCH** /api/v2/recordings/screensessions/{recordingSessionId} | Update a screen recording session
 [**postConversationRecordingAnnotations**](RecordingApi.html#postConversationRecordingAnnotations) | **POST** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations | Create annotation
+[**postRecordingBatchrequests**](RecordingApi.html#postRecordingBatchrequests) | **POST** /api/v2/recording/batchrequests | Submit a batch download request
 [**postRecordingLocalkeys**](RecordingApi.html#postRecordingLocalkeys) | **POST** /api/v2/recording/localkeys | create a local recording key
 [**postRecordingLocalkeysSettings**](RecordingApi.html#postRecordingLocalkeysSettings) | **POST** /api/v2/recording/localkeys/settings | create settings for local key creation
 [**postRecordingMediaretentionpolicies**](RecordingApi.html#postRecordingMediaretentionpolicies) | **POST** /api/v2/recording/mediaretentionpolicies | Create media retention policy
@@ -726,6 +728,54 @@ apiInstance.getOrphanrecordings(opts)
 
 **OrphanRecordingListing**
 
+<a name="getRecordingBatchrequest"></a>
+
+# BatchDownloadJobStatusResult getRecordingBatchrequest(jobId)
+
+GET /api/v2/recording/batchrequests/{jobId}
+
+Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RecordingApi();
+
+var jobId = "jobId_example"; // String | jobId
+
+apiInstance.getRecordingBatchrequest(jobId)
+  .then(function(data) {
+    console.log(`getRecordingBatchrequest success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getRecordingBatchrequest');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BatchDownloadJobStatusResult**
+
 <a name="getRecordingLocalkeysSetting"></a>
 
 # LocalEncryptionConfiguration getRecordingLocalkeysSetting(settingsId)
@@ -1280,6 +1330,54 @@ apiInstance.postConversationRecordingAnnotations(conversationId, recordingId, bo
 ### Return type
 
 **Annotation**
+
+<a name="postRecordingBatchrequests"></a>
+
+# BatchDownloadJobSubmissionResult postRecordingBatchrequests(body)
+
+POST /api/v2/recording/batchrequests
+
+Submit a batch download request
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RecordingApi();
+
+var body = {}; // Object | Job submission criteria
+
+apiInstance.postRecordingBatchrequests(body)
+  .then(function(data) {
+    console.log(`postRecordingBatchrequests success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postRecordingBatchrequests');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Job submission criteria |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BatchDownloadJobSubmissionResult**
 
 <a name="postRecordingLocalkeys"></a>
 

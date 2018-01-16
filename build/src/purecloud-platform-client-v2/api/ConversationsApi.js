@@ -18,7 +18,7 @@
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 15.0.0
+   * @version 16.0.0
    */
 
   /**

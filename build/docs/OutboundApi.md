@@ -70,6 +70,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundCampaigns**](OutboundApi.html#postOutboundCampaigns) | **POST** /api/v2/outbound/campaigns | Create a campaign.
 [**postOutboundCampaignsProgress**](OutboundApi.html#postOutboundCampaignsProgress) | **POST** /api/v2/outbound/campaigns/progress | Get progress for a list of campaigns
 [**postOutboundContactlistContacts**](OutboundApi.html#postOutboundContactlistContacts) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts | Add contacts to a contact list.
+[**postOutboundContactlistContactsBulk**](OutboundApi.html#postOutboundContactlistContactsBulk) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts/bulk | Get contacts from a contact list.
 [**postOutboundContactlistExport**](OutboundApi.html#postOutboundContactlistExport) | **POST** /api/v2/outbound/contactlists/{contactListId}/export | Initiate the export of a contact list.
 [**postOutboundContactlistfilters**](OutboundApi.html#postOutboundContactlistfilters) | **POST** /api/v2/outbound/contactlistfilters | Create Contact List Filter
 [**postOutboundContactlistfiltersPreview**](OutboundApi.html#postOutboundContactlistfiltersPreview) | **POST** /api/v2/outbound/contactlistfilters/preview | Get a preview of the output of a contact list filter
@@ -3287,6 +3288,57 @@ apiInstance.postOutboundContactlistContacts(contactListId, body, opts)
  **body** | **Object** | Contact |  |
  **priority** | **Boolean** | Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue. | [optional]  |
  **clearSystemData** | **Boolean** | Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**[DialerContact]**
+
+<a name="postOutboundContactlistContactsBulk"></a>
+
+# [DialerContact] postOutboundContactlistContactsBulk(contactListId, body)
+
+POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk
+
+Get contacts from a contact list.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.OutboundApi();
+
+var contactListId = "contactListId_example"; // String | Contact List ID
+
+var body = [{}]; // Object | ContactIds to get.
+
+apiInstance.postOutboundContactlistContactsBulk(contactListId, body)
+  .then(function(data) {
+    console.log(`postOutboundContactlistContactsBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postOutboundContactlistContactsBulk');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListId** | **String** | Contact List ID |  |
+ **body** | **Object** | ContactIds to get. |  |
 {: class="table table-striped"}
 
 ### Return type

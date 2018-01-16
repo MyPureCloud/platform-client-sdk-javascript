@@ -8,7 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**getWorkforcemanagementAdherence**](WorkforceManagementApi.html#getWorkforcemanagementAdherence) | **GET** /api/v2/workforcemanagement/adherence | Get a list of UserScheduleAdherence records for the requested users
-[**getWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitActivitycodes) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/activitycodes | Get activity codes corresponding to a management unit
+[**getWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitActivitycodes) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/activitycodes | Get activity codes
 [**getWorkforcemanagementManagementunitIntradayQueues**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitIntradayQueues) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/intraday/queues | Get intraday queues for the given date
 [**getWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequest) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Get a time off request by id
 [**getWorkforcemanagementManagementunitUserTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequests) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests | Get a list of time off requests for any user
@@ -17,7 +17,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequest) | **GET** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Get a time off request for the current user by id
 [**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequests) | **GET** /api/v2/workforcemanagement/timeoffrequests | Get a list of time off requests for the current user
 [**patchWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementTimeoffrequest) | **PATCH** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Mark a time off request for the current user as read or unread
+[**postWorkforcemanagementAgents**](WorkforceManagementApi.html#postWorkforcemanagementAgents) | **POST** /api/v2/workforcemanagement/agents | Move agents in and out of management unit
 [**postWorkforcemanagementAgentsManagementunits**](WorkforceManagementApi.html#postWorkforcemanagementAgentsManagementunits) | **POST** /api/v2/workforcemanagement/agents/managementunits | Get the management units to which the agents belong
+[**postWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitActivitycodes) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/activitycodes | Create a new activity code
 [**postWorkforcemanagementManagementunitHistoricaladherencequery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitHistoricaladherencequery) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/historicaladherencequery | Request a historical adherence report
 [**postWorkforcemanagementManagementunitIntraday**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitIntraday) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/intraday | Get intraday data for the given date for the requested queueIds
 [**postWorkforcemanagementManagementunitSchedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitSchedulesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/schedules/search | Get user schedules within the given time range
@@ -78,7 +80,7 @@ apiInstance.getWorkforcemanagementAdherence(userId)
 
 GET /api/v2/workforcemanagement/managementunits/{muId}/activitycodes
 
-Get activity codes corresponding to a management unit
+Get activity codes
 
 
 
@@ -530,6 +532,55 @@ apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
 
 void (no response body)
 
+<a name="postWorkforcemanagementAgents"></a>
+
+# MoveAgentsResponse postWorkforcemanagementAgents(opts)
+
+POST /api/v2/workforcemanagement/agents
+
+Move agents in and out of management unit
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var opts = { 
+  'body': {} // Object | body
+};
+apiInstance.postWorkforcemanagementAgents(opts)
+  .then(function(data) {
+    console.log(`postWorkforcemanagementAgents success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postWorkforcemanagementAgents');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**MoveAgentsResponse**
+
 <a name="postWorkforcemanagementAgentsManagementunits"></a>
 
 # [AgentManagementUnitReference] postWorkforcemanagementAgentsManagementunits(opts)
@@ -578,6 +629,58 @@ apiInstance.postWorkforcemanagementAgentsManagementunits(opts)
 ### Return type
 
 **[AgentManagementUnitReference]**
+
+<a name="postWorkforcemanagementManagementunitActivitycodes"></a>
+
+# ActivityCode postWorkforcemanagementManagementunitActivitycodes(muId, opts)
+
+POST /api/v2/workforcemanagement/managementunits/{muId}/activitycodes
+
+Create a new activity code
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+
+var opts = { 
+  'body': {} // Object | body
+};
+apiInstance.postWorkforcemanagementManagementunitActivitycodes(muId, opts)
+  .then(function(data) {
+    console.log(`postWorkforcemanagementManagementunitActivitycodes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postWorkforcemanagementManagementunitActivitycodes');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ActivityCode**
 
 <a name="postWorkforcemanagementManagementunitHistoricaladherencequery"></a>
 

@@ -18,7 +18,7 @@
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 15.0.0
+   * @version 16.0.0
    */
 
   /**
@@ -62,7 +62,7 @@
 
 
     /**
-     * Get activity codes corresponding to a management unit
+     * Get activity codes
      * 
      * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      */
@@ -340,6 +340,31 @@
 
 
     /**
+     * Move agents in and out of management unit
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body body
+     */
+    this.postWorkforcemanagementAgents = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/workforcemanagement/agents', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get the management units to which the agents belong
      * 
      * @param {Object} opts Optional parameters
@@ -353,6 +378,37 @@
         '/api/v2/workforcemanagement/agents/managementunits', 
         'POST', 
         {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Create a new activity code
+     * 
+     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body body
+     */
+    this.postWorkforcemanagementManagementunitActivitycodes = function(muId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'muId' is set
+      if (muId === undefined || muId === null) {
+        throw "Missing the required parameter 'muId' when calling postWorkforcemanagementManagementunitActivitycodes";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/workforcemanagement/managementunits/{muId}/activitycodes', 
+        'POST', 
+        { 'muId': muId }, 
         {  }, 
         {  }, 
         {  }, 

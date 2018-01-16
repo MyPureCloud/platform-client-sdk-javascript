@@ -347,7 +347,8 @@ var opts = {
   'name': "name_example", // String | 
   'permission': null, // [Object] | 
   'defaultRoleId': null, // [Object] | 
-  'userCount': true // Boolean | 
+  'userCount': true, // Boolean | 
+  'id': ["id_example"] // [String] | id
 };
 apiInstance.getAuthorizationRoles(opts)
   .then(function(data) {
@@ -375,6 +376,7 @@ apiInstance.getAuthorizationRoles(opts)
  **permission** | **[Object]** |  | [optional]  |
  **defaultRoleId** | **[Object]** |  | [optional]  |
  **userCount** | **Boolean** |  | [optional] [default to true] |
+ **id** | **[String]** | id | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

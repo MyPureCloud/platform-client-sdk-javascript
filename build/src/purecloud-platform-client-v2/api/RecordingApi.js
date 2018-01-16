@@ -18,7 +18,7 @@
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 15.0.0
+   * @version 16.0.0
    */
 
   /**
@@ -458,6 +458,34 @@
 
 
     /**
+     * Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+     * 
+     * @param {String} jobId jobId
+     */
+    this.getRecordingBatchrequest = function(jobId) { 
+
+      // verify the required parameter 'jobId' is set
+      if (jobId === undefined || jobId === null) {
+        throw "Missing the required parameter 'jobId' when calling getRecordingBatchrequest";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/recording/batchrequests/{jobId}', 
+        'GET', 
+        { 'jobId': jobId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get the local encryption settings
      * 
      * @param {String} settingsId Settings Id
@@ -762,6 +790,34 @@
         '/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations', 
         'POST', 
         { 'conversationId': conversationId,'recordingId': recordingId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Submit a batch download request
+     * 
+     * @param {Object} body Job submission criteria
+     */
+    this.postRecordingBatchrequests = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postRecordingBatchrequests";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/recording/batchrequests', 
+        'POST', 
+        {  }, 
         {  }, 
         {  }, 
         {  }, 

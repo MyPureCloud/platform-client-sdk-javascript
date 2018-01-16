@@ -18,7 +18,7 @@
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 15.0.0
+   * @version 16.0.0
    */
 
   /**
@@ -213,6 +213,7 @@
      * @param {Array.<Object>} opts.permission 
      * @param {Array.<Object>} opts.defaultRoleId 
      * @param {Boolean} opts.userCount  (default to true)
+     * @param {Array.<String>} opts.id id
      */
     this.getAuthorizationRoles = function(opts) { 
       opts = opts || {};
@@ -222,7 +223,7 @@
         '/api/v2/authorization/roles', 
         'GET', 
         {  }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'permission': this.apiClient.buildCollectionParam(opts['permission'], 'multi'),'defaultRoleId': this.apiClient.buildCollectionParam(opts['defaultRoleId'], 'multi'),'userCount': opts['userCount'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'permission': this.apiClient.buildCollectionParam(opts['permission'], 'multi'),'defaultRoleId': this.apiClient.buildCollectionParam(opts['defaultRoleId'], 'multi'),'userCount': opts['userCount'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
         {  }, 
         {  }, 
         null, 

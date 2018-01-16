@@ -18,7 +18,7 @@
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 15.0.0
+   * @version 16.0.0
    */
 
   /**
@@ -1851,6 +1851,40 @@
         'POST', 
         { 'contactListId': contactListId }, 
         { 'priority': opts['priority'],'clearSystemData': opts['clearSystemData'] }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get contacts from a contact list.
+     * 
+     * @param {String} contactListId Contact List ID
+     * @param {Array.<Object>} body ContactIds to get.
+     */
+    this.postOutboundContactlistContactsBulk = function(contactListId, body) { 
+
+      // verify the required parameter 'contactListId' is set
+      if (contactListId === undefined || contactListId === null) {
+        throw "Missing the required parameter 'contactListId' when calling postOutboundContactlistContactsBulk";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postOutboundContactlistContactsBulk";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/outbound/contactlists/{contactListId}/contacts/bulk', 
+        'POST', 
+        { 'contactListId': contactListId }, 
+        {  }, 
         {  }, 
         {  }, 
         body, 
