@@ -18,7 +18,7 @@
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 16.0.0
+   * @version 17.0.0
    */
 
   /**
@@ -338,7 +338,7 @@
      * @param {String} conversationId Conversation ID
      * @param {Object} opts Optional parameters
      * @param {Number} opts.maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (default to 5000)
-     * @param {Object} opts.formatId The desired media format (default to WEBM)
+     * @param {Object} opts.formatId The desired media format. Possible values: NONE, MP3, WAV, or WEBM (default to WEBM)
      */
     this.getConversationRecordings = function(conversationId, opts) { 
       opts = opts || {};
@@ -802,7 +802,7 @@
 
 
     /**
-     * Submit a batch download request
+     * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
      * 
      * @param {Object} body Job submission criteria
      */

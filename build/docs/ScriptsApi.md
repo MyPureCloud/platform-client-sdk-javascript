@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getScriptsPublishedScriptIdPages**](ScriptsApi.html#getScriptsPublishedScriptIdPages) | **GET** /api/v2/scripts/published/{scriptId}/pages | Get the list of published pages
 [**getScriptsPublishedScriptIdVariables**](ScriptsApi.html#getScriptsPublishedScriptIdVariables) | **GET** /api/v2/scripts/published/{scriptId}/variables | Get the published variables
 [**getScriptsUploadStatus**](ScriptsApi.html#getScriptsUploadStatus) | **GET** /api/v2/scripts/uploads/{uploadId}/status | Get the upload status of an imported script
+[**postScriptExport**](ScriptsApi.html#postScriptExport) | **POST** /api/v2/scripts/{scriptId}/export | Export a script via download service.
 {: class="table table-striped"}
 
 <a name="getScript"></a>
@@ -436,7 +437,6 @@ var apiInstance = new platformClient.ScriptsApi();
 var scriptId = "scriptId_example"; // String | Script ID
 
 var opts = { 
-  'foo': 25, // Number | 
   'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
 };
 apiInstance.getScriptsPublishedScriptIdPages(scriptId, opts)
@@ -456,7 +456,6 @@ apiInstance.getScriptsPublishedScriptIdPages(scriptId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **scriptId** | **String** | Script ID |  |
- **foo** | **Number** |  | [optional] [default to 25] |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
 {: class="table table-striped"}
 
@@ -573,4 +572,56 @@ apiInstance.getScriptsUploadStatus(uploadId, opts)
 ### Return type
 
 **ImportScriptStatusResponse**
+
+<a name="postScriptExport"></a>
+
+# ExportScriptResponse postScriptExport(scriptId, opts)
+
+POST /api/v2/scripts/{scriptId}/export
+
+Export a script via download service.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ScriptsApi();
+
+var scriptId = "scriptId_example"; // String | Script ID
+
+var opts = { 
+  'body': {} // Object | 
+};
+apiInstance.postScriptExport(scriptId, opts)
+  .then(function(data) {
+    console.log(`postScriptExport success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postScriptExport');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **scriptId** | **String** | Script ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ExportScriptResponse**
 

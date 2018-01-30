@@ -181,6 +181,10 @@
       "class": "InteractionStatRuleNotification"
     },
     {
+      "topic": "v2.users.{id}.badges.chats",
+      "class": "ChatBadgeNotification"
+    },
+    {
       "topic": "v2.users.{id}.callforwarding",
       "class": "CallForwardingNotification"
     },

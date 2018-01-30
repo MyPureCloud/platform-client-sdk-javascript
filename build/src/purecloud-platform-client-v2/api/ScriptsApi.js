@@ -18,7 +18,7 @@
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 16.0.0
+   * @version 17.0.0
    */
 
   /**
@@ -272,7 +272,6 @@
      * 
      * @param {String} scriptId Script ID
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.foo  (default to 25)
      * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
      */
     this.getScriptsPublishedScriptIdPages = function(scriptId, opts) { 
@@ -288,7 +287,7 @@
         '/api/v2/scripts/published/{scriptId}/pages', 
         'GET', 
         { 'scriptId': scriptId }, 
-        { 'foo': opts['foo'],'scriptDataVersion': opts['scriptDataVersion'] }, 
+        { 'scriptDataVersion': opts['scriptDataVersion'] }, 
         {  }, 
         {  }, 
         null, 
@@ -357,6 +356,37 @@
         {  }, 
         {  }, 
         null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Export a script via download service.
+     * 
+     * @param {String} scriptId Script ID
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body 
+     */
+    this.postScriptExport = function(scriptId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'scriptId' is set
+      if (scriptId === undefined || scriptId === null) {
+        throw "Missing the required parameter 'scriptId' when calling postScriptExport";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/scripts/{scriptId}/export', 
+        'POST', 
+        { 'scriptId': scriptId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
