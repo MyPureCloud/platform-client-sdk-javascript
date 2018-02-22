@@ -18,7 +18,7 @@
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -1829,8 +1829,9 @@
      * @param {String} contactListId Contact List ID
      * @param {Array.<Object>} body Contact
      * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.priority Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue.
-     * @param {Boolean} opts.clearSystemData Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t.
+     * @param {Boolean} opts.priority Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue.
+     * @param {Boolean} opts.clearSystemData Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won&#39;t.
+     * @param {Boolean} opts.doNotQueue Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed; False means that updated contacts will be requeued, according to the &#39;priority&#39; parameter.
      */
     this.postOutboundContactlistContacts = function(contactListId, body, opts) { 
       opts = opts || {};
@@ -1850,7 +1851,7 @@
         '/api/v2/outbound/contactlists/{contactListId}/contacts', 
         'POST', 
         { 'contactListId': contactListId }, 
-        { 'priority': opts['priority'],'clearSystemData': opts['clearSystemData'] }, 
+        { 'priority': opts['priority'],'clearSystemData': opts['clearSystemData'],'doNotQueue': opts['doNotQueue'] }, 
         {  }, 
         {  }, 
         body, 

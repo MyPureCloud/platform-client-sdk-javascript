@@ -10,6 +10,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteQualityCalibration**](QualityApi.html#deleteQualityCalibration) | **DELETE** /api/v2/quality/calibrations/{calibrationId} | Delete a calibration by id.
 [**deleteQualityConversationEvaluation**](QualityApi.html#deleteQualityConversationEvaluation) | **DELETE** /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId} | Delete an evaluation
 [**deleteQualityForm**](QualityApi.html#deleteQualityForm) | **DELETE** /api/v2/quality/forms/{formId} | Delete an evaluation form.
+[**deleteQualityFormsEvaluation**](QualityApi.html#deleteQualityFormsEvaluation) | **DELETE** /api/v2/quality/forms/evaluations/{formId} | Delete an evaluation form.
+[**deleteQualityFormsSurvey**](QualityApi.html#deleteQualityFormsSurvey) | **DELETE** /api/v2/quality/forms/surveys/{formId} | Delete a survey form.
 [**deleteQualityKeywordset**](QualityApi.html#deleteQualityKeywordset) | **DELETE** /api/v2/quality/keywordsets/{keywordSetId} | Delete a keywordSet by id.
 [**deleteQualityKeywordsets**](QualityApi.html#deleteQualityKeywordsets) | **DELETE** /api/v2/quality/keywordsets | Delete keyword sets
 [**getQualityAgentsActivity**](QualityApi.html#getQualityAgentsActivity) | **GET** /api/v2/quality/agents/activity | Gets a list of Agent Activities
@@ -22,21 +24,38 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getQualityForm**](QualityApi.html#getQualityForm) | **GET** /api/v2/quality/forms/{formId} | Get an evaluation form
 [**getQualityFormVersions**](QualityApi.html#getQualityFormVersions) | **GET** /api/v2/quality/forms/{formId}/versions | Gets all the revisions for a specific evaluation.
 [**getQualityForms**](QualityApi.html#getQualityForms) | **GET** /api/v2/quality/forms | Get the list of evaluation forms
+[**getQualityFormsEvaluation**](QualityApi.html#getQualityFormsEvaluation) | **GET** /api/v2/quality/forms/evaluations/{formId} | Get an evaluation form
+[**getQualityFormsEvaluationVersions**](QualityApi.html#getQualityFormsEvaluationVersions) | **GET** /api/v2/quality/forms/evaluations/{formId}/versions | Gets all the revisions for a specific evaluation.
+[**getQualityFormsEvaluations**](QualityApi.html#getQualityFormsEvaluations) | **GET** /api/v2/quality/forms/evaluations | Get the list of evaluation forms
+[**getQualityFormsSurvey**](QualityApi.html#getQualityFormsSurvey) | **GET** /api/v2/quality/forms/surveys/{formId} | Get a survey form
+[**getQualityFormsSurveyVersions**](QualityApi.html#getQualityFormsSurveyVersions) | **GET** /api/v2/quality/forms/surveys/{formId}/versions | Gets all the revisions for a specific survey.
+[**getQualityFormsSurveys**](QualityApi.html#getQualityFormsSurveys) | **GET** /api/v2/quality/forms/surveys | Get the list of survey forms
 [**getQualityKeywordset**](QualityApi.html#getQualityKeywordset) | **GET** /api/v2/quality/keywordsets/{keywordSetId} | Get a keywordSet by id.
 [**getQualityKeywordsets**](QualityApi.html#getQualityKeywordsets) | **GET** /api/v2/quality/keywordsets | Get the list of keyword sets
 [**getQualityPublishedform**](QualityApi.html#getQualityPublishedform) | **GET** /api/v2/quality/publishedforms/{formId} | Get the published evaluation forms.
 [**getQualityPublishedforms**](QualityApi.html#getQualityPublishedforms) | **GET** /api/v2/quality/publishedforms | Get the published evaluation forms.
+[**getQualityPublishedformsEvaluation**](QualityApi.html#getQualityPublishedformsEvaluation) | **GET** /api/v2/quality/publishedforms/evaluations/{formId} | Get the most recent published version of an evaluation form.
+[**getQualityPublishedformsEvaluations**](QualityApi.html#getQualityPublishedformsEvaluations) | **GET** /api/v2/quality/publishedforms/evaluations | Get the published evaluation forms.
+[**getQualityPublishedformsSurvey**](QualityApi.html#getQualityPublishedformsSurvey) | **GET** /api/v2/quality/publishedforms/surveys/{formId} | Get the most recent published version of a survey form.
+[**getQualityPublishedformsSurveys**](QualityApi.html#getQualityPublishedformsSurveys) | **GET** /api/v2/quality/publishedforms/surveys | Get the published survey forms.
+[**patchQualityFormsSurvey**](QualityApi.html#patchQualityFormsSurvey) | **PATCH** /api/v2/quality/forms/surveys/{formId} | Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
 [**postAnalyticsEvaluationsAggregatesQuery**](QualityApi.html#postAnalyticsEvaluationsAggregatesQuery) | **POST** /api/v2/analytics/evaluations/aggregates/query | Query for evaluation aggregates
 [**postQualityCalibrations**](QualityApi.html#postQualityCalibrations) | **POST** /api/v2/quality/calibrations | Create a calibration
 [**postQualityConversationEvaluations**](QualityApi.html#postQualityConversationEvaluations) | **POST** /api/v2/quality/conversations/{conversationId}/evaluations | Create an evaluation
 [**postQualityEvaluationsScoring**](QualityApi.html#postQualityEvaluationsScoring) | **POST** /api/v2/quality/evaluations/scoring | Score evaluation
 [**postQualityForms**](QualityApi.html#postQualityForms) | **POST** /api/v2/quality/forms | Create an evaluation form.
+[**postQualityFormsEvaluations**](QualityApi.html#postQualityFormsEvaluations) | **POST** /api/v2/quality/forms/evaluations | Create an evaluation form.
+[**postQualityFormsSurveys**](QualityApi.html#postQualityFormsSurveys) | **POST** /api/v2/quality/forms/surveys | Create a survey form.
 [**postQualityKeywordsets**](QualityApi.html#postQualityKeywordsets) | **POST** /api/v2/quality/keywordsets | Create a Keyword Set
 [**postQualityPublishedforms**](QualityApi.html#postQualityPublishedforms) | **POST** /api/v2/quality/publishedforms | Publish an evaluation form.
+[**postQualityPublishedformsEvaluations**](QualityApi.html#postQualityPublishedformsEvaluations) | **POST** /api/v2/quality/publishedforms/evaluations | Publish an evaluation form.
+[**postQualityPublishedformsSurveys**](QualityApi.html#postQualityPublishedformsSurveys) | **POST** /api/v2/quality/publishedforms/surveys | Publish a survey form.
 [**postQualitySpotability**](QualityApi.html#postQualitySpotability) | **POST** /api/v2/quality/spotability | Retrieve the spotability statistic
 [**putQualityCalibration**](QualityApi.html#putQualityCalibration) | **PUT** /api/v2/quality/calibrations/{calibrationId} | Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
 [**putQualityConversationEvaluation**](QualityApi.html#putQualityConversationEvaluation) | **PUT** /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId} | Update an evaluation
 [**putQualityForm**](QualityApi.html#putQualityForm) | **PUT** /api/v2/quality/forms/{formId} | Update an evaluation form.
+[**putQualityFormsEvaluation**](QualityApi.html#putQualityFormsEvaluation) | **PUT** /api/v2/quality/forms/evaluations/{formId} | Update an evaluation form.
+[**putQualityFormsSurvey**](QualityApi.html#putQualityFormsSurvey) | **PUT** /api/v2/quality/forms/surveys/{formId} | Update a survey form.
 [**putQualityKeywordset**](QualityApi.html#putQualityKeywordset) | **PUT** /api/v2/quality/keywordsets/{keywordSetId} | Update a keywordSet to the specified keywordSet via PUT.
 {: class="table table-striped"}
 
@@ -177,6 +196,102 @@ apiInstance.deleteQualityForm(formId)
   })
   .catch(function(err) {
   	console.log('There was a failure calling deleteQualityForm');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **formId** | **String** | Form ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteQualityFormsEvaluation"></a>
+
+# void deleteQualityFormsEvaluation(formId)
+
+DELETE /api/v2/quality/forms/evaluations/{formId}
+
+Delete an evaluation form.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var formId = "formId_example"; // String | Form ID
+
+apiInstance.deleteQualityFormsEvaluation(formId)
+  .then(function() {
+    console.log('deleteQualityFormsEvaluation returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling deleteQualityFormsEvaluation');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **formId** | **String** | Form ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteQualityFormsSurvey"></a>
+
+# void deleteQualityFormsSurvey(formId)
+
+DELETE /api/v2/quality/forms/surveys/{formId}
+
+Delete a survey form.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var formId = "formId_example"; // String | Form ID
+
+apiInstance.deleteQualityFormsSurvey(formId)
+  .then(function() {
+    console.log('deleteQualityFormsSurvey returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling deleteQualityFormsSurvey');
     console.error(err);
   });
 
@@ -919,6 +1034,332 @@ apiInstance.getQualityForms(opts)
 
 **EvaluationFormEntityListing**
 
+<a name="getQualityFormsEvaluation"></a>
+
+# EvaluationForm getQualityFormsEvaluation(formId)
+
+GET /api/v2/quality/forms/evaluations/{formId}
+
+Get an evaluation form
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var formId = "formId_example"; // String | Form ID
+
+apiInstance.getQualityFormsEvaluation(formId)
+  .then(function(data) {
+    console.log(`getQualityFormsEvaluation success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getQualityFormsEvaluation');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **formId** | **String** | Form ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EvaluationForm**
+
+<a name="getQualityFormsEvaluationVersions"></a>
+
+# EvaluationFormEntityListing getQualityFormsEvaluationVersions(formId, opts)
+
+GET /api/v2/quality/forms/evaluations/{formId}/versions
+
+Gets all the revisions for a specific evaluation.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var formId = "formId_example"; // String | Form ID
+
+var opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+apiInstance.getQualityFormsEvaluationVersions(formId, opts)
+  .then(function(data) {
+    console.log(`getQualityFormsEvaluationVersions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getQualityFormsEvaluationVersions');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **formId** | **String** | Form ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**EvaluationFormEntityListing**
+
+<a name="getQualityFormsEvaluations"></a>
+
+# EvaluationFormEntityListing getQualityFormsEvaluations(opts)
+
+GET /api/v2/quality/forms/evaluations
+
+Get the list of evaluation forms
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var opts = { 
+  'pageSize': 25, // Number | The total page size requested
+  'pageNumber': 1, // Number | The page number requested
+  'sortBy': "sortBy_example", // String | variable name requested to sort by
+  'nextPage': "nextPage_example", // String | next page token
+  'previousPage': "previousPage_example", // String | Previous page token
+  'expand': "expand_example", // String | Expand
+  'name': "name_example" // String | Name
+};
+apiInstance.getQualityFormsEvaluations(opts)
+  .then(function(data) {
+    console.log(`getQualityFormsEvaluations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getQualityFormsEvaluations');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
+ **sortBy** | **String** | variable name requested to sort by | [optional]  |
+ **nextPage** | **String** | next page token | [optional]  |
+ **previousPage** | **String** | Previous page token | [optional]  |
+ **expand** | **String** | Expand | [optional]  |
+ **name** | **String** | Name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**EvaluationFormEntityListing**
+
+<a name="getQualityFormsSurvey"></a>
+
+# SurveyForm getQualityFormsSurvey(formId)
+
+GET /api/v2/quality/forms/surveys/{formId}
+
+Get a survey form
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var formId = "formId_example"; // String | Form ID
+
+apiInstance.getQualityFormsSurvey(formId)
+  .then(function(data) {
+    console.log(`getQualityFormsSurvey success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getQualityFormsSurvey');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **formId** | **String** | Form ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SurveyForm**
+
+<a name="getQualityFormsSurveyVersions"></a>
+
+# SurveyFormEntityListing getQualityFormsSurveyVersions(formId, opts)
+
+GET /api/v2/quality/forms/surveys/{formId}/versions
+
+Gets all the revisions for a specific survey.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var formId = "formId_example"; // String | Form ID
+
+var opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+apiInstance.getQualityFormsSurveyVersions(formId, opts)
+  .then(function(data) {
+    console.log(`getQualityFormsSurveyVersions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getQualityFormsSurveyVersions');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **formId** | **String** | Form ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**SurveyFormEntityListing**
+
+<a name="getQualityFormsSurveys"></a>
+
+# SurveyFormEntityListing getQualityFormsSurveys(opts)
+
+GET /api/v2/quality/forms/surveys
+
+Get the list of survey forms
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var opts = { 
+  'pageSize': 25, // Number | The total page size requested
+  'pageNumber': 1, // Number | The page number requested
+  'sortBy': "sortBy_example", // String | variable name requested to sort by
+  'nextPage': "nextPage_example", // String | next page token
+  'previousPage': "previousPage_example", // String | Previous page token
+  'expand': "expand_example", // String | Expand
+  'name': "name_example" // String | Name
+};
+apiInstance.getQualityFormsSurveys(opts)
+  .then(function(data) {
+    console.log(`getQualityFormsSurveys success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getQualityFormsSurveys');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
+ **sortBy** | **String** | variable name requested to sort by | [optional]  |
+ **nextPage** | **String** | next page token | [optional]  |
+ **previousPage** | **String** | Previous page token | [optional]  |
+ **expand** | **String** | Expand | [optional]  |
+ **name** | **String** | Name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**SurveyFormEntityListing**
+
 <a name="getQualityKeywordset"></a>
 
 # KeywordSet getQualityKeywordset(keywordSetId)
@@ -1134,6 +1575,259 @@ apiInstance.getQualityPublishedforms(opts)
 ### Return type
 
 **EvaluationFormEntityListing**
+
+<a name="getQualityPublishedformsEvaluation"></a>
+
+# EvaluationForm getQualityPublishedformsEvaluation(formId)
+
+GET /api/v2/quality/publishedforms/evaluations/{formId}
+
+Get the most recent published version of an evaluation form.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var formId = "formId_example"; // String | Form ID
+
+apiInstance.getQualityPublishedformsEvaluation(formId)
+  .then(function(data) {
+    console.log(`getQualityPublishedformsEvaluation success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getQualityPublishedformsEvaluation');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **formId** | **String** | Form ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EvaluationForm**
+
+<a name="getQualityPublishedformsEvaluations"></a>
+
+# EvaluationFormEntityListing getQualityPublishedformsEvaluations(opts)
+
+GET /api/v2/quality/publishedforms/evaluations
+
+Get the published evaluation forms.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'name': "name_example" // String | Name
+};
+apiInstance.getQualityPublishedformsEvaluations(opts)
+  .then(function(data) {
+    console.log(`getQualityPublishedformsEvaluations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getQualityPublishedformsEvaluations');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **name** | **String** | Name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**EvaluationFormEntityListing**
+
+<a name="getQualityPublishedformsSurvey"></a>
+
+# SurveyForm getQualityPublishedformsSurvey(formId)
+
+GET /api/v2/quality/publishedforms/surveys/{formId}
+
+Get the most recent published version of a survey form.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var formId = "formId_example"; // String | Form ID
+
+apiInstance.getQualityPublishedformsSurvey(formId)
+  .then(function(data) {
+    console.log(`getQualityPublishedformsSurvey success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getQualityPublishedformsSurvey');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **formId** | **String** | Form ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SurveyForm**
+
+<a name="getQualityPublishedformsSurveys"></a>
+
+# SurveyFormEntityListing getQualityPublishedformsSurveys(opts)
+
+GET /api/v2/quality/publishedforms/surveys
+
+Get the published survey forms.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'name': "name_example" // String | Name
+};
+apiInstance.getQualityPublishedformsSurveys(opts)
+  .then(function(data) {
+    console.log(`getQualityPublishedformsSurveys success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getQualityPublishedformsSurveys');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **name** | **String** | Name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**SurveyFormEntityListing**
+
+<a name="patchQualityFormsSurvey"></a>
+
+# SurveyForm patchQualityFormsSurvey(formId, body)
+
+PATCH /api/v2/quality/forms/surveys/{formId}
+
+Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var formId = "formId_example"; // String | Form ID
+
+var body = {}; // Object | Survey form
+
+apiInstance.patchQualityFormsSurvey(formId, body)
+  .then(function(data) {
+    console.log(`patchQualityFormsSurvey success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling patchQualityFormsSurvey');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **formId** | **String** | Form ID |  |
+ **body** | **Object** | Survey form |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SurveyForm**
 
 <a name="postAnalyticsEvaluationsAggregatesQuery"></a>
 
@@ -1386,6 +2080,102 @@ apiInstance.postQualityForms(body)
 
 **EvaluationForm**
 
+<a name="postQualityFormsEvaluations"></a>
+
+# EvaluationForm postQualityFormsEvaluations(body)
+
+POST /api/v2/quality/forms/evaluations
+
+Create an evaluation form.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var body = {}; // Object | Evaluation form
+
+apiInstance.postQualityFormsEvaluations(body)
+  .then(function(data) {
+    console.log(`postQualityFormsEvaluations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postQualityFormsEvaluations');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Evaluation form |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EvaluationForm**
+
+<a name="postQualityFormsSurveys"></a>
+
+# SurveyForm postQualityFormsSurveys(body)
+
+POST /api/v2/quality/forms/surveys
+
+Create a survey form.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var body = {}; // Object | Survey form
+
+apiInstance.postQualityFormsSurveys(body)
+  .then(function(data) {
+    console.log(`postQualityFormsSurveys success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postQualityFormsSurveys');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Survey form |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SurveyForm**
+
 <a name="postQualityKeywordsets"></a>
 
 # KeywordSet postQualityKeywordsets(body, opts)
@@ -1485,6 +2275,102 @@ apiInstance.postQualityPublishedforms(body)
 ### Return type
 
 **EvaluationForm**
+
+<a name="postQualityPublishedformsEvaluations"></a>
+
+# EvaluationForm postQualityPublishedformsEvaluations(body)
+
+POST /api/v2/quality/publishedforms/evaluations
+
+Publish an evaluation form.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var body = {}; // Object | Evaluation form
+
+apiInstance.postQualityPublishedformsEvaluations(body)
+  .then(function(data) {
+    console.log(`postQualityPublishedformsEvaluations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postQualityPublishedformsEvaluations');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Evaluation form |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EvaluationForm**
+
+<a name="postQualityPublishedformsSurveys"></a>
+
+# SurveyForm postQualityPublishedformsSurveys(body)
+
+POST /api/v2/quality/publishedforms/surveys
+
+Publish a survey form.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var body = {}; // Object | Survey form
+
+apiInstance.postQualityPublishedformsSurveys(body)
+  .then(function(data) {
+    console.log(`postQualityPublishedformsSurveys success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postQualityPublishedformsSurveys');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Survey form |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SurveyForm**
 
 <a name="postQualitySpotability"></a>
 
@@ -1694,6 +2580,108 @@ apiInstance.putQualityForm(formId, body)
 ### Return type
 
 **EvaluationForm**
+
+<a name="putQualityFormsEvaluation"></a>
+
+# EvaluationForm putQualityFormsEvaluation(formId, body)
+
+PUT /api/v2/quality/forms/evaluations/{formId}
+
+Update an evaluation form.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var formId = "formId_example"; // String | Form ID
+
+var body = {}; // Object | Evaluation form
+
+apiInstance.putQualityFormsEvaluation(formId, body)
+  .then(function(data) {
+    console.log(`putQualityFormsEvaluation success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling putQualityFormsEvaluation');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **formId** | **String** | Form ID |  |
+ **body** | **Object** | Evaluation form |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EvaluationForm**
+
+<a name="putQualityFormsSurvey"></a>
+
+# SurveyForm putQualityFormsSurvey(formId, body)
+
+PUT /api/v2/quality/forms/surveys/{formId}
+
+Update a survey form.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var formId = "formId_example"; // String | Form ID
+
+var body = {}; // Object | Survey form
+
+apiInstance.putQualityFormsSurvey(formId, body)
+  .then(function(data) {
+    console.log(`putQualityFormsSurvey success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling putQualityFormsSurvey');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **formId** | **String** | Form ID |  |
+ **body** | **Object** | Survey form |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SurveyForm**
 
 <a name="putQualityKeywordset"></a>
 

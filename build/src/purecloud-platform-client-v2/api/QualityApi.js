@@ -18,7 +18,7 @@
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -119,6 +119,62 @@
 
       return this.apiClient.callApi(
         '/api/v2/quality/forms/{formId}', 
+        'DELETE', 
+        { 'formId': formId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Delete an evaluation form.
+     * 
+     * @param {String} formId Form ID
+     */
+    this.deleteQualityFormsEvaluation = function(formId) { 
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling deleteQualityFormsEvaluation";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/evaluations/{formId}', 
+        'DELETE', 
+        { 'formId': formId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Delete a survey form.
+     * 
+     * @param {String} formId Form ID
+     */
+    this.deleteQualityFormsSurvey = function(formId) { 
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling deleteQualityFormsSurvey";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/surveys/{formId}', 
         'DELETE', 
         { 'formId': formId }, 
         {  }, 
@@ -539,6 +595,188 @@
 
 
     /**
+     * Get an evaluation form
+     * 
+     * @param {String} formId Form ID
+     */
+    this.getQualityFormsEvaluation = function(formId) { 
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling getQualityFormsEvaluation";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/evaluations/{formId}', 
+        'GET', 
+        { 'formId': formId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Gets all the revisions for a specific evaluation.
+     * 
+     * @param {String} formId Form ID
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     */
+    this.getQualityFormsEvaluationVersions = function(formId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling getQualityFormsEvaluationVersions";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/evaluations/{formId}/versions', 
+        'GET', 
+        { 'formId': formId }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get the list of evaluation forms
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The total page size requested (default to 25)
+     * @param {Number} opts.pageNumber The page number requested (default to 1)
+     * @param {String} opts.sortBy variable name requested to sort by
+     * @param {String} opts.nextPage next page token
+     * @param {String} opts.previousPage Previous page token
+     * @param {String} opts.expand Expand
+     * @param {String} opts.name Name
+     */
+    this.getQualityFormsEvaluations = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/evaluations', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a survey form
+     * 
+     * @param {String} formId Form ID
+     */
+    this.getQualityFormsSurvey = function(formId) { 
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling getQualityFormsSurvey";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/surveys/{formId}', 
+        'GET', 
+        { 'formId': formId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Gets all the revisions for a specific survey.
+     * 
+     * @param {String} formId Form ID
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     */
+    this.getQualityFormsSurveyVersions = function(formId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling getQualityFormsSurveyVersions";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/surveys/{formId}/versions', 
+        'GET', 
+        { 'formId': formId }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get the list of survey forms
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The total page size requested (default to 25)
+     * @param {Number} opts.pageNumber The page number requested (default to 1)
+     * @param {String} opts.sortBy variable name requested to sort by
+     * @param {String} opts.nextPage next page token
+     * @param {String} opts.previousPage Previous page token
+     * @param {String} opts.expand Expand
+     * @param {String} opts.name Name
+     */
+    this.getQualityFormsSurveys = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/surveys', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get a keywordSet by id.
      * 
      * @param {String} keywordSetId KeywordSet ID
@@ -648,6 +886,150 @@
         {  }, 
         {  }, 
         null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get the most recent published version of an evaluation form.
+     * 
+     * @param {String} formId Form ID
+     */
+    this.getQualityPublishedformsEvaluation = function(formId) { 
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling getQualityPublishedformsEvaluation";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/publishedforms/evaluations/{formId}', 
+        'GET', 
+        { 'formId': formId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get the published evaluation forms.
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {String} opts.name Name
+     */
+    this.getQualityPublishedformsEvaluations = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/publishedforms/evaluations', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get the most recent published version of a survey form.
+     * 
+     * @param {String} formId Form ID
+     */
+    this.getQualityPublishedformsSurvey = function(formId) { 
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling getQualityPublishedformsSurvey";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/publishedforms/surveys/{formId}', 
+        'GET', 
+        { 'formId': formId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get the published survey forms.
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {String} opts.name Name
+     */
+    this.getQualityPublishedformsSurveys = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/publishedforms/surveys', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
+     * 
+     * @param {String} formId Form ID
+     * @param {Object} body Survey form
+     */
+    this.patchQualityFormsSurvey = function(formId, body) { 
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling patchQualityFormsSurvey";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling patchQualityFormsSurvey";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/surveys/{formId}', 
+        'PATCH', 
+        { 'formId': formId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -808,6 +1190,62 @@
 
 
     /**
+     * Create an evaluation form.
+     * 
+     * @param {Object} body Evaluation form
+     */
+    this.postQualityFormsEvaluations = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postQualityFormsEvaluations";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/evaluations', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Create a survey form.
+     * 
+     * @param {Object} body Survey form
+     */
+    this.postQualityFormsSurveys = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postQualityFormsSurveys";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/surveys', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Create a Keyword Set
      * 
      * @param {Object} body keywordSet
@@ -853,6 +1291,62 @@
 
       return this.apiClient.callApi(
         '/api/v2/quality/publishedforms', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Publish an evaluation form.
+     * 
+     * @param {Object} body Evaluation form
+     */
+    this.postQualityPublishedformsEvaluations = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postQualityPublishedformsEvaluations";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/publishedforms/evaluations', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Publish a survey form.
+     * 
+     * @param {Object} body Survey form
+     */
+    this.postQualityPublishedformsSurveys = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postQualityPublishedformsSurveys";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/publishedforms/surveys', 
         'POST', 
         {  }, 
         {  }, 
@@ -989,6 +1483,74 @@
 
       return this.apiClient.callApi(
         '/api/v2/quality/forms/{formId}', 
+        'PUT', 
+        { 'formId': formId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update an evaluation form.
+     * 
+     * @param {String} formId Form ID
+     * @param {Object} body Evaluation form
+     */
+    this.putQualityFormsEvaluation = function(formId, body) { 
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling putQualityFormsEvaluation";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putQualityFormsEvaluation";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/evaluations/{formId}', 
+        'PUT', 
+        { 'formId': formId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update a survey form.
+     * 
+     * @param {String} formId Form ID
+     * @param {Object} body Survey form
+     */
+    this.putQualityFormsSurvey = function(formId, body) { 
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling putQualityFormsSurvey";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putQualityFormsSurvey";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/surveys/{formId}', 
         'PUT', 
         { 'formId': formId }, 
         {  }, 

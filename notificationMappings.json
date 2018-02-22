@@ -287,6 +287,14 @@
     {
       "topic": "v2.users.{id}.workforcemanagement.timeoffrequests",
       "class": "TimeOffRequestUpdateNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.agents",
+      "class": "WfmMoveAgentsCompleteNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.managementunits.{id}.agents.sync",
+      "class": "WfmUpdateAgentDetailsCompleteNotification"
     }
   ]
 }

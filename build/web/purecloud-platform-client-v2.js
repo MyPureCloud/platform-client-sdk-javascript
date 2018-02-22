@@ -1,4 +1,4 @@
-require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+require=(function(){function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s}return e})()({1:[function(require,module,exports){
 
 },{}],2:[function(require,module,exports){
 'use strict'
@@ -17,6 +17,8 @@ for (var i = 0, len = code.length; i < len; ++i) {
   revLookup[code.charCodeAt(i)] = i
 }
 
+// Support decoding URL-safe base64 strings, as Node.js does.
+// See: https://en.wikipedia.org/wiki/Base64#URL_applications
 revLookup['-'.charCodeAt(0)] = 62
 revLookup['_'.charCodeAt(0)] = 63
 
@@ -78,7 +80,7 @@ function encodeChunk (uint8, start, end) {
   var tmp
   var output = []
   for (var i = start; i < end; i += 3) {
-    tmp = (uint8[i] << 16) + (uint8[i + 1] << 8) + (uint8[i + 2])
+    tmp = ((uint8[i] << 16) & 0xFF0000) + ((uint8[i + 1] << 8) & 0xFF00) + (uint8[i + 2] & 0xFF)
     output.push(tripletToBase64(tmp))
   }
   return output.join('')
@@ -172,6 +174,24 @@ function typedArraySupport () {
   }
 }
 
+Object.defineProperty(Buffer.prototype, 'parent', {
+  get: function () {
+    if (!(this instanceof Buffer)) {
+      return undefined
+    }
+    return this.buffer
+  }
+})
+
+Object.defineProperty(Buffer.prototype, 'offset', {
+  get: function () {
+    if (!(this instanceof Buffer)) {
+      return undefined
+    }
+    return this.byteOffset
+  }
+})
+
 function createBuffer (length) {
   if (length > K_MAX_LENGTH) {
     throw new RangeError('Invalid typed array length')
@@ -223,7 +243,7 @@ function from (value, encodingOrOffset, length) {
     throw new TypeError('"value" argument must not be a number')
   }
 
-  if (isArrayBuffer(value)) {
+  if (isArrayBuffer(value) || (value && isArrayBuffer(value.buffer))) {
     return fromArrayBuffer(value, encodingOrOffset, length)
   }
 
@@ -253,7 +273,7 @@ Buffer.__proto__ = Uint8Array
 
 function assertSize (size) {
   if (typeof size !== 'number') {
-    throw new TypeError('"size" argument must be a number')
+    throw new TypeError('"size" argument must be of type number')
   } else if (size < 0) {
     throw new RangeError('"size" argument must not be negative')
   }
@@ -307,7 +327,7 @@ function fromString (string, encoding) {
   }
 
   if (!Buffer.isEncoding(encoding)) {
-    throw new TypeError('"encoding" must be a valid string encoding')
+    throw new TypeError('Unknown encoding: ' + encoding)
   }
 
   var length = byteLength(string, encoding) | 0
@@ -336,11 +356,11 @@ function fromArrayLike (array) {
 
 function fromArrayBuffer (array, byteOffset, length) {
   if (byteOffset < 0 || array.byteLength < byteOffset) {
-    throw new RangeError('\'offset\' is out of bounds')
+    throw new RangeError('"offset" is outside of buffer bounds')
   }
 
   if (array.byteLength < byteOffset + (length || 0)) {
-    throw new RangeError('\'length\' is out of bounds')
+    throw new RangeError('"length" is outside of buffer bounds')
   }
 
   var buf
@@ -371,7 +391,7 @@ function fromObject (obj) {
   }
 
   if (obj) {
-    if (isArrayBufferView(obj) || 'length' in obj) {
+    if (ArrayBuffer.isView(obj) || 'length' in obj) {
       if (typeof obj.length !== 'number' || numberIsNaN(obj.length)) {
         return createBuffer(0)
       }
@@ -383,7 +403,7 @@ function fromObject (obj) {
     }
   }
 
-  throw new TypeError('First argument must be a string, Buffer, ArrayBuffer, Array, or array-like object.')
+  throw new TypeError('The first argument must be one of type string, Buffer, ArrayBuffer, Array, or Array-like Object.')
 }
 
 function checked (length) {
@@ -470,6 +490,9 @@ Buffer.concat = function concat (list, length) {
   var pos = 0
   for (i = 0; i < list.length; ++i) {
     var buf = list[i]
+    if (ArrayBuffer.isView(buf)) {
+      buf = Buffer.from(buf)
+    }
     if (!Buffer.isBuffer(buf)) {
       throw new TypeError('"list" argument must be an Array of Buffers')
     }
@@ -483,7 +506,7 @@ function byteLength (string, encoding) {
   if (Buffer.isBuffer(string)) {
     return string.length
   }
-  if (isArrayBufferView(string) || isArrayBuffer(string)) {
+  if (ArrayBuffer.isView(string) || isArrayBuffer(string)) {
     return string.byteLength
   }
   if (typeof string !== 'string') {
@@ -650,6 +673,8 @@ Buffer.prototype.toString = function toString () {
   if (arguments.length === 0) return utf8Slice(this, 0, length)
   return slowToString.apply(this, arguments)
 }
+
+Buffer.prototype.toLocaleString = Buffer.prototype.toString
 
 Buffer.prototype.equals = function equals (b) {
   if (!Buffer.isBuffer(b)) throw new TypeError('Argument must be a Buffer')
@@ -871,9 +896,7 @@ function hexWrite (buf, string, offset, length) {
     }
   }
 
-  // must be an even number of digits
   var strLen = string.length
-  if (strLen % 2 !== 0) throw new TypeError('Invalid hex string')
 
   if (length > strLen / 2) {
     length = strLen / 2
@@ -1566,6 +1589,7 @@ Buffer.prototype.writeDoubleBE = function writeDoubleBE (value, offset, noAssert
 
 // copy(targetBuffer, targetStart=0, sourceStart=0, sourceEnd=buffer.length)
 Buffer.prototype.copy = function copy (target, targetStart, start, end) {
+  if (!Buffer.isBuffer(target)) throw new TypeError('argument should be a Buffer')
   if (!start) start = 0
   if (!end && end !== 0) end = this.length
   if (targetStart >= target.length) targetStart = target.length
@@ -1580,7 +1604,7 @@ Buffer.prototype.copy = function copy (target, targetStart, start, end) {
   if (targetStart < 0) {
     throw new RangeError('targetStart out of bounds')
   }
-  if (start < 0 || start >= this.length) throw new RangeError('sourceStart out of bounds')
+  if (start < 0 || start >= this.length) throw new RangeError('Index out of range')
   if (end < 0) throw new RangeError('sourceEnd out of bounds')
 
   // Are we oob?
@@ -1590,22 +1614,19 @@ Buffer.prototype.copy = function copy (target, targetStart, start, end) {
   }
 
   var len = end - start
-  var i
 
-  if (this === target && start < targetStart && targetStart < end) {
+  if (this === target && typeof Uint8Array.prototype.copyWithin === 'function') {
+    // Use built-in when available, missing from IE11
+    this.copyWithin(targetStart, start, end)
+  } else if (this === target && start < targetStart && targetStart < end) {
     // descending copy from end
-    for (i = len - 1; i >= 0; --i) {
-      target[i + targetStart] = this[i + start]
-    }
-  } else if (len < 1000) {
-    // ascending copy from start
-    for (i = 0; i < len; ++i) {
+    for (var i = len - 1; i >= 0; --i) {
       target[i + targetStart] = this[i + start]
     }
   } else {
     Uint8Array.prototype.set.call(
       target,
-      this.subarray(start, start + len),
+      this.subarray(start, end),
       targetStart
     )
   }
@@ -1628,17 +1649,19 @@ Buffer.prototype.fill = function fill (val, start, end, encoding) {
       encoding = end
       end = this.length
     }
-    if (val.length === 1) {
-      var code = val.charCodeAt(0)
-      if (code < 256) {
-        val = code
-      }
-    }
     if (encoding !== undefined && typeof encoding !== 'string') {
       throw new TypeError('encoding must be a string')
     }
     if (typeof encoding === 'string' && !Buffer.isEncoding(encoding)) {
       throw new TypeError('Unknown encoding: ' + encoding)
+    }
+    if (val.length === 1) {
+      var code = val.charCodeAt(0)
+      if ((encoding === 'utf8' && code < 128) ||
+          encoding === 'latin1') {
+        // Fast path: If `val` fits into a single byte, use that numeric value.
+        val = code
+      }
     }
   } else if (typeof val === 'number') {
     val = val & 255
@@ -1668,6 +1691,10 @@ Buffer.prototype.fill = function fill (val, start, end, encoding) {
       ? val
       : new Buffer(val, encoding)
     var len = bytes.length
+    if (len === 0) {
+      throw new TypeError('The value "' + val +
+        '" is invalid for argument "value"')
+    }
     for (i = 0; i < end - start; ++i) {
       this[i + start] = bytes[i % len]
     }
@@ -1682,6 +1709,8 @@ Buffer.prototype.fill = function fill (val, start, end, encoding) {
 var INVALID_BASE64_RE = /[^+/0-9A-Za-z-_]/g
 
 function base64clean (str) {
+  // Node takes equal signs as end of the Base64 encoding
+  str = str.split('=')[0]
   // Node strips out invalid characters like \n and \t from the string, base64-js does not
   str = str.trim().replace(INVALID_BASE64_RE, '')
   // Node converts strings with length < 2 to ''
@@ -1821,11 +1850,6 @@ function isArrayBuffer (obj) {
   return obj instanceof ArrayBuffer ||
     (obj != null && obj.constructor != null && obj.constructor.name === 'ArrayBuffer' &&
       typeof obj.byteLength === 'number')
-}
-
-// Node 0.10 supports `ArrayBuffer` but lacks `ArrayBuffer.isView`
-function isArrayBufferView (obj) {
-  return (typeof ArrayBuffer.isView === 'function') && ArrayBuffer.isView(obj)
 }
 
 function numberIsNaN (obj) {
@@ -3242,7 +3266,7 @@ module.exports = request;
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -3875,7 +3899,7 @@ module.exports = request;
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '17.0.0' });
+    //request.set({ 'purecloud-sdk': '18.0.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -4028,7 +4052,7 @@ module.exports = request;
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -4384,7 +4408,7 @@ module.exports = request;
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -5049,7 +5073,7 @@ module.exports = request;
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -7102,7 +7126,7 @@ module.exports = request;
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -7313,7 +7337,7 @@ module.exports = request;
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -7872,7 +7896,7 @@ module.exports = request;
   /**
    * Billing service.
    * @module purecloud-platform-client-v2/api/BillingApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -7945,7 +7969,7 @@ module.exports = request;
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -9202,7 +9226,7 @@ module.exports = request;
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -11835,7 +11859,7 @@ module.exports = request;
 
 
     /**
-     * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+     * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
      * 
      * @param {String} conversationId conversationId
      * @param {Object} body Send external email reply
@@ -11944,7 +11968,7 @@ module.exports = request;
 
     /**
      * Create an email conversation
-     * 
+     * If the direction of the request is INBOUND, this will create an external conversation with a third party provider. If the direction of the the request is OUTBOUND, this will create a conversation to send outbound emails on behalf of a queue.
      * @param {Object} body Create email request
      */
     this.postConversationsEmails = function(body) { 
@@ -12102,7 +12126,7 @@ module.exports = request;
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -13086,7 +13110,7 @@ module.exports = request;
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -13291,7 +13315,7 @@ module.exports = request;
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -13454,7 +13478,7 @@ module.exports = request;
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -13974,7 +13998,7 @@ module.exports = request;
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -14373,7 +14397,7 @@ module.exports = request;
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -15082,7 +15106,7 @@ module.exports = request;
   /**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -15790,7 +15814,7 @@ module.exports = request;
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -16103,7 +16127,7 @@ module.exports = request;
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -16348,7 +16372,7 @@ module.exports = request;
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -16501,7 +16525,7 @@ module.exports = request;
   /**
    * MobileDevices service.
    * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -16682,7 +16706,7 @@ module.exports = request;
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -16914,7 +16938,7 @@ module.exports = request;
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -17121,7 +17145,7 @@ module.exports = request;
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -17269,7 +17293,7 @@ module.exports = request;
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -18034,7 +18058,7 @@ module.exports = request;
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -19845,8 +19869,9 @@ module.exports = request;
      * @param {String} contactListId Contact List ID
      * @param {Array.<Object>} body Contact
      * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.priority Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue.
-     * @param {Boolean} opts.clearSystemData Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t.
+     * @param {Boolean} opts.priority Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue.
+     * @param {Boolean} opts.clearSystemData Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won&#39;t.
+     * @param {Boolean} opts.doNotQueue Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed; False means that updated contacts will be requeued, according to the &#39;priority&#39; parameter.
      */
     this.postOutboundContactlistContacts = function(contactListId, body, opts) { 
       opts = opts || {};
@@ -19866,7 +19891,7 @@ module.exports = request;
         '/api/v2/outbound/contactlists/{contactListId}/contacts', 
         'POST', 
         { 'contactListId': contactListId }, 
-        { 'priority': opts['priority'],'clearSystemData': opts['clearSystemData'] }, 
+        { 'priority': opts['priority'],'clearSystemData': opts['clearSystemData'],'doNotQueue': opts['doNotQueue'] }, 
         {  }, 
         {  }, 
         body, 
@@ -20737,7 +20762,7 @@ module.exports = request;
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -21021,7 +21046,7 @@ module.exports = request;
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -21122,6 +21147,62 @@ module.exports = request;
 
       return this.apiClient.callApi(
         '/api/v2/quality/forms/{formId}', 
+        'DELETE', 
+        { 'formId': formId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Delete an evaluation form.
+     * 
+     * @param {String} formId Form ID
+     */
+    this.deleteQualityFormsEvaluation = function(formId) { 
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling deleteQualityFormsEvaluation";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/evaluations/{formId}', 
+        'DELETE', 
+        { 'formId': formId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Delete a survey form.
+     * 
+     * @param {String} formId Form ID
+     */
+    this.deleteQualityFormsSurvey = function(formId) { 
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling deleteQualityFormsSurvey";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/surveys/{formId}', 
         'DELETE', 
         { 'formId': formId }, 
         {  }, 
@@ -21542,6 +21623,188 @@ module.exports = request;
 
 
     /**
+     * Get an evaluation form
+     * 
+     * @param {String} formId Form ID
+     */
+    this.getQualityFormsEvaluation = function(formId) { 
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling getQualityFormsEvaluation";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/evaluations/{formId}', 
+        'GET', 
+        { 'formId': formId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Gets all the revisions for a specific evaluation.
+     * 
+     * @param {String} formId Form ID
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     */
+    this.getQualityFormsEvaluationVersions = function(formId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling getQualityFormsEvaluationVersions";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/evaluations/{formId}/versions', 
+        'GET', 
+        { 'formId': formId }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get the list of evaluation forms
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The total page size requested (default to 25)
+     * @param {Number} opts.pageNumber The page number requested (default to 1)
+     * @param {String} opts.sortBy variable name requested to sort by
+     * @param {String} opts.nextPage next page token
+     * @param {String} opts.previousPage Previous page token
+     * @param {String} opts.expand Expand
+     * @param {String} opts.name Name
+     */
+    this.getQualityFormsEvaluations = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/evaluations', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a survey form
+     * 
+     * @param {String} formId Form ID
+     */
+    this.getQualityFormsSurvey = function(formId) { 
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling getQualityFormsSurvey";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/surveys/{formId}', 
+        'GET', 
+        { 'formId': formId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Gets all the revisions for a specific survey.
+     * 
+     * @param {String} formId Form ID
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     */
+    this.getQualityFormsSurveyVersions = function(formId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling getQualityFormsSurveyVersions";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/surveys/{formId}/versions', 
+        'GET', 
+        { 'formId': formId }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get the list of survey forms
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The total page size requested (default to 25)
+     * @param {Number} opts.pageNumber The page number requested (default to 1)
+     * @param {String} opts.sortBy variable name requested to sort by
+     * @param {String} opts.nextPage next page token
+     * @param {String} opts.previousPage Previous page token
+     * @param {String} opts.expand Expand
+     * @param {String} opts.name Name
+     */
+    this.getQualityFormsSurveys = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/surveys', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get a keywordSet by id.
      * 
      * @param {String} keywordSetId KeywordSet ID
@@ -21651,6 +21914,150 @@ module.exports = request;
         {  }, 
         {  }, 
         null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get the most recent published version of an evaluation form.
+     * 
+     * @param {String} formId Form ID
+     */
+    this.getQualityPublishedformsEvaluation = function(formId) { 
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling getQualityPublishedformsEvaluation";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/publishedforms/evaluations/{formId}', 
+        'GET', 
+        { 'formId': formId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get the published evaluation forms.
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {String} opts.name Name
+     */
+    this.getQualityPublishedformsEvaluations = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/publishedforms/evaluations', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get the most recent published version of a survey form.
+     * 
+     * @param {String} formId Form ID
+     */
+    this.getQualityPublishedformsSurvey = function(formId) { 
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling getQualityPublishedformsSurvey";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/publishedforms/surveys/{formId}', 
+        'GET', 
+        { 'formId': formId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get the published survey forms.
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {String} opts.name Name
+     */
+    this.getQualityPublishedformsSurveys = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/publishedforms/surveys', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
+     * 
+     * @param {String} formId Form ID
+     * @param {Object} body Survey form
+     */
+    this.patchQualityFormsSurvey = function(formId, body) { 
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling patchQualityFormsSurvey";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling patchQualityFormsSurvey";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/surveys/{formId}', 
+        'PATCH', 
+        { 'formId': formId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -21811,6 +22218,62 @@ module.exports = request;
 
 
     /**
+     * Create an evaluation form.
+     * 
+     * @param {Object} body Evaluation form
+     */
+    this.postQualityFormsEvaluations = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postQualityFormsEvaluations";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/evaluations', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Create a survey form.
+     * 
+     * @param {Object} body Survey form
+     */
+    this.postQualityFormsSurveys = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postQualityFormsSurveys";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/surveys', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Create a Keyword Set
      * 
      * @param {Object} body keywordSet
@@ -21856,6 +22319,62 @@ module.exports = request;
 
       return this.apiClient.callApi(
         '/api/v2/quality/publishedforms', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Publish an evaluation form.
+     * 
+     * @param {Object} body Evaluation form
+     */
+    this.postQualityPublishedformsEvaluations = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postQualityPublishedformsEvaluations";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/publishedforms/evaluations', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Publish a survey form.
+     * 
+     * @param {Object} body Survey form
+     */
+    this.postQualityPublishedformsSurveys = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postQualityPublishedformsSurveys";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/publishedforms/surveys', 
         'POST', 
         {  }, 
         {  }, 
@@ -22006,6 +22525,74 @@ module.exports = request;
 
 
     /**
+     * Update an evaluation form.
+     * 
+     * @param {String} formId Form ID
+     * @param {Object} body Evaluation form
+     */
+    this.putQualityFormsEvaluation = function(formId, body) { 
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling putQualityFormsEvaluation";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putQualityFormsEvaluation";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/evaluations/{formId}', 
+        'PUT', 
+        { 'formId': formId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update a survey form.
+     * 
+     * @param {String} formId Form ID
+     * @param {Object} body Survey form
+     */
+    this.putQualityFormsSurvey = function(formId, body) { 
+
+      // verify the required parameter 'formId' is set
+      if (formId === undefined || formId === null) {
+        throw "Missing the required parameter 'formId' when calling putQualityFormsSurvey";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putQualityFormsSurvey";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/quality/forms/surveys/{formId}', 
+        'PUT', 
+        { 'formId': formId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Update a keywordSet to the specified keywordSet via PUT.
      * 
      * @param {String} keywordSetId KeywordSet ID
@@ -22063,7 +22650,7 @@ module.exports = request;
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -23245,7 +23832,7 @@ module.exports = request;
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -23616,7 +24203,7 @@ module.exports = request;
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -25009,7 +25596,7 @@ module.exports = request;
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -25409,7 +25996,7 @@ module.exports = request;
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -25866,7 +26453,7 @@ module.exports = request;
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -25993,7 +26580,7 @@ module.exports = request;
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -26158,7 +26745,7 @@ module.exports = request;
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -30081,7 +30668,7 @@ module.exports = request;
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -30164,7 +30751,7 @@ module.exports = request;
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -30379,7 +30966,7 @@ module.exports = request;
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -31829,7 +32416,7 @@ module.exports = request;
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -31944,7 +32531,7 @@ module.exports = request;
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -32651,6 +33238,285 @@ module.exports = request;
     if (!root.platformClient) {
       root.platformClient = {};
     }
+    root.platformClient.WebChatApi = factory(root.platformClient.ApiClient);
+  }
+}(this, function(ApiClient) {
+  'use strict';
+
+  /**
+   * WebChat service.
+   * @module purecloud-platform-client-v2/api/WebChatApi
+   * @version 18.0.0
+   */
+
+  /**
+   * Constructs a new WebChatApi. 
+   * @alias module:purecloud-platform-client-v2/api/WebChatApi
+   * @class
+   * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+   * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+   */
+  var exports = function(apiClient) {
+    this.apiClient = apiClient || ApiClient.instance;
+
+
+
+    /**
+     * Delete a WebChat deployment
+     * 
+     * @param {String} deploymentId Deployment Id
+     */
+    this.deleteWebchatDeployment = function(deploymentId) { 
+
+      // verify the required parameter 'deploymentId' is set
+      if (deploymentId === undefined || deploymentId === null) {
+        throw "Missing the required parameter 'deploymentId' when calling deleteWebchatDeployment";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/webchat/deployments/{deploymentId}', 
+        'DELETE', 
+        { 'deploymentId': deploymentId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Remove WebChat deployment settings
+     * 
+     */
+    this.deleteWebchatSettings = function() { 
+
+
+      return this.apiClient.callApi(
+        '/api/v2/webchat/settings', 
+        'DELETE', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a WebChat deployment
+     * 
+     * @param {String} deploymentId Deployment Id
+     */
+    this.getWebchatDeployment = function(deploymentId) { 
+
+      // verify the required parameter 'deploymentId' is set
+      if (deploymentId === undefined || deploymentId === null) {
+        throw "Missing the required parameter 'deploymentId' when calling getWebchatDeployment";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/webchat/deployments/{deploymentId}', 
+        'GET', 
+        { 'deploymentId': deploymentId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * List WebChat deployments
+     * 
+     */
+    this.getWebchatDeployments = function() { 
+
+
+      return this.apiClient.callApi(
+        '/api/v2/webchat/deployments', 
+        'GET', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get WebChat deployment settings
+     * 
+     */
+    this.getWebchatSettings = function() { 
+
+
+      return this.apiClient.callApi(
+        '/api/v2/webchat/settings', 
+        'GET', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Create WebChat deployment
+     * 
+     * @param {Object} body Deployment
+     */
+    this.postWebchatDeployments = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postWebchatDeployments";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/webchat/deployments', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Create WebChat deployment settings
+     * 
+     * @param {Object} body webChatSettings
+     */
+    this.postWebchatSettings = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postWebchatSettings";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/webchat/settings', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update a WebChat deployment
+     * 
+     * @param {String} deploymentId Deployment Id
+     * @param {Object} body Deployment
+     */
+    this.putWebchatDeployment = function(deploymentId, body) { 
+
+      // verify the required parameter 'deploymentId' is set
+      if (deploymentId === undefined || deploymentId === null) {
+        throw "Missing the required parameter 'deploymentId' when calling putWebchatDeployment";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putWebchatDeployment";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/webchat/deployments/{deploymentId}', 
+        'PUT', 
+        { 'deploymentId': deploymentId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update WebChat deployment settings
+     * 
+     * @param {Object} body webChatSettings
+     */
+    this.putWebchatSettings = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putWebchatSettings";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/webchat/settings', 
+        'PUT', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+  };
+
+  return exports;
+}));
+
+},{"../ApiClient":8}],49:[function(require,module,exports){
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['purecloud-platform-client-v2/ApiClient'], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    module.exports = factory(require('../ApiClient'));
+  } else {
+    // Browser globals (root is window)
+    if (!root.platformClient) {
+      root.platformClient = {};
+    }
     root.platformClient.WorkforceManagementApi = factory(root.platformClient.ApiClient);
   }
 }(this, function(ApiClient) {
@@ -32659,7 +33525,7 @@ module.exports = request;
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -33186,12 +34052,12 @@ module.exports = request;
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['purecloud-platform-client-v2/ApiClient', 'purecloud-platform-client-v2/api/AlertingApi', 'purecloud-platform-client-v2/api/AnalyticsApi', 'purecloud-platform-client-v2/api/ArchitectApi', 'purecloud-platform-client-v2/api/AttributesApi', 'purecloud-platform-client-v2/api/AuthorizationApi', 'purecloud-platform-client-v2/api/BillingApi', 'purecloud-platform-client-v2/api/ContentManagementApi', 'purecloud-platform-client-v2/api/ConversationsApi', 'purecloud-platform-client-v2/api/ExternalContactsApi', 'purecloud-platform-client-v2/api/FaxApi', 'purecloud-platform-client-v2/api/GeolocationApi', 'purecloud-platform-client-v2/api/GreetingsApi', 'purecloud-platform-client-v2/api/GroupsApi', 'purecloud-platform-client-v2/api/IdentityProviderApi', 'purecloud-platform-client-v2/api/IntegrationsApi', 'purecloud-platform-client-v2/api/LanguagesApi', 'purecloud-platform-client-v2/api/LicenseApi', 'purecloud-platform-client-v2/api/LocationsApi', 'purecloud-platform-client-v2/api/MobileDevicesApi', 'purecloud-platform-client-v2/api/NotificationsApi', 'purecloud-platform-client-v2/api/OAuthApi', 'purecloud-platform-client-v2/api/OrganizationApi', 'purecloud-platform-client-v2/api/OrganizationAuthorizationApi', 'purecloud-platform-client-v2/api/OutboundApi', 'purecloud-platform-client-v2/api/PresenceApi', 'purecloud-platform-client-v2/api/QualityApi', 'purecloud-platform-client-v2/api/RecordingApi', 'purecloud-platform-client-v2/api/ResponseManagementApi', 'purecloud-platform-client-v2/api/RoutingApi', 'purecloud-platform-client-v2/api/ScriptsApi', 'purecloud-platform-client-v2/api/SearchApi', 'purecloud-platform-client-v2/api/StationsApi', 'purecloud-platform-client-v2/api/SuggestApi', 'purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi', 'purecloud-platform-client-v2/api/TokensApi', 'purecloud-platform-client-v2/api/UserRecordingsApi', 'purecloud-platform-client-v2/api/UsersApi', 'purecloud-platform-client-v2/api/UtilitiesApi', 'purecloud-platform-client-v2/api/VoicemailApi', 'purecloud-platform-client-v2/api/WorkforceManagementApi'], factory);
+    define(['purecloud-platform-client-v2/ApiClient', 'purecloud-platform-client-v2/api/AlertingApi', 'purecloud-platform-client-v2/api/AnalyticsApi', 'purecloud-platform-client-v2/api/ArchitectApi', 'purecloud-platform-client-v2/api/AttributesApi', 'purecloud-platform-client-v2/api/AuthorizationApi', 'purecloud-platform-client-v2/api/BillingApi', 'purecloud-platform-client-v2/api/ContentManagementApi', 'purecloud-platform-client-v2/api/ConversationsApi', 'purecloud-platform-client-v2/api/ExternalContactsApi', 'purecloud-platform-client-v2/api/FaxApi', 'purecloud-platform-client-v2/api/GeolocationApi', 'purecloud-platform-client-v2/api/GreetingsApi', 'purecloud-platform-client-v2/api/GroupsApi', 'purecloud-platform-client-v2/api/IdentityProviderApi', 'purecloud-platform-client-v2/api/IntegrationsApi', 'purecloud-platform-client-v2/api/LanguagesApi', 'purecloud-platform-client-v2/api/LicenseApi', 'purecloud-platform-client-v2/api/LocationsApi', 'purecloud-platform-client-v2/api/MobileDevicesApi', 'purecloud-platform-client-v2/api/NotificationsApi', 'purecloud-platform-client-v2/api/OAuthApi', 'purecloud-platform-client-v2/api/OrganizationApi', 'purecloud-platform-client-v2/api/OrganizationAuthorizationApi', 'purecloud-platform-client-v2/api/OutboundApi', 'purecloud-platform-client-v2/api/PresenceApi', 'purecloud-platform-client-v2/api/QualityApi', 'purecloud-platform-client-v2/api/RecordingApi', 'purecloud-platform-client-v2/api/ResponseManagementApi', 'purecloud-platform-client-v2/api/RoutingApi', 'purecloud-platform-client-v2/api/ScriptsApi', 'purecloud-platform-client-v2/api/SearchApi', 'purecloud-platform-client-v2/api/StationsApi', 'purecloud-platform-client-v2/api/SuggestApi', 'purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi', 'purecloud-platform-client-v2/api/TokensApi', 'purecloud-platform-client-v2/api/UserRecordingsApi', 'purecloud-platform-client-v2/api/UsersApi', 'purecloud-platform-client-v2/api/UtilitiesApi', 'purecloud-platform-client-v2/api/VoicemailApi', 'purecloud-platform-client-v2/api/WebChatApi', 'purecloud-platform-client-v2/api/WorkforceManagementApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./api/AlertingApi'), require('./api/AnalyticsApi'), require('./api/ArchitectApi'), require('./api/AttributesApi'), require('./api/AuthorizationApi'), require('./api/BillingApi'), require('./api/ContentManagementApi'), require('./api/ConversationsApi'), require('./api/ExternalContactsApi'), require('./api/FaxApi'), require('./api/GeolocationApi'), require('./api/GreetingsApi'), require('./api/GroupsApi'), require('./api/IdentityProviderApi'), require('./api/IntegrationsApi'), require('./api/LanguagesApi'), require('./api/LicenseApi'), require('./api/LocationsApi'), require('./api/MobileDevicesApi'), require('./api/NotificationsApi'), require('./api/OAuthApi'), require('./api/OrganizationApi'), require('./api/OrganizationAuthorizationApi'), require('./api/OutboundApi'), require('./api/PresenceApi'), require('./api/QualityApi'), require('./api/RecordingApi'), require('./api/ResponseManagementApi'), require('./api/RoutingApi'), require('./api/ScriptsApi'), require('./api/SearchApi'), require('./api/StationsApi'), require('./api/SuggestApi'), require('./api/TelephonyProvidersEdgeApi'), require('./api/TokensApi'), require('./api/UserRecordingsApi'), require('./api/UsersApi'), require('./api/UtilitiesApi'), require('./api/VoicemailApi'), require('./api/WorkforceManagementApi'));
+    module.exports = factory(require('./ApiClient'), require('./api/AlertingApi'), require('./api/AnalyticsApi'), require('./api/ArchitectApi'), require('./api/AttributesApi'), require('./api/AuthorizationApi'), require('./api/BillingApi'), require('./api/ContentManagementApi'), require('./api/ConversationsApi'), require('./api/ExternalContactsApi'), require('./api/FaxApi'), require('./api/GeolocationApi'), require('./api/GreetingsApi'), require('./api/GroupsApi'), require('./api/IdentityProviderApi'), require('./api/IntegrationsApi'), require('./api/LanguagesApi'), require('./api/LicenseApi'), require('./api/LocationsApi'), require('./api/MobileDevicesApi'), require('./api/NotificationsApi'), require('./api/OAuthApi'), require('./api/OrganizationApi'), require('./api/OrganizationAuthorizationApi'), require('./api/OutboundApi'), require('./api/PresenceApi'), require('./api/QualityApi'), require('./api/RecordingApi'), require('./api/ResponseManagementApi'), require('./api/RoutingApi'), require('./api/ScriptsApi'), require('./api/SearchApi'), require('./api/StationsApi'), require('./api/SuggestApi'), require('./api/TelephonyProvidersEdgeApi'), require('./api/TokensApi'), require('./api/UserRecordingsApi'), require('./api/UsersApi'), require('./api/UtilitiesApi'), require('./api/VoicemailApi'), require('./api/WebChatApi'), require('./api/WorkforceManagementApi'));
   }
-}(function(ApiClient, AlertingApi, AnalyticsApi, ArchitectApi, AttributesApi, AuthorizationApi, BillingApi, ContentManagementApi, ConversationsApi, ExternalContactsApi, FaxApi, GeolocationApi, GreetingsApi, GroupsApi, IdentityProviderApi, IntegrationsApi, LanguagesApi, LicenseApi, LocationsApi, MobileDevicesApi, NotificationsApi, OAuthApi, OrganizationApi, OrganizationAuthorizationApi, OutboundApi, PresenceApi, QualityApi, RecordingApi, ResponseManagementApi, RoutingApi, ScriptsApi, SearchApi, StationsApi, SuggestApi, TelephonyProvidersEdgeApi, TokensApi, UserRecordingsApi, UsersApi, UtilitiesApi, VoicemailApi, WorkforceManagementApi) {
+}(function(ApiClient, AlertingApi, AnalyticsApi, ArchitectApi, AttributesApi, AuthorizationApi, BillingApi, ContentManagementApi, ConversationsApi, ExternalContactsApi, FaxApi, GeolocationApi, GreetingsApi, GroupsApi, IdentityProviderApi, IntegrationsApi, LanguagesApi, LicenseApi, LocationsApi, MobileDevicesApi, NotificationsApi, OAuthApi, OrganizationApi, OrganizationAuthorizationApi, OutboundApi, PresenceApi, QualityApi, RecordingApi, ResponseManagementApi, RoutingApi, ScriptsApi, SearchApi, StationsApi, SuggestApi, TelephonyProvidersEdgeApi, TokensApi, UserRecordingsApi, UsersApi, UtilitiesApi, VoicemailApi, WebChatApi, WorkforceManagementApi) {
   'use strict';
 
   /**
@@ -33223,7 +34089,7 @@ module.exports = request;
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 17.0.0
+   * @version 18.0.0
    */
   var platformClient = {
     /**
@@ -33427,6 +34293,11 @@ module.exports = request;
      */
     VoicemailApi: VoicemailApi,
     /**
+     * The WebChatApi service constructor.
+     * @property {module:purecloud-platform-client-v2/api/WebChatApi}
+     */
+    WebChatApi: WebChatApi,
+    /**
      * The WorkforceManagementApi service constructor.
      * @property {module:purecloud-platform-client-v2/api/WorkforceManagementApi}
      */
@@ -33436,4 +34307,4 @@ module.exports = request;
   return platformClient;
 }));
 
-},{"./ApiClient":8,"./api/AlertingApi":9,"./api/AnalyticsApi":10,"./api/ArchitectApi":11,"./api/AttributesApi":12,"./api/AuthorizationApi":13,"./api/BillingApi":14,"./api/ContentManagementApi":15,"./api/ConversationsApi":16,"./api/ExternalContactsApi":17,"./api/FaxApi":18,"./api/GeolocationApi":19,"./api/GreetingsApi":20,"./api/GroupsApi":21,"./api/IdentityProviderApi":22,"./api/IntegrationsApi":23,"./api/LanguagesApi":24,"./api/LicenseApi":25,"./api/LocationsApi":26,"./api/MobileDevicesApi":27,"./api/NotificationsApi":28,"./api/OAuthApi":29,"./api/OrganizationApi":30,"./api/OrganizationAuthorizationApi":31,"./api/OutboundApi":32,"./api/PresenceApi":33,"./api/QualityApi":34,"./api/RecordingApi":35,"./api/ResponseManagementApi":36,"./api/RoutingApi":37,"./api/ScriptsApi":38,"./api/SearchApi":39,"./api/StationsApi":40,"./api/SuggestApi":41,"./api/TelephonyProvidersEdgeApi":42,"./api/TokensApi":43,"./api/UserRecordingsApi":44,"./api/UsersApi":45,"./api/UtilitiesApi":46,"./api/VoicemailApi":47,"./api/WorkforceManagementApi":48}]},{},[]);
+},{"./ApiClient":8,"./api/AlertingApi":9,"./api/AnalyticsApi":10,"./api/ArchitectApi":11,"./api/AttributesApi":12,"./api/AuthorizationApi":13,"./api/BillingApi":14,"./api/ContentManagementApi":15,"./api/ConversationsApi":16,"./api/ExternalContactsApi":17,"./api/FaxApi":18,"./api/GeolocationApi":19,"./api/GreetingsApi":20,"./api/GroupsApi":21,"./api/IdentityProviderApi":22,"./api/IntegrationsApi":23,"./api/LanguagesApi":24,"./api/LicenseApi":25,"./api/LocationsApi":26,"./api/MobileDevicesApi":27,"./api/NotificationsApi":28,"./api/OAuthApi":29,"./api/OrganizationApi":30,"./api/OrganizationAuthorizationApi":31,"./api/OutboundApi":32,"./api/PresenceApi":33,"./api/QualityApi":34,"./api/RecordingApi":35,"./api/ResponseManagementApi":36,"./api/RoutingApi":37,"./api/ScriptsApi":38,"./api/SearchApi":39,"./api/StationsApi":40,"./api/SuggestApi":41,"./api/TelephonyProvidersEdgeApi":42,"./api/TokensApi":43,"./api/UserRecordingsApi":44,"./api/UsersApi":45,"./api/UtilitiesApi":46,"./api/VoicemailApi":47,"./api/WebChatApi":48,"./api/WorkforceManagementApi":49}]},{},[]);

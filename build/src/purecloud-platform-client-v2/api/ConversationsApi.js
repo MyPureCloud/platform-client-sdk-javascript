@@ -18,7 +18,7 @@
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 17.0.0
+   * @version 18.0.0
    */
 
   /**
@@ -2651,7 +2651,7 @@
 
 
     /**
-     * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+     * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
      * 
      * @param {String} conversationId conversationId
      * @param {Object} body Send external email reply
@@ -2760,7 +2760,7 @@
 
     /**
      * Create an email conversation
-     * 
+     * If the direction of the request is INBOUND, this will create an external conversation with a third party provider. If the direction of the the request is OUTBOUND, this will create a conversation to send outbound emails on behalf of a queue.
      * @param {Object} body Create email request
      */
     this.postConversationsEmails = function(body) { 
