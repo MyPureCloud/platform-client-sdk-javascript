@@ -18,7 +18,7 @@
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -290,6 +290,68 @@
         'DELETE', 
         {  }, 
         { 'id': this.apiClient.buildCollectionParam(id, 'multi') }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * deletes a specific datatable by id
+     * deletes an entire datatable (including schema and data) with a given datatableId)
+     * @param {String} datatableId id of datatable
+     */
+    this.deleteFlowsDatatable = function(datatableId) { 
+
+      // verify the required parameter 'datatableId' is set
+      if (datatableId === undefined || datatableId === null) {
+        throw "Missing the required parameter 'datatableId' when calling deleteFlowsDatatable";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables/{datatableId}', 
+        'DELETE', 
+        { 'datatableId': datatableId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Delete a row entry
+     * Deletes a row with a given rowId.
+     * @param {String} datatableId id of datatable
+     * @param {String} rowId the key for the row
+     */
+    this.deleteFlowsDatatableRow = function(datatableId, rowId) { 
+
+      // verify the required parameter 'datatableId' is set
+      if (datatableId === undefined || datatableId === null) {
+        throw "Missing the required parameter 'datatableId' when calling deleteFlowsDatatableRow";
+      }
+
+      // verify the required parameter 'rowId' is set
+      if (rowId === undefined || rowId === null) {
+        throw "Missing the required parameter 'rowId' when calling deleteFlowsDatatableRow";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables/{datatableId}/rows/{rowId}', 
+        'DELETE', 
+        { 'datatableId': datatableId,'rowId': rowId }, 
+        {  }, 
         {  }, 
         {  }, 
         null, 
@@ -1352,6 +1414,130 @@
 
 
     /**
+     * Returns a specific datatable by datatableId
+     * Given a datableid returns the schema associated with it.
+     * @param {String} datatableId id of datatable
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.showbrief If true returns a shortened version of the schema including the name, id and description] (default to true)
+     */
+    this.getFlowsDatatable = function(datatableId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'datatableId' is set
+      if (datatableId === undefined || datatableId === null) {
+        throw "Missing the required parameter 'datatableId' when calling getFlowsDatatable";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables/{datatableId}', 
+        'GET', 
+        { 'datatableId': datatableId }, 
+        { 'showbrief': opts['showbrief'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Returns a specific row for the datatable
+     * Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+     * @param {String} datatableId id of datatable
+     * @param {String} rowId The key for the row
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.showbrief if true returns just the key field for the row (default to true)
+     */
+    this.getFlowsDatatableRow = function(datatableId, rowId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'datatableId' is set
+      if (datatableId === undefined || datatableId === null) {
+        throw "Missing the required parameter 'datatableId' when calling getFlowsDatatableRow";
+      }
+
+      // verify the required parameter 'rowId' is set
+      if (rowId === undefined || rowId === null) {
+        throw "Missing the required parameter 'rowId' when calling getFlowsDatatableRow";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables/{datatableId}/rows/{rowId}', 
+        'GET', 
+        { 'datatableId': datatableId,'rowId': rowId }, 
+        { 'showbrief': opts['showbrief'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Returns the rows for the datatable
+     * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+     * @param {String} datatableId id of datatable
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.showbrief If true returns just the key value of the row (default to true)
+     */
+    this.getFlowsDatatableRows = function(datatableId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'datatableId' is set
+      if (datatableId === undefined || datatableId === null) {
+        throw "Missing the required parameter 'datatableId' when calling getFlowsDatatableRows";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables/{datatableId}/rows', 
+        'GET', 
+        { 'datatableId': datatableId }, 
+        { 'showbrief': opts['showbrief'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Retrieve a list of datatables for the org
+     * Returns a metadata list of the datatables associated with this org, including ID, name and description.
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.showbrief If true, returns a shortened version of the schema including the name, id and description (default to true)
+     */
+    this.getFlowsDatatables = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables', 
+        'GET', 
+        {  }, 
+        { 'showbrief': opts['showbrief'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Rebuild Dependency Tracking data for an organization
      * Asynchronous.  Notification topic: v2.architect.dependencytracking.build
      */
@@ -1819,6 +2005,68 @@
 
 
     /**
+     * Create a new row entry
+     * Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+     * @param {String} datatableId id of datatable
+     * @param {Object} dataTableRow 
+     */
+    this.postFlowsDatatableRows = function(datatableId, dataTableRow) { 
+
+      // verify the required parameter 'datatableId' is set
+      if (datatableId === undefined || datatableId === null) {
+        throw "Missing the required parameter 'datatableId' when calling postFlowsDatatableRows";
+      }
+
+      // verify the required parameter 'dataTableRow' is set
+      if (dataTableRow === undefined || dataTableRow === null) {
+        throw "Missing the required parameter 'dataTableRow' when calling postFlowsDatatableRows";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables/{datatableId}/rows', 
+        'POST', 
+        { 'datatableId': datatableId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        dataTableRow, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Create a new datatable with the specified json-schema definition
+     * This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+     * @param {Object} body datatable json-schema
+     */
+    this.postFlowsDatatables = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postFlowsDatatables";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Update an IVR Config.
      * 
      * @param {String} ivrId IVR id
@@ -2036,6 +2284,75 @@
         '/api/v2/flows/{flowId}', 
         'PUT', 
         { 'flowId': flowId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Updates a specific datatable by datatableId
+     * Updates a schema for a datatable with the given datatableId - updates are additive only, no changes or removals of existing fields.
+     * @param {String} datatableId id of datatable
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.showbrief If true returns a shortened version of the schema including the name, id and description (default to true)
+     * @param {Object} opts.body datatable json-schema
+     */
+    this.putFlowsDatatable = function(datatableId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'datatableId' is set
+      if (datatableId === undefined || datatableId === null) {
+        throw "Missing the required parameter 'datatableId' when calling putFlowsDatatable";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables/{datatableId}', 
+        'PUT', 
+        { 'datatableId': datatableId }, 
+        { 'showbrief': opts['showbrief'] }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update a row entry
+     * Updates a row with the given to the new values.
+     * @param {String} datatableId id of datatable
+     * @param {String} rowId the key for the row
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body datatable row
+     */
+    this.putFlowsDatatableRow = function(datatableId, rowId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'datatableId' is set
+      if (datatableId === undefined || datatableId === null) {
+        throw "Missing the required parameter 'datatableId' when calling putFlowsDatatableRow";
+      }
+
+      // verify the required parameter 'rowId' is set
+      if (rowId === undefined || rowId === null) {
+        throw "Missing the required parameter 'rowId' when calling putFlowsDatatableRow";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables/{datatableId}/rows/{rowId}', 
+        'PUT', 
+        { 'datatableId': datatableId,'rowId': rowId }, 
         {  }, 
         {  }, 
         {  }, 

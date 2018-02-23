@@ -16,6 +16,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteArchitectSystempromptResource**](ArchitectApi.html#deleteArchitectSystempromptResource) | **DELETE** /api/v2/architect/systemprompts/{promptId}/resources/{languageCode} | Delete a system prompt resource override.
 [**deleteFlow**](ArchitectApi.html#deleteFlow) | **DELETE** /api/v2/flows/{flowId} | Delete flow
 [**deleteFlows**](ArchitectApi.html#deleteFlows) | **DELETE** /api/v2/flows | Batch-delete a list of flows
+[**deleteFlowsDatatable**](ArchitectApi.html#deleteFlowsDatatable) | **DELETE** /api/v2/flows/datatables/{datatableId} | deletes a specific datatable by id
+[**deleteFlowsDatatableRow**](ArchitectApi.html#deleteFlowsDatatableRow) | **DELETE** /api/v2/flows/datatables/{datatableId}/rows/{rowId} | Delete a row entry
 [**getArchitectDependencytracking**](ArchitectApi.html#getArchitectDependencytracking) | **GET** /api/v2/architect/dependencytracking | Get Dependency Tracking objects that have a given display name
 [**getArchitectDependencytrackingBuild**](ArchitectApi.html#getArchitectDependencytrackingBuild) | **GET** /api/v2/architect/dependencytracking/build | Get Dependency Tracking build status for an organization
 [**getArchitectDependencytrackingConsumedresources**](ArchitectApi.html#getArchitectDependencytrackingConsumedresources) | **GET** /api/v2/architect/dependencytracking/consumedresources | Get resources that are consumed by a given Dependency Tracking object
@@ -48,6 +50,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowVersionConfiguration**](ArchitectApi.html#getFlowVersionConfiguration) | **GET** /api/v2/flows/{flowId}/versions/{versionId}/configuration | Create flow version configuration
 [**getFlowVersions**](ArchitectApi.html#getFlowVersions) | **GET** /api/v2/flows/{flowId}/versions | Get flow version list
 [**getFlows**](ArchitectApi.html#getFlows) | **GET** /api/v2/flows | Get a pageable list of flows, filtered by query parameters
+[**getFlowsDatatable**](ArchitectApi.html#getFlowsDatatable) | **GET** /api/v2/flows/datatables/{datatableId} | Returns a specific datatable by datatableId
+[**getFlowsDatatableRow**](ArchitectApi.html#getFlowsDatatableRow) | **GET** /api/v2/flows/datatables/{datatableId}/rows/{rowId} | Returns a specific row for the datatable
+[**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | **GET** /api/v2/flows/datatables/{datatableId}/rows | Returns the rows for the datatable
+[**getFlowsDatatables**](ArchitectApi.html#getFlowsDatatables) | **GET** /api/v2/flows/datatables | Retrieve a list of datatables for the org
 [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | **POST** /api/v2/architect/dependencytracking/build | Rebuild Dependency Tracking data for an organization
 [**postArchitectIvrs**](ArchitectApi.html#postArchitectIvrs) | **POST** /api/v2/architect/ivrs | Create IVR config.
 [**postArchitectPromptHistory**](ArchitectApi.html#postArchitectPromptHistory) | **POST** /api/v2/architect/prompts/{promptId}/history | Generate prompt history
@@ -65,6 +71,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postFlowsActionsPublish**](ArchitectApi.html#postFlowsActionsPublish) | **POST** /api/v2/flows/actions/publish | Publish flow
 [**postFlowsActionsRevert**](ArchitectApi.html#postFlowsActionsRevert) | **POST** /api/v2/flows/actions/revert | Revert flow
 [**postFlowsActionsUnlock**](ArchitectApi.html#postFlowsActionsUnlock) | **POST** /api/v2/flows/actions/unlock | Unlock flow
+[**postFlowsDatatableRows**](ArchitectApi.html#postFlowsDatatableRows) | **POST** /api/v2/flows/datatables/{datatableId}/rows | Create a new row entry
+[**postFlowsDatatables**](ArchitectApi.html#postFlowsDatatables) | **POST** /api/v2/flows/datatables | Create a new datatable with the specified json-schema definition
 [**putArchitectIvr**](ArchitectApi.html#putArchitectIvr) | **PUT** /api/v2/architect/ivrs/{ivrId} | Update an IVR Config.
 [**putArchitectPrompt**](ArchitectApi.html#putArchitectPrompt) | **PUT** /api/v2/architect/prompts/{promptId} | Update specified user prompt
 [**putArchitectPromptResource**](ArchitectApi.html#putArchitectPromptResource) | **PUT** /api/v2/architect/prompts/{promptId}/resources/{languageCode} | Update specified user prompt resource
@@ -72,6 +80,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putArchitectSchedulegroup**](ArchitectApi.html#putArchitectSchedulegroup) | **PUT** /api/v2/architect/schedulegroups/{scheduleGroupId} | Updates a schedule group by ID
 [**putArchitectSystempromptResource**](ArchitectApi.html#putArchitectSystempromptResource) | **PUT** /api/v2/architect/systemprompts/{promptId}/resources/{languageCode} | Updates a system prompt resource override.
 [**putFlow**](ArchitectApi.html#putFlow) | **PUT** /api/v2/flows/{flowId} | Update flow
+[**putFlowsDatatable**](ArchitectApi.html#putFlowsDatatable) | **PUT** /api/v2/flows/datatables/{datatableId} | Updates a specific datatable by datatableId
+[**putFlowsDatatableRow**](ArchitectApi.html#putFlowsDatatableRow) | **PUT** /api/v2/flows/datatables/{datatableId}/rows/{rowId} | Update a row entry
 {: class="table table-striped"}
 
 <a name="deleteArchitectIvr"></a>
@@ -515,6 +525,105 @@ apiInstance.deleteFlows(id)
 ### Return type
 
 **Operation**
+
+<a name="deleteFlowsDatatable"></a>
+
+# void deleteFlowsDatatable(datatableId)
+
+DELETE /api/v2/flows/datatables/{datatableId}
+
+deletes a specific datatable by id
+
+deletes an entire datatable (including schema and data) with a given datatableId)
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var datatableId = "datatableId_example"; // String | id of datatable
+
+apiInstance.deleteFlowsDatatable(datatableId)
+  .then(function() {
+    console.log('deleteFlowsDatatable returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling deleteFlowsDatatable');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **datatableId** | **String** | id of datatable |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteFlowsDatatableRow"></a>
+
+# void deleteFlowsDatatableRow(datatableId, rowId)
+
+DELETE /api/v2/flows/datatables/{datatableId}/rows/{rowId}
+
+Delete a row entry
+
+Deletes a row with a given rowId.
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var datatableId = "datatableId_example"; // String | id of datatable
+
+var rowId = "rowId_example"; // String | the key for the row
+
+apiInstance.deleteFlowsDatatableRow(datatableId, rowId)
+  .then(function() {
+    console.log('deleteFlowsDatatableRow returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling deleteFlowsDatatableRow');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **datatableId** | **String** | id of datatable |  |
+ **rowId** | **String** | the key for the row |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="getArchitectDependencytracking"></a>
 
@@ -2304,6 +2413,214 @@ apiInstance.getFlows(type, opts)
 
 **FlowEntityListing**
 
+<a name="getFlowsDatatable"></a>
+
+# JsonSchemaDocument getFlowsDatatable(datatableId, opts)
+
+GET /api/v2/flows/datatables/{datatableId}
+
+Returns a specific datatable by datatableId
+
+Given a datableid returns the schema associated with it.
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var datatableId = "datatableId_example"; // String | id of datatable
+
+var opts = { 
+  'showbrief': true // Boolean | If true returns a shortened version of the schema including the name, id and description]
+};
+apiInstance.getFlowsDatatable(datatableId, opts)
+  .then(function(data) {
+    console.log(`getFlowsDatatable success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getFlowsDatatable');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **datatableId** | **String** | id of datatable |  |
+ **showbrief** | **Boolean** | If true returns a shortened version of the schema including the name, id and description] | [optional] [default to true] |
+{: class="table table-striped"}
+
+### Return type
+
+**JsonSchemaDocument**
+
+<a name="getFlowsDatatableRow"></a>
+
+# **{&#39;String&#39;: Object}** getFlowsDatatableRow(datatableId, rowId, opts)
+
+GET /api/v2/flows/datatables/{datatableId}/rows/{rowId}
+
+Returns a specific row for the datatable
+
+Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var datatableId = "datatableId_example"; // String | id of datatable
+
+var rowId = "rowId_example"; // String | The key for the row
+
+var opts = { 
+  'showbrief': true // Boolean | if true returns just the key field for the row
+};
+apiInstance.getFlowsDatatableRow(datatableId, rowId, opts)
+  .then(function(data) {
+    console.log(`getFlowsDatatableRow success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getFlowsDatatableRow');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **datatableId** | **String** | id of datatable |  |
+ **rowId** | **String** | The key for the row |  |
+ **showbrief** | **Boolean** | if true returns just the key field for the row | [optional] [default to true] |
+{: class="table table-striped"}
+
+### Return type
+
+**{&#39;String&#39;: Object}**
+
+<a name="getFlowsDatatableRows"></a>
+
+# **[{&#39;String&#39;: Object}]** getFlowsDatatableRows(datatableId, opts)
+
+GET /api/v2/flows/datatables/{datatableId}/rows
+
+Returns the rows for the datatable
+
+Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var datatableId = "datatableId_example"; // String | id of datatable
+
+var opts = { 
+  'showbrief': true // Boolean | If true returns just the key value of the row
+};
+apiInstance.getFlowsDatatableRows(datatableId, opts)
+  .then(function(data) {
+    console.log(`getFlowsDatatableRows success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getFlowsDatatableRows');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **datatableId** | **String** | id of datatable |  |
+ **showbrief** | **Boolean** | If true returns just the key value of the row | [optional] [default to true] |
+{: class="table table-striped"}
+
+### Return type
+
+**[{&#39;String&#39;: Object}]**
+
+<a name="getFlowsDatatables"></a>
+
+# [JsonSchemaDocument] getFlowsDatatables(opts)
+
+GET /api/v2/flows/datatables
+
+Retrieve a list of datatables for the org
+
+Returns a metadata list of the datatables associated with this org, including ID, name and description.
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var opts = { 
+  'showbrief': true // Boolean | If true, returns a shortened version of the schema including the name, id and description
+};
+apiInstance.getFlowsDatatables(opts)
+  .then(function(data) {
+    console.log(`getFlowsDatatables success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getFlowsDatatables');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **showbrief** | **Boolean** | If true, returns a shortened version of the schema including the name, id and description | [optional] [default to true] |
+{: class="table table-striped"}
+
+### Return type
+
+**[JsonSchemaDocument]**
+
 <a name="postArchitectDependencytrackingBuild"></a>
 
 # void postArchitectDependencytrackingBuild()
@@ -3135,6 +3452,105 @@ apiInstance.postFlowsActionsUnlock(flow)
 
 **Flow**
 
+<a name="postFlowsDatatableRows"></a>
+
+# **{&#39;String&#39;: Object}** postFlowsDatatableRows(datatableId, dataTableRow)
+
+POST /api/v2/flows/datatables/{datatableId}/rows
+
+Create a new row entry
+
+Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var datatableId = "datatableId_example"; // String | id of datatable
+
+var dataTableRow = null; // Object | 
+
+apiInstance.postFlowsDatatableRows(datatableId, dataTableRow)
+  .then(function(data) {
+    console.log(`postFlowsDatatableRows success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postFlowsDatatableRows');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **datatableId** | **String** | id of datatable |  |
+ **dataTableRow** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**{&#39;String&#39;: Object}**
+
+<a name="postFlowsDatatables"></a>
+
+# JsonSchemaDocument postFlowsDatatables(body)
+
+POST /api/v2/flows/datatables
+
+Create a new datatable with the specified json-schema definition
+
+This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var body = {}; // Object | datatable json-schema
+
+apiInstance.postFlowsDatatables(body)
+  .then(function(data) {
+    console.log(`postFlowsDatatables success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postFlowsDatatables');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | datatable json-schema |  |
+{: class="table table-striped"}
+
+### Return type
+
+**JsonSchemaDocument**
+
 <a name="putArchitectIvr"></a>
 
 # IVR putArchitectIvr(ivrId, opts)
@@ -3504,4 +3920,113 @@ apiInstance.putFlow(flowId, opts)
 ### Return type
 
 **Flow**
+
+<a name="putFlowsDatatable"></a>
+
+# JsonSchemaDocument putFlowsDatatable(datatableId, opts)
+
+PUT /api/v2/flows/datatables/{datatableId}
+
+Updates a specific datatable by datatableId
+
+Updates a schema for a datatable with the given datatableId - updates are additive only, no changes or removals of existing fields.
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var datatableId = "datatableId_example"; // String | id of datatable
+
+var opts = { 
+  'showbrief': true, // Boolean | If true returns a shortened version of the schema including the name, id and description
+  'body': {} // Object | datatable json-schema
+};
+apiInstance.putFlowsDatatable(datatableId, opts)
+  .then(function(data) {
+    console.log(`putFlowsDatatable success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling putFlowsDatatable');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **datatableId** | **String** | id of datatable |  |
+ **showbrief** | **Boolean** | If true returns a shortened version of the schema including the name, id and description | [optional] [default to true] |
+ **body** | **Object** | datatable json-schema | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**JsonSchemaDocument**
+
+<a name="putFlowsDatatableRow"></a>
+
+# **{&#39;String&#39;: Object}** putFlowsDatatableRow(datatableId, rowId, opts)
+
+PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId}
+
+Update a row entry
+
+Updates a row with the given to the new values.
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var datatableId = "datatableId_example"; // String | id of datatable
+
+var rowId = "rowId_example"; // String | the key for the row
+
+var opts = { 
+  'body': null // Object | datatable row
+};
+apiInstance.putFlowsDatatableRow(datatableId, rowId, opts)
+  .then(function(data) {
+    console.log(`putFlowsDatatableRow success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling putFlowsDatatableRow');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **datatableId** | **String** | id of datatable |  |
+ **rowId** | **String** | the key for the row |  |
+ **body** | **Object** | datatable row | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**{&#39;String&#39;: Object}**
 

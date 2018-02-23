@@ -2251,7 +2251,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.QualityApi();
 
-var body = {}; // Object | Evaluation form
+var body = {}; // Object | Publish request containing id of form to publish
 
 apiInstance.postQualityPublishedforms(body)
   .then(function(data) {
@@ -2269,7 +2269,7 @@ apiInstance.postQualityPublishedforms(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Evaluation form |  |
+ **body** | **Object** | Publish request containing id of form to publish |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2299,7 +2299,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.QualityApi();
 
-var body = {}; // Object | Evaluation form
+var body = {}; // Object | Publish request containing id of form to publish
 
 apiInstance.postQualityPublishedformsEvaluations(body)
   .then(function(data) {
@@ -2317,7 +2317,7 @@ apiInstance.postQualityPublishedformsEvaluations(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Evaluation form |  |
+ **body** | **Object** | Publish request containing id of form to publish |  |
 {: class="table table-striped"}
 
 ### Return type

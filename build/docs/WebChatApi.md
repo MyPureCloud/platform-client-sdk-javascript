@@ -13,7 +13,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWebchatDeployments**](WebChatApi.html#getWebchatDeployments) | **GET** /api/v2/webchat/deployments | List WebChat deployments
 [**getWebchatSettings**](WebChatApi.html#getWebchatSettings) | **GET** /api/v2/webchat/settings | Get WebChat deployment settings
 [**postWebchatDeployments**](WebChatApi.html#postWebchatDeployments) | **POST** /api/v2/webchat/deployments | Create WebChat deployment
-[**postWebchatSettings**](WebChatApi.html#postWebchatSettings) | **POST** /api/v2/webchat/settings | Create WebChat deployment settings
 [**putWebchatDeployment**](WebChatApi.html#putWebchatDeployment) | **PUT** /api/v2/webchat/deployments/{deploymentId} | Update a WebChat deployment
 [**putWebchatSettings**](WebChatApi.html#putWebchatSettings) | **PUT** /api/v2/webchat/settings | Update WebChat deployment settings
 {: class="table table-striped"}
@@ -287,54 +286,6 @@ apiInstance.postWebchatDeployments(body)
 ### Return type
 
 **WebChatDeployment**
-
-<a name="postWebchatSettings"></a>
-
-# WebChatSettings postWebchatSettings(body)
-
-POST /api/v2/webchat/settings
-
-Create WebChat deployment settings
-
-
-
-### Example
-
-~~~ javascript
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new platformClient.WebChatApi();
-
-var body = {}; // Object | webChatSettings
-
-apiInstance.postWebchatSettings(body)
-  .then(function(data) {
-    console.log(`postWebchatSettings success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWebchatSettings');
-    console.error(err);
-  });
-
-~~~
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | webChatSettings |  |
-{: class="table table-striped"}
-
-### Return type
-
-**WebChatSettings**
 
 <a name="putWebchatDeployment"></a>
 

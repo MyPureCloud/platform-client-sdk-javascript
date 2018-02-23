@@ -18,7 +18,7 @@
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -1080,6 +1080,40 @@
 
 
     /**
+     * Change a users password
+     * 
+     * @param {String} userId User ID
+     * @param {Object} body Password
+     */
+    this.postUserPassword = function(userId, body) { 
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling postUserPassword";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postUserPassword";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/{userId}/password', 
+        'POST', 
+        { 'userId': userId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Add routing skill to user
      * 
      * @param {String} userId User ID
@@ -1128,6 +1162,34 @@
 
       return this.apiClient.callApi(
         '/api/v2/users', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Change your password
+     * 
+     * @param {Object} body Password
+     */
+    this.postUsersMePassword = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postUsersMePassword";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/me/password', 
         'POST', 
         {  }, 
         {  }, 

@@ -18,7 +18,7 @@
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -1279,7 +1279,7 @@
     /**
      * Publish an evaluation form.
      * 
-     * @param {Object} body Evaluation form
+     * @param {Object} body Publish request containing id of form to publish
      */
     this.postQualityPublishedforms = function(body) { 
 
@@ -1307,7 +1307,7 @@
     /**
      * Publish an evaluation form.
      * 
-     * @param {Object} body Evaluation form
+     * @param {Object} body Publish request containing id of form to publish
      */
     this.postQualityPublishedformsEvaluations = function(body) { 
 

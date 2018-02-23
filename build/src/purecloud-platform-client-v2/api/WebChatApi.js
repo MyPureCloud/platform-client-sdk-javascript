@@ -18,7 +18,7 @@
   /**
    * WebChat service.
    * @module purecloud-platform-client-v2/api/WebChatApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -170,34 +170,6 @@
 
       return this.apiClient.callApi(
         '/api/v2/webchat/deployments', 
-        'POST', 
-        {  }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        body, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Create WebChat deployment settings
-     * 
-     * @param {Object} body webChatSettings
-     */
-    this.postWebchatSettings = function(body) { 
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw "Missing the required parameter 'body' when calling postWebchatSettings";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/webchat/settings', 
         'POST', 
         {  }, 
         {  }, 

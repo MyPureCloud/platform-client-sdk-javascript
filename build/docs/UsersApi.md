@@ -41,8 +41,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsUsersDetailsQuery**](UsersApi.html#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
 [**postAnalyticsUsersObservationsQuery**](UsersApi.html#postAnalyticsUsersObservationsQuery) | **POST** /api/v2/analytics/users/observations/query | Query for user observations
 [**postUserInvite**](UsersApi.html#postUserInvite) | **POST** /api/v2/users/{userId}/invite | Send an activation email to the user
+[**postUserPassword**](UsersApi.html#postUserPassword) | **POST** /api/v2/users/{userId}/password | Change a users password
 [**postUserRoutingskills**](UsersApi.html#postUserRoutingskills) | **POST** /api/v2/users/{userId}/routingskills | Add routing skill to user
 [**postUsers**](UsersApi.html#postUsers) | **POST** /api/v2/users | Create user
+[**postUsersMePassword**](UsersApi.html#postUsersMePassword) | **POST** /api/v2/users/me/password | Change your password
 [**postUsersSearch**](UsersApi.html#postUsersSearch) | **POST** /api/v2/users/search | Search users
 [**putUserCallforwarding**](UsersApi.html#putUserCallforwarding) | **PUT** /api/v2/users/{userId}/callforwarding | Update a user&#39;s CallForwarding
 [**putUserOutofoffice**](UsersApi.html#putUserOutofoffice) | **PUT** /api/v2/users/{userId}/outofoffice | Update an OutOfOffice
@@ -1794,6 +1796,57 @@ apiInstance.postUserInvite(userId, opts)
 
 void (no response body)
 
+<a name="postUserPassword"></a>
+
+# void postUserPassword(userId, body)
+
+POST /api/v2/users/{userId}/password
+
+Change a users password
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var body = {}; // Object | Password
+
+apiInstance.postUserPassword(userId, body)
+  .then(function() {
+    console.log('postUserPassword returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postUserPassword');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **body** | **Object** | Password |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="postUserRoutingskills"></a>
 
 # UserRoutingSkill postUserRoutingskills(userId, body)
@@ -1892,6 +1945,54 @@ apiInstance.postUsers(body)
 ### Return type
 
 **User**
+
+<a name="postUsersMePassword"></a>
+
+# void postUsersMePassword(body)
+
+POST /api/v2/users/me/password
+
+Change your password
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var body = {}; // Object | Password
+
+apiInstance.postUsersMePassword(body)
+  .then(function() {
+    console.log('postUsersMePassword returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postUsersMePassword');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Password |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="postUsersSearch"></a>
 

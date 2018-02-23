@@ -3266,7 +3266,7 @@ module.exports = request;
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -3899,7 +3899,7 @@ module.exports = request;
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '18.0.0' });
+    //request.set({ 'purecloud-sdk': '19.0.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -4052,7 +4052,7 @@ module.exports = request;
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -4408,7 +4408,7 @@ module.exports = request;
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -5073,7 +5073,7 @@ module.exports = request;
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -5345,6 +5345,68 @@ module.exports = request;
         'DELETE', 
         {  }, 
         { 'id': this.apiClient.buildCollectionParam(id, 'multi') }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * deletes a specific datatable by id
+     * deletes an entire datatable (including schema and data) with a given datatableId)
+     * @param {String} datatableId id of datatable
+     */
+    this.deleteFlowsDatatable = function(datatableId) { 
+
+      // verify the required parameter 'datatableId' is set
+      if (datatableId === undefined || datatableId === null) {
+        throw "Missing the required parameter 'datatableId' when calling deleteFlowsDatatable";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables/{datatableId}', 
+        'DELETE', 
+        { 'datatableId': datatableId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Delete a row entry
+     * Deletes a row with a given rowId.
+     * @param {String} datatableId id of datatable
+     * @param {String} rowId the key for the row
+     */
+    this.deleteFlowsDatatableRow = function(datatableId, rowId) { 
+
+      // verify the required parameter 'datatableId' is set
+      if (datatableId === undefined || datatableId === null) {
+        throw "Missing the required parameter 'datatableId' when calling deleteFlowsDatatableRow";
+      }
+
+      // verify the required parameter 'rowId' is set
+      if (rowId === undefined || rowId === null) {
+        throw "Missing the required parameter 'rowId' when calling deleteFlowsDatatableRow";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables/{datatableId}/rows/{rowId}', 
+        'DELETE', 
+        { 'datatableId': datatableId,'rowId': rowId }, 
+        {  }, 
         {  }, 
         {  }, 
         null, 
@@ -6407,6 +6469,130 @@ module.exports = request;
 
 
     /**
+     * Returns a specific datatable by datatableId
+     * Given a datableid returns the schema associated with it.
+     * @param {String} datatableId id of datatable
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.showbrief If true returns a shortened version of the schema including the name, id and description] (default to true)
+     */
+    this.getFlowsDatatable = function(datatableId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'datatableId' is set
+      if (datatableId === undefined || datatableId === null) {
+        throw "Missing the required parameter 'datatableId' when calling getFlowsDatatable";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables/{datatableId}', 
+        'GET', 
+        { 'datatableId': datatableId }, 
+        { 'showbrief': opts['showbrief'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Returns a specific row for the datatable
+     * Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+     * @param {String} datatableId id of datatable
+     * @param {String} rowId The key for the row
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.showbrief if true returns just the key field for the row (default to true)
+     */
+    this.getFlowsDatatableRow = function(datatableId, rowId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'datatableId' is set
+      if (datatableId === undefined || datatableId === null) {
+        throw "Missing the required parameter 'datatableId' when calling getFlowsDatatableRow";
+      }
+
+      // verify the required parameter 'rowId' is set
+      if (rowId === undefined || rowId === null) {
+        throw "Missing the required parameter 'rowId' when calling getFlowsDatatableRow";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables/{datatableId}/rows/{rowId}', 
+        'GET', 
+        { 'datatableId': datatableId,'rowId': rowId }, 
+        { 'showbrief': opts['showbrief'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Returns the rows for the datatable
+     * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+     * @param {String} datatableId id of datatable
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.showbrief If true returns just the key value of the row (default to true)
+     */
+    this.getFlowsDatatableRows = function(datatableId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'datatableId' is set
+      if (datatableId === undefined || datatableId === null) {
+        throw "Missing the required parameter 'datatableId' when calling getFlowsDatatableRows";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables/{datatableId}/rows', 
+        'GET', 
+        { 'datatableId': datatableId }, 
+        { 'showbrief': opts['showbrief'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Retrieve a list of datatables for the org
+     * Returns a metadata list of the datatables associated with this org, including ID, name and description.
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.showbrief If true, returns a shortened version of the schema including the name, id and description (default to true)
+     */
+    this.getFlowsDatatables = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables', 
+        'GET', 
+        {  }, 
+        { 'showbrief': opts['showbrief'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Rebuild Dependency Tracking data for an organization
      * Asynchronous.  Notification topic: v2.architect.dependencytracking.build
      */
@@ -6874,6 +7060,68 @@ module.exports = request;
 
 
     /**
+     * Create a new row entry
+     * Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+     * @param {String} datatableId id of datatable
+     * @param {Object} dataTableRow 
+     */
+    this.postFlowsDatatableRows = function(datatableId, dataTableRow) { 
+
+      // verify the required parameter 'datatableId' is set
+      if (datatableId === undefined || datatableId === null) {
+        throw "Missing the required parameter 'datatableId' when calling postFlowsDatatableRows";
+      }
+
+      // verify the required parameter 'dataTableRow' is set
+      if (dataTableRow === undefined || dataTableRow === null) {
+        throw "Missing the required parameter 'dataTableRow' when calling postFlowsDatatableRows";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables/{datatableId}/rows', 
+        'POST', 
+        { 'datatableId': datatableId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        dataTableRow, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Create a new datatable with the specified json-schema definition
+     * This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+     * @param {Object} body datatable json-schema
+     */
+    this.postFlowsDatatables = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postFlowsDatatables";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Update an IVR Config.
      * 
      * @param {String} ivrId IVR id
@@ -7100,6 +7348,75 @@ module.exports = request;
         ['application/json']
       );
     };
+
+
+    /**
+     * Updates a specific datatable by datatableId
+     * Updates a schema for a datatable with the given datatableId - updates are additive only, no changes or removals of existing fields.
+     * @param {String} datatableId id of datatable
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.showbrief If true returns a shortened version of the schema including the name, id and description (default to true)
+     * @param {Object} opts.body datatable json-schema
+     */
+    this.putFlowsDatatable = function(datatableId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'datatableId' is set
+      if (datatableId === undefined || datatableId === null) {
+        throw "Missing the required parameter 'datatableId' when calling putFlowsDatatable";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables/{datatableId}', 
+        'PUT', 
+        { 'datatableId': datatableId }, 
+        { 'showbrief': opts['showbrief'] }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update a row entry
+     * Updates a row with the given to the new values.
+     * @param {String} datatableId id of datatable
+     * @param {String} rowId the key for the row
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body datatable row
+     */
+    this.putFlowsDatatableRow = function(datatableId, rowId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'datatableId' is set
+      if (datatableId === undefined || datatableId === null) {
+        throw "Missing the required parameter 'datatableId' when calling putFlowsDatatableRow";
+      }
+
+      // verify the required parameter 'rowId' is set
+      if (rowId === undefined || rowId === null) {
+        throw "Missing the required parameter 'rowId' when calling putFlowsDatatableRow";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/datatables/{datatableId}/rows/{rowId}', 
+        'PUT', 
+        { 'datatableId': datatableId,'rowId': rowId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
   };
 
   return exports;
@@ -7126,7 +7443,7 @@ module.exports = request;
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -7337,7 +7654,7 @@ module.exports = request;
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -7896,7 +8213,7 @@ module.exports = request;
   /**
    * Billing service.
    * @module purecloud-platform-client-v2/api/BillingApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -7969,7 +8286,7 @@ module.exports = request;
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -9226,7 +9543,7 @@ module.exports = request;
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -12126,7 +12443,7 @@ module.exports = request;
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -13110,7 +13427,7 @@ module.exports = request;
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -13315,7 +13632,7 @@ module.exports = request;
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -13478,7 +13795,7 @@ module.exports = request;
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -13998,7 +14315,7 @@ module.exports = request;
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -14397,7 +14714,7 @@ module.exports = request;
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -15106,7 +15423,7 @@ module.exports = request;
   /**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -15814,7 +16131,7 @@ module.exports = request;
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -16127,7 +16444,7 @@ module.exports = request;
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -16372,7 +16689,7 @@ module.exports = request;
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -16525,7 +16842,7 @@ module.exports = request;
   /**
    * MobileDevices service.
    * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -16706,7 +17023,7 @@ module.exports = request;
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -16938,7 +17255,7 @@ module.exports = request;
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -17145,7 +17462,7 @@ module.exports = request;
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -17293,7 +17610,7 @@ module.exports = request;
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -18058,7 +18375,7 @@ module.exports = request;
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -20762,7 +21079,7 @@ module.exports = request;
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -21046,7 +21363,7 @@ module.exports = request;
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -22307,7 +22624,7 @@ module.exports = request;
     /**
      * Publish an evaluation form.
      * 
-     * @param {Object} body Evaluation form
+     * @param {Object} body Publish request containing id of form to publish
      */
     this.postQualityPublishedforms = function(body) { 
 
@@ -22335,7 +22652,7 @@ module.exports = request;
     /**
      * Publish an evaluation form.
      * 
-     * @param {Object} body Evaluation form
+     * @param {Object} body Publish request containing id of form to publish
      */
     this.postQualityPublishedformsEvaluations = function(body) { 
 
@@ -22650,7 +22967,7 @@ module.exports = request;
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -23832,7 +24149,7 @@ module.exports = request;
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -24203,7 +24520,7 @@ module.exports = request;
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -25596,7 +25913,7 @@ module.exports = request;
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -25996,7 +26313,7 @@ module.exports = request;
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -26453,7 +26770,7 @@ module.exports = request;
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -26580,7 +26897,7 @@ module.exports = request;
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -26745,7 +27062,7 @@ module.exports = request;
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -30668,7 +30985,7 @@ module.exports = request;
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -30751,7 +31068,7 @@ module.exports = request;
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -30966,7 +31283,7 @@ module.exports = request;
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -32028,6 +32345,40 @@ module.exports = request;
 
 
     /**
+     * Change a users password
+     * 
+     * @param {String} userId User ID
+     * @param {Object} body Password
+     */
+    this.postUserPassword = function(userId, body) { 
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling postUserPassword";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postUserPassword";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/{userId}/password', 
+        'POST', 
+        { 'userId': userId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Add routing skill to user
      * 
      * @param {String} userId User ID
@@ -32076,6 +32427,34 @@ module.exports = request;
 
       return this.apiClient.callApi(
         '/api/v2/users', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Change your password
+     * 
+     * @param {Object} body Password
+     */
+    this.postUsersMePassword = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postUsersMePassword";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/me/password', 
         'POST', 
         {  }, 
         {  }, 
@@ -32416,7 +32795,7 @@ module.exports = request;
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -32531,7 +32910,7 @@ module.exports = request;
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -33246,7 +33625,7 @@ module.exports = request;
   /**
    * WebChat service.
    * @module purecloud-platform-client-v2/api/WebChatApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -33412,34 +33791,6 @@ module.exports = request;
 
 
     /**
-     * Create WebChat deployment settings
-     * 
-     * @param {Object} body webChatSettings
-     */
-    this.postWebchatSettings = function(body) { 
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw "Missing the required parameter 'body' when calling postWebchatSettings";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/webchat/settings', 
-        'POST', 
-        {  }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        body, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
      * Update a WebChat deployment
      * 
      * @param {String} deploymentId Deployment Id
@@ -33525,7 +33876,7 @@ module.exports = request;
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 18.0.0
+   * @version 19.0.0
    */
 
   /**
@@ -34089,7 +34440,7 @@ module.exports = request;
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 18.0.0
+   * @version 19.0.0
    */
   var platformClient = {
     /**
