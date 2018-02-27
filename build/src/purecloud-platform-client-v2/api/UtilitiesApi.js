@@ -18,7 +18,7 @@
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 19.0.1
+   * @version 19.0.2
    */
 
   /**

@@ -18,7 +18,7 @@
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 19.0.1
+   * @version 19.0.2
    */
 
   /**
