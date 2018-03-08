@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteAuthorizationRole**](AuthorizationApi.html#deleteAuthorizationRole) | **DELETE** /api/v2/authorization/roles/{roleId} | Delete an organization role.
 [**deleteUserRoles**](AuthorizationApi.html#deleteUserRoles) | **DELETE** /api/v2/users/{userId}/roles | Removes all the roles from the user.
+[**getAuthorizationDivisionsLimit**](AuthorizationApi.html#getAuthorizationDivisionsLimit) | **GET** /api/v2/authorization/divisions/limit | Returns the maximum allowed number of divisions.
 [**getAuthorizationPermissions**](AuthorizationApi.html#getAuthorizationPermissions) | **GET** /api/v2/authorization/permissions | Get all permissions.
 [**getAuthorizationProducts**](AuthorizationApi.html#getAuthorizationProducts) | **GET** /api/v2/authorization/products | Get the list of enabled products
 [**getAuthorizationRole**](AuthorizationApi.html#getAuthorizationRole) | **GET** /api/v2/authorization/roles/{roleId} | Get a single organization role.
@@ -121,6 +122,48 @@ apiInstance.deleteUserRoles(userId)
 ### Return type
 
 void (no response body)
+
+<a name="getAuthorizationDivisionsLimit"></a>
+
+# **&#39;Number&#39;** getAuthorizationDivisionsLimit()
+
+GET /api/v2/authorization/divisions/limit
+
+Returns the maximum allowed number of divisions.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AuthorizationApi();
+apiInstance.getAuthorizationDivisionsLimit()
+  .then(function(data) {
+    console.log(`getAuthorizationDivisionsLimit success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getAuthorizationDivisionsLimit');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**&#39;Number&#39;**
 
 <a name="getAuthorizationPermissions"></a>
 

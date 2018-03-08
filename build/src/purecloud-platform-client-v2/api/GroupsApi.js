@@ -18,7 +18,7 @@
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 19.0.2
+   * @version 20.0.0
    */
 
   /**
@@ -189,8 +189,11 @@
      * Get group profile
      * 
      * @param {String} groupId groupId
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.fields Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList
      */
-    this.getGroupProfile = function(groupId) { 
+    this.getGroupProfile = function(groupId, opts) { 
+      opts = opts || {};
 
       // verify the required parameter 'groupId' is set
       if (groupId === undefined || groupId === null) {
@@ -202,7 +205,7 @@
         '/api/v2/groups/{groupId}/profile', 
         'GET', 
         { 'groupId': groupId }, 
-        {  }, 
+        { 'fields': opts['fields'] }, 
         {  }, 
         {  }, 
         null, 

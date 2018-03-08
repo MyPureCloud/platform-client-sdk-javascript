@@ -18,7 +18,7 @@
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 19.0.2
+   * @version 20.0.0
    */
 
   /**
@@ -256,140 +256,6 @@
 
 
     /**
-     * Get a time off request for the current user by id
-     * 
-     * @param {String} timeOffRequestId Time Off Request Id
-     */
-    this.getWorkforcemanagementTimeoffrequest = function(timeOffRequestId) { 
-
-      // verify the required parameter 'timeOffRequestId' is set
-      if (timeOffRequestId === undefined || timeOffRequestId === null) {
-        throw "Missing the required parameter 'timeOffRequestId' when calling getWorkforcemanagementTimeoffrequest";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}', 
-        'GET', 
-        { 'timeOffRequestId': timeOffRequestId }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Get a list of time off requests for the current user
-     * 
-     * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (default to false)
-     */
-    this.getWorkforcemanagementTimeoffrequests = function(opts) { 
-      opts = opts || {};
-
-
-      return this.apiClient.callApi(
-        '/api/v2/workforcemanagement/timeoffrequests', 
-        'GET', 
-        {  }, 
-        { 'recentlyReviewed': opts['recentlyReviewed'] }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Mark a time off request for the current user as read or unread
-     * 
-     * @param {String} timeOffRequestId Time Off Request Id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
-     */
-    this.patchWorkforcemanagementTimeoffrequest = function(timeOffRequestId, opts) { 
-      opts = opts || {};
-
-      // verify the required parameter 'timeOffRequestId' is set
-      if (timeOffRequestId === undefined || timeOffRequestId === null) {
-        throw "Missing the required parameter 'timeOffRequestId' when calling patchWorkforcemanagementTimeoffrequest";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}', 
-        'PATCH', 
-        { 'timeOffRequestId': timeOffRequestId }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        opts['body'], 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Move agents in and out of management unit
-     * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body body
-     */
-    this.postWorkforcemanagementAgents = function(opts) { 
-      opts = opts || {};
-
-
-      return this.apiClient.callApi(
-        '/api/v2/workforcemanagement/agents', 
-        'POST', 
-        {  }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        opts['body'], 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Get the management units to which the agents belong
-     * 
-     * @param {Object} opts Optional parameters
-     * @param {Array.<Object>} opts.body body
-     */
-    this.postWorkforcemanagementAgentsManagementunits = function(opts) { 
-      opts = opts || {};
-
-
-      return this.apiClient.callApi(
-        '/api/v2/workforcemanagement/agents/managementunits', 
-        'POST', 
-        {  }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        opts['body'], 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
      * Create a new activity code
      * 
      * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
@@ -502,31 +368,6 @@
         '/api/v2/workforcemanagement/managementunits/{muId}/schedules/search', 
         'POST', 
         { 'muId': muId }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        opts['body'], 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Get a schedule for the current user
-     * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body body
-     */
-    this.postWorkforcemanagementSchedules = function(opts) { 
-      opts = opts || {};
-
-
-      return this.apiClient.callApi(
-        '/api/v2/workforcemanagement/schedules', 
-        'POST', 
-        {  }, 
         {  }, 
         {  }, 
         {  }, 

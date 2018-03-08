@@ -10,20 +10,20 @@
     if (!root.platformClient) {
       root.platformClient = {};
     }
-    root.platformClient.TokensApi = factory(root.platformClient.ApiClient);
+    root.platformClient.ObjectsApi = factory(root.platformClient.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
 
   /**
-   * Tokens service.
-   * @module purecloud-platform-client-v2/api/TokensApi
+   * Objects service.
+   * @module purecloud-platform-client-v2/api/ObjectsApi
    * @version 20.0.0
    */
 
   /**
-   * Constructs a new TokensApi. 
-   * @alias module:purecloud-platform-client-v2/api/TokensApi
+   * Constructs a new ObjectsApi. 
+   * @alias module:purecloud-platform-client-v2/api/ObjectsApi
    * @class
    * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
@@ -34,36 +34,14 @@
 
 
     /**
-     * Delete  auth token used to make the request.
+     * Returns the maximum allowed number of divisions.
      * 
      */
-    this.deleteTokensMe = function() { 
+    this.getAuthorizationDivisionsLimit = function() { 
 
 
       return this.apiClient.callApi(
-        '/api/v2/tokens/me', 
-        'DELETE', 
-        {  }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Fetch information about the current token
-     * 
-     */
-    this.getTokensMe = function() { 
-
-
-      return this.apiClient.callApi(
-        '/api/v2/tokens/me', 
+        '/api/v2/authorization/divisions/limit', 
         'GET', 
         {  }, 
         {  }, 

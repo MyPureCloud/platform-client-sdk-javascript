@@ -18,7 +18,7 @@
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 19.0.2
+   * @version 20.0.0
    */
 
   /**

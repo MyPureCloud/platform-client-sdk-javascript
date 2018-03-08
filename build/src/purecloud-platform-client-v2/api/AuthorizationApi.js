@@ -18,7 +18,7 @@
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 19.0.2
+   * @version 20.0.0
    */
 
   /**
@@ -78,6 +78,28 @@
         '/api/v2/users/{userId}/roles', 
         'DELETE', 
         { 'userId': userId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Returns the maximum allowed number of divisions.
+     * 
+     */
+    this.getAuthorizationDivisionsLimit = function() { 
+
+
+      return this.apiClient.callApi(
+        '/api/v2/authorization/divisions/limit', 
+        'GET', 
+        {  }, 
         {  }, 
         {  }, 
         {  }, 

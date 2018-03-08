@@ -276,7 +276,7 @@ apiInstance.getGroupMembers(groupId, opts)
 
 <a name="getGroupProfile"></a>
 
-# GroupProfile getGroupProfile(groupId)
+# GroupProfile getGroupProfile(groupId, opts)
 
 GET /api/v2/groups/{groupId}/profile
 
@@ -299,7 +299,10 @@ var apiInstance = new platformClient.GroupsApi();
 
 var groupId = "groupId_example"; // String | groupId
 
-apiInstance.getGroupProfile(groupId)
+var opts = { 
+  'fields': "fields_example" // String | Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList
+};
+apiInstance.getGroupProfile(groupId, opts)
   .then(function(data) {
     console.log(`getGroupProfile success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -316,6 +319,7 @@ apiInstance.getGroupProfile(groupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | groupId |  |
+ **fields** | **String** | Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
