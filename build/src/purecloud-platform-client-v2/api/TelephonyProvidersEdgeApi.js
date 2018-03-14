@@ -18,7 +18,7 @@
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 20.0.0
+   * @version 20.1.0
    */
 
   /**
