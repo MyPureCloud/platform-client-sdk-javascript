@@ -16,32 +16,37 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationParticipantSecureivrsessions**](ConversationsApi.html#getConversationParticipantSecureivrsessions) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Get a list of secure sessions for this participant.
 [**getConversationParticipantWrapup**](ConversationsApi.html#getConversationParticipantWrapup) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
 [**getConversationParticipantWrapupcodes**](ConversationsApi.html#getConversationParticipantWrapupcodes) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
-[**getConversations**](ConversationsApi.html#getConversations) | **GET** /api/v2/conversations | Get conversations
+[**getConversations**](ConversationsApi.html#getConversations) | **GET** /api/v2/conversations | Get active conversations for the logged in user
 [**getConversationsCall**](ConversationsApi.html#getConversationsCall) | **GET** /api/v2/conversations/calls/{conversationId} | Get call conversation
 [**getConversationsCallParticipantWrapup**](ConversationsApi.html#getConversationsCallParticipantWrapup) | **GET** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
 [**getConversationsCallParticipantWrapupcodes**](ConversationsApi.html#getConversationsCallParticipantWrapupcodes) | **GET** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
 [**getConversationsCallback**](ConversationsApi.html#getConversationsCallback) | **GET** /api/v2/conversations/callbacks/{conversationId} | Get callback conversation
 [**getConversationsCallbackParticipantWrapup**](ConversationsApi.html#getConversationsCallbackParticipantWrapup) | **GET** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
 [**getConversationsCallbackParticipantWrapupcodes**](ConversationsApi.html#getConversationsCallbackParticipantWrapupcodes) | **GET** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
-[**getConversationsCallbacks**](ConversationsApi.html#getConversationsCallbacks) | **GET** /api/v2/conversations/callbacks | Get callback conversations
-[**getConversationsCalls**](ConversationsApi.html#getConversationsCalls) | **GET** /api/v2/conversations/calls | Get recent conversations
+[**getConversationsCallbacks**](ConversationsApi.html#getConversationsCallbacks) | **GET** /api/v2/conversations/callbacks | Get active callback conversations for the logged in user
+[**getConversationsCalls**](ConversationsApi.html#getConversationsCalls) | **GET** /api/v2/conversations/calls | Get active call conversations for the logged in user
 [**getConversationsCallsHistory**](ConversationsApi.html#getConversationsCallsHistory) | **GET** /api/v2/conversations/calls/history | Get call history
 [**getConversationsCallsMaximumconferenceparties**](ConversationsApi.html#getConversationsCallsMaximumconferenceparties) | **GET** /api/v2/conversations/calls/maximumconferenceparties | Get the maximum number of participants that this user can have on a conference
 [**getConversationsChat**](ConversationsApi.html#getConversationsChat) | **GET** /api/v2/conversations/chats/{conversationId} | Get chat conversation
 [**getConversationsChatParticipantWrapup**](ConversationsApi.html#getConversationsChatParticipantWrapup) | **GET** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
 [**getConversationsChatParticipantWrapupcodes**](ConversationsApi.html#getConversationsChatParticipantWrapupcodes) | **GET** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
-[**getConversationsChats**](ConversationsApi.html#getConversationsChats) | **GET** /api/v2/conversations/chats | Get recent chat conversations
+[**getConversationsChats**](ConversationsApi.html#getConversationsChats) | **GET** /api/v2/conversations/chats | Get active chat conversations for the logged in user
 [**getConversationsCobrowsesession**](ConversationsApi.html#getConversationsCobrowsesession) | **GET** /api/v2/conversations/cobrowsesessions/{conversationId} | Get cobrowse conversation
 [**getConversationsCobrowsesessionParticipantWrapup**](ConversationsApi.html#getConversationsCobrowsesessionParticipantWrapup) | **GET** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
 [**getConversationsCobrowsesessionParticipantWrapupcodes**](ConversationsApi.html#getConversationsCobrowsesessionParticipantWrapupcodes) | **GET** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
-[**getConversationsCobrowsesessions**](ConversationsApi.html#getConversationsCobrowsesessions) | **GET** /api/v2/conversations/cobrowsesessions | Get recent cobrowse conversations
+[**getConversationsCobrowsesessions**](ConversationsApi.html#getConversationsCobrowsesessions) | **GET** /api/v2/conversations/cobrowsesessions | Get active cobrowse conversations for the logged in user
 [**getConversationsEmail**](ConversationsApi.html#getConversationsEmail) | **GET** /api/v2/conversations/emails/{conversationId} | Get email conversation
 [**getConversationsEmailMessage**](ConversationsApi.html#getConversationsEmailMessage) | **GET** /api/v2/conversations/emails/{conversationId}/messages/{messageId} | Get conversation message
 [**getConversationsEmailMessages**](ConversationsApi.html#getConversationsEmailMessages) | **GET** /api/v2/conversations/emails/{conversationId}/messages | Get conversation messages
 [**getConversationsEmailMessagesDraft**](ConversationsApi.html#getConversationsEmailMessagesDraft) | **GET** /api/v2/conversations/emails/{conversationId}/messages/draft | Get conversation draft reply
 [**getConversationsEmailParticipantWrapup**](ConversationsApi.html#getConversationsEmailParticipantWrapup) | **GET** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
 [**getConversationsEmailParticipantWrapupcodes**](ConversationsApi.html#getConversationsEmailParticipantWrapupcodes) | **GET** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
-[**getConversationsEmails**](ConversationsApi.html#getConversationsEmails) | **GET** /api/v2/conversations/emails | Get recent email conversations
+[**getConversationsEmails**](ConversationsApi.html#getConversationsEmails) | **GET** /api/v2/conversations/emails | Get active email conversations for the logged in user
+[**getConversationsMessage**](ConversationsApi.html#getConversationsMessage) | **GET** /api/v2/conversations/messages/{conversationId} | Get message conversation
+[**getConversationsMessageMessage**](ConversationsApi.html#getConversationsMessageMessage) | **GET** /api/v2/conversations/messages/{conversationId}/messages/{messageId} | Get message
+[**getConversationsMessageParticipantWrapup**](ConversationsApi.html#getConversationsMessageParticipantWrapup) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
+[**getConversationsMessageParticipantWrapupcodes**](ConversationsApi.html#getConversationsMessageParticipantWrapupcodes) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
+[**getConversationsMessages**](ConversationsApi.html#getConversationsMessages) | **GET** /api/v2/conversations/messages | Get active message conversations for the logged in user
 [**patchConversationParticipant**](ConversationsApi.html#patchConversationParticipant) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId} | Update a participant.
 [**patchConversationParticipantAttributes**](ConversationsApi.html#patchConversationParticipantAttributes) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationsCall**](ConversationsApi.html#patchConversationsCall) | **PATCH** /api/v2/conversations/calls/{conversationId} | Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants
@@ -65,6 +70,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsEmailParticipant**](ConversationsApi.html#patchConversationsEmailParticipant) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsEmailParticipantAttributes**](ConversationsApi.html#patchConversationsEmailParticipantAttributes) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationsEmailParticipantCommunication**](ConversationsApi.html#patchConversationsEmailParticipantCommunication) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant&#39;s communication by disconnecting it.
+[**patchConversationsMessage**](ConversationsApi.html#patchConversationsMessage) | **PATCH** /api/v2/conversations/messages/{conversationId} | Update a conversation by disconnecting all of the participants
+[**patchConversationsMessageParticipant**](ConversationsApi.html#patchConversationsMessageParticipant) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId} | Update conversation participant
+[**patchConversationsMessageParticipantAttributes**](ConversationsApi.html#patchConversationsMessageParticipantAttributes) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
+[**patchConversationsMessageParticipantCommunication**](ConversationsApi.html#patchConversationsMessageParticipantCommunication) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant&#39;s communication by disconnecting it.
 [**postAnalyticsConversationDetailsProperties**](ConversationsApi.html#postAnalyticsConversationDetailsProperties) | **POST** /api/v2/analytics/conversations/{conversationId}/details/properties | Index conversation properties
 [**postAnalyticsConversationsAggregatesQuery**](ConversationsApi.html#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
 [**postAnalyticsConversationsDetailsQuery**](ConversationsApi.html#postAnalyticsConversationsDetailsQuery) | **POST** /api/v2/analytics/conversations/details/query | Query for conversation details
@@ -88,6 +97,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsEmailParticipantReplace**](ConversationsApi.html#postConversationsEmailParticipantReplace) | **POST** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationsEmails**](ConversationsApi.html#postConversationsEmails) | **POST** /api/v2/conversations/emails | Create an email conversation
 [**postConversationsFaxes**](ConversationsApi.html#postConversationsFaxes) | **POST** /api/v2/conversations/faxes | Create Fax Conversation
+[**postConversationsMessageCommunicationMessages**](ConversationsApi.html#postConversationsMessageCommunicationMessages) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages | Send message
+[**postConversationsMessageMessagesBulk**](ConversationsApi.html#postConversationsMessageMessagesBulk) | **POST** /api/v2/conversations/messages/{conversationId}/messages/bulk | Get messages in batch
+[**postConversationsMessageParticipantReplace**](ConversationsApi.html#postConversationsMessageParticipantReplace) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | **PUT** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata | Set uuiData to be sent on future commands.
 [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | **PUT** /api/v2/conversations/emails/{conversationId}/messages/draft | Update conversation draft reply
 {: class="table table-striped"}
@@ -561,7 +573,7 @@ apiInstance.getConversationParticipantWrapupcodes(conversationId, participantId)
 
 GET /api/v2/conversations
 
-Get conversations
+Get active conversations for the logged in user
 
 
 
@@ -918,7 +930,7 @@ apiInstance.getConversationsCallbackParticipantWrapupcodes(conversationId, parti
 
 GET /api/v2/conversations/callbacks
 
-Get callback conversations
+Get active callback conversations for the logged in user
 
 
 
@@ -960,7 +972,7 @@ This endpoint does not need any parameter.
 
 GET /api/v2/conversations/calls
 
-Get recent conversations
+Get active call conversations for the logged in user
 
 
 
@@ -1253,7 +1265,7 @@ apiInstance.getConversationsChatParticipantWrapupcodes(conversationId, participa
 
 GET /api/v2/conversations/chats
 
-Get recent chat conversations
+Get active chat conversations for the logged in user
 
 
 
@@ -1449,7 +1461,7 @@ apiInstance.getConversationsCobrowsesessionParticipantWrapupcodes(conversationId
 
 GET /api/v2/conversations/cobrowsesessions
 
-Get recent cobrowse conversations
+Get active cobrowse conversations for the logged in user
 
 
 
@@ -1792,7 +1804,7 @@ apiInstance.getConversationsEmailParticipantWrapupcodes(conversationId, particip
 
 GET /api/v2/conversations/emails
 
-Get recent email conversations
+Get active email conversations for the logged in user
 
 
 
@@ -1827,6 +1839,253 @@ This endpoint does not need any parameter.
 ### Return type
 
 **EmailConversationEntityListing**
+
+<a name="getConversationsMessage"></a>
+
+# MessageConversation getConversationsMessage(conversationId)
+
+GET /api/v2/conversations/messages/{conversationId}
+
+Get message conversation
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ConversationsApi();
+
+var conversationId = "conversationId_example"; // String | conversationId
+
+apiInstance.getConversationsMessage(conversationId)
+  .then(function(data) {
+    console.log(`getConversationsMessage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getConversationsMessage');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessageConversation**
+
+<a name="getConversationsMessageMessage"></a>
+
+# MessageData getConversationsMessageMessage(conversationId, messageId)
+
+GET /api/v2/conversations/messages/{conversationId}/messages/{messageId}
+
+Get message
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ConversationsApi();
+
+var conversationId = "conversationId_example"; // String | conversationId
+
+var messageId = "messageId_example"; // String | messageId
+
+apiInstance.getConversationsMessageMessage(conversationId, messageId)
+  .then(function(data) {
+    console.log(`getConversationsMessageMessage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getConversationsMessageMessage');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **messageId** | **String** | messageId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessageData**
+
+<a name="getConversationsMessageParticipantWrapup"></a>
+
+# Wrapup getConversationsMessageParticipantWrapup(conversationId, participantId, opts)
+
+GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup
+
+Get the wrap-up for this conversation participant. 
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ConversationsApi();
+
+var conversationId = "conversationId_example"; // String | conversationId
+
+var participantId = "participantId_example"; // String | participantId
+
+var opts = { 
+  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+};
+apiInstance.getConversationsMessageParticipantWrapup(conversationId, participantId, opts)
+  .then(function(data) {
+    console.log(`getConversationsMessageParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getConversationsMessageParticipantWrapup');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+**Wrapup**
+
+<a name="getConversationsMessageParticipantWrapupcodes"></a>
+
+# [WrapupCode] getConversationsMessageParticipantWrapupcodes(conversationId, participantId)
+
+GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes
+
+Get list of wrapup codes for this conversation participant
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ConversationsApi();
+
+var conversationId = "conversationId_example"; // String |  conversationId
+
+var participantId = "participantId_example"; // String | participantId
+
+apiInstance.getConversationsMessageParticipantWrapupcodes(conversationId, participantId)
+  .then(function(data) {
+    console.log(`getConversationsMessageParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getConversationsMessageParticipantWrapupcodes');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** |  conversationId |  |
+ **participantId** | **String** | participantId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**[WrapupCode]**
+
+<a name="getConversationsMessages"></a>
+
+# MessageConversationEntityListing getConversationsMessages()
+
+GET /api/v2/conversations/messages
+
+Get active message conversations for the logged in user
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ConversationsApi();
+apiInstance.getConversationsMessages()
+  .then(function(data) {
+    console.log(`getConversationsMessages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getConversationsMessages');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**MessageConversationEntityListing**
 
 <a name="patchConversationParticipant"></a>
 
@@ -3072,6 +3331,224 @@ apiInstance.patchConversationsEmailParticipantCommunication(conversationId, part
 
 **Empty**
 
+<a name="patchConversationsMessage"></a>
+
+# Conversation patchConversationsMessage(conversationId, body)
+
+PATCH /api/v2/conversations/messages/{conversationId}
+
+Update a conversation by disconnecting all of the participants
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ConversationsApi();
+
+var conversationId = "conversationId_example"; // String | conversationId
+
+var body = {}; // Object | Conversation
+
+apiInstance.patchConversationsMessage(conversationId, body)
+  .then(function(data) {
+    console.log(`patchConversationsMessage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling patchConversationsMessage');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Object** | Conversation |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Conversation**
+
+<a name="patchConversationsMessageParticipant"></a>
+
+# void patchConversationsMessageParticipant(conversationId, participantId, opts)
+
+PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}
+
+Update conversation participant
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ConversationsApi();
+
+var conversationId = "conversationId_example"; // String |  conversationId
+
+var participantId = "participantId_example"; // String | participantId
+
+var opts = { 
+  'body': {} // Object | 
+};
+apiInstance.patchConversationsMessageParticipant(conversationId, participantId, opts)
+  .then(function() {
+    console.log('patchConversationsMessageParticipant returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling patchConversationsMessageParticipant');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** |  conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="patchConversationsMessageParticipantAttributes"></a>
+
+# void patchConversationsMessageParticipantAttributes(conversationId, participantId, opts)
+
+PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes
+
+Update the attributes on a conversation participant.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ConversationsApi();
+
+var conversationId = "conversationId_example"; // String |  conversationId
+
+var participantId = "participantId_example"; // String | participantId
+
+var opts = { 
+  'body': {} // Object | 
+};
+apiInstance.patchConversationsMessageParticipantAttributes(conversationId, participantId, opts)
+  .then(function() {
+    console.log('patchConversationsMessageParticipantAttributes returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling patchConversationsMessageParticipantAttributes');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** |  conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="patchConversationsMessageParticipantCommunication"></a>
+
+# Empty patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body)
+
+PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}
+
+Update conversation participant&#39;s communication by disconnecting it.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ConversationsApi();
+
+var conversationId = "conversationId_example"; // String |  conversationId
+
+var participantId = "participantId_example"; // String | participantId
+
+var communicationId = "communicationId_example"; // String | communicationId
+
+var body = {}; // Object | Participant
+
+apiInstance.patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body)
+  .then(function(data) {
+    console.log(`patchConversationsMessageParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling patchConversationsMessageParticipantCommunication');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** |  conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **communicationId** | **String** | communicationId |  |
+ **body** | **Object** | Participant |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Empty**
+
 <a name="postAnalyticsConversationDetailsProperties"></a>
 
 # PropertyIndexRequest postAnalyticsConversationDetailsProperties(conversationId, body)
@@ -4257,6 +4734,166 @@ apiInstance.postConversationsFaxes(body)
 ### Return type
 
 **FaxSendResponse**
+
+<a name="postConversationsMessageCommunicationMessages"></a>
+
+# MessageData postConversationsMessageCommunicationMessages(conversationId, communicationId, body)
+
+POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages
+
+Send message
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ConversationsApi();
+
+var conversationId = "conversationId_example"; // String | conversationId
+
+var communicationId = "communicationId_example"; // String | communicationId
+
+var body = {}; // Object | Message
+
+apiInstance.postConversationsMessageCommunicationMessages(conversationId, communicationId, body)
+  .then(function(data) {
+    console.log(`postConversationsMessageCommunicationMessages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postConversationsMessageCommunicationMessages');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **communicationId** | **String** | communicationId |  |
+ **body** | **Object** | Message |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessageData**
+
+<a name="postConversationsMessageMessagesBulk"></a>
+
+# TextMessageListing postConversationsMessageMessagesBulk(conversationId, opts)
+
+POST /api/v2/conversations/messages/{conversationId}/messages/bulk
+
+Get messages in batch
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ConversationsApi();
+
+var conversationId = "conversationId_example"; // String | conversationId
+
+var opts = { 
+  'body': [{}] // Object | messageIds
+};
+apiInstance.postConversationsMessageMessagesBulk(conversationId, opts)
+  .then(function(data) {
+    console.log(`postConversationsMessageMessagesBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postConversationsMessageMessagesBulk');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Object** | messageIds | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**TextMessageListing**
+
+<a name="postConversationsMessageParticipantReplace"></a>
+
+# void postConversationsMessageParticipantReplace(conversationId, participantId, body)
+
+POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace
+
+Replace this participant with the specified user and/or address
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ConversationsApi();
+
+var conversationId = "conversationId_example"; // String | conversationId
+
+var participantId = "participantId_example"; // String | participantId
+
+var body = {}; // Object | Transfer request
+
+apiInstance.postConversationsMessageParticipantReplace(conversationId, participantId, body)
+  .then(function() {
+    console.log('postConversationsMessageParticipantReplace returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postConversationsMessageParticipantReplace');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **Object** | Transfer request |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="putConversationsCallParticipantCommunicationUuidata"></a>
 

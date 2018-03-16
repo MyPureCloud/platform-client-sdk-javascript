@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingQueueUser**](RoutingApi.html#deleteRoutingQueueUser) | **DELETE** /api/v2/routing/queues/{queueId}/users/{memberId} | Delete queue member
 [**deleteRoutingQueueWrapupcode**](RoutingApi.html#deleteRoutingQueueWrapupcode) | **DELETE** /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId} | Delete a wrap-up code from a queue
 [**deleteRoutingSkill**](RoutingApi.html#deleteRoutingSkill) | **DELETE** /api/v2/routing/skills/{skillId} | Delete Routing Skill
+[**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | **DELETE** /api/v2/routing/sms/phonenumbers/{addressId} | Delete a phone number provisioned for SMS.
 [**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | **DELETE** /api/v2/routing/utilization | Delete utilization settings and revert to system defaults.
 [**deleteRoutingWrapupcode**](RoutingApi.html#deleteRoutingWrapupcode) | **DELETE** /api/v2/routing/wrapupcodes/{codeId} | Delete wrap-up code
 [**deleteUserRoutingskill**](RoutingApi.html#deleteUserRoutingskill) | **DELETE** /api/v2/users/{userId}/routingskills/{skillId} | Remove routing skill from user
@@ -22,6 +23,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingEmailDomains**](RoutingApi.html#getRoutingEmailDomains) | **GET** /api/v2/routing/email/domains | Get domains
 [**getRoutingEmailSetup**](RoutingApi.html#getRoutingEmailSetup) | **GET** /api/v2/routing/email/setup | Get email setup
 [**getRoutingLanguages**](RoutingApi.html#getRoutingLanguages) | **GET** /api/v2/routing/languages | Get the list of supported languages.
+[**getRoutingMessageRecipient**](RoutingApi.html#getRoutingMessageRecipient) | **GET** /api/v2/routing/message/recipients/{recipientId} | Get a recipient
+[**getRoutingMessageRecipients**](RoutingApi.html#getRoutingMessageRecipients) | **GET** /api/v2/routing/message/recipients | Get recipients
 [**getRoutingQueue**](RoutingApi.html#getRoutingQueue) | **GET** /api/v2/routing/queues/{queueId} | Get details about this queue.
 [**getRoutingQueueEstimatedwaittime**](RoutingApi.html#getRoutingQueueEstimatedwaittime) | **GET** /api/v2/routing/queues/{queueId}/estimatedwaittime | Get Estimated Wait Time
 [**getRoutingQueueMediatypeEstimatedwaittime**](RoutingApi.html#getRoutingQueueMediatypeEstimatedwaittime) | **GET** /api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime | Get Estimated Wait Time
@@ -30,6 +33,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingQueues**](RoutingApi.html#getRoutingQueues) | **GET** /api/v2/routing/queues | Get list of queues.
 [**getRoutingSkill**](RoutingApi.html#getRoutingSkill) | **GET** /api/v2/routing/skills/{skillId} | Get Routing Skill
 [**getRoutingSkills**](RoutingApi.html#getRoutingSkills) | **GET** /api/v2/routing/skills | Get the list of routing skills.
+[**getRoutingSmsAvailablephonenumbers**](RoutingApi.html#getRoutingSmsAvailablephonenumbers) | **GET** /api/v2/routing/sms/availablephonenumbers | Get a list of available phone numbers for SMS provisioning.
+[**getRoutingSmsPhonenumber**](RoutingApi.html#getRoutingSmsPhonenumber) | **GET** /api/v2/routing/sms/phonenumbers/{addressId} | Get a phone number provisioned for SMS.
+[**getRoutingSmsPhonenumbers**](RoutingApi.html#getRoutingSmsPhonenumbers) | **GET** /api/v2/routing/sms/phonenumbers | Get a list of provisioned phone numbers.
 [**getRoutingUtilization**](RoutingApi.html#getRoutingUtilization) | **GET** /api/v2/routing/utilization | Get the utilization settings.
 [**getRoutingWrapupcode**](RoutingApi.html#getRoutingWrapupcode) | **GET** /api/v2/routing/wrapupcodes/{codeId} | Get details about this wrap-up code.
 [**getRoutingWrapupcodes**](RoutingApi.html#getRoutingWrapupcodes) | **GET** /api/v2/routing/wrapupcodes | Get list of wrapup codes.
@@ -44,10 +50,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postRoutingQueueWrapupcodes**](RoutingApi.html#postRoutingQueueWrapupcodes) | **POST** /api/v2/routing/queues/{queueId}/wrapupcodes | Add up to 100 wrap-up codes to a queue
 [**postRoutingQueues**](RoutingApi.html#postRoutingQueues) | **POST** /api/v2/routing/queues | Create queue
 [**postRoutingSkills**](RoutingApi.html#postRoutingSkills) | **POST** /api/v2/routing/skills | Create Skill
+[**postRoutingSmsAddresses**](RoutingApi.html#postRoutingSmsAddresses) | **POST** /api/v2/routing/sms/addresses | Provision an Address for SMS
+[**postRoutingSmsPhonenumbers**](RoutingApi.html#postRoutingSmsPhonenumbers) | **POST** /api/v2/routing/sms/phonenumbers | Provision a phone number for SMS
 [**postRoutingWrapupcodes**](RoutingApi.html#postRoutingWrapupcodes) | **POST** /api/v2/routing/wrapupcodes | Create a wrap-up code
 [**postUserRoutingskills**](RoutingApi.html#postUserRoutingskills) | **POST** /api/v2/users/{userId}/routingskills | Add routing skill to user
 [**putRoutingEmailDomainRoute**](RoutingApi.html#putRoutingEmailDomainRoute) | **PUT** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Update a route
+[**putRoutingMessageRecipient**](RoutingApi.html#putRoutingMessageRecipient) | **PUT** /api/v2/routing/message/recipients/{recipientId} | Update a recipient
 [**putRoutingQueue**](RoutingApi.html#putRoutingQueue) | **PUT** /api/v2/routing/queues/{queueId} | Update a queue
+[**putRoutingSmsPhonenumber**](RoutingApi.html#putRoutingSmsPhonenumber) | **PUT** /api/v2/routing/sms/phonenumbers/{addressId} | Update a phone number provisioned for SMS.
 [**putRoutingUtilization**](RoutingApi.html#putRoutingUtilization) | **PUT** /api/v2/routing/utilization | Update the utilization settings.
 [**putRoutingWrapupcode**](RoutingApi.html#putRoutingWrapupcode) | **PUT** /api/v2/routing/wrapupcodes/{codeId} | Update wrap-up code
 [**putUserRoutingskill**](RoutingApi.html#putUserRoutingskill) | **PUT** /api/v2/users/{userId}/routingskills/{skillId} | Update routing skill proficiency or state.
@@ -348,6 +358,54 @@ apiInstance.deleteRoutingSkill(skillId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **skillId** | **String** | Skill ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteRoutingSmsPhonenumber"></a>
+
+# void deleteRoutingSmsPhonenumber(addressId)
+
+DELETE /api/v2/routing/sms/phonenumbers/{addressId}
+
+Delete a phone number provisioned for SMS.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RoutingApi();
+
+var addressId = "addressId_example"; // String | Address ID
+
+apiInstance.deleteRoutingSmsPhonenumber(addressId)
+  .then(function() {
+    console.log('deleteRoutingSmsPhonenumber returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling deleteRoutingSmsPhonenumber');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **addressId** | **String** | Address ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -789,6 +847,105 @@ apiInstance.getRoutingLanguages(opts)
 
 **LanguageEntityListing**
 
+<a name="getRoutingMessageRecipient"></a>
+
+# Recipient getRoutingMessageRecipient(recipientId)
+
+GET /api/v2/routing/message/recipients/{recipientId}
+
+Get a recipient
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RoutingApi();
+
+var recipientId = "recipientId_example"; // String | Recipient ID
+
+apiInstance.getRoutingMessageRecipient(recipientId)
+  .then(function(data) {
+    console.log(`getRoutingMessageRecipient success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getRoutingMessageRecipient');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **recipientId** | **String** | Recipient ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Recipient**
+
+<a name="getRoutingMessageRecipients"></a>
+
+# RecipientListing getRoutingMessageRecipients(opts)
+
+GET /api/v2/routing/message/recipients
+
+Get recipients
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RoutingApi();
+
+var opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+apiInstance.getRoutingMessageRecipients(opts)
+  .then(function(data) {
+    console.log(`getRoutingMessageRecipients success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getRoutingMessageRecipients');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**RecipientListing**
+
 <a name="getRoutingQueue"></a>
 
 # Queue getRoutingQueue(queueId)
@@ -1217,6 +1374,174 @@ apiInstance.getRoutingSkills(opts)
 ### Return type
 
 **SkillEntityListing**
+
+<a name="getRoutingSmsAvailablephonenumbers"></a>
+
+# SMSAvailablePhoneNumberEntityListing getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, opts)
+
+GET /api/v2/routing/sms/availablephonenumbers
+
+Get a list of available phone numbers for SMS provisioning.
+
+This request will return up to 30 random phone numbers matching the criteria specified.  To get additional phone numbers repeat the request.
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RoutingApi();
+
+var countryCode = "countryCode_example"; // String | The ISO 3166-1 alpha-2 country code of the county for which available phone numbers should be returned
+
+var phoneNumberType = "phoneNumberType_example"; // String | Type of available phone numbers searched
+
+var opts = { 
+  'region': "region_example", // String | Region/province/state that can be used to restrict the numbers returned
+  'city': "city_example", // String | City that can be used to restrict the numbers returned
+  'areaCode': "areaCode_example", // String | Area code that can be used to restrict the numbers returned
+  'pattern': "pattern_example", // String | A pattern to match phone numbers. Valid characters are '*' and [0-9a-zA-Z]. The '*' character will match any single digit.
+  'addressRequirement': "addressRequirement_example" // String | This indicates whether the phone number requires to have an Address registered.
+};
+apiInstance.getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, opts)
+  .then(function(data) {
+    console.log(`getRoutingSmsAvailablephonenumbers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getRoutingSmsAvailablephonenumbers');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **countryCode** | **String** | The ISO 3166-1 alpha-2 country code of the county for which available phone numbers should be returned |  |
+ **phoneNumberType** | **String** | Type of available phone numbers searched | <br />**Values**: local, mobile, tollfree |
+ **region** | **String** | Region/province/state that can be used to restrict the numbers returned | [optional]  |
+ **city** | **String** | City that can be used to restrict the numbers returned | [optional]  |
+ **areaCode** | **String** | Area code that can be used to restrict the numbers returned | [optional]  |
+ **pattern** | **String** | A pattern to match phone numbers. Valid characters are &#39;*&#39; and [0-9a-zA-Z]. The &#39;*&#39; character will match any single digit. | [optional]  |
+ **addressRequirement** | **String** | This indicates whether the phone number requires to have an Address registered. | [optional] <br />**Values**: none, any, local, foreign |
+{: class="table table-striped"}
+
+### Return type
+
+**SMSAvailablePhoneNumberEntityListing**
+
+<a name="getRoutingSmsPhonenumber"></a>
+
+# SmsPhoneNumber getRoutingSmsPhonenumber(addressId)
+
+GET /api/v2/routing/sms/phonenumbers/{addressId}
+
+Get a phone number provisioned for SMS.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RoutingApi();
+
+var addressId = "addressId_example"; // String | Address ID
+
+apiInstance.getRoutingSmsPhonenumber(addressId)
+  .then(function(data) {
+    console.log(`getRoutingSmsPhonenumber success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getRoutingSmsPhonenumber');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **addressId** | **String** | Address ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SmsPhoneNumber**
+
+<a name="getRoutingSmsPhonenumbers"></a>
+
+# SmsPhoneNumberEntityListing getRoutingSmsPhonenumbers(opts)
+
+GET /api/v2/routing/sms/phonenumbers
+
+Get a list of provisioned phone numbers.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RoutingApi();
+
+var opts = { 
+  'phoneNumber': "phoneNumber_example", // String | Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used.
+  'phoneNumberType': "phoneNumberType_example", // String | Filter on phone number type
+  'phoneNumberStatus': "phoneNumberStatus_example", // String | Filter on phone number status
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+apiInstance.getRoutingSmsPhonenumbers(opts)
+  .then(function(data) {
+    console.log(`getRoutingSmsPhonenumbers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getRoutingSmsPhonenumbers');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **phoneNumber** | **String** | Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. | [optional]  |
+ **phoneNumberType** | **String** | Filter on phone number type | [optional] <br />**Values**: local, mobile, tollfree |
+ **phoneNumberStatus** | **String** | Filter on phone number status | [optional] <br />**Values**: active, invalid, porting |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**SmsPhoneNumberEntityListing**
 
 <a name="getRoutingUtilization"></a>
 
@@ -1921,6 +2246,102 @@ apiInstance.postRoutingSkills(body)
 
 **RoutingSkill**
 
+<a name="postRoutingSmsAddresses"></a>
+
+# SmsPhoneNumber postRoutingSmsAddresses(body)
+
+POST /api/v2/routing/sms/addresses
+
+Provision an Address for SMS
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RoutingApi();
+
+var body = {}; // Object | SmsAddress
+
+apiInstance.postRoutingSmsAddresses(body)
+  .then(function(data) {
+    console.log(`postRoutingSmsAddresses success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postRoutingSmsAddresses');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | SmsAddress |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SmsPhoneNumber**
+
+<a name="postRoutingSmsPhonenumbers"></a>
+
+# SmsPhoneNumber postRoutingSmsPhonenumbers(body)
+
+POST /api/v2/routing/sms/phonenumbers
+
+Provision a phone number for SMS
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RoutingApi();
+
+var body = {}; // Object | SmsPhoneNumber
+
+apiInstance.postRoutingSmsPhonenumbers(body)
+  .then(function(data) {
+    console.log(`postRoutingSmsPhonenumbers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postRoutingSmsPhonenumbers');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | SmsPhoneNumber |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SmsPhoneNumber**
+
 <a name="postRoutingWrapupcodes"></a>
 
 # WrapupCode postRoutingWrapupcodes(body)
@@ -2074,6 +2495,57 @@ apiInstance.putRoutingEmailDomainRoute(domainName, routeId, body)
 
 **InboundRoute**
 
+<a name="putRoutingMessageRecipient"></a>
+
+# Recipient putRoutingMessageRecipient(recipientId, body)
+
+PUT /api/v2/routing/message/recipients/{recipientId}
+
+Update a recipient
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RoutingApi();
+
+var recipientId = "recipientId_example"; // String | Recipient ID
+
+var body = {}; // Object | Recipient
+
+apiInstance.putRoutingMessageRecipient(recipientId, body)
+  .then(function(data) {
+    console.log(`putRoutingMessageRecipient success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling putRoutingMessageRecipient');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **recipientId** | **String** | Recipient ID |  |
+ **body** | **Object** | Recipient |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Recipient**
+
 <a name="putRoutingQueue"></a>
 
 # Queue putRoutingQueue(queueId, body)
@@ -2124,6 +2596,57 @@ apiInstance.putRoutingQueue(queueId, body)
 ### Return type
 
 **Queue**
+
+<a name="putRoutingSmsPhonenumber"></a>
+
+# SmsPhoneNumber putRoutingSmsPhonenumber(addressId, body)
+
+PUT /api/v2/routing/sms/phonenumbers/{addressId}
+
+Update a phone number provisioned for SMS.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RoutingApi();
+
+var addressId = "addressId_example"; // String | Address ID
+
+var body = {}; // Object | SmsPhoneNumber
+
+apiInstance.putRoutingSmsPhonenumber(addressId, body)
+  .then(function(data) {
+    console.log(`putRoutingSmsPhonenumber success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling putRoutingSmsPhonenumber');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **addressId** | **String** | Address ID |  |
+ **body** | **Object** | SmsPhoneNumber |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SmsPhoneNumber**
 
 <a name="putRoutingUtilization"></a>
 

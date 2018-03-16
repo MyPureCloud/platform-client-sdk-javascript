@@ -50,7 +50,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowVersionConfiguration**](ArchitectApi.html#getFlowVersionConfiguration) | **GET** /api/v2/flows/{flowId}/versions/{versionId}/configuration | Create flow version configuration
 [**getFlowVersions**](ArchitectApi.html#getFlowVersions) | **GET** /api/v2/flows/{flowId}/versions | Get flow version list
 [**getFlows**](ArchitectApi.html#getFlows) | **GET** /api/v2/flows | Get a pageable list of flows, filtered by query parameters
-[**getFlowsDatatable**](ArchitectApi.html#getFlowsDatatable) | **GET** /api/v2/flows/datatables/{datatableId} | Returns a specific datatable by datatableId
+[**getFlowsDatatable**](ArchitectApi.html#getFlowsDatatable) | **GET** /api/v2/flows/datatables/{datatableId} | Returns a specific datatable by id
 [**getFlowsDatatableRow**](ArchitectApi.html#getFlowsDatatableRow) | **GET** /api/v2/flows/datatables/{datatableId}/rows/{rowId} | Returns a specific row for the datatable
 [**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | **GET** /api/v2/flows/datatables/{datatableId}/rows | Returns the rows for the datatable
 [**getFlowsDatatables**](ArchitectApi.html#getFlowsDatatables) | **GET** /api/v2/flows/datatables | Retrieve a list of datatables for the org
@@ -80,7 +80,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putArchitectSchedulegroup**](ArchitectApi.html#putArchitectSchedulegroup) | **PUT** /api/v2/architect/schedulegroups/{scheduleGroupId} | Updates a schedule group by ID
 [**putArchitectSystempromptResource**](ArchitectApi.html#putArchitectSystempromptResource) | **PUT** /api/v2/architect/systemprompts/{promptId}/resources/{languageCode} | Updates a system prompt resource override.
 [**putFlow**](ArchitectApi.html#putFlow) | **PUT** /api/v2/flows/{flowId} | Update flow
-[**putFlowsDatatable**](ArchitectApi.html#putFlowsDatatable) | **PUT** /api/v2/flows/datatables/{datatableId} | Updates a specific datatable by datatableId
+[**putFlowsDatatable**](ArchitectApi.html#putFlowsDatatable) | **PUT** /api/v2/flows/datatables/{datatableId} | Updates a specific datatable by id
 [**putFlowsDatatableRow**](ArchitectApi.html#putFlowsDatatableRow) | **PUT** /api/v2/flows/datatables/{datatableId}/rows/{rowId} | Update a row entry
 {: class="table table-striped"}
 
@@ -534,7 +534,7 @@ DELETE /api/v2/flows/datatables/{datatableId}
 
 deletes a specific datatable by id
 
-deletes an entire datatable (including schema and data) with a given datatableId)
+deletes an entire datatable (including schema and data) with a given id)
 
 ### Example
 
@@ -2415,11 +2415,11 @@ apiInstance.getFlows(type, opts)
 
 <a name="getFlowsDatatable"></a>
 
-# JsonSchemaDocument getFlowsDatatable(datatableId, opts)
+# DataTable getFlowsDatatable(datatableId, opts)
 
 GET /api/v2/flows/datatables/{datatableId}
 
-Returns a specific datatable by datatableId
+Returns a specific datatable by id
 
 Given a datableid returns the schema associated with it.
 
@@ -2439,7 +2439,7 @@ var apiInstance = new platformClient.ArchitectApi();
 var datatableId = "datatableId_example"; // String | id of datatable
 
 var opts = { 
-  'showbrief': true // Boolean | If true returns a shortened version of the schema including the name, id and description]
+  'expand': "expand_example" // String | Expand instructions for the result
 };
 apiInstance.getFlowsDatatable(datatableId, opts)
   .then(function(data) {
@@ -2458,12 +2458,12 @@ apiInstance.getFlowsDatatable(datatableId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **datatableId** | **String** | id of datatable |  |
- **showbrief** | **Boolean** | If true returns a shortened version of the schema including the name, id and description] | [optional] [default to true] |
+ **expand** | **String** | Expand instructions for the result | [optional] <br />**Values**: schema |
 {: class="table table-striped"}
 
 ### Return type
 
-**JsonSchemaDocument**
+**DataTable**
 
 <a name="getFlowsDatatableRow"></a>
 
@@ -2522,7 +2522,7 @@ apiInstance.getFlowsDatatableRow(datatableId, rowId, opts)
 
 <a name="getFlowsDatatableRows"></a>
 
-# **[{&#39;String&#39;: Object}]** getFlowsDatatableRows(datatableId, opts)
+# DataTableRowEntityListing getFlowsDatatableRows(datatableId, opts)
 
 GET /api/v2/flows/datatables/{datatableId}/rows
 
@@ -2546,6 +2546,8 @@ var apiInstance = new platformClient.ArchitectApi();
 var datatableId = "datatableId_example"; // String | id of datatable
 
 var opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
   'showbrief': true // Boolean | If true returns just the key value of the row
 };
 apiInstance.getFlowsDatatableRows(datatableId, opts)
@@ -2565,16 +2567,18 @@ apiInstance.getFlowsDatatableRows(datatableId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **datatableId** | **String** | id of datatable |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **showbrief** | **Boolean** | If true returns just the key value of the row | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type
 
-**[{&#39;String&#39;: Object}]**
+**DataTableRowEntityListing**
 
 <a name="getFlowsDatatables"></a>
 
-# [JsonSchemaDocument] getFlowsDatatables(opts)
+# DataTablesDomainEntityListing getFlowsDatatables(opts)
 
 GET /api/v2/flows/datatables
 
@@ -2596,7 +2600,11 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.ArchitectApi();
 
 var opts = { 
-  'showbrief': true // Boolean | If true, returns a shortened version of the schema including the name, id and description
+  'expand': "expand_example", // String | Expand instructions for the result
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'sortBy': "id", // String | Sort by
+  'sortOrder': "ascending" // String | Sort order
 };
 apiInstance.getFlowsDatatables(opts)
   .then(function(data) {
@@ -2614,12 +2622,16 @@ apiInstance.getFlowsDatatables(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **showbrief** | **Boolean** | If true, returns a shortened version of the schema including the name, id and description | [optional] [default to true] |
+ **expand** | **String** | Expand instructions for the result | [optional] <br />**Values**: schema |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | Sort by | [optional] [default to id]<br />**Values**: id, name |
+ **sortOrder** | **String** | Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
 
-**[JsonSchemaDocument]**
+**DataTablesDomainEntityListing**
 
 <a name="postArchitectDependencytrackingBuild"></a>
 
@@ -3505,7 +3517,7 @@ apiInstance.postFlowsDatatableRows(datatableId, dataTableRow)
 
 <a name="postFlowsDatatables"></a>
 
-# JsonSchemaDocument postFlowsDatatables(body)
+# DataTable postFlowsDatatables(body)
 
 POST /api/v2/flows/datatables
 
@@ -3549,7 +3561,7 @@ apiInstance.postFlowsDatatables(body)
 
 ### Return type
 
-**JsonSchemaDocument**
+**DataTable**
 
 <a name="putArchitectIvr"></a>
 
@@ -3923,13 +3935,13 @@ apiInstance.putFlow(flowId, opts)
 
 <a name="putFlowsDatatable"></a>
 
-# JsonSchemaDocument putFlowsDatatable(datatableId, opts)
+# DataTable putFlowsDatatable(datatableId, opts)
 
 PUT /api/v2/flows/datatables/{datatableId}
 
-Updates a specific datatable by datatableId
+Updates a specific datatable by id
 
-Updates a schema for a datatable with the given datatableId - updates are additive only, no changes or removals of existing fields.
+Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
 
 ### Example
 
@@ -3947,7 +3959,7 @@ var apiInstance = new platformClient.ArchitectApi();
 var datatableId = "datatableId_example"; // String | id of datatable
 
 var opts = { 
-  'showbrief': true, // Boolean | If true returns a shortened version of the schema including the name, id and description
+  'expand': "expand_example", // String | Expand instructions for the result
   'body': {} // Object | datatable json-schema
 };
 apiInstance.putFlowsDatatable(datatableId, opts)
@@ -3967,13 +3979,13 @@ apiInstance.putFlowsDatatable(datatableId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **datatableId** | **String** | id of datatable |  |
- **showbrief** | **Boolean** | If true returns a shortened version of the schema including the name, id and description | [optional] [default to true] |
+ **expand** | **String** | Expand instructions for the result | [optional] <br />**Values**: schema |
  **body** | **Object** | datatable json-schema | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-**JsonSchemaDocument**
+**DataTable**
 
 <a name="putFlowsDatatableRow"></a>
 

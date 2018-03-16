@@ -3266,7 +3266,7 @@ module.exports = request;
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -3899,7 +3899,7 @@ module.exports = request;
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '20.1.0' });
+    //request.set({ 'purecloud-sdk': '21.0.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -4052,7 +4052,7 @@ module.exports = request;
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -4408,7 +4408,7 @@ module.exports = request;
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -5073,7 +5073,7 @@ module.exports = request;
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -5357,7 +5357,7 @@ module.exports = request;
 
     /**
      * deletes a specific datatable by id
-     * deletes an entire datatable (including schema and data) with a given datatableId)
+     * deletes an entire datatable (including schema and data) with a given id)
      * @param {String} datatableId id of datatable
      */
     this.deleteFlowsDatatable = function(datatableId) { 
@@ -6469,11 +6469,11 @@ module.exports = request;
 
 
     /**
-     * Returns a specific datatable by datatableId
+     * Returns a specific datatable by id
      * Given a datableid returns the schema associated with it.
      * @param {String} datatableId id of datatable
      * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.showbrief If true returns a shortened version of the schema including the name, id and description] (default to true)
+     * @param {Object} opts.expand Expand instructions for the result
      */
     this.getFlowsDatatable = function(datatableId, opts) { 
       opts = opts || {};
@@ -6488,7 +6488,7 @@ module.exports = request;
         '/api/v2/flows/datatables/{datatableId}', 
         'GET', 
         { 'datatableId': datatableId }, 
-        { 'showbrief': opts['showbrief'] }, 
+        { 'expand': opts['expand'] }, 
         {  }, 
         {  }, 
         null, 
@@ -6541,6 +6541,8 @@ module.exports = request;
      * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
      * @param {String} datatableId id of datatable
      * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Boolean} opts.showbrief If true returns just the key value of the row (default to true)
      */
     this.getFlowsDatatableRows = function(datatableId, opts) { 
@@ -6556,7 +6558,7 @@ module.exports = request;
         '/api/v2/flows/datatables/{datatableId}/rows', 
         'GET', 
         { 'datatableId': datatableId }, 
-        { 'showbrief': opts['showbrief'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'showbrief': opts['showbrief'] }, 
         {  }, 
         {  }, 
         null, 
@@ -6571,7 +6573,11 @@ module.exports = request;
      * Retrieve a list of datatables for the org
      * Returns a metadata list of the datatables associated with this org, including ID, name and description.
      * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.showbrief If true, returns a shortened version of the schema including the name, id and description (default to true)
+     * @param {Object} opts.expand Expand instructions for the result
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Object} opts.sortBy Sort by (default to id)
+     * @param {Object} opts.sortOrder Sort order (default to ascending)
      */
     this.getFlowsDatatables = function(opts) { 
       opts = opts || {};
@@ -6581,7 +6587,7 @@ module.exports = request;
         '/api/v2/flows/datatables', 
         'GET', 
         {  }, 
-        { 'showbrief': opts['showbrief'] }, 
+        { 'expand': opts['expand'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
         {  }, 
         {  }, 
         null, 
@@ -7351,11 +7357,11 @@ module.exports = request;
 
 
     /**
-     * Updates a specific datatable by datatableId
-     * Updates a schema for a datatable with the given datatableId - updates are additive only, no changes or removals of existing fields.
+     * Updates a specific datatable by id
+     * Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
      * @param {String} datatableId id of datatable
      * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.showbrief If true returns a shortened version of the schema including the name, id and description (default to true)
+     * @param {Object} opts.expand Expand instructions for the result
      * @param {Object} opts.body datatable json-schema
      */
     this.putFlowsDatatable = function(datatableId, opts) { 
@@ -7371,7 +7377,7 @@ module.exports = request;
         '/api/v2/flows/datatables/{datatableId}', 
         'PUT', 
         { 'datatableId': datatableId }, 
-        { 'showbrief': opts['showbrief'] }, 
+        { 'expand': opts['expand'] }, 
         {  }, 
         {  }, 
         opts['body'], 
@@ -7443,7 +7449,7 @@ module.exports = request;
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -7654,7 +7660,7 @@ module.exports = request;
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -8235,7 +8241,7 @@ module.exports = request;
   /**
    * Billing service.
    * @module purecloud-platform-client-v2/api/BillingApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -8308,7 +8314,7 @@ module.exports = request;
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -9565,7 +9571,7 @@ module.exports = request;
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -9890,7 +9896,7 @@ module.exports = request;
 
 
     /**
-     * Get conversations
+     * Get active conversations for the logged in user
      * 
      * @param {Object} opts Optional parameters
      * @param {String} opts.communicationType Call or Chat communication filtering
@@ -10113,7 +10119,7 @@ module.exports = request;
 
 
     /**
-     * Get callback conversations
+     * Get active callback conversations for the logged in user
      * 
      */
     this.getConversationsCallbacks = function() { 
@@ -10135,7 +10141,7 @@ module.exports = request;
 
 
     /**
-     * Get recent conversations
+     * Get active call conversations for the logged in user
      * 
      */
     this.getConversationsCalls = function() { 
@@ -10306,7 +10312,7 @@ module.exports = request;
 
 
     /**
-     * Get recent chat conversations
+     * Get active chat conversations for the logged in user
      * 
      */
     this.getConversationsChats = function() { 
@@ -10427,7 +10433,7 @@ module.exports = request;
 
 
     /**
-     * Get recent cobrowse conversations
+     * Get active cobrowse conversations for the logged in user
      * 
      */
     this.getConversationsCobrowsesessions = function() { 
@@ -10638,7 +10644,7 @@ module.exports = request;
 
 
     /**
-     * Get recent email conversations
+     * Get active email conversations for the logged in user
      * 
      */
     this.getConversationsEmails = function() { 
@@ -10646,6 +10652,161 @@ module.exports = request;
 
       return this.apiClient.callApi(
         '/api/v2/conversations/emails', 
+        'GET', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get message conversation
+     * 
+     * @param {String} conversationId conversationId
+     */
+    this.getConversationsMessage = function(conversationId) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling getConversationsMessage";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/messages/{conversationId}', 
+        'GET', 
+        { 'conversationId': conversationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get message
+     * 
+     * @param {String} conversationId conversationId
+     * @param {String} messageId messageId
+     */
+    this.getConversationsMessageMessage = function(conversationId, messageId) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling getConversationsMessageMessage";
+      }
+
+      // verify the required parameter 'messageId' is set
+      if (messageId === undefined || messageId === null) {
+        throw "Missing the required parameter 'messageId' when calling getConversationsMessageMessage";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/messages/{conversationId}/messages/{messageId}', 
+        'GET', 
+        { 'conversationId': conversationId,'messageId': messageId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get the wrap-up for this conversation participant. 
+     * 
+     * @param {String} conversationId conversationId
+     * @param {String} participantId participantId
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+     */
+    this.getConversationsMessageParticipantWrapup = function(conversationId, participantId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling getConversationsMessageParticipantWrapup";
+      }
+
+      // verify the required parameter 'participantId' is set
+      if (participantId === undefined || participantId === null) {
+        throw "Missing the required parameter 'participantId' when calling getConversationsMessageParticipantWrapup";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup', 
+        'GET', 
+        { 'conversationId': conversationId,'participantId': participantId }, 
+        { 'provisional': opts['provisional'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get list of wrapup codes for this conversation participant
+     * 
+     * @param {String} conversationId  conversationId
+     * @param {String} participantId participantId
+     */
+    this.getConversationsMessageParticipantWrapupcodes = function(conversationId, participantId) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling getConversationsMessageParticipantWrapupcodes";
+      }
+
+      // verify the required parameter 'participantId' is set
+      if (participantId === undefined || participantId === null) {
+        throw "Missing the required parameter 'participantId' when calling getConversationsMessageParticipantWrapupcodes";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes', 
+        'GET', 
+        { 'conversationId': conversationId,'participantId': participantId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get active message conversations for the logged in user
+     * 
+     */
+    this.getConversationsMessages = function() { 
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/messages', 
         'GET', 
         {  }, 
         {  }, 
@@ -11574,6 +11735,160 @@ module.exports = request;
 
 
     /**
+     * Update a conversation by disconnecting all of the participants
+     * 
+     * @param {String} conversationId conversationId
+     * @param {Object} body Conversation
+     */
+    this.patchConversationsMessage = function(conversationId, body) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling patchConversationsMessage";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling patchConversationsMessage";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/messages/{conversationId}', 
+        'PATCH', 
+        { 'conversationId': conversationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update conversation participant
+     * 
+     * @param {String} conversationId  conversationId
+     * @param {String} participantId participantId
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body 
+     */
+    this.patchConversationsMessageParticipant = function(conversationId, participantId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling patchConversationsMessageParticipant";
+      }
+
+      // verify the required parameter 'participantId' is set
+      if (participantId === undefined || participantId === null) {
+        throw "Missing the required parameter 'participantId' when calling patchConversationsMessageParticipant";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/messages/{conversationId}/participants/{participantId}', 
+        'PATCH', 
+        { 'conversationId': conversationId,'participantId': participantId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update the attributes on a conversation participant.
+     * 
+     * @param {String} conversationId  conversationId
+     * @param {String} participantId participantId
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body 
+     */
+    this.patchConversationsMessageParticipantAttributes = function(conversationId, participantId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling patchConversationsMessageParticipantAttributes";
+      }
+
+      // verify the required parameter 'participantId' is set
+      if (participantId === undefined || participantId === null) {
+        throw "Missing the required parameter 'participantId' when calling patchConversationsMessageParticipantAttributes";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes', 
+        'PATCH', 
+        { 'conversationId': conversationId,'participantId': participantId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update conversation participant&#39;s communication by disconnecting it.
+     * 
+     * @param {String} conversationId  conversationId
+     * @param {String} participantId participantId
+     * @param {String} communicationId communicationId
+     * @param {Object} body Participant
+     */
+    this.patchConversationsMessageParticipantCommunication = function(conversationId, participantId, communicationId, body) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling patchConversationsMessageParticipantCommunication";
+      }
+
+      // verify the required parameter 'participantId' is set
+      if (participantId === undefined || participantId === null) {
+        throw "Missing the required parameter 'participantId' when calling patchConversationsMessageParticipantCommunication";
+      }
+
+      // verify the required parameter 'communicationId' is set
+      if (communicationId === undefined || communicationId === null) {
+        throw "Missing the required parameter 'communicationId' when calling patchConversationsMessageParticipantCommunication";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling patchConversationsMessageParticipantCommunication";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}', 
+        'PATCH', 
+        { 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Index conversation properties
      * 
      * @param {String} conversationId conversationId
@@ -12362,6 +12677,117 @@ module.exports = request;
 
 
     /**
+     * Send message
+     * 
+     * @param {String} conversationId conversationId
+     * @param {String} communicationId communicationId
+     * @param {Object} body Message
+     */
+    this.postConversationsMessageCommunicationMessages = function(conversationId, communicationId, body) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling postConversationsMessageCommunicationMessages";
+      }
+
+      // verify the required parameter 'communicationId' is set
+      if (communicationId === undefined || communicationId === null) {
+        throw "Missing the required parameter 'communicationId' when calling postConversationsMessageCommunicationMessages";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postConversationsMessageCommunicationMessages";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages', 
+        'POST', 
+        { 'conversationId': conversationId,'communicationId': communicationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get messages in batch
+     * 
+     * @param {String} conversationId conversationId
+     * @param {Object} opts Optional parameters
+     * @param {Array.<Object>} opts.body messageIds
+     */
+    this.postConversationsMessageMessagesBulk = function(conversationId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling postConversationsMessageMessagesBulk";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/messages/{conversationId}/messages/bulk', 
+        'POST', 
+        { 'conversationId': conversationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Replace this participant with the specified user and/or address
+     * 
+     * @param {String} conversationId conversationId
+     * @param {String} participantId participantId
+     * @param {Object} body Transfer request
+     */
+    this.postConversationsMessageParticipantReplace = function(conversationId, participantId, body) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling postConversationsMessageParticipantReplace";
+      }
+
+      // verify the required parameter 'participantId' is set
+      if (participantId === undefined || participantId === null) {
+        throw "Missing the required parameter 'participantId' when calling postConversationsMessageParticipantReplace";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postConversationsMessageParticipantReplace";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace', 
+        'POST', 
+        { 'conversationId': conversationId,'participantId': participantId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Set uuiData to be sent on future commands.
      * 
      * @param {String} conversationId conversationId
@@ -12465,7 +12891,7 @@ module.exports = request;
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -13449,7 +13875,7 @@ module.exports = request;
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -13654,7 +14080,7 @@ module.exports = request;
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -13817,7 +14243,7 @@ module.exports = request;
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -14337,7 +14763,7 @@ module.exports = request;
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -14739,7 +15165,7 @@ module.exports = request;
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -15448,7 +15874,7 @@ module.exports = request;
   /**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -16156,7 +16582,7 @@ module.exports = request;
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -16469,7 +16895,7 @@ module.exports = request;
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -16714,7 +17140,7 @@ module.exports = request;
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -16867,7 +17293,7 @@ module.exports = request;
   /**
    * MobileDevices service.
    * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -17048,7 +17474,7 @@ module.exports = request;
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -17280,7 +17706,7 @@ module.exports = request;
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -17487,7 +17913,7 @@ module.exports = request;
   /**
    * Objects service.
    * @module purecloud-platform-client-v2/api/ObjectsApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -17548,7 +17974,7 @@ module.exports = request;
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -17696,7 +18122,7 @@ module.exports = request;
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -18461,7 +18887,7 @@ module.exports = request;
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -21165,7 +21591,7 @@ module.exports = request;
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -21449,7 +21875,7 @@ module.exports = request;
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -23053,7 +23479,7 @@ module.exports = request;
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -24235,7 +24661,7 @@ module.exports = request;
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -24606,7 +25032,7 @@ module.exports = request;
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -24799,6 +25225,34 @@ module.exports = request;
         '/api/v2/routing/skills/{skillId}', 
         'DELETE', 
         { 'skillId': skillId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Delete a phone number provisioned for SMS.
+     * 
+     * @param {String} addressId Address ID
+     */
+    this.deleteRoutingSmsPhonenumber = function(addressId) { 
+
+      // verify the required parameter 'addressId' is set
+      if (addressId === undefined || addressId === null) {
+        throw "Missing the required parameter 'addressId' when calling deleteRoutingSmsPhonenumber";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/sms/phonenumbers/{addressId}', 
+        'DELETE', 
+        { 'addressId': addressId }, 
         {  }, 
         {  }, 
         {  }, 
@@ -25062,6 +25516,60 @@ module.exports = request;
 
 
     /**
+     * Get a recipient
+     * 
+     * @param {String} recipientId Recipient ID
+     */
+    this.getRoutingMessageRecipient = function(recipientId) { 
+
+      // verify the required parameter 'recipientId' is set
+      if (recipientId === undefined || recipientId === null) {
+        throw "Missing the required parameter 'recipientId' when calling getRoutingMessageRecipient";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/message/recipients/{recipientId}', 
+        'GET', 
+        { 'recipientId': recipientId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get recipients
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     */
+    this.getRoutingMessageRecipients = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/message/recipients', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get details about this queue.
      * 
      * @param {String} queueId Queue ID
@@ -25297,6 +25805,104 @@ module.exports = request;
         'GET', 
         {  }, 
         { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a list of available phone numbers for SMS provisioning.
+     * This request will return up to 30 random phone numbers matching the criteria specified.  To get additional phone numbers repeat the request.
+     * @param {String} countryCode The ISO 3166-1 alpha-2 country code of the county for which available phone numbers should be returned
+     * @param {Object} phoneNumberType Type of available phone numbers searched
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.region Region/province/state that can be used to restrict the numbers returned
+     * @param {String} opts.city City that can be used to restrict the numbers returned
+     * @param {String} opts.areaCode Area code that can be used to restrict the numbers returned
+     * @param {String} opts.pattern A pattern to match phone numbers. Valid characters are &#39;*&#39; and [0-9a-zA-Z]. The &#39;*&#39; character will match any single digit.
+     * @param {Object} opts.addressRequirement This indicates whether the phone number requires to have an Address registered.
+     */
+    this.getRoutingSmsAvailablephonenumbers = function(countryCode, phoneNumberType, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'countryCode' is set
+      if (countryCode === undefined || countryCode === null) {
+        throw "Missing the required parameter 'countryCode' when calling getRoutingSmsAvailablephonenumbers";
+      }
+
+      // verify the required parameter 'phoneNumberType' is set
+      if (phoneNumberType === undefined || phoneNumberType === null) {
+        throw "Missing the required parameter 'phoneNumberType' when calling getRoutingSmsAvailablephonenumbers";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/sms/availablephonenumbers', 
+        'GET', 
+        {  }, 
+        { 'countryCode': countryCode,'region': opts['region'],'city': opts['city'],'areaCode': opts['areaCode'],'phoneNumberType': phoneNumberType,'pattern': opts['pattern'],'addressRequirement': opts['addressRequirement'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a phone number provisioned for SMS.
+     * 
+     * @param {String} addressId Address ID
+     */
+    this.getRoutingSmsPhonenumber = function(addressId) { 
+
+      // verify the required parameter 'addressId' is set
+      if (addressId === undefined || addressId === null) {
+        throw "Missing the required parameter 'addressId' when calling getRoutingSmsPhonenumber";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/sms/phonenumbers/{addressId}', 
+        'GET', 
+        { 'addressId': addressId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a list of provisioned phone numbers.
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.phoneNumber Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used.
+     * @param {Object} opts.phoneNumberType Filter on phone number type
+     * @param {Object} opts.phoneNumberStatus Filter on phone number status
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     */
+    this.getRoutingSmsPhonenumbers = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/sms/phonenumbers', 
+        'GET', 
+        {  }, 
+        { 'phoneNumber': opts['phoneNumber'],'phoneNumberType': opts['phoneNumberType'],'phoneNumberStatus': opts['phoneNumberStatus'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
         {  }, 
         {  }, 
         null, 
@@ -25738,6 +26344,62 @@ module.exports = request;
 
 
     /**
+     * Provision an Address for SMS
+     * 
+     * @param {Object} body SmsAddress
+     */
+    this.postRoutingSmsAddresses = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postRoutingSmsAddresses";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/sms/addresses', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Provision a phone number for SMS
+     * 
+     * @param {Object} body SmsPhoneNumber
+     */
+    this.postRoutingSmsPhonenumbers = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postRoutingSmsPhonenumbers";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/sms/phonenumbers', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Create a wrap-up code
      * 
      * @param {Object} body WrapupCode
@@ -25840,6 +26502,40 @@ module.exports = request;
 
 
     /**
+     * Update a recipient
+     * 
+     * @param {String} recipientId Recipient ID
+     * @param {Object} body Recipient
+     */
+    this.putRoutingMessageRecipient = function(recipientId, body) { 
+
+      // verify the required parameter 'recipientId' is set
+      if (recipientId === undefined || recipientId === null) {
+        throw "Missing the required parameter 'recipientId' when calling putRoutingMessageRecipient";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putRoutingMessageRecipient";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/message/recipients/{recipientId}', 
+        'PUT', 
+        { 'recipientId': recipientId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Update a queue
      * 
      * @param {String} queueId Queue ID
@@ -25862,6 +26558,40 @@ module.exports = request;
         '/api/v2/routing/queues/{queueId}', 
         'PUT', 
         { 'queueId': queueId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update a phone number provisioned for SMS.
+     * 
+     * @param {String} addressId Address ID
+     * @param {Object} body SmsPhoneNumber
+     */
+    this.putRoutingSmsPhonenumber = function(addressId, body) { 
+
+      // verify the required parameter 'addressId' is set
+      if (addressId === undefined || addressId === null) {
+        throw "Missing the required parameter 'addressId' when calling putRoutingSmsPhonenumber";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putRoutingSmsPhonenumber";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/sms/phonenumbers/{addressId}', 
+        'PUT', 
+        { 'addressId': addressId }, 
         {  }, 
         {  }, 
         {  }, 
@@ -25999,7 +26729,7 @@ module.exports = request;
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -26399,7 +27129,7 @@ module.exports = request;
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -26856,7 +27586,7 @@ module.exports = request;
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -26983,7 +27713,7 @@ module.exports = request;
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -27148,7 +27878,7 @@ module.exports = request;
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -31071,7 +31801,7 @@ module.exports = request;
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -31154,7 +31884,7 @@ module.exports = request;
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -31369,7 +32099,7 @@ module.exports = request;
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -32881,7 +33611,7 @@ module.exports = request;
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -32996,7 +33726,7 @@ module.exports = request;
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -33711,7 +34441,7 @@ module.exports = request;
   /**
    * WebChat service.
    * @module purecloud-platform-client-v2/api/WebChatApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -33962,7 +34692,7 @@ module.exports = request;
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -34367,7 +35097,7 @@ module.exports = request;
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 20.1.0
+   * @version 21.0.0
    */
   var platformClient = {
     /**

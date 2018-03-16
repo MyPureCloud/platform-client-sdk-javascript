@@ -18,7 +18,7 @@
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -211,6 +211,34 @@
         '/api/v2/routing/skills/{skillId}', 
         'DELETE', 
         { 'skillId': skillId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Delete a phone number provisioned for SMS.
+     * 
+     * @param {String} addressId Address ID
+     */
+    this.deleteRoutingSmsPhonenumber = function(addressId) { 
+
+      // verify the required parameter 'addressId' is set
+      if (addressId === undefined || addressId === null) {
+        throw "Missing the required parameter 'addressId' when calling deleteRoutingSmsPhonenumber";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/sms/phonenumbers/{addressId}', 
+        'DELETE', 
+        { 'addressId': addressId }, 
         {  }, 
         {  }, 
         {  }, 
@@ -474,6 +502,60 @@
 
 
     /**
+     * Get a recipient
+     * 
+     * @param {String} recipientId Recipient ID
+     */
+    this.getRoutingMessageRecipient = function(recipientId) { 
+
+      // verify the required parameter 'recipientId' is set
+      if (recipientId === undefined || recipientId === null) {
+        throw "Missing the required parameter 'recipientId' when calling getRoutingMessageRecipient";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/message/recipients/{recipientId}', 
+        'GET', 
+        { 'recipientId': recipientId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get recipients
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     */
+    this.getRoutingMessageRecipients = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/message/recipients', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get details about this queue.
      * 
      * @param {String} queueId Queue ID
@@ -709,6 +791,104 @@
         'GET', 
         {  }, 
         { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a list of available phone numbers for SMS provisioning.
+     * This request will return up to 30 random phone numbers matching the criteria specified.  To get additional phone numbers repeat the request.
+     * @param {String} countryCode The ISO 3166-1 alpha-2 country code of the county for which available phone numbers should be returned
+     * @param {Object} phoneNumberType Type of available phone numbers searched
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.region Region/province/state that can be used to restrict the numbers returned
+     * @param {String} opts.city City that can be used to restrict the numbers returned
+     * @param {String} opts.areaCode Area code that can be used to restrict the numbers returned
+     * @param {String} opts.pattern A pattern to match phone numbers. Valid characters are &#39;*&#39; and [0-9a-zA-Z]. The &#39;*&#39; character will match any single digit.
+     * @param {Object} opts.addressRequirement This indicates whether the phone number requires to have an Address registered.
+     */
+    this.getRoutingSmsAvailablephonenumbers = function(countryCode, phoneNumberType, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'countryCode' is set
+      if (countryCode === undefined || countryCode === null) {
+        throw "Missing the required parameter 'countryCode' when calling getRoutingSmsAvailablephonenumbers";
+      }
+
+      // verify the required parameter 'phoneNumberType' is set
+      if (phoneNumberType === undefined || phoneNumberType === null) {
+        throw "Missing the required parameter 'phoneNumberType' when calling getRoutingSmsAvailablephonenumbers";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/sms/availablephonenumbers', 
+        'GET', 
+        {  }, 
+        { 'countryCode': countryCode,'region': opts['region'],'city': opts['city'],'areaCode': opts['areaCode'],'phoneNumberType': phoneNumberType,'pattern': opts['pattern'],'addressRequirement': opts['addressRequirement'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a phone number provisioned for SMS.
+     * 
+     * @param {String} addressId Address ID
+     */
+    this.getRoutingSmsPhonenumber = function(addressId) { 
+
+      // verify the required parameter 'addressId' is set
+      if (addressId === undefined || addressId === null) {
+        throw "Missing the required parameter 'addressId' when calling getRoutingSmsPhonenumber";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/sms/phonenumbers/{addressId}', 
+        'GET', 
+        { 'addressId': addressId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a list of provisioned phone numbers.
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.phoneNumber Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used.
+     * @param {Object} opts.phoneNumberType Filter on phone number type
+     * @param {Object} opts.phoneNumberStatus Filter on phone number status
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     */
+    this.getRoutingSmsPhonenumbers = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/sms/phonenumbers', 
+        'GET', 
+        {  }, 
+        { 'phoneNumber': opts['phoneNumber'],'phoneNumberType': opts['phoneNumberType'],'phoneNumberStatus': opts['phoneNumberStatus'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
         {  }, 
         {  }, 
         null, 
@@ -1150,6 +1330,62 @@
 
 
     /**
+     * Provision an Address for SMS
+     * 
+     * @param {Object} body SmsAddress
+     */
+    this.postRoutingSmsAddresses = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postRoutingSmsAddresses";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/sms/addresses', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Provision a phone number for SMS
+     * 
+     * @param {Object} body SmsPhoneNumber
+     */
+    this.postRoutingSmsPhonenumbers = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postRoutingSmsPhonenumbers";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/sms/phonenumbers', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Create a wrap-up code
      * 
      * @param {Object} body WrapupCode
@@ -1252,6 +1488,40 @@
 
 
     /**
+     * Update a recipient
+     * 
+     * @param {String} recipientId Recipient ID
+     * @param {Object} body Recipient
+     */
+    this.putRoutingMessageRecipient = function(recipientId, body) { 
+
+      // verify the required parameter 'recipientId' is set
+      if (recipientId === undefined || recipientId === null) {
+        throw "Missing the required parameter 'recipientId' when calling putRoutingMessageRecipient";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putRoutingMessageRecipient";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/message/recipients/{recipientId}', 
+        'PUT', 
+        { 'recipientId': recipientId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Update a queue
      * 
      * @param {String} queueId Queue ID
@@ -1274,6 +1544,40 @@
         '/api/v2/routing/queues/{queueId}', 
         'PUT', 
         { 'queueId': queueId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update a phone number provisioned for SMS.
+     * 
+     * @param {String} addressId Address ID
+     * @param {Object} body SmsPhoneNumber
+     */
+    this.putRoutingSmsPhonenumber = function(addressId, body) { 
+
+      // verify the required parameter 'addressId' is set
+      if (addressId === undefined || addressId === null) {
+        throw "Missing the required parameter 'addressId' when calling putRoutingSmsPhonenumber";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putRoutingSmsPhonenumber";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/sms/phonenumbers/{addressId}', 
+        'PUT', 
+        { 'addressId': addressId }, 
         {  }, 
         {  }, 
         {  }, 

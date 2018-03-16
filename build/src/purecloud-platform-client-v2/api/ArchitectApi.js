@@ -18,7 +18,7 @@
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
@@ -302,7 +302,7 @@
 
     /**
      * deletes a specific datatable by id
-     * deletes an entire datatable (including schema and data) with a given datatableId)
+     * deletes an entire datatable (including schema and data) with a given id)
      * @param {String} datatableId id of datatable
      */
     this.deleteFlowsDatatable = function(datatableId) { 
@@ -1414,11 +1414,11 @@
 
 
     /**
-     * Returns a specific datatable by datatableId
+     * Returns a specific datatable by id
      * Given a datableid returns the schema associated with it.
      * @param {String} datatableId id of datatable
      * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.showbrief If true returns a shortened version of the schema including the name, id and description] (default to true)
+     * @param {Object} opts.expand Expand instructions for the result
      */
     this.getFlowsDatatable = function(datatableId, opts) { 
       opts = opts || {};
@@ -1433,7 +1433,7 @@
         '/api/v2/flows/datatables/{datatableId}', 
         'GET', 
         { 'datatableId': datatableId }, 
-        { 'showbrief': opts['showbrief'] }, 
+        { 'expand': opts['expand'] }, 
         {  }, 
         {  }, 
         null, 
@@ -1486,6 +1486,8 @@
      * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
      * @param {String} datatableId id of datatable
      * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Boolean} opts.showbrief If true returns just the key value of the row (default to true)
      */
     this.getFlowsDatatableRows = function(datatableId, opts) { 
@@ -1501,7 +1503,7 @@
         '/api/v2/flows/datatables/{datatableId}/rows', 
         'GET', 
         { 'datatableId': datatableId }, 
-        { 'showbrief': opts['showbrief'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'showbrief': opts['showbrief'] }, 
         {  }, 
         {  }, 
         null, 
@@ -1516,7 +1518,11 @@
      * Retrieve a list of datatables for the org
      * Returns a metadata list of the datatables associated with this org, including ID, name and description.
      * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.showbrief If true, returns a shortened version of the schema including the name, id and description (default to true)
+     * @param {Object} opts.expand Expand instructions for the result
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Object} opts.sortBy Sort by (default to id)
+     * @param {Object} opts.sortOrder Sort order (default to ascending)
      */
     this.getFlowsDatatables = function(opts) { 
       opts = opts || {};
@@ -1526,7 +1532,7 @@
         '/api/v2/flows/datatables', 
         'GET', 
         {  }, 
-        { 'showbrief': opts['showbrief'] }, 
+        { 'expand': opts['expand'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
         {  }, 
         {  }, 
         null, 
@@ -2296,11 +2302,11 @@
 
 
     /**
-     * Updates a specific datatable by datatableId
-     * Updates a schema for a datatable with the given datatableId - updates are additive only, no changes or removals of existing fields.
+     * Updates a specific datatable by id
+     * Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
      * @param {String} datatableId id of datatable
      * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.showbrief If true returns a shortened version of the schema including the name, id and description (default to true)
+     * @param {Object} opts.expand Expand instructions for the result
      * @param {Object} opts.body datatable json-schema
      */
     this.putFlowsDatatable = function(datatableId, opts) { 
@@ -2316,7 +2322,7 @@
         '/api/v2/flows/datatables/{datatableId}', 
         'PUT', 
         { 'datatableId': datatableId }, 
-        { 'showbrief': opts['showbrief'] }, 
+        { 'expand': opts['expand'] }, 
         {  }, 
         {  }, 
         opts['body'], 

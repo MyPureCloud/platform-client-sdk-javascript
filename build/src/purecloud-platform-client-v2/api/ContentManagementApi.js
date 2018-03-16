@@ -18,7 +18,7 @@
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 20.1.0
+   * @version 21.0.0
    */
 
   /**
