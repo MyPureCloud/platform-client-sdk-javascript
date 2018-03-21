@@ -1859,7 +1859,7 @@ function numberIsNaN (obj) {
 },{"base64-js":2,"ieee754":4}],4:[function(require,module,exports){
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
-  var eLen = nBytes * 8 - mLen - 1
+  var eLen = (nBytes * 8) - mLen - 1
   var eMax = (1 << eLen) - 1
   var eBias = eMax >> 1
   var nBits = -7
@@ -1872,12 +1872,12 @@ exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   e = s & ((1 << (-nBits)) - 1)
   s >>= (-nBits)
   nBits += eLen
-  for (; nBits > 0; e = e * 256 + buffer[offset + i], i += d, nBits -= 8) {}
+  for (; nBits > 0; e = (e * 256) + buffer[offset + i], i += d, nBits -= 8) {}
 
   m = e & ((1 << (-nBits)) - 1)
   e >>= (-nBits)
   nBits += mLen
-  for (; nBits > 0; m = m * 256 + buffer[offset + i], i += d, nBits -= 8) {}
+  for (; nBits > 0; m = (m * 256) + buffer[offset + i], i += d, nBits -= 8) {}
 
   if (e === 0) {
     e = 1 - eBias
@@ -1892,7 +1892,7 @@ exports.read = function (buffer, offset, isLE, mLen, nBytes) {
 
 exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   var e, m, c
-  var eLen = nBytes * 8 - mLen - 1
+  var eLen = (nBytes * 8) - mLen - 1
   var eMax = (1 << eLen) - 1
   var eBias = eMax >> 1
   var rt = (mLen === 23 ? Math.pow(2, -24) - Math.pow(2, -77) : 0)
@@ -1925,7 +1925,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
       m = 0
       e = eMax
     } else if (e + eBias >= 1) {
-      m = (value * c - 1) * Math.pow(2, mLen)
+      m = ((value * c) - 1) * Math.pow(2, mLen)
       e = e + eBias
     } else {
       m = value * Math.pow(2, eBias - 1) * Math.pow(2, mLen)
@@ -3266,7 +3266,7 @@ module.exports = request;
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -3899,7 +3899,7 @@ module.exports = request;
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '21.0.0' });
+    //request.set({ 'purecloud-sdk': '22.0.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -4052,7 +4052,7 @@ module.exports = request;
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -4408,7 +4408,7 @@ module.exports = request;
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -4468,6 +4468,28 @@ module.exports = request;
         '/api/v2/analytics/conversations/{conversationId}/details', 
         'GET', 
         { 'conversationId': conversationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get all view export requests for a user
+     * 
+     */
+    this.getAnalyticsReportingExports = function() { 
+
+
+      return this.apiClient.callApi(
+        '/api/v2/analytics/reporting/exports', 
+        'GET', 
+        {  }, 
         {  }, 
         {  }, 
         {  }, 
@@ -4876,6 +4898,34 @@ module.exports = request;
 
 
     /**
+     * Generate a view export request
+     * 
+     * @param {Object} body ReportingExportJobRequest
+     */
+    this.postAnalyticsReportingExports = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postAnalyticsReportingExports";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/analytics/reporting/exports', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Place a scheduled report immediately into the reporting queue
      * 
      * @param {String} scheduleId Schedule ID
@@ -5073,7 +5123,7 @@ module.exports = request;
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -6541,8 +6591,8 @@ module.exports = request;
      * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
      * @param {String} datatableId id of datatable
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Boolean} opts.showbrief If true returns just the key value of the row (default to true)
      */
     this.getFlowsDatatableRows = function(datatableId, opts) { 
@@ -6558,7 +6608,7 @@ module.exports = request;
         '/api/v2/flows/datatables/{datatableId}/rows', 
         'GET', 
         { 'datatableId': datatableId }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'showbrief': opts['showbrief'] }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'showbrief': opts['showbrief'] }, 
         {  }, 
         {  }, 
         null, 
@@ -6574,8 +6624,8 @@ module.exports = request;
      * Returns a metadata list of the datatables associated with this org, including ID, name and description.
      * @param {Object} opts Optional parameters
      * @param {Object} opts.expand Expand instructions for the result
-     * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Object} opts.sortBy Sort by (default to id)
      * @param {Object} opts.sortOrder Sort order (default to ascending)
      */
@@ -6587,7 +6637,7 @@ module.exports = request;
         '/api/v2/flows/datatables', 
         'GET', 
         {  }, 
-        { 'expand': opts['expand'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        { 'expand': opts['expand'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
         {  }, 
         {  }, 
         null, 
@@ -7449,7 +7499,7 @@ module.exports = request;
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -7660,7 +7710,7 @@ module.exports = request;
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -7961,6 +8011,46 @@ module.exports = request;
 
 
     /**
+     * Set the division of a list of objects. The objects must all be of the same type: CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, QUEUE, USER
+     * 
+     * @param {String} divisionId Division ID
+     * @param {Object} objectType The type of the objects. Must be one of the valid object types
+     * @param {Array.<Object>} body Object Id List
+     */
+    this.postAuthorizationDivisionObject = function(divisionId, objectType, body) { 
+
+      // verify the required parameter 'divisionId' is set
+      if (divisionId === undefined || divisionId === null) {
+        throw "Missing the required parameter 'divisionId' when calling postAuthorizationDivisionObject";
+      }
+
+      // verify the required parameter 'objectType' is set
+      if (objectType === undefined || objectType === null) {
+        throw "Missing the required parameter 'objectType' when calling postAuthorizationDivisionObject";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postAuthorizationDivisionObject";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/authorization/divisions/{divisionId}/objects/{objectType}', 
+        'POST', 
+        { 'divisionId': divisionId,'objectType': objectType }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get an unsaved org role to default role comparison
      * Allows users to compare their existing roles in an unsaved state to its default role
      * @param {String} leftRoleId Left Role ID
@@ -8241,7 +8331,7 @@ module.exports = request;
   /**
    * Billing service.
    * @module purecloud-platform-client-v2/api/BillingApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -8314,7 +8404,7 @@ module.exports = request;
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -9571,7 +9661,7 @@ module.exports = request;
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -12891,7 +12981,7 @@ module.exports = request;
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -13875,7 +13965,7 @@ module.exports = request;
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -14080,7 +14170,7 @@ module.exports = request;
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -14243,7 +14333,7 @@ module.exports = request;
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -14763,7 +14853,7 @@ module.exports = request;
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -15165,7 +15255,7 @@ module.exports = request;
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -15874,7 +15964,7 @@ module.exports = request;
   /**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -16582,7 +16672,7 @@ module.exports = request;
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -16895,7 +16985,7 @@ module.exports = request;
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -17140,7 +17230,7 @@ module.exports = request;
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -17293,7 +17383,7 @@ module.exports = request;
   /**
    * MobileDevices service.
    * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -17474,7 +17564,7 @@ module.exports = request;
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -17628,7 +17718,7 @@ module.exports = request;
 
     /**
      * Create a new channel
-     * There is a limit of 10 channels. Creating an 11th channel will remove the channel with oldest last used date.
+     * There is a limit of 5 channels. Creating a 6th channel will remove the channel with oldest last used date.
      */
     this.postNotificationsChannels = function() { 
 
@@ -17706,7 +17796,7 @@ module.exports = request;
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -17913,7 +18003,7 @@ module.exports = request;
   /**
    * Objects service.
    * @module purecloud-platform-client-v2/api/ObjectsApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -17948,6 +18038,46 @@ module.exports = request;
         ['application/json']
       );
     };
+
+
+    /**
+     * Set the division of a list of objects. The objects must all be of the same type: CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, QUEUE, USER
+     * 
+     * @param {String} divisionId Division ID
+     * @param {Object} objectType The type of the objects. Must be one of the valid object types
+     * @param {Array.<Object>} body Object Id List
+     */
+    this.postAuthorizationDivisionObject = function(divisionId, objectType, body) { 
+
+      // verify the required parameter 'divisionId' is set
+      if (divisionId === undefined || divisionId === null) {
+        throw "Missing the required parameter 'divisionId' when calling postAuthorizationDivisionObject";
+      }
+
+      // verify the required parameter 'objectType' is set
+      if (objectType === undefined || objectType === null) {
+        throw "Missing the required parameter 'objectType' when calling postAuthorizationDivisionObject";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postAuthorizationDivisionObject";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/authorization/divisions/{divisionId}/objects/{objectType}', 
+        'POST', 
+        { 'divisionId': divisionId,'objectType': objectType }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
   };
 
   return exports;
@@ -17974,7 +18104,7 @@ module.exports = request;
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -18122,7 +18252,7 @@ module.exports = request;
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -18887,7 +19017,7 @@ module.exports = request;
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -19742,6 +19872,7 @@ module.exports = request;
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
+     * @param {Array.<String>} opts.id id
      * @param {String} opts.contactListId Contact List ID
      * @param {String} opts.dncListId DNC list ID
      * @param {String} opts.distributionQueueId Distribution queue ID
@@ -19758,7 +19889,7 @@ module.exports = request;
         '/api/v2/outbound/campaigns', 
         'GET', 
         {  }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'contactListId': opts['contactListId'],'dncListId': opts['dncListId'],'distributionQueueId': opts['distributionQueueId'],'edgeGroupId': opts['edgeGroupId'],'callAnalysisResponseSetId': opts['callAnalysisResponseSetId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'contactListId': opts['contactListId'],'dncListId': opts['dncListId'],'distributionQueueId': opts['distributionQueueId'],'edgeGroupId': opts['edgeGroupId'],'callAnalysisResponseSetId': opts['callAnalysisResponseSetId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
         {  }, 
         {  }, 
         null, 
@@ -19963,6 +20094,7 @@ module.exports = request;
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
+     * @param {Array.<String>} opts.id id
      * @param {String} opts.sortBy Sort by
      * @param {Object} opts.sortOrder Sort order (default to a)
      */
@@ -19974,7 +20106,7 @@ module.exports = request;
         '/api/v2/outbound/contactlists', 
         'GET', 
         {  }, 
-        { 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        { 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
         {  }, 
         {  }, 
         null, 
@@ -21591,7 +21723,7 @@ module.exports = request;
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -21875,7 +22007,7 @@ module.exports = request;
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -23479,7 +23611,7 @@ module.exports = request;
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -24661,7 +24793,7 @@ module.exports = request;
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -25032,7 +25164,7 @@ module.exports = request;
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -26729,7 +26861,7 @@ module.exports = request;
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -27129,7 +27261,7 @@ module.exports = request;
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -27586,7 +27718,7 @@ module.exports = request;
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -27687,6 +27819,56 @@ module.exports = request;
         ['application/json']
       );
     };
+
+
+    /**
+     * Get an organization&#39;s StationSettings
+     * 
+     */
+    this.getStationsSettings = function() { 
+
+
+      return this.apiClient.callApi(
+        '/api/v2/stations/settings', 
+        'GET', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Patch an organization&#39;s StationSettings
+     * 
+     * @param {Object} body Station settings
+     */
+    this.patchStationsSettings = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling patchStationsSettings";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/stations/settings', 
+        'PATCH', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
   };
 
   return exports;
@@ -27713,7 +27895,7 @@ module.exports = request;
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -27878,7 +28060,7 @@ module.exports = request;
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -31801,7 +31983,7 @@ module.exports = request;
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -31884,7 +32066,7 @@ module.exports = request;
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -32099,7 +32281,7 @@ module.exports = request;
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -33611,7 +33793,7 @@ module.exports = request;
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -33726,7 +33908,7 @@ module.exports = request;
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -34441,7 +34623,7 @@ module.exports = request;
   /**
    * WebChat service.
    * @module purecloud-platform-client-v2/api/WebChatApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -34692,7 +34874,7 @@ module.exports = request;
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -35097,7 +35279,7 @@ module.exports = request;
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 21.0.0
+   * @version 22.0.0
    */
   var platformClient = {
     /**

@@ -18,7 +18,7 @@
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -1486,8 +1486,8 @@
      * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
      * @param {String} datatableId id of datatable
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Boolean} opts.showbrief If true returns just the key value of the row (default to true)
      */
     this.getFlowsDatatableRows = function(datatableId, opts) { 
@@ -1503,7 +1503,7 @@
         '/api/v2/flows/datatables/{datatableId}/rows', 
         'GET', 
         { 'datatableId': datatableId }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'showbrief': opts['showbrief'] }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'showbrief': opts['showbrief'] }, 
         {  }, 
         {  }, 
         null, 
@@ -1519,8 +1519,8 @@
      * Returns a metadata list of the datatables associated with this org, including ID, name and description.
      * @param {Object} opts Optional parameters
      * @param {Object} opts.expand Expand instructions for the result
-     * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Object} opts.sortBy Sort by (default to id)
      * @param {Object} opts.sortOrder Sort order (default to ascending)
      */
@@ -1532,7 +1532,7 @@
         '/api/v2/flows/datatables', 
         'GET', 
         {  }, 
-        { 'expand': opts['expand'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        { 'expand': opts['expand'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
         {  }, 
         {  }, 
         null, 

@@ -18,7 +18,7 @@
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -873,6 +873,7 @@
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
+     * @param {Array.<String>} opts.id id
      * @param {String} opts.contactListId Contact List ID
      * @param {String} opts.dncListId DNC list ID
      * @param {String} opts.distributionQueueId Distribution queue ID
@@ -889,7 +890,7 @@
         '/api/v2/outbound/campaigns', 
         'GET', 
         {  }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'contactListId': opts['contactListId'],'dncListId': opts['dncListId'],'distributionQueueId': opts['distributionQueueId'],'edgeGroupId': opts['edgeGroupId'],'callAnalysisResponseSetId': opts['callAnalysisResponseSetId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'contactListId': opts['contactListId'],'dncListId': opts['dncListId'],'distributionQueueId': opts['distributionQueueId'],'edgeGroupId': opts['edgeGroupId'],'callAnalysisResponseSetId': opts['callAnalysisResponseSetId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
         {  }, 
         {  }, 
         null, 
@@ -1094,6 +1095,7 @@
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
+     * @param {Array.<String>} opts.id id
      * @param {String} opts.sortBy Sort by
      * @param {Object} opts.sortOrder Sort order (default to a)
      */
@@ -1105,7 +1107,7 @@
         '/api/v2/outbound/contactlists', 
         'GET', 
         {  }, 
-        { 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        { 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
         {  }, 
         {  }, 
         null, 

@@ -18,7 +18,7 @@
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -78,6 +78,28 @@
         '/api/v2/analytics/conversations/{conversationId}/details', 
         'GET', 
         { 'conversationId': conversationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get all view export requests for a user
+     * 
+     */
+    this.getAnalyticsReportingExports = function() { 
+
+
+      return this.apiClient.callApi(
+        '/api/v2/analytics/reporting/exports', 
+        'GET', 
+        {  }, 
         {  }, 
         {  }, 
         {  }, 
@@ -472,6 +494,34 @@
 
       return this.apiClient.callApi(
         '/api/v2/analytics/queues/observations/query', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Generate a view export request
+     * 
+     * @param {Object} body ReportingExportJobRequest
+     */
+    this.postAnalyticsReportingExports = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postAnalyticsReportingExports";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/analytics/reporting/exports', 
         'POST', 
         {  }, 
         {  }, 

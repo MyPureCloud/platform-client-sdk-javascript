@@ -18,7 +18,7 @@
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -172,7 +172,7 @@
 
     /**
      * Create a new channel
-     * There is a limit of 10 channels. Creating an 11th channel will remove the channel with oldest last used date.
+     * There is a limit of 5 channels. Creating a 6th channel will remove the channel with oldest last used date.
      */
     this.postNotificationsChannels = function() { 
 

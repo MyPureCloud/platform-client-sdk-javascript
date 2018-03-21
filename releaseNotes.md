@@ -1,269 +1,117 @@
-Platform API version: 2013
+Platform API version: 2032
 
 
-Republished
+# Major Changes (6 changes)
 
-# Major Changes (17 changes)
+**GET /api/v2/outbound/campaigns** (1 change)
 
-**GET /api/v2/flows/datatables/{datatableId}** (3 changes)
+* Parameter id was added
 
-* Parameter showbrief was removed
-* Parameter expand was added
-* Response 200 type was changed from JsonSchemaDocument to DataTable
+**GET /api/v2/outbound/contactlists** (1 change)
 
-**PUT /api/v2/flows/datatables/{datatableId}** (3 changes)
+* Parameter id was added
 
-* Parameter showbrief was removed
-* Parameter expand was added
-* Response 200 type was changed from JsonSchemaDocument to DataTable
+**TimeZone** (3 changes)
 
-**GET /api/v2/flows/datatables/{datatableId}/rows** (3 changes)
+* Property name was removed
+* Property offset was removed
+* Property selfUri was removed
 
-* Parameter pageSize was added
-* Parameter pageNumber was added
-* Response 200 type was changed from object[] to DataTableRowEntityListing
+**GroupUpdate** (1 change)
 
-**GET /api/v2/flows/datatables** (7 changes)
+* Enum value owners was removed from property visibility
 
-* Parameter showbrief was removed
-* Parameter expand was added
-* Parameter pageSize was added
-* Parameter pageNumber was added
-* Parameter sortBy was added
-* Parameter sortOrder was added
-* Response 200 type was changed from JsonSchemaDocument[] to DataTablesDomainEntityListing
+
+# Minor Changes (28 changes)
+
+**/api/v2/authorization/divisions/{divisionId}/objects/{objectType}** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/stations/settings** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PATCH was added
+
+**POST /api/v2/flows/datatables/{datatableId}/rows** (1 change)
+
+* Response 409 was added
 
 **POST /api/v2/flows/datatables** (1 change)
 
-* Response 200 type was changed from JsonSchemaDocument to DataTable
+* Response 409 was added
 
+**PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId}** (1 change)
 
-# Minor Changes (65 changes)
+* Response 409 was added
 
-**/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}** (2 changes)
-
-* Path was added
-* Operation PATCH was added
-
-**/api/v2/conversations/messages/{conversationId}/participants/{participantId}** (2 changes)
-
-* Path was added
-* Operation PATCH was added
-
-**/api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/conversations/messages/{conversationId}/messages/{messageId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/messages** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/conversations/messages/{conversationId}/messages/bulk** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes** (2 changes)
-
-* Path was added
-* Operation PATCH was added
-
-**/api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/messages/{conversationId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/routing/sms/addresses** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/routing/sms/phonenumbers** (3 changes)
+**/api/v2/analytics/reporting/exports** (3 changes)
 
 * Path was added
 * Operation GET was added
 * Operation POST was added
 
-**/api/v2/routing/message/recipients** (2 changes)
+**Group** (1 change)
 
-* Path was added
-* Operation GET was added
+* Optional property owners was added
 
-**/api/v2/routing/sms/phonenumbers/{addressId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/routing/sms/availablephonenumbers** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/routing/message/recipients/{recipientId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**EmailMediaParticipant** (1 change)
-
-* Optional property draftAttachments was added
-
-**Email** (1 change)
-
-* Optional property draftAttachments was added
-
-**DataTable** (1 change)
+**AuthzTypedObject** (1 change)
 
 * Model was added
 
-**AggregateMetricData** (1 change)
+**TrustGroup** (1 change)
 
-* Enum value tAlert was added to property metric
+* Optional property owners was added
 
-**AggregationQuery** (2 changes)
+**TimeZone** (4 changes)
 
-* Enum value flaggedReason was added to property groupBy
-* Enum value tAlert was added to property metrics
+* Optional property displayName was added
+* id is no longer readonly
+* Optional property dstsavings was added
+* Optional property rawOffset was added
 
-**AnalyticsQueryPredicate** (2 changes)
+**GroupUpdate** (2 changes)
 
-* Enum value flaggedReason was added to property dimension
-* Enum value tAlert was added to property metric
+* Enum value ownerIds was added to property visibility
+* Optional property ownerIds was added
 
-**AnalyticsParticipant** (1 change)
-
-* Optional property flaggedReason was added
-
-**DataTableRowEntityListing** (1 change)
+**FreeSeatingConfiguration** (1 change)
 
 * Model was added
 
-**ObservationQuery** (1 change)
-
-* Enum value tAlert was added to property metrics
-
-**MessageData** (1 change)
+**StationSettings** (1 change)
 
 * Model was added
 
-**MessageConversationEntityListing** (1 change)
+**GroupCreate** (1 change)
 
 * Model was added
 
-**AdditionalMessage** (1 change)
+**DataColumn** (1 change)
 
 * Model was added
 
-**TextMessageListing** (1 change)
+**ReportingExportJobResponse** (1 change)
 
 * Model was added
 
-**MessageConversation** (1 change)
+**ViewFilter** (1 change)
 
 * Model was added
 
-**MessageMediaParticipant** (1 change)
+**ReportingExportJobListing** (1 change)
 
 * Model was added
 
-**SmsPhoneNumber** (1 change)
-
-* Model was added
-
-**SmsAddressProvision** (1 change)
-
-* Model was added
-
-**DataTablesDomainEntityListing** (1 change)
-
-* Model was added
-
-**SmsPhoneNumberEntityListing** (1 change)
-
-* Model was added
-
-**SmsPhoneNumberProvision** (1 change)
-
-* Model was added
-
-**Recipient** (1 change)
-
-* Model was added
-
-**RecipientListing** (1 change)
-
-* Model was added
-
-**SMSAvailablePhoneNumberEntityListing** (1 change)
-
-* Model was added
-
-**SmsAvailablePhoneNumber** (1 change)
+**ReportingExportJobRequest** (1 change)
 
 * Model was added
 
 
-# Point Changes (10 changes)
+# Point Changes (1 change)
 
-**GET /api/v2/conversations/emails** (1 change)
-
-* Summary was changed
-
-**GET /api/v2/flows/datatables/{datatableId}** (1 change)
-
-* Summary was changed
-
-**PUT /api/v2/flows/datatables/{datatableId}** (2 changes)
+**POST /api/v2/notifications/channels** (1 change)
 
 * Description was changed
-* Summary was changed
-
-**DELETE /api/v2/flows/datatables/{datatableId}** (1 change)
-
-* Description was changed
-
-**GET /api/v2/conversations/callbacks** (1 change)
-
-* Summary was changed
-
-**GET /api/v2/conversations/calls** (1 change)
-
-* Summary was changed
-
-**GET /api/v2/conversations/chats** (1 change)
-
-* Summary was changed
-
-**GET /api/v2/conversations/cobrowsesessions** (1 change)
-
-* Summary was changed
-
-**GET /api/v2/conversations** (1 change)
-
-* Summary was changed

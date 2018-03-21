@@ -2546,8 +2546,8 @@ var apiInstance = new platformClient.ArchitectApi();
 var datatableId = "datatableId_example"; // String | id of datatable
 
 var opts = { 
-  'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
   'showbrief': true // Boolean | If true returns just the key value of the row
 };
 apiInstance.getFlowsDatatableRows(datatableId, opts)
@@ -2567,8 +2567,8 @@ apiInstance.getFlowsDatatableRows(datatableId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **datatableId** | **String** | id of datatable |  |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **showbrief** | **Boolean** | If true returns just the key value of the row | [optional] [default to true] |
 {: class="table table-striped"}
 
@@ -2601,8 +2601,8 @@ var apiInstance = new platformClient.ArchitectApi();
 
 var opts = { 
   'expand': "expand_example", // String | Expand instructions for the result
-  'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
   'sortBy': "id", // String | Sort by
   'sortOrder': "ascending" // String | Sort order
 };
@@ -2623,8 +2623,8 @@ apiInstance.getFlowsDatatables(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **expand** | **String** | Expand instructions for the result | [optional] <br />**Values**: schema |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **sortBy** | **String** | Sort by | [optional] [default to id]<br />**Values**: id, name |
  **sortOrder** | **String** | Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
 {: class="table table-striped"}

@@ -1568,6 +1568,7 @@ var opts = {
   'pageNumber': 1, // Number | Page number
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
+  'id': ["id_example"], // [String] | id
   'contactListId': "contactListId_example", // String | Contact List ID
   'dncListId': "dncListId_example", // String | DNC list ID
   'distributionQueueId': "distributionQueueId_example", // String | Distribution queue ID
@@ -1596,6 +1597,7 @@ apiInstance.getOutboundCampaigns(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
+ **id** | **[String]** | id | [optional]  |
  **contactListId** | **String** | Contact List ID | [optional]  |
  **dncListId** | **String** | DNC list ID | [optional]  |
  **distributionQueueId** | **String** | Distribution queue ID | [optional]  |
@@ -1953,6 +1955,7 @@ var opts = {
   'pageNumber': 1, // Number | Page number
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
+  'id': ["id_example"], // [String] | id
   'sortBy': "sortBy_example", // String | Sort by
   'sortOrder': "a" // String | Sort order
 };
@@ -1978,6 +1981,7 @@ apiInstance.getOutboundContactlists(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
+ **id** | **[String]** | id | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}

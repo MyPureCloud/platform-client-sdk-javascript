@@ -18,7 +18,7 @@
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 21.0.0
+   * @version 22.0.0
    */
 
   /**
@@ -114,6 +114,56 @@
         {  }, 
         {  }, 
         null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get an organization&#39;s StationSettings
+     * 
+     */
+    this.getStationsSettings = function() { 
+
+
+      return this.apiClient.callApi(
+        '/api/v2/stations/settings', 
+        'GET', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Patch an organization&#39;s StationSettings
+     * 
+     * @param {Object} body Station settings
+     */
+    this.patchStationsSettings = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling patchStationsSettings";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/stations/settings', 
+        'PATCH', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
