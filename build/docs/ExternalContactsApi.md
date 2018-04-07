@@ -466,8 +466,8 @@ var apiInstance = new platformClient.ExternalContactsApi();
 var contactId = "contactId_example"; // String | ExternalContact Id
 
 var opts = { 
-  'pageSize': 20, // Number | Page size
-  'pageNumber': 1, // Number | Page number
+  'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+  'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'sortOrder': "sortOrder_example", // String | Sort order
   'expand': ["expand_example"] // [String] | which fields, if any, to expand
 };
@@ -488,8 +488,8 @@ apiInstance.getExternalcontactsContactNotes(contactId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact Id |  |
- **pageSize** | **Number** | Page size | [optional] [default to 20] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
+ **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
@@ -522,8 +522,8 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.ExternalContactsApi();
 
 var opts = { 
-  'pageSize': 20, // Number | Page size
-  'pageNumber': 1, // Number | Page number
+  'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+  'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'q': "q_example", // String | User supplied search keywords (no special syntax is currently supported)
   'sortOrder': "sortOrder_example", // String | Sort order
   'expand': ["expand_example"] // [String] | which fields, if any, to expand
@@ -544,8 +544,8 @@ apiInstance.getExternalcontactsContacts(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 20] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
+ **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
  **q** | **String** | User supplied search keywords (no special syntax is currently supported) | [optional]  |
  **sortOrder** | **String** | Sort order | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
@@ -635,8 +635,8 @@ var apiInstance = new platformClient.ExternalContactsApi();
 var externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
 
 var opts = { 
-  'pageSize': 20, // Number | Page size
-  'pageNumber': 1, // Number | Page number
+  'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+  'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'q': "q_example", // String | User supplied search keywords (no special syntax is currently supported)
   'sortOrder': "sortOrder_example", // String | Sort order
   'expand': ["expand_example"] // [String] | which fields, if any, to expand
@@ -658,8 +658,8 @@ apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization ID |  |
- **pageSize** | **Number** | Page size | [optional] [default to 20] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
+ **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
  **q** | **String** | User supplied search keywords (no special syntax is currently supported) | [optional]  |
  **sortOrder** | **String** | Sort order | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
@@ -750,8 +750,8 @@ var apiInstance = new platformClient.ExternalContactsApi();
 var externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
 
 var opts = { 
-  'pageSize': 20, // Number | Page size
-  'pageNumber': 1, // Number | Page number
+  'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+  'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'sortOrder': "sortOrder_example", // String | Sort order
   'expand': ["expand_example"] // [String] | which fields, if any, to expand
 };
@@ -772,8 +772,8 @@ apiInstance.getExternalcontactsOrganizationNotes(externalOrganizationId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization Id |  |
- **pageSize** | **Number** | Page size | [optional] [default to 20] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
+ **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
@@ -808,8 +808,8 @@ var apiInstance = new platformClient.ExternalContactsApi();
 var externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
 
 var opts = { 
-  'pageSize': 20, // Number | Page size
-  'pageNumber': 1, // Number | Page number
+  'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+  'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'expand': "expand_example", // String | which fields, if any, to expand
   'sortOrder': "sortOrder_example" // String | Sort order
 };
@@ -830,8 +830,8 @@ apiInstance.getExternalcontactsOrganizationRelationships(externalOrganizationId,
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization ID |  |
- **pageSize** | **Number** | Page size | [optional] [default to 20] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
+ **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
  **expand** | **String** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
  **sortOrder** | **String** | Sort order | [optional]  |
 {: class="table table-striped"}
@@ -864,8 +864,8 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.ExternalContactsApi();
 
 var opts = { 
-  'pageSize': 20, // Number | Page size
-  'pageNumber': 1, // Number | Page number
+  'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+  'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'q': "q_example", // String | Search query
   'trustorId': ["trustorId_example"], // [String] | Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested
   'sortOrder': "sortOrder_example", // String | Sort order
@@ -888,8 +888,8 @@ apiInstance.getExternalcontactsOrganizations(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 20] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
+ **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
  **q** | **String** | Search query | [optional]  |
  **trustorId** | **[String]** | Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested | [optional]  |
  **sortOrder** | **String** | Sort order | [optional]  |

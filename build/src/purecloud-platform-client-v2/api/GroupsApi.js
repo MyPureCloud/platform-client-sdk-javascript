@@ -18,7 +18,7 @@
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 22.0.0
+   * @version 23.0.0
    */
 
   /**
@@ -152,7 +152,35 @@
 
 
     /**
-     * Get group members
+     * Get all individuals associated with the group
+     * 
+     * @param {String} groupId Group ID
+     */
+    this.getGroupIndividuals = function(groupId) { 
+
+      // verify the required parameter 'groupId' is set
+      if (groupId === undefined || groupId === null) {
+        throw "Missing the required parameter 'groupId' when calling getGroupIndividuals";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/groups/{groupId}/individuals', 
+        'GET', 
+        { 'groupId': groupId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get group members, includes individuals, owners, and dynamically included people
      * 
      * @param {String} groupId Group ID
      * @param {Object} opts Optional parameters
@@ -265,6 +293,34 @@
         'GET', 
         {  }, 
         { 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get group profile listing
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Array.<String>} opts.id id
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
+     */
+    this.getProfilesGroups = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/profiles/groups', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortOrder': opts['sortOrder'] }, 
         {  }, 
         {  }, 
         null, 

@@ -18,7 +18,7 @@
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 22.0.0
+   * @version 23.0.0
    */
 
   /**
@@ -286,8 +286,8 @@
      * 
      * @param {String} contactId ExternalContact Id
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize Page size (default to 20)
-     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 20)
+     * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 1)
      * @param {String} opts.sortOrder Sort order
      * @param {Array.<String>} opts.expand which fields, if any, to expand
      */
@@ -319,8 +319,8 @@
      * Search for external contacts
      * 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize Page size (default to 20)
-     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 20)
+     * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 1)
      * @param {String} opts.q User supplied search keywords (no special syntax is currently supported)
      * @param {String} opts.sortOrder Sort order
      * @param {Array.<String>} opts.expand which fields, if any, to expand
@@ -381,8 +381,8 @@
      * 
      * @param {String} externalOrganizationId External Organization ID
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize Page size (default to 20)
-     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 20)
+     * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 1)
      * @param {String} opts.q User supplied search keywords (no special syntax is currently supported)
      * @param {String} opts.sortOrder Sort order
      * @param {Array.<String>} opts.expand which fields, if any, to expand
@@ -453,8 +453,8 @@
      * 
      * @param {String} externalOrganizationId External Organization Id
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize Page size (default to 20)
-     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 20)
+     * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 1)
      * @param {String} opts.sortOrder Sort order
      * @param {Array.<String>} opts.expand which fields, if any, to expand
      */
@@ -487,8 +487,8 @@
      * 
      * @param {String} externalOrganizationId External Organization ID
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize Page size (default to 20)
-     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 20)
+     * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 1)
      * @param {Object} opts.expand which fields, if any, to expand
      * @param {String} opts.sortOrder Sort order
      */
@@ -520,8 +520,8 @@
      * Search for external organizations
      * 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize Page size (default to 20)
-     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 20)
+     * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 1)
      * @param {String} opts.q Search query
      * @param {Array.<String>} opts.trustorId Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested
      * @param {String} opts.sortOrder Sort order

@@ -18,7 +18,7 @@
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 22.0.0
+   * @version 23.0.0
    */
 
   /**
@@ -686,6 +686,38 @@
         'GET', 
         { 'userId': userId }, 
         { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * List the organizations that have authorized/trusted the user.
+     * 
+     * @param {String} userId User ID
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     */
+    this.getUserTrustors = function(userId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling getUserTrustors";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/{userId}/trustors', 
+        'GET', 
+        { 'userId': userId }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
         {  }, 
         {  }, 
         null, 

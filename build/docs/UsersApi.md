@@ -29,6 +29,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUserRoutingstatus**](UsersApi.html#getUserRoutingstatus) | **GET** /api/v2/users/{userId}/routingstatus | Fetch the routing status of a user
 [**getUserStation**](UsersApi.html#getUserStation) | **GET** /api/v2/users/{userId}/station | Get station information for user
 [**getUserSuperiors**](UsersApi.html#getUserSuperiors) | **GET** /api/v2/users/{userId}/superiors | Get superiors
+[**getUserTrustors**](UsersApi.html#getUserTrustors) | **GET** /api/v2/users/{userId}/trustors | List the organizations that have authorized/trusted the user.
 [**getUsers**](UsersApi.html#getUsers) | **GET** /api/v2/users | Get the list of available users.
 [**getUsersMe**](UsersApi.html#getUsersMe) | **GET** /api/v2/users/me | Get current user details.
 [**getUsersSearch**](UsersApi.html#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
@@ -1178,6 +1179,60 @@ apiInstance.getUserSuperiors(userId, opts)
 ### Return type
 
 **[User]**
+
+<a name="getUserTrustors"></a>
+
+# TrustorEntityListing getUserTrustors(userId, opts)
+
+GET /api/v2/users/{userId}/trustors
+
+List the organizations that have authorized/trusted the user.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+apiInstance.getUserTrustors(userId, opts)
+  .then(function(data) {
+    console.log(`getUserTrustors success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getUserTrustors');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**TrustorEntityListing**
 
 <a name="getUsers"></a>
 

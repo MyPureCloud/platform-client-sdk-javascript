@@ -11,10 +11,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteGroupMembers**](GroupsApi.html#deleteGroupMembers) | **DELETE** /api/v2/groups/{groupId}/members | Remove members
 [**getFieldconfig**](GroupsApi.html#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
 [**getGroup**](GroupsApi.html#getGroup) | **GET** /api/v2/groups/{groupId} | Get group
-[**getGroupMembers**](GroupsApi.html#getGroupMembers) | **GET** /api/v2/groups/{groupId}/members | Get group members
+[**getGroupIndividuals**](GroupsApi.html#getGroupIndividuals) | **GET** /api/v2/groups/{groupId}/individuals | Get all individuals associated with the group
+[**getGroupMembers**](GroupsApi.html#getGroupMembers) | **GET** /api/v2/groups/{groupId}/members | Get group members, includes individuals, owners, and dynamically included people
 [**getGroupProfile**](GroupsApi.html#getGroupProfile) | **GET** /api/v2/groups/{groupId}/profile | Get group profile
 [**getGroups**](GroupsApi.html#getGroups) | **GET** /api/v2/groups | Get a group list
 [**getGroupsSearch**](GroupsApi.html#getGroupsSearch) | **GET** /api/v2/groups/search | Search groups using the q64 value returned from a previous search
+[**getProfilesGroups**](GroupsApi.html#getProfilesGroups) | **GET** /api/v2/profiles/groups | Get group profile listing
 [**postGroupMembers**](GroupsApi.html#postGroupMembers) | **POST** /api/v2/groups/{groupId}/members | Add members
 [**postGroups**](GroupsApi.html#postGroups) | **POST** /api/v2/groups | Create a group
 [**postGroupsSearch**](GroupsApi.html#postGroupsSearch) | **POST** /api/v2/groups/search | Search groups
@@ -216,13 +218,61 @@ apiInstance.getGroup(groupId)
 
 **Group**
 
+<a name="getGroupIndividuals"></a>
+
+# [UserEntityListing] getGroupIndividuals(groupId)
+
+GET /api/v2/groups/{groupId}/individuals
+
+Get all individuals associated with the group
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.GroupsApi();
+
+var groupId = "groupId_example"; // String | Group ID
+
+apiInstance.getGroupIndividuals(groupId)
+  .then(function(data) {
+    console.log(`getGroupIndividuals success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getGroupIndividuals');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **groupId** | **String** | Group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**[UserEntityListing]**
+
 <a name="getGroupMembers"></a>
 
 # UserEntityListing getGroupMembers(groupId, opts)
 
 GET /api/v2/groups/{groupId}/members
 
-Get group members
+Get group members, includes individuals, owners, and dynamically included people
 
 
 
@@ -432,6 +482,61 @@ apiInstance.getGroupsSearch(q64, opts)
 ### Return type
 
 **GroupsSearchResponse**
+
+<a name="getProfilesGroups"></a>
+
+# GroupProfileEntityListing getProfilesGroups(opts)
+
+GET /api/v2/profiles/groups
+
+Get group profile listing
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.GroupsApi();
+
+var opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'id': ["id_example"], // [String] | id
+  'sortOrder': "ASC" // String | Ascending or descending sort order
+};
+apiInstance.getProfilesGroups(opts)
+  .then(function(data) {
+    console.log(`getProfilesGroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getProfilesGroups');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **id** | **[String]** | id | [optional]  |
+ **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+**GroupProfileEntityListing**
 
 <a name="postGroupMembers"></a>
 

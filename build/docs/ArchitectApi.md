@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteArchitectEmergencygroup**](ArchitectApi.html#deleteArchitectEmergencygroup) | **DELETE** /api/v2/architect/emergencygroups/{emergencyGroupId} | Deletes a emergency group by ID
 [**deleteArchitectIvr**](ArchitectApi.html#deleteArchitectIvr) | **DELETE** /api/v2/architect/ivrs/{ivrId} | Delete an IVR Config.
 [**deleteArchitectPrompt**](ArchitectApi.html#deleteArchitectPrompt) | **DELETE** /api/v2/architect/prompts/{promptId} | Delete specified user prompt
 [**deleteArchitectPromptResource**](ArchitectApi.html#deleteArchitectPromptResource) | **DELETE** /api/v2/architect/prompts/{promptId}/resources/{languageCode} | Delete specified user prompt resource
@@ -27,6 +28,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getArchitectDependencytrackingType**](ArchitectApi.html#getArchitectDependencytrackingType) | **GET** /api/v2/architect/dependencytracking/types/{typeId} | Get a Dependency Tracking type.
 [**getArchitectDependencytrackingTypes**](ArchitectApi.html#getArchitectDependencytrackingTypes) | **GET** /api/v2/architect/dependencytracking/types | Get Dependency Tracking types.
 [**getArchitectDependencytrackingUpdatedresourceconsumers**](ArchitectApi.html#getArchitectDependencytrackingUpdatedresourceconsumers) | **GET** /api/v2/architect/dependencytracking/updatedresourceconsumers | Get Dependency Tracking objects that depend on updated resources
+[**getArchitectEmergencygroup**](ArchitectApi.html#getArchitectEmergencygroup) | **GET** /api/v2/architect/emergencygroups/{emergencyGroupId} | Gets a emergency group by ID
+[**getArchitectEmergencygroups**](ArchitectApi.html#getArchitectEmergencygroups) | **GET** /api/v2/architect/emergencygroups | Get a list of emergency groups.
 [**getArchitectIvr**](ArchitectApi.html#getArchitectIvr) | **GET** /api/v2/architect/ivrs/{ivrId} | Get an IVR config.
 [**getArchitectIvrs**](ArchitectApi.html#getArchitectIvrs) | **GET** /api/v2/architect/ivrs | Get IVR configs.
 [**getArchitectPrompt**](ArchitectApi.html#getArchitectPrompt) | **GET** /api/v2/architect/prompts/{promptId} | Get specified user prompt
@@ -55,6 +58,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | **GET** /api/v2/flows/datatables/{datatableId}/rows | Returns the rows for the datatable
 [**getFlowsDatatables**](ArchitectApi.html#getFlowsDatatables) | **GET** /api/v2/flows/datatables | Retrieve a list of datatables for the org
 [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | **POST** /api/v2/architect/dependencytracking/build | Rebuild Dependency Tracking data for an organization
+[**postArchitectEmergencygroups**](ArchitectApi.html#postArchitectEmergencygroups) | **POST** /api/v2/architect/emergencygroups | Creates a new emergency group
 [**postArchitectIvrs**](ArchitectApi.html#postArchitectIvrs) | **POST** /api/v2/architect/ivrs | Create IVR config.
 [**postArchitectPromptHistory**](ArchitectApi.html#postArchitectPromptHistory) | **POST** /api/v2/architect/prompts/{promptId}/history | Generate prompt history
 [**postArchitectPromptResources**](ArchitectApi.html#postArchitectPromptResources) | **POST** /api/v2/architect/prompts/{promptId}/resources | Create a new user prompt resource
@@ -73,6 +77,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postFlowsActionsUnlock**](ArchitectApi.html#postFlowsActionsUnlock) | **POST** /api/v2/flows/actions/unlock | Unlock flow
 [**postFlowsDatatableRows**](ArchitectApi.html#postFlowsDatatableRows) | **POST** /api/v2/flows/datatables/{datatableId}/rows | Create a new row entry
 [**postFlowsDatatables**](ArchitectApi.html#postFlowsDatatables) | **POST** /api/v2/flows/datatables | Create a new datatable with the specified json-schema definition
+[**putArchitectEmergencygroup**](ArchitectApi.html#putArchitectEmergencygroup) | **PUT** /api/v2/architect/emergencygroups/{emergencyGroupId} | Updates a emergency group by ID
 [**putArchitectIvr**](ArchitectApi.html#putArchitectIvr) | **PUT** /api/v2/architect/ivrs/{ivrId} | Update an IVR Config.
 [**putArchitectPrompt**](ArchitectApi.html#putArchitectPrompt) | **PUT** /api/v2/architect/prompts/{promptId} | Update specified user prompt
 [**putArchitectPromptResource**](ArchitectApi.html#putArchitectPromptResource) | **PUT** /api/v2/architect/prompts/{promptId}/resources/{languageCode} | Update specified user prompt resource
@@ -83,6 +88,54 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putFlowsDatatable**](ArchitectApi.html#putFlowsDatatable) | **PUT** /api/v2/flows/datatables/{datatableId} | Updates a specific datatable by id
 [**putFlowsDatatableRow**](ArchitectApi.html#putFlowsDatatableRow) | **PUT** /api/v2/flows/datatables/{datatableId}/rows/{rowId} | Update a row entry
 {: class="table table-striped"}
+
+<a name="deleteArchitectEmergencygroup"></a>
+
+# void deleteArchitectEmergencygroup(emergencyGroupId)
+
+DELETE /api/v2/architect/emergencygroups/{emergencyGroupId}
+
+Deletes a emergency group by ID
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var emergencyGroupId = "emergencyGroupId_example"; // String | Emergency group ID
+
+apiInstance.deleteArchitectEmergencygroup(emergencyGroupId)
+  .then(function() {
+    console.log('deleteArchitectEmergencygroup returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling deleteArchitectEmergencygroup');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **emergencyGroupId** | **String** | Emergency group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deleteArchitectIvr"></a>
 
@@ -528,7 +581,7 @@ apiInstance.deleteFlows(id)
 
 <a name="deleteFlowsDatatable"></a>
 
-# void deleteFlowsDatatable(datatableId)
+# void deleteFlowsDatatable(datatableId, opts)
 
 DELETE /api/v2/flows/datatables/{datatableId}
 
@@ -551,7 +604,10 @@ var apiInstance = new platformClient.ArchitectApi();
 
 var datatableId = "datatableId_example"; // String | id of datatable
 
-apiInstance.deleteFlowsDatatable(datatableId)
+var opts = { 
+  'force': false // Boolean | force delete, even if in use
+};
+apiInstance.deleteFlowsDatatable(datatableId, opts)
   .then(function() {
     console.log('deleteFlowsDatatable returned successfully.');
   })
@@ -568,6 +624,7 @@ apiInstance.deleteFlowsDatatable(datatableId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **datatableId** | **String** | id of datatable |  |
+ **force** | **Boolean** | force delete, even if in use | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1124,6 +1181,111 @@ apiInstance.getArchitectDependencytrackingUpdatedresourceconsumers(opts)
 ### Return type
 
 **DependencyObjectEntityListing**
+
+<a name="getArchitectEmergencygroup"></a>
+
+# EmergencyGroup getArchitectEmergencygroup(emergencyGroupId)
+
+GET /api/v2/architect/emergencygroups/{emergencyGroupId}
+
+Gets a emergency group by ID
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var emergencyGroupId = "emergencyGroupId_example"; // String | Emergency group ID
+
+apiInstance.getArchitectEmergencygroup(emergencyGroupId)
+  .then(function(data) {
+    console.log(`getArchitectEmergencygroup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getArchitectEmergencygroup');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **emergencyGroupId** | **String** | Emergency group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EmergencyGroup**
+
+<a name="getArchitectEmergencygroups"></a>
+
+# EmergencyGroupListing getArchitectEmergencygroups(opts)
+
+GET /api/v2/architect/emergencygroups
+
+Get a list of emergency groups.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortBy': "name", // String | Sort by
+  'sortOrder': "ASC", // String | Sort order
+  'name': "name_example" // String | Name of the Emergency Group to filter by.
+};
+apiInstance.getArchitectEmergencygroups(opts)
+  .then(function(data) {
+    console.log(`getArchitectEmergencygroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getArchitectEmergencygroups');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
+ **name** | **String** | Name of the Emergency Group to filter by. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**EmergencyGroupListing**
 
 <a name="getArchitectIvr"></a>
 
@@ -2626,7 +2788,7 @@ apiInstance.getFlowsDatatables(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **sortBy** | **String** | Sort by | [optional] [default to id]<br />**Values**: id, name |
- **sortOrder** | **String** | Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
+ **sortOrder** | **String** | Sort order | [optional] [default to ascending] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2674,6 +2836,55 @@ This endpoint does not need any parameter.
 ### Return type
 
 void (no response body)
+
+<a name="postArchitectEmergencygroups"></a>
+
+# EmergencyGroup postArchitectEmergencygroups(opts)
+
+POST /api/v2/architect/emergencygroups
+
+Creates a new emergency group
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var opts = { 
+  'body': {} // Object | 
+};
+apiInstance.postArchitectEmergencygroups(opts)
+  .then(function(data) {
+    console.log(`postArchitectEmergencygroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postArchitectEmergencygroups');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**EmergencyGroup**
 
 <a name="postArchitectIvrs"></a>
 
@@ -3562,6 +3773,58 @@ apiInstance.postFlowsDatatables(body)
 ### Return type
 
 **DataTable**
+
+<a name="putArchitectEmergencygroup"></a>
+
+# EmergencyGroup putArchitectEmergencygroup(emergencyGroupId, opts)
+
+PUT /api/v2/architect/emergencygroups/{emergencyGroupId}
+
+Updates a emergency group by ID
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var emergencyGroupId = "emergencyGroupId_example"; // String | Emergency group ID
+
+var opts = { 
+  'body': {} // Object | 
+};
+apiInstance.putArchitectEmergencygroup(emergencyGroupId, opts)
+  .then(function(data) {
+    console.log(`putArchitectEmergencygroup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling putArchitectEmergencygroup');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **emergencyGroupId** | **String** | Emergency group ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**EmergencyGroup**
 
 <a name="putArchitectIvr"></a>
 

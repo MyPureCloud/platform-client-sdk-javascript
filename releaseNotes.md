@@ -1,117 +1,125 @@
-Platform API version: 2032
+Platform API version: 2072
 
 
-# Major Changes (6 changes)
+# Major Changes (5 changes)
 
-**GET /api/v2/outbound/campaigns** (1 change)
+**DELETE /api/v2/flows/datatables/{datatableId}** (1 change)
 
-* Parameter id was added
-
-**GET /api/v2/outbound/contactlists** (1 change)
-
-* Parameter id was added
-
-**TimeZone** (3 changes)
-
-* Property name was removed
-* Property offset was removed
-* Property selfUri was removed
-
-**GroupUpdate** (1 change)
-
-* Enum value owners was removed from property visibility
-
-
-# Minor Changes (28 changes)
-
-**/api/v2/authorization/divisions/{divisionId}/objects/{objectType}** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/stations/settings** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**POST /api/v2/flows/datatables/{datatableId}/rows** (1 change)
-
-* Response 409 was added
-
-**POST /api/v2/flows/datatables** (1 change)
-
-* Response 409 was added
-
-**PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId}** (1 change)
-
-* Response 409 was added
-
-**/api/v2/analytics/reporting/exports** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**Group** (1 change)
-
-* Optional property owners was added
-
-**AuthzTypedObject** (1 change)
-
-* Model was added
-
-**TrustGroup** (1 change)
-
-* Optional property owners was added
+* Parameter force was added
 
 **TimeZone** (4 changes)
 
-* Optional property displayName was added
-* id is no longer readonly
-* Optional property dstsavings was added
-* Optional property rawOffset was added
+* Property displayName was removed
+* Property dstsavings was removed
+* Property rawOffset was removed
+* id has been made readonly
 
-**GroupUpdate** (2 changes)
 
-* Enum value ownerIds was added to property visibility
-* Optional property ownerIds was added
+# Minor Changes (25 changes)
 
-**FreeSeatingConfiguration** (1 change)
+**/api/v2/groups/{groupId}/individuals** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/users/{userId}/trustors** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/architect/emergencygroups** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/profiles/groups** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/architect/emergencygroups/{emergencyGroupId}** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PUT was added
+* Operation DELETE was added
+
+**DELETE /api/v2/flows/datatables/{datatableId}** (1 change)
+
+* Response 409 was added
+
+**Video** (1 change)
+
+* Optional property msids was added
+
+**AnalyticsSession** (1 change)
+
+* Values are no longer constrained by enum members
+
+**IVR** (1 change)
+
+* Optional property holidayHoursFlow was added
+
+**TimeZone** (3 changes)
+
+* Optional property name was added
+* Optional property offset was added
+* Optional property selfUri was added
+
+**ScheduleGroup** (1 change)
+
+* Optional property holidaySchedules was added
+
+**EmergencyCallFlow** (1 change)
 
 * Model was added
 
-**StationSettings** (1 change)
+**EmergencyGroup** (1 change)
 
 * Model was added
 
-**GroupCreate** (1 change)
+**EmergencyGroupListing** (1 change)
 
 * Model was added
 
-**DataColumn** (1 change)
-
-* Model was added
-
-**ReportingExportJobResponse** (1 change)
-
-* Model was added
-
-**ViewFilter** (1 change)
-
-* Model was added
-
-**ReportingExportJobListing** (1 change)
-
-* Model was added
-
-**ReportingExportJobRequest** (1 change)
+**GroupProfileEntityListing** (1 change)
 
 * Model was added
 
 
-# Point Changes (1 change)
+# Point Changes (13 changes)
 
-**POST /api/v2/notifications/channels** (1 change)
+**GET /api/v2/groups/{groupId}/members** (1 change)
 
-* Description was changed
+* Summary was changed
+
+**GET /api/v2/externalcontacts/organizations** (2 changes)
+
+* Description was changed for parameter pageSize
+* Description was changed for parameter pageNumber
+
+**GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships** (2 changes)
+
+* Description was changed for parameter pageSize
+* Description was changed for parameter pageNumber
+
+**GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes** (2 changes)
+
+* Description was changed for parameter pageSize
+* Description was changed for parameter pageNumber
+
+**GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts** (2 changes)
+
+* Description was changed for parameter pageSize
+* Description was changed for parameter pageNumber
+
+**GET /api/v2/externalcontacts/contacts** (2 changes)
+
+* Description was changed for parameter pageSize
+* Description was changed for parameter pageNumber
+
+**GET /api/v2/externalcontacts/contacts/{contactId}/notes** (2 changes)
+
+* Description was changed for parameter pageSize
+* Description was changed for parameter pageNumber

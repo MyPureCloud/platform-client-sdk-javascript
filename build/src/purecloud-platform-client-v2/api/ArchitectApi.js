@@ -18,7 +18,7 @@
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 22.0.0
+   * @version 23.0.0
    */
 
   /**
@@ -31,6 +31,34 @@
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
+
+
+    /**
+     * Deletes a emergency group by ID
+     * 
+     * @param {String} emergencyGroupId Emergency group ID
+     */
+    this.deleteArchitectEmergencygroup = function(emergencyGroupId) { 
+
+      // verify the required parameter 'emergencyGroupId' is set
+      if (emergencyGroupId === undefined || emergencyGroupId === null) {
+        throw "Missing the required parameter 'emergencyGroupId' when calling deleteArchitectEmergencygroup";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/emergencygroups/{emergencyGroupId}', 
+        'DELETE', 
+        { 'emergencyGroupId': emergencyGroupId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
 
 
     /**
@@ -304,8 +332,11 @@
      * deletes a specific datatable by id
      * deletes an entire datatable (including schema and data) with a given id)
      * @param {String} datatableId id of datatable
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.force force delete, even if in use (default to false)
      */
-    this.deleteFlowsDatatable = function(datatableId) { 
+    this.deleteFlowsDatatable = function(datatableId, opts) { 
+      opts = opts || {};
 
       // verify the required parameter 'datatableId' is set
       if (datatableId === undefined || datatableId === null) {
@@ -317,7 +348,7 @@
         '/api/v2/flows/datatables/{datatableId}', 
         'DELETE', 
         { 'datatableId': datatableId }, 
-        {  }, 
+        { 'force': opts['force'] }, 
         {  }, 
         {  }, 
         null, 
@@ -642,6 +673,63 @@
         'GET', 
         {  }, 
         { 'name': opts['name'],'objectType': this.apiClient.buildCollectionParam(opts['objectType'], 'multi'),'consumedResources': opts['consumedResources'],'consumedResourceType': this.apiClient.buildCollectionParam(opts['consumedResourceType'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Gets a emergency group by ID
+     * 
+     * @param {String} emergencyGroupId Emergency group ID
+     */
+    this.getArchitectEmergencygroup = function(emergencyGroupId) { 
+
+      // verify the required parameter 'emergencyGroupId' is set
+      if (emergencyGroupId === undefined || emergencyGroupId === null) {
+        throw "Missing the required parameter 'emergencyGroupId' when calling getArchitectEmergencygroup";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/emergencygroups/{emergencyGroupId}', 
+        'GET', 
+        { 'emergencyGroupId': emergencyGroupId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a list of emergency groups.
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {String} opts.sortBy Sort by (default to name)
+     * @param {String} opts.sortOrder Sort order (default to ASC)
+     * @param {String} opts.name Name of the Emergency Group to filter by.
+     */
+    this.getArchitectEmergencygroups = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/emergencygroups', 
+        'GET', 
+        {  }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'] }, 
         {  }, 
         {  }, 
         null, 
@@ -1522,7 +1610,7 @@
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Object} opts.sortBy Sort by (default to id)
-     * @param {Object} opts.sortOrder Sort order (default to ascending)
+     * @param {String} opts.sortOrder Sort order (default to ascending)
      */
     this.getFlowsDatatables = function(opts) { 
       opts = opts || {};
@@ -1558,6 +1646,31 @@
         {  }, 
         {  }, 
         null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Creates a new emergency group
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body 
+     */
+    this.postArchitectEmergencygroups = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/emergencygroups', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -2065,6 +2178,37 @@
         {  }, 
         {  }, 
         body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Updates a emergency group by ID
+     * 
+     * @param {String} emergencyGroupId Emergency group ID
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body 
+     */
+    this.putArchitectEmergencygroup = function(emergencyGroupId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'emergencyGroupId' is set
+      if (emergencyGroupId === undefined || emergencyGroupId === null) {
+        throw "Missing the required parameter 'emergencyGroupId' when calling putArchitectEmergencygroup";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/architect/emergencygroups/{emergencyGroupId}', 
+        'PUT', 
+        { 'emergencyGroupId': emergencyGroupId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
