@@ -3266,7 +3266,7 @@ module.exports = request;
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -3899,7 +3899,7 @@ module.exports = request;
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '23.0.0' });
+    //request.set({ 'purecloud-sdk': '23.1.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -4052,7 +4052,7 @@ module.exports = request;
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -4408,7 +4408,7 @@ module.exports = request;
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -5123,7 +5123,7 @@ module.exports = request;
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -7643,7 +7643,7 @@ module.exports = request;
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -7854,7 +7854,7 @@ module.exports = request;
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -8475,7 +8475,7 @@ module.exports = request;
   /**
    * Billing service.
    * @module purecloud-platform-client-v2/api/BillingApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -8548,7 +8548,7 @@ module.exports = request;
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -9805,7 +9805,7 @@ module.exports = request;
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -12213,6 +12213,34 @@ module.exports = request;
 
 
     /**
+     * Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resyncronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
+     * 
+     * @param {String} conversationId conversation ID
+     */
+    this.postConversationDisconnect = function(conversationId) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling postConversationDisconnect";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/{conversationId}/disconnect', 
+        'POST', 
+        { 'conversationId': conversationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Create a new callback for the specified participant on the conversation.
      * 
      * @param {String} conversationId conversation ID
@@ -13125,7 +13153,7 @@ module.exports = request;
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -14109,7 +14137,7 @@ module.exports = request;
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -14314,7 +14342,7 @@ module.exports = request;
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -14477,7 +14505,7 @@ module.exports = request;
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -14997,7 +15025,7 @@ module.exports = request;
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -15455,7 +15483,7 @@ module.exports = request;
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -16164,7 +16192,7 @@ module.exports = request;
   /**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -16872,7 +16900,7 @@ module.exports = request;
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -17185,7 +17213,7 @@ module.exports = request;
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -17430,7 +17458,7 @@ module.exports = request;
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -17583,7 +17611,7 @@ module.exports = request;
   /**
    * MobileDevices service.
    * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -17764,7 +17792,7 @@ module.exports = request;
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -17996,7 +18024,7 @@ module.exports = request;
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -18203,7 +18231,7 @@ module.exports = request;
   /**
    * Objects service.
    * @module purecloud-platform-client-v2/api/ObjectsApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -18304,7 +18332,7 @@ module.exports = request;
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -18452,7 +18480,7 @@ module.exports = request;
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -19217,7 +19245,7 @@ module.exports = request;
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -21923,7 +21951,7 @@ module.exports = request;
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -22207,7 +22235,7 @@ module.exports = request;
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -23811,7 +23839,7 @@ module.exports = request;
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -24993,7 +25021,7 @@ module.exports = request;
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -25364,7 +25392,7 @@ module.exports = request;
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -25635,6 +25663,40 @@ module.exports = request;
         '/api/v2/routing/wrapupcodes/{codeId}', 
         'DELETE', 
         { 'codeId': codeId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Remove routing language from user
+     * 
+     * @param {String} userId User ID
+     * @param {String} languageId languageId
+     */
+    this.deleteUserRoutinglanguage = function(userId, languageId) { 
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling deleteUserRoutinglanguage";
+      }
+
+      // verify the required parameter 'languageId' is set
+      if (languageId === undefined || languageId === null) {
+        throw "Missing the required parameter 'languageId' when calling deleteUserRoutinglanguage";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/{userId}/routinglanguages/{languageId}', 
+        'DELETE', 
+        { 'userId': userId,'languageId': languageId }, 
         {  }, 
         {  }, 
         {  }, 
@@ -26324,6 +26386,39 @@ module.exports = request;
 
 
     /**
+     * List routing language for user
+     * 
+     * @param {String} userId User ID
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
+     */
+    this.getUserRoutinglanguages = function(userId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling getUserRoutinglanguages";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/{userId}/routinglanguages', 
+        'GET', 
+        { 'userId': userId }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * List routing skills for user
      * 
      * @param {String} userId User ID
@@ -26419,6 +26514,46 @@ module.exports = request;
         '/api/v2/routing/queues/{queueId}/users', 
         'PATCH', 
         { 'queueId': queueId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update routing language proficiency or state.
+     * 
+     * @param {String} userId User ID
+     * @param {String} languageId languageId
+     * @param {Object} body Language
+     */
+    this.patchUserRoutinglanguage = function(userId, languageId, body) { 
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling patchUserRoutinglanguage";
+      }
+
+      // verify the required parameter 'languageId' is set
+      if (languageId === undefined || languageId === null) {
+        throw "Missing the required parameter 'languageId' when calling patchUserRoutinglanguage";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling patchUserRoutinglanguage";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/{userId}/routinglanguages/{languageId}', 
+        'PATCH', 
+        { 'userId': userId,'languageId': languageId }, 
         {  }, 
         {  }, 
         {  }, 
@@ -26760,6 +26895,40 @@ module.exports = request;
 
 
     /**
+     * Add routing language to user
+     * 
+     * @param {String} userId User ID
+     * @param {Object} body Language
+     */
+    this.postUserRoutinglanguages = function(userId, body) { 
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling postUserRoutinglanguages";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postUserRoutinglanguages";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/{userId}/routinglanguages', 
+        'POST', 
+        { 'userId': userId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Add routing skill to user
      * 
      * @param {String} userId User ID
@@ -27061,7 +27230,7 @@ module.exports = request;
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -27461,7 +27630,7 @@ module.exports = request;
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -27918,7 +28087,7 @@ module.exports = request;
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -28095,7 +28264,7 @@ module.exports = request;
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -28260,7 +28429,7 @@ module.exports = request;
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -32183,7 +32352,7 @@ module.exports = request;
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -32266,7 +32435,7 @@ module.exports = request;
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -32481,7 +32650,7 @@ module.exports = request;
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -32541,6 +32710,40 @@ module.exports = request;
         '/api/v2/users/{userId}/roles', 
         'DELETE', 
         { 'userId': userId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Remove routing language from user
+     * 
+     * @param {String} userId User ID
+     * @param {String} languageId languageId
+     */
+    this.deleteUserRoutinglanguage = function(userId, languageId) { 
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling deleteUserRoutinglanguage";
+      }
+
+      // verify the required parameter 'languageId' is set
+      if (languageId === undefined || languageId === null) {
+        throw "Missing the required parameter 'languageId' when calling deleteUserRoutinglanguage";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/{userId}/routinglanguages/{languageId}', 
+        'DELETE', 
+        { 'userId': userId,'languageId': languageId }, 
         {  }, 
         {  }, 
         {  }, 
@@ -33040,6 +33243,39 @@ module.exports = request;
 
 
     /**
+     * List routing language for user
+     * 
+     * @param {String} userId User ID
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
+     */
+    this.getUserRoutinglanguages = function(userId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling getUserRoutinglanguages";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/{userId}/routinglanguages', 
+        'GET', 
+        { 'userId': userId }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * List routing skills for user
      * 
      * @param {String} userId User ID
@@ -33460,6 +33696,46 @@ module.exports = request;
 
 
     /**
+     * Update routing language proficiency or state.
+     * 
+     * @param {String} userId User ID
+     * @param {String} languageId languageId
+     * @param {Object} body Language
+     */
+    this.patchUserRoutinglanguage = function(userId, languageId, body) { 
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling patchUserRoutinglanguage";
+      }
+
+      // verify the required parameter 'languageId' is set
+      if (languageId === undefined || languageId === null) {
+        throw "Missing the required parameter 'languageId' when calling patchUserRoutinglanguage";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling patchUserRoutinglanguage";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/{userId}/routinglanguages/{languageId}', 
+        'PATCH', 
+        { 'userId': userId,'languageId': languageId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Query for user aggregates
      * 
      * @param {Object} body query
@@ -33595,6 +33871,40 @@ module.exports = request;
 
       return this.apiClient.callApi(
         '/api/v2/users/{userId}/password', 
+        'POST', 
+        { 'userId': userId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Add routing language to user
+     * 
+     * @param {String} userId User ID
+     * @param {Object} body Language
+     */
+    this.postUserRoutinglanguages = function(userId, body) { 
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling postUserRoutinglanguages";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postUserRoutinglanguages";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/{userId}/routinglanguages', 
         'POST', 
         { 'userId': userId }, 
         {  }, 
@@ -34025,7 +34335,7 @@ module.exports = request;
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -34140,7 +34450,7 @@ module.exports = request;
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -34855,7 +35165,7 @@ module.exports = request;
   /**
    * WebChat service.
    * @module purecloud-platform-client-v2/api/WebChatApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -35106,7 +35416,7 @@ module.exports = request;
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -35180,7 +35490,7 @@ module.exports = request;
     /**
      * Get intraday queues for the given date
      * 
-     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {String} _date ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23
      */
     this.getWorkforcemanagementManagementunitIntradayQueues = function(muId, _date) { 
@@ -35214,7 +35524,7 @@ module.exports = request;
     /**
      * Get a time off request by id
      * 
-     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {String} userId The userId to whom the Time Off Request applies.
      * @param {String} timeOffRequestId Time Off Request Id
      */
@@ -35254,7 +35564,7 @@ module.exports = request;
     /**
      * Get a list of time off requests for any user
      * 
-     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {String} userId The userId to whom the Time Off Request applies.
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (default to false)
@@ -35291,7 +35601,7 @@ module.exports = request;
     /**
      * Get agents in the management unit
      * 
-     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      */
     this.getWorkforcemanagementManagementunitUsers = function(muId) { 
 
@@ -35377,7 +35687,7 @@ module.exports = request;
     /**
      * Request a historical adherence report
      * 
-     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {Object} opts Optional parameters
      * @param {Object} opts.body body
      */
@@ -35408,7 +35718,7 @@ module.exports = request;
     /**
      * Get intraday data for the given date for the requested queueIds
      * 
-     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {Object} opts Optional parameters
      * @param {Object} opts.body body
      */
@@ -35439,7 +35749,7 @@ module.exports = request;
     /**
      * Get user schedules within the given time range
      * 
-     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {Object} opts Optional parameters
      * @param {Object} opts.body body
      */
@@ -35511,7 +35821,7 @@ module.exports = request;
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 23.0.0
+   * @version 23.1.0
    */
   var platformClient = {
     /**

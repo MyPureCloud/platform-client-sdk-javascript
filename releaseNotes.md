@@ -1,125 +1,113 @@
-Platform API version: 2072
+Platform API version: 2097
 
 
-# Major Changes (5 changes)
-
-**DELETE /api/v2/flows/datatables/{datatableId}** (1 change)
-
-* Parameter force was added
-
-**TimeZone** (4 changes)
-
-* Property displayName was removed
-* Property dstsavings was removed
-* Property rawOffset was removed
-* id has been made readonly
+# Major Changes (0 changes)
 
 
-# Minor Changes (25 changes)
+# Minor Changes (45 changes)
 
-**/api/v2/groups/{groupId}/individuals** (2 changes)
+**POST /api/v2/conversations/calls** (1 change)
+
+* Response 409 was added
+
+**/api/v2/conversations/{conversationId}/disconnect** (2 changes)
 
 * Path was added
-* Operation GET was added
+* Operation POST was added
 
-**/api/v2/users/{userId}/trustors** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/architect/emergencygroups** (3 changes)
+**/api/v2/users/{userId}/routinglanguages** (3 changes)
 
 * Path was added
 * Operation GET was added
 * Operation POST was added
 
-**/api/v2/profiles/groups** (2 changes)
+**/api/v2/users/{userId}/routinglanguages/{languageId}** (3 changes)
 
 * Path was added
-* Operation GET was added
-
-**/api/v2/architect/emergencygroups/{emergencyGroupId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
 * Operation DELETE was added
+* Operation PATCH was added
 
-**DELETE /api/v2/flows/datatables/{datatableId}** (1 change)
+**ReportingExportJobResponse** (11 changes)
 
-* Response 409 was added
+* Enum value INTERACTION_SEARCH_VIEW was added to property viewType
+* Enum value AGENT_PERFORMANCE_SUMMARY_VIEW was added to property viewType
+* Enum value AGENT_PERFORMANCE_DETAIL_VIEW was added to property viewType
+* Enum value AGENT_STATUS_SUMMARY_VIEW was added to property viewType
+* Enum value AGENT_STATUS_DETAIL_VIEW was added to property viewType
+* Enum value AGENT_EVALUATION_SUMMARY_VIEW was added to property viewType
+* Enum value AGENT_EVALUATION_DETAIL_VIEW was added to property viewType
+* Enum value AGENT_QUEUE_DETAIL_VIEW was added to property viewType
+* Enum value AGENT_INTERACTION_DETAIL_VIEW was added to property viewType
+* Enum value ABANDON_INSIGHTS_VIEW was added to property viewType
+* Enum value SKILLS_PERFORMANCE_VIEW was added to property viewType
 
-**Video** (1 change)
+**ViewFilter** (11 changes)
 
-* Optional property msids was added
+* Optional property addressFroms was added
+* Optional property contactIds was added
+* Optional property aniList was added
+* Optional property durationMilliseconds was added
+* Optional property evaluationScore was added
+* Optional property evaluationCriticalScore was added
+* Optional property evaluationFormIds was added
+* Optional property evaluatedAgentIds was added
+* Optional property evaluatorIds was added
+* Optional property transferred was added
+* Optional property abandoned was added
 
-**AnalyticsSession** (1 change)
+**ReportingExportJobRequest** (11 changes)
 
-* Values are no longer constrained by enum members
+* Enum value INTERACTION_SEARCH_VIEW was added to property viewType
+* Enum value AGENT_PERFORMANCE_SUMMARY_VIEW was added to property viewType
+* Enum value AGENT_PERFORMANCE_DETAIL_VIEW was added to property viewType
+* Enum value AGENT_STATUS_SUMMARY_VIEW was added to property viewType
+* Enum value AGENT_STATUS_DETAIL_VIEW was added to property viewType
+* Enum value AGENT_EVALUATION_SUMMARY_VIEW was added to property viewType
+* Enum value AGENT_EVALUATION_DETAIL_VIEW was added to property viewType
+* Enum value AGENT_QUEUE_DETAIL_VIEW was added to property viewType
+* Enum value AGENT_INTERACTION_DETAIL_VIEW was added to property viewType
+* Enum value ABANDON_INSIGHTS_VIEW was added to property viewType
+* Enum value SKILLS_PERFORMANCE_VIEW was added to property viewType
 
-**IVR** (1 change)
-
-* Optional property holidayHoursFlow was added
-
-**TimeZone** (3 changes)
-
-* Optional property name was added
-* Optional property offset was added
-* Optional property selfUri was added
-
-**ScheduleGroup** (1 change)
-
-* Optional property holidaySchedules was added
-
-**EmergencyCallFlow** (1 change)
+**UserLanguageEntityListing** (1 change)
 
 * Model was added
 
-**EmergencyGroup** (1 change)
+**UserRoutingLanguage** (1 change)
 
 * Model was added
 
-**EmergencyGroupListing** (1 change)
-
-* Model was added
-
-**GroupProfileEntityListing** (1 change)
+**UserRoutingLanguagePost** (1 change)
 
 * Model was added
 
 
-# Point Changes (13 changes)
+# Point Changes (7 changes)
 
-**GET /api/v2/groups/{groupId}/members** (1 change)
+**POST /api/v2/workforcemanagement/managementunits/{muId}/historicaladherencequery** (1 change)
 
-* Summary was changed
+* Description was changed for parameter muId
 
-**GET /api/v2/externalcontacts/organizations** (2 changes)
+**GET /api/v2/workforcemanagement/managementunits/{muId}/intraday/queues** (1 change)
 
-* Description was changed for parameter pageSize
-* Description was changed for parameter pageNumber
+* Description was changed for parameter muId
 
-**GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships** (2 changes)
+**GET /api/v2/workforcemanagement/managementunits/{muId}/users** (1 change)
 
-* Description was changed for parameter pageSize
-* Description was changed for parameter pageNumber
+* Description was changed for parameter muId
 
-**GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes** (2 changes)
+**POST /api/v2/workforcemanagement/managementunits/{muId}/schedules/search** (1 change)
 
-* Description was changed for parameter pageSize
-* Description was changed for parameter pageNumber
+* Description was changed for parameter muId
 
-**GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts** (2 changes)
+**GET /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}** (1 change)
 
-* Description was changed for parameter pageSize
-* Description was changed for parameter pageNumber
+* Description was changed for parameter muId
 
-**GET /api/v2/externalcontacts/contacts** (2 changes)
+**GET /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests** (1 change)
 
-* Description was changed for parameter pageSize
-* Description was changed for parameter pageNumber
+* Description was changed for parameter muId
 
-**GET /api/v2/externalcontacts/contacts/{contactId}/notes** (2 changes)
+**POST /api/v2/workforcemanagement/managementunits/{muId}/intraday** (1 change)
 
-* Description was changed for parameter pageSize
-* Description was changed for parameter pageNumber
+* Description was changed for parameter muId

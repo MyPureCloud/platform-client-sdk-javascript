@@ -18,7 +18,7 @@
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**

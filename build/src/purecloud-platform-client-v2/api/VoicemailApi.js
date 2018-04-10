@@ -18,7 +18,7 @@
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**

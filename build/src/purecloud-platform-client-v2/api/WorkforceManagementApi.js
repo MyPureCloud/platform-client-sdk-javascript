@@ -18,7 +18,7 @@
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -92,7 +92,7 @@
     /**
      * Get intraday queues for the given date
      * 
-     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {String} _date ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23
      */
     this.getWorkforcemanagementManagementunitIntradayQueues = function(muId, _date) { 
@@ -126,7 +126,7 @@
     /**
      * Get a time off request by id
      * 
-     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {String} userId The userId to whom the Time Off Request applies.
      * @param {String} timeOffRequestId Time Off Request Id
      */
@@ -166,7 +166,7 @@
     /**
      * Get a list of time off requests for any user
      * 
-     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {String} userId The userId to whom the Time Off Request applies.
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (default to false)
@@ -203,7 +203,7 @@
     /**
      * Get agents in the management unit
      * 
-     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      */
     this.getWorkforcemanagementManagementunitUsers = function(muId) { 
 
@@ -289,7 +289,7 @@
     /**
      * Request a historical adherence report
      * 
-     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {Object} opts Optional parameters
      * @param {Object} opts.body body
      */
@@ -320,7 +320,7 @@
     /**
      * Get intraday data for the given date for the requested queueIds
      * 
-     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {Object} opts Optional parameters
      * @param {Object} opts.body body
      */
@@ -351,7 +351,7 @@
     /**
      * Get user schedules within the given time range
      * 
-     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {Object} opts Optional parameters
      * @param {Object} opts.body body
      */

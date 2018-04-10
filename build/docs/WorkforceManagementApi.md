@@ -139,7 +139,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+var muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 var _date = "_date_example"; // String | ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23
 
@@ -159,7 +159,7 @@ apiInstance.getWorkforcemanagementManagementunitIntradayQueues(muId, _date)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **_date** | **String** | ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23 |  |
 {: class="table table-striped"}
 
@@ -190,7 +190,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+var muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 var userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
 
@@ -212,7 +212,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId,
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **userId** | **String** | The userId to whom the Time Off Request applies. |  |
  **timeOffRequestId** | **String** | Time Off Request Id |  |
 {: class="table table-striped"}
@@ -244,7 +244,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+var muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 var userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
 
@@ -267,7 +267,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(muId, userId
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **userId** | **String** | The userId to whom the Time Off Request applies. |  |
  **recentlyReviewed** | **Boolean** | Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
 {: class="table table-striped"}
@@ -299,7 +299,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+var muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 apiInstance.getWorkforcemanagementManagementunitUsers(muId)
   .then(function(data) {
@@ -317,7 +317,7 @@ apiInstance.getWorkforcemanagementManagementunitUsers(muId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -452,7 +452,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+var muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 var opts = { 
   'body': {} // Object | body
@@ -473,7 +473,7 @@ apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(muId, 
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -504,7 +504,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+var muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 var opts = { 
   'body': {} // Object | body
@@ -525,7 +525,7 @@ apiInstance.postWorkforcemanagementManagementunitIntraday(muId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -556,7 +556,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+var muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 var opts = { 
   'body': {} // Object | body
@@ -577,7 +577,7 @@ apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(muId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 

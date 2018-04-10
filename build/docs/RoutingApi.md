@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | **DELETE** /api/v2/routing/sms/phonenumbers/{addressId} | Delete a phone number provisioned for SMS.
 [**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | **DELETE** /api/v2/routing/utilization | Delete utilization settings and revert to system defaults.
 [**deleteRoutingWrapupcode**](RoutingApi.html#deleteRoutingWrapupcode) | **DELETE** /api/v2/routing/wrapupcodes/{codeId} | Delete wrap-up code
+[**deleteUserRoutinglanguage**](RoutingApi.html#deleteUserRoutinglanguage) | **DELETE** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove routing language from user
 [**deleteUserRoutingskill**](RoutingApi.html#deleteUserRoutingskill) | **DELETE** /api/v2/users/{userId}/routingskills/{skillId} | Remove routing skill from user
 [**getRoutingEmailDomain**](RoutingApi.html#getRoutingEmailDomain) | **GET** /api/v2/routing/email/domains/{domainId} | Get domain
 [**getRoutingEmailDomainRoute**](RoutingApi.html#getRoutingEmailDomainRoute) | **GET** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Get a route
@@ -39,9 +40,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingUtilization**](RoutingApi.html#getRoutingUtilization) | **GET** /api/v2/routing/utilization | Get the utilization settings.
 [**getRoutingWrapupcode**](RoutingApi.html#getRoutingWrapupcode) | **GET** /api/v2/routing/wrapupcodes/{codeId} | Get details about this wrap-up code.
 [**getRoutingWrapupcodes**](RoutingApi.html#getRoutingWrapupcodes) | **GET** /api/v2/routing/wrapupcodes | Get list of wrapup codes.
+[**getUserRoutinglanguages**](RoutingApi.html#getUserRoutinglanguages) | **GET** /api/v2/users/{userId}/routinglanguages | List routing language for user
 [**getUserRoutingskills**](RoutingApi.html#getUserRoutingskills) | **GET** /api/v2/users/{userId}/routingskills | List routing skills for user
 [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | **PATCH** /api/v2/routing/queues/{queueId}/users/{memberId} | Update the ring number of joined status for a User in a Queue
 [**patchRoutingQueueUsers**](RoutingApi.html#patchRoutingQueueUsers) | **PATCH** /api/v2/routing/queues/{queueId}/users | Join or unjoin a set of users for a queue
+[**patchUserRoutinglanguage**](RoutingApi.html#patchUserRoutinglanguage) | **PATCH** /api/v2/users/{userId}/routinglanguages/{languageId} | Update routing language proficiency or state.
 [**postAnalyticsQueuesObservationsQuery**](RoutingApi.html#postAnalyticsQueuesObservationsQuery) | **POST** /api/v2/analytics/queues/observations/query | Query for queue observations
 [**postRoutingEmailDomainRoutes**](RoutingApi.html#postRoutingEmailDomainRoutes) | **POST** /api/v2/routing/email/domains/{domainName}/routes | Create a route
 [**postRoutingEmailDomains**](RoutingApi.html#postRoutingEmailDomains) | **POST** /api/v2/routing/email/domains | Create a domain
@@ -53,6 +56,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postRoutingSmsAddresses**](RoutingApi.html#postRoutingSmsAddresses) | **POST** /api/v2/routing/sms/addresses | Provision an Address for SMS
 [**postRoutingSmsPhonenumbers**](RoutingApi.html#postRoutingSmsPhonenumbers) | **POST** /api/v2/routing/sms/phonenumbers | Provision a phone number for SMS
 [**postRoutingWrapupcodes**](RoutingApi.html#postRoutingWrapupcodes) | **POST** /api/v2/routing/wrapupcodes | Create a wrap-up code
+[**postUserRoutinglanguages**](RoutingApi.html#postUserRoutinglanguages) | **POST** /api/v2/users/{userId}/routinglanguages | Add routing language to user
 [**postUserRoutingskills**](RoutingApi.html#postUserRoutingskills) | **POST** /api/v2/users/{userId}/routingskills | Add routing skill to user
 [**putRoutingEmailDomainRoute**](RoutingApi.html#putRoutingEmailDomainRoute) | **PUT** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Update a route
 [**putRoutingMessageRecipient**](RoutingApi.html#putRoutingMessageRecipient) | **PUT** /api/v2/routing/message/recipients/{recipientId} | Update a recipient
@@ -496,6 +500,57 @@ apiInstance.deleteRoutingWrapupcode(codeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **codeId** | **String** | Wrapup Code ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteUserRoutinglanguage"></a>
+
+# void deleteUserRoutinglanguage(userId, languageId)
+
+DELETE /api/v2/users/{userId}/routinglanguages/{languageId}
+
+Remove routing language from user
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RoutingApi();
+
+var userId = "userId_example"; // String | User ID
+
+var languageId = "languageId_example"; // String | languageId
+
+apiInstance.deleteUserRoutinglanguage(userId, languageId)
+  .then(function() {
+    console.log('deleteUserRoutinglanguage returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling deleteUserRoutinglanguage');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **languageId** | **String** | languageId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1688,6 +1743,62 @@ apiInstance.getRoutingWrapupcodes(opts)
 
 **WrapupCodeEntityListing**
 
+<a name="getUserRoutinglanguages"></a>
+
+# UserLanguageEntityListing getUserRoutinglanguages(userId, opts)
+
+GET /api/v2/users/{userId}/routinglanguages
+
+List routing language for user
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RoutingApi();
+
+var userId = "userId_example"; // String | User ID
+
+var opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'sortOrder': "ASC" // String | Ascending or descending sort order
+};
+apiInstance.getUserRoutinglanguages(userId, opts)
+  .then(function(data) {
+    console.log(`getUserRoutinglanguages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getUserRoutinglanguages');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+**UserLanguageEntityListing**
+
 <a name="getUserRoutingskills"></a>
 
 # UserSkillEntityListing getUserRoutingskills(userId, opts)
@@ -1848,6 +1959,60 @@ apiInstance.patchRoutingQueueUsers(queueId, body)
 ### Return type
 
 **QueueMemberEntityListing**
+
+<a name="patchUserRoutinglanguage"></a>
+
+# UserRoutingLanguage patchUserRoutinglanguage(userId, languageId, body)
+
+PATCH /api/v2/users/{userId}/routinglanguages/{languageId}
+
+Update routing language proficiency or state.
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RoutingApi();
+
+var userId = "userId_example"; // String | User ID
+
+var languageId = "languageId_example"; // String | languageId
+
+var body = {}; // Object | Language
+
+apiInstance.patchUserRoutinglanguage(userId, languageId, body)
+  .then(function(data) {
+    console.log(`patchUserRoutinglanguage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling patchUserRoutinglanguage');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **languageId** | **String** | languageId |  |
+ **body** | **Object** | Language |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserRoutingLanguage**
 
 <a name="postAnalyticsQueuesObservationsQuery"></a>
 
@@ -2389,6 +2554,57 @@ apiInstance.postRoutingWrapupcodes(body)
 ### Return type
 
 **WrapupCode**
+
+<a name="postUserRoutinglanguages"></a>
+
+# UserRoutingLanguage postUserRoutinglanguages(userId, body)
+
+POST /api/v2/users/{userId}/routinglanguages
+
+Add routing language to user
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RoutingApi();
+
+var userId = "userId_example"; // String | User ID
+
+var body = {}; // Object | Language
+
+apiInstance.postUserRoutinglanguages(userId, body)
+  .then(function(data) {
+    console.log(`postUserRoutinglanguages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postUserRoutinglanguages');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **body** | **Object** | Language |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserRoutingLanguage**
 
 <a name="postUserRoutingskills"></a>
 

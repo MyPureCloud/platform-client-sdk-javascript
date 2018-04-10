@@ -18,7 +18,7 @@
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 23.0.0
+   * @version 23.1.0
    */
 
   /**
@@ -289,6 +289,40 @@
         '/api/v2/routing/wrapupcodes/{codeId}', 
         'DELETE', 
         { 'codeId': codeId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Remove routing language from user
+     * 
+     * @param {String} userId User ID
+     * @param {String} languageId languageId
+     */
+    this.deleteUserRoutinglanguage = function(userId, languageId) { 
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling deleteUserRoutinglanguage";
+      }
+
+      // verify the required parameter 'languageId' is set
+      if (languageId === undefined || languageId === null) {
+        throw "Missing the required parameter 'languageId' when calling deleteUserRoutinglanguage";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/{userId}/routinglanguages/{languageId}', 
+        'DELETE', 
+        { 'userId': userId,'languageId': languageId }, 
         {  }, 
         {  }, 
         {  }, 
@@ -978,6 +1012,39 @@
 
 
     /**
+     * List routing language for user
+     * 
+     * @param {String} userId User ID
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
+     */
+    this.getUserRoutinglanguages = function(userId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling getUserRoutinglanguages";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/{userId}/routinglanguages', 
+        'GET', 
+        { 'userId': userId }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * List routing skills for user
      * 
      * @param {String} userId User ID
@@ -1073,6 +1140,46 @@
         '/api/v2/routing/queues/{queueId}/users', 
         'PATCH', 
         { 'queueId': queueId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update routing language proficiency or state.
+     * 
+     * @param {String} userId User ID
+     * @param {String} languageId languageId
+     * @param {Object} body Language
+     */
+    this.patchUserRoutinglanguage = function(userId, languageId, body) { 
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling patchUserRoutinglanguage";
+      }
+
+      // verify the required parameter 'languageId' is set
+      if (languageId === undefined || languageId === null) {
+        throw "Missing the required parameter 'languageId' when calling patchUserRoutinglanguage";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling patchUserRoutinglanguage";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/{userId}/routinglanguages/{languageId}', 
+        'PATCH', 
+        { 'userId': userId,'languageId': languageId }, 
         {  }, 
         {  }, 
         {  }, 
@@ -1402,6 +1509,40 @@
         '/api/v2/routing/wrapupcodes', 
         'POST', 
         {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Add routing language to user
+     * 
+     * @param {String} userId User ID
+     * @param {Object} body Language
+     */
+    this.postUserRoutinglanguages = function(userId, body) { 
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling postUserRoutinglanguages";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postUserRoutinglanguages";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/{userId}/routinglanguages', 
+        'POST', 
+        { 'userId': userId }, 
         {  }, 
         {  }, 
         {  }, 
