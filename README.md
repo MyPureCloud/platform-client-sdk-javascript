@@ -25,8 +25,8 @@ npm install purecloud-platform-client-v2
 Reference from the CDN:
 
 ~~~ html
-<!-- Replace `23.1.0` with the version you want to use. -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/23.1.0/purecloud-platform-client-v2.min.js"></script>
+<!-- Replace `23.2.0` with the version you want to use. -->
+<script src="https://sdk-cdn.mypurecloud.com/javascript/23.2.0/purecloud-platform-client-v2.min.js"></script>
 ~~~
 
 View the documentation on the [PureCloud Developer Center](https://developer.mypurecloud.com/api/rest/client-libraries/javascript/).
@@ -41,7 +41,7 @@ Reference the SDK in your HTML document. For convenience, all modules are bundle
 
 ~~~ html
 <!-- Include the full library -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/23.1.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/23.2.0/purecloud-platform-client-v2.min.js"></script>
 ~~~
 
 
@@ -79,11 +79,16 @@ client.loginClientCredentialsGrant(clientId, clientSecret)
 
 The Implicit grant only works when used in a browser. This is because a node.js application does not have a browser interface that can display the PureCloud login window.
 
+Optional parameters may be specified in the optional third parameter for `loginImplicitGrant`. This parameter accepts an object with key/value pairs. Supported properties:
+
+* `state` - An arbitrary string used to associate a login request with a login response. This value will be provided in the `state` property on the object when the promise is resolved. The state in the resolved promise will be identical to what was passed into `loginImplicitGrant`, except when the state is retrieved from the auth hash upon completing a login; in that case, the state from the auth hash will override the passed in state.
+
 ~~~ javascript
 const platformClient = require('platformClient');
 var client = platformClient.ApiClient.instance;
-client.loginImplicitGrant(clientId, redirectUri)
-  .then(function() {
+client.loginImplicitGrant(clientId, redirectUri, { state: state })
+  .then(function(data) {
+  	console.log(data);
     // Do authenticated things
   })
   .catch(function(err) {

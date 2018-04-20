@@ -181,6 +181,10 @@
       "class": "InteractionStatRuleNotification"
     },
     {
+      "topic": "v2.users.{id}.analytics.reporting.exports",
+      "class": "DataExportNotificationNotification"
+    },
+    {
       "topic": "v2.users.{id}.badges.chats",
       "class": "ChatBadgeNotification"
     },

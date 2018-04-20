@@ -22,65 +22,97 @@ for (var i = 0, len = code.length; i < len; ++i) {
 revLookup['-'.charCodeAt(0)] = 62
 revLookup['_'.charCodeAt(0)] = 63
 
-function placeHoldersCount (b64) {
+function getLens (b64) {
   var len = b64.length
+
   if (len % 4 > 0) {
     throw new Error('Invalid string. Length must be a multiple of 4')
   }
 
-  // the number of equal signs (place holders)
-  // if there are two placeholders, than the two characters before it
-  // represent one byte
-  // if there is only one, then the three characters before it represent 2 bytes
-  // this is just a cheap hack to not do indexOf twice
-  return b64[len - 2] === '=' ? 2 : b64[len - 1] === '=' ? 1 : 0
+  // Trim off extra bytes after placeholder bytes are found
+  // See: https://github.com/beatgammit/base64-js/issues/42
+  var validLen = b64.indexOf('=')
+  if (validLen === -1) validLen = len
+
+  var placeHoldersLen = validLen === len
+    ? 0
+    : 4 - (validLen % 4)
+
+  return [validLen, placeHoldersLen]
 }
 
+// base64 is 4/3 + up to two characters of the original data
 function byteLength (b64) {
-  // base64 is 4/3 + up to two characters of the original data
-  return (b64.length * 3 / 4) - placeHoldersCount(b64)
+  var lens = getLens(b64)
+  var validLen = lens[0]
+  var placeHoldersLen = lens[1]
+  return ((validLen + placeHoldersLen) * 3 / 4) - placeHoldersLen
+}
+
+function _byteLength (b64, validLen, placeHoldersLen) {
+  return ((validLen + placeHoldersLen) * 3 / 4) - placeHoldersLen
 }
 
 function toByteArray (b64) {
-  var i, l, tmp, placeHolders, arr
-  var len = b64.length
-  placeHolders = placeHoldersCount(b64)
+  var tmp
+  var lens = getLens(b64)
+  var validLen = lens[0]
+  var placeHoldersLen = lens[1]
 
-  arr = new Arr((len * 3 / 4) - placeHolders)
+  var arr = new Arr(_byteLength(b64, validLen, placeHoldersLen))
+
+  var curByte = 0
 
   // if there are placeholders, only get up to the last complete 4 chars
-  l = placeHolders > 0 ? len - 4 : len
+  var len = placeHoldersLen > 0
+    ? validLen - 4
+    : validLen
 
-  var L = 0
-
-  for (i = 0; i < l; i += 4) {
-    tmp = (revLookup[b64.charCodeAt(i)] << 18) | (revLookup[b64.charCodeAt(i + 1)] << 12) | (revLookup[b64.charCodeAt(i + 2)] << 6) | revLookup[b64.charCodeAt(i + 3)]
-    arr[L++] = (tmp >> 16) & 0xFF
-    arr[L++] = (tmp >> 8) & 0xFF
-    arr[L++] = tmp & 0xFF
+  for (var i = 0; i < len; i += 4) {
+    tmp =
+      (revLookup[b64.charCodeAt(i)] << 18) |
+      (revLookup[b64.charCodeAt(i + 1)] << 12) |
+      (revLookup[b64.charCodeAt(i + 2)] << 6) |
+      revLookup[b64.charCodeAt(i + 3)]
+    arr[curByte++] = (tmp >> 16) & 0xFF
+    arr[curByte++] = (tmp >> 8) & 0xFF
+    arr[curByte++] = tmp & 0xFF
   }
 
-  if (placeHolders === 2) {
-    tmp = (revLookup[b64.charCodeAt(i)] << 2) | (revLookup[b64.charCodeAt(i + 1)] >> 4)
-    arr[L++] = tmp & 0xFF
-  } else if (placeHolders === 1) {
-    tmp = (revLookup[b64.charCodeAt(i)] << 10) | (revLookup[b64.charCodeAt(i + 1)] << 4) | (revLookup[b64.charCodeAt(i + 2)] >> 2)
-    arr[L++] = (tmp >> 8) & 0xFF
-    arr[L++] = tmp & 0xFF
+  if (placeHoldersLen === 2) {
+    tmp =
+      (revLookup[b64.charCodeAt(i)] << 2) |
+      (revLookup[b64.charCodeAt(i + 1)] >> 4)
+    arr[curByte++] = tmp & 0xFF
+  }
+
+  if (placeHoldersLen === 1) {
+    tmp =
+      (revLookup[b64.charCodeAt(i)] << 10) |
+      (revLookup[b64.charCodeAt(i + 1)] << 4) |
+      (revLookup[b64.charCodeAt(i + 2)] >> 2)
+    arr[curByte++] = (tmp >> 8) & 0xFF
+    arr[curByte++] = tmp & 0xFF
   }
 
   return arr
 }
 
 function tripletToBase64 (num) {
-  return lookup[num >> 18 & 0x3F] + lookup[num >> 12 & 0x3F] + lookup[num >> 6 & 0x3F] + lookup[num & 0x3F]
+  return lookup[num >> 18 & 0x3F] +
+    lookup[num >> 12 & 0x3F] +
+    lookup[num >> 6 & 0x3F] +
+    lookup[num & 0x3F]
 }
 
 function encodeChunk (uint8, start, end) {
   var tmp
   var output = []
   for (var i = start; i < end; i += 3) {
-    tmp = ((uint8[i] << 16) & 0xFF0000) + ((uint8[i + 1] << 8) & 0xFF00) + (uint8[i + 2] & 0xFF)
+    tmp =
+      ((uint8[i] << 16) & 0xFF0000) +
+      ((uint8[i + 1] << 8) & 0xFF00) +
+      (uint8[i + 2] & 0xFF)
     output.push(tripletToBase64(tmp))
   }
   return output.join('')
@@ -90,30 +122,33 @@ function fromByteArray (uint8) {
   var tmp
   var len = uint8.length
   var extraBytes = len % 3 // if we have 1 byte left, pad 2 bytes
-  var output = ''
   var parts = []
   var maxChunkLength = 16383 // must be multiple of 3
 
   // go through the array every three bytes, we'll deal with trailing stuff later
   for (var i = 0, len2 = len - extraBytes; i < len2; i += maxChunkLength) {
-    parts.push(encodeChunk(uint8, i, (i + maxChunkLength) > len2 ? len2 : (i + maxChunkLength)))
+    parts.push(encodeChunk(
+      uint8, i, (i + maxChunkLength) > len2 ? len2 : (i + maxChunkLength)
+    ))
   }
 
   // pad the end with zeros, but make sure to not forget the extra bytes
   if (extraBytes === 1) {
     tmp = uint8[len - 1]
-    output += lookup[tmp >> 2]
-    output += lookup[(tmp << 4) & 0x3F]
-    output += '=='
+    parts.push(
+      lookup[tmp >> 2] +
+      lookup[(tmp << 4) & 0x3F] +
+      '=='
+    )
   } else if (extraBytes === 2) {
-    tmp = (uint8[len - 2] << 8) + (uint8[len - 1])
-    output += lookup[tmp >> 10]
-    output += lookup[(tmp >> 4) & 0x3F]
-    output += lookup[(tmp << 2) & 0x3F]
-    output += '='
+    tmp = (uint8[len - 2] << 8) + uint8[len - 1]
+    parts.push(
+      lookup[tmp >> 10] +
+      lookup[(tmp >> 4) & 0x3F] +
+      lookup[(tmp << 2) & 0x3F] +
+      '='
+    )
   }
-
-  parts.push(output)
 
   return parts.join('')
 }
@@ -3266,7 +3301,7 @@ module.exports = request;
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -3310,9 +3345,6 @@ module.exports = request;
 
     // Expose superagent module for use with superagent-proxy
     this.superagent = superagent;
-
-    // Check for auth token in hash
-    this._setValuesFromUrlHash();
   };
 
   /**
@@ -3347,8 +3379,24 @@ module.exports = request;
   /**
    * @description Saves the auth token to local storage, if enabled.
    */
-  exports.prototype._saveSettings = function _saveSettings() {
+  exports.prototype._saveSettings = function _saveSettings(opts) {
     try {
+      if (!this.authData) this.authData = {};
+
+      if (opts.accessToken) {
+      	this.authData.accessToken = opts.accessToken;
+      	this.authentications['PureCloud Auth'].accessToken = opts.accessToken;
+      }
+
+      if (opts.state) {
+      	this.authData.state = opts.state;
+      }
+
+      if (opts.tokenExpiryTime) {
+      	this.authData.tokenExpiryTime = opts.tokenExpiryTime;
+      	this.authData.tokenExpiryTimeString = opts.tokenExpiryTimeString;
+      }
+
       // Don't save settings if we aren't supposed to be persisting them
       if (this.persistSettings !== true) return;
 
@@ -3358,14 +3406,13 @@ module.exports = request;
         return;
       }
 
-      // Save settings
-      if (this.authentications['PureCloud Auth'].accessToken) {
-        localStorage.setItem(`${this.settingsPrefix}_access_token`, this.authentications['PureCloud Auth'].accessToken);
-        this._debugTrace('Access token saved to local storage');
-      } else {
-        this._debugTrace('Access token cleared');
-        localStorage.removeItem(`${this.settingsPrefix}_access_token`);
-      }
+      // Remove state from data so it's not persisted
+      let tempData = JSON.parse(JSON.stringify(this.authData));
+      delete tempData.state;
+
+      // Save updated auth data
+      localStorage.setItem(`${this.settingsPrefix}_auth_data`, JSON.stringify(tempData));
+      this._debugTrace('Auth data saved to local storage');
     } catch (e) {
       console.error(e);
     }
@@ -3384,11 +3431,13 @@ module.exports = request;
       return;
     }
 
-    var token = localStorage.getItem(`${this.settingsPrefix}_access_token`);
-    if (token) {
-      this.setAccessToken(token);
-      this._debugTrace('Access token retrieved from local storage');
-    }
+    // Load current auth data
+    this.authData = localStorage.getItem(`${this.settingsPrefix}_auth_data`);
+    if (!this.authData) 
+    	this.authData = {};
+    else
+    	this.authData = JSON.parse(this.authData);
+    if (this.authData.accessToken) this.setAccessToken(this.authData.accessToken);
   };
 
   /**
@@ -3420,23 +3469,36 @@ module.exports = request;
    * @description Initiates the implicit grant login flow. Will attempt to load the token from local storage, if enabled.
    * @param {string} clientId - The client ID of an OAuth Implicit Grant client
    * @param {string} redirectUri - The redirect URI of the OAuth Implicit Grant client
+   * @param {object} opts - (optional) Additional options 
+   * @param {string} opts.state - (optional) An arbitrary string to be passed back with the login response. Used for client apps to associate login responses with a request.
    */
-  exports.prototype.loginImplicitGrant = function loginImplicitGrant(clientId, redirectUri) {
+  exports.prototype.loginImplicitGrant = function loginImplicitGrant(clientId, redirectUri, opts) {
     var self = this;
     this.clientId = clientId;
     this.redirectUri = redirectUri;
 
+    // Check for auth token in hash
+    this._setValuesFromUrlHash();
+
+    if (!opts) opts = {};
+
     return new Promise(function(resolve, reject) {
       self._testTokenAccess()
         .then(function() {
-          resolve();
+        	if (!self.authData.state && opts.state)
+        		self.authData.state = opts.state;
+          resolve(self.authData);
         })
         .catch(function(error) {
+        	self._debugTrace('Error encountered during login. This is normal if the application has not yet been authorized.');
+        	self._debugTrace(error);
           var query = {
               client_id: encodeURIComponent(self.clientId),
               redirect_uri: encodeURI(self.redirectUri),
               response_type: 'token'
           };
+          if (opts.state)
+          	query.state = encodeURIComponent(opts.state);
 
           var url = self._buildAuthUrl('oauth/authorize', query);
           self._debugTrace(`Implicit grant: redirecting to ${url} for authorization...`);
@@ -3502,11 +3564,10 @@ module.exports = request;
       self.callApi('/api/v2/authorization/permissions', 'GET', 
         null, null, null, null, null, ['PureCloud Auth'], ['application/json'], ['application/json'])
         .then(function(roles) {
-          self._saveSettings();
           resolve();
         })
         .catch(function(error) {
-          self.setAccessToken();
+          self._saveSettings({ accessToken: undefined });
           reject(error);
         });
     });
@@ -3528,10 +3589,24 @@ module.exports = request;
         return obj;
       }, {});
 
-    // Set access token
-    if(hash.access_token) {
+    // Everything goes in here because we only want to act if we found an access token
+    if (hash.access_token) {
+			let opts = {};
+
+	    if (hash.state) {
+	    	/* Auth does some interesting things with encoding. It encodes the data twice, except 
+	    	 * for spaces, then replaces all spaces with a plus sign. This process must be done 
+	    	 * in reverse order to properly extract the state data. 
+	    	 */
+		    opts.state = decodeURIComponent(decodeURIComponent(hash.state.replace(/\+/g, '%20')));
+		  }
+
+	    if (hash.expires_in) {
+		    opts.tokenExpiryTime = (new Date()).getTime() + (parseInt(decodeURIComponent(decodeURIComponent(hash.expires_in.replace(/\+/g, '%20')))) * 1000);
+		    opts.tokenExpiryTimeString = (new Date(opts.tokenExpiryTime)).toUTCString();
+		  }
       // Set access token
-      this.setAccessToken(hash.access_token);
+      opts.accessToken = decodeURIComponent(decodeURIComponent(hash.access_token.replace(/\+/g, '%20')));
 
       // Remove hash from URL
       // Credit: https://stackoverflow.com/questions/1397329/how-to-remove-the-hash-from-window-location-with-javascript-without-page-refresh/5298684#5298684
@@ -3550,6 +3625,8 @@ module.exports = request;
         document.body.scrollTop = scrollV;
         document.body.scrollLeft = scrollH;
       }
+
+      this._saveSettings(opts);
     }
   };
 
@@ -3558,10 +3635,7 @@ module.exports = request;
    * @param {string} token - The access token
    */
   exports.prototype.setAccessToken = function(token) {
-    // Set token for API use
-    this.authentications['PureCloud Auth'].accessToken = token;
-
-    this._saveSettings();
+    this._saveSettings({ accessToken: token });
   };
 
   /**
@@ -3594,7 +3668,12 @@ module.exports = request;
    */
   exports.prototype.logout = function() {
     if(exports.hasLocalStorage) {
-        this.setAccessToken();
+        this._saveSettings({
+        	accessToken: undefined,
+        	state: undefined,
+        	tokenExpiryTime: undefined,
+        	tokenExpiryTimeString: undefined
+	      });
     }
 
     var query = {
@@ -3899,7 +3978,7 @@ module.exports = request;
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '23.1.0' });
+    //request.set({ 'purecloud-sdk': '23.2.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -4052,7 +4131,7 @@ module.exports = request;
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -4408,7 +4487,7 @@ module.exports = request;
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -5123,7 +5202,7 @@ module.exports = request;
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -7643,7 +7722,7 @@ module.exports = request;
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -7854,7 +7933,7 @@ module.exports = request;
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -8475,7 +8554,7 @@ module.exports = request;
   /**
    * Billing service.
    * @module purecloud-platform-client-v2/api/BillingApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -8548,7 +8627,7 @@ module.exports = request;
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -9805,7 +9884,7 @@ module.exports = request;
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -13153,7 +13232,7 @@ module.exports = request;
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -14137,7 +14216,7 @@ module.exports = request;
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -14342,7 +14421,7 @@ module.exports = request;
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -14505,7 +14584,7 @@ module.exports = request;
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -15025,7 +15104,7 @@ module.exports = request;
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -15483,7 +15562,7 @@ module.exports = request;
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -16192,7 +16271,7 @@ module.exports = request;
   /**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -16900,7 +16979,7 @@ module.exports = request;
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -17213,7 +17292,7 @@ module.exports = request;
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -17458,7 +17537,7 @@ module.exports = request;
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -17611,7 +17690,7 @@ module.exports = request;
   /**
    * MobileDevices service.
    * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -17792,7 +17871,7 @@ module.exports = request;
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -18024,7 +18103,7 @@ module.exports = request;
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -18231,7 +18310,7 @@ module.exports = request;
   /**
    * Objects service.
    * @module purecloud-platform-client-v2/api/ObjectsApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -18332,7 +18411,7 @@ module.exports = request;
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -18480,7 +18559,7 @@ module.exports = request;
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -19245,7 +19324,7 @@ module.exports = request;
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -21951,7 +22030,7 @@ module.exports = request;
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -22235,7 +22314,7 @@ module.exports = request;
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -23839,7 +23918,7 @@ module.exports = request;
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -25021,7 +25100,7 @@ module.exports = request;
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -25392,7 +25471,7 @@ module.exports = request;
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -27230,7 +27309,7 @@ module.exports = request;
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -27630,7 +27709,7 @@ module.exports = request;
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -28087,7 +28166,7 @@ module.exports = request;
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -28264,7 +28343,7 @@ module.exports = request;
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -28429,7 +28508,7 @@ module.exports = request;
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -32352,7 +32431,7 @@ module.exports = request;
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -32435,7 +32514,7 @@ module.exports = request;
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -32650,7 +32729,7 @@ module.exports = request;
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -34335,7 +34414,7 @@ module.exports = request;
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -34450,7 +34529,7 @@ module.exports = request;
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -35165,7 +35244,7 @@ module.exports = request;
   /**
    * WebChat service.
    * @module purecloud-platform-client-v2/api/WebChatApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -35416,7 +35495,7 @@ module.exports = request;
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -35821,7 +35900,7 @@ module.exports = request;
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 23.1.0
+   * @version 23.2.0
    */
   var platformClient = {
     /**

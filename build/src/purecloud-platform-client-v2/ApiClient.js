@@ -17,7 +17,7 @@
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 23.1.0
+   * @version 23.2.0
    */
 
   /**
@@ -61,9 +61,6 @@
 
     // Expose superagent module for use with superagent-proxy
     this.superagent = superagent;
-
-    // Check for auth token in hash
-    this._setValuesFromUrlHash();
   };
 
   /**
@@ -98,8 +95,24 @@
   /**
    * @description Saves the auth token to local storage, if enabled.
    */
-  exports.prototype._saveSettings = function _saveSettings() {
+  exports.prototype._saveSettings = function _saveSettings(opts) {
     try {
+      if (!this.authData) this.authData = {};
+
+      if (opts.accessToken) {
+      	this.authData.accessToken = opts.accessToken;
+      	this.authentications['PureCloud Auth'].accessToken = opts.accessToken;
+      }
+
+      if (opts.state) {
+      	this.authData.state = opts.state;
+      }
+
+      if (opts.tokenExpiryTime) {
+      	this.authData.tokenExpiryTime = opts.tokenExpiryTime;
+      	this.authData.tokenExpiryTimeString = opts.tokenExpiryTimeString;
+      }
+
       // Don't save settings if we aren't supposed to be persisting them
       if (this.persistSettings !== true) return;
 
@@ -109,14 +122,13 @@
         return;
       }
 
-      // Save settings
-      if (this.authentications['PureCloud Auth'].accessToken) {
-        localStorage.setItem(`${this.settingsPrefix}_access_token`, this.authentications['PureCloud Auth'].accessToken);
-        this._debugTrace('Access token saved to local storage');
-      } else {
-        this._debugTrace('Access token cleared');
-        localStorage.removeItem(`${this.settingsPrefix}_access_token`);
-      }
+      // Remove state from data so it's not persisted
+      let tempData = JSON.parse(JSON.stringify(this.authData));
+      delete tempData.state;
+
+      // Save updated auth data
+      localStorage.setItem(`${this.settingsPrefix}_auth_data`, JSON.stringify(tempData));
+      this._debugTrace('Auth data saved to local storage');
     } catch (e) {
       console.error(e);
     }
@@ -135,11 +147,13 @@
       return;
     }
 
-    var token = localStorage.getItem(`${this.settingsPrefix}_access_token`);
-    if (token) {
-      this.setAccessToken(token);
-      this._debugTrace('Access token retrieved from local storage');
-    }
+    // Load current auth data
+    this.authData = localStorage.getItem(`${this.settingsPrefix}_auth_data`);
+    if (!this.authData) 
+    	this.authData = {};
+    else
+    	this.authData = JSON.parse(this.authData);
+    if (this.authData.accessToken) this.setAccessToken(this.authData.accessToken);
   };
 
   /**
@@ -171,23 +185,36 @@
    * @description Initiates the implicit grant login flow. Will attempt to load the token from local storage, if enabled.
    * @param {string} clientId - The client ID of an OAuth Implicit Grant client
    * @param {string} redirectUri - The redirect URI of the OAuth Implicit Grant client
+   * @param {object} opts - (optional) Additional options 
+   * @param {string} opts.state - (optional) An arbitrary string to be passed back with the login response. Used for client apps to associate login responses with a request.
    */
-  exports.prototype.loginImplicitGrant = function loginImplicitGrant(clientId, redirectUri) {
+  exports.prototype.loginImplicitGrant = function loginImplicitGrant(clientId, redirectUri, opts) {
     var self = this;
     this.clientId = clientId;
     this.redirectUri = redirectUri;
 
+    // Check for auth token in hash
+    this._setValuesFromUrlHash();
+
+    if (!opts) opts = {};
+
     return new Promise(function(resolve, reject) {
       self._testTokenAccess()
         .then(function() {
-          resolve();
+        	if (!self.authData.state && opts.state)
+        		self.authData.state = opts.state;
+          resolve(self.authData);
         })
         .catch(function(error) {
+        	self._debugTrace('Error encountered during login. This is normal if the application has not yet been authorized.');
+        	self._debugTrace(error);
           var query = {
               client_id: encodeURIComponent(self.clientId),
               redirect_uri: encodeURI(self.redirectUri),
               response_type: 'token'
           };
+          if (opts.state)
+          	query.state = encodeURIComponent(opts.state);
 
           var url = self._buildAuthUrl('oauth/authorize', query);
           self._debugTrace(`Implicit grant: redirecting to ${url} for authorization...`);
@@ -253,11 +280,10 @@
       self.callApi('/api/v2/authorization/permissions', 'GET', 
         null, null, null, null, null, ['PureCloud Auth'], ['application/json'], ['application/json'])
         .then(function(roles) {
-          self._saveSettings();
           resolve();
         })
         .catch(function(error) {
-          self.setAccessToken();
+          self._saveSettings({ accessToken: undefined });
           reject(error);
         });
     });
@@ -279,10 +305,24 @@
         return obj;
       }, {});
 
-    // Set access token
-    if(hash.access_token) {
+    // Everything goes in here because we only want to act if we found an access token
+    if (hash.access_token) {
+			let opts = {};
+
+	    if (hash.state) {
+	    	/* Auth does some interesting things with encoding. It encodes the data twice, except 
+	    	 * for spaces, then replaces all spaces with a plus sign. This process must be done 
+	    	 * in reverse order to properly extract the state data. 
+	    	 */
+		    opts.state = decodeURIComponent(decodeURIComponent(hash.state.replace(/\+/g, '%20')));
+		  }
+
+	    if (hash.expires_in) {
+		    opts.tokenExpiryTime = (new Date()).getTime() + (parseInt(decodeURIComponent(decodeURIComponent(hash.expires_in.replace(/\+/g, '%20')))) * 1000);
+		    opts.tokenExpiryTimeString = (new Date(opts.tokenExpiryTime)).toUTCString();
+		  }
       // Set access token
-      this.setAccessToken(hash.access_token);
+      opts.accessToken = decodeURIComponent(decodeURIComponent(hash.access_token.replace(/\+/g, '%20')));
 
       // Remove hash from URL
       // Credit: https://stackoverflow.com/questions/1397329/how-to-remove-the-hash-from-window-location-with-javascript-without-page-refresh/5298684#5298684
@@ -301,6 +341,8 @@
         document.body.scrollTop = scrollV;
         document.body.scrollLeft = scrollH;
       }
+
+      this._saveSettings(opts);
     }
   };
 
@@ -309,10 +351,7 @@
    * @param {string} token - The access token
    */
   exports.prototype.setAccessToken = function(token) {
-    // Set token for API use
-    this.authentications['PureCloud Auth'].accessToken = token;
-
-    this._saveSettings();
+    this._saveSettings({ accessToken: token });
   };
 
   /**
@@ -345,7 +384,12 @@
    */
   exports.prototype.logout = function() {
     if(exports.hasLocalStorage) {
-        this.setAccessToken();
+        this._saveSettings({
+        	accessToken: undefined,
+        	state: undefined,
+        	tokenExpiryTime: undefined,
+        	tokenExpiryTimeString: undefined
+	      });
     }
 
     var query = {
@@ -650,7 +694,7 @@
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '23.1.0' });
+    //request.set({ 'purecloud-sdk': '23.2.0' });
 
     // set request timeout
     request.timeout(this.timeout);
