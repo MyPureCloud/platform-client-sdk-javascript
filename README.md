@@ -25,8 +25,8 @@ npm install purecloud-platform-client-v2
 Reference from the CDN:
 
 ~~~ html
-<!-- Replace `23.2.0` with the version you want to use. -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/23.2.0/purecloud-platform-client-v2.min.js"></script>
+<!-- Replace `24.0.0` with the version you want to use. -->
+<script src="https://sdk-cdn.mypurecloud.com/javascript/24.0.0/purecloud-platform-client-v2.min.js"></script>
 ~~~
 
 View the documentation on the [PureCloud Developer Center](https://developer.mypurecloud.com/api/rest/client-libraries/javascript/).
@@ -41,7 +41,7 @@ Reference the SDK in your HTML document. For convenience, all modules are bundle
 
 ~~~ html
 <!-- Include the full library -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/23.2.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/24.0.0/purecloud-platform-client-v2.min.js"></script>
 ~~~
 
 
@@ -88,7 +88,7 @@ const platformClient = require('platformClient');
 var client = platformClient.ApiClient.instance;
 client.loginImplicitGrant(clientId, redirectUri, { state: state })
   .then(function(data) {
-  	console.log(data);
+    console.log(data);
     // Do authenticated things
   })
   .catch(function(err) {

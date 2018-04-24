@@ -18,7 +18,7 @@
   /**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -31,6 +31,34 @@
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
+
+
+    /**
+     * Delete integration.
+     * 
+     * @param {String} integrationId Integration Id
+     */
+    this.deleteIntegration = function(integrationId) { 
+
+      // verify the required parameter 'integrationId' is set
+      if (integrationId === undefined || integrationId === null) {
+        throw "Missing the required parameter 'integrationId' when calling deleteIntegration";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/{integrationId}', 
+        'DELETE', 
+        { 'integrationId': integrationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
 
 
     /**
@@ -79,6 +107,128 @@
         'DELETE', 
         { 'actionId': actionId }, 
         {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Delete a set of credentials
+     * 
+     * @param {String} credentialId Credential ID
+     */
+    this.deleteIntegrationsCredential = function(credentialId) { 
+
+      // verify the required parameter 'credentialId' is set
+      if (credentialId === undefined || credentialId === null) {
+        throw "Missing the required parameter 'credentialId' when calling deleteIntegrationsCredential";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/credentials/{credentialId}', 
+        'DELETE', 
+        { 'credentialId': credentialId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get integration.
+     * 
+     * @param {String} integrationId Integration Id
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The total page size requested (default to 25)
+     * @param {Number} opts.pageNumber The page number requested (default to 1)
+     * @param {String} opts.sortBy variable name requested to sort by
+     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {String} opts.nextPage next page token
+     * @param {String} opts.previousPage Previous page token
+     */
+    this.getIntegration = function(integrationId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'integrationId' is set
+      if (integrationId === undefined || integrationId === null) {
+        throw "Missing the required parameter 'integrationId' when calling getIntegration";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/{integrationId}', 
+        'GET', 
+        { 'integrationId': integrationId }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get integration configuration.
+     * 
+     * @param {String} integrationId Integration Id
+     */
+    this.getIntegrationConfigCurrent = function(integrationId) { 
+
+      // verify the required parameter 'integrationId' is set
+      if (integrationId === undefined || integrationId === null) {
+        throw "Missing the required parameter 'integrationId' when calling getIntegrationConfigCurrent";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/{integrationId}/config/current', 
+        'GET', 
+        { 'integrationId': integrationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * List integrations
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The total page size requested (default to 25)
+     * @param {Number} opts.pageNumber The page number requested (default to 1)
+     * @param {String} opts.sortBy variable name requested to sort by
+     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {String} opts.nextPage next page token
+     * @param {String} opts.previousPage Previous page token
+     */
+    this.getIntegrations = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
         {  }, 
         {  }, 
         null, 
@@ -415,6 +565,298 @@
 
 
     /**
+     * List permitted client app integrations for the logged in user
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The total page size requested (default to 25)
+     * @param {Number} opts.pageNumber The page number requested (default to 1)
+     * @param {String} opts.sortBy variable name requested to sort by
+     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {String} opts.nextPage next page token
+     * @param {String} opts.previousPage Previous page token
+     */
+    this.getIntegrationsClientapps = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/clientapps', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a single credential with sensitive fields redacted
+     * 
+     * @param {String} credentialId Credential ID
+     */
+    this.getIntegrationsCredential = function(credentialId) { 
+
+      // verify the required parameter 'credentialId' is set
+      if (credentialId === undefined || credentialId === null) {
+        throw "Missing the required parameter 'credentialId' when calling getIntegrationsCredential";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/credentials/{credentialId}', 
+        'GET', 
+        { 'credentialId': credentialId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * List multiple sets of credentials
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (default to 25)
+     */
+    this.getIntegrationsCredentials = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/credentials', 
+        'GET', 
+        {  }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * List all credential types
+     * 
+     */
+    this.getIntegrationsCredentialsTypes = function() { 
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/credentials/types', 
+        'GET', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * List all events
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {String} opts.sortBy Sort by (default to timestamp)
+     * @param {String} opts.sortOrder Order by (default to descending)
+     * @param {String} opts.entityId Include only events with this entity ID
+     */
+    this.getIntegrationsEventlog = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/eventlog', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'entityId': opts['entityId'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a single event
+     * 
+     * @param {String} eventId Event Id
+     */
+    this.getIntegrationsEventlogEventId = function(eventId) { 
+
+      // verify the required parameter 'eventId' is set
+      if (eventId === undefined || eventId === null) {
+        throw "Missing the required parameter 'eventId' when calling getIntegrationsEventlogEventId";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/eventlog/{eventId}', 
+        'GET', 
+        { 'eventId': eventId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get integration type.
+     * 
+     * @param {String} typeId Integration Type Id
+     */
+    this.getIntegrationsType = function(typeId) { 
+
+      // verify the required parameter 'typeId' is set
+      if (typeId === undefined || typeId === null) {
+        throw "Missing the required parameter 'typeId' when calling getIntegrationsType";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/types/{typeId}', 
+        'GET', 
+        { 'typeId': typeId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get properties config schema for an integration type.
+     * 
+     * @param {String} typeId Integration Type Id
+     * @param {Object} configType Config schema type
+     */
+    this.getIntegrationsTypeConfigschema = function(typeId, configType) { 
+
+      // verify the required parameter 'typeId' is set
+      if (typeId === undefined || typeId === null) {
+        throw "Missing the required parameter 'typeId' when calling getIntegrationsTypeConfigschema";
+      }
+
+      // verify the required parameter 'configType' is set
+      if (configType === undefined || configType === null) {
+        throw "Missing the required parameter 'configType' when calling getIntegrationsTypeConfigschema";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/types/{typeId}/configschemas/{configType}', 
+        'GET', 
+        { 'typeId': typeId,'configType': configType }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * List integration types
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The total page size requested (default to 25)
+     * @param {Number} opts.pageNumber The page number requested (default to 1)
+     * @param {String} opts.sortBy variable name requested to sort by
+     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {String} opts.nextPage next page token
+     * @param {String} opts.previousPage Previous page token
+     */
+    this.getIntegrationsTypes = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/types', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update an integration.
+     * 
+     * @param {String} integrationId Integration Id
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body Integration Update
+     * @param {Number} opts.pageSize The total page size requested (default to 25)
+     * @param {Number} opts.pageNumber The page number requested (default to 1)
+     * @param {String} opts.sortBy variable name requested to sort by
+     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {String} opts.nextPage next page token
+     * @param {String} opts.previousPage Previous page token
+     */
+    this.patchIntegration = function(integrationId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'integrationId' is set
+      if (integrationId === undefined || integrationId === null) {
+        throw "Missing the required parameter 'integrationId' when calling patchIntegration";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/{integrationId}', 
+        'PATCH', 
+        { 'integrationId': integrationId }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Patch an Action
      * 
      * @param {String} actionId actionId
@@ -475,6 +917,31 @@
         {  }, 
         {  }, 
         body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Create an integration.
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body Integration
+     */
+    this.postIntegrations = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -695,6 +1162,118 @@
         {  }, 
         {  }, 
         body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Create a set of credentials
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body Credential
+     */
+    this.postIntegrationsCredentials = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/credentials', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Add a vendor connection
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body 
+     */
+    this.postIntegrationsWorkforcemanagementVendorconnection = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/workforcemanagement/vendorconnection', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update integration configuration.
+     * 
+     * @param {String} integrationId Integration Id
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body Integration Configuration
+     */
+    this.putIntegrationConfigCurrent = function(integrationId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'integrationId' is set
+      if (integrationId === undefined || integrationId === null) {
+        throw "Missing the required parameter 'integrationId' when calling putIntegrationConfigCurrent";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/{integrationId}/config/current', 
+        'PUT', 
+        { 'integrationId': integrationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update a set of credentials
+     * 
+     * @param {String} credentialId Credential ID
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body Credential
+     */
+    this.putIntegrationsCredential = function(credentialId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'credentialId' is set
+      if (credentialId === undefined || credentialId === null) {
+        throw "Missing the required parameter 'credentialId' when calling putIntegrationsCredential";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/credentials/{credentialId}', 
+        'PUT', 
+        { 'credentialId': credentialId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']

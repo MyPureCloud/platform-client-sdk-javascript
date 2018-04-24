@@ -18,7 +18,7 @@
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -78,28 +78,6 @@
         '/api/v2/users/{userId}/roles', 
         'DELETE', 
         { 'userId': userId }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Returns the maximum allowed number of divisions.
-     * 
-     */
-    this.getAuthorizationDivisionsLimit = function() { 
-
-
-      return this.apiClient.callApi(
-        '/api/v2/authorization/divisions/limit', 
-        'GET', 
-        {  }, 
         {  }, 
         {  }, 
         {  }, 
@@ -307,46 +285,6 @@
         '/api/v2/authorization/roles/{roleId}', 
         'PATCH', 
         { 'roleId': roleId }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        body, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Set the division of a list of objects. The objects must all be of the same type: CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, QUEUE, USER
-     * 
-     * @param {String} divisionId Division ID
-     * @param {Object} objectType The type of the objects. Must be one of the valid object types
-     * @param {Array.<Object>} body Object Id List
-     */
-    this.postAuthorizationDivisionObject = function(divisionId, objectType, body) { 
-
-      // verify the required parameter 'divisionId' is set
-      if (divisionId === undefined || divisionId === null) {
-        throw "Missing the required parameter 'divisionId' when calling postAuthorizationDivisionObject";
-      }
-
-      // verify the required parameter 'objectType' is set
-      if (objectType === undefined || objectType === null) {
-        throw "Missing the required parameter 'objectType' when calling postAuthorizationDivisionObject";
-      }
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw "Missing the required parameter 'body' when calling postAuthorizationDivisionObject";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/authorization/divisions/{divisionId}/objects/{objectType}', 
-        'POST', 
-        { 'divisionId': divisionId,'objectType': objectType }, 
         {  }, 
         {  }, 
         {  }, 

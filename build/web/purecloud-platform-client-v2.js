@@ -3301,7 +3301,7 @@ module.exports = request;
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -3978,7 +3978,7 @@ module.exports = request;
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '23.2.0' });
+    //request.set({ 'purecloud-sdk': '24.0.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -4131,7 +4131,7 @@ module.exports = request;
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -4487,7 +4487,7 @@ module.exports = request;
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -5194,6 +5194,163 @@ module.exports = request;
     if (!root.platformClient) {
       root.platformClient = {};
     }
+    root.platformClient.AppFoundryApi = factory(root.platformClient.ApiClient);
+  }
+}(this, function(ApiClient) {
+  'use strict';
+
+  /**
+   * AppFoundry service.
+   * @module purecloud-platform-client-v2/api/AppFoundryApi
+   * @version 24.0.0
+   */
+
+  /**
+   * Constructs a new AppFoundryApi. 
+   * @alias module:purecloud-platform-client-v2/api/AppFoundryApi
+   * @class
+   * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+   * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+   */
+  var exports = function(apiClient) {
+    this.apiClient = apiClient || ApiClient.instance;
+
+
+
+    /**
+     * Return a structured hierarchy of available listing categories
+     * 
+     * @param {String} platformName 
+     */
+    this.getAppfoundryPlatformNameCategories = function(platformName) { 
+
+      // verify the required parameter 'platformName' is set
+      if (platformName === undefined || platformName === null) {
+        throw "Missing the required parameter 'platformName' when calling getAppfoundryPlatformNameCategories";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/appfoundry/{platformName}/categories', 
+        'GET', 
+        { 'platformName': platformName }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get listings that are part of the specified root category or a contained subcategory
+     * 
+     * @param {String} platformName 
+     * @param {String} categoryName Name of category to request listings from
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The total page size requested (default to 25)
+     * @param {Number} opts.pageNumber The page number requested (default to 1)
+     * @param {String} opts.sortBy variable name requested to sort by
+     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {String} opts.nextPage next page token
+     * @param {String} opts.previousPage Previous page token
+     */
+    this.getAppfoundryPlatformNameCategory = function(platformName, categoryName, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'platformName' is set
+      if (platformName === undefined || platformName === null) {
+        throw "Missing the required parameter 'platformName' when calling getAppfoundryPlatformNameCategory";
+      }
+
+      // verify the required parameter 'categoryName' is set
+      if (categoryName === undefined || categoryName === null) {
+        throw "Missing the required parameter 'categoryName' when calling getAppfoundryPlatformNameCategory";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/appfoundry/{platformName}/categories/{categoryName}', 
+        'GET', 
+        { 'platformName': platformName,'categoryName': categoryName }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get listings that are part of the specified subcategory
+     * 
+     * @param {String} platformName 
+     * @param {String} categoryName Name of category to request listings from
+     * @param {String} subCategoryName Name of subcategory to request listings from
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The total page size requested (default to 25)
+     * @param {Number} opts.pageNumber The page number requested (default to 1)
+     * @param {String} opts.sortBy variable name requested to sort by
+     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {String} opts.nextPage next page token
+     * @param {String} opts.previousPage Previous page token
+     */
+    this.getAppfoundryPlatformNameCategorySubCategoryName = function(platformName, categoryName, subCategoryName, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'platformName' is set
+      if (platformName === undefined || platformName === null) {
+        throw "Missing the required parameter 'platformName' when calling getAppfoundryPlatformNameCategorySubCategoryName";
+      }
+
+      // verify the required parameter 'categoryName' is set
+      if (categoryName === undefined || categoryName === null) {
+        throw "Missing the required parameter 'categoryName' when calling getAppfoundryPlatformNameCategorySubCategoryName";
+      }
+
+      // verify the required parameter 'subCategoryName' is set
+      if (subCategoryName === undefined || subCategoryName === null) {
+        throw "Missing the required parameter 'subCategoryName' when calling getAppfoundryPlatformNameCategorySubCategoryName";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/appfoundry/{platformName}/categories/{categoryName}/{subCategoryName}', 
+        'GET', 
+        { 'platformName': platformName,'categoryName': categoryName,'subCategoryName': subCategoryName }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+  };
+
+  return exports;
+}));
+
+},{"../ApiClient":8}],12:[function(require,module,exports){
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['purecloud-platform-client-v2/ApiClient'], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    module.exports = factory(require('../ApiClient'));
+  } else {
+    // Browser globals (root is window)
+    if (!root.platformClient) {
+      root.platformClient = {};
+    }
     root.platformClient.ArchitectApi = factory(root.platformClient.ApiClient);
   }
 }(this, function(ApiClient) {
@@ -5202,7 +5359,7 @@ module.exports = request;
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -7701,7 +7858,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],12:[function(require,module,exports){
+},{"../ApiClient":8}],13:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -7722,7 +7879,7 @@ module.exports = request;
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -7912,7 +8069,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],13:[function(require,module,exports){
+},{"../ApiClient":8}],14:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -7933,7 +8090,7 @@ module.exports = request;
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -7993,28 +8150,6 @@ module.exports = request;
         '/api/v2/users/{userId}/roles', 
         'DELETE', 
         { 'userId': userId }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Returns the maximum allowed number of divisions.
-     * 
-     */
-    this.getAuthorizationDivisionsLimit = function() { 
-
-
-      return this.apiClient.callApi(
-        '/api/v2/authorization/divisions/limit', 
-        'GET', 
-        {  }, 
         {  }, 
         {  }, 
         {  }, 
@@ -8222,46 +8357,6 @@ module.exports = request;
         '/api/v2/authorization/roles/{roleId}', 
         'PATCH', 
         { 'roleId': roleId }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        body, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Set the division of a list of objects. The objects must all be of the same type: CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, QUEUE, USER
-     * 
-     * @param {String} divisionId Division ID
-     * @param {Object} objectType The type of the objects. Must be one of the valid object types
-     * @param {Array.<Object>} body Object Id List
-     */
-    this.postAuthorizationDivisionObject = function(divisionId, objectType, body) { 
-
-      // verify the required parameter 'divisionId' is set
-      if (divisionId === undefined || divisionId === null) {
-        throw "Missing the required parameter 'divisionId' when calling postAuthorizationDivisionObject";
-      }
-
-      // verify the required parameter 'objectType' is set
-      if (objectType === undefined || objectType === null) {
-        throw "Missing the required parameter 'objectType' when calling postAuthorizationDivisionObject";
-      }
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw "Missing the required parameter 'body' when calling postAuthorizationDivisionObject";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/authorization/divisions/{divisionId}/objects/{objectType}', 
-        'POST', 
-        { 'divisionId': divisionId,'objectType': objectType }, 
         {  }, 
         {  }, 
         {  }, 
@@ -8533,7 +8628,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],14:[function(require,module,exports){
+},{"../ApiClient":8}],15:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -8554,7 +8649,7 @@ module.exports = request;
   /**
    * Billing service.
    * @module purecloud-platform-client-v2/api/BillingApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -8606,7 +8701,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],15:[function(require,module,exports){
+},{"../ApiClient":8}],16:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -8627,7 +8722,7 @@ module.exports = request;
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -9863,7 +9958,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],16:[function(require,module,exports){
+},{"../ApiClient":8}],17:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -9884,7 +9979,7 @@ module.exports = request;
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -13211,7 +13306,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],17:[function(require,module,exports){
+},{"../ApiClient":8}],18:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -13232,7 +13327,7 @@ module.exports = request;
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -14195,7 +14290,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],18:[function(require,module,exports){
+},{"../ApiClient":8}],19:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -14216,7 +14311,7 @@ module.exports = request;
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -14400,7 +14495,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],19:[function(require,module,exports){
+},{"../ApiClient":8}],20:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -14421,7 +14516,7 @@ module.exports = request;
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -14563,7 +14658,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],20:[function(require,module,exports){
+},{"../ApiClient":8}],21:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -14584,7 +14679,7 @@ module.exports = request;
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -15083,7 +15178,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],21:[function(require,module,exports){
+},{"../ApiClient":8}],22:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -15104,7 +15199,7 @@ module.exports = request;
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -15541,7 +15636,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],22:[function(require,module,exports){
+},{"../ApiClient":8}],23:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -15562,7 +15657,7 @@ module.exports = request;
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -16250,7 +16345,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],23:[function(require,module,exports){
+},{"../ApiClient":8}],24:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -16271,7 +16366,7 @@ module.exports = request;
   /**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -16284,6 +16379,34 @@ module.exports = request;
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
+
+
+    /**
+     * Delete integration.
+     * 
+     * @param {String} integrationId Integration Id
+     */
+    this.deleteIntegration = function(integrationId) { 
+
+      // verify the required parameter 'integrationId' is set
+      if (integrationId === undefined || integrationId === null) {
+        throw "Missing the required parameter 'integrationId' when calling deleteIntegration";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/{integrationId}', 
+        'DELETE', 
+        { 'integrationId': integrationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
 
 
     /**
@@ -16332,6 +16455,128 @@ module.exports = request;
         'DELETE', 
         { 'actionId': actionId }, 
         {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Delete a set of credentials
+     * 
+     * @param {String} credentialId Credential ID
+     */
+    this.deleteIntegrationsCredential = function(credentialId) { 
+
+      // verify the required parameter 'credentialId' is set
+      if (credentialId === undefined || credentialId === null) {
+        throw "Missing the required parameter 'credentialId' when calling deleteIntegrationsCredential";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/credentials/{credentialId}', 
+        'DELETE', 
+        { 'credentialId': credentialId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get integration.
+     * 
+     * @param {String} integrationId Integration Id
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The total page size requested (default to 25)
+     * @param {Number} opts.pageNumber The page number requested (default to 1)
+     * @param {String} opts.sortBy variable name requested to sort by
+     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {String} opts.nextPage next page token
+     * @param {String} opts.previousPage Previous page token
+     */
+    this.getIntegration = function(integrationId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'integrationId' is set
+      if (integrationId === undefined || integrationId === null) {
+        throw "Missing the required parameter 'integrationId' when calling getIntegration";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/{integrationId}', 
+        'GET', 
+        { 'integrationId': integrationId }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get integration configuration.
+     * 
+     * @param {String} integrationId Integration Id
+     */
+    this.getIntegrationConfigCurrent = function(integrationId) { 
+
+      // verify the required parameter 'integrationId' is set
+      if (integrationId === undefined || integrationId === null) {
+        throw "Missing the required parameter 'integrationId' when calling getIntegrationConfigCurrent";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/{integrationId}/config/current', 
+        'GET', 
+        { 'integrationId': integrationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * List integrations
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The total page size requested (default to 25)
+     * @param {Number} opts.pageNumber The page number requested (default to 1)
+     * @param {String} opts.sortBy variable name requested to sort by
+     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {String} opts.nextPage next page token
+     * @param {String} opts.previousPage Previous page token
+     */
+    this.getIntegrations = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
         {  }, 
         {  }, 
         null, 
@@ -16668,6 +16913,298 @@ module.exports = request;
 
 
     /**
+     * List permitted client app integrations for the logged in user
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The total page size requested (default to 25)
+     * @param {Number} opts.pageNumber The page number requested (default to 1)
+     * @param {String} opts.sortBy variable name requested to sort by
+     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {String} opts.nextPage next page token
+     * @param {String} opts.previousPage Previous page token
+     */
+    this.getIntegrationsClientapps = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/clientapps', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a single credential with sensitive fields redacted
+     * 
+     * @param {String} credentialId Credential ID
+     */
+    this.getIntegrationsCredential = function(credentialId) { 
+
+      // verify the required parameter 'credentialId' is set
+      if (credentialId === undefined || credentialId === null) {
+        throw "Missing the required parameter 'credentialId' when calling getIntegrationsCredential";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/credentials/{credentialId}', 
+        'GET', 
+        { 'credentialId': credentialId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * List multiple sets of credentials
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (default to 25)
+     */
+    this.getIntegrationsCredentials = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/credentials', 
+        'GET', 
+        {  }, 
+        { 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * List all credential types
+     * 
+     */
+    this.getIntegrationsCredentialsTypes = function() { 
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/credentials/types', 
+        'GET', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * List all events
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {String} opts.sortBy Sort by (default to timestamp)
+     * @param {String} opts.sortOrder Order by (default to descending)
+     * @param {String} opts.entityId Include only events with this entity ID
+     */
+    this.getIntegrationsEventlog = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/eventlog', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'entityId': opts['entityId'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a single event
+     * 
+     * @param {String} eventId Event Id
+     */
+    this.getIntegrationsEventlogEventId = function(eventId) { 
+
+      // verify the required parameter 'eventId' is set
+      if (eventId === undefined || eventId === null) {
+        throw "Missing the required parameter 'eventId' when calling getIntegrationsEventlogEventId";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/eventlog/{eventId}', 
+        'GET', 
+        { 'eventId': eventId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get integration type.
+     * 
+     * @param {String} typeId Integration Type Id
+     */
+    this.getIntegrationsType = function(typeId) { 
+
+      // verify the required parameter 'typeId' is set
+      if (typeId === undefined || typeId === null) {
+        throw "Missing the required parameter 'typeId' when calling getIntegrationsType";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/types/{typeId}', 
+        'GET', 
+        { 'typeId': typeId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get properties config schema for an integration type.
+     * 
+     * @param {String} typeId Integration Type Id
+     * @param {Object} configType Config schema type
+     */
+    this.getIntegrationsTypeConfigschema = function(typeId, configType) { 
+
+      // verify the required parameter 'typeId' is set
+      if (typeId === undefined || typeId === null) {
+        throw "Missing the required parameter 'typeId' when calling getIntegrationsTypeConfigschema";
+      }
+
+      // verify the required parameter 'configType' is set
+      if (configType === undefined || configType === null) {
+        throw "Missing the required parameter 'configType' when calling getIntegrationsTypeConfigschema";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/types/{typeId}/configschemas/{configType}', 
+        'GET', 
+        { 'typeId': typeId,'configType': configType }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * List integration types
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize The total page size requested (default to 25)
+     * @param {Number} opts.pageNumber The page number requested (default to 1)
+     * @param {String} opts.sortBy variable name requested to sort by
+     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {String} opts.nextPage next page token
+     * @param {String} opts.previousPage Previous page token
+     */
+    this.getIntegrationsTypes = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/types', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update an integration.
+     * 
+     * @param {String} integrationId Integration Id
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body Integration Update
+     * @param {Number} opts.pageSize The total page size requested (default to 25)
+     * @param {Number} opts.pageNumber The page number requested (default to 1)
+     * @param {String} opts.sortBy variable name requested to sort by
+     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {String} opts.nextPage next page token
+     * @param {String} opts.previousPage Previous page token
+     */
+    this.patchIntegration = function(integrationId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'integrationId' is set
+      if (integrationId === undefined || integrationId === null) {
+        throw "Missing the required parameter 'integrationId' when calling patchIntegration";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/{integrationId}', 
+        'PATCH', 
+        { 'integrationId': integrationId }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Patch an Action
      * 
      * @param {String} actionId actionId
@@ -16728,6 +17265,31 @@ module.exports = request;
         {  }, 
         {  }, 
         body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Create an integration.
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body Integration
+     */
+    this.postIntegrations = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -16953,12 +17515,124 @@ module.exports = request;
         ['application/json']
       );
     };
+
+
+    /**
+     * Create a set of credentials
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body Credential
+     */
+    this.postIntegrationsCredentials = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/credentials', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Add a vendor connection
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body 
+     */
+    this.postIntegrationsWorkforcemanagementVendorconnection = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/workforcemanagement/vendorconnection', 
+        'POST', 
+        {  }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update integration configuration.
+     * 
+     * @param {String} integrationId Integration Id
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body Integration Configuration
+     */
+    this.putIntegrationConfigCurrent = function(integrationId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'integrationId' is set
+      if (integrationId === undefined || integrationId === null) {
+        throw "Missing the required parameter 'integrationId' when calling putIntegrationConfigCurrent";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/{integrationId}/config/current', 
+        'PUT', 
+        { 'integrationId': integrationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update a set of credentials
+     * 
+     * @param {String} credentialId Credential ID
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body Credential
+     */
+    this.putIntegrationsCredential = function(credentialId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'credentialId' is set
+      if (credentialId === undefined || credentialId === null) {
+        throw "Missing the required parameter 'credentialId' when calling putIntegrationsCredential";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/integrations/credentials/{credentialId}', 
+        'PUT', 
+        { 'credentialId': credentialId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
   };
 
   return exports;
 }));
 
-},{"../ApiClient":8}],24:[function(require,module,exports){
+},{"../ApiClient":8}],25:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -16979,7 +17653,7 @@ module.exports = request;
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -17271,7 +17945,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],25:[function(require,module,exports){
+},{"../ApiClient":8}],26:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -17292,7 +17966,7 @@ module.exports = request;
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -17516,7 +18190,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],26:[function(require,module,exports){
+},{"../ApiClient":8}],27:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -17537,7 +18211,7 @@ module.exports = request;
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -17669,7 +18343,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],27:[function(require,module,exports){
+},{"../ApiClient":8}],28:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -17690,7 +18364,7 @@ module.exports = request;
   /**
    * MobileDevices service.
    * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -17850,7 +18524,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],28:[function(require,module,exports){
+},{"../ApiClient":8}],29:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -17871,7 +18545,7 @@ module.exports = request;
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -18082,7 +18756,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],29:[function(require,module,exports){
+},{"../ApiClient":8}],30:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -18103,7 +18777,7 @@ module.exports = request;
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -18289,107 +18963,6 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],30:[function(require,module,exports){
-(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module.
-    define(['purecloud-platform-client-v2/ApiClient'], factory);
-  } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
-  } else {
-    // Browser globals (root is window)
-    if (!root.platformClient) {
-      root.platformClient = {};
-    }
-    root.platformClient.ObjectsApi = factory(root.platformClient.ApiClient);
-  }
-}(this, function(ApiClient) {
-  'use strict';
-
-  /**
-   * Objects service.
-   * @module purecloud-platform-client-v2/api/ObjectsApi
-   * @version 23.2.0
-   */
-
-  /**
-   * Constructs a new ObjectsApi. 
-   * @alias module:purecloud-platform-client-v2/api/ObjectsApi
-   * @class
-   * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-   * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-   */
-  var exports = function(apiClient) {
-    this.apiClient = apiClient || ApiClient.instance;
-
-
-
-    /**
-     * Returns the maximum allowed number of divisions.
-     * 
-     */
-    this.getAuthorizationDivisionsLimit = function() { 
-
-
-      return this.apiClient.callApi(
-        '/api/v2/authorization/divisions/limit', 
-        'GET', 
-        {  }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Set the division of a list of objects. The objects must all be of the same type: CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, QUEUE, USER
-     * 
-     * @param {String} divisionId Division ID
-     * @param {Object} objectType The type of the objects. Must be one of the valid object types
-     * @param {Array.<Object>} body Object Id List
-     */
-    this.postAuthorizationDivisionObject = function(divisionId, objectType, body) { 
-
-      // verify the required parameter 'divisionId' is set
-      if (divisionId === undefined || divisionId === null) {
-        throw "Missing the required parameter 'divisionId' when calling postAuthorizationDivisionObject";
-      }
-
-      // verify the required parameter 'objectType' is set
-      if (objectType === undefined || objectType === null) {
-        throw "Missing the required parameter 'objectType' when calling postAuthorizationDivisionObject";
-      }
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw "Missing the required parameter 'body' when calling postAuthorizationDivisionObject";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/authorization/divisions/{divisionId}/objects/{objectType}', 
-        'POST', 
-        { 'divisionId': divisionId,'objectType': objectType }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        body, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-  };
-
-  return exports;
-}));
-
 },{"../ApiClient":8}],31:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
@@ -18411,7 +18984,7 @@ module.exports = request;
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -18559,7 +19132,7 @@ module.exports = request;
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -19324,7 +19897,7 @@ module.exports = request;
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -22030,7 +22603,7 @@ module.exports = request;
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -22314,7 +22887,7 @@ module.exports = request;
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -23918,7 +24491,7 @@ module.exports = request;
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -25100,7 +25673,7 @@ module.exports = request;
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -25471,7 +26044,7 @@ module.exports = request;
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -27309,7 +27882,7 @@ module.exports = request;
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -27709,7 +28282,7 @@ module.exports = request;
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -28166,7 +28739,7 @@ module.exports = request;
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -28343,7 +28916,7 @@ module.exports = request;
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -28508,7 +29081,7 @@ module.exports = request;
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -32431,7 +33004,7 @@ module.exports = request;
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -32514,7 +33087,7 @@ module.exports = request;
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -32729,7 +33302,7 @@ module.exports = request;
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -34414,7 +34987,7 @@ module.exports = request;
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -34529,7 +35102,7 @@ module.exports = request;
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -35244,7 +35817,7 @@ module.exports = request;
   /**
    * WebChat service.
    * @module purecloud-platform-client-v2/api/WebChatApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -35495,7 +36068,7 @@ module.exports = request;
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 23.2.0
+   * @version 24.0.0
    */
 
   /**
@@ -35863,12 +36436,12 @@ module.exports = request;
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['purecloud-platform-client-v2/ApiClient', 'purecloud-platform-client-v2/api/AlertingApi', 'purecloud-platform-client-v2/api/AnalyticsApi', 'purecloud-platform-client-v2/api/ArchitectApi', 'purecloud-platform-client-v2/api/AttributesApi', 'purecloud-platform-client-v2/api/AuthorizationApi', 'purecloud-platform-client-v2/api/BillingApi', 'purecloud-platform-client-v2/api/ContentManagementApi', 'purecloud-platform-client-v2/api/ConversationsApi', 'purecloud-platform-client-v2/api/ExternalContactsApi', 'purecloud-platform-client-v2/api/FaxApi', 'purecloud-platform-client-v2/api/GeolocationApi', 'purecloud-platform-client-v2/api/GreetingsApi', 'purecloud-platform-client-v2/api/GroupsApi', 'purecloud-platform-client-v2/api/IdentityProviderApi', 'purecloud-platform-client-v2/api/IntegrationsApi', 'purecloud-platform-client-v2/api/LanguagesApi', 'purecloud-platform-client-v2/api/LicenseApi', 'purecloud-platform-client-v2/api/LocationsApi', 'purecloud-platform-client-v2/api/MobileDevicesApi', 'purecloud-platform-client-v2/api/NotificationsApi', 'purecloud-platform-client-v2/api/OAuthApi', 'purecloud-platform-client-v2/api/ObjectsApi', 'purecloud-platform-client-v2/api/OrganizationApi', 'purecloud-platform-client-v2/api/OrganizationAuthorizationApi', 'purecloud-platform-client-v2/api/OutboundApi', 'purecloud-platform-client-v2/api/PresenceApi', 'purecloud-platform-client-v2/api/QualityApi', 'purecloud-platform-client-v2/api/RecordingApi', 'purecloud-platform-client-v2/api/ResponseManagementApi', 'purecloud-platform-client-v2/api/RoutingApi', 'purecloud-platform-client-v2/api/ScriptsApi', 'purecloud-platform-client-v2/api/SearchApi', 'purecloud-platform-client-v2/api/StationsApi', 'purecloud-platform-client-v2/api/SuggestApi', 'purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi', 'purecloud-platform-client-v2/api/TokensApi', 'purecloud-platform-client-v2/api/UserRecordingsApi', 'purecloud-platform-client-v2/api/UsersApi', 'purecloud-platform-client-v2/api/UtilitiesApi', 'purecloud-platform-client-v2/api/VoicemailApi', 'purecloud-platform-client-v2/api/WebChatApi', 'purecloud-platform-client-v2/api/WorkforceManagementApi'], factory);
+    define(['purecloud-platform-client-v2/ApiClient', 'purecloud-platform-client-v2/api/AlertingApi', 'purecloud-platform-client-v2/api/AnalyticsApi', 'purecloud-platform-client-v2/api/AppFoundryApi', 'purecloud-platform-client-v2/api/ArchitectApi', 'purecloud-platform-client-v2/api/AttributesApi', 'purecloud-platform-client-v2/api/AuthorizationApi', 'purecloud-platform-client-v2/api/BillingApi', 'purecloud-platform-client-v2/api/ContentManagementApi', 'purecloud-platform-client-v2/api/ConversationsApi', 'purecloud-platform-client-v2/api/ExternalContactsApi', 'purecloud-platform-client-v2/api/FaxApi', 'purecloud-platform-client-v2/api/GeolocationApi', 'purecloud-platform-client-v2/api/GreetingsApi', 'purecloud-platform-client-v2/api/GroupsApi', 'purecloud-platform-client-v2/api/IdentityProviderApi', 'purecloud-platform-client-v2/api/IntegrationsApi', 'purecloud-platform-client-v2/api/LanguagesApi', 'purecloud-platform-client-v2/api/LicenseApi', 'purecloud-platform-client-v2/api/LocationsApi', 'purecloud-platform-client-v2/api/MobileDevicesApi', 'purecloud-platform-client-v2/api/NotificationsApi', 'purecloud-platform-client-v2/api/OAuthApi', 'purecloud-platform-client-v2/api/OrganizationApi', 'purecloud-platform-client-v2/api/OrganizationAuthorizationApi', 'purecloud-platform-client-v2/api/OutboundApi', 'purecloud-platform-client-v2/api/PresenceApi', 'purecloud-platform-client-v2/api/QualityApi', 'purecloud-platform-client-v2/api/RecordingApi', 'purecloud-platform-client-v2/api/ResponseManagementApi', 'purecloud-platform-client-v2/api/RoutingApi', 'purecloud-platform-client-v2/api/ScriptsApi', 'purecloud-platform-client-v2/api/SearchApi', 'purecloud-platform-client-v2/api/StationsApi', 'purecloud-platform-client-v2/api/SuggestApi', 'purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi', 'purecloud-platform-client-v2/api/TokensApi', 'purecloud-platform-client-v2/api/UserRecordingsApi', 'purecloud-platform-client-v2/api/UsersApi', 'purecloud-platform-client-v2/api/UtilitiesApi', 'purecloud-platform-client-v2/api/VoicemailApi', 'purecloud-platform-client-v2/api/WebChatApi', 'purecloud-platform-client-v2/api/WorkforceManagementApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./api/AlertingApi'), require('./api/AnalyticsApi'), require('./api/ArchitectApi'), require('./api/AttributesApi'), require('./api/AuthorizationApi'), require('./api/BillingApi'), require('./api/ContentManagementApi'), require('./api/ConversationsApi'), require('./api/ExternalContactsApi'), require('./api/FaxApi'), require('./api/GeolocationApi'), require('./api/GreetingsApi'), require('./api/GroupsApi'), require('./api/IdentityProviderApi'), require('./api/IntegrationsApi'), require('./api/LanguagesApi'), require('./api/LicenseApi'), require('./api/LocationsApi'), require('./api/MobileDevicesApi'), require('./api/NotificationsApi'), require('./api/OAuthApi'), require('./api/ObjectsApi'), require('./api/OrganizationApi'), require('./api/OrganizationAuthorizationApi'), require('./api/OutboundApi'), require('./api/PresenceApi'), require('./api/QualityApi'), require('./api/RecordingApi'), require('./api/ResponseManagementApi'), require('./api/RoutingApi'), require('./api/ScriptsApi'), require('./api/SearchApi'), require('./api/StationsApi'), require('./api/SuggestApi'), require('./api/TelephonyProvidersEdgeApi'), require('./api/TokensApi'), require('./api/UserRecordingsApi'), require('./api/UsersApi'), require('./api/UtilitiesApi'), require('./api/VoicemailApi'), require('./api/WebChatApi'), require('./api/WorkforceManagementApi'));
+    module.exports = factory(require('./ApiClient'), require('./api/AlertingApi'), require('./api/AnalyticsApi'), require('./api/AppFoundryApi'), require('./api/ArchitectApi'), require('./api/AttributesApi'), require('./api/AuthorizationApi'), require('./api/BillingApi'), require('./api/ContentManagementApi'), require('./api/ConversationsApi'), require('./api/ExternalContactsApi'), require('./api/FaxApi'), require('./api/GeolocationApi'), require('./api/GreetingsApi'), require('./api/GroupsApi'), require('./api/IdentityProviderApi'), require('./api/IntegrationsApi'), require('./api/LanguagesApi'), require('./api/LicenseApi'), require('./api/LocationsApi'), require('./api/MobileDevicesApi'), require('./api/NotificationsApi'), require('./api/OAuthApi'), require('./api/OrganizationApi'), require('./api/OrganizationAuthorizationApi'), require('./api/OutboundApi'), require('./api/PresenceApi'), require('./api/QualityApi'), require('./api/RecordingApi'), require('./api/ResponseManagementApi'), require('./api/RoutingApi'), require('./api/ScriptsApi'), require('./api/SearchApi'), require('./api/StationsApi'), require('./api/SuggestApi'), require('./api/TelephonyProvidersEdgeApi'), require('./api/TokensApi'), require('./api/UserRecordingsApi'), require('./api/UsersApi'), require('./api/UtilitiesApi'), require('./api/VoicemailApi'), require('./api/WebChatApi'), require('./api/WorkforceManagementApi'));
   }
-}(function(ApiClient, AlertingApi, AnalyticsApi, ArchitectApi, AttributesApi, AuthorizationApi, BillingApi, ContentManagementApi, ConversationsApi, ExternalContactsApi, FaxApi, GeolocationApi, GreetingsApi, GroupsApi, IdentityProviderApi, IntegrationsApi, LanguagesApi, LicenseApi, LocationsApi, MobileDevicesApi, NotificationsApi, OAuthApi, ObjectsApi, OrganizationApi, OrganizationAuthorizationApi, OutboundApi, PresenceApi, QualityApi, RecordingApi, ResponseManagementApi, RoutingApi, ScriptsApi, SearchApi, StationsApi, SuggestApi, TelephonyProvidersEdgeApi, TokensApi, UserRecordingsApi, UsersApi, UtilitiesApi, VoicemailApi, WebChatApi, WorkforceManagementApi) {
+}(function(ApiClient, AlertingApi, AnalyticsApi, AppFoundryApi, ArchitectApi, AttributesApi, AuthorizationApi, BillingApi, ContentManagementApi, ConversationsApi, ExternalContactsApi, FaxApi, GeolocationApi, GreetingsApi, GroupsApi, IdentityProviderApi, IntegrationsApi, LanguagesApi, LicenseApi, LocationsApi, MobileDevicesApi, NotificationsApi, OAuthApi, OrganizationApi, OrganizationAuthorizationApi, OutboundApi, PresenceApi, QualityApi, RecordingApi, ResponseManagementApi, RoutingApi, ScriptsApi, SearchApi, StationsApi, SuggestApi, TelephonyProvidersEdgeApi, TokensApi, UserRecordingsApi, UsersApi, UtilitiesApi, VoicemailApi, WebChatApi, WorkforceManagementApi) {
   'use strict';
 
   /**
@@ -35900,7 +36473,7 @@ module.exports = request;
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 23.2.0
+   * @version 24.0.0
    */
   var platformClient = {
     /**
@@ -35918,6 +36491,11 @@ module.exports = request;
      * @property {module:purecloud-platform-client-v2/api/AnalyticsApi}
      */
     AnalyticsApi: AnalyticsApi,
+    /**
+     * The AppFoundryApi service constructor.
+     * @property {module:purecloud-platform-client-v2/api/AppFoundryApi}
+     */
+    AppFoundryApi: AppFoundryApi,
     /**
      * The ArchitectApi service constructor.
      * @property {module:purecloud-platform-client-v2/api/ArchitectApi}
@@ -36013,11 +36591,6 @@ module.exports = request;
      * @property {module:purecloud-platform-client-v2/api/OAuthApi}
      */
     OAuthApi: OAuthApi,
-    /**
-     * The ObjectsApi service constructor.
-     * @property {module:purecloud-platform-client-v2/api/ObjectsApi}
-     */
-    ObjectsApi: ObjectsApi,
     /**
      * The OrganizationApi service constructor.
      * @property {module:purecloud-platform-client-v2/api/OrganizationApi}
@@ -36123,4 +36696,4 @@ module.exports = request;
   return platformClient;
 }));
 
-},{"./ApiClient":8,"./api/AlertingApi":9,"./api/AnalyticsApi":10,"./api/ArchitectApi":11,"./api/AttributesApi":12,"./api/AuthorizationApi":13,"./api/BillingApi":14,"./api/ContentManagementApi":15,"./api/ConversationsApi":16,"./api/ExternalContactsApi":17,"./api/FaxApi":18,"./api/GeolocationApi":19,"./api/GreetingsApi":20,"./api/GroupsApi":21,"./api/IdentityProviderApi":22,"./api/IntegrationsApi":23,"./api/LanguagesApi":24,"./api/LicenseApi":25,"./api/LocationsApi":26,"./api/MobileDevicesApi":27,"./api/NotificationsApi":28,"./api/OAuthApi":29,"./api/ObjectsApi":30,"./api/OrganizationApi":31,"./api/OrganizationAuthorizationApi":32,"./api/OutboundApi":33,"./api/PresenceApi":34,"./api/QualityApi":35,"./api/RecordingApi":36,"./api/ResponseManagementApi":37,"./api/RoutingApi":38,"./api/ScriptsApi":39,"./api/SearchApi":40,"./api/StationsApi":41,"./api/SuggestApi":42,"./api/TelephonyProvidersEdgeApi":43,"./api/TokensApi":44,"./api/UserRecordingsApi":45,"./api/UsersApi":46,"./api/UtilitiesApi":47,"./api/VoicemailApi":48,"./api/WebChatApi":49,"./api/WorkforceManagementApi":50}]},{},[]);
+},{"./ApiClient":8,"./api/AlertingApi":9,"./api/AnalyticsApi":10,"./api/AppFoundryApi":11,"./api/ArchitectApi":12,"./api/AttributesApi":13,"./api/AuthorizationApi":14,"./api/BillingApi":15,"./api/ContentManagementApi":16,"./api/ConversationsApi":17,"./api/ExternalContactsApi":18,"./api/FaxApi":19,"./api/GeolocationApi":20,"./api/GreetingsApi":21,"./api/GroupsApi":22,"./api/IdentityProviderApi":23,"./api/IntegrationsApi":24,"./api/LanguagesApi":25,"./api/LicenseApi":26,"./api/LocationsApi":27,"./api/MobileDevicesApi":28,"./api/NotificationsApi":29,"./api/OAuthApi":30,"./api/OrganizationApi":31,"./api/OrganizationAuthorizationApi":32,"./api/OutboundApi":33,"./api/PresenceApi":34,"./api/QualityApi":35,"./api/RecordingApi":36,"./api/ResponseManagementApi":37,"./api/RoutingApi":38,"./api/ScriptsApi":39,"./api/SearchApi":40,"./api/StationsApi":41,"./api/SuggestApi":42,"./api/TelephonyProvidersEdgeApi":43,"./api/TokensApi":44,"./api/UserRecordingsApi":45,"./api/UsersApi":46,"./api/UtilitiesApi":47,"./api/VoicemailApi":48,"./api/WebChatApi":49,"./api/WorkforceManagementApi":50}]},{},[]);

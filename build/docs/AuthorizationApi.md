@@ -9,7 +9,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteAuthorizationRole**](AuthorizationApi.html#deleteAuthorizationRole) | **DELETE** /api/v2/authorization/roles/{roleId} | Delete an organization role.
 [**deleteUserRoles**](AuthorizationApi.html#deleteUserRoles) | **DELETE** /api/v2/users/{userId}/roles | Removes all the roles from the user.
-[**getAuthorizationDivisionsLimit**](AuthorizationApi.html#getAuthorizationDivisionsLimit) | **GET** /api/v2/authorization/divisions/limit | Returns the maximum allowed number of divisions.
 [**getAuthorizationPermissions**](AuthorizationApi.html#getAuthorizationPermissions) | **GET** /api/v2/authorization/permissions | Get all permissions.
 [**getAuthorizationProducts**](AuthorizationApi.html#getAuthorizationProducts) | **GET** /api/v2/authorization/products | Get the list of enabled products
 [**getAuthorizationRole**](AuthorizationApi.html#getAuthorizationRole) | **GET** /api/v2/authorization/roles/{roleId} | Get a single organization role.
@@ -17,7 +16,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAuthorizationRoles**](AuthorizationApi.html#getAuthorizationRoles) | **GET** /api/v2/authorization/roles | Retrieve a list of all roles defined for the organization
 [**getUserRoles**](AuthorizationApi.html#getUserRoles) | **GET** /api/v2/users/{userId}/roles | Returns a listing of roles and permissions for a user.
 [**patchAuthorizationRole**](AuthorizationApi.html#patchAuthorizationRole) | **PATCH** /api/v2/authorization/roles/{roleId} | Patch Organization Role for needsUpdate Field
-[**postAuthorizationDivisionObject**](AuthorizationApi.html#postAuthorizationDivisionObject) | **POST** /api/v2/authorization/divisions/{divisionId}/objects/{objectType} | Set the division of a list of objects. The objects must all be of the same type: CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, QUEUE, USER
 [**postAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi.html#postAuthorizationRoleComparedefaultRightRoleId) | **POST** /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId} | Get an unsaved org role to default role comparison
 [**postAuthorizationRoles**](AuthorizationApi.html#postAuthorizationRoles) | **POST** /api/v2/authorization/roles | Create an organization role.
 [**postAuthorizationRolesDefault**](AuthorizationApi.html#postAuthorizationRolesDefault) | **POST** /api/v2/authorization/roles/default | Restores all default roles
@@ -123,48 +121,6 @@ apiInstance.deleteUserRoles(userId)
 ### Return type
 
 void (no response body)
-
-<a name="getAuthorizationDivisionsLimit"></a>
-
-# **&#39;Number&#39;** getAuthorizationDivisionsLimit()
-
-GET /api/v2/authorization/divisions/limit
-
-Returns the maximum allowed number of divisions.
-
-
-
-### Example
-
-~~~ javascript
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new platformClient.AuthorizationApi();
-apiInstance.getAuthorizationDivisionsLimit()
-  .then(function(data) {
-    console.log(`getAuthorizationDivisionsLimit success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAuthorizationDivisionsLimit');
-    console.error(err);
-  });
-
-~~~
-
-### Parameters
-
-This endpoint does not need any parameter.
-{: class="table table-striped"}
-
-### Return type
-
-**&#39;Number&#39;**
 
 <a name="getAuthorizationPermissions"></a>
 
@@ -525,60 +481,6 @@ apiInstance.patchAuthorizationRole(roleId, body)
 ### Return type
 
 **DomainOrganizationRole**
-
-<a name="postAuthorizationDivisionObject"></a>
-
-# [AuthzTypedObject] postAuthorizationDivisionObject(divisionId, objectType, body)
-
-POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType}
-
-Set the division of a list of objects. The objects must all be of the same type: CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, QUEUE, USER
-
-
-
-### Example
-
-~~~ javascript
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new platformClient.AuthorizationApi();
-
-var divisionId = "divisionId_example"; // String | Division ID
-
-var objectType = "objectType_example"; // String | The type of the objects. Must be one of the valid object types
-
-var body = [{}]; // Object | Object Id List
-
-apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
-  .then(function(data) {
-    console.log(`postAuthorizationDivisionObject success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAuthorizationDivisionObject');
-    console.error(err);
-  });
-
-~~~
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **divisionId** | **String** | Division ID |  |
- **objectType** | **String** | The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, USER |
- **body** | **Object** | Object Id List |  |
-{: class="table table-striped"}
-
-### Return type
-
-**[AuthzTypedObject]**
 
 <a name="postAuthorizationRoleComparedefaultRightRoleId"></a>
 
