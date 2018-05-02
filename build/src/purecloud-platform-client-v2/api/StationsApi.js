@@ -18,7 +18,7 @@
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 24.0.0
+   * @version 25.0.0
    */
 
   /**

@@ -18,7 +18,7 @@
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 24.0.0
+   * @version 25.0.0
    */
 
   /**
