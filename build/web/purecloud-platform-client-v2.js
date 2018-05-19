@@ -1980,172 +1980,6 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 },{}],5:[function(require,module,exports){
 
 /**
- * Expose `Emitter`.
- */
-
-module.exports = Emitter;
-
-/**
- * Initialize a new `Emitter`.
- *
- * @api public
- */
-
-function Emitter(obj) {
-  if (obj) return mixin(obj);
-};
-
-/**
- * Mixin the emitter properties.
- *
- * @param {Object} obj
- * @return {Object}
- * @api private
- */
-
-function mixin(obj) {
-  for (var key in Emitter.prototype) {
-    obj[key] = Emitter.prototype[key];
-  }
-  return obj;
-}
-
-/**
- * Listen on the given `event` with `fn`.
- *
- * @param {String} event
- * @param {Function} fn
- * @return {Emitter}
- * @api public
- */
-
-Emitter.prototype.on =
-Emitter.prototype.addEventListener = function(event, fn){
-  this._callbacks = this._callbacks || {};
-  (this._callbacks[event] = this._callbacks[event] || [])
-    .push(fn);
-  return this;
-};
-
-/**
- * Adds an `event` listener that will be invoked a single
- * time then automatically removed.
- *
- * @param {String} event
- * @param {Function} fn
- * @return {Emitter}
- * @api public
- */
-
-Emitter.prototype.once = function(event, fn){
-  var self = this;
-  this._callbacks = this._callbacks || {};
-
-  function on() {
-    self.off(event, on);
-    fn.apply(this, arguments);
-  }
-
-  on.fn = fn;
-  this.on(event, on);
-  return this;
-};
-
-/**
- * Remove the given callback for `event` or all
- * registered callbacks.
- *
- * @param {String} event
- * @param {Function} fn
- * @return {Emitter}
- * @api public
- */
-
-Emitter.prototype.off =
-Emitter.prototype.removeListener =
-Emitter.prototype.removeAllListeners =
-Emitter.prototype.removeEventListener = function(event, fn){
-  this._callbacks = this._callbacks || {};
-
-  // all
-  if (0 == arguments.length) {
-    this._callbacks = {};
-    return this;
-  }
-
-  // specific event
-  var callbacks = this._callbacks[event];
-  if (!callbacks) return this;
-
-  // remove all handlers
-  if (1 == arguments.length) {
-    delete this._callbacks[event];
-    return this;
-  }
-
-  // remove specific handler
-  var cb;
-  for (var i = 0; i < callbacks.length; i++) {
-    cb = callbacks[i];
-    if (cb === fn || cb.fn === fn) {
-      callbacks.splice(i, 1);
-      break;
-    }
-  }
-  return this;
-};
-
-/**
- * Emit `event` with the given args.
- *
- * @param {String} event
- * @param {Mixed} ...
- * @return {Emitter}
- */
-
-Emitter.prototype.emit = function(event){
-  this._callbacks = this._callbacks || {};
-  var args = [].slice.call(arguments, 1)
-    , callbacks = this._callbacks[event];
-
-  if (callbacks) {
-    callbacks = callbacks.slice(0);
-    for (var i = 0, len = callbacks.length; i < len; ++i) {
-      callbacks[i].apply(this, args);
-    }
-  }
-
-  return this;
-};
-
-/**
- * Return array of callbacks for `event`.
- *
- * @param {String} event
- * @return {Array}
- * @api public
- */
-
-Emitter.prototype.listeners = function(event){
-  this._callbacks = this._callbacks || {};
-  return this._callbacks[event] || [];
-};
-
-/**
- * Check if this emitter has `event` handlers.
- *
- * @param {String} event
- * @return {Boolean}
- * @api public
- */
-
-Emitter.prototype.hasListeners = function(event){
-  return !! this.listeners(event).length;
-};
-
-},{}],6:[function(require,module,exports){
-
-/**
  * Reduce `arr` with `fn`.
  *
  * @param {Array} arr
@@ -2168,7 +2002,7 @@ module.exports = function(arr, fn, initial){
   
   return curr;
 };
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /**
  * Module dependencies.
  */
@@ -3280,7 +3114,173 @@ request.put = function(url, data, fn){
 
 module.exports = request;
 
-},{"emitter":5,"reduce":6}],8:[function(require,module,exports){
+},{"emitter":7,"reduce":5}],7:[function(require,module,exports){
+
+/**
+ * Expose `Emitter`.
+ */
+
+module.exports = Emitter;
+
+/**
+ * Initialize a new `Emitter`.
+ *
+ * @api public
+ */
+
+function Emitter(obj) {
+  if (obj) return mixin(obj);
+};
+
+/**
+ * Mixin the emitter properties.
+ *
+ * @param {Object} obj
+ * @return {Object}
+ * @api private
+ */
+
+function mixin(obj) {
+  for (var key in Emitter.prototype) {
+    obj[key] = Emitter.prototype[key];
+  }
+  return obj;
+}
+
+/**
+ * Listen on the given `event` with `fn`.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */
+
+Emitter.prototype.on =
+Emitter.prototype.addEventListener = function(event, fn){
+  this._callbacks = this._callbacks || {};
+  (this._callbacks[event] = this._callbacks[event] || [])
+    .push(fn);
+  return this;
+};
+
+/**
+ * Adds an `event` listener that will be invoked a single
+ * time then automatically removed.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */
+
+Emitter.prototype.once = function(event, fn){
+  var self = this;
+  this._callbacks = this._callbacks || {};
+
+  function on() {
+    self.off(event, on);
+    fn.apply(this, arguments);
+  }
+
+  on.fn = fn;
+  this.on(event, on);
+  return this;
+};
+
+/**
+ * Remove the given callback for `event` or all
+ * registered callbacks.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */
+
+Emitter.prototype.off =
+Emitter.prototype.removeListener =
+Emitter.prototype.removeAllListeners =
+Emitter.prototype.removeEventListener = function(event, fn){
+  this._callbacks = this._callbacks || {};
+
+  // all
+  if (0 == arguments.length) {
+    this._callbacks = {};
+    return this;
+  }
+
+  // specific event
+  var callbacks = this._callbacks[event];
+  if (!callbacks) return this;
+
+  // remove all handlers
+  if (1 == arguments.length) {
+    delete this._callbacks[event];
+    return this;
+  }
+
+  // remove specific handler
+  var cb;
+  for (var i = 0; i < callbacks.length; i++) {
+    cb = callbacks[i];
+    if (cb === fn || cb.fn === fn) {
+      callbacks.splice(i, 1);
+      break;
+    }
+  }
+  return this;
+};
+
+/**
+ * Emit `event` with the given args.
+ *
+ * @param {String} event
+ * @param {Mixed} ...
+ * @return {Emitter}
+ */
+
+Emitter.prototype.emit = function(event){
+  this._callbacks = this._callbacks || {};
+  var args = [].slice.call(arguments, 1)
+    , callbacks = this._callbacks[event];
+
+  if (callbacks) {
+    callbacks = callbacks.slice(0);
+    for (var i = 0, len = callbacks.length; i < len; ++i) {
+      callbacks[i].apply(this, args);
+    }
+  }
+
+  return this;
+};
+
+/**
+ * Return array of callbacks for `event`.
+ *
+ * @param {String} event
+ * @return {Array}
+ * @api public
+ */
+
+Emitter.prototype.listeners = function(event){
+  this._callbacks = this._callbacks || {};
+  return this._callbacks[event] || [];
+};
+
+/**
+ * Check if this emitter has `event` handlers.
+ *
+ * @param {String} event
+ * @return {Boolean}
+ * @api public
+ */
+
+Emitter.prototype.hasListeners = function(event){
+  return !! this.listeners(event).length;
+};
+
+},{}],8:[function(require,module,exports){
 (function (Buffer){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
@@ -3301,7 +3301,7 @@ module.exports = request;
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -3978,7 +3978,7 @@ module.exports = request;
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '25.0.0' });
+    //request.set({ 'purecloud-sdk': '26.0.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -4110,7 +4110,7 @@ module.exports = request;
 }));
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":3,"fs":1,"superagent":7}],9:[function(require,module,exports){
+},{"buffer":3,"fs":1,"superagent":6}],9:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -4131,7 +4131,7 @@ module.exports = request;
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -4487,7 +4487,7 @@ module.exports = request;
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -5194,163 +5194,6 @@ module.exports = request;
     if (!root.platformClient) {
       root.platformClient = {};
     }
-    root.platformClient.AppFoundryApi = factory(root.platformClient.ApiClient);
-  }
-}(this, function(ApiClient) {
-  'use strict';
-
-  /**
-   * AppFoundry service.
-   * @module purecloud-platform-client-v2/api/AppFoundryApi
-   * @version 25.0.0
-   */
-
-  /**
-   * Constructs a new AppFoundryApi. 
-   * @alias module:purecloud-platform-client-v2/api/AppFoundryApi
-   * @class
-   * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-   * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-   */
-  var exports = function(apiClient) {
-    this.apiClient = apiClient || ApiClient.instance;
-
-
-
-    /**
-     * Return a structured hierarchy of available listing categories
-     * 
-     * @param {String} platformName 
-     */
-    this.getAppfoundryPlatformNameCategories = function(platformName) { 
-
-      // verify the required parameter 'platformName' is set
-      if (platformName === undefined || platformName === null) {
-        throw "Missing the required parameter 'platformName' when calling getAppfoundryPlatformNameCategories";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/appfoundry/{platformName}/categories', 
-        'GET', 
-        { 'platformName': platformName }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Get listings that are part of the specified root category or a contained subcategory
-     * 
-     * @param {String} platformName 
-     * @param {String} categoryName Name of category to request listings from
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The total page size requested (default to 25)
-     * @param {Number} opts.pageNumber The page number requested (default to 1)
-     * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
-     * @param {String} opts.nextPage next page token
-     * @param {String} opts.previousPage Previous page token
-     */
-    this.getAppfoundryPlatformNameCategory = function(platformName, categoryName, opts) { 
-      opts = opts || {};
-
-      // verify the required parameter 'platformName' is set
-      if (platformName === undefined || platformName === null) {
-        throw "Missing the required parameter 'platformName' when calling getAppfoundryPlatformNameCategory";
-      }
-
-      // verify the required parameter 'categoryName' is set
-      if (categoryName === undefined || categoryName === null) {
-        throw "Missing the required parameter 'categoryName' when calling getAppfoundryPlatformNameCategory";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/appfoundry/{platformName}/categories/{categoryName}', 
-        'GET', 
-        { 'platformName': platformName,'categoryName': categoryName }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Get listings that are part of the specified subcategory
-     * 
-     * @param {String} platformName 
-     * @param {String} categoryName Name of category to request listings from
-     * @param {String} subCategoryName Name of subcategory to request listings from
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The total page size requested (default to 25)
-     * @param {Number} opts.pageNumber The page number requested (default to 1)
-     * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
-     * @param {String} opts.nextPage next page token
-     * @param {String} opts.previousPage Previous page token
-     */
-    this.getAppfoundryPlatformNameCategorySubCategoryName = function(platformName, categoryName, subCategoryName, opts) { 
-      opts = opts || {};
-
-      // verify the required parameter 'platformName' is set
-      if (platformName === undefined || platformName === null) {
-        throw "Missing the required parameter 'platformName' when calling getAppfoundryPlatformNameCategorySubCategoryName";
-      }
-
-      // verify the required parameter 'categoryName' is set
-      if (categoryName === undefined || categoryName === null) {
-        throw "Missing the required parameter 'categoryName' when calling getAppfoundryPlatformNameCategorySubCategoryName";
-      }
-
-      // verify the required parameter 'subCategoryName' is set
-      if (subCategoryName === undefined || subCategoryName === null) {
-        throw "Missing the required parameter 'subCategoryName' when calling getAppfoundryPlatformNameCategorySubCategoryName";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/appfoundry/{platformName}/categories/{categoryName}/{subCategoryName}', 
-        'GET', 
-        { 'platformName': platformName,'categoryName': categoryName,'subCategoryName': subCategoryName }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-  };
-
-  return exports;
-}));
-
-},{"../ApiClient":8}],12:[function(require,module,exports){
-(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module.
-    define(['purecloud-platform-client-v2/ApiClient'], factory);
-  } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
-  } else {
-    // Browser globals (root is window)
-    if (!root.platformClient) {
-      root.platformClient = {};
-    }
     root.platformClient.ArchitectApi = factory(root.platformClient.ApiClient);
   }
 }(this, function(ApiClient) {
@@ -5359,7 +5202,7 @@ module.exports = request;
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -7858,7 +7701,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],13:[function(require,module,exports){
+},{"../ApiClient":8}],12:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -7879,7 +7722,7 @@ module.exports = request;
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -8069,7 +7912,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],14:[function(require,module,exports){
+},{"../ApiClient":8}],13:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -8090,7 +7933,7 @@ module.exports = request;
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -8278,12 +8121,12 @@ module.exports = request;
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {Array.<String>} opts.expand variable name requested by expand list
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      * @param {String} opts.name 
-     * @param {Array.<Object>} opts.permission 
-     * @param {Array.<Object>} opts.defaultRoleId 
+     * @param {Array.<String>} opts.permission 
+     * @param {Array.<String>} opts.defaultRoleId 
      * @param {Boolean} opts.userCount  (default to true)
      * @param {Array.<String>} opts.id id
      */
@@ -8628,7 +8471,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],15:[function(require,module,exports){
+},{"../ApiClient":8}],14:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -8649,7 +8492,7 @@ module.exports = request;
   /**
    * Billing service.
    * @module purecloud-platform-client-v2/api/BillingApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -8701,7 +8544,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],16:[function(require,module,exports){
+},{"../ApiClient":8}],15:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -8722,7 +8565,7 @@ module.exports = request;
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -9958,7 +9801,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],17:[function(require,module,exports){
+},{"../ApiClient":8}],16:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -9979,7 +9822,7 @@ module.exports = request;
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -13306,7 +13149,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],18:[function(require,module,exports){
+},{"../ApiClient":8}],17:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -13327,7 +13170,7 @@ module.exports = request;
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -14290,7 +14133,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],19:[function(require,module,exports){
+},{"../ApiClient":8}],18:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -14311,7 +14154,7 @@ module.exports = request;
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -14495,7 +14338,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],20:[function(require,module,exports){
+},{"../ApiClient":8}],19:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -14516,7 +14359,7 @@ module.exports = request;
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -14658,7 +14501,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],21:[function(require,module,exports){
+},{"../ApiClient":8}],20:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -14679,7 +14522,7 @@ module.exports = request;
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -15178,7 +15021,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],22:[function(require,module,exports){
+},{"../ApiClient":8}],21:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -15199,7 +15042,7 @@ module.exports = request;
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -15636,7 +15479,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],23:[function(require,module,exports){
+},{"../ApiClient":8}],22:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -15657,7 +15500,7 @@ module.exports = request;
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -16345,7 +16188,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],24:[function(require,module,exports){
+},{"../ApiClient":8}],23:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -16366,7 +16209,7 @@ module.exports = request;
   /**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -16501,7 +16344,7 @@ module.exports = request;
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {Array.<String>} opts.expand variable name requested by expand list
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      */
@@ -16564,7 +16407,7 @@ module.exports = request;
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {Array.<String>} opts.expand variable name requested by expand list
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      */
@@ -16825,7 +16668,7 @@ module.exports = request;
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {Array.<String>} opts.expand variable name requested by expand list
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      */
@@ -16856,7 +16699,7 @@ module.exports = request;
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {Array.<String>} opts.expand variable name requested by expand list
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      */
@@ -16889,7 +16732,7 @@ module.exports = request;
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {Array.<String>} opts.expand variable name requested by expand list
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      */
@@ -16919,7 +16762,7 @@ module.exports = request;
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {Array.<String>} opts.expand variable name requested by expand list
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      */
@@ -17144,7 +16987,7 @@ module.exports = request;
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {Array.<String>} opts.expand variable name requested by expand list
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      */
@@ -17176,7 +17019,7 @@ module.exports = request;
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {Array.<String>} opts.expand variable name requested by expand list
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      */
@@ -17632,7 +17475,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],25:[function(require,module,exports){
+},{"../ApiClient":8}],24:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -17653,7 +17496,7 @@ module.exports = request;
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -17945,7 +17788,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],26:[function(require,module,exports){
+},{"../ApiClient":8}],25:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -17966,7 +17809,7 @@ module.exports = request;
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -18190,7 +18033,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],27:[function(require,module,exports){
+},{"../ApiClient":8}],26:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -18211,7 +18054,7 @@ module.exports = request;
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -18343,7 +18186,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],28:[function(require,module,exports){
+},{"../ApiClient":8}],27:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -18364,7 +18207,7 @@ module.exports = request;
   /**
    * MobileDevices service.
    * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -18524,7 +18367,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],29:[function(require,module,exports){
+},{"../ApiClient":8}],28:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -18545,7 +18388,7 @@ module.exports = request;
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -18756,7 +18599,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],30:[function(require,module,exports){
+},{"../ApiClient":8}],29:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -18777,7 +18620,7 @@ module.exports = request;
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -18963,7 +18806,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],31:[function(require,module,exports){
+},{"../ApiClient":8}],30:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -18984,7 +18827,7 @@ module.exports = request;
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -19111,7 +18954,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],32:[function(require,module,exports){
+},{"../ApiClient":8}],31:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -19132,7 +18975,7 @@ module.exports = request;
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -19876,7 +19719,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],33:[function(require,module,exports){
+},{"../ApiClient":8}],32:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -19897,7 +19740,7 @@ module.exports = request;
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -22582,7 +22425,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],34:[function(require,module,exports){
+},{"../ApiClient":8}],33:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -22603,7 +22446,7 @@ module.exports = request;
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -22866,7 +22709,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],35:[function(require,module,exports){
+},{"../ApiClient":8}],34:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -22887,7 +22730,7 @@ module.exports = request;
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -23120,12 +22963,12 @@ module.exports = request;
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {Array.<String>} opts.expand variable name requested by expand list
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      * @param {Date} opts.startTime Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
      * @param {Date} opts.endTime End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-     * @param {Array.<Object>} opts.agentUserId user id of agent requested
+     * @param {Array.<String>} opts.agentUserId user id of agent requested
      * @param {String} opts.evaluatorUserId user id of the evaluator
      * @param {String} opts.name name
      * @param {String} opts.group group id
@@ -23189,7 +23032,7 @@ module.exports = request;
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {Array.<String>} opts.expand variable name requested by expand list
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      * @param {String} opts.conversationId conversation id
@@ -23228,7 +23071,7 @@ module.exports = request;
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {Array.<String>} opts.expand variable name requested by expand list
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      * @param {String} opts.recordingId id of the recording
@@ -23302,7 +23145,7 @@ module.exports = request;
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {Array.<String>} opts.expand variable name requested by expand list
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      * @param {String} opts.conversationId conversationId specified
@@ -23311,7 +23154,7 @@ module.exports = request;
      * @param {String} opts.queueId queue id
      * @param {String} opts.startTime start time of the evaluation query
      * @param {String} opts.endTime end time of the evaluation query
-     * @param {Array.<Object>} opts.evaluationState 
+     * @param {Array.<String>} opts.evaluationState 
      * @param {Boolean} opts.isReleased the evaluation has been released
      * @param {Boolean} opts.agentHasRead agent has the evaluation
      * @param {Boolean} opts.expandAnswerTotalScores get the total scores for evaluations
@@ -23344,13 +23187,13 @@ module.exports = request;
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {Array.<String>} opts.expand variable name requested by expand list
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      * @param {Date} opts.startTime The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
      * @param {Date} opts.endTime The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
      * @param {String} opts.name Evaluator name
-     * @param {Array.<Object>} opts.permission permission strings
+     * @param {Array.<String>} opts.permission permission strings
      * @param {String} opts.group group id
      */
     this.getQualityEvaluatorsActivity = function(opts) { 
@@ -23680,7 +23523,7 @@ module.exports = request;
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {Array.<String>} opts.expand variable name requested by expand list
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      * @param {String} opts.name the keyword set name - used for filtering results in searches.
@@ -24470,7 +24313,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],36:[function(require,module,exports){
+},{"../ApiClient":8}],35:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -24491,7 +24334,7 @@ module.exports = request;
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -24905,7 +24748,7 @@ module.exports = request;
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {Array.<String>} opts.expand variable name requested by expand list
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      * @param {Boolean} opts.hasConversation Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. (default to false)
@@ -25015,7 +24858,7 @@ module.exports = request;
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {Array.<String>} opts.expand variable name requested by expand list
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      * @param {String} opts.name the policy name - used for filtering results in searches.
@@ -25652,7 +25495,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],37:[function(require,module,exports){
+},{"../ApiClient":8}],36:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -25673,7 +25516,7 @@ module.exports = request;
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -26023,7 +25866,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],38:[function(require,module,exports){
+},{"../ApiClient":8}],37:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -26044,7 +25887,7 @@ module.exports = request;
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -27861,7 +27704,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],39:[function(require,module,exports){
+},{"../ApiClient":8}],38:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -27882,7 +27725,7 @@ module.exports = request;
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -28261,7 +28104,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],40:[function(require,module,exports){
+},{"../ApiClient":8}],39:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -28282,7 +28125,7 @@ module.exports = request;
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -28718,7 +28561,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],41:[function(require,module,exports){
+},{"../ApiClient":8}],40:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -28739,7 +28582,7 @@ module.exports = request;
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -28895,7 +28738,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],42:[function(require,module,exports){
+},{"../ApiClient":8}],41:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -28916,7 +28759,7 @@ module.exports = request;
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -29060,7 +28903,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],43:[function(require,module,exports){
+},{"../ApiClient":8}],42:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -29081,7 +28924,7 @@ module.exports = request;
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -32983,7 +32826,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],44:[function(require,module,exports){
+},{"../ApiClient":8}],43:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -33004,7 +32847,7 @@ module.exports = request;
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -33066,7 +32909,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],45:[function(require,module,exports){
+},{"../ApiClient":8}],44:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -33087,7 +32930,7 @@ module.exports = request;
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -33281,7 +33124,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],46:[function(require,module,exports){
+},{"../ApiClient":8}],45:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -33302,7 +33145,7 @@ module.exports = request;
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -34966,7 +34809,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],47:[function(require,module,exports){
+},{"../ApiClient":8}],46:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -34987,7 +34830,7 @@ module.exports = request;
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -35081,7 +34924,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],48:[function(require,module,exports){
+},{"../ApiClient":8}],47:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -35102,7 +34945,7 @@ module.exports = request;
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -35796,7 +35639,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],49:[function(require,module,exports){
+},{"../ApiClient":8}],48:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -35817,7 +35660,7 @@ module.exports = request;
   /**
    * WebChat service.
    * @module purecloud-platform-client-v2/api/WebChatApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -36047,7 +35890,7 @@ module.exports = request;
   return exports;
 }));
 
-},{"../ApiClient":8}],50:[function(require,module,exports){
+},{"../ApiClient":8}],49:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -36068,7 +35911,7 @@ module.exports = request;
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -36114,7 +35957,7 @@ module.exports = request;
     /**
      * Get activity codes
      * 
-     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      */
     this.getWorkforcemanagementManagementunitActivitycodes = function(muId) { 
 
@@ -36174,9 +36017,9 @@ module.exports = request;
 
 
     /**
-     * Get a time off request by id
+     * Get a time off request
      * 
-     * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {String} userId The userId to whom the Time Off Request applies.
      * @param {String} timeOffRequestId Time Off Request Id
      */
@@ -36214,9 +36057,9 @@ module.exports = request;
 
 
     /**
-     * Get a list of time off requests for any user
+     * Get a list of time off requests for a given user
      * 
-     * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {String} userId The userId to whom the Time Off Request applies.
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (default to false)
@@ -36306,9 +36149,52 @@ module.exports = request;
 
 
     /**
-     * Create a new activity code
+     * Update a time off request
      * 
      * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} userId The id of the user the requested time off request belongs to
+     * @param {String} timeOffRequestId The id of the time off request to update
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body body
+     */
+    this.patchWorkforcemanagementManagementunitUserTimeoffrequest = function(muId, userId, timeOffRequestId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'muId' is set
+      if (muId === undefined || muId === null) {
+        throw "Missing the required parameter 'muId' when calling patchWorkforcemanagementManagementunitUserTimeoffrequest";
+      }
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling patchWorkforcemanagementManagementunitUserTimeoffrequest";
+      }
+
+      // verify the required parameter 'timeOffRequestId' is set
+      if (timeOffRequestId === undefined || timeOffRequestId === null) {
+        throw "Missing the required parameter 'timeOffRequestId' when calling patchWorkforcemanagementManagementunitUserTimeoffrequest";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}', 
+        'PATCH', 
+        { 'muId': muId,'userId': userId,'timeOffRequestId': timeOffRequestId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Create a new activity code
+     * 
+     * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {Object} opts Optional parameters
      * @param {Object} opts.body body
      */
@@ -36399,7 +36285,7 @@ module.exports = request;
 
 
     /**
-     * Get user schedules within the given time range
+     * Query published schedules for given given time range for set of users
      * 
      * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {Object} opts Optional parameters
@@ -36436,12 +36322,12 @@ module.exports = request;
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['purecloud-platform-client-v2/ApiClient', 'purecloud-platform-client-v2/api/AlertingApi', 'purecloud-platform-client-v2/api/AnalyticsApi', 'purecloud-platform-client-v2/api/AppFoundryApi', 'purecloud-platform-client-v2/api/ArchitectApi', 'purecloud-platform-client-v2/api/AttributesApi', 'purecloud-platform-client-v2/api/AuthorizationApi', 'purecloud-platform-client-v2/api/BillingApi', 'purecloud-platform-client-v2/api/ContentManagementApi', 'purecloud-platform-client-v2/api/ConversationsApi', 'purecloud-platform-client-v2/api/ExternalContactsApi', 'purecloud-platform-client-v2/api/FaxApi', 'purecloud-platform-client-v2/api/GeolocationApi', 'purecloud-platform-client-v2/api/GreetingsApi', 'purecloud-platform-client-v2/api/GroupsApi', 'purecloud-platform-client-v2/api/IdentityProviderApi', 'purecloud-platform-client-v2/api/IntegrationsApi', 'purecloud-platform-client-v2/api/LanguagesApi', 'purecloud-platform-client-v2/api/LicenseApi', 'purecloud-platform-client-v2/api/LocationsApi', 'purecloud-platform-client-v2/api/MobileDevicesApi', 'purecloud-platform-client-v2/api/NotificationsApi', 'purecloud-platform-client-v2/api/OAuthApi', 'purecloud-platform-client-v2/api/OrganizationApi', 'purecloud-platform-client-v2/api/OrganizationAuthorizationApi', 'purecloud-platform-client-v2/api/OutboundApi', 'purecloud-platform-client-v2/api/PresenceApi', 'purecloud-platform-client-v2/api/QualityApi', 'purecloud-platform-client-v2/api/RecordingApi', 'purecloud-platform-client-v2/api/ResponseManagementApi', 'purecloud-platform-client-v2/api/RoutingApi', 'purecloud-platform-client-v2/api/ScriptsApi', 'purecloud-platform-client-v2/api/SearchApi', 'purecloud-platform-client-v2/api/StationsApi', 'purecloud-platform-client-v2/api/SuggestApi', 'purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi', 'purecloud-platform-client-v2/api/TokensApi', 'purecloud-platform-client-v2/api/UserRecordingsApi', 'purecloud-platform-client-v2/api/UsersApi', 'purecloud-platform-client-v2/api/UtilitiesApi', 'purecloud-platform-client-v2/api/VoicemailApi', 'purecloud-platform-client-v2/api/WebChatApi', 'purecloud-platform-client-v2/api/WorkforceManagementApi'], factory);
+    define(['purecloud-platform-client-v2/ApiClient', 'purecloud-platform-client-v2/api/AlertingApi', 'purecloud-platform-client-v2/api/AnalyticsApi', 'purecloud-platform-client-v2/api/ArchitectApi', 'purecloud-platform-client-v2/api/AttributesApi', 'purecloud-platform-client-v2/api/AuthorizationApi', 'purecloud-platform-client-v2/api/BillingApi', 'purecloud-platform-client-v2/api/ContentManagementApi', 'purecloud-platform-client-v2/api/ConversationsApi', 'purecloud-platform-client-v2/api/ExternalContactsApi', 'purecloud-platform-client-v2/api/FaxApi', 'purecloud-platform-client-v2/api/GeolocationApi', 'purecloud-platform-client-v2/api/GreetingsApi', 'purecloud-platform-client-v2/api/GroupsApi', 'purecloud-platform-client-v2/api/IdentityProviderApi', 'purecloud-platform-client-v2/api/IntegrationsApi', 'purecloud-platform-client-v2/api/LanguagesApi', 'purecloud-platform-client-v2/api/LicenseApi', 'purecloud-platform-client-v2/api/LocationsApi', 'purecloud-platform-client-v2/api/MobileDevicesApi', 'purecloud-platform-client-v2/api/NotificationsApi', 'purecloud-platform-client-v2/api/OAuthApi', 'purecloud-platform-client-v2/api/OrganizationApi', 'purecloud-platform-client-v2/api/OrganizationAuthorizationApi', 'purecloud-platform-client-v2/api/OutboundApi', 'purecloud-platform-client-v2/api/PresenceApi', 'purecloud-platform-client-v2/api/QualityApi', 'purecloud-platform-client-v2/api/RecordingApi', 'purecloud-platform-client-v2/api/ResponseManagementApi', 'purecloud-platform-client-v2/api/RoutingApi', 'purecloud-platform-client-v2/api/ScriptsApi', 'purecloud-platform-client-v2/api/SearchApi', 'purecloud-platform-client-v2/api/StationsApi', 'purecloud-platform-client-v2/api/SuggestApi', 'purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi', 'purecloud-platform-client-v2/api/TokensApi', 'purecloud-platform-client-v2/api/UserRecordingsApi', 'purecloud-platform-client-v2/api/UsersApi', 'purecloud-platform-client-v2/api/UtilitiesApi', 'purecloud-platform-client-v2/api/VoicemailApi', 'purecloud-platform-client-v2/api/WebChatApi', 'purecloud-platform-client-v2/api/WorkforceManagementApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./api/AlertingApi'), require('./api/AnalyticsApi'), require('./api/AppFoundryApi'), require('./api/ArchitectApi'), require('./api/AttributesApi'), require('./api/AuthorizationApi'), require('./api/BillingApi'), require('./api/ContentManagementApi'), require('./api/ConversationsApi'), require('./api/ExternalContactsApi'), require('./api/FaxApi'), require('./api/GeolocationApi'), require('./api/GreetingsApi'), require('./api/GroupsApi'), require('./api/IdentityProviderApi'), require('./api/IntegrationsApi'), require('./api/LanguagesApi'), require('./api/LicenseApi'), require('./api/LocationsApi'), require('./api/MobileDevicesApi'), require('./api/NotificationsApi'), require('./api/OAuthApi'), require('./api/OrganizationApi'), require('./api/OrganizationAuthorizationApi'), require('./api/OutboundApi'), require('./api/PresenceApi'), require('./api/QualityApi'), require('./api/RecordingApi'), require('./api/ResponseManagementApi'), require('./api/RoutingApi'), require('./api/ScriptsApi'), require('./api/SearchApi'), require('./api/StationsApi'), require('./api/SuggestApi'), require('./api/TelephonyProvidersEdgeApi'), require('./api/TokensApi'), require('./api/UserRecordingsApi'), require('./api/UsersApi'), require('./api/UtilitiesApi'), require('./api/VoicemailApi'), require('./api/WebChatApi'), require('./api/WorkforceManagementApi'));
+    module.exports = factory(require('./ApiClient'), require('./api/AlertingApi'), require('./api/AnalyticsApi'), require('./api/ArchitectApi'), require('./api/AttributesApi'), require('./api/AuthorizationApi'), require('./api/BillingApi'), require('./api/ContentManagementApi'), require('./api/ConversationsApi'), require('./api/ExternalContactsApi'), require('./api/FaxApi'), require('./api/GeolocationApi'), require('./api/GreetingsApi'), require('./api/GroupsApi'), require('./api/IdentityProviderApi'), require('./api/IntegrationsApi'), require('./api/LanguagesApi'), require('./api/LicenseApi'), require('./api/LocationsApi'), require('./api/MobileDevicesApi'), require('./api/NotificationsApi'), require('./api/OAuthApi'), require('./api/OrganizationApi'), require('./api/OrganizationAuthorizationApi'), require('./api/OutboundApi'), require('./api/PresenceApi'), require('./api/QualityApi'), require('./api/RecordingApi'), require('./api/ResponseManagementApi'), require('./api/RoutingApi'), require('./api/ScriptsApi'), require('./api/SearchApi'), require('./api/StationsApi'), require('./api/SuggestApi'), require('./api/TelephonyProvidersEdgeApi'), require('./api/TokensApi'), require('./api/UserRecordingsApi'), require('./api/UsersApi'), require('./api/UtilitiesApi'), require('./api/VoicemailApi'), require('./api/WebChatApi'), require('./api/WorkforceManagementApi'));
   }
-}(function(ApiClient, AlertingApi, AnalyticsApi, AppFoundryApi, ArchitectApi, AttributesApi, AuthorizationApi, BillingApi, ContentManagementApi, ConversationsApi, ExternalContactsApi, FaxApi, GeolocationApi, GreetingsApi, GroupsApi, IdentityProviderApi, IntegrationsApi, LanguagesApi, LicenseApi, LocationsApi, MobileDevicesApi, NotificationsApi, OAuthApi, OrganizationApi, OrganizationAuthorizationApi, OutboundApi, PresenceApi, QualityApi, RecordingApi, ResponseManagementApi, RoutingApi, ScriptsApi, SearchApi, StationsApi, SuggestApi, TelephonyProvidersEdgeApi, TokensApi, UserRecordingsApi, UsersApi, UtilitiesApi, VoicemailApi, WebChatApi, WorkforceManagementApi) {
+}(function(ApiClient, AlertingApi, AnalyticsApi, ArchitectApi, AttributesApi, AuthorizationApi, BillingApi, ContentManagementApi, ConversationsApi, ExternalContactsApi, FaxApi, GeolocationApi, GreetingsApi, GroupsApi, IdentityProviderApi, IntegrationsApi, LanguagesApi, LicenseApi, LocationsApi, MobileDevicesApi, NotificationsApi, OAuthApi, OrganizationApi, OrganizationAuthorizationApi, OutboundApi, PresenceApi, QualityApi, RecordingApi, ResponseManagementApi, RoutingApi, ScriptsApi, SearchApi, StationsApi, SuggestApi, TelephonyProvidersEdgeApi, TokensApi, UserRecordingsApi, UsersApi, UtilitiesApi, VoicemailApi, WebChatApi, WorkforceManagementApi) {
   'use strict';
 
   /**
@@ -36473,7 +36359,7 @@ module.exports = request;
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 25.0.0
+   * @version 26.0.0
    */
   var platformClient = {
     /**
@@ -36491,11 +36377,6 @@ module.exports = request;
      * @property {module:purecloud-platform-client-v2/api/AnalyticsApi}
      */
     AnalyticsApi: AnalyticsApi,
-    /**
-     * The AppFoundryApi service constructor.
-     * @property {module:purecloud-platform-client-v2/api/AppFoundryApi}
-     */
-    AppFoundryApi: AppFoundryApi,
     /**
      * The ArchitectApi service constructor.
      * @property {module:purecloud-platform-client-v2/api/ArchitectApi}
@@ -36696,4 +36577,4 @@ module.exports = request;
   return platformClient;
 }));
 
-},{"./ApiClient":8,"./api/AlertingApi":9,"./api/AnalyticsApi":10,"./api/AppFoundryApi":11,"./api/ArchitectApi":12,"./api/AttributesApi":13,"./api/AuthorizationApi":14,"./api/BillingApi":15,"./api/ContentManagementApi":16,"./api/ConversationsApi":17,"./api/ExternalContactsApi":18,"./api/FaxApi":19,"./api/GeolocationApi":20,"./api/GreetingsApi":21,"./api/GroupsApi":22,"./api/IdentityProviderApi":23,"./api/IntegrationsApi":24,"./api/LanguagesApi":25,"./api/LicenseApi":26,"./api/LocationsApi":27,"./api/MobileDevicesApi":28,"./api/NotificationsApi":29,"./api/OAuthApi":30,"./api/OrganizationApi":31,"./api/OrganizationAuthorizationApi":32,"./api/OutboundApi":33,"./api/PresenceApi":34,"./api/QualityApi":35,"./api/RecordingApi":36,"./api/ResponseManagementApi":37,"./api/RoutingApi":38,"./api/ScriptsApi":39,"./api/SearchApi":40,"./api/StationsApi":41,"./api/SuggestApi":42,"./api/TelephonyProvidersEdgeApi":43,"./api/TokensApi":44,"./api/UserRecordingsApi":45,"./api/UsersApi":46,"./api/UtilitiesApi":47,"./api/VoicemailApi":48,"./api/WebChatApi":49,"./api/WorkforceManagementApi":50}]},{},[]);
+},{"./ApiClient":8,"./api/AlertingApi":9,"./api/AnalyticsApi":10,"./api/ArchitectApi":11,"./api/AttributesApi":12,"./api/AuthorizationApi":13,"./api/BillingApi":14,"./api/ContentManagementApi":15,"./api/ConversationsApi":16,"./api/ExternalContactsApi":17,"./api/FaxApi":18,"./api/GeolocationApi":19,"./api/GreetingsApi":20,"./api/GroupsApi":21,"./api/IdentityProviderApi":22,"./api/IntegrationsApi":23,"./api/LanguagesApi":24,"./api/LicenseApi":25,"./api/LocationsApi":26,"./api/MobileDevicesApi":27,"./api/NotificationsApi":28,"./api/OAuthApi":29,"./api/OrganizationApi":30,"./api/OrganizationAuthorizationApi":31,"./api/OutboundApi":32,"./api/PresenceApi":33,"./api/QualityApi":34,"./api/RecordingApi":35,"./api/ResponseManagementApi":36,"./api/RoutingApi":37,"./api/ScriptsApi":38,"./api/SearchApi":39,"./api/StationsApi":40,"./api/SuggestApi":41,"./api/TelephonyProvidersEdgeApi":42,"./api/TokensApi":43,"./api/UserRecordingsApi":44,"./api/UsersApi":45,"./api/UtilitiesApi":46,"./api/VoicemailApi":47,"./api/WebChatApi":48,"./api/WorkforceManagementApi":49}]},{},[]);

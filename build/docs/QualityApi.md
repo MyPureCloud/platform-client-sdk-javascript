@@ -432,12 +432,12 @@ var opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': null, // [Object] | variable name requested by expand list
+  'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
   'startTime': new Date("2013-10-20T19:20:30+01:00"), // Date | Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
   'endTime': new Date("2013-10-20T19:20:30+01:00"), // Date | End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-  'agentUserId': null, // [Object] | user id of agent requested
+  'agentUserId': ["agentUserId_example"], // [String] | user id of agent requested
   'evaluatorUserId': "evaluatorUserId_example", // String | user id of the evaluator
   'name': "name_example", // String | name
   'group': "group_example" // String | group id
@@ -461,12 +461,12 @@ apiInstance.getQualityAgentsActivity(opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[Object]** | variable name requested by expand list | [optional]  |
+ **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **startTime** | **Date** | Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
  **endTime** | **Date** | End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
- **agentUserId** | **[Object]** | user id of agent requested | [optional]  |
+ **agentUserId** | **[String]** | user id of agent requested | [optional]  |
  **evaluatorUserId** | **String** | user id of the evaluator | [optional]  |
  **name** | **String** | name | [optional]  |
  **group** | **String** | group id | [optional]  |
@@ -559,7 +559,7 @@ var opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': null, // [Object] | variable name requested by expand list
+  'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
   'conversationId': "conversationId_example", // String | conversation id
@@ -586,7 +586,7 @@ apiInstance.getQualityCalibrations(calibratorId, opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[Object]** | variable name requested by expand list | [optional]  |
+ **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **conversationId** | **String** | conversation id | [optional]  |
@@ -627,7 +627,7 @@ var opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': null, // [Object] | variable name requested by expand list
+  'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
   'recordingId': "recordingId_example", // String | id of the recording
@@ -653,7 +653,7 @@ apiInstance.getQualityConversationAudits(conversationId, opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[Object]** | variable name requested by expand list | [optional]  |
+ **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **recordingId** | **String** | id of the recording | [optional]  |
@@ -746,7 +746,7 @@ var opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': null, // [Object] | variable name requested by expand list
+  'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
   'conversationId': "conversationId_example", // String | conversationId specified
@@ -755,7 +755,7 @@ var opts = {
   'queueId': "queueId_example", // String | queue id
   'startTime': "startTime_example", // String | start time of the evaluation query
   'endTime': "endTime_example", // String | end time of the evaluation query
-  'evaluationState': null, // [Object] | 
+  'evaluationState': ["evaluationState_example"], // [String] | 
   'isReleased': true, // Boolean | the evaluation has been released
   'agentHasRead': true, // Boolean | agent has the evaluation
   'expandAnswerTotalScores': true, // Boolean | get the total scores for evaluations
@@ -781,7 +781,7 @@ apiInstance.getQualityEvaluationsQuery(opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[Object]** | variable name requested by expand list | [optional]  |
+ **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **conversationId** | **String** | conversationId specified | [optional]  |
@@ -790,7 +790,7 @@ apiInstance.getQualityEvaluationsQuery(opts)
  **queueId** | **String** | queue id | [optional]  |
  **startTime** | **String** | start time of the evaluation query | [optional]  |
  **endTime** | **String** | end time of the evaluation query | [optional]  |
- **evaluationState** | **[Object]** |  | [optional]  |
+ **evaluationState** | **[String]** |  | [optional]  |
  **isReleased** | **Boolean** | the evaluation has been released | [optional]  |
  **agentHasRead** | **Boolean** | agent has the evaluation | [optional]  |
  **expandAnswerTotalScores** | **Boolean** | get the total scores for evaluations | [optional]  |
@@ -829,13 +829,13 @@ var opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': null, // [Object] | variable name requested by expand list
+  'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
   'startTime': new Date("2013-10-20T19:20:30+01:00"), // Date | The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
   'endTime': new Date("2013-10-20T19:20:30+01:00"), // Date | The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
   'name': "name_example", // String | Evaluator name
-  'permission': null, // [Object] | permission strings
+  'permission': ["permission_example"], // [String] | permission strings
   'group': "group_example" // String | group id
 };
 apiInstance.getQualityEvaluatorsActivity(opts)
@@ -857,13 +857,13 @@ apiInstance.getQualityEvaluatorsActivity(opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[Object]** | variable name requested by expand list | [optional]  |
+ **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **startTime** | **Date** | The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
  **endTime** | **Date** | The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
  **name** | **String** | Evaluator name | [optional]  |
- **permission** | **[Object]** | permission strings | [optional]  |
+ **permission** | **[String]** | permission strings | [optional]  |
  **group** | **String** | group id | [optional]  |
 {: class="table table-striped"}
 
@@ -1435,7 +1435,7 @@ var opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': null, // [Object] | variable name requested by expand list
+  'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
   'name': "name_example", // String | the keyword set name - used for filtering results in searches.
@@ -1462,7 +1462,7 @@ apiInstance.getQualityKeywordsets(opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[Object]** | variable name requested by expand list | [optional]  |
+ **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **name** | **String** | the keyword set name - used for filtering results in searches. | [optional]  |

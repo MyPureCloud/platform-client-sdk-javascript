@@ -10,14 +10,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementAdherence**](WorkforceManagementApi.html#getWorkforcemanagementAdherence) | **GET** /api/v2/workforcemanagement/adherence | Get a list of UserScheduleAdherence records for the requested users
 [**getWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitActivitycodes) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/activitycodes | Get activity codes
 [**getWorkforcemanagementManagementunitIntradayQueues**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitIntradayQueues) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/intraday/queues | Get intraday queues for the given date
-[**getWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequest) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Get a time off request by id
-[**getWorkforcemanagementManagementunitUserTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequests) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests | Get a list of time off requests for any user
+[**getWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequest) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Get a time off request
+[**getWorkforcemanagementManagementunitUserTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequests) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests | Get a list of time off requests for a given user
 [**getWorkforcemanagementManagementunitUsers**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUsers) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/users | Get agents in the management unit
 [**getWorkforcemanagementManagementunits**](WorkforceManagementApi.html#getWorkforcemanagementManagementunits) | **GET** /api/v2/workforcemanagement/managementunits | Get management units
+[**patchWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitUserTimeoffrequest) | **PATCH** /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Update a time off request
 [**postWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitActivitycodes) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/activitycodes | Create a new activity code
 [**postWorkforcemanagementManagementunitHistoricaladherencequery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitHistoricaladherencequery) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/historicaladherencequery | Request a historical adherence report
 [**postWorkforcemanagementManagementunitIntraday**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitIntraday) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/intraday | Get intraday data for the given date for the requested queueIds
-[**postWorkforcemanagementManagementunitSchedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitSchedulesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/schedules/search | Get user schedules within the given time range
+[**postWorkforcemanagementManagementunitSchedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitSchedulesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/schedules/search | Query published schedules for given given time range for set of users
 {: class="table table-striped"}
 
 <a name="getWorkforcemanagementAdherence"></a>
@@ -91,7 +92,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+var muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 apiInstance.getWorkforcemanagementManagementunitActivitycodes(muId)
   .then(function(data) {
@@ -109,7 +110,7 @@ apiInstance.getWorkforcemanagementManagementunitActivitycodes(muId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **muId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -169,11 +170,11 @@ apiInstance.getWorkforcemanagementManagementunitIntradayQueues(muId, _date)
 
 <a name="getWorkforcemanagementManagementunitUserTimeoffrequest"></a>
 
-# TimeOffRequest getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId)
+# TimeOffRequestResponse getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId)
 
 GET /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}
 
-Get a time off request by id
+Get a time off request
 
 
 
@@ -190,7 +191,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 
 var userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
 
@@ -212,14 +213,14 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId,
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **userId** | **String** | The userId to whom the Time Off Request applies. |  |
  **timeOffRequestId** | **String** | Time Off Request Id |  |
 {: class="table table-striped"}
 
 ### Return type
 
-**TimeOffRequest**
+**TimeOffRequestResponse**
 
 <a name="getWorkforcemanagementManagementunitUserTimeoffrequests"></a>
 
@@ -227,7 +228,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId,
 
 GET /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests
 
-Get a list of time off requests for any user
+Get a list of time off requests for a given user
 
 
 
@@ -244,7 +245,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 
 var userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
 
@@ -267,7 +268,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(muId, userId
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **userId** | **String** | The userId to whom the Time Off Request applies. |  |
  **recentlyReviewed** | **Boolean** | Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
 {: class="table table-striped"}
@@ -377,6 +378,64 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
 
 **ManagementUnitListing**
 
+<a name="patchWorkforcemanagementManagementunitUserTimeoffrequest"></a>
+
+# TimeOffRequestResponse patchWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId, opts)
+
+PATCH /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}
+
+Update a time off request
+
+
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+
+var userId = "userId_example"; // String | The id of the user the requested time off request belongs to
+
+var timeOffRequestId = "timeOffRequestId_example"; // String | The id of the time off request to update
+
+var opts = { 
+  'body': {} // Object | body
+};
+apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId, opts)
+  .then(function(data) {
+    console.log(`patchWorkforcemanagementManagementunitUserTimeoffrequest success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling patchWorkforcemanagementManagementunitUserTimeoffrequest');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **userId** | **String** | The id of the user the requested time off request belongs to |  |
+ **timeOffRequestId** | **String** | The id of the time off request to update |  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**TimeOffRequestResponse**
+
 <a name="postWorkforcemanagementManagementunitActivitycodes"></a>
 
 # ActivityCode postWorkforcemanagementManagementunitActivitycodes(muId, opts)
@@ -400,7 +459,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+var muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 var opts = { 
   'body': {} // Object | body
@@ -421,7 +480,7 @@ apiInstance.postWorkforcemanagementManagementunitActivitycodes(muId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **muId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -539,7 +598,7 @@ apiInstance.postWorkforcemanagementManagementunitIntraday(muId, opts)
 
 POST /api/v2/workforcemanagement/managementunits/{muId}/schedules/search
 
-Get user schedules within the given time range
+Query published schedules for given given time range for set of users
 
 
 

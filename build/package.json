@@ -1,6 +1,6 @@
 {
   "name": "purecloud-platform-client-v2",
-  "version": "25.0.0",
+  "version": "26.0.0",
   "description": "A JavaScript library to interface with the PureCloud Platform API",
   "license": "MIT",
   "main": "src/purecloud-platform-client-v2/index.js",

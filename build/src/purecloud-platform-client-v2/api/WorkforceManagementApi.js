@@ -18,7 +18,7 @@
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -64,7 +64,7 @@
     /**
      * Get activity codes
      * 
-     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      */
     this.getWorkforcemanagementManagementunitActivitycodes = function(muId) { 
 
@@ -124,9 +124,9 @@
 
 
     /**
-     * Get a time off request by id
+     * Get a time off request
      * 
-     * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {String} userId The userId to whom the Time Off Request applies.
      * @param {String} timeOffRequestId Time Off Request Id
      */
@@ -164,9 +164,9 @@
 
 
     /**
-     * Get a list of time off requests for any user
+     * Get a list of time off requests for a given user
      * 
-     * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {String} userId The userId to whom the Time Off Request applies.
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (default to false)
@@ -256,9 +256,52 @@
 
 
     /**
-     * Create a new activity code
+     * Update a time off request
      * 
      * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+     * @param {String} userId The id of the user the requested time off request belongs to
+     * @param {String} timeOffRequestId The id of the time off request to update
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body body
+     */
+    this.patchWorkforcemanagementManagementunitUserTimeoffrequest = function(muId, userId, timeOffRequestId, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'muId' is set
+      if (muId === undefined || muId === null) {
+        throw "Missing the required parameter 'muId' when calling patchWorkforcemanagementManagementunitUserTimeoffrequest";
+      }
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw "Missing the required parameter 'userId' when calling patchWorkforcemanagementManagementunitUserTimeoffrequest";
+      }
+
+      // verify the required parameter 'timeOffRequestId' is set
+      if (timeOffRequestId === undefined || timeOffRequestId === null) {
+        throw "Missing the required parameter 'timeOffRequestId' when calling patchWorkforcemanagementManagementunitUserTimeoffrequest";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}', 
+        'PATCH', 
+        { 'muId': muId,'userId': userId,'timeOffRequestId': timeOffRequestId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        opts['body'], 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Create a new activity code
+     * 
+     * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {Object} opts Optional parameters
      * @param {Object} opts.body body
      */
@@ -349,7 +392,7 @@
 
 
     /**
-     * Get user schedules within the given time range
+     * Query published schedules for given given time range for set of users
      * 
      * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
      * @param {Object} opts Optional parameters

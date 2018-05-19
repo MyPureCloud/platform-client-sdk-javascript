@@ -220,7 +220,7 @@ apiInstance.getGroup(groupId)
 
 <a name="getGroupIndividuals"></a>
 
-# [UserEntityListing] getGroupIndividuals(groupId)
+# UserEntityListing getGroupIndividuals(groupId)
 
 GET /api/v2/groups/{groupId}/individuals
 
@@ -264,7 +264,7 @@ apiInstance.getGroupIndividuals(groupId)
 
 ### Return type
 
-**[UserEntityListing]**
+**UserEntityListing**
 
 <a name="getGroupMembers"></a>
 

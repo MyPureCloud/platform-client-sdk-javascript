@@ -18,7 +18,7 @@
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 25.0.0
+   * @version 26.0.0
    */
 
   /**
@@ -432,7 +432,7 @@
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {Array.<String>} opts.expand variable name requested by expand list
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      * @param {Boolean} opts.hasConversation Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. (default to false)
@@ -542,7 +542,7 @@
      * @param {Number} opts.pageSize The total page size requested (default to 25)
      * @param {Number} opts.pageNumber The page number requested (default to 1)
      * @param {String} opts.sortBy variable name requested to sort by
-     * @param {Array.<Object>} opts.expand variable name requested by expand list
+     * @param {Array.<String>} opts.expand variable name requested by expand list
      * @param {String} opts.nextPage next page token
      * @param {String} opts.previousPage Previous page token
      * @param {String} opts.name the policy name - used for filtering results in searches.

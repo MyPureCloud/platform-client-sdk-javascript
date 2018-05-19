@@ -692,7 +692,7 @@ var opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': null, // [Object] | variable name requested by expand list
+  'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
   'hasConversation': false, // Boolean | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization.
@@ -717,7 +717,7 @@ apiInstance.getOrphanrecordings(opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[Object]** | variable name requested by expand list | [optional]  |
+ **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **hasConversation** | **Boolean** | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to false] |
@@ -893,7 +893,7 @@ var opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': null, // [Object] | variable name requested by expand list
+  'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
   'name': "name_example", // String | the policy name - used for filtering results in searches.
@@ -920,7 +920,7 @@ apiInstance.getRecordingMediaretentionpolicies(opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[Object]** | variable name requested by expand list | [optional]  |
+ **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **name** | **String** | the policy name - used for filtering results in searches. | [optional]  |
