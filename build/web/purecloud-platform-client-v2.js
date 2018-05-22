@@ -3301,7 +3301,7 @@ Emitter.prototype.hasListeners = function(event){
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -3978,7 +3978,7 @@ Emitter.prototype.hasListeners = function(event){
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '26.0.0' });
+    //request.set({ 'purecloud-sdk': '26.1.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -4131,7 +4131,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -4487,7 +4487,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -5202,7 +5202,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -7722,7 +7722,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -7933,7 +7933,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -8492,7 +8492,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Billing service.
    * @module purecloud-platform-client-v2/api/BillingApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -8565,7 +8565,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -9822,7 +9822,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -13170,7 +13170,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -14154,7 +14154,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -14351,6 +14351,164 @@ Emitter.prototype.hasListeners = function(event){
     if (!root.platformClient) {
       root.platformClient = {};
     }
+    root.platformClient.GeneralDataProtectionRegulationApi = factory(root.platformClient.ApiClient);
+  }
+}(this, function(ApiClient) {
+  'use strict';
+
+  /**
+   * GeneralDataProtectionRegulation service.
+   * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
+   * @version 26.1.0
+   */
+
+  /**
+   * Constructs a new GeneralDataProtectionRegulationApi. 
+   * @alias module:purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
+   * @class
+   * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+   * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+   */
+  var exports = function(apiClient) {
+    this.apiClient = apiClient || ApiClient.instance;
+
+
+
+    /**
+     * Get an existing GDPR request
+     * 
+     * @param {String} requestId Request id
+     */
+    this.getGdprRequest = function(requestId) { 
+
+      // verify the required parameter 'requestId' is set
+      if (requestId === undefined || requestId === null) {
+        throw "Missing the required parameter 'requestId' when calling getGdprRequest";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/gdpr/requests/{requestId}', 
+        'GET', 
+        { 'requestId': requestId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get all GDPR requests
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     */
+    this.getGdprRequests = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/gdpr/requests', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get GDPR subjects
+     * 
+     * @param {Object} searchType Search Type
+     * @param {String} searchValue Search Value
+     */
+    this.getGdprSubjects = function(searchType, searchValue) { 
+
+      // verify the required parameter 'searchType' is set
+      if (searchType === undefined || searchType === null) {
+        throw "Missing the required parameter 'searchType' when calling getGdprSubjects";
+      }
+
+      // verify the required parameter 'searchValue' is set
+      if (searchValue === undefined || searchValue === null) {
+        throw "Missing the required parameter 'searchValue' when calling getGdprSubjects";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/gdpr/subjects', 
+        'GET', 
+        {  }, 
+        { 'searchType': searchType,'searchValue': searchValue }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Submit a new GDPR request
+     * 
+     * @param {Object} body GDPR request
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.deleteConfirmed Confirm delete (default to false)
+     */
+    this.postGdprRequests = function(body, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postGdprRequests";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/gdpr/requests', 
+        'POST', 
+        {  }, 
+        { 'deleteConfirmed': opts['deleteConfirmed'] }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+  };
+
+  return exports;
+}));
+
+},{"../ApiClient":8}],20:[function(require,module,exports){
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['purecloud-platform-client-v2/ApiClient'], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    module.exports = factory(require('../ApiClient'));
+  } else {
+    // Browser globals (root is window)
+    if (!root.platformClient) {
+      root.platformClient = {};
+    }
     root.platformClient.GeolocationApi = factory(root.platformClient.ApiClient);
   }
 }(this, function(ApiClient) {
@@ -14359,7 +14517,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -14501,7 +14659,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],20:[function(require,module,exports){
+},{"../ApiClient":8}],21:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -14522,7 +14680,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -15021,7 +15179,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],21:[function(require,module,exports){
+},{"../ApiClient":8}],22:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -15042,7 +15200,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -15479,7 +15637,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],22:[function(require,module,exports){
+},{"../ApiClient":8}],23:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -15500,7 +15658,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -16188,7 +16346,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],23:[function(require,module,exports){
+},{"../ApiClient":8}],24:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -16209,7 +16367,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -17475,7 +17633,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],24:[function(require,module,exports){
+},{"../ApiClient":8}],25:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -17496,7 +17654,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -17788,7 +17946,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],25:[function(require,module,exports){
+},{"../ApiClient":8}],26:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -17809,7 +17967,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -18033,7 +18191,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],26:[function(require,module,exports){
+},{"../ApiClient":8}],27:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -18054,7 +18212,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -18186,7 +18344,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],27:[function(require,module,exports){
+},{"../ApiClient":8}],28:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -18207,7 +18365,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * MobileDevices service.
    * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -18367,7 +18525,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],28:[function(require,module,exports){
+},{"../ApiClient":8}],29:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -18388,7 +18546,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -18599,7 +18757,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],29:[function(require,module,exports){
+},{"../ApiClient":8}],30:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -18620,7 +18778,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -18806,7 +18964,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],30:[function(require,module,exports){
+},{"../ApiClient":8}],31:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -18827,7 +18985,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -18954,7 +19112,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],31:[function(require,module,exports){
+},{"../ApiClient":8}],32:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -18975,7 +19133,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -19719,7 +19877,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],32:[function(require,module,exports){
+},{"../ApiClient":8}],33:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -19740,7 +19898,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -22425,7 +22583,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],33:[function(require,module,exports){
+},{"../ApiClient":8}],34:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -22446,7 +22604,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -22709,7 +22867,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],34:[function(require,module,exports){
+},{"../ApiClient":8}],35:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -22730,7 +22888,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -24313,7 +24471,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],35:[function(require,module,exports){
+},{"../ApiClient":8}],36:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -24334,7 +24492,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -25495,7 +25653,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],36:[function(require,module,exports){
+},{"../ApiClient":8}],37:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -25516,7 +25674,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -25866,7 +26024,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],37:[function(require,module,exports){
+},{"../ApiClient":8}],38:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -25887,7 +26045,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -27704,7 +27862,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],38:[function(require,module,exports){
+},{"../ApiClient":8}],39:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -27725,7 +27883,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -28104,7 +28262,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],39:[function(require,module,exports){
+},{"../ApiClient":8}],40:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -28125,7 +28283,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -28561,7 +28719,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],40:[function(require,module,exports){
+},{"../ApiClient":8}],41:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -28582,7 +28740,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -28738,7 +28896,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],41:[function(require,module,exports){
+},{"../ApiClient":8}],42:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -28759,7 +28917,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -28903,7 +29061,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],42:[function(require,module,exports){
+},{"../ApiClient":8}],43:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -28924,7 +29082,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -32826,7 +32984,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],43:[function(require,module,exports){
+},{"../ApiClient":8}],44:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -32847,7 +33005,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -32909,7 +33067,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],44:[function(require,module,exports){
+},{"../ApiClient":8}],45:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -32930,7 +33088,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -33124,7 +33282,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],45:[function(require,module,exports){
+},{"../ApiClient":8}],46:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -33145,7 +33303,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -34809,7 +34967,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],46:[function(require,module,exports){
+},{"../ApiClient":8}],47:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -34830,7 +34988,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -34924,7 +35082,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],47:[function(require,module,exports){
+},{"../ApiClient":8}],48:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -34945,7 +35103,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -35639,7 +35797,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],48:[function(require,module,exports){
+},{"../ApiClient":8}],49:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -35660,7 +35818,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * WebChat service.
    * @module purecloud-platform-client-v2/api/WebChatApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -35890,7 +36048,7 @@ Emitter.prototype.hasListeners = function(event){
   return exports;
 }));
 
-},{"../ApiClient":8}],49:[function(require,module,exports){
+},{"../ApiClient":8}],50:[function(require,module,exports){
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -35911,7 +36069,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
@@ -36322,12 +36480,12 @@ Emitter.prototype.hasListeners = function(event){
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['purecloud-platform-client-v2/ApiClient', 'purecloud-platform-client-v2/api/AlertingApi', 'purecloud-platform-client-v2/api/AnalyticsApi', 'purecloud-platform-client-v2/api/ArchitectApi', 'purecloud-platform-client-v2/api/AttributesApi', 'purecloud-platform-client-v2/api/AuthorizationApi', 'purecloud-platform-client-v2/api/BillingApi', 'purecloud-platform-client-v2/api/ContentManagementApi', 'purecloud-platform-client-v2/api/ConversationsApi', 'purecloud-platform-client-v2/api/ExternalContactsApi', 'purecloud-platform-client-v2/api/FaxApi', 'purecloud-platform-client-v2/api/GeolocationApi', 'purecloud-platform-client-v2/api/GreetingsApi', 'purecloud-platform-client-v2/api/GroupsApi', 'purecloud-platform-client-v2/api/IdentityProviderApi', 'purecloud-platform-client-v2/api/IntegrationsApi', 'purecloud-platform-client-v2/api/LanguagesApi', 'purecloud-platform-client-v2/api/LicenseApi', 'purecloud-platform-client-v2/api/LocationsApi', 'purecloud-platform-client-v2/api/MobileDevicesApi', 'purecloud-platform-client-v2/api/NotificationsApi', 'purecloud-platform-client-v2/api/OAuthApi', 'purecloud-platform-client-v2/api/OrganizationApi', 'purecloud-platform-client-v2/api/OrganizationAuthorizationApi', 'purecloud-platform-client-v2/api/OutboundApi', 'purecloud-platform-client-v2/api/PresenceApi', 'purecloud-platform-client-v2/api/QualityApi', 'purecloud-platform-client-v2/api/RecordingApi', 'purecloud-platform-client-v2/api/ResponseManagementApi', 'purecloud-platform-client-v2/api/RoutingApi', 'purecloud-platform-client-v2/api/ScriptsApi', 'purecloud-platform-client-v2/api/SearchApi', 'purecloud-platform-client-v2/api/StationsApi', 'purecloud-platform-client-v2/api/SuggestApi', 'purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi', 'purecloud-platform-client-v2/api/TokensApi', 'purecloud-platform-client-v2/api/UserRecordingsApi', 'purecloud-platform-client-v2/api/UsersApi', 'purecloud-platform-client-v2/api/UtilitiesApi', 'purecloud-platform-client-v2/api/VoicemailApi', 'purecloud-platform-client-v2/api/WebChatApi', 'purecloud-platform-client-v2/api/WorkforceManagementApi'], factory);
+    define(['purecloud-platform-client-v2/ApiClient', 'purecloud-platform-client-v2/api/AlertingApi', 'purecloud-platform-client-v2/api/AnalyticsApi', 'purecloud-platform-client-v2/api/ArchitectApi', 'purecloud-platform-client-v2/api/AttributesApi', 'purecloud-platform-client-v2/api/AuthorizationApi', 'purecloud-platform-client-v2/api/BillingApi', 'purecloud-platform-client-v2/api/ContentManagementApi', 'purecloud-platform-client-v2/api/ConversationsApi', 'purecloud-platform-client-v2/api/ExternalContactsApi', 'purecloud-platform-client-v2/api/FaxApi', 'purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi', 'purecloud-platform-client-v2/api/GeolocationApi', 'purecloud-platform-client-v2/api/GreetingsApi', 'purecloud-platform-client-v2/api/GroupsApi', 'purecloud-platform-client-v2/api/IdentityProviderApi', 'purecloud-platform-client-v2/api/IntegrationsApi', 'purecloud-platform-client-v2/api/LanguagesApi', 'purecloud-platform-client-v2/api/LicenseApi', 'purecloud-platform-client-v2/api/LocationsApi', 'purecloud-platform-client-v2/api/MobileDevicesApi', 'purecloud-platform-client-v2/api/NotificationsApi', 'purecloud-platform-client-v2/api/OAuthApi', 'purecloud-platform-client-v2/api/OrganizationApi', 'purecloud-platform-client-v2/api/OrganizationAuthorizationApi', 'purecloud-platform-client-v2/api/OutboundApi', 'purecloud-platform-client-v2/api/PresenceApi', 'purecloud-platform-client-v2/api/QualityApi', 'purecloud-platform-client-v2/api/RecordingApi', 'purecloud-platform-client-v2/api/ResponseManagementApi', 'purecloud-platform-client-v2/api/RoutingApi', 'purecloud-platform-client-v2/api/ScriptsApi', 'purecloud-platform-client-v2/api/SearchApi', 'purecloud-platform-client-v2/api/StationsApi', 'purecloud-platform-client-v2/api/SuggestApi', 'purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi', 'purecloud-platform-client-v2/api/TokensApi', 'purecloud-platform-client-v2/api/UserRecordingsApi', 'purecloud-platform-client-v2/api/UsersApi', 'purecloud-platform-client-v2/api/UtilitiesApi', 'purecloud-platform-client-v2/api/VoicemailApi', 'purecloud-platform-client-v2/api/WebChatApi', 'purecloud-platform-client-v2/api/WorkforceManagementApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./api/AlertingApi'), require('./api/AnalyticsApi'), require('./api/ArchitectApi'), require('./api/AttributesApi'), require('./api/AuthorizationApi'), require('./api/BillingApi'), require('./api/ContentManagementApi'), require('./api/ConversationsApi'), require('./api/ExternalContactsApi'), require('./api/FaxApi'), require('./api/GeolocationApi'), require('./api/GreetingsApi'), require('./api/GroupsApi'), require('./api/IdentityProviderApi'), require('./api/IntegrationsApi'), require('./api/LanguagesApi'), require('./api/LicenseApi'), require('./api/LocationsApi'), require('./api/MobileDevicesApi'), require('./api/NotificationsApi'), require('./api/OAuthApi'), require('./api/OrganizationApi'), require('./api/OrganizationAuthorizationApi'), require('./api/OutboundApi'), require('./api/PresenceApi'), require('./api/QualityApi'), require('./api/RecordingApi'), require('./api/ResponseManagementApi'), require('./api/RoutingApi'), require('./api/ScriptsApi'), require('./api/SearchApi'), require('./api/StationsApi'), require('./api/SuggestApi'), require('./api/TelephonyProvidersEdgeApi'), require('./api/TokensApi'), require('./api/UserRecordingsApi'), require('./api/UsersApi'), require('./api/UtilitiesApi'), require('./api/VoicemailApi'), require('./api/WebChatApi'), require('./api/WorkforceManagementApi'));
+    module.exports = factory(require('./ApiClient'), require('./api/AlertingApi'), require('./api/AnalyticsApi'), require('./api/ArchitectApi'), require('./api/AttributesApi'), require('./api/AuthorizationApi'), require('./api/BillingApi'), require('./api/ContentManagementApi'), require('./api/ConversationsApi'), require('./api/ExternalContactsApi'), require('./api/FaxApi'), require('./api/GeneralDataProtectionRegulationApi'), require('./api/GeolocationApi'), require('./api/GreetingsApi'), require('./api/GroupsApi'), require('./api/IdentityProviderApi'), require('./api/IntegrationsApi'), require('./api/LanguagesApi'), require('./api/LicenseApi'), require('./api/LocationsApi'), require('./api/MobileDevicesApi'), require('./api/NotificationsApi'), require('./api/OAuthApi'), require('./api/OrganizationApi'), require('./api/OrganizationAuthorizationApi'), require('./api/OutboundApi'), require('./api/PresenceApi'), require('./api/QualityApi'), require('./api/RecordingApi'), require('./api/ResponseManagementApi'), require('./api/RoutingApi'), require('./api/ScriptsApi'), require('./api/SearchApi'), require('./api/StationsApi'), require('./api/SuggestApi'), require('./api/TelephonyProvidersEdgeApi'), require('./api/TokensApi'), require('./api/UserRecordingsApi'), require('./api/UsersApi'), require('./api/UtilitiesApi'), require('./api/VoicemailApi'), require('./api/WebChatApi'), require('./api/WorkforceManagementApi'));
   }
-}(function(ApiClient, AlertingApi, AnalyticsApi, ArchitectApi, AttributesApi, AuthorizationApi, BillingApi, ContentManagementApi, ConversationsApi, ExternalContactsApi, FaxApi, GeolocationApi, GreetingsApi, GroupsApi, IdentityProviderApi, IntegrationsApi, LanguagesApi, LicenseApi, LocationsApi, MobileDevicesApi, NotificationsApi, OAuthApi, OrganizationApi, OrganizationAuthorizationApi, OutboundApi, PresenceApi, QualityApi, RecordingApi, ResponseManagementApi, RoutingApi, ScriptsApi, SearchApi, StationsApi, SuggestApi, TelephonyProvidersEdgeApi, TokensApi, UserRecordingsApi, UsersApi, UtilitiesApi, VoicemailApi, WebChatApi, WorkforceManagementApi) {
+}(function(ApiClient, AlertingApi, AnalyticsApi, ArchitectApi, AttributesApi, AuthorizationApi, BillingApi, ContentManagementApi, ConversationsApi, ExternalContactsApi, FaxApi, GeneralDataProtectionRegulationApi, GeolocationApi, GreetingsApi, GroupsApi, IdentityProviderApi, IntegrationsApi, LanguagesApi, LicenseApi, LocationsApi, MobileDevicesApi, NotificationsApi, OAuthApi, OrganizationApi, OrganizationAuthorizationApi, OutboundApi, PresenceApi, QualityApi, RecordingApi, ResponseManagementApi, RoutingApi, ScriptsApi, SearchApi, StationsApi, SuggestApi, TelephonyProvidersEdgeApi, TokensApi, UserRecordingsApi, UsersApi, UtilitiesApi, VoicemailApi, WebChatApi, WorkforceManagementApi) {
   'use strict';
 
   /**
@@ -36359,7 +36517,7 @@ Emitter.prototype.hasListeners = function(event){
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 26.0.0
+   * @version 26.1.0
    */
   var platformClient = {
     /**
@@ -36417,6 +36575,11 @@ Emitter.prototype.hasListeners = function(event){
      * @property {module:purecloud-platform-client-v2/api/FaxApi}
      */
     FaxApi: FaxApi,
+    /**
+     * The GeneralDataProtectionRegulationApi service constructor.
+     * @property {module:purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi}
+     */
+    GeneralDataProtectionRegulationApi: GeneralDataProtectionRegulationApi,
     /**
      * The GeolocationApi service constructor.
      * @property {module:purecloud-platform-client-v2/api/GeolocationApi}
@@ -36577,4 +36740,4 @@ Emitter.prototype.hasListeners = function(event){
   return platformClient;
 }));
 
-},{"./ApiClient":8,"./api/AlertingApi":9,"./api/AnalyticsApi":10,"./api/ArchitectApi":11,"./api/AttributesApi":12,"./api/AuthorizationApi":13,"./api/BillingApi":14,"./api/ContentManagementApi":15,"./api/ConversationsApi":16,"./api/ExternalContactsApi":17,"./api/FaxApi":18,"./api/GeolocationApi":19,"./api/GreetingsApi":20,"./api/GroupsApi":21,"./api/IdentityProviderApi":22,"./api/IntegrationsApi":23,"./api/LanguagesApi":24,"./api/LicenseApi":25,"./api/LocationsApi":26,"./api/MobileDevicesApi":27,"./api/NotificationsApi":28,"./api/OAuthApi":29,"./api/OrganizationApi":30,"./api/OrganizationAuthorizationApi":31,"./api/OutboundApi":32,"./api/PresenceApi":33,"./api/QualityApi":34,"./api/RecordingApi":35,"./api/ResponseManagementApi":36,"./api/RoutingApi":37,"./api/ScriptsApi":38,"./api/SearchApi":39,"./api/StationsApi":40,"./api/SuggestApi":41,"./api/TelephonyProvidersEdgeApi":42,"./api/TokensApi":43,"./api/UserRecordingsApi":44,"./api/UsersApi":45,"./api/UtilitiesApi":46,"./api/VoicemailApi":47,"./api/WebChatApi":48,"./api/WorkforceManagementApi":49}]},{},[]);
+},{"./ApiClient":8,"./api/AlertingApi":9,"./api/AnalyticsApi":10,"./api/ArchitectApi":11,"./api/AttributesApi":12,"./api/AuthorizationApi":13,"./api/BillingApi":14,"./api/ContentManagementApi":15,"./api/ConversationsApi":16,"./api/ExternalContactsApi":17,"./api/FaxApi":18,"./api/GeneralDataProtectionRegulationApi":19,"./api/GeolocationApi":20,"./api/GreetingsApi":21,"./api/GroupsApi":22,"./api/IdentityProviderApi":23,"./api/IntegrationsApi":24,"./api/LanguagesApi":25,"./api/LicenseApi":26,"./api/LocationsApi":27,"./api/MobileDevicesApi":28,"./api/NotificationsApi":29,"./api/OAuthApi":30,"./api/OrganizationApi":31,"./api/OrganizationAuthorizationApi":32,"./api/OutboundApi":33,"./api/PresenceApi":34,"./api/QualityApi":35,"./api/RecordingApi":36,"./api/ResponseManagementApi":37,"./api/RoutingApi":38,"./api/ScriptsApi":39,"./api/SearchApi":40,"./api/StationsApi":41,"./api/SuggestApi":42,"./api/TelephonyProvidersEdgeApi":43,"./api/TokensApi":44,"./api/UserRecordingsApi":45,"./api/UsersApi":46,"./api/UtilitiesApi":47,"./api/VoicemailApi":48,"./api/WebChatApi":49,"./api/WorkforceManagementApi":50}]},{},[]);

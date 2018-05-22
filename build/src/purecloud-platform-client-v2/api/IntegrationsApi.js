@@ -18,7 +18,7 @@
   /**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 26.0.0
+   * @version 26.1.0
    */
 
   /**
