@@ -18,7 +18,7 @@
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 26.1.0
+   * @version 27.0.0
    */
 
   /**
@@ -117,15 +117,18 @@
     /**
      * The list of existing channels
      * 
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.includechannels Show user&#39;s channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. (default to token)
      */
-    this.getNotificationsChannels = function() { 
+    this.getNotificationsChannels = function(opts) { 
+      opts = opts || {};
 
 
       return this.apiClient.callApi(
         '/api/v2/notifications/channels', 
         'GET', 
         {  }, 
-        {  }, 
+        { 'includechannels': opts['includechannels'] }, 
         {  }, 
         {  }, 
         null, 
@@ -172,7 +175,7 @@
 
     /**
      * Create a new channel
-     * There is a limit of 5 channels. Creating a 6th channel will remove the channel with oldest last used date.
+     * There is a limit of 5 channels per user/app combination. Creating a 6th channel will remove the channel with oldest last used date.
      */
     this.postNotificationsChannels = function() { 
 

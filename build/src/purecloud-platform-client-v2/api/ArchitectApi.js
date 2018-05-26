@@ -18,7 +18,7 @@
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 26.1.0
+   * @version 27.0.0
    */
 
   /**
@@ -1621,6 +1621,45 @@
         'GET', 
         {  }, 
         { 'expand': opts['expand'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a pageable list of basic flow information objects filterable by query parameters.
+     * This returns a simplified version of /flow consisting of name and type.
+     * @param {Object} type Type
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {String} opts.sortBy Sort by (default to id)
+     * @param {String} opts.sortOrder Sort order (default to asc)
+     * @param {Array.<String>} opts.id ID
+     * @param {String} opts.name Name
+     * @param {String} opts.publishVersionId Publish version ID
+     * @param {String} opts.publishedAfter Published after
+     * @param {String} opts.publishedBefore Published before
+     */
+    this.getFlowsDivisionviews = function(type, opts) { 
+      opts = opts || {};
+
+      // verify the required parameter 'type' is set
+      if (type === undefined || type === null) {
+        throw "Missing the required parameter 'type' when calling getFlowsDivisionviews";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/flows/divisionviews', 
+        'GET', 
+        {  }, 
+        { 'type': type,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'publishVersionId': opts['publishVersionId'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'] }, 
         {  }, 
         {  }, 
         null, 

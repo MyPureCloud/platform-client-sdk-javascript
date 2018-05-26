@@ -163,7 +163,7 @@ apiInstance.getNotificationsChannelSubscriptions(channelId)
 
 <a name="getNotificationsChannels"></a>
 
-# ChannelEntityListing getNotificationsChannels()
+# ChannelEntityListing getNotificationsChannels(opts)
 
 GET /api/v2/notifications/channels
 
@@ -183,7 +183,11 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.NotificationsApi();
-apiInstance.getNotificationsChannels()
+
+var opts = { 
+  'includechannels': "token" // String | Show user's channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence.
+};
+apiInstance.getNotificationsChannels(opts)
   .then(function(data) {
     console.log(`getNotificationsChannels success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -196,7 +200,10 @@ apiInstance.getNotificationsChannels()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **includechannels** | **String** | Show user&#39;s channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. | [optional] [default to token]<br />**Values**: token, oauthclient |
 {: class="table table-striped"}
 
 ### Return type
@@ -262,7 +269,7 @@ POST /api/v2/notifications/channels
 
 Create a new channel
 
-There is a limit of 5 channels. Creating a 6th channel will remove the channel with oldest last used date.
+There is a limit of 5 channels per user/app combination. Creating a 6th channel will remove the channel with oldest last used date.
 
 ### Example
 

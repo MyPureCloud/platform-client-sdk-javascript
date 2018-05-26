@@ -57,6 +57,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowsDatatableRow**](ArchitectApi.html#getFlowsDatatableRow) | **GET** /api/v2/flows/datatables/{datatableId}/rows/{rowId} | Returns a specific row for the datatable
 [**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | **GET** /api/v2/flows/datatables/{datatableId}/rows | Returns the rows for the datatable
 [**getFlowsDatatables**](ArchitectApi.html#getFlowsDatatables) | **GET** /api/v2/flows/datatables | Retrieve a list of datatables for the org
+[**getFlowsDivisionviews**](ArchitectApi.html#getFlowsDivisionviews) | **GET** /api/v2/flows/divisionviews | Get a pageable list of basic flow information objects filterable by query parameters.
 [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | **POST** /api/v2/architect/dependencytracking/build | Rebuild Dependency Tracking data for an organization
 [**postArchitectEmergencygroups**](ArchitectApi.html#postArchitectEmergencygroups) | **POST** /api/v2/architect/emergencygroups | Creates a new emergency group
 [**postArchitectIvrs**](ArchitectApi.html#postArchitectIvrs) | **POST** /api/v2/architect/ivrs | Create IVR config.
@@ -2794,6 +2795,74 @@ apiInstance.getFlowsDatatables(opts)
 ### Return type
 
 **DataTablesDomainEntityListing**
+
+<a name="getFlowsDivisionviews"></a>
+
+# FlowDivisionViewEntityListing getFlowsDivisionviews(type, opts)
+
+GET /api/v2/flows/divisionviews
+
+Get a pageable list of basic flow information objects filterable by query parameters.
+
+This returns a simplified version of /flow consisting of name and type.
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ArchitectApi();
+
+var type = "type_example"; // String | Type
+
+var opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortBy': "id", // String | Sort by
+  'sortOrder': "asc", // String | Sort order
+  'id': ["id_example"], // [String] | ID
+  'name': "name_example", // String | Name
+  'publishVersionId': "publishVersionId_example", // String | Publish version ID
+  'publishedAfter': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01", // String | Published after
+  'publishedBefore': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01" // String | Published before
+};
+apiInstance.getFlowsDivisionviews(type, opts)
+  .then(function(data) {
+    console.log(`getFlowsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getFlowsDivisionviews');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **type** | **String** | Type | <br />**Values**: inboundcall, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to id] |
+ **sortOrder** | **String** | Sort order | [optional] [default to asc] |
+ **id** | **[String]** | ID | [optional]  |
+ **name** | **String** | Name | [optional]  |
+ **publishVersionId** | **String** | Publish version ID | [optional]  |
+ **publishedAfter** | **String** | Published after | [optional]  |
+ **publishedBefore** | **String** | Published before | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**FlowDivisionViewEntityListing**
 
 <a name="postArchitectDependencytrackingBuild"></a>
 

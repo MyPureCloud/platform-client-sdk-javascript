@@ -18,7 +18,7 @@
   /**
    * MobileDevices service.
    * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   * @version 26.1.0
+   * @version 27.0.0
    */
 
   /**

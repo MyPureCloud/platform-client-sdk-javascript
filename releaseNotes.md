@@ -1,54 +1,40 @@
-Platform API version: 2259
+Platform API version: 2280
 
 
-# Major Changes (0 changes)
+# Major Changes (1 change)
+
+**GET /api/v2/notifications/channels** (1 change)
+
+* Parameter includechannels was added
 
 
-# Minor Changes (14 changes)
+# Minor Changes (7 changes)
 
-**/api/v2/gdpr/requests/{requestId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/gdpr/subjects** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/gdpr/requests** (3 changes)
+**/api/v2/flows/divisionviews** (2 changes)
 
 * Path was added
 * Operation GET was added
-* Operation POST was added
 
-**ConversationDivisionMembership** (1 change)
+**ViewFilter** (2 changes)
 
-* Model was added
+* Optional property skillGroups was added
+* Optional property languageGroups was added
 
-**DialerContactId** (1 change)
-
-* Model was added
-
-**GDPRRequest** (1 change)
+**FlowDivisionView** (1 change)
 
 * Model was added
 
-**GDPRSubject** (1 change)
+**FlowDivisionViewEntityListing** (1 change)
 
 * Model was added
 
-**ReplacementTerm** (1 change)
+**Channel** (1 change)
 
-* Model was added
-
-**GDPRSubjectEntityListing** (1 change)
-
-* Model was added
-
-**GDPRRequestEntityListing** (1 change)
-
-* Model was added
+* Optional property expires was added
 
 
-# Point Changes (0 changes)
+# Point Changes (1 change)
+
+**POST /api/v2/notifications/channels** (1 change)
+
+* Description was changed

@@ -299,6 +299,10 @@
     {
       "topic": "v2.workforcemanagement.managementunits.{id}.agents.sync",
       "class": "WfmUpdateAgentDetailsCompleteNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.managementunits.{id}.schedules",
+      "class": "WfmScheduleNotificationNotification"
     }
   ]
 }
