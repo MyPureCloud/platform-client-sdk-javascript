@@ -65,9 +65,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # Empty deleteUser(userId)
 
+
+
 DELETE /api/v2/users/{userId}
 
 Delete user
+
+
+
+Requires NO permissions: 
 
 
 
@@ -113,11 +119,17 @@ apiInstance.deleteUser(userId)
 
 # void deleteUserRoles(userId)
 
+
+
 DELETE /api/v2/users/{userId}/roles
 
 Removes all the roles from the user.
 
 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:delete
 
 ### Example
 
@@ -161,11 +173,17 @@ void (no response body)
 
 # void deleteUserRoutinglanguage(userId, languageId)
 
+
+
 DELETE /api/v2/users/{userId}/routinglanguages/{languageId}
 
 Remove routing language from user
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -212,11 +230,17 @@ void (no response body)
 
 # void deleteUserRoutingskill(userId, skillId)
 
+
+
 DELETE /api/v2/users/{userId}/routingskills/{skillId}
 
 Remove routing skill from user
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -263,9 +287,15 @@ void (no response body)
 
 # void deleteUserStationAssociatedstation(userId)
 
+
+
 DELETE /api/v2/users/{userId}/station/associatedstation
 
 Clear associated station
+
+
+
+Requires NO permissions: 
 
 
 
@@ -311,11 +341,17 @@ void (no response body)
 
 # void deleteUserStationDefaultstation(userId)
 
+
+
 DELETE /api/v2/users/{userId}/station/defaultstation
 
 Clear default station
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all* telephony:phone:assign
 
 ### Example
 
@@ -359,9 +395,15 @@ void (no response body)
 
 # FieldConfig getFieldconfig(type)
 
+
+
 GET /api/v2/fieldconfig
 
 Fetch field config for an entity type
+
+
+
+Requires NO permissions: 
 
 
 
@@ -407,9 +449,15 @@ apiInstance.getFieldconfig(type)
 
 # UserProfileEntityListing getProfilesUsers(opts)
 
+
+
 GET /api/v2/profiles/users
 
 Get a user profile listing
+
+
+
+Requires NO permissions: 
 
 
 
@@ -468,9 +516,15 @@ apiInstance.getProfilesUsers(opts)
 
 # User getUser(userId, opts)
 
+
+
 GET /api/v2/users/{userId}
 
 Get user.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -522,9 +576,15 @@ apiInstance.getUser(userId, opts)
 
 # Adjacents getUserAdjacents(userId, opts)
 
+
+
 GET /api/v2/users/{userId}/adjacents
 
 Get adjacents
+
+
+
+Requires NO permissions: 
 
 
 
@@ -574,9 +634,15 @@ apiInstance.getUserAdjacents(userId, opts)
 
 # CallForwarding getUserCallforwarding(userId)
 
+
+
 GET /api/v2/users/{userId}/callforwarding
 
 Get a user&#39;s CallForwarding
+
+
+
+Requires NO permissions: 
 
 
 
@@ -622,9 +688,15 @@ apiInstance.getUserCallforwarding(userId)
 
 # [User] getUserDirectreports(userId, opts)
 
+
+
 GET /api/v2/users/{userId}/directreports
 
 Get direct reports
+
+
+
+Requires NO permissions: 
 
 
 
@@ -674,9 +746,15 @@ apiInstance.getUserDirectreports(userId, opts)
 
 # UserEntityListing getUserFavorites(userId, opts)
 
+
+
 GET /api/v2/users/{userId}/favorites
 
 Get favorites
+
+
+
+Requires NO permissions: 
 
 
 
@@ -732,9 +810,15 @@ apiInstance.getUserFavorites(userId, opts)
 
 # Geolocation getUserGeolocation(userId, clientId)
 
+
+
 GET /api/v2/users/{userId}/geolocations/{clientId}
 
 Get a user&#39;s Geolocation
+
+
+
+Requires NO permissions: 
 
 
 
@@ -783,9 +867,15 @@ apiInstance.getUserGeolocation(userId, clientId)
 
 # OutOfOffice getUserOutofoffice(userId)
 
+
+
 GET /api/v2/users/{userId}/outofoffice
 
 Get a OutOfOffice
+
+
+
+Requires NO permissions: 
 
 
 
@@ -831,9 +921,15 @@ apiInstance.getUserOutofoffice(userId)
 
 # UserProfile getUserProfile(userId, opts)
 
+
+
 GET /api/v2/users/{userId}/profile
 
 Get user profile
+
+
+
+Requires NO permissions: 
 
 
 
@@ -883,11 +979,17 @@ apiInstance.getUserProfile(userId, opts)
 
 # **[&#39;String&#39;]** getUserProfileskills(userId)
 
+
+
 GET /api/v2/users/{userId}/profileskills
 
 List profile skills for a user
 
 
+
+Requires ANY permissions: 
+
+* directory:userProfile:view
 
 ### Example
 
@@ -931,11 +1033,17 @@ apiInstance.getUserProfileskills(userId)
 
 # UserQueueEntityListing getUserQueues(userId, opts)
 
+
+
 GET /api/v2/users/{userId}/queues
 
 Get queues for user
 
 
+
+Requires ANY permissions: 
+
+* routing:queue:view
 
 ### Example
 
@@ -955,7 +1063,8 @@ var userId = "userId_example"; // String | User ID
 var opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'joined': true // Boolean | Is joined to the queue
+  'joined': true, // Boolean | Is joined to the queue
+  'divisionId': ["divisionId_example"] // [String] | Division ID(s)
 };
 apiInstance.getUserQueues(userId, opts)
   .then(function(data) {
@@ -977,6 +1086,7 @@ apiInstance.getUserQueues(userId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **joined** | **Boolean** | Is joined to the queue | [optional] [default to true] |
+ **divisionId** | **[String]** | Division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -987,11 +1097,17 @@ apiInstance.getUserQueues(userId, opts)
 
 # UserAuthorization getUserRoles(userId)
 
+
+
 GET /api/v2/users/{userId}/roles
 
 Returns a listing of roles and permissions for a user.
 
 
+
+Requires ANY permissions: 
+
+* authorization:grant:view
 
 ### Example
 
@@ -1035,9 +1151,15 @@ apiInstance.getUserRoles(userId)
 
 # UserLanguageEntityListing getUserRoutinglanguages(userId, opts)
 
+
+
 GET /api/v2/users/{userId}/routinglanguages
 
 List routing language for user
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1091,9 +1213,15 @@ apiInstance.getUserRoutinglanguages(userId, opts)
 
 # UserSkillEntityListing getUserRoutingskills(userId, opts)
 
+
+
 GET /api/v2/users/{userId}/routingskills
 
 List routing skills for user
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1147,9 +1275,15 @@ apiInstance.getUserRoutingskills(userId, opts)
 
 # RoutingStatus getUserRoutingstatus(userId)
 
+
+
 GET /api/v2/users/{userId}/routingstatus
 
 Fetch the routing status of a user
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1195,9 +1329,15 @@ apiInstance.getUserRoutingstatus(userId)
 
 # UserStations getUserStation(userId)
 
+
+
 GET /api/v2/users/{userId}/station
 
 Get station information for user
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1243,9 +1383,15 @@ apiInstance.getUserStation(userId)
 
 # [User] getUserSuperiors(userId, opts)
 
+
+
 GET /api/v2/users/{userId}/superiors
 
 Get superiors
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1295,11 +1441,17 @@ apiInstance.getUserSuperiors(userId, opts)
 
 # TrustorEntityListing getUserTrustors(userId, opts)
 
+
+
 GET /api/v2/users/{userId}/trustors
 
 List the organizations that have authorized/trusted the user.
 
 
+
+Requires ANY permissions: 
+
+* authorization:orgTrustor:view
 
 ### Example
 
@@ -1349,9 +1501,15 @@ apiInstance.getUserTrustors(userId, opts)
 
 # UserEntityListing getUsers(opts)
 
+
+
 GET /api/v2/users
 
 Get the list of available users.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1408,11 +1566,17 @@ apiInstance.getUsers(opts)
 
 # UserMe getUsersMe(opts)
 
+
+
 GET /api/v2/users/me
 
 Get current user details.
 
 This request is not valid when using the Client Credentials OAuth grant.
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1457,9 +1621,15 @@ apiInstance.getUsersMe(opts)
 
 # UsersSearchResponse getUsersSearch(q64, opts)
 
+
+
 GET /api/v2/users/search
 
 Search users using the q64 value returned from a previous search
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1509,9 +1679,15 @@ apiInstance.getUsersSearch(q64, opts)
 
 # User patchUser(userId, body)
 
+
+
 PATCH /api/v2/users/{userId}
 
 Update user
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1560,9 +1736,15 @@ apiInstance.patchUser(userId, body)
 
 # CallForwarding patchUserCallforwarding(userId, body)
 
+
+
 PATCH /api/v2/users/{userId}/callforwarding
 
 Patch a user&#39;s CallForwarding
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1611,11 +1793,17 @@ apiInstance.patchUserCallforwarding(userId, body)
 
 # Geolocation patchUserGeolocation(userId, clientId, body)
 
+
+
 PATCH /api/v2/users/{userId}/geolocations/{clientId}
 
 Patch a user&#39;s Geolocation
 
 The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1665,11 +1853,17 @@ apiInstance.patchUserGeolocation(userId, clientId, body)
 
 # UserQueue patchUserQueue(queueId, userId, body)
 
+
+
 PATCH /api/v2/users/{userId}/queues/{queueId}
 
 Join or unjoin a queue for a user
 
 
+
+Requires ANY permissions: 
+
+* routing:queue:join
 
 ### Example
 
@@ -1717,13 +1911,19 @@ apiInstance.patchUserQueue(queueId, userId, body)
 
 <a name="patchUserQueues"></a>
 
-# UserQueueEntityListing patchUserQueues(userId, body)
+# UserQueueEntityListing patchUserQueues(userId, body, opts)
+
+
 
 PATCH /api/v2/users/{userId}/queues
 
 Join or unjoin a set of queues for a user
 
 
+
+Requires ANY permissions: 
+
+* routing:queue:join
 
 ### Example
 
@@ -1742,7 +1942,10 @@ var userId = "userId_example"; // String | User ID
 
 var body = [{}]; // Object | User Queues
 
-apiInstance.patchUserQueues(userId, body)
+var opts = { 
+  'divisionId': ["divisionId_example"] // [String] | Division ID(s)
+};
+apiInstance.patchUserQueues(userId, body, opts)
   .then(function(data) {
     console.log(`patchUserQueues success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1760,6 +1963,7 @@ apiInstance.patchUserQueues(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | User Queues |  |
+ **divisionId** | **[String]** | Division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1770,11 +1974,17 @@ apiInstance.patchUserQueues(userId, body)
 
 # UserRoutingLanguage patchUserRoutinglanguage(userId, languageId, body)
 
+
+
 PATCH /api/v2/users/{userId}/routinglanguages/{languageId}
 
 Update routing language proficiency or state.
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -1824,11 +2034,17 @@ apiInstance.patchUserRoutinglanguage(userId, languageId, body)
 
 # PresenceQueryResponse postAnalyticsUsersAggregatesQuery(body)
 
+
+
 POST /api/v2/analytics/users/aggregates/query
 
 Query for user aggregates
 
 
+
+Requires ANY permissions: 
+
+* analytics:userAggregate:view
 
 ### Example
 
@@ -1872,11 +2088,17 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 
 # AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(body)
 
+
+
 POST /api/v2/analytics/users/details/query
 
 Query for user details
 
 
+
+Requires ANY permissions: 
+
+* analytics:userObservation:view
 
 ### Example
 
@@ -1920,11 +2142,17 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
 
 # ObservationQueryResponse postAnalyticsUsersObservationsQuery(body)
 
+
+
 POST /api/v2/analytics/users/observations/query
 
 Query for user observations
 
 
+
+Requires ANY permissions: 
+
+* analytics:userObservation:view
 
 ### Example
 
@@ -1968,11 +2196,17 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 
 # void postUserInvite(userId, opts)
 
+
+
 POST /api/v2/users/{userId}/invite
 
 Send an activation email to the user
 
 
+
+Requires ANY permissions: 
+
+* directory:user:add* user_manager* user_administration
 
 ### Example
 
@@ -2020,11 +2254,17 @@ void (no response body)
 
 # void postUserPassword(userId, body)
 
+
+
 POST /api/v2/users/{userId}/password
 
 Change a users password
 
 
+
+Requires ANY permissions: 
+
+* user_administration* directory:userPassword:edit
 
 ### Example
 
@@ -2071,11 +2311,17 @@ void (no response body)
 
 # UserRoutingLanguage postUserRoutinglanguages(userId, body)
 
+
+
 POST /api/v2/users/{userId}/routinglanguages
 
 Add routing language to user
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -2122,11 +2368,17 @@ apiInstance.postUserRoutinglanguages(userId, body)
 
 # UserRoutingSkill postUserRoutingskills(userId, body)
 
+
+
 POST /api/v2/users/{userId}/routingskills
 
 Add routing skill to user
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -2173,11 +2425,17 @@ apiInstance.postUserRoutingskills(userId, body)
 
 # User postUsers(body)
 
+
+
 POST /api/v2/users
 
 Create user
 
 
+
+Requires ANY permissions: 
+
+* directory:user:add
 
 ### Example
 
@@ -2221,9 +2479,15 @@ apiInstance.postUsers(body)
 
 # void postUsersMePassword(body)
 
+
+
 POST /api/v2/users/me/password
 
 Change your password
+
+
+
+Requires NO permissions: 
 
 
 
@@ -2269,9 +2533,15 @@ void (no response body)
 
 # UsersSearchResponse postUsersSearch(body)
 
+
+
 POST /api/v2/users/search
 
 Search users
+
+
+
+Requires NO permissions: 
 
 
 
@@ -2317,9 +2587,15 @@ apiInstance.postUsersSearch(body)
 
 # CallForwarding putUserCallforwarding(userId, body)
 
+
+
 PUT /api/v2/users/{userId}/callforwarding
 
 Update a user&#39;s CallForwarding
+
+
+
+Requires NO permissions: 
 
 
 
@@ -2368,9 +2644,15 @@ apiInstance.putUserCallforwarding(userId, body)
 
 # OutOfOffice putUserOutofoffice(userId, body)
 
+
+
 PUT /api/v2/users/{userId}/outofoffice
 
 Update an OutOfOffice
+
+
+
+Requires NO permissions: 
 
 
 
@@ -2419,11 +2701,17 @@ apiInstance.putUserOutofoffice(userId, body)
 
 # **[&#39;String&#39;]** putUserProfileskills(userId, opts)
 
+
+
 PUT /api/v2/users/{userId}/profileskills
 
 Update profile skills for a user
 
 
+
+Requires ANY permissions: 
+
+* directory:userProfile:edit* admin* user_manager* user_administration
 
 ### Example
 
@@ -2471,11 +2759,17 @@ apiInstance.putUserProfileskills(userId, opts)
 
 # UserAuthorization putUserRoles(userId, body)
 
+
+
 PUT /api/v2/users/{userId}/roles
 
 Sets the user&#39;s roles
 
 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 
@@ -2522,11 +2816,17 @@ apiInstance.putUserRoles(userId, body)
 
 # UserRoutingSkill putUserRoutingskill(userId, skillId, body)
 
+
+
 PUT /api/v2/users/{userId}/routingskills/{skillId}
 
 Update routing skill proficiency or state.
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -2576,9 +2876,15 @@ apiInstance.putUserRoutingskill(userId, skillId, body)
 
 # RoutingStatus putUserRoutingstatus(userId, body)
 
+
+
 PUT /api/v2/users/{userId}/routingstatus
 
 Update the routing status of a user
+
+
+
+Requires NO permissions: 
 
 
 
@@ -2627,9 +2933,15 @@ apiInstance.putUserRoutingstatus(userId, body)
 
 # void putUserStationAssociatedstationStationId(userId, stationId)
 
+
+
 PUT /api/v2/users/{userId}/station/associatedstation/{stationId}
 
 Set associated station
+
+
+
+Requires NO permissions: 
 
 
 
@@ -2678,11 +2990,17 @@ void (no response body)
 
 # void putUserStationDefaultstationStationId(userId, stationId)
 
+
+
 PUT /api/v2/users/{userId}/station/defaultstation/{stationId}
 
 Set default station
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all* telephony:phone:assign
 
 ### Example
 

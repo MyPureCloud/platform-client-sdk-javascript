@@ -17,11 +17,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # LocationDefinition getLocation(locationId)
 
+
+
 GET /api/v2/locations/{locationId}
 
 Get Location by ID.
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -65,9 +71,15 @@ apiInstance.getLocation(locationId)
 
 # LocationEntityListing getLocations(opts)
 
+
+
 GET /api/v2/locations
 
 Get a list of all locations.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -118,9 +130,15 @@ apiInstance.getLocations(opts)
 
 # LocationsSearchResponse getLocationsSearch(q64, opts)
 
+
+
 GET /api/v2/locations/search
 
 Search locations using the q64 value returned from a previous search
+
+
+
+Requires NO permissions: 
 
 
 
@@ -170,9 +188,15 @@ apiInstance.getLocationsSearch(q64, opts)
 
 # LocationsSearchResponse postLocationsSearch(body)
 
+
+
 POST /api/v2/locations/search
 
 Search locations
+
+
+
+Requires NO permissions: 
 
 
 

@@ -35,7 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putExternalcontactsConversation**](ExternalContactsApi.html#putExternalcontactsConversation) | **PUT** /api/v2/externalcontacts/conversations/{conversationId} | Associate an external contact with a conversation
 [**putExternalcontactsOrganization**](ExternalContactsApi.html#putExternalcontactsOrganization) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Update an external organization
 [**putExternalcontactsOrganizationNote**](ExternalContactsApi.html#putExternalcontactsOrganizationNote) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Update a note for an external organization
-[**putExternalcontactsOrganizationTrustorTrustorId**](ExternalContactsApi.html#putExternalcontactsOrganizationTrustorTrustorId) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId} | Links a Trustor with an Extenral Organization
+[**putExternalcontactsOrganizationTrustorTrustorId**](ExternalContactsApi.html#putExternalcontactsOrganizationTrustorTrustorId) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId} | Links a Trustor with an External Organization
 [**putExternalcontactsRelationship**](ExternalContactsApi.html#putExternalcontactsRelationship) | **PUT** /api/v2/externalcontacts/relationships/{relationshipId} | Update a relationship
 {: class="table table-striped"}
 
@@ -43,11 +43,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deleteExternalcontactsContact(contactId)
 
+
+
 DELETE /api/v2/externalcontacts/contacts/{contactId}
 
 Delete an external contact
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:delete
 
 ### Example
 
@@ -91,11 +97,17 @@ void (no response body)
 
 # void deleteExternalcontactsContactNote(contactId, noteId)
 
+
+
 DELETE /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}
 
 Delete a note for an external contact
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
 
 ### Example
 
@@ -142,11 +154,17 @@ void (no response body)
 
 # void deleteExternalcontactsOrganization(externalOrganizationId)
 
+
+
 DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}
 
 Delete an external organization
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:delete
 
 ### Example
 
@@ -190,11 +208,17 @@ void (no response body)
 
 # void deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId)
 
+
+
 DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}
 
 Delete a note for an external organization
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -241,11 +265,17 @@ void (no response body)
 
 # void deleteExternalcontactsOrganizationTrustor(externalOrganizationId)
 
+
+
 DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor
 
 Unlink the Trustor for this External Organization
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -289,11 +319,17 @@ void (no response body)
 
 # void deleteExternalcontactsRelationship(relationshipId)
 
+
+
 DELETE /api/v2/externalcontacts/relationships/{relationshipId}
 
 Delete a relationship
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -337,11 +373,17 @@ void (no response body)
 
 # ExternalContact getExternalcontactsContact(contactId, opts)
 
+
+
 GET /api/v2/externalcontacts/contacts/{contactId}
 
 Fetch an external contact
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
 
 ### Example
 
@@ -389,11 +431,17 @@ apiInstance.getExternalcontactsContact(contactId, opts)
 
 # Note getExternalcontactsContactNote(contactId, noteId, opts)
 
+
+
 GET /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}
 
 Fetch a note for an external contact
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
 
 ### Example
 
@@ -444,11 +492,17 @@ apiInstance.getExternalcontactsContactNote(contactId, noteId, opts)
 
 # NoteListing getExternalcontactsContactNotes(contactId, opts)
 
+
+
 GET /api/v2/externalcontacts/contacts/{contactId}/notes
 
 List notes for an external contact
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
 
 ### Example
 
@@ -502,11 +556,17 @@ apiInstance.getExternalcontactsContactNotes(contactId, opts)
 
 # ContactListing getExternalcontactsContacts(opts)
 
+
+
 GET /api/v2/externalcontacts/contacts
 
 Search for external contacts
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
 
 ### Example
 
@@ -559,11 +619,17 @@ apiInstance.getExternalcontactsContacts(opts)
 
 # ExternalOrganization getExternalcontactsOrganization(externalOrganizationId, opts)
 
+
+
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}
 
 Fetch an external organization
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
 
 ### Example
 
@@ -613,11 +679,17 @@ apiInstance.getExternalcontactsOrganization(externalOrganizationId, opts)
 
 # ContactListing getExternalcontactsOrganizationContacts(externalOrganizationId, opts)
 
+
+
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts
 
 Search for external contacts in an external organization
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
 
 ### Example
 
@@ -673,11 +745,17 @@ apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts
 
 # Note getExternalcontactsOrganizationNote(externalOrganizationId, noteId, opts)
 
+
+
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}
 
 Fetch a note for an external organization
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
 
 ### Example
 
@@ -728,11 +806,17 @@ apiInstance.getExternalcontactsOrganizationNote(externalOrganizationId, noteId, 
 
 # NoteListing getExternalcontactsOrganizationNotes(externalOrganizationId, opts)
 
+
+
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes
 
 List notes for an external organization
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
 
 ### Example
 
@@ -786,11 +870,17 @@ apiInstance.getExternalcontactsOrganizationNotes(externalOrganizationId, opts)
 
 # RelationshipListing getExternalcontactsOrganizationRelationships(externalOrganizationId, opts)
 
+
+
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships
 
 Fetch a relationship for an external organization
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
 
 ### Example
 
@@ -844,11 +934,17 @@ apiInstance.getExternalcontactsOrganizationRelationships(externalOrganizationId,
 
 # ExternalOrganizationListing getExternalcontactsOrganizations(opts)
 
+
+
 GET /api/v2/externalcontacts/organizations
 
 Search for external organizations
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
 
 ### Example
 
@@ -905,11 +1001,17 @@ apiInstance.getExternalcontactsOrganizations(opts)
 
 # Relationship getExternalcontactsRelationship(relationshipId, opts)
 
+
+
 GET /api/v2/externalcontacts/relationships/{relationshipId}
 
 Fetch a relationship
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
 
 ### Example
 
@@ -957,11 +1059,17 @@ apiInstance.getExternalcontactsRelationship(relationshipId, opts)
 
 # ReverseWhitepagesLookupResult getExternalcontactsReversewhitepageslookup(lookupVal, opts)
 
+
+
 GET /api/v2/externalcontacts/reversewhitepageslookup
 
 Lookup contacts and externalOrganizations based on an attribute
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
 
 ### Example
 
@@ -1007,13 +1115,19 @@ apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, opts)
 
 <a name="postExternalcontactsContactNotes"></a>
 
-# Note postExternalcontactsContactNotes(contactId, opts)
+# Note postExternalcontactsContactNotes(contactId, body)
+
+
 
 POST /api/v2/externalcontacts/contacts/{contactId}/notes
 
 Create a note for an external contact
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
 
 ### Example
 
@@ -1030,10 +1144,9 @@ var apiInstance = new platformClient.ExternalContactsApi();
 
 var contactId = "contactId_example"; // String | ExternalContact Id
 
-var opts = { 
-  'body': {} // Object | ExternalContact
-};
-apiInstance.postExternalcontactsContactNotes(contactId, opts)
+var body = {}; // Object | ExternalContact
+
+apiInstance.postExternalcontactsContactNotes(contactId, body)
   .then(function(data) {
     console.log(`postExternalcontactsContactNotes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1050,7 +1163,7 @@ apiInstance.postExternalcontactsContactNotes(contactId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact Id |  |
- **body** | **Object** | ExternalContact | [optional]  |
+ **body** | **Object** | ExternalContact |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1059,13 +1172,19 @@ apiInstance.postExternalcontactsContactNotes(contactId, opts)
 
 <a name="postExternalcontactsContacts"></a>
 
-# ExternalContact postExternalcontactsContacts(opts)
+# ExternalContact postExternalcontactsContacts(body)
+
+
 
 POST /api/v2/externalcontacts/contacts
 
 Create an external contact
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:add
 
 ### Example
 
@@ -1080,10 +1199,9 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ExternalContactsApi();
 
-var opts = { 
-  'body': {} // Object | ExternalContact
-};
-apiInstance.postExternalcontactsContacts(opts)
+var body = {}; // Object | ExternalContact
+
+apiInstance.postExternalcontactsContacts(body)
   .then(function(data) {
     console.log(`postExternalcontactsContacts success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1099,7 +1217,7 @@ apiInstance.postExternalcontactsContacts(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | ExternalContact | [optional]  |
+ **body** | **Object** | ExternalContact |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1108,13 +1226,19 @@ apiInstance.postExternalcontactsContacts(opts)
 
 <a name="postExternalcontactsOrganizationNotes"></a>
 
-# Note postExternalcontactsOrganizationNotes(externalOrganizationId, opts)
+# Note postExternalcontactsOrganizationNotes(externalOrganizationId, body)
+
+
 
 POST /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes
 
 Create a note for an external organization
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -1131,10 +1255,9 @@ var apiInstance = new platformClient.ExternalContactsApi();
 
 var externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
 
-var opts = { 
-  'body': {} // Object | ExternalContact
-};
-apiInstance.postExternalcontactsOrganizationNotes(externalOrganizationId, opts)
+var body = {}; // Object | ExternalContact
+
+apiInstance.postExternalcontactsOrganizationNotes(externalOrganizationId, body)
   .then(function(data) {
     console.log(`postExternalcontactsOrganizationNotes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1151,7 +1274,7 @@ apiInstance.postExternalcontactsOrganizationNotes(externalOrganizationId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization Id |  |
- **body** | **Object** | ExternalContact | [optional]  |
+ **body** | **Object** | ExternalContact |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1160,13 +1283,19 @@ apiInstance.postExternalcontactsOrganizationNotes(externalOrganizationId, opts)
 
 <a name="postExternalcontactsOrganizations"></a>
 
-# ExternalOrganization postExternalcontactsOrganizations(opts)
+# ExternalOrganization postExternalcontactsOrganizations(body)
+
+
 
 POST /api/v2/externalcontacts/organizations
 
 Create an external organization
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:add
 
 ### Example
 
@@ -1181,10 +1310,9 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ExternalContactsApi();
 
-var opts = { 
-  'body': {} // Object | ExternalOrganization
-};
-apiInstance.postExternalcontactsOrganizations(opts)
+var body = {}; // Object | ExternalOrganization
+
+apiInstance.postExternalcontactsOrganizations(body)
   .then(function(data) {
     console.log(`postExternalcontactsOrganizations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1200,7 +1328,7 @@ apiInstance.postExternalcontactsOrganizations(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | ExternalOrganization | [optional]  |
+ **body** | **Object** | ExternalOrganization |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1209,13 +1337,19 @@ apiInstance.postExternalcontactsOrganizations(opts)
 
 <a name="postExternalcontactsRelationships"></a>
 
-# Relationship postExternalcontactsRelationships(opts)
+# Relationship postExternalcontactsRelationships(body)
+
+
 
 POST /api/v2/externalcontacts/relationships
 
 Create a relationship
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -1230,10 +1364,9 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ExternalContactsApi();
 
-var opts = { 
-  'body': {} // Object | Relationship
-};
-apiInstance.postExternalcontactsRelationships(opts)
+var body = {}; // Object | Relationship
+
+apiInstance.postExternalcontactsRelationships(body)
   .then(function(data) {
     console.log(`postExternalcontactsRelationships success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1249,7 +1382,7 @@ apiInstance.postExternalcontactsRelationships(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Relationship | [optional]  |
+ **body** | **Object** | Relationship |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1258,13 +1391,19 @@ apiInstance.postExternalcontactsRelationships(opts)
 
 <a name="putExternalcontactsContact"></a>
 
-# ExternalContact putExternalcontactsContact(contactId, opts)
+# ExternalContact putExternalcontactsContact(contactId, body)
+
+
 
 PUT /api/v2/externalcontacts/contacts/{contactId}
 
 Update an external contact
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
 
 ### Example
 
@@ -1281,10 +1420,9 @@ var apiInstance = new platformClient.ExternalContactsApi();
 
 var contactId = "contactId_example"; // String | ExternalContact ID
 
-var opts = { 
-  'body': {} // Object | ExternalContact
-};
-apiInstance.putExternalcontactsContact(contactId, opts)
+var body = {}; // Object | ExternalContact
+
+apiInstance.putExternalcontactsContact(contactId, body)
   .then(function(data) {
     console.log(`putExternalcontactsContact success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1301,7 +1439,7 @@ apiInstance.putExternalcontactsContact(contactId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
- **body** | **Object** | ExternalContact | [optional]  |
+ **body** | **Object** | ExternalContact |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1310,13 +1448,19 @@ apiInstance.putExternalcontactsContact(contactId, opts)
 
 <a name="putExternalcontactsContactNote"></a>
 
-# Note putExternalcontactsContactNote(contactId, noteId, opts)
+# Note putExternalcontactsContactNote(contactId, noteId, body)
+
+
 
 PUT /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}
 
 Update a note for an external contact
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
 
 ### Example
 
@@ -1335,10 +1479,9 @@ var contactId = "contactId_example"; // String | ExternalContact Id
 
 var noteId = "noteId_example"; // String | Note Id
 
-var opts = { 
-  'body': {} // Object | Note
-};
-apiInstance.putExternalcontactsContactNote(contactId, noteId, opts)
+var body = {}; // Object | Note
+
+apiInstance.putExternalcontactsContactNote(contactId, noteId, body)
   .then(function(data) {
     console.log(`putExternalcontactsContactNote success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1356,7 +1499,7 @@ apiInstance.putExternalcontactsContactNote(contactId, noteId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact Id |  |
  **noteId** | **String** | Note Id |  |
- **body** | **Object** | Note | [optional]  |
+ **body** | **Object** | Note |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1365,13 +1508,19 @@ apiInstance.putExternalcontactsContactNote(contactId, noteId, opts)
 
 <a name="putExternalcontactsConversation"></a>
 
-# void putExternalcontactsConversation(conversationId, opts)
+# void putExternalcontactsConversation(conversationId, body)
+
+
 
 PUT /api/v2/externalcontacts/conversations/{conversationId}
 
 Associate an external contact with a conversation
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:conversation:associate
 
 ### Example
 
@@ -1388,10 +1537,9 @@ var apiInstance = new platformClient.ExternalContactsApi();
 
 var conversationId = "conversationId_example"; // String | Conversation ID
 
-var opts = { 
-  'body': {} // Object | ConversationAssociation
-};
-apiInstance.putExternalcontactsConversation(conversationId, opts)
+var body = {}; // Object | ConversationAssociation
+
+apiInstance.putExternalcontactsConversation(conversationId, body)
   .then(function() {
     console.log('putExternalcontactsConversation returned successfully.');
   })
@@ -1408,7 +1556,7 @@ apiInstance.putExternalcontactsConversation(conversationId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
- **body** | **Object** | ConversationAssociation | [optional]  |
+ **body** | **Object** | ConversationAssociation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1417,13 +1565,19 @@ void (no response body)
 
 <a name="putExternalcontactsOrganization"></a>
 
-# ExternalOrganization putExternalcontactsOrganization(externalOrganizationId, opts)
+# ExternalOrganization putExternalcontactsOrganization(externalOrganizationId, body)
+
+
 
 PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}
 
 Update an external organization
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -1440,10 +1594,9 @@ var apiInstance = new platformClient.ExternalContactsApi();
 
 var externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
 
-var opts = { 
-  'body': {} // Object | ExternalOrganization
-};
-apiInstance.putExternalcontactsOrganization(externalOrganizationId, opts)
+var body = {}; // Object | ExternalOrganization
+
+apiInstance.putExternalcontactsOrganization(externalOrganizationId, body)
   .then(function(data) {
     console.log(`putExternalcontactsOrganization success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1460,7 +1613,7 @@ apiInstance.putExternalcontactsOrganization(externalOrganizationId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization ID |  |
- **body** | **Object** | ExternalOrganization | [optional]  |
+ **body** | **Object** | ExternalOrganization |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1469,13 +1622,19 @@ apiInstance.putExternalcontactsOrganization(externalOrganizationId, opts)
 
 <a name="putExternalcontactsOrganizationNote"></a>
 
-# Note putExternalcontactsOrganizationNote(externalOrganizationId, noteId, opts)
+# Note putExternalcontactsOrganizationNote(externalOrganizationId, noteId, body)
+
+
 
 PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}
 
 Update a note for an external organization
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -1494,10 +1653,9 @@ var externalOrganizationId = "externalOrganizationId_example"; // String | Exter
 
 var noteId = "noteId_example"; // String | Note Id
 
-var opts = { 
-  'body': {} // Object | Note
-};
-apiInstance.putExternalcontactsOrganizationNote(externalOrganizationId, noteId, opts)
+var body = {}; // Object | Note
+
+apiInstance.putExternalcontactsOrganizationNote(externalOrganizationId, noteId, body)
   .then(function(data) {
     console.log(`putExternalcontactsOrganizationNote success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1515,7 +1673,7 @@ apiInstance.putExternalcontactsOrganizationNote(externalOrganizationId, noteId, 
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization Id |  |
  **noteId** | **String** | Note Id |  |
- **body** | **Object** | Note | [optional]  |
+ **body** | **Object** | Note |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1526,11 +1684,17 @@ apiInstance.putExternalcontactsOrganizationNote(externalOrganizationId, noteId, 
 
 # ExternalOrganization putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId)
 
+
+
 PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}
 
-Links a Trustor with an Extenral Organization
+Links a Trustor with an External Organization
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -1575,13 +1739,19 @@ apiInstance.putExternalcontactsOrganizationTrustorTrustorId(externalOrganization
 
 <a name="putExternalcontactsRelationship"></a>
 
-# Relationship putExternalcontactsRelationship(relationshipId, opts)
+# Relationship putExternalcontactsRelationship(relationshipId, body)
+
+
 
 PUT /api/v2/externalcontacts/relationships/{relationshipId}
 
 Update a relationship
 
 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -1598,10 +1768,9 @@ var apiInstance = new platformClient.ExternalContactsApi();
 
 var relationshipId = "relationshipId_example"; // String | Relationship Id
 
-var opts = { 
-  'body': {} // Object | Relationship
-};
-apiInstance.putExternalcontactsRelationship(relationshipId, opts)
+var body = {}; // Object | Relationship
+
+apiInstance.putExternalcontactsRelationship(relationshipId, body)
   .then(function(data) {
     console.log(`putExternalcontactsRelationship success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1618,7 +1787,7 @@ apiInstance.putExternalcontactsRelationship(relationshipId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **relationshipId** | **String** | Relationship Id |  |
- **body** | **Object** | Relationship | [optional]  |
+ **body** | **Object** | Relationship |  |
 {: class="table table-striped"}
 
 ### Return type

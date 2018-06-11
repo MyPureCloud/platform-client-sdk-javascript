@@ -63,9 +63,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # Calibration deleteQualityCalibration(calibrationId, calibratorId)
 
+
+
 DELETE /api/v2/quality/calibrations/{calibrationId}
 
 Delete a calibration by id.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -114,9 +120,15 @@ apiInstance.deleteQualityCalibration(calibrationId, calibratorId)
 
 # Evaluation deleteQualityConversationEvaluation(conversationId, evaluationId, opts)
 
+
+
 DELETE /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}
 
 Delete an evaluation
+
+
+
+Requires NO permissions: 
 
 
 
@@ -169,11 +181,17 @@ apiInstance.deleteQualityConversationEvaluation(conversationId, evaluationId, op
 
 # void deleteQualityForm(formId)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 DELETE /api/v2/quality/forms/{formId}
 
 Delete an evaluation form.
 
 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:delete
 
 ### Example
 
@@ -217,11 +235,17 @@ void (no response body)
 
 # void deleteQualityFormsEvaluation(formId)
 
+
+
 DELETE /api/v2/quality/forms/evaluations/{formId}
 
 Delete an evaluation form.
 
 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:delete
 
 ### Example
 
@@ -265,11 +289,17 @@ void (no response body)
 
 # void deleteQualityFormsSurvey(formId)
 
+
+
 DELETE /api/v2/quality/forms/surveys/{formId}
 
 Delete a survey form.
 
 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:delete
 
 ### Example
 
@@ -313,9 +343,15 @@ void (no response body)
 
 # void deleteQualityKeywordset(keywordSetId)
 
+
+
 DELETE /api/v2/quality/keywordsets/{keywordSetId}
 
 Delete a keywordSet by id.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -361,11 +397,17 @@ void (no response body)
 
 # void deleteQualityKeywordsets(ids)
 
+
+
 DELETE /api/v2/quality/keywordsets
 
 Delete keyword sets
 
 Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -409,11 +451,17 @@ void (no response body)
 
 # AgentActivityEntityListing getQualityAgentsActivity(opts)
 
+
+
 GET /api/v2/quality/agents/activity
 
 Gets a list of Agent Activities
 
 Including the number of evaluations and average evaluation score
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -480,9 +528,15 @@ apiInstance.getQualityAgentsActivity(opts)
 
 # Calibration getQualityCalibration(calibrationId, opts)
 
+
+
 GET /api/v2/quality/calibrations/{calibrationId}
 
 Get a calibration by id.  Requires either calibrator id or conversation id
+
+
+
+Requires NO permissions: 
 
 
 
@@ -534,9 +588,15 @@ apiInstance.getQualityCalibration(calibrationId, opts)
 
 # CalibrationEntityListing getQualityCalibrations(calibratorId, opts)
 
+
+
 GET /api/v2/quality/calibrations
 
 Get the list of calibrations
+
+
+
+Requires NO permissions: 
 
 
 
@@ -602,9 +662,15 @@ apiInstance.getQualityCalibrations(calibratorId, opts)
 
 # QualityAuditPage getQualityConversationAudits(conversationId, opts)
 
+
+
 GET /api/v2/quality/conversations/{conversationId}/audits
 
 Get audits for conversation or recording
+
+
+
+Requires NO permissions: 
 
 
 
@@ -668,9 +734,15 @@ apiInstance.getQualityConversationAudits(conversationId, opts)
 
 # Evaluation getQualityConversationEvaluation(conversationId, evaluationId, opts)
 
+
+
 GET /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}
 
 Get an evaluation
+
+
+
+Requires NO permissions: 
 
 
 
@@ -723,11 +795,17 @@ apiInstance.getQualityConversationEvaluation(conversationId, evaluationId, opts)
 
 # EvaluationEntityListing getQualityEvaluationsQuery(opts)
 
+
+
 GET /api/v2/quality/evaluations/query
 
 Queries Evaluations and returns a paged list
 
 Query params must include one of conversationId, evaluatorUserId, or agentUserId
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -806,9 +884,15 @@ apiInstance.getQualityEvaluationsQuery(opts)
 
 # EvaluatorActivityEntityListing getQualityEvaluatorsActivity(opts)
 
+
+
 GET /api/v2/quality/evaluators/activity
 
 Get an evaluator activity
+
+
+
+Requires NO permissions: 
 
 
 
@@ -875,11 +959,17 @@ apiInstance.getQualityEvaluatorsActivity(opts)
 
 # EvaluationForm getQualityForm(formId)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 GET /api/v2/quality/forms/{formId}
 
 Get an evaluation form
 
 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -923,11 +1013,17 @@ apiInstance.getQualityForm(formId)
 
 # EvaluationFormEntityListing getQualityFormVersions(formId, opts)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 GET /api/v2/quality/forms/{formId}/versions
 
 Gets all the revisions for a specific evaluation.
 
 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -977,11 +1073,17 @@ apiInstance.getQualityFormVersions(formId, opts)
 
 # EvaluationFormEntityListing getQualityForms(opts)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 GET /api/v2/quality/forms
 
 Get the list of evaluation forms
 
 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -1038,11 +1140,17 @@ apiInstance.getQualityForms(opts)
 
 # EvaluationForm getQualityFormsEvaluation(formId)
 
+
+
 GET /api/v2/quality/forms/evaluations/{formId}
 
 Get an evaluation form
 
 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -1086,11 +1194,17 @@ apiInstance.getQualityFormsEvaluation(formId)
 
 # EvaluationFormEntityListing getQualityFormsEvaluationVersions(formId, opts)
 
+
+
 GET /api/v2/quality/forms/evaluations/{formId}/versions
 
 Gets all the revisions for a specific evaluation.
 
 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -1140,11 +1254,17 @@ apiInstance.getQualityFormsEvaluationVersions(formId, opts)
 
 # EvaluationFormEntityListing getQualityFormsEvaluations(opts)
 
+
+
 GET /api/v2/quality/forms/evaluations
 
 Get the list of evaluation forms
 
 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -1201,11 +1321,17 @@ apiInstance.getQualityFormsEvaluations(opts)
 
 # SurveyForm getQualityFormsSurvey(formId)
 
+
+
 GET /api/v2/quality/forms/surveys/{formId}
 
 Get a survey form
 
 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:view
 
 ### Example
 
@@ -1249,11 +1375,17 @@ apiInstance.getQualityFormsSurvey(formId)
 
 # SurveyFormEntityListing getQualityFormsSurveyVersions(formId, opts)
 
+
+
 GET /api/v2/quality/forms/surveys/{formId}/versions
 
 Gets all the revisions for a specific survey.
 
 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:view
 
 ### Example
 
@@ -1303,11 +1435,17 @@ apiInstance.getQualityFormsSurveyVersions(formId, opts)
 
 # SurveyFormEntityListing getQualityFormsSurveys(opts)
 
+
+
 GET /api/v2/quality/forms/surveys
 
 Get the list of survey forms
 
 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:view
 
 ### Example
 
@@ -1364,9 +1502,15 @@ apiInstance.getQualityFormsSurveys(opts)
 
 # KeywordSet getQualityKeywordset(keywordSetId)
 
+
+
 GET /api/v2/quality/keywordsets/{keywordSetId}
 
 Get a keywordSet by id.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1412,9 +1556,15 @@ apiInstance.getQualityKeywordset(keywordSetId)
 
 # KeywordSetEntityListing getQualityKeywordsets(opts)
 
+
+
 GET /api/v2/quality/keywordsets
 
 Get the list of keyword sets
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1479,11 +1629,17 @@ apiInstance.getQualityKeywordsets(opts)
 
 # EvaluationForm getQualityPublishedform(formId)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 GET /api/v2/quality/publishedforms/{formId}
 
 Get the published evaluation forms.
 
 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -1527,11 +1683,17 @@ apiInstance.getQualityPublishedform(formId)
 
 # EvaluationFormEntityListing getQualityPublishedforms(opts)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 GET /api/v2/quality/publishedforms
 
 Get the published evaluation forms.
 
 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -1580,11 +1742,17 @@ apiInstance.getQualityPublishedforms(opts)
 
 # EvaluationForm getQualityPublishedformsEvaluation(formId)
 
+
+
 GET /api/v2/quality/publishedforms/evaluations/{formId}
 
 Get the most recent published version of an evaluation form.
 
 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -1628,11 +1796,17 @@ apiInstance.getQualityPublishedformsEvaluation(formId)
 
 # EvaluationFormEntityListing getQualityPublishedformsEvaluations(opts)
 
+
+
 GET /api/v2/quality/publishedforms/evaluations
 
 Get the published evaluation forms.
 
 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
 
 ### Example
 
@@ -1681,11 +1855,17 @@ apiInstance.getQualityPublishedformsEvaluations(opts)
 
 # SurveyForm getQualityPublishedformsSurvey(formId)
 
+
+
 GET /api/v2/quality/publishedforms/surveys/{formId}
 
 Get the most recent published version of a survey form.
 
 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:view
 
 ### Example
 
@@ -1729,11 +1909,17 @@ apiInstance.getQualityPublishedformsSurvey(formId)
 
 # SurveyFormEntityListing getQualityPublishedformsSurveys(opts)
 
+
+
 GET /api/v2/quality/publishedforms/surveys
 
 Get the published survey forms.
 
 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:view
 
 ### Example
 
@@ -1782,11 +1968,17 @@ apiInstance.getQualityPublishedformsSurveys(opts)
 
 # SurveyForm patchQualityFormsSurvey(formId, body)
 
+
+
 PATCH /api/v2/quality/forms/surveys/{formId}
 
 Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
 
 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:edit
 
 ### Example
 
@@ -1833,11 +2025,17 @@ apiInstance.patchQualityFormsSurvey(formId, body)
 
 # AggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(body)
 
+
+
 POST /api/v2/analytics/evaluations/aggregates/query
 
 Query for evaluation aggregates
 
 
+
+Requires ANY permissions: 
+
+* analytics:evaluationAggregate:view
 
 ### Example
 
@@ -1881,9 +2079,15 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
 
 # Calibration postQualityCalibrations(body, opts)
 
+
+
 POST /api/v2/quality/calibrations
 
 Create a calibration
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1933,9 +2137,15 @@ apiInstance.postQualityCalibrations(body, opts)
 
 # Evaluation postQualityConversationEvaluations(conversationId, body, opts)
 
+
+
 POST /api/v2/quality/conversations/{conversationId}/evaluations
 
 Create an evaluation
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1988,9 +2198,15 @@ apiInstance.postQualityConversationEvaluations(conversationId, body, opts)
 
 # EvaluationScoringSet postQualityEvaluationsScoring(body)
 
+
+
 POST /api/v2/quality/evaluations/scoring
 
 Score evaluation
+
+
+
+Requires NO permissions: 
 
 
 
@@ -2036,11 +2252,17 @@ apiInstance.postQualityEvaluationsScoring(body)
 
 # EvaluationForm postQualityForms(body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 POST /api/v2/quality/forms
 
 Create an evaluation form.
 
 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:add
 
 ### Example
 
@@ -2084,11 +2306,17 @@ apiInstance.postQualityForms(body)
 
 # EvaluationForm postQualityFormsEvaluations(body)
 
+
+
 POST /api/v2/quality/forms/evaluations
 
 Create an evaluation form.
 
 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:add
 
 ### Example
 
@@ -2132,11 +2360,17 @@ apiInstance.postQualityFormsEvaluations(body)
 
 # SurveyForm postQualityFormsSurveys(body)
 
+
+
 POST /api/v2/quality/forms/surveys
 
 Create a survey form.
 
 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:add
 
 ### Example
 
@@ -2180,9 +2414,15 @@ apiInstance.postQualityFormsSurveys(body)
 
 # KeywordSet postQualityKeywordsets(body, opts)
 
+
+
 POST /api/v2/quality/keywordsets
 
 Create a Keyword Set
+
+
+
+Requires NO permissions: 
 
 
 
@@ -2232,11 +2472,17 @@ apiInstance.postQualityKeywordsets(body, opts)
 
 # EvaluationForm postQualityPublishedforms(body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 POST /api/v2/quality/publishedforms
 
 Publish an evaluation form.
 
 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:add
 
 ### Example
 
@@ -2280,11 +2526,17 @@ apiInstance.postQualityPublishedforms(body)
 
 # EvaluationForm postQualityPublishedformsEvaluations(body)
 
+
+
 POST /api/v2/quality/publishedforms/evaluations
 
 Publish an evaluation form.
 
 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:add
 
 ### Example
 
@@ -2328,11 +2580,17 @@ apiInstance.postQualityPublishedformsEvaluations(body)
 
 # SurveyForm postQualityPublishedformsSurveys(body)
 
+
+
 POST /api/v2/quality/publishedforms/surveys
 
 Publish a survey form.
 
 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:add
 
 ### Example
 
@@ -2376,9 +2634,15 @@ apiInstance.postQualityPublishedformsSurveys(body)
 
 # KeywordSet postQualitySpotability(opts)
 
+
+
 POST /api/v2/quality/spotability
 
 Retrieve the spotability statistic
+
+
+
+Requires NO permissions: 
 
 
 
@@ -2425,9 +2689,15 @@ apiInstance.postQualitySpotability(opts)
 
 # Calibration putQualityCalibration(calibrationId, body)
 
+
+
 PUT /api/v2/quality/calibrations/{calibrationId}
 
 Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
+
+
+
+Requires NO permissions: 
 
 
 
@@ -2476,9 +2746,15 @@ apiInstance.putQualityCalibration(calibrationId, body)
 
 # Evaluation putQualityConversationEvaluation(conversationId, evaluationId, body, opts)
 
+
+
 PUT /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}
 
 Update an evaluation
+
+
+
+Requires NO permissions: 
 
 
 
@@ -2534,11 +2810,17 @@ apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body,
 
 # EvaluationForm putQualityForm(formId, body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 PUT /api/v2/quality/forms/{formId}
 
 Update an evaluation form.
 
 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:edit
 
 ### Example
 
@@ -2585,11 +2867,17 @@ apiInstance.putQualityForm(formId, body)
 
 # EvaluationForm putQualityFormsEvaluation(formId, body)
 
+
+
 PUT /api/v2/quality/forms/evaluations/{formId}
 
 Update an evaluation form.
 
 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:edit
 
 ### Example
 
@@ -2636,11 +2924,17 @@ apiInstance.putQualityFormsEvaluation(formId, body)
 
 # SurveyForm putQualityFormsSurvey(formId, body)
 
+
+
 PUT /api/v2/quality/forms/surveys/{formId}
 
 Update a survey form.
 
 
+
+Requires ANY permissions: 
+
+* quality:surveyForm:edit
 
 ### Example
 
@@ -2687,9 +2981,15 @@ apiInstance.putQualityFormsSurvey(formId, body)
 
 # KeywordSet putQualityKeywordset(keywordSetId, body)
 
+
+
 PUT /api/v2/quality/keywordsets/{keywordSetId}
 
 Update a keywordSet to the specified keywordSet via PUT.
+
+
+
+Requires NO permissions: 
 
 
 

@@ -18,7 +18,7 @@
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -613,15 +613,18 @@
      * Create a note for an external contact
      * 
      * @param {String} contactId ExternalContact Id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body ExternalContact
+     * @param {Object} body ExternalContact
      */
-    this.postExternalcontactsContactNotes = function(contactId, opts) { 
-      opts = opts || {};
+    this.postExternalcontactsContactNotes = function(contactId, body) { 
 
       // verify the required parameter 'contactId' is set
       if (contactId === undefined || contactId === null) {
         throw "Missing the required parameter 'contactId' when calling postExternalcontactsContactNotes";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postExternalcontactsContactNotes";
       }
 
 
@@ -632,7 +635,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -643,11 +646,14 @@
     /**
      * Create an external contact
      * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body ExternalContact
+     * @param {Object} body ExternalContact
      */
-    this.postExternalcontactsContacts = function(opts) { 
-      opts = opts || {};
+    this.postExternalcontactsContacts = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postExternalcontactsContacts";
+      }
 
 
       return this.apiClient.callApi(
@@ -657,7 +663,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -669,15 +675,18 @@
      * Create a note for an external organization
      * 
      * @param {String} externalOrganizationId External Organization Id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body ExternalContact
+     * @param {Object} body ExternalContact
      */
-    this.postExternalcontactsOrganizationNotes = function(externalOrganizationId, opts) { 
-      opts = opts || {};
+    this.postExternalcontactsOrganizationNotes = function(externalOrganizationId, body) { 
 
       // verify the required parameter 'externalOrganizationId' is set
       if (externalOrganizationId === undefined || externalOrganizationId === null) {
         throw "Missing the required parameter 'externalOrganizationId' when calling postExternalcontactsOrganizationNotes";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postExternalcontactsOrganizationNotes";
       }
 
 
@@ -688,7 +697,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -699,11 +708,14 @@
     /**
      * Create an external organization
      * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body ExternalOrganization
+     * @param {Object} body ExternalOrganization
      */
-    this.postExternalcontactsOrganizations = function(opts) { 
-      opts = opts || {};
+    this.postExternalcontactsOrganizations = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postExternalcontactsOrganizations";
+      }
 
 
       return this.apiClient.callApi(
@@ -713,7 +725,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -724,11 +736,14 @@
     /**
      * Create a relationship
      * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body Relationship
+     * @param {Object} body Relationship
      */
-    this.postExternalcontactsRelationships = function(opts) { 
-      opts = opts || {};
+    this.postExternalcontactsRelationships = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postExternalcontactsRelationships";
+      }
 
 
       return this.apiClient.callApi(
@@ -738,7 +753,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -750,15 +765,18 @@
      * Update an external contact
      * 
      * @param {String} contactId ExternalContact ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body ExternalContact
+     * @param {Object} body ExternalContact
      */
-    this.putExternalcontactsContact = function(contactId, opts) { 
-      opts = opts || {};
+    this.putExternalcontactsContact = function(contactId, body) { 
 
       // verify the required parameter 'contactId' is set
       if (contactId === undefined || contactId === null) {
         throw "Missing the required parameter 'contactId' when calling putExternalcontactsContact";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putExternalcontactsContact";
       }
 
 
@@ -769,7 +787,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -782,11 +800,9 @@
      * 
      * @param {String} contactId ExternalContact Id
      * @param {String} noteId Note Id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body Note
+     * @param {Object} body Note
      */
-    this.putExternalcontactsContactNote = function(contactId, noteId, opts) { 
-      opts = opts || {};
+    this.putExternalcontactsContactNote = function(contactId, noteId, body) { 
 
       // verify the required parameter 'contactId' is set
       if (contactId === undefined || contactId === null) {
@@ -798,6 +814,11 @@
         throw "Missing the required parameter 'noteId' when calling putExternalcontactsContactNote";
       }
 
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putExternalcontactsContactNote";
+      }
+
 
       return this.apiClient.callApi(
         '/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}', 
@@ -806,7 +827,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -818,15 +839,18 @@
      * Associate an external contact with a conversation
      * 
      * @param {String} conversationId Conversation ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body ConversationAssociation
+     * @param {Object} body ConversationAssociation
      */
-    this.putExternalcontactsConversation = function(conversationId, opts) { 
-      opts = opts || {};
+    this.putExternalcontactsConversation = function(conversationId, body) { 
 
       // verify the required parameter 'conversationId' is set
       if (conversationId === undefined || conversationId === null) {
         throw "Missing the required parameter 'conversationId' when calling putExternalcontactsConversation";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putExternalcontactsConversation";
       }
 
 
@@ -837,7 +861,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -849,15 +873,18 @@
      * Update an external organization
      * 
      * @param {String} externalOrganizationId External Organization ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body ExternalOrganization
+     * @param {Object} body ExternalOrganization
      */
-    this.putExternalcontactsOrganization = function(externalOrganizationId, opts) { 
-      opts = opts || {};
+    this.putExternalcontactsOrganization = function(externalOrganizationId, body) { 
 
       // verify the required parameter 'externalOrganizationId' is set
       if (externalOrganizationId === undefined || externalOrganizationId === null) {
         throw "Missing the required parameter 'externalOrganizationId' when calling putExternalcontactsOrganization";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putExternalcontactsOrganization";
       }
 
 
@@ -868,7 +895,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -881,11 +908,9 @@
      * 
      * @param {String} externalOrganizationId External Organization Id
      * @param {String} noteId Note Id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body Note
+     * @param {Object} body Note
      */
-    this.putExternalcontactsOrganizationNote = function(externalOrganizationId, noteId, opts) { 
-      opts = opts || {};
+    this.putExternalcontactsOrganizationNote = function(externalOrganizationId, noteId, body) { 
 
       // verify the required parameter 'externalOrganizationId' is set
       if (externalOrganizationId === undefined || externalOrganizationId === null) {
@@ -897,6 +922,11 @@
         throw "Missing the required parameter 'noteId' when calling putExternalcontactsOrganizationNote";
       }
 
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putExternalcontactsOrganizationNote";
+      }
+
 
       return this.apiClient.callApi(
         '/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}', 
@@ -905,7 +935,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -914,7 +944,7 @@
 
 
     /**
-     * Links a Trustor with an Extenral Organization
+     * Links a Trustor with an External Organization
      * 
      * @param {String} externalOrganizationId External Organization ID
      * @param {String} trustorId Trustor ID
@@ -951,15 +981,18 @@
      * Update a relationship
      * 
      * @param {String} relationshipId Relationship Id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body Relationship
+     * @param {Object} body Relationship
      */
-    this.putExternalcontactsRelationship = function(relationshipId, opts) { 
-      opts = opts || {};
+    this.putExternalcontactsRelationship = function(relationshipId, body) { 
 
       // verify the required parameter 'relationshipId' is set
       if (relationshipId === undefined || relationshipId === null) {
         throw "Missing the required parameter 'relationshipId' when calling putExternalcontactsRelationship";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putExternalcontactsRelationship";
       }
 
 
@@ -970,7 +1003,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']

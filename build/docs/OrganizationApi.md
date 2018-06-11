@@ -17,9 +17,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # FieldConfig getFieldconfig(type)
 
+
+
 GET /api/v2/fieldconfig
 
 Fetch field config for an entity type
+
+
+
+Requires NO permissions: 
 
 
 
@@ -65,9 +71,15 @@ apiInstance.getFieldconfig(type)
 
 # Organization getOrganizationsMe()
 
+
+
 GET /api/v2/organizations/me
 
 Get organization.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -107,11 +119,17 @@ This endpoint does not need any parameter.
 
 # OrganizationFeatures patchOrganizationsFeature(featureName, enabled)
 
+
+
 PATCH /api/v2/organizations/features/{featureName}
 
 Update organization
 
 
+
+Requires ANY permissions: 
+
+* admin
 
 ### Example
 
@@ -158,11 +176,17 @@ apiInstance.patchOrganizationsFeature(featureName, enabled)
 
 # Organization putOrganizationsMe(opts)
 
+
+
 PUT /api/v2/organizations/me
 
 Update organization.
 
 
+
+Requires ANY permissions: 
+
+* admin
 
 ### Example
 

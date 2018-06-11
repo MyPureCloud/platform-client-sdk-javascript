@@ -21,11 +21,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # LicenseDefinition getLicenseDefinition(licenseId)
 
+
+
 GET /api/v2/license/definitions/{licenseId}
 
 Get PureCloud license definition.
 
 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 
@@ -69,11 +75,17 @@ apiInstance.getLicenseDefinition(licenseId)
 
 # [LicenseDefinition] getLicenseDefinitions()
 
+
+
 GET /api/v2/license/definitions
 
 Get all PureCloud license definitions available for the organization.
 
 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 
@@ -111,11 +123,17 @@ This endpoint does not need any parameter.
 
 # LicenseOrganization getLicenseOrganization()
 
+
+
 GET /api/v2/license/organization
 
 Get license assignments for the organization.
 
 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 
@@ -153,11 +171,17 @@ This endpoint does not need any parameter.
 
 # LicenseOrgToggle getLicenseToggle(featureName)
 
+
+
 GET /api/v2/license/toggles/{featureName}
 
 Get PureCloud license feature toggle value.
 
 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 
@@ -201,11 +225,17 @@ apiInstance.getLicenseToggle(featureName)
 
 # LicenseUser getLicenseUser(userId)
 
+
+
 GET /api/v2/license/users/{userId}
 
 Get licenses for specified user.
 
 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 
@@ -249,11 +279,17 @@ apiInstance.getLicenseUser(userId)
 
 # [LicenseUpdateStatus] postLicenseOrganization(opts)
 
+
+
 POST /api/v2/license/organization
 
 Update the organization&#39;s license assignments in a batch.
 
 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 
@@ -298,11 +334,17 @@ apiInstance.postLicenseOrganization(opts)
 
 # LicenseOrgToggle postLicenseToggle(featureName)
 
+
+
 POST /api/v2/license/toggles/{featureName}
 
 Switch PureCloud license feature toggle value.
 
 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 
@@ -346,9 +388,15 @@ apiInstance.postLicenseToggle(featureName)
 
 # **{&#39;String&#39;: Object}** postLicenseUsers(opts)
 
+
+
 POST /api/v2/license/users
 
 Fetch user licenses in a batch.
+
+
+
+Requires NO permissions: 
 
 
 

@@ -51,9 +51,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deleteContentmanagementDocument(documentId, opts)
 
+
+
 DELETE /api/v2/contentmanagement/documents/{documentId}
 
 Delete a document.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -103,11 +109,17 @@ void (no response body)
 
 # void deleteContentmanagementShare(shareId)
 
+
+
 DELETE /api/v2/contentmanagement/shares/{shareId}
 
 Deletes an existing share.
 
 This revokes sharing rights specified in the share record
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -151,9 +163,15 @@ void (no response body)
 
 # void deleteContentmanagementStatusStatusId(statusId)
 
+
+
 DELETE /api/v2/contentmanagement/status/{statusId}
 
 Cancel the command for this status
+
+
+
+Requires NO permissions: 
 
 
 
@@ -199,9 +217,15 @@ void (no response body)
 
 # void deleteContentmanagementWorkspace(workspaceId, opts)
 
+
+
 DELETE /api/v2/contentmanagement/workspaces/{workspaceId}
 
 Delete a workspace
+
+
+
+Requires NO permissions: 
 
 
 
@@ -251,9 +275,15 @@ void (no response body)
 
 # void deleteContentmanagementWorkspaceMember(workspaceId, memberId)
 
+
+
 DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}
 
 Delete a member from a workspace
+
+
+
+Requires NO permissions: 
 
 
 
@@ -302,11 +332,17 @@ void (no response body)
 
 # void deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId)
 
+
+
 DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}
 
 Delete workspace tag
 
 Delete a tag from a workspace. Will remove this tag from all documents.
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -353,9 +389,15 @@ void (no response body)
 
 # Document getContentmanagementDocument(documentId, opts)
 
+
+
 GET /api/v2/contentmanagement/documents/{documentId}
 
 Get a document.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -405,9 +447,15 @@ apiInstance.getContentmanagementDocument(documentId, opts)
 
 # DocumentAuditEntityListing getContentmanagementDocumentAudits(documentId, opts)
 
+
+
 GET /api/v2/contentmanagement/documents/{documentId}/audits
 
 Get a list of audits for a document.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -467,9 +515,15 @@ apiInstance.getContentmanagementDocumentAudits(documentId, opts)
 
 # DownloadResponse getContentmanagementDocumentContent(documentId, opts)
 
+
+
 GET /api/v2/contentmanagement/documents/{documentId}/content
 
 Download a document.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -521,9 +575,15 @@ apiInstance.getContentmanagementDocumentContent(documentId, opts)
 
 # DocumentEntityListing getContentmanagementDocuments(workspaceId, opts)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 GET /api/v2/contentmanagement/documents
 
 Get a list of documents.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -583,9 +643,15 @@ apiInstance.getContentmanagementDocuments(workspaceId, opts)
 
 # QueryResults getContentmanagementQuery(queryPhrase, opts)
 
+
+
 GET /api/v2/contentmanagement/query
 
 Query content
+
+
+
+Requires NO permissions: 
 
 
 
@@ -643,9 +709,15 @@ apiInstance.getContentmanagementQuery(queryPhrase, opts)
 
 # SecurityProfile getContentmanagementSecurityprofile(securityProfileId)
 
+
+
 GET /api/v2/contentmanagement/securityprofiles/{securityProfileId}
 
 Get a Security Profile
+
+
+
+Requires NO permissions: 
 
 
 
@@ -691,9 +763,15 @@ apiInstance.getContentmanagementSecurityprofile(securityProfileId)
 
 # SecurityProfileEntityListing getContentmanagementSecurityprofiles()
 
+
+
 GET /api/v2/contentmanagement/securityprofiles
 
 Get a List of Security Profiles
+
+
+
+Requires NO permissions: 
 
 
 
@@ -733,9 +811,15 @@ This endpoint does not need any parameter.
 
 # Share getContentmanagementShare(shareId, opts)
 
+
+
 GET /api/v2/contentmanagement/shares/{shareId}
 
 Retrieve details about an existing share.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -785,11 +869,17 @@ apiInstance.getContentmanagementShare(shareId, opts)
 
 # SharedResponse getContentmanagementSharedSharedId(sharedId, opts)
 
+
+
 GET /api/v2/contentmanagement/shared/{sharedId}
 
 Get shared documents. Securely download a shared document.
 
 This method requires the download sharing URI obtained in the get document response (downloadSharingUri). Documents may be shared between users in the same workspace. Documents may also be shared between any user by creating a content management share.
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -843,11 +933,17 @@ apiInstance.getContentmanagementSharedSharedId(sharedId, opts)
 
 # ShareEntityListing getContentmanagementShares(opts)
 
+
+
 GET /api/v2/contentmanagement/shares
 
 Gets a list of shares.  You must specify at least one filter (e.g. entityId).
 
 Failing to specify a filter will return 400.
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -898,9 +994,15 @@ apiInstance.getContentmanagementShares(opts)
 
 # CommandStatusEntityListing getContentmanagementStatus(opts)
 
+
+
 GET /api/v2/contentmanagement/status
 
 Get a list of statuses for pending operations
+
+
+
+Requires NO permissions: 
 
 
 
@@ -949,9 +1051,15 @@ apiInstance.getContentmanagementStatus(opts)
 
 # CommandStatus getContentmanagementStatusStatusId(statusId)
 
+
+
 GET /api/v2/contentmanagement/status/{statusId}
 
 Get a status.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -997,9 +1105,15 @@ apiInstance.getContentmanagementStatusStatusId(statusId)
 
 # Usage getContentmanagementUsage()
 
+
+
 GET /api/v2/contentmanagement/usage
 
 Get usage details.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1039,9 +1153,15 @@ This endpoint does not need any parameter.
 
 # Workspace getContentmanagementWorkspace(workspaceId, opts)
 
+
+
 GET /api/v2/contentmanagement/workspaces/{workspaceId}
 
 Get a workspace.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1091,9 +1211,15 @@ apiInstance.getContentmanagementWorkspace(workspaceId, opts)
 
 # DocumentEntityListing getContentmanagementWorkspaceDocuments(workspaceId, opts)
 
+
+
 GET /api/v2/contentmanagement/workspaces/{workspaceId}/documents
 
 Get a list of documents.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1151,9 +1277,15 @@ apiInstance.getContentmanagementWorkspaceDocuments(workspaceId, opts)
 
 # WorkspaceMember getContentmanagementWorkspaceMember(workspaceId, memberId, opts)
 
+
+
 GET /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}
 
 Get a workspace member
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1206,9 +1338,15 @@ apiInstance.getContentmanagementWorkspaceMember(workspaceId, memberId, opts)
 
 # WorkspaceMemberEntityListing getContentmanagementWorkspaceMembers(workspaceId, opts)
 
+
+
 GET /api/v2/contentmanagement/workspaces/{workspaceId}/members
 
 Get a list workspace members
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1262,9 +1400,15 @@ apiInstance.getContentmanagementWorkspaceMembers(workspaceId, opts)
 
 # TagValue getContentmanagementWorkspaceTagvalue(workspaceId, tagId, opts)
 
+
+
 GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}
 
 Get a workspace tag
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1317,9 +1461,15 @@ apiInstance.getContentmanagementWorkspaceTagvalue(workspaceId, tagId, opts)
 
 # TagValueEntityListing getContentmanagementWorkspaceTagvalues(workspaceId, opts)
 
+
+
 GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues
 
 Get a list of workspace tags
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1375,11 +1525,17 @@ apiInstance.getContentmanagementWorkspaceTagvalues(workspaceId, opts)
 
 # WorkspaceEntityListing getContentmanagementWorkspaces(opts)
 
+
+
 GET /api/v2/contentmanagement/workspaces
 
 Get a list of workspaces.
 
 Specifying &#39;content&#39; access will return all workspaces the user has document access to, while &#39;admin&#39; access will return all group workspaces the user has administrative rights to.
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1430,9 +1586,15 @@ apiInstance.getContentmanagementWorkspaces(opts)
 
 # QueryResults postContentmanagementAuditquery(body)
 
+
+
 POST /api/v2/contentmanagement/auditquery
 
 Query audits
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1478,9 +1640,15 @@ apiInstance.postContentmanagementAuditquery(body)
 
 # Document postContentmanagementDocument(documentId, body, opts)
 
+
+
 POST /api/v2/contentmanagement/documents/{documentId}
 
 Update a document.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1535,9 +1703,15 @@ apiInstance.postContentmanagementDocument(documentId, body, opts)
 
 # ReplaceResponse postContentmanagementDocumentContent(documentId, body, opts)
 
+
+
 POST /api/v2/contentmanagement/documents/{documentId}/content
 
 Replace the contents of a document.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1590,9 +1764,15 @@ apiInstance.postContentmanagementDocumentContent(documentId, body, opts)
 
 # Document postContentmanagementDocuments(body, opts)
 
+
+
 POST /api/v2/contentmanagement/documents
 
 Add a document.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1646,9 +1826,15 @@ apiInstance.postContentmanagementDocuments(body, opts)
 
 # QueryResults postContentmanagementQuery(body, opts)
 
+
+
 POST /api/v2/contentmanagement/query
 
 Query content
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1698,9 +1884,15 @@ apiInstance.postContentmanagementQuery(body, opts)
 
 # CreateShareResponse postContentmanagementShares(body)
 
+
+
 POST /api/v2/contentmanagement/shares
 
 Creates a new share or updates an existing share if the entity has already been shared
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1746,9 +1938,15 @@ apiInstance.postContentmanagementShares(body)
 
 # TagValue postContentmanagementWorkspaceTagvalues(workspaceId, body)
 
+
+
 POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues
 
 Create a workspace tag
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1797,9 +1995,15 @@ apiInstance.postContentmanagementWorkspaceTagvalues(workspaceId, body)
 
 # TagValueEntityListing postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, opts)
 
+
+
 POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query
 
 Perform a prefix query on tags in the workspace
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1852,9 +2056,15 @@ apiInstance.postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, opts
 
 # Workspace postContentmanagementWorkspaces(body)
 
+
+
 POST /api/v2/contentmanagement/workspaces
 
 Create a group workspace
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1900,9 +2110,15 @@ apiInstance.postContentmanagementWorkspaces(body)
 
 # Workspace putContentmanagementWorkspace(workspaceId, body)
 
+
+
 PUT /api/v2/contentmanagement/workspaces/{workspaceId}
 
 Update a workspace
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1951,9 +2167,15 @@ apiInstance.putContentmanagementWorkspace(workspaceId, body)
 
 # WorkspaceMember putContentmanagementWorkspaceMember(workspaceId, memberId, body)
 
+
+
 PUT /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}
 
 Add a member to a workspace
+
+
+
+Requires NO permissions: 
 
 
 
@@ -2005,9 +2227,15 @@ apiInstance.putContentmanagementWorkspaceMember(workspaceId, memberId, body)
 
 # TagValue putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
 
+
+
 PUT /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}
 
 Update a workspace tag. Will update all documents with the new tag value.
+
+
+
+Requires NO permissions: 
 
 
 

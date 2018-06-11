@@ -19,9 +19,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deleteFaxDocument(documentId)
 
+
+
 DELETE /api/v2/fax/documents/{documentId}
 
 Delete a fax document.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -67,9 +73,15 @@ void (no response body)
 
 # FaxDocument getFaxDocument(documentId)
 
+
+
 GET /api/v2/fax/documents/{documentId}
 
 Get a document.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -115,9 +127,15 @@ apiInstance.getFaxDocument(documentId)
 
 # DownloadResponse getFaxDocumentContent(documentId)
 
+
+
 GET /api/v2/fax/documents/{documentId}/content
 
 Download a fax document.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -163,9 +181,15 @@ apiInstance.getFaxDocumentContent(documentId)
 
 # FaxDocumentEntityListing getFaxDocuments(opts)
 
+
+
 GET /api/v2/fax/documents
 
 Get a list of fax documents.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -214,9 +238,15 @@ apiInstance.getFaxDocuments(opts)
 
 # FaxSummary getFaxSummary()
 
+
+
 GET /api/v2/fax/summary
 
 Get fax summary
+
+
+
+Requires NO permissions: 
 
 
 
@@ -256,9 +286,15 @@ This endpoint does not need any parameter.
 
 # FaxDocument putFaxDocument(documentId, body)
 
+
+
 PUT /api/v2/fax/documents/{documentId}
 
 Update a fax document.
+
+
+
+Requires NO permissions: 
 
 
 

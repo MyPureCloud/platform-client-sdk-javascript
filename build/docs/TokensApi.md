@@ -15,9 +15,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deleteTokensMe()
 
+
+
 DELETE /api/v2/tokens/me
 
 Delete  auth token used to make the request.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -57,9 +63,15 @@ void (no response body)
 
 # TokenInfo getTokensMe()
 
+
+
 GET /api/v2/tokens/me
 
 Fetch information about the current token
+
+
+
+Requires NO permissions: 
 
 
 

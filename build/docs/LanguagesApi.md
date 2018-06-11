@@ -23,11 +23,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deleteLanguage(languageId)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 DELETE /api/v2/languages/{languageId}
 
 Delete Language (Deprecated)
 
 This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -71,11 +77,17 @@ void (no response body)
 
 # void deleteRoutingLanguage(languageId)
 
+
+
 DELETE /api/v2/routing/languages/{languageId}
 
 Delete Language
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -119,11 +131,17 @@ void (no response body)
 
 # Language getLanguage(languageId)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 GET /api/v2/languages/{languageId}
 
 Get language (Deprecated)
 
 This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -167,11 +185,17 @@ apiInstance.getLanguage(languageId)
 
 # LanguageEntityListing getLanguages(opts)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 GET /api/v2/languages
 
 Get the list of supported languages. (Deprecated)
 
 This endpoint is deprecated. It has been moved to /routing/languages
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -222,9 +246,15 @@ apiInstance.getLanguages(opts)
 
 # AvailableTranslations getLanguagesTranslations()
 
+
+
 GET /api/v2/languages/translations
 
 Get all available languages for translation
+
+
+
+Requires NO permissions: 
 
 
 
@@ -264,9 +294,15 @@ This endpoint does not need any parameter.
 
 # **{&#39;String&#39;: Object}** getLanguagesTranslationsBuiltin(language)
 
+
+
 GET /api/v2/languages/translations/builtin
 
 Get the builtin translation for a language
+
+
+
+Requires NO permissions: 
 
 
 
@@ -312,9 +348,15 @@ apiInstance.getLanguagesTranslationsBuiltin(language)
 
 # **{&#39;String&#39;: Object}** getLanguagesTranslationsOrganization(language)
 
+
+
 GET /api/v2/languages/translations/organization
 
 Get effective translation for an organization by language
+
+
+
+Requires NO permissions: 
 
 
 
@@ -360,9 +402,15 @@ apiInstance.getLanguagesTranslationsOrganization(language)
 
 # **{&#39;String&#39;: Object}** getLanguagesTranslationsUser(userId)
 
+
+
 GET /api/v2/languages/translations/users/{userId}
 
 Get effective language translation for a user
+
+
+
+Requires NO permissions: 
 
 
 
@@ -408,11 +456,17 @@ apiInstance.getLanguagesTranslationsUser(userId)
 
 # Language getRoutingLanguage(languageId)
 
+
+
 GET /api/v2/routing/languages/{languageId}
 
 Get language
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -456,11 +510,17 @@ apiInstance.getRoutingLanguage(languageId)
 
 # Language postLanguages(body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 POST /api/v2/languages
 
 Create Language (Deprecated)
 
 This endpoint is deprecated. It has been moved to /routing/languages
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 

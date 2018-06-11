@@ -24,11 +24,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # Script getScript(scriptId)
 
+
+
 GET /api/v2/scripts/{scriptId}
 
 Get a script
 
 
+
+Requires ANY permissions: 
+
+* scripter:script:view
 
 ### Example
 
@@ -72,11 +78,17 @@ apiInstance.getScript(scriptId)
 
 # Page getScriptPage(scriptId, pageId, opts)
 
+
+
 GET /api/v2/scripts/{scriptId}/pages/{pageId}
 
 Get a page
 
 
+
+Requires ANY permissions: 
+
+* scripter:script:view
 
 ### Example
 
@@ -127,11 +139,17 @@ apiInstance.getScriptPage(scriptId, pageId, opts)
 
 # [Page] getScriptPages(scriptId, opts)
 
+
+
 GET /api/v2/scripts/{scriptId}/pages
 
 Get the list of pages
 
 
+
+Requires ANY permissions: 
+
+* scripter:script:view
 
 ### Example
 
@@ -179,11 +197,17 @@ apiInstance.getScriptPages(scriptId, opts)
 
 # ScriptEntityListing getScripts(opts)
 
+
+
 GET /api/v2/scripts
 
 Get the list of scripts
 
 
+
+Requires ANY permissions: 
+
+* scripter:script:view
 
 ### Example
 
@@ -244,11 +268,17 @@ apiInstance.getScripts(opts)
 
 # ScriptEntityListing getScriptsPublished(scriptId, opts)
 
+
+
 GET /api/v2/scripts/published
 
 Get the published scripts.
 
 
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:view
 
 ### Example
 
@@ -308,11 +338,17 @@ apiInstance.getScriptsPublished(scriptId, opts)
 
 # Script getScriptsPublishedScriptId(scriptId, opts)
 
+
+
 GET /api/v2/scripts/published/{scriptId}
 
 Get the published script.
 
 
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:view
 
 ### Example
 
@@ -360,11 +396,17 @@ apiInstance.getScriptsPublishedScriptId(scriptId, opts)
 
 # Page getScriptsPublishedScriptIdPage(scriptId, pageId, opts)
 
+
+
 GET /api/v2/scripts/published/{scriptId}/pages/{pageId}
 
 Get the published page.
 
 
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:view
 
 ### Example
 
@@ -415,11 +457,17 @@ apiInstance.getScriptsPublishedScriptIdPage(scriptId, pageId, opts)
 
 # [Page] getScriptsPublishedScriptIdPages(scriptId, opts)
 
+
+
 GET /api/v2/scripts/published/{scriptId}/pages
 
 Get the list of published pages
 
 
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:view
 
 ### Example
 
@@ -467,11 +515,17 @@ apiInstance.getScriptsPublishedScriptIdPages(scriptId, opts)
 
 # **Object** getScriptsPublishedScriptIdVariables(scriptId, opts)
 
+
+
 GET /api/v2/scripts/published/{scriptId}/variables
 
 Get the published variables
 
 
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:view
 
 ### Example
 
@@ -525,11 +579,17 @@ apiInstance.getScriptsPublishedScriptIdVariables(scriptId, opts)
 
 # ImportScriptStatusResponse getScriptsUploadStatus(uploadId, opts)
 
+
+
 GET /api/v2/scripts/uploads/{uploadId}/status
 
 Get the upload status of an imported script
 
 
+
+Requires ANY permissions: 
+
+* scripter:script:view
 
 ### Example
 
@@ -577,11 +637,17 @@ apiInstance.getScriptsUploadStatus(uploadId, opts)
 
 # ExportScriptResponse postScriptExport(scriptId, opts)
 
+
+
 POST /api/v2/scripts/{scriptId}/export
 
 Export a script via download service.
 
 
+
+Requires ANY permissions: 
+
+* scripter:script:view
 
 ### Example
 

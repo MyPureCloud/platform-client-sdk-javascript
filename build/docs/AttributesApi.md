@@ -19,11 +19,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deleteAttribute(attributeId)
 
+
+
 DELETE /api/v2/attributes/{attributeId}
 
 Delete an existing Attribute.
 
 This will remove attribute.
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -67,9 +73,15 @@ void (no response body)
 
 # Attribute getAttribute(attributeId)
 
+
+
 GET /api/v2/attributes/{attributeId}
 
 Get details about an existing attribute.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -115,9 +127,15 @@ apiInstance.getAttribute(attributeId)
 
 # AttributeEntityListing getAttributes(opts)
 
+
+
 GET /api/v2/attributes
 
 Gets a list of existing attributes.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -166,9 +184,15 @@ apiInstance.getAttributes(opts)
 
 # Attribute postAttributes(body)
 
+
+
 POST /api/v2/attributes
 
 Create an attribute.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -214,9 +238,15 @@ apiInstance.postAttributes(body)
 
 # AttributeEntityListing postAttributesQuery(body)
 
+
+
 POST /api/v2/attributes/query
 
 Query attributes
+
+
+
+Requires NO permissions: 
 
 
 
@@ -262,11 +292,17 @@ apiInstance.postAttributesQuery(body)
 
 # Attribute putAttribute(attributeId, body)
 
+
+
 PUT /api/v2/attributes/{attributeId}
 
 Update an existing attribute.
 
 Fields that can be updated: name, description. The most recent version is required for updates.
+
+Requires NO permissions: 
+
+
 
 ### Example
 

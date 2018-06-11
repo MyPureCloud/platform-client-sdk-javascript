@@ -54,9 +54,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # Integration deleteIntegration(integrationId)
 
+
+
 DELETE /api/v2/integrations/{integrationId}
 
 Delete integration.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -102,11 +108,17 @@ apiInstance.deleteIntegration(integrationId)
 
 # void deleteIntegrationsAction(actionId)
 
+
+
 DELETE /api/v2/integrations/actions/{actionId}
 
 Delete an Action
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:delete
 
 ### Example
 
@@ -150,11 +162,17 @@ void (no response body)
 
 # void deleteIntegrationsActionDraft(actionId)
 
+
+
 DELETE /api/v2/integrations/actions/{actionId}/draft
 
 Delete a Draft
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:delete
 
 ### Example
 
@@ -198,9 +216,15 @@ void (no response body)
 
 # void deleteIntegrationsCredential(credentialId)
 
+
+
 DELETE /api/v2/integrations/credentials/{credentialId}
 
 Delete a set of credentials
+
+
+
+Requires NO permissions: 
 
 
 
@@ -246,9 +270,15 @@ void (no response body)
 
 # Integration getIntegration(integrationId, opts)
 
+
+
 GET /api/v2/integrations/{integrationId}
 
 Get integration.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -308,9 +338,15 @@ apiInstance.getIntegration(integrationId, opts)
 
 # IntegrationConfiguration getIntegrationConfigCurrent(integrationId)
 
+
+
 GET /api/v2/integrations/{integrationId}/config/current
 
 Get integration configuration.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -356,9 +392,15 @@ apiInstance.getIntegrationConfigCurrent(integrationId)
 
 # IntegrationEntityListing getIntegrations(opts)
 
+
+
 GET /api/v2/integrations
 
 List integrations
+
+
+
+Requires NO permissions: 
 
 
 
@@ -415,11 +457,17 @@ apiInstance.getIntegrations(opts)
 
 # Action getIntegrationsAction(actionId, opts)
 
+
+
 GET /api/v2/integrations/actions/{actionId}
 
 Retrieves a single Action matching id.
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -469,11 +517,17 @@ apiInstance.getIntegrationsAction(actionId, opts)
 
 # Action getIntegrationsActionDraft(actionId, opts)
 
+
+
 GET /api/v2/integrations/actions/{actionId}/draft
 
 Retrieve a Draft
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -523,11 +577,17 @@ apiInstance.getIntegrationsActionDraft(actionId, opts)
 
 # JsonSchemaDocument getIntegrationsActionDraftSchema(actionId, fileName)
 
+
+
 GET /api/v2/integrations/actions/{actionId}/draft/schemas/{fileName}
 
 Retrieve schema for a Draft based on filename.
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -574,11 +634,17 @@ apiInstance.getIntegrationsActionDraftSchema(actionId, fileName)
 
 # **&#39;String&#39;** getIntegrationsActionDraftTemplate(actionId, fileName)
 
+
+
 GET /api/v2/integrations/actions/{actionId}/draft/templates/{fileName}
 
 Retrieve templates for a Draft based on filename.
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -625,11 +691,17 @@ apiInstance.getIntegrationsActionDraftTemplate(actionId, fileName)
 
 # DraftValidationResult getIntegrationsActionDraftValidation(actionId)
 
+
+
 GET /api/v2/integrations/actions/{actionId}/draft/validation
 
 Validate current Draft configuration.
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:edit
 
 ### Example
 
@@ -673,11 +745,17 @@ apiInstance.getIntegrationsActionDraftValidation(actionId)
 
 # JsonSchemaDocument getIntegrationsActionSchema(actionId, fileName)
 
+
+
 GET /api/v2/integrations/actions/{actionId}/schemas/{fileName}
 
 Retrieve schema for an action based on filename.
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -724,11 +802,17 @@ apiInstance.getIntegrationsActionSchema(actionId, fileName)
 
 # **&#39;String&#39;** getIntegrationsActionTemplate(actionId, fileName)
 
+
+
 GET /api/v2/integrations/actions/{actionId}/templates/{fileName}
 
 Retrieve text of templates for an action based on filename.
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -775,11 +859,17 @@ apiInstance.getIntegrationsActionTemplate(actionId, fileName)
 
 # ActionEntityListing getIntegrationsActions(opts)
 
+
+
 GET /api/v2/integrations/actions
 
 Retrieves all actions associated with filters passed in via query param.
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -840,11 +930,17 @@ apiInstance.getIntegrationsActions(opts)
 
 # CategoryEntityListing getIntegrationsActionsCategories(opts)
 
+
+
 GET /api/v2/integrations/actions/categories
 
 Retrieves all categories of available Actions
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -901,11 +997,17 @@ apiInstance.getIntegrationsActionsCategories(opts)
 
 # ActionEntityListing getIntegrationsActionsDrafts(opts)
 
+
+
 GET /api/v2/integrations/actions/drafts
 
 Retrieves all action drafts associated with the filters passed in via query param.
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -966,9 +1068,15 @@ apiInstance.getIntegrationsActionsDrafts(opts)
 
 # ClientAppEntityListing getIntegrationsClientapps(opts)
 
+
+
 GET /api/v2/integrations/clientapps
 
 List permitted client app integrations for the logged in user
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1025,9 +1133,15 @@ apiInstance.getIntegrationsClientapps(opts)
 
 # Credential getIntegrationsCredential(credentialId)
 
+
+
 GET /api/v2/integrations/credentials/{credentialId}
 
 Get a single credential with sensitive fields redacted
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1073,9 +1187,15 @@ apiInstance.getIntegrationsCredential(credentialId)
 
 # CredentialInfoListing getIntegrationsCredentials(opts)
 
+
+
 GET /api/v2/integrations/credentials
 
 List multiple sets of credentials
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1124,9 +1244,15 @@ apiInstance.getIntegrationsCredentials(opts)
 
 # CredentialTypeListing getIntegrationsCredentialsTypes()
 
+
+
 GET /api/v2/integrations/credentials/types
 
 List all credential types
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1166,11 +1292,17 @@ This endpoint does not need any parameter.
 
 # IntegrationEventEntityListing getIntegrationsEventlog(opts)
 
+
+
 GET /api/v2/integrations/eventlog
 
 List all events
 
 
+
+Requires ANY permissions: 
+
+* integrations:integration:view* bridge:notification:view
 
 ### Example
 
@@ -1223,11 +1355,17 @@ apiInstance.getIntegrationsEventlog(opts)
 
 # IntegrationEvent getIntegrationsEventlogEventId(eventId)
 
+
+
 GET /api/v2/integrations/eventlog/{eventId}
 
 Get a single event
 
 
+
+Requires ANY permissions: 
+
+* integrations:integration:view* bridge:notification:view
 
 ### Example
 
@@ -1271,9 +1409,15 @@ apiInstance.getIntegrationsEventlogEventId(eventId)
 
 # IntegrationType getIntegrationsType(typeId)
 
+
+
 GET /api/v2/integrations/types/{typeId}
 
 Get integration type.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1319,9 +1463,15 @@ apiInstance.getIntegrationsType(typeId)
 
 # JsonSchemaDocument getIntegrationsTypeConfigschema(typeId, configType)
 
+
+
 GET /api/v2/integrations/types/{typeId}/configschemas/{configType}
 
 Get properties config schema for an integration type.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1370,9 +1520,15 @@ apiInstance.getIntegrationsTypeConfigschema(typeId, configType)
 
 # IntegrationTypeEntityListing getIntegrationsTypes(opts)
 
+
+
 GET /api/v2/integrations/types
 
 List integration types
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1429,9 +1585,15 @@ apiInstance.getIntegrationsTypes(opts)
 
 # Integration patchIntegration(integrationId, opts)
 
+
+
 PATCH /api/v2/integrations/{integrationId}
 
 Update an integration.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1493,11 +1655,17 @@ apiInstance.patchIntegration(integrationId, opts)
 
 # Action patchIntegrationsAction(actionId, body)
 
+
+
 PATCH /api/v2/integrations/actions/{actionId}
 
 Patch an Action
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:edit
 
 ### Example
 
@@ -1544,11 +1712,17 @@ apiInstance.patchIntegrationsAction(actionId, body)
 
 # Action patchIntegrationsActionDraft(actionId, body)
 
+
+
 PATCH /api/v2/integrations/actions/{actionId}/draft
 
 Update an existing Draft
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:edit
 
 ### Example
 
@@ -1595,9 +1769,15 @@ apiInstance.patchIntegrationsActionDraft(actionId, body)
 
 # Integration postIntegrations(opts)
 
+
+
 POST /api/v2/integrations
 
 Create an integration.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1644,11 +1824,17 @@ apiInstance.postIntegrations(opts)
 
 # Action postIntegrationsActionDraft(actionId)
 
+
+
 POST /api/v2/integrations/actions/{actionId}/draft
 
 Create a new Draft from existing Action
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:edit
 
 ### Example
 
@@ -1692,11 +1878,17 @@ apiInstance.postIntegrationsActionDraft(actionId)
 
 # Action postIntegrationsActionDraftPublish(actionId, body)
 
+
+
 POST /api/v2/integrations/actions/{actionId}/draft/publish
 
 Publish a Draft and make it the active Action configuration
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:edit
 
 ### Example
 
@@ -1743,11 +1935,17 @@ apiInstance.postIntegrationsActionDraftPublish(actionId, body)
 
 # TestExecutionResult postIntegrationsActionDraftTest(actionId, body)
 
+
+
 POST /api/v2/integrations/actions/{actionId}/draft/test
 
 Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:execute
 
 ### Example
 
@@ -1794,11 +1992,17 @@ apiInstance.postIntegrationsActionDraftTest(actionId, body)
 
 # **Object** postIntegrationsActionExecute(actionId, body)
 
+
+
 POST /api/v2/integrations/actions/{actionId}/execute
 
 Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:execute* bridge:actions:execute
 
 ### Example
 
@@ -1845,11 +2049,17 @@ apiInstance.postIntegrationsActionExecute(actionId, body)
 
 # TestExecutionResult postIntegrationsActionTest(actionId, body)
 
+
+
 POST /api/v2/integrations/actions/{actionId}/test
 
 Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:execute* bridge:actions:execute
 
 ### Example
 
@@ -1896,11 +2106,17 @@ apiInstance.postIntegrationsActionTest(actionId, body)
 
 # Action postIntegrationsActions(body)
 
+
+
 POST /api/v2/integrations/actions
 
 Create a new Action
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:add
 
 ### Example
 
@@ -1944,11 +2160,17 @@ apiInstance.postIntegrationsActions(body)
 
 # Action postIntegrationsActionsDrafts(body)
 
+
+
 POST /api/v2/integrations/actions/drafts
 
 Create a new Draft
 
 
+
+Requires ANY permissions: 
+
+* integrations:action:add
 
 ### Example
 
@@ -1992,9 +2214,15 @@ apiInstance.postIntegrationsActionsDrafts(body)
 
 # CredentialInfo postIntegrationsCredentials(opts)
 
+
+
 POST /api/v2/integrations/credentials
 
 Create a set of credentials
+
+
+
+Requires NO permissions: 
 
 
 
@@ -2041,9 +2269,15 @@ apiInstance.postIntegrationsCredentials(opts)
 
 # UserActionCategoryEntityListing postIntegrationsWorkforcemanagementVendorconnection(opts)
 
+
+
 POST /api/v2/integrations/workforcemanagement/vendorconnection
 
 Add a vendor connection
+
+
+
+Requires NO permissions: 
 
 
 
@@ -2090,9 +2324,15 @@ apiInstance.postIntegrationsWorkforcemanagementVendorconnection(opts)
 
 # IntegrationConfiguration putIntegrationConfigCurrent(integrationId, opts)
 
+
+
 PUT /api/v2/integrations/{integrationId}/config/current
 
 Update integration configuration.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -2142,9 +2382,15 @@ apiInstance.putIntegrationConfigCurrent(integrationId, opts)
 
 # CredentialInfo putIntegrationsCredential(credentialId, opts)
 
+
+
 PUT /api/v2/integrations/credentials/{credentialId}
 
 Update a set of credentials
+
+
+
+Requires NO permissions: 
 
 
 

@@ -18,7 +18,7 @@
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -1476,6 +1476,7 @@
      * @param {Boolean} opts.includeSchemas Include variable schemas (default to false)
      * @param {String} opts.publishedAfter Published after
      * @param {String} opts.publishedBefore Published before
+     * @param {Array.<String>} opts.divisionId division ID(s)
      */
     this.getFlows = function(type, opts) { 
       opts = opts || {};
@@ -1490,7 +1491,7 @@
         '/api/v2/flows', 
         'GET', 
         {  }, 
-        { 'type': type,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'publishVersionId': opts['publishVersionId'],'editableBy': opts['editableBy'],'lockedBy': opts['lockedBy'],'secure': opts['secure'],'deleted': opts['deleted'],'includeSchemas': opts['includeSchemas'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'] }, 
+        { 'type': type,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'publishVersionId': opts['publishVersionId'],'editableBy': opts['editableBy'],'lockedBy': opts['lockedBy'],'secure': opts['secure'],'deleted': opts['deleted'],'includeSchemas': opts['includeSchemas'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
         {  }, 
         {  }, 
         null, 
@@ -1645,6 +1646,7 @@
      * @param {String} opts.publishVersionId Publish version ID
      * @param {String} opts.publishedAfter Published after
      * @param {String} opts.publishedBefore Published before
+     * @param {Array.<String>} opts.divisionId division ID(s)
      */
     this.getFlowsDivisionviews = function(type, opts) { 
       opts = opts || {};
@@ -1659,7 +1661,7 @@
         '/api/v2/flows/divisionviews', 
         'GET', 
         {  }, 
-        { 'type': type,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'publishVersionId': opts['publishVersionId'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'] }, 
+        { 'type': type,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'publishVersionId': opts['publishVersionId'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
         {  }, 
         {  }, 
         null, 

@@ -17,11 +17,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # GDPRRequest getGdprRequest(requestId)
 
+
+
 GET /api/v2/gdpr/requests/{requestId}
 
 Get an existing GDPR request
 
 
+
+Requires ANY permissions: 
+
+* gdpr:request:view
 
 ### Example
 
@@ -65,11 +71,17 @@ apiInstance.getGdprRequest(requestId)
 
 # GDPRRequestEntityListing getGdprRequests(opts)
 
+
+
 GET /api/v2/gdpr/requests
 
 Get all GDPR requests
 
 
+
+Requires ANY permissions: 
+
+* gdpr:request:view
 
 ### Example
 
@@ -116,11 +128,17 @@ apiInstance.getGdprRequests(opts)
 
 # GDPRSubjectEntityListing getGdprSubjects(searchType, searchValue)
 
+
+
 GET /api/v2/gdpr/subjects
 
 Get GDPR subjects
 
 
+
+Requires ANY permissions: 
+
+* gdpr:subject:view
 
 ### Example
 
@@ -167,11 +185,17 @@ apiInstance.getGdprSubjects(searchType, searchValue)
 
 # GDPRRequest postGdprRequests(body, opts)
 
+
+
 POST /api/v2/gdpr/requests
 
 Submit a new GDPR request
 
 
+
+Requires ANY permissions: 
+
+* gdpr:request:add
 
 ### Example
 

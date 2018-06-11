@@ -94,11 +94,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deleteArchitectEmergencygroup(emergencyGroupId)
 
+
+
 DELETE /api/v2/architect/emergencygroups/{emergencyGroupId}
 
 Deletes a emergency group by ID
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -142,11 +148,17 @@ void (no response body)
 
 # void deleteArchitectIvr(ivrId)
 
+
+
 DELETE /api/v2/architect/ivrs/{ivrId}
 
 Delete an IVR Config.
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -190,11 +202,17 @@ void (no response body)
 
 # void deleteArchitectPrompt(promptId, opts)
 
+
+
 DELETE /api/v2/architect/prompts/{promptId}
 
 Delete specified user prompt
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -242,11 +260,17 @@ void (no response body)
 
 # void deleteArchitectPromptResource(promptId, languageCode)
 
+
+
 DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}
 
 Delete specified user prompt resource
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -293,11 +317,17 @@ void (no response body)
 
 # Operation deleteArchitectPrompts(id)
 
+
+
 DELETE /api/v2/architect/prompts
 
 Batch-delete a list of prompts
 
 Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -341,11 +371,17 @@ apiInstance.deleteArchitectPrompts(id)
 
 # void deleteArchitectSchedule(scheduleId)
 
+
+
 DELETE /api/v2/architect/schedules/{scheduleId}
 
 Delete a schedule by id
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -389,11 +425,17 @@ void (no response body)
 
 # void deleteArchitectSchedulegroup(scheduleGroupId)
 
+
+
 DELETE /api/v2/architect/schedulegroups/{scheduleGroupId}
 
 Deletes a schedule group by ID
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -437,11 +479,17 @@ void (no response body)
 
 # void deleteArchitectSystempromptResource(promptId, languageCode)
 
+
+
 DELETE /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}
 
 Delete a system prompt resource override.
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -488,11 +536,17 @@ void (no response body)
 
 # void deleteFlow(flowId)
 
+
+
 DELETE /api/v2/flows/{flowId}
 
 Delete flow
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -536,11 +590,17 @@ void (no response body)
 
 # Operation deleteFlows(id)
 
+
+
 DELETE /api/v2/flows
 
 Batch-delete a list of flows
 
 Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -584,11 +644,17 @@ apiInstance.deleteFlows(id)
 
 # void deleteFlowsDatatable(datatableId, opts)
 
+
+
 DELETE /api/v2/flows/datatables/{datatableId}
 
 deletes a specific datatable by id
 
 deletes an entire datatable (including schema and data) with a given id)
+
+Requires ANY permissions: 
+
+* architect:datatable:delete
 
 ### Example
 
@@ -636,11 +702,17 @@ void (no response body)
 
 # void deleteFlowsDatatableRow(datatableId, rowId)
 
+
+
 DELETE /api/v2/flows/datatables/{datatableId}/rows/{rowId}
 
 Delete a row entry
 
 Deletes a row with a given rowId.
+
+Requires ANY permissions: 
+
+* architect:datatable:delete
 
 ### Example
 
@@ -687,11 +759,17 @@ void (no response body)
 
 # DependencyObjectEntityListing getArchitectDependencytracking(name, opts)
 
+
+
 GET /api/v2/architect/dependencytracking
 
 Get Dependency Tracking objects that have a given display name
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -751,11 +829,17 @@ apiInstance.getArchitectDependencytracking(name, opts)
 
 # DependencyStatus getArchitectDependencytrackingBuild()
 
+
+
 GET /api/v2/architect/dependencytracking/build
 
 Get Dependency Tracking build status for an organization
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -793,11 +877,17 @@ This endpoint does not need any parameter.
 
 # ConsumedResourcesEntityListing getArchitectDependencytrackingConsumedresources(id, version, objectType, opts)
 
+
+
 GET /api/v2/architect/dependencytracking/consumedresources
 
 Get resources that are consumed by a given Dependency Tracking object
 
 
+
+Requires ANY permissions: 
+
+* admin* editor* readonly
 
 ### Example
 
@@ -851,11 +941,17 @@ apiInstance.getArchitectDependencytrackingConsumedresources(id, version, objectT
 
 # ConsumingResourcesEntityListing getArchitectDependencytrackingConsumingresources(id, objectType, opts)
 
+
+
 GET /api/v2/architect/dependencytracking/consumingresources
 
 Get resources that consume a given Dependency Tracking object
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -906,11 +1002,17 @@ apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, opt
 
 # DependencyObjectEntityListing getArchitectDependencytrackingDeletedresourceconsumers(opts)
 
+
+
 GET /api/v2/architect/dependencytracking/deletedresourceconsumers
 
 Get Dependency Tracking objects that consume deleted resources
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -967,11 +1069,17 @@ apiInstance.getArchitectDependencytrackingDeletedresourceconsumers(opts)
 
 # DependencyObject getArchitectDependencytrackingObject(id, opts)
 
+
+
 GET /api/v2/architect/dependencytracking/object
 
 Get a Dependency Tracking object
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1029,11 +1137,17 @@ apiInstance.getArchitectDependencytrackingObject(id, opts)
 
 # DependencyType getArchitectDependencytrackingType(typeId)
 
+
+
 GET /api/v2/architect/dependencytracking/types/{typeId}
 
 Get a Dependency Tracking type.
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1077,11 +1191,17 @@ apiInstance.getArchitectDependencytrackingType(typeId)
 
 # DependencyTypeEntityListing getArchitectDependencytrackingTypes(opts)
 
+
+
 GET /api/v2/architect/dependencytracking/types
 
 Get Dependency Tracking types.
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1128,11 +1248,17 @@ apiInstance.getArchitectDependencytrackingTypes(opts)
 
 # DependencyObjectEntityListing getArchitectDependencytrackingUpdatedresourceconsumers(opts)
 
+
+
 GET /api/v2/architect/dependencytracking/updatedresourceconsumers
 
 Get Dependency Tracking objects that depend on updated resources
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1187,11 +1313,17 @@ apiInstance.getArchitectDependencytrackingUpdatedresourceconsumers(opts)
 
 # EmergencyGroup getArchitectEmergencygroup(emergencyGroupId)
 
+
+
 GET /api/v2/architect/emergencygroups/{emergencyGroupId}
 
 Gets a emergency group by ID
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1235,11 +1367,17 @@ apiInstance.getArchitectEmergencygroup(emergencyGroupId)
 
 # EmergencyGroupListing getArchitectEmergencygroups(opts)
 
+
+
 GET /api/v2/architect/emergencygroups
 
 Get a list of emergency groups.
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1292,11 +1430,17 @@ apiInstance.getArchitectEmergencygroups(opts)
 
 # IVR getArchitectIvr(ivrId)
 
+
+
 GET /api/v2/architect/ivrs/{ivrId}
 
 Get an IVR config.
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1340,11 +1484,17 @@ apiInstance.getArchitectIvr(ivrId)
 
 # IVREntityListing getArchitectIvrs(opts)
 
+
+
 GET /api/v2/architect/ivrs
 
 Get IVR configs.
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1397,11 +1547,17 @@ apiInstance.getArchitectIvrs(opts)
 
 # Prompt getArchitectPrompt(promptId)
 
+
+
 GET /api/v2/architect/prompts/{promptId}
 
 Get specified user prompt
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1445,11 +1601,17 @@ apiInstance.getArchitectPrompt(promptId)
 
 # HistoryListing getArchitectPromptHistoryHistoryId(promptId, historyId, opts)
 
+
+
 GET /api/v2/architect/prompts/{promptId}/history/{historyId}
 
 Get generated prompt history
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1508,11 +1670,17 @@ apiInstance.getArchitectPromptHistoryHistoryId(promptId, historyId, opts)
 
 # PromptAsset getArchitectPromptResource(promptId, languageCode)
 
+
+
 GET /api/v2/architect/prompts/{promptId}/resources/{languageCode}
 
 Get specified user prompt resource
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1559,11 +1727,17 @@ apiInstance.getArchitectPromptResource(promptId, languageCode)
 
 # PromptAssetEntityListing getArchitectPromptResources(promptId, opts)
 
+
+
 GET /api/v2/architect/prompts/{promptId}/resources
 
 Get a pageable list of user prompt resources
 
 The returned list is pageable, and query parameters can be used for filtering.
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1613,11 +1787,17 @@ apiInstance.getArchitectPromptResources(promptId, opts)
 
 # PromptEntityListing getArchitectPrompts(opts)
 
+
+
 GET /api/v2/architect/prompts
 
 Get a pageable list of user prompts
 
 The returned list is pageable, and query parameters can be used for filtering.  Multiple names can be specified, in which case all matching prompts will be returned, and no other filters will be evaluated.
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1674,11 +1854,17 @@ apiInstance.getArchitectPrompts(opts)
 
 # Schedule getArchitectSchedule(scheduleId)
 
+
+
 GET /api/v2/architect/schedules/{scheduleId}
 
 Get a schedule by ID
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1722,11 +1908,17 @@ apiInstance.getArchitectSchedule(scheduleId)
 
 # ScheduleGroup getArchitectSchedulegroup(scheduleGroupId)
 
+
+
 GET /api/v2/architect/schedulegroups/{scheduleGroupId}
 
 Gets a schedule group by ID
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1770,11 +1962,17 @@ apiInstance.getArchitectSchedulegroup(scheduleGroupId)
 
 # ScheduleGroupEntityListing getArchitectSchedulegroups(opts)
 
+
+
 GET /api/v2/architect/schedulegroups
 
 Get a list of schedule groups.
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1827,11 +2025,17 @@ apiInstance.getArchitectSchedulegroups(opts)
 
 # ScheduleEntityListing getArchitectSchedules(opts)
 
+
+
 GET /api/v2/architect/schedules
 
 Get a list of schedules.
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1884,11 +2088,17 @@ apiInstance.getArchitectSchedules(opts)
 
 # SystemPrompt getArchitectSystemprompt(promptId)
 
+
+
 GET /api/v2/architect/systemprompts/{promptId}
 
 Get a system prompt
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1932,11 +2142,17 @@ apiInstance.getArchitectSystemprompt(promptId)
 
 # HistoryListing getArchitectSystempromptHistoryHistoryId(promptId, historyId, opts)
 
+
+
 GET /api/v2/architect/systemprompts/{promptId}/history/{historyId}
 
 Get generated prompt history
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1995,11 +2211,17 @@ apiInstance.getArchitectSystempromptHistoryHistoryId(promptId, historyId, opts)
 
 # SystemPromptAsset getArchitectSystempromptResource(promptId, languageCode)
 
+
+
 GET /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}
 
 Get a system prompt resource.
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2046,11 +2268,17 @@ apiInstance.getArchitectSystempromptResource(promptId, languageCode)
 
 # SystemPromptAssetEntityListing getArchitectSystempromptResources(promptId, opts)
 
+
+
 GET /api/v2/architect/systemprompts/{promptId}/resources
 
 Get system prompt resources.
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2104,11 +2332,17 @@ apiInstance.getArchitectSystempromptResources(promptId, opts)
 
 # SystemPromptEntityListing getArchitectSystemprompts(opts)
 
+
+
 GET /api/v2/architect/systemprompts
 
 Get System Prompts
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2165,11 +2399,17 @@ apiInstance.getArchitectSystemprompts(opts)
 
 # Flow getFlow(flowId, opts)
 
+
+
 GET /api/v2/flows/{flowId}
 
 Get flow
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2217,11 +2457,17 @@ apiInstance.getFlow(flowId, opts)
 
 # HistoryListing getFlowHistoryHistoryId(flowId, historyId, opts)
 
+
+
 GET /api/v2/flows/{flowId}/history/{historyId}
 
 Get generated flow history
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2280,11 +2526,17 @@ apiInstance.getFlowHistoryHistoryId(flowId, historyId, opts)
 
 # **Object** getFlowLatestconfiguration(flowId, opts)
 
+
+
 GET /api/v2/flows/{flowId}/latestconfiguration
 
 Get the latest configuration for flow
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2332,11 +2584,17 @@ apiInstance.getFlowLatestconfiguration(flowId, opts)
 
 # FlowVersion getFlowVersion(flowId, versionId, opts)
 
+
+
 GET /api/v2/flows/{flowId}/versions/{versionId}
 
 Get flow version
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2387,11 +2645,17 @@ apiInstance.getFlowVersion(flowId, versionId, opts)
 
 # **Object** getFlowVersionConfiguration(flowId, versionId, opts)
 
+
+
 GET /api/v2/flows/{flowId}/versions/{versionId}/configuration
 
 Create flow version configuration
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2442,11 +2706,17 @@ apiInstance.getFlowVersionConfiguration(flowId, versionId, opts)
 
 # FlowVersionEntityListing getFlowVersions(flowId, opts)
 
+
+
 GET /api/v2/flows/{flowId}/versions
 
 Get flow version list
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2498,11 +2768,17 @@ apiInstance.getFlowVersions(flowId, opts)
 
 # FlowEntityListing getFlows(type, opts)
 
+
+
 GET /api/v2/flows
 
 Get a pageable list of flows, filtered by query parameters
 
 Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2535,7 +2811,8 @@ var opts = {
   'deleted': false, // Boolean | Include deleted
   'includeSchemas': false, // Boolean | Include variable schemas
   'publishedAfter': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01", // String | Published after
-  'publishedBefore': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01" // String | Published before
+  'publishedBefore': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01", // String | Published before
+  'divisionId': ["divisionId_example"] // [String] | division ID(s)
 };
 apiInstance.getFlows(type, opts)
   .then(function(data) {
@@ -2570,6 +2847,7 @@ apiInstance.getFlows(type, opts)
  **includeSchemas** | **Boolean** | Include variable schemas | [optional] [default to false] |
  **publishedAfter** | **String** | Published after | [optional]  |
  **publishedBefore** | **String** | Published before | [optional]  |
+ **divisionId** | **[String]** | division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2580,11 +2858,17 @@ apiInstance.getFlows(type, opts)
 
 # DataTable getFlowsDatatable(datatableId, opts)
 
+
+
 GET /api/v2/flows/datatables/{datatableId}
 
 Returns a specific datatable by id
 
 Given a datableid returns the schema associated with it.
+
+Requires ANY permissions: 
+
+* architect:datatable:view
 
 ### Example
 
@@ -2632,11 +2916,17 @@ apiInstance.getFlowsDatatable(datatableId, opts)
 
 # **{&#39;String&#39;: Object}** getFlowsDatatableRow(datatableId, rowId, opts)
 
+
+
 GET /api/v2/flows/datatables/{datatableId}/rows/{rowId}
 
 Returns a specific row for the datatable
 
 Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+
+Requires ANY permissions: 
+
+* architect:datatable:view
 
 ### Example
 
@@ -2687,11 +2977,17 @@ apiInstance.getFlowsDatatableRow(datatableId, rowId, opts)
 
 # DataTableRowEntityListing getFlowsDatatableRows(datatableId, opts)
 
+
+
 GET /api/v2/flows/datatables/{datatableId}/rows
 
 Returns the rows for the datatable
 
 Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+
+Requires ANY permissions: 
+
+* architect:datatable:view
 
 ### Example
 
@@ -2743,11 +3039,17 @@ apiInstance.getFlowsDatatableRows(datatableId, opts)
 
 # DataTablesDomainEntityListing getFlowsDatatables(opts)
 
+
+
 GET /api/v2/flows/datatables
 
 Retrieve a list of datatables for the org
 
 Returns a metadata list of the datatables associated with this org, including ID, name and description.
+
+Requires ANY permissions: 
+
+* architect:datatable:view
 
 ### Example
 
@@ -2800,11 +3102,17 @@ apiInstance.getFlowsDatatables(opts)
 
 # FlowDivisionViewEntityListing getFlowsDivisionviews(type, opts)
 
+
+
 GET /api/v2/flows/divisionviews
 
 Get a pageable list of basic flow information objects filterable by query parameters.
 
 This returns a simplified version of /flow consisting of name and type.
+
+Requires ANY permissions: 
+
+* architect:flow:search
 
 ### Example
 
@@ -2830,7 +3138,8 @@ var opts = {
   'name': "name_example", // String | Name
   'publishVersionId': "publishVersionId_example", // String | Publish version ID
   'publishedAfter': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01", // String | Published after
-  'publishedBefore': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01" // String | Published before
+  'publishedBefore': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01", // String | Published before
+  'divisionId': ["divisionId_example"] // [String] | division ID(s)
 };
 apiInstance.getFlowsDivisionviews(type, opts)
   .then(function(data) {
@@ -2858,6 +3167,7 @@ apiInstance.getFlowsDivisionviews(type, opts)
  **publishVersionId** | **String** | Publish version ID | [optional]  |
  **publishedAfter** | **String** | Published after | [optional]  |
  **publishedBefore** | **String** | Published before | [optional]  |
+ **divisionId** | **[String]** | division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2868,11 +3178,17 @@ apiInstance.getFlowsDivisionviews(type, opts)
 
 # void postArchitectDependencytrackingBuild()
 
+
+
 POST /api/v2/architect/dependencytracking/build
 
 Rebuild Dependency Tracking data for an organization
 
 Asynchronous.  Notification topic: v2.architect.dependencytracking.build
+
+Requires ANY permissions: 
+
+* architect:user:admin
 
 ### Example
 
@@ -2910,11 +3226,17 @@ void (no response body)
 
 # EmergencyGroup postArchitectEmergencygroups(opts)
 
+
+
 POST /api/v2/architect/emergencygroups
 
 Creates a new emergency group
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2959,11 +3281,17 @@ apiInstance.postArchitectEmergencygroups(opts)
 
 # IVR postArchitectIvrs(opts)
 
+
+
 POST /api/v2/architect/ivrs
 
 Create IVR config.
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3008,11 +3336,17 @@ apiInstance.postArchitectIvrs(opts)
 
 # Operation postArchitectPromptHistory(promptId)
 
+
+
 POST /api/v2/architect/prompts/{promptId}/history
 
 Generate prompt history
 
 Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -3056,11 +3390,17 @@ apiInstance.postArchitectPromptHistory(promptId)
 
 # PromptAsset postArchitectPromptResources(promptId, opts)
 
+
+
 POST /api/v2/architect/prompts/{promptId}/resources
 
 Create a new user prompt resource
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3108,11 +3448,17 @@ apiInstance.postArchitectPromptResources(promptId, opts)
 
 # Prompt postArchitectPrompts(opts)
 
+
+
 POST /api/v2/architect/prompts
 
 Create a new user prompt
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3157,11 +3503,17 @@ apiInstance.postArchitectPrompts(opts)
 
 # ScheduleGroup postArchitectSchedulegroups(opts)
 
+
+
 POST /api/v2/architect/schedulegroups
 
 Creates a new schedule group
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3206,11 +3558,17 @@ apiInstance.postArchitectSchedulegroups(opts)
 
 # Schedule postArchitectSchedules(opts)
 
+
+
 POST /api/v2/architect/schedules
 
 Create a new schedule.
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3255,11 +3613,17 @@ apiInstance.postArchitectSchedules(opts)
 
 # Operation postArchitectSystempromptHistory(promptId)
 
+
+
 POST /api/v2/architect/systemprompts/{promptId}/history
 
 Generate system prompt history
 
 Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -3303,11 +3667,17 @@ apiInstance.postArchitectSystempromptHistory(promptId)
 
 # SystemPromptAsset postArchitectSystempromptResources(promptId, opts)
 
+
+
 POST /api/v2/architect/systemprompts/{promptId}/resources
 
 Create system prompt resource override.
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3355,11 +3725,17 @@ apiInstance.postArchitectSystempromptResources(promptId, opts)
 
 # FlowVersion postFlowVersions(flowId, opts)
 
+
+
 POST /api/v2/flows/{flowId}/versions
 
 Create flow version
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3407,11 +3783,17 @@ apiInstance.postFlowVersions(flowId, opts)
 
 # Flow postFlows(opts)
 
+
+
 POST /api/v2/flows
 
 Create flow
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -3456,11 +3838,17 @@ apiInstance.postFlows(opts)
 
 # Flow postFlowsActionsCheckin(flow)
 
+
+
 POST /api/v2/flows/actions/checkin
 
 Check-in flow
 
 Asynchronous.  Notification topic: v2.flows.{flowId}
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3504,11 +3892,17 @@ apiInstance.postFlowsActionsCheckin(flow)
 
 # Flow postFlowsActionsCheckout(flow)
 
+
+
 POST /api/v2/flows/actions/checkout
 
 Check-out flow
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3552,11 +3946,17 @@ apiInstance.postFlowsActionsCheckout(flow)
 
 # Flow postFlowsActionsDeactivate(flow)
 
+
+
 POST /api/v2/flows/actions/deactivate
 
 Deactivate flow
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3600,11 +4000,17 @@ apiInstance.postFlowsActionsDeactivate(flow)
 
 # Operation postFlowsActionsPublish(flow, opts)
 
+
+
 POST /api/v2/flows/actions/publish
 
 Publish flow
 
 Asynchronous.  Notification topic: v2.flows.{flowId}
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3652,11 +4058,17 @@ apiInstance.postFlowsActionsPublish(flow, opts)
 
 # Flow postFlowsActionsRevert(flow)
 
+
+
 POST /api/v2/flows/actions/revert
 
 Revert flow
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3700,11 +4112,17 @@ apiInstance.postFlowsActionsRevert(flow)
 
 # Flow postFlowsActionsUnlock(flow)
 
+
+
 POST /api/v2/flows/actions/unlock
 
 Unlock flow
 
 Allows for unlocking a flow in the case where there is no flow configuration available, and thus a check-in will not unlock the flow. The user must have Architect Admin permissions to perform this action.
+
+Requires ANY permissions: 
+
+* architect:user:admin
 
 ### Example
 
@@ -3748,11 +4166,17 @@ apiInstance.postFlowsActionsUnlock(flow)
 
 # **{&#39;String&#39;: Object}** postFlowsDatatableRows(datatableId, dataTableRow)
 
+
+
 POST /api/v2/flows/datatables/{datatableId}/rows
 
 Create a new row entry
 
 Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+
+Requires ANY permissions: 
+
+* architect:datatable:add
 
 ### Example
 
@@ -3799,11 +4223,17 @@ apiInstance.postFlowsDatatableRows(datatableId, dataTableRow)
 
 # DataTable postFlowsDatatables(body)
 
+
+
 POST /api/v2/flows/datatables
 
 Create a new datatable with the specified json-schema definition
 
 This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+
+Requires ANY permissions: 
+
+* architect:datatable:add
 
 ### Example
 
@@ -3847,11 +4277,17 @@ apiInstance.postFlowsDatatables(body)
 
 # EmergencyGroup putArchitectEmergencygroup(emergencyGroupId, opts)
 
+
+
 PUT /api/v2/architect/emergencygroups/{emergencyGroupId}
 
 Updates a emergency group by ID
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3899,11 +4335,17 @@ apiInstance.putArchitectEmergencygroup(emergencyGroupId, opts)
 
 # IVR putArchitectIvr(ivrId, opts)
 
+
+
 PUT /api/v2/architect/ivrs/{ivrId}
 
 Update an IVR Config.
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3951,11 +4393,17 @@ apiInstance.putArchitectIvr(ivrId, opts)
 
 # Prompt putArchitectPrompt(promptId, opts)
 
+
+
 PUT /api/v2/architect/prompts/{promptId}
 
 Update specified user prompt
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -4003,11 +4451,17 @@ apiInstance.putArchitectPrompt(promptId, opts)
 
 # PromptAsset putArchitectPromptResource(promptId, languageCode, opts)
 
+
+
 PUT /api/v2/architect/prompts/{promptId}/resources/{languageCode}
 
 Update specified user prompt resource
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -4058,11 +4512,17 @@ apiInstance.putArchitectPromptResource(promptId, languageCode, opts)
 
 # Schedule putArchitectSchedule(scheduleId, opts)
 
+
+
 PUT /api/v2/architect/schedules/{scheduleId}
 
 Update schedule by ID
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4110,11 +4570,17 @@ apiInstance.putArchitectSchedule(scheduleId, opts)
 
 # ScheduleGroup putArchitectSchedulegroup(scheduleGroupId, opts)
 
+
+
 PUT /api/v2/architect/schedulegroups/{scheduleGroupId}
 
 Updates a schedule group by ID
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4162,11 +4628,17 @@ apiInstance.putArchitectSchedulegroup(scheduleGroupId, opts)
 
 # SystemPromptAsset putArchitectSystempromptResource(promptId, languageCode, opts)
 
+
+
 PUT /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}
 
 Updates a system prompt resource override.
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -4217,11 +4689,17 @@ apiInstance.putArchitectSystempromptResource(promptId, languageCode, opts)
 
 # Flow putFlow(flowId, opts)
 
+
+
 PUT /api/v2/flows/{flowId}
 
 Update flow
 
 
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -4269,11 +4747,17 @@ apiInstance.putFlow(flowId, opts)
 
 # DataTable putFlowsDatatable(datatableId, opts)
 
+
+
 PUT /api/v2/flows/datatables/{datatableId}
 
 Updates a specific datatable by id
 
 Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
+
+Requires ANY permissions: 
+
+* architect:datatable:edit
 
 ### Example
 
@@ -4323,11 +4807,17 @@ apiInstance.putFlowsDatatable(datatableId, opts)
 
 # **{&#39;String&#39;: Object}** putFlowsDatatableRow(datatableId, rowId, opts)
 
+
+
 PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId}
 
 Update a row entry
 
 Updates a row with the given to the new values.
+
+Requires ANY permissions: 
+
+* architect:datatable:edit
 
 ### Example
 

@@ -27,9 +27,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # DocumentationSearchResponse getDocumentationSearch(q64)
 
+
+
 GET /api/v2/documentation/search
 
 Search documentation using the q64 value returned from a previous search
+
+
+
+Requires NO permissions: 
 
 
 
@@ -75,9 +81,15 @@ apiInstance.getDocumentationSearch(q64)
 
 # GroupsSearchResponse getGroupsSearch(q64, opts)
 
+
+
 GET /api/v2/groups/search
 
 Search groups using the q64 value returned from a previous search
+
+
+
+Requires NO permissions: 
 
 
 
@@ -127,9 +139,15 @@ apiInstance.getGroupsSearch(q64, opts)
 
 # LocationsSearchResponse getLocationsSearch(q64, opts)
 
+
+
 GET /api/v2/locations/search
 
 Search locations using the q64 value returned from a previous search
+
+
+
+Requires NO permissions: 
 
 
 
@@ -179,9 +197,15 @@ apiInstance.getLocationsSearch(q64, opts)
 
 # JsonNodeSearchResponse getSearch(q64, opts)
 
+
+
 GET /api/v2/search
 
 Search using the q64 value returned from a previous search.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -233,9 +257,15 @@ apiInstance.getSearch(q64, opts)
 
 # JsonNodeSearchResponse getSearchSuggest(q64, opts)
 
+
+
 GET /api/v2/search/suggest
 
 Suggest resources using the q64 value returned from a previous suggest query.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -287,9 +317,15 @@ apiInstance.getSearchSuggest(q64, opts)
 
 # UsersSearchResponse getUsersSearch(q64, opts)
 
+
+
 GET /api/v2/users/search
 
 Search users using the q64 value returned from a previous search
+
+
+
+Requires NO permissions: 
 
 
 
@@ -339,9 +375,15 @@ apiInstance.getUsersSearch(q64, opts)
 
 # VoicemailsSearchResponse getVoicemailSearch(q64, opts)
 
+
+
 GET /api/v2/voicemail/search
 
 Search voicemails using the q64 value returned from a previous search
+
+
+
+Requires NO permissions: 
 
 
 
@@ -391,9 +433,15 @@ apiInstance.getVoicemailSearch(q64, opts)
 
 # DocumentationSearchResponse postDocumentationSearch(body)
 
+
+
 POST /api/v2/documentation/search
 
 Search documentation
+
+
+
+Requires NO permissions: 
 
 
 
@@ -439,9 +487,15 @@ apiInstance.postDocumentationSearch(body)
 
 # GroupsSearchResponse postGroupsSearch(body)
 
+
+
 POST /api/v2/groups/search
 
 Search groups
+
+
+
+Requires NO permissions: 
 
 
 
@@ -487,9 +541,15 @@ apiInstance.postGroupsSearch(body)
 
 # LocationsSearchResponse postLocationsSearch(body)
 
+
+
 POST /api/v2/locations/search
 
 Search locations
+
+
+
+Requires NO permissions: 
 
 
 
@@ -535,9 +595,15 @@ apiInstance.postLocationsSearch(body)
 
 # JsonNodeSearchResponse postSearch(body, opts)
 
+
+
 POST /api/v2/search
 
 Search resources.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -587,9 +653,15 @@ apiInstance.postSearch(body, opts)
 
 # JsonNodeSearchResponse postSearchSuggest(body, opts)
 
+
+
 POST /api/v2/search/suggest
 
 Suggest resources.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -639,9 +711,15 @@ apiInstance.postSearchSuggest(body, opts)
 
 # UsersSearchResponse postUsersSearch(body)
 
+
+
 POST /api/v2/users/search
 
 Search users
+
+
+
+Requires NO permissions: 
 
 
 
@@ -687,9 +765,15 @@ apiInstance.postUsersSearch(body)
 
 # VoicemailsSearchResponse postVoicemailSearch(body)
 
+
+
 POST /api/v2/voicemail/search
 
 Search voicemails
+
+
+
+Requires NO permissions: 
 
 
 

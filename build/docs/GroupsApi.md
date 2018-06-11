@@ -27,11 +27,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deleteGroup(groupId)
 
+
+
 DELETE /api/v2/groups/{groupId}
 
 Delete group
 
 
+
+Requires ANY permissions: 
+
+* group_administration
 
 ### Example
 
@@ -75,9 +81,15 @@ void (no response body)
 
 # Empty deleteGroupMembers(groupId, ids)
 
+
+
 DELETE /api/v2/groups/{groupId}/members
 
 Remove members
+
+
+
+Requires NO permissions: 
 
 
 
@@ -126,9 +138,15 @@ apiInstance.deleteGroupMembers(groupId, ids)
 
 # FieldConfig getFieldconfig(type)
 
+
+
 GET /api/v2/fieldconfig
 
 Fetch field config for an entity type
+
+
+
+Requires NO permissions: 
 
 
 
@@ -174,9 +192,15 @@ apiInstance.getFieldconfig(type)
 
 # Group getGroup(groupId)
 
+
+
 GET /api/v2/groups/{groupId}
 
 Get group
+
+
+
+Requires NO permissions: 
 
 
 
@@ -222,9 +246,15 @@ apiInstance.getGroup(groupId)
 
 # UserEntityListing getGroupIndividuals(groupId)
 
+
+
 GET /api/v2/groups/{groupId}/individuals
 
 Get all individuals associated with the group
+
+
+
+Requires NO permissions: 
 
 
 
@@ -270,9 +300,15 @@ apiInstance.getGroupIndividuals(groupId)
 
 # UserEntityListing getGroupMembers(groupId, opts)
 
+
+
 GET /api/v2/groups/{groupId}/members
 
 Get group members, includes individuals, owners, and dynamically included people
+
+
+
+Requires NO permissions: 
 
 
 
@@ -328,9 +364,15 @@ apiInstance.getGroupMembers(groupId, opts)
 
 # GroupProfile getGroupProfile(groupId, opts)
 
+
+
 GET /api/v2/groups/{groupId}/profile
 
 Get group profile
+
+
+
+Requires NO permissions: 
 
 
 
@@ -380,9 +422,15 @@ apiInstance.getGroupProfile(groupId, opts)
 
 # GroupEntityListing getGroups(opts)
 
+
+
 GET /api/v2/groups
 
 Get a group list
+
+
+
+Requires NO permissions: 
 
 
 
@@ -435,9 +483,15 @@ apiInstance.getGroups(opts)
 
 # GroupsSearchResponse getGroupsSearch(q64, opts)
 
+
+
 GET /api/v2/groups/search
 
 Search groups using the q64 value returned from a previous search
+
+
+
+Requires NO permissions: 
 
 
 
@@ -487,9 +541,15 @@ apiInstance.getGroupsSearch(q64, opts)
 
 # GroupProfileEntityListing getProfilesGroups(opts)
 
+
+
 GET /api/v2/profiles/groups
 
 Get group profile listing
+
+
+
+Requires NO permissions: 
 
 
 
@@ -542,9 +602,15 @@ apiInstance.getProfilesGroups(opts)
 
 # Empty postGroupMembers(groupId, body)
 
+
+
 POST /api/v2/groups/{groupId}/members
 
 Add members
+
+
+
+Requires NO permissions: 
 
 
 
@@ -593,11 +659,17 @@ apiInstance.postGroupMembers(groupId, body)
 
 # Group postGroups(body)
 
+
+
 POST /api/v2/groups
 
 Create a group
 
 
+
+Requires ANY permissions: 
+
+* group_administration* group_creation
 
 ### Example
 
@@ -641,9 +713,15 @@ apiInstance.postGroups(body)
 
 # GroupsSearchResponse postGroupsSearch(body)
 
+
+
 POST /api/v2/groups/search
 
 Search groups
+
+
+
+Requires NO permissions: 
 
 
 
@@ -689,11 +767,17 @@ apiInstance.postGroupsSearch(body)
 
 # Group putGroup(groupId, opts)
 
+
+
 PUT /api/v2/groups/{groupId}
 
 Update group
 
 
+
+Requires ANY permissions: 
+
+* group_administration
 
 ### Example
 

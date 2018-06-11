@@ -18,9 +18,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deleteStationAssociateduser(stationId)
 
+
+
 DELETE /api/v2/stations/{stationId}/associateduser
 
 Unassigns the user assigned to this station
+
+
+
+Requires NO permissions: 
 
 
 
@@ -66,9 +72,15 @@ void (no response body)
 
 # Station getStation(stationId)
 
+
+
 GET /api/v2/stations/{stationId}
 
 Get station.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -114,9 +126,15 @@ apiInstance.getStation(stationId)
 
 # StationEntityListing getStations(opts)
 
+
+
 GET /api/v2/stations
 
 Get the list of available stations.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -177,11 +195,17 @@ apiInstance.getStations(opts)
 
 # StationSettings getStationsSettings()
 
+
+
 GET /api/v2/stations/settings
 
 Get an organization&#39;s StationSettings
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -219,11 +243,17 @@ This endpoint does not need any parameter.
 
 # StationSettings patchStationsSettings(body)
 
+
+
 PATCH /api/v2/stations/settings
 
 Patch an organization&#39;s StationSettings
 
 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 

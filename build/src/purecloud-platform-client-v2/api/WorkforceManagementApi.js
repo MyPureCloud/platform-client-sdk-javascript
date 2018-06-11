@@ -18,7 +18,7 @@
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -233,7 +233,7 @@
      * 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize 
-     * @param {Number} opts.pageNumber  (default to 1)
+     * @param {Number} opts.pageNumber 
      * @param {Object} opts.expand 
      */
     this.getWorkforcemanagementManagementunits = function(opts) { 

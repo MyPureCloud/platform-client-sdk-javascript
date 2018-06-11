@@ -50,9 +50,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deleteConversationRecordingAnnotation(conversationId, recordingId, annotationId)
 
+
+
 DELETE /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}
 
 Delete annotation
+
+
+
+Requires NO permissions: 
 
 
 
@@ -104,11 +110,17 @@ void (no response body)
 
 # OrphanRecording deleteOrphanrecording(orphanId)
 
+
+
 DELETE /api/v2/orphanrecordings/{orphanId}
 
 Deletes a single orphan recording
 
 
+
+Requires ANY permissions: 
+
+* recording:orphan:delete
 
 ### Example
 
@@ -152,11 +164,17 @@ apiInstance.deleteOrphanrecording(orphanId)
 
 # void deleteRecordingMediaretentionpolicies(ids)
 
+
+
 DELETE /api/v2/recording/mediaretentionpolicies
 
 Delete media retention policies
 
 Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
+
+Requires ANY permissions: 
+
+* recording:retentionPolicy:delete
 
 ### Example
 
@@ -200,11 +218,17 @@ void (no response body)
 
 # void deleteRecordingMediaretentionpolicy(policyId)
 
+
+
 DELETE /api/v2/recording/mediaretentionpolicies/{policyId}
 
 Delete a media retention policy
 
 
+
+Requires ANY permissions: 
+
+* recording:retentionPolicy:delete
 
 ### Example
 
@@ -248,9 +272,15 @@ void (no response body)
 
 # Recording getConversationRecording(conversationId, recordingId, opts)
 
+
+
 GET /api/v2/conversations/{conversationId}/recordings/{recordingId}
 
 Gets a specific recording.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -307,9 +337,15 @@ apiInstance.getConversationRecording(conversationId, recordingId, opts)
 
 # Annotation getConversationRecordingAnnotation(conversationId, recordingId, annotationId)
 
+
+
 GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}
 
 Get annotation
+
+
+
+Requires NO permissions: 
 
 
 
@@ -361,9 +397,15 @@ apiInstance.getConversationRecordingAnnotation(conversationId, recordingId, anno
 
 # [Annotation] getConversationRecordingAnnotations(conversationId, recordingId)
 
+
+
 GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations
 
 Get annotations for recording
+
+
+
+Requires NO permissions: 
 
 
 
@@ -412,9 +454,15 @@ apiInstance.getConversationRecordingAnnotations(conversationId, recordingId)
 
 # [Recording] getConversationRecordingmetadata(conversationId)
 
+
+
 GET /api/v2/conversations/{conversationId}/recordingmetadata
 
 Get recording metadata for a conversation. Does not return playable media.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -460,9 +508,15 @@ apiInstance.getConversationRecordingmetadata(conversationId)
 
 # Recording getConversationRecordingmetadataRecordingId(conversationId, recordingId)
 
+
+
 GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}
 
 Get metadata for a specific recording. Does not return playable media.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -511,9 +565,15 @@ apiInstance.getConversationRecordingmetadataRecordingId(conversationId, recordin
 
 # [Recording] getConversationRecordings(conversationId, opts)
 
+
+
 GET /api/v2/conversations/{conversationId}/recordings
 
 Get all of a Conversation&#39;s Recordings.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -565,11 +625,17 @@ apiInstance.getConversationRecordings(conversationId, opts)
 
 # OrphanRecording getOrphanrecording(orphanId)
 
+
+
 GET /api/v2/orphanrecordings/{orphanId}
 
 Gets a single orphan recording
 
 
+
+Requires ANY permissions: 
+
+* recording:orphan:view
 
 ### Example
 
@@ -613,11 +679,17 @@ apiInstance.getOrphanrecording(orphanId)
 
 # Recording getOrphanrecordingMedia(orphanId, opts)
 
+
+
 GET /api/v2/orphanrecordings/{orphanId}/media
 
 Gets the media of a single orphan recording
 
 A 202 response means the orphaned media is currently transcoding and will be available shortly.A 200 response denotes the transcoded orphan media is available now and is contained in the response body.
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -669,11 +741,17 @@ apiInstance.getOrphanrecordingMedia(orphanId, opts)
 
 # OrphanRecordingListing getOrphanrecordings(opts)
 
+
+
 GET /api/v2/orphanrecordings
 
 Gets all orphan recordings
 
 
+
+Requires ANY permissions: 
+
+* recording:orphan:view
 
 ### Example
 
@@ -732,9 +810,15 @@ apiInstance.getOrphanrecordings(opts)
 
 # BatchDownloadJobStatusResult getRecordingBatchrequest(jobId)
 
+
+
 GET /api/v2/recording/batchrequests/{jobId}
 
 Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+
+
+
+Requires NO permissions: 
 
 
 
@@ -780,11 +864,17 @@ apiInstance.getRecordingBatchrequest(jobId)
 
 # LocalEncryptionConfiguration getRecordingLocalkeysSetting(settingsId)
 
+
+
 GET /api/v2/recording/localkeys/settings/{settingsId}
 
 Get the local encryption settings
 
 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:view
 
 ### Example
 
@@ -828,11 +918,17 @@ apiInstance.getRecordingLocalkeysSetting(settingsId)
 
 # LocalEncryptionConfigurationListing getRecordingLocalkeysSettings()
 
+
+
 GET /api/v2/recording/localkeys/settings
 
 gets a list local key settings data
 
 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:view
 
 ### Example
 
@@ -870,11 +966,17 @@ This endpoint does not need any parameter.
 
 # PolicyEntityListing getRecordingMediaretentionpolicies(opts)
 
+
+
 GET /api/v2/recording/mediaretentionpolicies
 
 Gets media retention policy list with query options to filter on name and enabled.
 
 for a less verbose response, add summary=true to this endpoint
+
+Requires ANY permissions: 
+
+* recording:retentionPolicy:view
 
 ### Example
 
@@ -937,11 +1039,17 @@ apiInstance.getRecordingMediaretentionpolicies(opts)
 
 # Policy getRecordingMediaretentionpolicy(policyId)
 
+
+
 GET /api/v2/recording/mediaretentionpolicies/{policyId}
 
 Get a media retention policy
 
 
+
+Requires ANY permissions: 
+
+* recording:retentionPolicy:view
 
 ### Example
 
@@ -985,11 +1093,17 @@ apiInstance.getRecordingMediaretentionpolicy(policyId)
 
 # EncryptionKeyEntityListing getRecordingRecordingkeys(opts)
 
+
+
 GET /api/v2/recording/recordingkeys
 
 Get encryption key list
 
 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:view
 
 ### Example
 
@@ -1036,11 +1150,17 @@ apiInstance.getRecordingRecordingkeys(opts)
 
 # KeyRotationSchedule getRecordingRecordingkeysRotationschedule()
 
+
+
 GET /api/v2/recording/recordingkeys/rotationschedule
 
 Get key rotation schedule
 
 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:view
 
 ### Example
 
@@ -1078,9 +1198,15 @@ This endpoint does not need any parameter.
 
 # RecordingSettings getRecordingSettings(opts)
 
+
+
 GET /api/v2/recording/settings
 
 Get the Recording Settings for the Organization
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1127,9 +1253,15 @@ apiInstance.getRecordingSettings(opts)
 
 # ScreenRecordingSessionListing getRecordingsScreensessions(opts)
 
+
+
 GET /api/v2/recordings/screensessions
 
 Retrieves a paged listing of screen recording sessions
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1178,11 +1310,17 @@ apiInstance.getRecordingsScreensessions(opts)
 
 # Policy patchRecordingMediaretentionpolicy(policyId, body)
 
+
+
 PATCH /api/v2/recording/mediaretentionpolicies/{policyId}
 
 Patch a media retention policy
 
 
+
+Requires ANY permissions: 
+
+* recording:retentionPolicy:edit
 
 ### Example
 
@@ -1229,9 +1367,15 @@ apiInstance.patchRecordingMediaretentionpolicy(policyId, body)
 
 # void patchRecordingsScreensession(recordingSessionId, opts)
 
+
+
 PATCH /api/v2/recordings/screensessions/{recordingSessionId}
 
 Update a screen recording session
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1281,9 +1425,15 @@ void (no response body)
 
 # Annotation postConversationRecordingAnnotations(conversationId, recordingId, body)
 
+
+
 POST /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations
 
 Create annotation
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1335,9 +1485,15 @@ apiInstance.postConversationRecordingAnnotations(conversationId, recordingId, bo
 
 # BatchDownloadJobSubmissionResult postRecordingBatchrequests(body)
 
+
+
 POST /api/v2/recording/batchrequests
 
 Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1383,11 +1539,17 @@ apiInstance.postRecordingBatchrequests(body)
 
 # EncryptionKey postRecordingLocalkeys(body)
 
+
+
 POST /api/v2/recording/localkeys
 
 create a local recording key
 
 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:edit
 
 ### Example
 
@@ -1431,11 +1593,17 @@ apiInstance.postRecordingLocalkeys(body)
 
 # LocalEncryptionConfiguration postRecordingLocalkeysSettings(body)
 
+
+
 POST /api/v2/recording/localkeys/settings
 
 create settings for local key creation
 
 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:edit
 
 ### Example
 
@@ -1479,11 +1647,17 @@ apiInstance.postRecordingLocalkeysSettings(body)
 
 # Policy postRecordingMediaretentionpolicies(body)
 
+
+
 POST /api/v2/recording/mediaretentionpolicies
 
 Create media retention policy
 
 
+
+Requires ANY permissions: 
+
+* recording:retentionPolicy:add
 
 ### Example
 
@@ -1527,11 +1701,17 @@ apiInstance.postRecordingMediaretentionpolicies(body)
 
 # EncryptionKey postRecordingRecordingkeys()
 
+
+
 POST /api/v2/recording/recordingkeys
 
 Create encryption key
 
 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:edit
 
 ### Example
 
@@ -1569,11 +1749,17 @@ This endpoint does not need any parameter.
 
 # Recording putConversationRecording(conversationId, recordingId, body)
 
+
+
 PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}
 
 Updates the retention records on a recording.
 
 Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. 
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1623,9 +1809,15 @@ apiInstance.putConversationRecording(conversationId, recordingId, body)
 
 # Annotation putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body)
 
+
+
 PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}
 
 Update annotation
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1680,11 +1872,17 @@ apiInstance.putConversationRecordingAnnotation(conversationId, recordingId, anno
 
 # Recording putOrphanrecording(orphanId, opts)
 
+
+
 PUT /api/v2/orphanrecordings/{orphanId}
 
 Updates an orphan recording to a regular recording with retention values
 
 If this operation is successful the orphan will no longer exist. It will be replaced by the resulting recording in the response. This replacement recording is accessible by the normal Recording api.
+
+Requires ANY permissions: 
+
+* recording:orphan:edit
 
 ### Example
 
@@ -1732,11 +1930,17 @@ apiInstance.putOrphanrecording(orphanId, opts)
 
 # LocalEncryptionConfiguration putRecordingLocalkeysSetting(settingsId, body)
 
+
+
 PUT /api/v2/recording/localkeys/settings/{settingsId}
 
 Update the local encryption settings
 
 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:edit
 
 ### Example
 
@@ -1783,11 +1987,17 @@ apiInstance.putRecordingLocalkeysSetting(settingsId, body)
 
 # Policy putRecordingMediaretentionpolicy(policyId, body)
 
+
+
 PUT /api/v2/recording/mediaretentionpolicies/{policyId}
 
 Update a media retention policy
 
 
+
+Requires ANY permissions: 
+
+* recording:retentionPolicy:edit
 
 ### Example
 
@@ -1834,11 +2044,17 @@ apiInstance.putRecordingMediaretentionpolicy(policyId, body)
 
 # KeyRotationSchedule putRecordingRecordingkeysRotationschedule(body)
 
+
+
 PUT /api/v2/recording/recordingkeys/rotationschedule
 
 Update key rotation schedule
 
 
+
+Requires ANY permissions: 
+
+* recording:encryptionKey:edit
 
 ### Example
 
@@ -1882,9 +2098,15 @@ apiInstance.putRecordingRecordingkeysRotationschedule(body)
 
 # RecordingSettings putRecordingSettings(body)
 
+
+
 PUT /api/v2/recording/settings
 
 Update the Recording Settings for the Organization
+
+
+
+Requires NO permissions: 
 
 
 

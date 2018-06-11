@@ -30,11 +30,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deleteAuthorizationRole(roleId)
 
+
+
 DELETE /api/v2/authorization/roles/{roleId}
 
 Delete an organization role.
 
 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:role:delete
 
 ### Example
 
@@ -78,11 +84,17 @@ void (no response body)
 
 # void deleteUserRoles(userId)
 
+
+
 DELETE /api/v2/users/{userId}/roles
 
 Removes all the roles from the user.
 
 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:delete
 
 ### Example
 
@@ -126,11 +138,17 @@ void (no response body)
 
 # PermissionCollectionEntityListing getAuthorizationPermissions(opts)
 
+
+
 GET /api/v2/authorization/permissions
 
 Get all permissions.
 
 Retrieve a list of all permission defined in the system.
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -177,11 +195,17 @@ apiInstance.getAuthorizationPermissions(opts)
 
 # OrganizationProductEntityListing getAuthorizationProducts()
 
+
+
 GET /api/v2/authorization/products
 
 Get the list of enabled products
 
 Gets the list of enabled products. Some example product names are: collaborateFree, collaboratePro, communicate, and engage.
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -219,11 +243,17 @@ This endpoint does not need any parameter.
 
 # DomainOrganizationRole getAuthorizationRole(roleId)
 
+
+
 GET /api/v2/authorization/roles/{roleId}
 
 Get a single organization role.
 
 Get the organization role specified by its ID.
+
+Requires ANY permissions: 
+
+* authorization:role:view
 
 ### Example
 
@@ -267,11 +297,17 @@ apiInstance.getAuthorizationRole(roleId)
 
 # DomainOrgRoleDifference getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId)
 
+
+
 GET /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}
 
 Get an org role to default role comparison comparison
 
 Compares any organization role to a default role id and show differences
+
+Requires ANY permissions: 
+
+* authorization:role:view
 
 ### Example
 
@@ -318,11 +354,17 @@ apiInstance.getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleI
 
 # OrganizationRoleEntityListing getAuthorizationRoles(opts)
 
+
+
 GET /api/v2/authorization/roles
 
 Retrieve a list of all roles defined for the organization
 
 
+
+Requires ANY permissions: 
+
+* authorization:role:view
 
 ### Example
 
@@ -387,11 +429,17 @@ apiInstance.getAuthorizationRoles(opts)
 
 # UserAuthorization getUserRoles(userId)
 
+
+
 GET /api/v2/users/{userId}/roles
 
 Returns a listing of roles and permissions for a user.
 
 
+
+Requires ANY permissions: 
+
+* authorization:grant:view
 
 ### Example
 
@@ -435,11 +483,17 @@ apiInstance.getUserRoles(userId)
 
 # DomainOrganizationRole patchAuthorizationRole(roleId, body)
 
+
+
 PATCH /api/v2/authorization/roles/{roleId}
 
 Patch Organization Role for needsUpdate Field
 
 Patch Organization Role for needsUpdate Field
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:role:edit
 
 ### Example
 
@@ -486,11 +540,17 @@ apiInstance.patchAuthorizationRole(roleId, body)
 
 # DomainOrgRoleDifference postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body)
 
+
+
 POST /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}
 
 Get an unsaved org role to default role comparison
 
 Allows users to compare their existing roles in an unsaved state to its default role
+
+Requires ANY permissions: 
+
+* authorization:role:view
 
 ### Example
 
@@ -540,11 +600,17 @@ apiInstance.postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRole
 
 # DomainOrganizationRole postAuthorizationRoles(body)
 
+
+
 POST /api/v2/authorization/roles
 
 Create an organization role.
 
 
+
+Requires ANY permissions: 
+
+* authorization:role:add
 
 ### Example
 
@@ -588,11 +654,17 @@ apiInstance.postAuthorizationRoles(body)
 
 # OrganizationRoleEntityListing postAuthorizationRolesDefault(opts)
 
+
+
 POST /api/v2/authorization/roles/default
 
 Restores all default roles
 
 This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force=true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force=true, you can restore all default roles. Note: This does not have an effect on custom roles.
+
+Requires ANY permissions: 
+
+* authorization:role:edit
 
 ### Example
 
@@ -637,11 +709,17 @@ apiInstance.postAuthorizationRolesDefault(opts)
 
 # DomainOrganizationRole putAuthorizationRole(roleId, body)
 
+
+
 PUT /api/v2/authorization/roles/{roleId}
 
 Update an organization role.
 
 Update
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:role:edit
 
 ### Example
 
@@ -688,11 +766,17 @@ apiInstance.putAuthorizationRole(roleId, body)
 
 # **[&#39;String&#39;]** putAuthorizationRoleUsersAdd(roleId, body)
 
+
+
 PUT /api/v2/authorization/roles/{roleId}/users/add
 
 Sets the users for the role
 
 
+
+Requires ANY permissions: 
+
+* authorization:grant:add
 
 ### Example
 
@@ -739,11 +823,17 @@ apiInstance.putAuthorizationRoleUsersAdd(roleId, body)
 
 # **[&#39;String&#39;]** putAuthorizationRoleUsersRemove(roleId, body)
 
+
+
 PUT /api/v2/authorization/roles/{roleId}/users/remove
 
 Removes the users from the role
 
 
+
+Requires ANY permissions: 
+
+* authorization:grant:delete
 
 ### Example
 
@@ -790,11 +880,17 @@ apiInstance.putAuthorizationRoleUsersRemove(roleId, body)
 
 # OrganizationRoleEntityListing putAuthorizationRolesDefault(body)
 
+
+
 PUT /api/v2/authorization/roles/default
 
 Restore specified default roles
 
 
+
+Requires ANY permissions: 
+
+* authorization:role:edit
 
 ### Example
 
@@ -838,11 +934,17 @@ apiInstance.putAuthorizationRolesDefault(body)
 
 # UserAuthorization putUserRoles(userId, body)
 
+
+
 PUT /api/v2/users/{userId}/roles
 
 Sets the user&#39;s roles
 
 
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 

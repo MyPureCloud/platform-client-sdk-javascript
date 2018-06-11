@@ -17,9 +17,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # JsonNodeSearchResponse getSearch(q64, opts)
 
+
+
 GET /api/v2/search
 
 Search using the q64 value returned from a previous search.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -71,9 +77,15 @@ apiInstance.getSearch(q64, opts)
 
 # JsonNodeSearchResponse getSearchSuggest(q64, opts)
 
+
+
 GET /api/v2/search/suggest
 
 Suggest resources using the q64 value returned from a previous suggest query.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -125,9 +137,15 @@ apiInstance.getSearchSuggest(q64, opts)
 
 # JsonNodeSearchResponse postSearch(body, opts)
 
+
+
 POST /api/v2/search
 
 Search resources.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -177,9 +195,15 @@ apiInstance.postSearch(body, opts)
 
 # JsonNodeSearchResponse postSearchSuggest(body, opts)
 
+
+
 POST /api/v2/search/suggest
 
 Suggest resources.
+
+
+
+Requires NO permissions: 
 
 
 

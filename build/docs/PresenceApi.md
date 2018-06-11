@@ -21,11 +21,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deletePresencedefinition(presenceId)
 
+
+
 DELETE /api/v2/presencedefinitions/{presenceId}
 
 Delete a Presence Definition
 
 
+
+Requires ANY permissions: 
+
+* presence:presenceDefinition:delete
 
 ### Example
 
@@ -69,9 +75,15 @@ void (no response body)
 
 # OrganizationPresence getPresencedefinition(presenceId, opts)
 
+
+
 GET /api/v2/presencedefinitions/{presenceId}
 
 Get a Presence Definition
+
+
+
+Requires NO permissions: 
 
 
 
@@ -121,9 +133,15 @@ apiInstance.getPresencedefinition(presenceId, opts)
 
 # OrganizationPresenceEntityListing getPresencedefinitions(opts)
 
+
+
 GET /api/v2/presencedefinitions
 
 Get an Organization&#39;s list of Presence Definitions
+
+
+
+Requires NO permissions: 
 
 
 
@@ -176,9 +194,15 @@ apiInstance.getPresencedefinitions(opts)
 
 # [SystemPresence] getSystempresences()
 
+
+
 GET /api/v2/systempresences
 
 Get the list of SystemPresences
+
+
+
+Requires NO permissions: 
 
 
 
@@ -218,9 +242,15 @@ This endpoint does not need any parameter.
 
 # UserPresence getUserPresence(userId, sourceId)
 
+
+
 GET /api/v2/users/{userId}/presences/{sourceId}
 
 Get a user&#39;s Presence
+
+
+
+Requires NO permissions: 
 
 
 
@@ -269,11 +299,17 @@ apiInstance.getUserPresence(userId, sourceId)
 
 # UserPresence patchUserPresence(userId, sourceId, body)
 
+
+
 PATCH /api/v2/users/{userId}/presences/{sourceId}
 
 Patch a user&#39;s Presence
 
 The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -323,11 +359,17 @@ apiInstance.patchUserPresence(userId, sourceId, body)
 
 # OrganizationPresence postPresencedefinitions(body)
 
+
+
 POST /api/v2/presencedefinitions
 
 Create a Presence Definition
 
 
+
+Requires ANY permissions: 
+
+* presence:presenceDefinition:add
 
 ### Example
 
@@ -371,11 +413,17 @@ apiInstance.postPresencedefinitions(body)
 
 # OrganizationPresence putPresencedefinition(presenceId, body)
 
+
+
 PUT /api/v2/presencedefinitions/{presenceId}
 
 Update a Presence Definition
 
 
+
+Requires ANY permissions: 
+
+* presence:presenceDefinition:edit
 
 ### Example
 

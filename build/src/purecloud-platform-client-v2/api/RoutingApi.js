@@ -18,7 +18,7 @@
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -760,6 +760,7 @@
      * @param {String} opts.sortBy Sort by (default to name)
      * @param {String} opts.name Name
      * @param {Boolean} opts.active Active
+     * @param {Array.<String>} opts.divisionId Division ID(s)
      */
     this.getRoutingQueues = function(opts) { 
       opts = opts || {};
@@ -769,7 +770,7 @@
         '/api/v2/routing/queues', 
         'GET', 
         {  }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'name': opts['name'],'active': opts['active'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'name': opts['name'],'active': opts['active'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
         {  }, 
         {  }, 
         null, 

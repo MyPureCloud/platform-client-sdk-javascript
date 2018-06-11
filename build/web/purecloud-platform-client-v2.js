@@ -3301,7 +3301,7 @@ Emitter.prototype.hasListeners = function(event){
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -3978,7 +3978,7 @@ Emitter.prototype.hasListeners = function(event){
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '27.0.0' });
+    //request.set({ 'purecloud-sdk': '28.0.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -4131,7 +4131,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -4487,7 +4487,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -5202,7 +5202,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -6660,6 +6660,7 @@ Emitter.prototype.hasListeners = function(event){
      * @param {Boolean} opts.includeSchemas Include variable schemas (default to false)
      * @param {String} opts.publishedAfter Published after
      * @param {String} opts.publishedBefore Published before
+     * @param {Array.<String>} opts.divisionId division ID(s)
      */
     this.getFlows = function(type, opts) { 
       opts = opts || {};
@@ -6674,7 +6675,7 @@ Emitter.prototype.hasListeners = function(event){
         '/api/v2/flows', 
         'GET', 
         {  }, 
-        { 'type': type,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'publishVersionId': opts['publishVersionId'],'editableBy': opts['editableBy'],'lockedBy': opts['lockedBy'],'secure': opts['secure'],'deleted': opts['deleted'],'includeSchemas': opts['includeSchemas'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'] }, 
+        { 'type': type,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'publishVersionId': opts['publishVersionId'],'editableBy': opts['editableBy'],'lockedBy': opts['lockedBy'],'secure': opts['secure'],'deleted': opts['deleted'],'includeSchemas': opts['includeSchemas'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
         {  }, 
         {  }, 
         null, 
@@ -6829,6 +6830,7 @@ Emitter.prototype.hasListeners = function(event){
      * @param {String} opts.publishVersionId Publish version ID
      * @param {String} opts.publishedAfter Published after
      * @param {String} opts.publishedBefore Published before
+     * @param {Array.<String>} opts.divisionId division ID(s)
      */
     this.getFlowsDivisionviews = function(type, opts) { 
       opts = opts || {};
@@ -6843,7 +6845,7 @@ Emitter.prototype.hasListeners = function(event){
         '/api/v2/flows/divisionviews', 
         'GET', 
         {  }, 
-        { 'type': type,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'publishVersionId': opts['publishVersionId'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'] }, 
+        { 'type': type,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'publishVersionId': opts['publishVersionId'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
         {  }, 
         {  }, 
         null, 
@@ -7761,7 +7763,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -7972,7 +7974,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -8531,7 +8533,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Billing service.
    * @module purecloud-platform-client-v2/api/BillingApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -8604,7 +8606,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -9861,7 +9863,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -13209,7 +13211,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -13804,15 +13806,18 @@ Emitter.prototype.hasListeners = function(event){
      * Create a note for an external contact
      * 
      * @param {String} contactId ExternalContact Id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body ExternalContact
+     * @param {Object} body ExternalContact
      */
-    this.postExternalcontactsContactNotes = function(contactId, opts) { 
-      opts = opts || {};
+    this.postExternalcontactsContactNotes = function(contactId, body) { 
 
       // verify the required parameter 'contactId' is set
       if (contactId === undefined || contactId === null) {
         throw "Missing the required parameter 'contactId' when calling postExternalcontactsContactNotes";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postExternalcontactsContactNotes";
       }
 
 
@@ -13823,7 +13828,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -13834,11 +13839,14 @@ Emitter.prototype.hasListeners = function(event){
     /**
      * Create an external contact
      * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body ExternalContact
+     * @param {Object} body ExternalContact
      */
-    this.postExternalcontactsContacts = function(opts) { 
-      opts = opts || {};
+    this.postExternalcontactsContacts = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postExternalcontactsContacts";
+      }
 
 
       return this.apiClient.callApi(
@@ -13848,7 +13856,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -13860,15 +13868,18 @@ Emitter.prototype.hasListeners = function(event){
      * Create a note for an external organization
      * 
      * @param {String} externalOrganizationId External Organization Id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body ExternalContact
+     * @param {Object} body ExternalContact
      */
-    this.postExternalcontactsOrganizationNotes = function(externalOrganizationId, opts) { 
-      opts = opts || {};
+    this.postExternalcontactsOrganizationNotes = function(externalOrganizationId, body) { 
 
       // verify the required parameter 'externalOrganizationId' is set
       if (externalOrganizationId === undefined || externalOrganizationId === null) {
         throw "Missing the required parameter 'externalOrganizationId' when calling postExternalcontactsOrganizationNotes";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postExternalcontactsOrganizationNotes";
       }
 
 
@@ -13879,7 +13890,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -13890,11 +13901,14 @@ Emitter.prototype.hasListeners = function(event){
     /**
      * Create an external organization
      * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body ExternalOrganization
+     * @param {Object} body ExternalOrganization
      */
-    this.postExternalcontactsOrganizations = function(opts) { 
-      opts = opts || {};
+    this.postExternalcontactsOrganizations = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postExternalcontactsOrganizations";
+      }
 
 
       return this.apiClient.callApi(
@@ -13904,7 +13918,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -13915,11 +13929,14 @@ Emitter.prototype.hasListeners = function(event){
     /**
      * Create a relationship
      * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body Relationship
+     * @param {Object} body Relationship
      */
-    this.postExternalcontactsRelationships = function(opts) { 
-      opts = opts || {};
+    this.postExternalcontactsRelationships = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postExternalcontactsRelationships";
+      }
 
 
       return this.apiClient.callApi(
@@ -13929,7 +13946,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -13941,15 +13958,18 @@ Emitter.prototype.hasListeners = function(event){
      * Update an external contact
      * 
      * @param {String} contactId ExternalContact ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body ExternalContact
+     * @param {Object} body ExternalContact
      */
-    this.putExternalcontactsContact = function(contactId, opts) { 
-      opts = opts || {};
+    this.putExternalcontactsContact = function(contactId, body) { 
 
       // verify the required parameter 'contactId' is set
       if (contactId === undefined || contactId === null) {
         throw "Missing the required parameter 'contactId' when calling putExternalcontactsContact";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putExternalcontactsContact";
       }
 
 
@@ -13960,7 +13980,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -13973,11 +13993,9 @@ Emitter.prototype.hasListeners = function(event){
      * 
      * @param {String} contactId ExternalContact Id
      * @param {String} noteId Note Id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body Note
+     * @param {Object} body Note
      */
-    this.putExternalcontactsContactNote = function(contactId, noteId, opts) { 
-      opts = opts || {};
+    this.putExternalcontactsContactNote = function(contactId, noteId, body) { 
 
       // verify the required parameter 'contactId' is set
       if (contactId === undefined || contactId === null) {
@@ -13989,6 +14007,11 @@ Emitter.prototype.hasListeners = function(event){
         throw "Missing the required parameter 'noteId' when calling putExternalcontactsContactNote";
       }
 
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putExternalcontactsContactNote";
+      }
+
 
       return this.apiClient.callApi(
         '/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}', 
@@ -13997,7 +14020,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -14009,15 +14032,18 @@ Emitter.prototype.hasListeners = function(event){
      * Associate an external contact with a conversation
      * 
      * @param {String} conversationId Conversation ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body ConversationAssociation
+     * @param {Object} body ConversationAssociation
      */
-    this.putExternalcontactsConversation = function(conversationId, opts) { 
-      opts = opts || {};
+    this.putExternalcontactsConversation = function(conversationId, body) { 
 
       // verify the required parameter 'conversationId' is set
       if (conversationId === undefined || conversationId === null) {
         throw "Missing the required parameter 'conversationId' when calling putExternalcontactsConversation";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putExternalcontactsConversation";
       }
 
 
@@ -14028,7 +14054,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -14040,15 +14066,18 @@ Emitter.prototype.hasListeners = function(event){
      * Update an external organization
      * 
      * @param {String} externalOrganizationId External Organization ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body ExternalOrganization
+     * @param {Object} body ExternalOrganization
      */
-    this.putExternalcontactsOrganization = function(externalOrganizationId, opts) { 
-      opts = opts || {};
+    this.putExternalcontactsOrganization = function(externalOrganizationId, body) { 
 
       // verify the required parameter 'externalOrganizationId' is set
       if (externalOrganizationId === undefined || externalOrganizationId === null) {
         throw "Missing the required parameter 'externalOrganizationId' when calling putExternalcontactsOrganization";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putExternalcontactsOrganization";
       }
 
 
@@ -14059,7 +14088,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -14072,11 +14101,9 @@ Emitter.prototype.hasListeners = function(event){
      * 
      * @param {String} externalOrganizationId External Organization Id
      * @param {String} noteId Note Id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body Note
+     * @param {Object} body Note
      */
-    this.putExternalcontactsOrganizationNote = function(externalOrganizationId, noteId, opts) { 
-      opts = opts || {};
+    this.putExternalcontactsOrganizationNote = function(externalOrganizationId, noteId, body) { 
 
       // verify the required parameter 'externalOrganizationId' is set
       if (externalOrganizationId === undefined || externalOrganizationId === null) {
@@ -14088,6 +14115,11 @@ Emitter.prototype.hasListeners = function(event){
         throw "Missing the required parameter 'noteId' when calling putExternalcontactsOrganizationNote";
       }
 
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putExternalcontactsOrganizationNote";
+      }
+
 
       return this.apiClient.callApi(
         '/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}', 
@@ -14096,7 +14128,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -14105,7 +14137,7 @@ Emitter.prototype.hasListeners = function(event){
 
 
     /**
-     * Links a Trustor with an Extenral Organization
+     * Links a Trustor with an External Organization
      * 
      * @param {String} externalOrganizationId External Organization ID
      * @param {String} trustorId Trustor ID
@@ -14142,15 +14174,18 @@ Emitter.prototype.hasListeners = function(event){
      * Update a relationship
      * 
      * @param {String} relationshipId Relationship Id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body Relationship
+     * @param {Object} body Relationship
      */
-    this.putExternalcontactsRelationship = function(relationshipId, opts) { 
-      opts = opts || {};
+    this.putExternalcontactsRelationship = function(relationshipId, body) { 
 
       // verify the required parameter 'relationshipId' is set
       if (relationshipId === undefined || relationshipId === null) {
         throw "Missing the required parameter 'relationshipId' when calling putExternalcontactsRelationship";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putExternalcontactsRelationship";
       }
 
 
@@ -14161,7 +14196,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -14193,7 +14228,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -14398,7 +14433,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * GeneralDataProtectionRegulation service.
    * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -14556,7 +14591,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -14719,7 +14754,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -15239,7 +15274,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -15697,7 +15732,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -16406,7 +16441,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -17693,7 +17728,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -18006,7 +18041,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -18251,7 +18286,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -18404,7 +18439,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * MobileDevices service.
    * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -18585,7 +18620,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -18820,7 +18855,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -19027,7 +19062,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -19175,7 +19210,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -19940,7 +19975,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -20813,6 +20848,36 @@ Emitter.prototype.hasListeners = function(event){
         'GET', 
         {  }, 
         { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'contactListId': opts['contactListId'],'dncListId': opts['dncListId'],'distributionQueueId': opts['distributionQueueId'],'edgeGroupId': opts['edgeGroupId'],'callAnalysisResponseSetId': opts['callAnalysisResponseSetId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Query a list of basic Campaign information objects
+     * This returns a simplified version of a Campaign, consisting of name and division.
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {Object} opts.filterType Filter type (default to Prefix)
+     * @param {String} opts.name Name
+     * @param {String} opts.sortBy Sort by
+     * @param {Object} opts.sortOrder Sort order (default to a)
+     */
+    this.getOutboundCampaignsDivisionviews = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/outbound/campaigns/divisionviews', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
         {  }, 
         {  }, 
         null, 
@@ -22646,7 +22711,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -22930,7 +22995,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -24534,7 +24599,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -25716,7 +25781,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -26087,7 +26152,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -26829,6 +26894,7 @@ Emitter.prototype.hasListeners = function(event){
      * @param {String} opts.sortBy Sort by (default to name)
      * @param {String} opts.name Name
      * @param {Boolean} opts.active Active
+     * @param {Array.<String>} opts.divisionId Division ID(s)
      */
     this.getRoutingQueues = function(opts) { 
       opts = opts || {};
@@ -26838,7 +26904,7 @@ Emitter.prototype.hasListeners = function(event){
         '/api/v2/routing/queues', 
         'GET', 
         {  }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'name': opts['name'],'active': opts['active'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'name': opts['name'],'active': opts['active'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
         {  }, 
         {  }, 
         null, 
@@ -27925,7 +27991,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -28325,7 +28391,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -28782,7 +28848,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -28959,7 +29025,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -29124,7 +29190,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -33047,7 +33113,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -33130,7 +33196,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -33345,7 +33411,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -33884,6 +33950,7 @@ Emitter.prototype.hasListeners = function(event){
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Boolean} opts.joined Is joined to the queue (default to true)
+     * @param {Array.<String>} opts.divisionId Division ID(s)
      */
     this.getUserQueues = function(userId, opts) { 
       opts = opts || {};
@@ -33898,7 +33965,7 @@ Emitter.prototype.hasListeners = function(event){
         '/api/v2/users/{userId}/queues', 
         'GET', 
         { 'userId': userId }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'joined': opts['joined'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'joined': opts['joined'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
         {  }, 
         {  }, 
         null, 
@@ -34361,8 +34428,11 @@ Emitter.prototype.hasListeners = function(event){
      * 
      * @param {String} userId User ID
      * @param {Array.<Object>} body User Queues
+     * @param {Object} opts Optional parameters
+     * @param {Array.<String>} opts.divisionId Division ID(s)
      */
-    this.patchUserQueues = function(userId, body) { 
+    this.patchUserQueues = function(userId, body, opts) { 
+      opts = opts || {};
 
       // verify the required parameter 'userId' is set
       if (userId === undefined || userId === null) {
@@ -34379,7 +34449,7 @@ Emitter.prototype.hasListeners = function(event){
         '/api/v2/users/{userId}/queues', 
         'PATCH', 
         { 'userId': userId }, 
-        {  }, 
+        { 'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
         {  }, 
         {  }, 
         body, 
@@ -35030,7 +35100,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -35145,7 +35215,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -35860,7 +35930,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * WebChat service.
    * @module purecloud-platform-client-v2/api/WebChatApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -36111,7 +36181,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -36326,7 +36396,7 @@ Emitter.prototype.hasListeners = function(event){
      * 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize 
-     * @param {Number} opts.pageNumber  (default to 1)
+     * @param {Number} opts.pageNumber 
      * @param {Object} opts.expand 
      */
     this.getWorkforcemanagementManagementunits = function(opts) { 
@@ -36559,7 +36629,7 @@ Emitter.prototype.hasListeners = function(event){
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 27.0.0
+   * @version 28.0.0
    */
   var platformClient = {
     /**

@@ -37,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundCampaignrule**](OutboundApi.html#getOutboundCampaignrule) | **GET** /api/v2/outbound/campaignrules/{campaignRuleId} | Get Campaign Rule
 [**getOutboundCampaignrules**](OutboundApi.html#getOutboundCampaignrules) | **GET** /api/v2/outbound/campaignrules | Query Campaign Rule list
 [**getOutboundCampaigns**](OutboundApi.html#getOutboundCampaigns) | **GET** /api/v2/outbound/campaigns | Query a list of dialer campaigns.
+[**getOutboundCampaignsDivisionviews**](OutboundApi.html#getOutboundCampaignsDivisionviews) | **GET** /api/v2/outbound/campaigns/divisionviews | Query a list of basic Campaign information objects
 [**getOutboundContactlist**](OutboundApi.html#getOutboundContactlist) | **GET** /api/v2/outbound/contactlists/{contactListId} | Get a dialer contact list.
 [**getOutboundContactlistContact**](OutboundApi.html#getOutboundContactlistContact) | **GET** /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} | Get a contact.
 [**getOutboundContactlistExport**](OutboundApi.html#getOutboundContactlistExport) | **GET** /api/v2/outbound/contactlists/{contactListId}/export | Get the URI of a contact list export.
@@ -102,11 +103,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deleteOutboundAttemptlimit(attemptLimitsId)
 
+
+
 DELETE /api/v2/outbound/attemptlimits/{attemptLimitsId}
 
 Delete attempt limits
 
 
+
+Requires ANY permissions: 
+
+* outbound:attemptLimits:delete
 
 ### Example
 
@@ -150,11 +157,17 @@ void (no response body)
 
 # void deleteOutboundCallabletimeset(callableTimeSetId)
 
+
+
 DELETE /api/v2/outbound/callabletimesets/{callableTimeSetId}
 
 Delete callable time set
 
 
+
+Requires ANY permissions: 
+
+* outbound:callableTimeSet:delete
 
 ### Example
 
@@ -198,11 +211,17 @@ void (no response body)
 
 # void deleteOutboundCallanalysisresponseset(callAnalysisSetId)
 
+
+
 DELETE /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}
 
 Delete a dialer call analysis response set.
 
 
+
+Requires ANY permissions: 
+
+* outbound:responseSet:delete
 
 ### Example
 
@@ -246,11 +265,17 @@ void (no response body)
 
 # Campaign deleteOutboundCampaign(campaignId)
 
+
+
 DELETE /api/v2/outbound/campaigns/{campaignId}
 
 Delete a campaign.
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaign:delete
 
 ### Example
 
@@ -294,11 +319,17 @@ apiInstance.deleteOutboundCampaign(campaignId)
 
 # void deleteOutboundCampaignProgress(campaignId)
 
+
+
 DELETE /api/v2/outbound/campaigns/{campaignId}/progress
 
 Reset campaign progress and recycle the campaign
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaign:edit
 
 ### Example
 
@@ -342,11 +373,17 @@ void (no response body)
 
 # void deleteOutboundCampaignrule(campaignRuleId)
 
+
+
 DELETE /api/v2/outbound/campaignrules/{campaignRuleId}
 
 Delete Campaign Rule
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaignRule:delete
 
 ### Example
 
@@ -390,11 +427,17 @@ void (no response body)
 
 # void deleteOutboundContactlist(contactListId)
 
+
+
 DELETE /api/v2/outbound/contactlists/{contactListId}
 
 Delete a contact list.
 
 
+
+Requires ANY permissions: 
+
+* outbound:contactList:delete
 
 ### Example
 
@@ -438,11 +481,17 @@ void (no response body)
 
 # void deleteOutboundContactlistContact(contactListId, contactId)
 
+
+
 DELETE /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}
 
 Delete a contact.
 
 
+
+Requires ANY permissions: 
+
+* outbound:contact:delete
 
 ### Example
 
@@ -489,11 +538,17 @@ void (no response body)
 
 # void deleteOutboundContactlistContacts(contactListId, contactIds)
 
+
+
 DELETE /api/v2/outbound/contactlists/{contactListId}/contacts
 
 Delete contacts from a contact list.
 
 
+
+Requires ANY permissions: 
+
+* outbound:contact:delete
 
 ### Example
 
@@ -540,11 +595,17 @@ void (no response body)
 
 # void deleteOutboundContactlistfilter(contactListFilterId)
 
+
+
 DELETE /api/v2/outbound/contactlistfilters/{contactListFilterId}
 
 Delete Contact List Filter
 
 
+
+Requires ANY permissions: 
+
+* outbound:contactListFilter:delete
 
 ### Example
 
@@ -588,11 +649,17 @@ void (no response body)
 
 # void deleteOutboundContactlists(id)
 
+
+
 DELETE /api/v2/outbound/contactlists
 
 Delete multiple contact lists.
 
 
+
+Requires ANY permissions: 
+
+* outbound:contactList:delete
 
 ### Example
 
@@ -636,11 +703,17 @@ void (no response body)
 
 # void deleteOutboundDnclist(dncListId)
 
+
+
 DELETE /api/v2/outbound/dnclists/{dncListId}
 
 Delete dialer DNC list
 
 
+
+Requires ANY permissions: 
+
+* outbound:dncList:delete
 
 ### Example
 
@@ -684,11 +757,17 @@ void (no response body)
 
 # void deleteOutboundRuleset(ruleSetId)
 
+
+
 DELETE /api/v2/outbound/rulesets/{ruleSetId}
 
 Delete a Rule set.
 
 
+
+Requires ANY permissions: 
+
+* outbound:ruleSet:delete
 
 ### Example
 
@@ -732,11 +811,17 @@ void (no response body)
 
 # void deleteOutboundSchedulesCampaign(campaignId)
 
+
+
 DELETE /api/v2/outbound/schedules/campaigns/{campaignId}
 
 Delete a dialer campaign schedule.
 
 
+
+Requires ANY permissions: 
+
+* outbound:schedule:delete
 
 ### Example
 
@@ -780,11 +865,17 @@ void (no response body)
 
 # void deleteOutboundSchedulesSequence(sequenceId)
 
+
+
 DELETE /api/v2/outbound/schedules/sequences/{sequenceId}
 
 Delete a dialer sequence schedule.
 
 
+
+Requires ANY permissions: 
+
+* outbound:schedule:delete
 
 ### Example
 
@@ -828,11 +919,17 @@ void (no response body)
 
 # void deleteOutboundSequence(sequenceId)
 
+
+
 DELETE /api/v2/outbound/sequences/{sequenceId}
 
 Delete a dialer campaign sequence.
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaignSequence:delete
 
 ### Example
 
@@ -876,11 +973,17 @@ void (no response body)
 
 # AttemptLimits getOutboundAttemptlimit(attemptLimitsId)
 
+
+
 GET /api/v2/outbound/attemptlimits/{attemptLimitsId}
 
 Get attempt limits
 
 
+
+Requires ANY permissions: 
+
+* outbound:attemptLimits:view
 
 ### Example
 
@@ -924,11 +1027,17 @@ apiInstance.getOutboundAttemptlimit(attemptLimitsId)
 
 # AttemptLimitsEntityListing getOutboundAttemptlimits(opts)
 
+
+
 GET /api/v2/outbound/attemptlimits
 
 Query attempt limits list
 
 
+
+Requires ANY permissions: 
+
+* outbound:attemptLimits:view
 
 ### Example
 
@@ -983,11 +1092,17 @@ apiInstance.getOutboundAttemptlimits(opts)
 
 # CallableTimeSet getOutboundCallabletimeset(callableTimeSetId)
 
+
+
 GET /api/v2/outbound/callabletimesets/{callableTimeSetId}
 
 Get callable time set
 
 
+
+Requires ANY permissions: 
+
+* outbound:callableTimeSet:view
 
 ### Example
 
@@ -1031,11 +1146,17 @@ apiInstance.getOutboundCallabletimeset(callableTimeSetId)
 
 # CallableTimeSetEntityListing getOutboundCallabletimesets(opts)
 
+
+
 GET /api/v2/outbound/callabletimesets
 
 Query callable time set list
 
 
+
+Requires ANY permissions: 
+
+* outbound:callableTimeSet:view
 
 ### Example
 
@@ -1090,11 +1211,17 @@ apiInstance.getOutboundCallabletimesets(opts)
 
 # ResponseSet getOutboundCallanalysisresponseset(callAnalysisSetId)
 
+
+
 GET /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}
 
 Get a dialer call analysis response set.
 
 
+
+Requires ANY permissions: 
+
+* outbound:responseSet:view
 
 ### Example
 
@@ -1138,11 +1265,17 @@ apiInstance.getOutboundCallanalysisresponseset(callAnalysisSetId)
 
 # ResponseSetEntityListing getOutboundCallanalysisresponsesets(opts)
 
+
+
 GET /api/v2/outbound/callanalysisresponsesets
 
 Query a list of dialer call analysis response sets.
 
 
+
+Requires ANY permissions: 
+
+* outbound:responseSet:view
 
 ### Example
 
@@ -1197,11 +1330,17 @@ apiInstance.getOutboundCallanalysisresponsesets(opts)
 
 # Campaign getOutboundCampaign(campaignId)
 
+
+
 GET /api/v2/outbound/campaigns/{campaignId}
 
 Get dialer campaign.
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaign:view
 
 ### Example
 
@@ -1245,11 +1384,17 @@ apiInstance.getOutboundCampaign(campaignId)
 
 # CampaignDiagnostics getOutboundCampaignDiagnostics(campaignId)
 
+
+
 GET /api/v2/outbound/campaigns/{campaignId}/diagnostics
 
 Get campaign diagnostics
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaign:view
 
 ### Example
 
@@ -1293,11 +1438,17 @@ apiInstance.getOutboundCampaignDiagnostics(campaignId)
 
 # CampaignInteractions getOutboundCampaignInteractions(campaignId)
 
+
+
 GET /api/v2/outbound/campaigns/{campaignId}/interactions
 
 Get dialer campaign interactions.
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaign:view
 
 ### Example
 
@@ -1341,11 +1492,17 @@ apiInstance.getOutboundCampaignInteractions(campaignId)
 
 # CampaignProgress getOutboundCampaignProgress(campaignId)
 
+
+
 GET /api/v2/outbound/campaigns/{campaignId}/progress
 
 Get campaign progress
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaign:view
 
 ### Example
 
@@ -1389,11 +1546,17 @@ apiInstance.getOutboundCampaignProgress(campaignId)
 
 # CampaignStats getOutboundCampaignStats(campaignId)
 
+
+
 GET /api/v2/outbound/campaigns/{campaignId}/stats
 
 Get statistics about a Dialer Campaign
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaign:view
 
 ### Example
 
@@ -1437,11 +1600,17 @@ apiInstance.getOutboundCampaignStats(campaignId)
 
 # CampaignRule getOutboundCampaignrule(campaignRuleId)
 
+
+
 GET /api/v2/outbound/campaignrules/{campaignRuleId}
 
 Get Campaign Rule
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaignRule:view
 
 ### Example
 
@@ -1485,11 +1654,17 @@ apiInstance.getOutboundCampaignrule(campaignRuleId)
 
 # CampaignRuleEntityListing getOutboundCampaignrules(opts)
 
+
+
 GET /api/v2/outbound/campaignrules
 
 Query Campaign Rule list
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaignRule:view
 
 ### Example
 
@@ -1544,11 +1719,17 @@ apiInstance.getOutboundCampaignrules(opts)
 
 # CampaignEntityListing getOutboundCampaigns(opts)
 
+
+
 GET /api/v2/outbound/campaigns
 
 Query a list of dialer campaigns.
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaign:view
 
 ### Example
 
@@ -1611,15 +1792,86 @@ apiInstance.getOutboundCampaigns(opts)
 
 **CampaignEntityListing**
 
+<a name="getOutboundCampaignsDivisionviews"></a>
+
+# CampaignDivisionViewListing getOutboundCampaignsDivisionviews(opts)
+
+
+
+GET /api/v2/outbound/campaigns/divisionviews
+
+Query a list of basic Campaign information objects
+
+This returns a simplified version of a Campaign, consisting of name and division.
+
+Requires ANY permissions: 
+
+* outbound:campaign:search
+
+### Example
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.OutboundApi();
+
+var opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'filterType': "Prefix", // String | Filter type
+  'name': "name_example", // String | Name
+  'sortBy': "sortBy_example", // String | Sort by
+  'sortOrder': "a" // String | Sort order
+};
+apiInstance.getOutboundCampaignsDivisionviews(opts)
+  .then(function(data) {
+    console.log(`getOutboundCampaignsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getOutboundCampaignsDivisionviews');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+**CampaignDivisionViewListing**
+
 <a name="getOutboundContactlist"></a>
 
 # ContactList getOutboundContactlist(contactListId, opts)
+
+
 
 GET /api/v2/outbound/contactlists/{contactListId}
 
 Get a dialer contact list.
 
 
+
+Requires ANY permissions: 
+
+* outbound:contactList:view
 
 ### Example
 
@@ -1669,11 +1921,17 @@ apiInstance.getOutboundContactlist(contactListId, opts)
 
 # DialerContact getOutboundContactlistContact(contactListId, contactId)
 
+
+
 GET /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}
 
 Get a contact.
 
 
+
+Requires ANY permissions: 
+
+* outbound:contact:view
 
 ### Example
 
@@ -1720,11 +1978,17 @@ apiInstance.getOutboundContactlistContact(contactListId, contactId)
 
 # ExportUri getOutboundContactlistExport(contactListId, opts)
 
+
+
 GET /api/v2/outbound/contactlists/{contactListId}/export
 
 Get the URI of a contact list export.
 
 
+
+Requires ALL permissions: 
+
+* outbound:contact:view* outbound:contactList:view
 
 ### Example
 
@@ -1772,11 +2036,17 @@ apiInstance.getOutboundContactlistExport(contactListId, opts)
 
 # ImportStatus getOutboundContactlistImportstatus(contactListId)
 
+
+
 GET /api/v2/outbound/contactlists/{contactListId}/importstatus
 
 Get dialer contactList import status.
 
 
+
+Requires ANY permissions: 
+
+* outbound:contactList:view
 
 ### Example
 
@@ -1820,11 +2090,17 @@ apiInstance.getOutboundContactlistImportstatus(contactListId)
 
 # ContactListFilter getOutboundContactlistfilter(contactListFilterId)
 
+
+
 GET /api/v2/outbound/contactlistfilters/{contactListFilterId}
 
 Get Contact list filter
 
 
+
+Requires ANY permissions: 
+
+* outbound:contactListFilter:view
 
 ### Example
 
@@ -1868,11 +2144,17 @@ apiInstance.getOutboundContactlistfilter(contactListFilterId)
 
 # ContactListFilterEntityListing getOutboundContactlistfilters(opts)
 
+
+
 GET /api/v2/outbound/contactlistfilters
 
 Query Contact list filters
 
 
+
+Requires ANY permissions: 
+
+* outbound:contactListFilter:view
 
 ### Example
 
@@ -1929,11 +2211,17 @@ apiInstance.getOutboundContactlistfilters(opts)
 
 # ContactListEntityListing getOutboundContactlists(opts)
 
+
+
 GET /api/v2/outbound/contactlists
 
 Query a list of contact lists.
 
 
+
+Requires ANY permissions: 
+
+* outbound:contactList:view
 
 ### Example
 
@@ -1994,11 +2282,17 @@ apiInstance.getOutboundContactlists(opts)
 
 # DncList getOutboundDnclist(dncListId, opts)
 
+
+
 GET /api/v2/outbound/dnclists/{dncListId}
 
 Get dialer DNC list
 
 
+
+Requires ANY permissions: 
+
+* outbound:dncList:view
 
 ### Example
 
@@ -2048,11 +2342,17 @@ apiInstance.getOutboundDnclist(dncListId, opts)
 
 # ExportUri getOutboundDnclistExport(dncListId, opts)
 
+
+
 GET /api/v2/outbound/dnclists/{dncListId}/export
 
 Get the URI of a DNC list export.
 
 
+
+Requires ALL permissions: 
+
+* outbound:dnc:view* outbound:dncList:view
 
 ### Example
 
@@ -2100,11 +2400,17 @@ apiInstance.getOutboundDnclistExport(dncListId, opts)
 
 # ImportStatus getOutboundDnclistImportstatus(dncListId)
 
+
+
 GET /api/v2/outbound/dnclists/{dncListId}/importstatus
 
 Get dialer dncList import status.
 
 
+
+Requires ANY permissions: 
+
+* outbound:dncList:view
 
 ### Example
 
@@ -2148,11 +2454,17 @@ apiInstance.getOutboundDnclistImportstatus(dncListId)
 
 # DncListEntityListing getOutboundDnclists(opts)
 
+
+
 GET /api/v2/outbound/dnclists
 
 Query dialer DNC lists
 
 
+
+Requires ANY permissions: 
+
+* outbound:dncList:view
 
 ### Example
 
@@ -2211,11 +2523,17 @@ apiInstance.getOutboundDnclists(opts)
 
 # EventLog getOutboundEvent(eventId)
 
+
+
 GET /api/v2/outbound/events/{eventId}
 
 Get Dialer Event
 
 
+
+Requires ANY permissions: 
+
+* outbound:eventLog:view
 
 ### Example
 
@@ -2259,11 +2577,17 @@ apiInstance.getOutboundEvent(eventId)
 
 # DialerEventEntityListing getOutboundEvents(opts)
 
+
+
 GET /api/v2/outbound/events
 
 Query Event Logs
 
 
+
+Requires ANY permissions: 
+
+* outbound:eventLog:view
 
 ### Example
 
@@ -2320,11 +2644,17 @@ apiInstance.getOutboundEvents(opts)
 
 # RuleSet getOutboundRuleset(ruleSetId)
 
+
+
 GET /api/v2/outbound/rulesets/{ruleSetId}
 
 Get a Rule Set by ID.
 
 
+
+Requires ANY permissions: 
+
+* outbound:ruleSet:view
 
 ### Example
 
@@ -2368,11 +2698,17 @@ apiInstance.getOutboundRuleset(ruleSetId)
 
 # RuleSetEntityListing getOutboundRulesets(opts)
 
+
+
 GET /api/v2/outbound/rulesets
 
 Query a list of Rule Sets.
 
 
+
+Requires ANY permissions: 
+
+* outbound:ruleSet:view
 
 ### Example
 
@@ -2427,11 +2763,17 @@ apiInstance.getOutboundRulesets(opts)
 
 # CampaignSchedule getOutboundSchedulesCampaign(campaignId)
 
+
+
 GET /api/v2/outbound/schedules/campaigns/{campaignId}
 
 Get a dialer campaign schedule.
 
 
+
+Requires ANY permissions: 
+
+* outbound:schedule:view
 
 ### Example
 
@@ -2475,11 +2817,17 @@ apiInstance.getOutboundSchedulesCampaign(campaignId)
 
 # [CampaignSchedule] getOutboundSchedulesCampaigns()
 
+
+
 GET /api/v2/outbound/schedules/campaigns
 
 Query for a list of dialer campaign schedules.
 
 
+
+Requires ANY permissions: 
+
+* outbound:schedule:view
 
 ### Example
 
@@ -2517,11 +2865,17 @@ This endpoint does not need any parameter.
 
 # SequenceSchedule getOutboundSchedulesSequence(sequenceId)
 
+
+
 GET /api/v2/outbound/schedules/sequences/{sequenceId}
 
 Get a dialer sequence schedule.
 
 
+
+Requires ANY permissions: 
+
+* outbound:schedule:view
 
 ### Example
 
@@ -2565,11 +2919,17 @@ apiInstance.getOutboundSchedulesSequence(sequenceId)
 
 # [SequenceSchedule] getOutboundSchedulesSequences()
 
+
+
 GET /api/v2/outbound/schedules/sequences
 
 Query for a list of dialer sequence schedules.
 
 
+
+Requires ANY permissions: 
+
+* outbound:schedule:view
 
 ### Example
 
@@ -2607,11 +2967,17 @@ This endpoint does not need any parameter.
 
 # CampaignSequence getOutboundSequence(sequenceId)
 
+
+
 GET /api/v2/outbound/sequences/{sequenceId}
 
 Get a dialer campaign sequence.
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaignSequence:view
 
 ### Example
 
@@ -2655,11 +3021,17 @@ apiInstance.getOutboundSequence(sequenceId)
 
 # CampaignSequenceEntityListing getOutboundSequences(opts)
 
+
+
 GET /api/v2/outbound/sequences
 
 Query a list of dialer campaign sequences.
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaignSequence:view
 
 ### Example
 
@@ -2714,11 +3086,17 @@ apiInstance.getOutboundSequences(opts)
 
 # OutboundSettings getOutboundSettings()
 
+
+
 GET /api/v2/outbound/settings
 
 Get the outbound settings for this organization
 
 
+
+Requires ANY permissions: 
+
+* outbound:settings:view
 
 ### Example
 
@@ -2756,11 +3134,17 @@ This endpoint does not need any parameter.
 
 # WrapUpCodeMapping getOutboundWrapupcodemappings()
 
+
+
 GET /api/v2/outbound/wrapupcodemappings
 
 Get the Dialer wrap up code mapping.
 
 
+
+Requires ANY permissions: 
+
+* outbound:wrapUpCodeMapping:view
 
 ### Example
 
@@ -2798,11 +3182,17 @@ This endpoint does not need any parameter.
 
 # void patchOutboundSettings(body)
 
+
+
 PATCH /api/v2/outbound/settings
 
 Update the outbound settings for this organization
 
 
+
+Requires ANY permissions: 
+
+* outbound:settings:edit
 
 ### Example
 
@@ -2846,11 +3236,17 @@ void (no response body)
 
 # AttemptLimits postOutboundAttemptlimits(body)
 
+
+
 POST /api/v2/outbound/attemptlimits
 
 Create attempt limits
 
 
+
+Requires ANY permissions: 
+
+* outbound:attemptLimits:add
 
 ### Example
 
@@ -2894,11 +3290,17 @@ apiInstance.postOutboundAttemptlimits(body)
 
 # AuditSearchResult postOutboundAudits(body, opts)
 
+
+
 POST /api/v2/outbound/audits
 
 Retrieves audits for dialer.
 
 
+
+Requires ANY permissions: 
+
+* outbound:audit:view
 
 ### Example
 
@@ -2954,11 +3356,17 @@ apiInstance.postOutboundAudits(body, opts)
 
 # CallableTimeSet postOutboundCallabletimesets(body)
 
+
+
 POST /api/v2/outbound/callabletimesets
 
 Create callable time set
 
 
+
+Requires ANY permissions: 
+
+* outbound:callableTimeSet:add
 
 ### Example
 
@@ -3002,11 +3410,17 @@ apiInstance.postOutboundCallabletimesets(body)
 
 # ResponseSet postOutboundCallanalysisresponsesets(body)
 
+
+
 POST /api/v2/outbound/callanalysisresponsesets
 
 Create a dialer call analysis response set.
 
 
+
+Requires ANY permissions: 
+
+* outbound:responseSet:add
 
 ### Example
 
@@ -3050,11 +3464,17 @@ apiInstance.postOutboundCallanalysisresponsesets(body)
 
 # ContactCallbackRequest postOutboundCampaignCallbackSchedule(campaignId, body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 POST /api/v2/outbound/campaigns/{campaignId}/callback/schedule
 
 Schedule a Callback for a Dialer Campaign (Deprecated)
 
 This endpoint is deprecated and may have unexpected results. Please use \&quot;/conversations/{conversationId}/participants/{participantId}/callbacks instead.\&quot;
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3101,11 +3521,17 @@ apiInstance.postOutboundCampaignCallbackSchedule(campaignId, body)
 
 # CampaignRule postOutboundCampaignrules(body)
 
+
+
 POST /api/v2/outbound/campaignrules
 
 Create Campaign Rule
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaignRule:add
 
 ### Example
 
@@ -3149,11 +3575,17 @@ apiInstance.postOutboundCampaignrules(body)
 
 # Campaign postOutboundCampaigns(body)
 
+
+
 POST /api/v2/outbound/campaigns
 
 Create a campaign.
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaign:add
 
 ### Example
 
@@ -3197,11 +3629,17 @@ apiInstance.postOutboundCampaigns(body)
 
 # [CampaignProgress] postOutboundCampaignsProgress(body)
 
+
+
 POST /api/v2/outbound/campaigns/progress
 
 Get progress for a list of campaigns
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaign:view
 
 ### Example
 
@@ -3245,11 +3683,17 @@ apiInstance.postOutboundCampaignsProgress(body)
 
 # [DialerContact] postOutboundContactlistContacts(contactListId, body, opts)
 
+
+
 POST /api/v2/outbound/contactlists/{contactListId}/contacts
 
 Add contacts to a contact list.
 
 
+
+Requires ANY permissions: 
+
+* outbound:contact:add
 
 ### Example
 
@@ -3304,11 +3748,17 @@ apiInstance.postOutboundContactlistContacts(contactListId, body, opts)
 
 # [DialerContact] postOutboundContactlistContactsBulk(contactListId, body)
 
+
+
 POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk
 
 Get contacts from a contact list.
 
 
+
+Requires ANY permissions: 
+
+* outbound:contact:view
 
 ### Example
 
@@ -3355,11 +3805,17 @@ apiInstance.postOutboundContactlistContactsBulk(contactListId, body)
 
 # UriReference postOutboundContactlistExport(contactListId)
 
+
+
 POST /api/v2/outbound/contactlists/{contactListId}/export
 
 Initiate the export of a contact list.
 
 Returns 200 if received OK.
+
+Requires ALL permissions: 
+
+* outbound:contact:view* outbound:contactList:view
 
 ### Example
 
@@ -3403,11 +3859,17 @@ apiInstance.postOutboundContactlistExport(contactListId)
 
 # ContactListFilter postOutboundContactlistfilters(body)
 
+
+
 POST /api/v2/outbound/contactlistfilters
 
 Create Contact List Filter
 
 
+
+Requires ANY permissions: 
+
+* outbound:contactListFilter:add
 
 ### Example
 
@@ -3451,11 +3913,17 @@ apiInstance.postOutboundContactlistfilters(body)
 
 # FilterPreviewResponse postOutboundContactlistfiltersPreview(body)
 
+
+
 POST /api/v2/outbound/contactlistfilters/preview
 
 Get a preview of the output of a contact list filter
 
 
+
+Requires ANY permissions: 
+
+* outbound:contact:view
 
 ### Example
 
@@ -3499,11 +3967,17 @@ apiInstance.postOutboundContactlistfiltersPreview(body)
 
 # ContactList postOutboundContactlists(body)
 
+
+
 POST /api/v2/outbound/contactlists
 
 Create a contact List.
 
 
+
+Requires ANY permissions: 
+
+* outbound:contactList:add
 
 ### Example
 
@@ -3547,11 +4021,17 @@ apiInstance.postOutboundContactlists(body)
 
 # void postOutboundConversationDnc(conversationId)
 
+
+
 POST /api/v2/outbound/conversations/{conversationId}/dnc
 
 Add phone numbers to a Dialer DNC list.
 
 
+
+Requires ANY permissions: 
+
+* outbound:dnc:add
 
 ### Example
 
@@ -3595,11 +4075,17 @@ void (no response body)
 
 # UriReference postOutboundDnclistExport(dncListId)
 
+
+
 POST /api/v2/outbound/dnclists/{dncListId}/export
 
 Initiate the export of a dnc list.
 
 Returns 200 if received OK.
+
+Requires ALL permissions: 
+
+* outbound:dnc:view* outbound:dncList:view
 
 ### Example
 
@@ -3643,11 +4129,17 @@ apiInstance.postOutboundDnclistExport(dncListId)
 
 # void postOutboundDnclistPhonenumbers(dncListId, body)
 
+
+
 POST /api/v2/outbound/dnclists/{dncListId}/phonenumbers
 
 Add phone numbers to a Dialer DNC list.
 
 Only Internal DNC lists may be appended to
+
+Requires ANY permissions: 
+
+* outbound:dnc:add
 
 ### Example
 
@@ -3694,11 +4186,17 @@ void (no response body)
 
 # DncList postOutboundDnclists(body)
 
+
+
 POST /api/v2/outbound/dnclists
 
 Create dialer DNC list
 
 
+
+Requires ANY permissions: 
+
+* outbound:dncList:add
 
 ### Example
 
@@ -3742,11 +4240,17 @@ apiInstance.postOutboundDnclists(body)
 
 # RuleSet postOutboundRulesets(body)
 
+
+
 POST /api/v2/outbound/rulesets
 
 Create a Dialer Call Analysis Response Set.
 
 
+
+Requires ANY permissions: 
+
+* outbound:ruleSet:add
 
 ### Example
 
@@ -3790,11 +4294,17 @@ apiInstance.postOutboundRulesets(body)
 
 # CampaignSequence postOutboundSequences(body)
 
+
+
 POST /api/v2/outbound/sequences
 
 Create a new campaign sequence.
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaignSequence:add
 
 ### Example
 
@@ -3838,11 +4348,17 @@ apiInstance.postOutboundSequences(body)
 
 # AttemptLimits putOutboundAttemptlimit(attemptLimitsId, body)
 
+
+
 PUT /api/v2/outbound/attemptlimits/{attemptLimitsId}
 
 Update attempt limits
 
 
+
+Requires ANY permissions: 
+
+* outbound:attemptLimits:edit
 
 ### Example
 
@@ -3889,11 +4405,17 @@ apiInstance.putOutboundAttemptlimit(attemptLimitsId, body)
 
 # CallableTimeSet putOutboundCallabletimeset(callableTimeSetId, body)
 
+
+
 PUT /api/v2/outbound/callabletimesets/{callableTimeSetId}
 
 Update callable time set
 
 
+
+Requires ANY permissions: 
+
+* outbound:callableTimeSet:edit
 
 ### Example
 
@@ -3940,11 +4462,17 @@ apiInstance.putOutboundCallabletimeset(callableTimeSetId, body)
 
 # ResponseSet putOutboundCallanalysisresponseset(callAnalysisSetId, body)
 
+
+
 PUT /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}
 
 Update a dialer call analysis response set.
 
 
+
+Requires ANY permissions: 
+
+* outbound:responseSet:edit
 
 ### Example
 
@@ -3991,11 +4519,17 @@ apiInstance.putOutboundCallanalysisresponseset(callAnalysisSetId, body)
 
 # Campaign putOutboundCampaign(campaignId, body)
 
+
+
 PUT /api/v2/outbound/campaigns/{campaignId}
 
 Update a campaign.
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaign:edit
 
 ### Example
 
@@ -4042,11 +4576,17 @@ apiInstance.putOutboundCampaign(campaignId, body)
 
 # **&#39;String&#39;** putOutboundCampaignAgent(campaignId, userId, body)
 
+
+
 PUT /api/v2/outbound/campaigns/{campaignId}/agents/{userId}
 
 Send notification that an agent&#39;s state changed 
 
 New agent state.
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4096,11 +4636,17 @@ apiInstance.putOutboundCampaignAgent(campaignId, userId, body)
 
 # CampaignRule putOutboundCampaignrule(campaignRuleId, body)
 
+
+
 PUT /api/v2/outbound/campaignrules/{campaignRuleId}
 
 Update Campaign Rule
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaignRule:edit
 
 ### Example
 
@@ -4147,11 +4693,17 @@ apiInstance.putOutboundCampaignrule(campaignRuleId, body)
 
 # ContactList putOutboundContactlist(contactListId, body)
 
+
+
 PUT /api/v2/outbound/contactlists/{contactListId}
 
 Update a contact list.
 
 
+
+Requires ANY permissions: 
+
+* outbound:contactList:edit
 
 ### Example
 
@@ -4198,11 +4750,17 @@ apiInstance.putOutboundContactlist(contactListId, body)
 
 # DialerContact putOutboundContactlistContact(contactListId, contactId, body)
 
+
+
 PUT /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}
 
 Update a contact.
 
 
+
+Requires ANY permissions: 
+
+* outbound:contact:edit
 
 ### Example
 
@@ -4252,11 +4810,17 @@ apiInstance.putOutboundContactlistContact(contactListId, contactId, body)
 
 # ContactListFilter putOutboundContactlistfilter(contactListFilterId, body)
 
+
+
 PUT /api/v2/outbound/contactlistfilters/{contactListFilterId}
 
 Update Contact List Filter
 
 
+
+Requires ANY permissions: 
+
+* outbound:contactListFilter:edit
 
 ### Example
 
@@ -4303,11 +4867,17 @@ apiInstance.putOutboundContactlistfilter(contactListFilterId, body)
 
 # DncList putOutboundDnclist(dncListId, body)
 
+
+
 PUT /api/v2/outbound/dnclists/{dncListId}
 
 Update dialer DNC list
 
 
+
+Requires ANY permissions: 
+
+* outbound:dncList:edit
 
 ### Example
 
@@ -4354,11 +4924,17 @@ apiInstance.putOutboundDnclist(dncListId, body)
 
 # RuleSet putOutboundRuleset(ruleSetId, body)
 
+
+
 PUT /api/v2/outbound/rulesets/{ruleSetId}
 
 Update a RuleSet.
 
 
+
+Requires ANY permissions: 
+
+* outbound:ruleSet:edit
 
 ### Example
 
@@ -4405,11 +4981,17 @@ apiInstance.putOutboundRuleset(ruleSetId, body)
 
 # CampaignSchedule putOutboundSchedulesCampaign(campaignId, body)
 
+
+
 PUT /api/v2/outbound/schedules/campaigns/{campaignId}
 
 Update a new campaign schedule.
 
 
+
+Requires ANY permissions: 
+
+* outbound:schedule:edit
 
 ### Example
 
@@ -4456,11 +5038,17 @@ apiInstance.putOutboundSchedulesCampaign(campaignId, body)
 
 # SequenceSchedule putOutboundSchedulesSequence(sequenceId, body)
 
+
+
 PUT /api/v2/outbound/schedules/sequences/{sequenceId}
 
 Update a new sequence schedule.
 
 
+
+Requires ANY permissions: 
+
+* outbound:schedule:edit
 
 ### Example
 
@@ -4507,11 +5095,17 @@ apiInstance.putOutboundSchedulesSequence(sequenceId, body)
 
 # CampaignSequence putOutboundSequence(sequenceId, body)
 
+
+
 PUT /api/v2/outbound/sequences/{sequenceId}
 
 Update a new campaign sequence.
 
 
+
+Requires ANY permissions: 
+
+* outbound:campaignSequence:edit
 
 ### Example
 
@@ -4558,11 +5152,17 @@ apiInstance.putOutboundSequence(sequenceId, body)
 
 # WrapUpCodeMapping putOutboundWrapupcodemappings(body)
 
+
+
 PUT /api/v2/outbound/wrapupcodemappings
 
 Update the Dialer wrap up code mapping.
 
 
+
+Requires ANY permissions: 
+
+* outbound:wrapUpCodeMapping:edit
 
 ### Example
 

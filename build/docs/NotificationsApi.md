@@ -20,9 +20,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deleteNotificationsChannelSubscriptions(channelId)
 
+
+
 DELETE /api/v2/notifications/channels/{channelId}/subscriptions
 
 Remove all subscriptions
+
+
+
+Requires NO permissions: 
 
 
 
@@ -68,9 +74,15 @@ void (no response body)
 
 # AvailableTopicEntityListing getNotificationsAvailabletopics(opts)
 
+
+
 GET /api/v2/notifications/availabletopics
 
 Get available notification topics.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -117,9 +129,15 @@ apiInstance.getNotificationsAvailabletopics(opts)
 
 # ChannelTopicEntityListing getNotificationsChannelSubscriptions(channelId)
 
+
+
 GET /api/v2/notifications/channels/{channelId}/subscriptions
 
 The list of all subscriptions for this channel
+
+
+
+Requires NO permissions: 
 
 
 
@@ -165,9 +183,15 @@ apiInstance.getNotificationsChannelSubscriptions(channelId)
 
 # ChannelEntityListing getNotificationsChannels(opts)
 
+
+
 GET /api/v2/notifications/channels
 
 The list of existing channels
+
+
+
+Requires NO permissions: 
 
 
 
@@ -214,9 +238,15 @@ apiInstance.getNotificationsChannels(opts)
 
 # ChannelTopicEntityListing postNotificationsChannelSubscriptions(channelId, body)
 
+
+
 POST /api/v2/notifications/channels/{channelId}/subscriptions
 
 Add a list of subscriptions to the existing list of subscriptions
+
+
+
+Requires NO permissions: 
 
 
 
@@ -265,11 +295,17 @@ apiInstance.postNotificationsChannelSubscriptions(channelId, body)
 
 # Channel postNotificationsChannels()
 
+
+
 POST /api/v2/notifications/channels
 
 Create a new channel
 
 There is a limit of 5 channels per user/app combination. Creating a 6th channel will remove the channel with oldest last used date.
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -307,9 +343,15 @@ This endpoint does not need any parameter.
 
 # ChannelTopicEntityListing putNotificationsChannelSubscriptions(channelId, body)
 
+
+
 PUT /api/v2/notifications/channels/{channelId}/subscriptions
 
 Replace the current list of subscriptions with a new list.
+
+
+
+Requires NO permissions: 
 
 
 

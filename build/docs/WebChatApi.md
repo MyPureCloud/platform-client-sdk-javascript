@@ -21,11 +21,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deleteWebchatDeployment(deploymentId)
 
+
+
 DELETE /api/v2/webchat/deployments/{deploymentId}
 
 Delete a WebChat deployment
 
 
+
+Requires ANY permissions: 
+
+* webchat:deployment:delete
 
 ### Example
 
@@ -69,11 +75,17 @@ void (no response body)
 
 # void deleteWebchatSettings()
 
+
+
 DELETE /api/v2/webchat/settings
 
 Remove WebChat deployment settings
 
 
+
+Requires ANY permissions: 
+
+* webchat:deployment:delete
 
 ### Example
 
@@ -111,11 +123,17 @@ void (no response body)
 
 # WebChatDeployment getWebchatDeployment(deploymentId)
 
+
+
 GET /api/v2/webchat/deployments/{deploymentId}
 
 Get a WebChat deployment
 
 
+
+Requires ANY permissions: 
+
+* webchat:deployment:read
 
 ### Example
 
@@ -159,11 +177,17 @@ apiInstance.getWebchatDeployment(deploymentId)
 
 # WebChatDeploymentEntityListing getWebchatDeployments()
 
+
+
 GET /api/v2/webchat/deployments
 
 List WebChat deployments
 
 
+
+Requires ANY permissions: 
+
+* webchat:deployment:read
 
 ### Example
 
@@ -201,11 +225,17 @@ This endpoint does not need any parameter.
 
 # WebChatSettings getWebchatSettings()
 
+
+
 GET /api/v2/webchat/settings
 
 Get WebChat deployment settings
 
 
+
+Requires ANY permissions: 
+
+* webchat:deployment:read
 
 ### Example
 
@@ -243,11 +273,17 @@ This endpoint does not need any parameter.
 
 # WebChatDeployment postWebchatDeployments(body)
 
+
+
 POST /api/v2/webchat/deployments
 
 Create WebChat deployment
 
 
+
+Requires ANY permissions: 
+
+* webchat:deployment:create
 
 ### Example
 
@@ -291,11 +327,17 @@ apiInstance.postWebchatDeployments(body)
 
 # WebChatDeployment putWebchatDeployment(deploymentId, body)
 
+
+
 PUT /api/v2/webchat/deployments/{deploymentId}
 
 Update a WebChat deployment
 
 
+
+Requires ANY permissions: 
+
+* webchat:deployment:update
 
 ### Example
 
@@ -342,11 +384,17 @@ apiInstance.putWebchatDeployment(deploymentId, body)
 
 # WebChatSettings putWebchatSettings(body)
 
+
+
 PUT /api/v2/webchat/settings
 
 Update WebChat deployment settings
 
 
+
+Requires ANY permissions: 
+
+* webchat:deployment:update
 
 ### Example
 

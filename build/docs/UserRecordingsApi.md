@@ -19,9 +19,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deleteUserrecording(recordingId)
 
+
+
 DELETE /api/v2/userrecordings/{recordingId}
 
 Delete a user recording.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -67,9 +73,15 @@ void (no response body)
 
 # UserRecording getUserrecording(recordingId, opts)
 
+
+
 GET /api/v2/userrecordings/{recordingId}
 
 Get a user recording.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -119,9 +131,15 @@ apiInstance.getUserrecording(recordingId, opts)
 
 # DownloadResponse getUserrecordingMedia(recordingId, opts)
 
+
+
 GET /api/v2/userrecordings/{recordingId}/media
 
 Download a user recording.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -171,9 +189,15 @@ apiInstance.getUserrecordingMedia(recordingId, opts)
 
 # UserRecordingEntityListing getUserrecordings(opts)
 
+
+
 GET /api/v2/userrecordings
 
 Get a list of user recordings.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -224,9 +248,15 @@ apiInstance.getUserrecordings(opts)
 
 # FaxSummary getUserrecordingsSummary()
 
+
+
 GET /api/v2/userrecordings/summary
 
 Get user recording summary
+
+
+
+Requires NO permissions: 
 
 
 
@@ -266,9 +296,15 @@ This endpoint does not need any parameter.
 
 # UserRecording putUserrecording(recordingId, body, opts)
 
+
+
 PUT /api/v2/userrecordings/{recordingId}
 
 Update a user recording.
+
+
+
+Requires NO permissions: 
 
 
 

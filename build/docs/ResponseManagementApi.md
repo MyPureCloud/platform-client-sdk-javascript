@@ -24,11 +24,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deleteResponsemanagementLibrary(libraryId)
 
+
+
 DELETE /api/v2/responsemanagement/libraries/{libraryId}
 
 Delete an existing response library.
 
 This will remove any responses associated with the library.
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -72,11 +78,17 @@ void (no response body)
 
 # void deleteResponsemanagementResponse(responseId)
 
+
+
 DELETE /api/v2/responsemanagement/responses/{responseId}
 
 Delete an existing response.
 
 This will remove the response from any libraries associated with it.
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -120,9 +132,15 @@ void (no response body)
 
 # LibraryEntityListing getResponsemanagementLibraries(opts)
 
+
+
 GET /api/v2/responsemanagement/libraries
 
 Gets a list of existing response libraries.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -171,9 +189,15 @@ apiInstance.getResponsemanagementLibraries(opts)
 
 # Library getResponsemanagementLibrary(libraryId)
 
+
+
 GET /api/v2/responsemanagement/libraries/{libraryId}
 
 Get details about an existing response library.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -219,9 +243,15 @@ apiInstance.getResponsemanagementLibrary(libraryId)
 
 # Response getResponsemanagementResponse(responseId, opts)
 
+
+
 GET /api/v2/responsemanagement/responses/{responseId}
 
 Get details about an existing response.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -271,9 +301,15 @@ apiInstance.getResponsemanagementResponse(responseId, opts)
 
 # ResponseEntityListing getResponsemanagementResponses(libraryId, opts)
 
+
+
 GET /api/v2/responsemanagement/responses
 
 Gets a list of existing responses.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -327,9 +363,15 @@ apiInstance.getResponsemanagementResponses(libraryId, opts)
 
 # Library postResponsemanagementLibraries(body)
 
+
+
 POST /api/v2/responsemanagement/libraries
 
 Create a response library.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -375,9 +417,15 @@ apiInstance.postResponsemanagementLibraries(body)
 
 # Response postResponsemanagementResponses(body, opts)
 
+
+
 POST /api/v2/responsemanagement/responses
 
 Create a response.
+
+
+
+Requires NO permissions: 
 
 
 
@@ -427,9 +475,15 @@ apiInstance.postResponsemanagementResponses(body, opts)
 
 # ResponseQueryResults postResponsemanagementResponsesQuery(body)
 
+
+
 POST /api/v2/responsemanagement/responses/query
 
 Query responses
+
+
+
+Requires NO permissions: 
 
 
 
@@ -475,11 +529,17 @@ apiInstance.postResponsemanagementResponsesQuery(body)
 
 # Library putResponsemanagementLibrary(libraryId, body)
 
+
+
 PUT /api/v2/responsemanagement/libraries/{libraryId}
 
 Update an existing response library.
 
 Fields that can be updated: name. The most recent version is required for updates.
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -526,11 +586,17 @@ apiInstance.putResponsemanagementLibrary(libraryId, body)
 
 # Response putResponsemanagementResponse(responseId, body, opts)
 
+
+
 PUT /api/v2/responsemanagement/responses/{responseId}
 
 Update an existing response.
 
 Fields that can be updated: name, libraries, and texts. The most recent version is required for updates.
+
+Requires NO permissions: 
+
+
 
 ### Example
 

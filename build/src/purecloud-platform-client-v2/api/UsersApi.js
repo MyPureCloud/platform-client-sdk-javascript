@@ -18,7 +18,7 @@
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 27.0.0
+   * @version 28.0.0
    */
 
   /**
@@ -557,6 +557,7 @@
      * @param {Number} opts.pageSize Page size (default to 25)
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Boolean} opts.joined Is joined to the queue (default to true)
+     * @param {Array.<String>} opts.divisionId Division ID(s)
      */
     this.getUserQueues = function(userId, opts) { 
       opts = opts || {};
@@ -571,7 +572,7 @@
         '/api/v2/users/{userId}/queues', 
         'GET', 
         { 'userId': userId }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'joined': opts['joined'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'joined': opts['joined'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
         {  }, 
         {  }, 
         null, 
@@ -1034,8 +1035,11 @@
      * 
      * @param {String} userId User ID
      * @param {Array.<Object>} body User Queues
+     * @param {Object} opts Optional parameters
+     * @param {Array.<String>} opts.divisionId Division ID(s)
      */
-    this.patchUserQueues = function(userId, body) { 
+    this.patchUserQueues = function(userId, body, opts) { 
+      opts = opts || {};
 
       // verify the required parameter 'userId' is set
       if (userId === undefined || userId === null) {
@@ -1052,7 +1056,7 @@
         '/api/v2/users/{userId}/queues', 
         'PATCH', 
         { 'userId': userId }, 
-        {  }, 
+        { 'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
         {  }, 
         {  }, 
         body, 

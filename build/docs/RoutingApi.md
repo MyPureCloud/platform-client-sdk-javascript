@@ -71,11 +71,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deleteRoutingEmailDomain(domainId)
 
+
+
 DELETE /api/v2/routing/email/domains/{domainId}
 
 Delete a domain
 
 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -119,11 +125,17 @@ void (no response body)
 
 # void deleteRoutingEmailDomainRoute(domainName, routeId)
 
+
+
 DELETE /api/v2/routing/email/domains/{domainName}/routes/{routeId}
 
 Delete a route
 
 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -170,11 +182,17 @@ void (no response body)
 
 # void deleteRoutingQueue(queueId, opts)
 
+
+
 DELETE /api/v2/routing/queues/{queueId}
 
 Delete a queue
 
 
+
+Requires ANY permissions: 
+
+* routing:queue:delete
 
 ### Example
 
@@ -222,11 +240,17 @@ void (no response body)
 
 # void deleteRoutingQueueUser(queueId, memberId)
 
+
+
 DELETE /api/v2/routing/queues/{queueId}/users/{memberId}
 
 Delete queue member
 
 
+
+Requires ANY permissions: 
+
+* routing:queue:edit
 
 ### Example
 
@@ -273,11 +297,17 @@ void (no response body)
 
 # void deleteRoutingQueueWrapupcode(queueId, codeId)
 
+
+
 DELETE /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId}
 
 Delete a wrap-up code from a queue
 
 
+
+Requires ANY permissions: 
+
+* routing:queue:edit
 
 ### Example
 
@@ -324,11 +354,17 @@ void (no response body)
 
 # void deleteRoutingSkill(skillId)
 
+
+
 DELETE /api/v2/routing/skills/{skillId}
 
 Delete Routing Skill
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -372,11 +408,17 @@ void (no response body)
 
 # void deleteRoutingSmsPhonenumber(addressId)
 
+
+
 DELETE /api/v2/routing/sms/phonenumbers/{addressId}
 
 Delete a phone number provisioned for SMS.
 
 
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:delete
 
 ### Example
 
@@ -420,11 +462,17 @@ void (no response body)
 
 # void deleteRoutingUtilization()
 
+
+
 DELETE /api/v2/routing/utilization
 
 Delete utilization settings and revert to system defaults.
 
 
+
+Requires ANY permissions: 
+
+* routing:utilization:manage
 
 ### Example
 
@@ -462,11 +510,17 @@ void (no response body)
 
 # void deleteRoutingWrapupcode(codeId)
 
+
+
 DELETE /api/v2/routing/wrapupcodes/{codeId}
 
 Delete wrap-up code
 
 
+
+Requires ANY permissions: 
+
+* routing:wrapupCode:delete
 
 ### Example
 
@@ -510,11 +564,17 @@ void (no response body)
 
 # void deleteUserRoutinglanguage(userId, languageId)
 
+
+
 DELETE /api/v2/users/{userId}/routinglanguages/{languageId}
 
 Remove routing language from user
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -561,11 +621,17 @@ void (no response body)
 
 # void deleteUserRoutingskill(userId, skillId)
 
+
+
 DELETE /api/v2/users/{userId}/routingskills/{skillId}
 
 Remove routing skill from user
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -612,11 +678,17 @@ void (no response body)
 
 # InboundDomain getRoutingEmailDomain(domainId)
 
+
+
 GET /api/v2/routing/email/domains/{domainId}
 
 Get domain
 
 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -660,11 +732,17 @@ apiInstance.getRoutingEmailDomain(domainId)
 
 # InboundRoute getRoutingEmailDomainRoute(domainName, routeId)
 
+
+
 GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}
 
 Get a route
 
 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -711,11 +789,17 @@ apiInstance.getRoutingEmailDomainRoute(domainName, routeId)
 
 # InboundRouteEntityListing getRoutingEmailDomainRoutes(domainName, opts)
 
+
+
 GET /api/v2/routing/email/domains/{domainName}/routes
 
 Get routes
 
 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -767,11 +851,17 @@ apiInstance.getRoutingEmailDomainRoutes(domainName, opts)
 
 # InboundDomainEntityListing getRoutingEmailDomains()
 
+
+
 GET /api/v2/routing/email/domains
 
 Get domains
 
 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -809,11 +899,17 @@ This endpoint does not need any parameter.
 
 # EmailSetup getRoutingEmailSetup()
 
+
+
 GET /api/v2/routing/email/setup
 
 Get email setup
 
 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -851,11 +947,17 @@ This endpoint does not need any parameter.
 
 # LanguageEntityListing getRoutingLanguages(opts)
 
+
+
 GET /api/v2/routing/languages
 
 Get the list of supported languages.
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -906,11 +1008,17 @@ apiInstance.getRoutingLanguages(opts)
 
 # Recipient getRoutingMessageRecipient(recipientId)
 
+
+
 GET /api/v2/routing/message/recipients/{recipientId}
 
 Get a recipient
 
 
+
+Requires ANY permissions: 
+
+* routing:message:manage
 
 ### Example
 
@@ -954,11 +1062,17 @@ apiInstance.getRoutingMessageRecipient(recipientId)
 
 # RecipientListing getRoutingMessageRecipients(opts)
 
+
+
 GET /api/v2/routing/message/recipients
 
 Get recipients
 
 
+
+Requires ANY permissions: 
+
+* routing:message:manage
 
 ### Example
 
@@ -1005,11 +1119,17 @@ apiInstance.getRoutingMessageRecipients(opts)
 
 # Queue getRoutingQueue(queueId)
 
+
+
 GET /api/v2/routing/queues/{queueId}
 
 Get details about this queue.
 
 
+
+Requires ANY permissions: 
+
+* routing:queue:view
 
 ### Example
 
@@ -1053,11 +1173,17 @@ apiInstance.getRoutingQueue(queueId)
 
 # EstimatedWaitTimePredictions getRoutingQueueEstimatedwaittime(queueId, opts)
 
+
+
 GET /api/v2/routing/queues/{queueId}/estimatedwaittime
 
 Get Estimated Wait Time
 
 
+
+Requires ANY permissions: 
+
+* routing:queue:view
 
 ### Example
 
@@ -1105,11 +1231,17 @@ apiInstance.getRoutingQueueEstimatedwaittime(queueId, opts)
 
 # EstimatedWaitTimePredictions getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType)
 
+
+
 GET /api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime
 
 Get Estimated Wait Time
 
 
+
+Requires ANY permissions: 
+
+* routing:queue:view
 
 ### Example
 
@@ -1156,11 +1288,17 @@ apiInstance.getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType)
 
 # QueueMemberEntityListing getRoutingQueueUsers(queueId, opts)
 
+
+
 GET /api/v2/routing/queues/{queueId}/users
 
 Get the members of this queue
 
 
+
+Requires ANY permissions: 
+
+* routing:queue:view
 
 ### Example
 
@@ -1228,11 +1366,17 @@ apiInstance.getRoutingQueueUsers(queueId, opts)
 
 # WrapupCodeEntityListing getRoutingQueueWrapupcodes(queueId)
 
+
+
 GET /api/v2/routing/queues/{queueId}/wrapupcodes
 
 Get the wrap-up codes for a queue
 
 
+
+Requires ANY permissions: 
+
+* routing:queue:view
 
 ### Example
 
@@ -1276,11 +1420,17 @@ apiInstance.getRoutingQueueWrapupcodes(queueId)
 
 # QueueEntityListing getRoutingQueues(opts)
 
+
+
 GET /api/v2/routing/queues
 
 Get list of queues.
 
 
+
+Requires ANY permissions: 
+
+* routing:queue:view
 
 ### Example
 
@@ -1300,7 +1450,8 @@ var opts = {
   'pageNumber': 1, // Number | Page number
   'sortBy': "name", // String | Sort by
   'name': "name_example", // String | Name
-  'active': true // Boolean | Active
+  'active': true, // Boolean | Active
+  'divisionId': ["divisionId_example"] // [String] | Division ID(s)
 };
 apiInstance.getRoutingQueues(opts)
   .then(function(data) {
@@ -1323,6 +1474,7 @@ apiInstance.getRoutingQueues(opts)
  **sortBy** | **String** | Sort by | [optional] [default to name] |
  **name** | **String** | Name | [optional]  |
  **active** | **Boolean** | Active | [optional]  |
+ **divisionId** | **[String]** | Division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1333,11 +1485,17 @@ apiInstance.getRoutingQueues(opts)
 
 # RoutingSkill getRoutingSkill(skillId)
 
+
+
 GET /api/v2/routing/skills/{skillId}
 
 Get Routing Skill
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -1381,11 +1539,17 @@ apiInstance.getRoutingSkill(skillId)
 
 # SkillEntityListing getRoutingSkills(opts)
 
+
+
 GET /api/v2/routing/skills
 
 Get the list of routing skills.
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -1434,11 +1598,17 @@ apiInstance.getRoutingSkills(opts)
 
 # SMSAvailablePhoneNumberEntityListing getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, opts)
 
+
+
 GET /api/v2/routing/sms/availablephonenumbers
 
 Get a list of available phone numbers for SMS provisioning.
 
 This request will return up to 30 random phone numbers matching the criteria specified.  To get additional phone numbers repeat the request.
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:add
 
 ### Example
 
@@ -1497,11 +1667,17 @@ apiInstance.getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, opt
 
 # SmsPhoneNumber getRoutingSmsPhonenumber(addressId)
 
+
+
 GET /api/v2/routing/sms/phonenumbers/{addressId}
 
 Get a phone number provisioned for SMS.
 
 
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:view
 
 ### Example
 
@@ -1545,11 +1721,17 @@ apiInstance.getRoutingSmsPhonenumber(addressId)
 
 # SmsPhoneNumberEntityListing getRoutingSmsPhonenumbers(opts)
 
+
+
 GET /api/v2/routing/sms/phonenumbers
 
 Get a list of provisioned phone numbers.
 
 
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:view
 
 ### Example
 
@@ -1602,11 +1784,17 @@ apiInstance.getRoutingSmsPhonenumbers(opts)
 
 # Utilization getRoutingUtilization()
 
+
+
 GET /api/v2/routing/utilization
 
 Get the utilization settings.
 
 
+
+Requires ANY permissions: 
+
+* routing:utilization:manage* routing:utilization:view
 
 ### Example
 
@@ -1644,11 +1832,17 @@ This endpoint does not need any parameter.
 
 # WrapupCode getRoutingWrapupcode(codeId)
 
+
+
 GET /api/v2/routing/wrapupcodes/{codeId}
 
 Get details about this wrap-up code.
 
 
+
+Requires ANY permissions: 
+
+* routing:wrapupCode:view
 
 ### Example
 
@@ -1692,11 +1886,17 @@ apiInstance.getRoutingWrapupcode(codeId)
 
 # WrapupCodeEntityListing getRoutingWrapupcodes(opts)
 
+
+
 GET /api/v2/routing/wrapupcodes
 
 Get list of wrapup codes.
 
 
+
+Requires ANY permissions: 
+
+* routing:wrapupCode:view
 
 ### Example
 
@@ -1747,9 +1947,15 @@ apiInstance.getRoutingWrapupcodes(opts)
 
 # UserLanguageEntityListing getUserRoutinglanguages(userId, opts)
 
+
+
 GET /api/v2/users/{userId}/routinglanguages
 
 List routing language for user
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1803,9 +2009,15 @@ apiInstance.getUserRoutinglanguages(userId, opts)
 
 # UserSkillEntityListing getUserRoutingskills(userId, opts)
 
+
+
 GET /api/v2/users/{userId}/routingskills
 
 List routing skills for user
+
+
+
+Requires NO permissions: 
 
 
 
@@ -1859,11 +2071,17 @@ apiInstance.getUserRoutingskills(userId, opts)
 
 # QueueMember patchRoutingQueueUser(queueId, memberId, body)
 
+
+
 PATCH /api/v2/routing/queues/{queueId}/users/{memberId}
 
 Update the ring number of joined status for a User in a Queue
 
 
+
+Requires ANY permissions: 
+
+* routing:queue:edit
 
 ### Example
 
@@ -1913,11 +2131,17 @@ apiInstance.patchRoutingQueueUser(queueId, memberId, body)
 
 # QueueMemberEntityListing patchRoutingQueueUsers(queueId, body)
 
+
+
 PATCH /api/v2/routing/queues/{queueId}/users
 
 Join or unjoin a set of users for a queue
 
 
+
+Requires ANY permissions: 
+
+* routing:queue:edit
 
 ### Example
 
@@ -1964,11 +2188,17 @@ apiInstance.patchRoutingQueueUsers(queueId, body)
 
 # UserRoutingLanguage patchUserRoutinglanguage(userId, languageId, body)
 
+
+
 PATCH /api/v2/users/{userId}/routinglanguages/{languageId}
 
 Update routing language proficiency or state.
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -2018,11 +2248,17 @@ apiInstance.patchUserRoutinglanguage(userId, languageId, body)
 
 # QualifierMappingObservationQueryResponse postAnalyticsQueuesObservationsQuery(body)
 
+
+
 POST /api/v2/analytics/queues/observations/query
 
 Query for queue observations
 
 
+
+Requires ANY permissions: 
+
+* analytics:queueObservation:view
 
 ### Example
 
@@ -2066,11 +2302,17 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 
 # InboundRoute postRoutingEmailDomainRoutes(domainName, body)
 
+
+
 POST /api/v2/routing/email/domains/{domainName}/routes
 
 Create a route
 
 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -2117,11 +2359,17 @@ apiInstance.postRoutingEmailDomainRoutes(domainName, body)
 
 # InboundDomain postRoutingEmailDomains(body)
 
+
+
 POST /api/v2/routing/email/domains
 
 Create a domain
 
 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -2165,11 +2413,17 @@ apiInstance.postRoutingEmailDomains(body)
 
 # Language postRoutingLanguages(body)
 
+
+
 POST /api/v2/routing/languages
 
 Create Language
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -2213,11 +2467,17 @@ apiInstance.postRoutingLanguages(body)
 
 # **&#39;String&#39;** postRoutingQueueUsers(queueId, body, opts)
 
+
+
 POST /api/v2/routing/queues/{queueId}/users
 
 Bulk add or delete up to 100 queue members
 
 
+
+Requires ANY permissions: 
+
+* routing:queue:edit
 
 ### Example
 
@@ -2268,11 +2528,17 @@ apiInstance.postRoutingQueueUsers(queueId, body, opts)
 
 # [WrapupCode] postRoutingQueueWrapupcodes(queueId, body)
 
+
+
 POST /api/v2/routing/queues/{queueId}/wrapupcodes
 
 Add up to 100 wrap-up codes to a queue
 
 
+
+Requires ANY permissions: 
+
+* routing:queue:edit
 
 ### Example
 
@@ -2319,11 +2585,17 @@ apiInstance.postRoutingQueueWrapupcodes(queueId, body)
 
 # Queue postRoutingQueues(body)
 
+
+
 POST /api/v2/routing/queues
 
 Create queue
 
 
+
+Requires ANY permissions: 
+
+* routing:queue:add
 
 ### Example
 
@@ -2367,11 +2639,17 @@ apiInstance.postRoutingQueues(body)
 
 # RoutingSkill postRoutingSkills(body)
 
+
+
 POST /api/v2/routing/skills
 
 Create Skill
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -2415,11 +2693,17 @@ apiInstance.postRoutingSkills(body)
 
 # SmsPhoneNumber postRoutingSmsAddresses(body)
 
+
+
 POST /api/v2/routing/sms/addresses
 
 Provision an Address for SMS
 
 
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:add
 
 ### Example
 
@@ -2463,11 +2747,17 @@ apiInstance.postRoutingSmsAddresses(body)
 
 # SmsPhoneNumber postRoutingSmsPhonenumbers(body)
 
+
+
 POST /api/v2/routing/sms/phonenumbers
 
 Provision a phone number for SMS
 
 
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:add
 
 ### Example
 
@@ -2511,11 +2801,17 @@ apiInstance.postRoutingSmsPhonenumbers(body)
 
 # WrapupCode postRoutingWrapupcodes(body)
 
+
+
 POST /api/v2/routing/wrapupcodes
 
 Create a wrap-up code
 
 
+
+Requires ANY permissions: 
+
+* routing:wrapupCode:add
 
 ### Example
 
@@ -2559,11 +2855,17 @@ apiInstance.postRoutingWrapupcodes(body)
 
 # UserRoutingLanguage postUserRoutinglanguages(userId, body)
 
+
+
 POST /api/v2/users/{userId}/routinglanguages
 
 Add routing language to user
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -2610,11 +2912,17 @@ apiInstance.postUserRoutinglanguages(userId, body)
 
 # UserRoutingSkill postUserRoutingskills(userId, body)
 
+
+
 POST /api/v2/users/{userId}/routingskills
 
 Add routing skill to user
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -2661,11 +2969,17 @@ apiInstance.postUserRoutingskills(userId, body)
 
 # InboundRoute putRoutingEmailDomainRoute(domainName, routeId, body)
 
+
+
 PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}
 
 Update a route
 
 
+
+Requires ANY permissions: 
+
+* routing:email:manage
 
 ### Example
 
@@ -2715,11 +3029,17 @@ apiInstance.putRoutingEmailDomainRoute(domainName, routeId, body)
 
 # Recipient putRoutingMessageRecipient(recipientId, body)
 
+
+
 PUT /api/v2/routing/message/recipients/{recipientId}
 
 Update a recipient
 
 
+
+Requires ANY permissions: 
+
+* routing:message:manage
 
 ### Example
 
@@ -2766,11 +3086,17 @@ apiInstance.putRoutingMessageRecipient(recipientId, body)
 
 # Queue putRoutingQueue(queueId, body)
 
+
+
 PUT /api/v2/routing/queues/{queueId}
 
 Update a queue
 
 
+
+Requires ANY permissions: 
+
+* routing:queue:edit
 
 ### Example
 
@@ -2817,11 +3143,17 @@ apiInstance.putRoutingQueue(queueId, body)
 
 # SmsPhoneNumber putRoutingSmsPhonenumber(addressId, body)
 
+
+
 PUT /api/v2/routing/sms/phonenumbers/{addressId}
 
 Update a phone number provisioned for SMS.
 
 
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:edit
 
 ### Example
 
@@ -2868,11 +3200,17 @@ apiInstance.putRoutingSmsPhonenumber(addressId, body)
 
 # Utilization putRoutingUtilization(body)
 
+
+
 PUT /api/v2/routing/utilization
 
 Update the utilization settings.
 
 
+
+Requires ANY permissions: 
+
+* routing:utilization:manage
 
 ### Example
 
@@ -2916,11 +3254,17 @@ apiInstance.putRoutingUtilization(body)
 
 # WrapupCode putRoutingWrapupcode(codeId, body)
 
+
+
 PUT /api/v2/routing/wrapupcodes/{codeId}
 
 Update wrap-up code
 
 
+
+Requires ANY permissions: 
+
+* routing:wrapupCode:edit
 
 ### Example
 
@@ -2967,11 +3311,17 @@ apiInstance.putRoutingWrapupcode(codeId, body)
 
 # UserRoutingSkill putUserRoutingskill(userId, skillId, body)
 
+
+
 PUT /api/v2/users/{userId}/routingskills/{skillId}
 
 Update routing skill proficiency or state.
 
 
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
