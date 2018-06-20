@@ -106,7 +106,9 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -160,7 +162,9 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -212,9 +216,12 @@ Delete specified user prompt
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -270,9 +277,12 @@ Delete specified user prompt resource
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -327,9 +337,12 @@ Multiple IDs can be specified, in which case all specified prompts will be delet
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -383,7 +396,9 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -437,7 +452,9 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -489,9 +506,12 @@ Delete a system prompt resource override.
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -546,9 +566,12 @@ Delete flow
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -600,9 +623,12 @@ Multiple IDs can be specified, in which case all specified flows will be deleted
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -656,7 +682,9 @@ Requires ANY permissions:
 
 * architect:datatable:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -714,7 +742,9 @@ Requires ANY permissions:
 
 * architect:datatable:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -769,9 +799,13 @@ Get Dependency Tracking objects that have a given display name
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -839,9 +873,13 @@ Get Dependency Tracking build status for an organization
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -887,9 +925,13 @@ Get resources that are consumed by a given Dependency Tracking object
 
 Requires ANY permissions: 
 
-* admin* editor* readonly
+* admin
+* editor
+* readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -951,9 +993,13 @@ Get resources that consume a given Dependency Tracking object
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1012,9 +1058,13 @@ Get Dependency Tracking objects that consume deleted resources
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1079,9 +1129,13 @@ Get a Dependency Tracking object
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1147,9 +1201,13 @@ Get a Dependency Tracking type.
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1201,9 +1259,13 @@ Get Dependency Tracking types.
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1258,9 +1320,13 @@ Get Dependency Tracking objects that depend on updated resources
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1325,7 +1391,9 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1379,7 +1447,9 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1442,7 +1512,9 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1496,7 +1568,9 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1557,9 +1631,13 @@ Get specified user prompt
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1611,9 +1689,13 @@ Get generated prompt history
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1680,9 +1762,13 @@ Get specified user prompt resource
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1737,9 +1823,13 @@ The returned list is pageable, and query parameters can be used for filtering.
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1797,9 +1887,13 @@ The returned list is pageable, and query parameters can be used for filtering.  
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1866,7 +1960,9 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1920,7 +2016,9 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1974,7 +2072,9 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2037,7 +2137,9 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2098,9 +2200,13 @@ Get a system prompt
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2152,9 +2258,13 @@ Get generated prompt history
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2221,9 +2331,13 @@ Get a system prompt resource.
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2278,9 +2392,13 @@ Get system prompt resources.
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2342,9 +2460,13 @@ Get System Prompts
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2409,9 +2531,13 @@ Get flow
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2467,9 +2593,13 @@ Get generated flow history
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2536,9 +2666,13 @@ Get the latest configuration for flow
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2594,9 +2728,13 @@ Get flow version
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2655,9 +2793,13 @@ Create flow version configuration
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2716,9 +2858,13 @@ Get flow version list
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2778,9 +2924,13 @@ Multiple IDs can be specified, in which case all matching flows will be returned
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2870,7 +3020,9 @@ Requires ANY permissions:
 
 * architect:datatable:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2928,7 +3080,9 @@ Requires ANY permissions:
 
 * architect:datatable:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2989,7 +3143,9 @@ Requires ANY permissions:
 
 * architect:datatable:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3051,7 +3207,9 @@ Requires ANY permissions:
 
 * architect:datatable:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3114,7 +3272,9 @@ Requires ANY permissions:
 
 * architect:flow:search
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3190,7 +3350,9 @@ Requires ANY permissions:
 
 * architect:user:admin
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3224,7 +3386,7 @@ void (no response body)
 
 <a name="postArchitectEmergencygroups"></a>
 
-# EmergencyGroup postArchitectEmergencygroups(opts)
+# EmergencyGroup postArchitectEmergencygroups(body)
 
 
 
@@ -3238,7 +3400,57 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyEmergencyGroupExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#EmergencyGroupExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+EmergencyGroup <a style="cursor: pointer" onclick="copyEmergencyGroupExample()">Copy</a>
+
+<div id="EmergencyGroupExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "description": String, 
+  "version": Number, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "modifiedBy": String, 
+  "createdBy": String, 
+  "state": String, 
+  "modifiedByApp": String, 
+  "createdByApp": String, 
+  "enabled": Boolean, 
+  "emergencyCallFlows": { 
+    "emergencyFlow": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+    "ivrs": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3251,10 +3463,9 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ArchitectApi();
 
-var opts = { 
-  'body': {} // Object | 
-};
-apiInstance.postArchitectEmergencygroups(opts)
+var body = {}; // Object | 
+
+apiInstance.postArchitectEmergencygroups(body)
   .then(function(data) {
     console.log(`postArchitectEmergencygroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3270,7 +3481,7 @@ apiInstance.postArchitectEmergencygroups(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3279,7 +3490,7 @@ apiInstance.postArchitectEmergencygroups(opts)
 
 <a name="postArchitectIvrs"></a>
 
-# IVR postArchitectIvrs(opts)
+# IVR postArchitectIvrs(body)
 
 
 
@@ -3293,7 +3504,65 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyIVRExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#IVRExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+IVR <a style="cursor: pointer" onclick="copyIVRExample()">Copy</a>
+
+<div id="IVRExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "description": String, 
+  "version": Number, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "modifiedBy": String, 
+  "createdBy": String, 
+  "state": String, 
+  "modifiedByApp": String, 
+  "createdByApp": String, 
+  "dnis": [String], 
+  "openHoursFlow": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "closedHoursFlow": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "holidayHoursFlow": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "scheduleGroup": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3306,10 +3575,9 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ArchitectApi();
 
-var opts = { 
-  'body': {} // Object | 
-};
-apiInstance.postArchitectIvrs(opts)
+var body = {}; // Object | 
+
+apiInstance.postArchitectIvrs(body)
   .then(function(data) {
     console.log(`postArchitectIvrs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3325,7 +3593,7 @@ apiInstance.postArchitectIvrs(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3346,9 +3614,13 @@ Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3388,7 +3660,7 @@ apiInstance.postArchitectPromptHistory(promptId)
 
 <a name="postArchitectPromptResources"></a>
 
-# PromptAsset postArchitectPromptResources(promptId, opts)
+# PromptAsset postArchitectPromptResources(promptId, body)
 
 
 
@@ -3400,9 +3672,47 @@ Create a new user prompt resource
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyPromptAssetCreateExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#PromptAssetCreateExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+PromptAssetCreate <a style="cursor: pointer" onclick="copyPromptAssetCreateExample()">Copy</a>
+
+<div id="PromptAssetCreateExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "promptId": String, 
+  "language": String, 
+  "mediaUri": String, 
+  "ttsString": String, 
+  "uploadStatus": String, 
+  "uploadUri": String, 
+  "languageDefault": Boolean, 
+  "tags": {String: [String]}, 
+  "durationSeconds": Number, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3417,10 +3727,9 @@ var apiInstance = new platformClient.ArchitectApi();
 
 var promptId = "promptId_example"; // String | Prompt ID
 
-var opts = { 
-  'body': {} // Object | 
-};
-apiInstance.postArchitectPromptResources(promptId, opts)
+var body = {}; // Object | 
+
+apiInstance.postArchitectPromptResources(promptId, body)
   .then(function(data) {
     console.log(`postArchitectPromptResources success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3437,7 +3746,7 @@ apiInstance.postArchitectPromptResources(promptId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | Prompt ID |  |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3446,7 +3755,7 @@ apiInstance.postArchitectPromptResources(promptId, opts)
 
 <a name="postArchitectPrompts"></a>
 
-# Prompt postArchitectPrompts(opts)
+# Prompt postArchitectPrompts(body)
 
 
 
@@ -3458,9 +3767,374 @@ Create a new user prompt
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyPromptExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#PromptExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Prompt <a style="cursor: pointer" onclick="copyPromptExample()">Copy</a>
+
+<div id="PromptExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "description": String, 
+  "resources": { 
+    "id": String, 
+    "name": String, 
+    "promptId": String, 
+    "language": String, 
+    "mediaUri": String, 
+    "ttsString": String, 
+    "uploadStatus": String, 
+    "uploadUri": String, 
+    "languageDefault": Boolean, 
+    "tags": {String: [String]}, 
+    "durationSeconds": Number, 
+    "selfUri": String, 
+  },  
+  "currentOperation": { 
+    "id": String, 
+    "complete": Boolean, 
+    "user": { 
+      "id": String, 
+      "name": String, 
+      "chat": { 
+        "jabberId": String, 
+      },  
+      "department": String, 
+      "email": String, 
+      "primaryContactInfo": { 
+        "address": String, 
+        "display": String, 
+        "mediaType": String, 
+        "type": String, 
+        "extension": String, 
+      },  
+      "addresses": { 
+        "address": String, 
+        "display": String, 
+        "mediaType": String, 
+        "type": String, 
+        "extension": String, 
+      },  
+      "state": String, 
+      "title": String, 
+      "username": String, 
+      "manager": User, 
+      "images": { 
+        "resolution": String, 
+        "imageUri": String, 
+      },  
+      "version": Number, 
+      "routingStatus": { 
+        "userId": String, 
+        "status": String, 
+        "startTime": Date, 
+      },  
+      "presence": { 
+        "id": String, 
+        "name": String, 
+        "source": String, 
+        "primary": Boolean, 
+        "presenceDefinition": { 
+          "id": String, 
+          "systemPresence": String, 
+          "selfUri": String, 
+        },  
+        "message": String, 
+        "modifiedDate": Date, 
+        "selfUri": String, 
+      },  
+      "conversationSummary": { 
+        "userId": String, 
+        "call": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "callback": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "email": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "message": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "chat": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "socialExpression": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "video": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+      },  
+      "outOfOffice": { 
+        "id": String, 
+        "name": String, 
+        "user": User, 
+        "startDate": Date, 
+        "endDate": Date, 
+        "active": Boolean, 
+        "indefinite": Boolean, 
+        "selfUri": String, 
+      },  
+      "geolocation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "primary": Boolean, 
+        "latitude": Number, 
+        "longitude": Number, 
+        "country": String, 
+        "region": String, 
+        "city": String, 
+        "locations": { 
+          "id": String, 
+          "name": String, 
+          "address": { 
+            "city": String, 
+            "country": String, 
+            "countryName": String, 
+            "state": String, 
+            "street1": String, 
+            "street2": String, 
+            "zipcode": String, 
+          },  
+          "addressVerified": Boolean, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
+          "state": String, 
+          "version": Number, 
+          "path": [String], 
+          "selfUri": String, 
+        },  
+        "selfUri": String, 
+      },  
+      "station": { 
+        "associatedStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "effectiveStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "defaultStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "lastAssociatedStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+      },  
+      "authorization": { 
+        "roles": { 
+          "id": String, 
+          "name": String, 
+        },  
+        "permissions": [String], 
+        "permissionPolicies": { 
+          "id": String, 
+          "domain": String, 
+          "entityName": String, 
+          "policyName": String, 
+          "policyDescription": String, 
+          "actionSetKey": String, 
+          "allowConditions": Boolean, 
+          "resourceConditionNode": { 
+            "variableName": String, 
+            "conjunction": String, 
+            "operator": String, 
+            "operands": { 
+              "type": String, 
+              "value": String, 
+            },  
+            "terms": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+          },  
+          "namedResources": [String], 
+          "resourceCondition": String, 
+          "actionSet": [String], 
+        },  
+      },  
+      "profileSkills": [String], 
+      "locations": { 
+        "id": String, 
+        "floorplanId": String, 
+        "coordinates": {String: Number}, 
+        "notes": String, 
+        "locationDefinition": { 
+          "id": String, 
+          "name": String, 
+          "address": { 
+            "city": String, 
+            "country": String, 
+            "countryName": String, 
+            "state": String, 
+            "street1": String, 
+            "street2": String, 
+            "zipcode": String, 
+          },  
+          "addressVerified": Boolean, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
+          "state": String, 
+          "version": Number, 
+          "path": [String], 
+          "selfUri": String, 
+        },  
+      },  
+      "groups": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
+        "state": String, 
+        "version": Number, 
+        "type": String, 
+        "images": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "addresses": { 
+          "address": String, 
+          "display": String, 
+          "type": String, 
+          "mediaType": String, 
+        },  
+        "rulesVisible": Boolean, 
+        "visibility": String, 
+        "owners": User, 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "errorMessage": String, 
+    "errorCode": String, 
+    "errorDetails": { 
+      "errorCode": String, 
+      "fieldName": String, 
+      "entityId": String, 
+      "entityName": String, 
+    },  
+    "errorMessageParams": {String: String}, 
+    "actionName": String, 
+    "actionStatus": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3473,10 +4147,9 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ArchitectApi();
 
-var opts = { 
-  'body': {} // Object | 
-};
-apiInstance.postArchitectPrompts(opts)
+var body = {}; // Object | 
+
+apiInstance.postArchitectPrompts(body)
   .then(function(data) {
     console.log(`postArchitectPrompts success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3492,7 +4165,7 @@ apiInstance.postArchitectPrompts(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3501,7 +4174,7 @@ apiInstance.postArchitectPrompts(opts)
 
 <a name="postArchitectSchedulegroups"></a>
 
-# ScheduleGroup postArchitectSchedulegroups(opts)
+# ScheduleGroup postArchitectSchedulegroups(body)
 
 
 
@@ -3515,7 +4188,60 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyScheduleGroupExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ScheduleGroupExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ScheduleGroup <a style="cursor: pointer" onclick="copyScheduleGroupExample()">Copy</a>
+
+<div id="ScheduleGroupExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "description": String, 
+  "version": Number, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "modifiedBy": String, 
+  "createdBy": String, 
+  "state": String, 
+  "modifiedByApp": String, 
+  "createdByApp": String, 
+  "timeZone": String, 
+  "openSchedules": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "closedSchedules": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "holidaySchedules": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3528,10 +4254,9 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ArchitectApi();
 
-var opts = { 
-  'body': {} // Object | 
-};
-apiInstance.postArchitectSchedulegroups(opts)
+var body = {}; // Object | 
+
+apiInstance.postArchitectSchedulegroups(body)
   .then(function(data) {
     console.log(`postArchitectSchedulegroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3547,7 +4272,7 @@ apiInstance.postArchitectSchedulegroups(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3556,7 +4281,7 @@ apiInstance.postArchitectSchedulegroups(opts)
 
 <a name="postArchitectSchedules"></a>
 
-# Schedule postArchitectSchedules(opts)
+# Schedule postArchitectSchedules(body)
 
 
 
@@ -3570,7 +4295,47 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyScheduleExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ScheduleExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Schedule <a style="cursor: pointer" onclick="copyScheduleExample()">Copy</a>
+
+<div id="ScheduleExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "description": String, 
+  "version": Number, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "modifiedBy": String, 
+  "createdBy": String, 
+  "state": String, 
+  "modifiedByApp": String, 
+  "createdByApp": String, 
+  "start": Date, 
+  "end": Date, 
+  "rrule": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3583,10 +4348,9 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ArchitectApi();
 
-var opts = { 
-  'body': {} // Object | 
-};
-apiInstance.postArchitectSchedules(opts)
+var body = {}; // Object | 
+
+apiInstance.postArchitectSchedules(body)
   .then(function(data) {
     console.log(`postArchitectSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3602,7 +4366,7 @@ apiInstance.postArchitectSchedules(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3623,9 +4387,13 @@ Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3665,7 +4433,7 @@ apiInstance.postArchitectSystempromptHistory(promptId)
 
 <a name="postArchitectSystempromptResources"></a>
 
-# SystemPromptAsset postArchitectSystempromptResources(promptId, opts)
+# SystemPromptAsset postArchitectSystempromptResources(promptId, body)
 
 
 
@@ -3677,9 +4445,48 @@ Create system prompt resource override.
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copySystemPromptAssetExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#SystemPromptAssetExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+SystemPromptAsset <a style="cursor: pointer" onclick="copySystemPromptAssetExample()">Copy</a>
+
+<div id="SystemPromptAssetExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "promptId": String, 
+  "language": String, 
+  "durationSeconds": Number, 
+  "mediaUri": String, 
+  "ttsString": String, 
+  "uploadUri": String, 
+  "uploadStatus": String, 
+  "hasDefault": Boolean, 
+  "languageDefault": Boolean, 
+  "tags": {String: [String]}, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3694,10 +4501,9 @@ var apiInstance = new platformClient.ArchitectApi();
 
 var promptId = "promptId_example"; // String | Prompt ID
 
-var opts = { 
-  'body': {} // Object | 
-};
-apiInstance.postArchitectSystempromptResources(promptId, opts)
+var body = {}; // Object | 
+
+apiInstance.postArchitectSystempromptResources(promptId, body)
   .then(function(data) {
     console.log(`postArchitectSystempromptResources success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3714,7 +4520,7 @@ apiInstance.postArchitectSystempromptResources(promptId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | Prompt ID |  |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3723,7 +4529,7 @@ apiInstance.postArchitectSystempromptResources(promptId, opts)
 
 <a name="postFlowVersions"></a>
 
-# FlowVersion postFlowVersions(flowId, opts)
+# FlowVersion postFlowVersions(flowId, body)
 
 
 
@@ -3735,9 +4541,12 @@ Create flow version
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3752,10 +4561,9 @@ var apiInstance = new platformClient.ArchitectApi();
 
 var flowId = "flowId_example"; // String | Flow ID
 
-var opts = { 
-  'body': null // Object | 
-};
-apiInstance.postFlowVersions(flowId, opts)
+var body = null; // Object | 
+
+apiInstance.postFlowVersions(flowId, body)
   .then(function(data) {
     console.log(`postFlowVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3772,7 +4580,7 @@ apiInstance.postFlowVersions(flowId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **flowId** | **String** | Flow ID |  |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3781,7 +4589,7 @@ apiInstance.postFlowVersions(flowId, opts)
 
 <a name="postFlows"></a>
 
-# Flow postFlows(opts)
+# Flow postFlows(body)
 
 
 
@@ -3793,9 +4601,1044 @@ Create flow
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyFlowExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#FlowExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Flow <a style="cursor: pointer" onclick="copyFlowExample()">Copy</a>
+
+<div id="FlowExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "description": String, 
+  "type": String, 
+  "lockedUser": { 
+    "id": String, 
+    "name": String, 
+    "chat": { 
+      "jabberId": String, 
+    },  
+    "department": String, 
+    "email": String, 
+    "primaryContactInfo": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "addresses": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "state": String, 
+    "title": String, 
+    "username": String, 
+    "manager": User, 
+    "images": { 
+      "resolution": String, 
+      "imageUri": String, 
+    },  
+    "version": Number, 
+    "routingStatus": { 
+      "userId": String, 
+      "status": String, 
+      "startTime": Date, 
+    },  
+    "presence": { 
+      "id": String, 
+      "name": String, 
+      "source": String, 
+      "primary": Boolean, 
+      "presenceDefinition": { 
+        "id": String, 
+        "systemPresence": String, 
+        "selfUri": String, 
+      },  
+      "message": String, 
+      "modifiedDate": Date, 
+      "selfUri": String, 
+    },  
+    "conversationSummary": { 
+      "userId": String, 
+      "call": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "callback": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "email": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "message": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "chat": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "socialExpression": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "video": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+    },  
+    "outOfOffice": { 
+      "id": String, 
+      "name": String, 
+      "user": User, 
+      "startDate": Date, 
+      "endDate": Date, 
+      "active": Boolean, 
+      "indefinite": Boolean, 
+      "selfUri": String, 
+    },  
+    "geolocation": { 
+      "id": String, 
+      "name": String, 
+      "type": String, 
+      "primary": Boolean, 
+      "latitude": Number, 
+      "longitude": Number, 
+      "country": String, 
+      "region": String, 
+      "city": String, 
+      "locations": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "station": { 
+      "associatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "effectiveStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "defaultStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "lastAssociatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+    },  
+    "authorization": { 
+      "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "permissions": [String], 
+      "permissionPolicies": { 
+        "id": String, 
+        "domain": String, 
+        "entityName": String, 
+        "policyName": String, 
+        "policyDescription": String, 
+        "actionSetKey": String, 
+        "allowConditions": Boolean, 
+        "resourceConditionNode": { 
+          "variableName": String, 
+          "conjunction": String, 
+          "operator": String, 
+          "operands": { 
+            "type": String, 
+            "value": String, 
+          },  
+          "terms": { 
+            "variableName": String, 
+            "conjunction": String, 
+            "operator": String, 
+            "operands": { 
+              "type": String, 
+              "value": String, 
+            },  
+            "terms": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+          },  
+        },  
+        "namedResources": [String], 
+        "resourceCondition": String, 
+        "actionSet": [String], 
+      },  
+    },  
+    "profileSkills": [String], 
+    "locations": { 
+      "id": String, 
+      "floorplanId": String, 
+      "coordinates": {String: Number}, 
+      "notes": String, 
+      "locationDefinition": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+    },  
+    "groups": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "state": String, 
+      "version": Number, 
+      "type": String, 
+      "images": { 
+        "resolution": String, 
+        "imageUri": String, 
+      },  
+      "addresses": { 
+        "address": String, 
+        "display": String, 
+        "type": String, 
+        "mediaType": String, 
+      },  
+      "rulesVisible": Boolean, 
+      "visibility": String, 
+      "owners": User, 
+      "selfUri": String, 
+    },  
+    "selfUri": String, 
+  },  
+  "active": Boolean, 
+  "system": Boolean, 
+  "deleted": Boolean, 
+  "publishedVersion": { 
+    "id": String, 
+    "name": String, 
+    "commitVersion": String, 
+    "configurationVersion": String, 
+    "type": String, 
+    "secure": Boolean, 
+    "createdBy": User, 
+    "configurationUri": String, 
+    "dateCreated": Number, 
+    "generationId": String, 
+    "publishResultUri": String, 
+    "selfUri": String, 
+  },  
+  "savedVersion": { 
+    "id": String, 
+    "name": String, 
+    "commitVersion": String, 
+    "configurationVersion": String, 
+    "type": String, 
+    "secure": Boolean, 
+    "createdBy": User, 
+    "configurationUri": String, 
+    "dateCreated": Number, 
+    "generationId": String, 
+    "publishResultUri": String, 
+    "selfUri": String, 
+  },  
+  "inputSchema": Object, 
+  "outputSchema": Object, 
+  "checkedInVersion": { 
+    "id": String, 
+    "name": String, 
+    "commitVersion": String, 
+    "configurationVersion": String, 
+    "type": String, 
+    "secure": Boolean, 
+    "createdBy": User, 
+    "configurationUri": String, 
+    "dateCreated": Number, 
+    "generationId": String, 
+    "publishResultUri": String, 
+    "selfUri": String, 
+  },  
+  "publishedBy": { 
+    "id": String, 
+    "name": String, 
+    "chat": { 
+      "jabberId": String, 
+    },  
+    "department": String, 
+    "email": String, 
+    "primaryContactInfo": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "addresses": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "state": String, 
+    "title": String, 
+    "username": String, 
+    "manager": User, 
+    "images": { 
+      "resolution": String, 
+      "imageUri": String, 
+    },  
+    "version": Number, 
+    "routingStatus": { 
+      "userId": String, 
+      "status": String, 
+      "startTime": Date, 
+    },  
+    "presence": { 
+      "id": String, 
+      "name": String, 
+      "source": String, 
+      "primary": Boolean, 
+      "presenceDefinition": { 
+        "id": String, 
+        "systemPresence": String, 
+        "selfUri": String, 
+      },  
+      "message": String, 
+      "modifiedDate": Date, 
+      "selfUri": String, 
+    },  
+    "conversationSummary": { 
+      "userId": String, 
+      "call": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "callback": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "email": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "message": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "chat": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "socialExpression": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "video": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+    },  
+    "outOfOffice": { 
+      "id": String, 
+      "name": String, 
+      "user": User, 
+      "startDate": Date, 
+      "endDate": Date, 
+      "active": Boolean, 
+      "indefinite": Boolean, 
+      "selfUri": String, 
+    },  
+    "geolocation": { 
+      "id": String, 
+      "name": String, 
+      "type": String, 
+      "primary": Boolean, 
+      "latitude": Number, 
+      "longitude": Number, 
+      "country": String, 
+      "region": String, 
+      "city": String, 
+      "locations": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "station": { 
+      "associatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "effectiveStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "defaultStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "lastAssociatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+    },  
+    "authorization": { 
+      "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "permissions": [String], 
+      "permissionPolicies": { 
+        "id": String, 
+        "domain": String, 
+        "entityName": String, 
+        "policyName": String, 
+        "policyDescription": String, 
+        "actionSetKey": String, 
+        "allowConditions": Boolean, 
+        "resourceConditionNode": { 
+          "variableName": String, 
+          "conjunction": String, 
+          "operator": String, 
+          "operands": { 
+            "type": String, 
+            "value": String, 
+          },  
+          "terms": { 
+            "variableName": String, 
+            "conjunction": String, 
+            "operator": String, 
+            "operands": { 
+              "type": String, 
+              "value": String, 
+            },  
+            "terms": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+          },  
+        },  
+        "namedResources": [String], 
+        "resourceCondition": String, 
+        "actionSet": [String], 
+      },  
+    },  
+    "profileSkills": [String], 
+    "locations": { 
+      "id": String, 
+      "floorplanId": String, 
+      "coordinates": {String: Number}, 
+      "notes": String, 
+      "locationDefinition": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+    },  
+    "groups": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "state": String, 
+      "version": Number, 
+      "type": String, 
+      "images": { 
+        "resolution": String, 
+        "imageUri": String, 
+      },  
+      "addresses": { 
+        "address": String, 
+        "display": String, 
+        "type": String, 
+        "mediaType": String, 
+      },  
+      "rulesVisible": Boolean, 
+      "visibility": String, 
+      "owners": User, 
+      "selfUri": String, 
+    },  
+    "selfUri": String, 
+  },  
+  "currentOperation": { 
+    "id": String, 
+    "complete": Boolean, 
+    "user": { 
+      "id": String, 
+      "name": String, 
+      "chat": { 
+        "jabberId": String, 
+      },  
+      "department": String, 
+      "email": String, 
+      "primaryContactInfo": { 
+        "address": String, 
+        "display": String, 
+        "mediaType": String, 
+        "type": String, 
+        "extension": String, 
+      },  
+      "addresses": { 
+        "address": String, 
+        "display": String, 
+        "mediaType": String, 
+        "type": String, 
+        "extension": String, 
+      },  
+      "state": String, 
+      "title": String, 
+      "username": String, 
+      "manager": User, 
+      "images": { 
+        "resolution": String, 
+        "imageUri": String, 
+      },  
+      "version": Number, 
+      "routingStatus": { 
+        "userId": String, 
+        "status": String, 
+        "startTime": Date, 
+      },  
+      "presence": { 
+        "id": String, 
+        "name": String, 
+        "source": String, 
+        "primary": Boolean, 
+        "presenceDefinition": { 
+          "id": String, 
+          "systemPresence": String, 
+          "selfUri": String, 
+        },  
+        "message": String, 
+        "modifiedDate": Date, 
+        "selfUri": String, 
+      },  
+      "conversationSummary": { 
+        "userId": String, 
+        "call": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "callback": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "email": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "message": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "chat": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "socialExpression": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "video": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+      },  
+      "outOfOffice": { 
+        "id": String, 
+        "name": String, 
+        "user": User, 
+        "startDate": Date, 
+        "endDate": Date, 
+        "active": Boolean, 
+        "indefinite": Boolean, 
+        "selfUri": String, 
+      },  
+      "geolocation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "primary": Boolean, 
+        "latitude": Number, 
+        "longitude": Number, 
+        "country": String, 
+        "region": String, 
+        "city": String, 
+        "locations": { 
+          "id": String, 
+          "name": String, 
+          "address": { 
+            "city": String, 
+            "country": String, 
+            "countryName": String, 
+            "state": String, 
+            "street1": String, 
+            "street2": String, 
+            "zipcode": String, 
+          },  
+          "addressVerified": Boolean, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
+          "state": String, 
+          "version": Number, 
+          "path": [String], 
+          "selfUri": String, 
+        },  
+        "selfUri": String, 
+      },  
+      "station": { 
+        "associatedStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "effectiveStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "defaultStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "lastAssociatedStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+      },  
+      "authorization": { 
+        "roles": { 
+          "id": String, 
+          "name": String, 
+        },  
+        "permissions": [String], 
+        "permissionPolicies": { 
+          "id": String, 
+          "domain": String, 
+          "entityName": String, 
+          "policyName": String, 
+          "policyDescription": String, 
+          "actionSetKey": String, 
+          "allowConditions": Boolean, 
+          "resourceConditionNode": { 
+            "variableName": String, 
+            "conjunction": String, 
+            "operator": String, 
+            "operands": { 
+              "type": String, 
+              "value": String, 
+            },  
+            "terms": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+          },  
+          "namedResources": [String], 
+          "resourceCondition": String, 
+          "actionSet": [String], 
+        },  
+      },  
+      "profileSkills": [String], 
+      "locations": { 
+        "id": String, 
+        "floorplanId": String, 
+        "coordinates": {String: Number}, 
+        "notes": String, 
+        "locationDefinition": { 
+          "id": String, 
+          "name": String, 
+          "address": { 
+            "city": String, 
+            "country": String, 
+            "countryName": String, 
+            "state": String, 
+            "street1": String, 
+            "street2": String, 
+            "zipcode": String, 
+          },  
+          "addressVerified": Boolean, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
+          "state": String, 
+          "version": Number, 
+          "path": [String], 
+          "selfUri": String, 
+        },  
+      },  
+      "groups": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
+        "state": String, 
+        "version": Number, 
+        "type": String, 
+        "images": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "addresses": { 
+          "address": String, 
+          "display": String, 
+          "type": String, 
+          "mediaType": String, 
+        },  
+        "rulesVisible": Boolean, 
+        "visibility": String, 
+        "owners": User, 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "errorMessage": String, 
+    "errorCode": String, 
+    "errorDetails": { 
+      "errorCode": String, 
+      "fieldName": String, 
+      "entityId": String, 
+      "entityName": String, 
+    },  
+    "errorMessageParams": {String: String}, 
+    "actionName": String, 
+    "actionStatus": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3808,10 +5651,9 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ArchitectApi();
 
-var opts = { 
-  'body': {} // Object | 
-};
-apiInstance.postFlows(opts)
+var body = {}; // Object | 
+
+apiInstance.postFlows(body)
   .then(function(data) {
     console.log(`postFlows success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3827,7 +5669,7 @@ apiInstance.postFlows(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3848,9 +5690,12 @@ Asynchronous.  Notification topic: v2.flows.{flowId}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3902,9 +5747,12 @@ Check-out flow
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3956,9 +5804,12 @@ Deactivate flow
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4010,9 +5861,12 @@ Asynchronous.  Notification topic: v2.flows.{flowId}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4068,9 +5922,12 @@ Revert flow
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4124,7 +5981,9 @@ Requires ANY permissions:
 
 * architect:user:admin
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4178,7 +6037,9 @@ Requires ANY permissions:
 
 * architect:datatable:add
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4235,7 +6096,46 @@ Requires ANY permissions:
 
 * architect:datatable:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyDataTableExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#DataTableExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+DataTable <a style="cursor: pointer" onclick="copyDataTableExample()">Copy</a>
+
+<div id="DataTableExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "description": String, 
+  "schema": { 
+    "id": String, 
+    "$schema": String, 
+    "title": String, 
+    "description": String, 
+    "type": String, 
+    "required": [String], 
+    "properties": {String: Object}, 
+    "additionalProperties": Object, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4275,7 +6175,7 @@ apiInstance.postFlowsDatatables(body)
 
 <a name="putArchitectEmergencygroup"></a>
 
-# EmergencyGroup putArchitectEmergencygroup(emergencyGroupId, opts)
+# EmergencyGroup putArchitectEmergencygroup(emergencyGroupId, body)
 
 
 
@@ -4289,7 +6189,57 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyEmergencyGroupExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#EmergencyGroupExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+EmergencyGroup <a style="cursor: pointer" onclick="copyEmergencyGroupExample()">Copy</a>
+
+<div id="EmergencyGroupExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "description": String, 
+  "version": Number, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "modifiedBy": String, 
+  "createdBy": String, 
+  "state": String, 
+  "modifiedByApp": String, 
+  "createdByApp": String, 
+  "enabled": Boolean, 
+  "emergencyCallFlows": { 
+    "emergencyFlow": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+    "ivrs": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4304,10 +6254,9 @@ var apiInstance = new platformClient.ArchitectApi();
 
 var emergencyGroupId = "emergencyGroupId_example"; // String | Emergency group ID
 
-var opts = { 
-  'body': {} // Object | 
-};
-apiInstance.putArchitectEmergencygroup(emergencyGroupId, opts)
+var body = {}; // Object | 
+
+apiInstance.putArchitectEmergencygroup(emergencyGroupId, body)
   .then(function(data) {
     console.log(`putArchitectEmergencygroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4324,7 +6273,7 @@ apiInstance.putArchitectEmergencygroup(emergencyGroupId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **emergencyGroupId** | **String** | Emergency group ID |  |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4333,7 +6282,7 @@ apiInstance.putArchitectEmergencygroup(emergencyGroupId, opts)
 
 <a name="putArchitectIvr"></a>
 
-# IVR putArchitectIvr(ivrId, opts)
+# IVR putArchitectIvr(ivrId, body)
 
 
 
@@ -4347,7 +6296,65 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyIVRExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#IVRExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+IVR <a style="cursor: pointer" onclick="copyIVRExample()">Copy</a>
+
+<div id="IVRExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "description": String, 
+  "version": Number, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "modifiedBy": String, 
+  "createdBy": String, 
+  "state": String, 
+  "modifiedByApp": String, 
+  "createdByApp": String, 
+  "dnis": [String], 
+  "openHoursFlow": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "closedHoursFlow": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "holidayHoursFlow": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "scheduleGroup": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4362,10 +6369,9 @@ var apiInstance = new platformClient.ArchitectApi();
 
 var ivrId = "ivrId_example"; // String | IVR id
 
-var opts = { 
-  'body': {} // Object | 
-};
-apiInstance.putArchitectIvr(ivrId, opts)
+var body = {}; // Object | 
+
+apiInstance.putArchitectIvr(ivrId, body)
   .then(function(data) {
     console.log(`putArchitectIvr success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4382,7 +6388,7 @@ apiInstance.putArchitectIvr(ivrId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ivrId** | **String** | IVR id |  |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4391,7 +6397,7 @@ apiInstance.putArchitectIvr(ivrId, opts)
 
 <a name="putArchitectPrompt"></a>
 
-# Prompt putArchitectPrompt(promptId, opts)
+# Prompt putArchitectPrompt(promptId, body)
 
 
 
@@ -4403,9 +6409,374 @@ Update specified user prompt
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyPromptExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#PromptExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Prompt <a style="cursor: pointer" onclick="copyPromptExample()">Copy</a>
+
+<div id="PromptExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "description": String, 
+  "resources": { 
+    "id": String, 
+    "name": String, 
+    "promptId": String, 
+    "language": String, 
+    "mediaUri": String, 
+    "ttsString": String, 
+    "uploadStatus": String, 
+    "uploadUri": String, 
+    "languageDefault": Boolean, 
+    "tags": {String: [String]}, 
+    "durationSeconds": Number, 
+    "selfUri": String, 
+  },  
+  "currentOperation": { 
+    "id": String, 
+    "complete": Boolean, 
+    "user": { 
+      "id": String, 
+      "name": String, 
+      "chat": { 
+        "jabberId": String, 
+      },  
+      "department": String, 
+      "email": String, 
+      "primaryContactInfo": { 
+        "address": String, 
+        "display": String, 
+        "mediaType": String, 
+        "type": String, 
+        "extension": String, 
+      },  
+      "addresses": { 
+        "address": String, 
+        "display": String, 
+        "mediaType": String, 
+        "type": String, 
+        "extension": String, 
+      },  
+      "state": String, 
+      "title": String, 
+      "username": String, 
+      "manager": User, 
+      "images": { 
+        "resolution": String, 
+        "imageUri": String, 
+      },  
+      "version": Number, 
+      "routingStatus": { 
+        "userId": String, 
+        "status": String, 
+        "startTime": Date, 
+      },  
+      "presence": { 
+        "id": String, 
+        "name": String, 
+        "source": String, 
+        "primary": Boolean, 
+        "presenceDefinition": { 
+          "id": String, 
+          "systemPresence": String, 
+          "selfUri": String, 
+        },  
+        "message": String, 
+        "modifiedDate": Date, 
+        "selfUri": String, 
+      },  
+      "conversationSummary": { 
+        "userId": String, 
+        "call": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "callback": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "email": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "message": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "chat": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "socialExpression": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "video": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+      },  
+      "outOfOffice": { 
+        "id": String, 
+        "name": String, 
+        "user": User, 
+        "startDate": Date, 
+        "endDate": Date, 
+        "active": Boolean, 
+        "indefinite": Boolean, 
+        "selfUri": String, 
+      },  
+      "geolocation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "primary": Boolean, 
+        "latitude": Number, 
+        "longitude": Number, 
+        "country": String, 
+        "region": String, 
+        "city": String, 
+        "locations": { 
+          "id": String, 
+          "name": String, 
+          "address": { 
+            "city": String, 
+            "country": String, 
+            "countryName": String, 
+            "state": String, 
+            "street1": String, 
+            "street2": String, 
+            "zipcode": String, 
+          },  
+          "addressVerified": Boolean, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
+          "state": String, 
+          "version": Number, 
+          "path": [String], 
+          "selfUri": String, 
+        },  
+        "selfUri": String, 
+      },  
+      "station": { 
+        "associatedStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "effectiveStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "defaultStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "lastAssociatedStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+      },  
+      "authorization": { 
+        "roles": { 
+          "id": String, 
+          "name": String, 
+        },  
+        "permissions": [String], 
+        "permissionPolicies": { 
+          "id": String, 
+          "domain": String, 
+          "entityName": String, 
+          "policyName": String, 
+          "policyDescription": String, 
+          "actionSetKey": String, 
+          "allowConditions": Boolean, 
+          "resourceConditionNode": { 
+            "variableName": String, 
+            "conjunction": String, 
+            "operator": String, 
+            "operands": { 
+              "type": String, 
+              "value": String, 
+            },  
+            "terms": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+          },  
+          "namedResources": [String], 
+          "resourceCondition": String, 
+          "actionSet": [String], 
+        },  
+      },  
+      "profileSkills": [String], 
+      "locations": { 
+        "id": String, 
+        "floorplanId": String, 
+        "coordinates": {String: Number}, 
+        "notes": String, 
+        "locationDefinition": { 
+          "id": String, 
+          "name": String, 
+          "address": { 
+            "city": String, 
+            "country": String, 
+            "countryName": String, 
+            "state": String, 
+            "street1": String, 
+            "street2": String, 
+            "zipcode": String, 
+          },  
+          "addressVerified": Boolean, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
+          "state": String, 
+          "version": Number, 
+          "path": [String], 
+          "selfUri": String, 
+        },  
+      },  
+      "groups": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
+        "state": String, 
+        "version": Number, 
+        "type": String, 
+        "images": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "addresses": { 
+          "address": String, 
+          "display": String, 
+          "type": String, 
+          "mediaType": String, 
+        },  
+        "rulesVisible": Boolean, 
+        "visibility": String, 
+        "owners": User, 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "errorMessage": String, 
+    "errorCode": String, 
+    "errorDetails": { 
+      "errorCode": String, 
+      "fieldName": String, 
+      "entityId": String, 
+      "entityName": String, 
+    },  
+    "errorMessageParams": {String: String}, 
+    "actionName": String, 
+    "actionStatus": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4420,10 +6791,9 @@ var apiInstance = new platformClient.ArchitectApi();
 
 var promptId = "promptId_example"; // String | Prompt ID
 
-var opts = { 
-  'body': {} // Object | 
-};
-apiInstance.putArchitectPrompt(promptId, opts)
+var body = {}; // Object | 
+
+apiInstance.putArchitectPrompt(promptId, body)
   .then(function(data) {
     console.log(`putArchitectPrompt success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4440,7 +6810,7 @@ apiInstance.putArchitectPrompt(promptId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | Prompt ID |  |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4449,7 +6819,7 @@ apiInstance.putArchitectPrompt(promptId, opts)
 
 <a name="putArchitectPromptResource"></a>
 
-# PromptAsset putArchitectPromptResource(promptId, languageCode, opts)
+# PromptAsset putArchitectPromptResource(promptId, languageCode, body)
 
 
 
@@ -4461,9 +6831,47 @@ Update specified user prompt resource
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyPromptAssetExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#PromptAssetExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+PromptAsset <a style="cursor: pointer" onclick="copyPromptAssetExample()">Copy</a>
+
+<div id="PromptAssetExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "promptId": String, 
+  "language": String, 
+  "mediaUri": String, 
+  "ttsString": String, 
+  "uploadStatus": String, 
+  "uploadUri": String, 
+  "languageDefault": Boolean, 
+  "tags": {String: [String]}, 
+  "durationSeconds": Number, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4480,10 +6888,9 @@ var promptId = "promptId_example"; // String | Prompt ID
 
 var languageCode = "languageCode_example"; // String | Language
 
-var opts = { 
-  'body': {} // Object | 
-};
-apiInstance.putArchitectPromptResource(promptId, languageCode, opts)
+var body = {}; // Object | 
+
+apiInstance.putArchitectPromptResource(promptId, languageCode, body)
   .then(function(data) {
     console.log(`putArchitectPromptResource success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4501,7 +6908,7 @@ apiInstance.putArchitectPromptResource(promptId, languageCode, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | Prompt ID |  |
  **languageCode** | **String** | Language |  |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4510,7 +6917,7 @@ apiInstance.putArchitectPromptResource(promptId, languageCode, opts)
 
 <a name="putArchitectSchedule"></a>
 
-# Schedule putArchitectSchedule(scheduleId, opts)
+# Schedule putArchitectSchedule(scheduleId, body)
 
 
 
@@ -4524,7 +6931,47 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyScheduleExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ScheduleExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Schedule <a style="cursor: pointer" onclick="copyScheduleExample()">Copy</a>
+
+<div id="ScheduleExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "description": String, 
+  "version": Number, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "modifiedBy": String, 
+  "createdBy": String, 
+  "state": String, 
+  "modifiedByApp": String, 
+  "createdByApp": String, 
+  "start": Date, 
+  "end": Date, 
+  "rrule": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4539,10 +6986,9 @@ var apiInstance = new platformClient.ArchitectApi();
 
 var scheduleId = "scheduleId_example"; // String | Schedule ID
 
-var opts = { 
-  'body': {} // Object | 
-};
-apiInstance.putArchitectSchedule(scheduleId, opts)
+var body = {}; // Object | 
+
+apiInstance.putArchitectSchedule(scheduleId, body)
   .then(function(data) {
     console.log(`putArchitectSchedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4559,7 +7005,7 @@ apiInstance.putArchitectSchedule(scheduleId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **scheduleId** | **String** | Schedule ID |  |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4568,7 +7014,7 @@ apiInstance.putArchitectSchedule(scheduleId, opts)
 
 <a name="putArchitectSchedulegroup"></a>
 
-# ScheduleGroup putArchitectSchedulegroup(scheduleGroupId, opts)
+# ScheduleGroup putArchitectSchedulegroup(scheduleGroupId, body)
 
 
 
@@ -4582,7 +7028,60 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyScheduleGroupExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ScheduleGroupExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ScheduleGroup <a style="cursor: pointer" onclick="copyScheduleGroupExample()">Copy</a>
+
+<div id="ScheduleGroupExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "description": String, 
+  "version": Number, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "modifiedBy": String, 
+  "createdBy": String, 
+  "state": String, 
+  "modifiedByApp": String, 
+  "createdByApp": String, 
+  "timeZone": String, 
+  "openSchedules": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "closedSchedules": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "holidaySchedules": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4597,10 +7096,9 @@ var apiInstance = new platformClient.ArchitectApi();
 
 var scheduleGroupId = "scheduleGroupId_example"; // String | Schedule group ID
 
-var opts = { 
-  'body': {} // Object | 
-};
-apiInstance.putArchitectSchedulegroup(scheduleGroupId, opts)
+var body = {}; // Object | 
+
+apiInstance.putArchitectSchedulegroup(scheduleGroupId, body)
   .then(function(data) {
     console.log(`putArchitectSchedulegroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4617,7 +7115,7 @@ apiInstance.putArchitectSchedulegroup(scheduleGroupId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **scheduleGroupId** | **String** | Schedule group ID |  |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4626,7 +7124,7 @@ apiInstance.putArchitectSchedulegroup(scheduleGroupId, opts)
 
 <a name="putArchitectSystempromptResource"></a>
 
-# SystemPromptAsset putArchitectSystempromptResource(promptId, languageCode, opts)
+# SystemPromptAsset putArchitectSystempromptResource(promptId, languageCode, body)
 
 
 
@@ -4638,9 +7136,48 @@ Updates a system prompt resource override.
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copySystemPromptAssetExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#SystemPromptAssetExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+SystemPromptAsset <a style="cursor: pointer" onclick="copySystemPromptAssetExample()">Copy</a>
+
+<div id="SystemPromptAssetExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "promptId": String, 
+  "language": String, 
+  "durationSeconds": Number, 
+  "mediaUri": String, 
+  "ttsString": String, 
+  "uploadUri": String, 
+  "uploadStatus": String, 
+  "hasDefault": Boolean, 
+  "languageDefault": Boolean, 
+  "tags": {String: [String]}, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4657,10 +7194,9 @@ var promptId = "promptId_example"; // String | Prompt ID
 
 var languageCode = "languageCode_example"; // String | Language
 
-var opts = { 
-  'body': {} // Object | 
-};
-apiInstance.putArchitectSystempromptResource(promptId, languageCode, opts)
+var body = {}; // Object | 
+
+apiInstance.putArchitectSystempromptResource(promptId, languageCode, body)
   .then(function(data) {
     console.log(`putArchitectSystempromptResource success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4678,7 +7214,7 @@ apiInstance.putArchitectSystempromptResource(promptId, languageCode, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | Prompt ID |  |
  **languageCode** | **String** | Language |  |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4687,7 +7223,7 @@ apiInstance.putArchitectSystempromptResource(promptId, languageCode, opts)
 
 <a name="putFlow"></a>
 
-# Flow putFlow(flowId, opts)
+# Flow putFlow(flowId, body)
 
 
 
@@ -4699,9 +7235,1043 @@ Update flow
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyFlowExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#FlowExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Flow <a style="cursor: pointer" onclick="copyFlowExample()">Copy</a>
+
+<div id="FlowExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "description": String, 
+  "type": String, 
+  "lockedUser": { 
+    "id": String, 
+    "name": String, 
+    "chat": { 
+      "jabberId": String, 
+    },  
+    "department": String, 
+    "email": String, 
+    "primaryContactInfo": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "addresses": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "state": String, 
+    "title": String, 
+    "username": String, 
+    "manager": User, 
+    "images": { 
+      "resolution": String, 
+      "imageUri": String, 
+    },  
+    "version": Number, 
+    "routingStatus": { 
+      "userId": String, 
+      "status": String, 
+      "startTime": Date, 
+    },  
+    "presence": { 
+      "id": String, 
+      "name": String, 
+      "source": String, 
+      "primary": Boolean, 
+      "presenceDefinition": { 
+        "id": String, 
+        "systemPresence": String, 
+        "selfUri": String, 
+      },  
+      "message": String, 
+      "modifiedDate": Date, 
+      "selfUri": String, 
+    },  
+    "conversationSummary": { 
+      "userId": String, 
+      "call": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "callback": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "email": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "message": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "chat": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "socialExpression": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "video": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+    },  
+    "outOfOffice": { 
+      "id": String, 
+      "name": String, 
+      "user": User, 
+      "startDate": Date, 
+      "endDate": Date, 
+      "active": Boolean, 
+      "indefinite": Boolean, 
+      "selfUri": String, 
+    },  
+    "geolocation": { 
+      "id": String, 
+      "name": String, 
+      "type": String, 
+      "primary": Boolean, 
+      "latitude": Number, 
+      "longitude": Number, 
+      "country": String, 
+      "region": String, 
+      "city": String, 
+      "locations": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "station": { 
+      "associatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "effectiveStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "defaultStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "lastAssociatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+    },  
+    "authorization": { 
+      "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "permissions": [String], 
+      "permissionPolicies": { 
+        "id": String, 
+        "domain": String, 
+        "entityName": String, 
+        "policyName": String, 
+        "policyDescription": String, 
+        "actionSetKey": String, 
+        "allowConditions": Boolean, 
+        "resourceConditionNode": { 
+          "variableName": String, 
+          "conjunction": String, 
+          "operator": String, 
+          "operands": { 
+            "type": String, 
+            "value": String, 
+          },  
+          "terms": { 
+            "variableName": String, 
+            "conjunction": String, 
+            "operator": String, 
+            "operands": { 
+              "type": String, 
+              "value": String, 
+            },  
+            "terms": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+          },  
+        },  
+        "namedResources": [String], 
+        "resourceCondition": String, 
+        "actionSet": [String], 
+      },  
+    },  
+    "profileSkills": [String], 
+    "locations": { 
+      "id": String, 
+      "floorplanId": String, 
+      "coordinates": {String: Number}, 
+      "notes": String, 
+      "locationDefinition": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+    },  
+    "groups": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "state": String, 
+      "version": Number, 
+      "type": String, 
+      "images": { 
+        "resolution": String, 
+        "imageUri": String, 
+      },  
+      "addresses": { 
+        "address": String, 
+        "display": String, 
+        "type": String, 
+        "mediaType": String, 
+      },  
+      "rulesVisible": Boolean, 
+      "visibility": String, 
+      "owners": User, 
+      "selfUri": String, 
+    },  
+    "selfUri": String, 
+  },  
+  "active": Boolean, 
+  "system": Boolean, 
+  "deleted": Boolean, 
+  "publishedVersion": { 
+    "id": String, 
+    "name": String, 
+    "commitVersion": String, 
+    "configurationVersion": String, 
+    "type": String, 
+    "secure": Boolean, 
+    "createdBy": User, 
+    "configurationUri": String, 
+    "dateCreated": Number, 
+    "generationId": String, 
+    "publishResultUri": String, 
+    "selfUri": String, 
+  },  
+  "savedVersion": { 
+    "id": String, 
+    "name": String, 
+    "commitVersion": String, 
+    "configurationVersion": String, 
+    "type": String, 
+    "secure": Boolean, 
+    "createdBy": User, 
+    "configurationUri": String, 
+    "dateCreated": Number, 
+    "generationId": String, 
+    "publishResultUri": String, 
+    "selfUri": String, 
+  },  
+  "inputSchema": Object, 
+  "outputSchema": Object, 
+  "checkedInVersion": { 
+    "id": String, 
+    "name": String, 
+    "commitVersion": String, 
+    "configurationVersion": String, 
+    "type": String, 
+    "secure": Boolean, 
+    "createdBy": User, 
+    "configurationUri": String, 
+    "dateCreated": Number, 
+    "generationId": String, 
+    "publishResultUri": String, 
+    "selfUri": String, 
+  },  
+  "publishedBy": { 
+    "id": String, 
+    "name": String, 
+    "chat": { 
+      "jabberId": String, 
+    },  
+    "department": String, 
+    "email": String, 
+    "primaryContactInfo": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "addresses": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "state": String, 
+    "title": String, 
+    "username": String, 
+    "manager": User, 
+    "images": { 
+      "resolution": String, 
+      "imageUri": String, 
+    },  
+    "version": Number, 
+    "routingStatus": { 
+      "userId": String, 
+      "status": String, 
+      "startTime": Date, 
+    },  
+    "presence": { 
+      "id": String, 
+      "name": String, 
+      "source": String, 
+      "primary": Boolean, 
+      "presenceDefinition": { 
+        "id": String, 
+        "systemPresence": String, 
+        "selfUri": String, 
+      },  
+      "message": String, 
+      "modifiedDate": Date, 
+      "selfUri": String, 
+    },  
+    "conversationSummary": { 
+      "userId": String, 
+      "call": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "callback": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "email": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "message": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "chat": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "socialExpression": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "video": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+    },  
+    "outOfOffice": { 
+      "id": String, 
+      "name": String, 
+      "user": User, 
+      "startDate": Date, 
+      "endDate": Date, 
+      "active": Boolean, 
+      "indefinite": Boolean, 
+      "selfUri": String, 
+    },  
+    "geolocation": { 
+      "id": String, 
+      "name": String, 
+      "type": String, 
+      "primary": Boolean, 
+      "latitude": Number, 
+      "longitude": Number, 
+      "country": String, 
+      "region": String, 
+      "city": String, 
+      "locations": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "station": { 
+      "associatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "effectiveStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "defaultStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "lastAssociatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+    },  
+    "authorization": { 
+      "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "permissions": [String], 
+      "permissionPolicies": { 
+        "id": String, 
+        "domain": String, 
+        "entityName": String, 
+        "policyName": String, 
+        "policyDescription": String, 
+        "actionSetKey": String, 
+        "allowConditions": Boolean, 
+        "resourceConditionNode": { 
+          "variableName": String, 
+          "conjunction": String, 
+          "operator": String, 
+          "operands": { 
+            "type": String, 
+            "value": String, 
+          },  
+          "terms": { 
+            "variableName": String, 
+            "conjunction": String, 
+            "operator": String, 
+            "operands": { 
+              "type": String, 
+              "value": String, 
+            },  
+            "terms": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+          },  
+        },  
+        "namedResources": [String], 
+        "resourceCondition": String, 
+        "actionSet": [String], 
+      },  
+    },  
+    "profileSkills": [String], 
+    "locations": { 
+      "id": String, 
+      "floorplanId": String, 
+      "coordinates": {String: Number}, 
+      "notes": String, 
+      "locationDefinition": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+    },  
+    "groups": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "state": String, 
+      "version": Number, 
+      "type": String, 
+      "images": { 
+        "resolution": String, 
+        "imageUri": String, 
+      },  
+      "addresses": { 
+        "address": String, 
+        "display": String, 
+        "type": String, 
+        "mediaType": String, 
+      },  
+      "rulesVisible": Boolean, 
+      "visibility": String, 
+      "owners": User, 
+      "selfUri": String, 
+    },  
+    "selfUri": String, 
+  },  
+  "currentOperation": { 
+    "id": String, 
+    "complete": Boolean, 
+    "user": { 
+      "id": String, 
+      "name": String, 
+      "chat": { 
+        "jabberId": String, 
+      },  
+      "department": String, 
+      "email": String, 
+      "primaryContactInfo": { 
+        "address": String, 
+        "display": String, 
+        "mediaType": String, 
+        "type": String, 
+        "extension": String, 
+      },  
+      "addresses": { 
+        "address": String, 
+        "display": String, 
+        "mediaType": String, 
+        "type": String, 
+        "extension": String, 
+      },  
+      "state": String, 
+      "title": String, 
+      "username": String, 
+      "manager": User, 
+      "images": { 
+        "resolution": String, 
+        "imageUri": String, 
+      },  
+      "version": Number, 
+      "routingStatus": { 
+        "userId": String, 
+        "status": String, 
+        "startTime": Date, 
+      },  
+      "presence": { 
+        "id": String, 
+        "name": String, 
+        "source": String, 
+        "primary": Boolean, 
+        "presenceDefinition": { 
+          "id": String, 
+          "systemPresence": String, 
+          "selfUri": String, 
+        },  
+        "message": String, 
+        "modifiedDate": Date, 
+        "selfUri": String, 
+      },  
+      "conversationSummary": { 
+        "userId": String, 
+        "call": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "callback": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "email": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "message": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "chat": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "socialExpression": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "video": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+      },  
+      "outOfOffice": { 
+        "id": String, 
+        "name": String, 
+        "user": User, 
+        "startDate": Date, 
+        "endDate": Date, 
+        "active": Boolean, 
+        "indefinite": Boolean, 
+        "selfUri": String, 
+      },  
+      "geolocation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "primary": Boolean, 
+        "latitude": Number, 
+        "longitude": Number, 
+        "country": String, 
+        "region": String, 
+        "city": String, 
+        "locations": { 
+          "id": String, 
+          "name": String, 
+          "address": { 
+            "city": String, 
+            "country": String, 
+            "countryName": String, 
+            "state": String, 
+            "street1": String, 
+            "street2": String, 
+            "zipcode": String, 
+          },  
+          "addressVerified": Boolean, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
+          "state": String, 
+          "version": Number, 
+          "path": [String], 
+          "selfUri": String, 
+        },  
+        "selfUri": String, 
+      },  
+      "station": { 
+        "associatedStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "effectiveStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "defaultStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "lastAssociatedStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+      },  
+      "authorization": { 
+        "roles": { 
+          "id": String, 
+          "name": String, 
+        },  
+        "permissions": [String], 
+        "permissionPolicies": { 
+          "id": String, 
+          "domain": String, 
+          "entityName": String, 
+          "policyName": String, 
+          "policyDescription": String, 
+          "actionSetKey": String, 
+          "allowConditions": Boolean, 
+          "resourceConditionNode": { 
+            "variableName": String, 
+            "conjunction": String, 
+            "operator": String, 
+            "operands": { 
+              "type": String, 
+              "value": String, 
+            },  
+            "terms": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+          },  
+          "namedResources": [String], 
+          "resourceCondition": String, 
+          "actionSet": [String], 
+        },  
+      },  
+      "profileSkills": [String], 
+      "locations": { 
+        "id": String, 
+        "floorplanId": String, 
+        "coordinates": {String: Number}, 
+        "notes": String, 
+        "locationDefinition": { 
+          "id": String, 
+          "name": String, 
+          "address": { 
+            "city": String, 
+            "country": String, 
+            "countryName": String, 
+            "state": String, 
+            "street1": String, 
+            "street2": String, 
+            "zipcode": String, 
+          },  
+          "addressVerified": Boolean, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
+          "state": String, 
+          "version": Number, 
+          "path": [String], 
+          "selfUri": String, 
+        },  
+      },  
+      "groups": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
+        "state": String, 
+        "version": Number, 
+        "type": String, 
+        "images": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "addresses": { 
+          "address": String, 
+          "display": String, 
+          "type": String, 
+          "mediaType": String, 
+        },  
+        "rulesVisible": Boolean, 
+        "visibility": String, 
+        "owners": User, 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "errorMessage": String, 
+    "errorCode": String, 
+    "errorDetails": { 
+      "errorCode": String, 
+      "fieldName": String, 
+      "entityId": String, 
+      "entityName": String, 
+    },  
+    "errorMessageParams": {String: String}, 
+    "actionName": String, 
+    "actionStatus": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4716,10 +8286,9 @@ var apiInstance = new platformClient.ArchitectApi();
 
 var flowId = "flowId_example"; // String | Flow ID
 
-var opts = { 
-  'body': {} // Object | 
-};
-apiInstance.putFlow(flowId, opts)
+var body = {}; // Object | 
+
+apiInstance.putFlow(flowId, body)
   .then(function(data) {
     console.log(`putFlow success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4736,7 +8305,7 @@ apiInstance.putFlow(flowId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **flowId** | **String** | Flow ID |  |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4759,7 +8328,46 @@ Requires ANY permissions:
 
 * architect:datatable:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyDataTableExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#DataTableExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+DataTable <a style="cursor: pointer" onclick="copyDataTableExample()">Copy</a>
+
+<div id="DataTableExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "description": String, 
+  "schema": { 
+    "id": String, 
+    "$schema": String, 
+    "title": String, 
+    "description": String, 
+    "type": String, 
+    "required": [String], 
+    "properties": {String: Object}, 
+    "additionalProperties": Object, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4819,7 +8427,9 @@ Requires ANY permissions:
 
 * architect:datatable:edit
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

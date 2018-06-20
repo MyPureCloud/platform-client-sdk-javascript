@@ -48,7 +48,9 @@ Requires ANY permissions:
 
 * authorization:orgTrustee:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -100,9 +102,13 @@ Delete Trustee User
 
 Requires ANY permissions: 
 
-* authorization:orgTrusteeUser:delete* admin* role_manager
+* authorization:orgTrusteeUser:delete
+* admin
+* role_manager
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -157,9 +163,13 @@ Delete Trustee User Roles
 
 Requires ANY permissions: 
 
-* authorization:orgTrusteeUser:delete* admin* role_manager
+* authorization:orgTrusteeUser:delete
+* admin
+* role_manager
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -216,7 +226,9 @@ Requires ANY permissions:
 
 * authorization:orgTrustor:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -270,7 +282,9 @@ Requires ANY permissions:
 
 * authorization:orgTrusteeUser:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -325,9 +339,12 @@ Get Pairing Info
 
 Requires ANY permissions: 
 
-* authorization:orgTrustee:view* authorization:orgTrustor:view
+* authorization:orgTrustee:view
+* authorization:orgTrustor:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -381,7 +398,9 @@ Requires ANY permissions:
 
 * authorization:orgTrustee:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -435,7 +454,9 @@ Requires ANY permissions:
 
 * authorization:orgTrusteeUser:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -492,7 +513,9 @@ Requires ANY permissions:
 
 * authorization:orgTrusteeUser:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -549,7 +572,9 @@ Requires ANY permissions:
 
 * authorization:orgTrusteeUser:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -609,7 +634,9 @@ Requires ANY permissions:
 
 * authorization:orgTrustee:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -666,7 +693,9 @@ Requires ANY permissions:
 
 * authorization:orgTrustor:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -720,7 +749,9 @@ Requires ANY permissions:
 
 * authorization:orgTrusteeUser:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -777,7 +808,9 @@ Requires ANY permissions:
 
 * authorization:orgTrusteeUser:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -837,7 +870,9 @@ Requires ANY permissions:
 
 * authorization:orgTrustor:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -894,7 +929,34 @@ Requires ANY permissions:
 
 * authorization:orgTrustee:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyTrustRequestCreateExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#TrustRequestCreateExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+TrustRequestCreate <a style="cursor: pointer" onclick="copyTrustRequestCreateExample()">Copy</a>
+
+<div id="TrustRequestCreateExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "userIds": [String], 
+  "groupIds": [String], 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -946,9 +1008,38 @@ Add a user to the trust.
 
 Requires ALL permissions: 
 
-* authorization:orgTrusteeUser:add* admin* role_manager
+* authorization:orgTrusteeUser:add
+* admin
+* role_manager
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyTrustMemberCreateExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#TrustMemberCreateExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+TrustMemberCreate <a style="cursor: pointer" onclick="copyTrustMemberCreateExample()">Copy</a>
+
+<div id="TrustMemberCreateExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "roleIds": [String], 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1003,9 +1094,45 @@ Create a new organization authorization trust. This is required to grant other o
 
 Requires ALL permissions: 
 
-* authorization:orgTrustee:add* authorization:orgTrusteeUser:add
+* authorization:orgTrustee:add
+* authorization:orgTrusteeUser:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyTrustCreateExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#TrustCreateExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+TrustCreate <a style="cursor: pointer" onclick="copyTrustCreateExample()">Copy</a>
+
+<div id="TrustCreateExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "pairingId": String, 
+  "enabled": Boolean, 
+  "users": { 
+    "id": String, 
+    "roleIds": [String], 
+  },  
+  "groups": { 
+    "id": String, 
+    "roleIds": [String], 
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1059,7 +1186,47 @@ Requires ANY permissions:
 
 * authorization:audit:view
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyTrusteeAuditQueryRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#TrusteeAuditQueryRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+TrusteeAuditQueryRequest <a style="cursor: pointer" onclick="copyTrusteeAuditQueryRequestExample()">Copy</a>
+
+<div id="TrusteeAuditQueryRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "trusteeOrganizationIds": [String], 
+  "trusteeUserIds": [String], 
+  "startDate": Date, 
+  "endDate": Date, 
+  "queryPhrase": String, 
+  "facets": { 
+    "name": String, 
+    "type": String, 
+  },  
+  "filters": { 
+    "name": String, 
+    "type": String, 
+    "operator": String, 
+    "values": [String], 
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1123,7 +1290,47 @@ Requires ANY permissions:
 
 * authorization:audit:view
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyTrustorAuditQueryRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#TrustorAuditQueryRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+TrustorAuditQueryRequest <a style="cursor: pointer" onclick="copyTrustorAuditQueryRequestExample()">Copy</a>
+
+<div id="TrustorAuditQueryRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "trustorOrganizationId": String, 
+  "trusteeUserIds": [String], 
+  "startDate": Date, 
+  "endDate": Date, 
+  "queryPhrase": String, 
+  "facets": { 
+    "name": String, 
+    "type": String, 
+  },  
+  "filters": { 
+    "name": String, 
+    "type": String, 
+    "operator": String, 
+    "values": [String], 
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1187,7 +1394,687 @@ Requires ANY permissions:
 
 * authorization:orgTrustee:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyTrusteeExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#TrusteeExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Trustee <a style="cursor: pointer" onclick="copyTrusteeExample()">Copy</a>
+
+<div id="TrusteeExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "enabled": Boolean, 
+  "dateCreated": Date, 
+  "createdBy": { 
+    "id": String, 
+    "name": String, 
+    "chat": { 
+      "jabberId": String, 
+    },  
+    "department": String, 
+    "email": String, 
+    "primaryContactInfo": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "addresses": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "state": String, 
+    "title": String, 
+    "username": String, 
+    "manager": { 
+      "id": String, 
+      "name": String, 
+      "chat": { 
+        "jabberId": String, 
+      },  
+      "department": String, 
+      "email": String, 
+      "primaryContactInfo": { 
+        "address": String, 
+        "display": String, 
+        "mediaType": String, 
+        "type": String, 
+        "extension": String, 
+      },  
+      "addresses": { 
+        "address": String, 
+        "display": String, 
+        "mediaType": String, 
+        "type": String, 
+        "extension": String, 
+      },  
+      "state": String, 
+      "title": String, 
+      "username": String, 
+      "manager": User, 
+      "images": { 
+        "resolution": String, 
+        "imageUri": String, 
+      },  
+      "version": Number, 
+      "routingStatus": { 
+        "userId": String, 
+        "status": String, 
+        "startTime": Date, 
+      },  
+      "presence": { 
+        "id": String, 
+        "name": String, 
+        "source": String, 
+        "primary": Boolean, 
+        "presenceDefinition": { 
+          "id": String, 
+          "systemPresence": String, 
+          "selfUri": String, 
+        },  
+        "message": String, 
+        "modifiedDate": Date, 
+        "selfUri": String, 
+      },  
+      "conversationSummary": { 
+        "userId": String, 
+        "call": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "callback": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "email": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "message": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "chat": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "socialExpression": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "video": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+      },  
+      "outOfOffice": { 
+        "id": String, 
+        "name": String, 
+        "user": User, 
+        "startDate": Date, 
+        "endDate": Date, 
+        "active": Boolean, 
+        "indefinite": Boolean, 
+        "selfUri": String, 
+      },  
+      "geolocation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "primary": Boolean, 
+        "latitude": Number, 
+        "longitude": Number, 
+        "country": String, 
+        "region": String, 
+        "city": String, 
+        "locations": { 
+          "id": String, 
+          "name": String, 
+          "address": { 
+            "city": String, 
+            "country": String, 
+            "countryName": String, 
+            "state": String, 
+            "street1": String, 
+            "street2": String, 
+            "zipcode": String, 
+          },  
+          "addressVerified": Boolean, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
+          "state": String, 
+          "version": Number, 
+          "path": [String], 
+          "selfUri": String, 
+        },  
+        "selfUri": String, 
+      },  
+      "station": { 
+        "associatedStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "effectiveStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "defaultStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "lastAssociatedStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+      },  
+      "authorization": { 
+        "roles": { 
+          "id": String, 
+          "name": String, 
+        },  
+        "permissions": [String], 
+        "permissionPolicies": { 
+          "id": String, 
+          "domain": String, 
+          "entityName": String, 
+          "policyName": String, 
+          "policyDescription": String, 
+          "actionSetKey": String, 
+          "allowConditions": Boolean, 
+          "resourceConditionNode": { 
+            "variableName": String, 
+            "conjunction": String, 
+            "operator": String, 
+            "operands": { 
+              "type": String, 
+              "value": String, 
+            },  
+            "terms": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+          },  
+          "namedResources": [String], 
+          "resourceCondition": String, 
+          "actionSet": [String], 
+        },  
+      },  
+      "profileSkills": [String], 
+      "locations": { 
+        "id": String, 
+        "floorplanId": String, 
+        "coordinates": {String: Number}, 
+        "notes": String, 
+        "locationDefinition": { 
+          "id": String, 
+          "name": String, 
+          "address": { 
+            "city": String, 
+            "country": String, 
+            "countryName": String, 
+            "state": String, 
+            "street1": String, 
+            "street2": String, 
+            "zipcode": String, 
+          },  
+          "addressVerified": Boolean, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
+          "state": String, 
+          "version": Number, 
+          "path": [String], 
+          "selfUri": String, 
+        },  
+      },  
+      "groups": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
+        "state": String, 
+        "version": Number, 
+        "type": String, 
+        "images": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "addresses": { 
+          "address": String, 
+          "display": String, 
+          "type": String, 
+          "mediaType": String, 
+        },  
+        "rulesVisible": Boolean, 
+        "visibility": String, 
+        "owners": User, 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "images": { 
+      "resolution": String, 
+      "imageUri": String, 
+    },  
+    "version": Number, 
+    "routingStatus": { 
+      "userId": String, 
+      "status": String, 
+      "startTime": Date, 
+    },  
+    "presence": { 
+      "id": String, 
+      "name": String, 
+      "source": String, 
+      "primary": Boolean, 
+      "presenceDefinition": { 
+        "id": String, 
+        "systemPresence": String, 
+        "selfUri": String, 
+      },  
+      "message": String, 
+      "modifiedDate": Date, 
+      "selfUri": String, 
+    },  
+    "conversationSummary": { 
+      "userId": String, 
+      "call": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "callback": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "email": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "message": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "chat": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "socialExpression": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "video": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+    },  
+    "outOfOffice": { 
+      "id": String, 
+      "name": String, 
+      "user": User, 
+      "startDate": Date, 
+      "endDate": Date, 
+      "active": Boolean, 
+      "indefinite": Boolean, 
+      "selfUri": String, 
+    },  
+    "geolocation": { 
+      "id": String, 
+      "name": String, 
+      "type": String, 
+      "primary": Boolean, 
+      "latitude": Number, 
+      "longitude": Number, 
+      "country": String, 
+      "region": String, 
+      "city": String, 
+      "locations": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "station": { 
+      "associatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "effectiveStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "defaultStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "lastAssociatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+    },  
+    "authorization": { 
+      "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "permissions": [String], 
+      "permissionPolicies": { 
+        "id": String, 
+        "domain": String, 
+        "entityName": String, 
+        "policyName": String, 
+        "policyDescription": String, 
+        "actionSetKey": String, 
+        "allowConditions": Boolean, 
+        "resourceConditionNode": { 
+          "variableName": String, 
+          "conjunction": String, 
+          "operator": String, 
+          "operands": { 
+            "type": String, 
+            "value": String, 
+          },  
+          "terms": { 
+            "variableName": String, 
+            "conjunction": String, 
+            "operator": String, 
+            "operands": { 
+              "type": String, 
+              "value": String, 
+            },  
+            "terms": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+          },  
+        },  
+        "namedResources": [String], 
+        "resourceCondition": String, 
+        "actionSet": [String], 
+      },  
+    },  
+    "profileSkills": [String], 
+    "locations": { 
+      "id": String, 
+      "floorplanId": String, 
+      "coordinates": {String: Number}, 
+      "notes": String, 
+      "locationDefinition": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+    },  
+    "groups": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "state": String, 
+      "version": Number, 
+      "type": String, 
+      "images": { 
+        "resolution": String, 
+        "imageUri": String, 
+      },  
+      "addresses": { 
+        "address": String, 
+        "display": String, 
+        "type": String, 
+        "mediaType": String, 
+      },  
+      "rulesVisible": Boolean, 
+      "visibility": String, 
+      "owners": User, 
+      "selfUri": String, 
+    },  
+    "organization": { 
+      "id": String, 
+      "name": String, 
+      "defaultLanguage": String, 
+      "defaultCountryCode": String, 
+      "thirdPartyOrgName": String, 
+      "thirdPartyURI": String, 
+      "domain": String, 
+      "version": Number, 
+      "state": String, 
+      "defaultSiteId": String, 
+      "supportURI": String, 
+      "voicemailEnabled": Boolean, 
+      "selfUri": String, 
+      "features": {String: Boolean}, 
+    },  
+  },  
+  "organization": { 
+    "id": String, 
+    "name": String, 
+    "defaultLanguage": String, 
+    "defaultCountryCode": String, 
+    "thirdPartyOrgName": String, 
+    "thirdPartyURI": String, 
+    "domain": String, 
+    "version": Number, 
+    "state": String, 
+    "defaultSiteId": String, 
+    "supportURI": String, 
+    "voicemailEnabled": Boolean, 
+    "selfUri": String, 
+    "features": {String: Boolean}, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1242,9 +2129,13 @@ Update Trustee User Roles
 
 Requires ANY permissions: 
 
-* authorization:orgTrusteeUser:edit* admin* role_manager
+* authorization:orgTrusteeUser:edit
+* admin
+* role_manager
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1304,7 +2195,9 @@ Requires ALL permissions:
 
 * authorization:orgTrusteeUser:add
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

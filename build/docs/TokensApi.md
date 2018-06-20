@@ -27,7 +27,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -75,7 +76,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser

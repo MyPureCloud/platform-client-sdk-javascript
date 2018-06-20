@@ -35,7 +35,9 @@ Requires ANY permissions:
 
 * routing:skill:manage
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -89,7 +91,9 @@ Requires ANY permissions:
 
 * routing:skill:manage
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -143,7 +147,9 @@ Requires ANY permissions:
 
 * routing:skill:manage
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -197,7 +203,9 @@ Requires ANY permissions:
 
 * routing:skill:manage
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -258,7 +266,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -306,7 +315,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -360,7 +370,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -414,7 +425,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -468,7 +480,9 @@ Requires ANY permissions:
 
 * routing:skill:manage
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -522,7 +536,38 @@ Requires ANY permissions:
 
 * routing:skill:manage
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyLanguageExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#LanguageExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Language <a style="cursor: pointer" onclick="copyLanguageExample()">Copy</a>
+
+<div id="LanguageExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateModified": Date, 
+  "state": String, 
+  "version": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

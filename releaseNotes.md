@@ -1,139 +1,180 @@
-Platform API version: 2334
+Platform API version: 2373
 
 
 # Major Changes (25 changes)
 
-**PUT /api/v2/externalcontacts/conversations/{conversationId}** (1 change)
+**PUT /api/v2/architect/schedulegroups/{scheduleGroupId}** (1 change)
 
 * Parameter body was made required
 
-**POST /api/v2/externalcontacts/relationships** (1 change)
+**PUT /api/v2/architect/emergencygroups/{emergencyGroupId}** (1 change)
 
 * Parameter body was made required
 
-**GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup** (1 change)
-
-* Response 200 type was changed from Wrapup to AssignedWrapupCode
-
-**PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}** (1 change)
+**PUT /api/v2/architect/prompts/{promptId}** (1 change)
 
 * Parameter body was made required
 
-**GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup** (1 change)
+**GET /api/v2/workforcemanagement/managementunits** (2 changes)
 
-* Response 200 type was changed from Wrapup to AssignedWrapupCode
-
-**GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup** (1 change)
-
-* Response 200 type was changed from Wrapup to AssignedWrapupCode
-
-**GET /api/v2/flows** (1 change)
-
+* Parameter feature was added
 * Parameter divisionId was added
 
-**GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup** (1 change)
-
-* Response 200 type was changed from WrapupCode to AssignedWrapupCode
-
-**POST /api/v2/externalcontacts/contacts** (1 change)
+**POST /api/v2/flows/{flowId}/versions** (1 change)
 
 * Parameter body was made required
 
-**POST /api/v2/externalcontacts/contacts/{contactId}/notes** (1 change)
+**PUT /api/v2/architect/schedules/{scheduleId}** (1 change)
 
 * Parameter body was made required
 
-**PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}** (1 change)
+**POST /api/v2/architect/schedules** (1 change)
 
 * Parameter body was made required
 
-**POST /api/v2/externalcontacts/organizations** (1 change)
+**PUT /api/v2/flows/{flowId}** (1 change)
 
 * Parameter body was made required
 
-**GET /api/v2/flows/divisionviews** (1 change)
-
-* Parameter divisionId was added
-
-**GET /api/v2/routing/queues** (1 change)
-
-* Parameter divisionId was added
-
-**GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup** (1 change)
-
-* Response 200 type was changed from Wrapup to AssignedWrapupCode
-
-**GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup** (1 change)
-
-* Response 200 type was changed from Wrapup to AssignedWrapupCode
-
-**POST /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes** (1 change)
+**POST /api/v2/architect/prompts/{promptId}/resources** (1 change)
 
 * Parameter body was made required
 
-**GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup** (1 change)
-
-* Response 200 type was changed from Wrapup to AssignedWrapupCode
-
-**GET /api/v2/users/{userId}/queues** (1 change)
-
-* Parameter divisionId was added
-
-**PATCH /api/v2/users/{userId}/queues** (1 change)
-
-* Parameter divisionId was added
-
-**PUT /api/v2/externalcontacts/contacts/{contactId}** (1 change)
+**PUT /api/v2/architect/ivrs/{ivrId}** (1 change)
 
 * Parameter body was made required
 
-**PUT /api/v2/externalcontacts/relationships/{relationshipId}** (1 change)
+**POST /api/v2/architect/schedulegroups** (1 change)
 
 * Parameter body was made required
 
-**PUT /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}** (1 change)
+**POST /api/v2/architect/prompts** (1 change)
 
 * Parameter body was made required
 
-**AuthzDivision** (1 change)
+**PUT /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}** (1 change)
 
-* Model AuthzDivision was removed
+* Parameter body was made required
+
+**POST /api/v2/architect/emergencygroups** (1 change)
+
+* Parameter body was made required
+
+**POST /api/v2/architect/systemprompts/{promptId}/resources** (1 change)
+
+* Parameter body was made required
+
+**POST /api/v2/flows** (1 change)
+
+* Parameter body was made required
+
+**POST /api/v2/architect/ivrs** (1 change)
+
+* Parameter body was made required
+
+**PUT /api/v2/architect/prompts/{promptId}/resources/{languageCode}** (1 change)
+
+* Parameter body was made required
+
+**Queue** (1 change)
+
+* Property division was changed from UriReference to Division
+
+**CampaignDivisionView** (1 change)
+
+* Property division was changed from UriReference to Division
+
+**CreateQueueRequest** (1 change)
+
+* Property division was changed from UriReference to Division
+
+**UserQueue** (1 change)
+
+* Property division was changed from UriReference to Division
 
 **Flow** (1 change)
 
-* Property division was changed from AuthzDivision to UriReference
+* Property division was changed from UriReference to Division
+
+**FreeSeatingConfiguration** (1 change)
+
+* Property enabled was removed
 
 
-# Minor Changes (7 changes)
+# Minor Changes (25 changes)
 
-**/api/v2/outbound/campaigns/divisionviews** (2 changes)
+**/api/v2/routing/queues/search** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**AssignedWrapupCode** (1 change)
+**/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**Division** (1 change)
 
 * Model was added
 
-**WebChatConfig** (1 change)
+**MessageDetails** (1 change)
+
+* Optional property stickers was added
+
+**MessageMedia** (3 changes)
+
+* Optional property contentLengthBytes was added
+* Optional property name was added
+* Optional property id was added
+
+**MessageSticker** (1 change)
 
 * Model was added
 
-**WebChatDeployment** (1 change)
+**SurveyForm** (2 changes)
 
-* Optional property webChatConfig was added
+* Optional property headerImageId was added
+* Optional property headerImageUrl was added
 
-**CampaignDivisionView** (1 change)
+**ManagementUnit** (1 change)
+
+* Optional property division was added
+
+**FreeSeatingConfiguration** (1 change)
+
+* Optional property freeSeatingState was added
+
+**FlowDivisionView** (1 change)
+
+* Optional property division was added
+
+**OutboundSettings** (1 change)
+
+* Optional property maxConfigurableCallsPerAgent was added
+
+**EventMessage** (3 changes)
+
+* Enum value CONTACT_COLUMNS_LIMIT_EXCEEDED was added to property code
+* Enum value CONTACT_COLUMN_LENGTH_LIMIT_EXCEEDED was added to property code
+* Enum value CONTACT_DATUM_LENGTH_LIMIT_EXCEEDED was added to property code
+
+**MessageMediaData** (1 change)
 
 * Model was added
 
-**CampaignDivisionViewListing** (1 change)
+**MessageData** (1 change)
 
-* Model was added
+* Optional property stickers was added
+
+**AdditionalMessage** (2 changes)
+
+* Optional property mediaIds was added
+* Optional property stickerIds was added
 
 
-# Point Changes (1 change)
-
-**PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}** (1 change)
-
-* Summary was changed
+# Point Changes (0 changes)

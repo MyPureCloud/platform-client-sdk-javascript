@@ -53,7 +53,9 @@ Requires ANY permissions:
 
 * sso:provider:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -101,7 +103,9 @@ Requires ANY permissions:
 
 * sso:provider:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -149,7 +153,9 @@ Requires ANY permissions:
 
 * sso:provider:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -197,7 +203,9 @@ Requires ANY permissions:
 
 * sso:provider:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -245,7 +253,9 @@ Requires ANY permissions:
 
 * sso:provider:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -293,7 +303,9 @@ Requires ANY permissions:
 
 * sso:provider:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -341,7 +353,9 @@ Requires ANY permissions:
 
 * sso:provider:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -389,7 +403,9 @@ Requires ANY permissions:
 
 * sso:provider:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -437,7 +453,9 @@ Requires ANY permissions:
 
 * sso:provider:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -485,7 +503,9 @@ Requires ANY permissions:
 
 * sso:provider:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -533,7 +553,9 @@ Requires ANY permissions:
 
 * sso:provider:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -581,7 +603,9 @@ Requires ANY permissions:
 
 * sso:provider:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -629,7 +653,9 @@ Requires ANY permissions:
 
 * sso:provider:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -677,7 +703,9 @@ Requires ANY permissions:
 
 * sso:provider:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -725,7 +753,9 @@ Requires ANY permissions:
 
 * sso:provider:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -773,7 +803,9 @@ Requires ANY permissions:
 
 * sso:provider:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -821,7 +853,9 @@ Requires ANY permissions:
 
 * sso:provider:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -869,7 +903,9 @@ Requires ANY permissions:
 
 * sso:provider:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -917,7 +953,9 @@ Requires ANY permissions:
 
 * sso:provider:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -963,9 +1001,43 @@ Update/Create ADFS Identity Provider
 
 Requires ANY permissions: 
 
-* sso:provider:add* sso:provider:edit
+* sso:provider:add
+* sso:provider:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyADFSExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ADFSExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ADFS <a style="cursor: pointer" onclick="copyADFSExample()">Copy</a>
+
+<div id="ADFSExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "relyingPartyIdentifier": String, 
+  "certificate": String, 
+  "issuerURI": String, 
+  "ssoTargetURI": String, 
+  "disabled": Boolean, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1017,9 +1089,42 @@ Update/Create Customer Interaction Center (CIC) Identity Provider
 
 Requires ANY permissions: 
 
-* sso:provider:add* sso:provider:edit
+* sso:provider:add
+* sso:provider:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyCustomerInteractionCenterExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#CustomerInteractionCenterExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+CustomerInteractionCenter <a style="cursor: pointer" onclick="copyCustomerInteractionCenterExample()">Copy</a>
+
+<div id="CustomerInteractionCenterExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "certificate": String, 
+  "issuerURI": String, 
+  "ssoTargetURI": String, 
+  "disabled": Boolean, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1071,9 +1176,43 @@ Update/Create G Suite Identity Provider
 
 Requires ANY permissions: 
 
-* sso:provider:add* sso:provider:edit
+* sso:provider:add
+* sso:provider:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyGSuiteExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#GSuiteExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+GSuite <a style="cursor: pointer" onclick="copyGSuiteExample()">Copy</a>
+
+<div id="GSuiteExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "relyingPartyIdentifier": String, 
+  "certificate": String, 
+  "issuerURI": String, 
+  "ssoTargetURI": String, 
+  "disabled": Boolean, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1125,9 +1264,43 @@ Update/Create IdentityNow Provider
 
 Requires ANY permissions: 
 
-* sso:provider:add* sso:provider:edit
+* sso:provider:add
+* sso:provider:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyIdentityNowExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#IdentityNowExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+IdentityNow <a style="cursor: pointer" onclick="copyIdentityNowExample()">Copy</a>
+
+<div id="IdentityNowExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "relyingPartyIdentifier": String, 
+  "certificate": String, 
+  "issuerURI": String, 
+  "ssoTargetURI": String, 
+  "disabled": Boolean, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1179,9 +1352,42 @@ Update/Create Okta Identity Provider
 
 Requires ANY permissions: 
 
-* sso:provider:add* sso:provider:edit
+* sso:provider:add
+* sso:provider:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyOktaExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#OktaExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Okta <a style="cursor: pointer" onclick="copyOktaExample()">Copy</a>
+
+<div id="OktaExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "certificate": String, 
+  "issuerURI": String, 
+  "ssoTargetURI": String, 
+  "disabled": Boolean, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1233,9 +1439,42 @@ Update/Create OneLogin Identity Provider
 
 Requires ANY permissions: 
 
-* sso:provider:add* sso:provider:edit
+* sso:provider:add
+* sso:provider:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyOneLoginExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#OneLoginExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+OneLogin <a style="cursor: pointer" onclick="copyOneLoginExample()">Copy</a>
+
+<div id="OneLoginExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "certificate": String, 
+  "issuerURI": String, 
+  "ssoTargetURI": String, 
+  "disabled": Boolean, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1287,9 +1526,43 @@ Update/Create Ping Identity Provider
 
 Requires ANY permissions: 
 
-* sso:provider:add* sso:provider:edit
+* sso:provider:add
+* sso:provider:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyPingIdentityExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#PingIdentityExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+PingIdentity <a style="cursor: pointer" onclick="copyPingIdentityExample()">Copy</a>
+
+<div id="PingIdentityExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "relyingPartyIdentifier": String, 
+  "certificate": String, 
+  "issuerURI": String, 
+  "ssoTargetURI": String, 
+  "disabled": Boolean, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1341,9 +1614,39 @@ Update/Create PureCloud Identity Provider
 
 Requires ANY permissions: 
 
-* sso:provider:add* sso:provider:edit
+* sso:provider:add
+* sso:provider:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyPureCloudExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#PureCloudExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+PureCloud <a style="cursor: pointer" onclick="copyPureCloudExample()">Copy</a>
+
+<div id="PureCloudExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "disabled": Boolean, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1395,9 +1698,42 @@ Update/Create Salesforce Identity Provider
 
 Requires ANY permissions: 
 
-* sso:provider:add* sso:provider:edit
+* sso:provider:add
+* sso:provider:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copySalesforceExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#SalesforceExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Salesforce <a style="cursor: pointer" onclick="copySalesforceExample()">Copy</a>
+
+<div id="SalesforceExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "certificate": String, 
+  "issuerURI": String, 
+  "ssoTargetURI": String, 
+  "disabled": Boolean, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

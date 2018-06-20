@@ -18,7 +18,7 @@
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -1129,6 +1129,46 @@
         '/api/v2/conversations/messages/{conversationId}', 
         'GET', 
         { 'conversationId': conversationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get media
+     * 
+     * @param {String} conversationId conversationId
+     * @param {String} communicationId communicationId
+     * @param {String} mediaId mediaId
+     */
+    this.getConversationsMessageCommunicationMessagesMediaMediaId = function(conversationId, communicationId, mediaId) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling getConversationsMessageCommunicationMessagesMediaMediaId";
+      }
+
+      // verify the required parameter 'communicationId' is set
+      if (communicationId === undefined || communicationId === null) {
+        throw "Missing the required parameter 'communicationId' when calling getConversationsMessageCommunicationMessagesMediaMediaId";
+      }
+
+      // verify the required parameter 'mediaId' is set
+      if (mediaId === undefined || mediaId === null) {
+        throw "Missing the required parameter 'mediaId' when calling getConversationsMessageCommunicationMessagesMediaMediaId";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}', 
+        'GET', 
+        { 'conversationId': conversationId,'communicationId': communicationId,'mediaId': mediaId }, 
         {  }, 
         {  }, 
         {  }, 
@@ -3184,6 +3224,40 @@
         {  }, 
         {  }, 
         body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Create media
+     * 
+     * @param {String} conversationId conversationId
+     * @param {String} communicationId communicationId
+     */
+    this.postConversationsMessageCommunicationMessagesMedia = function(conversationId, communicationId) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling postConversationsMessageCommunicationMessagesMedia";
+      }
+
+      // verify the required parameter 'communicationId' is set
+      if (communicationId === undefined || communicationId === null) {
+        throw "Missing the required parameter 'communicationId' when calling postConversationsMessageCommunicationMessagesMedia";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media', 
+        'POST', 
+        { 'conversationId': conversationId,'communicationId': communicationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']

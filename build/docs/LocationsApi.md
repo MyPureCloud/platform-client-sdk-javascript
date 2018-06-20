@@ -29,7 +29,9 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -83,7 +85,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -142,7 +145,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -200,7 +204,103 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyLocationSearchRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#LocationSearchRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+LocationSearchRequest <a style="cursor: pointer" onclick="copyLocationSearchRequestExample()">Copy</a>
+
+<div id="LocationSearchRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "sortOrder": String, 
+  "sortBy": String, 
+  "pageSize": Number, 
+  "pageNumber": Number, 
+  "sort": { 
+    "sortOrder": String, 
+    "sortBy": String, 
+  },  
+  "query": { 
+    "endValue": String, 
+    "values": [String], 
+    "startValue": String, 
+    "fields": [String], 
+    "value": String, 
+    "operator": String, 
+    "group": { 
+      "endValue": String, 
+      "values": [String], 
+      "startValue": String, 
+      "fields": [String], 
+      "value": String, 
+      "operator": String, 
+      "group": { 
+        "endValue": String, 
+        "values": [String], 
+        "startValue": String, 
+        "fields": [String], 
+        "value": String, 
+        "operator": String, 
+        "group": { 
+          "endValue": String, 
+          "values": [String], 
+          "startValue": String, 
+          "fields": [String], 
+          "value": String, 
+          "operator": String, 
+          "group": { 
+            "endValue": String, 
+            "values": [String], 
+            "startValue": String, 
+            "fields": [String], 
+            "value": String, 
+            "operator": String, 
+            "group": { 
+              "endValue": String, 
+              "values": [String], 
+              "startValue": String, 
+              "fields": [String], 
+              "value": String, 
+              "operator": String, 
+              "group": { 
+                "endValue": String, 
+                "values": [String], 
+                "startValue": String, 
+                "fields": [String], 
+                "value": String, 
+                "operator": String, 
+                "group": [LocationSearchCriteria], 
+                "type": String, 
+              },  
+              "type": String, 
+            },  
+            "type": String, 
+          },  
+          "type": String, 
+        },  
+        "type": String, 
+      },  
+      "type": String, 
+    },  
+    "type": String, 
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

@@ -49,7 +49,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -103,7 +104,9 @@ Requires ANY permissions:
 
 * analytics:conversationDetail:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -157,7 +160,9 @@ Requires ANY permissions:
 
 * analytics:conversationAggregate:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -205,7 +210,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -264,7 +270,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -322,7 +329,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -370,7 +378,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -424,7 +433,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -484,7 +494,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -538,7 +549,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -595,7 +607,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -652,7 +665,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -700,7 +714,39 @@ Requires ANY permissions:
 
 * analytics:conversationProperties:index
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyPropertyIndexRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#PropertyIndexRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+PropertyIndexRequest <a style="cursor: pointer" onclick="copyPropertyIndexRequestExample()">Copy</a>
+
+<div id="PropertyIndexRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "sessionId": String, 
+  "targetDate": Date, 
+  "properties": { 
+    "propertyType": String, 
+    "property": String, 
+    "value": String, 
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -757,7 +803,83 @@ Requires ANY permissions:
 
 * analytics:conversationAggregate:view
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyAggregationQueryExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#AggregationQueryExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample()">Copy</a>
+
+<div id="AggregationQueryExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "interval": String, 
+  "granularity": String, 
+  "timeZone": String, 
+  "groupBy": [String], 
+  "filter": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "metrics": [String], 
+  "flattenMultivaluedDimensions": Boolean, 
+  "views": { 
+    "target": String, 
+    "name": String, 
+    "function": String, 
+    "range": { 
+      "gte": Number, 
+      "lt": Number, 
+    },  
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -811,7 +933,157 @@ Requires ANY permissions:
 
 * analytics:conversationDetail:view
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyConversationQueryExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ConversationQueryExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ConversationQuery <a style="cursor: pointer" onclick="copyConversationQueryExample()">Copy</a>
+
+<div id="ConversationQueryExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "interval": String, 
+  "conversationFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "evaluationFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "segmentFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "aggregations": { 
+    "type": String, 
+    "dimension": String, 
+    "metric": String, 
+    "size": Number, 
+    "ranges": { 
+      "gte": Number, 
+      "lt": Number, 
+    },  
+  },  
+  "paging": { 
+    "pageSize": Number, 
+    "pageNumber": Number, 
+  },  
+  "order": String, 
+  "orderBy": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -865,7 +1137,83 @@ Requires ANY permissions:
 
 * analytics:evaluationAggregate:view
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyAggregationQueryExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#AggregationQueryExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample()">Copy</a>
+
+<div id="AggregationQueryExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "interval": String, 
+  "granularity": String, 
+  "timeZone": String, 
+  "groupBy": [String], 
+  "filter": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "metrics": [String], 
+  "flattenMultivaluedDimensions": Boolean, 
+  "views": { 
+    "target": String, 
+    "name": String, 
+    "function": String, 
+    "range": { 
+      "gte": Number, 
+      "lt": Number, 
+    },  
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -919,7 +1267,69 @@ Requires ANY permissions:
 
 * analytics:queueObservation:view
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyObservationQueryExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ObservationQueryExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ObservationQuery <a style="cursor: pointer" onclick="copyObservationQueryExample()">Copy</a>
+
+<div id="ObservationQueryExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "filter": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "metrics": [String], 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -973,7 +1383,87 @@ Requires ANY permissions:
 
 * analytics:conversationAggregate:view
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyReportingExportJobRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ReportingExportJobRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ReportingExportJobRequest <a style="cursor: pointer" onclick="copyReportingExportJobRequestExample()">Copy</a>
+
+<div id="ReportingExportJobRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "name": String, 
+  "timeZone": { 
+    "dstsavings": Number, 
+    "rawOffset": Number, 
+    "id": String, 
+    "displayName": String, 
+  },  
+  "exportFormat": String, 
+  "interval": String, 
+  "period": String, 
+  "viewType": String, 
+  "filter": { 
+    "mediaTypes": [String], 
+    "queueIds": [String], 
+    "skillIds": [String], 
+    "skillGroups": [String], 
+    "languageIds": [String], 
+    "languageGroups": [String], 
+    "directions": [String], 
+    "wrapUpCodes": [String], 
+    "dnisList": [String], 
+    "userIds": [String], 
+    "addressTos": [String], 
+    "addressFroms": [String], 
+    "outboundCampaignIds": [String], 
+    "outboundContactListIds": [String], 
+    "contactIds": [String], 
+    "aniList": [String], 
+    "durationsMilliseconds": { 
+      "gt": Number, 
+      "gte": Number, 
+      "lt": Number, 
+      "lte": Number, 
+    },  
+    "evaluationScore": { 
+      "gt": Number, 
+      "gte": Number, 
+      "lt": Number, 
+      "lte": Number, 
+    },  
+    "evaluationCriticalScore": { 
+      "gt": Number, 
+      "gte": Number, 
+      "lt": Number, 
+      "lte": Number, 
+    },  
+    "evaluationFormIds": [String], 
+    "evaluatedAgentIds": [String], 
+    "evaluatorIds": [String], 
+    "transferred": Boolean, 
+    "abandoned": Boolean, 
+    "messageTypes": [String], 
+  },  
+  "read": Boolean, 
+  "locale": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1027,7 +1517,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1081,7 +1572,60 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyReportScheduleExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ReportScheduleExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ReportSchedule <a style="cursor: pointer" onclick="copyReportScheduleExample()">Copy</a>
+
+<div id="ReportScheduleExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "quartzCronExpression": String, 
+  "nextFireTime": Date, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "description": String, 
+  "timeZone": String, 
+  "timePeriod": String, 
+  "interval": String, 
+  "reportFormat": String, 
+  "locale": String, 
+  "enabled": Boolean, 
+  "reportId": String, 
+  "parameters": {String: Object}, 
+  "lastRun": { 
+    "id": String, 
+    "name": String, 
+    "reportId": String, 
+    "runTime": Date, 
+    "runStatus": String, 
+    "errorMessage": String, 
+    "runDurationMsec": Number, 
+    "reportUrl": String, 
+    "reportFormat": String, 
+    "scheduleUri": String, 
+    "selfUri": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1135,7 +1679,83 @@ Requires ANY permissions:
 
 * analytics:userAggregate:view
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyAggregationQueryExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#AggregationQueryExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample()">Copy</a>
+
+<div id="AggregationQueryExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "interval": String, 
+  "granularity": String, 
+  "timeZone": String, 
+  "groupBy": [String], 
+  "filter": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "metrics": [String], 
+  "flattenMultivaluedDimensions": Boolean, 
+  "views": { 
+    "target": String, 
+    "name": String, 
+    "function": String, 
+    "range": { 
+      "gte": Number, 
+      "lt": Number, 
+    },  
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1189,7 +1809,166 @@ Requires ANY permissions:
 
 * analytics:userObservation:view
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyUserDetailsQueryExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#UserDetailsQueryExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+UserDetailsQuery <a style="cursor: pointer" onclick="copyUserDetailsQueryExample()">Copy</a>
+
+<div id="UserDetailsQueryExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "interval": String, 
+  "userFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "presenceFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "routingStatusFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "presenceAggregations": { 
+    "type": String, 
+    "dimension": String, 
+    "metric": String, 
+    "size": Number, 
+    "ranges": { 
+      "gte": Number, 
+      "lt": Number, 
+    },  
+  },  
+  "routingStatusAggregations": { 
+    "type": String, 
+    "dimension": String, 
+    "metric": String, 
+    "size": Number, 
+    "ranges": { 
+      "gte": Number, 
+      "lt": Number, 
+    },  
+  },  
+  "paging": { 
+    "pageSize": Number, 
+    "pageNumber": Number, 
+  },  
+  "order": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1243,7 +2022,69 @@ Requires ANY permissions:
 
 * analytics:userObservation:view
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyObservationQueryExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ObservationQueryExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ObservationQuery <a style="cursor: pointer" onclick="copyObservationQueryExample()">Copy</a>
+
+<div id="ObservationQueryExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "filter": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "metrics": [String], 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1297,7 +2138,60 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyReportScheduleExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ReportScheduleExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ReportSchedule <a style="cursor: pointer" onclick="copyReportScheduleExample()">Copy</a>
+
+<div id="ReportScheduleExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "quartzCronExpression": String, 
+  "nextFireTime": Date, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "description": String, 
+  "timeZone": String, 
+  "timePeriod": String, 
+  "interval": String, 
+  "reportFormat": String, 
+  "locale": String, 
+  "enabled": Boolean, 
+  "reportId": String, 
+  "parameters": {String: Object}, 
+  "lastRun": { 
+    "id": String, 
+    "name": String, 
+    "reportId": String, 
+    "runTime": Date, 
+    "runStatus": String, 
+    "errorMessage": String, 
+    "runDurationMsec": Number, 
+    "reportUrl": String, 
+    "reportFormat": String, 
+    "scheduleUri": String, 
+    "selfUri": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

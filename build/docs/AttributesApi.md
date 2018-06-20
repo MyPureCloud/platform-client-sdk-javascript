@@ -31,7 +31,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -85,7 +86,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -139,7 +141,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -196,7 +199,48 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyAttributeExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#AttributeExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Attribute <a style="cursor: pointer" onclick="copyAttributeExample()">Copy</a>
+
+<div id="AttributeExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "version": Number, 
+  "description": String, 
+  "createdBy": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "dateCreated": Date, 
+  "modifiedBy": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "dateModified": Date, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -250,7 +294,34 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyAttributeQueryRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#AttributeQueryRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+AttributeQueryRequest <a style="cursor: pointer" onclick="copyAttributeQueryRequestExample()">Copy</a>
+
+<div id="AttributeQueryRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "query": String, 
+  "pageSize": Number, 
+  "pageNumber": Number, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -304,7 +375,48 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyAttributeExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#AttributeExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Attribute <a style="cursor: pointer" onclick="copyAttributeExample()">Copy</a>
+
+<div id="AttributeExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "version": Number, 
+  "description": String, 
+  "createdBy": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "dateCreated": Date, 
+  "modifiedBy": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "dateModified": Date, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

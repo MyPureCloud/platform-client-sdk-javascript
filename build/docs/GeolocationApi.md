@@ -29,7 +29,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -77,7 +78,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -134,7 +136,37 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyGeolocationSettingsExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#GeolocationSettingsExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+GeolocationSettings <a style="cursor: pointer" onclick="copyGeolocationSettingsExample()">Copy</a>
+
+<div id="GeolocationSettingsExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "enabled": Boolean, 
+  "mapboxKey": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -188,7 +220,64 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyGeolocationExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#GeolocationExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Geolocation <a style="cursor: pointer" onclick="copyGeolocationExample()">Copy</a>
+
+<div id="GeolocationExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "type": String, 
+  "primary": Boolean, 
+  "latitude": Number, 
+  "longitude": Number, 
+  "country": String, 
+  "region": String, 
+  "city": String, 
+  "locations": { 
+    "id": String, 
+    "name": String, 
+    "address": { 
+      "city": String, 
+      "country": String, 
+      "countryName": String, 
+      "state": String, 
+      "street1": String, 
+      "street2": String, 
+      "zipcode": String, 
+    },  
+    "addressVerified": Boolean, 
+    "emergencyNumber": { 
+      "e164": String, 
+      "number": String, 
+      "type": String, 
+    },  
+    "state": String, 
+    "version": Number, 
+    "path": [String], 
+    "selfUri": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

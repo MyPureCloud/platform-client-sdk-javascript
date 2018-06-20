@@ -37,7 +37,9 @@ Requires ANY permissions:
 
 * wfm:realtimeAdherence:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -89,9 +91,25 @@ Get activity codes
 
 Requires ANY permissions: 
 
-* wfm:activityCode:administer* wfm:agent:administer* wfm:agentSchedule:view* wfm:historicalAdherence:view* wfm:intraday:view* wfm:managementUnit:administer* wfm:publishedSchedule:view* wfm:realtimeAdherence:view* wfm:schedule:administer* wfm:schedule:generate* wfm:serviceGoalGroup:administer* wfm:shortTermForecast:administer* wfm:agentTimeOffRequest:submit* wfm:timeOffRequest:administer* wfm:workPlan:administer
+* wfm:activityCode:administer
+* wfm:agent:administer
+* wfm:agentSchedule:view
+* wfm:historicalAdherence:view
+* wfm:intraday:view
+* wfm:managementUnit:administer
+* wfm:publishedSchedule:view
+* wfm:realtimeAdherence:view
+* wfm:schedule:administer
+* wfm:schedule:generate
+* wfm:serviceGoalGroup:administer
+* wfm:shortTermForecast:administer
+* wfm:agentTimeOffRequest:submit
+* wfm:timeOffRequest:administer
+* wfm:workPlan:administer
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -145,7 +163,9 @@ Requires ANY permissions:
 
 * wfm:intraday:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -202,7 +222,9 @@ Requires ANY permissions:
 
 * wfm:timeOffRequest:administer
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -262,7 +284,9 @@ Requires ANY permissions:
 
 * wfm:timeOffRequest:administer
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -322,8 +346,13 @@ Get agents in the management unit
 Requires ANY permissions: 
 
 * wfm:agent:administer
+* wfm:timeOffRequest:administer
+* wfm:realtimeAdherence:view
+* wfm:historicalAdherence:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -377,7 +406,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -393,7 +423,9 @@ var apiInstance = new platformClient.WorkforceManagementApi();
 var opts = { 
   'pageSize': 56, // Number | 
   'pageNumber': 56, // Number | 
-  'expand': "expand_example" // String | 
+  'expand': "expand_example", // String | 
+  'feature': "feature_example", // String | 
+  'divisionId': "divisionId_example" // String | 
 };
 apiInstance.getWorkforcemanagementManagementunits(opts)
   .then(function(data) {
@@ -414,6 +446,8 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
  **pageSize** | **Number** |  | [optional]  |
  **pageNumber** | **Number** |  | [optional]  |
  **expand** | **String** |  | [optional] <br />**Values**: details |
+ **feature** | **String** |  | [optional] <br />**Values**: Agents, ActivityCodes, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ShortTermForecasts, TimeOffRequests, WorkPlans |
+ **divisionId** | **String** |  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -436,7 +470,46 @@ Requires ANY permissions:
 
 * wfm:timeOffRequest:administer
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyAdminTimeOffRequestPatchExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#AdminTimeOffRequestPatchExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+AdminTimeOffRequestPatch <a style="cursor: pointer" onclick="copyAdminTimeOffRequestPatchExample()">Copy</a>
+
+<div id="AdminTimeOffRequestPatchExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "status": String, 
+  "activityCodeId": String, 
+  "notes": String, 
+  "fullDayManagementUnitDates": [String], 
+  "partialDayStartDateTimes": [Date], 
+  "dailyDurationMinutes": Number, 
+  "metadata": { 
+    "version": Number, 
+    "modifiedBy": { 
+      "id": String, 
+      "selfUri": String, 
+    },  
+    "dateModified": Date, 
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -500,7 +573,38 @@ Requires ANY permissions:
 
 * wfm:activityCode:administer
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyCreateActivityCodeRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#CreateActivityCodeRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+CreateActivityCodeRequest <a style="cursor: pointer" onclick="copyCreateActivityCodeRequestExample()">Copy</a>
+
+<div id="CreateActivityCodeRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "name": String, 
+  "category": String, 
+  "lengthInMinutes": Number, 
+  "countsAsPaidTime": Boolean, 
+  "countsAsWorkTime": Boolean, 
+  "agentTimeOffSelectable": Boolean, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -558,7 +662,37 @@ Requires ANY permissions:
 
 * wfm:historicalAdherence:view
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyWfmHistoricalAdherenceQueryExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#WfmHistoricalAdherenceQueryExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+WfmHistoricalAdherenceQuery <a style="cursor: pointer" onclick="copyWfmHistoricalAdherenceQueryExample()">Copy</a>
+
+<div id="WfmHistoricalAdherenceQueryExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "startDate": Date, 
+  "endDate": Date, 
+  "timeZone": String, 
+  "userIds": [String], 
+  "includeExceptions": Boolean, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -616,7 +750,40 @@ Requires ANY permissions:
 
 * wfm:intraday:view
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyIntradayQueryDataCommandExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#IntradayQueryDataCommandExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+IntradayQueryDataCommand <a style="cursor: pointer" onclick="copyIntradayQueryDataCommandExample()">Copy</a>
+
+<div id="IntradayQueryDataCommandExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "startDate": Date, 
+  "endDate": Date, 
+  "metrics": { 
+    "category": String, 
+    "version": String, 
+  },  
+  "queueIds": [String], 
+  "intervalLengthMinutes": Number, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -672,9 +839,38 @@ Query published schedules for given given time range for set of users
 
 Requires ANY permissions: 
 
-* wfm:schedule:administer* wfm:publishedSchedule:view
+* wfm:schedule:administer
+* wfm:publishedSchedule:view
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyUserListScheduleRequestBodyExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#UserListScheduleRequestBodyExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+UserListScheduleRequestBody <a style="cursor: pointer" onclick="copyUserListScheduleRequestBodyExample()">Copy</a>
+
+<div id="UserListScheduleRequestBodyExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "userIds": [String], 
+  "startDate": Date, 
+  "endDate": Date, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

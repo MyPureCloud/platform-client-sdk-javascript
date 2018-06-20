@@ -29,7 +29,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -89,7 +90,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -149,7 +151,114 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copySearchRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#SearchRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+SearchRequest <a style="cursor: pointer" onclick="copySearchRequestExample()">Copy</a>
+
+<div id="SearchRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "sortOrder": String, 
+  "sortBy": String, 
+  "pageSize": Number, 
+  "pageNumber": Number, 
+  "sort": { 
+    "sortOrder": String, 
+    "sortBy": String, 
+  },  
+  "returnFields": [String], 
+  "expand": [String], 
+  "types": [String], 
+  "query": { 
+    "endValue": String, 
+    "values": [String], 
+    "startValue": String, 
+    "fields": [String], 
+    "value": String, 
+    "operator": String, 
+    "group": { 
+      "endValue": String, 
+      "values": [String], 
+      "startValue": String, 
+      "fields": [String], 
+      "value": String, 
+      "operator": String, 
+      "group": { 
+        "endValue": String, 
+        "values": [String], 
+        "startValue": String, 
+        "fields": [String], 
+        "value": String, 
+        "operator": String, 
+        "group": { 
+          "endValue": String, 
+          "values": [String], 
+          "startValue": String, 
+          "fields": [String], 
+          "value": String, 
+          "operator": String, 
+          "group": { 
+            "endValue": String, 
+            "values": [String], 
+            "startValue": String, 
+            "fields": [String], 
+            "value": String, 
+            "operator": String, 
+            "group": { 
+              "endValue": String, 
+              "values": [String], 
+              "startValue": String, 
+              "fields": [String], 
+              "value": String, 
+              "operator": String, 
+              "group": { 
+                "endValue": String, 
+                "values": [String], 
+                "startValue": String, 
+                "fields": [String], 
+                "value": String, 
+                "operator": String, 
+                "group": [SearchCriteria], 
+                "type": String, 
+              },  
+              "type": String, 
+            },  
+            "type": String, 
+          },  
+          "type": String, 
+        },  
+        "type": String, 
+      },  
+      "type": String, 
+    },  
+    "type": String, 
+  },  
+  "aggregations": { 
+    "field": String, 
+    "name": String, 
+    "type": String, 
+    "value": String, 
+    "size": Number, 
+    "order": [String], 
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -207,7 +316,90 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copySuggestSearchRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#SuggestSearchRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+SuggestSearchRequest <a style="cursor: pointer" onclick="copySuggestSearchRequestExample()">Copy</a>
+
+<div id="SuggestSearchRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "expand": [String], 
+  "types": [String], 
+  "query": { 
+    "endValue": String, 
+    "values": [String], 
+    "startValue": String, 
+    "fields": [String], 
+    "value": String, 
+    "operator": String, 
+    "group": { 
+      "endValue": String, 
+      "values": [String], 
+      "startValue": String, 
+      "fields": [String], 
+      "value": String, 
+      "operator": String, 
+      "group": { 
+        "endValue": String, 
+        "values": [String], 
+        "startValue": String, 
+        "fields": [String], 
+        "value": String, 
+        "operator": String, 
+        "group": { 
+          "endValue": String, 
+          "values": [String], 
+          "startValue": String, 
+          "fields": [String], 
+          "value": String, 
+          "operator": String, 
+          "group": { 
+            "endValue": String, 
+            "values": [String], 
+            "startValue": String, 
+            "fields": [String], 
+            "value": String, 
+            "operator": String, 
+            "group": { 
+              "endValue": String, 
+              "values": [String], 
+              "startValue": String, 
+              "fields": [String], 
+              "value": String, 
+              "operator": String, 
+              "group": { 
+                "endValue": String, 
+                "values": [String], 
+                "startValue": String, 
+                "fields": [String], 
+                "value": String, 
+                "operator": String, 
+                "group": [SuggestSearchCriteria], 
+              },  
+            },  
+          },  
+        },  
+      },  
+    },  
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

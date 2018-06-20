@@ -29,7 +29,9 @@ Requires ANY permissions:
 
 * gdpr:request:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -83,7 +85,9 @@ Requires ANY permissions:
 
 * gdpr:request:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -140,7 +144,9 @@ Requires ANY permissions:
 
 * gdpr:subject:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -197,7 +203,61 @@ Requires ANY permissions:
 
 * gdpr:request:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyGDPRRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#GDPRRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+GDPRRequest <a style="cursor: pointer" onclick="copyGDPRRequestExample()">Copy</a>
+
+<div id="GDPRRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "createdBy": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "replacementTerms": { 
+    "type": String, 
+    "existingValue": String, 
+    "updatedValue": String, 
+  },  
+  "requestType": String, 
+  "createdDate": Date, 
+  "status": String, 
+  "subject": { 
+    "name": String, 
+    "userId": String, 
+    "externalContactId": String, 
+    "dialerContactId": { 
+      "id": String, 
+      "contactListId": String, 
+    },  
+    "addresses": [String], 
+    "phoneNumbers": [String], 
+    "emailAddresses": [String], 
+  },  
+  "resultsUrl": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

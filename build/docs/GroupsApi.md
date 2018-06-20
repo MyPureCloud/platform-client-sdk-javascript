@@ -39,7 +39,9 @@ Requires ANY permissions:
 
 * group_administration
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -93,7 +95,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -150,7 +153,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -204,7 +208,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -258,7 +263,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -312,7 +318,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -376,7 +383,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -434,7 +442,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -495,7 +504,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -553,7 +563,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -614,7 +625,33 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyGroupMembersUpdateExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#GroupMembersUpdateExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+GroupMembersUpdate <a style="cursor: pointer" onclick="copyGroupMembersUpdateExample()">Copy</a>
+
+<div id="GroupMembersUpdateExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "memberIds": [String], 
+  "version": Number, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -669,9 +706,57 @@ Create a group
 
 Requires ANY permissions: 
 
-* group_administration* group_creation
+* group_administration
+* group_creation
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyGroupCreateExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#GroupCreateExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+GroupCreate <a style="cursor: pointer" onclick="copyGroupCreateExample()">Copy</a>
+
+<div id="GroupCreateExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "description": String, 
+  "dateModified": Date, 
+  "memberCount": Number, 
+  "state": String, 
+  "version": Number, 
+  "type": String, 
+  "images": { 
+    "resolution": String, 
+    "imageUri": String, 
+  },  
+  "addresses": { 
+    "address": String, 
+    "display": String, 
+    "type": String, 
+    "mediaType": String, 
+  },  
+  "rulesVisible": Boolean, 
+  "visibility": String, 
+  "ownerIds": [String], 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -725,7 +810,103 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyGroupSearchRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#GroupSearchRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+GroupSearchRequest <a style="cursor: pointer" onclick="copyGroupSearchRequestExample()">Copy</a>
+
+<div id="GroupSearchRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "sortOrder": String, 
+  "sortBy": String, 
+  "pageSize": Number, 
+  "pageNumber": Number, 
+  "sort": { 
+    "sortOrder": String, 
+    "sortBy": String, 
+  },  
+  "query": { 
+    "endValue": String, 
+    "values": [String], 
+    "startValue": String, 
+    "fields": [String], 
+    "value": String, 
+    "operator": String, 
+    "group": { 
+      "endValue": String, 
+      "values": [String], 
+      "startValue": String, 
+      "fields": [String], 
+      "value": String, 
+      "operator": String, 
+      "group": { 
+        "endValue": String, 
+        "values": [String], 
+        "startValue": String, 
+        "fields": [String], 
+        "value": String, 
+        "operator": String, 
+        "group": { 
+          "endValue": String, 
+          "values": [String], 
+          "startValue": String, 
+          "fields": [String], 
+          "value": String, 
+          "operator": String, 
+          "group": { 
+            "endValue": String, 
+            "values": [String], 
+            "startValue": String, 
+            "fields": [String], 
+            "value": String, 
+            "operator": String, 
+            "group": { 
+              "endValue": String, 
+              "values": [String], 
+              "startValue": String, 
+              "fields": [String], 
+              "value": String, 
+              "operator": String, 
+              "group": { 
+                "endValue": String, 
+                "values": [String], 
+                "startValue": String, 
+                "fields": [String], 
+                "value": String, 
+                "operator": String, 
+                "group": [GroupSearchCriteria], 
+                "type": String, 
+              },  
+              "type": String, 
+            },  
+            "type": String, 
+          },  
+          "type": String, 
+        },  
+        "type": String, 
+      },  
+      "type": String, 
+    },  
+    "type": String, 
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -779,7 +960,51 @@ Requires ANY permissions:
 
 * group_administration
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyGroupUpdateExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#GroupUpdateExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+GroupUpdate <a style="cursor: pointer" onclick="copyGroupUpdateExample()">Copy</a>
+
+<div id="GroupUpdateExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "description": String, 
+  "state": String, 
+  "version": Number, 
+  "images": { 
+    "resolution": String, 
+    "imageUri": String, 
+  },  
+  "addresses": { 
+    "address": String, 
+    "display": String, 
+    "type": String, 
+    "mediaType": String, 
+  },  
+  "rulesVisible": Boolean, 
+  "visibility": String, 
+  "ownerIds": [String], 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

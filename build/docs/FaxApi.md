@@ -31,7 +31,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -85,7 +86,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -139,7 +141,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -193,7 +196,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -250,7 +254,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -298,7 +303,62 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyFaxDocumentExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#FaxDocumentExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+FaxDocument <a style="cursor: pointer" onclick="copyFaxDocumentExample()">Copy</a>
+
+<div id="FaxDocumentExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "contentUri": String, 
+  "workspace": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "createdBy": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "contentType": String, 
+  "contentLength": Number, 
+  "filename": String, 
+  "read": Boolean, 
+  "pageCount": Number, 
+  "callerAddress": String, 
+  "receiverAddress": String, 
+  "thumbnails": { 
+    "resolution": String, 
+    "imageUri": String, 
+    "height": Number, 
+    "width": Number, 
+  },  
+  "sharingUri": String, 
+  "downloadSharingUri": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

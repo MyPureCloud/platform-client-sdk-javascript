@@ -24,9 +24,14 @@ Get a report of the billable usages (e.g. licenses and devices utilized) for a g
 
 Requires ANY permissions: 
 
-* billing:subscription:read* billing:subscription:view* billing:subscription:create* billing:subscription:add
+* billing:subscription:read
+* billing:subscription:view
+* billing:subscription:create
+* billing:subscription:add
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

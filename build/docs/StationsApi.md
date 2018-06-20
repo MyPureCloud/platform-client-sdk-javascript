@@ -30,7 +30,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -84,7 +85,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -138,7 +140,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -207,7 +210,9 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -255,7 +260,36 @@ Requires ANY permissions:
 
 * telephony:plugin:all
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyStationSettingsExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#StationSettingsExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+StationSettings <a style="cursor: pointer" onclick="copyStationSettingsExample()">Copy</a>
+
+<div id="StationSettingsExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "freeSeatingConfiguration": { 
+    "freeSeatingState": String, 
+    "ttlMinutes": Number, 
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

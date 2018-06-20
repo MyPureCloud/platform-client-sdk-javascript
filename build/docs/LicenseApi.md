@@ -31,9 +31,13 @@ Get PureCloud license definition.
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:grant:add
+* admin
+* role_manager
+* authorization:grant:add
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -85,9 +89,13 @@ Get all PureCloud license definitions available for the organization.
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:grant:add
+* admin
+* role_manager
+* authorization:grant:add
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -133,9 +141,13 @@ Get license assignments for the organization.
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:grant:add
+* admin
+* role_manager
+* authorization:grant:add
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -181,9 +193,13 @@ Get PureCloud license feature toggle value.
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:grant:add
+* admin
+* role_manager
+* authorization:grant:add
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -235,9 +251,13 @@ Get licenses for specified user.
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:grant:add
+* admin
+* role_manager
+* authorization:grant:add
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -289,9 +309,41 @@ Update the organization&#39;s license assignments in a batch.
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:grant:add
+* admin
+* role_manager
+* authorization:grant:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyLicenseBatchAssignmentRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#LicenseBatchAssignmentRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+LicenseBatchAssignmentRequest <a style="cursor: pointer" onclick="copyLicenseBatchAssignmentRequestExample()">Copy</a>
+
+<div id="LicenseBatchAssignmentRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "assignments": { 
+    "licenseId": String, 
+    "userIdsAdd": [String], 
+    "userIdsRemove": [String], 
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -344,9 +396,13 @@ Switch PureCloud license feature toggle value.
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:grant:add
+* admin
+* role_manager
+* authorization:grant:add
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -400,7 +456,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser

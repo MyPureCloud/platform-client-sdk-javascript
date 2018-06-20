@@ -31,7 +31,9 @@ Requires ANY permissions:
 
 * oauth:client:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -85,7 +87,9 @@ Requires ANY permissions:
 
 * oauth:client:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -139,7 +143,9 @@ Requires ANY permissions:
 
 * oauth:client:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -187,7 +193,9 @@ Requires ANY permissions:
 
 * oauth:client:edit
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -241,7 +249,53 @@ Requires ANY permissions:
 
 * oauth:client:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyOAuthClientExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#OAuthClientExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+OAuthClient <a style="cursor: pointer" onclick="copyOAuthClientExample()">Copy</a>
+
+<div id="OAuthClientExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "accessTokenValiditySeconds": Number, 
+  "description": String, 
+  "registeredRedirectUri": [String], 
+  "secret": String, 
+  "roleIds": [String], 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "createdBy": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "modifiedBy": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "authorizedGrantType": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -295,7 +349,53 @@ Requires ANY permissions:
 
 * oauth:client:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyOAuthClientExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#OAuthClientExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+OAuthClient <a style="cursor: pointer" onclick="copyOAuthClientExample()">Copy</a>
+
+<div id="OAuthClientExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "accessTokenValiditySeconds": Number, 
+  "description": String, 
+  "registeredRedirectUri": [String], 
+  "secret": String, 
+  "roleIds": [String], 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "createdBy": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "modifiedBy": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "authorizedGrantType": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

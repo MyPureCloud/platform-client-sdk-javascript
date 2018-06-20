@@ -63,7 +63,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -121,7 +122,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -175,7 +177,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -229,7 +232,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -287,7 +291,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -344,7 +349,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -401,7 +407,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -459,7 +466,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -527,7 +535,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -587,7 +596,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -655,7 +665,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -721,7 +732,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -775,7 +787,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -823,7 +836,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -881,7 +895,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -945,7 +960,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1006,7 +1022,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1063,7 +1080,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1117,7 +1135,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1165,7 +1184,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1223,7 +1243,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1289,7 +1310,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1350,7 +1372,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1412,7 +1435,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1473,7 +1497,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1537,7 +1562,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1598,7 +1624,51 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyContentQueryRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ContentQueryRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ContentQueryRequest <a style="cursor: pointer" onclick="copyContentQueryRequestExample()">Copy</a>
+
+<div id="ContentQueryRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "queryPhrase": String, 
+  "pageNumber": Number, 
+  "pageSize": Number, 
+  "facetNameRequests": [String], 
+  "sort": { 
+    "name": String, 
+    "ascending": Boolean, 
+  },  
+  "filters": { 
+    "name": String, 
+    "type": String, 
+    "operator": String, 
+    "values": [String], 
+  },  
+  "attributeFilters": { 
+    "id": String, 
+    "operator": String, 
+    "values": [String], 
+  },  
+  "includeShares": Boolean, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1652,7 +1722,61 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyDocumentUpdateExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#DocumentUpdateExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+DocumentUpdate <a style="cursor: pointer" onclick="copyDocumentUpdateExample()">Copy</a>
+
+<div id="DocumentUpdateExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "changeNumber": Number, 
+  "name": String, 
+  "read": Boolean, 
+  "addTags": [String], 
+  "removeTags": [String], 
+  "addTagIds": [String], 
+  "removeTagIds": [String], 
+  "updateAttributes": { 
+    "attribute": { 
+      "id": String, 
+      "name": String, 
+      "version": Number, 
+      "description": String, 
+      "createdBy": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "dateCreated": Date, 
+      "modifiedBy": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "dateModified": Date, 
+      "selfUri": String, 
+    },  
+    "values": [String], 
+  },  
+  "removeAttributes": [String], 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1715,7 +1839,34 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyReplaceRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ReplaceRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ReplaceRequest <a style="cursor: pointer" onclick="copyReplaceRequestExample()">Copy</a>
+
+<div id="ReplaceRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "changeNumber": Number, 
+  "name": String, 
+  "authToken": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1776,7 +1927,39 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyDocumentUploadExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#DocumentUploadExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+DocumentUpload <a style="cursor: pointer" onclick="copyDocumentUploadExample()">Copy</a>
+
+<div id="DocumentUploadExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "name": String, 
+  "workspace": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "tags": [String], 
+  "tagIds": [String], 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1838,7 +2021,51 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyQueryRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#QueryRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+QueryRequest <a style="cursor: pointer" onclick="copyQueryRequestExample()">Copy</a>
+
+<div id="QueryRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "queryPhrase": String, 
+  "pageNumber": Number, 
+  "pageSize": Number, 
+  "facetNameRequests": [String], 
+  "sort": { 
+    "name": String, 
+    "ascending": Boolean, 
+  },  
+  "filters": { 
+    "name": String, 
+    "type": String, 
+    "operator": String, 
+    "values": [String], 
+  },  
+  "attributeFilters": { 
+    "id": String, 
+    "operator": String, 
+    "values": [String], 
+  },  
+  "includeShares": Boolean, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1896,7 +2123,45 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyCreateShareRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#CreateShareRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+CreateShareRequest <a style="cursor: pointer" onclick="copyCreateShareRequestExample()">Copy</a>
+
+<div id="CreateShareRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "sharedEntityType": String, 
+  "sharedEntity": { 
+    "id": String, 
+  },  
+  "memberType": String, 
+  "member": { 
+    "id": String, 
+  },  
+  "members": { 
+    "memberType": String, 
+    "member": { 
+      "id": String, 
+    },  
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1950,7 +2215,36 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyTagValueExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#TagValueExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+TagValue <a style="cursor: pointer" onclick="copyTagValueExample()">Copy</a>
+
+<div id="TagValueExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "inUse": Boolean, 
+  "acl": [String], 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2007,7 +2301,34 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyTagQueryRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#TagQueryRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+TagQueryRequest <a style="cursor: pointer" onclick="copyTagQueryRequestExample()">Copy</a>
+
+<div id="TagQueryRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "query": String, 
+  "pageNumber": Number, 
+  "pageSize": Number, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2068,7 +2389,34 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyWorkspaceCreateExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#WorkspaceCreateExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+WorkspaceCreate <a style="cursor: pointer" onclick="copyWorkspaceCreateExample()">Copy</a>
+
+<div id="WorkspaceCreateExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "name": String, 
+  "bucket": String, 
+  "description": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2122,7 +2470,50 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyWorkspaceExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#WorkspaceExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Workspace <a style="cursor: pointer" onclick="copyWorkspaceExample()">Copy</a>
+
+<div id="WorkspaceExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "type": String, 
+  "isCurrentUserWorkspace": Boolean, 
+  "user": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "bucket": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "summary": { 
+    "totalDocumentCount": Number, 
+    "totalDocumentByteCount": Number, 
+  },  
+  "acl": [String], 
+  "description": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2179,7 +2570,390 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyWorkspaceMemberExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#WorkspaceMemberExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+WorkspaceMember <a style="cursor: pointer" onclick="copyWorkspaceMemberExample()">Copy</a>
+
+<div id="WorkspaceMemberExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "workspace": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "memberType": String, 
+  "member": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "user": { 
+    "id": String, 
+    "name": String, 
+    "chat": { 
+      "jabberId": String, 
+    },  
+    "department": String, 
+    "email": String, 
+    "primaryContactInfo": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "addresses": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "state": String, 
+    "title": String, 
+    "username": String, 
+    "manager": User, 
+    "images": { 
+      "resolution": String, 
+      "imageUri": String, 
+    },  
+    "version": Number, 
+    "routingStatus": { 
+      "userId": String, 
+      "status": String, 
+      "startTime": Date, 
+    },  
+    "presence": { 
+      "id": String, 
+      "name": String, 
+      "source": String, 
+      "primary": Boolean, 
+      "presenceDefinition": { 
+        "id": String, 
+        "systemPresence": String, 
+        "selfUri": String, 
+      },  
+      "message": String, 
+      "modifiedDate": Date, 
+      "selfUri": String, 
+    },  
+    "conversationSummary": { 
+      "userId": String, 
+      "call": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "callback": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "email": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "message": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "chat": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "socialExpression": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "video": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+    },  
+    "outOfOffice": { 
+      "id": String, 
+      "name": String, 
+      "user": User, 
+      "startDate": Date, 
+      "endDate": Date, 
+      "active": Boolean, 
+      "indefinite": Boolean, 
+      "selfUri": String, 
+    },  
+    "geolocation": { 
+      "id": String, 
+      "name": String, 
+      "type": String, 
+      "primary": Boolean, 
+      "latitude": Number, 
+      "longitude": Number, 
+      "country": String, 
+      "region": String, 
+      "city": String, 
+      "locations": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "station": { 
+      "associatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "effectiveStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "defaultStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "lastAssociatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+    },  
+    "authorization": { 
+      "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "permissions": [String], 
+      "permissionPolicies": { 
+        "id": String, 
+        "domain": String, 
+        "entityName": String, 
+        "policyName": String, 
+        "policyDescription": String, 
+        "actionSetKey": String, 
+        "allowConditions": Boolean, 
+        "resourceConditionNode": { 
+          "variableName": String, 
+          "conjunction": String, 
+          "operator": String, 
+          "operands": { 
+            "type": String, 
+            "value": String, 
+          },  
+          "terms": { 
+            "variableName": String, 
+            "conjunction": String, 
+            "operator": String, 
+            "operands": { 
+              "type": String, 
+              "value": String, 
+            },  
+            "terms": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+          },  
+        },  
+        "namedResources": [String], 
+        "resourceCondition": String, 
+        "actionSet": [String], 
+      },  
+    },  
+    "profileSkills": [String], 
+    "locations": { 
+      "id": String, 
+      "floorplanId": String, 
+      "coordinates": {String: Number}, 
+      "notes": String, 
+      "locationDefinition": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+    },  
+    "groups": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "state": String, 
+      "version": Number, 
+      "type": String, 
+      "images": { 
+        "resolution": String, 
+        "imageUri": String, 
+      },  
+      "addresses": { 
+        "address": String, 
+        "display": String, 
+        "type": String, 
+        "mediaType": String, 
+      },  
+      "rulesVisible": Boolean, 
+      "visibility": String, 
+      "owners": User, 
+      "selfUri": String, 
+    },  
+    "selfUri": String, 
+  },  
+  "group": { 
+    "id": String, 
+    "name": String, 
+    "description": String, 
+    "dateModified": Date, 
+    "memberCount": Number, 
+    "state": String, 
+    "version": Number, 
+    "type": String, 
+    "images": { 
+      "resolution": String, 
+      "imageUri": String, 
+    },  
+    "addresses": { 
+      "address": String, 
+      "display": String, 
+      "type": String, 
+      "mediaType": String, 
+    },  
+    "rulesVisible": Boolean, 
+    "visibility": String, 
+    "owners": User, 
+    "selfUri": String, 
+  },  
+  "securityProfile": { 
+    "id": String, 
+    "name": String, 
+    "permissions": [String], 
+    "selfUri": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2239,7 +3013,36 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyTagValueExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#TagValueExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+TagValue <a style="cursor: pointer" onclick="copyTagValueExample()">Copy</a>
+
+<div id="TagValueExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "inUse": Boolean, 
+  "acl": [String], 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

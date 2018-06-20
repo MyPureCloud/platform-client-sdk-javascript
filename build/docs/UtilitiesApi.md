@@ -28,7 +28,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -76,7 +77,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -133,7 +135,32 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyCertificateExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#CertificateExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Certificate <a style="cursor: pointer" onclick="copyCertificateExample()">Copy</a>
+
+<div id="CertificateExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "certificate": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

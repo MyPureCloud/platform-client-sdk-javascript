@@ -66,7 +66,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -120,7 +121,9 @@ Requires ANY permissions:
 
 * integrations:action:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -174,7 +177,9 @@ Requires ANY permissions:
 
 * integrations:action:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -228,7 +233,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -282,7 +288,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -350,7 +357,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -404,7 +412,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -467,9 +476,12 @@ Retrieves a single Action matching id.
 
 Requires ANY permissions: 
 
-* integrations:action:view* bridge:actions:view
+* integrations:action:view
+* bridge:actions:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -527,9 +539,12 @@ Retrieve a Draft
 
 Requires ANY permissions: 
 
-* integrations:action:view* bridge:actions:view
+* integrations:action:view
+* bridge:actions:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -587,9 +602,12 @@ Retrieve schema for a Draft based on filename.
 
 Requires ANY permissions: 
 
-* integrations:action:view* bridge:actions:view
+* integrations:action:view
+* bridge:actions:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -644,9 +662,12 @@ Retrieve templates for a Draft based on filename.
 
 Requires ANY permissions: 
 
-* integrations:action:view* bridge:actions:view
+* integrations:action:view
+* bridge:actions:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -703,7 +724,9 @@ Requires ANY permissions:
 
 * integrations:action:edit
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -755,9 +778,12 @@ Retrieve schema for an action based on filename.
 
 Requires ANY permissions: 
 
-* integrations:action:view* bridge:actions:view
+* integrations:action:view
+* bridge:actions:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -812,9 +838,12 @@ Retrieve text of templates for an action based on filename.
 
 Requires ANY permissions: 
 
-* integrations:action:view* bridge:actions:view
+* integrations:action:view
+* bridge:actions:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -869,9 +898,12 @@ Retrieves all actions associated with filters passed in via query param.
 
 Requires ANY permissions: 
 
-* integrations:action:view* bridge:actions:view
+* integrations:action:view
+* bridge:actions:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -940,9 +972,12 @@ Retrieves all categories of available Actions
 
 Requires ANY permissions: 
 
-* integrations:action:view* bridge:actions:view
+* integrations:action:view
+* bridge:actions:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1007,9 +1042,12 @@ Retrieves all action drafts associated with the filters passed in via query para
 
 Requires ANY permissions: 
 
-* integrations:action:view* bridge:actions:view
+* integrations:action:view
+* bridge:actions:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1080,7 +1118,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1145,7 +1184,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1199,7 +1239,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1256,7 +1297,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1302,9 +1344,12 @@ List all events
 
 Requires ANY permissions: 
 
-* integrations:integration:view* bridge:notification:view
+* integrations:integration:view
+* bridge:notification:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1365,9 +1410,12 @@ Get a single event
 
 Requires ANY permissions: 
 
-* integrations:integration:view* bridge:notification:view
+* integrations:integration:view
+* bridge:notification:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1421,7 +1469,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1475,7 +1524,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1532,7 +1582,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1597,7 +1648,96 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyIntegrationExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#IntegrationExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Integration <a style="cursor: pointer" onclick="copyIntegrationExample()">Copy</a>
+
+<div id="IntegrationExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "integrationType": { 
+    "id": String, 
+    "name": String, 
+    "description": String, 
+    "provider": String, 
+    "category": String, 
+    "images": { 
+      "resolution": String, 
+      "imageUri": String, 
+    },  
+    "configPropertiesSchemaUri": String, 
+    "configAdvancedSchemaUri": String, 
+    "helpUri": String, 
+    "credentials": { 
+      "required": Boolean, 
+      "title": String, 
+      "credentialTypes": [String], 
+    },  
+    "nonInstallable": Boolean, 
+    "maxInstances": Number, 
+    "userPermissions": [String], 
+    "selfUri": String, 
+  },  
+  "notes": String, 
+  "intendedState": String, 
+  "config": { 
+    "current": { 
+      "id": String, 
+      "name": String, 
+      "version": Number, 
+      "properties": Object, 
+      "advanced": Object, 
+      "notes": String, 
+      "credentials": { 
+        "id": String, 
+        "name": String, 
+        "createdDate": Date, 
+        "modifiedDate": Date, 
+        "type": { 
+          "id": String, 
+          "name": String, 
+          "properties": Object, 
+          "displayOrder": [String], 
+          "required": [String], 
+        },  
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+  },  
+  "reportedState": { 
+    "code": String, 
+    "effective": String, 
+    "detail": { 
+      "localizableMessageCode": String, 
+      "message": String, 
+      "messageWithParams": String, 
+      "messageParams": {String: String}, 
+    },  
+    "lastUpdated": Date, 
+  },  
+  "attributes": {String: String}, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1667,7 +1807,49 @@ Requires ANY permissions:
 
 * integrations:action:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyUpdateActionInputExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#UpdateActionInputExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+UpdateActionInput <a style="cursor: pointer" onclick="copyUpdateActionInputExample()">Copy</a>
+
+<div id="UpdateActionInputExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "category": String, 
+  "name": String, 
+  "config": { 
+    "request": { 
+      "requestUrlTemplate": String, 
+      "requestTemplate": String, 
+      "requestTemplateUri": String, 
+      "requestType": String, 
+      "headers": {String: String}, 
+    },  
+    "response": { 
+      "translationMap": {String: String}, 
+      "successTemplate": String, 
+      "successTemplateUri": String, 
+    },  
+  },  
+  "version": Number, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1724,7 +1906,76 @@ Requires ANY permissions:
 
 * integrations:action:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyUpdateDraftInputExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#UpdateDraftInputExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+UpdateDraftInput <a style="cursor: pointer" onclick="copyUpdateDraftInputExample()">Copy</a>
+
+<div id="UpdateDraftInputExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "category": String, 
+  "name": String, 
+  "config": { 
+    "request": { 
+      "requestUrlTemplate": String, 
+      "requestTemplate": String, 
+      "requestTemplateUri": String, 
+      "requestType": String, 
+      "headers": {String: String}, 
+    },  
+    "response": { 
+      "translationMap": {String: String}, 
+      "successTemplate": String, 
+      "successTemplateUri": String, 
+    },  
+  },  
+  "contract": { 
+    "input": { 
+      "inputSchema": { 
+        "id": String, 
+        "$schema": String, 
+        "title": String, 
+        "description": String, 
+        "type": String, 
+        "required": [String], 
+        "properties": {String: Object}, 
+        "additionalProperties": Object, 
+      },  
+    },  
+    "output": { 
+      "successSchema": { 
+        "id": String, 
+        "$schema": String, 
+        "title": String, 
+        "description": String, 
+        "type": String, 
+        "required": [String], 
+        "properties": {String: Object}, 
+        "additionalProperties": Object, 
+      },  
+    },  
+  },  
+  "secure": Boolean, 
+  "version": Number, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1781,7 +2032,57 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyCreateIntegrationRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#CreateIntegrationRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+CreateIntegrationRequest <a style="cursor: pointer" onclick="copyCreateIntegrationRequestExample()">Copy</a>
+
+<div id="CreateIntegrationRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "integrationType": { 
+    "id": String, 
+    "name": String, 
+    "description": String, 
+    "provider": String, 
+    "category": String, 
+    "images": { 
+      "resolution": String, 
+      "imageUri": String, 
+    },  
+    "configPropertiesSchemaUri": String, 
+    "configAdvancedSchemaUri": String, 
+    "helpUri": String, 
+    "credentials": { 
+      "required": Boolean, 
+      "title": String, 
+      "credentialTypes": [String], 
+    },  
+    "nonInstallable": Boolean, 
+    "maxInstances": Number, 
+    "userPermissions": [String], 
+    "selfUri": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1836,7 +2137,9 @@ Requires ANY permissions:
 
 * integrations:action:edit
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1890,7 +2193,33 @@ Requires ANY permissions:
 
 * integrations:action:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyPublishDraftInputExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#PublishDraftInputExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+PublishDraftInput <a style="cursor: pointer" onclick="copyPublishDraftInputExample()">Copy</a>
+
+<div id="PublishDraftInputExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "version": Number, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1947,7 +2276,9 @@ Requires ANY permissions:
 
 * integrations:action:execute
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2002,9 +2333,12 @@ Execute Action and return response from 3rd party.  Responses will follow the sc
 
 Requires ANY permissions: 
 
-* integrations:action:execute* bridge:actions:execute
+* integrations:action:execute
+* bridge:actions:execute
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2059,9 +2393,12 @@ Test the execution of an action. Responses will show execution steps broken out 
 
 Requires ANY permissions: 
 
-* integrations:action:execute* bridge:actions:execute
+* integrations:action:execute
+* bridge:actions:execute
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2118,7 +2455,76 @@ Requires ANY permissions:
 
 * integrations:action:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyPostActionInputExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#PostActionInputExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+PostActionInput <a style="cursor: pointer" onclick="copyPostActionInputExample()">Copy</a>
+
+<div id="PostActionInputExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "category": String, 
+  "name": String, 
+  "integrationId": String, 
+  "config": { 
+    "request": { 
+      "requestUrlTemplate": String, 
+      "requestTemplate": String, 
+      "requestTemplateUri": String, 
+      "requestType": String, 
+      "headers": {String: String}, 
+    },  
+    "response": { 
+      "translationMap": {String: String}, 
+      "successTemplate": String, 
+      "successTemplateUri": String, 
+    },  
+  },  
+  "contract": { 
+    "input": { 
+      "inputSchema": { 
+        "id": String, 
+        "$schema": String, 
+        "title": String, 
+        "description": String, 
+        "type": String, 
+        "required": [String], 
+        "properties": {String: Object}, 
+        "additionalProperties": Object, 
+      },  
+    },  
+    "output": { 
+      "successSchema": { 
+        "id": String, 
+        "$schema": String, 
+        "title": String, 
+        "description": String, 
+        "type": String, 
+        "required": [String], 
+        "properties": {String: Object}, 
+        "additionalProperties": Object, 
+      },  
+    },  
+  },  
+  "secure": Boolean, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2172,7 +2578,76 @@ Requires ANY permissions:
 
 * integrations:action:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyPostActionInputExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#PostActionInputExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+PostActionInput <a style="cursor: pointer" onclick="copyPostActionInputExample()">Copy</a>
+
+<div id="PostActionInputExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "category": String, 
+  "name": String, 
+  "integrationId": String, 
+  "config": { 
+    "request": { 
+      "requestUrlTemplate": String, 
+      "requestTemplate": String, 
+      "requestTemplateUri": String, 
+      "requestType": String, 
+      "headers": {String: String}, 
+    },  
+    "response": { 
+      "translationMap": {String: String}, 
+      "successTemplate": String, 
+      "successTemplateUri": String, 
+    },  
+  },  
+  "contract": { 
+    "input": { 
+      "inputSchema": { 
+        "id": String, 
+        "$schema": String, 
+        "title": String, 
+        "description": String, 
+        "type": String, 
+        "required": [String], 
+        "properties": {String: Object}, 
+        "additionalProperties": Object, 
+      },  
+    },  
+    "output": { 
+      "successSchema": { 
+        "id": String, 
+        "$schema": String, 
+        "title": String, 
+        "description": String, 
+        "type": String, 
+        "required": [String], 
+        "properties": {String: Object}, 
+        "additionalProperties": Object, 
+      },  
+    },  
+  },  
+  "secure": Boolean, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2226,7 +2701,42 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyCredentialExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#CredentialExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Credential <a style="cursor: pointer" onclick="copyCredentialExample()">Copy</a>
+
+<div id="CredentialExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "type": { 
+    "id": String, 
+    "name": String, 
+    "properties": Object, 
+    "displayOrder": [String], 
+    "required": [String], 
+  },  
+  "credentialFields": {String: String}, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2281,7 +2791,34 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyVendorConnectionRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#VendorConnectionRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+VendorConnectionRequest <a style="cursor: pointer" onclick="copyVendorConnectionRequestExample()">Copy</a>
+
+<div id="VendorConnectionRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "publisher": String, 
+  "type": String, 
+  "name": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2336,7 +2873,52 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyIntegrationConfigurationExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#IntegrationConfigurationExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+IntegrationConfiguration <a style="cursor: pointer" onclick="copyIntegrationConfigurationExample()">Copy</a>
+
+<div id="IntegrationConfigurationExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "version": Number, 
+  "properties": Object, 
+  "advanced": Object, 
+  "notes": String, 
+  "credentials": { 
+    "id": String, 
+    "name": String, 
+    "createdDate": Date, 
+    "modifiedDate": Date, 
+    "type": { 
+      "id": String, 
+      "name": String, 
+      "properties": Object, 
+      "displayOrder": [String], 
+      "required": [String], 
+    },  
+    "selfUri": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2394,7 +2976,42 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyCredentialExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#CredentialExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Credential <a style="cursor: pointer" onclick="copyCredentialExample()">Copy</a>
+
+<div id="CredentialExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "type": { 
+    "id": String, 
+    "name": String, 
+    "properties": Object, 
+    "displayOrder": [String], 
+    "required": [String], 
+  },  
+  "credentialFields": {String: String}, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

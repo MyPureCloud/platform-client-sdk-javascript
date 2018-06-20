@@ -3301,7 +3301,7 @@ Emitter.prototype.hasListeners = function(event){
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -3978,7 +3978,7 @@ Emitter.prototype.hasListeners = function(event){
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '28.0.0' });
+    //request.set({ 'purecloud-sdk': '29.0.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -4131,7 +4131,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -4487,7 +4487,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -5202,7 +5202,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -6881,11 +6881,14 @@ Emitter.prototype.hasListeners = function(event){
     /**
      * Creates a new emergency group
      * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.postArchitectEmergencygroups = function(opts) { 
-      opts = opts || {};
+    this.postArchitectEmergencygroups = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postArchitectEmergencygroups";
+      }
 
 
       return this.apiClient.callApi(
@@ -6895,7 +6898,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -6906,11 +6909,14 @@ Emitter.prototype.hasListeners = function(event){
     /**
      * Create IVR config.
      * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.postArchitectIvrs = function(opts) { 
-      opts = opts || {};
+    this.postArchitectIvrs = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postArchitectIvrs";
+      }
 
 
       return this.apiClient.callApi(
@@ -6920,7 +6926,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -6960,15 +6966,18 @@ Emitter.prototype.hasListeners = function(event){
      * Create a new user prompt resource
      * 
      * @param {String} promptId Prompt ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.postArchitectPromptResources = function(promptId, opts) { 
-      opts = opts || {};
+    this.postArchitectPromptResources = function(promptId, body) { 
 
       // verify the required parameter 'promptId' is set
       if (promptId === undefined || promptId === null) {
         throw "Missing the required parameter 'promptId' when calling postArchitectPromptResources";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postArchitectPromptResources";
       }
 
 
@@ -6979,7 +6988,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -6990,11 +6999,14 @@ Emitter.prototype.hasListeners = function(event){
     /**
      * Create a new user prompt
      * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.postArchitectPrompts = function(opts) { 
-      opts = opts || {};
+    this.postArchitectPrompts = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postArchitectPrompts";
+      }
 
 
       return this.apiClient.callApi(
@@ -7004,7 +7016,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -7015,11 +7027,14 @@ Emitter.prototype.hasListeners = function(event){
     /**
      * Creates a new schedule group
      * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.postArchitectSchedulegroups = function(opts) { 
-      opts = opts || {};
+    this.postArchitectSchedulegroups = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postArchitectSchedulegroups";
+      }
 
 
       return this.apiClient.callApi(
@@ -7029,7 +7044,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -7040,11 +7055,14 @@ Emitter.prototype.hasListeners = function(event){
     /**
      * Create a new schedule.
      * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.postArchitectSchedules = function(opts) { 
-      opts = opts || {};
+    this.postArchitectSchedules = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postArchitectSchedules";
+      }
 
 
       return this.apiClient.callApi(
@@ -7054,7 +7072,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -7094,15 +7112,18 @@ Emitter.prototype.hasListeners = function(event){
      * Create system prompt resource override.
      * 
      * @param {String} promptId Prompt ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.postArchitectSystempromptResources = function(promptId, opts) { 
-      opts = opts || {};
+    this.postArchitectSystempromptResources = function(promptId, body) { 
 
       // verify the required parameter 'promptId' is set
       if (promptId === undefined || promptId === null) {
         throw "Missing the required parameter 'promptId' when calling postArchitectSystempromptResources";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postArchitectSystempromptResources";
       }
 
 
@@ -7113,7 +7134,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -7125,15 +7146,18 @@ Emitter.prototype.hasListeners = function(event){
      * Create flow version
      * 
      * @param {String} flowId Flow ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.postFlowVersions = function(flowId, opts) { 
-      opts = opts || {};
+    this.postFlowVersions = function(flowId, body) { 
 
       // verify the required parameter 'flowId' is set
       if (flowId === undefined || flowId === null) {
         throw "Missing the required parameter 'flowId' when calling postFlowVersions";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postFlowVersions";
       }
 
 
@@ -7144,7 +7168,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -7155,11 +7179,14 @@ Emitter.prototype.hasListeners = function(event){
     /**
      * Create flow
      * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.postFlows = function(opts) { 
-      opts = opts || {};
+    this.postFlows = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postFlows";
+      }
 
 
       return this.apiClient.callApi(
@@ -7169,7 +7196,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -7414,15 +7441,18 @@ Emitter.prototype.hasListeners = function(event){
      * Updates a emergency group by ID
      * 
      * @param {String} emergencyGroupId Emergency group ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.putArchitectEmergencygroup = function(emergencyGroupId, opts) { 
-      opts = opts || {};
+    this.putArchitectEmergencygroup = function(emergencyGroupId, body) { 
 
       // verify the required parameter 'emergencyGroupId' is set
       if (emergencyGroupId === undefined || emergencyGroupId === null) {
         throw "Missing the required parameter 'emergencyGroupId' when calling putArchitectEmergencygroup";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putArchitectEmergencygroup";
       }
 
 
@@ -7433,7 +7463,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -7445,15 +7475,18 @@ Emitter.prototype.hasListeners = function(event){
      * Update an IVR Config.
      * 
      * @param {String} ivrId IVR id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.putArchitectIvr = function(ivrId, opts) { 
-      opts = opts || {};
+    this.putArchitectIvr = function(ivrId, body) { 
 
       // verify the required parameter 'ivrId' is set
       if (ivrId === undefined || ivrId === null) {
         throw "Missing the required parameter 'ivrId' when calling putArchitectIvr";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putArchitectIvr";
       }
 
 
@@ -7464,7 +7497,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -7476,15 +7509,18 @@ Emitter.prototype.hasListeners = function(event){
      * Update specified user prompt
      * 
      * @param {String} promptId Prompt ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.putArchitectPrompt = function(promptId, opts) { 
-      opts = opts || {};
+    this.putArchitectPrompt = function(promptId, body) { 
 
       // verify the required parameter 'promptId' is set
       if (promptId === undefined || promptId === null) {
         throw "Missing the required parameter 'promptId' when calling putArchitectPrompt";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putArchitectPrompt";
       }
 
 
@@ -7495,7 +7531,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -7508,11 +7544,9 @@ Emitter.prototype.hasListeners = function(event){
      * 
      * @param {String} promptId Prompt ID
      * @param {String} languageCode Language
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.putArchitectPromptResource = function(promptId, languageCode, opts) { 
-      opts = opts || {};
+    this.putArchitectPromptResource = function(promptId, languageCode, body) { 
 
       // verify the required parameter 'promptId' is set
       if (promptId === undefined || promptId === null) {
@@ -7524,6 +7558,11 @@ Emitter.prototype.hasListeners = function(event){
         throw "Missing the required parameter 'languageCode' when calling putArchitectPromptResource";
       }
 
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putArchitectPromptResource";
+      }
+
 
       return this.apiClient.callApi(
         '/api/v2/architect/prompts/{promptId}/resources/{languageCode}', 
@@ -7532,7 +7571,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -7544,15 +7583,18 @@ Emitter.prototype.hasListeners = function(event){
      * Update schedule by ID
      * 
      * @param {String} scheduleId Schedule ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.putArchitectSchedule = function(scheduleId, opts) { 
-      opts = opts || {};
+    this.putArchitectSchedule = function(scheduleId, body) { 
 
       // verify the required parameter 'scheduleId' is set
       if (scheduleId === undefined || scheduleId === null) {
         throw "Missing the required parameter 'scheduleId' when calling putArchitectSchedule";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putArchitectSchedule";
       }
 
 
@@ -7563,7 +7605,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -7575,15 +7617,18 @@ Emitter.prototype.hasListeners = function(event){
      * Updates a schedule group by ID
      * 
      * @param {String} scheduleGroupId Schedule group ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.putArchitectSchedulegroup = function(scheduleGroupId, opts) { 
-      opts = opts || {};
+    this.putArchitectSchedulegroup = function(scheduleGroupId, body) { 
 
       // verify the required parameter 'scheduleGroupId' is set
       if (scheduleGroupId === undefined || scheduleGroupId === null) {
         throw "Missing the required parameter 'scheduleGroupId' when calling putArchitectSchedulegroup";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putArchitectSchedulegroup";
       }
 
 
@@ -7594,7 +7639,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -7607,11 +7652,9 @@ Emitter.prototype.hasListeners = function(event){
      * 
      * @param {String} promptId Prompt ID
      * @param {String} languageCode Language
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.putArchitectSystempromptResource = function(promptId, languageCode, opts) { 
-      opts = opts || {};
+    this.putArchitectSystempromptResource = function(promptId, languageCode, body) { 
 
       // verify the required parameter 'promptId' is set
       if (promptId === undefined || promptId === null) {
@@ -7623,6 +7666,11 @@ Emitter.prototype.hasListeners = function(event){
         throw "Missing the required parameter 'languageCode' when calling putArchitectSystempromptResource";
       }
 
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putArchitectSystempromptResource";
+      }
+
 
       return this.apiClient.callApi(
         '/api/v2/architect/systemprompts/{promptId}/resources/{languageCode}', 
@@ -7631,7 +7679,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -7643,15 +7691,18 @@ Emitter.prototype.hasListeners = function(event){
      * Update flow
      * 
      * @param {String} flowId Flow ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.putFlow = function(flowId, opts) { 
-      opts = opts || {};
+    this.putFlow = function(flowId, body) { 
 
       // verify the required parameter 'flowId' is set
       if (flowId === undefined || flowId === null) {
         throw "Missing the required parameter 'flowId' when calling putFlow";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putFlow";
       }
 
 
@@ -7662,7 +7713,7 @@ Emitter.prototype.hasListeners = function(event){
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -7763,7 +7814,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -7974,7 +8025,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -8533,7 +8584,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Billing service.
    * @module purecloud-platform-client-v2/api/BillingApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -8606,7 +8657,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -9863,7 +9914,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -10974,6 +11025,46 @@ Emitter.prototype.hasListeners = function(event){
         '/api/v2/conversations/messages/{conversationId}', 
         'GET', 
         { 'conversationId': conversationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get media
+     * 
+     * @param {String} conversationId conversationId
+     * @param {String} communicationId communicationId
+     * @param {String} mediaId mediaId
+     */
+    this.getConversationsMessageCommunicationMessagesMediaMediaId = function(conversationId, communicationId, mediaId) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling getConversationsMessageCommunicationMessagesMediaMediaId";
+      }
+
+      // verify the required parameter 'communicationId' is set
+      if (communicationId === undefined || communicationId === null) {
+        throw "Missing the required parameter 'communicationId' when calling getConversationsMessageCommunicationMessagesMediaMediaId";
+      }
+
+      // verify the required parameter 'mediaId' is set
+      if (mediaId === undefined || mediaId === null) {
+        throw "Missing the required parameter 'mediaId' when calling getConversationsMessageCommunicationMessagesMediaMediaId";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}', 
+        'GET', 
+        { 'conversationId': conversationId,'communicationId': communicationId,'mediaId': mediaId }, 
         {  }, 
         {  }, 
         {  }, 
@@ -13037,6 +13128,40 @@ Emitter.prototype.hasListeners = function(event){
 
 
     /**
+     * Create media
+     * 
+     * @param {String} conversationId conversationId
+     * @param {String} communicationId communicationId
+     */
+    this.postConversationsMessageCommunicationMessagesMedia = function(conversationId, communicationId) { 
+
+      // verify the required parameter 'conversationId' is set
+      if (conversationId === undefined || conversationId === null) {
+        throw "Missing the required parameter 'conversationId' when calling postConversationsMessageCommunicationMessagesMedia";
+      }
+
+      // verify the required parameter 'communicationId' is set
+      if (communicationId === undefined || communicationId === null) {
+        throw "Missing the required parameter 'communicationId' when calling postConversationsMessageCommunicationMessagesMedia";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media', 
+        'POST', 
+        { 'conversationId': conversationId,'communicationId': communicationId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
      * Get messages in batch
      * 
      * @param {String} conversationId conversationId
@@ -13211,7 +13336,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -14228,7 +14353,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -14433,7 +14558,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * GeneralDataProtectionRegulation service.
    * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -14591,7 +14716,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -14754,7 +14879,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -15274,7 +15399,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -15732,7 +15857,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -16441,7 +16566,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -17728,7 +17853,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -18041,7 +18166,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -18286,7 +18411,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -18439,7 +18564,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * MobileDevices service.
    * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -18620,7 +18745,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -18855,7 +18980,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -19062,7 +19187,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -19210,7 +19335,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -19975,7 +20100,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -22711,7 +22836,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -22995,7 +23120,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -24599,7 +24724,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -25781,7 +25906,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -26152,7 +26277,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -26905,6 +27030,37 @@ Emitter.prototype.hasListeners = function(event){
         'GET', 
         {  }, 
         { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'name': opts['name'],'active': opts['active'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Search for queues by name
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.pageSize Page size (default to 25)
+     * @param {Number} opts.pageNumber Page number (default to 1)
+     * @param {String} opts.sortBy Sort by (default to name)
+     * @param {Object} opts.sortOrder Sort order (default to asc)
+     * @param {String} opts.name Name
+     * @param {Array.<String>} opts.id Queue ID(s)
+     * @param {Array.<String>} opts.divisionId Division ID(s)
+     */
+    this.getRoutingQueuesSearch = function(opts) { 
+      opts = opts || {};
+
+
+      return this.apiClient.callApi(
+        '/api/v2/routing/queues/search', 
+        'GET', 
+        {  }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
         {  }, 
         {  }, 
         null, 
@@ -27991,7 +28147,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -28391,7 +28547,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -28848,7 +29004,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -29025,7 +29181,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -29190,7 +29346,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -33113,7 +33269,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -33196,7 +33352,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -33411,7 +33567,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -35100,7 +35256,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -35215,7 +35371,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -35930,7 +36086,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * WebChat service.
    * @module purecloud-platform-client-v2/api/WebChatApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -36181,7 +36337,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -36398,6 +36554,8 @@ Emitter.prototype.hasListeners = function(event){
      * @param {Number} opts.pageSize 
      * @param {Number} opts.pageNumber 
      * @param {Object} opts.expand 
+     * @param {Object} opts.feature 
+     * @param {String} opts.divisionId 
      */
     this.getWorkforcemanagementManagementunits = function(opts) { 
       opts = opts || {};
@@ -36407,7 +36565,7 @@ Emitter.prototype.hasListeners = function(event){
         '/api/v2/workforcemanagement/managementunits', 
         'GET', 
         {  }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'feature': opts['feature'],'divisionId': opts['divisionId'] }, 
         {  }, 
         {  }, 
         null, 
@@ -36629,7 +36787,7 @@ Emitter.prototype.hasListeners = function(event){
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 28.0.0
+   * @version 29.0.0
    */
   var platformClient = {
     /**

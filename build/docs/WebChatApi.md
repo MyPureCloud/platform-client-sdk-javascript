@@ -33,7 +33,9 @@ Requires ANY permissions:
 
 * webchat:deployment:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -87,7 +89,9 @@ Requires ANY permissions:
 
 * webchat:deployment:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -135,7 +139,9 @@ Requires ANY permissions:
 
 * webchat:deployment:read
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -189,7 +195,9 @@ Requires ANY permissions:
 
 * webchat:deployment:read
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -237,7 +245,9 @@ Requires ANY permissions:
 
 * webchat:deployment:read
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -285,7 +295,42 @@ Requires ANY permissions:
 
 * webchat:deployment:create
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyWebChatDeploymentExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#WebChatDeploymentExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+WebChatDeployment <a style="cursor: pointer" onclick="copyWebChatDeploymentExample()">Copy</a>
+
+<div id="WebChatDeploymentExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "description": String, 
+  "authenticationRequired": Boolean, 
+  "authenticationUrl": String, 
+  "disabled": Boolean, 
+  "webChatConfig": { 
+    "webChatSkin": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -339,7 +384,42 @@ Requires ANY permissions:
 
 * webchat:deployment:update
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyWebChatDeploymentExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#WebChatDeploymentExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+WebChatDeployment <a style="cursor: pointer" onclick="copyWebChatDeploymentExample()">Copy</a>
+
+<div id="WebChatDeploymentExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "description": String, 
+  "authenticationRequired": Boolean, 
+  "authenticationUrl": String, 
+  "disabled": Boolean, 
+  "webChatConfig": { 
+    "webChatSkin": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -396,7 +476,33 @@ Requires ANY permissions:
 
 * webchat:deployment:update
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyWebChatSettingsExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#WebChatSettingsExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+WebChatSettings <a style="cursor: pointer" onclick="copyWebChatSettingsExample()">Copy</a>
+
+<div id="WebChatSettingsExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "requireDeployment": Boolean, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

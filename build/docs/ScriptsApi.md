@@ -36,7 +36,9 @@ Requires ANY permissions:
 
 * scripter:script:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -90,7 +92,9 @@ Requires ANY permissions:
 
 * scripter:script:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -151,7 +155,9 @@ Requires ANY permissions:
 
 * scripter:script:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -209,7 +215,9 @@ Requires ANY permissions:
 
 * scripter:script:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -280,7 +288,9 @@ Requires ANY permissions:
 
 * scripter:publishedScript:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -350,7 +360,9 @@ Requires ANY permissions:
 
 * scripter:publishedScript:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -408,7 +420,9 @@ Requires ANY permissions:
 
 * scripter:publishedScript:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -469,7 +483,9 @@ Requires ANY permissions:
 
 * scripter:publishedScript:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -527,7 +543,9 @@ Requires ANY permissions:
 
 * scripter:publishedScript:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -591,7 +609,9 @@ Requires ANY permissions:
 
 * scripter:script:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -649,7 +669,34 @@ Requires ANY permissions:
 
 * scripter:script:view
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyExportScriptRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ExportScriptRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ExportScriptRequest <a style="cursor: pointer" onclick="copyExportScriptRequestExample()">Copy</a>
+
+<div id="ExportScriptRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "fileName": String, 
+  "versionId": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

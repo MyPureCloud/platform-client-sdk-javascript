@@ -29,7 +29,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -83,7 +84,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -131,7 +133,33 @@ Requires ANY permissions:
 
 * admin
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyFeatureStateExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#FeatureStateExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+FeatureState <a style="cursor: pointer" onclick="copyFeatureStateExample()">Copy</a>
+
+<div id="FeatureStateExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "enabled": Boolean, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -188,7 +216,46 @@ Requires ANY permissions:
 
 * admin
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyOrganizationExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#OrganizationExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Organization <a style="cursor: pointer" onclick="copyOrganizationExample()">Copy</a>
+
+<div id="OrganizationExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "defaultLanguage": String, 
+  "defaultCountryCode": String, 
+  "thirdPartyOrgName": String, 
+  "thirdPartyURI": String, 
+  "domain": String, 
+  "version": Number, 
+  "state": String, 
+  "defaultSiteId": String, 
+  "supportURI": String, 
+  "voicemailEnabled": Boolean, 
+  "selfUri": String, 
+  "features": {String: Boolean}, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

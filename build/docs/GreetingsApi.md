@@ -41,7 +41,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -95,7 +96,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -149,7 +151,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -207,7 +210,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -264,7 +268,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -312,7 +317,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -372,7 +378,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -426,7 +433,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -486,7 +494,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -540,7 +549,51 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyGreetingExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#GreetingExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Greeting <a style="cursor: pointer" onclick="copyGreetingExample()">Copy</a>
+
+<div id="GreetingExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "type": String, 
+  "ownerType": String, 
+  "owner": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "audioFile": { 
+    "durationMilliseconds": Number, 
+    "sizeBytes": Number, 
+    "selfUri": String, 
+  },  
+  "audioTTS": String, 
+  "createdDate": Date, 
+  "createdBy": String, 
+  "modifiedDate": Date, 
+  "modifiedBy": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -594,7 +647,51 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyGreetingExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#GreetingExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Greeting <a style="cursor: pointer" onclick="copyGreetingExample()">Copy</a>
+
+<div id="GreetingExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "type": String, 
+  "ownerType": String, 
+  "owner": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "audioFile": { 
+    "durationMilliseconds": Number, 
+    "sizeBytes": Number, 
+    "selfUri": String, 
+  },  
+  "audioTTS": String, 
+  "createdDate": Date, 
+  "createdBy": String, 
+  "modifiedDate": Date, 
+  "modifiedBy": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -651,7 +748,51 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyGreetingExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#GreetingExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Greeting <a style="cursor: pointer" onclick="copyGreetingExample()">Copy</a>
+
+<div id="GreetingExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "type": String, 
+  "ownerType": String, 
+  "owner": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "audioFile": { 
+    "durationMilliseconds": Number, 
+    "sizeBytes": Number, 
+    "selfUri": String, 
+  },  
+  "audioTTS": String, 
+  "createdDate": Date, 
+  "createdBy": String, 
+  "modifiedDate": Date, 
+  "modifiedBy": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -708,7 +849,51 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyGreetingExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#GreetingExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Greeting <a style="cursor: pointer" onclick="copyGreetingExample()">Copy</a>
+
+<div id="GreetingExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "type": String, 
+  "ownerType": String, 
+  "owner": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "audioFile": { 
+    "durationMilliseconds": Number, 
+    "sizeBytes": Number, 
+    "selfUri": String, 
+  },  
+  "audioTTS": String, 
+  "createdDate": Date, 
+  "createdBy": String, 
+  "modifiedDate": Date, 
+  "modifiedBy": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -765,7 +950,66 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyDefaultGreetingListExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#DefaultGreetingListExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+DefaultGreetingList <a style="cursor: pointer" onclick="copyDefaultGreetingListExample()">Copy</a>
+
+<div id="DefaultGreetingListExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "owner": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "ownerType": String, 
+  "greetings": { 
+    "id": String, 
+    "name": String, 
+    "type": String, 
+    "ownerType": String, 
+    "owner": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+    "audioFile": { 
+      "durationMilliseconds": Number, 
+      "sizeBytes": Number, 
+      "selfUri": String, 
+    },  
+    "audioTTS": String, 
+    "createdDate": Date, 
+    "createdBy": String, 
+    "modifiedDate": Date, 
+    "modifiedBy": String, 
+    "selfUri": String, 
+  },  
+  "createdDate": Date, 
+  "createdBy": String, 
+  "modifiedDate": Date, 
+  "modifiedBy": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -819,7 +1063,66 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyDefaultGreetingListExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#DefaultGreetingListExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+DefaultGreetingList <a style="cursor: pointer" onclick="copyDefaultGreetingListExample()">Copy</a>
+
+<div id="DefaultGreetingListExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "owner": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "ownerType": String, 
+  "greetings": { 
+    "id": String, 
+    "name": String, 
+    "type": String, 
+    "ownerType": String, 
+    "owner": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+    "audioFile": { 
+      "durationMilliseconds": Number, 
+      "sizeBytes": Number, 
+      "selfUri": String, 
+    },  
+    "audioTTS": String, 
+    "createdDate": Date, 
+    "createdBy": String, 
+    "modifiedDate": Date, 
+    "modifiedBy": String, 
+    "selfUri": String, 
+  },  
+  "createdDate": Date, 
+  "createdBy": String, 
+  "modifiedDate": Date, 
+  "modifiedBy": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -876,7 +1179,66 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyDefaultGreetingListExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#DefaultGreetingListExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+DefaultGreetingList <a style="cursor: pointer" onclick="copyDefaultGreetingListExample()">Copy</a>
+
+<div id="DefaultGreetingListExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "owner": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "ownerType": String, 
+  "greetings": { 
+    "id": String, 
+    "name": String, 
+    "type": String, 
+    "ownerType": String, 
+    "owner": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+    "audioFile": { 
+      "durationMilliseconds": Number, 
+      "sizeBytes": Number, 
+      "selfUri": String, 
+    },  
+    "audioTTS": String, 
+    "createdDate": Date, 
+    "createdBy": String, 
+    "modifiedDate": Date, 
+    "modifiedBy": String, 
+    "selfUri": String, 
+  },  
+  "createdDate": Date, 
+  "createdBy": String, 
+  "modifiedDate": Date, 
+  "modifiedBy": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

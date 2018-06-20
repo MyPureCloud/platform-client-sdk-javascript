@@ -18,7 +18,7 @@
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**

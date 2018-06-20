@@ -18,7 +18,7 @@
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 28.0.0
+   * @version 29.0.0
    */
 
   /**
@@ -1697,11 +1697,14 @@
     /**
      * Creates a new emergency group
      * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.postArchitectEmergencygroups = function(opts) { 
-      opts = opts || {};
+    this.postArchitectEmergencygroups = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postArchitectEmergencygroups";
+      }
 
 
       return this.apiClient.callApi(
@@ -1711,7 +1714,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -1722,11 +1725,14 @@
     /**
      * Create IVR config.
      * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.postArchitectIvrs = function(opts) { 
-      opts = opts || {};
+    this.postArchitectIvrs = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postArchitectIvrs";
+      }
 
 
       return this.apiClient.callApi(
@@ -1736,7 +1742,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -1776,15 +1782,18 @@
      * Create a new user prompt resource
      * 
      * @param {String} promptId Prompt ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.postArchitectPromptResources = function(promptId, opts) { 
-      opts = opts || {};
+    this.postArchitectPromptResources = function(promptId, body) { 
 
       // verify the required parameter 'promptId' is set
       if (promptId === undefined || promptId === null) {
         throw "Missing the required parameter 'promptId' when calling postArchitectPromptResources";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postArchitectPromptResources";
       }
 
 
@@ -1795,7 +1804,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -1806,11 +1815,14 @@
     /**
      * Create a new user prompt
      * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.postArchitectPrompts = function(opts) { 
-      opts = opts || {};
+    this.postArchitectPrompts = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postArchitectPrompts";
+      }
 
 
       return this.apiClient.callApi(
@@ -1820,7 +1832,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -1831,11 +1843,14 @@
     /**
      * Creates a new schedule group
      * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.postArchitectSchedulegroups = function(opts) { 
-      opts = opts || {};
+    this.postArchitectSchedulegroups = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postArchitectSchedulegroups";
+      }
 
 
       return this.apiClient.callApi(
@@ -1845,7 +1860,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -1856,11 +1871,14 @@
     /**
      * Create a new schedule.
      * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.postArchitectSchedules = function(opts) { 
-      opts = opts || {};
+    this.postArchitectSchedules = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postArchitectSchedules";
+      }
 
 
       return this.apiClient.callApi(
@@ -1870,7 +1888,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -1910,15 +1928,18 @@
      * Create system prompt resource override.
      * 
      * @param {String} promptId Prompt ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.postArchitectSystempromptResources = function(promptId, opts) { 
-      opts = opts || {};
+    this.postArchitectSystempromptResources = function(promptId, body) { 
 
       // verify the required parameter 'promptId' is set
       if (promptId === undefined || promptId === null) {
         throw "Missing the required parameter 'promptId' when calling postArchitectSystempromptResources";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postArchitectSystempromptResources";
       }
 
 
@@ -1929,7 +1950,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -1941,15 +1962,18 @@
      * Create flow version
      * 
      * @param {String} flowId Flow ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.postFlowVersions = function(flowId, opts) { 
-      opts = opts || {};
+    this.postFlowVersions = function(flowId, body) { 
 
       // verify the required parameter 'flowId' is set
       if (flowId === undefined || flowId === null) {
         throw "Missing the required parameter 'flowId' when calling postFlowVersions";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postFlowVersions";
       }
 
 
@@ -1960,7 +1984,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -1971,11 +1995,14 @@
     /**
      * Create flow
      * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.postFlows = function(opts) { 
-      opts = opts || {};
+    this.postFlows = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling postFlows";
+      }
 
 
       return this.apiClient.callApi(
@@ -1985,7 +2012,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -2230,15 +2257,18 @@
      * Updates a emergency group by ID
      * 
      * @param {String} emergencyGroupId Emergency group ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.putArchitectEmergencygroup = function(emergencyGroupId, opts) { 
-      opts = opts || {};
+    this.putArchitectEmergencygroup = function(emergencyGroupId, body) { 
 
       // verify the required parameter 'emergencyGroupId' is set
       if (emergencyGroupId === undefined || emergencyGroupId === null) {
         throw "Missing the required parameter 'emergencyGroupId' when calling putArchitectEmergencygroup";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putArchitectEmergencygroup";
       }
 
 
@@ -2249,7 +2279,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -2261,15 +2291,18 @@
      * Update an IVR Config.
      * 
      * @param {String} ivrId IVR id
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.putArchitectIvr = function(ivrId, opts) { 
-      opts = opts || {};
+    this.putArchitectIvr = function(ivrId, body) { 
 
       // verify the required parameter 'ivrId' is set
       if (ivrId === undefined || ivrId === null) {
         throw "Missing the required parameter 'ivrId' when calling putArchitectIvr";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putArchitectIvr";
       }
 
 
@@ -2280,7 +2313,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -2292,15 +2325,18 @@
      * Update specified user prompt
      * 
      * @param {String} promptId Prompt ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.putArchitectPrompt = function(promptId, opts) { 
-      opts = opts || {};
+    this.putArchitectPrompt = function(promptId, body) { 
 
       // verify the required parameter 'promptId' is set
       if (promptId === undefined || promptId === null) {
         throw "Missing the required parameter 'promptId' when calling putArchitectPrompt";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putArchitectPrompt";
       }
 
 
@@ -2311,7 +2347,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -2324,11 +2360,9 @@
      * 
      * @param {String} promptId Prompt ID
      * @param {String} languageCode Language
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.putArchitectPromptResource = function(promptId, languageCode, opts) { 
-      opts = opts || {};
+    this.putArchitectPromptResource = function(promptId, languageCode, body) { 
 
       // verify the required parameter 'promptId' is set
       if (promptId === undefined || promptId === null) {
@@ -2340,6 +2374,11 @@
         throw "Missing the required parameter 'languageCode' when calling putArchitectPromptResource";
       }
 
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putArchitectPromptResource";
+      }
+
 
       return this.apiClient.callApi(
         '/api/v2/architect/prompts/{promptId}/resources/{languageCode}', 
@@ -2348,7 +2387,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -2360,15 +2399,18 @@
      * Update schedule by ID
      * 
      * @param {String} scheduleId Schedule ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.putArchitectSchedule = function(scheduleId, opts) { 
-      opts = opts || {};
+    this.putArchitectSchedule = function(scheduleId, body) { 
 
       // verify the required parameter 'scheduleId' is set
       if (scheduleId === undefined || scheduleId === null) {
         throw "Missing the required parameter 'scheduleId' when calling putArchitectSchedule";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putArchitectSchedule";
       }
 
 
@@ -2379,7 +2421,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -2391,15 +2433,18 @@
      * Updates a schedule group by ID
      * 
      * @param {String} scheduleGroupId Schedule group ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.putArchitectSchedulegroup = function(scheduleGroupId, opts) { 
-      opts = opts || {};
+    this.putArchitectSchedulegroup = function(scheduleGroupId, body) { 
 
       // verify the required parameter 'scheduleGroupId' is set
       if (scheduleGroupId === undefined || scheduleGroupId === null) {
         throw "Missing the required parameter 'scheduleGroupId' when calling putArchitectSchedulegroup";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putArchitectSchedulegroup";
       }
 
 
@@ -2410,7 +2455,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -2423,11 +2468,9 @@
      * 
      * @param {String} promptId Prompt ID
      * @param {String} languageCode Language
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.putArchitectSystempromptResource = function(promptId, languageCode, opts) { 
-      opts = opts || {};
+    this.putArchitectSystempromptResource = function(promptId, languageCode, body) { 
 
       // verify the required parameter 'promptId' is set
       if (promptId === undefined || promptId === null) {
@@ -2439,6 +2482,11 @@
         throw "Missing the required parameter 'languageCode' when calling putArchitectSystempromptResource";
       }
 
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putArchitectSystempromptResource";
+      }
+
 
       return this.apiClient.callApi(
         '/api/v2/architect/systemprompts/{promptId}/resources/{languageCode}', 
@@ -2447,7 +2495,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']
@@ -2459,15 +2507,18 @@
      * Update flow
      * 
      * @param {String} flowId Flow ID
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} body 
      */
-    this.putFlow = function(flowId, opts) { 
-      opts = opts || {};
+    this.putFlow = function(flowId, body) { 
 
       // verify the required parameter 'flowId' is set
       if (flowId === undefined || flowId === null) {
         throw "Missing the required parameter 'flowId' when calling putFlow";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putFlow";
       }
 
 
@@ -2478,7 +2529,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']

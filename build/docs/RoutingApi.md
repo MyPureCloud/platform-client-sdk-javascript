@@ -32,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingQueueUsers**](RoutingApi.html#getRoutingQueueUsers) | **GET** /api/v2/routing/queues/{queueId}/users | Get the members of this queue
 [**getRoutingQueueWrapupcodes**](RoutingApi.html#getRoutingQueueWrapupcodes) | **GET** /api/v2/routing/queues/{queueId}/wrapupcodes | Get the wrap-up codes for a queue
 [**getRoutingQueues**](RoutingApi.html#getRoutingQueues) | **GET** /api/v2/routing/queues | Get list of queues.
+[**getRoutingQueuesSearch**](RoutingApi.html#getRoutingQueuesSearch) | **GET** /api/v2/routing/queues/search | Search for queues by name
 [**getRoutingSkill**](RoutingApi.html#getRoutingSkill) | **GET** /api/v2/routing/skills/{skillId} | Get Routing Skill
 [**getRoutingSkills**](RoutingApi.html#getRoutingSkills) | **GET** /api/v2/routing/skills | Get the list of routing skills.
 [**getRoutingSmsAvailablephonenumbers**](RoutingApi.html#getRoutingSmsAvailablephonenumbers) | **GET** /api/v2/routing/sms/availablephonenumbers | Get a list of available phone numbers for SMS provisioning.
@@ -83,7 +84,9 @@ Requires ANY permissions:
 
 * routing:email:manage
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -137,7 +140,9 @@ Requires ANY permissions:
 
 * routing:email:manage
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -194,7 +199,9 @@ Requires ANY permissions:
 
 * routing:queue:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -252,7 +259,9 @@ Requires ANY permissions:
 
 * routing:queue:edit
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -309,7 +318,9 @@ Requires ANY permissions:
 
 * routing:queue:edit
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -366,7 +377,9 @@ Requires ANY permissions:
 
 * routing:skill:manage
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -420,7 +433,9 @@ Requires ANY permissions:
 
 * sms:phoneNumber:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -474,7 +489,9 @@ Requires ANY permissions:
 
 * routing:utilization:manage
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -522,7 +539,9 @@ Requires ANY permissions:
 
 * routing:wrapupCode:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -574,9 +593,12 @@ Remove routing language from user
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -631,9 +653,12 @@ Remove routing skill from user
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -690,7 +715,9 @@ Requires ANY permissions:
 
 * routing:email:manage
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -744,7 +771,9 @@ Requires ANY permissions:
 
 * routing:email:manage
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -801,7 +830,9 @@ Requires ANY permissions:
 
 * routing:email:manage
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -863,7 +894,9 @@ Requires ANY permissions:
 
 * routing:email:manage
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -911,7 +944,9 @@ Requires ANY permissions:
 
 * routing:email:manage
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -959,7 +994,9 @@ Requires ANY permissions:
 
 * routing:skill:manage
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1020,7 +1057,9 @@ Requires ANY permissions:
 
 * routing:message:manage
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1074,7 +1113,9 @@ Requires ANY permissions:
 
 * routing:message:manage
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1131,7 +1172,9 @@ Requires ANY permissions:
 
 * routing:queue:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1185,7 +1228,9 @@ Requires ANY permissions:
 
 * routing:queue:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1243,7 +1288,9 @@ Requires ANY permissions:
 
 * routing:queue:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1300,7 +1347,9 @@ Requires ANY permissions:
 
 * routing:queue:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1378,7 +1427,9 @@ Requires ANY permissions:
 
 * routing:queue:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1432,7 +1483,9 @@ Requires ANY permissions:
 
 * routing:queue:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1481,6 +1534,75 @@ apiInstance.getRoutingQueues(opts)
 
 **QueueEntityListing**
 
+<a name="getRoutingQueuesSearch"></a>
+
+# QueueEntityListing getRoutingQueuesSearch(opts)
+
+
+
+GET /api/v2/routing/queues/search
+
+Search for queues by name
+
+
+
+Requires ANY permissions: 
+
+* routing:queue:search
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RoutingApi();
+
+var opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'sortBy': "name", // String | Sort by
+  'sortOrder': "asc", // String | Sort order
+  'name': "name_example", // String | Name
+  'id': ["id_example"], // [String] | Queue ID(s)
+  'divisionId': ["divisionId_example"] // [String] | Division ID(s)
+};
+apiInstance.getRoutingQueuesSearch(opts)
+  .then(function(data) {
+    console.log(`getRoutingQueuesSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getRoutingQueuesSearch');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **sortOrder** | **String** | Sort order | [optional] [default to asc]<br />**Values**: asc, desc, score |
+ **name** | **String** | Name | [optional]  |
+ **id** | **[String]** | Queue ID(s) | [optional]  |
+ **divisionId** | **[String]** | Division ID(s) | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**QueueEntityListing**
+
 <a name="getRoutingSkill"></a>
 
 # RoutingSkill getRoutingSkill(skillId)
@@ -1497,7 +1619,9 @@ Requires ANY permissions:
 
 * routing:skill:manage
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1551,7 +1675,9 @@ Requires ANY permissions:
 
 * routing:skill:manage
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1610,7 +1736,9 @@ Requires ANY permissions:
 
 * sms:phoneNumber:add
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1679,7 +1807,9 @@ Requires ANY permissions:
 
 * sms:phoneNumber:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1733,7 +1863,9 @@ Requires ANY permissions:
 
 * sms:phoneNumber:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1794,9 +1926,12 @@ Get the utilization settings.
 
 Requires ANY permissions: 
 
-* routing:utilization:manage* routing:utilization:view
+* routing:utilization:manage
+* routing:utilization:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1844,7 +1979,9 @@ Requires ANY permissions:
 
 * routing:wrapupCode:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1898,7 +2035,9 @@ Requires ANY permissions:
 
 * routing:wrapupCode:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1959,7 +2098,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2021,7 +2161,8 @@ Requires NO permissions:
 
 
 
-### Example
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2083,7 +2224,358 @@ Requires ANY permissions:
 
 * routing:queue:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyQueueMemberExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#QueueMemberExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+QueueMember <a style="cursor: pointer" onclick="copyQueueMemberExample()">Copy</a>
+
+<div id="QueueMemberExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "user": { 
+    "id": String, 
+    "name": String, 
+    "chat": { 
+      "jabberId": String, 
+    },  
+    "department": String, 
+    "email": String, 
+    "primaryContactInfo": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "addresses": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "state": String, 
+    "title": String, 
+    "username": String, 
+    "manager": User, 
+    "images": { 
+      "resolution": String, 
+      "imageUri": String, 
+    },  
+    "version": Number, 
+    "routingStatus": { 
+      "userId": String, 
+      "status": String, 
+      "startTime": Date, 
+    },  
+    "presence": { 
+      "id": String, 
+      "name": String, 
+      "source": String, 
+      "primary": Boolean, 
+      "presenceDefinition": { 
+        "id": String, 
+        "systemPresence": String, 
+        "selfUri": String, 
+      },  
+      "message": String, 
+      "modifiedDate": Date, 
+      "selfUri": String, 
+    },  
+    "conversationSummary": { 
+      "userId": String, 
+      "call": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "callback": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "email": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "message": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "chat": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "socialExpression": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "video": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+    },  
+    "outOfOffice": { 
+      "id": String, 
+      "name": String, 
+      "user": User, 
+      "startDate": Date, 
+      "endDate": Date, 
+      "active": Boolean, 
+      "indefinite": Boolean, 
+      "selfUri": String, 
+    },  
+    "geolocation": { 
+      "id": String, 
+      "name": String, 
+      "type": String, 
+      "primary": Boolean, 
+      "latitude": Number, 
+      "longitude": Number, 
+      "country": String, 
+      "region": String, 
+      "city": String, 
+      "locations": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "station": { 
+      "associatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "effectiveStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "defaultStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "lastAssociatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+    },  
+    "authorization": { 
+      "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "permissions": [String], 
+      "permissionPolicies": { 
+        "id": String, 
+        "domain": String, 
+        "entityName": String, 
+        "policyName": String, 
+        "policyDescription": String, 
+        "actionSetKey": String, 
+        "allowConditions": Boolean, 
+        "resourceConditionNode": { 
+          "variableName": String, 
+          "conjunction": String, 
+          "operator": String, 
+          "operands": { 
+            "type": String, 
+            "value": String, 
+          },  
+          "terms": { 
+            "variableName": String, 
+            "conjunction": String, 
+            "operator": String, 
+            "operands": { 
+              "type": String, 
+              "value": String, 
+            },  
+            "terms": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+          },  
+        },  
+        "namedResources": [String], 
+        "resourceCondition": String, 
+        "actionSet": [String], 
+      },  
+    },  
+    "profileSkills": [String], 
+    "locations": { 
+      "id": String, 
+      "floorplanId": String, 
+      "coordinates": {String: Number}, 
+      "notes": String, 
+      "locationDefinition": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+    },  
+    "groups": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "state": String, 
+      "version": Number, 
+      "type": String, 
+      "images": { 
+        "resolution": String, 
+        "imageUri": String, 
+      },  
+      "addresses": { 
+        "address": String, 
+        "display": String, 
+        "type": String, 
+        "mediaType": String, 
+      },  
+      "rulesVisible": Boolean, 
+      "visibility": String, 
+      "owners": User, 
+      "selfUri": String, 
+    },  
+    "selfUri": String, 
+  },  
+  "ringNumber": Number, 
+  "joined": Boolean, 
+  "memberBy": String, 
+  "routingStatus": { 
+    "userId": String, 
+    "status": String, 
+    "startTime": Date, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2143,7 +2635,358 @@ Requires ANY permissions:
 
 * routing:queue:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyQueueMemberExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#QueueMemberExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+QueueMember <a style="cursor: pointer" onclick="copyQueueMemberExample()">Copy</a>
+
+<div id="QueueMemberExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "user": { 
+    "id": String, 
+    "name": String, 
+    "chat": { 
+      "jabberId": String, 
+    },  
+    "department": String, 
+    "email": String, 
+    "primaryContactInfo": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "addresses": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "state": String, 
+    "title": String, 
+    "username": String, 
+    "manager": User, 
+    "images": { 
+      "resolution": String, 
+      "imageUri": String, 
+    },  
+    "version": Number, 
+    "routingStatus": { 
+      "userId": String, 
+      "status": String, 
+      "startTime": Date, 
+    },  
+    "presence": { 
+      "id": String, 
+      "name": String, 
+      "source": String, 
+      "primary": Boolean, 
+      "presenceDefinition": { 
+        "id": String, 
+        "systemPresence": String, 
+        "selfUri": String, 
+      },  
+      "message": String, 
+      "modifiedDate": Date, 
+      "selfUri": String, 
+    },  
+    "conversationSummary": { 
+      "userId": String, 
+      "call": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "callback": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "email": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "message": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "chat": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "socialExpression": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "video": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+    },  
+    "outOfOffice": { 
+      "id": String, 
+      "name": String, 
+      "user": User, 
+      "startDate": Date, 
+      "endDate": Date, 
+      "active": Boolean, 
+      "indefinite": Boolean, 
+      "selfUri": String, 
+    },  
+    "geolocation": { 
+      "id": String, 
+      "name": String, 
+      "type": String, 
+      "primary": Boolean, 
+      "latitude": Number, 
+      "longitude": Number, 
+      "country": String, 
+      "region": String, 
+      "city": String, 
+      "locations": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "station": { 
+      "associatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "effectiveStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "defaultStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "lastAssociatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+    },  
+    "authorization": { 
+      "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "permissions": [String], 
+      "permissionPolicies": { 
+        "id": String, 
+        "domain": String, 
+        "entityName": String, 
+        "policyName": String, 
+        "policyDescription": String, 
+        "actionSetKey": String, 
+        "allowConditions": Boolean, 
+        "resourceConditionNode": { 
+          "variableName": String, 
+          "conjunction": String, 
+          "operator": String, 
+          "operands": { 
+            "type": String, 
+            "value": String, 
+          },  
+          "terms": { 
+            "variableName": String, 
+            "conjunction": String, 
+            "operator": String, 
+            "operands": { 
+              "type": String, 
+              "value": String, 
+            },  
+            "terms": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+          },  
+        },  
+        "namedResources": [String], 
+        "resourceCondition": String, 
+        "actionSet": [String], 
+      },  
+    },  
+    "profileSkills": [String], 
+    "locations": { 
+      "id": String, 
+      "floorplanId": String, 
+      "coordinates": {String: Number}, 
+      "notes": String, 
+      "locationDefinition": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+    },  
+    "groups": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "state": String, 
+      "version": Number, 
+      "type": String, 
+      "images": { 
+        "resolution": String, 
+        "imageUri": String, 
+      },  
+      "addresses": { 
+        "address": String, 
+        "display": String, 
+        "type": String, 
+        "mediaType": String, 
+      },  
+      "rulesVisible": Boolean, 
+      "visibility": String, 
+      "owners": User, 
+      "selfUri": String, 
+    },  
+    "selfUri": String, 
+  },  
+  "ringNumber": Number, 
+  "joined": Boolean, 
+  "memberBy": String, 
+  "routingStatus": { 
+    "userId": String, 
+    "status": String, 
+    "startTime": Date, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2198,9 +3041,41 @@ Update routing language proficiency or state.
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyUserRoutingLanguageExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#UserRoutingLanguageExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+UserRoutingLanguage <a style="cursor: pointer" onclick="copyUserRoutingLanguageExample()">Copy</a>
+
+<div id="UserRoutingLanguageExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "proficiency": Number, 
+  "state": String, 
+  "languageUri": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2260,7 +3135,69 @@ Requires ANY permissions:
 
 * analytics:queueObservation:view
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyObservationQueryExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ObservationQueryExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ObservationQuery <a style="cursor: pointer" onclick="copyObservationQueryExample()">Copy</a>
+
+<div id="ObservationQueryExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "filter": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "metrics": [String], 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2314,7 +3251,171 @@ Requires ANY permissions:
 
 * routing:email:manage
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyInboundRouteExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#InboundRouteExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+InboundRoute <a style="cursor: pointer" onclick="copyInboundRouteExample()">Copy</a>
+
+<div id="InboundRouteExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "pattern": String, 
+  "queue": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "priority": Number, 
+  "skills": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "language": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "fromName": String, 
+  "fromEmail": String, 
+  "flow": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "replyEmailAddress": { 
+    "domain": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+    "route": { 
+      "id": String, 
+      "name": String, 
+      "pattern": String, 
+      "queue": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "priority": Number, 
+      "skills": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "language": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "fromName": String, 
+      "fromEmail": String, 
+      "flow": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "replyEmailAddress": { 
+        "domain": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
+        "route": { 
+          "id": String, 
+          "name": String, 
+          "pattern": String, 
+          "queue": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "priority": Number, 
+          "skills": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "language": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "fromName": String, 
+          "fromEmail": String, 
+          "flow": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "replyEmailAddress": { 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
+            "route": { 
+              "id": String, 
+              "name": String, 
+              "pattern": String, 
+              "queue": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "priority": Number, 
+              "skills": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "language": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "fromName": String, 
+              "fromEmail": String, 
+              "flow": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "replyEmailAddress": { 
+                "domain": UriReference, 
+                "route": InboundRoute, 
+              },  
+              "selfUri": String, 
+            },  
+          },  
+          "selfUri": String, 
+        },  
+      },  
+      "selfUri": String, 
+    },  
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2371,7 +3472,37 @@ Requires ANY permissions:
 
 * routing:email:manage
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyInboundDomainExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#InboundDomainExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+InboundDomain <a style="cursor: pointer" onclick="copyInboundDomainExample()">Copy</a>
+
+<div id="InboundDomainExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "mxRecordStatus": String, 
+  "subDomain": Boolean, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2425,7 +3556,38 @@ Requires ANY permissions:
 
 * routing:skill:manage
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyLanguageExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#LanguageExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Language <a style="cursor: pointer" onclick="copyLanguageExample()">Copy</a>
+
+<div id="LanguageExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateModified": Date, 
+  "state": String, 
+  "version": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2479,7 +3641,33 @@ Requires ANY permissions:
 
 * routing:queue:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyWritableEntityExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#WritableEntityExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+WritableEntity <a style="cursor: pointer" onclick="copyWritableEntityExample()">Copy</a>
+
+<div id="WritableEntityExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2540,7 +3728,33 @@ Requires ANY permissions:
 
 * routing:queue:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyWrapUpCodeReferenceExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#WrapUpCodeReferenceExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+WrapUpCodeReference <a style="cursor: pointer" onclick="copyWrapUpCodeReferenceExample()">Copy</a>
+
+<div id="WrapUpCodeReferenceExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2597,7 +3811,228 @@ Requires ANY permissions:
 
 * routing:queue:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyCreateQueueRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#CreateQueueRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+CreateQueueRequest <a style="cursor: pointer" onclick="copyCreateQueueRequestExample()">Copy</a>
+
+<div id="CreateQueueRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "description": String, 
+  "version": Number, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "modifiedBy": String, 
+  "createdBy": String, 
+  "state": String, 
+  "modifiedByApp": String, 
+  "createdByApp": String, 
+  "mediaSettings": { 
+    "alertingTimeoutSeconds": Number, 
+    "serviceLevel": { 
+      "percentage": Number, 
+      "durationMs": Number, 
+    },  
+  },  
+  "bullseye": { 
+    "rings": { 
+      "expansionCriteria": { 
+        "type": String, 
+        "threshold": Number, 
+      },  
+      "actions": { 
+        "skillsToRemove": { 
+          "name": String, 
+          "id": String, 
+          "selfUri": String, 
+        },  
+      },  
+    },  
+  },  
+  "acwSettings": { 
+    "wrapupPrompt": String, 
+    "timeoutMs": Number, 
+  },  
+  "skillEvaluationMethod": String, 
+  "queueFlow": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "whisperPrompt": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "autoAnswerOnly": Boolean, 
+  "callingPartyName": String, 
+  "callingPartyNumber": String, 
+  "defaultScripts": { 
+    "id": String, 
+    "name": String, 
+    "versionId": String, 
+    "createdDate": Date, 
+    "modifiedDate": Date, 
+    "publishedDate": Date, 
+    "versionDate": Date, 
+    "startPageId": String, 
+    "startPageName": String, 
+    "features": Object, 
+    "variables": Object, 
+    "customActions": Object, 
+    "pages": { 
+      "id": String, 
+      "name": String, 
+      "versionId": String, 
+      "createdDate": Date, 
+      "modifiedDate": Date, 
+      "rootContainer": {String: Object}, 
+      "properties": {String: Object}, 
+      "selfUri": String, 
+    },  
+    "selfUri": String, 
+  },  
+  "outboundEmailAddress": { 
+    "domain": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+    "route": { 
+      "id": String, 
+      "name": String, 
+      "pattern": String, 
+      "queue": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "priority": Number, 
+      "skills": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "language": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "fromName": String, 
+      "fromEmail": String, 
+      "flow": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "replyEmailAddress": { 
+        "domain": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
+        "route": { 
+          "id": String, 
+          "name": String, 
+          "pattern": String, 
+          "queue": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "priority": Number, 
+          "skills": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "language": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "fromName": String, 
+          "fromEmail": String, 
+          "flow": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "replyEmailAddress": { 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
+            "route": { 
+              "id": String, 
+              "name": String, 
+              "pattern": String, 
+              "queue": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "priority": Number, 
+              "skills": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "language": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "fromName": String, 
+              "fromEmail": String, 
+              "flow": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "replyEmailAddress": { 
+                "domain": UriReference, 
+                "route": InboundRoute, 
+              },  
+              "selfUri": String, 
+            },  
+          },  
+          "selfUri": String, 
+        },  
+      },  
+      "selfUri": String, 
+    },  
+  },  
+  "sourceQueueId": String, 
+  "memberCount": Number, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2651,7 +4086,38 @@ Requires ANY permissions:
 
 * routing:skill:manage
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyRoutingSkillExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#RoutingSkillExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+RoutingSkill <a style="cursor: pointer" onclick="copyRoutingSkillExample()">Copy</a>
+
+<div id="RoutingSkillExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateModified": Date, 
+  "state": String, 
+  "version": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2705,7 +4171,41 @@ Requires ANY permissions:
 
 * sms:phoneNumber:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copySmsAddressProvisionExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#SmsAddressProvisionExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+SmsAddressProvision <a style="cursor: pointer" onclick="copySmsAddressProvisionExample()">Copy</a>
+
+<div id="SmsAddressProvisionExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "street": String, 
+  "city": String, 
+  "region": String, 
+  "postalCode": String, 
+  "countryCode": String, 
+  "autoCorrectAddress": Boolean, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2759,7 +4259,38 @@ Requires ANY permissions:
 
 * sms:phoneNumber:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copySmsPhoneNumberProvisionExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#SmsPhoneNumberProvisionExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+SmsPhoneNumberProvision <a style="cursor: pointer" onclick="copySmsPhoneNumberProvisionExample()">Copy</a>
+
+<div id="SmsPhoneNumberProvisionExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "phoneNumber": String, 
+  "phoneNumberType": String, 
+  "countryCode": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2813,7 +4344,39 @@ Requires ANY permissions:
 
 * routing:wrapupCode:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyWrapupCodeExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#WrapupCodeExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+WrapupCode <a style="cursor: pointer" onclick="copyWrapupCodeExample()">Copy</a>
+
+<div id="WrapupCodeExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "modifiedBy": String, 
+  "createdBy": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2865,9 +4428,39 @@ Add routing language to user
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyUserRoutingLanguagePostExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#UserRoutingLanguagePostExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+UserRoutingLanguagePost <a style="cursor: pointer" onclick="copyUserRoutingLanguagePostExample()">Copy</a>
+
+<div id="UserRoutingLanguagePostExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "proficiency": Number, 
+  "languageUri": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2922,9 +4515,39 @@ Add routing skill to user
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyUserRoutingSkillPostExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#UserRoutingSkillPostExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+UserRoutingSkillPost <a style="cursor: pointer" onclick="copyUserRoutingSkillPostExample()">Copy</a>
+
+<div id="UserRoutingSkillPostExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "proficiency": Number, 
+  "skillUri": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2981,7 +4604,171 @@ Requires ANY permissions:
 
 * routing:email:manage
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyInboundRouteExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#InboundRouteExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+InboundRoute <a style="cursor: pointer" onclick="copyInboundRouteExample()">Copy</a>
+
+<div id="InboundRouteExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "pattern": String, 
+  "queue": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "priority": Number, 
+  "skills": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "language": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "fromName": String, 
+  "fromEmail": String, 
+  "flow": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "replyEmailAddress": { 
+    "domain": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+    "route": { 
+      "id": String, 
+      "name": String, 
+      "pattern": String, 
+      "queue": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "priority": Number, 
+      "skills": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "language": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "fromName": String, 
+      "fromEmail": String, 
+      "flow": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "replyEmailAddress": { 
+        "domain": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
+        "route": { 
+          "id": String, 
+          "name": String, 
+          "pattern": String, 
+          "queue": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "priority": Number, 
+          "skills": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "language": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "fromName": String, 
+          "fromEmail": String, 
+          "flow": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "replyEmailAddress": { 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
+            "route": { 
+              "id": String, 
+              "name": String, 
+              "pattern": String, 
+              "queue": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "priority": Number, 
+              "skills": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "language": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "fromName": String, 
+              "fromEmail": String, 
+              "flow": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "replyEmailAddress": { 
+                "domain": UriReference, 
+                "route": InboundRoute, 
+              },  
+              "selfUri": String, 
+            },  
+          },  
+          "selfUri": String, 
+        },  
+      },  
+      "selfUri": String, 
+    },  
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3041,7 +4828,1336 @@ Requires ANY permissions:
 
 * routing:message:manage
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyRecipientExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#RecipientExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Recipient <a style="cursor: pointer" onclick="copyRecipientExample()">Copy</a>
+
+<div id="RecipientExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "flow": { 
+    "id": String, 
+    "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+    "description": String, 
+    "type": String, 
+    "lockedUser": { 
+      "id": String, 
+      "name": String, 
+      "chat": { 
+        "jabberId": String, 
+      },  
+      "department": String, 
+      "email": String, 
+      "primaryContactInfo": { 
+        "address": String, 
+        "display": String, 
+        "mediaType": String, 
+        "type": String, 
+        "extension": String, 
+      },  
+      "addresses": { 
+        "address": String, 
+        "display": String, 
+        "mediaType": String, 
+        "type": String, 
+        "extension": String, 
+      },  
+      "state": String, 
+      "title": String, 
+      "username": String, 
+      "manager": User, 
+      "images": { 
+        "resolution": String, 
+        "imageUri": String, 
+      },  
+      "version": Number, 
+      "routingStatus": { 
+        "userId": String, 
+        "status": String, 
+        "startTime": Date, 
+      },  
+      "presence": { 
+        "id": String, 
+        "name": String, 
+        "source": String, 
+        "primary": Boolean, 
+        "presenceDefinition": { 
+          "id": String, 
+          "systemPresence": String, 
+          "selfUri": String, 
+        },  
+        "message": String, 
+        "modifiedDate": Date, 
+        "selfUri": String, 
+      },  
+      "conversationSummary": { 
+        "userId": String, 
+        "call": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "callback": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "email": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "message": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "chat": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "socialExpression": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "video": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+      },  
+      "outOfOffice": { 
+        "id": String, 
+        "name": String, 
+        "user": User, 
+        "startDate": Date, 
+        "endDate": Date, 
+        "active": Boolean, 
+        "indefinite": Boolean, 
+        "selfUri": String, 
+      },  
+      "geolocation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "primary": Boolean, 
+        "latitude": Number, 
+        "longitude": Number, 
+        "country": String, 
+        "region": String, 
+        "city": String, 
+        "locations": { 
+          "id": String, 
+          "name": String, 
+          "address": { 
+            "city": String, 
+            "country": String, 
+            "countryName": String, 
+            "state": String, 
+            "street1": String, 
+            "street2": String, 
+            "zipcode": String, 
+          },  
+          "addressVerified": Boolean, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
+          "state": String, 
+          "version": Number, 
+          "path": [String], 
+          "selfUri": String, 
+        },  
+        "selfUri": String, 
+      },  
+      "station": { 
+        "associatedStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "effectiveStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "defaultStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "lastAssociatedStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+      },  
+      "authorization": { 
+        "roles": { 
+          "id": String, 
+          "name": String, 
+        },  
+        "permissions": [String], 
+        "permissionPolicies": { 
+          "id": String, 
+          "domain": String, 
+          "entityName": String, 
+          "policyName": String, 
+          "policyDescription": String, 
+          "actionSetKey": String, 
+          "allowConditions": Boolean, 
+          "resourceConditionNode": { 
+            "variableName": String, 
+            "conjunction": String, 
+            "operator": String, 
+            "operands": { 
+              "type": String, 
+              "value": String, 
+            },  
+            "terms": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+          },  
+          "namedResources": [String], 
+          "resourceCondition": String, 
+          "actionSet": [String], 
+        },  
+      },  
+      "profileSkills": [String], 
+      "locations": { 
+        "id": String, 
+        "floorplanId": String, 
+        "coordinates": {String: Number}, 
+        "notes": String, 
+        "locationDefinition": { 
+          "id": String, 
+          "name": String, 
+          "address": { 
+            "city": String, 
+            "country": String, 
+            "countryName": String, 
+            "state": String, 
+            "street1": String, 
+            "street2": String, 
+            "zipcode": String, 
+          },  
+          "addressVerified": Boolean, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
+          "state": String, 
+          "version": Number, 
+          "path": [String], 
+          "selfUri": String, 
+        },  
+      },  
+      "groups": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
+        "state": String, 
+        "version": Number, 
+        "type": String, 
+        "images": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "addresses": { 
+          "address": String, 
+          "display": String, 
+          "type": String, 
+          "mediaType": String, 
+        },  
+        "rulesVisible": Boolean, 
+        "visibility": String, 
+        "owners": User, 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "active": Boolean, 
+    "system": Boolean, 
+    "deleted": Boolean, 
+    "publishedVersion": { 
+      "id": String, 
+      "name": String, 
+      "commitVersion": String, 
+      "configurationVersion": String, 
+      "type": String, 
+      "secure": Boolean, 
+      "createdBy": User, 
+      "configurationUri": String, 
+      "dateCreated": Number, 
+      "generationId": String, 
+      "publishResultUri": String, 
+      "selfUri": String, 
+    },  
+    "savedVersion": { 
+      "id": String, 
+      "name": String, 
+      "commitVersion": String, 
+      "configurationVersion": String, 
+      "type": String, 
+      "secure": Boolean, 
+      "createdBy": User, 
+      "configurationUri": String, 
+      "dateCreated": Number, 
+      "generationId": String, 
+      "publishResultUri": String, 
+      "selfUri": String, 
+    },  
+    "inputSchema": Object, 
+    "outputSchema": Object, 
+    "checkedInVersion": { 
+      "id": String, 
+      "name": String, 
+      "commitVersion": String, 
+      "configurationVersion": String, 
+      "type": String, 
+      "secure": Boolean, 
+      "createdBy": User, 
+      "configurationUri": String, 
+      "dateCreated": Number, 
+      "generationId": String, 
+      "publishResultUri": String, 
+      "selfUri": String, 
+    },  
+    "publishedBy": { 
+      "id": String, 
+      "name": String, 
+      "chat": { 
+        "jabberId": String, 
+      },  
+      "department": String, 
+      "email": String, 
+      "primaryContactInfo": { 
+        "address": String, 
+        "display": String, 
+        "mediaType": String, 
+        "type": String, 
+        "extension": String, 
+      },  
+      "addresses": { 
+        "address": String, 
+        "display": String, 
+        "mediaType": String, 
+        "type": String, 
+        "extension": String, 
+      },  
+      "state": String, 
+      "title": String, 
+      "username": String, 
+      "manager": User, 
+      "images": { 
+        "resolution": String, 
+        "imageUri": String, 
+      },  
+      "version": Number, 
+      "routingStatus": { 
+        "userId": String, 
+        "status": String, 
+        "startTime": Date, 
+      },  
+      "presence": { 
+        "id": String, 
+        "name": String, 
+        "source": String, 
+        "primary": Boolean, 
+        "presenceDefinition": { 
+          "id": String, 
+          "systemPresence": String, 
+          "selfUri": String, 
+        },  
+        "message": String, 
+        "modifiedDate": Date, 
+        "selfUri": String, 
+      },  
+      "conversationSummary": { 
+        "userId": String, 
+        "call": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "callback": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "email": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "message": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "chat": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "socialExpression": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+        "video": { 
+          "contactCenter": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+          "enterprise": { 
+            "active": Number, 
+            "acw": Number, 
+          },  
+        },  
+      },  
+      "outOfOffice": { 
+        "id": String, 
+        "name": String, 
+        "user": User, 
+        "startDate": Date, 
+        "endDate": Date, 
+        "active": Boolean, 
+        "indefinite": Boolean, 
+        "selfUri": String, 
+      },  
+      "geolocation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "primary": Boolean, 
+        "latitude": Number, 
+        "longitude": Number, 
+        "country": String, 
+        "region": String, 
+        "city": String, 
+        "locations": { 
+          "id": String, 
+          "name": String, 
+          "address": { 
+            "city": String, 
+            "country": String, 
+            "countryName": String, 
+            "state": String, 
+            "street1": String, 
+            "street2": String, 
+            "zipcode": String, 
+          },  
+          "addressVerified": Boolean, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
+          "state": String, 
+          "version": Number, 
+          "path": [String], 
+          "selfUri": String, 
+        },  
+        "selfUri": String, 
+      },  
+      "station": { 
+        "associatedStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "effectiveStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "defaultStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+        "lastAssociatedStation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "associatedUser": User, 
+          "associatedDate": Date, 
+          "defaultUser": User, 
+          "providerInfo": {String: String}, 
+        },  
+      },  
+      "authorization": { 
+        "roles": { 
+          "id": String, 
+          "name": String, 
+        },  
+        "permissions": [String], 
+        "permissionPolicies": { 
+          "id": String, 
+          "domain": String, 
+          "entityName": String, 
+          "policyName": String, 
+          "policyDescription": String, 
+          "actionSetKey": String, 
+          "allowConditions": Boolean, 
+          "resourceConditionNode": { 
+            "variableName": String, 
+            "conjunction": String, 
+            "operator": String, 
+            "operands": { 
+              "type": String, 
+              "value": String, 
+            },  
+            "terms": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+          },  
+          "namedResources": [String], 
+          "resourceCondition": String, 
+          "actionSet": [String], 
+        },  
+      },  
+      "profileSkills": [String], 
+      "locations": { 
+        "id": String, 
+        "floorplanId": String, 
+        "coordinates": {String: Number}, 
+        "notes": String, 
+        "locationDefinition": { 
+          "id": String, 
+          "name": String, 
+          "address": { 
+            "city": String, 
+            "country": String, 
+            "countryName": String, 
+            "state": String, 
+            "street1": String, 
+            "street2": String, 
+            "zipcode": String, 
+          },  
+          "addressVerified": Boolean, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
+          "state": String, 
+          "version": Number, 
+          "path": [String], 
+          "selfUri": String, 
+        },  
+      },  
+      "groups": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
+        "state": String, 
+        "version": Number, 
+        "type": String, 
+        "images": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "addresses": { 
+          "address": String, 
+          "display": String, 
+          "type": String, 
+          "mediaType": String, 
+        },  
+        "rulesVisible": Boolean, 
+        "visibility": String, 
+        "owners": User, 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "currentOperation": { 
+      "id": String, 
+      "complete": Boolean, 
+      "user": { 
+        "id": String, 
+        "name": String, 
+        "chat": { 
+          "jabberId": String, 
+        },  
+        "department": String, 
+        "email": String, 
+        "primaryContactInfo": { 
+          "address": String, 
+          "display": String, 
+          "mediaType": String, 
+          "type": String, 
+          "extension": String, 
+        },  
+        "addresses": { 
+          "address": String, 
+          "display": String, 
+          "mediaType": String, 
+          "type": String, 
+          "extension": String, 
+        },  
+        "state": String, 
+        "title": String, 
+        "username": String, 
+        "manager": User, 
+        "images": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "version": Number, 
+        "routingStatus": { 
+          "userId": String, 
+          "status": String, 
+          "startTime": Date, 
+        },  
+        "presence": { 
+          "id": String, 
+          "name": String, 
+          "source": String, 
+          "primary": Boolean, 
+          "presenceDefinition": { 
+            "id": String, 
+            "systemPresence": String, 
+            "selfUri": String, 
+          },  
+          "message": String, 
+          "modifiedDate": Date, 
+          "selfUri": String, 
+        },  
+        "conversationSummary": { 
+          "userId": String, 
+          "call": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+          "callback": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+          "email": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+          "message": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+          "chat": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+          "socialExpression": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+          "video": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+        },  
+        "outOfOffice": { 
+          "id": String, 
+          "name": String, 
+          "user": User, 
+          "startDate": Date, 
+          "endDate": Date, 
+          "active": Boolean, 
+          "indefinite": Boolean, 
+          "selfUri": String, 
+        },  
+        "geolocation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "primary": Boolean, 
+          "latitude": Number, 
+          "longitude": Number, 
+          "country": String, 
+          "region": String, 
+          "city": String, 
+          "locations": { 
+            "id": String, 
+            "name": String, 
+            "address": { 
+              "city": String, 
+              "country": String, 
+              "countryName": String, 
+              "state": String, 
+              "street1": String, 
+              "street2": String, 
+              "zipcode": String, 
+            },  
+            "addressVerified": Boolean, 
+            "emergencyNumber": { 
+              "e164": String, 
+              "number": String, 
+              "type": String, 
+            },  
+            "state": String, 
+            "version": Number, 
+            "path": [String], 
+            "selfUri": String, 
+          },  
+          "selfUri": String, 
+        },  
+        "station": { 
+          "associatedStation": { 
+            "id": String, 
+            "name": String, 
+            "type": String, 
+            "associatedUser": User, 
+            "associatedDate": Date, 
+            "defaultUser": User, 
+            "providerInfo": {String: String}, 
+          },  
+          "effectiveStation": { 
+            "id": String, 
+            "name": String, 
+            "type": String, 
+            "associatedUser": User, 
+            "associatedDate": Date, 
+            "defaultUser": User, 
+            "providerInfo": {String: String}, 
+          },  
+          "defaultStation": { 
+            "id": String, 
+            "name": String, 
+            "type": String, 
+            "associatedUser": User, 
+            "associatedDate": Date, 
+            "defaultUser": User, 
+            "providerInfo": {String: String}, 
+          },  
+          "lastAssociatedStation": { 
+            "id": String, 
+            "name": String, 
+            "type": String, 
+            "associatedUser": User, 
+            "associatedDate": Date, 
+            "defaultUser": User, 
+            "providerInfo": {String: String}, 
+          },  
+        },  
+        "authorization": { 
+          "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "permissions": [String], 
+          "permissionPolicies": { 
+            "id": String, 
+            "domain": String, 
+            "entityName": String, 
+            "policyName": String, 
+            "policyDescription": String, 
+            "actionSetKey": String, 
+            "allowConditions": Boolean, 
+            "resourceConditionNode": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+            "namedResources": [String], 
+            "resourceCondition": String, 
+            "actionSet": [String], 
+          },  
+        },  
+        "profileSkills": [String], 
+        "locations": { 
+          "id": String, 
+          "floorplanId": String, 
+          "coordinates": {String: Number}, 
+          "notes": String, 
+          "locationDefinition": { 
+            "id": String, 
+            "name": String, 
+            "address": { 
+              "city": String, 
+              "country": String, 
+              "countryName": String, 
+              "state": String, 
+              "street1": String, 
+              "street2": String, 
+              "zipcode": String, 
+            },  
+            "addressVerified": Boolean, 
+            "emergencyNumber": { 
+              "e164": String, 
+              "number": String, 
+              "type": String, 
+            },  
+            "state": String, 
+            "version": Number, 
+            "path": [String], 
+            "selfUri": String, 
+          },  
+        },  
+        "groups": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
+          "state": String, 
+          "version": Number, 
+          "type": String, 
+          "images": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "addresses": { 
+            "address": String, 
+            "display": String, 
+            "type": String, 
+            "mediaType": String, 
+          },  
+          "rulesVisible": Boolean, 
+          "visibility": String, 
+          "owners": User, 
+          "selfUri": String, 
+        },  
+        "selfUri": String, 
+      },  
+      "errorMessage": String, 
+      "errorCode": String, 
+      "errorDetails": { 
+        "errorCode": String, 
+        "fieldName": String, 
+        "entityId": String, 
+        "entityName": String, 
+      },  
+      "errorMessageParams": {String: String}, 
+      "actionName": String, 
+      "actionStatus": String, 
+    },  
+    "selfUri": String, 
+  },  
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "createdBy": { 
+    "id": String, 
+    "name": String, 
+    "chat": { 
+      "jabberId": String, 
+    },  
+    "department": String, 
+    "email": String, 
+    "primaryContactInfo": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "addresses": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "state": String, 
+    "title": String, 
+    "username": String, 
+    "manager": User, 
+    "images": { 
+      "resolution": String, 
+      "imageUri": String, 
+    },  
+    "version": Number, 
+    "routingStatus": { 
+      "userId": String, 
+      "status": String, 
+      "startTime": Date, 
+    },  
+    "presence": { 
+      "id": String, 
+      "name": String, 
+      "source": String, 
+      "primary": Boolean, 
+      "presenceDefinition": { 
+        "id": String, 
+        "systemPresence": String, 
+        "selfUri": String, 
+      },  
+      "message": String, 
+      "modifiedDate": Date, 
+      "selfUri": String, 
+    },  
+    "conversationSummary": { 
+      "userId": String, 
+      "call": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "callback": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "email": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "message": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "chat": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "socialExpression": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "video": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+    },  
+    "outOfOffice": { 
+      "id": String, 
+      "name": String, 
+      "user": User, 
+      "startDate": Date, 
+      "endDate": Date, 
+      "active": Boolean, 
+      "indefinite": Boolean, 
+      "selfUri": String, 
+    },  
+    "geolocation": { 
+      "id": String, 
+      "name": String, 
+      "type": String, 
+      "primary": Boolean, 
+      "latitude": Number, 
+      "longitude": Number, 
+      "country": String, 
+      "region": String, 
+      "city": String, 
+      "locations": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "station": { 
+      "associatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "effectiveStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "defaultStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "lastAssociatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+    },  
+    "authorization": { 
+      "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "permissions": [String], 
+      "permissionPolicies": { 
+        "id": String, 
+        "domain": String, 
+        "entityName": String, 
+        "policyName": String, 
+        "policyDescription": String, 
+        "actionSetKey": String, 
+        "allowConditions": Boolean, 
+        "resourceConditionNode": { 
+          "variableName": String, 
+          "conjunction": String, 
+          "operator": String, 
+          "operands": { 
+            "type": String, 
+            "value": String, 
+          },  
+          "terms": { 
+            "variableName": String, 
+            "conjunction": String, 
+            "operator": String, 
+            "operands": { 
+              "type": String, 
+              "value": String, 
+            },  
+            "terms": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+          },  
+        },  
+        "namedResources": [String], 
+        "resourceCondition": String, 
+        "actionSet": [String], 
+      },  
+    },  
+    "profileSkills": [String], 
+    "locations": { 
+      "id": String, 
+      "floorplanId": String, 
+      "coordinates": {String: Number}, 
+      "notes": String, 
+      "locationDefinition": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+    },  
+    "groups": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "state": String, 
+      "version": Number, 
+      "type": String, 
+      "images": { 
+        "resolution": String, 
+        "imageUri": String, 
+      },  
+      "addresses": { 
+        "address": String, 
+        "display": String, 
+        "type": String, 
+        "mediaType": String, 
+      },  
+      "rulesVisible": Boolean, 
+      "visibility": String, 
+      "owners": User, 
+      "selfUri": String, 
+    },  
+    "selfUri": String, 
+  },  
+  "modifiedBy": User, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3098,7 +6214,227 @@ Requires ANY permissions:
 
 * routing:queue:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyQueueExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#QueueExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Queue <a style="cursor: pointer" onclick="copyQueueExample()">Copy</a>
+
+<div id="QueueExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "description": String, 
+  "version": Number, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "modifiedBy": String, 
+  "createdBy": String, 
+  "state": String, 
+  "modifiedByApp": String, 
+  "createdByApp": String, 
+  "mediaSettings": { 
+    "alertingTimeoutSeconds": Number, 
+    "serviceLevel": { 
+      "percentage": Number, 
+      "durationMs": Number, 
+    },  
+  },  
+  "bullseye": { 
+    "rings": { 
+      "expansionCriteria": { 
+        "type": String, 
+        "threshold": Number, 
+      },  
+      "actions": { 
+        "skillsToRemove": { 
+          "name": String, 
+          "id": String, 
+          "selfUri": String, 
+        },  
+      },  
+    },  
+  },  
+  "acwSettings": { 
+    "wrapupPrompt": String, 
+    "timeoutMs": Number, 
+  },  
+  "skillEvaluationMethod": String, 
+  "queueFlow": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "whisperPrompt": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "autoAnswerOnly": Boolean, 
+  "callingPartyName": String, 
+  "callingPartyNumber": String, 
+  "defaultScripts": { 
+    "id": String, 
+    "name": String, 
+    "versionId": String, 
+    "createdDate": Date, 
+    "modifiedDate": Date, 
+    "publishedDate": Date, 
+    "versionDate": Date, 
+    "startPageId": String, 
+    "startPageName": String, 
+    "features": Object, 
+    "variables": Object, 
+    "customActions": Object, 
+    "pages": { 
+      "id": String, 
+      "name": String, 
+      "versionId": String, 
+      "createdDate": Date, 
+      "modifiedDate": Date, 
+      "rootContainer": {String: Object}, 
+      "properties": {String: Object}, 
+      "selfUri": String, 
+    },  
+    "selfUri": String, 
+  },  
+  "outboundEmailAddress": { 
+    "domain": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+    "route": { 
+      "id": String, 
+      "name": String, 
+      "pattern": String, 
+      "queue": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "priority": Number, 
+      "skills": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "language": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "fromName": String, 
+      "fromEmail": String, 
+      "flow": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "replyEmailAddress": { 
+        "domain": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
+        "route": { 
+          "id": String, 
+          "name": String, 
+          "pattern": String, 
+          "queue": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "priority": Number, 
+          "skills": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "language": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "fromName": String, 
+          "fromEmail": String, 
+          "flow": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "replyEmailAddress": { 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
+            "route": { 
+              "id": String, 
+              "name": String, 
+              "pattern": String, 
+              "queue": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "priority": Number, 
+              "skills": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "language": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "fromName": String, 
+              "fromEmail": String, 
+              "flow": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "replyEmailAddress": { 
+                "domain": UriReference, 
+                "route": InboundRoute, 
+              },  
+              "selfUri": String, 
+            },  
+          },  
+          "selfUri": String, 
+        },  
+      },  
+      "selfUri": String, 
+    },  
+  },  
+  "memberCount": Number, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3155,7 +6491,359 @@ Requires ANY permissions:
 
 * sms:phoneNumber:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copySmsPhoneNumberExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#SmsPhoneNumberExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+SmsPhoneNumber <a style="cursor: pointer" onclick="copySmsPhoneNumberExample()">Copy</a>
+
+<div id="SmsPhoneNumberExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "phoneNumber": String, 
+  "phoneNumberType": String, 
+  "provisionedThroughPureCloud": Boolean, 
+  "phoneNumberStatus": String, 
+  "countryCode": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "createdBy": { 
+    "id": String, 
+    "name": String, 
+    "chat": { 
+      "jabberId": String, 
+    },  
+    "department": String, 
+    "email": String, 
+    "primaryContactInfo": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "addresses": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+    },  
+    "state": String, 
+    "title": String, 
+    "username": String, 
+    "manager": User, 
+    "images": { 
+      "resolution": String, 
+      "imageUri": String, 
+    },  
+    "version": Number, 
+    "routingStatus": { 
+      "userId": String, 
+      "status": String, 
+      "startTime": Date, 
+    },  
+    "presence": { 
+      "id": String, 
+      "name": String, 
+      "source": String, 
+      "primary": Boolean, 
+      "presenceDefinition": { 
+        "id": String, 
+        "systemPresence": String, 
+        "selfUri": String, 
+      },  
+      "message": String, 
+      "modifiedDate": Date, 
+      "selfUri": String, 
+    },  
+    "conversationSummary": { 
+      "userId": String, 
+      "call": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "callback": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "email": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "message": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "chat": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "socialExpression": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "video": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+    },  
+    "outOfOffice": { 
+      "id": String, 
+      "name": String, 
+      "user": User, 
+      "startDate": Date, 
+      "endDate": Date, 
+      "active": Boolean, 
+      "indefinite": Boolean, 
+      "selfUri": String, 
+    },  
+    "geolocation": { 
+      "id": String, 
+      "name": String, 
+      "type": String, 
+      "primary": Boolean, 
+      "latitude": Number, 
+      "longitude": Number, 
+      "country": String, 
+      "region": String, 
+      "city": String, 
+      "locations": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "station": { 
+      "associatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "effectiveStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "defaultStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "lastAssociatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+    },  
+    "authorization": { 
+      "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "permissions": [String], 
+      "permissionPolicies": { 
+        "id": String, 
+        "domain": String, 
+        "entityName": String, 
+        "policyName": String, 
+        "policyDescription": String, 
+        "actionSetKey": String, 
+        "allowConditions": Boolean, 
+        "resourceConditionNode": { 
+          "variableName": String, 
+          "conjunction": String, 
+          "operator": String, 
+          "operands": { 
+            "type": String, 
+            "value": String, 
+          },  
+          "terms": { 
+            "variableName": String, 
+            "conjunction": String, 
+            "operator": String, 
+            "operands": { 
+              "type": String, 
+              "value": String, 
+            },  
+            "terms": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+          },  
+        },  
+        "namedResources": [String], 
+        "resourceCondition": String, 
+        "actionSet": [String], 
+      },  
+    },  
+    "profileSkills": [String], 
+    "locations": { 
+      "id": String, 
+      "floorplanId": String, 
+      "coordinates": {String: Number}, 
+      "notes": String, 
+      "locationDefinition": { 
+        "id": String, 
+        "name": String, 
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "addressVerified": Boolean, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "state": String, 
+        "version": Number, 
+        "path": [String], 
+        "selfUri": String, 
+      },  
+    },  
+    "groups": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "state": String, 
+      "version": Number, 
+      "type": String, 
+      "images": { 
+        "resolution": String, 
+        "imageUri": String, 
+      },  
+      "addresses": { 
+        "address": String, 
+        "display": String, 
+        "type": String, 
+        "mediaType": String, 
+      },  
+      "rulesVisible": Boolean, 
+      "visibility": String, 
+      "owners": User, 
+      "selfUri": String, 
+    },  
+    "selfUri": String, 
+  },  
+  "modifiedBy": User, 
+  "version": Number, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3212,7 +6900,37 @@ Requires ANY permissions:
 
 * routing:utilization:manage
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyUtilizationExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#UtilizationExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Utilization <a style="cursor: pointer" onclick="copyUtilizationExample()">Copy</a>
+
+<div id="UtilizationExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "utilization": { 
+    "maximumCapacity": Number, 
+    "interruptableMediaTypes": [String], 
+    "includeNonAcd": Boolean, 
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3266,7 +6984,39 @@ Requires ANY permissions:
 
 * routing:wrapupCode:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyWrapupCodeExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#WrapupCodeExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+WrapupCode <a style="cursor: pointer" onclick="copyWrapupCodeExample()">Copy</a>
+
+<div id="WrapupCodeExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "modifiedBy": String, 
+  "createdBy": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3321,9 +7071,41 @@ Update routing skill proficiency or state.
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyUserRoutingSkillExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#UserRoutingSkillExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+UserRoutingSkill <a style="cursor: pointer" onclick="copyUserRoutingSkillExample()">Copy</a>
+
+<div id="UserRoutingSkillExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "proficiency": Number, 
+  "state": String, 
+  "skillUri": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser

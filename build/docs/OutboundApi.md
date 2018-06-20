@@ -115,7 +115,9 @@ Requires ANY permissions:
 
 * outbound:attemptLimits:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -169,7 +171,9 @@ Requires ANY permissions:
 
 * outbound:callableTimeSet:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -223,7 +227,9 @@ Requires ANY permissions:
 
 * outbound:responseSet:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -277,7 +283,9 @@ Requires ANY permissions:
 
 * outbound:campaign:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -331,7 +339,9 @@ Requires ANY permissions:
 
 * outbound:campaign:edit
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -385,7 +395,9 @@ Requires ANY permissions:
 
 * outbound:campaignRule:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -439,7 +451,9 @@ Requires ANY permissions:
 
 * outbound:contactList:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -493,7 +507,9 @@ Requires ANY permissions:
 
 * outbound:contact:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -550,7 +566,9 @@ Requires ANY permissions:
 
 * outbound:contact:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -607,7 +625,9 @@ Requires ANY permissions:
 
 * outbound:contactListFilter:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -661,7 +681,9 @@ Requires ANY permissions:
 
 * outbound:contactList:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -715,7 +737,9 @@ Requires ANY permissions:
 
 * outbound:dncList:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -769,7 +793,9 @@ Requires ANY permissions:
 
 * outbound:ruleSet:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -823,7 +849,9 @@ Requires ANY permissions:
 
 * outbound:schedule:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -877,7 +905,9 @@ Requires ANY permissions:
 
 * outbound:schedule:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -931,7 +961,9 @@ Requires ANY permissions:
 
 * outbound:campaignSequence:delete
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -985,7 +1017,9 @@ Requires ANY permissions:
 
 * outbound:attemptLimits:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1039,7 +1073,9 @@ Requires ANY permissions:
 
 * outbound:attemptLimits:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1104,7 +1140,9 @@ Requires ANY permissions:
 
 * outbound:callableTimeSet:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1158,7 +1196,9 @@ Requires ANY permissions:
 
 * outbound:callableTimeSet:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1223,7 +1263,9 @@ Requires ANY permissions:
 
 * outbound:responseSet:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1277,7 +1319,9 @@ Requires ANY permissions:
 
 * outbound:responseSet:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1342,7 +1386,9 @@ Requires ANY permissions:
 
 * outbound:campaign:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1396,7 +1442,9 @@ Requires ANY permissions:
 
 * outbound:campaign:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1450,7 +1498,9 @@ Requires ANY permissions:
 
 * outbound:campaign:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1504,7 +1554,9 @@ Requires ANY permissions:
 
 * outbound:campaign:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1558,7 +1610,9 @@ Requires ANY permissions:
 
 * outbound:campaign:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1612,7 +1666,9 @@ Requires ANY permissions:
 
 * outbound:campaignRule:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1666,7 +1722,9 @@ Requires ANY permissions:
 
 * outbound:campaignRule:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1731,7 +1789,9 @@ Requires ANY permissions:
 
 * outbound:campaign:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1808,7 +1868,9 @@ Requires ANY permissions:
 
 * outbound:campaign:search
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1873,7 +1935,9 @@ Requires ANY permissions:
 
 * outbound:contactList:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1933,7 +1997,9 @@ Requires ANY permissions:
 
 * outbound:contact:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -1988,9 +2054,12 @@ Get the URI of a contact list export.
 
 Requires ALL permissions: 
 
-* outbound:contact:view* outbound:contactList:view
+* outbound:contact:view
+* outbound:contactList:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2048,7 +2117,9 @@ Requires ANY permissions:
 
 * outbound:contactList:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2102,7 +2173,9 @@ Requires ANY permissions:
 
 * outbound:contactListFilter:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2156,7 +2229,9 @@ Requires ANY permissions:
 
 * outbound:contactListFilter:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2223,7 +2298,9 @@ Requires ANY permissions:
 
 * outbound:contactList:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2294,7 +2371,9 @@ Requires ANY permissions:
 
 * outbound:dncList:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2352,9 +2431,12 @@ Get the URI of a DNC list export.
 
 Requires ALL permissions: 
 
-* outbound:dnc:view* outbound:dncList:view
+* outbound:dnc:view
+* outbound:dncList:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2412,7 +2494,9 @@ Requires ANY permissions:
 
 * outbound:dncList:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2466,7 +2550,9 @@ Requires ANY permissions:
 
 * outbound:dncList:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2535,7 +2621,9 @@ Requires ANY permissions:
 
 * outbound:eventLog:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2589,7 +2677,9 @@ Requires ANY permissions:
 
 * outbound:eventLog:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2656,7 +2746,9 @@ Requires ANY permissions:
 
 * outbound:ruleSet:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2710,7 +2802,9 @@ Requires ANY permissions:
 
 * outbound:ruleSet:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2775,7 +2869,9 @@ Requires ANY permissions:
 
 * outbound:schedule:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2829,7 +2925,9 @@ Requires ANY permissions:
 
 * outbound:schedule:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2877,7 +2975,9 @@ Requires ANY permissions:
 
 * outbound:schedule:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2931,7 +3031,9 @@ Requires ANY permissions:
 
 * outbound:schedule:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -2979,7 +3081,9 @@ Requires ANY permissions:
 
 * outbound:campaignSequence:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3033,7 +3137,9 @@ Requires ANY permissions:
 
 * outbound:campaignSequence:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3098,7 +3204,9 @@ Requires ANY permissions:
 
 * outbound:settings:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3146,7 +3254,9 @@ Requires ANY permissions:
 
 * outbound:wrapUpCodeMapping:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3194,7 +3304,43 @@ Requires ANY permissions:
 
 * outbound:settings:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyOutboundSettingsExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#OutboundSettingsExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+OutboundSettings <a style="cursor: pointer" onclick="copyOutboundSettingsExample()">Copy</a>
+
+<div id="OutboundSettingsExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "maxCallsPerAgent": Number, 
+  "maxConfigurableCallsPerAgent": Number, 
+  "maxLineUtilization": Number, 
+  "abandonSeconds": Number, 
+  "complianceAbandonRateDenominator": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3248,7 +3394,46 @@ Requires ANY permissions:
 
 * outbound:attemptLimits:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyAttemptLimitsExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#AttemptLimitsExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+AttemptLimits <a style="cursor: pointer" onclick="copyAttemptLimitsExample()">Copy</a>
+
+<div id="AttemptLimitsExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "maxAttemptsPerContact": Number, 
+  "maxAttemptsPerNumber": Number, 
+  "timeZoneId": String, 
+  "resetPeriod": String, 
+  "recallEntries": { 
+    "nbrAttempts": Number, 
+    "minutesBetweenAttempts": Number, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3302,7 +3487,44 @@ Requires ANY permissions:
 
 * outbound:audit:view
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyDialerAuditRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#DialerAuditRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+DialerAuditRequest <a style="cursor: pointer" onclick="copyDialerAuditRequestExample()">Copy</a>
+
+<div id="DialerAuditRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "queryPhrase": String, 
+  "queryFields": [String], 
+  "facets": { 
+    "name": String, 
+    "type": String, 
+  },  
+  "filters": { 
+    "name": String, 
+    "type": String, 
+    "operator": String, 
+    "values": [String], 
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3368,7 +3590,46 @@ Requires ANY permissions:
 
 * outbound:callableTimeSet:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyCallableTimeSetExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#CallableTimeSetExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+CallableTimeSet <a style="cursor: pointer" onclick="copyCallableTimeSetExample()">Copy</a>
+
+<div id="CallableTimeSetExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "callableTimes": { 
+    "timeSlots": { 
+      "startTime": String, 
+      "stopTime": String, 
+      "day": Number, 
+    },  
+    "timeZoneId": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3422,7 +3683,43 @@ Requires ANY permissions:
 
 * outbound:responseSet:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyResponseSetExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ResponseSetExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ResponseSet <a style="cursor: pointer" onclick="copyResponseSetExample()">Copy</a>
+
+<div id="ResponseSetExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "responses": { 
+    "data": String, 
+    "name": String, 
+    "reactionType": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3476,7 +3773,36 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyContactCallbackRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ContactCallbackRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ContactCallbackRequest <a style="cursor: pointer" onclick="copyContactCallbackRequestExample()">Copy</a>
+
+<div id="ContactCallbackRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "campaignId": String, 
+  "contactListId": String, 
+  "contactId": String, 
+  "phoneColumn": String, 
+  "schedule": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3533,7 +3859,85 @@ Requires ANY permissions:
 
 * outbound:campaignRule:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyCampaignRuleExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#CampaignRuleExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+CampaignRule <a style="cursor: pointer" onclick="copyCampaignRuleExample()">Copy</a>
+
+<div id="CampaignRuleExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "campaignRuleEntities": { 
+    "campaigns": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+    "sequences": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+  },  
+  "campaignRuleConditions": { 
+    "id": String, 
+    "parameters": { 
+      "operator": String, 
+      "value": String, 
+      "priority": String, 
+      "dialingMode": String, 
+    },  
+    "conditionType": String, 
+  },  
+  "campaignRuleActions": { 
+    "id": String, 
+    "parameters": { 
+      "operator": String, 
+      "value": String, 
+      "priority": String, 
+      "dialingMode": String, 
+    },  
+    "actionType": String, 
+    "campaignRuleActionEntities": { 
+      "campaigns": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "sequences": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "useTriggeringEntity": Boolean, 
+    },  
+  },  
+  "matchAnyConditions": Boolean, 
+  "enabled": Boolean, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3587,7 +3991,118 @@ Requires ANY permissions:
 
 * outbound:campaign:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyCampaignExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#CampaignExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Campaign <a style="cursor: pointer" onclick="copyCampaignExample()">Copy</a>
+
+<div id="CampaignExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "contactList": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "queue": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "dialingMode": String, 
+  "script": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "edgeGroup": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "site": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "campaignStatus": String, 
+  "phoneColumns": { 
+    "columnName": String, 
+    "type": String, 
+  },  
+  "abandonRate": Number, 
+  "dncLists": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "callableTimeSet": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "callAnalysisResponseSet": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "errors": { 
+    "error": String, 
+    "details": String, 
+  },  
+  "callerName": String, 
+  "callerAddress": String, 
+  "outboundLineCount": Number, 
+  "ruleSets": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "skipPreviewDisabled": Boolean, 
+  "previewTimeOutSeconds": Number, 
+  "alwaysRunning": Boolean, 
+  "contactSort": { 
+    "fieldName": String, 
+    "direction": String, 
+    "numeric": Boolean, 
+  },  
+  "contactSorts": { 
+    "fieldName": String, 
+    "direction": String, 
+    "numeric": Boolean, 
+  },  
+  "noAnswerTimeout": Number, 
+  "callAnalysisLanguage": String, 
+  "priority": Number, 
+  "contactListFilters": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3641,7 +4156,9 @@ Requires ANY permissions:
 
 * outbound:campaign:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3695,7 +4212,49 @@ Requires ANY permissions:
 
 * outbound:contact:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyDialerContactExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#DialerContactExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+DialerContact <a style="cursor: pointer" onclick="copyDialerContactExample()">Copy</a>
+
+<div id="DialerContactExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "contactListId": String, 
+  "data": {String: Object}, 
+  "callRecords": { 
+    "lastAttempt": Date, 
+    "lastResult": String, 
+  },  
+  "callable": Boolean, 
+  "phoneNumberStatus": { 
+    "callable": Boolean, 
+  },  
+  "contactColumnTimeZones": { 
+    "timeZone": String, 
+    "columnType": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3760,7 +4319,9 @@ Requires ANY permissions:
 
 * outbound:contact:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3815,9 +4376,12 @@ Returns 200 if received OK.
 
 Requires ALL permissions: 
 
-* outbound:contact:view* outbound:contactList:view
+* outbound:contact:view
+* outbound:contactList:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3871,7 +4435,61 @@ Requires ANY permissions:
 
 * outbound:contactListFilter:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyContactListFilterExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ContactListFilterExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ContactListFilter <a style="cursor: pointer" onclick="copyContactListFilterExample()">Copy</a>
+
+<div id="ContactListFilterExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "contactList": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "clauses": { 
+    "filterType": String, 
+    "predicates": { 
+      "column": String, 
+      "columnType": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "min": String, 
+        "max": String, 
+        "minInclusive": Boolean, 
+        "maxInclusive": Boolean, 
+        "inSet": [String], 
+      },  
+      "inverted": Boolean, 
+    },  
+  },  
+  "filterType": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3925,7 +4543,61 @@ Requires ANY permissions:
 
 * outbound:contact:view
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyContactListFilterExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ContactListFilterExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ContactListFilter <a style="cursor: pointer" onclick="copyContactListFilterExample()">Copy</a>
+
+<div id="ContactListFilterExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "contactList": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "clauses": { 
+    "filterType": String, 
+    "predicates": { 
+      "column": String, 
+      "columnType": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "min": String, 
+        "max": String, 
+        "minInclusive": Boolean, 
+        "maxInclusive": Boolean, 
+        "inSet": [String], 
+      },  
+      "inverted": Boolean, 
+    },  
+  },  
+  "filterType": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -3979,7 +4651,61 @@ Requires ANY permissions:
 
 * outbound:contactList:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyContactListExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ContactListExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ContactList <a style="cursor: pointer" onclick="copyContactListExample()">Copy</a>
+
+<div id="ContactListExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "columnNames": [String], 
+  "phoneColumns": { 
+    "columnName": String, 
+    "type": String, 
+    "callableTimeColumn": String, 
+  },  
+  "importStatus": { 
+    "state": String, 
+    "totalRecords": Number, 
+    "completedRecords": Number, 
+    "percentComplete": Number, 
+    "failureReason": String, 
+  },  
+  "previewModeColumnName": String, 
+  "previewModeAcceptedValues": [String], 
+  "size": Number, 
+  "attemptLimits": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "automaticTimeZoneMapping": Boolean, 
+  "zipCodeColumnName": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4033,7 +4759,9 @@ Requires ANY permissions:
 
 * outbound:dnc:add
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4085,9 +4813,12 @@ Returns 200 if received OK.
 
 Requires ALL permissions: 
 
-* outbound:dnc:view* outbound:dncList:view
+* outbound:dnc:view
+* outbound:dncList:view
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4141,7 +4872,9 @@ Requires ANY permissions:
 
 * outbound:dnc:add
 
-### Example
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4198,7 +4931,50 @@ Requires ANY permissions:
 
 * outbound:dncList:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyDncListCreateExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#DncListCreateExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+DncListCreate <a style="cursor: pointer" onclick="copyDncListCreateExample()">Copy</a>
+
+<div id="DncListCreateExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "importStatus": { 
+    "state": String, 
+    "totalRecords": Number, 
+    "completedRecords": Number, 
+    "percentComplete": Number, 
+    "failureReason": String, 
+  },  
+  "size": Number, 
+  "dncSourceType": String, 
+  "loginId": String, 
+  "dncCodes": [String], 
+  "licenseId": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4252,7 +5028,71 @@ Requires ANY permissions:
 
 * outbound:ruleSet:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyRuleSetExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#RuleSetExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+RuleSet <a style="cursor: pointer" onclick="copyRuleSetExample()">Copy</a>
+
+<div id="RuleSetExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "contactList": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "queue": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "rules": { 
+    "id": String, 
+    "name": String, 
+    "order": Number, 
+    "category": String, 
+    "conditions": { 
+      "type": String, 
+      "inverted": Boolean, 
+      "attributeName": String, 
+      "value": String, 
+      "valueType": String, 
+      "operator": String, 
+      "codes": [String], 
+      "property": String, 
+      "propertyType": String, 
+    },  
+    "actions": { 
+      "type": String, 
+      "actionTypeName": String, 
+      "updateOption": String, 
+      "properties": {String: String}, 
+    },  
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4306,7 +5146,47 @@ Requires ANY permissions:
 
 * outbound:campaignSequence:add
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyCampaignSequenceExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#CampaignSequenceExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+CampaignSequence <a style="cursor: pointer" onclick="copyCampaignSequenceExample()">Copy</a>
+
+<div id="CampaignSequenceExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "campaigns": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "currentCampaign": Number, 
+  "status": String, 
+  "stopMessage": String, 
+  "repeat": Boolean, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4360,7 +5240,46 @@ Requires ANY permissions:
 
 * outbound:attemptLimits:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyAttemptLimitsExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#AttemptLimitsExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+AttemptLimits <a style="cursor: pointer" onclick="copyAttemptLimitsExample()">Copy</a>
+
+<div id="AttemptLimitsExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "maxAttemptsPerContact": Number, 
+  "maxAttemptsPerNumber": Number, 
+  "timeZoneId": String, 
+  "resetPeriod": String, 
+  "recallEntries": { 
+    "nbrAttempts": Number, 
+    "minutesBetweenAttempts": Number, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4417,7 +5336,46 @@ Requires ANY permissions:
 
 * outbound:callableTimeSet:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyCallableTimeSetExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#CallableTimeSetExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+CallableTimeSet <a style="cursor: pointer" onclick="copyCallableTimeSetExample()">Copy</a>
+
+<div id="CallableTimeSetExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "callableTimes": { 
+    "timeSlots": { 
+      "startTime": String, 
+      "stopTime": String, 
+      "day": Number, 
+    },  
+    "timeZoneId": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4474,7 +5432,43 @@ Requires ANY permissions:
 
 * outbound:responseSet:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyResponseSetExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ResponseSetExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ResponseSet <a style="cursor: pointer" onclick="copyResponseSetExample()">Copy</a>
+
+<div id="ResponseSetExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "responses": { 
+    "data": String, 
+    "name": String, 
+    "reactionType": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4531,7 +5525,118 @@ Requires ANY permissions:
 
 * outbound:campaign:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyCampaignExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#CampaignExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Campaign <a style="cursor: pointer" onclick="copyCampaignExample()">Copy</a>
+
+<div id="CampaignExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "contactList": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "queue": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "dialingMode": String, 
+  "script": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "edgeGroup": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "site": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "campaignStatus": String, 
+  "phoneColumns": { 
+    "columnName": String, 
+    "type": String, 
+  },  
+  "abandonRate": Number, 
+  "dncLists": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "callableTimeSet": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "callAnalysisResponseSet": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "errors": { 
+    "error": String, 
+    "details": String, 
+  },  
+  "callerName": String, 
+  "callerAddress": String, 
+  "outboundLineCount": Number, 
+  "ruleSets": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "skipPreviewDisabled": Boolean, 
+  "previewTimeOutSeconds": Number, 
+  "alwaysRunning": Boolean, 
+  "contactSort": { 
+    "fieldName": String, 
+    "direction": String, 
+    "numeric": Boolean, 
+  },  
+  "contactSorts": { 
+    "fieldName": String, 
+    "direction": String, 
+    "numeric": Boolean, 
+  },  
+  "noAnswerTimeout": Number, 
+  "callAnalysisLanguage": String, 
+  "priority": Number, 
+  "contactListFilters": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4588,7 +5693,32 @@ Requires NO permissions:
 
 
 
-### Example
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyAgentExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#AgentExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+Agent <a style="cursor: pointer" onclick="copyAgentExample()">Copy</a>
+
+<div id="AgentExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "stage": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4648,7 +5778,85 @@ Requires ANY permissions:
 
 * outbound:campaignRule:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyCampaignRuleExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#CampaignRuleExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+CampaignRule <a style="cursor: pointer" onclick="copyCampaignRuleExample()">Copy</a>
+
+<div id="CampaignRuleExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "campaignRuleEntities": { 
+    "campaigns": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+    "sequences": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+  },  
+  "campaignRuleConditions": { 
+    "id": String, 
+    "parameters": { 
+      "operator": String, 
+      "value": String, 
+      "priority": String, 
+      "dialingMode": String, 
+    },  
+    "conditionType": String, 
+  },  
+  "campaignRuleActions": { 
+    "id": String, 
+    "parameters": { 
+      "operator": String, 
+      "value": String, 
+      "priority": String, 
+      "dialingMode": String, 
+    },  
+    "actionType": String, 
+    "campaignRuleActionEntities": { 
+      "campaigns": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "sequences": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "useTriggeringEntity": Boolean, 
+    },  
+  },  
+  "matchAnyConditions": Boolean, 
+  "enabled": Boolean, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4705,7 +5913,61 @@ Requires ANY permissions:
 
 * outbound:contactList:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyContactListExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ContactListExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ContactList <a style="cursor: pointer" onclick="copyContactListExample()">Copy</a>
+
+<div id="ContactListExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "columnNames": [String], 
+  "phoneColumns": { 
+    "columnName": String, 
+    "type": String, 
+    "callableTimeColumn": String, 
+  },  
+  "importStatus": { 
+    "state": String, 
+    "totalRecords": Number, 
+    "completedRecords": Number, 
+    "percentComplete": Number, 
+    "failureReason": String, 
+  },  
+  "previewModeColumnName": String, 
+  "previewModeAcceptedValues": [String], 
+  "size": Number, 
+  "attemptLimits": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "automaticTimeZoneMapping": Boolean, 
+  "zipCodeColumnName": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4762,7 +6024,49 @@ Requires ANY permissions:
 
 * outbound:contact:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyDialerContactExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#DialerContactExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+DialerContact <a style="cursor: pointer" onclick="copyDialerContactExample()">Copy</a>
+
+<div id="DialerContactExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "contactListId": String, 
+  "data": {String: Object}, 
+  "callRecords": { 
+    "lastAttempt": Date, 
+    "lastResult": String, 
+  },  
+  "callable": Boolean, 
+  "phoneNumberStatus": { 
+    "callable": Boolean, 
+  },  
+  "contactColumnTimeZones": { 
+    "timeZone": String, 
+    "columnType": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4822,7 +6126,61 @@ Requires ANY permissions:
 
 * outbound:contactListFilter:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyContactListFilterExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ContactListFilterExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ContactListFilter <a style="cursor: pointer" onclick="copyContactListFilterExample()">Copy</a>
+
+<div id="ContactListFilterExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "contactList": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "clauses": { 
+    "filterType": String, 
+    "predicates": { 
+      "column": String, 
+      "columnType": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "min": String, 
+        "max": String, 
+        "minInclusive": Boolean, 
+        "maxInclusive": Boolean, 
+        "inSet": [String], 
+      },  
+      "inverted": Boolean, 
+    },  
+  },  
+  "filterType": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4879,7 +6237,50 @@ Requires ANY permissions:
 
 * outbound:dncList:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyDncListExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#DncListExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+DncList <a style="cursor: pointer" onclick="copyDncListExample()">Copy</a>
+
+<div id="DncListExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "importStatus": { 
+    "state": String, 
+    "totalRecords": Number, 
+    "completedRecords": Number, 
+    "percentComplete": Number, 
+    "failureReason": String, 
+  },  
+  "size": Number, 
+  "dncSourceType": String, 
+  "loginId": String, 
+  "dncCodes": [String], 
+  "licenseId": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4936,7 +6337,71 @@ Requires ANY permissions:
 
 * outbound:ruleSet:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyRuleSetExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#RuleSetExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+RuleSet <a style="cursor: pointer" onclick="copyRuleSetExample()">Copy</a>
+
+<div id="RuleSetExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "contactList": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "queue": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "rules": { 
+    "id": String, 
+    "name": String, 
+    "order": Number, 
+    "category": String, 
+    "conditions": { 
+      "type": String, 
+      "inverted": Boolean, 
+      "attributeName": String, 
+      "value": String, 
+      "valueType": String, 
+      "operator": String, 
+      "codes": [String], 
+      "property": String, 
+      "propertyType": String, 
+    },  
+    "actions": { 
+      "type": String, 
+      "actionTypeName": String, 
+      "updateOption": String, 
+      "properties": {String: String}, 
+    },  
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -4993,7 +6458,48 @@ Requires ANY permissions:
 
 * outbound:schedule:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyCampaignScheduleExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#CampaignScheduleExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+CampaignSchedule <a style="cursor: pointer" onclick="copyCampaignScheduleExample()">Copy</a>
+
+<div id="CampaignScheduleExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "intervals": { 
+    "start": String, 
+    "end": String, 
+  },  
+  "timeZone": String, 
+  "campaign": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -5050,7 +6556,48 @@ Requires ANY permissions:
 
 * outbound:schedule:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copySequenceScheduleExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#SequenceScheduleExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+SequenceSchedule <a style="cursor: pointer" onclick="copySequenceScheduleExample()">Copy</a>
+
+<div id="SequenceScheduleExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "intervals": { 
+    "start": String, 
+    "end": String, 
+  },  
+  "timeZone": String, 
+  "sequence": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -5107,7 +6654,47 @@ Requires ANY permissions:
 
 * outbound:campaignSequence:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyCampaignSequenceExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#CampaignSequenceExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+CampaignSequence <a style="cursor: pointer" onclick="copyCampaignSequenceExample()">Copy</a>
+
+<div id="CampaignSequenceExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "campaigns": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "currentCampaign": Number, 
+  "status": String, 
+  "stopMessage": String, 
+  "repeat": Boolean, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
@@ -5164,7 +6751,40 @@ Requires ANY permissions:
 
 * outbound:wrapUpCodeMapping:edit
 
-### Example
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyWrapUpCodeMappingExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#WrapUpCodeMappingExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+WrapUpCodeMapping <a style="cursor: pointer" onclick="copyWrapUpCodeMappingExample()">Copy</a>
+
+<div id="WrapUpCodeMappingExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "defaultSet": [String], 
+  "mapping": {String: [String]}, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
 
 ~~~ javascript
 // Browser
