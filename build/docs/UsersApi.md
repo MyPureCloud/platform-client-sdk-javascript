@@ -41,6 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchUserQueue**](UsersApi.html#patchUserQueue) | **PATCH** /api/v2/users/{userId}/queues/{queueId} | Join or unjoin a queue for a user
 [**patchUserQueues**](UsersApi.html#patchUserQueues) | **PATCH** /api/v2/users/{userId}/queues | Join or unjoin a set of queues for a user
 [**patchUserRoutinglanguage**](UsersApi.html#patchUserRoutinglanguage) | **PATCH** /api/v2/users/{userId}/routinglanguages/{languageId} | Update routing language proficiency or state.
+[**patchUsersBulk**](UsersApi.html#patchUsersBulk) | **PATCH** /api/v2/users/bulk | Update bulk acd autoanswer on users
 [**postAnalyticsUsersAggregatesQuery**](UsersApi.html#postAnalyticsUsersAggregatesQuery) | **POST** /api/v2/analytics/users/aggregates/query | Query for user aggregates
 [**postAnalyticsUsersDetailsQuery**](UsersApi.html#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
 [**postAnalyticsUsersObservationsQuery**](UsersApi.html#postAnalyticsUsersObservationsQuery) | **POST** /api/v2/analytics/users/observations/query | Query for user observations
@@ -2197,6 +2198,7 @@ UpdateUser <a style="cursor: pointer" onclick="copyUpdateUserExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "startDate": Date, 
@@ -2469,10 +2471,12 @@ UpdateUser <a style="cursor: pointer" onclick="copyUpdateUserExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "startDate": Date, 
@@ -2889,6 +2893,7 @@ UpdateUser <a style="cursor: pointer" onclick="copyUpdateUserExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "startDate": Date, 
@@ -3161,19 +3166,23 @@ UpdateUser <a style="cursor: pointer" onclick="copyUpdateUserExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "selfUri": String, 
       },  
+      "acdAutoAnswer": Boolean, 
       "selfUri": String, 
     },  
     "selfUri": String, 
   },  
   "state": String, 
+  "acdAutoAnswer": Boolean, 
   "selfUri": String, 
 }
 ~~~
@@ -3618,6 +3627,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -3770,10 +3780,12 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "startDate": Date, 
@@ -4049,6 +4061,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -4201,14 +4214,17 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "startDate": Date, 
@@ -4628,6 +4644,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -4780,10 +4797,12 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "startDate": Date, 
@@ -5059,6 +5078,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -5211,18 +5231,22 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
   "enabled": Boolean, 
@@ -6053,6 +6077,92 @@ apiInstance.patchUserRoutinglanguage(userId, languageId, body)
 ### Return type
 
 **UserRoutingLanguage**
+
+<a name="patchUsersBulk"></a>
+
+# UserEntityListing patchUsersBulk(body)
+
+
+
+PATCH /api/v2/users/bulk
+
+Update bulk acd autoanswer on users
+
+
+
+Requires ANY permissions: 
+
+* directory:user:add
+* user_manager
+* user_administration
+* directory:user:edit
+
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyPatchUserExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#PatchUserExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+PatchUser <a style="cursor: pointer" onclick="copyPatchUserExample()">Copy</a>
+
+<div id="PatchUserExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "acdAutoAnswer": Boolean, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var body = [{}]; // Object | Users
+
+apiInstance.patchUsersBulk(body)
+  .then(function(data) {
+    console.log(`patchUsersBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling patchUsersBulk');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Users |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserEntityListing**
 
 <a name="postAnalyticsUsersAggregatesQuery"></a>
 
@@ -7552,6 +7662,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -7704,10 +7815,12 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "startDate": Date, 
@@ -7983,6 +8096,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -8135,14 +8249,17 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "startDate": Date, 
@@ -8562,6 +8679,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -8714,10 +8832,12 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "startDate": Date, 
@@ -8993,6 +9113,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -9145,18 +9266,22 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
   "enabled": Boolean, 
@@ -9613,6 +9738,7 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -9765,10 +9891,12 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "startDate": Date, 
@@ -10044,6 +10172,7 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -10196,14 +10325,17 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "startDate": Date, 
@@ -10623,6 +10755,7 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -10775,10 +10908,12 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "startDate": Date, 
@@ -11054,6 +11189,7 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -11206,18 +11342,22 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
   "startDate": Date, 

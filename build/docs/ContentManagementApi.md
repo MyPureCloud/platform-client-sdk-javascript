@@ -2915,6 +2915,7 @@ WorkspaceMember <a style="cursor: pointer" onclick="copyWorkspaceMemberExample()
       "owners": User, 
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
   "group": { 

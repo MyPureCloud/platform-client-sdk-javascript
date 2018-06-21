@@ -838,6 +838,7 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "queue": { 
@@ -1183,6 +1184,7 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "queue": { 
@@ -1404,6 +1406,7 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "queue": { 
@@ -1503,6 +1506,7 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "queue": { 
@@ -1561,8 +1565,8 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ~~~
@@ -1949,6 +1953,7 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "queue": { 
@@ -2294,6 +2299,7 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "queue": { 
@@ -2515,6 +2521,7 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "queue": { 
@@ -2614,6 +2621,7 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "queue": { 
@@ -2672,8 +2680,8 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ~~~
@@ -3063,6 +3071,7 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "queue": { 
@@ -3408,6 +3417,7 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "queue": { 
@@ -3629,6 +3639,7 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "queue": { 
@@ -3728,6 +3739,7 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "queue": { 
@@ -3786,8 +3798,8 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ~~~
@@ -4230,6 +4242,7 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "queue": { 
@@ -4575,6 +4588,7 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "queue": { 
@@ -4796,6 +4810,7 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "queue": { 
@@ -4895,6 +4910,7 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "queue": { 
@@ -4953,8 +4969,8 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ~~~
@@ -5459,6 +5475,7 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "queue": { 
@@ -5804,6 +5821,7 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "queue": { 
@@ -6025,6 +6043,7 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "queue": { 
@@ -6124,6 +6143,7 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "queue": { 
@@ -6182,8 +6202,8 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ~~~

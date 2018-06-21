@@ -1272,6 +1272,7 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -1298,6 +1299,7 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -1746,6 +1748,7 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -2034,6 +2037,7 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -2253,6 +2257,7 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -2762,6 +2767,7 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -2878,6 +2884,7 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -2907,6 +2914,7 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -3286,6 +3294,7 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -3402,6 +3411,7 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -3431,6 +3441,7 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 

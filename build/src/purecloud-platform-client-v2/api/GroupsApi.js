@@ -18,7 +18,7 @@
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 29.0.0
+   * @version 29.1.0
    */
 
   /**

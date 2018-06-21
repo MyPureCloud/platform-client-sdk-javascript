@@ -1746,6 +1746,7 @@ Trustee <a style="cursor: pointer" onclick="copyTrusteeExample()">Copy</a>
         "owners": User, 
         "selfUri": String, 
       },  
+      "acdAutoAnswer": Boolean, 
       "selfUri": String, 
     },  
     "images": { 
@@ -2035,6 +2036,7 @@ Trustee <a style="cursor: pointer" onclick="copyTrusteeExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "organization": { 
       "id": String, 
       "name": String, 

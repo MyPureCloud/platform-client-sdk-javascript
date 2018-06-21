@@ -18,7 +18,7 @@
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 29.0.0
+   * @version 29.1.0
    */
 
   /**
@@ -1096,6 +1096,34 @@
         '/api/v2/users/{userId}/routinglanguages/{languageId}', 
         'PATCH', 
         { 'userId': userId,'languageId': languageId }, 
+        {  }, 
+        {  }, 
+        {  }, 
+        body, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Update bulk acd autoanswer on users
+     * 
+     * @param {Array.<Object>} body Users
+     */
+    this.patchUsersBulk = function(body) { 
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling patchUsersBulk";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/users/bulk', 
+        'PATCH', 
+        {  }, 
         {  }, 
         {  }, 
         {  }, 

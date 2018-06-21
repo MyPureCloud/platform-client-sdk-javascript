@@ -2787,6 +2787,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
       "owners": User, 
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
   "agent": User, 
@@ -3715,6 +3716,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -3741,6 +3743,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -4189,6 +4192,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -4477,6 +4481,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -4696,6 +4701,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -5205,6 +5211,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -5321,6 +5328,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -5350,6 +5358,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -5729,6 +5738,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -5845,6 +5855,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -5874,6 +5885,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -7377,6 +7389,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -7593,6 +7606,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -7712,6 +7726,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -7855,6 +7870,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -7881,6 +7897,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -7999,6 +8016,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -8025,6 +8043,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -8684,6 +8703,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
         "owners": User, 
         "selfUri": String, 
       },  
+      "acdAutoAnswer": Boolean, 
       "selfUri": String, 
     },  
     "agent": { 
@@ -8990,6 +9010,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
         "owners": User, 
         "selfUri": String, 
       },  
+      "acdAutoAnswer": Boolean, 
       "selfUri": String, 
     },  
     "calibration": { 
@@ -9290,6 +9311,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
           "owners": User, 
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "agent": User, 
@@ -9913,6 +9935,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -10029,6 +10052,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -10058,6 +10082,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -10770,6 +10795,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -10796,6 +10822,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -11244,6 +11271,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -11532,6 +11560,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -11751,6 +11780,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -12260,6 +12290,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -12376,6 +12407,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -12405,6 +12437,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -12784,6 +12817,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -12900,6 +12934,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -12929,6 +12964,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -13680,6 +13716,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -13706,6 +13743,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -14154,6 +14192,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -14442,6 +14481,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -14661,6 +14701,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -15170,6 +15211,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -15286,6 +15328,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -15315,6 +15358,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -15694,6 +15738,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -15810,6 +15855,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -15839,6 +15885,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -17367,6 +17414,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -17583,6 +17631,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -17702,6 +17751,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -17845,6 +17895,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -17871,6 +17922,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -17989,6 +18041,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -18015,6 +18068,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -18674,6 +18728,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
         "owners": User, 
         "selfUri": String, 
       },  
+      "acdAutoAnswer": Boolean, 
       "selfUri": String, 
     },  
     "agent": { 
@@ -18980,6 +19035,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
         "owners": User, 
         "selfUri": String, 
       },  
+      "acdAutoAnswer": Boolean, 
       "selfUri": String, 
     },  
     "calibration": { 
@@ -19280,6 +19336,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
           "owners": User, 
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "agent": User, 
@@ -19903,6 +19960,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -20019,6 +20077,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -20048,6 +20107,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -20760,6 +20820,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -20786,6 +20847,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -21234,6 +21296,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -21522,6 +21585,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -21741,6 +21805,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -22250,6 +22315,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -22366,6 +22432,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -22395,6 +22462,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -22774,6 +22842,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -22890,6 +22959,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -22919,6 +22989,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -23670,6 +23741,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -23696,6 +23768,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -24144,6 +24217,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -24432,6 +24506,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -24651,6 +24726,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -25160,6 +25236,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -25276,6 +25353,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -25305,6 +25383,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -25684,6 +25763,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -25800,6 +25880,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -25829,6 +25910,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -27382,6 +27464,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -27408,6 +27491,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -27856,6 +27940,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -28144,6 +28229,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -28363,6 +28449,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -28872,6 +28959,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -28988,6 +29076,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -29017,6 +29106,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -29396,6 +29486,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -29512,6 +29603,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -29541,6 +29633,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -30367,6 +30460,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
   "agent": { 
@@ -30682,6 +30776,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
   "calibration": { 
@@ -30991,6 +31086,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
         "owners": User, 
         "selfUri": String, 
       },  
+      "acdAutoAnswer": Boolean, 
       "selfUri": String, 
     },  
     "agent": User, 
@@ -31976,6 +32072,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -32192,6 +32289,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -32311,6 +32409,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -32454,6 +32553,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -32480,6 +32580,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -32598,6 +32699,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -32624,6 +32726,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -33607,6 +33710,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -33723,6 +33827,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -33752,6 +33857,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -34343,6 +34449,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "agent": { 
@@ -34640,6 +34747,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "calibration": { 
@@ -34931,6 +35039,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "agent": User, 
@@ -35342,6 +35451,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -35368,6 +35478,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -36051,6 +36162,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -36267,6 +36379,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -36386,6 +36499,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -36529,6 +36643,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -36555,6 +36670,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -36673,6 +36789,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -36699,6 +36816,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -37422,6 +37540,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -37638,6 +37757,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -37757,6 +37877,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -37900,6 +38021,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -37926,6 +38048,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -38044,6 +38167,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -38070,6 +38194,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -39084,6 +39209,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -39200,6 +39326,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -39229,6 +39356,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -39820,6 +39948,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "agent": { 
@@ -40117,6 +40246,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "calibration": { 
@@ -40408,6 +40538,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "agent": User, 
@@ -40819,6 +40950,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -40845,6 +40977,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -41528,6 +41661,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -41744,6 +41878,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -41863,6 +41998,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -42006,6 +42142,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -42032,6 +42169,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -42150,6 +42288,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -42176,6 +42315,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -42899,6 +43039,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -43115,6 +43256,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -43234,6 +43376,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -43377,6 +43520,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -43403,6 +43547,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -43521,6 +43666,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -43547,6 +43693,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -45839,6 +45986,7 @@ KeywordSet <a style="cursor: pointer" onclick="copyKeywordSetExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
   "keywords": { 
@@ -46678,6 +46826,7 @@ KeywordSet <a style="cursor: pointer" onclick="copyKeywordSetExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
   "keywords": { 
@@ -47091,6 +47240,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
       "owners": User, 
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
   "agent": User, 
@@ -48019,6 +48169,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -48045,6 +48196,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -48493,6 +48645,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -48781,6 +48934,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -49000,6 +49154,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -49509,6 +49664,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -49625,6 +49781,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -49654,6 +49811,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -50033,6 +50191,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -50149,6 +50308,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -50178,6 +50338,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -51681,6 +51842,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -51897,6 +52059,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -52016,6 +52179,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -52159,6 +52323,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -52185,6 +52350,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -52303,6 +52469,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -52329,6 +52496,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -52988,6 +53156,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
         "owners": User, 
         "selfUri": String, 
       },  
+      "acdAutoAnswer": Boolean, 
       "selfUri": String, 
     },  
     "agent": { 
@@ -53294,6 +53463,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
         "owners": User, 
         "selfUri": String, 
       },  
+      "acdAutoAnswer": Boolean, 
       "selfUri": String, 
     },  
     "calibration": { 
@@ -53594,6 +53764,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
           "owners": User, 
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "agent": User, 
@@ -54217,6 +54388,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -54333,6 +54505,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -54362,6 +54535,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -55074,6 +55248,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -55100,6 +55275,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -55548,6 +55724,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -55836,6 +56013,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -56055,6 +56233,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -56564,6 +56743,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -56680,6 +56860,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -56709,6 +56890,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -57088,6 +57270,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -57204,6 +57387,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -57233,6 +57417,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -57984,6 +58169,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -58010,6 +58196,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -58458,6 +58645,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -58746,6 +58934,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -58965,6 +59154,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -59474,6 +59664,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -59590,6 +59781,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -59619,6 +59811,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -59998,6 +60191,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -60114,6 +60308,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -60143,6 +60338,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -61671,6 +61867,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -61887,6 +62084,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -62006,6 +62204,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -62149,6 +62348,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -62175,6 +62375,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -62293,6 +62494,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -62319,6 +62521,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -62978,6 +63181,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
         "owners": User, 
         "selfUri": String, 
       },  
+      "acdAutoAnswer": Boolean, 
       "selfUri": String, 
     },  
     "agent": { 
@@ -63284,6 +63488,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
         "owners": User, 
         "selfUri": String, 
       },  
+      "acdAutoAnswer": Boolean, 
       "selfUri": String, 
     },  
     "calibration": { 
@@ -63584,6 +63789,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
           "owners": User, 
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "agent": User, 
@@ -64207,6 +64413,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -64323,6 +64530,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -64352,6 +64560,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -65064,6 +65273,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -65090,6 +65300,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -65538,6 +65749,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -65826,6 +66038,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -66045,6 +66258,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -66554,6 +66768,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -66670,6 +66885,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -66699,6 +66915,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -67078,6 +67295,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -67194,6 +67412,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -67223,6 +67442,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -67974,6 +68194,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -68000,6 +68221,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -68448,6 +68670,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -68736,6 +68959,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -68955,6 +69179,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -69464,6 +69689,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -69580,6 +69806,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -69609,6 +69836,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -69988,6 +70216,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -70104,6 +70333,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -70133,6 +70363,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -71685,6 +71916,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -71711,6 +71943,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -72159,6 +72392,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -72447,6 +72681,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -72666,6 +72901,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -73175,6 +73411,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -73291,6 +73528,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -73320,6 +73558,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -73699,6 +73938,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -73815,6 +74055,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -73844,6 +74085,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -74670,6 +74912,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
   "agent": { 
@@ -74985,6 +75228,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
   "calibration": { 
@@ -75294,6 +75538,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
         "owners": User, 
         "selfUri": String, 
       },  
+      "acdAutoAnswer": Boolean, 
       "selfUri": String, 
     },  
     "agent": User, 
@@ -76279,6 +76524,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -76495,6 +76741,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -76614,6 +76861,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -76757,6 +77005,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -76783,6 +77032,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -76901,6 +77151,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -76927,6 +77178,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -77910,6 +78162,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -78026,6 +78279,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -78055,6 +78309,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -78646,6 +78901,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "agent": { 
@@ -78943,6 +79199,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "calibration": { 
@@ -79234,6 +79491,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "agent": User, 
@@ -79645,6 +79903,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -79671,6 +79930,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -80354,6 +80614,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -80570,6 +80831,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -80689,6 +80951,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -80832,6 +81095,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -80858,6 +81122,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -80976,6 +81241,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -81002,6 +81268,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -81725,6 +81992,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -81941,6 +82209,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -82060,6 +82329,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -82203,6 +82473,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -82229,6 +82500,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -82347,6 +82619,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -82373,6 +82646,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -83387,6 +83661,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -83503,6 +83778,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -83532,6 +83808,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -84123,6 +84400,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "agent": { 
@@ -84420,6 +84698,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "calibration": { 
@@ -84711,6 +84990,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "agent": User, 
@@ -85122,6 +85402,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -85148,6 +85429,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -85831,6 +86113,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -86047,6 +86330,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -86166,6 +86450,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -86309,6 +86594,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -86335,6 +86621,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -86453,6 +86740,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -86479,6 +86767,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -87202,6 +87491,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -87418,6 +87708,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -87537,6 +87828,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -87680,6 +87972,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -87706,6 +87999,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -87824,6 +88118,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -87850,6 +88145,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -89884,6 +90180,7 @@ KeywordSet <a style="cursor: pointer" onclick="copyKeywordSetExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
   "keywords": { 

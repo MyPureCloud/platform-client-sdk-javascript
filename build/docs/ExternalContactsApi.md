@@ -1503,6 +1503,7 @@ Note <a style="cursor: pointer" onclick="copyNoteExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
   "externalDataSources": { 
@@ -2013,6 +2014,7 @@ ExternalContact <a style="cursor: pointer" onclick="copyExternalContactExample()
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "images": { 
@@ -2284,6 +2286,7 @@ ExternalContact <a style="cursor: pointer" onclick="copyExternalContactExample()
           "owners": User, 
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "organization": { 
           "id": String, 
           "name": String, 
@@ -2729,6 +2732,7 @@ Note <a style="cursor: pointer" onclick="copyNoteExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
   "externalDataSources": { 
@@ -3189,6 +3193,7 @@ ExternalOrganization <a style="cursor: pointer" onclick="copyExternalOrganizatio
           "owners": User, 
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "images": { 
@@ -3469,6 +3474,7 @@ ExternalOrganization <a style="cursor: pointer" onclick="copyExternalOrganizatio
         "owners": User, 
         "selfUri": String, 
       },  
+      "acdAutoAnswer": Boolean, 
       "organization": { 
         "id": String, 
         "name": String, 
@@ -3903,6 +3909,7 @@ Relationship <a style="cursor: pointer" onclick="copyRelationshipExample()">Copy
       "owners": User, 
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
   "externalOrganization": { 
@@ -4268,6 +4275,7 @@ Relationship <a style="cursor: pointer" onclick="copyRelationshipExample()">Copy
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "images": { 
@@ -4539,6 +4547,7 @@ Relationship <a style="cursor: pointer" onclick="copyRelationshipExample()">Copy
           "owners": User, 
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "organization": { 
           "id": String, 
           "name": String, 
@@ -5086,6 +5095,7 @@ ExternalContact <a style="cursor: pointer" onclick="copyExternalContactExample()
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "images": { 
@@ -5357,6 +5367,7 @@ ExternalContact <a style="cursor: pointer" onclick="copyExternalContactExample()
           "owners": User, 
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "organization": { 
           "id": String, 
           "name": String, 
@@ -5805,6 +5816,7 @@ Note <a style="cursor: pointer" onclick="copyNoteExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
   "externalDataSources": { 
@@ -6354,6 +6366,7 @@ ExternalOrganization <a style="cursor: pointer" onclick="copyExternalOrganizatio
           "owners": User, 
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
       "images": { 
@@ -6634,6 +6647,7 @@ ExternalOrganization <a style="cursor: pointer" onclick="copyExternalOrganizatio
         "owners": User, 
         "selfUri": String, 
       },  
+      "acdAutoAnswer": Boolean, 
       "organization": { 
         "id": String, 
         "name": String, 
@@ -7074,6 +7088,7 @@ Note <a style="cursor: pointer" onclick="copyNoteExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
   "externalDataSources": { 
@@ -7540,6 +7555,7 @@ Relationship <a style="cursor: pointer" onclick="copyRelationshipExample()">Copy
       "owners": User, 
       "selfUri": String, 
     },  
+    "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
   "externalOrganization": { 
@@ -7905,6 +7921,7 @@ Relationship <a style="cursor: pointer" onclick="copyRelationshipExample()">Copy
             "owners": User, 
             "selfUri": String, 
           },  
+          "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
         "images": { 
@@ -8176,6 +8193,7 @@ Relationship <a style="cursor: pointer" onclick="copyRelationshipExample()">Copy
           "owners": User, 
           "selfUri": String, 
         },  
+        "acdAutoAnswer": Boolean, 
         "organization": { 
           "id": String, 
           "name": String, 
