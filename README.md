@@ -131,8 +131,12 @@ client.setEnvironment('mypurecloud.ie');
 In a web environment, it is possible to persist the access token to prevent an authentication request from being made on each page load. To enable this function, simply enable settings persistence prior to attempting a login. To maintain multiple auth tokens in storage, specify the prefix to use for storage/retrieval when enabling persistence. Otherwise, the prefix is optional and will default to `purecloud`.
 
 ~~~ js
+// Browser
 const platformClient = require('platformClient');
-var client = purecloud-platform-client-v2.ApiClient.instance;
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+var client = platformClient.ApiClient.instance;
 client.setPersistSettings(true, 'optional_prefix');
 ~~~
 
