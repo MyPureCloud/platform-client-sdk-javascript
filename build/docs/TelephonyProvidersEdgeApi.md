@@ -28012,7 +28012,7 @@ CreateAsgRequest <a style="cursor: pointer" onclick="copyCreateAsgRequestExample
   "edgeGroupId": String, 
   "externalTrunkBaseId": String, 
   "asgLogicalIAMInstanceProfile": String, 
-  "asgAmi": Boolean, 
+  "asgAmi": String, 
   "asgType": String, 
   "asgInstanceCount": Number, 
   "asgNetworkSpace": String, 

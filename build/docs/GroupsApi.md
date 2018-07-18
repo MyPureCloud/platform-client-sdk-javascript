@@ -38,6 +38,7 @@ Delete group
 Requires ANY permissions: 
 
 * group_administration
+* admin
 
 
 
@@ -959,6 +960,7 @@ Update group
 Requires ANY permissions: 
 
 * group_administration
+* admin
 
 
 ### Request Body Schema

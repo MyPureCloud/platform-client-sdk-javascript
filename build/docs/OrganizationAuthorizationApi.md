@@ -1420,6 +1420,11 @@ Trustee <a style="cursor: pointer" onclick="copyTrusteeExample()">Copy</a>
   "createdBy": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -1445,6 +1450,11 @@ Trustee <a style="cursor: pointer" onclick="copyTrusteeExample()">Copy</a>
     "manager": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "chat": { 
         "jabberId": String, 
       },  

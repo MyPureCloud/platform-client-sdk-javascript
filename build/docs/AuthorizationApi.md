@@ -555,6 +555,11 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
         "user": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -973,6 +978,11 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -1295,6 +1305,11 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
             "user": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -1485,6 +1500,7 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
               "user": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -1670,6 +1686,11 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
         "user": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -2088,6 +2109,11 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -2410,6 +2436,11 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
             "user": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -2600,6 +2631,7 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
               "user": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -2788,6 +2820,11 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
         "user": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -3206,6 +3243,11 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -3528,6 +3570,11 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
             "user": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -3718,6 +3765,7 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
               "user": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -3959,6 +4007,11 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
         "user": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -4377,6 +4430,11 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -4699,6 +4757,11 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
             "user": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -4889,6 +4952,7 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
               "user": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -5192,6 +5256,11 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
         "user": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -5610,6 +5679,11 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -5932,6 +6006,11 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
             "user": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -6122,6 +6201,7 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
               "user": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 

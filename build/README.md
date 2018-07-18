@@ -25,8 +25,8 @@ npm install purecloud-platform-client-v2
 Reference from the CDN:
 
 ~~~ html
-<!-- Replace `29.1.0` with the version you want to use. -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/29.1.0/purecloud-platform-client-v2.min.js"></script>
+<!-- Replace `30.0.0` with the version you want to use. -->
+<script src="https://sdk-cdn.mypurecloud.com/javascript/30.0.0/purecloud-platform-client-v2.min.js"></script>
 ~~~
 
 View the documentation on the [PureCloud Developer Center](https://developer.mypurecloud.com/api/rest/client-libraries/javascript/).
@@ -41,7 +41,7 @@ Reference the SDK in your HTML document. For convenience, all modules are bundle
 
 ~~~ html
 <!-- Include the full library -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/29.1.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/30.0.0/purecloud-platform-client-v2.min.js"></script>
 ~~~
 
 
@@ -64,7 +64,7 @@ The Client Credentials grant only works when used in node.js. This is restricted
 
 ~~~ javascript
 const platformClient = require('purecloud-platform-client-v2');
-var client = platformClient.ApiClient.instance;
+const client = platformClient.ApiClient.instance;
 client.loginClientCredentialsGrant(clientId, clientSecret)
   .then(function() {
     // Do authenticated things
@@ -85,7 +85,7 @@ Optional parameters may be specified in the optional third parameter for `loginI
 
 ~~~ javascript
 const platformClient = require('platformClient');
-var client = platformClient.ApiClient.instance;
+const client = platformClient.ApiClient.instance;
 client.loginImplicitGrant(clientId, redirectUri, { state: state })
   .then(function(data) {
     console.log(data);
@@ -105,7 +105,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-var client = platformClient.ApiClient.instance;
+const client = platformClient.ApiClient.instance;
 client.setAccessToken(yourAccessToken);
 // Do authenticated things; no login function needed
 ~~~
@@ -121,7 +121,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-var client = platformClient.ApiClient.instance;
+const client = platformClient.ApiClient.instance;
 client.setEnvironment('mypurecloud.ie');
 ~~~
 
@@ -131,8 +131,12 @@ client.setEnvironment('mypurecloud.ie');
 In a web environment, it is possible to persist the access token to prevent an authentication request from being made on each page load. To enable this function, simply enable settings persistence prior to attempting a login. To maintain multiple auth tokens in storage, specify the prefix to use for storage/retrieval when enabling persistence. Otherwise, the prefix is optional and will default to `purecloud`.
 
 ~~~ js
+// Browser
 const platformClient = require('platformClient');
-var client = purecloud-platform-client-v2.ApiClient.instance;
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+const client = platformClient.ApiClient.instance;
 client.setPersistSettings(true, 'optional_prefix');
 ~~~
 
@@ -147,7 +151,7 @@ All API requests return a Promise which resolves to the response body, otherwise
 const platformClient = require('purecloud-platform-client-v2');
 
 // Create API instance
-var authorizationApi = new platformClient.AuthorizationApi();
+const authorizationApi = new platformClient.AuthorizationApi();
 
 // Authenticate
 client.loginClientCredentialsGrant(clientId, clientSecret)
@@ -171,7 +175,7 @@ client.loginClientCredentialsGrant(clientId, clientSecret)
 const platformClient = require('platformClient');
 
 // Create API instance
-var usersApi = new platformClient.UsersApi();
+const usersApi = new platformClient.UsersApi();
 
 // Authenticate
 client.loginImplicitGrant(clientId, redirectUri)
@@ -200,7 +204,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-var client = purecloud-platform-client-v2.ApiClient.instance;
+const client = platformClient.ApiClient.instance;
 client.setReturnExtendedResponses(true);
 ~~~
 
@@ -241,7 +245,7 @@ NOTE: SDK proxy configuration is only available in the node.js package due to `s
 ~~~ js
 const platformClient = require('purecloud-platform-client-v2');
 
-var client = purecloud-platform-client-v2.ApiClient.instance;
+const client = platformClient.ApiClient.instance;
 require('superagent-proxy')(client.superagent);
 // Configure settings for your proxy here
 // Documentation: https://www.npmjs.com/package/proxy-agent
@@ -299,7 +303,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-var client = purecloud-platform-client-v2.ApiClient.instance;
+const client = platformClient.ApiClient.instance;
 client.setDebugLog(console.log, 25);
 ~~~
 

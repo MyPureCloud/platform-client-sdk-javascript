@@ -3728,6 +3728,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "evaluator": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -4144,6 +4149,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
       "evaluator": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -4832,6 +4842,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -5327,6 +5338,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "evaluator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -5666,6 +5682,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -5786,6 +5803,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -6321,6 +6339,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "evaluator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -6660,6 +6683,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -6780,6 +6804,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -8727,6 +8752,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "evaluator": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -9143,6 +9173,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
       "evaluator": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -9831,6 +9866,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -10326,6 +10362,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "evaluator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -10665,6 +10706,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -10785,6 +10827,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -11320,6 +11363,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "evaluator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -11659,6 +11707,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -11779,6 +11828,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -13641,6 +13691,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "evaluator": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -14057,6 +14112,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
       "evaluator": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -14745,6 +14805,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -15240,6 +15301,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "evaluator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -15579,6 +15645,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -15699,6 +15766,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -16234,6 +16302,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "evaluator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -16573,6 +16646,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -16693,6 +16767,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -18555,6 +18630,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "evaluator": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -18971,6 +19051,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
       "evaluator": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -19659,6 +19744,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -20154,6 +20240,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "evaluator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -20493,6 +20584,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -20613,6 +20705,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -21148,6 +21241,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "evaluator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -21487,6 +21585,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -21607,6 +21706,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -23471,6 +23571,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "evaluator": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -23887,6 +23992,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
       "evaluator": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -24575,6 +24685,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -25070,6 +25181,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "evaluator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -25409,6 +25525,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -25529,6 +25646,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -26064,6 +26182,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "evaluator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -26403,6 +26526,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -26523,6 +26647,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -28385,6 +28510,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "evaluator": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -28801,6 +28931,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
       "evaluator": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -29489,6 +29624,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -29984,6 +30120,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "evaluator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -30323,6 +30464,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -30443,6 +30585,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -30978,6 +31121,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "evaluator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -31317,6 +31465,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -31437,6 +31586,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -34465,6 +34615,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "evaluator": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -34881,6 +35036,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
       "evaluator": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -35569,6 +35729,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -36064,6 +36225,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "evaluator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -36403,6 +36569,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -36523,6 +36690,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -37058,6 +37226,11 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "evaluator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -37397,6 +37570,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -37517,6 +37691,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 

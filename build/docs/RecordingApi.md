@@ -1449,6 +1449,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -1669,6 +1674,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "evaluators": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -1951,6 +1961,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "calibrator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -2229,8 +2244,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "surveyForm": { 
             "id": String, 
             "name": String, 
-            "selfUri": String, 
             "contextId": String, 
+            "selfUri": String, 
           },  
           "flow": { 
             "id": String, 
@@ -2238,6 +2253,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "inviteTimeInterval": String, 
+          "sendingUser": String, 
+          "sendingDomain": String, 
         },  
         "retentionDuration": { 
           "archiveRetention": { 
@@ -2268,6 +2285,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
         "forUsers": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -2683,6 +2705,14 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "dateModified": Date, 
           "modifiedBy": String, 
           "createdBy": String, 
+          "selfUri": String, 
+        },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "dateModified": Date, 
+          "state": String, 
+          "version": String, 
           "selfUri": String, 
         },  
         "timeAllowed": { 
@@ -2768,6 +2798,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -2988,6 +3023,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "evaluators": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -3270,6 +3310,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "calibrator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -3548,8 +3593,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "surveyForm": { 
             "id": String, 
             "name": String, 
-            "selfUri": String, 
             "contextId": String, 
+            "selfUri": String, 
           },  
           "flow": { 
             "id": String, 
@@ -3557,6 +3602,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "inviteTimeInterval": String, 
+          "sendingUser": String, 
+          "sendingDomain": String, 
         },  
         "retentionDuration": { 
           "archiveRetention": { 
@@ -3587,6 +3634,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
         "forUsers": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -4002,6 +4054,14 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "dateModified": Date, 
           "modifiedBy": String, 
           "createdBy": String, 
+          "selfUri": String, 
+        },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "dateModified": Date, 
+          "state": String, 
+          "version": String, 
           "selfUri": String, 
         },  
         "timeAllowed": { 
@@ -4086,6 +4146,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -4306,6 +4371,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "evaluators": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -4588,6 +4658,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "calibrator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -4866,8 +4941,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "surveyForm": { 
             "id": String, 
             "name": String, 
-            "selfUri": String, 
             "contextId": String, 
+            "selfUri": String, 
           },  
           "flow": { 
             "id": String, 
@@ -4875,6 +4950,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "inviteTimeInterval": String, 
+          "sendingUser": String, 
+          "sendingDomain": String, 
         },  
         "retentionDuration": { 
           "archiveRetention": { 
@@ -4905,6 +4982,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
         "forUsers": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -5320,6 +5402,14 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "dateModified": Date, 
           "modifiedBy": String, 
           "createdBy": String, 
+          "selfUri": String, 
+        },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "dateModified": Date, 
+          "state": String, 
+          "version": String, 
           "selfUri": String, 
         },  
         "timeAllowed": { 
@@ -5399,6 +5489,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -5619,6 +5714,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "evaluators": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -5901,6 +6001,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "calibrator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -6179,8 +6284,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "surveyForm": { 
             "id": String, 
             "name": String, 
-            "selfUri": String, 
             "contextId": String, 
+            "selfUri": String, 
           },  
           "flow": { 
             "id": String, 
@@ -6188,6 +6293,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "inviteTimeInterval": String, 
+          "sendingUser": String, 
+          "sendingDomain": String, 
         },  
         "retentionDuration": { 
           "archiveRetention": { 
@@ -6218,6 +6325,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
         "forUsers": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -6635,6 +6747,14 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "createdBy": String, 
           "selfUri": String, 
         },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "dateModified": Date, 
+          "state": String, 
+          "version": String, 
+          "selfUri": String, 
+        },  
         "timeAllowed": { 
           "timeSlots": { 
             "startTime": String, 
@@ -6651,6 +6771,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
     "forUsers": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "chat": { 
         "jabberId": String, 
       },  
@@ -7262,6 +7387,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
       "user": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -7563,6 +7693,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
       "evaluators": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -7980,6 +8115,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
       "calibrator": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -8393,8 +8533,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
       "surveyForm": { 
         "id": String, 
         "name": String, 
-        "selfUri": String, 
         "contextId": String, 
+        "selfUri": String, 
       },  
       "flow": { 
         "id": String, 
@@ -8402,6 +8542,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
         "selfUri": String, 
       },  
       "inviteTimeInterval": String, 
+      "sendingUser": String, 
+      "sendingDomain": String, 
     },  
     "retentionDuration": { 
       "archiveRetention": { 
@@ -8621,6 +8763,11 @@ Annotation <a style="cursor: pointer" onclick="copyAnnotationExample()">Copy</a>
   "user": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -9354,6 +9501,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -9574,6 +9726,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "evaluators": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -9856,6 +10013,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "calibrator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -10134,8 +10296,8 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "surveyForm": { 
             "id": String, 
             "name": String, 
-            "selfUri": String, 
             "contextId": String, 
+            "selfUri": String, 
           },  
           "flow": { 
             "id": String, 
@@ -10143,6 +10305,8 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
             "selfUri": String, 
           },  
           "inviteTimeInterval": String, 
+          "sendingUser": String, 
+          "sendingDomain": String, 
         },  
         "retentionDuration": { 
           "archiveRetention": { 
@@ -10173,6 +10337,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
         "forUsers": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -10588,6 +10757,14 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "dateModified": Date, 
           "modifiedBy": String, 
           "createdBy": String, 
+          "selfUri": String, 
+        },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "dateModified": Date, 
+          "state": String, 
+          "version": String, 
           "selfUri": String, 
         },  
         "timeAllowed": { 
@@ -10673,6 +10850,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -10893,6 +11075,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "evaluators": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -11175,6 +11362,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "calibrator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -11453,8 +11645,8 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "surveyForm": { 
             "id": String, 
             "name": String, 
-            "selfUri": String, 
             "contextId": String, 
+            "selfUri": String, 
           },  
           "flow": { 
             "id": String, 
@@ -11462,6 +11654,8 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
             "selfUri": String, 
           },  
           "inviteTimeInterval": String, 
+          "sendingUser": String, 
+          "sendingDomain": String, 
         },  
         "retentionDuration": { 
           "archiveRetention": { 
@@ -11492,6 +11686,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
         "forUsers": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -11907,6 +12106,14 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "dateModified": Date, 
           "modifiedBy": String, 
           "createdBy": String, 
+          "selfUri": String, 
+        },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "dateModified": Date, 
+          "state": String, 
+          "version": String, 
           "selfUri": String, 
         },  
         "timeAllowed": { 
@@ -11991,6 +12198,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -12211,6 +12423,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "evaluators": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -12493,6 +12710,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "calibrator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -12771,8 +12993,8 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "surveyForm": { 
             "id": String, 
             "name": String, 
-            "selfUri": String, 
             "contextId": String, 
+            "selfUri": String, 
           },  
           "flow": { 
             "id": String, 
@@ -12780,6 +13002,8 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
             "selfUri": String, 
           },  
           "inviteTimeInterval": String, 
+          "sendingUser": String, 
+          "sendingDomain": String, 
         },  
         "retentionDuration": { 
           "archiveRetention": { 
@@ -12810,6 +13034,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
         "forUsers": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -13225,6 +13454,14 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "dateModified": Date, 
           "modifiedBy": String, 
           "createdBy": String, 
+          "selfUri": String, 
+        },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "dateModified": Date, 
+          "state": String, 
+          "version": String, 
           "selfUri": String, 
         },  
         "timeAllowed": { 
@@ -13304,6 +13541,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -13524,6 +13766,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "evaluators": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -13806,6 +14053,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "calibrator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -14084,8 +14336,8 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "surveyForm": { 
             "id": String, 
             "name": String, 
-            "selfUri": String, 
             "contextId": String, 
+            "selfUri": String, 
           },  
           "flow": { 
             "id": String, 
@@ -14093,6 +14345,8 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
             "selfUri": String, 
           },  
           "inviteTimeInterval": String, 
+          "sendingUser": String, 
+          "sendingDomain": String, 
         },  
         "retentionDuration": { 
           "archiveRetention": { 
@@ -14123,6 +14377,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
         "forUsers": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -14540,6 +14799,14 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "createdBy": String, 
           "selfUri": String, 
         },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "dateModified": Date, 
+          "state": String, 
+          "version": String, 
+          "selfUri": String, 
+        },  
         "timeAllowed": { 
           "timeSlots": { 
             "startTime": String, 
@@ -14556,6 +14823,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
     "forUsers": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "chat": { 
         "jabberId": String, 
       },  
@@ -15167,6 +15439,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
       "user": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -15468,6 +15745,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
       "evaluators": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -15885,6 +16167,11 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
       "calibrator": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -16298,8 +16585,8 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
       "surveyForm": { 
         "id": String, 
         "name": String, 
-        "selfUri": String, 
         "contextId": String, 
+        "selfUri": String, 
       },  
       "flow": { 
         "id": String, 
@@ -16307,6 +16594,8 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
         "selfUri": String, 
       },  
       "inviteTimeInterval": String, 
+      "sendingUser": String, 
+      "sendingDomain": String, 
     },  
     "retentionDuration": { 
       "archiveRetention": { 
@@ -16496,6 +16785,11 @@ Recording <a style="cursor: pointer" onclick="copyRecordingExample()">Copy</a>
     "user": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "chat": { 
         "jabberId": String, 
       },  
@@ -16868,6 +17162,11 @@ Recording <a style="cursor: pointer" onclick="copyRecordingExample()">Copy</a>
     "fromUser": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "chat": { 
         "jabberId": String, 
       },  
@@ -17229,6 +17528,18 @@ Recording <a style="cursor: pointer" onclick="copyRecordingExample()">Copy</a>
         "verified": Boolean, 
         "profileUrl": String, 
       },  
+      "lineId": { 
+        "ids": { 
+          "userId": String, 
+        },  
+        "displayName": String, 
+      },  
+      "facebookId": { 
+        "ids": { 
+          "scopedId": String, 
+        },  
+        "displayName": String, 
+      },  
       "modifyDate": Date, 
       "createDate": Date, 
       "externalOrganization": { 
@@ -17286,6 +17597,11 @@ Recording <a style="cursor: pointer" onclick="copyRecordingExample()">Copy</a>
           "createdBy": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -17311,6 +17627,11 @@ Recording <a style="cursor: pointer" onclick="copyRecordingExample()">Copy</a>
             "manager": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -17647,6 +17968,9 @@ Recording <a style="cursor: pointer" onclick="copyRecordingExample()">Copy</a>
             "selfUri": String, 
             "features": {String: Boolean}, 
           },  
+          "authorization": { 
+            "permissions": [String], 
+          },  
           "selfUri": String, 
         },  
         "externalDataSources": { 
@@ -17665,6 +17989,7 @@ Recording <a style="cursor: pointer" onclick="copyRecordingExample()">Copy</a>
     },  
     "to": String, 
     "timestamp": Date, 
+    "id": String, 
     "messageText": String, 
   },  
   "fileState": String, 
@@ -17684,6 +18009,11 @@ Recording <a style="cursor: pointer" onclick="copyRecordingExample()">Copy</a>
   "users": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -18094,6 +18424,11 @@ Annotation <a style="cursor: pointer" onclick="copyAnnotationExample()">Copy</a>
   "user": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -18755,6 +19090,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -18975,6 +19315,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "evaluators": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -19257,6 +19602,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "calibrator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -19535,8 +19885,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "surveyForm": { 
             "id": String, 
             "name": String, 
-            "selfUri": String, 
             "contextId": String, 
+            "selfUri": String, 
           },  
           "flow": { 
             "id": String, 
@@ -19544,6 +19894,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "inviteTimeInterval": String, 
+          "sendingUser": String, 
+          "sendingDomain": String, 
         },  
         "retentionDuration": { 
           "archiveRetention": { 
@@ -19574,6 +19926,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
         "forUsers": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -19989,6 +20346,14 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "dateModified": Date, 
           "modifiedBy": String, 
           "createdBy": String, 
+          "selfUri": String, 
+        },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "dateModified": Date, 
+          "state": String, 
+          "version": String, 
           "selfUri": String, 
         },  
         "timeAllowed": { 
@@ -20074,6 +20439,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -20294,6 +20664,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "evaluators": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -20576,6 +20951,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "calibrator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -20854,8 +21234,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "surveyForm": { 
             "id": String, 
             "name": String, 
-            "selfUri": String, 
             "contextId": String, 
+            "selfUri": String, 
           },  
           "flow": { 
             "id": String, 
@@ -20863,6 +21243,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "inviteTimeInterval": String, 
+          "sendingUser": String, 
+          "sendingDomain": String, 
         },  
         "retentionDuration": { 
           "archiveRetention": { 
@@ -20893,6 +21275,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
         "forUsers": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -21308,6 +21695,14 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "dateModified": Date, 
           "modifiedBy": String, 
           "createdBy": String, 
+          "selfUri": String, 
+        },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "dateModified": Date, 
+          "state": String, 
+          "version": String, 
           "selfUri": String, 
         },  
         "timeAllowed": { 
@@ -21392,6 +21787,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -21612,6 +22012,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "evaluators": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -21894,6 +22299,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "calibrator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -22172,8 +22582,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "surveyForm": { 
             "id": String, 
             "name": String, 
-            "selfUri": String, 
             "contextId": String, 
+            "selfUri": String, 
           },  
           "flow": { 
             "id": String, 
@@ -22181,6 +22591,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "inviteTimeInterval": String, 
+          "sendingUser": String, 
+          "sendingDomain": String, 
         },  
         "retentionDuration": { 
           "archiveRetention": { 
@@ -22211,6 +22623,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
         "forUsers": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -22626,6 +23043,14 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "dateModified": Date, 
           "modifiedBy": String, 
           "createdBy": String, 
+          "selfUri": String, 
+        },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "dateModified": Date, 
+          "state": String, 
+          "version": String, 
           "selfUri": String, 
         },  
         "timeAllowed": { 
@@ -22705,6 +23130,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -22925,6 +23355,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "evaluators": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -23207,6 +23642,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "calibrator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -23485,8 +23925,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "surveyForm": { 
             "id": String, 
             "name": String, 
-            "selfUri": String, 
             "contextId": String, 
+            "selfUri": String, 
           },  
           "flow": { 
             "id": String, 
@@ -23494,6 +23934,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "inviteTimeInterval": String, 
+          "sendingUser": String, 
+          "sendingDomain": String, 
         },  
         "retentionDuration": { 
           "archiveRetention": { 
@@ -23524,6 +23966,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
         "forUsers": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -23941,6 +24388,14 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "createdBy": String, 
           "selfUri": String, 
         },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "dateModified": Date, 
+          "state": String, 
+          "version": String, 
+          "selfUri": String, 
+        },  
         "timeAllowed": { 
           "timeSlots": { 
             "startTime": String, 
@@ -23957,6 +24412,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
     "forUsers": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "chat": { 
         "jabberId": String, 
       },  
@@ -24568,6 +25028,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
       "user": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -24869,6 +25334,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
       "evaluators": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -25286,6 +25756,11 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
       "calibrator": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -25699,8 +26174,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
       "surveyForm": { 
         "id": String, 
         "name": String, 
-        "selfUri": String, 
         "contextId": String, 
+        "selfUri": String, 
       },  
       "flow": { 
         "id": String, 
@@ -25708,6 +26183,8 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
         "selfUri": String, 
       },  
       "inviteTimeInterval": String, 
+      "sendingUser": String, 
+      "sendingDomain": String, 
     },  
     "retentionDuration": { 
       "archiveRetention": { 

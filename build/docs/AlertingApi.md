@@ -514,6 +514,11 @@ InteractionStatsRule <a style="cursor: pointer" onclick="copyInteractionStatsRul
   "notificationUsers": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -1013,6 +1018,11 @@ InteractionStatsRule <a style="cursor: pointer" onclick="copyInteractionStatsRul
   "notificationUsers": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  

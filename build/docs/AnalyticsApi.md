@@ -158,7 +158,7 @@ Get all view export requests for a user
 
 Requires ANY permissions: 
 
-* analytics:conversationAggregate:view
+* analytics:dataExport:view
 
 
 
@@ -1381,7 +1381,7 @@ Generate a view export request
 
 Requires ANY permissions: 
 
-* analytics:conversationAggregate:view
+* analytics:dataExport:add
 
 
 ### Request Body Schema
@@ -1455,6 +1455,20 @@ ReportingExportJobRequest <a style="cursor: pointer" onclick="copyReportingExpor
     "transferred": Boolean, 
     "abandoned": Boolean, 
     "messageTypes": [String], 
+    "divisionIds": [String], 
+    "surveyFormIds": [String], 
+    "surveyTotalScore": { 
+      "gt": Number, 
+      "gte": Number, 
+      "lt": Number, 
+      "lte": Number, 
+    },  
+    "surveyNpsScore": { 
+      "gt": Number, 
+      "gte": Number, 
+      "lt": Number, 
+      "lte": Number, 
+    },  
   },  
   "read": Boolean, 
   "locale": String, 

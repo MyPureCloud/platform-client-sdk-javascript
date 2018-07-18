@@ -406,6 +406,11 @@ Library <a style="cursor: pointer" onclick="copyLibraryExample()">Copy</a>
   "createdBy": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -814,6 +819,11 @@ Response <a style="cursor: pointer" onclick="copyResponseExample()">Copy</a>
   "createdBy": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -1318,6 +1328,11 @@ Library <a style="cursor: pointer" onclick="copyLibraryExample()">Copy</a>
   "createdBy": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -1729,6 +1744,11 @@ Response <a style="cursor: pointer" onclick="copyResponseExample()">Copy</a>
   "createdBy": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  

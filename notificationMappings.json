@@ -33,6 +33,10 @@
       "class": "DocumentDataV2Notification"
     },
     {
+      "topic": "v2.flows.outcomes.{id}",
+      "class": "FlowOutcomeNotificationNotification"
+    },
+    {
       "topic": "v2.flows.{id}",
       "class": "FlowNotificationNotification"
     },

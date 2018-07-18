@@ -18,7 +18,7 @@
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 29.1.0
+   * @version 30.0.0
    */
 
   /**
@@ -1508,15 +1508,18 @@
      * Update profile skills for a user
      * 
      * @param {String} userId User ID
-     * @param {Object} opts Optional parameters
-     * @param {Array.<Object>} opts.body Skills
+     * @param {Array.<Object>} body Skills
      */
-    this.putUserProfileskills = function(userId, opts) { 
-      opts = opts || {};
+    this.putUserProfileskills = function(userId, body) { 
 
       // verify the required parameter 'userId' is set
       if (userId === undefined || userId === null) {
         throw "Missing the required parameter 'userId' when calling putUserProfileskills";
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw "Missing the required parameter 'body' when calling putUserProfileskills";
       }
 
 
@@ -1527,7 +1530,7 @@
         {  }, 
         {  }, 
         {  }, 
-        opts['body'], 
+        body, 
         ['PureCloud Auth'], 
         ['application/json'], 
         ['application/json']

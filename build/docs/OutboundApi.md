@@ -37,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundCampaignrule**](OutboundApi.html#getOutboundCampaignrule) | **GET** /api/v2/outbound/campaignrules/{campaignRuleId} | Get Campaign Rule
 [**getOutboundCampaignrules**](OutboundApi.html#getOutboundCampaignrules) | **GET** /api/v2/outbound/campaignrules | Query Campaign Rule list
 [**getOutboundCampaigns**](OutboundApi.html#getOutboundCampaigns) | **GET** /api/v2/outbound/campaigns | Query a list of dialer campaigns.
+[**getOutboundCampaignsDivisionview**](OutboundApi.html#getOutboundCampaignsDivisionview) | **GET** /api/v2/outbound/campaigns/divisionviews/{campaignId} | Get a basic Campaign information object
 [**getOutboundCampaignsDivisionviews**](OutboundApi.html#getOutboundCampaignsDivisionviews) | **GET** /api/v2/outbound/campaigns/divisionviews | Query a list of basic Campaign information objects
 [**getOutboundContactlist**](OutboundApi.html#getOutboundContactlist) | **GET** /api/v2/outbound/contactlists/{contactListId} | Get a dialer contact list.
 [**getOutboundContactlistContact**](OutboundApi.html#getOutboundContactlistContact) | **GET** /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} | Get a contact.
@@ -1815,6 +1816,7 @@ var opts = {
   'distributionQueueId': "distributionQueueId_example", // String | Distribution queue ID
   'edgeGroupId': "edgeGroupId_example", // String | Edge group ID
   'callAnalysisResponseSetId': "callAnalysisResponseSetId_example", // String | Call analysis response set ID
+  'divisionId': ["divisionId_example"], // [String] | Division ID(s)
   'sortBy': "sortBy_example", // String | Sort by
   'sortOrder': "a" // String | Sort order
 };
@@ -1844,6 +1846,7 @@ apiInstance.getOutboundCampaigns(opts)
  **distributionQueueId** | **String** | Distribution queue ID | [optional]  |
  **edgeGroupId** | **String** | Edge group ID | [optional]  |
  **callAnalysisResponseSetId** | **String** | Call analysis response set ID | [optional]  |
+ **divisionId** | **[String]** | Division ID(s) | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
@@ -1851,6 +1854,62 @@ apiInstance.getOutboundCampaigns(opts)
 ### Return type
 
 **CampaignEntityListing**
+
+<a name="getOutboundCampaignsDivisionview"></a>
+
+# CampaignDivisionView getOutboundCampaignsDivisionview(campaignId)
+
+
+
+GET /api/v2/outbound/campaigns/divisionviews/{campaignId}
+
+Get a basic Campaign information object
+
+This returns a simplified version of a Campaign, consisting of name and division.
+
+Requires ANY permissions: 
+
+* outbound:campaign:search
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.OutboundApi();
+
+var campaignId = "campaignId_example"; // String | Campaign ID
+
+apiInstance.getOutboundCampaignsDivisionview(campaignId)
+  .then(function(data) {
+    console.log(`getOutboundCampaignsDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getOutboundCampaignsDivisionview');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **campaignId** | **String** | Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**CampaignDivisionView**
 
 <a name="getOutboundCampaignsDivisionviews"></a>
 
@@ -1888,6 +1947,7 @@ var opts = {
   'pageNumber': 1, // Number | Page number
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
+  'id': ["id_example"], // [String] | id
   'sortBy': "sortBy_example", // String | Sort by
   'sortOrder': "a" // String | Sort order
 };
@@ -1911,6 +1971,7 @@ apiInstance.getOutboundCampaignsDivisionviews(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
+ **id** | **[String]** | id | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}

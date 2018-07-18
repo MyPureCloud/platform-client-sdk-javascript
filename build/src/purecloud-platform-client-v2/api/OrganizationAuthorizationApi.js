@@ -18,7 +18,7 @@
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 29.1.0
+   * @version 30.0.0
    */
 
   /**

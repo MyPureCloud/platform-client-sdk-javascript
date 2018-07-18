@@ -18,7 +18,7 @@
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 29.1.0
+   * @version 30.0.0
    */
 
   /**

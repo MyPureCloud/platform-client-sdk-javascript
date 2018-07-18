@@ -442,6 +442,11 @@ OrganizationPresence <a style="cursor: pointer" onclick="copyOrganizationPresenc
   "createdBy": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -759,6 +764,11 @@ OrganizationPresence <a style="cursor: pointer" onclick="copyOrganizationPresenc
   "modifiedBy": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -1162,6 +1172,11 @@ OrganizationPresence <a style="cursor: pointer" onclick="copyOrganizationPresenc
   "createdBy": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -1479,6 +1494,11 @@ OrganizationPresence <a style="cursor: pointer" onclick="copyOrganizationPresenc
   "modifiedBy": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  

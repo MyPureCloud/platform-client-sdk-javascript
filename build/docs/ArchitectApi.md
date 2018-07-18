@@ -3813,6 +3813,11 @@ Prompt <a style="cursor: pointer" onclick="copyPromptExample()">Copy</a>
     "user": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "chat": { 
         "jabberId": String, 
       },  
@@ -4638,6 +4643,11 @@ Flow <a style="cursor: pointer" onclick="copyFlowExample()">Copy</a>
   "lockedUser": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -5001,6 +5011,11 @@ Flow <a style="cursor: pointer" onclick="copyFlowExample()">Copy</a>
   "publishedBy": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -5320,6 +5335,11 @@ Flow <a style="cursor: pointer" onclick="copyFlowExample()">Copy</a>
     "user": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "chat": { 
         "jabberId": String, 
       },  
@@ -6459,6 +6479,11 @@ Prompt <a style="cursor: pointer" onclick="copyPromptExample()">Copy</a>
     "user": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "chat": { 
         "jabberId": String, 
       },  
@@ -7275,6 +7300,11 @@ Flow <a style="cursor: pointer" onclick="copyFlowExample()">Copy</a>
   "lockedUser": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -7638,6 +7668,11 @@ Flow <a style="cursor: pointer" onclick="copyFlowExample()">Copy</a>
   "publishedBy": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -7957,6 +7992,11 @@ Flow <a style="cursor: pointer" onclick="copyFlowExample()">Copy</a>
     "user": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "chat": { 
         "jabberId": String, 
       },  

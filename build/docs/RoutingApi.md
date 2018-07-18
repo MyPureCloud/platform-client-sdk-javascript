@@ -32,7 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingQueueUsers**](RoutingApi.html#getRoutingQueueUsers) | **GET** /api/v2/routing/queues/{queueId}/users | Get the members of this queue
 [**getRoutingQueueWrapupcodes**](RoutingApi.html#getRoutingQueueWrapupcodes) | **GET** /api/v2/routing/queues/{queueId}/wrapupcodes | Get the wrap-up codes for a queue
 [**getRoutingQueues**](RoutingApi.html#getRoutingQueues) | **GET** /api/v2/routing/queues | Get list of queues.
-[**getRoutingQueuesSearch**](RoutingApi.html#getRoutingQueuesSearch) | **GET** /api/v2/routing/queues/search | Search for queues by name
+[**getRoutingQueuesDivisionviews**](RoutingApi.html#getRoutingQueuesDivisionviews) | **GET** /api/v2/routing/queues/divisionviews | Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
 [**getRoutingSkill**](RoutingApi.html#getRoutingSkill) | **GET** /api/v2/routing/skills/{skillId} | Get Routing Skill
 [**getRoutingSkills**](RoutingApi.html#getRoutingSkills) | **GET** /api/v2/routing/skills | Get the list of routing skills.
 [**getRoutingSmsAvailablephonenumbers**](RoutingApi.html#getRoutingSmsAvailablephonenumbers) | **GET** /api/v2/routing/sms/availablephonenumbers | Get a list of available phone numbers for SMS provisioning.
@@ -1534,15 +1534,15 @@ apiInstance.getRoutingQueues(opts)
 
 **QueueEntityListing**
 
-<a name="getRoutingQueuesSearch"></a>
+<a name="getRoutingQueuesDivisionviews"></a>
 
-# QueueEntityListing getRoutingQueuesSearch(opts)
+# QueueEntityListing getRoutingQueuesDivisionviews(opts)
 
 
 
-GET /api/v2/routing/queues/search
+GET /api/v2/routing/queues/divisionviews
 
-Search for queues by name
+Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
 
 
 
@@ -1574,12 +1574,12 @@ var opts = {
   'id': ["id_example"], // [String] | Queue ID(s)
   'divisionId': ["divisionId_example"] // [String] | Division ID(s)
 };
-apiInstance.getRoutingQueuesSearch(opts)
+apiInstance.getRoutingQueuesDivisionviews(opts)
   .then(function(data) {
-    console.log(`getRoutingQueuesSearch success! data: ${JSON.stringify(data, null, 2)}`);
+    console.log(`getRoutingQueuesDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch(function(err) {
-  	console.log('There was a failure calling getRoutingQueuesSearch');
+  	console.log('There was a failure calling getRoutingQueuesDivisionviews');
     console.error(err);
   });
 
@@ -2249,6 +2249,11 @@ QueueMember <a style="cursor: pointer" onclick="copyQueueMemberExample()">Copy</
   "user": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -2661,6 +2666,11 @@ QueueMember <a style="cursor: pointer" onclick="copyQueueMemberExample()">Copy</
   "user": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -4865,6 +4875,11 @@ Recipient <a style="cursor: pointer" onclick="copyRecipientExample()">Copy</a>
     "lockedUser": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "chat": { 
         "jabberId": String, 
       },  
@@ -5219,6 +5234,11 @@ Recipient <a style="cursor: pointer" onclick="copyRecipientExample()">Copy</a>
     "publishedBy": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "chat": { 
         "jabberId": String, 
       },  
@@ -5529,6 +5549,11 @@ Recipient <a style="cursor: pointer" onclick="copyRecipientExample()">Copy</a>
       "user": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -5843,6 +5868,11 @@ Recipient <a style="cursor: pointer" onclick="copyRecipientExample()">Copy</a>
   "createdBy": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -6529,6 +6559,11 @@ SmsPhoneNumber <a style="cursor: pointer" onclick="copySmsPhoneNumberExample()">
   "createdBy": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  

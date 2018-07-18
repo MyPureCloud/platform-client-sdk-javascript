@@ -18,7 +18,7 @@
   /**
    * GeneralDataProtectionRegulation service.
    * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-   * @version 29.1.0
+   * @version 30.0.0
    */
 
   /**

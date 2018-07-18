@@ -1193,6 +1193,11 @@ Note <a style="cursor: pointer" onclick="copyNoteExample()">Copy</a>
   "createdBy": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -1649,6 +1654,18 @@ ExternalContact <a style="cursor: pointer" onclick="copyExternalContactExample()
     "verified": Boolean, 
     "profileUrl": String, 
   },  
+  "lineId": { 
+    "ids": { 
+      "userId": String, 
+    },  
+    "displayName": String, 
+  },  
+  "facebookId": { 
+    "ids": { 
+      "scopedId": String, 
+    },  
+    "displayName": String, 
+  },  
   "modifyDate": Date, 
   "createDate": Date, 
   "externalOrganization": { 
@@ -1706,6 +1723,11 @@ ExternalContact <a style="cursor: pointer" onclick="copyExternalContactExample()
       "createdBy": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -1731,6 +1753,11 @@ ExternalContact <a style="cursor: pointer" onclick="copyExternalContactExample()
         "manager": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -2320,6 +2347,9 @@ ExternalContact <a style="cursor: pointer" onclick="copyExternalContactExample()
         "selfUri": String, 
         "features": {String: Boolean}, 
       },  
+      "authorization": { 
+        "permissions": [String], 
+      },  
       "selfUri": String, 
     },  
     "externalDataSources": { 
@@ -2422,6 +2452,11 @@ Note <a style="cursor: pointer" onclick="copyNoteExample()">Copy</a>
   "createdBy": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -2876,6 +2911,11 @@ ExternalOrganization <a style="cursor: pointer" onclick="copyExternalOrganizatio
     "createdBy": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "chat": { 
         "jabberId": String, 
       },  
@@ -2901,6 +2941,11 @@ ExternalOrganization <a style="cursor: pointer" onclick="copyExternalOrganizatio
       "manager": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -3508,6 +3553,9 @@ ExternalOrganization <a style="cursor: pointer" onclick="copyExternalOrganizatio
       "selfUri": String, 
       "features": {String: Boolean}, 
     },  
+    "authorization": { 
+      "permissions": [String], 
+    },  
     "selfUri": String, 
   },  
   "externalDataSources": { 
@@ -3599,6 +3647,11 @@ Relationship <a style="cursor: pointer" onclick="copyRelationshipExample()">Copy
   "user": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -3967,6 +4020,11 @@ Relationship <a style="cursor: pointer" onclick="copyRelationshipExample()">Copy
       "createdBy": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -3992,6 +4050,11 @@ Relationship <a style="cursor: pointer" onclick="copyRelationshipExample()">Copy
         "manager": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -4580,6 +4643,9 @@ Relationship <a style="cursor: pointer" onclick="copyRelationshipExample()">Copy
         "voicemailEnabled": Boolean, 
         "selfUri": String, 
         "features": {String: Boolean}, 
+      },  
+      "authorization": { 
+        "permissions": [String], 
       },  
       "selfUri": String, 
     },  
@@ -4730,6 +4796,18 @@ ExternalContact <a style="cursor: pointer" onclick="copyExternalContactExample()
     "verified": Boolean, 
     "profileUrl": String, 
   },  
+  "lineId": { 
+    "ids": { 
+      "userId": String, 
+    },  
+    "displayName": String, 
+  },  
+  "facebookId": { 
+    "ids": { 
+      "scopedId": String, 
+    },  
+    "displayName": String, 
+  },  
   "modifyDate": Date, 
   "createDate": Date, 
   "externalOrganization": { 
@@ -4787,6 +4865,11 @@ ExternalContact <a style="cursor: pointer" onclick="copyExternalContactExample()
       "createdBy": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -4812,6 +4895,11 @@ ExternalContact <a style="cursor: pointer" onclick="copyExternalContactExample()
         "manager": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -5401,6 +5489,9 @@ ExternalContact <a style="cursor: pointer" onclick="copyExternalContactExample()
         "selfUri": String, 
         "features": {String: Boolean}, 
       },  
+      "authorization": { 
+        "permissions": [String], 
+      },  
       "selfUri": String, 
     },  
     "externalDataSources": { 
@@ -5506,6 +5597,11 @@ Note <a style="cursor: pointer" onclick="copyNoteExample()">Copy</a>
   "createdBy": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -6049,6 +6145,11 @@ ExternalOrganization <a style="cursor: pointer" onclick="copyExternalOrganizatio
     "createdBy": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "chat": { 
         "jabberId": String, 
       },  
@@ -6074,6 +6175,11 @@ ExternalOrganization <a style="cursor: pointer" onclick="copyExternalOrganizatio
       "manager": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -6681,6 +6787,9 @@ ExternalOrganization <a style="cursor: pointer" onclick="copyExternalOrganizatio
       "selfUri": String, 
       "features": {String: Boolean}, 
     },  
+    "authorization": { 
+      "permissions": [String], 
+    },  
     "selfUri": String, 
   },  
   "externalDataSources": { 
@@ -6778,6 +6887,11 @@ Note <a style="cursor: pointer" onclick="copyNoteExample()">Copy</a>
   "createdBy": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -7245,6 +7359,11 @@ Relationship <a style="cursor: pointer" onclick="copyRelationshipExample()">Copy
   "user": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -7613,6 +7732,11 @@ Relationship <a style="cursor: pointer" onclick="copyRelationshipExample()">Copy
       "createdBy": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -7638,6 +7762,11 @@ Relationship <a style="cursor: pointer" onclick="copyRelationshipExample()">Copy
         "manager": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -8226,6 +8355,9 @@ Relationship <a style="cursor: pointer" onclick="copyRelationshipExample()">Copy
         "voicemailEnabled": Boolean, 
         "selfUri": String, 
         "features": {String: Boolean}, 
+      },  
+      "authorization": { 
+        "permissions": [String], 
       },  
       "selfUri": String, 
     },  

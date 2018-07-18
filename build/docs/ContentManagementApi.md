@@ -2605,6 +2605,11 @@ WorkspaceMember <a style="cursor: pointer" onclick="copyWorkspaceMemberExample()
   "user": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  

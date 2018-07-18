@@ -1835,6 +1835,11 @@ UpdateUser <a style="cursor: pointer" onclick="copyUpdateUserExample()">Copy</a>
     "owners": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "chat": { 
         "jabberId": String, 
       },  
@@ -1961,6 +1966,11 @@ UpdateUser <a style="cursor: pointer" onclick="copyUpdateUserExample()">Copy</a>
         "user": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -2087,6 +2097,11 @@ UpdateUser <a style="cursor: pointer" onclick="copyUpdateUserExample()">Copy</a>
             "user": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -2360,6 +2375,11 @@ UpdateUser <a style="cursor: pointer" onclick="copyUpdateUserExample()">Copy</a>
             "owners": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -2656,6 +2676,11 @@ UpdateUser <a style="cursor: pointer" onclick="copyUpdateUserExample()">Copy</a>
         "owners": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -2782,6 +2807,11 @@ UpdateUser <a style="cursor: pointer" onclick="copyUpdateUserExample()">Copy</a>
             "user": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -3055,6 +3085,11 @@ UpdateUser <a style="cursor: pointer" onclick="copyUpdateUserExample()">Copy</a>
             "owners": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -3270,6 +3305,11 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
   "user": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -3396,6 +3436,11 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
       "user": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -3522,6 +3567,11 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -3606,6 +3656,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
               "user": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -3759,6 +3810,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
               "owners": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -3956,6 +4008,11 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
           "owners": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -4040,6 +4097,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
               "user": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -4193,6 +4251,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
               "owners": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -4413,6 +4472,11 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
       "owners": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -4539,6 +4603,11 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -4623,6 +4692,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
               "user": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -4776,6 +4846,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
               "owners": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -4973,6 +5044,11 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
           "owners": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -5057,6 +5133,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
               "user": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -5210,6 +5287,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
               "owners": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -6118,7 +6196,6 @@ PatchUser <a style="cursor: pointer" onclick="copyPatchUserExample()">Copy</a>
 ~~~ json
 { 
   "id": String, 
-  "name": String, 
   "acdAutoAnswer": Boolean, 
   "selfUri": String, 
 }
@@ -7305,6 +7382,11 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
   "user": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -7431,6 +7513,11 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
       "user": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -7557,6 +7644,11 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -7641,6 +7733,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
               "user": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -7794,6 +7887,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
               "owners": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -7991,6 +8085,11 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
           "owners": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -8075,6 +8174,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
               "user": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -8228,6 +8328,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
               "owners": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -8448,6 +8549,11 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
       "owners": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -8574,6 +8680,11 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -8658,6 +8769,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
               "user": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -8811,6 +8923,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
               "owners": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -9008,6 +9121,11 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
           "owners": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -9092,6 +9210,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
               "user": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -9245,6 +9364,7 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
               "owners": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -9381,6 +9501,11 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
   "user": { 
     "id": String, 
     "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "chat": { 
       "jabberId": String, 
     },  
@@ -9507,6 +9632,11 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
       "user": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -9633,6 +9763,11 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -9717,6 +9852,7 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
               "user": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -9870,6 +10006,7 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
               "owners": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -10067,6 +10204,11 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
           "owners": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -10151,6 +10293,7 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
               "user": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -10304,6 +10447,7 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
               "owners": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -10524,6 +10668,11 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
       "owners": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "chat": { 
           "jabberId": String, 
         },  
@@ -10650,6 +10799,11 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
           "user": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -10734,6 +10888,7 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
               "user": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -10887,6 +11042,7 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
               "owners": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -11084,6 +11240,11 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
           "owners": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -11168,6 +11329,7 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
               "user": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -11321,6 +11483,7 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
               "owners": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -11413,7 +11576,7 @@ apiInstance.putUserOutofoffice(userId, body)
 
 <a name="putUserProfileskills"></a>
 
-# **[&#39;String&#39;]** putUserProfileskills(userId, opts)
+# **[&#39;String&#39;]** putUserProfileskills(userId, body)
 
 
 
@@ -11447,10 +11610,9 @@ var apiInstance = new platformClient.UsersApi();
 
 var userId = "userId_example"; // String | User ID
 
-var opts = { 
-  'body': [{}] // Object | Skills
-};
-apiInstance.putUserProfileskills(userId, opts)
+var body = [{}]; // Object | Skills
+
+apiInstance.putUserProfileskills(userId, body)
   .then(function(data) {
     console.log(`putUserProfileskills success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11467,7 +11629,7 @@ apiInstance.putUserProfileskills(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **body** | **Object** | Skills | [optional]  |
+ **body** | **Object** | Skills |  |
 {: class="table table-striped"}
 
 ### Return type

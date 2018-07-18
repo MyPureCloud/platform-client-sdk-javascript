@@ -1251,6 +1251,7 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
               "evaluator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -1278,6 +1279,7 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
               "agent": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -1465,6 +1467,11 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
         "evaluator": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -1754,6 +1761,11 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
         "agent": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "chat": { 
             "jabberId": String, 
           },  
@@ -2046,6 +2058,11 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
           "calibrator": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "chat": { 
               "jabberId": String, 
             },  
@@ -2656,6 +2673,11 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
             "evaluator": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -2773,6 +2795,11 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
             "agent": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -2893,6 +2920,7 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
               "calibrator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 
@@ -3183,6 +3211,11 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
             "evaluator": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -3300,6 +3333,11 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
             "agent": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "chat": { 
                 "jabberId": String, 
               },  
@@ -3420,6 +3458,7 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
               "calibrator": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "chat": Chat, 
                 "department": String, 
                 "email": String, 

@@ -18,7 +18,7 @@
   /**
    * Billing service.
    * @module purecloud-platform-client-v2/api/BillingApi
-   * @version 29.1.0
+   * @version 30.0.0
    */
 
   /**

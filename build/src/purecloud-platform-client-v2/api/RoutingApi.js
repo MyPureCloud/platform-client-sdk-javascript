@@ -18,7 +18,7 @@
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 29.1.0
+   * @version 30.0.0
    */
 
   /**
@@ -782,7 +782,7 @@
 
 
     /**
-     * Search for queues by name
+     * Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
      * 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pageSize Page size (default to 25)
@@ -793,12 +793,12 @@
      * @param {Array.<String>} opts.id Queue ID(s)
      * @param {Array.<String>} opts.divisionId Division ID(s)
      */
-    this.getRoutingQueuesSearch = function(opts) { 
+    this.getRoutingQueuesDivisionviews = function(opts) { 
       opts = opts || {};
 
 
       return this.apiClient.callApi(
-        '/api/v2/routing/queues/search', 
+        '/api/v2/routing/queues/divisionviews', 
         'GET', 
         {  }, 
         { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 

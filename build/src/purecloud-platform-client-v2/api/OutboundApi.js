@@ -18,7 +18,7 @@
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 29.1.0
+   * @version 30.0.0
    */
 
   /**
@@ -879,6 +879,7 @@
      * @param {String} opts.distributionQueueId Distribution queue ID
      * @param {String} opts.edgeGroupId Edge group ID
      * @param {String} opts.callAnalysisResponseSetId Call analysis response set ID
+     * @param {Array.<String>} opts.divisionId Division ID(s)
      * @param {String} opts.sortBy Sort by
      * @param {Object} opts.sortOrder Sort order (default to a)
      */
@@ -890,7 +891,35 @@
         '/api/v2/outbound/campaigns', 
         'GET', 
         {  }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'contactListId': opts['contactListId'],'dncListId': opts['dncListId'],'distributionQueueId': opts['distributionQueueId'],'edgeGroupId': opts['edgeGroupId'],'callAnalysisResponseSetId': opts['callAnalysisResponseSetId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'contactListId': opts['contactListId'],'dncListId': opts['dncListId'],'distributionQueueId': opts['distributionQueueId'],'edgeGroupId': opts['edgeGroupId'],'callAnalysisResponseSetId': opts['callAnalysisResponseSetId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        {  }, 
+        {  }, 
+        null, 
+        ['PureCloud Auth'], 
+        ['application/json'], 
+        ['application/json']
+      );
+    };
+
+
+    /**
+     * Get a basic Campaign information object
+     * This returns a simplified version of a Campaign, consisting of name and division.
+     * @param {String} campaignId Campaign ID
+     */
+    this.getOutboundCampaignsDivisionview = function(campaignId) { 
+
+      // verify the required parameter 'campaignId' is set
+      if (campaignId === undefined || campaignId === null) {
+        throw "Missing the required parameter 'campaignId' when calling getOutboundCampaignsDivisionview";
+      }
+
+
+      return this.apiClient.callApi(
+        '/api/v2/outbound/campaigns/divisionviews/{campaignId}', 
+        'GET', 
+        { 'campaignId': campaignId }, 
+        {  }, 
         {  }, 
         {  }, 
         null, 
@@ -909,6 +938,7 @@
      * @param {Number} opts.pageNumber Page number (default to 1)
      * @param {Object} opts.filterType Filter type (default to Prefix)
      * @param {String} opts.name Name
+     * @param {Array.<String>} opts.id id
      * @param {String} opts.sortBy Sort by
      * @param {Object} opts.sortOrder Sort order (default to a)
      */
@@ -920,7 +950,7 @@
         '/api/v2/outbound/campaigns/divisionviews', 
         'GET', 
         {  }, 
-        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+        { 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
         {  }, 
         {  }, 
         null, 
