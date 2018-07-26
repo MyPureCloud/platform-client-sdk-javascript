@@ -3301,7 +3301,7 @@ Emitter.prototype.hasListeners = function(event){
 
   /**
    * @module purecloud-platform-client-v2/ApiClient
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -3978,7 +3978,7 @@ Emitter.prototype.hasListeners = function(event){
 
     // set header parameters
     request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-    //request.set({ 'purecloud-sdk': '30.0.0' });
+    //request.set({ 'purecloud-sdk': '31.0.0' });
 
     // set request timeout
     request.timeout(this.timeout);
@@ -4131,7 +4131,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Alerting service.
    * @module purecloud-platform-client-v2/api/AlertingApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -4487,7 +4487,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Analytics service.
    * @module purecloud-platform-client-v2/api/AnalyticsApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -5202,7 +5202,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Architect service.
    * @module purecloud-platform-client-v2/api/ArchitectApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -7814,7 +7814,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Attributes service.
    * @module purecloud-platform-client-v2/api/AttributesApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -8025,7 +8025,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Authorization service.
    * @module purecloud-platform-client-v2/api/AuthorizationApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -8584,7 +8584,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Billing service.
    * @module purecloud-platform-client-v2/api/BillingApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -8657,7 +8657,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * ContentManagement service.
    * @module purecloud-platform-client-v2/api/ContentManagementApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -9914,7 +9914,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Conversations service.
    * @module purecloud-platform-client-v2/api/ConversationsApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -13336,7 +13336,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * ExternalContacts service.
    * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -14353,7 +14353,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Fax service.
    * @module purecloud-platform-client-v2/api/FaxApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -14558,7 +14558,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * GeneralDataProtectionRegulation service.
    * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -14716,7 +14716,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Geolocation service.
    * @module purecloud-platform-client-v2/api/GeolocationApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -14879,7 +14879,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Greetings service.
    * @module purecloud-platform-client-v2/api/GreetingsApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -15399,7 +15399,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Groups service.
    * @module purecloud-platform-client-v2/api/GroupsApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -15857,7 +15857,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * IdentityProvider service.
    * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -16566,7 +16566,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Integrations service.
    * @module purecloud-platform-client-v2/api/IntegrationsApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -17853,7 +17853,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Languages service.
    * @module purecloud-platform-client-v2/api/LanguagesApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -18166,7 +18166,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * License service.
    * @module purecloud-platform-client-v2/api/LicenseApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -18411,7 +18411,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Locations service.
    * @module purecloud-platform-client-v2/api/LocationsApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -18564,7 +18564,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * MobileDevices service.
    * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -18745,7 +18745,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Notifications service.
    * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -18980,7 +18980,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * OAuth service.
    * @module purecloud-platform-client-v2/api/OAuthApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -19187,7 +19187,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Organization service.
    * @module purecloud-platform-client-v2/api/OrganizationApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -19335,7 +19335,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * OrganizationAuthorization service.
    * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -20100,7 +20100,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Outbound service.
    * @module purecloud-platform-client-v2/api/OutboundApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -22866,7 +22866,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Presence service.
    * @module purecloud-platform-client-v2/api/PresenceApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -23150,7 +23150,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Quality service.
    * @module purecloud-platform-client-v2/api/QualityApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -24754,7 +24754,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Recording service.
    * @module purecloud-platform-client-v2/api/RecordingApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -25936,7 +25936,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * ResponseManagement service.
    * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -26307,7 +26307,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Routing service.
    * @module purecloud-platform-client-v2/api/RoutingApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -28177,7 +28177,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Scripts service.
    * @module purecloud-platform-client-v2/api/ScriptsApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -28577,7 +28577,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Search service.
    * @module purecloud-platform-client-v2/api/SearchApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -29034,7 +29034,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Stations service.
    * @module purecloud-platform-client-v2/api/StationsApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -29211,7 +29211,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Suggest service.
    * @module purecloud-platform-client-v2/api/SuggestApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -29376,7 +29376,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * TelephonyProvidersEdge service.
    * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -33299,7 +33299,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -33382,7 +33382,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * UserRecordings service.
    * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -33597,7 +33597,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Users service.
    * @module purecloud-platform-client-v2/api/UsersApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -35317,7 +35317,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Utilities service.
    * @module purecloud-platform-client-v2/api/UtilitiesApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -35432,7 +35432,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Voicemail service.
    * @module purecloud-platform-client-v2/api/VoicemailApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -36147,7 +36147,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * WebChat service.
    * @module purecloud-platform-client-v2/api/WebChatApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -36398,7 +36398,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * WorkforceManagement service.
    * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   * @version 30.0.0
+   * @version 31.0.0
    */
 
   /**
@@ -38465,7 +38465,7 @@ Emitter.prototype.hasListeners = function(event){
    * </pre>
    * </p>
    * @module purecloud-platform-client-v2/index
-   * @version 30.0.0
+   * @version 31.0.0
    */
   var platformClient = {
     /**

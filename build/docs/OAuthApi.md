@@ -289,6 +289,7 @@ OAuthClient <a style="cursor: pointer" onclick="copyOAuthClientExample()">Copy</
     "selfUri": String, 
   },  
   "authorizedGrantType": String, 
+  "scope": [String], 
   "selfUri": String, 
 }
 ~~~
@@ -389,6 +390,7 @@ OAuthClient <a style="cursor: pointer" onclick="copyOAuthClientExample()">Copy</
     "selfUri": String, 
   },  
   "authorizedGrantType": String, 
+  "scope": [String], 
   "selfUri": String, 
 }
 ~~~

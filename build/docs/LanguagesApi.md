@@ -476,9 +476,8 @@ Get language
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* routing:skill:manage
 
 
 

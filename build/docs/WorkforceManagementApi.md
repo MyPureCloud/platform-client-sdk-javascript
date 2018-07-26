@@ -1563,6 +1563,7 @@ Use \&quot;recent\&quot; for the `weekDateId` path parameter to fetch all foreca
 Requires ANY permissions: 
 
 * wfm:shortTermForecast:administer
+* wfm:schedule:generate
 
 
 
