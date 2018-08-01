@@ -74,8 +74,11 @@ Delete user
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* directory:user:delete
+* user_manager
+* user_administration
 
 
 
@@ -1071,7 +1074,7 @@ Get queues for user
 
 Requires ANY permissions: 
 
-* routing:queue:view
+* routing:queue:join
 
 
 
@@ -1651,7 +1654,7 @@ apiInstance.getUsersMe(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
 {: class="table table-striped"}
 
 ### Return type
@@ -1729,8 +1732,11 @@ Update user
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* directory:user:edit
+* user_manager
+* user_administration
 
 
 ### Request Body Schema
@@ -6197,7 +6203,6 @@ PatchUser <a style="cursor: pointer" onclick="copyPatchUserExample()">Copy</a>
 { 
   "id": String, 
   "acdAutoAnswer": Boolean, 
-  "selfUri": String, 
 }
 ~~~
 </div>

@@ -83,6 +83,7 @@ Delete management unit
 Requires ANY permissions: 
 
 * wfm:managementUnit:administer
+* wfm:managementUnit:delete
 
 
 
@@ -139,6 +140,7 @@ Deletes an activity code
 Requires ANY permissions: 
 
 * wfm:activityCode:administer
+* wfm:activityCode:delete
 
 
 
@@ -257,6 +259,7 @@ Delete a service goal group
 Requires ANY permissions: 
 
 * wfm:serviceGoalGroup:administer
+* wfm:serviceGoalGroup:delete
 
 
 
@@ -316,6 +319,7 @@ Delete a schedule
 Requires ANY permissions: 
 
 * wfm:schedule:administer
+* wfm:schedule:delete
 
 
 
@@ -378,6 +382,7 @@ Must not be tied to any schedules
 Requires ANY permissions: 
 
 * wfm:shortTermForecast:administer
+* wfm:shortTermForecast:delete
 
 
 
@@ -440,6 +445,7 @@ Delete a work plan
 Requires ANY permissions: 
 
 * wfm:workPlan:administer
+* wfm:workPlan:delete
 
 
 
@@ -554,21 +560,50 @@ Get management unit
 
 Requires ANY permissions: 
 
+* wfm:activityCode:add
 * wfm:activityCode:administer
+* wfm:activityCode:delete
+* wfm:activityCode:edit
+* wfm:activityCode:view
 * wfm:agent:administer
+* wfm:agent:edit
 * wfm:agentSchedule:view
+* wfm:agentTimeOffRequest:submit
+* wfm:agent:view
 * wfm:historicalAdherence:view
 * wfm:intraday:view
+* wfm:managementUnit:add
 * wfm:managementUnit:administer
+* wfm:managementUnit:delete
+* wfm:managementUnit:edit
+* wfm:managementUnit:view
 * wfm:publishedSchedule:view
 * wfm:realtimeAdherence:view
+* wfm:schedule:add
 * wfm:schedule:administer
+* wfm:schedule:delete
+* wfm:schedule:edit
 * wfm:schedule:generate
+* wfm:schedule:view
+* wfm:serviceGoalGroup:add
 * wfm:serviceGoalGroup:administer
+* wfm:serviceGoalGroup:delete
+* wfm:serviceGoalGroup:edit
+* wfm:serviceGoalGroup:view
+* wfm:shortTermForecast:add
 * wfm:shortTermForecast:administer
-* wfm:agentTimeOffRequest:submit
+* wfm:shortTermForecast:delete
+* wfm:shortTermForecast:edit
+* wfm:shortTermForecast:view
+* wfm:timeOffRequest:add
 * wfm:timeOffRequest:administer
+* wfm:timeOffRequest:edit
+* wfm:timeOffRequest:view
+* wfm:workPlan:add
 * wfm:workPlan:administer
+* wfm:workPlan:delete
+* wfm:workPlan:edit
+* wfm:workPlan:view
 
 
 
@@ -629,20 +664,7 @@ Get an activity code
 Requires ANY permissions: 
 
 * wfm:activityCode:administer
-* wfm:agent:administer
-* wfm:agentSchedule:view
-* wfm:historicalAdherence:view
-* wfm:intraday:view
-* wfm:managementUnit:administer
-* wfm:publishedSchedule:view
-* wfm:realtimeAdherence:view
-* wfm:schedule:administer
-* wfm:schedule:generate
-* wfm:serviceGoalGroup:administer
-* wfm:shortTermForecast:administer
-* wfm:agentTimeOffRequest:submit
-* wfm:timeOffRequest:administer
-* wfm:workPlan:administer
+* wfm:activityCode:view
 
 
 
@@ -701,21 +723,50 @@ Get activity codes
 
 Requires ANY permissions: 
 
+* wfm:activityCode:add
 * wfm:activityCode:administer
+* wfm:activityCode:delete
+* wfm:activityCode:edit
+* wfm:activityCode:view
 * wfm:agent:administer
+* wfm:agent:edit
 * wfm:agentSchedule:view
+* wfm:agentTimeOffRequest:submit
+* wfm:agent:view
 * wfm:historicalAdherence:view
 * wfm:intraday:view
+* wfm:managementUnit:add
 * wfm:managementUnit:administer
+* wfm:managementUnit:delete
+* wfm:managementUnit:edit
+* wfm:managementUnit:view
 * wfm:publishedSchedule:view
 * wfm:realtimeAdherence:view
+* wfm:schedule:add
 * wfm:schedule:administer
+* wfm:schedule:delete
+* wfm:schedule:edit
 * wfm:schedule:generate
+* wfm:schedule:view
+* wfm:serviceGoalGroup:add
 * wfm:serviceGoalGroup:administer
+* wfm:serviceGoalGroup:delete
+* wfm:serviceGoalGroup:edit
+* wfm:serviceGoalGroup:view
+* wfm:shortTermForecast:add
 * wfm:shortTermForecast:administer
-* wfm:agentTimeOffRequest:submit
+* wfm:shortTermForecast:delete
+* wfm:shortTermForecast:edit
+* wfm:shortTermForecast:view
+* wfm:timeOffRequest:add
 * wfm:timeOffRequest:administer
+* wfm:timeOffRequest:edit
+* wfm:timeOffRequest:view
+* wfm:workPlan:add
 * wfm:workPlan:administer
+* wfm:workPlan:delete
+* wfm:workPlan:edit
+* wfm:workPlan:view
 
 
 
@@ -772,6 +823,7 @@ Get data for agent in the management unit
 Requires ANY permissions: 
 
 * wfm:agent:administer
+* wfm:agent:view
 
 
 
@@ -946,6 +998,7 @@ Get a service goal group
 Requires ANY permissions: 
 
 * wfm:serviceGoalGroup:administer
+* wfm:serviceGoalGroup:view
 
 
 
@@ -1005,7 +1058,9 @@ Get service goal groups
 Requires ANY permissions: 
 
 * wfm:serviceGoalGroup:administer
+* wfm:serviceGoalGroup:view
 * wfm:shortTermForecast:administer
+* wfm:shortTermForecast:view
 
 
 
@@ -1062,6 +1117,7 @@ Get the settings for the requested management unit
 Requires ANY permissions: 
 
 * wfm:managementUnit:administer
+* wfm:managementUnit:view
 
 
 
@@ -1118,6 +1174,7 @@ Get a time off request
 Requires ANY permissions: 
 
 * wfm:timeOffRequest:administer
+* wfm:timeOffRequest:view
 
 
 
@@ -1180,6 +1237,7 @@ Get a list of time off requests for a given user
 Requires ANY permissions: 
 
 * wfm:timeOffRequest:administer
+* wfm:timeOffRequest:view
 
 
 
@@ -1243,12 +1301,16 @@ Get users in the management unit
 Requires ANY permissions: 
 
 * wfm:agent:administer
+* wfm:agent:view
 * wfm:historicalAdherence:view
 * wfm:publishedSchedule:view
 * wfm:realtimeAdherence:view
 * wfm:schedule:administer
+* wfm:schedule:view
 * wfm:timeOffRequest:administer
+* wfm:timeOffRequest:view
 * wfm:workPlan:administer
+* wfm:workPlan:view
 
 
 
@@ -1304,8 +1366,9 @@ Get a week schedule
 
 Requires ANY permissions: 
 
-* wfm:schedule:administer
 * wfm:publishedSchedule:view
+* wfm:schedule:administer
+* wfm:schedule:view
 
 
 
@@ -1373,8 +1436,9 @@ Get week schedule generation results
 
 Requires ANY permissions: 
 
-* wfm:schedule:administer
 * wfm:publishedSchedule:view
+* wfm:schedule:administer
+* wfm:schedule:view
 
 
 
@@ -1436,8 +1500,9 @@ Get the list of schedules in a week in management unit
 
 Requires ANY permissions: 
 
-* wfm:schedule:administer
 * wfm:publishedSchedule:view
+* wfm:schedule:administer
+* wfm:schedule:view
 
 
 
@@ -1497,6 +1562,7 @@ Get the final result of a short term forecast calculation with modifications app
 Requires ANY permissions: 
 
 * wfm:shortTermForecast:administer
+* wfm:shortTermForecast:view
 
 
 
@@ -1562,8 +1628,9 @@ Use \&quot;recent\&quot; for the `weekDateId` path parameter to fetch all foreca
 
 Requires ANY permissions: 
 
-* wfm:shortTermForecast:administer
 * wfm:schedule:generate
+* wfm:shortTermForecast:administer
+* wfm:shortTermForecast:view
 
 
 
@@ -1623,6 +1690,7 @@ Get a work plan
 Requires ANY permissions: 
 
 * wfm:workPlan:administer
+* wfm:workPlan:view
 
 
 
@@ -1683,8 +1751,11 @@ Requires ANY permissions:
 
 * wfm:workPlan:administer
 * wfm:agent:administer
-* wfm:schedule:administer
+* wfm:agent:view
 * wfm:publishedSchedule:view
+* wfm:schedule:administer
+* wfm:schedule:view
+* wfm:workPlan:view
 
 
 
@@ -1924,6 +1995,7 @@ Update an activity code
 Requires ANY permissions: 
 
 * wfm:activityCode:administer
+* wfm:activityCode:edit
 
 
 ### Request Body Schema
@@ -2024,6 +2096,7 @@ Update a service goal group
 Requires ANY permissions: 
 
 * wfm:serviceGoalGroup:administer
+* wfm:serviceGoalGroup:edit
 
 
 ### Request Body Schema
@@ -2141,6 +2214,7 @@ Patch the settings for the requested management unit
 Requires ANY permissions: 
 
 * wfm:managementUnit:administer
+* wfm:managementUnit:edit
 
 
 ### Request Body Schema
@@ -2261,6 +2335,7 @@ Update a time off request
 Requires ANY permissions: 
 
 * wfm:timeOffRequest:administer
+* wfm:timeOffRequest:edit
 
 
 ### Request Body Schema
@@ -2364,6 +2439,7 @@ Update a week schedule
 Requires ANY permissions: 
 
 * wfm:schedule:administer
+* wfm:schedule:edit
 
 
 ### Request Body Schema
@@ -2505,6 +2581,7 @@ Update a work plan
 Requires ANY permissions: 
 
 * wfm:workPlan:administer
+* wfm:workPlan:edit
 
 
 ### Request Body Schema
@@ -2833,6 +2910,7 @@ Create a new activity code
 
 Requires ANY permissions: 
 
+* wfm:activityCode:add
 * wfm:activityCode:administer
 
 
@@ -3101,8 +3179,9 @@ Query published schedules for given given time range for set of users
 
 Requires ANY permissions: 
 
-* wfm:schedule:administer
 * wfm:publishedSchedule:view
+* wfm:schedule:administer
+* wfm:schedule:view
 
 
 ### Request Body Schema
@@ -3188,6 +3267,7 @@ Create a new service goal group
 
 Requires ANY permissions: 
 
+* wfm:serviceGoalGroup:add
 * wfm:serviceGoalGroup:administer
 
 
@@ -3291,6 +3371,7 @@ Create a new time off request
 Requires ANY permissions: 
 
 * wfm:timeOffRequest:administer
+* wfm:timeOffRequest:add
 
 
 ### Request Body Schema
@@ -3384,6 +3465,7 @@ Gets a list of time off requests from lookup ids
 Requires ANY permissions: 
 
 * wfm:timeOffRequest:administer
+* wfm:timeOffRequest:view
 
 
 ### Request Body Schema
@@ -4853,6 +4935,7 @@ Gets the lookup ids to fetch the specified set of requests
 Requires ANY permissions: 
 
 * wfm:timeOffRequest:administer
+* wfm:timeOffRequest:view
 
 
 ### Request Body Schema
@@ -4941,6 +5024,7 @@ Copy a week schedule
 
 Requires ANY permissions: 
 
+* wfm:schedule:add
 * wfm:schedule:administer
 
 
@@ -5036,6 +5120,7 @@ Add a schedule for a week in management unit using imported data. Use partial up
 
 Requires ANY permissions: 
 
+* wfm:schedule:add
 * wfm:schedule:administer
 
 
@@ -5254,7 +5339,9 @@ Partial upload of user schedules where activity count is greater than 17500
 
 Requires ANY permissions: 
 
+* wfm:schedule:add
 * wfm:schedule:administer
+* wfm:schedule:edit
 
 
 ### Request Body Schema
@@ -5376,6 +5463,7 @@ Copy a short term forecast
 
 Requires ANY permissions: 
 
+* wfm:shortTermForecast:add
 * wfm:shortTermForecast:administer
 
 
@@ -5470,6 +5558,7 @@ Import a short term forecast
 
 Requires ANY permissions: 
 
+* wfm:shortTermForecast:add
 * wfm:shortTermForecast:administer
 
 
@@ -5587,6 +5676,7 @@ Generate a short term forecast
 
 Requires ANY permissions: 
 
+* wfm:shortTermForecast:add
 * wfm:shortTermForecast:administer
 
 
@@ -5677,6 +5767,7 @@ Import a short term forecast
 
 Requires ANY permissions: 
 
+* wfm:shortTermForecast:add
 * wfm:shortTermForecast:administer
 
 
@@ -5785,6 +5876,7 @@ Create a copy of work plan
 
 Requires ANY permissions: 
 
+* wfm:workPlan:add
 * wfm:workPlan:administer
 
 
@@ -5872,6 +5964,7 @@ Create a new work plan
 
 Requires ANY permissions: 
 
+* wfm:workPlan:add
 * wfm:workPlan:administer
 
 
@@ -6012,6 +6105,7 @@ Add a management unit
 Requires ANY permissions: 
 
 * wfm:managementUnit:administer
+* wfm:managementUnit:add
 
 
 ### Request Body Schema
@@ -6127,8 +6221,8 @@ Get published schedule for the current user
 Requires ANY permissions: 
 
 * wfm:agentSchedule:view
-* wfm:schedule:administer
 * wfm:publishedSchedule:view
+* wfm:schedule:administer
 
 
 ### Request Body Schema

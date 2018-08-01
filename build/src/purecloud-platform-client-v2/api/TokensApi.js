@@ -18,7 +18,7 @@
   /**
    * Tokens service.
    * @module purecloud-platform-client-v2/api/TokensApi
-   * @version 31.0.0
+   * @version 32.0.0
    */
 
   /**
