@@ -1,233 +1,204 @@
-(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module.
-    define(['purecloud-platform-client-v2/ApiClient'], factory);
-  } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
-  } else {
-    // Browser globals (root is window)
-    if (!root.platformClient) {
-      root.platformClient = {};
-    }
-    root.platformClient.NotificationsApi = factory(root.platformClient.ApiClient);
-  }
-}(this, function(ApiClient) {
-  'use strict';
-
-  /**
-   * Notifications service.
-   * @module purecloud-platform-client-v2/api/NotificationsApi
-   * @version 32.1.0
-   */
-
-  /**
-   * Constructs a new NotificationsApi. 
-   * @alias module:purecloud-platform-client-v2/api/NotificationsApi
-   * @class
-   * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-   * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-   */
-  var exports = function(apiClient) {
-    this.apiClient = apiClient || ApiClient.instance;
+import ApiClient from '../ApiClient.js';
 
 
+class NotificationsApi {
+	/**
+	 * Notifications service.
+	 * @module purecloud-platform-client-v2/api/NotificationsApi
+	 * @version 33.0.0
+	 */
 
-    /**
-     * Remove all subscriptions
-     * 
-     * @param {String} channelId Channel ID
-     */
-    this.deleteNotificationsChannelSubscriptions = function(channelId) { 
-
-      // verify the required parameter 'channelId' is set
-      if (channelId === undefined || channelId === null) {
-        throw "Missing the required parameter 'channelId' when calling deleteNotificationsChannelSubscriptions";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/notifications/channels/{channelId}/subscriptions', 
-        'DELETE', 
-        { 'channelId': channelId }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
+	/**
+	 * Constructs a new NotificationsApi. 
+	 * @alias module:purecloud-platform-client-v2/api/NotificationsApi
+	 * @class
+	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+	 */
+	constructor(apiClient) {
+		this.apiClient = apiClient || ApiClient.instance;
+	}
 
 
-    /**
-     * Get available notification topics.
-     * 
-     * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.expand Which fields, if any, to expand
-     */
-    this.getNotificationsAvailabletopics = function(opts) { 
-      opts = opts || {};
+	/**
+	 * Remove all subscriptions
+	 * 
+	 * @param {String} channelId Channel ID
+	 */
+	deleteNotificationsChannelSubscriptions(channelId) { 
+		// verify the required parameter 'channelId' is set
+		if (channelId === undefined || channelId === null) {
+			throw 'Missing the required parameter "channelId" when calling deleteNotificationsChannelSubscriptions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/notifications/channels/{channelId}/subscriptions', 
+			'DELETE', 
+			{ 'channelId': channelId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get available notification topics.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 */
+	getNotificationsAvailabletopics(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/notifications/availabletopics', 
+			'GET', 
+			{  }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * The list of all subscriptions for this channel
+	 * 
+	 * @param {String} channelId Channel ID
+	 */
+	getNotificationsChannelSubscriptions(channelId) { 
+		// verify the required parameter 'channelId' is set
+		if (channelId === undefined || channelId === null) {
+			throw 'Missing the required parameter "channelId" when calling getNotificationsChannelSubscriptions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/notifications/channels/{channelId}/subscriptions', 
+			'GET', 
+			{ 'channelId': channelId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * The list of existing channels
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.includechannels Show user&#39;s channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. (default to token)
+	 */
+	getNotificationsChannels(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/notifications/channels', 
+			'GET', 
+			{  }, 
+			{ 'includechannels': opts['includechannels'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add a list of subscriptions to the existing list of subscriptions
+	 * 
+	 * @param {String} channelId Channel ID
+	 * @param {Array.<Object>} body Body
+	 */
+	postNotificationsChannelSubscriptions(channelId, body) { 
+		// verify the required parameter 'channelId' is set
+		if (channelId === undefined || channelId === null) {
+			throw 'Missing the required parameter "channelId" when calling postNotificationsChannelSubscriptions';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postNotificationsChannelSubscriptions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/notifications/channels/{channelId}/subscriptions', 
+			'POST', 
+			{ 'channelId': channelId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a new channel
+	 * There is a limit of 5 channels per user/app combination. Creating a 6th channel will remove the channel with oldest last used date.
+	 */
+	postNotificationsChannels() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/notifications/channels', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Replace the current list of subscriptions with a new list.
+	 * 
+	 * @param {String} channelId Channel ID
+	 * @param {Array.<Object>} body Body
+	 */
+	putNotificationsChannelSubscriptions(channelId, body) { 
+		// verify the required parameter 'channelId' is set
+		if (channelId === undefined || channelId === null) {
+			throw 'Missing the required parameter "channelId" when calling putNotificationsChannelSubscriptions';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putNotificationsChannelSubscriptions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/notifications/channels/{channelId}/subscriptions', 
+			'PUT', 
+			{ 'channelId': channelId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+}
 
 
-      return this.apiClient.callApi(
-        '/api/v2/notifications/availabletopics', 
-        'GET', 
-        {  }, 
-        { 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * The list of all subscriptions for this channel
-     * 
-     * @param {String} channelId Channel ID
-     */
-    this.getNotificationsChannelSubscriptions = function(channelId) { 
-
-      // verify the required parameter 'channelId' is set
-      if (channelId === undefined || channelId === null) {
-        throw "Missing the required parameter 'channelId' when calling getNotificationsChannelSubscriptions";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/notifications/channels/{channelId}/subscriptions', 
-        'GET', 
-        { 'channelId': channelId }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * The list of existing channels
-     * 
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.includechannels Show user&#39;s channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. (default to token)
-     */
-    this.getNotificationsChannels = function(opts) { 
-      opts = opts || {};
-
-
-      return this.apiClient.callApi(
-        '/api/v2/notifications/channels', 
-        'GET', 
-        {  }, 
-        { 'includechannels': opts['includechannels'] }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Add a list of subscriptions to the existing list of subscriptions
-     * 
-     * @param {String} channelId Channel ID
-     * @param {Array.<Object>} body Body
-     */
-    this.postNotificationsChannelSubscriptions = function(channelId, body) { 
-
-      // verify the required parameter 'channelId' is set
-      if (channelId === undefined || channelId === null) {
-        throw "Missing the required parameter 'channelId' when calling postNotificationsChannelSubscriptions";
-      }
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw "Missing the required parameter 'body' when calling postNotificationsChannelSubscriptions";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/notifications/channels/{channelId}/subscriptions', 
-        'POST', 
-        { 'channelId': channelId }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        body, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Create a new channel
-     * There is a limit of 5 channels per user/app combination. Creating a 6th channel will remove the channel with oldest last used date.
-     */
-    this.postNotificationsChannels = function() { 
-
-
-      return this.apiClient.callApi(
-        '/api/v2/notifications/channels', 
-        'POST', 
-        {  }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        null, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-
-
-    /**
-     * Replace the current list of subscriptions with a new list.
-     * 
-     * @param {String} channelId Channel ID
-     * @param {Array.<Object>} body Body
-     */
-    this.putNotificationsChannelSubscriptions = function(channelId, body) { 
-
-      // verify the required parameter 'channelId' is set
-      if (channelId === undefined || channelId === null) {
-        throw "Missing the required parameter 'channelId' when calling putNotificationsChannelSubscriptions";
-      }
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw "Missing the required parameter 'body' when calling putNotificationsChannelSubscriptions";
-      }
-
-
-      return this.apiClient.callApi(
-        '/api/v2/notifications/channels/{channelId}/subscriptions', 
-        'PUT', 
-        { 'channelId': channelId }, 
-        {  }, 
-        {  }, 
-        {  }, 
-        body, 
-        ['PureCloud Auth'], 
-        ['application/json'], 
-        ['application/json']
-      );
-    };
-  };
-
-  return exports;
-}));
+export default NotificationsApi;

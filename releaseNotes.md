@@ -1,18 +1,14 @@
 Platform API version: 2517
 
 
+# SDK Changes
+
+* No functional changes, new deployment options published
+
 # Major Changes (0 changes)
 
 
-# Minor Changes (2 changes)
-
-**Dependency** (1 change)
-
-* Enum value FLOWOUTCOME was added to property type
-
-**DependencyObject** (1 change)
-
-* Enum value FLOWOUTCOME was added to property type
+# Minor Changes (0 changes)
 
 
 # Point Changes (0 changes)
