@@ -1,58 +1,70 @@
 ---
 title: JavaScript SDK
 ---
-A JavaScript library to interface with the PureCloud Platform API
-
-[![GitHub release](https://img.shields.io/github/release/mypurecloud/platform-client-sdk-javascript.svg)]()
-![Bower version](https://img.shields.io/bower/v/purecloud-platform-client-v2.svg)
-[![npm](https://img.shields.io/npm/v/purecloud-platform-client-v2.svg)](https://www.npmjs.com/package/purecloud-platform-client-v2)
-
 
 # Platform API Javascript Client
 
-Install with [Bower](http://bower.io):
+A JavaScript library to interface with the PureCloud Platform API
 
-~~~ sh
-bower install purecloud-platform-client-v2
-~~~
+[![GitHub release](https://img.shields.io/github/release/mypurecloud/platform-client-sdk-javascript.svg)]()
+[![npm](https://img.shields.io/npm/v/purecloud-platform-client-v2.svg)](https://www.npmjs.com/package/purecloud-platform-client-v2)
 
-Install with [NPM](https://www.npmjs.com/package/purecloud-platform-client-v2):
+## CommonJS
+
+For node.js via [NPM](https://www.npmjs.com/package/purecloud-platform-client-v2):
 
 ~~~ sh
 npm install purecloud-platform-client-v2
 ~~~
 
-Reference from the CDN:
-
-~~~ html
-<!-- Replace `34.0.1` with the version you want to use. -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/34.0.1/purecloud-platform-client-v2.min.js"></script>
-~~~
-
-View the documentation on the [PureCloud Developer Center](https://developer.mypurecloud.com/api/rest/client-libraries/javascript/).
-View the source code on [Github](https://github.com/MyPureCloud/purecloud-platform-client-v2).
-
-
-# Usage
-
-## Client-side usage
-
-Reference the SDK in your HTML document. For convenience, all modules are bundled together.
-
-~~~ html
-<!-- Include the full library -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/34.0.1/purecloud-platform-client-v2.min.js"></script>
-~~~
-
-
-## NodeJS usage
-
-Require the SDK in your node app. All modules are obtained from the `purecloud-platform-client-v2` package.
-
 ~~~ javascript
+// Obtain a reference to the platformClient object
 const platformClient = require('purecloud-platform-client-v2');
 ~~~
 
+For direct use in a browser script:
+
+~~~ html
+<!-- Include the CJS SDK -->
+<script src="https://sdk-cdn.mypurecloud.com/javascript/34.0.2/purecloud-platform-client-v2.min.js"></script>
+
+<script type="text/javascript">
+  // Obtain a reference to the platformClient object
+  const platformClient = require('platformClient');
+</script>
+~~~
+
+
+## AMD
+
+~~~ html
+<!-- Include requirejs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+
+<script type="text/javascript">
+  // Obtain a reference to the platformClient object
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/34.0.2/purecloud-platform-client-v2.min.js'], (platformClient) => {
+    console.log(platformClient);
+  });
+</script>
+~~~
+
+## ES6 Classes and Other Entry Points
+
+The node package's [package.json](https://github.com/MyPureCloud/platform-client-sdk-javascript/blob/master/build/package.json) file contains the following entry points for use with various packaging systems:
+
+* **jsnext:main**
+	* Entry point: src/purecloud-platform-client-v2/index.js
+	* The main ES6 class in the source code
+* **main**
+	* Entry point: dist/node/purecloud-platform-client-v2.js
+	* The CJS module for node apps
+* **browser**
+	* Entry point: dist/web-cjs/purecloud-platform-client-v2.min.js
+	* The [Browserify](http://browserify.org/)ed CJS module for standalone use in a browser
+
+
+# Usage
 
 ## Authentication
 
@@ -63,13 +75,12 @@ After authentication has completed, the access token is stored on the `ApiClient
 The Client Credentials grant only works when used in node.js. This is restricted intentionally because it is impossible for client credentials to be handled securely in a browser application.
 
 ~~~ javascript
-const platformClient = require('purecloud-platform-client-v2');
 const client = platformClient.ApiClient.instance;
 client.loginClientCredentialsGrant(clientId, clientSecret)
-  .then(function() {
+  .then(() => {
     // Do authenticated things
   })
-  .catch(function(err) {
+  .catch((err) => {
     // Handle failure response
     console.log(err);
   });
@@ -84,14 +95,13 @@ Optional parameters may be specified in the optional third parameter for `loginI
 * `state` - An arbitrary string used to associate a login request with a login response. This value will be provided in the `state` property on the object when the promise is resolved. The state in the resolved promise will be identical to what was passed into `loginImplicitGrant`, except when the state is retrieved from the auth hash upon completing a login; in that case, the state from the auth hash will override the passed in state.
 
 ~~~ javascript
-const platformClient = require('platformClient');
 const client = platformClient.ApiClient.instance;
 client.loginImplicitGrant(clientId, redirectUri, { state: state })
-  .then(function(data) {
+  .then((data) => {
     console.log(data);
     // Do authenticated things
   })
-  .catch(function(err) {
+  .catch((err) => {
     // Handle failure response
     console.log(err);
   });
@@ -100,14 +110,9 @@ client.loginImplicitGrant(clientId, redirectUri, { state: state })
 **Any platform** Provide an existing auth token
 
 ~~~ javascript
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
 const client = platformClient.ApiClient.instance;
 client.setAccessToken(yourAccessToken);
-// Do authenticated things; no login function needed
+// Do authenticated things; no authentication function needed
 ~~~
 
 
@@ -116,11 +121,6 @@ client.setAccessToken(yourAccessToken);
 If connecting to a PureCloud environment other than mypurecloud.com (e.g. mypurecloud.ie), set the environment on the `ApiClient` instance.
 
 ~~~ js
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
 const client = platformClient.ApiClient.instance;
 client.setEnvironment('mypurecloud.ie');
 ~~~
@@ -131,11 +131,6 @@ client.setEnvironment('mypurecloud.ie');
 In a web environment, it is possible to persist the access token to prevent an authentication request from being made on each page load. To enable this function, simply enable settings persistence prior to attempting a login. To maintain multiple auth tokens in storage, specify the prefix to use for storage/retrieval when enabling persistence. Otherwise, the prefix is optional and will default to `purecloud`.
 
 ~~~ js
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
 const client = platformClient.ApiClient.instance;
 client.setPersistSettings(true, 'optional_prefix');
 ~~~
@@ -148,22 +143,20 @@ All API requests return a Promise which resolves to the response body, otherwise
 **Node.js**
 
 ~~~ js
-const platformClient = require('purecloud-platform-client-v2');
-
 // Create API instance
 const authorizationApi = new platformClient.AuthorizationApi();
 
 // Authenticate
 client.loginClientCredentialsGrant(clientId, clientSecret)
-  .then(function() 
+  .then(() => { 
     // Make request to GET /api/v2/authorization/permissions
     return authorizationApi.getAuthorizationPermissions();
   })
-  .then(function(permissions) {
+  .then((permissions) => {
     // Handle successful result
     console.log(permissions);
   })
-  .catch(function(err) {
+  .catch((err) => {
     // Handle failure response
     console.log(err);
   });
@@ -172,22 +165,20 @@ client.loginClientCredentialsGrant(clientId, clientSecret)
 **Web**
 
 ~~~ js
-const platformClient = require('platformClient');
-
 // Create API instance
 const usersApi = new platformClient.UsersApi();
 
 // Authenticate
 client.loginImplicitGrant(clientId, redirectUri)
-  .then(function() {
+  .then(() => {
     // Make request to GET /api/v2/users/me?expand=presence
     return usersApi.getUsersMe({ 'expand': ["presence"] });
   })
-  .then(function(userMe) {
+  .then((userMe) => {
     // Handle successful result
     console.log(`Hello, ${userMe.name}!`);
   })
-  .catch(function(err) {
+  .catch((err) => {
     // Handle failure response
     console.log(err);
   });
@@ -199,11 +190,6 @@ client.loginImplicitGrant(clientId, redirectUri)
 By default, the SDK will return only the response body as the result of an API function call. To retrieve additional information about the response, enable extended responses. This will return the extended response for all API function calls:
 
 ~~~ js
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
 const client = platformClient.ApiClient.instance;
 client.setReturnExtendedResponses(true);
 ~~~
@@ -243,16 +229,14 @@ After both steps have been completed, the configured proxy server will be used f
 NOTE: SDK proxy configuration is only available in the node.js package due to `superagent-proxy`'s incompatibility with browserify. Additionally, `superagent-proxy` is not included a dependency of the SDK and must be provided by your node application's dependencies.
 
 ~~~ js
-const platformClient = require('purecloud-platform-client-v2');
-
 const client = platformClient.ApiClient.instance;
 require('superagent-proxy')(client.superagent);
 // Configure settings for your proxy here
 // Documentation: https://www.npmjs.com/package/proxy-agent
 client.proxy = {
-	host: '172.1.1.100',
-	port: 443,
-	protocol: 'https',
+  host: '172.1.1.100',
+  port: 443,
+  protocol: 'https',
 };
 ~~~
 
@@ -298,11 +282,6 @@ Example error response object:
 There are hooks to trace requests and responses.  To enable debug tracing, provide a log object. Optionally, specify a maximum number of lines. If specified, the response body trace will be truncated. If not specified, the entire response body will be traced out.
 
 ~~~ js
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
 const client = platformClient.ApiClient.instance;
 client.setDebugLog(console.log, 25);
 ~~~
