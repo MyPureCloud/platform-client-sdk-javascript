@@ -1405,10 +1405,10 @@ ReportingExportJobRequest <a style="cursor: pointer" onclick="copyReportingExpor
 { 
   "name": String, 
   "timeZone": { 
-    "displayName": String, 
-    "id": String, 
     "dstsavings": Number, 
     "rawOffset": Number, 
+    "id": String, 
+    "displayName": String, 
   },  
   "exportFormat": String, 
   "interval": String, 

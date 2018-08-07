@@ -52,7 +52,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postRoutingLanguages**](RoutingApi.html#postRoutingLanguages) | **POST** /api/v2/routing/languages | Create Language
 [**postRoutingQueueUsers**](RoutingApi.html#postRoutingQueueUsers) | **POST** /api/v2/routing/queues/{queueId}/users | Bulk add or delete up to 100 queue members
 [**postRoutingQueueWrapupcodes**](RoutingApi.html#postRoutingQueueWrapupcodes) | **POST** /api/v2/routing/queues/{queueId}/wrapupcodes | Add up to 100 wrap-up codes to a queue
-[**postRoutingQueues**](RoutingApi.html#postRoutingQueues) | **POST** /api/v2/routing/queues | Create queue
+[**postRoutingQueues**](RoutingApi.html#postRoutingQueues) | **POST** /api/v2/routing/queues | Create a queue
 [**postRoutingSkills**](RoutingApi.html#postRoutingSkills) | **POST** /api/v2/routing/skills | Create Skill
 [**postRoutingSmsAddresses**](RoutingApi.html#postRoutingSmsAddresses) | **POST** /api/v2/routing/sms/addresses | Provision an Address for SMS
 [**postRoutingSmsPhonenumbers**](RoutingApi.html#postRoutingSmsPhonenumbers) | **POST** /api/v2/routing/sms/phonenumbers | Provision a phone number for SMS
@@ -3812,7 +3812,7 @@ apiInstance.postRoutingQueueWrapupcodes(queueId, body)
 
 POST /api/v2/routing/queues
 
-Create queue
+Create a queue
 
 
 
@@ -6253,18 +6253,18 @@ Requires ANY permissions:
 {::options parse_block_html="true" /}
 
 <script type="text/javascript">
-	function copyQueueExample() {
+	function copyQueueRequestExample() {
 		var $temp = $("<textarea>");
 		$("body").append($temp);
-		$temp.val($('#QueueExample').text()).select();
+		$temp.val($('#QueueRequestExample').text()).select();
 		document.execCommand("copy");
 		$temp.remove();
 	}
 </script>
 
-Queue <a style="cursor: pointer" onclick="copyQueueExample()">Copy</a>
+QueueRequest <a style="cursor: pointer" onclick="copyQueueRequestExample()">Copy</a>
 
-<div id="QueueExample" style="max-height: 250px; overflow-y: scroll;">
+<div id="QueueRequestExample" style="max-height: 250px; overflow-y: scroll;">
 ~~~ json
 { 
   "id": String, 

@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 33.0.0
+	 * @version 34.0.0
 	 */
 
 	/**
@@ -161,6 +161,40 @@ class AuthorizationApi {
 			'GET', 
 			{ 'leftRoleId': leftRoleId,'rightRoleId': rightRoleId }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the subjects&#39; granted divisions in the specified role.
+	 * Includes the divisions for which the subject has a grant.
+	 * @param {String} roleId Role ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The total page size requested (default to 25)
+	 * @param {Number} opts.pageNumber The page number requested (default to 1)
+	 * @param {String} opts.sortBy variable name requested to sort by
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
+	 * @param {String} opts.nextPage next page token
+	 * @param {String} opts.previousPage Previous page token
+	 */
+	getAuthorizationRoleSubjectgrants(roleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'roleId' is set
+		if (roleId === undefined || roleId === null) {
+			throw 'Missing the required parameter "roleId" when calling getAuthorizationRoleSubjectgrants';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/roles/{roleId}/subjectgrants', 
+			'GET', 
+			{ 'roleId': roleId }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
 			{  }, 
 			{  }, 
 			null, 

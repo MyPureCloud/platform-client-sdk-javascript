@@ -2027,7 +2027,7 @@ Disable a particular version of a survey form and invalidates any invitations th
 
 Requires ANY permissions: 
 
-* quality:surveyForm:edit
+* quality:surveyForm:disable
 
 
 ### Request Body Schema

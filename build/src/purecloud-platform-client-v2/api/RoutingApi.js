@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 33.0.0
+	 * @version 34.0.0
 	 */
 
 	/**
@@ -1275,7 +1275,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Create queue
+	 * Create a queue
 	 * 
 	 * @param {Object} body Queue
 	 */

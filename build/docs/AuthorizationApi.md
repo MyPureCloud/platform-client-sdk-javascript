@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAuthorizationProducts**](AuthorizationApi.html#getAuthorizationProducts) | **GET** /api/v2/authorization/products | Get the list of enabled products
 [**getAuthorizationRole**](AuthorizationApi.html#getAuthorizationRole) | **GET** /api/v2/authorization/roles/{roleId} | Get a single organization role.
 [**getAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi.html#getAuthorizationRoleComparedefaultRightRoleId) | **GET** /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId} | Get an org role to default role comparison comparison
+[**getAuthorizationRoleSubjectgrants**](AuthorizationApi.html#getAuthorizationRoleSubjectgrants) | **GET** /api/v2/authorization/roles/{roleId}/subjectgrants | Get the subjects&#39; granted divisions in the specified role.
 [**getAuthorizationRoles**](AuthorizationApi.html#getAuthorizationRoles) | **GET** /api/v2/authorization/roles | Retrieve a list of all roles defined for the organization
 [**getUserRoles**](AuthorizationApi.html#getUserRoles) | **GET** /api/v2/users/{userId}/roles | Returns a listing of roles and permissions for a user.
 [**patchAuthorizationRole**](AuthorizationApi.html#patchAuthorizationRole) | **PATCH** /api/v2/authorization/roles/{roleId} | Patch Organization Role for needsUpdate Field
@@ -363,6 +364,76 @@ apiInstance.getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleI
 ### Return type
 
 **DomainOrgRoleDifference**
+
+<a name="getAuthorizationRoleSubjectgrants"></a>
+
+# SubjectDivisionGrantsEntityListing getAuthorizationRoleSubjectgrants(roleId, opts)
+
+
+
+GET /api/v2/authorization/roles/{roleId}/subjectgrants
+
+Get the subjects&#39; granted divisions in the specified role.
+
+Includes the divisions for which the subject has a grant.
+
+Requires ANY permissions: 
+
+* authorization:role:view
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AuthorizationApi();
+
+var roleId = "roleId_example"; // String | Role ID
+
+var opts = { 
+  'pageSize': 25, // Number | The total page size requested
+  'pageNumber': 1, // Number | The page number requested
+  'sortBy': "sortBy_example", // String | variable name requested to sort by
+  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'nextPage': "nextPage_example", // String | next page token
+  'previousPage': "previousPage_example" // String | Previous page token
+};
+apiInstance.getAuthorizationRoleSubjectgrants(roleId, opts)
+  .then(function(data) {
+    console.log(`getAuthorizationRoleSubjectgrants success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getAuthorizationRoleSubjectgrants');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **roleId** | **String** | Role ID |  |
+ **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
+ **sortBy** | **String** | variable name requested to sort by | [optional]  |
+ **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **nextPage** | **String** | next page token | [optional]  |
+ **previousPage** | **String** | Previous page token | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**SubjectDivisionGrantsEntityListing**
 
 <a name="getAuthorizationRoles"></a>
 
@@ -1581,8 +1652,8 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "default": Boolean, 
   "base": Boolean, 
+  "default": Boolean, 
   "selfUri": String, 
 }
 ~~~
@@ -2712,8 +2783,8 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "default": Boolean, 
   "base": Boolean, 
+  "default": Boolean, 
   "selfUri": String, 
 }
 ~~~
@@ -3846,8 +3917,8 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "default": Boolean, 
   "base": Boolean, 
+  "default": Boolean, 
   "selfUri": String, 
 }
 ~~~
@@ -5033,8 +5104,8 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "default": Boolean, 
   "base": Boolean, 
+  "default": Boolean, 
   "selfUri": String, 
 }
 ~~~
@@ -6282,8 +6353,8 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "default": Boolean, 
   "base": Boolean, 
+  "default": Boolean, 
   "selfUri": String, 
 }
 ~~~

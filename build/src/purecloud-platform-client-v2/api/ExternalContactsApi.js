@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 33.0.0
+	 * @version 34.0.0
 	 */
 
 	/**
@@ -524,7 +524,7 @@ class ExternalContactsApi {
 	}
 
 	/**
-	 * Lookup contacts and externalOrganizations based on an attribute
+	 * Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
 	 * 
 	 * @param {String} lookupVal User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names)
 	 * @param {Object} opts Optional parameters

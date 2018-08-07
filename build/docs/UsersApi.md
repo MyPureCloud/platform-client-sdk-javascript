@@ -5596,7 +5596,6 @@ UserQueue <a style="cursor: pointer" onclick="copyUserQueueExample()">Copy</a>
     "name": String, 
     "selfUri": String, 
   },  
-  "autoAnswerOnly": Boolean, 
   "callingPartyName": String, 
   "callingPartyNumber": String, 
   "defaultScripts": { 
@@ -5877,7 +5876,6 @@ UserQueue <a style="cursor: pointer" onclick="copyUserQueueExample()">Copy</a>
     "name": String, 
     "selfUri": String, 
   },  
-  "autoAnswerOnly": Boolean, 
   "callingPartyName": String, 
   "callingPartyNumber": String, 
   "defaultScripts": { 
