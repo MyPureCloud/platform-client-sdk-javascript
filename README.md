@@ -4,7 +4,7 @@ title: JavaScript SDK
 
 # Platform API Javascript Client
 
-A JavaScript library to interface with the PureCloud Platform API
+A JavaScript library to interface with the PureCloud Platform API. View the documentation on the [PureCloud Developer Center](https://developer.mypurecloud.com/api/rest/client-libraries/javascript/). Browse the source code on [Github](https://github.com/MyPureCloud/platform-client-sdk-javascript).
 
 [![GitHub release](https://img.shields.io/github/release/mypurecloud/platform-client-sdk-javascript.svg)]()
 [![npm](https://img.shields.io/npm/v/purecloud-platform-client-v2.svg)](https://www.npmjs.com/package/purecloud-platform-client-v2)
@@ -26,7 +26,7 @@ For direct use in a browser script:
 
 ~~~ html
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/34.0.2/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/34.0.3/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -43,7 +43,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/34.0.2/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/34.0.3/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
