@@ -2,7 +2,7 @@ import superagent from 'superagent';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 34.0.4
+ * @version 34.0.5
  */
 class ApiClient {
 	/**
@@ -420,7 +420,7 @@ class ApiClient {
 	/**
 	 * @description Redirects the user to the PureCloud logout page
 	 */
-	logout() {
+	logout(logoutRedirectUri) {
 		if(this.hasLocalStorage) {
 			this._saveSettings({
 				accessToken: undefined,
@@ -431,9 +431,11 @@ class ApiClient {
 		}
 
 		var query = {
-			client_id: encodeURIComponent(this.clientId),
-			redirect_uri: encodeURI(this.redirectUri)
+			client_id: encodeURIComponent(this.clientId)
 		};
+
+		if (redirectUri)
+			query['redirect_uri'] = encodeURI(logoutRedirectUri);
 
 		var url = this._buildAuthUrl('logout', query);
 		window.location.replace(url);
@@ -685,7 +687,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '34.0.4' });
+		//request.set({ 'purecloud-sdk': '34.0.5' });
 
 		// set request timeout
 		request.timeout(this.timeout);
