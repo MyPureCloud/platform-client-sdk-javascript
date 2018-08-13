@@ -1,0 +1,17 @@
+
+{
+  "author": "Genesys Developer Evangelists",
+  "title": "Platform Client SDK - JavaScript",
+  "logo_url": "https://raw.githubusercontent.com/MyPureCloud/platform-client-sdk-dotnet/master/genesys_64.png",
+  "categories": [
+    "sdk"
+  ],
+  "tags": [
+  ],
+  "apis": [
+    "platform"
+  ],
+  "sdks": [
+    "javascript"
+  ]
+}
