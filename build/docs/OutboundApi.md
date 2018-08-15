@@ -1812,7 +1812,7 @@ var opts = {
   'name': "name_example", // String | Name
   'id': ["id_example"], // [String] | id
   'contactListId': "contactListId_example", // String | Contact List ID
-  'dncListId': "dncListId_example", // String | DNC list ID
+  'dncListIds': "dncListIds_example", // String | DNC list ID
   'distributionQueueId': "distributionQueueId_example", // String | Distribution queue ID
   'edgeGroupId': "edgeGroupId_example", // String | Edge group ID
   'callAnalysisResponseSetId': "callAnalysisResponseSetId_example", // String | Call analysis response set ID
@@ -1842,7 +1842,7 @@ apiInstance.getOutboundCampaigns(opts)
  **name** | **String** | Name | [optional]  |
  **id** | **[String]** | id | [optional]  |
  **contactListId** | **String** | Contact List ID | [optional]  |
- **dncListId** | **String** | DNC list ID | [optional]  |
+ **dncListIds** | **String** | DNC list ID | [optional]  |
  **distributionQueueId** | **String** | Distribution queue ID | [optional]  |
  **edgeGroupId** | **String** | Edge group ID | [optional]  |
  **callAnalysisResponseSetId** | **String** | Call analysis response set ID | [optional]  |

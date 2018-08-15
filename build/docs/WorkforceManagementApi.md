@@ -1691,6 +1691,8 @@ Requires ANY permissions:
 
 * wfm:workPlan:administer
 * wfm:workPlan:view
+* wfm:schedule:administer
+* wfm:schedule:edit
 
 
 
@@ -2738,7 +2740,6 @@ Update a time off request for the current user
 
 Requires ANY permissions: 
 
-* wfm:agentSchedule:view
 * wfm:agentTimeOffRequest:submit
 
 
@@ -6304,7 +6305,6 @@ Create a time off request for the current user
 
 Requires ANY permissions: 
 
-* wfm:agentSchedule:view
 * wfm:agentTimeOffRequest:submit
 
 

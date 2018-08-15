@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 34.0.6
+	 * @version 35.0.0
 	 */
 
 	/**
@@ -781,7 +781,7 @@ class OutboundApi {
 	 * @param {String} opts.name Name
 	 * @param {Array.<String>} opts.id id
 	 * @param {String} opts.contactListId Contact List ID
-	 * @param {String} opts.dncListId DNC list ID
+	 * @param {String} opts.dncListIds DNC list ID
 	 * @param {String} opts.distributionQueueId Distribution queue ID
 	 * @param {String} opts.edgeGroupId Edge group ID
 	 * @param {String} opts.callAnalysisResponseSetId Call analysis response set ID
@@ -797,7 +797,7 @@ class OutboundApi {
 			'/api/v2/outbound/campaigns', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'contactListId': opts['contactListId'],'dncListId': opts['dncListId'],'distributionQueueId': opts['distributionQueueId'],'edgeGroupId': opts['edgeGroupId'],'callAnalysisResponseSetId': opts['callAnalysisResponseSetId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'contactListId': opts['contactListId'],'dncListIds': opts['dncListIds'],'distributionQueueId': opts['distributionQueueId'],'edgeGroupId': opts['edgeGroupId'],'callAnalysisResponseSetId': opts['callAnalysisResponseSetId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
