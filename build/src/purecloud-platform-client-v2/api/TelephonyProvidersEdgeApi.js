@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 35.0.0
+	 * @version 36.0.0
 	 */
 
 	/**
@@ -1867,31 +1867,6 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
-	 * Gets the basic information about an asg in a specified site
-	 * 
-	 * @param {String} siteId Site id associated with the asg
-	 */
-	getTelephonyProvidersEdgesSiteAutoscalinggroups(siteId) { 
-		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
-			throw 'Missing the required parameter "siteId" when calling getTelephonyProvidersEdgesSiteAutoscalinggroups';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups', 
-			'GET', 
-			{ 'siteId': siteId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud Auth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get a Number Plan by ID.
 	 * 
 	 * @param {String} siteId Site ID
@@ -2831,36 +2806,6 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/phones/reboot', 
 			'POST', 
 			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud Auth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Creates an ASG for the specified site
-	 * 
-	 * @param {String} siteId Site that will be associated with the asg
-	 * @param {Object} body CreateAsgRequest
-	 */
-	postTelephonyProvidersEdgesSiteAutoscalinggroups(siteId, body) { 
-		// verify the required parameter 'siteId' is set
-		if (siteId === undefined || siteId === null) {
-			throw 'Missing the required parameter "siteId" when calling postTelephonyProvidersEdgesSiteAutoscalinggroups';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesSiteAutoscalinggroups';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups', 
-			'POST', 
-			{ 'siteId': siteId }, 
 			{  }, 
 			{  }, 
 			{  }, 
