@@ -7,12 +7,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteAuthorizationSubjectDivisionRole**](UsersApi.html#deleteAuthorizationSubjectDivisionRole) | **DELETE** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Delete a grant of a role in a division
 [**deleteUser**](UsersApi.html#deleteUser) | **DELETE** /api/v2/users/{userId} | Delete user
 [**deleteUserRoles**](UsersApi.html#deleteUserRoles) | **DELETE** /api/v2/users/{userId}/roles | Removes all the roles from the user.
 [**deleteUserRoutinglanguage**](UsersApi.html#deleteUserRoutinglanguage) | **DELETE** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove routing language from user
 [**deleteUserRoutingskill**](UsersApi.html#deleteUserRoutingskill) | **DELETE** /api/v2/users/{userId}/routingskills/{skillId} | Remove routing skill from user
 [**deleteUserStationAssociatedstation**](UsersApi.html#deleteUserStationAssociatedstation) | **DELETE** /api/v2/users/{userId}/station/associatedstation | Clear associated station
 [**deleteUserStationDefaultstation**](UsersApi.html#deleteUserStationDefaultstation) | **DELETE** /api/v2/users/{userId}/station/defaultstation | Clear default station
+[**getAuthorizationDivisionspermittedMe**](UsersApi.html#getAuthorizationDivisionspermittedMe) | **GET** /api/v2/authorization/divisionspermitted/me | Returns whether or not current user can perform the specified action(s).
+[**getAuthorizationDivisionspermittedSubjectId**](UsersApi.html#getAuthorizationDivisionspermittedSubjectId) | **GET** /api/v2/authorization/divisionspermitted/{subjectId} | Returns whether or not specified user can perform the specified action(s).
+[**getAuthorizationSubject**](UsersApi.html#getAuthorizationSubject) | **GET** /api/v2/authorization/subjects/{subjectId} | Returns a listing of roles and permissions for a user.
+[**getAuthorizationSubjectsMe**](UsersApi.html#getAuthorizationSubjectsMe) | **GET** /api/v2/authorization/subjects/me | Returns a listing of roles and permissions for the currently authenticated user.
 [**getFieldconfig**](UsersApi.html#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
 [**getProfilesUsers**](UsersApi.html#getProfilesUsers) | **GET** /api/v2/profiles/users | Get a user profile listing
 [**getUser**](UsersApi.html#getUser) | **GET** /api/v2/users/{userId} | Get user.
@@ -41,10 +46,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchUserQueue**](UsersApi.html#patchUserQueue) | **PATCH** /api/v2/users/{userId}/queues/{queueId} | Join or unjoin a queue for a user
 [**patchUserQueues**](UsersApi.html#patchUserQueues) | **PATCH** /api/v2/users/{userId}/queues | Join or unjoin a set of queues for a user
 [**patchUserRoutinglanguage**](UsersApi.html#patchUserRoutinglanguage) | **PATCH** /api/v2/users/{userId}/routinglanguages/{languageId} | Update routing language proficiency or state.
+[**patchUserRoutinglanguagesBulk**](UsersApi.html#patchUserRoutinglanguagesBulk) | **PATCH** /api/v2/users/{userId}/routinglanguages/bulk | Add bulk routing language to user. Max limit 50 languages
+[**patchUserRoutingskillsBulk**](UsersApi.html#patchUserRoutingskillsBulk) | **PATCH** /api/v2/users/{userId}/routingskills/bulk | Add bulk routing skills to user
 [**patchUsersBulk**](UsersApi.html#patchUsersBulk) | **PATCH** /api/v2/users/bulk | Update bulk acd autoanswer on users
 [**postAnalyticsUsersAggregatesQuery**](UsersApi.html#postAnalyticsUsersAggregatesQuery) | **POST** /api/v2/analytics/users/aggregates/query | Query for user aggregates
 [**postAnalyticsUsersDetailsQuery**](UsersApi.html#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
 [**postAnalyticsUsersObservationsQuery**](UsersApi.html#postAnalyticsUsersObservationsQuery) | **POST** /api/v2/analytics/users/observations/query | Query for user observations
+[**postAuthorizationSubjectDivisionRole**](UsersApi.html#postAuthorizationSubjectDivisionRole) | **POST** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Make a grant of a role in a division
 [**postUserInvite**](UsersApi.html#postUserInvite) | **POST** /api/v2/users/{userId}/invite | Send an activation email to the user
 [**postUserPassword**](UsersApi.html#postUserPassword) | **POST** /api/v2/users/{userId}/password | Change a users password
 [**postUserRoutinglanguages**](UsersApi.html#postUserRoutinglanguages) | **POST** /api/v2/users/{userId}/routinglanguages | Add routing language to user
@@ -61,6 +69,68 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putUserStationAssociatedstationStationId**](UsersApi.html#putUserStationAssociatedstationStationId) | **PUT** /api/v2/users/{userId}/station/associatedstation/{stationId} | Set associated station
 [**putUserStationDefaultstationStationId**](UsersApi.html#putUserStationDefaultstationStationId) | **PUT** /api/v2/users/{userId}/station/defaultstation/{stationId} | Set default station
 {: class="table table-striped"}
+
+<a name="deleteAuthorizationSubjectDivisionRole"></a>
+
+# void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
+
+
+
+DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}
+
+Delete a grant of a role in a division
+
+
+
+Requires ANY permissions: 
+
+* authorization:grant:delete
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var subjectId = "subjectId_example"; // String | Subject ID (user or group)
+
+var divisionId = "divisionId_example"; // String | the id of the division of the grant
+
+var roleId = "roleId_example"; // String | the id of the role of the grant
+
+apiInstance.deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
+  .then(function() {
+    console.log('deleteAuthorizationSubjectDivisionRole returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling deleteAuthorizationSubjectDivisionRole');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **subjectId** | **String** | Subject ID (user or group) |  |
+ **divisionId** | **String** | the id of the division of the grant |  |
+ **roleId** | **String** | the id of the role of the grant |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deleteUser"></a>
 
@@ -410,6 +480,232 @@ apiInstance.deleteUserStationDefaultstation(userId)
 
 void (no response body)
 
+<a name="getAuthorizationDivisionspermittedMe"></a>
+
+# [AuthzDivision] getAuthorizationDivisionspermittedMe(permission, opts)
+
+
+
+GET /api/v2/authorization/divisionspermitted/me
+
+Returns whether or not current user can perform the specified action(s).
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var permission = "permission_example"; // String | The permission string, including the object to access, e.g. routing:queue:view
+
+var opts = { 
+  'name': "name_example" // String | Search term to filter by division name
+};
+apiInstance.getAuthorizationDivisionspermittedMe(permission, opts)
+  .then(function(data) {
+    console.log(`getAuthorizationDivisionspermittedMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getAuthorizationDivisionspermittedMe');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
+ **name** | **String** | Search term to filter by division name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**[AuthzDivision]**
+
+<a name="getAuthorizationDivisionspermittedSubjectId"></a>
+
+# [AuthzDivision] getAuthorizationDivisionspermittedSubjectId(subjectId, permission, opts)
+
+
+
+GET /api/v2/authorization/divisionspermitted/{subjectId}
+
+Returns whether or not specified user can perform the specified action(s).
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var subjectId = "subjectId_example"; // String | Subject ID (user or group)
+
+var permission = "permission_example"; // String | The permission string, including the object to access, e.g. routing:queue:view
+
+var opts = { 
+  'name': "name_example" // String | Search term to filter by division name
+};
+apiInstance.getAuthorizationDivisionspermittedSubjectId(subjectId, permission, opts)
+  .then(function(data) {
+    console.log(`getAuthorizationDivisionspermittedSubjectId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getAuthorizationDivisionspermittedSubjectId');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **subjectId** | **String** | Subject ID (user or group) |  |
+ **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
+ **name** | **String** | Search term to filter by division name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**[AuthzDivision]**
+
+<a name="getAuthorizationSubject"></a>
+
+# AuthzSubject getAuthorizationSubject(subjectId)
+
+
+
+GET /api/v2/authorization/subjects/{subjectId}
+
+Returns a listing of roles and permissions for a user.
+
+
+
+Requires ANY permissions: 
+
+* authorization:grant:view
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var subjectId = "subjectId_example"; // String | Subject ID (user or group)
+
+apiInstance.getAuthorizationSubject(subjectId)
+  .then(function(data) {
+    console.log(`getAuthorizationSubject success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getAuthorizationSubject');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **subjectId** | **String** | Subject ID (user or group) |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AuthzSubject**
+
+<a name="getAuthorizationSubjectsMe"></a>
+
+# AuthzSubject getAuthorizationSubjectsMe()
+
+
+
+GET /api/v2/authorization/subjects/me
+
+Returns a listing of roles and permissions for the currently authenticated user.
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+apiInstance.getAuthorizationSubjectsMe()
+  .then(function(data) {
+    console.log(`getAuthorizationSubjectsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getAuthorizationSubjectsMe');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**AuthzSubject**
+
 <a name="getFieldconfig"></a>
 
 # FieldConfig getFieldconfig(type)
@@ -586,7 +882,7 @@ apiInstance.getUser(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
  **state** | **String** | Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
 {: class="table table-striped"}
 
@@ -646,7 +942,7 @@ apiInstance.getUserAdjacents(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 {: class="table table-striped"}
 
 ### Return type
@@ -760,7 +1056,7 @@ apiInstance.getUserDirectreports(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 {: class="table table-striped"}
 
 ### Return type
@@ -825,7 +1121,7 @@ apiInstance.getUserFavorites(userId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 {: class="table table-striped"}
 
 ### Return type
@@ -997,7 +1293,7 @@ apiInstance.getUserProfile(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 {: class="table table-striped"}
 
 ### Return type
@@ -1470,7 +1766,7 @@ apiInstance.getUserSuperiors(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 {: class="table table-striped"}
 
 ### Return type
@@ -1597,7 +1893,7 @@ apiInstance.getUsers(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **id** | **[String]** | id | [optional]  |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
  **state** | **String** | Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted |
 {: class="table table-striped"}
 
@@ -1654,7 +1950,7 @@ apiInstance.getUsersMe(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
 {: class="table table-striped"}
 
 ### Return type
@@ -2219,6 +2515,22 @@ UpdateUser <a style="cursor: pointer" onclick="copyUpdateUserExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "skills": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "skillUri": String, 
+                "selfUri": String, 
+              },  
+              "languages": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "languageUri": String, 
+                "selfUri": String, 
+              },  
               "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
@@ -2497,9 +2809,41 @@ UpdateUser <a style="cursor: pointer" onclick="copyUpdateUserExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "skills": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "skillUri": String, 
+                "selfUri": String, 
+              },  
+              "languages": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "languageUri": String, 
+                "selfUri": String, 
+              },  
               "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
+            "selfUri": String, 
+          },  
+          "skills": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "skillUri": String, 
+            "selfUri": String, 
+          },  
+          "languages": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "languageUri": String, 
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
@@ -2929,6 +3273,22 @@ UpdateUser <a style="cursor: pointer" onclick="copyUpdateUserExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "skills": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "skillUri": String, 
+                "selfUri": String, 
+              },  
+              "languages": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "languageUri": String, 
+                "selfUri": String, 
+              },  
               "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
@@ -3207,14 +3567,62 @@ UpdateUser <a style="cursor: pointer" onclick="copyUpdateUserExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "skills": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "skillUri": String, 
+                "selfUri": String, 
+              },  
+              "languages": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "languageUri": String, 
+                "selfUri": String, 
+              },  
               "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "selfUri": String, 
           },  
+          "skills": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "skillUri": String, 
+            "selfUri": String, 
+          },  
+          "languages": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "languageUri": String, 
+            "selfUri": String, 
+          },  
           "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
+        "selfUri": String, 
+      },  
+      "skills": { 
+        "id": String, 
+        "name": String, 
+        "proficiency": Number, 
+        "state": String, 
+        "skillUri": String, 
+        "selfUri": String, 
+      },  
+      "languages": { 
+        "id": String, 
+        "name": String, 
+        "proficiency": Number, 
+        "state": String, 
+        "languageUri": String, 
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 
@@ -3684,6 +4092,8 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
@@ -3838,9 +4248,27 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
+              "selfUri": String, 
+            },  
+            "skills": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "skillUri": String, 
+              "selfUri": String, 
+            },  
+            "languages": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "languageUri": String, 
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
@@ -4125,6 +4553,8 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
@@ -4279,14 +4709,48 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
             },  
+            "skills": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "skillUri": String, 
+              "selfUri": String, 
+            },  
+            "languages": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "languageUri": String, 
+              "selfUri": String, 
+            },  
             "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
+          "selfUri": String, 
+        },  
+        "skills": { 
+          "id": String, 
+          "name": String, 
+          "proficiency": Number, 
+          "state": String, 
+          "skillUri": String, 
+          "selfUri": String, 
+        },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "proficiency": Number, 
+          "state": String, 
+          "languageUri": String, 
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
@@ -4720,6 +5184,8 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
@@ -4874,9 +5340,27 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
+              "selfUri": String, 
+            },  
+            "skills": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "skillUri": String, 
+              "selfUri": String, 
+            },  
+            "languages": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "languageUri": String, 
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
@@ -5161,6 +5645,8 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
@@ -5315,9 +5801,27 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
+              "selfUri": String, 
+            },  
+            "skills": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "skillUri": String, 
+              "selfUri": String, 
+            },  
+            "languages": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "languageUri": String, 
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
@@ -5325,9 +5829,41 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
           },  
           "selfUri": String, 
         },  
+        "skills": { 
+          "id": String, 
+          "name": String, 
+          "proficiency": Number, 
+          "state": String, 
+          "skillUri": String, 
+          "selfUri": String, 
+        },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "proficiency": Number, 
+          "state": String, 
+          "languageUri": String, 
+          "selfUri": String, 
+        },  
         "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
+      "selfUri": String, 
+    },  
+    "skills": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "skillUri": String, 
+      "selfUri": String, 
+    },  
+    "languages": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "languageUri": String, 
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
@@ -6160,6 +6696,180 @@ apiInstance.patchUserRoutinglanguage(userId, languageId, body)
 
 **UserRoutingLanguage**
 
+<a name="patchUserRoutinglanguagesBulk"></a>
+
+# UserLanguageEntityListing patchUserRoutinglanguagesBulk(userId, body)
+
+
+
+PATCH /api/v2/users/{userId}/routinglanguages/bulk
+
+Add bulk routing language to user. Max limit 50 languages
+
+
+
+Requires ANY permissions: 
+
+* routing:skill:assign
+* admin
+
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyUserRoutingLanguagePostExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#UserRoutingLanguagePostExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+UserRoutingLanguagePost <a style="cursor: pointer" onclick="copyUserRoutingLanguagePostExample()">Copy</a>
+
+<div id="UserRoutingLanguagePostExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "proficiency": Number, 
+  "languageUri": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var body = [{}]; // Object | Language
+
+apiInstance.patchUserRoutinglanguagesBulk(userId, body)
+  .then(function(data) {
+    console.log(`patchUserRoutinglanguagesBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling patchUserRoutinglanguagesBulk');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **body** | **Object** | Language |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserLanguageEntityListing**
+
+<a name="patchUserRoutingskillsBulk"></a>
+
+# UserSkillEntityListing patchUserRoutingskillsBulk(userId, body)
+
+
+
+PATCH /api/v2/users/{userId}/routingskills/bulk
+
+Add bulk routing skills to user
+
+
+
+Requires ANY permissions: 
+
+* routing:skill:assign
+* admin
+
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyUserRoutingSkillPostExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#UserRoutingSkillPostExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+UserRoutingSkillPost <a style="cursor: pointer" onclick="copyUserRoutingSkillPostExample()">Copy</a>
+
+<div id="UserRoutingSkillPostExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "proficiency": Number, 
+  "skillUri": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var userId = "userId_example"; // String | User ID
+
+var body = [{}]; // Object | Skill
+
+apiInstance.patchUserRoutingskillsBulk(userId, body)
+  .then(function(data) {
+    console.log(`patchUserRoutingskillsBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling patchUserRoutingskillsBulk');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **body** | **Object** | Skill |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserSkillEntityListing**
+
 <a name="patchUsersBulk"></a>
 
 # UserEntityListing patchUsersBulk(body)
@@ -6702,6 +7412,72 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 ### Return type
 
 **ObservationQueryResponse**
+
+<a name="postAuthorizationSubjectDivisionRole"></a>
+
+# void postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
+
+
+
+POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}
+
+Make a grant of a role in a division
+
+
+
+Requires ANY permissions: 
+
+* authorization:grant:add
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.UsersApi();
+
+var subjectId = "subjectId_example"; // String | Subject ID (user or group)
+
+var divisionId = "divisionId_example"; // String | the id of the division to which to make the grant
+
+var roleId = "roleId_example"; // String | the id of the role to grant
+
+var opts = { 
+  'subjectType': "PC_USER" // String | what the type of the subject is, PC_GROUP or PC_USER
+};
+apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
+  .then(function() {
+    console.log('postAuthorizationSubjectDivisionRole returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postAuthorizationSubjectDivisionRole');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **subjectId** | **String** | Subject ID (user or group) |  |
+ **divisionId** | **String** | the id of the division to which to make the grant |  |
+ **roleId** | **String** | the id of the role to grant |  |
+ **subjectType** | **String** | what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="postUserInvite"></a>
 
@@ -7758,6 +8534,8 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
@@ -7912,9 +8690,27 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
+              "selfUri": String, 
+            },  
+            "skills": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "skillUri": String, 
+              "selfUri": String, 
+            },  
+            "languages": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "languageUri": String, 
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
@@ -8199,6 +8995,8 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
@@ -8353,14 +9151,48 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
             },  
+            "skills": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "skillUri": String, 
+              "selfUri": String, 
+            },  
+            "languages": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "languageUri": String, 
+              "selfUri": String, 
+            },  
             "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
+          "selfUri": String, 
+        },  
+        "skills": { 
+          "id": String, 
+          "name": String, 
+          "proficiency": Number, 
+          "state": String, 
+          "skillUri": String, 
+          "selfUri": String, 
+        },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "proficiency": Number, 
+          "state": String, 
+          "languageUri": String, 
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
@@ -8794,6 +9626,8 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
@@ -8948,9 +9782,27 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
+              "selfUri": String, 
+            },  
+            "skills": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "skillUri": String, 
+              "selfUri": String, 
+            },  
+            "languages": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "languageUri": String, 
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
@@ -9235,6 +10087,8 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
@@ -9389,9 +10243,27 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
+              "selfUri": String, 
+            },  
+            "skills": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "skillUri": String, 
+              "selfUri": String, 
+            },  
+            "languages": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "languageUri": String, 
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
@@ -9399,9 +10271,41 @@ CallForwarding <a style="cursor: pointer" onclick="copyCallForwardingExample()">
           },  
           "selfUri": String, 
         },  
+        "skills": { 
+          "id": String, 
+          "name": String, 
+          "proficiency": Number, 
+          "state": String, 
+          "skillUri": String, 
+          "selfUri": String, 
+        },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "proficiency": Number, 
+          "state": String, 
+          "languageUri": String, 
+          "selfUri": String, 
+        },  
         "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
+      "selfUri": String, 
+    },  
+    "skills": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "skillUri": String, 
+      "selfUri": String, 
+    },  
+    "languages": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "languageUri": String, 
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
@@ -9877,6 +10781,8 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
@@ -10031,9 +10937,27 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
+              "selfUri": String, 
+            },  
+            "skills": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "skillUri": String, 
+              "selfUri": String, 
+            },  
+            "languages": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "languageUri": String, 
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
@@ -10318,6 +11242,8 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
@@ -10472,14 +11398,48 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
             },  
+            "skills": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "skillUri": String, 
+              "selfUri": String, 
+            },  
+            "languages": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "languageUri": String, 
+              "selfUri": String, 
+            },  
             "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
+          "selfUri": String, 
+        },  
+        "skills": { 
+          "id": String, 
+          "name": String, 
+          "proficiency": Number, 
+          "state": String, 
+          "skillUri": String, 
+          "selfUri": String, 
+        },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "proficiency": Number, 
+          "state": String, 
+          "languageUri": String, 
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
@@ -10913,6 +11873,8 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
@@ -11067,9 +12029,27 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
+              "selfUri": String, 
+            },  
+            "skills": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "skillUri": String, 
+              "selfUri": String, 
+            },  
+            "languages": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "languageUri": String, 
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
@@ -11354,6 +12334,8 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
@@ -11508,9 +12490,27 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
+              "selfUri": String, 
+            },  
+            "skills": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "skillUri": String, 
+              "selfUri": String, 
+            },  
+            "languages": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "languageUri": String, 
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
@@ -11518,9 +12518,41 @@ OutOfOffice <a style="cursor: pointer" onclick="copyOutOfOfficeExample()">Copy</
           },  
           "selfUri": String, 
         },  
+        "skills": { 
+          "id": String, 
+          "name": String, 
+          "proficiency": Number, 
+          "state": String, 
+          "skillUri": String, 
+          "selfUri": String, 
+        },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "proficiency": Number, 
+          "state": String, 
+          "languageUri": String, 
+          "selfUri": String, 
+        },  
         "acdAutoAnswer": Boolean, 
         "selfUri": String, 
       },  
+      "selfUri": String, 
+    },  
+    "skills": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "skillUri": String, 
+      "selfUri": String, 
+    },  
+    "languages": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "languageUri": String, 
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 

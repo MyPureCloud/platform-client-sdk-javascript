@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**getDocumentationGknSearch**](SearchApi.html#getDocumentationGknSearch) | **GET** /api/v2/documentation/gkn/search | Search gkn documentation using the q64 value returned from a previous search
 [**getDocumentationSearch**](SearchApi.html#getDocumentationSearch) | **GET** /api/v2/documentation/search | Search documentation using the q64 value returned from a previous search
 [**getGroupsSearch**](SearchApi.html#getGroupsSearch) | **GET** /api/v2/groups/search | Search groups using the q64 value returned from a previous search
 [**getLocationsSearch**](SearchApi.html#getLocationsSearch) | **GET** /api/v2/locations/search | Search locations using the q64 value returned from a previous search
@@ -14,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getSearchSuggest**](SearchApi.html#getSearchSuggest) | **GET** /api/v2/search/suggest | Suggest resources using the q64 value returned from a previous suggest query.
 [**getUsersSearch**](SearchApi.html#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
 [**getVoicemailSearch**](SearchApi.html#getVoicemailSearch) | **GET** /api/v2/voicemail/search | Search voicemails using the q64 value returned from a previous search
+[**postDocumentationGknSearch**](SearchApi.html#postDocumentationGknSearch) | **POST** /api/v2/documentation/gkn/search | Search gkn documentation
 [**postDocumentationSearch**](SearchApi.html#postDocumentationSearch) | **POST** /api/v2/documentation/search | Search documentation
 [**postGroupsSearch**](SearchApi.html#postGroupsSearch) | **POST** /api/v2/groups/search | Search groups
 [**postLocationsSearch**](SearchApi.html#postLocationsSearch) | **POST** /api/v2/locations/search | Search locations
@@ -22,6 +24,61 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postUsersSearch**](SearchApi.html#postUsersSearch) | **POST** /api/v2/users/search | Search users
 [**postVoicemailSearch**](SearchApi.html#postVoicemailSearch) | **POST** /api/v2/voicemail/search | Search voicemails
 {: class="table table-striped"}
+
+<a name="getDocumentationGknSearch"></a>
+
+# GKNDocumentationSearchResponse getDocumentationGknSearch(q64)
+
+
+
+GET /api/v2/documentation/gkn/search
+
+Search gkn documentation using the q64 value returned from a previous search
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.SearchApi();
+
+var q64 = "q64_example"; // String | q64
+
+apiInstance.getDocumentationGknSearch(q64)
+  .then(function(data) {
+    console.log(`getDocumentationGknSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getDocumentationGknSearch');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **q64** | **String** | q64 |  |
+{: class="table table-striped"}
+
+### Return type
+
+**GKNDocumentationSearchResponse**
 
 <a name="getDocumentationSearch"></a>
 
@@ -249,7 +306,7 @@ apiInstance.getSearch(q64, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
  **profile** | **Boolean** | profile | [optional] [default to true] |
 {: class="table table-striped"}
 
@@ -310,7 +367,7 @@ apiInstance.getSearchSuggest(q64, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
  **profile** | **Boolean** | profile | [optional] [default to true] |
 {: class="table table-striped"}
 
@@ -435,6 +492,156 @@ apiInstance.getVoicemailSearch(q64, opts)
 ### Return type
 
 **VoicemailsSearchResponse**
+
+<a name="postDocumentationGknSearch"></a>
+
+# GKNDocumentationSearchResponse postDocumentationGknSearch(body)
+
+
+
+POST /api/v2/documentation/gkn/search
+
+Search gkn documentation
+
+
+
+Requires NO permissions: 
+
+
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyGKNDocumentationSearchRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#GKNDocumentationSearchRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+GKNDocumentationSearchRequest <a style="cursor: pointer" onclick="copyGKNDocumentationSearchRequestExample()">Copy</a>
+
+<div id="GKNDocumentationSearchRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "sortOrder": String, 
+  "sortBy": String, 
+  "pageSize": Number, 
+  "pageNumber": Number, 
+  "sort": { 
+    "sortOrder": String, 
+    "sortBy": String, 
+  },  
+  "query": { 
+    "endValue": String, 
+    "values": [String], 
+    "startValue": String, 
+    "fields": [String], 
+    "value": String, 
+    "operator": String, 
+    "group": { 
+      "endValue": String, 
+      "values": [String], 
+      "startValue": String, 
+      "fields": [String], 
+      "value": String, 
+      "operator": String, 
+      "group": { 
+        "endValue": String, 
+        "values": [String], 
+        "startValue": String, 
+        "fields": [String], 
+        "value": String, 
+        "operator": String, 
+        "group": { 
+          "endValue": String, 
+          "values": [String], 
+          "startValue": String, 
+          "fields": [String], 
+          "value": String, 
+          "operator": String, 
+          "group": { 
+            "endValue": String, 
+            "values": [String], 
+            "startValue": String, 
+            "fields": [String], 
+            "value": String, 
+            "operator": String, 
+            "group": { 
+              "endValue": String, 
+              "values": [String], 
+              "startValue": String, 
+              "fields": [String], 
+              "value": String, 
+              "operator": String, 
+              "group": { 
+                "endValue": String, 
+                "values": [String], 
+                "startValue": String, 
+                "fields": [String], 
+                "value": String, 
+                "operator": String, 
+                "group": [GKNDocumentationSearchCriteria], 
+                "type": String, 
+              },  
+              "type": String, 
+            },  
+            "type": String, 
+          },  
+          "type": String, 
+        },  
+        "type": String, 
+      },  
+      "type": String, 
+    },  
+    "type": String, 
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.SearchApi();
+
+var body = {}; // Object | Search request options
+
+apiInstance.postDocumentationGknSearch(body)
+  .then(function(data) {
+    console.log(`postDocumentationGknSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postDocumentationGknSearch');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**GKNDocumentationSearchResponse**
 
 <a name="postDocumentationSearch"></a>
 

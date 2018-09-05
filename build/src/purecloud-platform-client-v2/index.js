@@ -9,6 +9,7 @@ import ContentManagementApi from './api/ContentManagementApi.js';
 import ConversationsApi from './api/ConversationsApi.js';
 import ExternalContactsApi from './api/ExternalContactsApi.js';
 import FaxApi from './api/FaxApi.js';
+import FlowsApi from './api/FlowsApi.js';
 import GeneralDataProtectionRegulationApi from './api/GeneralDataProtectionRegulationApi.js';
 import GeolocationApi from './api/GeolocationApi.js';
 import GreetingsApi from './api/GreetingsApi.js';
@@ -18,9 +19,11 @@ import IntegrationsApi from './api/IntegrationsApi.js';
 import LanguagesApi from './api/LanguagesApi.js';
 import LicenseApi from './api/LicenseApi.js';
 import LocationsApi from './api/LocationsApi.js';
+import MessagingApi from './api/MessagingApi.js';
 import MobileDevicesApi from './api/MobileDevicesApi.js';
 import NotificationsApi from './api/NotificationsApi.js';
 import OAuthApi from './api/OAuthApi.js';
+import ObjectsApi from './api/ObjectsApi.js';
 import OrganizationApi from './api/OrganizationApi.js';
 import OrganizationAuthorizationApi from './api/OrganizationAuthorizationApi.js';
 import OutboundApi from './api/OutboundApi.js';
@@ -72,7 +75,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 36.0.0
+ * @version 37.0.0
  */
 class platformClient {
 	constructor() {
@@ -132,6 +135,11 @@ class platformClient {
 		 */
 		this.FaxApi = FaxApi;
 		/**
+		 * The FlowsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/FlowsApi}
+		 */
+		this.FlowsApi = FlowsApi;
+		/**
 		 * The GeneralDataProtectionRegulationApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi}
 		 */
@@ -177,6 +185,11 @@ class platformClient {
 		 */
 		this.LocationsApi = LocationsApi;
 		/**
+		 * The MessagingApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/MessagingApi}
+		 */
+		this.MessagingApi = MessagingApi;
+		/**
 		 * The MobileDevicesApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/MobileDevicesApi}
 		 */
@@ -191,6 +204,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/OAuthApi}
 		 */
 		this.OAuthApi = OAuthApi;
+		/**
+		 * The ObjectsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/ObjectsApi}
+		 */
+		this.ObjectsApi = ObjectsApi;
 		/**
 		 * The OrganizationApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/OrganizationApi}

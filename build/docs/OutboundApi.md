@@ -4279,37 +4279,27 @@ Requires ANY permissions:
 {::options parse_block_html="true" /}
 
 <script type="text/javascript">
-	function copyDialerContactExample() {
+	function copyWritableDialerContactExample() {
 		var $temp = $("<textarea>");
 		$("body").append($temp);
-		$temp.val($('#DialerContactExample').text()).select();
+		$temp.val($('#WritableDialerContactExample').text()).select();
 		document.execCommand("copy");
 		$temp.remove();
 	}
 </script>
 
-DialerContact <a style="cursor: pointer" onclick="copyDialerContactExample()">Copy</a>
+WritableDialerContact <a style="cursor: pointer" onclick="copyWritableDialerContactExample()">Copy</a>
 
-<div id="DialerContactExample" style="max-height: 250px; overflow-y: scroll;">
+<div id="WritableDialerContactExample" style="max-height: 250px; overflow-y: scroll;">
 ~~~ json
 { 
   "id": String, 
-  "name": String, 
   "contactListId": String, 
   "data": {String: Object}, 
-  "callRecords": { 
-    "lastAttempt": Date, 
-    "lastResult": String, 
-  },  
   "callable": Boolean, 
   "phoneNumberStatus": { 
     "callable": Boolean, 
   },  
-  "contactColumnTimeZones": { 
-    "timeZone": String, 
-    "columnType": String, 
-  },  
-  "selfUri": String, 
 }
 ~~~
 </div>

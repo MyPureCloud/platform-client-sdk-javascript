@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 36.0.0
+	 * @version 37.0.0
 	 */
 
 	/**
@@ -922,8 +922,8 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.sortBy Sort by (default to name)
 	 * @param {String} opts.name Name
-	 * @param {String} opts.sortBy Sort by (default to name)
 	 */
 	getRoutingWrapupcodes(opts) { 
 		opts = opts || {};
@@ -933,7 +933,7 @@ class RoutingApi {
 			'/api/v2/routing/wrapupcodes', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'sortBy': opts['sortBy'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'name': opts['name'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1095,6 +1095,66 @@ class RoutingApi {
 			'/api/v2/users/{userId}/routinglanguages/{languageId}', 
 			'PATCH', 
 			{ 'userId': userId,'languageId': languageId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add bulk routing language to user. Max limit 50 languages
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Array.<Object>} body Language
+	 */
+	patchUserRoutinglanguagesBulk(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling patchUserRoutinglanguagesBulk';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchUserRoutinglanguagesBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/routinglanguages/bulk', 
+			'PATCH', 
+			{ 'userId': userId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add bulk routing skills to user
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Array.<Object>} body Skill
+	 */
+	patchUserRoutingskillsBulk(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling patchUserRoutingskillsBulk';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchUserRoutingskillsBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/routingskills/bulk', 
+			'PATCH', 
+			{ 'userId': userId }, 
 			{  }, 
 			{  }, 
 			{  }, 

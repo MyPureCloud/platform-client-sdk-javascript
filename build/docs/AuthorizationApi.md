@@ -7,25 +7,97 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteAuthorizationDivision**](AuthorizationApi.html#deleteAuthorizationDivision) | **DELETE** /api/v2/authorization/divisions/{divisionId} | Delete a division.
 [**deleteAuthorizationRole**](AuthorizationApi.html#deleteAuthorizationRole) | **DELETE** /api/v2/authorization/roles/{roleId} | Delete an organization role.
+[**deleteAuthorizationSubjectDivisionRole**](AuthorizationApi.html#deleteAuthorizationSubjectDivisionRole) | **DELETE** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Delete a grant of a role in a division
 [**deleteUserRoles**](AuthorizationApi.html#deleteUserRoles) | **DELETE** /api/v2/users/{userId}/roles | Removes all the roles from the user.
+[**getAuthorizationDivision**](AuthorizationApi.html#getAuthorizationDivision) | **GET** /api/v2/authorization/divisions/{divisionId} | Returns an authorization division.
+[**getAuthorizationDivisions**](AuthorizationApi.html#getAuthorizationDivisions) | **GET** /api/v2/authorization/divisions | Retrieve a list of all divisions defined for the organization
+[**getAuthorizationDivisionsHome**](AuthorizationApi.html#getAuthorizationDivisionsHome) | **GET** /api/v2/authorization/divisions/home | Retrieve the home division for the organization.
+[**getAuthorizationDivisionsLimit**](AuthorizationApi.html#getAuthorizationDivisionsLimit) | **GET** /api/v2/authorization/divisions/limit | Returns the maximum allowed number of divisions.
+[**getAuthorizationDivisionspermittedMe**](AuthorizationApi.html#getAuthorizationDivisionspermittedMe) | **GET** /api/v2/authorization/divisionspermitted/me | Returns whether or not current user can perform the specified action(s).
+[**getAuthorizationDivisionspermittedSubjectId**](AuthorizationApi.html#getAuthorizationDivisionspermittedSubjectId) | **GET** /api/v2/authorization/divisionspermitted/{subjectId} | Returns whether or not specified user can perform the specified action(s).
 [**getAuthorizationPermissions**](AuthorizationApi.html#getAuthorizationPermissions) | **GET** /api/v2/authorization/permissions | Get all permissions.
 [**getAuthorizationProducts**](AuthorizationApi.html#getAuthorizationProducts) | **GET** /api/v2/authorization/products | Get the list of enabled products
 [**getAuthorizationRole**](AuthorizationApi.html#getAuthorizationRole) | **GET** /api/v2/authorization/roles/{roleId} | Get a single organization role.
 [**getAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi.html#getAuthorizationRoleComparedefaultRightRoleId) | **GET** /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId} | Get an org role to default role comparison comparison
 [**getAuthorizationRoleSubjectgrants**](AuthorizationApi.html#getAuthorizationRoleSubjectgrants) | **GET** /api/v2/authorization/roles/{roleId}/subjectgrants | Get the subjects&#39; granted divisions in the specified role.
+[**getAuthorizationRoleUsers**](AuthorizationApi.html#getAuthorizationRoleUsers) | **GET** /api/v2/authorization/roles/{roleId}/users | Get a list of the users in a specified role.
 [**getAuthorizationRoles**](AuthorizationApi.html#getAuthorizationRoles) | **GET** /api/v2/authorization/roles | Retrieve a list of all roles defined for the organization
+[**getAuthorizationSubject**](AuthorizationApi.html#getAuthorizationSubject) | **GET** /api/v2/authorization/subjects/{subjectId} | Returns a listing of roles and permissions for a user.
+[**getAuthorizationSubjectsMe**](AuthorizationApi.html#getAuthorizationSubjectsMe) | **GET** /api/v2/authorization/subjects/me | Returns a listing of roles and permissions for the currently authenticated user.
 [**getUserRoles**](AuthorizationApi.html#getUserRoles) | **GET** /api/v2/users/{userId}/roles | Returns a listing of roles and permissions for a user.
 [**patchAuthorizationRole**](AuthorizationApi.html#patchAuthorizationRole) | **PATCH** /api/v2/authorization/roles/{roleId} | Patch Organization Role for needsUpdate Field
+[**postAuthorizationDivisionObject**](AuthorizationApi.html#postAuthorizationDivisionObject) | **POST** /api/v2/authorization/divisions/{divisionId}/objects/{objectType} | Assign a list of objects to a division
+[**postAuthorizationDivisions**](AuthorizationApi.html#postAuthorizationDivisions) | **POST** /api/v2/authorization/divisions | Create a division.
+[**postAuthorizationRole**](AuthorizationApi.html#postAuthorizationRole) | **POST** /api/v2/authorization/roles/{roleId} | Bulk-grant subjects and divisions with an organization role.
 [**postAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi.html#postAuthorizationRoleComparedefaultRightRoleId) | **POST** /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId} | Get an unsaved org role to default role comparison
 [**postAuthorizationRoles**](AuthorizationApi.html#postAuthorizationRoles) | **POST** /api/v2/authorization/roles | Create an organization role.
 [**postAuthorizationRolesDefault**](AuthorizationApi.html#postAuthorizationRolesDefault) | **POST** /api/v2/authorization/roles/default | Restores all default roles
+[**postAuthorizationSubjectDivisionRole**](AuthorizationApi.html#postAuthorizationSubjectDivisionRole) | **POST** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Make a grant of a role in a division
+[**putAuthorizationDivision**](AuthorizationApi.html#putAuthorizationDivision) | **PUT** /api/v2/authorization/divisions/{divisionId} | Update a division.
 [**putAuthorizationRole**](AuthorizationApi.html#putAuthorizationRole) | **PUT** /api/v2/authorization/roles/{roleId} | Update an organization role.
 [**putAuthorizationRoleUsersAdd**](AuthorizationApi.html#putAuthorizationRoleUsersAdd) | **PUT** /api/v2/authorization/roles/{roleId}/users/add | Sets the users for the role
 [**putAuthorizationRoleUsersRemove**](AuthorizationApi.html#putAuthorizationRoleUsersRemove) | **PUT** /api/v2/authorization/roles/{roleId}/users/remove | Removes the users from the role
 [**putAuthorizationRolesDefault**](AuthorizationApi.html#putAuthorizationRolesDefault) | **PUT** /api/v2/authorization/roles/default | Restore specified default roles
 [**putUserRoles**](AuthorizationApi.html#putUserRoles) | **PUT** /api/v2/users/{userId}/roles | Sets the user&#39;s roles
 {: class="table table-striped"}
+
+<a name="deleteAuthorizationDivision"></a>
+
+# void deleteAuthorizationDivision(divisionId)
+
+
+
+DELETE /api/v2/authorization/divisions/{divisionId}
+
+Delete a division.
+
+
+
+Requires ANY permissions: 
+
+* authorization:division:delete
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AuthorizationApi();
+
+var divisionId = "divisionId_example"; // String | Division ID
+
+apiInstance.deleteAuthorizationDivision(divisionId)
+  .then(function() {
+    console.log('deleteAuthorizationDivision returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling deleteAuthorizationDivision');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **divisionId** | **String** | Division ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deleteAuthorizationRole"></a>
 
@@ -79,6 +151,68 @@ apiInstance.deleteAuthorizationRole(roleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteAuthorizationSubjectDivisionRole"></a>
+
+# void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
+
+
+
+DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}
+
+Delete a grant of a role in a division
+
+
+
+Requires ANY permissions: 
+
+* authorization:grant:delete
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AuthorizationApi();
+
+var subjectId = "subjectId_example"; // String | Subject ID (user or group)
+
+var divisionId = "divisionId_example"; // String | the id of the division of the grant
+
+var roleId = "roleId_example"; // String | the id of the role of the grant
+
+apiInstance.deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
+  .then(function() {
+    console.log('deleteAuthorizationSubjectDivisionRole returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling deleteAuthorizationSubjectDivisionRole');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **subjectId** | **String** | Subject ID (user or group) |  |
+ **divisionId** | **String** | the id of the division of the grant |  |
+ **roleId** | **String** | the id of the role of the grant |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -142,6 +276,358 @@ apiInstance.deleteUserRoles(userId)
 ### Return type
 
 void (no response body)
+
+<a name="getAuthorizationDivision"></a>
+
+# AuthzDivision getAuthorizationDivision(divisionId, opts)
+
+
+
+GET /api/v2/authorization/divisions/{divisionId}
+
+Returns an authorization division.
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AuthorizationApi();
+
+var divisionId = "divisionId_example"; // String | Division ID
+
+var opts = { 
+  'objectCount': false // Boolean | Get count of objects in this division, grouped by type
+};
+apiInstance.getAuthorizationDivision(divisionId, opts)
+  .then(function(data) {
+    console.log(`getAuthorizationDivision success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getAuthorizationDivision');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **divisionId** | **String** | Division ID |  |
+ **objectCount** | **Boolean** | Get count of objects in this division, grouped by type | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+**AuthzDivision**
+
+<a name="getAuthorizationDivisions"></a>
+
+# AuthzDivisionEntityListing getAuthorizationDivisions(opts)
+
+
+
+GET /api/v2/authorization/divisions
+
+Retrieve a list of all divisions defined for the organization
+
+Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AuthorizationApi();
+
+var opts = { 
+  'pageSize': 25, // Number | The total page size requested
+  'pageNumber': 1, // Number | The page number requested
+  'sortBy': "sortBy_example", // String | variable name requested to sort by
+  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'nextPage': "nextPage_example", // String | next page token
+  'previousPage': "previousPage_example", // String | Previous page token
+  'objectCount': false, // Boolean | Include the count of objects contained in the division
+  'id': ["id_example"], // [String] | Optionally request specific divisions by their IDs
+  'name': "name_example" // String | Search term to filter by division name
+};
+apiInstance.getAuthorizationDivisions(opts)
+  .then(function(data) {
+    console.log(`getAuthorizationDivisions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getAuthorizationDivisions');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
+ **sortBy** | **String** | variable name requested to sort by | [optional]  |
+ **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **nextPage** | **String** | next page token | [optional]  |
+ **previousPage** | **String** | Previous page token | [optional]  |
+ **objectCount** | **Boolean** | Include the count of objects contained in the division | [optional] [default to false] |
+ **id** | **[String]** | Optionally request specific divisions by their IDs | [optional]  |
+ **name** | **String** | Search term to filter by division name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**AuthzDivisionEntityListing**
+
+<a name="getAuthorizationDivisionsHome"></a>
+
+# AuthzDivision getAuthorizationDivisionsHome()
+
+
+
+GET /api/v2/authorization/divisions/home
+
+Retrieve the home division for the organization.
+
+Will not include object counts.
+
+Requires ANY permissions: 
+
+* authorization:division:view
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AuthorizationApi();
+apiInstance.getAuthorizationDivisionsHome()
+  .then(function(data) {
+    console.log(`getAuthorizationDivisionsHome success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getAuthorizationDivisionsHome');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**AuthzDivision**
+
+<a name="getAuthorizationDivisionsLimit"></a>
+
+# **&#39;Number&#39;** getAuthorizationDivisionsLimit()
+
+
+
+GET /api/v2/authorization/divisions/limit
+
+Returns the maximum allowed number of divisions.
+
+
+
+Requires ANY permissions: 
+
+* authorization:division:view
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AuthorizationApi();
+apiInstance.getAuthorizationDivisionsLimit()
+  .then(function(data) {
+    console.log(`getAuthorizationDivisionsLimit success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getAuthorizationDivisionsLimit');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**&#39;Number&#39;**
+
+<a name="getAuthorizationDivisionspermittedMe"></a>
+
+# [AuthzDivision] getAuthorizationDivisionspermittedMe(permission, opts)
+
+
+
+GET /api/v2/authorization/divisionspermitted/me
+
+Returns whether or not current user can perform the specified action(s).
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AuthorizationApi();
+
+var permission = "permission_example"; // String | The permission string, including the object to access, e.g. routing:queue:view
+
+var opts = { 
+  'name': "name_example" // String | Search term to filter by division name
+};
+apiInstance.getAuthorizationDivisionspermittedMe(permission, opts)
+  .then(function(data) {
+    console.log(`getAuthorizationDivisionspermittedMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getAuthorizationDivisionspermittedMe');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
+ **name** | **String** | Search term to filter by division name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**[AuthzDivision]**
+
+<a name="getAuthorizationDivisionspermittedSubjectId"></a>
+
+# [AuthzDivision] getAuthorizationDivisionspermittedSubjectId(subjectId, permission, opts)
+
+
+
+GET /api/v2/authorization/divisionspermitted/{subjectId}
+
+Returns whether or not specified user can perform the specified action(s).
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AuthorizationApi();
+
+var subjectId = "subjectId_example"; // String | Subject ID (user or group)
+
+var permission = "permission_example"; // String | The permission string, including the object to access, e.g. routing:queue:view
+
+var opts = { 
+  'name': "name_example" // String | Search term to filter by division name
+};
+apiInstance.getAuthorizationDivisionspermittedSubjectId(subjectId, permission, opts)
+  .then(function(data) {
+    console.log(`getAuthorizationDivisionspermittedSubjectId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getAuthorizationDivisionspermittedSubjectId');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **subjectId** | **String** | Subject ID (user or group) |  |
+ **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
+ **name** | **String** | Search term to filter by division name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**[AuthzDivision]**
 
 <a name="getAuthorizationPermissions"></a>
 
@@ -435,6 +921,67 @@ apiInstance.getAuthorizationRoleSubjectgrants(roleId, opts)
 
 **SubjectDivisionGrantsEntityListing**
 
+<a name="getAuthorizationRoleUsers"></a>
+
+# UserEntityListing getAuthorizationRoleUsers(roleId, opts)
+
+
+
+GET /api/v2/authorization/roles/{roleId}/users
+
+Get a list of the users in a specified role.
+
+Get an array of the UUIDs of the users in the specified role.
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AuthorizationApi();
+
+var roleId = "roleId_example"; // String | Role ID
+
+var opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+apiInstance.getAuthorizationRoleUsers(roleId, opts)
+  .then(function(data) {
+    console.log(`getAuthorizationRoleUsers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getAuthorizationRoleUsers');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **roleId** | **String** | Role ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**UserEntityListing**
+
 <a name="getAuthorizationRoles"></a>
 
 # OrganizationRoleEntityListing getAuthorizationRoles(opts)
@@ -511,6 +1058,111 @@ apiInstance.getAuthorizationRoles(opts)
 ### Return type
 
 **OrganizationRoleEntityListing**
+
+<a name="getAuthorizationSubject"></a>
+
+# AuthzSubject getAuthorizationSubject(subjectId)
+
+
+
+GET /api/v2/authorization/subjects/{subjectId}
+
+Returns a listing of roles and permissions for a user.
+
+
+
+Requires ANY permissions: 
+
+* authorization:grant:view
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AuthorizationApi();
+
+var subjectId = "subjectId_example"; // String | Subject ID (user or group)
+
+apiInstance.getAuthorizationSubject(subjectId)
+  .then(function(data) {
+    console.log(`getAuthorizationSubject success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getAuthorizationSubject');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **subjectId** | **String** | Subject ID (user or group) |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AuthzSubject**
+
+<a name="getAuthorizationSubjectsMe"></a>
+
+# AuthzSubject getAuthorizationSubjectsMe()
+
+
+
+GET /api/v2/authorization/subjects/me
+
+Returns a listing of roles and permissions for the currently authenticated user.
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AuthorizationApi();
+apiInstance.getAuthorizationSubjectsMe()
+  .then(function(data) {
+    console.log(`getAuthorizationSubjectsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getAuthorizationSubjectsMe');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**AuthzSubject**
 
 <a name="getUserRoles"></a>
 
@@ -914,6 +1566,22 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
             "owners": User, 
             "selfUri": String, 
           },  
+          "skills": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "skillUri": String, 
+            "selfUri": String, 
+          },  
+          "languages": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "languageUri": String, 
+            "selfUri": String, 
+          },  
           "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
@@ -1265,6 +1933,22 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
               "owners": User, 
               "selfUri": String, 
             },  
+            "skills": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "skillUri": String, 
+              "selfUri": String, 
+            },  
+            "languages": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "languageUri": String, 
+              "selfUri": String, 
+            },  
             "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
@@ -1492,6 +2176,22 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "skills": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "skillUri": String, 
+                "selfUri": String, 
+              },  
+              "languages": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "languageUri": String, 
+                "selfUri": String, 
+              },  
               "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
@@ -1593,6 +2293,8 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
@@ -1652,8 +2354,8 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ~~~
@@ -1700,6 +2402,237 @@ apiInstance.patchAuthorizationRole(roleId, body)
 ### Return type
 
 **DomainOrganizationRole**
+
+<a name="postAuthorizationDivisionObject"></a>
+
+# void postAuthorizationDivisionObject(divisionId, objectType, body)
+
+
+
+POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType}
+
+Assign a list of objects to a division
+
+Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AuthorizationApi();
+
+var divisionId = "divisionId_example"; // String | Division ID
+
+var objectType = "objectType_example"; // String | The type of the objects. Must be one of the valid object types
+
+var body = [{}]; // Object | Object Id List
+
+apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
+  .then(function() {
+    console.log('postAuthorizationDivisionObject returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postAuthorizationDivisionObject');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **divisionId** | **String** | Division ID |  |
+ **objectType** | **String** | The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, USER |
+ **body** | **Object** | Object Id List |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="postAuthorizationDivisions"></a>
+
+# AuthzDivision postAuthorizationDivisions(body)
+
+
+
+POST /api/v2/authorization/divisions
+
+Create a division.
+
+
+
+Requires ALL permissions: 
+
+* authorization:division:add
+* authorization:grant:add
+
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyAuthzDivisionExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#AuthzDivisionExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+AuthzDivision <a style="cursor: pointer" onclick="copyAuthzDivisionExample()">Copy</a>
+
+<div id="AuthzDivisionExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "description": String, 
+  "homeDivision": Boolean, 
+  "objectCounts": {String: Number}, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AuthorizationApi();
+
+var body = {}; // Object | Division
+
+apiInstance.postAuthorizationDivisions(body)
+  .then(function(data) {
+    console.log(`postAuthorizationDivisions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postAuthorizationDivisions');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Division |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AuthzDivision**
+
+<a name="postAuthorizationRole"></a>
+
+# void postAuthorizationRole(roleId, body)
+
+
+
+POST /api/v2/authorization/roles/{roleId}
+
+Bulk-grant subjects and divisions with an organization role.
+
+
+
+Requires ANY permissions: 
+
+* authorization:grant:add
+
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copySubjectDivisionsExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#SubjectDivisionsExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+SubjectDivisions <a style="cursor: pointer" onclick="copySubjectDivisionsExample()">Copy</a>
+
+<div id="SubjectDivisionsExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "subjectIds": [String], 
+  "divisionIds": [String], 
+}
+~~~
+</div>
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AuthorizationApi();
+
+var roleId = "roleId_example"; // String | Role ID
+
+var body = {}; // Object | Subjects and Divisions
+
+apiInstance.postAuthorizationRole(roleId, body)
+  .then(function() {
+    console.log('postAuthorizationRole returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postAuthorizationRole');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **roleId** | **String** | Role ID |  |
+ **body** | **Object** | Subjects and Divisions |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="postAuthorizationRoleComparedefaultRightRoleId"></a>
 
@@ -2045,6 +2978,22 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
             "owners": User, 
             "selfUri": String, 
           },  
+          "skills": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "skillUri": String, 
+            "selfUri": String, 
+          },  
+          "languages": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "languageUri": String, 
+            "selfUri": String, 
+          },  
           "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
@@ -2396,6 +3345,22 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
               "owners": User, 
               "selfUri": String, 
             },  
+            "skills": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "skillUri": String, 
+              "selfUri": String, 
+            },  
+            "languages": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "languageUri": String, 
+              "selfUri": String, 
+            },  
             "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
@@ -2623,6 +3588,22 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "skills": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "skillUri": String, 
+                "selfUri": String, 
+              },  
+              "languages": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "languageUri": String, 
+                "selfUri": String, 
+              },  
               "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
@@ -2724,6 +3705,8 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
@@ -2783,8 +3766,8 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ~~~
@@ -3179,6 +4162,22 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
             "owners": User, 
             "selfUri": String, 
           },  
+          "skills": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "skillUri": String, 
+            "selfUri": String, 
+          },  
+          "languages": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "languageUri": String, 
+            "selfUri": String, 
+          },  
           "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
@@ -3530,6 +4529,22 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
               "owners": User, 
               "selfUri": String, 
             },  
+            "skills": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "skillUri": String, 
+              "selfUri": String, 
+            },  
+            "languages": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "languageUri": String, 
+              "selfUri": String, 
+            },  
             "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
@@ -3757,6 +4772,22 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "skills": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "skillUri": String, 
+                "selfUri": String, 
+              },  
+              "languages": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "languageUri": String, 
+                "selfUri": String, 
+              },  
               "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
@@ -3858,6 +4889,8 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
@@ -3917,8 +4950,8 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ~~~
@@ -4019,6 +5052,160 @@ apiInstance.postAuthorizationRolesDefault(opts)
 ### Return type
 
 **OrganizationRoleEntityListing**
+
+<a name="postAuthorizationSubjectDivisionRole"></a>
+
+# void postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
+
+
+
+POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}
+
+Make a grant of a role in a division
+
+
+
+Requires ANY permissions: 
+
+* authorization:grant:add
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AuthorizationApi();
+
+var subjectId = "subjectId_example"; // String | Subject ID (user or group)
+
+var divisionId = "divisionId_example"; // String | the id of the division to which to make the grant
+
+var roleId = "roleId_example"; // String | the id of the role to grant
+
+var opts = { 
+  'subjectType': "PC_USER" // String | what the type of the subject is, PC_GROUP or PC_USER
+};
+apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
+  .then(function() {
+    console.log('postAuthorizationSubjectDivisionRole returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postAuthorizationSubjectDivisionRole');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **subjectId** | **String** | Subject ID (user or group) |  |
+ **divisionId** | **String** | the id of the division to which to make the grant |  |
+ **roleId** | **String** | the id of the role to grant |  |
+ **subjectType** | **String** | what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="putAuthorizationDivision"></a>
+
+# AuthzDivision putAuthorizationDivision(divisionId, body)
+
+
+
+PUT /api/v2/authorization/divisions/{divisionId}
+
+Update a division.
+
+
+
+Requires ANY permissions: 
+
+* authorization:division:edit
+
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyAuthzDivisionExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#AuthzDivisionExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+AuthzDivision <a style="cursor: pointer" onclick="copyAuthzDivisionExample()">Copy</a>
+
+<div id="AuthzDivisionExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "description": String, 
+  "homeDivision": Boolean, 
+  "objectCounts": {String: Number}, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AuthorizationApi();
+
+var divisionId = "divisionId_example"; // String | Division ID
+
+var body = {}; // Object | Updated division data
+
+apiInstance.putAuthorizationDivision(divisionId, body)
+  .then(function(data) {
+    console.log(`putAuthorizationDivision success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling putAuthorizationDivision');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **divisionId** | **String** | Division ID |  |
+ **body** | **Object** | Updated division data |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AuthzDivision**
 
 <a name="putAuthorizationRole"></a>
 
@@ -4366,6 +5553,22 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
             "owners": User, 
             "selfUri": String, 
           },  
+          "skills": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "skillUri": String, 
+            "selfUri": String, 
+          },  
+          "languages": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "languageUri": String, 
+            "selfUri": String, 
+          },  
           "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
@@ -4717,6 +5920,22 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
               "owners": User, 
               "selfUri": String, 
             },  
+            "skills": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "skillUri": String, 
+              "selfUri": String, 
+            },  
+            "languages": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "languageUri": String, 
+              "selfUri": String, 
+            },  
             "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
@@ -4944,6 +6163,22 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "skills": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "skillUri": String, 
+                "selfUri": String, 
+              },  
+              "languages": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "languageUri": String, 
+                "selfUri": String, 
+              },  
               "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
@@ -5045,6 +6280,8 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
@@ -5104,8 +6341,8 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ~~~
@@ -5615,6 +6852,22 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
             "owners": User, 
             "selfUri": String, 
           },  
+          "skills": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "skillUri": String, 
+            "selfUri": String, 
+          },  
+          "languages": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "languageUri": String, 
+            "selfUri": String, 
+          },  
           "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
@@ -5966,6 +7219,22 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
               "owners": User, 
               "selfUri": String, 
             },  
+            "skills": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "skillUri": String, 
+              "selfUri": String, 
+            },  
+            "languages": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "languageUri": String, 
+              "selfUri": String, 
+            },  
             "acdAutoAnswer": Boolean, 
             "selfUri": String, 
           },  
@@ -6193,6 +7462,22 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "skills": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "skillUri": String, 
+                "selfUri": String, 
+              },  
+              "languages": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "languageUri": String, 
+                "selfUri": String, 
+              },  
               "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
@@ -6294,6 +7579,8 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
                 "profileSkills": [String], 
                 "locations": [Location], 
                 "groups": [Group], 
+                "skills": [UserRoutingSkill], 
+                "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "selfUri": String, 
               },  
@@ -6353,8 +7640,8 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ~~~

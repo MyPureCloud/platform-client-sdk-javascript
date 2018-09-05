@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchUserPresence**](PresenceApi.html#patchUserPresence) | **PATCH** /api/v2/users/{userId}/presences/{sourceId} | Patch a user&#39;s Presence
 [**postPresencedefinitions**](PresenceApi.html#postPresencedefinitions) | **POST** /api/v2/presencedefinitions | Create a Presence Definition
 [**putPresencedefinition**](PresenceApi.html#putPresencedefinition) | **PUT** /api/v2/presencedefinitions/{presenceId} | Update a Presence Definition
+[**putUsersPresencesBulk**](PresenceApi.html#putUsersPresencesBulk) | **PUT** /api/v2/users/presences/bulk | Update bulk user Presences
 {: class="table table-striped"}
 
 <a name="deletePresencedefinition"></a>
@@ -757,6 +758,22 @@ OrganizationPresence <a style="cursor: pointer" onclick="copyOrganizationPresenc
       "owners": User, 
       "selfUri": String, 
     },  
+    "skills": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "skillUri": String, 
+      "selfUri": String, 
+    },  
+    "languages": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "languageUri": String, 
+      "selfUri": String, 
+    },  
     "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
@@ -1077,6 +1094,22 @@ OrganizationPresence <a style="cursor: pointer" onclick="copyOrganizationPresenc
       "rulesVisible": Boolean, 
       "visibility": String, 
       "owners": User, 
+      "selfUri": String, 
+    },  
+    "skills": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "skillUri": String, 
+      "selfUri": String, 
+    },  
+    "languages": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "languageUri": String, 
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
@@ -1487,6 +1520,22 @@ OrganizationPresence <a style="cursor: pointer" onclick="copyOrganizationPresenc
       "owners": User, 
       "selfUri": String, 
     },  
+    "skills": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "skillUri": String, 
+      "selfUri": String, 
+    },  
+    "languages": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "languageUri": String, 
+      "selfUri": String, 
+    },  
     "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
@@ -1809,6 +1858,22 @@ OrganizationPresence <a style="cursor: pointer" onclick="copyOrganizationPresenc
       "owners": User, 
       "selfUri": String, 
     },  
+    "skills": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "skillUri": String, 
+      "selfUri": String, 
+    },  
+    "languages": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "languageUri": String, 
+      "selfUri": String, 
+    },  
     "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
@@ -1859,4 +1924,95 @@ apiInstance.putPresencedefinition(presenceId, body)
 ### Return type
 
 **OrganizationPresence**
+
+<a name="putUsersPresencesBulk"></a>
+
+# [UserPresence] putUsersPresencesBulk(body)
+
+
+
+PUT /api/v2/users/presences/bulk
+
+Update bulk user Presences
+
+
+
+Requires ANY permissions: 
+
+* user_administration
+
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyUserPresenceExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#UserPresenceExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+UserPresence <a style="cursor: pointer" onclick="copyUserPresenceExample()">Copy</a>
+
+<div id="UserPresenceExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "source": String, 
+  "primary": Boolean, 
+  "presenceDefinition": { 
+    "id": String, 
+    "systemPresence": String, 
+    "selfUri": String, 
+  },  
+  "message": String, 
+  "modifiedDate": Date, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.PresenceApi();
+
+var body = [{}]; // Object | List of User presences
+
+apiInstance.putUsersPresencesBulk(body)
+  .then(function(data) {
+    console.log(`putUsersPresencesBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling putUsersPresencesBulk');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | List of User presences |  |
+{: class="table table-striped"}
+
+### Return type
+
+**[UserPresence]**
 

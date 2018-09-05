@@ -350,8 +350,8 @@ FaxDocument <a style="cursor: pointer" onclick="copyFaxDocumentExample()">Copy</
     "height": Number, 
     "width": Number, 
   },  
-  "downloadSharingUri": String, 
   "sharingUri": String, 
+  "downloadSharingUri": String, 
   "selfUri": String, 
 }
 ~~~

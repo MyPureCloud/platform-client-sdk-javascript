@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 36.0.0
+	 * @version 37.0.0
 	 */
 
 	/**
@@ -19,6 +19,41 @@ class UsersApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete a grant of a role in a division
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {String} divisionId the id of the division of the grant
+	 * @param {String} roleId the id of the role of the grant
+	 */
+	deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId) { 
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling deleteAuthorizationSubjectDivisionRole';
+		}
+		// verify the required parameter 'divisionId' is set
+		if (divisionId === undefined || divisionId === null) {
+			throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationSubjectDivisionRole';
+		}
+		// verify the required parameter 'roleId' is set
+		if (roleId === undefined || roleId === null) {
+			throw 'Missing the required parameter "roleId" when calling deleteAuthorizationSubjectDivisionRole';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}', 
+			'DELETE', 
+			{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
 
 	/**
 	 * Delete user
@@ -170,6 +205,114 @@ class UsersApi {
 			'/api/v2/users/{userId}/station/defaultstation', 
 			'DELETE', 
 			{ 'userId': userId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns whether or not current user can perform the specified action(s).
+	 * 
+	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.name Search term to filter by division name
+	 */
+	getAuthorizationDivisionspermittedMe(permission, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'permission' is set
+		if (permission === undefined || permission === null) {
+			throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedMe';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisionspermitted/me', 
+			'GET', 
+			{  }, 
+			{ 'name': opts['name'],'permission': permission }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns whether or not specified user can perform the specified action(s).
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.name Search term to filter by division name
+	 */
+	getAuthorizationDivisionspermittedSubjectId(subjectId, permission, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling getAuthorizationDivisionspermittedSubjectId';
+		}
+		// verify the required parameter 'permission' is set
+		if (permission === undefined || permission === null) {
+			throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedSubjectId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisionspermitted/{subjectId}', 
+			'GET', 
+			{ 'subjectId': subjectId }, 
+			{ 'name': opts['name'],'permission': permission }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns a listing of roles and permissions for a user.
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 */
+	getAuthorizationSubject(subjectId) { 
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling getAuthorizationSubject';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/subjects/{subjectId}', 
+			'GET', 
+			{ 'subjectId': subjectId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns a listing of roles and permissions for the currently authenticated user.
+	 * 
+	 */
+	getAuthorizationSubjectsMe() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/subjects/me', 
+			'GET', 
+			{  }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -999,6 +1142,66 @@ class UsersApi {
 	}
 
 	/**
+	 * Add bulk routing language to user. Max limit 50 languages
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Array.<Object>} body Language
+	 */
+	patchUserRoutinglanguagesBulk(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling patchUserRoutinglanguagesBulk';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchUserRoutinglanguagesBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/routinglanguages/bulk', 
+			'PATCH', 
+			{ 'userId': userId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add bulk routing skills to user
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Array.<Object>} body Skill
+	 */
+	patchUserRoutingskillsBulk(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling patchUserRoutingskillsBulk';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchUserRoutingskillsBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/routingskills/bulk', 
+			'PATCH', 
+			{ 'userId': userId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update bulk acd autoanswer on users
 	 * 
 	 * @param {Array.<Object>} body Users
@@ -1092,6 +1295,45 @@ class UsersApi {
 			{  }, 
 			{  }, 
 			body, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Make a grant of a role in a division
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {String} divisionId the id of the division to which to make the grant
+	 * @param {String} roleId the id of the role to grant
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.subjectType what the type of the subject is, PC_GROUP or PC_USER (default to PC_USER)
+	 */
+	postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectDivisionRole';
+		}
+		// verify the required parameter 'divisionId' is set
+		if (divisionId === undefined || divisionId === null) {
+			throw 'Missing the required parameter "divisionId" when calling postAuthorizationSubjectDivisionRole';
+		}
+		// verify the required parameter 'roleId' is set
+		if (roleId === undefined || roleId === null) {
+			throw 'Missing the required parameter "roleId" when calling postAuthorizationSubjectDivisionRole';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}', 
+			'POST', 
+			{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId }, 
+			{ 'subjectType': opts['subjectType'] }, 
+			{  }, 
+			{  }, 
+			null, 
 			['PureCloud Auth'], 
 			['application/json'], 
 			['application/json']

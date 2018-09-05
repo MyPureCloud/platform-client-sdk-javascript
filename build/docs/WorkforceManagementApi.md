@@ -35,6 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWorkplan) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} | Get a work plan
 [**getWorkforcemanagementManagementunitWorkplans**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWorkplans) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans | Get work plans
 [**getWorkforcemanagementManagementunits**](WorkforceManagementApi.html#getWorkforcemanagementManagementunits) | **GET** /api/v2/workforcemanagement/managementunits | Get management units
+[**getWorkforcemanagementManagementunitsDivisionviews**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitsDivisionviews) | **GET** /api/v2/workforcemanagement/managementunits/divisionviews | Get management units across divisions
 [**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequest) | **GET** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Get a time off request for the current user
 [**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequests) | **GET** /api/v2/workforcemanagement/timeoffrequests | Get a list of time off requests for the current user
 [**patchWorkforcemanagementManagementunitActivitycode**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitActivitycode) | **PATCH** /api/v2/workforcemanagement/managementunits/{muId}/activitycodes/{acId} | Update an activity code
@@ -1867,6 +1868,63 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
 
 **ManagementUnitListing**
 
+<a name="getWorkforcemanagementManagementunitsDivisionviews"></a>
+
+# ManagementUnitListing getWorkforcemanagementManagementunitsDivisionviews(opts)
+
+
+
+GET /api/v2/workforcemanagement/managementunits/divisionviews
+
+Get management units across divisions
+
+
+
+Requires ANY permissions: 
+
+* wfm:managementUnit:search
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var opts = { 
+  'divisionId': ["divisionId_example"] // [String] | The divisionIds to filter by. If omitted, will return all divisions
+};
+apiInstance.getWorkforcemanagementManagementunitsDivisionviews(opts)
+  .then(function(data) {
+    console.log(`getWorkforcemanagementManagementunitsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getWorkforcemanagementManagementunitsDivisionviews');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **divisionId** | **[String]** | The divisionIds to filter by. If omitted, will return all divisions | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ManagementUnitListing**
+
 <a name="getWorkforcemanagementTimeoffrequest"></a>
 
 # TimeOffRequestResponse getWorkforcemanagementTimeoffrequest(timeOffRequestId)
@@ -2511,6 +2569,7 @@ UpdateWeekScheduleRequest <a style="cursor: pointer" onclick="copyUpdateWeekSche
     "dateModified": Date, 
   },  
   "agentSchedulesVersion": Number, 
+  "agentUpdateFilter": String, 
 }
 ~~~
 </div>
@@ -3871,6 +3930,22 @@ TimeOffRequestLookupList <a style="cursor: pointer" onclick="copyTimeOffRequestL
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "skills": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "skillUri": String, 
+                "selfUri": String, 
+              },  
+              "languages": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "languageUri": String, 
+                "selfUri": String, 
+              },  
               "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
@@ -4149,9 +4224,41 @@ TimeOffRequestLookupList <a style="cursor: pointer" onclick="copyTimeOffRequestL
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "skills": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "skillUri": String, 
+                "selfUri": String, 
+              },  
+              "languages": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "languageUri": String, 
+                "selfUri": String, 
+              },  
               "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
+            "selfUri": String, 
+          },  
+          "skills": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "skillUri": String, 
+            "selfUri": String, 
+          },  
+          "languages": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "languageUri": String, 
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
@@ -4581,6 +4688,22 @@ TimeOffRequestLookupList <a style="cursor: pointer" onclick="copyTimeOffRequestL
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "skills": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "skillUri": String, 
+                "selfUri": String, 
+              },  
+              "languages": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "languageUri": String, 
+                "selfUri": String, 
+              },  
               "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
@@ -4859,14 +4982,62 @@ TimeOffRequestLookupList <a style="cursor: pointer" onclick="copyTimeOffRequestL
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "skills": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "skillUri": String, 
+                "selfUri": String, 
+              },  
+              "languages": { 
+                "id": String, 
+                "name": String, 
+                "proficiency": Number, 
+                "state": String, 
+                "languageUri": String, 
+                "selfUri": String, 
+              },  
               "acdAutoAnswer": Boolean, 
               "selfUri": String, 
             },  
             "selfUri": String, 
           },  
+          "skills": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "skillUri": String, 
+            "selfUri": String, 
+          },  
+          "languages": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "languageUri": String, 
+            "selfUri": String, 
+          },  
           "acdAutoAnswer": Boolean, 
           "selfUri": String, 
         },  
+        "selfUri": String, 
+      },  
+      "skills": { 
+        "id": String, 
+        "name": String, 
+        "proficiency": Number, 
+        "state": String, 
+        "skillUri": String, 
+        "selfUri": String, 
+      },  
+      "languages": { 
+        "id": String, 
+        "name": String, 
+        "proficiency": Number, 
+        "state": String, 
+        "languageUri": String, 
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 

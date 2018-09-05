@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 36.0.0
+	 * @version 37.0.0
 	 */
 
 	/**
@@ -231,6 +231,31 @@ class PresenceApi {
 			'/api/v2/presencedefinitions/{presenceId}', 
 			'PUT', 
 			{ 'presenceId': presenceId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update bulk user Presences
+	 * 
+	 * @param {Array.<Object>} body List of User presences
+	 */
+	putUsersPresencesBulk(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putUsersPresencesBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/presences/bulk', 
+			'PUT', 
+			{  }, 
 			{  }, 
 			{  }, 
 			{  }, 

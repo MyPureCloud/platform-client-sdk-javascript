@@ -1839,6 +1839,7 @@ UpdateActionInput <a style="cursor: pointer" onclick="copyUpdateActionInputExamp
     },  
     "response": { 
       "translationMap": {String: String}, 
+      "translationMapDefaults": {String: String}, 
       "successTemplate": String, 
       "successTemplateUri": String, 
     },  
@@ -1938,6 +1939,7 @@ UpdateDraftInput <a style="cursor: pointer" onclick="copyUpdateDraftInputExample
     },  
     "response": { 
       "translationMap": {String: String}, 
+      "translationMapDefaults": {String: String}, 
       "successTemplate": String, 
       "successTemplateUri": String, 
     },  
@@ -2488,6 +2490,7 @@ PostActionInput <a style="cursor: pointer" onclick="copyPostActionInputExample()
     },  
     "response": { 
       "translationMap": {String: String}, 
+      "translationMapDefaults": {String: String}, 
       "successTemplate": String, 
       "successTemplateUri": String, 
     },  
@@ -2611,6 +2614,7 @@ PostActionInput <a style="cursor: pointer" onclick="copyPostActionInputExample()
     },  
     "response": { 
       "translationMap": {String: String}, 
+      "translationMapDefaults": {String: String}, 
       "successTemplate": String, 
       "successTemplateUri": String, 
     },  

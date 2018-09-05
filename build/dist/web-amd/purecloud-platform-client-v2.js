@@ -4,7 +4,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
 	/**
 	 * @module purecloud-platform-client-v2/ApiClient
-	 * @version 36.0.0
+	 * @version 37.0.0
 	 */
 	class ApiClient {
 		/**
@@ -689,7 +689,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
 			// set header parameters
 			request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-			//request.set({ 'purecloud-sdk': '36.0.0' });
+			//request.set({ 'purecloud-sdk': '37.0.0' });
 
 			// set request timeout
 			request.timeout(this.timeout);
@@ -816,7 +816,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Alerting service.
 		 * @module purecloud-platform-client-v2/api/AlertingApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -1130,7 +1130,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Analytics service.
 		 * @module purecloud-platform-client-v2/api/AnalyticsApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -1551,6 +1551,31 @@ define(['superagent'], function (superagent) { 'use strict';
 		}
 
 		/**
+		 * Query for flow aggregates
+		 * 
+		 * @param {Object} body query
+		 */
+		postAnalyticsFlowsAggregatesQuery(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsFlowsAggregatesQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/flows/aggregates/query', 
+				'POST', 
+				{  }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
 		 * Query for queue observations
 		 * 
 		 * @param {Object} body query
@@ -1761,7 +1786,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Architect service.
 		 * @module purecloud-platform-client-v2/api/ArchitectApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -4129,7 +4154,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Attributes service.
 		 * @module purecloud-platform-client-v2/api/AttributesApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -4305,7 +4330,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Authorization service.
 		 * @module purecloud-platform-client-v2/api/AuthorizationApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -4319,6 +4344,31 @@ define(['superagent'], function (superagent) { 'use strict';
 			this.apiClient = apiClient || ApiClient.instance;
 		}
 
+
+		/**
+		 * Delete a division.
+		 * 
+		 * @param {String} divisionId Division ID
+		 */
+		deleteAuthorizationDivision(divisionId) { 
+			// verify the required parameter 'divisionId' is set
+			if (divisionId === undefined || divisionId === null) {
+				throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationDivision';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisions/{divisionId}', 
+				'DELETE', 
+				{ 'divisionId': divisionId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
 
 		/**
 		 * Delete an organization role.
@@ -4346,6 +4396,41 @@ define(['superagent'], function (superagent) { 'use strict';
 		}
 
 		/**
+		 * Delete a grant of a role in a division
+		 * 
+		 * @param {String} subjectId Subject ID (user or group)
+		 * @param {String} divisionId the id of the division of the grant
+		 * @param {String} roleId the id of the role of the grant
+		 */
+		deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId) { 
+			// verify the required parameter 'subjectId' is set
+			if (subjectId === undefined || subjectId === null) {
+				throw 'Missing the required parameter "subjectId" when calling deleteAuthorizationSubjectDivisionRole';
+			}
+			// verify the required parameter 'divisionId' is set
+			if (divisionId === undefined || divisionId === null) {
+				throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationSubjectDivisionRole';
+			}
+			// verify the required parameter 'roleId' is set
+			if (roleId === undefined || roleId === null) {
+				throw 'Missing the required parameter "roleId" when calling deleteAuthorizationSubjectDivisionRole';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}', 
+				'DELETE', 
+				{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
 		 * Removes all the roles from the user.
 		 * 
 		 * @param {String} userId User ID
@@ -4361,6 +4446,170 @@ define(['superagent'], function (superagent) { 'use strict';
 				'DELETE', 
 				{ 'userId': userId }, 
 				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Returns an authorization division.
+		 * 
+		 * @param {String} divisionId Division ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.objectCount Get count of objects in this division, grouped by type (default to false)
+		 */
+		getAuthorizationDivision(divisionId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'divisionId' is set
+			if (divisionId === undefined || divisionId === null) {
+				throw 'Missing the required parameter "divisionId" when calling getAuthorizationDivision';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisions/{divisionId}', 
+				'GET', 
+				{ 'divisionId': divisionId }, 
+				{ 'objectCount': opts['objectCount'] }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Retrieve a list of all divisions defined for the organization
+		 * Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize The total page size requested (default to 25)
+		 * @param {Number} opts.pageNumber The page number requested (default to 1)
+		 * @param {String} opts.sortBy variable name requested to sort by
+		 * @param {Array.<String>} opts.expand variable name requested by expand list
+		 * @param {String} opts.nextPage next page token
+		 * @param {String} opts.previousPage Previous page token
+		 * @param {Boolean} opts.objectCount Include the count of objects contained in the division (default to false)
+		 * @param {Array.<String>} opts.id Optionally request specific divisions by their IDs
+		 * @param {String} opts.name Search term to filter by division name
+		 */
+		getAuthorizationDivisions(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisions', 
+				'GET', 
+				{  }, 
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'objectCount': opts['objectCount'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'] }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Retrieve the home division for the organization.
+		 * Will not include object counts.
+		 */
+		getAuthorizationDivisionsHome() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisions/home', 
+				'GET', 
+				{  }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Returns the maximum allowed number of divisions.
+		 * 
+		 */
+		getAuthorizationDivisionsLimit() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisions/limit', 
+				'GET', 
+				{  }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Returns whether or not current user can perform the specified action(s).
+		 * 
+		 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.name Search term to filter by division name
+		 */
+		getAuthorizationDivisionspermittedMe(permission, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'permission' is set
+			if (permission === undefined || permission === null) {
+				throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedMe';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisionspermitted/me', 
+				'GET', 
+				{  }, 
+				{ 'name': opts['name'],'permission': permission }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Returns whether or not specified user can perform the specified action(s).
+		 * 
+		 * @param {String} subjectId Subject ID (user or group)
+		 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.name Search term to filter by division name
+		 */
+		getAuthorizationDivisionspermittedSubjectId(subjectId, permission, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'subjectId' is set
+			if (subjectId === undefined || subjectId === null) {
+				throw 'Missing the required parameter "subjectId" when calling getAuthorizationDivisionspermittedSubjectId';
+			}
+			// verify the required parameter 'permission' is set
+			if (permission === undefined || permission === null) {
+				throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedSubjectId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisionspermitted/{subjectId}', 
+				'GET', 
+				{ 'subjectId': subjectId }, 
+				{ 'name': opts['name'],'permission': permission }, 
 				{  }, 
 				{  }, 
 				null, 
@@ -4505,6 +4754,36 @@ define(['superagent'], function (superagent) { 'use strict';
 		}
 
 		/**
+		 * Get a list of the users in a specified role.
+		 * Get an array of the UUIDs of the users in the specified role.
+		 * @param {String} roleId Role ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 */
+		getAuthorizationRoleUsers(roleId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'roleId' is set
+			if (roleId === undefined || roleId === null) {
+				throw 'Missing the required parameter "roleId" when calling getAuthorizationRoleUsers';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/roles/{roleId}/users', 
+				'GET', 
+				{ 'roleId': roleId }, 
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
 		 * Retrieve a list of all roles defined for the organization
 		 * 
 		 * @param {Object} opts Optional parameters
@@ -4529,6 +4808,51 @@ define(['superagent'], function (superagent) { 'use strict';
 				'GET', 
 				{  }, 
 				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'permission': this.apiClient.buildCollectionParam(opts['permission'], 'multi'),'defaultRoleId': this.apiClient.buildCollectionParam(opts['defaultRoleId'], 'multi'),'userCount': opts['userCount'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Returns a listing of roles and permissions for a user.
+		 * 
+		 * @param {String} subjectId Subject ID (user or group)
+		 */
+		getAuthorizationSubject(subjectId) { 
+			// verify the required parameter 'subjectId' is set
+			if (subjectId === undefined || subjectId === null) {
+				throw 'Missing the required parameter "subjectId" when calling getAuthorizationSubject';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/subjects/{subjectId}', 
+				'GET', 
+				{ 'subjectId': subjectId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Returns a listing of roles and permissions for the currently authenticated user.
+		 * 
+		 */
+		getAuthorizationSubjectsMe() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/subjects/me', 
+				'GET', 
+				{  }, 
+				{  }, 
 				{  }, 
 				{  }, 
 				null, 
@@ -4582,6 +4906,96 @@ define(['superagent'], function (superagent) { 'use strict';
 			return this.apiClient.callApi(
 				'/api/v2/authorization/roles/{roleId}', 
 				'PATCH', 
+				{ 'roleId': roleId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Assign a list of objects to a division
+		 * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+		 * @param {String} divisionId Division ID
+		 * @param {Object} objectType The type of the objects. Must be one of the valid object types
+		 * @param {Array.<Object>} body Object Id List
+		 */
+		postAuthorizationDivisionObject(divisionId, objectType, body) { 
+			// verify the required parameter 'divisionId' is set
+			if (divisionId === undefined || divisionId === null) {
+				throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionObject';
+			}
+			// verify the required parameter 'objectType' is set
+			if (objectType === undefined || objectType === null) {
+				throw 'Missing the required parameter "objectType" when calling postAuthorizationDivisionObject';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAuthorizationDivisionObject';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisions/{divisionId}/objects/{objectType}', 
+				'POST', 
+				{ 'divisionId': divisionId,'objectType': objectType }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create a division.
+		 * 
+		 * @param {Object} body Division
+		 */
+		postAuthorizationDivisions(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAuthorizationDivisions';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisions', 
+				'POST', 
+				{  }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Bulk-grant subjects and divisions with an organization role.
+		 * 
+		 * @param {String} roleId Role ID
+		 * @param {Object} body Subjects and Divisions
+		 */
+		postAuthorizationRole(roleId, body) { 
+			// verify the required parameter 'roleId' is set
+			if (roleId === undefined || roleId === null) {
+				throw 'Missing the required parameter "roleId" when calling postAuthorizationRole';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAuthorizationRole';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/roles/{roleId}', 
+				'POST', 
 				{ 'roleId': roleId }, 
 				{  }, 
 				{  }, 
@@ -4671,6 +5085,75 @@ define(['superagent'], function (superagent) { 'use strict';
 				{  }, 
 				{  }, 
 				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Make a grant of a role in a division
+		 * 
+		 * @param {String} subjectId Subject ID (user or group)
+		 * @param {String} divisionId the id of the division to which to make the grant
+		 * @param {String} roleId the id of the role to grant
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.subjectType what the type of the subject is, PC_GROUP or PC_USER (default to PC_USER)
+		 */
+		postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'subjectId' is set
+			if (subjectId === undefined || subjectId === null) {
+				throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectDivisionRole';
+			}
+			// verify the required parameter 'divisionId' is set
+			if (divisionId === undefined || divisionId === null) {
+				throw 'Missing the required parameter "divisionId" when calling postAuthorizationSubjectDivisionRole';
+			}
+			// verify the required parameter 'roleId' is set
+			if (roleId === undefined || roleId === null) {
+				throw 'Missing the required parameter "roleId" when calling postAuthorizationSubjectDivisionRole';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}', 
+				'POST', 
+				{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId }, 
+				{ 'subjectType': opts['subjectType'] }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update a division.
+		 * 
+		 * @param {String} divisionId Division ID
+		 * @param {Object} body Updated division data
+		 */
+		putAuthorizationDivision(divisionId, body) { 
+			// verify the required parameter 'divisionId' is set
+			if (divisionId === undefined || divisionId === null) {
+				throw 'Missing the required parameter "divisionId" when calling putAuthorizationDivision';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling putAuthorizationDivision';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisions/{divisionId}', 
+				'PUT', 
+				{ 'divisionId': divisionId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
 				['PureCloud Auth'], 
 				['application/json'], 
 				['application/json']
@@ -4828,7 +5311,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Billing service.
 		 * @module purecloud-platform-client-v2/api/BillingApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -4879,7 +5362,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * ContentManagement service.
 		 * @module purecloud-platform-client-v2/api/ContentManagementApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -6019,7 +6502,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Conversations service.
 		 * @module purecloud-platform-client-v2/api/ConversationsApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -9050,7 +9533,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * ExternalContacts service.
 		 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -9958,7 +10441,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Fax service.
 		 * @module purecloud-platform-client-v2/api/FaxApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -10125,11 +10608,57 @@ define(['superagent'], function (superagent) { 'use strict';
 
 	}
 
+	class FlowsApi {
+		/**
+		 * Flows service.
+		 * @module purecloud-platform-client-v2/api/FlowsApi
+		 * @version 37.0.0
+		 */
+
+		/**
+		 * Constructs a new FlowsApi. 
+		 * @alias module:purecloud-platform-client-v2/api/FlowsApi
+		 * @class
+		 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+		 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+		 */
+		constructor(apiClient) {
+			this.apiClient = apiClient || ApiClient.instance;
+		}
+
+
+		/**
+		 * Query for flow aggregates
+		 * 
+		 * @param {Object} body query
+		 */
+		postAnalyticsFlowsAggregatesQuery(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAnalyticsFlowsAggregatesQuery';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/analytics/flows/aggregates/query', 
+				'POST', 
+				{  }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+	}
+
 	class GeneralDataProtectionRegulationApi {
 		/**
 		 * GeneralDataProtectionRegulation service.
 		 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -10259,7 +10788,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Geolocation service.
 		 * @module purecloud-platform-client-v2/api/GeolocationApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -10390,7 +10919,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Greetings service.
 		 * @module purecloud-platform-client-v2/api/GreetingsApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -10845,7 +11374,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Groups service.
 		 * @module purecloud-platform-client-v2/api/GroupsApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -11249,7 +11778,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * IdentityProvider service.
 		 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -11875,7 +12404,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Integrations service.
 		 * @module purecloud-platform-client-v2/api/IntegrationsApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -13039,7 +13568,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Languages service.
 		 * @module purecloud-platform-client-v2/api/LanguagesApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -13307,7 +13836,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * License service.
 		 * @module purecloud-platform-client-v2/api/LicenseApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -13516,7 +14045,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Locations service.
 		 * @module purecloud-platform-client-v2/api/LocationsApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -13638,11 +14167,417 @@ define(['superagent'], function (superagent) { 'use strict';
 
 	}
 
+	class MessagingApi {
+		/**
+		 * Messaging service.
+		 * @module purecloud-platform-client-v2/api/MessagingApi
+		 * @version 37.0.0
+		 */
+
+		/**
+		 * Constructs a new MessagingApi. 
+		 * @alias module:purecloud-platform-client-v2/api/MessagingApi
+		 * @class
+		 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+		 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+		 */
+		constructor(apiClient) {
+			this.apiClient = apiClient || ApiClient.instance;
+		}
+
+
+		/**
+		 * Delete a Facebook messaging integration
+		 * 
+		 * @param {String} integrationId Integration ID
+		 */
+		deleteMessagingIntegrationsFacebookIntegrationId(integrationId) { 
+			// verify the required parameter 'integrationId' is set
+			if (integrationId === undefined || integrationId === null) {
+				throw 'Missing the required parameter "integrationId" when calling deleteMessagingIntegrationsFacebookIntegrationId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/messaging/integrations/facebook/{integrationId}', 
+				'DELETE', 
+				{ 'integrationId': integrationId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete a LINE messenger integration
+		 * 
+		 * @param {String} integrationId Integration ID
+		 */
+		deleteMessagingIntegrationsLineIntegrationId(integrationId) { 
+			// verify the required parameter 'integrationId' is set
+			if (integrationId === undefined || integrationId === null) {
+				throw 'Missing the required parameter "integrationId" when calling deleteMessagingIntegrationsLineIntegrationId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/messaging/integrations/line/{integrationId}', 
+				'DELETE', 
+				{ 'integrationId': integrationId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete a Twitter messaging integration
+		 * 
+		 * @param {String} integrationId Integration ID
+		 */
+		deleteMessagingIntegrationsTwitterIntegrationId(integrationId) { 
+			// verify the required parameter 'integrationId' is set
+			if (integrationId === undefined || integrationId === null) {
+				throw 'Missing the required parameter "integrationId" when calling deleteMessagingIntegrationsTwitterIntegrationId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/messaging/integrations/twitter/{integrationId}', 
+				'DELETE', 
+				{ 'integrationId': integrationId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a list of Facebook Integrations
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 */
+		getMessagingIntegrationsFacebook(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/messaging/integrations/facebook', 
+				'GET', 
+				{  }, 
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a Facebook messaging integration
+		 * 
+		 * @param {String} integrationId Integration ID
+		 */
+		getMessagingIntegrationsFacebookIntegrationId(integrationId) { 
+			// verify the required parameter 'integrationId' is set
+			if (integrationId === undefined || integrationId === null) {
+				throw 'Missing the required parameter "integrationId" when calling getMessagingIntegrationsFacebookIntegrationId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/messaging/integrations/facebook/{integrationId}', 
+				'GET', 
+				{ 'integrationId': integrationId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a list of LINE messenger Integrations
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 */
+		getMessagingIntegrationsLine(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/messaging/integrations/line', 
+				'GET', 
+				{  }, 
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a LINE messenger integration
+		 * 
+		 * @param {String} integrationId Integration ID
+		 */
+		getMessagingIntegrationsLineIntegrationId(integrationId) { 
+			// verify the required parameter 'integrationId' is set
+			if (integrationId === undefined || integrationId === null) {
+				throw 'Missing the required parameter "integrationId" when calling getMessagingIntegrationsLineIntegrationId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/messaging/integrations/line/{integrationId}', 
+				'GET', 
+				{ 'integrationId': integrationId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a list of Twitter Integrations
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 */
+		getMessagingIntegrationsTwitter(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/messaging/integrations/twitter', 
+				'GET', 
+				{  }, 
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a Twitter messaging integration
+		 * 
+		 * @param {String} integrationId Integration ID
+		 */
+		getMessagingIntegrationsTwitterIntegrationId(integrationId) { 
+			// verify the required parameter 'integrationId' is set
+			if (integrationId === undefined || integrationId === null) {
+				throw 'Missing the required parameter "integrationId" when calling getMessagingIntegrationsTwitterIntegrationId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/messaging/integrations/twitter/{integrationId}', 
+				'GET', 
+				{ 'integrationId': integrationId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a list of Messaging Stickers
+		 * 
+		 * @param {String} messengerType Messenger Type
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 */
+		getMessagingSticker(messengerType, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'messengerType' is set
+			if (messengerType === undefined || messengerType === null) {
+				throw 'Missing the required parameter "messengerType" when calling getMessagingSticker';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/messaging/stickers/{messengerType}', 
+				'GET', 
+				{ 'messengerType': messengerType }, 
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create a Facebook Integration
+		 * 
+		 * @param {Object} body FacebookIntegrationRequest
+		 */
+		postMessagingIntegrationsFacebook(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postMessagingIntegrationsFacebook';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/messaging/integrations/facebook', 
+				'POST', 
+				{  }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create a LINE messenger Integration
+		 * 
+		 * @param {Object} body LineIntegrationRequest
+		 */
+		postMessagingIntegrationsLine(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postMessagingIntegrationsLine';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/messaging/integrations/line', 
+				'POST', 
+				{  }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Webhook redirect for LINE messenger Integration
+		 * 
+		 * @param {String} integrationId Integration ID
+		 */
+		postMessagingIntegrationsLineWebhookIntegrationId(integrationId) { 
+			// verify the required parameter 'integrationId' is set
+			if (integrationId === undefined || integrationId === null) {
+				throw 'Missing the required parameter "integrationId" when calling postMessagingIntegrationsLineWebhookIntegrationId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/messaging/integrations/line/webhook/{integrationId}', 
+				'POST', 
+				{ 'integrationId': integrationId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create a Twitter Integration
+		 * 
+		 * @param {Object} body TwitterIntegrationRequest
+		 */
+		postMessagingIntegrationsTwitter(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postMessagingIntegrationsTwitter';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/messaging/integrations/twitter', 
+				'POST', 
+				{  }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update a LINE messenger integration
+		 * 
+		 * @param {String} integrationId Integration ID
+		 * @param {Object} body LineIntegrationRequest
+		 */
+		putMessagingIntegrationsLineIntegrationId(integrationId, body) { 
+			// verify the required parameter 'integrationId' is set
+			if (integrationId === undefined || integrationId === null) {
+				throw 'Missing the required parameter "integrationId" when calling putMessagingIntegrationsLineIntegrationId';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling putMessagingIntegrationsLineIntegrationId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/messaging/integrations/line/{integrationId}', 
+				'PUT', 
+				{ 'integrationId': integrationId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+	}
+
 	class MobileDevicesApi {
 		/**
 		 * MobileDevices service.
 		 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -13793,7 +14728,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Notifications service.
 		 * @module purecloud-platform-client-v2/api/NotificationsApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -13992,7 +14927,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * OAuth service.
 		 * @module purecloud-platform-client-v2/api/OAuthApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -14159,11 +15094,248 @@ define(['superagent'], function (superagent) { 'use strict';
 
 	}
 
+	class ObjectsApi {
+		/**
+		 * Objects service.
+		 * @module purecloud-platform-client-v2/api/ObjectsApi
+		 * @version 37.0.0
+		 */
+
+		/**
+		 * Constructs a new ObjectsApi. 
+		 * @alias module:purecloud-platform-client-v2/api/ObjectsApi
+		 * @class
+		 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+		 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+		 */
+		constructor(apiClient) {
+			this.apiClient = apiClient || ApiClient.instance;
+		}
+
+
+		/**
+		 * Delete a division.
+		 * 
+		 * @param {String} divisionId Division ID
+		 */
+		deleteAuthorizationDivision(divisionId) { 
+			// verify the required parameter 'divisionId' is set
+			if (divisionId === undefined || divisionId === null) {
+				throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationDivision';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisions/{divisionId}', 
+				'DELETE', 
+				{ 'divisionId': divisionId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Returns an authorization division.
+		 * 
+		 * @param {String} divisionId Division ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.objectCount Get count of objects in this division, grouped by type (default to false)
+		 */
+		getAuthorizationDivision(divisionId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'divisionId' is set
+			if (divisionId === undefined || divisionId === null) {
+				throw 'Missing the required parameter "divisionId" when calling getAuthorizationDivision';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisions/{divisionId}', 
+				'GET', 
+				{ 'divisionId': divisionId }, 
+				{ 'objectCount': opts['objectCount'] }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Retrieve a list of all divisions defined for the organization
+		 * Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize The total page size requested (default to 25)
+		 * @param {Number} opts.pageNumber The page number requested (default to 1)
+		 * @param {String} opts.sortBy variable name requested to sort by
+		 * @param {Array.<String>} opts.expand variable name requested by expand list
+		 * @param {String} opts.nextPage next page token
+		 * @param {String} opts.previousPage Previous page token
+		 * @param {Boolean} opts.objectCount Include the count of objects contained in the division (default to false)
+		 * @param {Array.<String>} opts.id Optionally request specific divisions by their IDs
+		 * @param {String} opts.name Search term to filter by division name
+		 */
+		getAuthorizationDivisions(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisions', 
+				'GET', 
+				{  }, 
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'objectCount': opts['objectCount'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'] }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Retrieve the home division for the organization.
+		 * Will not include object counts.
+		 */
+		getAuthorizationDivisionsHome() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisions/home', 
+				'GET', 
+				{  }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Returns the maximum allowed number of divisions.
+		 * 
+		 */
+		getAuthorizationDivisionsLimit() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisions/limit', 
+				'GET', 
+				{  }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Assign a list of objects to a division
+		 * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+		 * @param {String} divisionId Division ID
+		 * @param {Object} objectType The type of the objects. Must be one of the valid object types
+		 * @param {Array.<Object>} body Object Id List
+		 */
+		postAuthorizationDivisionObject(divisionId, objectType, body) { 
+			// verify the required parameter 'divisionId' is set
+			if (divisionId === undefined || divisionId === null) {
+				throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionObject';
+			}
+			// verify the required parameter 'objectType' is set
+			if (objectType === undefined || objectType === null) {
+				throw 'Missing the required parameter "objectType" when calling postAuthorizationDivisionObject';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAuthorizationDivisionObject';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisions/{divisionId}/objects/{objectType}', 
+				'POST', 
+				{ 'divisionId': divisionId,'objectType': objectType }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create a division.
+		 * 
+		 * @param {Object} body Division
+		 */
+		postAuthorizationDivisions(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postAuthorizationDivisions';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisions', 
+				'POST', 
+				{  }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update a division.
+		 * 
+		 * @param {String} divisionId Division ID
+		 * @param {Object} body Updated division data
+		 */
+		putAuthorizationDivision(divisionId, body) { 
+			// verify the required parameter 'divisionId' is set
+			if (divisionId === undefined || divisionId === null) {
+				throw 'Missing the required parameter "divisionId" when calling putAuthorizationDivision';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling putAuthorizationDivision';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisions/{divisionId}', 
+				'PUT', 
+				{ 'divisionId': divisionId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+	}
+
 	class OrganizationApi {
 		/**
 		 * Organization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -14283,7 +15455,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * OrganizationAuthorization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -14958,7 +16130,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Outbound service.
 		 * @module purecloud-platform-client-v2/api/OutboundApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -17444,7 +18616,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Presence service.
 		 * @module purecloud-platform-client-v2/api/PresenceApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -17680,13 +18852,38 @@ define(['superagent'], function (superagent) { 'use strict';
 			);
 		}
 
+		/**
+		 * Update bulk user Presences
+		 * 
+		 * @param {Array.<Object>} body List of User presences
+		 */
+		putUsersPresencesBulk(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling putUsersPresencesBulk';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/users/presences/bulk', 
+				'PUT', 
+				{  }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
 	}
 
 	class QualityApi {
 		/**
 		 * Quality service.
 		 * @module purecloud-platform-client-v2/api/QualityApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -19144,7 +20341,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Recording service.
 		 * @module purecloud-platform-client-v2/api/RecordingApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -20198,7 +21395,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * ResponseManagement service.
 		 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -20522,7 +21719,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Routing service.
 		 * @module purecloud-platform-client-v2/api/RoutingApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -21439,8 +22636,8 @@ define(['superagent'], function (superagent) { 'use strict';
 		 * @param {Object} opts Optional parameters
 		 * @param {Number} opts.pageSize Page size (default to 25)
 		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 * @param {Object} opts.sortBy Sort by (default to name)
 		 * @param {String} opts.name Name
-		 * @param {String} opts.sortBy Sort by (default to name)
 		 */
 		getRoutingWrapupcodes(opts) { 
 			opts = opts || {};
@@ -21450,7 +22647,7 @@ define(['superagent'], function (superagent) { 'use strict';
 				'/api/v2/routing/wrapupcodes', 
 				'GET', 
 				{  }, 
-				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'sortBy': opts['sortBy'] }, 
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'name': opts['name'] }, 
 				{  }, 
 				{  }, 
 				null, 
@@ -21612,6 +22809,66 @@ define(['superagent'], function (superagent) { 'use strict';
 				'/api/v2/users/{userId}/routinglanguages/{languageId}', 
 				'PATCH', 
 				{ 'userId': userId,'languageId': languageId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Add bulk routing language to user. Max limit 50 languages
+		 * 
+		 * @param {String} userId User ID
+		 * @param {Array.<Object>} body Language
+		 */
+		patchUserRoutinglanguagesBulk(userId, body) { 
+			// verify the required parameter 'userId' is set
+			if (userId === undefined || userId === null) {
+				throw 'Missing the required parameter "userId" when calling patchUserRoutinglanguagesBulk';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchUserRoutinglanguagesBulk';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/users/{userId}/routinglanguages/bulk', 
+				'PATCH', 
+				{ 'userId': userId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Add bulk routing skills to user
+		 * 
+		 * @param {String} userId User ID
+		 * @param {Array.<Object>} body Skill
+		 */
+		patchUserRoutingskillsBulk(userId, body) { 
+			// verify the required parameter 'userId' is set
+			if (userId === undefined || userId === null) {
+				throw 'Missing the required parameter "userId" when calling patchUserRoutingskillsBulk';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchUserRoutingskillsBulk';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/users/{userId}/routingskills/bulk', 
+				'PATCH', 
+				{ 'userId': userId }, 
 				{  }, 
 				{  }, 
 				{  }, 
@@ -22197,7 +23454,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Scripts service.
 		 * @module purecloud-platform-client-v2/api/ScriptsApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -22555,7 +23812,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Search service.
 		 * @module purecloud-platform-client-v2/api/SearchApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -22569,6 +23826,31 @@ define(['superagent'], function (superagent) { 'use strict';
 			this.apiClient = apiClient || ApiClient.instance;
 		}
 
+
+		/**
+		 * Search gkn documentation using the q64 value returned from a previous search
+		 * 
+		 * @param {String} q64 q64
+		 */
+		getDocumentationGknSearch(q64) { 
+			// verify the required parameter 'q64' is set
+			if (q64 === undefined || q64 === null) {
+				throw 'Missing the required parameter "q64" when calling getDocumentationGknSearch';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/documentation/gkn/search', 
+				'GET', 
+				{  }, 
+				{ 'q64': q64 }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
 
 		/**
 		 * Search documentation using the q64 value returned from a previous search
@@ -22772,6 +24054,31 @@ define(['superagent'], function (superagent) { 'use strict';
 		}
 
 		/**
+		 * Search gkn documentation
+		 * 
+		 * @param {Object} body Search request options
+		 */
+		postDocumentationGknSearch(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postDocumentationGknSearch';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/documentation/gkn/search', 
+				'POST', 
+				{  }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
 		 * Search documentation
 		 * 
 		 * @param {Object} body Search request options
@@ -22960,7 +24267,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Stations service.
 		 * @module purecloud-platform-client-v2/api/StationsApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -23107,7 +24414,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Suggest service.
 		 * @module purecloud-platform-client-v2/api/SuggestApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -23246,7 +24553,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * TelephonyProvidersEdge service.
 		 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -26728,7 +28035,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Tokens service.
 		 * @module purecloud-platform-client-v2/api/TokensApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -26789,7 +28096,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * UserRecordings service.
 		 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -26973,7 +28280,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Users service.
 		 * @module purecloud-platform-client-v2/api/UsersApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -26987,6 +28294,41 @@ define(['superagent'], function (superagent) { 'use strict';
 			this.apiClient = apiClient || ApiClient.instance;
 		}
 
+
+		/**
+		 * Delete a grant of a role in a division
+		 * 
+		 * @param {String} subjectId Subject ID (user or group)
+		 * @param {String} divisionId the id of the division of the grant
+		 * @param {String} roleId the id of the role of the grant
+		 */
+		deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId) { 
+			// verify the required parameter 'subjectId' is set
+			if (subjectId === undefined || subjectId === null) {
+				throw 'Missing the required parameter "subjectId" when calling deleteAuthorizationSubjectDivisionRole';
+			}
+			// verify the required parameter 'divisionId' is set
+			if (divisionId === undefined || divisionId === null) {
+				throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationSubjectDivisionRole';
+			}
+			// verify the required parameter 'roleId' is set
+			if (roleId === undefined || roleId === null) {
+				throw 'Missing the required parameter "roleId" when calling deleteAuthorizationSubjectDivisionRole';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}', 
+				'DELETE', 
+				{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
 
 		/**
 		 * Delete user
@@ -27138,6 +28480,114 @@ define(['superagent'], function (superagent) { 'use strict';
 				'/api/v2/users/{userId}/station/defaultstation', 
 				'DELETE', 
 				{ 'userId': userId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Returns whether or not current user can perform the specified action(s).
+		 * 
+		 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.name Search term to filter by division name
+		 */
+		getAuthorizationDivisionspermittedMe(permission, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'permission' is set
+			if (permission === undefined || permission === null) {
+				throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedMe';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisionspermitted/me', 
+				'GET', 
+				{  }, 
+				{ 'name': opts['name'],'permission': permission }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Returns whether or not specified user can perform the specified action(s).
+		 * 
+		 * @param {String} subjectId Subject ID (user or group)
+		 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.name Search term to filter by division name
+		 */
+		getAuthorizationDivisionspermittedSubjectId(subjectId, permission, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'subjectId' is set
+			if (subjectId === undefined || subjectId === null) {
+				throw 'Missing the required parameter "subjectId" when calling getAuthorizationDivisionspermittedSubjectId';
+			}
+			// verify the required parameter 'permission' is set
+			if (permission === undefined || permission === null) {
+				throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedSubjectId';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/divisionspermitted/{subjectId}', 
+				'GET', 
+				{ 'subjectId': subjectId }, 
+				{ 'name': opts['name'],'permission': permission }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Returns a listing of roles and permissions for a user.
+		 * 
+		 * @param {String} subjectId Subject ID (user or group)
+		 */
+		getAuthorizationSubject(subjectId) { 
+			// verify the required parameter 'subjectId' is set
+			if (subjectId === undefined || subjectId === null) {
+				throw 'Missing the required parameter "subjectId" when calling getAuthorizationSubject';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/subjects/{subjectId}', 
+				'GET', 
+				{ 'subjectId': subjectId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Returns a listing of roles and permissions for the currently authenticated user.
+		 * 
+		 */
+		getAuthorizationSubjectsMe() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/subjects/me', 
+				'GET', 
+				{  }, 
 				{  }, 
 				{  }, 
 				{  }, 
@@ -27967,6 +29417,66 @@ define(['superagent'], function (superagent) { 'use strict';
 		}
 
 		/**
+		 * Add bulk routing language to user. Max limit 50 languages
+		 * 
+		 * @param {String} userId User ID
+		 * @param {Array.<Object>} body Language
+		 */
+		patchUserRoutinglanguagesBulk(userId, body) { 
+			// verify the required parameter 'userId' is set
+			if (userId === undefined || userId === null) {
+				throw 'Missing the required parameter "userId" when calling patchUserRoutinglanguagesBulk';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchUserRoutinglanguagesBulk';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/users/{userId}/routinglanguages/bulk', 
+				'PATCH', 
+				{ 'userId': userId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Add bulk routing skills to user
+		 * 
+		 * @param {String} userId User ID
+		 * @param {Array.<Object>} body Skill
+		 */
+		patchUserRoutingskillsBulk(userId, body) { 
+			// verify the required parameter 'userId' is set
+			if (userId === undefined || userId === null) {
+				throw 'Missing the required parameter "userId" when calling patchUserRoutingskillsBulk';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchUserRoutingskillsBulk';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/users/{userId}/routingskills/bulk', 
+				'PATCH', 
+				{ 'userId': userId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
 		 * Update bulk acd autoanswer on users
 		 * 
 		 * @param {Array.<Object>} body Users
@@ -28060,6 +29570,45 @@ define(['superagent'], function (superagent) { 'use strict';
 				{  }, 
 				{  }, 
 				body, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Make a grant of a role in a division
+		 * 
+		 * @param {String} subjectId Subject ID (user or group)
+		 * @param {String} divisionId the id of the division to which to make the grant
+		 * @param {String} roleId the id of the role to grant
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.subjectType what the type of the subject is, PC_GROUP or PC_USER (default to PC_USER)
+		 */
+		postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'subjectId' is set
+			if (subjectId === undefined || subjectId === null) {
+				throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectDivisionRole';
+			}
+			// verify the required parameter 'divisionId' is set
+			if (divisionId === undefined || divisionId === null) {
+				throw 'Missing the required parameter "divisionId" when calling postAuthorizationSubjectDivisionRole';
+			}
+			// verify the required parameter 'roleId' is set
+			if (roleId === undefined || roleId === null) {
+				throw 'Missing the required parameter "roleId" when calling postAuthorizationSubjectDivisionRole';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}', 
+				'POST', 
+				{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId }, 
+				{ 'subjectType': opts['subjectType'] }, 
+				{  }, 
+				{  }, 
+				null, 
 				['PureCloud Auth'], 
 				['application/json'], 
 				['application/json']
@@ -28511,7 +30060,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Utilities service.
 		 * @module purecloud-platform-client-v2/api/UtilitiesApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -28602,7 +30151,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Voicemail service.
 		 * @module purecloud-platform-client-v2/api/VoicemailApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -29239,7 +30788,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * WebChat service.
 		 * @module purecloud-platform-client-v2/api/WebChatApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -29450,7 +30999,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * WorkforceManagement service.
 		 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-		 * @version 36.0.0
+		 * @version 37.0.0
 		 */
 
 		/**
@@ -30300,6 +31849,30 @@ define(['superagent'], function (superagent) { 'use strict';
 				'GET', 
 				{  }, 
 				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'feature': opts['feature'],'divisionId': opts['divisionId'] }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud Auth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get management units across divisions
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {Array.<String>} opts.divisionId The divisionIds to filter by. If omitted, will return all divisions
+		 */
+		getWorkforcemanagementManagementunitsDivisionviews(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/managementunits/divisionviews', 
+				'GET', 
+				{  }, 
+				{ 'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
 				{  }, 
 				{  }, 
 				null, 
@@ -31322,7 +32895,7 @@ define(['superagent'], function (superagent) { 'use strict';
 	 * </pre>
 	 * </p>
 	 * @module purecloud-platform-client-v2/index
-	 * @version 36.0.0
+	 * @version 37.0.0
 	 */
 	class platformClient {
 		constructor() {
@@ -31382,6 +32955,11 @@ define(['superagent'], function (superagent) { 'use strict';
 			 */
 			this.FaxApi = FaxApi;
 			/**
+			 * The FlowsApi service constructor.
+			 * @property {module:purecloud-platform-client-v2/api/FlowsApi}
+			 */
+			this.FlowsApi = FlowsApi;
+			/**
 			 * The GeneralDataProtectionRegulationApi service constructor.
 			 * @property {module:purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi}
 			 */
@@ -31427,6 +33005,11 @@ define(['superagent'], function (superagent) { 'use strict';
 			 */
 			this.LocationsApi = LocationsApi;
 			/**
+			 * The MessagingApi service constructor.
+			 * @property {module:purecloud-platform-client-v2/api/MessagingApi}
+			 */
+			this.MessagingApi = MessagingApi;
+			/**
 			 * The MobileDevicesApi service constructor.
 			 * @property {module:purecloud-platform-client-v2/api/MobileDevicesApi}
 			 */
@@ -31441,6 +33024,11 @@ define(['superagent'], function (superagent) { 'use strict';
 			 * @property {module:purecloud-platform-client-v2/api/OAuthApi}
 			 */
 			this.OAuthApi = OAuthApi;
+			/**
+			 * The ObjectsApi service constructor.
+			 * @property {module:purecloud-platform-client-v2/api/ObjectsApi}
+			 */
+			this.ObjectsApi = ObjectsApi;
 			/**
 			 * The OrganizationApi service constructor.
 			 * @property {module:purecloud-platform-client-v2/api/OrganizationApi}

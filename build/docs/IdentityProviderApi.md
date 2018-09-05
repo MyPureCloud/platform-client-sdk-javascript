@@ -1028,8 +1028,8 @@ ADFS <a style="cursor: pointer" onclick="copyADFSExample()">Copy</a>
   "name": String, 
   "relyingPartyIdentifier": String, 
   "certificate": String, 
-  "issuerURI": String, 
   "ssoTargetURI": String, 
+  "issuerURI": String, 
   "disabled": Boolean, 
   "selfUri": String, 
 }
@@ -1115,8 +1115,8 @@ CustomerInteractionCenter <a style="cursor: pointer" onclick="copyCustomerIntera
   "id": String, 
   "name": String, 
   "certificate": String, 
-  "issuerURI": String, 
   "ssoTargetURI": String, 
+  "issuerURI": String, 
   "disabled": Boolean, 
   "selfUri": String, 
 }
@@ -1203,8 +1203,8 @@ GSuite <a style="cursor: pointer" onclick="copyGSuiteExample()">Copy</a>
   "name": String, 
   "relyingPartyIdentifier": String, 
   "certificate": String, 
-  "issuerURI": String, 
   "ssoTargetURI": String, 
+  "issuerURI": String, 
   "disabled": Boolean, 
   "selfUri": String, 
 }
@@ -1291,8 +1291,8 @@ IdentityNow <a style="cursor: pointer" onclick="copyIdentityNowExample()">Copy</
   "name": String, 
   "relyingPartyIdentifier": String, 
   "certificate": String, 
-  "issuerURI": String, 
   "ssoTargetURI": String, 
+  "issuerURI": String, 
   "disabled": Boolean, 
   "selfUri": String, 
 }
@@ -1378,8 +1378,8 @@ Okta <a style="cursor: pointer" onclick="copyOktaExample()">Copy</a>
   "id": String, 
   "name": String, 
   "certificate": String, 
-  "issuerURI": String, 
   "ssoTargetURI": String, 
+  "issuerURI": String, 
   "disabled": Boolean, 
   "selfUri": String, 
 }
@@ -1465,8 +1465,8 @@ OneLogin <a style="cursor: pointer" onclick="copyOneLoginExample()">Copy</a>
   "id": String, 
   "name": String, 
   "certificate": String, 
-  "issuerURI": String, 
   "ssoTargetURI": String, 
+  "issuerURI": String, 
   "disabled": Boolean, 
   "selfUri": String, 
 }
@@ -1553,8 +1553,8 @@ PingIdentity <a style="cursor: pointer" onclick="copyPingIdentityExample()">Copy
   "name": String, 
   "relyingPartyIdentifier": String, 
   "certificate": String, 
-  "issuerURI": String, 
   "ssoTargetURI": String, 
+  "issuerURI": String, 
   "disabled": Boolean, 
   "selfUri": String, 
 }
@@ -1724,8 +1724,8 @@ Salesforce <a style="cursor: pointer" onclick="copySalesforceExample()">Copy</a>
   "id": String, 
   "name": String, 
   "certificate": String, 
-  "issuerURI": String, 
   "ssoTargetURI": String, 
+  "issuerURI": String, 
   "disabled": Boolean, 
   "selfUri": String, 
 }

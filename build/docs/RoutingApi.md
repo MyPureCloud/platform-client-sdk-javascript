@@ -46,6 +46,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | **PATCH** /api/v2/routing/queues/{queueId}/users/{memberId} | Update the ring number of joined status for a User in a Queue
 [**patchRoutingQueueUsers**](RoutingApi.html#patchRoutingQueueUsers) | **PATCH** /api/v2/routing/queues/{queueId}/users | Join or unjoin a set of users for a queue
 [**patchUserRoutinglanguage**](RoutingApi.html#patchUserRoutinglanguage) | **PATCH** /api/v2/users/{userId}/routinglanguages/{languageId} | Update routing language proficiency or state.
+[**patchUserRoutinglanguagesBulk**](RoutingApi.html#patchUserRoutinglanguagesBulk) | **PATCH** /api/v2/users/{userId}/routinglanguages/bulk | Add bulk routing language to user. Max limit 50 languages
+[**patchUserRoutingskillsBulk**](RoutingApi.html#patchUserRoutingskillsBulk) | **PATCH** /api/v2/users/{userId}/routingskills/bulk | Add bulk routing skills to user
 [**postAnalyticsQueuesObservationsQuery**](RoutingApi.html#postAnalyticsQueuesObservationsQuery) | **POST** /api/v2/analytics/queues/observations/query | Query for queue observations
 [**postRoutingEmailDomainRoutes**](RoutingApi.html#postRoutingEmailDomainRoutes) | **POST** /api/v2/routing/email/domains/{domainName}/routes | Create a route
 [**postRoutingEmailDomains**](RoutingApi.html#postRoutingEmailDomains) | **POST** /api/v2/routing/email/domains | Create a domain
@@ -1396,7 +1398,7 @@ apiInstance.getRoutingQueueUsers(queueId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortBy** | **String** | Sort by | [optional] [default to name] |
- **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
  **joined** | **Boolean** | Filter by joined status | [optional]  |
  **name** | **String** | Filter by queue member name | [optional]  |
  **profileSkills** | **[String]** | Filter by profile skill | [optional]  |
@@ -2050,8 +2052,8 @@ var apiInstance = new platformClient.RoutingApi();
 var opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'name': "name_example", // String | Name
-  'sortBy': "name" // String | Sort by
+  'sortBy': "name", // String | Sort by
+  'name': "name_example" // String | Name
 };
 apiInstance.getRoutingWrapupcodes(opts)
   .then(function(data) {
@@ -2071,8 +2073,8 @@ apiInstance.getRoutingWrapupcodes(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | Sort by | [optional] [default to name]<br />**Values**: name, id |
  **name** | **String** | Name | [optional]  |
- **sortBy** | **String** | Sort by | [optional] [default to name] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2561,6 +2563,22 @@ QueueMember <a style="cursor: pointer" onclick="copyQueueMemberExample()">Copy</
       "owners": User, 
       "selfUri": String, 
     },  
+    "skills": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "skillUri": String, 
+      "selfUri": String, 
+    },  
+    "languages": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "languageUri": String, 
+      "selfUri": String, 
+    },  
     "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
@@ -2978,6 +2996,22 @@ QueueMember <a style="cursor: pointer" onclick="copyQueueMemberExample()">Copy</
       "owners": User, 
       "selfUri": String, 
     },  
+    "skills": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "skillUri": String, 
+      "selfUri": String, 
+    },  
+    "languages": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "languageUri": String, 
+      "selfUri": String, 
+    },  
     "acdAutoAnswer": Boolean, 
     "selfUri": String, 
   },  
@@ -3127,6 +3161,180 @@ apiInstance.patchUserRoutinglanguage(userId, languageId, body)
 ### Return type
 
 **UserRoutingLanguage**
+
+<a name="patchUserRoutinglanguagesBulk"></a>
+
+# UserLanguageEntityListing patchUserRoutinglanguagesBulk(userId, body)
+
+
+
+PATCH /api/v2/users/{userId}/routinglanguages/bulk
+
+Add bulk routing language to user. Max limit 50 languages
+
+
+
+Requires ANY permissions: 
+
+* routing:skill:assign
+* admin
+
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyUserRoutingLanguagePostExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#UserRoutingLanguagePostExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+UserRoutingLanguagePost <a style="cursor: pointer" onclick="copyUserRoutingLanguagePostExample()">Copy</a>
+
+<div id="UserRoutingLanguagePostExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "proficiency": Number, 
+  "languageUri": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RoutingApi();
+
+var userId = "userId_example"; // String | User ID
+
+var body = [{}]; // Object | Language
+
+apiInstance.patchUserRoutinglanguagesBulk(userId, body)
+  .then(function(data) {
+    console.log(`patchUserRoutinglanguagesBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling patchUserRoutinglanguagesBulk');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **body** | **Object** | Language |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserLanguageEntityListing**
+
+<a name="patchUserRoutingskillsBulk"></a>
+
+# UserSkillEntityListing patchUserRoutingskillsBulk(userId, body)
+
+
+
+PATCH /api/v2/users/{userId}/routingskills/bulk
+
+Add bulk routing skills to user
+
+
+
+Requires ANY permissions: 
+
+* routing:skill:assign
+* admin
+
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyUserRoutingSkillPostExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#UserRoutingSkillPostExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+UserRoutingSkillPost <a style="cursor: pointer" onclick="copyUserRoutingSkillPostExample()">Copy</a>
+
+<div id="UserRoutingSkillPostExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "proficiency": Number, 
+  "skillUri": String, 
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.RoutingApi();
+
+var userId = "userId_example"; // String | User ID
+
+var body = [{}]; // Object | Skill
+
+apiInstance.patchUserRoutingskillsBulk(userId, body)
+  .then(function(data) {
+    console.log(`patchUserRoutingskillsBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling patchUserRoutingskillsBulk');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **body** | **Object** | Skill |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserSkillEntityListing**
 
 <a name="postAnalyticsQueuesObservationsQuery"></a>
 
@@ -5178,6 +5386,22 @@ Recipient <a style="cursor: pointer" onclick="copyRecipientExample()">Copy</a>
         "owners": User, 
         "selfUri": String, 
       },  
+      "skills": { 
+        "id": String, 
+        "name": String, 
+        "proficiency": Number, 
+        "state": String, 
+        "skillUri": String, 
+        "selfUri": String, 
+      },  
+      "languages": { 
+        "id": String, 
+        "name": String, 
+        "proficiency": Number, 
+        "state": String, 
+        "languageUri": String, 
+        "selfUri": String, 
+      },  
       "acdAutoAnswer": Boolean, 
       "selfUri": String, 
     },  
@@ -5537,6 +5761,22 @@ Recipient <a style="cursor: pointer" onclick="copyRecipientExample()">Copy</a>
         "owners": User, 
         "selfUri": String, 
       },  
+      "skills": { 
+        "id": String, 
+        "name": String, 
+        "proficiency": Number, 
+        "state": String, 
+        "skillUri": String, 
+        "selfUri": String, 
+      },  
+      "languages": { 
+        "id": String, 
+        "name": String, 
+        "proficiency": Number, 
+        "state": String, 
+        "languageUri": String, 
+        "selfUri": String, 
+      },  
       "acdAutoAnswer": Boolean, 
       "selfUri": String, 
     },  
@@ -5841,6 +6081,22 @@ Recipient <a style="cursor: pointer" onclick="copyRecipientExample()">Copy</a>
           "rulesVisible": Boolean, 
           "visibility": String, 
           "owners": User, 
+          "selfUri": String, 
+        },  
+        "skills": { 
+          "id": String, 
+          "name": String, 
+          "proficiency": Number, 
+          "state": String, 
+          "skillUri": String, 
+          "selfUri": String, 
+        },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "proficiency": Number, 
+          "state": String, 
+          "languageUri": String, 
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
@@ -6178,6 +6434,22 @@ Recipient <a style="cursor: pointer" onclick="copyRecipientExample()">Copy</a>
       "rulesVisible": Boolean, 
       "visibility": String, 
       "owners": User, 
+      "selfUri": String, 
+    },  
+    "skills": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "skillUri": String, 
+      "selfUri": String, 
+    },  
+    "languages": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "languageUri": String, 
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
@@ -6869,6 +7141,22 @@ SmsPhoneNumber <a style="cursor: pointer" onclick="copySmsPhoneNumberExample()">
       "rulesVisible": Boolean, 
       "visibility": String, 
       "owners": User, 
+      "selfUri": String, 
+    },  
+    "skills": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "skillUri": String, 
+      "selfUri": String, 
+    },  
+    "languages": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "languageUri": String, 
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 

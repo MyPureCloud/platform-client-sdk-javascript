@@ -5,7 +5,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 36.0.0
+	 * @version 37.0.0
 	 */
 
 	/**
@@ -19,6 +19,31 @@ class SearchApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Search gkn documentation using the q64 value returned from a previous search
+	 * 
+	 * @param {String} q64 q64
+	 */
+	getDocumentationGknSearch(q64) { 
+		// verify the required parameter 'q64' is set
+		if (q64 === undefined || q64 === null) {
+			throw 'Missing the required parameter "q64" when calling getDocumentationGknSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/documentation/gkn/search', 
+			'GET', 
+			{  }, 
+			{ 'q64': q64 }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
 
 	/**
 	 * Search documentation using the q64 value returned from a previous search
@@ -215,6 +240,31 @@ class SearchApi {
 			{  }, 
 			{  }, 
 			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search gkn documentation
+	 * 
+	 * @param {Object} body Search request options
+	 */
+	postDocumentationGknSearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postDocumentationGknSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/documentation/gkn/search', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud Auth'], 
 			['application/json'], 
 			['application/json']

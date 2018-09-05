@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 36.0.0
+	 * @version 37.0.0
 	 */
 
 	/**
@@ -855,6 +855,30 @@ class WorkforceManagementApi {
 			'GET', 
 			{  }, 
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'feature': opts['feature'],'divisionId': opts['divisionId'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get management units across divisions
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.divisionId The divisionIds to filter by. If omitted, will return all divisions
+	 */
+	getWorkforcemanagementManagementunitsDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/divisionviews', 
+			'GET', 
+			{  }, 
+			{ 'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 

@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 36.0.0
+	 * @version 37.0.0
 	 */
 
 	/**
@@ -19,6 +19,31 @@ class AuthorizationApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete a division.
+	 * 
+	 * @param {String} divisionId Division ID
+	 */
+	deleteAuthorizationDivision(divisionId) { 
+		// verify the required parameter 'divisionId' is set
+		if (divisionId === undefined || divisionId === null) {
+			throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationDivision';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisions/{divisionId}', 
+			'DELETE', 
+			{ 'divisionId': divisionId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
 
 	/**
 	 * Delete an organization role.
@@ -46,6 +71,41 @@ class AuthorizationApi {
 	}
 
 	/**
+	 * Delete a grant of a role in a division
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {String} divisionId the id of the division of the grant
+	 * @param {String} roleId the id of the role of the grant
+	 */
+	deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId) { 
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling deleteAuthorizationSubjectDivisionRole';
+		}
+		// verify the required parameter 'divisionId' is set
+		if (divisionId === undefined || divisionId === null) {
+			throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationSubjectDivisionRole';
+		}
+		// verify the required parameter 'roleId' is set
+		if (roleId === undefined || roleId === null) {
+			throw 'Missing the required parameter "roleId" when calling deleteAuthorizationSubjectDivisionRole';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}', 
+			'DELETE', 
+			{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Removes all the roles from the user.
 	 * 
 	 * @param {String} userId User ID
@@ -61,6 +121,170 @@ class AuthorizationApi {
 			'DELETE', 
 			{ 'userId': userId }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns an authorization division.
+	 * 
+	 * @param {String} divisionId Division ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.objectCount Get count of objects in this division, grouped by type (default to false)
+	 */
+	getAuthorizationDivision(divisionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'divisionId' is set
+		if (divisionId === undefined || divisionId === null) {
+			throw 'Missing the required parameter "divisionId" when calling getAuthorizationDivision';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisions/{divisionId}', 
+			'GET', 
+			{ 'divisionId': divisionId }, 
+			{ 'objectCount': opts['objectCount'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a list of all divisions defined for the organization
+	 * Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The total page size requested (default to 25)
+	 * @param {Number} opts.pageNumber The page number requested (default to 1)
+	 * @param {String} opts.sortBy variable name requested to sort by
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
+	 * @param {String} opts.nextPage next page token
+	 * @param {String} opts.previousPage Previous page token
+	 * @param {Boolean} opts.objectCount Include the count of objects contained in the division (default to false)
+	 * @param {Array.<String>} opts.id Optionally request specific divisions by their IDs
+	 * @param {String} opts.name Search term to filter by division name
+	 */
+	getAuthorizationDivisions(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisions', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'objectCount': opts['objectCount'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve the home division for the organization.
+	 * Will not include object counts.
+	 */
+	getAuthorizationDivisionsHome() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisions/home', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns the maximum allowed number of divisions.
+	 * 
+	 */
+	getAuthorizationDivisionsLimit() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisions/limit', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns whether or not current user can perform the specified action(s).
+	 * 
+	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.name Search term to filter by division name
+	 */
+	getAuthorizationDivisionspermittedMe(permission, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'permission' is set
+		if (permission === undefined || permission === null) {
+			throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedMe';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisionspermitted/me', 
+			'GET', 
+			{  }, 
+			{ 'name': opts['name'],'permission': permission }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns whether or not specified user can perform the specified action(s).
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.name Search term to filter by division name
+	 */
+	getAuthorizationDivisionspermittedSubjectId(subjectId, permission, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling getAuthorizationDivisionspermittedSubjectId';
+		}
+		// verify the required parameter 'permission' is set
+		if (permission === undefined || permission === null) {
+			throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedSubjectId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisionspermitted/{subjectId}', 
+			'GET', 
+			{ 'subjectId': subjectId }, 
+			{ 'name': opts['name'],'permission': permission }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -205,6 +429,36 @@ class AuthorizationApi {
 	}
 
 	/**
+	 * Get a list of the users in a specified role.
+	 * Get an array of the UUIDs of the users in the specified role.
+	 * @param {String} roleId Role ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getAuthorizationRoleUsers(roleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'roleId' is set
+		if (roleId === undefined || roleId === null) {
+			throw 'Missing the required parameter "roleId" when calling getAuthorizationRoleUsers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/roles/{roleId}/users', 
+			'GET', 
+			{ 'roleId': roleId }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Retrieve a list of all roles defined for the organization
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -229,6 +483,51 @@ class AuthorizationApi {
 			'GET', 
 			{  }, 
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'permission': this.apiClient.buildCollectionParam(opts['permission'], 'multi'),'defaultRoleId': this.apiClient.buildCollectionParam(opts['defaultRoleId'], 'multi'),'userCount': opts['userCount'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns a listing of roles and permissions for a user.
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 */
+	getAuthorizationSubject(subjectId) { 
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling getAuthorizationSubject';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/subjects/{subjectId}', 
+			'GET', 
+			{ 'subjectId': subjectId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns a listing of roles and permissions for the currently authenticated user.
+	 * 
+	 */
+	getAuthorizationSubjectsMe() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/subjects/me', 
+			'GET', 
+			{  }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -282,6 +581,96 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/roles/{roleId}', 
 			'PATCH', 
+			{ 'roleId': roleId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Assign a list of objects to a division
+	 * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+	 * @param {String} divisionId Division ID
+	 * @param {Object} objectType The type of the objects. Must be one of the valid object types
+	 * @param {Array.<Object>} body Object Id List
+	 */
+	postAuthorizationDivisionObject(divisionId, objectType, body) { 
+		// verify the required parameter 'divisionId' is set
+		if (divisionId === undefined || divisionId === null) {
+			throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionObject';
+		}
+		// verify the required parameter 'objectType' is set
+		if (objectType === undefined || objectType === null) {
+			throw 'Missing the required parameter "objectType" when calling postAuthorizationDivisionObject';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationDivisionObject';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisions/{divisionId}/objects/{objectType}', 
+			'POST', 
+			{ 'divisionId': divisionId,'objectType': objectType }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a division.
+	 * 
+	 * @param {Object} body Division
+	 */
+	postAuthorizationDivisions(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationDivisions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisions', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk-grant subjects and divisions with an organization role.
+	 * 
+	 * @param {String} roleId Role ID
+	 * @param {Object} body Subjects and Divisions
+	 */
+	postAuthorizationRole(roleId, body) { 
+		// verify the required parameter 'roleId' is set
+		if (roleId === undefined || roleId === null) {
+			throw 'Missing the required parameter "roleId" when calling postAuthorizationRole';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationRole';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/roles/{roleId}', 
+			'POST', 
 			{ 'roleId': roleId }, 
 			{  }, 
 			{  }, 
@@ -371,6 +760,75 @@ class AuthorizationApi {
 			{  }, 
 			{  }, 
 			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Make a grant of a role in a division
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {String} divisionId the id of the division to which to make the grant
+	 * @param {String} roleId the id of the role to grant
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.subjectType what the type of the subject is, PC_GROUP or PC_USER (default to PC_USER)
+	 */
+	postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectDivisionRole';
+		}
+		// verify the required parameter 'divisionId' is set
+		if (divisionId === undefined || divisionId === null) {
+			throw 'Missing the required parameter "divisionId" when calling postAuthorizationSubjectDivisionRole';
+		}
+		// verify the required parameter 'roleId' is set
+		if (roleId === undefined || roleId === null) {
+			throw 'Missing the required parameter "roleId" when calling postAuthorizationSubjectDivisionRole';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}', 
+			'POST', 
+			{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId }, 
+			{ 'subjectType': opts['subjectType'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a division.
+	 * 
+	 * @param {String} divisionId Division ID
+	 * @param {Object} body Updated division data
+	 */
+	putAuthorizationDivision(divisionId, body) { 
+		// verify the required parameter 'divisionId' is set
+		if (divisionId === undefined || divisionId === null) {
+			throw 'Missing the required parameter "divisionId" when calling putAuthorizationDivision';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putAuthorizationDivision';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisions/{divisionId}', 
+			'PUT', 
+			{ 'divisionId': divisionId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud Auth'], 
 			['application/json'], 
 			['application/json']
