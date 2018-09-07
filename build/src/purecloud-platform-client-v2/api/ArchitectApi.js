@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 37.0.0
+	 * @version 37.1.0
 	 */
 
 	/**

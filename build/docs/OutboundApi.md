@@ -1090,7 +1090,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.OutboundApi();
 
 var opts = { 
-  'pageSize': 25, // Number | Page size
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
@@ -1113,7 +1113,7 @@ apiInstance.getOutboundAttemptlimits(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
@@ -1213,7 +1213,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.OutboundApi();
 
 var opts = { 
-  'pageSize': 25, // Number | Page size
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
@@ -1236,7 +1236,7 @@ apiInstance.getOutboundCallabletimesets(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
@@ -1336,7 +1336,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.OutboundApi();
 
 var opts = { 
-  'pageSize': 25, // Number | Page size
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
@@ -1359,7 +1359,7 @@ apiInstance.getOutboundCallanalysisresponsesets(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
@@ -1739,7 +1739,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.OutboundApi();
 
 var opts = { 
-  'pageSize': 25, // Number | Page size
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
@@ -1762,7 +1762,7 @@ apiInstance.getOutboundCampaignrules(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
@@ -1806,7 +1806,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.OutboundApi();
 
 var opts = { 
-  'pageSize': 25, // Number | Page size
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
@@ -1836,7 +1836,7 @@ apiInstance.getOutboundCampaigns(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
@@ -1943,7 +1943,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.OutboundApi();
 
 var opts = { 
-  'pageSize': 25, // Number | Page size
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
@@ -1967,7 +1967,7 @@ apiInstance.getOutboundCampaignsDivisionviews(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
@@ -2306,7 +2306,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.OutboundApi();
 
 var opts = { 
-  'pageSize': 25, // Number | Page size
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
@@ -2330,7 +2330,7 @@ apiInstance.getOutboundContactlistfilters(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
@@ -2377,7 +2377,7 @@ var apiInstance = new platformClient.OutboundApi();
 var opts = { 
   'includeImportStatus': false, // Boolean | Include import status
   'includeSize': false, // Boolean | Include size
-  'pageSize': 25, // Number | Page size
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
@@ -2403,7 +2403,7 @@ apiInstance.getOutboundContactlists(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **includeImportStatus** | **Boolean** | Include import status | [optional] [default to false] |
  **includeSize** | **Boolean** | Include size | [optional] [default to false] |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
@@ -2629,7 +2629,7 @@ var apiInstance = new platformClient.OutboundApi();
 var opts = { 
   'includeImportStatus': false, // Boolean | Import status
   'includeSize': false, // Boolean | Include size
-  'pageSize': 25, // Number | Page size
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
@@ -2654,7 +2654,7 @@ apiInstance.getOutboundDnclists(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **includeImportStatus** | **Boolean** | Import status | [optional] [default to false] |
  **includeSize** | **Boolean** | Include size | [optional] [default to false] |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
@@ -2879,7 +2879,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.OutboundApi();
 
 var opts = { 
-  'pageSize': 25, // Number | Page size
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
@@ -2902,7 +2902,7 @@ apiInstance.getOutboundRulesets(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
@@ -3214,7 +3214,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.OutboundApi();
 
 var opts = { 
-  'pageSize': 25, // Number | Page size
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
@@ -3237,7 +3237,7 @@ apiInstance.getOutboundSequences(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |

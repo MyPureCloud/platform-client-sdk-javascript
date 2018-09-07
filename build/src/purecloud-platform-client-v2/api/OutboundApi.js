@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 37.0.0
+	 * @version 37.1.0
 	 */
 
 	/**
@@ -459,7 +459,7 @@ class OutboundApi {
 	 * Query attempt limits list
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
@@ -513,7 +513,7 @@ class OutboundApi {
 	 * Query callable time set list
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
@@ -567,7 +567,7 @@ class OutboundApi {
 	 * Query a list of dialer call analysis response sets.
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
@@ -746,7 +746,7 @@ class OutboundApi {
 	 * Query Campaign Rule list
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
@@ -775,7 +775,7 @@ class OutboundApi {
 	 * Query a list of dialer campaigns.
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
@@ -836,7 +836,7 @@ class OutboundApi {
 	 * Query a list of basic Campaign information objects
 	 * This returns a simplified version of a Campaign, consisting of name and division.
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
@@ -1005,7 +1005,7 @@ class OutboundApi {
 	 * Query Contact list filters
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
@@ -1037,7 +1037,7 @@ class OutboundApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeImportStatus Include import status (default to false)
 	 * @param {Boolean} opts.includeSize Include size (default to false)
-	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
@@ -1153,7 +1153,7 @@ class OutboundApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeImportStatus Import status (default to false)
 	 * @param {Boolean} opts.includeSize Include size (default to false)
-	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
@@ -1262,7 +1262,7 @@ class OutboundApi {
 	 * Query a list of Rule Sets.
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
@@ -1406,7 +1406,7 @@ class OutboundApi {
 	 * Query a list of dialer campaign sequences.
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name

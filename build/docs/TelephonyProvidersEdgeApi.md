@@ -11394,8 +11394,8 @@ DomainCertificateAuthority <a style="cursor: pointer" onclick="copyDomainCertifi
     "expirationDate": Date, 
     "issueDate": Date, 
     "expired": Boolean, 
-    "valid": Boolean, 
     "signatureValid": Boolean, 
+    "valid": Boolean, 
   },  
   "selfUri": String, 
 }
@@ -47924,8 +47924,8 @@ DomainCertificateAuthority <a style="cursor: pointer" onclick="copyDomainCertifi
     "expirationDate": Date, 
     "issueDate": Date, 
     "expired": Boolean, 
-    "valid": Boolean, 
     "signatureValid": Boolean, 
+    "valid": Boolean, 
   },  
   "selfUri": String, 
 }

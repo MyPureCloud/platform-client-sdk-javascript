@@ -5,7 +5,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 37.0.0
+	 * @version 37.1.0
 	 */
 
 	/**

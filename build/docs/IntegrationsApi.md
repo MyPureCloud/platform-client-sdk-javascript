@@ -1682,6 +1682,7 @@ Integration <a style="cursor: pointer" onclick="copyIntegrationExample()">Copy</
     "configPropertiesSchemaUri": String, 
     "configAdvancedSchemaUri": String, 
     "helpUri": String, 
+    "termsOfServiceUri": String, 
     "credentials": { 
       "required": Boolean, 
       "title": String, 
@@ -2068,6 +2069,7 @@ CreateIntegrationRequest <a style="cursor: pointer" onclick="copyCreateIntegrati
     "configPropertiesSchemaUri": String, 
     "configAdvancedSchemaUri": String, 
     "helpUri": String, 
+    "termsOfServiceUri": String, 
     "credentials": { 
       "required": Boolean, 
       "title": String, 

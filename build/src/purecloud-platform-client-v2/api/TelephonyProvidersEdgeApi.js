@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 37.0.0
+	 * @version 37.1.0
 	 */
 
 	/**

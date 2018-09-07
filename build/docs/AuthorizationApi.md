@@ -2354,8 +2354,8 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "default": Boolean, 
   "base": Boolean, 
+  "default": Boolean, 
   "selfUri": String, 
 }
 ~~~
@@ -3766,8 +3766,8 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "default": Boolean, 
   "base": Boolean, 
+  "default": Boolean, 
   "selfUri": String, 
 }
 ~~~
@@ -4950,8 +4950,8 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "default": Boolean, 
   "base": Boolean, 
+  "default": Boolean, 
   "selfUri": String, 
 }
 ~~~
@@ -6341,8 +6341,8 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "default": Boolean, 
   "base": Boolean, 
+  "default": Boolean, 
   "selfUri": String, 
 }
 ~~~
@@ -7640,8 +7640,8 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "default": Boolean, 
   "base": Boolean, 
+  "default": Boolean, 
   "selfUri": String, 
 }
 ~~~
