@@ -37,12 +37,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundCampaignrule**](OutboundApi.html#getOutboundCampaignrule) | **GET** /api/v2/outbound/campaignrules/{campaignRuleId} | Get Campaign Rule
 [**getOutboundCampaignrules**](OutboundApi.html#getOutboundCampaignrules) | **GET** /api/v2/outbound/campaignrules | Query Campaign Rule list
 [**getOutboundCampaigns**](OutboundApi.html#getOutboundCampaigns) | **GET** /api/v2/outbound/campaigns | Query a list of dialer campaigns.
-[**getOutboundCampaignsDivisionview**](OutboundApi.html#getOutboundCampaignsDivisionview) | **GET** /api/v2/outbound/campaigns/divisionviews/{campaignId} | Get a basic Campaign information object
 [**getOutboundCampaignsDivisionviews**](OutboundApi.html#getOutboundCampaignsDivisionviews) | **GET** /api/v2/outbound/campaigns/divisionviews | Query a list of basic Campaign information objects
 [**getOutboundContactlist**](OutboundApi.html#getOutboundContactlist) | **GET** /api/v2/outbound/contactlists/{contactListId} | Get a dialer contact list.
 [**getOutboundContactlistContact**](OutboundApi.html#getOutboundContactlistContact) | **GET** /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} | Get a contact.
 [**getOutboundContactlistExport**](OutboundApi.html#getOutboundContactlistExport) | **GET** /api/v2/outbound/contactlists/{contactListId}/export | Get the URI of a contact list export.
 [**getOutboundContactlistImportstatus**](OutboundApi.html#getOutboundContactlistImportstatus) | **GET** /api/v2/outbound/contactlists/{contactListId}/importstatus | Get dialer contactList import status.
+[**getOutboundContactlistTimezonemappingpreview**](OutboundApi.html#getOutboundContactlistTimezonemappingpreview) | **GET** /api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview | Preview the result of applying Automatic Time Zone Mapping to a contact list
 [**getOutboundContactlistfilter**](OutboundApi.html#getOutboundContactlistfilter) | **GET** /api/v2/outbound/contactlistfilters/{contactListFilterId} | Get Contact list filter
 [**getOutboundContactlistfilters**](OutboundApi.html#getOutboundContactlistfilters) | **GET** /api/v2/outbound/contactlistfilters | Query Contact list filters
 [**getOutboundContactlists**](OutboundApi.html#getOutboundContactlists) | **GET** /api/v2/outbound/contactlists | Query a list of contact lists.
@@ -1855,62 +1855,6 @@ apiInstance.getOutboundCampaigns(opts)
 
 **CampaignEntityListing**
 
-<a name="getOutboundCampaignsDivisionview"></a>
-
-# CampaignDivisionView getOutboundCampaignsDivisionview(campaignId)
-
-
-
-GET /api/v2/outbound/campaigns/divisionviews/{campaignId}
-
-Get a basic Campaign information object
-
-This returns a simplified version of a Campaign, consisting of name and division.
-
-Requires ANY permissions: 
-
-* outbound:campaign:search
-
-
-
-### Example Usage
-
-~~~ javascript
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new platformClient.OutboundApi();
-
-var campaignId = "campaignId_example"; // String | Campaign ID
-
-apiInstance.getOutboundCampaignsDivisionview(campaignId)
-  .then(function(data) {
-    console.log(`getOutboundCampaignsDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch(function(err) {
-  	console.log('There was a failure calling getOutboundCampaignsDivisionview');
-    console.error(err);
-  });
-
-~~~
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **campaignId** | **String** | Campaign ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**CampaignDivisionView**
-
 <a name="getOutboundCampaignsDivisionviews"></a>
 
 # CampaignDivisionViewListing getOutboundCampaignsDivisionviews(opts)
@@ -2217,6 +2161,62 @@ apiInstance.getOutboundContactlistImportstatus(contactListId)
 ### Return type
 
 **ImportStatus**
+
+<a name="getOutboundContactlistTimezonemappingpreview"></a>
+
+# TimeZoneMappingPreview getOutboundContactlistTimezonemappingpreview(contactListId)
+
+
+
+GET /api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview
+
+Preview the result of applying Automatic Time Zone Mapping to a contact list
+
+
+
+Requires ANY permissions: 
+
+* outbound:contactList:view
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.OutboundApi();
+
+var contactListId = "contactListId_example"; // String | ContactList ID
+
+apiInstance.getOutboundContactlistTimezonemappingpreview(contactListId)
+  .then(function(data) {
+    console.log(`getOutboundContactlistTimezonemappingpreview success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getOutboundContactlistTimezonemappingpreview');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListId** | **String** | ContactList ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**TimeZoneMappingPreview**
 
 <a name="getOutboundContactlistfilter"></a>
 

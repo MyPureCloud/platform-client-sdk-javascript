@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 37.1.0
+	 * @version 38.0.0
 	 */
 
 	/**
@@ -2950,6 +2950,31 @@ class ConversationsApi {
 			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace', 
 			'POST', 
 			{ 'conversationId': conversationId,'participantId': participantId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create an outbound messaging conversation.
+	 * If there is an existing conversation between the remote address and the address associated with the queue specified in createOutboundRequest then the result of this request depends on the state of that conversation and the useExistingConversation field of createOutboundRequest. If the existing conversation is in alerting or connected state, then the request will fail. If the existing conversation is disconnected but still within the conversation window then the request will fail unless useExistingConversation is set to true.
+	 * @param {Object} body Create outbound messaging conversation
+	 */
+	postConversationsMessages(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages', 
+			'POST', 
+			{  }, 
 			{  }, 
 			{  }, 
 			{  }, 

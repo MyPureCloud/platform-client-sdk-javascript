@@ -20,6 +20,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitActivitycodes) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/activitycodes | Get activity codes
 [**getWorkforcemanagementManagementunitAgent**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitAgent) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId} | Get data for agent in the management unit
 [**getWorkforcemanagementManagementunitIntradayQueues**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitIntradayQueues) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/intraday/queues | Get intraday queues for the given date
+[**getWorkforcemanagementManagementunitSchedulingRun**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitSchedulingRun) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId} | Gets the status for a specific scheduling run
+[**getWorkforcemanagementManagementunitSchedulingRunResult**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitSchedulingRunResult) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId}/result | Gets the result of a specific scheduling run
 [**getWorkforcemanagementManagementunitSchedulingRuns**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitSchedulingRuns) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs | Get the status of all the ongoing schedule runs
 [**getWorkforcemanagementManagementunitServicegoalgroup**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitServicegoalgroup) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/servicegoalgroups/{serviceGoalGroupId} | Get a service goal group
 [**getWorkforcemanagementManagementunitServicegoalgroups**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitServicegoalgroups) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/servicegoalgroups | Get service goal groups
@@ -39,6 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequest) | **GET** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Get a time off request for the current user
 [**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequests) | **GET** /api/v2/workforcemanagement/timeoffrequests | Get a list of time off requests for the current user
 [**patchWorkforcemanagementManagementunitActivitycode**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitActivitycode) | **PATCH** /api/v2/workforcemanagement/managementunits/{muId}/activitycodes/{acId} | Update an activity code
+[**patchWorkforcemanagementManagementunitSchedulingRun**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitSchedulingRun) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId} | Marks a specific scheduling run as applied, allowing a new rescheduling run to be started
 [**patchWorkforcemanagementManagementunitServicegoalgroup**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitServicegoalgroup) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/servicegoalgroups/{serviceGoalGroupId} | Update a service goal group
 [**patchWorkforcemanagementManagementunitSettings**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitSettings) | **PATCH** /api/v2/workforcemanagement/managementunits/{muId}/settings | Patch the settings for the requested management unit
 [**patchWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitUserTimeoffrequest) | **PATCH** /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Update a time off request
@@ -55,6 +58,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementManagementunitTimeoffrequestsFetchdetails**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffrequestsFetchdetails) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests/fetchdetails | Gets a list of time off requests from lookup ids
 [**postWorkforcemanagementManagementunitTimeoffrequestsQuery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffrequestsQuery) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests/query | Gets the lookup ids to fetch the specified set of requests
 [**postWorkforcemanagementManagementunitWeekScheduleCopy**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekScheduleCopy) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy | Copy a week schedule
+[**postWorkforcemanagementManagementunitWeekScheduleReschedule**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekScheduleReschedule) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule | Start a scheduling run to compute the reschedule. When the scheduling run finishes, a client can get the reschedule changes and then the client can apply them to the schedule, save the schedule, and mark the scheduling run as applied
 [**postWorkforcemanagementManagementunitWeekSchedules**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekSchedules) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules | Add a schedule for a week in management unit using imported data. Use partial uploads of user schedules if activity count in schedule is greater than 17500
 [**postWorkforcemanagementManagementunitWeekSchedulesGenerate**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekSchedulesGenerate) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/generate | Generate a week schedule
 [**postWorkforcemanagementManagementunitWeekSchedulesPartialupload**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekSchedulesPartialupload) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/partialupload | Partial upload of user schedules where activity count is greater than 17500
@@ -927,6 +931,124 @@ apiInstance.getWorkforcemanagementManagementunitIntradayQueues(muId, _date)
 ### Return type
 
 **WfmIntradayQueueListing**
+
+<a name="getWorkforcemanagementManagementunitSchedulingRun"></a>
+
+# SchedulingRunResponse getWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId)
+
+
+
+GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId}
+
+Gets the status for a specific scheduling run
+
+
+
+Requires ANY permissions: 
+
+* wfm:schedule:generate
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
+
+var runId = "runId_example"; // String | The ID of the schedule run
+
+apiInstance.getWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId)
+  .then(function(data) {
+    console.log(`getWorkforcemanagementManagementunitSchedulingRun success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getWorkforcemanagementManagementunitSchedulingRun');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The ID of the management unit. |  |
+ **runId** | **String** | The ID of the schedule run |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SchedulingRunResponse**
+
+<a name="getWorkforcemanagementManagementunitSchedulingRunResult"></a>
+
+# RescheduleResult getWorkforcemanagementManagementunitSchedulingRunResult(managementUnitId, runId)
+
+
+
+GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId}/result
+
+Gets the result of a specific scheduling run
+
+
+
+Requires ANY permissions: 
+
+* wfm:schedule:generate
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
+
+var runId = "runId_example"; // String | The ID of the schedule run
+
+apiInstance.getWorkforcemanagementManagementunitSchedulingRunResult(managementUnitId, runId)
+  .then(function(data) {
+    console.log(`getWorkforcemanagementManagementunitSchedulingRunResult success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getWorkforcemanagementManagementunitSchedulingRunResult');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The ID of the management unit. |  |
+ **runId** | **String** | The ID of the schedule run |  |
+{: class="table table-striped"}
+
+### Return type
+
+**RescheduleResult**
 
 <a name="getWorkforcemanagementManagementunitSchedulingRuns"></a>
 
@@ -2141,6 +2263,93 @@ apiInstance.patchWorkforcemanagementManagementunitActivitycode(muId, acId, opts)
 
 **ActivityCode**
 
+<a name="patchWorkforcemanagementManagementunitSchedulingRun"></a>
+
+# RescheduleResult patchWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId, opts)
+
+
+
+PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId}
+
+Marks a specific scheduling run as applied, allowing a new rescheduling run to be started
+
+
+
+Requires ANY permissions: 
+
+* wfm:schedule:generate
+
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyUpdateSchedulingRunRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#UpdateSchedulingRunRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+UpdateSchedulingRunRequest <a style="cursor: pointer" onclick="copyUpdateSchedulingRunRequestExample()">Copy</a>
+
+<div id="UpdateSchedulingRunRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "applied": Boolean, 
+}
+~~~
+</div>
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
+
+var runId = "runId_example"; // String | The ID of the schedule run
+
+var opts = { 
+  'body': {} // Object | body
+};
+apiInstance.patchWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId, opts)
+  .then(function(data) {
+    console.log(`patchWorkforcemanagementManagementunitSchedulingRun success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling patchWorkforcemanagementManagementunitSchedulingRun');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The ID of the management unit. |  |
+ **runId** | **String** | The ID of the schedule run |  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**RescheduleResult**
+
 <a name="patchWorkforcemanagementManagementunitServicegoalgroup"></a>
 
 # ServiceGoalGroup patchWorkforcemanagementManagementunitServicegoalgroup(managementUnitId, serviceGoalGroupId, opts)
@@ -2569,6 +2778,22 @@ UpdateWeekScheduleRequest <a style="cursor: pointer" onclick="copyUpdateWeekSche
     "dateModified": Date, 
   },  
   "agentSchedulesVersion": Number, 
+  "shortTermForecast": { 
+    "id": String, 
+    "weekDate": String, 
+    "description": String, 
+    "selfUri": String, 
+  },  
+  "headcountForecast": { 
+    "required": { 
+      "interval": Date, 
+      "value": Number, 
+    },  
+    "requiredWithoutShrinkage": { 
+      "interval": Date, 
+      "value": Number, 
+    },  
+  },  
   "agentUpdateFilter": String, 
 }
 ~~~
@@ -5271,6 +5496,104 @@ apiInstance.postWorkforcemanagementManagementunitWeekScheduleCopy(managementUnit
  **scheduleId** | **String** | The ID of the schedule to copy from |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncWeekScheduleResponse**
+
+<a name="postWorkforcemanagementManagementunitWeekScheduleReschedule"></a>
+
+# AsyncWeekScheduleResponse postWorkforcemanagementManagementunitWeekScheduleReschedule(managementUnitId, weekId, scheduleId, opts)
+
+
+
+POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule
+
+Start a scheduling run to compute the reschedule. When the scheduling run finishes, a client can get the reschedule changes and then the client can apply them to the schedule, save the schedule, and mark the scheduling run as applied
+
+
+
+Requires ANY permissions: 
+
+* wfm:schedule:administer
+* wfm:schedule:edit
+
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyRescheduleRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#RescheduleRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+RescheduleRequest <a style="cursor: pointer" onclick="copyRescheduleRequestExample()">Copy</a>
+
+<div id="RescheduleRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "startDate": Date, 
+  "endDate": Date, 
+  "agentIds": [String], 
+  "activityCodeIds": [String], 
+  "doNotChangeWeeklyPaidTime": Boolean, 
+  "doNotChangeDailyPaidTime": Boolean, 
+  "doNotChangeShiftStartTimes": Boolean, 
+  "doNotChangeManuallyEditedShifts": Boolean, 
+}
+~~~
+</div>
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.WorkforceManagementApi();
+
+var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+
+var weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
+
+var scheduleId = "scheduleId_example"; // String | The ID of the schedule to re-optimize
+
+var opts = { 
+  'body': {} // Object | body
+};
+apiInstance.postWorkforcemanagementManagementunitWeekScheduleReschedule(managementUnitId, weekId, scheduleId, opts)
+  .then(function(data) {
+    console.log(`postWorkforcemanagementManagementunitWeekScheduleReschedule success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postWorkforcemanagementManagementunitWeekScheduleReschedule');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. |  |
+ **scheduleId** | **String** | The ID of the schedule to re-optimize |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 

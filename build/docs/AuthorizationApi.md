@@ -1663,6 +1663,13 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
             },  
             "selfUri": String, 
           },  
+          "outboundMessagingAddresses": { 
+            "smsAddress": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
+          },  
           "outboundEmailAddress": { 
             "domain": { 
               "id": String, 
@@ -2025,6 +2032,13 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
               },  
               "selfUri": String, 
             },  
+            "outboundMessagingAddresses": { 
+              "smsAddress": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+            },  
             "outboundEmailAddress": { 
               "domain": { 
                 "id": String, 
@@ -2253,6 +2267,9 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
                 "pages": [Page], 
                 "selfUri": String, 
               },  
+              "outboundMessagingAddresses": { 
+                "smsAddress": UriReference, 
+              },  
               "outboundEmailAddress": { 
                 "domain": UriReference, 
                 "route": InboundRoute, 
@@ -2321,6 +2338,7 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -3075,6 +3093,13 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
             },  
             "selfUri": String, 
           },  
+          "outboundMessagingAddresses": { 
+            "smsAddress": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
+          },  
           "outboundEmailAddress": { 
             "domain": { 
               "id": String, 
@@ -3437,6 +3462,13 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
               },  
               "selfUri": String, 
             },  
+            "outboundMessagingAddresses": { 
+              "smsAddress": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+            },  
             "outboundEmailAddress": { 
               "domain": { 
                 "id": String, 
@@ -3665,6 +3697,9 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
                 "pages": [Page], 
                 "selfUri": String, 
               },  
+              "outboundMessagingAddresses": { 
+                "smsAddress": UriReference, 
+              },  
               "outboundEmailAddress": { 
                 "domain": UriReference, 
                 "route": InboundRoute, 
@@ -3733,6 +3768,7 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -4259,6 +4295,13 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
             },  
             "selfUri": String, 
           },  
+          "outboundMessagingAddresses": { 
+            "smsAddress": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
+          },  
           "outboundEmailAddress": { 
             "domain": { 
               "id": String, 
@@ -4621,6 +4664,13 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
               },  
               "selfUri": String, 
             },  
+            "outboundMessagingAddresses": { 
+              "smsAddress": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+            },  
             "outboundEmailAddress": { 
               "domain": { 
                 "id": String, 
@@ -4849,6 +4899,9 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
                 "pages": [Page], 
                 "selfUri": String, 
               },  
+              "outboundMessagingAddresses": { 
+                "smsAddress": UriReference, 
+              },  
               "outboundEmailAddress": { 
                 "domain": UriReference, 
                 "route": InboundRoute, 
@@ -4917,6 +4970,7 @@ DomainOrganizationRoleCreate <a style="cursor: pointer" onclick="copyDomainOrgan
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -5650,6 +5704,13 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
             },  
             "selfUri": String, 
           },  
+          "outboundMessagingAddresses": { 
+            "smsAddress": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
+          },  
           "outboundEmailAddress": { 
             "domain": { 
               "id": String, 
@@ -6012,6 +6073,13 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
               },  
               "selfUri": String, 
             },  
+            "outboundMessagingAddresses": { 
+              "smsAddress": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+            },  
             "outboundEmailAddress": { 
               "domain": { 
                 "id": String, 
@@ -6240,6 +6308,9 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
                 "pages": [Page], 
                 "selfUri": String, 
               },  
+              "outboundMessagingAddresses": { 
+                "smsAddress": UriReference, 
+              },  
               "outboundEmailAddress": { 
                 "domain": UriReference, 
                 "route": InboundRoute, 
@@ -6308,6 +6379,7 @@ DomainOrganizationRoleUpdate <a style="cursor: pointer" onclick="copyDomainOrgan
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -6949,6 +7021,13 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
             },  
             "selfUri": String, 
           },  
+          "outboundMessagingAddresses": { 
+            "smsAddress": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
+          },  
           "outboundEmailAddress": { 
             "domain": { 
               "id": String, 
@@ -7311,6 +7390,13 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
               },  
               "selfUri": String, 
             },  
+            "outboundMessagingAddresses": { 
+              "smsAddress": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+            },  
             "outboundEmailAddress": { 
               "domain": { 
                 "id": String, 
@@ -7539,6 +7625,9 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
                 "pages": [Page], 
                 "selfUri": String, 
               },  
+              "outboundMessagingAddresses": { 
+                "smsAddress": UriReference, 
+              },  
               "outboundEmailAddress": { 
                 "domain": UriReference, 
                 "route": InboundRoute, 
@@ -7607,6 +7696,7 @@ DomainOrganizationRole <a style="cursor: pointer" onclick="copyDomainOrganizatio
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 

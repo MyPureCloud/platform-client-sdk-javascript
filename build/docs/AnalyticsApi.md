@@ -1591,6 +1591,8 @@ ReportingExportJobRequest <a style="cursor: pointer" onclick="copyReportingExpor
     "directions": [String], 
     "wrapUpCodes": [String], 
     "dnisList": [String], 
+    "filterQueuesByUserIds": [String], 
+    "filterUsersByQueueIds": [String], 
     "userIds": [String], 
     "addressTos": [String], 
     "addressFroms": [String], 

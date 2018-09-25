@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 37.1.0
+	 * @version 38.0.0
 	 */
 
 	/**
@@ -801,6 +801,7 @@ class QualityApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.name Name
+	 * @param {Boolean} opts.onlyLatestPerContext onlyLatestPerContext (default to false)
 	 */
 	getQualityPublishedforms(opts) { 
 		opts = opts || {};
@@ -810,7 +811,7 @@ class QualityApi {
 			'/api/v2/quality/publishedforms', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'onlyLatestPerContext': opts['onlyLatestPerContext'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -852,6 +853,7 @@ class QualityApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.name Name
+	 * @param {Boolean} opts.onlyLatestPerContext onlyLatestPerContext (default to false)
 	 */
 	getQualityPublishedformsEvaluations(opts) { 
 		opts = opts || {};
@@ -861,7 +863,7 @@ class QualityApi {
 			'/api/v2/quality/publishedforms/evaluations', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'onlyLatestPerContext': opts['onlyLatestPerContext'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -903,6 +905,7 @@ class QualityApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.name Name
+	 * @param {Boolean} opts.onlyLatestEnabledPerContext onlyLatestEnabledPerContext (default to false)
 	 */
 	getQualityPublishedformsSurveys(opts) { 
 		opts = opts || {};
@@ -912,7 +915,7 @@ class QualityApi {
 			'/api/v2/quality/publishedforms/surveys', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'onlyLatestEnabledPerContext': opts['onlyLatestEnabledPerContext'] }, 
 			{  }, 
 			{  }, 
 			null, 

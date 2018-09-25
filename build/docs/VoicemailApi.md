@@ -3663,6 +3663,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -3750,9 +3751,9 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -3762,9 +3763,9 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
             "total": Number, 
             "selfUri": String, 
             "firstUri": String, 
+            "previousUri": String, 
             "nextUri": String, 
             "lastUri": String, 
-            "previousUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -5530,9 +5531,9 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -5624,9 +5625,9 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -6099,6 +6100,9 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "customActions": Object, 
                 "pages": [Page], 
                 "selfUri": String, 
+              },  
+              "outboundMessagingAddresses": { 
+                "smsAddress": UriReference, 
               },  
               "outboundEmailAddress": { 
                 "domain": UriReference, 
@@ -6197,9 +6201,9 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -6672,6 +6676,9 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "customActions": Object, 
                 "pages": [Page], 
                 "selfUri": String, 
+              },  
+              "outboundMessagingAddresses": { 
+                "smsAddress": UriReference, 
               },  
               "outboundEmailAddress": { 
                 "domain": UriReference, 
@@ -6799,6 +6806,13 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "selfUri": String, 
+          },  
+          "outboundMessagingAddresses": { 
+            "smsAddress": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
           },  
           "outboundEmailAddress": { 
             "domain": { 
@@ -12773,6 +12787,13 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
         "selfUri": String, 
       },  
       "selfUri": String, 
+    },  
+    "outboundMessagingAddresses": { 
+      "smsAddress": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
     },  
     "outboundEmailAddress": { 
       "domain": { 
@@ -16164,6 +16185,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -16251,9 +16273,9 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -16263,9 +16285,9 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
             "total": Number, 
             "selfUri": String, 
             "firstUri": String, 
+            "previousUri": String, 
             "nextUri": String, 
             "lastUri": String, 
-            "previousUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -18031,9 +18053,9 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -18125,9 +18147,9 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -18600,6 +18622,9 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "customActions": Object, 
                 "pages": [Page], 
                 "selfUri": String, 
+              },  
+              "outboundMessagingAddresses": { 
+                "smsAddress": UriReference, 
               },  
               "outboundEmailAddress": { 
                 "domain": UriReference, 
@@ -18698,9 +18723,9 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -19173,6 +19198,9 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "customActions": Object, 
                 "pages": [Page], 
                 "selfUri": String, 
+              },  
+              "outboundMessagingAddresses": { 
+                "smsAddress": UriReference, 
               },  
               "outboundEmailAddress": { 
                 "domain": UriReference, 
@@ -19300,6 +19328,13 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "selfUri": String, 
+          },  
+          "outboundMessagingAddresses": { 
+            "smsAddress": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
           },  
           "outboundEmailAddress": { 
             "domain": { 
@@ -25274,6 +25309,13 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
         "selfUri": String, 
       },  
       "selfUri": String, 
+    },  
+    "outboundMessagingAddresses": { 
+      "smsAddress": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
     },  
     "outboundEmailAddress": { 
       "domain": { 

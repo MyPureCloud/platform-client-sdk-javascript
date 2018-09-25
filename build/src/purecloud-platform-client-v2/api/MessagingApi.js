@@ -5,7 +5,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 37.1.0
+	 * @version 38.0.0
 	 */
 
 	/**
@@ -319,31 +319,6 @@ class MessagingApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Webhook redirect for LINE messenger Integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 */
-	postMessagingIntegrationsLineWebhookIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling postMessagingIntegrationsLineWebhookIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/line/webhook/{integrationId}', 
-			'POST', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
 			['PureCloud Auth'], 
 			['application/json'], 
 			['application/json']

@@ -103,6 +103,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsMessageCommunicationMessagesMedia**](ConversationsApi.html#postConversationsMessageCommunicationMessagesMedia) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media | Create media
 [**postConversationsMessageMessagesBulk**](ConversationsApi.html#postConversationsMessageMessagesBulk) | **POST** /api/v2/conversations/messages/{conversationId}/messages/bulk | Get messages in batch
 [**postConversationsMessageParticipantReplace**](ConversationsApi.html#postConversationsMessageParticipantReplace) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
+[**postConversationsMessages**](ConversationsApi.html#postConversationsMessages) | **POST** /api/v2/conversations/messages | Create an outbound messaging conversation.
 [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | **PUT** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata | Set uuiData to be sent on future commands.
 [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | **PUT** /api/v2/conversations/emails/{conversationId}/messages/draft | Update conversation draft reply
 {: class="table table-striped"}
@@ -3721,9 +3722,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -4031,6 +4032,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "pages": [Page], 
                 "selfUri": String, 
               },  
+              "outboundMessagingAddresses": { 
+                "smsAddress": UriReference, 
+              },  
               "outboundEmailAddress": { 
                 "domain": UriReference, 
                 "route": InboundRoute, 
@@ -4146,9 +4150,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -4158,9 +4162,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "total": Number, 
           "selfUri": String, 
           "firstUri": String, 
+          "previousUri": String, 
           "nextUri": String, 
           "lastUri": String, 
-          "previousUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -4960,6 +4964,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -5047,9 +5052,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -5059,9 +5064,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "total": Number, 
             "selfUri": String, 
             "firstUri": String, 
+            "previousUri": String, 
             "nextUri": String, 
             "lastUri": String, 
-            "previousUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -5367,9 +5372,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -5697,9 +5702,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -5820,6 +5825,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -5943,6 +5949,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -6061,6 +6068,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "selfUri": String, 
+            },  
+            "outboundMessagingAddresses": { 
+              "smsAddress": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
             },  
             "outboundEmailAddress": { 
               "domain": { 
@@ -6390,9 +6404,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -6720,9 +6734,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -6843,6 +6857,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -6966,6 +6981,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -7084,6 +7100,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "selfUri": String, 
+            },  
+            "outboundMessagingAddresses": { 
+              "smsAddress": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
             },  
             "outboundEmailAddress": { 
               "domain": { 
@@ -7232,6 +7255,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "selfUri": String, 
           },  
           "selfUri": String, 
+        },  
+        "outboundMessagingAddresses": { 
+          "smsAddress": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
         },  
         "outboundEmailAddress": { 
           "domain": { 
@@ -8827,9 +8857,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -9137,6 +9167,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "pages": [Page], 
                 "selfUri": String, 
               },  
+              "outboundMessagingAddresses": { 
+                "smsAddress": UriReference, 
+              },  
               "outboundEmailAddress": { 
                 "domain": UriReference, 
                 "route": InboundRoute, 
@@ -9252,9 +9285,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -9264,9 +9297,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "total": Number, 
           "selfUri": String, 
           "firstUri": String, 
+          "previousUri": String, 
           "nextUri": String, 
           "lastUri": String, 
-          "previousUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -10066,6 +10099,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -10153,9 +10187,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -10165,9 +10199,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "total": Number, 
             "selfUri": String, 
             "firstUri": String, 
+            "previousUri": String, 
             "nextUri": String, 
             "lastUri": String, 
-            "previousUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -10473,9 +10507,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -10803,9 +10837,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -10926,6 +10960,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -11049,6 +11084,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -11167,6 +11203,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "selfUri": String, 
+            },  
+            "outboundMessagingAddresses": { 
+              "smsAddress": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
             },  
             "outboundEmailAddress": { 
               "domain": { 
@@ -11496,9 +11539,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -11826,9 +11869,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -11949,6 +11992,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -12072,6 +12116,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -12190,6 +12235,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "selfUri": String, 
+            },  
+            "outboundMessagingAddresses": { 
+              "smsAddress": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
             },  
             "outboundEmailAddress": { 
               "domain": { 
@@ -12338,6 +12390,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "selfUri": String, 
           },  
           "selfUri": String, 
+        },  
+        "outboundMessagingAddresses": { 
+          "smsAddress": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
         },  
         "outboundEmailAddress": { 
           "domain": { 
@@ -13848,9 +13907,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -14158,6 +14217,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "pages": [Page], 
                 "selfUri": String, 
               },  
+              "outboundMessagingAddresses": { 
+                "smsAddress": UriReference, 
+              },  
               "outboundEmailAddress": { 
                 "domain": UriReference, 
                 "route": InboundRoute, 
@@ -14273,9 +14335,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -14285,9 +14347,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "total": Number, 
           "selfUri": String, 
           "firstUri": String, 
+          "previousUri": String, 
           "nextUri": String, 
           "lastUri": String, 
-          "previousUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -15087,6 +15149,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -15174,9 +15237,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -15186,9 +15249,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "total": Number, 
             "selfUri": String, 
             "firstUri": String, 
+            "previousUri": String, 
             "nextUri": String, 
             "lastUri": String, 
-            "previousUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -15494,9 +15557,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -15824,9 +15887,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -15947,6 +16010,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -16070,6 +16134,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -16188,6 +16253,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "selfUri": String, 
+            },  
+            "outboundMessagingAddresses": { 
+              "smsAddress": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
             },  
             "outboundEmailAddress": { 
               "domain": { 
@@ -16517,9 +16589,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -16847,9 +16919,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -16970,6 +17042,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -17093,6 +17166,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -17211,6 +17285,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "selfUri": String, 
+            },  
+            "outboundMessagingAddresses": { 
+              "smsAddress": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
             },  
             "outboundEmailAddress": { 
               "domain": { 
@@ -17359,6 +17440,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "selfUri": String, 
           },  
           "selfUri": String, 
+        },  
+        "outboundMessagingAddresses": { 
+          "smsAddress": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
         },  
         "outboundEmailAddress": { 
           "domain": { 
@@ -18869,9 +18957,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -19179,6 +19267,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "pages": [Page], 
                 "selfUri": String, 
               },  
+              "outboundMessagingAddresses": { 
+                "smsAddress": UriReference, 
+              },  
               "outboundEmailAddress": { 
                 "domain": UriReference, 
                 "route": InboundRoute, 
@@ -19294,9 +19385,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -19306,9 +19397,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "total": Number, 
           "selfUri": String, 
           "firstUri": String, 
+          "previousUri": String, 
           "nextUri": String, 
           "lastUri": String, 
-          "previousUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -20108,6 +20199,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -20195,9 +20287,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -20207,9 +20299,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "total": Number, 
             "selfUri": String, 
             "firstUri": String, 
+            "previousUri": String, 
             "nextUri": String, 
             "lastUri": String, 
-            "previousUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -20515,9 +20607,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -20845,9 +20937,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -20968,6 +21060,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -21091,6 +21184,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -21209,6 +21303,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "selfUri": String, 
+            },  
+            "outboundMessagingAddresses": { 
+              "smsAddress": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
             },  
             "outboundEmailAddress": { 
               "domain": { 
@@ -21538,9 +21639,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -21868,9 +21969,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -21991,6 +22092,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -22114,6 +22216,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -22232,6 +22335,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "selfUri": String, 
+            },  
+            "outboundMessagingAddresses": { 
+              "smsAddress": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
             },  
             "outboundEmailAddress": { 
               "domain": { 
@@ -22380,6 +22490,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "selfUri": String, 
           },  
           "selfUri": String, 
+        },  
+        "outboundMessagingAddresses": { 
+          "smsAddress": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
         },  
         "outboundEmailAddress": { 
           "domain": { 
@@ -23892,9 +24009,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -24202,6 +24319,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "pages": [Page], 
                 "selfUri": String, 
               },  
+              "outboundMessagingAddresses": { 
+                "smsAddress": UriReference, 
+              },  
               "outboundEmailAddress": { 
                 "domain": UriReference, 
                 "route": InboundRoute, 
@@ -24317,9 +24437,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -24329,9 +24449,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "total": Number, 
           "selfUri": String, 
           "firstUri": String, 
+          "previousUri": String, 
           "nextUri": String, 
           "lastUri": String, 
-          "previousUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -25131,6 +25251,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -25218,9 +25339,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -25230,9 +25351,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "total": Number, 
             "selfUri": String, 
             "firstUri": String, 
+            "previousUri": String, 
             "nextUri": String, 
             "lastUri": String, 
-            "previousUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -25538,9 +25659,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -25868,9 +25989,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -25991,6 +26112,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -26114,6 +26236,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -26232,6 +26355,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "selfUri": String, 
+            },  
+            "outboundMessagingAddresses": { 
+              "smsAddress": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
             },  
             "outboundEmailAddress": { 
               "domain": { 
@@ -26561,9 +26691,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -26891,9 +27021,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -27014,6 +27144,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -27137,6 +27268,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -27255,6 +27387,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "selfUri": String, 
+            },  
+            "outboundMessagingAddresses": { 
+              "smsAddress": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
             },  
             "outboundEmailAddress": { 
               "domain": { 
@@ -27403,6 +27542,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "selfUri": String, 
           },  
           "selfUri": String, 
+        },  
+        "outboundMessagingAddresses": { 
+          "smsAddress": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
         },  
         "outboundEmailAddress": { 
           "domain": { 
@@ -28913,9 +29059,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -29223,6 +29369,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "pages": [Page], 
                 "selfUri": String, 
               },  
+              "outboundMessagingAddresses": { 
+                "smsAddress": UriReference, 
+              },  
               "outboundEmailAddress": { 
                 "domain": UriReference, 
                 "route": InboundRoute, 
@@ -29338,9 +29487,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -29350,9 +29499,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "total": Number, 
           "selfUri": String, 
           "firstUri": String, 
+          "previousUri": String, 
           "nextUri": String, 
           "lastUri": String, 
-          "previousUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -30152,6 +30301,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -30239,9 +30389,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -30251,9 +30401,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "total": Number, 
             "selfUri": String, 
             "firstUri": String, 
+            "previousUri": String, 
             "nextUri": String, 
             "lastUri": String, 
-            "previousUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -30559,9 +30709,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -30889,9 +31039,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -31012,6 +31162,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -31135,6 +31286,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -31253,6 +31405,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "selfUri": String, 
+            },  
+            "outboundMessagingAddresses": { 
+              "smsAddress": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
             },  
             "outboundEmailAddress": { 
               "domain": { 
@@ -31582,9 +31741,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -31912,9 +32071,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -32035,6 +32194,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -32158,6 +32318,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -32276,6 +32437,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "selfUri": String, 
+            },  
+            "outboundMessagingAddresses": { 
+              "smsAddress": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
             },  
             "outboundEmailAddress": { 
               "domain": { 
@@ -32424,6 +32592,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "selfUri": String, 
           },  
           "selfUri": String, 
+        },  
+        "outboundMessagingAddresses": { 
+          "smsAddress": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
         },  
         "outboundEmailAddress": { 
           "domain": { 
@@ -35137,9 +35312,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -35447,6 +35622,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "pages": [Page], 
                 "selfUri": String, 
               },  
+              "outboundMessagingAddresses": { 
+                "smsAddress": UriReference, 
+              },  
               "outboundEmailAddress": { 
                 "domain": UriReference, 
                 "route": InboundRoute, 
@@ -35562,9 +35740,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -35574,9 +35752,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "total": Number, 
           "selfUri": String, 
           "firstUri": String, 
+          "previousUri": String, 
           "nextUri": String, 
           "lastUri": String, 
-          "previousUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -36376,6 +36554,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -36463,9 +36642,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -36475,9 +36654,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "total": Number, 
             "selfUri": String, 
             "firstUri": String, 
+            "previousUri": String, 
             "nextUri": String, 
             "lastUri": String, 
-            "previousUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -36783,9 +36962,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -37113,9 +37292,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -37236,6 +37415,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -37359,6 +37539,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -37477,6 +37658,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "selfUri": String, 
+            },  
+            "outboundMessagingAddresses": { 
+              "smsAddress": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
             },  
             "outboundEmailAddress": { 
               "domain": { 
@@ -37806,9 +37994,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "total": Number, 
               "selfUri": String, 
               "firstUri": String, 
+              "previousUri": String, 
               "nextUri": String, 
               "lastUri": String, 
-              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -38136,9 +38324,9 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "total": Number, 
                 "selfUri": String, 
                 "firstUri": String, 
+                "previousUri": String, 
                 "nextUri": String, 
                 "lastUri": String, 
-                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -38259,6 +38447,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -38382,6 +38571,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
+                "outboundMessagingAddresses": QueueMessagingAddresses, 
                 "outboundEmailAddress": QueueEmailAddress, 
                 "memberCount": Number, 
                 "selfUri": String, 
@@ -38500,6 +38690,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "selfUri": String, 
+            },  
+            "outboundMessagingAddresses": { 
+              "smsAddress": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
             },  
             "outboundEmailAddress": { 
               "domain": { 
@@ -38648,6 +38845,13 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
             "selfUri": String, 
           },  
           "selfUri": String, 
+        },  
+        "outboundMessagingAddresses": { 
+          "smsAddress": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
         },  
         "outboundEmailAddress": { 
           "domain": { 
@@ -40105,6 +40309,91 @@ apiInstance.postConversationsMessageParticipantReplace(conversationId, participa
 ### Return type
 
 void (no response body)
+
+<a name="postConversationsMessages"></a>
+
+# MessageConversation postConversationsMessages(body)
+
+
+
+POST /api/v2/conversations/messages
+
+Create an outbound messaging conversation.
+
+If there is an existing conversation between the remote address and the address associated with the queue specified in createOutboundRequest then the result of this request depends on the state of that conversation and the useExistingConversation field of createOutboundRequest. If the existing conversation is in alerting or connected state, then the request will fail. If the existing conversation is disconnected but still within the conversation window then the request will fail unless useExistingConversation is set to true.
+
+Requires ANY permissions: 
+
+* conversation:message:create
+
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyCreateOutboundMessagingConversationRequestExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#CreateOutboundMessagingConversationRequestExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+CreateOutboundMessagingConversationRequest <a style="cursor: pointer" onclick="copyCreateOutboundMessagingConversationRequestExample()">Copy</a>
+
+<div id="CreateOutboundMessagingConversationRequestExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "queueId": String, 
+  "toAddress": String, 
+  "toAddressMessengerType": String, 
+  "useExistingConversation": Boolean, 
+  "externalContactId": String, 
+  "externalOrganizationId": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.ConversationsApi();
+
+var body = {}; // Object | Create outbound messaging conversation
+
+apiInstance.postConversationsMessages(body)
+  .then(function(data) {
+    console.log(`postConversationsMessages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postConversationsMessages');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Create outbound messaging conversation |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessageConversation**
 
 <a name="putConversationsCallParticipantCommunicationUuidata"></a>
 

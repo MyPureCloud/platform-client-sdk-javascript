@@ -6159,6 +6159,13 @@ UserQueue <a style="cursor: pointer" onclick="copyUserQueueExample()">Copy</a>
     },  
     "selfUri": String, 
   },  
+  "outboundMessagingAddresses": { 
+    "smsAddress": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+  },  
   "outboundEmailAddress": { 
     "domain": { 
       "id": String, 
@@ -6438,6 +6445,13 @@ UserQueue <a style="cursor: pointer" onclick="copyUserQueueExample()">Copy</a>
       "selfUri": String, 
     },  
     "selfUri": String, 
+  },  
+  "outboundMessagingAddresses": { 
+    "smsAddress": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
   },  
   "outboundEmailAddress": { 
     "domain": { 
@@ -7847,6 +7861,7 @@ CreateUser <a style="cursor: pointer" onclick="copyCreateUserExample()">Copy</a>
   },  
   "title": String, 
   "password": String, 
+  "divisionId": String, 
 }
 ~~~
 </div>

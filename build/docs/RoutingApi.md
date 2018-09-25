@@ -1130,6 +1130,7 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 var apiInstance = new platformClient.RoutingApi();
 
 var opts = { 
+  'messengerType': "messengerType_example", // String | Messenger Type
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
@@ -1149,6 +1150,7 @@ apiInstance.getRoutingMessageRecipients(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+ **messengerType** | **String** | Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, line, whatsapp, telegram, kakao |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
@@ -4129,6 +4131,13 @@ CreateQueueRequest <a style="cursor: pointer" onclick="copyCreateQueueRequestExa
     },  
     "selfUri": String, 
   },  
+  "outboundMessagingAddresses": { 
+    "smsAddress": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+  },  
   "outboundEmailAddress": { 
     "domain": { 
       "id": String, 
@@ -6456,6 +6465,7 @@ Recipient <a style="cursor: pointer" onclick="copyRecipientExample()">Copy</a>
     "selfUri": String, 
   },  
   "modifiedBy": User, 
+  "messengerType": String, 
   "selfUri": String, 
 }
 ~~~
@@ -6619,6 +6629,13 @@ QueueRequest <a style="cursor: pointer" onclick="copyQueueRequestExample()">Copy
       "selfUri": String, 
     },  
     "selfUri": String, 
+  },  
+  "outboundMessagingAddresses": { 
+    "smsAddress": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
   },  
   "outboundEmailAddress": { 
     "domain": { 

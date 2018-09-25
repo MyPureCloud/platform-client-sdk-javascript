@@ -19,7 +19,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getMessagingSticker**](MessagingApi.html#getMessagingSticker) | **GET** /api/v2/messaging/stickers/{messengerType} | Get a list of Messaging Stickers
 [**postMessagingIntegrationsFacebook**](MessagingApi.html#postMessagingIntegrationsFacebook) | **POST** /api/v2/messaging/integrations/facebook | Create a Facebook Integration
 [**postMessagingIntegrationsLine**](MessagingApi.html#postMessagingIntegrationsLine) | **POST** /api/v2/messaging/integrations/line | Create a LINE messenger Integration
-[**postMessagingIntegrationsLineWebhookIntegrationId**](MessagingApi.html#postMessagingIntegrationsLineWebhookIntegrationId) | **POST** /api/v2/messaging/integrations/line/webhook/{integrationId} | Webhook redirect for LINE messenger Integration
 [**postMessagingIntegrationsTwitter**](MessagingApi.html#postMessagingIntegrationsTwitter) | **POST** /api/v2/messaging/integrations/twitter | Create a Twitter Integration
 [**putMessagingIntegrationsLineIntegrationId**](MessagingApi.html#putMessagingIntegrationsLineIntegrationId) | **PUT** /api/v2/messaging/integrations/line/{integrationId} | Update a LINE messenger integration
 {: class="table table-striped"}
@@ -727,7 +726,6 @@ LineIntegrationRequest <a style="cursor: pointer" onclick="copyLineIntegrationRe
   "channelId": String, 
   "channelSecret": String, 
   "switcherSecret": String, 
-  "channelAccessToken": String, 
   "selfUri": String, 
 }
 ~~~
@@ -771,61 +769,6 @@ apiInstance.postMessagingIntegrationsLine(body)
 ### Return type
 
 **LineIntegration**
-
-<a name="postMessagingIntegrationsLineWebhookIntegrationId"></a>
-
-# void postMessagingIntegrationsLineWebhookIntegrationId(integrationId)
-
-
-
-POST /api/v2/messaging/integrations/line/webhook/{integrationId}
-
-Webhook redirect for LINE messenger Integration
-
-
-
-Requires NO permissions: 
-
-
-
-
-### Example Usage
-
-~~~ javascript
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new platformClient.MessagingApi();
-
-var integrationId = "integrationId_example"; // String | Integration ID
-
-apiInstance.postMessagingIntegrationsLineWebhookIntegrationId(integrationId)
-  .then(function() {
-    console.log('postMessagingIntegrationsLineWebhookIntegrationId returned successfully.');
-  })
-  .catch(function(err) {
-  	console.log('There was a failure calling postMessagingIntegrationsLineWebhookIntegrationId');
-    console.error(err);
-  });
-
-~~~
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **integrationId** | **String** | Integration ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (no response body)
 
 <a name="postMessagingIntegrationsTwitter"></a>
 
@@ -956,7 +899,6 @@ LineIntegrationRequest <a style="cursor: pointer" onclick="copyLineIntegrationRe
   "channelId": String, 
   "channelSecret": String, 
   "switcherSecret": String, 
-  "channelAccessToken": String, 
   "selfUri": String, 
 }
 ~~~

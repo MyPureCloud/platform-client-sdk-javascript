@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 37.1.0
+	 * @version 38.0.0
 	 */
 
 	/**
@@ -808,31 +808,6 @@ class OutboundApi {
 	}
 
 	/**
-	 * Get a basic Campaign information object
-	 * This returns a simplified version of a Campaign, consisting of name and division.
-	 * @param {String} campaignId Campaign ID
-	 */
-	getOutboundCampaignsDivisionview(campaignId) { 
-		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
-			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignsDivisionview';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/campaigns/divisionviews/{campaignId}', 
-			'GET', 
-			{ 'campaignId': campaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud Auth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
 	 * Query a list of basic Campaign information objects
 	 * This returns a simplified version of a Campaign, consisting of name and division.
 	 * @param {Object} opts Optional parameters
@@ -964,6 +939,31 @@ class OutboundApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists/{contactListId}/importstatus', 
+			'GET', 
+			{ 'contactListId': contactListId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Preview the result of applying Automatic Time Zone Mapping to a contact list
+	 * 
+	 * @param {String} contactListId ContactList ID
+	 */
+	getOutboundContactlistTimezonemappingpreview(contactListId) { 
+		// verify the required parameter 'contactListId' is set
+		if (contactListId === undefined || contactListId === null) {
+			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistTimezonemappingpreview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview', 
 			'GET', 
 			{ 'contactListId': contactListId }, 
 			{  }, 

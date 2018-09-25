@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 37.1.0
+	 * @version 38.0.0
 	 */
 
 	/**
@@ -395,6 +395,66 @@ class WorkforceManagementApi {
 			'GET', 
 			{ 'muId': muId }, 
 			{ 'date': _date }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets the status for a specific scheduling run
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} runId The ID of the schedule run
+	 */
+	getWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitSchedulingRun';
+		}
+		// verify the required parameter 'runId' is set
+		if (runId === undefined || runId === null) {
+			throw 'Missing the required parameter "runId" when calling getWorkforcemanagementManagementunitSchedulingRun';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId}', 
+			'GET', 
+			{ 'managementUnitId': managementUnitId,'runId': runId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets the result of a specific scheduling run
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} runId The ID of the schedule run
+	 */
+	getWorkforcemanagementManagementunitSchedulingRunResult(managementUnitId, runId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitSchedulingRunResult';
+		}
+		// verify the required parameter 'runId' is set
+		if (runId === undefined || runId === null) {
+			throw 'Missing the required parameter "runId" when calling getWorkforcemanagementManagementunitSchedulingRunResult';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId}/result', 
+			'GET', 
+			{ 'managementUnitId': managementUnitId,'runId': runId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -972,6 +1032,40 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Marks a specific scheduling run as applied, allowing a new rescheduling run to be started
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} runId The ID of the schedule run
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	patchWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitSchedulingRun';
+		}
+		// verify the required parameter 'runId' is set
+		if (runId === undefined || runId === null) {
+			throw 'Missing the required parameter "runId" when calling patchWorkforcemanagementManagementunitSchedulingRun';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId}', 
+			'PATCH', 
+			{ 'managementUnitId': managementUnitId,'runId': runId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update a service goal group
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
@@ -1465,6 +1559,45 @@ class WorkforceManagementApi {
 			'POST', 
 			{ 'managementUnitId': managementUnitId,'weekId': weekId,'scheduleId': scheduleId }, 
 			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start a scheduling run to compute the reschedule. When the scheduling run finishes, a client can get the reschedule changes and then the client can apply them to the schedule, save the schedule, and mark the scheduling run as applied
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
+	 * @param {String} scheduleId The ID of the schedule to re-optimize
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementManagementunitWeekScheduleReschedule(managementUnitId, weekId, scheduleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekScheduleReschedule';
+		}
+		// verify the required parameter 'weekId' is set
+		if (weekId === undefined || weekId === null) {
+			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementManagementunitWeekScheduleReschedule';
+		}
+		// verify the required parameter 'scheduleId' is set
+		if (scheduleId === undefined || scheduleId === null) {
+			throw 'Missing the required parameter "scheduleId" when calling postWorkforcemanagementManagementunitWeekScheduleReschedule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId,'weekId': weekId,'scheduleId': scheduleId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			opts['body'], 
