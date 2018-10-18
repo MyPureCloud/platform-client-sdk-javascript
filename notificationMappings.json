@@ -293,6 +293,10 @@
       "class": "WfmHistoricalAdherenceCalculationsCompleteNoticeNotification"
     },
     {
+      "topic": "v2.users.{id}.workforcemanagement.schedules",
+      "class": "WfmAgentScheduleUpdateNotificationNotification"
+    },
+    {
       "topic": "v2.users.{id}.workforcemanagement.timeoffrequests",
       "class": "TimeOffRequestUpdateNotification"
     },

@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 38.0.0
+	 * @version 39.0.0
 	 */
 
 	/**
@@ -702,6 +702,31 @@ class QualityApi {
 			'GET', 
 			{  }, 
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a list of survey forms by their ids
+	 * 
+	 * @param {Array.<String>} ids A comma-delimited list of valid survey form ids
+	 */
+	getQualityFormsSurveysBulk(ids) { 
+		// verify the required parameter 'ids' is set
+		if (ids === undefined || ids === null) {
+			throw 'Missing the required parameter "ids" when calling getQualityFormsSurveysBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/quality/forms/surveys/bulk', 
+			'GET', 
+			{  }, 
+			{ 'ids': this.apiClient.buildCollectionParam(ids, 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 

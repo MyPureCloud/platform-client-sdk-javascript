@@ -1900,7 +1900,7 @@ var apiInstance = new platformClient.WorkforceManagementApi();
 var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 var opts = { 
-  'expand': "expand_example" // String | 
+  'expand': ["expand_example"] // [String] | 
 };
 apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts)
   .then(function(data) {
@@ -1919,7 +1919,7 @@ apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
- **expand** | **String** |  | [optional] <br />**Values**: agentCount |
+ **expand** | **[String]** |  | [optional] <br />**Values**: agentCount, details |
 {: class="table table-striped"}
 
 ### Return type
@@ -2897,6 +2897,8 @@ WorkPlan <a style="cursor: pointer" onclick="copyWorkPlanExample()">Copy</a>
   "weeklyExactPaidMinutes": Number, 
   "weeklyMinimumPaidMinutes": Number, 
   "weeklyMaximumPaidMinutes": Number, 
+  "constrainPaidTimeGranularity": Boolean, 
+  "paidTimeGranularityMinutes": Number, 
   "constrainMinimumTimeBetweenShifts": Boolean, 
   "minimumTimeBetweenShiftsMinutes": Number, 
   "maximumDays": Number, 
@@ -6489,6 +6491,8 @@ CreateWorkPlan <a style="cursor: pointer" onclick="copyCreateWorkPlanExample()">
   "weeklyExactPaidMinutes": Number, 
   "weeklyMinimumPaidMinutes": Number, 
   "weeklyMaximumPaidMinutes": Number, 
+  "constrainPaidTimeGranularity": Boolean, 
+  "paidTimeGranularityMinutes": Number, 
   "constrainMinimumTimeBetweenShifts": Boolean, 
   "minimumTimeBetweenShiftsMinutes": Number, 
   "maximumDays": Number, 

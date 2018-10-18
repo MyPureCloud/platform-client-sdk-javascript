@@ -46,6 +46,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundContactlistfilter**](OutboundApi.html#getOutboundContactlistfilter) | **GET** /api/v2/outbound/contactlistfilters/{contactListFilterId} | Get Contact list filter
 [**getOutboundContactlistfilters**](OutboundApi.html#getOutboundContactlistfilters) | **GET** /api/v2/outbound/contactlistfilters | Query Contact list filters
 [**getOutboundContactlists**](OutboundApi.html#getOutboundContactlists) | **GET** /api/v2/outbound/contactlists | Query a list of contact lists.
+[**getOutboundContactlistsDivisionviews**](OutboundApi.html#getOutboundContactlistsDivisionviews) | **GET** /api/v2/outbound/contactlists/divisionviews | Query a list of simplified contact list objects.
 [**getOutboundDnclist**](OutboundApi.html#getOutboundDnclist) | **GET** /api/v2/outbound/dnclists/{dncListId} | Get dialer DNC list
 [**getOutboundDnclistExport**](OutboundApi.html#getOutboundDnclistExport) | **GET** /api/v2/outbound/dnclists/{dncListId}/export | Get the URI of a DNC list export.
 [**getOutboundDnclistImportstatus**](OutboundApi.html#getOutboundDnclistImportstatus) | **GET** /api/v2/outbound/dnclists/{dncListId}/importstatus | Get dialer dncList import status.
@@ -71,6 +72,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundCampaignrules**](OutboundApi.html#postOutboundCampaignrules) | **POST** /api/v2/outbound/campaignrules | Create Campaign Rule
 [**postOutboundCampaigns**](OutboundApi.html#postOutboundCampaigns) | **POST** /api/v2/outbound/campaigns | Create a campaign.
 [**postOutboundCampaignsProgress**](OutboundApi.html#postOutboundCampaignsProgress) | **POST** /api/v2/outbound/campaigns/progress | Get progress for a list of campaigns
+[**postOutboundContactlistClear**](OutboundApi.html#postOutboundContactlistClear) | **POST** /api/v2/outbound/contactlists/{contactListId}/clear | Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
 [**postOutboundContactlistContacts**](OutboundApi.html#postOutboundContactlistContacts) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts | Add contacts to a contact list.
 [**postOutboundContactlistContactsBulk**](OutboundApi.html#postOutboundContactlistContactsBulk) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts/bulk | Get contacts from a contact list.
 [**postOutboundContactlistExport**](OutboundApi.html#postOutboundContactlistExport) | **POST** /api/v2/outbound/contactlists/{contactListId}/export | Initiate the export of a contact list.
@@ -2416,6 +2418,79 @@ apiInstance.getOutboundContactlists(opts)
 
 **ContactListEntityListing**
 
+<a name="getOutboundContactlistsDivisionviews"></a>
+
+# ContactListDivisionViewListing getOutboundContactlistsDivisionviews(opts)
+
+
+
+GET /api/v2/outbound/contactlists/divisionviews
+
+Query a list of simplified contact list objects.
+
+This return a simplified version of contact lists, consisting of the name, divisions, columns, and phone columns.
+
+Requires ANY permissions: 
+
+* outbound:contactList:search
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.OutboundApi();
+
+var opts = { 
+  'includeImportStatus': false, // Boolean | Include import status
+  'includeSize': false, // Boolean | Include size
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
+  'pageNumber': 1, // Number | Page number
+  'filterType': "Prefix", // String | Filter type
+  'name': "name_example", // String | Name
+  'id': ["id_example"], // [String] | id
+  'sortBy': "sortBy_example", // String | Sort by
+  'sortOrder': "a" // String | Sort order
+};
+apiInstance.getOutboundContactlistsDivisionviews(opts)
+  .then(function(data) {
+    console.log(`getOutboundContactlistsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getOutboundContactlistsDivisionviews');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **includeImportStatus** | **Boolean** | Include import status | [optional] [default to false] |
+ **includeSize** | **Boolean** | Include size | [optional] [default to false] |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+ **name** | **String** | Name | [optional]  |
+ **id** | **[String]** | id | [optional]  |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+**ContactListDivisionViewListing**
+
 <a name="getOutboundDnclist"></a>
 
 # DncList getOutboundDnclist(dncListId, opts)
@@ -2633,6 +2708,8 @@ var opts = {
   'pageNumber': 1, // Number | Page number
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
+  'dncSourceType': "dncSourceType_example", // String | DncSourceType
+  'divisionId': ["divisionId_example"], // [String] | Division ID(s)
   'sortBy': "sortBy_example", // String | Sort by
   'sortOrder': "sortOrder_example" // String | Sort order
 };
@@ -2658,6 +2735,8 @@ apiInstance.getOutboundDnclists(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
+ **dncSourceType** | **String** | DncSourceType | [optional] <br />**Values**: rds, dnc.com, gryphon |
+ **divisionId** | **[String]** | Division ID(s) | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] <br />**Values**: ascending, descending |
 {: class="table table-striped"}
@@ -4256,6 +4335,62 @@ apiInstance.postOutboundCampaignsProgress(body)
 ### Return type
 
 **[CampaignProgress]**
+
+<a name="postOutboundContactlistClear"></a>
+
+# void postOutboundContactlistClear(contactListId)
+
+
+
+POST /api/v2/outbound/contactlists/{contactListId}/clear
+
+Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
+
+
+
+Requires ANY permissions: 
+
+* outbound:contact:delete
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.OutboundApi();
+
+var contactListId = "contactListId_example"; // String | Contact List ID
+
+apiInstance.postOutboundContactlistClear(contactListId)
+  .then(function() {
+    console.log('postOutboundContactlistClear returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postOutboundContactlistClear');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListId** | **String** | Contact List ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="postOutboundContactlistContacts"></a>
 

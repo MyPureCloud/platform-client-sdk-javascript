@@ -30,6 +30,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getQualityFormsSurvey**](QualityApi.html#getQualityFormsSurvey) | **GET** /api/v2/quality/forms/surveys/{formId} | Get a survey form
 [**getQualityFormsSurveyVersions**](QualityApi.html#getQualityFormsSurveyVersions) | **GET** /api/v2/quality/forms/surveys/{formId}/versions | Gets all the revisions for a specific survey.
 [**getQualityFormsSurveys**](QualityApi.html#getQualityFormsSurveys) | **GET** /api/v2/quality/forms/surveys | Get the list of survey forms
+[**getQualityFormsSurveysBulk**](QualityApi.html#getQualityFormsSurveysBulk) | **GET** /api/v2/quality/forms/surveys/bulk | Retrieve a list of survey forms by their ids
 [**getQualityKeywordset**](QualityApi.html#getQualityKeywordset) | **GET** /api/v2/quality/keywordsets/{keywordSetId} | Get a keywordSet by id.
 [**getQualityKeywordsets**](QualityApi.html#getQualityKeywordsets) | **GET** /api/v2/quality/keywordsets | Get the list of keyword sets
 [**getQualityPublishedform**](QualityApi.html#getQualityPublishedform) | **GET** /api/v2/quality/publishedforms/{formId} | Get the published evaluation forms.
@@ -1527,6 +1528,62 @@ apiInstance.getQualityFormsSurveys(opts)
  **previousPage** | **String** | Previous page token | [optional]  |
  **expand** | **String** | Expand | [optional]  |
  **name** | **String** | Name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**SurveyFormEntityListing**
+
+<a name="getQualityFormsSurveysBulk"></a>
+
+# SurveyFormEntityListing getQualityFormsSurveysBulk(ids)
+
+
+
+GET /api/v2/quality/forms/surveys/bulk
+
+Retrieve a list of survey forms by their ids
+
+
+
+Requires ANY permissions: 
+
+* quality:surveyForm:view
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var ids = ["ids_example"]; // [String] | A comma-delimited list of valid survey form ids
+
+apiInstance.getQualityFormsSurveysBulk(ids)
+  .then(function(data) {
+    console.log(`getQualityFormsSurveysBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getQualityFormsSurveysBulk');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **ids** | **[String]** | A comma-delimited list of valid survey form ids |  |
 {: class="table table-striped"}
 
 ### Return type

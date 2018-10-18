@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 38.0.0
+	 * @version 39.0.0
 	 */
 
 	/**
@@ -1064,6 +1064,38 @@ class OutboundApi {
 	}
 
 	/**
+	 * Query a list of simplified contact list objects.
+	 * This return a simplified version of contact lists, consisting of the name, divisions, columns, and phone columns.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeImportStatus Include import status (default to false)
+	 * @param {Boolean} opts.includeSize Include size (default to false)
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.filterType Filter type (default to Prefix)
+	 * @param {String} opts.name Name
+	 * @param {Array.<String>} opts.id id
+	 * @param {String} opts.sortBy Sort by
+	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 */
+	getOutboundContactlistsDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/divisionviews', 
+			'GET', 
+			{  }, 
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get dialer DNC list
 	 * 
 	 * @param {String} dncListId DncList ID
@@ -1157,6 +1189,8 @@ class OutboundApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
+	 * @param {Object} opts.dncSourceType DncSourceType
+	 * @param {Array.<String>} opts.divisionId Division ID(s)
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order
 	 */
@@ -1168,7 +1202,7 @@ class OutboundApi {
 			'/api/v2/outbound/dnclists', 
 			'GET', 
 			{  }, 
-			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'dncSourceType': opts['dncSourceType'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1703,6 +1737,31 @@ class OutboundApi {
 			{  }, 
 			{  }, 
 			body, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
+	 * 
+	 * @param {String} contactListId Contact List ID
+	 */
+	postOutboundContactlistClear(contactListId) { 
+		// verify the required parameter 'contactListId' is set
+		if (contactListId === undefined || contactListId === null) {
+			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistClear';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/{contactListId}/clear', 
+			'POST', 
+			{ 'contactListId': contactListId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
 			['PureCloud Auth'], 
 			['application/json'], 
 			['application/json']

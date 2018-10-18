@@ -216,8 +216,7 @@ Delete specified user prompt
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:userPrompt:delete
 
 
 
@@ -277,8 +276,7 @@ Delete specified user prompt resource
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:userPrompt:edit
 
 
 
@@ -337,8 +335,7 @@ Multiple IDs can be specified, in which case all specified prompts will be delet
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:userPrompt:delete
 
 
 
@@ -506,8 +503,7 @@ Delete a system prompt resource override.
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:systemPrompt:edit
 
 
 
@@ -566,8 +562,7 @@ Delete flow
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:flow:delete
 
 
 
@@ -623,8 +618,7 @@ Multiple IDs can be specified, in which case all specified flows will be deleted
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:flow:delete
 
 
 
@@ -799,9 +793,7 @@ Get Dependency Tracking objects that have a given display name
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:dependencyTracking:view
 
 
 
@@ -873,9 +865,7 @@ Get Dependency Tracking build status for an organization
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:dependencyTracking:view
 
 
 
@@ -925,9 +915,7 @@ Get resources that are consumed by a given Dependency Tracking object
 
 Requires ANY permissions: 
 
-* admin
-* editor
-* readonly
+* architect:dependencyTracking:view
 
 
 
@@ -993,9 +981,7 @@ Get resources that consume a given Dependency Tracking object
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:dependencyTracking:view
 
 
 
@@ -1058,9 +1044,7 @@ Get Dependency Tracking objects that consume deleted resources
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:dependencyTracking:view
 
 
 
@@ -1129,9 +1113,7 @@ Get a Dependency Tracking object
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:dependencyTracking:view
 
 
 
@@ -1201,9 +1183,7 @@ Get a Dependency Tracking type.
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:dependencyTracking:view
 
 
 
@@ -1259,9 +1239,7 @@ Get Dependency Tracking types.
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:dependencyTracking:view
 
 
 
@@ -1320,9 +1298,7 @@ Get Dependency Tracking objects that depend on updated resources
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:dependencyTracking:view
 
 
 
@@ -1631,9 +1607,7 @@ Get specified user prompt
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:userPrompt:view
 
 
 
@@ -1689,9 +1663,7 @@ Get generated prompt history
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:userPrompt:view
 
 
 
@@ -1762,9 +1734,7 @@ Get specified user prompt resource
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:userPrompt:view
 
 
 
@@ -1823,9 +1793,7 @@ The returned list is pageable, and query parameters can be used for filtering.
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:userPrompt:view
 
 
 
@@ -1887,9 +1855,7 @@ The returned list is pageable, and query parameters can be used for filtering.  
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:userPrompt:view
 
 
 
@@ -2200,9 +2166,7 @@ Get a system prompt
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:systemPrompt:view
 
 
 
@@ -2258,9 +2222,7 @@ Get generated prompt history
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:systemPrompt:view
 
 
 
@@ -2331,9 +2293,7 @@ Get a system prompt resource.
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:systemPrompt:view
 
 
 
@@ -2392,9 +2352,7 @@ Get system prompt resources.
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:systemPrompt:view
 
 
 
@@ -2460,9 +2418,7 @@ Get System Prompts
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:systemPrompt:view
 
 
 
@@ -2531,9 +2487,7 @@ Get flow
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:flow:view
 
 
 
@@ -2593,9 +2547,7 @@ Get generated flow history
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:flow:view
 
 
 
@@ -2666,9 +2618,7 @@ Get the latest configuration for flow
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:flow:view
 
 
 
@@ -2728,9 +2678,7 @@ Get flow version
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:flow:view
 
 
 
@@ -2793,9 +2741,7 @@ Create flow version configuration
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:flow:view
 
 
 
@@ -2858,9 +2804,7 @@ Get flow version list
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:flow:view
 
 
 
@@ -2924,9 +2868,7 @@ Multiple IDs can be specified, in which case all matching flows will be returned
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:flow:view
 
 
 
@@ -3348,7 +3290,7 @@ Asynchronous.  Notification topic: v2.architect.dependencytracking.build
 
 Requires ANY permissions: 
 
-* architect:user:admin
+* architect:dependencyTracking:rebuild
 
 
 
@@ -3614,9 +3556,7 @@ Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:userPrompt:view
 
 
 
@@ -3672,8 +3612,7 @@ Create a new user prompt resource
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:userPrompt:edit
 
 
 ### Request Body Schema
@@ -3768,8 +3707,7 @@ Create a new user prompt
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:userPrompt:add
 
 
 ### Request Body Schema
@@ -4411,9 +4349,7 @@ Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:systemPrompt:edit
 
 
 
@@ -4469,8 +4405,7 @@ Create system prompt resource override.
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:systemPrompt:edit
 
 
 ### Request Body Schema
@@ -4566,8 +4501,7 @@ Create flow version
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:flow:edit
 
 
 
@@ -4626,9 +4560,7 @@ Create flow
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:flow:add
 
 
 ### Request Body Schema
@@ -5781,8 +5713,8 @@ Asynchronous.  Notification topic: v2.flows.{flowId}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:flow:edit
+* architect:flow:unlock
 
 
 
@@ -5838,8 +5770,7 @@ Check-out flow
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:flow:edit
 
 
 
@@ -5895,8 +5826,7 @@ Deactivate flow
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:flow:publish
 
 
 
@@ -5952,8 +5882,8 @@ Asynchronous.  Notification topic: v2.flows.{flowId}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:flow:unlock
+* architect:flow:publish
 
 
 
@@ -6013,8 +5943,7 @@ Revert flow
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:flow:edit
 
 
 
@@ -6070,7 +5999,7 @@ Allows for unlocking a flow in the case where there is no flow configuration ava
 
 Requires ANY permissions: 
 
-* architect:user:admin
+* architect:flow:unlock
 
 
 
@@ -6500,8 +6429,7 @@ Update specified user prompt
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:userPrompt:edit
 
 
 ### Request Body Schema
@@ -6945,8 +6873,7 @@ Update specified user prompt resource
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:userPrompt:edit
 
 
 ### Request Body Schema
@@ -7251,8 +7178,7 @@ Updates a system prompt resource override.
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:systemPrompt:edit
 
 
 ### Request Body Schema
@@ -7351,8 +7277,7 @@ Update flow
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:flow:edit
 
 
 ### Request Body Schema
