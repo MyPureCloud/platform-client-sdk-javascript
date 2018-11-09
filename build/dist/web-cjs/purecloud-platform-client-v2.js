@@ -4008,7 +4008,7 @@ function isSlowBuffer (obj) {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 39.0.0
+ * @version 40.0.0
  */
 class ApiClient {
 	/**
@@ -4693,7 +4693,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '39.0.0' });
+		//request.set({ 'purecloud-sdk': '40.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -4820,7 +4820,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -5134,7 +5134,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -5190,6 +5190,30 @@ class AnalyticsApi {
 			'GET', 
 			{ 'conversationId': conversationId }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets multiple conversations by id
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.id Comma-separated conversation ids
+	 */
+	getAnalyticsConversationsDetails(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/details', 
+			'GET', 
+			{  }, 
+			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -5790,7 +5814,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -7117,8 +7141,8 @@ class ArchitectApi {
 	/**
 	 * Get a pageable list of flows, filtered by query parameters
 	 * Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
-	 * @param {Object} type Type
 	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.type Type
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.sortBy Sort by (default to id)
@@ -7137,19 +7161,15 @@ class ArchitectApi {
 	 * @param {String} opts.publishedBefore Published before
 	 * @param {Array.<String>} opts.divisionId division ID(s)
 	 */
-	getFlows(type, opts) { 
+	getFlows(opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'type' is set
-		if (type === undefined || type === null) {
-			throw 'Missing the required parameter "type" when calling getFlows';
-		}
 
 		return this.apiClient.callApi(
 			'/api/v2/flows', 
 			'GET', 
 			{  }, 
-			{ 'type': type,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'publishVersionId': opts['publishVersionId'],'editableBy': opts['editableBy'],'lockedBy': opts['lockedBy'],'secure': opts['secure'],'deleted': opts['deleted'],'includeSchemas': opts['includeSchemas'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
+			{ 'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'publishVersionId': opts['publishVersionId'],'editableBy': opts['editableBy'],'lockedBy': opts['lockedBy'],'secure': opts['secure'],'deleted': opts['deleted'],'includeSchemas': opts['includeSchemas'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -7284,8 +7304,8 @@ class ArchitectApi {
 	/**
 	 * Get a pageable list of basic flow information objects filterable by query parameters.
 	 * This returns a simplified version of /flow consisting of name and type.
-	 * @param {Object} type Type
 	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.type Type
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.sortBy Sort by (default to id)
@@ -7297,19 +7317,15 @@ class ArchitectApi {
 	 * @param {String} opts.publishedBefore Published before
 	 * @param {Array.<String>} opts.divisionId division ID(s)
 	 */
-	getFlowsDivisionviews(type, opts) { 
+	getFlowsDivisionviews(opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'type' is set
-		if (type === undefined || type === null) {
-			throw 'Missing the required parameter "type" when calling getFlowsDivisionviews';
-		}
 
 		return this.apiClient.callApi(
 			'/api/v2/flows/divisionviews', 
 			'GET', 
 			{  }, 
-			{ 'type': type,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'publishVersionId': opts['publishVersionId'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
+			{ 'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'publishVersionId': opts['publishVersionId'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -8158,7 +8174,7 @@ class AttributesApi {
 	/**
 	 * Attributes service.
 	 * @module purecloud-platform-client-v2/api/AttributesApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -8334,7 +8350,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -9315,7 +9331,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -9366,7 +9382,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -10506,7 +10522,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -10632,6 +10648,30 @@ class ConversationsApi {
 			'GET', 
 			{ 'conversationId': conversationId }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets multiple conversations by id
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.id Comma-separated conversation ids
+	 */
+	getAnalyticsConversationsDetails(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/details', 
+			'GET', 
+			{  }, 
+			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -13562,7 +13602,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -14470,7 +14510,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -14641,7 +14681,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -14687,7 +14727,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -14817,7 +14857,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -14948,7 +14988,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -15403,7 +15443,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -15807,7 +15847,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -16433,7 +16473,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -17597,7 +17637,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -17865,7 +17905,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -18074,7 +18114,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -18200,7 +18240,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -18581,7 +18621,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -18732,7 +18772,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -18931,7 +18971,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -19102,7 +19142,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -19339,7 +19379,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -19459,7 +19499,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -20134,7 +20174,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -21193,8 +21233,38 @@ class OutboundApi {
 	}
 
 	/**
+	 * Get a basic ContactList information object
+	 * This returns a simplified version of a ContactList, consisting of the name, division, column names, phone columns, import status, and size.
+	 * @param {String} contactListId Contactlist ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeImportStatus Include import status (default to false)
+	 * @param {Boolean} opts.includeSize Include size (default to false)
+	 */
+	getOutboundContactlistsDivisionview(contactListId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'contactListId' is set
+		if (contactListId === undefined || contactListId === null) {
+			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistsDivisionview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/divisionviews/{contactListId}', 
+			'GET', 
+			{ 'contactListId': contactListId }, 
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Query a list of simplified contact list objects.
-	 * This return a simplified version of contact lists, consisting of the name, divisions, columns, and phone columns.
+	 * This return a simplified version of contact lists, consisting of the name, division, column names, phone columns, import status, and size.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeImportStatus Include import status (default to false)
 	 * @param {Boolean} opts.includeSize Include size (default to false)
@@ -21332,6 +21402,68 @@ class OutboundApi {
 			'GET', 
 			{  }, 
 			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'dncSourceType': opts['dncSourceType'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a basic DncList information object
+	 * This returns a simplified version of a DncList, consisting of the name, division, import status, and size.
+	 * @param {String} dncListId Dnclist ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeImportStatus Include import status (default to false)
+	 * @param {Boolean} opts.includeSize Include size (default to false)
+	 */
+	getOutboundDnclistsDivisionview(dncListId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'dncListId' is set
+		if (dncListId === undefined || dncListId === null) {
+			throw 'Missing the required parameter "dncListId" when calling getOutboundDnclistsDivisionview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/dnclists/divisionviews/{dncListId}', 
+			'GET', 
+			{ 'dncListId': dncListId }, 
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query a list of simplified dnc list objects.
+	 * This return a simplified version of dnc lists, consisting of the name, division, import status, and size.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeImportStatus Include import status (default to false)
+	 * @param {Boolean} opts.includeSize Include size (default to false)
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.filterType Filter type (default to Prefix)
+	 * @param {String} opts.name Name
+	 * @param {Array.<String>} opts.id id
+	 * @param {String} opts.sortBy Sort by
+	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 */
+	getOutboundDnclistsDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/dnclists/divisionviews', 
+			'GET', 
+			{  }, 
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -21866,31 +21998,6 @@ class OutboundApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
-	 * 
-	 * @param {String} contactListId Contact List ID
-	 */
-	postOutboundContactlistClear(contactListId) { 
-		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
-			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistClear';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/contactlists/{contactListId}/clear', 
-			'POST', 
-			{ 'contactListId': contactListId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
 			['PureCloud Auth'], 
 			['application/json'], 
 			['application/json']
@@ -22679,7 +22786,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -22946,7 +23053,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -23463,6 +23570,7 @@ class QualityApi {
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.expand Expand
 	 * @param {String} opts.name Name
+	 * @param {String} opts.sortOrder Order to sort results, either asc or desc
 	 */
 	getQualityForms(opts) { 
 		opts = opts || {};
@@ -23472,7 +23580,7 @@ class QualityApi {
 			'/api/v2/quality/forms', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -23548,6 +23656,7 @@ class QualityApi {
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.expand Expand
 	 * @param {String} opts.name Name
+	 * @param {String} opts.sortOrder Order to sort results, either asc or desc
 	 */
 	getQualityFormsEvaluations(opts) { 
 		opts = opts || {};
@@ -23557,7 +23666,7 @@ class QualityApi {
 			'/api/v2/quality/forms/evaluations', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -23633,6 +23742,7 @@ class QualityApi {
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.expand Expand
 	 * @param {String} opts.name Name
+	 * @param {String} opts.sortOrder Order to sort results, either asc or desc
 	 */
 	getQualityFormsSurveys(opts) { 
 		opts = opts || {};
@@ -23642,7 +23752,7 @@ class QualityApi {
 			'/api/v2/quality/forms/surveys', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -23655,19 +23765,48 @@ class QualityApi {
 	/**
 	 * Retrieve a list of survey forms by their ids
 	 * 
-	 * @param {Array.<String>} ids A comma-delimited list of valid survey form ids
+	 * @param {Array.<String>} id A comma-delimited list of valid survey form ids
 	 */
-	getQualityFormsSurveysBulk(ids) { 
-		// verify the required parameter 'ids' is set
-		if (ids === undefined || ids === null) {
-			throw 'Missing the required parameter "ids" when calling getQualityFormsSurveysBulk';
+	getQualityFormsSurveysBulk(id) { 
+		// verify the required parameter 'id' is set
+		if (id === undefined || id === null) {
+			throw 'Missing the required parameter "id" when calling getQualityFormsSurveysBulk';
 		}
 
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/surveys/bulk', 
 			'GET', 
 			{  }, 
-			{ 'ids': this.apiClient.buildCollectionParam(ids, 'multi') }, 
+			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a list of the latest form versions by context ids
+	 * 
+	 * @param {Array.<String>} contextId A comma-delimited list of valid survey form context ids
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.published If true, the latest published version will be included. If false, only the unpublished version will be included. (default to true)
+	 */
+	getQualityFormsSurveysBulkContexts(contextId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'contextId' is set
+		if (contextId === undefined || contextId === null) {
+			throw 'Missing the required parameter "contextId" when calling getQualityFormsSurveysBulkContexts';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/quality/forms/surveys/bulk/contexts', 
+			'GET', 
+			{  }, 
+			{ 'contextId': this.apiClient.buildCollectionParam(contextId, 'multi'),'published': opts['published'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -24432,7 +24571,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -25486,7 +25625,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -25810,7 +25949,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -26258,6 +26397,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {String} opts.name Name
+	 * @param {Array.<String>} opts.id id
 	 */
 	getRoutingLanguages(opts) { 
 		opts = opts || {};
@@ -26267,7 +26407,7 @@ class RoutingApi {
 			'/api/v2/routing/languages', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -26595,6 +26735,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.name Filter for results that start with this value
+	 * @param {Array.<String>} opts.id id
 	 */
 	getRoutingSkills(opts) { 
 		opts = opts || {};
@@ -26604,7 +26745,7 @@ class RoutingApi {
 			'/api/v2/routing/skills', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -27574,7 +27715,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -27932,7 +28073,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -28387,7 +28528,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -28534,7 +28675,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -28673,7 +28814,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -32155,7 +32296,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -32216,7 +32357,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -32400,7 +32541,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -34180,7 +34321,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -34271,7 +34412,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -34908,7 +35049,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -35119,7 +35260,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -37148,7 +37289,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 39.0.0
+ * @version 40.0.0
  */
 class platformClient {
 	constructor() {

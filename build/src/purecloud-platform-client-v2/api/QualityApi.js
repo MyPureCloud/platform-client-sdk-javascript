@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -522,6 +522,7 @@ class QualityApi {
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.expand Expand
 	 * @param {String} opts.name Name
+	 * @param {String} opts.sortOrder Order to sort results, either asc or desc
 	 */
 	getQualityForms(opts) { 
 		opts = opts || {};
@@ -531,7 +532,7 @@ class QualityApi {
 			'/api/v2/quality/forms', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -607,6 +608,7 @@ class QualityApi {
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.expand Expand
 	 * @param {String} opts.name Name
+	 * @param {String} opts.sortOrder Order to sort results, either asc or desc
 	 */
 	getQualityFormsEvaluations(opts) { 
 		opts = opts || {};
@@ -616,7 +618,7 @@ class QualityApi {
 			'/api/v2/quality/forms/evaluations', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -692,6 +694,7 @@ class QualityApi {
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.expand Expand
 	 * @param {String} opts.name Name
+	 * @param {String} opts.sortOrder Order to sort results, either asc or desc
 	 */
 	getQualityFormsSurveys(opts) { 
 		opts = opts || {};
@@ -701,7 +704,7 @@ class QualityApi {
 			'/api/v2/quality/forms/surveys', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -714,19 +717,48 @@ class QualityApi {
 	/**
 	 * Retrieve a list of survey forms by their ids
 	 * 
-	 * @param {Array.<String>} ids A comma-delimited list of valid survey form ids
+	 * @param {Array.<String>} id A comma-delimited list of valid survey form ids
 	 */
-	getQualityFormsSurveysBulk(ids) { 
-		// verify the required parameter 'ids' is set
-		if (ids === undefined || ids === null) {
-			throw 'Missing the required parameter "ids" when calling getQualityFormsSurveysBulk';
+	getQualityFormsSurveysBulk(id) { 
+		// verify the required parameter 'id' is set
+		if (id === undefined || id === null) {
+			throw 'Missing the required parameter "id" when calling getQualityFormsSurveysBulk';
 		}
 
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/surveys/bulk', 
 			'GET', 
 			{  }, 
-			{ 'ids': this.apiClient.buildCollectionParam(ids, 'multi') }, 
+			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a list of the latest form versions by context ids
+	 * 
+	 * @param {Array.<String>} contextId A comma-delimited list of valid survey form context ids
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.published If true, the latest published version will be included. If false, only the unpublished version will be included. (default to true)
+	 */
+	getQualityFormsSurveysBulkContexts(contextId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'contextId' is set
+		if (contextId === undefined || contextId === null) {
+			throw 'Missing the required parameter "contextId" when calling getQualityFormsSurveysBulkContexts';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/quality/forms/surveys/bulk/contexts', 
+			'GET', 
+			{  }, 
+			{ 'contextId': this.apiClient.buildCollectionParam(contextId, 'multi'),'published': opts['published'] }, 
 			{  }, 
 			{  }, 
 			null, 

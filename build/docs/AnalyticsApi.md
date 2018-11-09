@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteAnalyticsReportingSchedule**](AnalyticsApi.html#deleteAnalyticsReportingSchedule) | **DELETE** /api/v2/analytics/reporting/schedules/{scheduleId} | Delete a scheduled report job.
 [**getAnalyticsConversationDetails**](AnalyticsApi.html#getAnalyticsConversationDetails) | **GET** /api/v2/analytics/conversations/{conversationId}/details | Get a conversation by id
+[**getAnalyticsConversationsDetails**](AnalyticsApi.html#getAnalyticsConversationsDetails) | **GET** /api/v2/analytics/conversations/details | Gets multiple conversations by id
 [**getAnalyticsReportingExports**](AnalyticsApi.html#getAnalyticsReportingExports) | **GET** /api/v2/analytics/reporting/exports | Get all view export requests for a user
 [**getAnalyticsReportingMetadata**](AnalyticsApi.html#getAnalyticsReportingMetadata) | **GET** /api/v2/analytics/reporting/metadata | Get list of reporting metadata.
 [**getAnalyticsReportingReportIdMetadata**](AnalyticsApi.html#getAnalyticsReportingReportIdMetadata) | **GET** /api/v2/analytics/reporting/{reportId}/metadata | Get a reporting metadata.
@@ -139,6 +140,63 @@ apiInstance.getAnalyticsConversationDetails(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AnalyticsConversation**
+
+<a name="getAnalyticsConversationsDetails"></a>
+
+# AnalyticsConversation getAnalyticsConversationsDetails(opts)
+
+
+
+GET /api/v2/analytics/conversations/details
+
+Gets multiple conversations by id
+
+
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AnalyticsApi();
+
+var opts = { 
+  'id': ["id_example"] // [String] | Comma-separated conversation ids
+};
+apiInstance.getAnalyticsConversationsDetails(opts)
+  .then(function(data) {
+    console.log(`getAnalyticsConversationsDetails success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getAnalyticsConversationsDetails');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **id** | **[String]** | Comma-separated conversation ids | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1638,6 +1696,13 @@ ReportingExportJobRequest <a style="cursor: pointer" onclick="copyReportingExpor
       "lt": Number, 
       "lte": Number, 
     },  
+    "showSecondaryStatus": Boolean, 
+    "agentDurationSortOrder": String, 
+    "waitingDurationSortOrder": String, 
+    "interactingDurationSortOrder": String, 
+    "agentName": String, 
+    "skillsList": [String], 
+    "languageList": [String], 
   },  
   "read": Boolean, 
   "locale": String, 

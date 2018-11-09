@@ -2856,7 +2856,7 @@ apiInstance.getFlowVersions(flowId, opts)
 
 <a name="getFlows"></a>
 
-# FlowEntityListing getFlows(type, opts)
+# FlowEntityListing getFlows(opts)
 
 
 
@@ -2885,9 +2885,8 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ArchitectApi();
 
-var type = "type_example"; // String | Type
-
 var opts = { 
+  'type': ["type_example"], // [String] | Type
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortBy': "id", // String | Sort by
@@ -2906,7 +2905,7 @@ var opts = {
   'publishedBefore': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01", // String | Published before
   'divisionId': ["divisionId_example"] // [String] | division ID(s)
 };
-apiInstance.getFlows(type, opts)
+apiInstance.getFlows(opts)
   .then(function(data) {
     console.log(`getFlows success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2922,7 +2921,7 @@ apiInstance.getFlows(type, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **type** | **String** | Type | <br />**Values**: inboundcall, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
+ **type** | **[String]** | Type | [optional] <br />**Values**: inboundcall, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **sortBy** | **String** | Sort by | [optional] [default to id] |
@@ -3200,7 +3199,7 @@ apiInstance.getFlowsDatatables(opts)
 
 <a name="getFlowsDivisionviews"></a>
 
-# FlowDivisionViewEntityListing getFlowsDivisionviews(type, opts)
+# FlowDivisionViewEntityListing getFlowsDivisionviews(opts)
 
 
 
@@ -3229,9 +3228,8 @@ platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken 
 
 var apiInstance = new platformClient.ArchitectApi();
 
-var type = "type_example"; // String | Type
-
 var opts = { 
+  'type': ["type_example"], // [String] | Type
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortBy': "id", // String | Sort by
@@ -3243,7 +3241,7 @@ var opts = {
   'publishedBefore': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01", // String | Published before
   'divisionId': ["divisionId_example"] // [String] | division ID(s)
 };
-apiInstance.getFlowsDivisionviews(type, opts)
+apiInstance.getFlowsDivisionviews(opts)
   .then(function(data) {
     console.log(`getFlowsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3259,7 +3257,7 @@ apiInstance.getFlowsDivisionviews(type, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **type** | **String** | Type | <br />**Values**: inboundcall, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
+ **type** | **[String]** | Type | [optional] <br />**Values**: inboundcall, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **sortBy** | **String** | Sort by | [optional] [default to id] |

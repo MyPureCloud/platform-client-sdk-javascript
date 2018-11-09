@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -1332,8 +1332,8 @@ class ArchitectApi {
 	/**
 	 * Get a pageable list of flows, filtered by query parameters
 	 * Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
-	 * @param {Object} type Type
 	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.type Type
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.sortBy Sort by (default to id)
@@ -1352,19 +1352,15 @@ class ArchitectApi {
 	 * @param {String} opts.publishedBefore Published before
 	 * @param {Array.<String>} opts.divisionId division ID(s)
 	 */
-	getFlows(type, opts) { 
+	getFlows(opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'type' is set
-		if (type === undefined || type === null) {
-			throw 'Missing the required parameter "type" when calling getFlows';
-		}
 
 		return this.apiClient.callApi(
 			'/api/v2/flows', 
 			'GET', 
 			{  }, 
-			{ 'type': type,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'publishVersionId': opts['publishVersionId'],'editableBy': opts['editableBy'],'lockedBy': opts['lockedBy'],'secure': opts['secure'],'deleted': opts['deleted'],'includeSchemas': opts['includeSchemas'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
+			{ 'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'publishVersionId': opts['publishVersionId'],'editableBy': opts['editableBy'],'lockedBy': opts['lockedBy'],'secure': opts['secure'],'deleted': opts['deleted'],'includeSchemas': opts['includeSchemas'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1499,8 +1495,8 @@ class ArchitectApi {
 	/**
 	 * Get a pageable list of basic flow information objects filterable by query parameters.
 	 * This returns a simplified version of /flow consisting of name and type.
-	 * @param {Object} type Type
 	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.type Type
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.sortBy Sort by (default to id)
@@ -1512,19 +1508,15 @@ class ArchitectApi {
 	 * @param {String} opts.publishedBefore Published before
 	 * @param {Array.<String>} opts.divisionId division ID(s)
 	 */
-	getFlowsDivisionviews(type, opts) { 
+	getFlowsDivisionviews(opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'type' is set
-		if (type === undefined || type === null) {
-			throw 'Missing the required parameter "type" when calling getFlowsDivisionviews';
-		}
 
 		return this.apiClient.callApi(
 			'/api/v2/flows/divisionviews', 
 			'GET', 
 			{  }, 
-			{ 'type': type,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'publishVersionId': opts['publishVersionId'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
+			{ 'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'publishVersionId': opts['publishVersionId'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 

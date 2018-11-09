@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 39.0.0
+	 * @version 40.0.0
 	 */
 
 	/**
@@ -61,6 +61,30 @@ class AnalyticsApi {
 			'GET', 
 			{ 'conversationId': conversationId }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets multiple conversations by id
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.id Comma-separated conversation ids
+	 */
+	getAnalyticsConversationsDetails(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/details', 
+			'GET', 
+			{  }, 
+			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 

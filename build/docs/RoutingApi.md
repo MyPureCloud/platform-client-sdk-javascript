@@ -1015,7 +1015,8 @@ var opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortOrder': "ASC", // String | Ascending or descending sort order
-  'name': "name_example" // String | Name
+  'name': "name_example", // String | Name
+  'id': ["id_example"] // [String] | id
 };
 apiInstance.getRoutingLanguages(opts)
   .then(function(data) {
@@ -1037,6 +1038,7 @@ apiInstance.getRoutingLanguages(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
  **name** | **String** | Name | [optional]  |
+ **id** | **[String]** | id | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1759,7 +1761,8 @@ var apiInstance = new platformClient.RoutingApi();
 var opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'name': "name_example" // String | Filter for results that start with this value
+  'name': "name_example", // String | Filter for results that start with this value
+  'id': ["id_example"] // [String] | id
 };
 apiInstance.getRoutingSkills(opts)
   .then(function(data) {
@@ -1780,6 +1783,7 @@ apiInstance.getRoutingSkills(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **name** | **String** | Filter for results that start with this value | [optional]  |
+ **id** | **[String]** | id | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
