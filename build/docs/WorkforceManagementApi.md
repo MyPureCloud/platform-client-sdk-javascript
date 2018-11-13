@@ -2399,6 +2399,10 @@ ServiceGoalGroup <a style="cursor: pointer" onclick="copyServiceGoalGroupExample
       "include": Boolean, 
       "seconds": Number, 
     },  
+    "abandonRate": { 
+      "include": Boolean, 
+      "percent": Number, 
+    },  
   },  
   "queueMediaAssociations": { 
     "queue": { 
@@ -3587,6 +3591,10 @@ CreateServiceGoalGroupRequest <a style="cursor: pointer" onclick="copyCreateServ
     "averageSpeedOfAnswer": { 
       "include": Boolean, 
       "seconds": Number, 
+    },  
+    "abandonRate": { 
+      "include": Boolean, 
+      "percent": Number, 
     },  
   },  
   "queueMediaAssociations": { 

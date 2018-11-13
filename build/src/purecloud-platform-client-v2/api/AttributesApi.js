@@ -5,7 +5,7 @@ class AttributesApi {
 	/**
 	 * Attributes service.
 	 * @module purecloud-platform-client-v2/api/AttributesApi
-	 * @version 40.0.0
+	 * @version 40.1.0
 	 */
 
 	/**
