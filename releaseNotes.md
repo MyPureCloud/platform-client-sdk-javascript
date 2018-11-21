@@ -1,18 +1,14 @@
-Platform API version: 2803
+Platform API version: 2810
 
+
+# SDK Changes
+
+* API-3855 fixing boolean query param check
 
 # Major Changes (0 changes)
 
 
-# Minor Changes (2 changes)
-
-**ServiceGoalGroupGoals** (1 change)
-
-* Optional property abandonRate was added
-
-**WfmAbandonRate** (1 change)
-
-* Model was added
+# Minor Changes (0 changes)
 
 
 # Point Changes (0 changes)
