@@ -420,9 +420,8 @@ Retrieve the home division for the organization.
 
 Will not include object counts.
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* authorization:division:view
 
 
 

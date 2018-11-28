@@ -1121,6 +1121,42 @@ ConversationQuery <a style="cursor: pointer" onclick="copyConversationQueryExamp
       },  
     },  
   },  
+  "mediaEndpointStatFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
   "segmentFilters": { 
     "type": String, 
     "clauses": { 
@@ -1703,6 +1739,24 @@ ReportingExportJobRequest <a style="cursor: pointer" onclick="copyReportingExpor
     "agentName": String, 
     "skillsList": [String], 
     "languageList": [String], 
+    "mos": { 
+      "gt": Number, 
+      "gte": Number, 
+      "lt": Number, 
+      "lte": Number, 
+    },  
+    "surveyQuestionGroupScore": { 
+      "gt": Number, 
+      "gte": Number, 
+      "lt": Number, 
+      "lte": Number, 
+    },  
+    "surveyPromoterScore": { 
+      "gt": Number, 
+      "gte": Number, 
+      "lt": Number, 
+      "lte": Number, 
+    },  
   },  
   "read": Boolean, 
   "locale": String, 

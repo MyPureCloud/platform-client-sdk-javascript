@@ -5,7 +5,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 40.1.1
+	 * @version 41.0.0
 	 */
 
 	/**
@@ -41,6 +41,35 @@ class BillingApi {
 			'GET', 
 			{  }, 
 			{ 'startDate': startDate,'endDate': endDate }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the billing overview for an organization that is managed by a partner.
+	 * Tax Disclaimer: Prices returned by this API do not include applicable taxes. It is the responsibility of the customer to pay all taxes that are appropriate in their jurisdiction. See the PureCloud API Documentation in the Developer Center for more information about this API: https://developer.mypurecloud.com/api/rest/v2/
+	 * @param {String} trustorOrgId The organization ID of the trustor (customer) organization.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.billingPeriodIndex Billing Period Index (default to 0)
+	 */
+	getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'trustorOrgId' is set
+		if (trustorOrgId === undefined || trustorOrgId === null) {
+			throw 'Missing the required parameter "trustorOrgId" when calling getBillingTrusteebillingoverviewTrustorOrgId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/billing/trusteebillingoverview/{trustorOrgId}', 
+			'GET', 
+			{ 'trustorOrgId': trustorOrgId }, 
+			{ 'billingPeriodIndex': opts['billingPeriodIndex'] }, 
 			{  }, 
 			{  }, 
 			null, 

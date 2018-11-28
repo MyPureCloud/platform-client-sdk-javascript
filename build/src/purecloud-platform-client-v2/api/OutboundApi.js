@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 40.1.1
+	 * @version 41.0.0
 	 */
 
 	/**
@@ -1042,6 +1042,7 @@ class OutboundApi {
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
 	 * @param {Array.<String>} opts.id id
+	 * @param {Array.<String>} opts.divisionId Division ID(s)
 	 * @param {String} opts.sortBy Sort by
 	 * @param {Object} opts.sortOrder Sort order (default to a)
 	 */
@@ -1053,7 +1054,7 @@ class OutboundApi {
 			'/api/v2/outbound/contactlists', 
 			'GET', 
 			{  }, 
-			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1829,6 +1830,31 @@ class OutboundApi {
 			{  }, 
 			{  }, 
 			body, 
+			['PureCloud Auth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
+	 * 
+	 * @param {String} contactListId Contact List ID
+	 */
+	postOutboundContactlistClear(contactListId) { 
+		// verify the required parameter 'contactListId' is set
+		if (contactListId === undefined || contactListId === null) {
+			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistClear';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/{contactListId}/clear', 
+			'POST', 
+			{ 'contactListId': contactListId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
 			['PureCloud Auth'], 
 			['application/json'], 
 			['application/json']

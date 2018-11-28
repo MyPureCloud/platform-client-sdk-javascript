@@ -75,6 +75,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundCampaignrules**](OutboundApi.html#postOutboundCampaignrules) | **POST** /api/v2/outbound/campaignrules | Create Campaign Rule
 [**postOutboundCampaigns**](OutboundApi.html#postOutboundCampaigns) | **POST** /api/v2/outbound/campaigns | Create a campaign.
 [**postOutboundCampaignsProgress**](OutboundApi.html#postOutboundCampaignsProgress) | **POST** /api/v2/outbound/campaigns/progress | Get progress for a list of campaigns
+[**postOutboundContactlistClear**](OutboundApi.html#postOutboundContactlistClear) | **POST** /api/v2/outbound/contactlists/{contactListId}/clear | Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
 [**postOutboundContactlistContacts**](OutboundApi.html#postOutboundContactlistContacts) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts | Add contacts to a contact list.
 [**postOutboundContactlistContactsBulk**](OutboundApi.html#postOutboundContactlistContactsBulk) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts/bulk | Get contacts from a contact list.
 [**postOutboundContactlistExport**](OutboundApi.html#postOutboundContactlistExport) | **POST** /api/v2/outbound/contactlists/{contactListId}/export | Initiate the export of a contact list.
@@ -2386,6 +2387,7 @@ var opts = {
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
   'id': ["id_example"], // [String] | id
+  'divisionId': ["divisionId_example"], // [String] | Division ID(s)
   'sortBy': "sortBy_example", // String | Sort by
   'sortOrder': "a" // String | Sort order
 };
@@ -2412,6 +2414,7 @@ apiInstance.getOutboundContactlists(opts)
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
  **id** | **[String]** | id | [optional]  |
+ **divisionId** | **[String]** | Division ID(s) | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
@@ -4534,6 +4537,62 @@ apiInstance.postOutboundCampaignsProgress(body)
 ### Return type
 
 **[CampaignProgress]**
+
+<a name="postOutboundContactlistClear"></a>
+
+# void postOutboundContactlistClear(contactListId)
+
+
+
+POST /api/v2/outbound/contactlists/{contactListId}/clear
+
+Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
+
+
+
+Requires ANY permissions: 
+
+* outbound:contact:delete
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.OutboundApi();
+
+var contactListId = "contactListId_example"; // String | Contact List ID
+
+apiInstance.postOutboundContactlistClear(contactListId)
+  .then(function() {
+    console.log('postOutboundContactlistClear returned successfully.');
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postOutboundContactlistClear');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListId** | **String** | Contact List ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="postOutboundContactlistContacts"></a>
 
