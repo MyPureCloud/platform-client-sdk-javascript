@@ -5,7 +5,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 41.0.0
+	 * @version 42.0.0
 	 */
 
 	/**
@@ -39,7 +39,7 @@ class GreetingsApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -64,7 +64,7 @@ class GreetingsApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -93,7 +93,7 @@ class GreetingsApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -118,7 +118,7 @@ class GreetingsApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -138,7 +138,7 @@ class GreetingsApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -168,7 +168,7 @@ class GreetingsApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -193,7 +193,7 @@ class GreetingsApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -223,7 +223,7 @@ class GreetingsApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -248,7 +248,7 @@ class GreetingsApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -273,7 +273,7 @@ class GreetingsApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -303,7 +303,7 @@ class GreetingsApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -333,7 +333,7 @@ class GreetingsApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -363,7 +363,7 @@ class GreetingsApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -388,7 +388,7 @@ class GreetingsApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -418,7 +418,7 @@ class GreetingsApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -448,7 +448,7 @@ class GreetingsApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);

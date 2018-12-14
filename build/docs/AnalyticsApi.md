@@ -29,6 +29,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsReportingExports**](AnalyticsApi.html#postAnalyticsReportingExports) | **POST** /api/v2/analytics/reporting/exports | Generate a view export request
 [**postAnalyticsReportingScheduleRunreport**](AnalyticsApi.html#postAnalyticsReportingScheduleRunreport) | **POST** /api/v2/analytics/reporting/schedules/{scheduleId}/runreport | Place a scheduled report immediately into the reporting queue
 [**postAnalyticsReportingSchedules**](AnalyticsApi.html#postAnalyticsReportingSchedules) | **POST** /api/v2/analytics/reporting/schedules | Create a scheduled report job
+[**postAnalyticsSurveysAggregatesQuery**](AnalyticsApi.html#postAnalyticsSurveysAggregatesQuery) | **POST** /api/v2/analytics/surveys/aggregates/query | Query for survey aggregates
 [**postAnalyticsUsersAggregatesQuery**](AnalyticsApi.html#postAnalyticsUsersAggregatesQuery) | **POST** /api/v2/analytics/users/aggregates/query | Query for user aggregates
 [**postAnalyticsUsersDetailsQuery**](AnalyticsApi.html#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
 [**postAnalyticsUsersObservationsQuery**](AnalyticsApi.html#postAnalyticsUsersObservationsQuery) | **POST** /api/v2/analytics/users/observations/query | Query for user observations
@@ -60,8 +61,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -116,8 +117,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -172,8 +173,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -229,8 +230,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 apiInstance.getAnalyticsReportingExports()
@@ -278,8 +279,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -338,8 +339,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -397,8 +398,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 apiInstance.getAnalyticsReportingReportformats()
@@ -446,8 +447,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -501,8 +502,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -562,8 +563,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -617,8 +618,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -675,8 +676,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -733,8 +734,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 apiInstance.getAnalyticsReportingTimeperiods()
@@ -813,8 +814,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -946,8 +947,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -1222,8 +1223,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -1352,8 +1353,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -1482,8 +1483,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -1598,8 +1599,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -1757,6 +1758,39 @@ ReportingExportJobRequest <a style="cursor: pointer" onclick="copyReportingExpor
       "lt": Number, 
       "lte": Number, 
     },  
+    "surveyFormContextIds": [String], 
+    "conversationIds": [String], 
+    "isEnded": Boolean, 
+    "isSurveyed": Boolean, 
+    "surveyScores": { 
+      "gt": Number, 
+      "gte": Number, 
+      "lt": Number, 
+      "lte": Number, 
+    },  
+    "promoterScores": { 
+      "gt": Number, 
+      "gte": Number, 
+      "lt": Number, 
+      "lte": Number, 
+    },  
+    "isCampaign": Boolean, 
+    "surveyStatuses": [String], 
+    "conversationProperties": { 
+      "isWaiting": Boolean, 
+      "isActive": Boolean, 
+      "isAcd": Boolean, 
+      "isScreenshare": Boolean, 
+      "isCobrowse": Boolean, 
+      "isVoicemail": Boolean, 
+      "isFlagged": Boolean, 
+      "filterWrapUpNotes": Boolean, 
+      "matchAll": Boolean, 
+    },  
+    "isBlindTransferred": Boolean, 
+    "isConsulted": Boolean, 
+    "isConsultTransferred": Boolean, 
+    "remoteParticipants": [String], 
   },  
   "read": Boolean, 
   "locale": String, 
@@ -1773,8 +1807,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -1828,8 +1862,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -1935,8 +1969,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -1964,6 +1998,136 @@ apiInstance.postAnalyticsReportingSchedules(body)
 ### Return type
 
 **ReportSchedule**
+
+<a name="postAnalyticsSurveysAggregatesQuery"></a>
+
+# AggregateQueryResponse postAnalyticsSurveysAggregatesQuery(body)
+
+
+
+POST /api/v2/analytics/surveys/aggregates/query
+
+Query for survey aggregates
+
+
+
+Requires ANY permissions: 
+
+* analytics:surveyAggregate:view
+
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyAggregationQueryExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#AggregationQueryExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample()">Copy</a>
+
+<div id="AggregationQueryExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "interval": String, 
+  "granularity": String, 
+  "timeZone": String, 
+  "groupBy": [String], 
+  "filter": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "metrics": [String], 
+  "flattenMultivaluedDimensions": Boolean, 
+  "views": { 
+    "target": String, 
+    "name": String, 
+    "function": String, 
+    "range": { 
+      "gte": Number, 
+      "lt": Number, 
+    },  
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.AnalyticsApi();
+
+var body = {}; // Object | query
+
+apiInstance.postAnalyticsSurveysAggregatesQuery(body)
+  .then(function(data) {
+    console.log(`postAnalyticsSurveysAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postAnalyticsSurveysAggregatesQuery');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AggregateQueryResponse**
 
 <a name="postAnalyticsUsersAggregatesQuery"></a>
 
@@ -2065,8 +2229,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -2278,8 +2442,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -2394,8 +2558,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 
@@ -2501,8 +2665,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.AnalyticsApi();
 

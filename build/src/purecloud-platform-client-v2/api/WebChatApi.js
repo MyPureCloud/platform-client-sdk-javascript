@@ -5,7 +5,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 41.0.0
+	 * @version 42.0.0
 	 */
 
 	/**
@@ -39,7 +39,7 @@ class WebChatApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -59,7 +59,7 @@ class WebChatApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -84,7 +84,7 @@ class WebChatApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -104,7 +104,7 @@ class WebChatApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -124,7 +124,7 @@ class WebChatApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -149,7 +149,7 @@ class WebChatApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -179,7 +179,7 @@ class WebChatApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -204,7 +204,7 @@ class WebChatApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);

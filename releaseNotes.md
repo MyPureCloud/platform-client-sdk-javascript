@@ -1,221 +1,185 @@
-Platform API version: 2842
+Platform API version: 2887
 
 
-# Major Changes (19 changes)
+# Major Changes (6 changes)
 
-**DELETE /api/v2/outbound/contactlists/{contactListId}/contacts** (1 change)
+**POST /api/v2/authorization/roles/{roleId}** (1 change)
 
-* Response 204 was removed
-
-**GET /api/v2/outbound/contactlists** (1 change)
-
-* Parameter divisionId was added
-
-**Question** (1 change)
-
-* Model Question was removed
-
-**QuestionGroup** (1 change)
-
-* Model QuestionGroup was removed
-
-**EvaluationForm** (1 change)
-
-* Property questionGroups was changed from QuestionGroup[] to EvaluationQuestionGroup[]
+* Parameter subjectType was added
 
 **AggregateMetricData** (1 change)
 
-* Enum value nSurveysBounced was removed from property metric
+* Enum value tFlowHangUp was removed from property metric
 
 **AggregationQuery** (1 change)
 
-* Enum value nSurveysBounced was removed from property metrics
+* Enum value tFlowHangUp was removed from property metrics
 
 **AnalyticsQueryPredicate** (1 change)
 
-* Enum value nSurveysBounced was removed from property metric
+* Enum value tFlowHangUp was removed from property metric
 
-**SurveyForm** (1 change)
+**ObservationMetricData** (1 change)
 
-* Property questionGroups was changed from QuestionGroup[] to SurveyQuestionGroup[]
-
-**ObservationDataContainer** (1 change)
-
-* Property data was changed from AggregateMetricData[] to ObservationMetricData[]
+* Enum value tFlowHangUp was removed from property metric
 
 **ObservationQuery** (1 change)
 
-* Enum value nSurveysBounced was removed from property metrics
-
-**AnalyticsEvaluation** (2 changes)
-
-* Property getoTotalScore was removed
-* Property getoTotalCriticalScore was removed
-
-**AnalyticsSurvey** (6 changes)
-
-* Property status was removed
-* Property getoSurveyTotalScore was removed
-* Property getsurveyCompletedDate was removed
-* Property mediaTypes was removed
-* Property languageIds was removed
-* Property skillIds was removed
+* Enum value tFlowHangUp was removed from property metrics
 
 
-# Minor Changes (60 changes)
+# Minor Changes (48 changes)
 
-**/api/v2/billing/trusteebillingoverview/{trustorOrgId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/outbound/contactlists/{contactListId}/clear** (2 changes)
+**/api/v2/gmsc/tokens** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**DELETE /api/v2/outbound/contactlists/{contactListId}/contacts** (1 change)
+**/api/v2/quality/conversations/{conversationId}/surveys** (2 changes)
 
-* Response 200 was added
+* Path was added
+* Operation GET was added
 
-**EvaluationQuestion** (1 change)
+**/api/v2/analytics/surveys/aggregates/query** (2 changes)
 
-* Model was added
+* Path was added
+* Operation POST was added
 
-**EvaluationQuestionGroup** (1 change)
+**/api/v2/quality/surveys/scorable** (3 changes)
 
-* Model was added
+* Path was added
+* Operation GET was added
+* Operation PUT was added
 
-**DataSchema** (1 change)
+**/api/v2/routing/queues/divisionviews/all** (2 changes)
 
-* Model was added
+* Path was added
+* Operation GET was added
 
-**AggregateMetricData** (2 changes)
+**/api/v2/quality/surveys/scoring** (2 changes)
 
-* Enum value nSurveyErrors was added to property metric
-* Enum value nFlowOutcomeFailed was added to property metric
+* Path was added
+* Operation POST was added
 
-**AggregationQuery** (10 changes)
+**/api/v2/quality/surveys/{surveyId}** (2 changes)
 
-* Enum value surveyFormName was added to property groupBy
-* Enum value surveyErrorReason was added to property groupBy
-* Enum value surveyPreviousStatus was added to property groupBy
-* Enum value surveyStatus was added to property groupBy
-* Enum value minMos was added to property groupBy
-* Enum value mediaStatsMinConversationMos was added to property groupBy
-* Enum value minRFactor was added to property groupBy
-* Enum value mediaStatsMinConversationRFactor was added to property groupBy
-* Enum value nSurveyErrors was added to property metrics
-* Enum value nFlowOutcomeFailed was added to property metrics
+* Path was added
+* Operation GET was added
 
-**AnalyticsQueryPredicate** (10 changes)
+**User** (1 change)
 
-* Enum value surveyFormName was added to property dimension
-* Enum value surveyErrorReason was added to property dimension
-* Enum value surveyPreviousStatus was added to property dimension
-* Enum value surveyStatus was added to property dimension
-* Enum value minMos was added to property dimension
-* Enum value mediaStatsMinConversationMos was added to property dimension
-* Enum value minRFactor was added to property dimension
-* Enum value mediaStatsMinConversationRFactor was added to property dimension
-* Enum value nSurveyErrors was added to property metric
-* Enum value nFlowOutcomeFailed was added to property metric
+* Optional property languagePreference was added
 
-**Entity** (1 change)
+**OrgUser** (1 change)
+
+* Optional property languagePreference was added
+
+**Token** (1 change)
 
 * Model was added
 
-**SubscriptionOverviewUsage** (1 change)
+**TrustUser** (1 change)
 
-* Model was added
+* Optional property languagePreference was added
 
-**TrusteeBillingOverview** (1 change)
+**AggregateMetricData** (1 change)
 
-* Model was added
+* Enum value tFlowDisconnect was added to property metric
 
-**Dependency** (1 change)
+**AggregationQuery** (1 change)
 
-* id is no longer readonly
+* Enum value tFlowDisconnect was added to property metrics
 
-**SurveyQuestion** (1 change)
+**AnalyticsQueryPredicate** (1 change)
 
-* Model was added
-
-**SurveyQuestionGroup** (1 change)
-
-* Model was added
-
-**ViewFilter** (3 changes)
-
-* Optional property mos was added
-* Optional property surveyQuestionGroupScore was added
-* Optional property surveyPromoterScore was added
-
-**SystemPrompt** (1 change)
-
-* id is no longer readonly
+* Enum value tFlowDisconnect was added to property metric
 
 **ObservationMetricData** (1 change)
 
-* Model was added
+* Enum value tFlowDisconnect was added to property metric
 
-**ObservationQuery** (2 changes)
+**ObservationQuery** (1 change)
 
-* Enum value nSurveyErrors was added to property metrics
-* Enum value nFlowOutcomeFailed was added to property metrics
+* Enum value tFlowDisconnect was added to property metrics
 
-**DependencyObject** (1 change)
-
-* id is no longer readonly
-
-**Flow** (1 change)
-
-* id is no longer readonly
-
-**FlowVersion** (1 change)
-
-* id is no longer readonly
-
-**Prompt** (1 change)
-
-* id is no longer readonly
-
-**DependencyType** (1 change)
-
-* id is no longer readonly
-
-**AnalyticsConversation** (2 changes)
-
-* Optional property mediaStatsMinConversationMos was added
-* Optional property mediaStatsMinConversationRFactor was added
-
-**AnalyticsEvaluation** (2 changes)
-
-* Optional property oTotalScore was added
-* Optional property oTotalCriticalScore was added
-
-**AnalyticsMediaEndpointStat** (1 change)
+**Survey** (1 change)
 
 * Model was added
 
-**AnalyticsSession** (1 change)
+**SurveyQuestionGroupScore** (1 change)
 
-* Optional property mediaEndpointStats was added
+* Model was added
 
-**AnalyticsSurvey** (4 changes)
+**SurveyQuestionScore** (1 change)
 
-* Optional property surveyFormName was added
-* Optional property surveyStatus was added
-* Optional property surveyCompletedDate was added
-* Optional property oSurveyTotalScore was added
+* Model was added
 
-**ConversationQuery** (1 change)
+**SurveyScoringSet** (1 change)
 
-* Optional property mediaEndpointStatFilters was added
+* Model was added
 
-**FlowDivisionView** (1 change)
+**UserMe** (1 change)
 
-* id is no longer readonly
+* Optional property languagePreference was added
+
+**ConversationProperties** (1 change)
+
+* Model was added
+
+**ViewFilter** (13 changes)
+
+* Optional property surveyFormContextIds was added
+* Optional property conversationIds was added
+* Optional property isEnded was added
+* Optional property isSurveyed was added
+* Optional property surveyScores was added
+* Optional property promoterScores was added
+* Optional property isCampaign was added
+* Optional property surveyStatuses was added
+* Optional property conversationProperties was added
+* Optional property isBlindTransferred was added
+* Optional property isConsulted was added
+* Optional property isConsultTransferred was added
+* Optional property remoteParticipants was added
+
+**ScorableSurvey** (1 change)
+
+* Model was added
+
+**SurveyFormAndScoringSet** (1 change)
+
+* Model was added
+
+**Condition** (1 change)
+
+* Enum value dataActionCondition was added to property type
+
+**ContactColumnToDataActionFieldMapping** (1 change)
+
+* Model was added
+
+**DataActionConditionPredicate** (1 change)
+
+* Model was added
 
 
-# Point Changes (0 changes)
+# Point Changes (7 changes)
+
+**PATCH /api/v2/routing/queues/{queueId}/users/{memberId}** (2 changes)
+
+* Summary was changed
+* Response 202 was changed from User ring number change has been accepted to User update has been accepted
+
+**GET /api/v2/routing/queues/divisionviews** (3 changes)
+
+* Summary was changed
+* Description was changed for parameter pageSize
+* Description was changed for parameter pageNumber
+
+**GET /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}** (1 change)
+
+* Summary was changed
+
+**POST /api/v2/outbound/contactlists/{contactListId}/contacts** (1 change)
+
+* Description was changed for parameter doNotQueue

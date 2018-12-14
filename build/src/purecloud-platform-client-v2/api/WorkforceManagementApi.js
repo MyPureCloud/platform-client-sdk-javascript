@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 41.0.0
+	 * @version 42.0.0
 	 */
 
 	/**
@@ -39,7 +39,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -69,7 +69,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -99,7 +99,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -129,7 +129,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -164,7 +164,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -199,7 +199,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -229,7 +229,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -254,7 +254,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -283,7 +283,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -313,7 +313,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -338,7 +338,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -368,7 +368,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -398,7 +398,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -428,7 +428,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -458,7 +458,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -483,7 +483,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -513,7 +513,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -538,7 +538,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -563,7 +563,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -598,7 +598,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -632,7 +632,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -657,7 +657,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -697,7 +697,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -732,7 +732,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -762,7 +762,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -801,7 +801,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -831,7 +831,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -861,7 +861,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -890,7 +890,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -918,7 +918,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -942,7 +942,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -967,7 +967,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -991,7 +991,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1025,7 +1025,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1059,7 +1059,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1093,7 +1093,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1122,7 +1122,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1161,7 +1161,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1202,7 +1202,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1236,7 +1236,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1265,7 +1265,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1289,7 +1289,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1318,7 +1318,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1347,7 +1347,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1376,7 +1376,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1405,7 +1405,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1434,7 +1434,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1463,7 +1463,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1492,7 +1492,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1521,7 +1521,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1562,7 +1562,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1601,7 +1601,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1637,7 +1637,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1671,7 +1671,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1705,7 +1705,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1749,7 +1749,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1788,7 +1788,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1827,7 +1827,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1862,7 +1862,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1896,7 +1896,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1925,7 +1925,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1949,7 +1949,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1973,7 +1973,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -1997,7 +1997,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);

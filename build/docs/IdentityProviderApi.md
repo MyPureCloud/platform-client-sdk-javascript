@@ -63,8 +63,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.deleteIdentityprovidersAdfs()
@@ -113,8 +113,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.deleteIdentityprovidersCic()
@@ -163,8 +163,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.deleteIdentityprovidersGsuite()
@@ -213,8 +213,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.deleteIdentityprovidersIdentitynow()
@@ -263,8 +263,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.deleteIdentityprovidersOkta()
@@ -313,8 +313,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.deleteIdentityprovidersOnelogin()
@@ -363,8 +363,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.deleteIdentityprovidersPing()
@@ -413,8 +413,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.deleteIdentityprovidersPurecloud()
@@ -463,8 +463,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.deleteIdentityprovidersSalesforce()
@@ -513,8 +513,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityproviders()
@@ -563,8 +563,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityprovidersAdfs()
@@ -613,8 +613,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityprovidersCic()
@@ -663,8 +663,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityprovidersGsuite()
@@ -713,8 +713,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityprovidersIdentitynow()
@@ -763,8 +763,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityprovidersOkta()
@@ -813,8 +813,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityprovidersOnelogin()
@@ -863,8 +863,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityprovidersPing()
@@ -913,8 +913,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityprovidersPurecloud()
@@ -963,8 +963,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 apiInstance.getIdentityprovidersSalesforce()
@@ -1045,8 +1045,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 
@@ -1132,8 +1132,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 
@@ -1220,8 +1220,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 
@@ -1308,8 +1308,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 
@@ -1395,8 +1395,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 
@@ -1482,8 +1482,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 
@@ -1570,8 +1570,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 
@@ -1654,8 +1654,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 
@@ -1741,8 +1741,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.IdentityProviderApi();
 

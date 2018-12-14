@@ -5,7 +5,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 41.0.0
+	 * @version 42.0.0
 	 */
 
 	/**
@@ -39,7 +39,7 @@ class ObjectsApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -68,7 +68,7 @@ class ObjectsApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -100,7 +100,7 @@ class ObjectsApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -120,7 +120,7 @@ class ObjectsApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -140,7 +140,7 @@ class ObjectsApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -175,7 +175,7 @@ class ObjectsApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -200,7 +200,7 @@ class ObjectsApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -230,7 +230,7 @@ class ObjectsApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);

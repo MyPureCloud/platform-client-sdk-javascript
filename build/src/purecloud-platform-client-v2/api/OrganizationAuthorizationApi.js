@@ -5,7 +5,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 41.0.0
+	 * @version 42.0.0
 	 */
 
 	/**
@@ -39,7 +39,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -69,7 +69,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -99,7 +99,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -124,7 +124,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -154,7 +154,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -179,7 +179,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -204,7 +204,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -234,7 +234,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -264,7 +264,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -294,7 +294,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -319,7 +319,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -344,7 +344,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -374,7 +374,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -404,7 +404,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -429,7 +429,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -454,7 +454,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -484,7 +484,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -509,7 +509,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -541,7 +541,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -573,7 +573,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -603,7 +603,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -638,7 +638,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);
@@ -668,7 +668,7 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			null, 
-			['PureCloud Auth'], 
+			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
 		);

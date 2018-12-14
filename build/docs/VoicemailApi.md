@@ -58,8 +58,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 
@@ -113,8 +113,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 apiInstance.deleteVoicemailMessages()
@@ -162,8 +162,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 
@@ -217,8 +217,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 
@@ -282,8 +282,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 
@@ -337,8 +337,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 apiInstance.getVoicemailMailbox()
@@ -386,8 +386,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 apiInstance.getVoicemailMeMailbox()
@@ -435,8 +435,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 
@@ -493,8 +493,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 apiInstance.getVoicemailMePolicy()
@@ -542,8 +542,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 
@@ -601,8 +601,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 
@@ -660,8 +660,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 
@@ -719,8 +719,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 apiInstance.getVoicemailPolicy()
@@ -769,8 +769,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 
@@ -830,8 +830,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 
@@ -889,8 +889,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 
@@ -1378,6 +1378,7 @@ VoicemailGroupPolicy <a style="cursor: pointer" onclick="copyVoicemailGroupPolic
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "startDate": Date, 
@@ -1672,6 +1673,7 @@ VoicemailGroupPolicy <a style="cursor: pointer" onclick="copyVoicemailGroupPolic
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -1693,6 +1695,7 @@ VoicemailGroupPolicy <a style="cursor: pointer" onclick="copyVoicemailGroupPolic
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "startDate": Date, 
@@ -2136,6 +2139,7 @@ VoicemailGroupPolicy <a style="cursor: pointer" onclick="copyVoicemailGroupPolic
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "startDate": Date, 
@@ -2430,6 +2434,7 @@ VoicemailGroupPolicy <a style="cursor: pointer" onclick="copyVoicemailGroupPolic
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -2451,6 +2456,7 @@ VoicemailGroupPolicy <a style="cursor: pointer" onclick="copyVoicemailGroupPolic
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -2472,6 +2478,7 @@ VoicemailGroupPolicy <a style="cursor: pointer" onclick="copyVoicemailGroupPolic
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 
+      "languagePreference": String, 
       "selfUri": String, 
     },  
     "selfUri": String, 
@@ -2495,8 +2502,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 
@@ -2580,8 +2587,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 
@@ -3577,6 +3584,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -3607,6 +3615,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -4035,6 +4044,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "startDate": Date, 
@@ -4329,6 +4339,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -4350,6 +4361,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -4619,6 +4631,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "startDate": Date, 
@@ -4913,6 +4926,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -4934,6 +4948,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -5056,6 +5071,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -5212,6 +5228,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -5233,6 +5250,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -5764,6 +5782,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -5902,6 +5921,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -5935,6 +5955,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -6340,6 +6361,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -6478,6 +6500,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -6511,6 +6534,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -7256,6 +7280,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -7412,6 +7437,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -7433,6 +7459,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "startDate": Date, 
@@ -7717,6 +7744,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -7873,6 +7901,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -7894,6 +7923,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -7915,6 +7945,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "startDate": Date, 
@@ -8348,6 +8379,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -8504,6 +8536,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -8525,6 +8558,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "startDate": Date, 
@@ -8809,6 +8843,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -8965,6 +9000,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -8986,6 +9022,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -9007,6 +9044,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -9028,6 +9066,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
+    "languagePreference": String, 
     "selfUri": String, 
   },  
   "deleted": Boolean, 
@@ -9411,6 +9450,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -9567,6 +9607,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -9588,6 +9629,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "startDate": Date, 
@@ -9872,6 +9914,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -10028,6 +10071,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -10049,6 +10093,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -10070,6 +10115,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "startDate": Date, 
@@ -10503,6 +10549,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -10659,6 +10706,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -10680,6 +10728,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "startDate": Date, 
@@ -10964,6 +11013,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -11120,6 +11170,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -11141,6 +11192,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -11162,6 +11214,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -11183,6 +11236,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
+    "languagePreference": String, 
     "selfUri": String, 
   },  
   "group": { 
@@ -11604,6 +11658,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "startDate": Date, 
@@ -11898,6 +11953,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -11919,6 +11975,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "startDate": Date, 
@@ -12362,6 +12419,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "startDate": Date, 
@@ -12656,6 +12714,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -12677,6 +12736,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -12698,6 +12758,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 
+      "languagePreference": String, 
       "selfUri": String, 
     },  
     "selfUri": String, 
@@ -13158,6 +13219,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -13314,6 +13376,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -13335,6 +13398,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "startDate": Date, 
@@ -13619,6 +13683,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -13775,6 +13840,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -13796,6 +13862,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -13817,6 +13884,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -14094,6 +14162,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -14250,6 +14319,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -14271,6 +14341,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "startDate": Date, 
@@ -14555,6 +14626,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -14711,6 +14783,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -14732,6 +14805,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -14753,6 +14827,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -14777,8 +14852,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 
@@ -14862,8 +14937,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 
@@ -14946,8 +15021,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 
@@ -15098,8 +15173,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 
@@ -16095,6 +16170,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -16125,6 +16201,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -16553,6 +16630,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "startDate": Date, 
@@ -16847,6 +16925,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -16868,6 +16947,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -17137,6 +17217,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "startDate": Date, 
@@ -17431,6 +17512,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -17452,6 +17534,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -17574,6 +17657,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -17730,6 +17814,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -17751,6 +17836,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -18282,6 +18368,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -18420,6 +18507,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -18453,6 +18541,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -18858,6 +18947,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -18996,6 +19086,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -19029,6 +19120,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -19774,6 +19866,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -19930,6 +20023,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -19951,6 +20045,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "startDate": Date, 
@@ -20235,6 +20330,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -20391,6 +20487,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -20412,6 +20509,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -20433,6 +20531,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "startDate": Date, 
@@ -20866,6 +20965,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -21022,6 +21122,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -21043,6 +21144,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "startDate": Date, 
@@ -21327,6 +21429,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -21483,6 +21586,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -21504,6 +21608,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -21525,6 +21630,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -21546,6 +21652,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
+    "languagePreference": String, 
     "selfUri": String, 
   },  
   "deleted": Boolean, 
@@ -21929,6 +22036,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -22085,6 +22193,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -22106,6 +22215,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "startDate": Date, 
@@ -22390,6 +22500,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -22546,6 +22657,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -22567,6 +22679,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -22588,6 +22701,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "startDate": Date, 
@@ -23021,6 +23135,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -23177,6 +23292,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -23198,6 +23314,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "startDate": Date, 
@@ -23482,6 +23599,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -23638,6 +23756,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -23659,6 +23778,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -23680,6 +23800,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -23701,6 +23822,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
+    "languagePreference": String, 
     "selfUri": String, 
   },  
   "group": { 
@@ -24122,6 +24244,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "startDate": Date, 
@@ -24416,6 +24539,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -24437,6 +24561,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "startDate": Date, 
@@ -24880,6 +25005,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "startDate": Date, 
@@ -25174,6 +25300,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -25195,6 +25322,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -25216,6 +25344,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 
+      "languagePreference": String, 
       "selfUri": String, 
     },  
     "selfUri": String, 
@@ -25676,6 +25805,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -25832,6 +25962,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -25853,6 +25984,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "startDate": Date, 
@@ -26137,6 +26269,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -26293,6 +26426,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -26314,6 +26448,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -26335,6 +26470,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -26612,6 +26748,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -26768,6 +26905,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -26789,6 +26927,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "startDate": Date, 
@@ -27073,6 +27212,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "startDate": Date, 
@@ -27229,6 +27369,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -27250,6 +27391,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -27271,6 +27413,7 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -27295,8 +27438,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 
@@ -27387,8 +27530,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.VoicemailApi();
 

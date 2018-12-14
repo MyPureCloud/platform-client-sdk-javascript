@@ -2,7 +2,7 @@ import superagent from 'superagent';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 41.0.0
+ * @version 42.0.0
  */
 class ApiClient {
 	/**
@@ -91,7 +91,8 @@ class ApiClient {
 		 * @type {Array.<String>}
 		 */
 		this.authentications = {
-			'PureCloud Auth': {type: 'oauth2'}
+			'PureCloud OAuth': {type: 'oauth2'},
+			'Guest Chat JWT': {type: 'apiKey', 'in': 'header', name: 'Authorization'}
 		};
 
 		/**
@@ -153,7 +154,7 @@ class ApiClient {
 		try {
 			if (opts.accessToken) {
 				this.authData.accessToken = opts.accessToken;
-				this.authentications['PureCloud Auth'].accessToken = opts.accessToken;
+				this.authentications['PureCloud OAuth'].accessToken = opts.accessToken;
 			}
 
 			if (opts.state) {
@@ -305,9 +306,16 @@ class ApiClient {
 				if (error) {
 					reject(error);
 				} else {
+					// Save access token
 					this.setAccessToken(response.body['access_token']);
+
+					// Set expiry time
+					this.authData.tokenExpiryTime = (new Date()).getTime() + (response.body['expires_in'] * 1000);
+					this.authData.tokenExpiryTimeString = (new Date(this.authData.tokenExpiryTime)).toUTCString();
 					this._debugTrace(`Access token expires in ${response.body['expires_in']} seconds`);
-					resolve();
+
+					// Return auth data
+					resolve(this.authData);
 				}
 			});
 		});
@@ -322,14 +330,14 @@ class ApiClient {
 			this._loadSettings();
 
 			// Check if there is a token to test
-			if (!this.authentications['PureCloud Auth'].accessToken) {
+			if (!this.authentications['PureCloud OAuth'].accessToken) {
 				reject(new Error('Token is not set'));
 				return;
 			}
 
 			// Test token
 			this.callApi('/api/v2/authorization/permissions', 'GET', 
-				null, null, null, null, null, ['PureCloud Auth'], ['application/json'], ['application/json'])
+				null, null, null, null, null, ['PureCloud OAuth'], ['application/json'], ['application/json'])
 				.then(() => {
 					resolve();
 				})
@@ -414,7 +422,7 @@ class ApiClient {
 		this.storageKey = storageKey;
 
 		// Trigger storage of current token
-		this.setAccessToken(this.authentications['PureCloud Auth'].accessToken);
+		this.setAccessToken(this.authentications['PureCloud OAuth'].accessToken);
 	}
 
 	/**
@@ -687,7 +695,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '41.0.0' });
+		//request.set({ 'purecloud-sdk': '42.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);

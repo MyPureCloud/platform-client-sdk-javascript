@@ -134,8 +134,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -195,8 +195,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -253,8 +253,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -312,8 +312,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -368,8 +368,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -425,8 +425,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -480,8 +480,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -541,8 +541,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -599,8 +599,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -661,8 +661,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -719,8 +719,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -775,8 +775,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -830,8 +830,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -892,8 +892,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -950,8 +950,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -1005,8 +1005,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -1067,8 +1067,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -1125,8 +1125,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 apiInstance.getConversationsCallbacks()
@@ -1174,8 +1174,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 apiInstance.getConversationsCalls()
@@ -1223,8 +1223,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -1285,8 +1285,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 apiInstance.getConversationsCallsMaximumconferenceparties()
@@ -1334,8 +1334,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -1389,8 +1389,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -1451,8 +1451,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -1509,8 +1509,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 apiInstance.getConversationsChats()
@@ -1558,8 +1558,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -1613,8 +1613,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -1675,8 +1675,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -1733,8 +1733,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 apiInstance.getConversationsCobrowsesessions()
@@ -1782,8 +1782,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -1837,8 +1837,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -1895,8 +1895,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -1950,8 +1950,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -2005,8 +2005,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -2067,8 +2067,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -2125,8 +2125,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 apiInstance.getConversationsEmails()
@@ -2174,8 +2174,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -2230,8 +2230,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -2292,8 +2292,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -2350,8 +2350,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -2412,8 +2412,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -2470,8 +2470,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 apiInstance.getConversationsMessages()
@@ -2557,8 +2557,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -2642,8 +2642,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -3923,6 +3923,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -4540,6 +4541,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "agent": User, 
@@ -4961,6 +4963,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -5665,6 +5668,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -5818,6 +5822,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -5942,6 +5947,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -6695,6 +6701,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -6848,6 +6855,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -6972,6 +6980,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -7399,8 +7408,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -7495,8 +7504,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -7580,8 +7589,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -7679,8 +7688,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -7767,8 +7776,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -9048,6 +9057,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -9665,6 +9675,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "agent": User, 
@@ -10086,6 +10097,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -10790,6 +10802,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -10943,6 +10956,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -11067,6 +11081,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -11820,6 +11835,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -11973,6 +11989,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -12097,6 +12114,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -12524,8 +12542,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -12620,8 +12638,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -12705,8 +12723,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -12804,8 +12822,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -14088,6 +14106,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -14705,6 +14724,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "agent": User, 
@@ -15126,6 +15146,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -15830,6 +15851,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -15983,6 +16005,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -16107,6 +16130,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -16860,6 +16884,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -17013,6 +17038,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -17137,6 +17163,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -17564,8 +17591,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -17660,8 +17687,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -17745,8 +17772,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -17844,8 +17871,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -19128,6 +19155,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -19745,6 +19773,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "agent": User, 
@@ -20166,6 +20195,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -20870,6 +20900,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -21023,6 +21054,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -21147,6 +21179,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -21900,6 +21933,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -22053,6 +22087,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -22177,6 +22212,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -22604,8 +22640,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -22700,8 +22736,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -22786,8 +22822,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -22886,8 +22922,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -24170,6 +24206,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -24787,6 +24824,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "agent": User, 
@@ -25208,6 +25246,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -25912,6 +25951,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -26065,6 +26105,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -26189,6 +26230,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -26942,6 +26984,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -27095,6 +27138,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -27219,6 +27263,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -27646,8 +27691,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -27742,8 +27787,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -27827,8 +27872,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -27926,8 +27971,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -29210,6 +29255,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -29827,6 +29873,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "agent": User, 
@@ -30248,6 +30295,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -30952,6 +31000,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -31105,6 +31154,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -31229,6 +31279,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -31982,6 +32033,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -32135,6 +32187,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -32259,6 +32312,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -32686,8 +32740,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -32782,8 +32836,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -32868,8 +32922,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -32968,8 +33022,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -33063,8 +33117,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -33196,8 +33250,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -33472,8 +33526,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -33528,8 +33582,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -33622,8 +33676,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -33708,8 +33762,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -33798,8 +33852,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -33886,8 +33940,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -33973,8 +34027,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -34061,8 +34115,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -34123,8 +34177,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -34209,8 +34263,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -35489,6 +35543,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -36106,6 +36161,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "agent": User, 
@@ -36527,6 +36583,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -37231,6 +37288,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -37384,6 +37442,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -37508,6 +37567,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -38261,6 +38321,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -38414,6 +38475,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -38538,6 +38600,7 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -38965,8 +39028,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -39051,8 +39114,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -39151,8 +39214,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -39247,8 +39310,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -39330,8 +39393,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -39422,8 +39485,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -39505,8 +39568,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -39602,8 +39665,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -39713,8 +39776,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -39799,8 +39862,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -39899,8 +39962,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -40009,8 +40072,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -40091,8 +40154,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -40153,8 +40216,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -40212,8 +40275,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -40299,8 +40362,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -40390,8 +40453,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -40469,8 +40532,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 
@@ -40586,8 +40649,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.ConversationsApi();
 

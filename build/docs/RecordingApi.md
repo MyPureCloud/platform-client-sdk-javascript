@@ -71,8 +71,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -133,8 +133,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -189,8 +189,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -245,8 +245,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -300,8 +300,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -366,8 +366,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -427,8 +427,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -485,8 +485,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -540,8 +540,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -598,8 +598,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -660,8 +660,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -715,8 +715,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -779,8 +779,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -849,8 +849,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -905,8 +905,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -961,8 +961,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 apiInstance.getRecordingLocalkeysSettings()
@@ -1011,8 +1011,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -1086,8 +1086,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -1142,8 +1142,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -1201,8 +1201,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 apiInstance.getRecordingRecordingkeysRotationschedule()
@@ -1250,8 +1250,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -1306,8 +1306,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -1680,6 +1680,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
         },  
@@ -1921,6 +1922,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "maxNumberEvaluations": Number, 
@@ -2222,6 +2224,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "evaluators": User, 
@@ -2632,6 +2635,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "dateRanges": [String], 
@@ -3094,6 +3098,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
         },  
@@ -3335,6 +3340,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "maxNumberEvaluations": Number, 
@@ -3636,6 +3642,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "evaluators": User, 
@@ -4046,6 +4053,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "dateRanges": [String], 
@@ -4507,6 +4515,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
         },  
@@ -4748,6 +4757,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "maxNumberEvaluations": Number, 
@@ -5049,6 +5059,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "evaluators": User, 
@@ -5459,6 +5470,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "dateRanges": [String], 
@@ -5915,6 +5927,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
         },  
@@ -6156,6 +6169,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "maxNumberEvaluations": Number, 
@@ -6457,6 +6471,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "evaluators": User, 
@@ -6867,6 +6882,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "dateRanges": [String], 
@@ -7354,6 +7370,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 
+      "languagePreference": String, 
       "selfUri": String, 
     },  
     "directions": [String], 
@@ -7980,6 +7997,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
     },  
@@ -8302,6 +8320,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "maxNumberEvaluations": Number, 
@@ -8736,6 +8755,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "evaluators": User, 
@@ -8917,8 +8937,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -9001,8 +9021,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -9414,6 +9434,7 @@ Annotation <a style="cursor: pointer" onclick="copyAnnotationExample()">Copy</a>
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
+    "languagePreference": String, 
     "selfUri": String, 
   },  
   "description": String, 
@@ -9441,8 +9462,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -9529,8 +9550,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -9611,8 +9632,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -9696,8 +9717,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -10067,6 +10088,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
         },  
@@ -10308,6 +10330,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "maxNumberEvaluations": Number, 
@@ -10609,6 +10632,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "evaluators": User, 
@@ -11019,6 +11043,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "dateRanges": [String], 
@@ -11481,6 +11506,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
         },  
@@ -11722,6 +11748,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "maxNumberEvaluations": Number, 
@@ -12023,6 +12050,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "evaluators": User, 
@@ -12433,6 +12461,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "dateRanges": [String], 
@@ -12894,6 +12923,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
         },  
@@ -13135,6 +13165,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "maxNumberEvaluations": Number, 
@@ -13436,6 +13467,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "evaluators": User, 
@@ -13846,6 +13878,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "dateRanges": [String], 
@@ -14302,6 +14335,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
         },  
@@ -14543,6 +14577,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "maxNumberEvaluations": Number, 
@@ -14844,6 +14879,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "evaluators": User, 
@@ -15254,6 +15290,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "dateRanges": [String], 
@@ -15741,6 +15778,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 
+      "languagePreference": String, 
       "selfUri": String, 
     },  
     "directions": [String], 
@@ -16367,6 +16405,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
     },  
@@ -16689,6 +16728,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "maxNumberEvaluations": Number, 
@@ -17123,6 +17163,7 @@ PolicyCreate <a style="cursor: pointer" onclick="copyPolicyCreateExample()">Copy
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "evaluators": User, 
@@ -17304,8 +17345,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -17360,8 +17401,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 apiInstance.postRecordingRecordingkeys()
@@ -17762,6 +17803,7 @@ Recording <a style="cursor: pointer" onclick="copyRecordingExample()">Copy</a>
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 
+      "languagePreference": String, 
       "selfUri": String, 
     },  
     "description": String, 
@@ -18155,6 +18197,7 @@ Recording <a style="cursor: pointer" onclick="copyRecordingExample()">Copy</a>
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 
+      "languagePreference": String, 
       "selfUri": String, 
     },  
     "fromExternalContact": { 
@@ -18446,6 +18489,7 @@ Recording <a style="cursor: pointer" onclick="copyRecordingExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "images": { 
@@ -18653,6 +18697,7 @@ Recording <a style="cursor: pointer" onclick="copyRecordingExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "organization": { 
               "id": String, 
               "name": String, 
@@ -19070,6 +19115,7 @@ Recording <a style="cursor: pointer" onclick="copyRecordingExample()">Copy</a>
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
+    "languagePreference": String, 
     "selfUri": String, 
   },  
   "selfUri": String, 
@@ -19086,8 +19132,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -19501,6 +19547,7 @@ Annotation <a style="cursor: pointer" onclick="copyAnnotationExample()">Copy</a>
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
+    "languagePreference": String, 
     "selfUri": String, 
   },  
   "description": String, 
@@ -19528,8 +19575,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -19619,8 +19666,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -19708,8 +19755,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -20082,6 +20129,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
         },  
@@ -20323,6 +20371,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "maxNumberEvaluations": Number, 
@@ -20624,6 +20673,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "evaluators": User, 
@@ -21034,6 +21084,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "dateRanges": [String], 
@@ -21496,6 +21547,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
         },  
@@ -21737,6 +21789,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "maxNumberEvaluations": Number, 
@@ -22038,6 +22091,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "evaluators": User, 
@@ -22448,6 +22502,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "dateRanges": [String], 
@@ -22909,6 +22964,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
         },  
@@ -23150,6 +23206,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "maxNumberEvaluations": Number, 
@@ -23451,6 +23508,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "evaluators": User, 
@@ -23861,6 +23919,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "dateRanges": [String], 
@@ -24317,6 +24376,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
         },  
@@ -24558,6 +24618,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "maxNumberEvaluations": Number, 
@@ -24859,6 +24920,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "evaluators": User, 
@@ -25269,6 +25331,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "dateRanges": [String], 
@@ -25756,6 +25819,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 
+      "languagePreference": String, 
       "selfUri": String, 
     },  
     "directions": [String], 
@@ -26382,6 +26446,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
     },  
@@ -26704,6 +26769,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "maxNumberEvaluations": Number, 
@@ -27138,6 +27204,7 @@ Policy <a style="cursor: pointer" onclick="copyPolicyExample()">Copy</a>
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "evaluators": User, 
@@ -27319,8 +27386,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -27405,8 +27472,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 
@@ -27484,8 +27551,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.RecordingApi();
 

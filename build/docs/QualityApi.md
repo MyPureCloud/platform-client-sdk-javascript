@@ -19,6 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getQualityCalibrations**](QualityApi.html#getQualityCalibrations) | **GET** /api/v2/quality/calibrations | Get the list of calibrations
 [**getQualityConversationAudits**](QualityApi.html#getQualityConversationAudits) | **GET** /api/v2/quality/conversations/{conversationId}/audits | Get audits for conversation or recording
 [**getQualityConversationEvaluation**](QualityApi.html#getQualityConversationEvaluation) | **GET** /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId} | Get an evaluation
+[**getQualityConversationSurveys**](QualityApi.html#getQualityConversationSurveys) | **GET** /api/v2/quality/conversations/{conversationId}/surveys | Get the surveys for a conversation
 [**getQualityEvaluationsQuery**](QualityApi.html#getQualityEvaluationsQuery) | **GET** /api/v2/quality/evaluations/query | Queries Evaluations and returns a paged list
 [**getQualityEvaluatorsActivity**](QualityApi.html#getQualityEvaluatorsActivity) | **GET** /api/v2/quality/evaluators/activity | Get an evaluator activity
 [**getQualityForm**](QualityApi.html#getQualityForm) | **GET** /api/v2/quality/forms/{formId} | Get an evaluation form
@@ -40,8 +41,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getQualityPublishedformsEvaluations**](QualityApi.html#getQualityPublishedformsEvaluations) | **GET** /api/v2/quality/publishedforms/evaluations | Get the published evaluation forms.
 [**getQualityPublishedformsSurvey**](QualityApi.html#getQualityPublishedformsSurvey) | **GET** /api/v2/quality/publishedforms/surveys/{formId} | Get the most recent published version of a survey form.
 [**getQualityPublishedformsSurveys**](QualityApi.html#getQualityPublishedformsSurveys) | **GET** /api/v2/quality/publishedforms/surveys | Get the published survey forms.
+[**getQualitySurvey**](QualityApi.html#getQualitySurvey) | **GET** /api/v2/quality/surveys/{surveyId} | Get a survey for a conversation
+[**getQualitySurveysScorable**](QualityApi.html#getQualitySurveysScorable) | **GET** /api/v2/quality/surveys/scorable | Get a survey as an end-customer, for the purposes of scoring it.
 [**patchQualityFormsSurvey**](QualityApi.html#patchQualityFormsSurvey) | **PATCH** /api/v2/quality/forms/surveys/{formId} | Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
 [**postAnalyticsEvaluationsAggregatesQuery**](QualityApi.html#postAnalyticsEvaluationsAggregatesQuery) | **POST** /api/v2/analytics/evaluations/aggregates/query | Query for evaluation aggregates
+[**postAnalyticsSurveysAggregatesQuery**](QualityApi.html#postAnalyticsSurveysAggregatesQuery) | **POST** /api/v2/analytics/surveys/aggregates/query | Query for survey aggregates
 [**postQualityCalibrations**](QualityApi.html#postQualityCalibrations) | **POST** /api/v2/quality/calibrations | Create a calibration
 [**postQualityConversationEvaluations**](QualityApi.html#postQualityConversationEvaluations) | **POST** /api/v2/quality/conversations/{conversationId}/evaluations | Create an evaluation
 [**postQualityEvaluationsScoring**](QualityApi.html#postQualityEvaluationsScoring) | **POST** /api/v2/quality/evaluations/scoring | Score evaluation
@@ -53,12 +57,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postQualityPublishedformsEvaluations**](QualityApi.html#postQualityPublishedformsEvaluations) | **POST** /api/v2/quality/publishedforms/evaluations | Publish an evaluation form.
 [**postQualityPublishedformsSurveys**](QualityApi.html#postQualityPublishedformsSurveys) | **POST** /api/v2/quality/publishedforms/surveys | Publish a survey form.
 [**postQualitySpotability**](QualityApi.html#postQualitySpotability) | **POST** /api/v2/quality/spotability | Retrieve the spotability statistic
+[**postQualitySurveysScoring**](QualityApi.html#postQualitySurveysScoring) | **POST** /api/v2/quality/surveys/scoring | Score survey
 [**putQualityCalibration**](QualityApi.html#putQualityCalibration) | **PUT** /api/v2/quality/calibrations/{calibrationId} | Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
 [**putQualityConversationEvaluation**](QualityApi.html#putQualityConversationEvaluation) | **PUT** /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId} | Update an evaluation
 [**putQualityForm**](QualityApi.html#putQualityForm) | **PUT** /api/v2/quality/forms/{formId} | Update an evaluation form.
 [**putQualityFormsEvaluation**](QualityApi.html#putQualityFormsEvaluation) | **PUT** /api/v2/quality/forms/evaluations/{formId} | Update an evaluation form.
 [**putQualityFormsSurvey**](QualityApi.html#putQualityFormsSurvey) | **PUT** /api/v2/quality/forms/surveys/{formId} | Update a survey form.
 [**putQualityKeywordset**](QualityApi.html#putQualityKeywordset) | **PUT** /api/v2/quality/keywordsets/{keywordSetId} | Update a keywordSet to the specified keywordSet via PUT.
+[**putQualitySurveysScorable**](QualityApi.html#putQualitySurveysScorable) | **PUT** /api/v2/quality/surveys/scorable | Update a survey as an end-customer, for the purposes of scoring it.
 {: class="table table-striped"}
 
 <a name="deleteQualityCalibration"></a>
@@ -86,8 +92,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -144,8 +150,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -207,8 +213,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -263,8 +269,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -319,8 +325,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -374,8 +380,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -429,8 +435,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -484,8 +490,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -562,8 +568,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -623,8 +629,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -698,8 +704,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -771,8 +777,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -808,6 +814,61 @@ apiInstance.getQualityConversationEvaluation(conversationId, evaluationId, opts)
 
 **Evaluation**
 
+<a name="getQualityConversationSurveys"></a>
+
+# [Survey] getQualityConversationSurveys(conversationId)
+
+
+
+GET /api/v2/quality/conversations/{conversationId}/surveys
+
+Get the surveys for a conversation
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var conversationId = "conversationId_example"; // String | conversationId
+
+apiInstance.getQualityConversationSurveys(conversationId)
+  .then(function(data) {
+    console.log(`getQualityConversationSurveys success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getQualityConversationSurveys');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**[Survey]**
+
 <a name="getQualityEvaluationsQuery"></a>
 
 # EvaluationEntityListing getQualityEvaluationsQuery(opts)
@@ -833,8 +894,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -923,8 +984,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -1000,8 +1061,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -1056,8 +1117,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -1118,8 +1179,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -1189,8 +1250,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -1245,8 +1306,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -1307,8 +1368,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -1378,8 +1439,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -1434,8 +1495,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -1496,8 +1557,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -1567,8 +1628,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -1623,8 +1684,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -1682,8 +1743,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -1737,8 +1798,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -1812,8 +1873,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -1868,8 +1929,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -1931,8 +1992,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -1987,8 +2048,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -2050,8 +2111,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -2106,8 +2167,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -2142,6 +2203,114 @@ apiInstance.getQualityPublishedformsSurveys(opts)
 ### Return type
 
 **SurveyFormEntityListing**
+
+<a name="getQualitySurvey"></a>
+
+# Survey getQualitySurvey(surveyId)
+
+
+
+GET /api/v2/quality/surveys/{surveyId}
+
+Get a survey for a conversation
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var surveyId = "surveyId_example"; // String | surveyId
+
+apiInstance.getQualitySurvey(surveyId)
+  .then(function(data) {
+    console.log(`getQualitySurvey success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getQualitySurvey');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **surveyId** | **String** | surveyId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Survey**
+
+<a name="getQualitySurveysScorable"></a>
+
+# ScorableSurvey getQualitySurveysScorable(opts)
+
+
+
+GET /api/v2/quality/surveys/scorable
+
+Get a survey as an end-customer, for the purposes of scoring it.
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+var apiInstance = new platformClient.QualityApi();
+
+var opts = { 
+  'customerSurveyUrl': "customerSurveyUrl_example" // String | customerSurveyUrl
+};
+apiInstance.getQualitySurveysScorable(opts)
+  .then(function(data) {
+    console.log(`getQualitySurveysScorable success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getQualitySurveysScorable');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customerSurveyUrl** | **String** | customerSurveyUrl | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ScorableSurvey**
 
 <a name="patchQualityFormsSurvey"></a>
 
@@ -2383,8 +2552,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -2516,8 +2685,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -2529,6 +2698,136 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
   })
   .catch(function(err) {
   	console.log('There was a failure calling postAnalyticsEvaluationsAggregatesQuery');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AggregateQueryResponse**
+
+<a name="postAnalyticsSurveysAggregatesQuery"></a>
+
+# AggregateQueryResponse postAnalyticsSurveysAggregatesQuery(body)
+
+
+
+POST /api/v2/analytics/surveys/aggregates/query
+
+Query for survey aggregates
+
+
+
+Requires ANY permissions: 
+
+* analytics:surveyAggregate:view
+
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyAggregationQueryExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#AggregationQueryExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample()">Copy</a>
+
+<div id="AggregationQueryExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "interval": String, 
+  "granularity": String, 
+  "timeZone": String, 
+  "groupBy": [String], 
+  "filter": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "metrics": [String], 
+  "flattenMultivaluedDimensions": Boolean, 
+  "views": { 
+    "target": String, 
+    "name": String, 
+    "function": String, 
+    "range": { 
+      "gte": Number, 
+      "lt": Number, 
+    },  
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var body = {}; // Object | query
+
+apiInstance.postAnalyticsSurveysAggregatesQuery(body)
+  .then(function(data) {
+    console.log(`postAnalyticsSurveysAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postAnalyticsSurveysAggregatesQuery');
     console.error(err);
   });
 
@@ -2918,6 +3217,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
+    "languagePreference": String, 
     "selfUri": String, 
   },  
   "agent": User, 
@@ -3852,6 +4152,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -3882,6 +4183,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -4351,6 +4653,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -4661,6 +4964,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -4902,6 +5206,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -5433,6 +5738,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -5571,6 +5877,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -5604,6 +5911,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -6009,6 +6317,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -6147,6 +6456,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -6180,6 +6490,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -7709,6 +8020,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -7947,6 +8259,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -8088,6 +8401,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -8236,6 +8550,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -8266,6 +8581,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -8389,6 +8705,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -8419,6 +8736,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -9104,6 +9422,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 
+      "languagePreference": String, 
       "selfUri": String, 
     },  
     "agent": { 
@@ -9432,6 +9751,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 
+      "languagePreference": String, 
       "selfUri": String, 
     },  
     "calibration": { 
@@ -9754,6 +10074,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "agent": User, 
@@ -10401,6 +10722,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -10539,6 +10861,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -10572,6 +10895,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -11288,6 +11612,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -11318,6 +11643,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -11787,6 +12113,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -12097,6 +12424,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -12338,6 +12666,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -12869,6 +13198,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -13007,6 +13337,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -13040,6 +13371,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -13445,6 +13777,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -13583,6 +13916,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -13616,6 +13950,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -14382,6 +14717,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -14412,6 +14748,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -14881,6 +15218,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -15191,6 +15529,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -15432,6 +15771,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -15963,6 +16303,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -16101,6 +16442,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -16134,6 +16476,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -16539,6 +16882,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -16677,6 +17021,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -16710,6 +17055,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -18277,6 +18623,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -18515,6 +18862,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -18656,6 +19004,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -18804,6 +19153,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -18834,6 +19184,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -18957,6 +19308,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -18987,6 +19339,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -19672,6 +20025,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 
+      "languagePreference": String, 
       "selfUri": String, 
     },  
     "agent": { 
@@ -20000,6 +20354,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 
+      "languagePreference": String, 
       "selfUri": String, 
     },  
     "calibration": { 
@@ -20322,6 +20677,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "agent": User, 
@@ -20969,6 +21325,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -21107,6 +21464,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -21140,6 +21498,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -21856,6 +22215,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -21886,6 +22246,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -22355,6 +22716,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -22665,6 +23027,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -22906,6 +23269,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -23437,6 +23801,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -23575,6 +23940,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -23608,6 +23974,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -24013,6 +24380,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -24151,6 +24519,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -24184,6 +24553,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -24950,6 +25320,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -24980,6 +25351,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -25449,6 +25821,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -25759,6 +26132,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -26000,6 +26374,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -26531,6 +26906,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -26669,6 +27045,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -26702,6 +27079,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -27107,6 +27485,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -27245,6 +27624,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -27278,6 +27658,7 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -27852,8 +28233,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -28854,6 +29235,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -28884,6 +29266,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -29353,6 +29736,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -29663,6 +30047,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -29904,6 +30289,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -30435,6 +30821,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -30573,6 +30960,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -30606,6 +30994,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -31011,6 +31400,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -31149,6 +31539,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -31182,6 +31573,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -32034,6 +32426,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
+    "languagePreference": String, 
     "selfUri": String, 
   },  
   "agent": { 
@@ -32371,6 +32764,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
+    "languagePreference": String, 
     "selfUri": String, 
   },  
   "calibration": { 
@@ -32702,6 +33096,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 
+      "languagePreference": String, 
       "selfUri": String, 
     },  
     "agent": User, 
@@ -33709,6 +34104,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -33947,6 +34343,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -34088,6 +34485,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -34236,6 +34634,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -34266,6 +34665,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -34389,6 +34789,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -34419,6 +34820,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -35430,6 +35832,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -35568,6 +35971,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -35601,6 +36005,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -36213,6 +36618,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "agent": { 
@@ -36532,6 +36938,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "calibration": { 
@@ -36845,6 +37252,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "agent": User, 
@@ -37261,6 +37669,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -37291,6 +37700,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -37994,6 +38404,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -38232,6 +38643,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -38373,6 +38785,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -38521,6 +38934,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -38551,6 +38965,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -38674,6 +39089,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -38704,6 +39120,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -39456,6 +39873,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -39694,6 +40112,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -39835,6 +40254,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -39983,6 +40403,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -40013,6 +40434,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -40136,6 +40558,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -40166,6 +40589,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -41219,6 +41643,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -41357,6 +41782,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -41390,6 +41816,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -42002,6 +42429,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "agent": { 
@@ -42321,6 +42749,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "calibration": { 
@@ -42634,6 +43063,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "agent": User, 
@@ -43050,6 +43480,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -43080,6 +43511,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -43783,6 +44215,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -44021,6 +44454,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -44162,6 +44596,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -44310,6 +44745,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -44340,6 +44776,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -44463,6 +44900,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -44493,6 +44931,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -45245,6 +45684,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -45483,6 +45923,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -45624,6 +46065,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -45772,6 +46214,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -45802,6 +46245,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -45925,6 +46369,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -45955,6 +46400,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -46599,8 +47045,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -46870,8 +47316,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -47135,8 +47581,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -47400,8 +47846,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -47670,8 +48116,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -48259,6 +48705,7 @@ KeywordSet <a style="cursor: pointer" onclick="copyKeywordSetExample()">Copy</a>
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
+    "languagePreference": String, 
     "selfUri": String, 
   },  
   "keywords": { 
@@ -48291,8 +48738,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -48376,8 +48823,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -48457,8 +48904,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -48538,8 +48985,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -49127,6 +49574,7 @@ KeywordSet <a style="cursor: pointer" onclick="copyKeywordSetExample()">Copy</a>
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
+    "languagePreference": String, 
     "selfUri": String, 
   },  
   "keywords": { 
@@ -49159,8 +49607,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -49189,6 +49637,271 @@ apiInstance.postQualitySpotability(opts)
 ### Return type
 
 **KeywordSet**
+
+<a name="postQualitySurveysScoring"></a>
+
+# SurveyScoringSet postQualitySurveysScoring(body)
+
+
+
+POST /api/v2/quality/surveys/scoring
+
+Score survey
+
+
+
+Requires NO permissions: 
+
+
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copySurveyFormAndScoringSetExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#SurveyFormAndScoringSetExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+SurveyFormAndScoringSet <a style="cursor: pointer" onclick="copySurveyFormAndScoringSetExample()">Copy</a>
+
+<div id="SurveyFormAndScoringSetExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "surveyForm": { 
+    "id": String, 
+    "name": String, 
+    "modifiedDate": Date, 
+    "published": Boolean, 
+    "disabled": Boolean, 
+    "contextId": String, 
+    "language": String, 
+    "headerImageId": String, 
+    "headerImageUrl": String, 
+    "header": String, 
+    "footer": String, 
+    "questionGroups": { 
+      "id": String, 
+      "name": String, 
+      "type": String, 
+      "naEnabled": Boolean, 
+      "questions": { 
+        "id": String, 
+        "text": String, 
+        "helpText": String, 
+        "type": String, 
+        "naEnabled": Boolean, 
+        "visibilityCondition": { 
+          "combiningOperation": String, 
+          "predicates": [Object], 
+        },  
+        "answerOptions": { 
+          "id": String, 
+          "text": String, 
+          "value": Number, 
+        },  
+        "maxResponseCharacters": Number, 
+        "explanationPrompt": String, 
+      },  
+      "visibilityCondition": { 
+        "combiningOperation": String, 
+        "predicates": [Object], 
+      },  
+    },  
+    "publishedVersions": { 
+      "entities": { 
+        "id": String, 
+        "name": String, 
+        "modifiedDate": Date, 
+        "published": Boolean, 
+        "disabled": Boolean, 
+        "contextId": String, 
+        "language": String, 
+        "headerImageId": String, 
+        "headerImageUrl": String, 
+        "header": String, 
+        "footer": String, 
+        "questionGroups": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "naEnabled": Boolean, 
+          "questions": { 
+            "id": String, 
+            "text": String, 
+            "helpText": String, 
+            "type": String, 
+            "naEnabled": Boolean, 
+            "visibilityCondition": { 
+              "combiningOperation": String, 
+              "predicates": [Object], 
+            },  
+            "answerOptions": { 
+              "id": String, 
+              "text": String, 
+              "value": Number, 
+            },  
+            "maxResponseCharacters": Number, 
+            "explanationPrompt": String, 
+          },  
+          "visibilityCondition": { 
+            "combiningOperation": String, 
+            "predicates": [Object], 
+          },  
+        },  
+        "publishedVersions": { 
+          "entities": { 
+            "id": String, 
+            "name": String, 
+            "modifiedDate": Date, 
+            "published": Boolean, 
+            "disabled": Boolean, 
+            "contextId": String, 
+            "language": String, 
+            "headerImageId": String, 
+            "headerImageUrl": String, 
+            "header": String, 
+            "footer": String, 
+            "questionGroups": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "naEnabled": Boolean, 
+              "questions": { 
+                "id": String, 
+                "text": String, 
+                "helpText": String, 
+                "type": String, 
+                "naEnabled": Boolean, 
+                "visibilityCondition": VisibilityCondition, 
+                "answerOptions": [AnswerOption], 
+                "maxResponseCharacters": Number, 
+                "explanationPrompt": String, 
+              },  
+              "visibilityCondition": { 
+                "combiningOperation": String, 
+                "predicates": [Object], 
+              },  
+            },  
+            "publishedVersions": { 
+              "entities": { 
+                "id": String, 
+                "name": String, 
+                "modifiedDate": Date, 
+                "published": Boolean, 
+                "disabled": Boolean, 
+                "contextId": String, 
+                "language": String, 
+                "headerImageId": String, 
+                "headerImageUrl": String, 
+                "header": String, 
+                "footer": String, 
+                "questionGroups": [SurveyQuestionGroup], 
+                "publishedVersions": DomainEntityListingSurveyForm, 
+                "selfUri": String, 
+              },  
+              "pageSize": Number, 
+              "pageNumber": Number, 
+              "total": Number, 
+              "firstUri": String, 
+              "selfUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "pageCount": Number, 
+            },  
+            "selfUri": String, 
+          },  
+          "pageSize": Number, 
+          "pageNumber": Number, 
+          "total": Number, 
+          "firstUri": String, 
+          "selfUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
+          "nextUri": String, 
+          "pageCount": Number, 
+        },  
+        "selfUri": String, 
+      },  
+      "pageSize": Number, 
+      "pageNumber": Number, 
+      "total": Number, 
+      "firstUri": String, 
+      "selfUri": String, 
+      "previousUri": String, 
+      "lastUri": String, 
+      "nextUri": String, 
+      "pageCount": Number, 
+    },  
+    "selfUri": String, 
+  },  
+  "answers": { 
+    "totalScore": Number, 
+    "npsScore": Number, 
+    "questionGroupScores": { 
+      "questionGroupId": String, 
+      "totalScore": Number, 
+      "maxTotalScore": Number, 
+      "markedNA": Boolean, 
+      "questionScores": { 
+        "questionId": String, 
+        "answerId": String, 
+        "score": Number, 
+        "markedNA": Boolean, 
+        "npsScore": Number, 
+        "npsTextAnswer": String, 
+        "freeTextAnswer": String, 
+      },  
+    },  
+  },  
+}
+~~~
+</div>
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.QualityApi();
+
+var body = {}; // Object | surveyAndScoringSet
+
+apiInstance.postQualitySurveysScoring(body)
+  .then(function(data) {
+    console.log(`postQualitySurveysScoring success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling postQualitySurveysScoring');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | surveyAndScoringSet |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SurveyScoringSet**
 
 <a name="putQualityCalibration"></a>
 
@@ -49562,6 +50275,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
+    "languagePreference": String, 
     "selfUri": String, 
   },  
   "agent": User, 
@@ -50496,6 +51210,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -50526,6 +51241,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -50995,6 +51711,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -51305,6 +52022,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -51546,6 +52264,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -52077,6 +52796,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -52215,6 +52935,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -52248,6 +52969,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -52653,6 +53375,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -52791,6 +53514,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -52824,6 +53548,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -54353,6 +55078,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -54591,6 +55317,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -54732,6 +55459,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -54880,6 +55608,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -54910,6 +55639,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -55033,6 +55763,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -55063,6 +55794,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -55748,6 +56480,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 
+      "languagePreference": String, 
       "selfUri": String, 
     },  
     "agent": { 
@@ -56076,6 +56809,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 
+      "languagePreference": String, 
       "selfUri": String, 
     },  
     "calibration": { 
@@ -56398,6 +57132,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "agent": User, 
@@ -57045,6 +57780,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -57183,6 +57919,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -57216,6 +57953,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -57932,6 +58670,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -57962,6 +58701,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -58431,6 +59171,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -58741,6 +59482,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -58982,6 +59724,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -59513,6 +60256,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -59651,6 +60395,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -59684,6 +60429,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -60089,6 +60835,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -60227,6 +60974,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -60260,6 +61008,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -61026,6 +61775,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -61056,6 +61806,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -61525,6 +62276,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -61835,6 +62587,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -62076,6 +62829,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -62607,6 +63361,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -62745,6 +63500,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -62778,6 +63534,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -63183,6 +63940,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -63321,6 +64079,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -63354,6 +64113,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -64921,6 +65681,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -65159,6 +65920,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -65300,6 +66062,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -65448,6 +66211,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -65478,6 +66242,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -65601,6 +66366,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -65631,6 +66397,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -66316,6 +67083,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 
+      "languagePreference": String, 
       "selfUri": String, 
     },  
     "agent": { 
@@ -66644,6 +67412,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 
+      "languagePreference": String, 
       "selfUri": String, 
     },  
     "calibration": { 
@@ -66966,6 +67735,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "agent": User, 
@@ -67613,6 +68383,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -67751,6 +68522,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -67784,6 +68556,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -68500,6 +69273,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -68530,6 +69304,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -68999,6 +69774,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -69309,6 +70085,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -69550,6 +70327,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -70081,6 +70859,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -70219,6 +70998,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -70252,6 +71032,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -70657,6 +71438,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -70795,6 +71577,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -70828,6 +71611,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -71594,6 +72378,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -71624,6 +72409,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -72093,6 +72879,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -72403,6 +73190,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -72644,6 +73432,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -73175,6 +73964,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -73313,6 +74103,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -73346,6 +74137,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -73751,6 +74543,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -73889,6 +74682,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -73922,6 +74716,7 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -74496,8 +75291,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -75497,6 +76292,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -75527,6 +76323,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -75996,6 +76793,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "agent": { 
@@ -76306,6 +77104,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "calibration": { 
@@ -76547,6 +77346,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": User, 
@@ -77078,6 +77878,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -77216,6 +78017,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -77249,6 +78051,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -77654,6 +78457,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -77792,6 +78596,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -77825,6 +78630,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -78677,6 +79483,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
+    "languagePreference": String, 
     "selfUri": String, 
   },  
   "agent": { 
@@ -79014,6 +79821,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
+    "languagePreference": String, 
     "selfUri": String, 
   },  
   "calibration": { 
@@ -79345,6 +80153,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
         "selfUri": String, 
       },  
       "acdAutoAnswer": Boolean, 
+      "languagePreference": String, 
       "selfUri": String, 
     },  
     "agent": User, 
@@ -80352,6 +81161,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -80590,6 +81400,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -80731,6 +81542,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -80879,6 +81691,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -80909,6 +81722,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -81032,6 +81846,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -81062,6 +81877,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -82073,6 +82889,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -82211,6 +83028,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -82244,6 +83062,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -82856,6 +83675,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "agent": { 
@@ -83175,6 +83995,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "calibration": { 
@@ -83488,6 +84309,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "agent": User, 
@@ -83904,6 +84726,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -83934,6 +84757,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -84637,6 +85461,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -84875,6 +85700,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -85016,6 +85842,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -85164,6 +85991,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -85194,6 +86022,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -85317,6 +86146,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -85347,6 +86177,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -86099,6 +86930,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -86337,6 +87169,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -86478,6 +87311,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -86626,6 +87460,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -86656,6 +87491,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -86779,6 +87615,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -86809,6 +87646,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -87862,6 +88700,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": { 
@@ -88000,6 +88839,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "calibration": { 
@@ -88033,6 +88873,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -88645,6 +89486,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "agent": { 
@@ -88964,6 +89806,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
           "selfUri": String, 
         },  
         "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
         "selfUri": String, 
       },  
       "calibration": { 
@@ -89277,6 +90120,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
             "selfUri": String, 
           },  
           "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
           "selfUri": String, 
         },  
         "agent": User, 
@@ -89693,6 +90537,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -89723,6 +90568,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -90426,6 +91272,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -90664,6 +91511,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -90805,6 +91653,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -90953,6 +91802,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -90983,6 +91833,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -91106,6 +91957,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -91136,6 +91988,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -91888,6 +92741,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "agent": { 
@@ -92126,6 +92980,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
             "selfUri": String, 
           },  
           "calibration": { 
@@ -92267,6 +93122,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "acdAutoAnswer": Boolean, 
+              "languagePreference": String, 
               "selfUri": String, 
             },  
             "agent": User, 
@@ -92415,6 +93271,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -92445,6 +93302,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -92568,6 +93426,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -92598,6 +93457,7 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
                 "skills": [UserRoutingSkill], 
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
+                "languagePreference": String, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -93242,8 +94102,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -93517,8 +94377,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -93785,8 +94645,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -94058,8 +94918,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -94650,6 +95510,7 @@ KeywordSet <a style="cursor: pointer" onclick="copyKeywordSetExample()">Copy</a>
       "selfUri": String, 
     },  
     "acdAutoAnswer": Boolean, 
+    "languagePreference": String, 
     "selfUri": String, 
   },  
   "keywords": { 
@@ -94682,8 +95543,8 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-platformClient.ApiClient.instance.authentications['PureCloud Auth'].accessToken = 'YOUR ACCESS TOKEN';
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new platformClient.QualityApi();
 
@@ -94714,4 +95575,274 @@ apiInstance.putQualityKeywordset(keywordSetId, body)
 ### Return type
 
 **KeywordSet**
+
+<a name="putQualitySurveysScorable"></a>
+
+# ScorableSurvey putQualitySurveysScorable(body, opts)
+
+
+
+PUT /api/v2/quality/surveys/scorable
+
+Update a survey as an end-customer, for the purposes of scoring it.
+
+
+
+Requires NO permissions: 
+
+
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyScorableSurveyExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#ScorableSurveyExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+ScorableSurvey <a style="cursor: pointer" onclick="copyScorableSurveyExample()">Copy</a>
+
+<div id="ScorableSurveyExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "id": String, 
+  "name": String, 
+  "surveyForm": { 
+    "id": String, 
+    "name": String, 
+    "modifiedDate": Date, 
+    "published": Boolean, 
+    "disabled": Boolean, 
+    "contextId": String, 
+    "language": String, 
+    "headerImageId": String, 
+    "headerImageUrl": String, 
+    "header": String, 
+    "footer": String, 
+    "questionGroups": { 
+      "id": String, 
+      "name": String, 
+      "type": String, 
+      "naEnabled": Boolean, 
+      "questions": { 
+        "id": String, 
+        "text": String, 
+        "helpText": String, 
+        "type": String, 
+        "naEnabled": Boolean, 
+        "visibilityCondition": { 
+          "combiningOperation": String, 
+          "predicates": [Object], 
+        },  
+        "answerOptions": { 
+          "id": String, 
+          "text": String, 
+          "value": Number, 
+        },  
+        "maxResponseCharacters": Number, 
+        "explanationPrompt": String, 
+      },  
+      "visibilityCondition": { 
+        "combiningOperation": String, 
+        "predicates": [Object], 
+      },  
+    },  
+    "publishedVersions": { 
+      "entities": { 
+        "id": String, 
+        "name": String, 
+        "modifiedDate": Date, 
+        "published": Boolean, 
+        "disabled": Boolean, 
+        "contextId": String, 
+        "language": String, 
+        "headerImageId": String, 
+        "headerImageUrl": String, 
+        "header": String, 
+        "footer": String, 
+        "questionGroups": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "naEnabled": Boolean, 
+          "questions": { 
+            "id": String, 
+            "text": String, 
+            "helpText": String, 
+            "type": String, 
+            "naEnabled": Boolean, 
+            "visibilityCondition": { 
+              "combiningOperation": String, 
+              "predicates": [Object], 
+            },  
+            "answerOptions": { 
+              "id": String, 
+              "text": String, 
+              "value": Number, 
+            },  
+            "maxResponseCharacters": Number, 
+            "explanationPrompt": String, 
+          },  
+          "visibilityCondition": { 
+            "combiningOperation": String, 
+            "predicates": [Object], 
+          },  
+        },  
+        "publishedVersions": { 
+          "entities": { 
+            "id": String, 
+            "name": String, 
+            "modifiedDate": Date, 
+            "published": Boolean, 
+            "disabled": Boolean, 
+            "contextId": String, 
+            "language": String, 
+            "headerImageId": String, 
+            "headerImageUrl": String, 
+            "header": String, 
+            "footer": String, 
+            "questionGroups": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "naEnabled": Boolean, 
+              "questions": { 
+                "id": String, 
+                "text": String, 
+                "helpText": String, 
+                "type": String, 
+                "naEnabled": Boolean, 
+                "visibilityCondition": VisibilityCondition, 
+                "answerOptions": [AnswerOption], 
+                "maxResponseCharacters": Number, 
+                "explanationPrompt": String, 
+              },  
+              "visibilityCondition": { 
+                "combiningOperation": String, 
+                "predicates": [Object], 
+              },  
+            },  
+            "publishedVersions": { 
+              "entities": { 
+                "id": String, 
+                "name": String, 
+                "modifiedDate": Date, 
+                "published": Boolean, 
+                "disabled": Boolean, 
+                "contextId": String, 
+                "language": String, 
+                "headerImageId": String, 
+                "headerImageUrl": String, 
+                "header": String, 
+                "footer": String, 
+                "questionGroups": [SurveyQuestionGroup], 
+                "publishedVersions": DomainEntityListingSurveyForm, 
+                "selfUri": String, 
+              },  
+              "pageSize": Number, 
+              "pageNumber": Number, 
+              "total": Number, 
+              "firstUri": String, 
+              "selfUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "pageCount": Number, 
+            },  
+            "selfUri": String, 
+          },  
+          "pageSize": Number, 
+          "pageNumber": Number, 
+          "total": Number, 
+          "firstUri": String, 
+          "selfUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
+          "nextUri": String, 
+          "pageCount": Number, 
+        },  
+        "selfUri": String, 
+      },  
+      "pageSize": Number, 
+      "pageNumber": Number, 
+      "total": Number, 
+      "firstUri": String, 
+      "selfUri": String, 
+      "previousUri": String, 
+      "lastUri": String, 
+      "nextUri": String, 
+      "pageCount": Number, 
+    },  
+    "selfUri": String, 
+  },  
+  "status": String, 
+  "answers": { 
+    "totalScore": Number, 
+    "npsScore": Number, 
+    "questionGroupScores": { 
+      "questionGroupId": String, 
+      "totalScore": Number, 
+      "maxTotalScore": Number, 
+      "markedNA": Boolean, 
+      "questionScores": { 
+        "questionId": String, 
+        "answerId": String, 
+        "score": Number, 
+        "markedNA": Boolean, 
+        "npsScore": Number, 
+        "npsTextAnswer": String, 
+        "freeTextAnswer": String, 
+      },  
+    },  
+  },  
+  "selfUri": String, 
+}
+~~~
+</div>
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+var apiInstance = new platformClient.QualityApi();
+
+var body = {}; // Object | survey
+
+var opts = { 
+  'customerSurveyUrl': "customerSurveyUrl_example" // String | customerSurveyUrl
+};
+apiInstance.putQualitySurveysScorable(body, opts)
+  .then(function(data) {
+    console.log(`putQualitySurveysScorable success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling putQualitySurveysScorable');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | survey |  |
+ **customerSurveyUrl** | **String** | customerSurveyUrl | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ScorableSurvey**
 
