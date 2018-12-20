@@ -9,8 +9,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**getFieldconfig**](OrganizationApi.html#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
 [**getOrganizationsMe**](OrganizationApi.html#getOrganizationsMe) | **GET** /api/v2/organizations/me | Get organization.
+[**getOrganizationsWhitelist**](OrganizationApi.html#getOrganizationsWhitelist) | **GET** /api/v2/organizations/whitelist | Get organization whitelist settings
 [**patchOrganizationsFeature**](OrganizationApi.html#patchOrganizationsFeature) | **PATCH** /api/v2/organizations/features/{featureName} | Update organization
 [**putOrganizationsMe**](OrganizationApi.html#putOrganizationsMe) | **PUT** /api/v2/organizations/me | Update organization.
+[**putOrganizationsWhitelist**](OrganizationApi.html#putOrganizationsWhitelist) | **PUT** /api/v2/organizations/whitelist | Update organization whitelist settings
 {: class="table table-striped"}
 
 <a name="getFieldconfig"></a>
@@ -116,6 +118,55 @@ This endpoint does not need any parameter.
 ### Return type
 
 **Organization**
+
+<a name="getOrganizationsWhitelist"></a>
+
+# OrgWhitelistSettings getOrganizationsWhitelist()
+
+
+
+GET /api/v2/organizations/whitelist
+
+Get organization whitelist settings
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.OrganizationApi();
+apiInstance.getOrganizationsWhitelist()
+  .then(function(data) {
+    console.log(`getOrganizationsWhitelist success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling getOrganizationsWhitelist');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**OrgWhitelistSettings**
 
 <a name="patchOrganizationsFeature"></a>
 
@@ -293,4 +344,85 @@ apiInstance.putOrganizationsMe(opts)
 ### Return type
 
 **Organization**
+
+<a name="putOrganizationsWhitelist"></a>
+
+# OrgWhitelistSettings putOrganizationsWhitelist(body)
+
+
+
+PUT /api/v2/organizations/whitelist
+
+Update organization whitelist settings
+
+
+
+Requires ANY permissions: 
+
+* admin
+
+
+### Request Body Schema
+
+{::options parse_block_html="true" /}
+
+<script type="text/javascript">
+	function copyOrgWhitelistSettingsExample() {
+		var $temp = $("<textarea>");
+		$("body").append($temp);
+		$temp.val($('#OrgWhitelistSettingsExample').text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>
+
+OrgWhitelistSettings <a style="cursor: pointer" onclick="copyOrgWhitelistSettingsExample()">Copy</a>
+
+<div id="OrgWhitelistSettingsExample" style="max-height: 250px; overflow-y: scroll;">
+~~~ json
+{ 
+  "enableWhitelist": Boolean, 
+  "domainWhitelist": [String], 
+}
+~~~
+</div>
+
+
+### Example Usage
+
+~~~ javascript
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new platformClient.OrganizationApi();
+
+var body = {}; // Object | Whitelist settings
+
+apiInstance.putOrganizationsWhitelist(body)
+  .then(function(data) {
+    console.log(`putOrganizationsWhitelist success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch(function(err) {
+  	console.log('There was a failure calling putOrganizationsWhitelist');
+    console.error(err);
+  });
+
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Whitelist settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OrgWhitelistSettings**
 

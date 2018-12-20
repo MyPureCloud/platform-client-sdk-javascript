@@ -1791,6 +1791,7 @@ ReportingExportJobRequest <a style="cursor: pointer" onclick="copyReportingExpor
     "isConsulted": Boolean, 
     "isConsultTransferred": Boolean, 
     "remoteParticipants": [String], 
+    "statusList": [String], 
   },  
   "read": Boolean, 
   "locale": String, 

@@ -5,7 +5,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 42.1.0
+	 * @version 42.2.0
 	 */
 
 	/**
@@ -66,6 +66,26 @@ class OrganizationApi {
 	}
 
 	/**
+	 * Get organization whitelist settings
+	 * 
+	 */
+	getOrganizationsWhitelist() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/whitelist', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update organization
 	 * 
 	 * @param {Object} featureName Organization feature
@@ -113,6 +133,31 @@ class OrganizationApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update organization whitelist settings
+	 * 
+	 * @param {Object} body Whitelist settings
+	 */
+	putOrganizationsWhitelist(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOrganizationsWhitelist';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/whitelist', 
+			'PUT', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

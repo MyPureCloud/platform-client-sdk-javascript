@@ -1455,8 +1455,10 @@ declare namespace ObjectsApi {
 declare class OrganizationApi {  
   	getFieldconfig(type: string): Promise<Models.FieldConfig>; 
   	getOrganizationsMe(): Promise<Models.Organization>; 
+  	getOrganizationsWhitelist(): Promise<Models.OrgWhitelistSettings>; 
   	patchOrganizationsFeature(featureName: string, enabled: Models.FeatureState): Promise<Models.OrganizationFeatures>; 
-  	putOrganizationsMe(opts?: OrganizationApi.putOrganizationsMeOptions): Promise<Models.Organization>;
+  	putOrganizationsMe(opts?: OrganizationApi.putOrganizationsMeOptions): Promise<Models.Organization>; 
+  	putOrganizationsWhitelist(body: Models.OrgWhitelistSettings): Promise<Models.OrgWhitelistSettings>;
 }
 
 declare namespace OrganizationApi { 
@@ -3630,6 +3632,7 @@ declare namespace Models {
 		"conversationEnd"?: string;
 		"mediaStatsMinConversationMos"?: number;
 		"mediaStatsMinConversationRFactor"?: number;
+		"originatingDirection"?: string;
 		"participants"?: Array<Models.AnalyticsParticipant>;
 		"evaluations"?: Array<Models.AnalyticsEvaluation>;
 		"surveys"?: Array<Models.AnalyticsSurvey>;
@@ -3782,6 +3785,7 @@ declare namespace Models {
 		"ani"?: string;
 		"direction"?: string;
 		"dnis"?: string;
+		"sessionDnis"?: string;
 		"outboundCampaignId"?: string;
 		"outboundContactId"?: string;
 		"outboundContactListId"?: string;
@@ -11663,6 +11667,11 @@ declare namespace Models {
 		"organization"?: Models.Organization;
 	}
 	
+	export interface OrgWhitelistSettings { 
+		"enableWhitelist"?: boolean;
+		"domainWhitelist"?: Array<string>;
+	}
+	
 	export interface Organization { 
 		"id"?: string;
 		"name"?: string;
@@ -16990,6 +16999,7 @@ declare namespace Models {
 		"isConsulted"?: boolean;
 		"isConsultTransferred"?: boolean;
 		"remoteParticipants"?: Array<string>;
+		"statusList"?: Array<string>;
 	}
 	
 	export interface VisibilityCondition { 
