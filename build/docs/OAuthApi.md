@@ -290,6 +290,10 @@ OAuthClient <a style="cursor: pointer" onclick="copyOAuthClientExample()">Copy</
   },  
   "authorizedGrantType": String, 
   "scope": [String], 
+  "roleDivisions": { 
+    "roleId": String, 
+    "divisionId": String, 
+  },  
   "selfUri": String, 
 }
 ~~~
@@ -391,6 +395,10 @@ OAuthClient <a style="cursor: pointer" onclick="copyOAuthClientExample()">Copy</
   },  
   "authorizedGrantType": String, 
   "scope": [String], 
+  "roleDivisions": { 
+    "roleId": String, 
+    "divisionId": String, 
+  },  
   "selfUri": String, 
 }
 ~~~

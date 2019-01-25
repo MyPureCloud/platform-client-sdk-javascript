@@ -265,9 +265,8 @@ Returns the maximum allowed number of divisions.
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* authorization:division:view
 
 
 

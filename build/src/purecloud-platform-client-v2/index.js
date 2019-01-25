@@ -2,7 +2,6 @@ import ApiClient from './ApiClient.js';
 import AlertingApi from './api/AlertingApi.js';
 import AnalyticsApi from './api/AnalyticsApi.js';
 import ArchitectApi from './api/ArchitectApi.js';
-import AttributesApi from './api/AttributesApi.js';
 import AuthorizationApi from './api/AuthorizationApi.js';
 import BillingApi from './api/BillingApi.js';
 import ContentManagementApi from './api/ContentManagementApi.js';
@@ -75,7 +74,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 42.2.0
+ * @version 43.0.0
  */
 class platformClient {
 	constructor() {
@@ -99,11 +98,6 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/ArchitectApi}
 		 */
 		this.ArchitectApi = ArchitectApi;
-		/**
-		 * The AttributesApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/AttributesApi}
-		 */
-		this.AttributesApi = AttributesApi;
 		/**
 		 * The AuthorizationApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/AuthorizationApi}

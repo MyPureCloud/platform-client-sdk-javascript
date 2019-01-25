@@ -18263,6 +18263,17 @@ Recording <a style="cursor: pointer" onclick="copyRecordingExample()">Copy</a>
         },  
         "displayName": String, 
       },  
+      "whatsAppId": { 
+        "phoneNumber": { 
+          "display": String, 
+          "extension": Number, 
+          "acceptsSMS": Boolean, 
+          "userInput": String, 
+          "e164": String, 
+          "countryCode": String, 
+        },  
+        "displayName": String, 
+      },  
       "facebookId": { 
         "ids": { 
           "scopedId": String, 

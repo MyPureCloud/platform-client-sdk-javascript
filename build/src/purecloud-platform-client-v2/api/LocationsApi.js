@@ -5,7 +5,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -19,6 +19,31 @@ class LocationsApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete a location
+	 * 
+	 * @param {String} locationId Location ID
+	 */
+	deleteLocation(locationId) { 
+		// verify the required parameter 'locationId' is set
+		if (locationId === undefined || locationId === null) {
+			throw 'Missing the required parameter "locationId" when calling deleteLocation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/locations/{locationId}', 
+			'DELETE', 
+			{ 'locationId': locationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
 
 	/**
 	 * Get Location by ID.
@@ -51,6 +76,7 @@ class LocationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Array.<String>} opts.id id
 	 * @param {Object} opts.sortOrder Sort order
 	 */
 	getLocations(opts) { 
@@ -61,7 +87,7 @@ class LocationsApi {
 			'/api/v2/locations', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -94,6 +120,61 @@ class LocationsApi {
 			{  }, 
 			{  }, 
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a location
+	 * 
+	 * @param {String} locationId Location ID
+	 * @param {Object} body Location
+	 */
+	patchLocation(locationId, body) { 
+		// verify the required parameter 'locationId' is set
+		if (locationId === undefined || locationId === null) {
+			throw 'Missing the required parameter "locationId" when calling patchLocation';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchLocation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/locations/{locationId}', 
+			'PATCH', 
+			{ 'locationId': locationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a location
+	 * 
+	 * @param {Object} body Location
+	 */
+	postLocations(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLocations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/locations', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

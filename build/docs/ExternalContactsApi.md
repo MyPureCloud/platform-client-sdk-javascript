@@ -1677,6 +1677,17 @@ ExternalContact <a style="cursor: pointer" onclick="copyExternalContactExample()
     },  
     "displayName": String, 
   },  
+  "whatsAppId": { 
+    "phoneNumber": { 
+      "display": String, 
+      "extension": Number, 
+      "acceptsSMS": Boolean, 
+      "userInput": String, 
+      "e164": String, 
+      "countryCode": String, 
+    },  
+    "displayName": String, 
+  },  
   "facebookId": { 
     "ids": { 
       "scopedId": String, 
@@ -4952,6 +4963,17 @@ ExternalContact <a style="cursor: pointer" onclick="copyExternalContactExample()
   "lineId": { 
     "ids": { 
       "userId": String, 
+    },  
+    "displayName": String, 
+  },  
+  "whatsAppId": { 
+    "phoneNumber": { 
+      "display": String, 
+      "extension": Number, 
+      "acceptsSMS": Boolean, 
+      "userInput": String, 
+      "e164": String, 
+      "countryCode": String, 
     },  
     "displayName": String, 
   },  

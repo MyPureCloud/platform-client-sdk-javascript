@@ -324,6 +324,7 @@ WebChatDeployment <a style="cursor: pointer" onclick="copyWebChatDeploymentExamp
   "webChatConfig": { 
     "webChatSkin": String, 
   },  
+  "allowedDomains": [String], 
   "selfUri": String, 
 }
 ~~~
@@ -413,6 +414,7 @@ WebChatDeployment <a style="cursor: pointer" onclick="copyWebChatDeploymentExamp
   "webChatConfig": { 
     "webChatSkin": String, 
   },  
+  "allowedDomains": [String], 
   "selfUri": String, 
 }
 ~~~

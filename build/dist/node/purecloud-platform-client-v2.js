@@ -6,7 +6,7 @@ var superagent = _interopDefault(require('superagent'));
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 42.2.0
+ * @version 43.0.0
  */
 class ApiClient {
 	/**
@@ -699,7 +699,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '42.2.0' });
+		//request.set({ 'purecloud-sdk': '43.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -826,7 +826,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -1140,7 +1140,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -1845,7 +1845,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -4201,187 +4201,11 @@ class ArchitectApi {
 
 }
 
-class AttributesApi {
-	/**
-	 * Attributes service.
-	 * @module purecloud-platform-client-v2/api/AttributesApi
-	 * @version 42.2.0
-	 */
-
-	/**
-	 * Constructs a new AttributesApi. 
-	 * @alias module:purecloud-platform-client-v2/api/AttributesApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Delete an existing Attribute.
-	 * This will remove attribute.
-	 * @param {String} attributeId Attribute ID
-	 */
-	deleteAttribute(attributeId) { 
-		// verify the required parameter 'attributeId' is set
-		if (attributeId === undefined || attributeId === null) {
-			throw 'Missing the required parameter "attributeId" when calling deleteAttribute';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/attributes/{attributeId}', 
-			'DELETE', 
-			{ 'attributeId': attributeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get details about an existing attribute.
-	 * 
-	 * @param {String} attributeId Attribute ID
-	 */
-	getAttribute(attributeId) { 
-		// verify the required parameter 'attributeId' is set
-		if (attributeId === undefined || attributeId === null) {
-			throw 'Missing the required parameter "attributeId" when calling getAttribute';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/attributes/{attributeId}', 
-			'GET', 
-			{ 'attributeId': attributeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets a list of existing attributes.
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 */
-	getAttributes(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/attributes', 
-			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create an attribute.
-	 * 
-	 * @param {Object} body Attribute
-	 */
-	postAttributes(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAttributes';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/attributes', 
-			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Query attributes
-	 * 
-	 * @param {Object} body query
-	 */
-	postAttributesQuery(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAttributesQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/attributes/query', 
-			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update an existing attribute.
-	 * Fields that can be updated: name, description. The most recent version is required for updates.
-	 * @param {String} attributeId Attribute ID
-	 * @param {Object} body Attribute
-	 */
-	putAttribute(attributeId, body) { 
-		// verify the required parameter 'attributeId' is set
-		if (attributeId === undefined || attributeId === null) {
-			throw 'Missing the required parameter "attributeId" when calling putAttribute';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAttribute';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/attributes/{attributeId}', 
-			'PUT', 
-			{ 'attributeId': attributeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-}
-
 class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -5366,7 +5190,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -5446,7 +5270,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -6586,7 +6410,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -9666,7 +9490,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -10574,7 +10398,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -10745,7 +10569,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -10791,7 +10615,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -10921,7 +10745,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -11052,7 +10876,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -11507,7 +11331,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -11911,7 +11735,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -12537,7 +12361,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -13701,7 +13525,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -13969,7 +13793,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -14178,7 +14002,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -14192,6 +14016,31 @@ class LocationsApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete a location
+	 * 
+	 * @param {String} locationId Location ID
+	 */
+	deleteLocation(locationId) { 
+		// verify the required parameter 'locationId' is set
+		if (locationId === undefined || locationId === null) {
+			throw 'Missing the required parameter "locationId" when calling deleteLocation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/locations/{locationId}', 
+			'DELETE', 
+			{ 'locationId': locationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
 
 	/**
 	 * Get Location by ID.
@@ -14224,6 +14073,7 @@ class LocationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Array.<String>} opts.id id
 	 * @param {Object} opts.sortOrder Sort order
 	 */
 	getLocations(opts) { 
@@ -14234,7 +14084,7 @@ class LocationsApi {
 			'/api/v2/locations', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -14274,6 +14124,61 @@ class LocationsApi {
 	}
 
 	/**
+	 * Update a location
+	 * 
+	 * @param {String} locationId Location ID
+	 * @param {Object} body Location
+	 */
+	patchLocation(locationId, body) { 
+		// verify the required parameter 'locationId' is set
+		if (locationId === undefined || locationId === null) {
+			throw 'Missing the required parameter "locationId" when calling patchLocation';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchLocation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/locations/{locationId}', 
+			'PATCH', 
+			{ 'locationId': locationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a location
+	 * 
+	 * @param {Object} body Location
+	 */
+	postLocations(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLocations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/locations', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Search locations
 	 * 
 	 * @param {Object} body Search request options
@@ -14304,7 +14209,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -14685,7 +14590,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -14836,7 +14741,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -15035,7 +14940,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -15206,7 +15111,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -15443,7 +15348,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -15608,7 +15513,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -16283,7 +16188,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -18921,7 +18826,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -19188,7 +19093,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -20859,7 +20764,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -21913,7 +21818,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -22237,7 +22142,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -24030,7 +23935,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -24388,7 +24293,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -24843,7 +24748,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -24990,7 +24895,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -25129,7 +25034,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -28611,7 +28516,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -28672,7 +28577,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -28856,7 +28761,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -30636,7 +30541,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -30747,7 +30652,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -31384,7 +31289,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -31595,7 +31500,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 42.2.0
+	 * @version 43.0.0
 	 */
 
 	/**
@@ -33624,7 +33529,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 42.2.0
+ * @version 43.0.0
  */
 class platformClient {
 	constructor() {
@@ -33648,11 +33553,6 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/ArchitectApi}
 		 */
 		this.ArchitectApi = ArchitectApi;
-		/**
-		 * The AttributesApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/AttributesApi}
-		 */
-		this.AttributesApi = AttributesApi;
 		/**
 		 * The AuthorizationApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/AuthorizationApi}

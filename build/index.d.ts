@@ -420,22 +420,6 @@ declare namespace ArchitectApi {
 	}
 }
 
-declare class AttributesApi {  
-  	deleteAttribute(attributeId: string): Promise<void>; 
-  	getAttribute(attributeId: string): Promise<Models.Attribute>; 
-  	getAttributes(opts?: AttributesApi.getAttributesOptions): Promise<Models.AttributeEntityListing>; 
-  	postAttributes(body: Models.Attribute): Promise<Models.Attribute>; 
-  	postAttributesQuery(body: Models.AttributeQueryRequest): Promise<Models.AttributeEntityListing>; 
-  	putAttribute(attributeId: string, body: Models.Attribute): Promise<Models.Attribute>;
-}
-
-declare namespace AttributesApi { 
-	export interface getAttributesOptions { 
-		"pageNumber"?: number;
-		"pageSize"?: number;
-	}
-}
-
 declare class AuthorizationApi {  
   	deleteAuthorizationDivision(divisionId: string): Promise<void>; 
   	deleteAuthorizationRole(roleId: string): Promise<void>; 
@@ -1321,9 +1305,12 @@ declare namespace LicenseApi {
 }
 
 declare class LocationsApi {  
+  	deleteLocation(locationId: string): Promise<void>; 
   	getLocation(locationId: string): Promise<Models.LocationDefinition>; 
   	getLocations(opts?: LocationsApi.getLocationsOptions): Promise<Models.LocationEntityListing>; 
   	getLocationsSearch(q64: string, opts?: LocationsApi.getLocationsSearchOptions): Promise<Models.LocationsSearchResponse>; 
+  	patchLocation(locationId: string, body: Models.LocationUpdateDefinition): Promise<Models.LocationDefinition>; 
+  	postLocations(body: Models.LocationDefinition): Promise<Models.LocationDefinition>; 
   	postLocationsSearch(body: Models.LocationSearchRequest): Promise<Models.LocationsSearchResponse>;
 }
 
@@ -1331,6 +1318,7 @@ declare namespace LocationsApi {
 	export interface getLocationsOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
+		"id"?: Array<string>;
 		"sortOrder"?: string;
 	}
 	export interface getLocationsSearchOptions { 
@@ -3690,6 +3678,8 @@ declare namespace Models {
 		"flowVersion"?: string;
 		"flowType"?: string;
 		"exitReason"?: string;
+		"entryReason"?: string;
+		"entryType"?: string;
 		"transferType"?: string;
 		"transferTargetName"?: string;
 		"transferTargetAddress"?: string;
@@ -3816,6 +3806,13 @@ declare namespace Models {
 		"flow"?: Models.AnalyticsFlow;
 		"mediaEndpointStats"?: Array<Models.AnalyticsMediaEndpointStat>;
 		"recording"?: boolean;
+		"journeyCustomerId"?: string;
+		"journeyCustomerIdType"?: string;
+		"journeyCustomerSessionId"?: string;
+		"journeyCustomerSessionIdType"?: string;
+		"journeyActionId"?: string;
+		"journeyActionMapId"?: string;
+		"journeyActionMapVersion"?: string;
 	}
 	
 	export interface AnalyticsSessionMetric { 
@@ -4157,29 +4154,10 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
-	export interface AttributeEntityListing { 
-		"entities"?: Array<Models.Attribute>;
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"total"?: number;
-		"firstUri"?: string;
-		"selfUri"?: string;
-		"previousUri"?: string;
-		"nextUri"?: string;
-		"lastUri"?: string;
-		"pageCount"?: number;
-	}
-	
 	export interface AttributeFilterItem { 
 		"id"?: string;
 		"operator"?: string;
 		"values"?: Array<string>;
-	}
-	
-	export interface AttributeQueryRequest { 
-		"query"?: string;
-		"pageSize"?: number;
-		"pageNumber"?: number;
 	}
 	
 	export interface AuditChange { 
@@ -9428,6 +9406,7 @@ declare namespace Models {
 		"address"?: Models.ContactAddress;
 		"twitterId"?: Models.TwitterId;
 		"lineId"?: Models.LineId;
+		"whatsAppId"?: Models.WhatsAppId;
 		"facebookId"?: Models.FacebookId;
 		"modifyDate"?: string;
 		"createDate"?: string;
@@ -11042,7 +11021,7 @@ declare namespace Models {
 	
 	export interface LocationDefinition { 
 		"id"?: string;
-		"name"?: string;
+		"name": string;
 		"address"?: Models.LocationAddress;
 		"addressVerified"?: boolean;
 		"emergencyNumber"?: Models.LocationEmergencyNumber;
@@ -11089,6 +11068,16 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"sort"?: Array<Models.SearchSort>;
 		"query"?: Array<Models.LocationSearchCriteria>;
+	}
+	
+	export interface LocationUpdateDefinition { 
+		"name"?: string;
+		"address"?: Models.LocationAddress;
+		"addressVerified"?: boolean;
+		"emergencyNumber"?: Models.LocationEmergencyNumber;
+		"state"?: string;
+		"version"?: number;
+		"path"?: Array<string>;
 	}
 	
 	export interface LocationsSearchResponse { 
@@ -11513,6 +11502,7 @@ declare namespace Models {
 		"modifiedBy"?: Models.UriReference;
 		"authorizedGrantType": string;
 		"scope": Array<string>;
+		"roleDivisions"?: Array<Models.RoleDivision>;
 		"selfUri"?: string;
 	}
 	
@@ -11542,6 +11532,7 @@ declare namespace Models {
 		"createdBy"?: Models.UriReference;
 		"modifiedBy"?: Models.UriReference;
 		"scope": Array<string>;
+		"roleDivisions"?: Array<Models.RoleDivision>;
 		"selfUri"?: string;
 	}
 	
@@ -11632,6 +11623,7 @@ declare namespace Models {
 		"modifiedBy"?: Models.UriReference;
 		"authorizedGrantType": string;
 		"scope": Array<string>;
+		"roleDivisions"?: Array<Models.RoleDivision>;
 		"organization"?: Models.NamedEntity;
 	}
 	
@@ -14658,6 +14650,11 @@ declare namespace Models {
 		"actions"?: Models.Actions;
 	}
 	
+	export interface RoleDivision { 
+		"roleId": string;
+		"divisionId": string;
+	}
+	
 	export interface RouteGroup { 
 		"attributes": Models.RouteGroupAttributes;
 		"offeredPerInterval": Array<number>;
@@ -17000,6 +16997,15 @@ declare namespace Models {
 		"isConsultTransferred"?: boolean;
 		"remoteParticipants"?: Array<string>;
 		"statusList"?: Array<string>;
+		"flowIds"?: Array<string>;
+		"flowOutcomeIds"?: Array<string>;
+		"flowOutcomeValues"?: Array<string>;
+		"flowDestinationTypes"?: Array<string>;
+		"flowDisconnectReasons"?: Array<string>;
+		"flowTypes"?: Array<string>;
+		"flowEntryTypes"?: Array<string>;
+		"flowEntryReasons"?: Array<string>;
+		"groupIds"?: Array<string>;
 	}
 	
 	export interface VisibilityCondition { 
@@ -17170,6 +17176,7 @@ declare namespace Models {
 		"authenticationUrl"?: string;
 		"disabled"?: boolean;
 		"webChatConfig"?: Models.WebChatConfig;
+		"allowedDomains"?: Array<string>;
 		"selfUri"?: string;
 	}
 	
@@ -17498,6 +17505,11 @@ declare namespace Models {
 		"version": number;
 		"modifiedBy"?: Models.UserReference;
 		"dateModified"?: string;
+	}
+	
+	export interface WhatsAppId { 
+		"phoneNumber"?: Models.PhoneNumber;
+		"displayName"?: string;
 	}
 	
 	export interface WorkPlan { 
