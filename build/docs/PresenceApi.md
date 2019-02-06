@@ -38,29 +38,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.PresenceApi();
+let apiInstance = new platformClient.PresenceApi();
 
-var presenceId = "presenceId_example"; // String | Organization Presence ID
+let presenceId = "presenceId_example"; // String | Organization Presence ID
 
 apiInstance.deletePresencedefinition(presenceId)
-  .then(function() {
+  .then(() => {
     console.log('deletePresencedefinition returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deletePresencedefinition');
+  .catch((err) => {
+    console.log('There was a failure calling deletePresencedefinition');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -93,32 +92,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.PresenceApi();
+let apiInstance = new platformClient.PresenceApi();
 
-var presenceId = "presenceId_example"; // String | Organization Presence ID
-
-var opts = { 
+let presenceId = "presenceId_example"; // String | Organization Presence ID
+let opts = { 
   'localeCode': "localeCode_example" // String | The locale code to fetch for the presence definition. Use ALL to fetch everything.
 };
+
 apiInstance.getPresencedefinition(presenceId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getPresencedefinition success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getPresencedefinition');
+  .catch((err) => {
+    console.log('There was a failure calling getPresencedefinition');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -152,33 +150,33 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.PresenceApi();
+let apiInstance = new platformClient.PresenceApi();
 
-var opts = { 
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'deleted': "false", // String | Deleted query can be TRUE, FALSE or ALL
   'localeCode': "localeCode_example" // String | The locale code to fetch for each presence definition. Use ALL to fetch everything.
 };
+
 apiInstance.getPresencedefinitions(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getPresencedefinitions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getPresencedefinitions');
+  .catch((err) => {
+    console.log('There was a failure calling getPresencedefinitions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -214,26 +212,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.PresenceApi();
+let apiInstance = new platformClient.PresenceApi();
+
 apiInstance.getSystempresences()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getSystempresences success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getSystempresences');
+  .catch((err) => {
+    console.log('There was a failure calling getSystempresences');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -263,31 +261,29 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.PresenceApi();
+let apiInstance = new platformClient.PresenceApi();
 
-var userId = "userId_example"; // String | user Id
-
-var sourceId = "sourceId_example"; // String | Source
+let userId = "userId_example"; // String | user Id
+let sourceId = "sourceId_example"; // String | Source
 
 apiInstance.getUserPresence(userId, sourceId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getUserPresence success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getUserPresence');
+  .catch((err) => {
+    console.log('There was a failure calling getUserPresence');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -320,22 +316,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUserPresenceExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UserPresenceExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UserPresenceExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UserPresence <a style="cursor: pointer" onclick="copyUserPresenceExample()">Copy</a>
+UserPresence <a href="#" onclick="return copyUserPresenceExample()">Copy</a>
 
-<div id="UserPresenceExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UserPresenceExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -350,39 +346,37 @@ UserPresence <a style="cursor: pointer" onclick="copyUserPresenceExample()">Copy
   "modifiedDate": Date, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.PresenceApi();
+let apiInstance = new platformClient.PresenceApi();
 
-var userId = "userId_example"; // String | user Id
-
-var sourceId = "sourceId_example"; // String | Source
-
-var body = {}; // Object | User presence
+let userId = "userId_example"; // String | user Id
+let sourceId = "sourceId_example"; // String | Source
+let body = {}; // Object | User presence
 
 apiInstance.patchUserPresence(userId, sourceId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchUserPresence success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchUserPresence');
+  .catch((err) => {
+    console.log('There was a failure calling patchUserPresence');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -417,22 +411,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyOrganizationPresenceExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#OrganizationPresenceExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#OrganizationPresenceExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-OrganizationPresence <a style="cursor: pointer" onclick="copyOrganizationPresenceExample()">Copy</a>
+OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample()">Copy</a>
 
-<div id="OrganizationPresenceExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="OrganizationPresenceExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1120,35 +1114,35 @@ OrganizationPresence <a style="cursor: pointer" onclick="copyOrganizationPresenc
   "modifiedDate": Date, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.PresenceApi();
+let apiInstance = new platformClient.PresenceApi();
 
-var body = {}; // Object | The Presence Definition to create
+let body = {}; // Object | The Presence Definition to create
 
 apiInstance.postPresencedefinitions(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postPresencedefinitions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postPresencedefinitions');
+  .catch((err) => {
+    console.log('There was a failure calling postPresencedefinitions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1181,22 +1175,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyOrganizationPresenceExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#OrganizationPresenceExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#OrganizationPresenceExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-OrganizationPresence <a style="cursor: pointer" onclick="copyOrganizationPresenceExample()">Copy</a>
+OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample()">Copy</a>
 
-<div id="OrganizationPresenceExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="OrganizationPresenceExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1884,37 +1878,36 @@ OrganizationPresence <a style="cursor: pointer" onclick="copyOrganizationPresenc
   "modifiedDate": Date, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.PresenceApi();
+let apiInstance = new platformClient.PresenceApi();
 
-var presenceId = "presenceId_example"; // String | Organization Presence ID
-
-var body = {}; // Object | The OrganizationPresence to update
+let presenceId = "presenceId_example"; // String | Organization Presence ID
+let body = {}; // Object | The OrganizationPresence to update
 
 apiInstance.putPresencedefinition(presenceId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putPresencedefinition success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putPresencedefinition');
+  .catch((err) => {
+    console.log('There was a failure calling putPresencedefinition');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1948,22 +1941,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUserPresenceExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UserPresenceExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UserPresenceExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UserPresence <a style="cursor: pointer" onclick="copyUserPresenceExample()">Copy</a>
+UserPresence <a href="#" onclick="return copyUserPresenceExample()">Copy</a>
 
-<div id="UserPresenceExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UserPresenceExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1978,35 +1971,35 @@ UserPresence <a style="cursor: pointer" onclick="copyUserPresenceExample()">Copy
   "modifiedDate": Date, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.PresenceApi();
+let apiInstance = new platformClient.PresenceApi();
 
-var body = [{}]; // Object | List of User presences
+let body = [{}]; // Object | List of User presences
 
 apiInstance.putUsersPresencesBulk(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putUsersPresencesBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putUsersPresencesBulk');
+  .catch((err) => {
+    console.log('There was a failure calling putUsersPresencesBulk');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

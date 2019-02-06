@@ -7845,6 +7845,7 @@ declare namespace Models {
 		"codes"?: Array<string>;
 		"propertyType"?: string;
 		"property"?: string;
+		"dataNotFoundResolution"?: boolean;
 		"contactIdField"?: string;
 		"callAnalysisResultField"?: string;
 		"agentWrapupField"?: string;
@@ -7864,6 +7865,8 @@ declare namespace Models {
 		"outputField"?: string;
 		"outputOperator"?: string;
 		"comparisonValue"?: string;
+		"outputFieldMissingResolution"?: boolean;
+		"inverted"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -14165,10 +14168,11 @@ declare namespace Models {
 	}
 	
 	export interface QueueUserEventTopicQueueMember { 
-		"id"?: string;
-		"queueId"?: string;
+		"memberId"?: string;
+		"name"?: string;
+		"ringNumber"?: number;
+		"type"?: string;
 		"joined"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueUtilizationDiagnostic { 

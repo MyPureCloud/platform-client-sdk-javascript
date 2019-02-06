@@ -55,29 +55,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var scheduleId = "scheduleId_example"; // String | Schedule ID
+let scheduleId = "scheduleId_example"; // String | Schedule ID
 
 apiInstance.deleteAnalyticsReportingSchedule(scheduleId)
-  .then(function() {
+  .then(() => {
     console.log('deleteAnalyticsReportingSchedule returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteAnalyticsReportingSchedule');
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsReportingSchedule');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -111,29 +110,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
+let conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getAnalyticsConversationDetails(conversationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAnalyticsConversationDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAnalyticsConversationDetails');
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsConversationDetails');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -167,30 +165,30 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var opts = { 
+let opts = { 
   'id': ["id_example"] // [String] | Comma-separated conversation ids
 };
+
 apiInstance.getAnalyticsConversationsDetails(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAnalyticsConversationsDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAnalyticsConversationsDetails');
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsConversationsDetails');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -224,26 +222,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
+
 apiInstance.getAnalyticsReportingExports()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAnalyticsReportingExports success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAnalyticsReportingExports');
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsReportingExports');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -273,32 +271,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var opts = { 
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'locale': "locale_example" // String | Locale
 };
+
 apiInstance.getAnalyticsReportingMetadata(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAnalyticsReportingMetadata success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAnalyticsReportingMetadata');
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsReportingMetadata');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -333,32 +331,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var reportId = "reportId_example"; // String | Report ID
-
-var opts = { 
+let reportId = "reportId_example"; // String | Report ID
+let opts = { 
   'locale': "locale_example" // String | Locale
 };
+
 apiInstance.getAnalyticsReportingReportIdMetadata(reportId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAnalyticsReportingReportIdMetadata success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAnalyticsReportingReportIdMetadata');
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsReportingReportIdMetadata');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -392,26 +389,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
+
 apiInstance.getAnalyticsReportingReportformats()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAnalyticsReportingReportformats success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAnalyticsReportingReportformats');
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsReportingReportformats');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -441,29 +438,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var scheduleId = "scheduleId_example"; // String | Schedule ID
+let scheduleId = "scheduleId_example"; // String | Schedule ID
 
 apiInstance.getAnalyticsReportingSchedule(scheduleId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAnalyticsReportingSchedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAnalyticsReportingSchedule');
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsReportingSchedule');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -496,33 +492,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var scheduleId = "scheduleId_example"; // String | Schedule ID
-
-var opts = { 
+let scheduleId = "scheduleId_example"; // String | Schedule ID
+let opts = { 
   'pageNumber': 1, // Number | 
   'pageSize': 25 // Number | 
 };
+
 apiInstance.getAnalyticsReportingScheduleHistory(scheduleId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAnalyticsReportingScheduleHistory success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAnalyticsReportingScheduleHistory');
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsReportingScheduleHistory');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -557,29 +552,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var scheduleId = "scheduleId_example"; // String | Schedule ID
+let scheduleId = "scheduleId_example"; // String | Schedule ID
 
 apiInstance.getAnalyticsReportingScheduleHistoryLatest(scheduleId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAnalyticsReportingScheduleHistoryLatest success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAnalyticsReportingScheduleHistoryLatest');
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsReportingScheduleHistoryLatest');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -612,31 +606,29 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var runId = "runId_example"; // String | Run ID
-
-var scheduleId = "scheduleId_example"; // String | Schedule ID
+let runId = "runId_example"; // String | Run ID
+let scheduleId = "scheduleId_example"; // String | Schedule ID
 
 apiInstance.getAnalyticsReportingScheduleHistoryRunId(runId, scheduleId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAnalyticsReportingScheduleHistoryRunId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAnalyticsReportingScheduleHistoryRunId');
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsReportingScheduleHistoryRunId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -670,31 +662,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var opts = { 
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25 // Number | Page size
 };
+
 apiInstance.getAnalyticsReportingSchedules(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAnalyticsReportingSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAnalyticsReportingSchedules');
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsReportingSchedules');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -728,26 +720,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
+
 apiInstance.getAnalyticsReportingTimeperiods()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAnalyticsReportingTimeperiods success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAnalyticsReportingTimeperiods');
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsReportingTimeperiods');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -777,22 +769,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyPropertyIndexRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#PropertyIndexRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PropertyIndexRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-PropertyIndexRequest <a style="cursor: pointer" onclick="copyPropertyIndexRequestExample()">Copy</a>
+PropertyIndexRequest <a href="#" onclick="return copyPropertyIndexRequestExample()">Copy</a>
 
-<div id="PropertyIndexRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="PropertyIndexRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "sessionId": String, 
   "targetDate": Date, 
@@ -802,37 +794,36 @@ PropertyIndexRequest <a style="cursor: pointer" onclick="copyPropertyIndexReques
     "value": String, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var body = {}; // Object | request
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | request
 
 apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsConversationDetailsProperties success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsConversationDetailsProperties');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsConversationDetailsProperties');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -866,22 +857,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyAggregationQueryExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#AggregationQueryExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#AggregationQueryExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample()">Copy</a>
+AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy</a>
 
-<div id="AggregationQueryExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="AggregationQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "interval": String, 
   "granularity": String, 
@@ -935,35 +926,35 @@ AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample
     },  
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var body = {}; // Object | query
+let body = {}; // Object | query
 
 apiInstance.postAnalyticsConversationsAggregatesQuery(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsConversationsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsConversationsAggregatesQuery');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsConversationsAggregatesQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -996,22 +987,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyConversationQueryExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ConversationQueryExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ConversationQueryExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ConversationQuery <a style="cursor: pointer" onclick="copyConversationQueryExample()">Copy</a>
+ConversationQuery <a href="#" onclick="return copyConversationQueryExample()">Copy</a>
 
-<div id="ConversationQueryExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ConversationQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "interval": String, 
   "conversationFilters": { 
@@ -1211,35 +1202,35 @@ ConversationQuery <a style="cursor: pointer" onclick="copyConversationQueryExamp
   "order": String, 
   "orderBy": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var body = {}; // Object | query
+let body = {}; // Object | query
 
 apiInstance.postAnalyticsConversationsDetailsQuery(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsConversationsDetailsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsConversationsDetailsQuery');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsConversationsDetailsQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1272,22 +1263,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyAggregationQueryExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#AggregationQueryExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#AggregationQueryExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample()">Copy</a>
+AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy</a>
 
-<div id="AggregationQueryExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="AggregationQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "interval": String, 
   "granularity": String, 
@@ -1341,35 +1332,35 @@ AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample
     },  
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var body = {}; // Object | query
+let body = {}; // Object | query
 
 apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsEvaluationsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsEvaluationsAggregatesQuery');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsEvaluationsAggregatesQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1402,22 +1393,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyAggregationQueryExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#AggregationQueryExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#AggregationQueryExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample()">Copy</a>
+AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy</a>
 
-<div id="AggregationQueryExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="AggregationQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "interval": String, 
   "granularity": String, 
@@ -1471,35 +1462,35 @@ AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample
     },  
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var body = {}; // Object | query
+let body = {}; // Object | query
 
 apiInstance.postAnalyticsFlowsAggregatesQuery(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsFlowsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsFlowsAggregatesQuery');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsFlowsAggregatesQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1532,22 +1523,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyObservationQueryExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ObservationQueryExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ObservationQueryExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ObservationQuery <a style="cursor: pointer" onclick="copyObservationQueryExample()">Copy</a>
+ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy</a>
 
-<div id="ObservationQueryExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ObservationQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "filter": { 
     "type": String, 
@@ -1587,35 +1578,35 @@ ObservationQuery <a style="cursor: pointer" onclick="copyObservationQueryExample
   },  
   "metrics": [String], 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var body = {}; // Object | query
+let body = {}; // Object | query
 
 apiInstance.postAnalyticsQueuesObservationsQuery(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsQueuesObservationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsQueuesObservationsQuery');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsQueuesObservationsQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1648,22 +1639,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyReportingExportJobRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ReportingExportJobRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ReportingExportJobRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ReportingExportJobRequest <a style="cursor: pointer" onclick="copyReportingExportJobRequestExample()">Copy</a>
+ReportingExportJobRequest <a href="#" onclick="return copyReportingExportJobRequestExample()">Copy</a>
 
-<div id="ReportingExportJobRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ReportingExportJobRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "name": String, 
   "timeZone": { 
@@ -1805,35 +1796,35 @@ ReportingExportJobRequest <a style="cursor: pointer" onclick="copyReportingExpor
   "read": Boolean, 
   "locale": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var body = {}; // Object | ReportingExportJobRequest
+let body = {}; // Object | ReportingExportJobRequest
 
 apiInstance.postAnalyticsReportingExports(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsReportingExports success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsReportingExports');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsReportingExports');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1866,29 +1857,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var scheduleId = "scheduleId_example"; // String | Schedule ID
+let scheduleId = "scheduleId_example"; // String | Schedule ID
 
 apiInstance.postAnalyticsReportingScheduleRunreport(scheduleId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsReportingScheduleRunreport success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsReportingScheduleRunreport');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsReportingScheduleRunreport');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1920,22 +1910,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyReportScheduleExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ReportScheduleExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ReportScheduleExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ReportSchedule <a style="cursor: pointer" onclick="copyReportScheduleExample()">Copy</a>
+ReportSchedule <a href="#" onclick="return copyReportScheduleExample()">Copy</a>
 
-<div id="ReportScheduleExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ReportScheduleExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1967,35 +1957,35 @@ ReportSchedule <a style="cursor: pointer" onclick="copyReportScheduleExample()">
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var body = {}; // Object | ReportSchedule
+let body = {}; // Object | ReportSchedule
 
 apiInstance.postAnalyticsReportingSchedules(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsReportingSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsReportingSchedules');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsReportingSchedules');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2028,22 +2018,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyAggregationQueryExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#AggregationQueryExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#AggregationQueryExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample()">Copy</a>
+AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy</a>
 
-<div id="AggregationQueryExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="AggregationQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "interval": String, 
   "granularity": String, 
@@ -2097,35 +2087,35 @@ AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample
     },  
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var body = {}; // Object | query
+let body = {}; // Object | query
 
 apiInstance.postAnalyticsSurveysAggregatesQuery(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsSurveysAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsSurveysAggregatesQuery');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsSurveysAggregatesQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2158,22 +2148,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyAggregationQueryExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#AggregationQueryExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#AggregationQueryExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample()">Copy</a>
+AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy</a>
 
-<div id="AggregationQueryExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="AggregationQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "interval": String, 
   "granularity": String, 
@@ -2227,35 +2217,35 @@ AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample
     },  
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var body = {}; // Object | query
+let body = {}; // Object | query
 
 apiInstance.postAnalyticsUsersAggregatesQuery(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsUsersAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsUsersAggregatesQuery');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsUsersAggregatesQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2288,22 +2278,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUserDetailsQueryExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UserDetailsQueryExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UserDetailsQueryExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UserDetailsQuery <a style="cursor: pointer" onclick="copyUserDetailsQueryExample()">Copy</a>
+UserDetailsQuery <a href="#" onclick="return copyUserDetailsQueryExample()">Copy</a>
 
-<div id="UserDetailsQueryExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UserDetailsQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "interval": String, 
   "userFilters": { 
@@ -2440,35 +2430,35 @@ UserDetailsQuery <a style="cursor: pointer" onclick="copyUserDetailsQueryExample
   },  
   "order": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var body = {}; // Object | query
+let body = {}; // Object | query
 
 apiInstance.postAnalyticsUsersDetailsQuery(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsUsersDetailsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsUsersDetailsQuery');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsUsersDetailsQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2501,22 +2491,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyObservationQueryExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ObservationQueryExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ObservationQueryExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ObservationQuery <a style="cursor: pointer" onclick="copyObservationQueryExample()">Copy</a>
+ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy</a>
 
-<div id="ObservationQueryExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ObservationQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "filter": { 
     "type": String, 
@@ -2556,35 +2546,35 @@ ObservationQuery <a style="cursor: pointer" onclick="copyObservationQueryExample
   },  
   "metrics": [String], 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var body = {}; // Object | query
+let body = {}; // Object | query
 
 apiInstance.postAnalyticsUsersObservationsQuery(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsUsersObservationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsUsersObservationsQuery');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsUsersObservationsQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2616,22 +2606,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyReportScheduleExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ReportScheduleExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ReportScheduleExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ReportSchedule <a style="cursor: pointer" onclick="copyReportScheduleExample()">Copy</a>
+ReportSchedule <a href="#" onclick="return copyReportScheduleExample()">Copy</a>
 
-<div id="ReportScheduleExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ReportScheduleExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -2663,37 +2653,36 @@ ReportSchedule <a style="cursor: pointer" onclick="copyReportScheduleExample()">
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AnalyticsApi();
+let apiInstance = new platformClient.AnalyticsApi();
 
-var scheduleId = "scheduleId_example"; // String | Schedule ID
-
-var body = {}; // Object | ReportSchedule
+let scheduleId = "scheduleId_example"; // String | Schedule ID
+let body = {}; // Object | ReportSchedule
 
 apiInstance.putAnalyticsReportingSchedule(scheduleId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putAnalyticsReportingSchedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putAnalyticsReportingSchedule');
+  .catch((err) => {
+    console.log('There was a failure calling putAnalyticsReportingSchedule');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

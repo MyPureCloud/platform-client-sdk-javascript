@@ -44,29 +44,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GroupsApi();
+let apiInstance = new platformClient.GroupsApi();
 
-var groupId = "groupId_example"; // String | Group ID
+let groupId = "groupId_example"; // String | Group ID
 
 apiInstance.deleteGroup(groupId)
-  .then(function() {
+  .then(() => {
     console.log('deleteGroup returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteGroup');
+  .catch((err) => {
+    console.log('There was a failure calling deleteGroup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -99,31 +98,29 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GroupsApi();
+let apiInstance = new platformClient.GroupsApi();
 
-var groupId = "groupId_example"; // String | Group ID
-
-var ids = "ids_example"; // String | Comma separated list of userIds to remove
+let groupId = "groupId_example"; // String | Group ID
+let ids = "ids_example"; // String | Comma separated list of userIds to remove
 
 apiInstance.deleteGroupMembers(groupId, ids)
-  .then(function(data) {
+  .then((data) => {
     console.log(`deleteGroupMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteGroupMembers');
+  .catch((err) => {
+    console.log('There was a failure calling deleteGroupMembers');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -157,29 +154,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GroupsApi();
+let apiInstance = new platformClient.GroupsApi();
 
-var type = "type_example"; // String | Field type
+let type = "type_example"; // String | Field type
 
 apiInstance.getFieldconfig(type)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getFieldconfig success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getFieldconfig');
+  .catch((err) => {
+    console.log('There was a failure calling getFieldconfig');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -212,29 +208,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GroupsApi();
+let apiInstance = new platformClient.GroupsApi();
 
-var groupId = "groupId_example"; // String | Group ID
+let groupId = "groupId_example"; // String | Group ID
 
 apiInstance.getGroup(groupId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getGroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getGroup');
+  .catch((err) => {
+    console.log('There was a failure calling getGroup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -267,29 +262,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GroupsApi();
+let apiInstance = new platformClient.GroupsApi();
 
-var groupId = "groupId_example"; // String | Group ID
+let groupId = "groupId_example"; // String | Group ID
 
 apiInstance.getGroupIndividuals(groupId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getGroupIndividuals success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getGroupIndividuals');
+  .catch((err) => {
+    console.log('There was a failure calling getGroupIndividuals');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -322,35 +316,34 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GroupsApi();
+let apiInstance = new platformClient.GroupsApi();
 
-var groupId = "groupId_example"; // String | Group ID
-
-var opts = { 
+let groupId = "groupId_example"; // String | Group ID
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortOrder': "ASC", // String | Ascending or descending sort order
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand
 };
+
 apiInstance.getGroupMembers(groupId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getGroupMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getGroupMembers');
+  .catch((err) => {
+    console.log('There was a failure calling getGroupMembers');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -387,32 +380,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GroupsApi();
+let apiInstance = new platformClient.GroupsApi();
 
-var groupId = "groupId_example"; // String | groupId
-
-var opts = { 
+let groupId = "groupId_example"; // String | groupId
+let opts = { 
   'fields': "fields_example" // String | Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList
 };
+
 apiInstance.getGroupProfile(groupId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getGroupProfile success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getGroupProfile');
+  .catch((err) => {
+    console.log('There was a failure calling getGroupProfile');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -446,33 +438,33 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GroupsApi();
+let apiInstance = new platformClient.GroupsApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'id': ["id_example"], // [String] | id
   'sortOrder': "ASC" // String | Ascending or descending sort order
 };
+
 apiInstance.getGroups(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getGroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getGroups');
+  .catch((err) => {
+    console.log('There was a failure calling getGroups');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -508,32 +500,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GroupsApi();
+let apiInstance = new platformClient.GroupsApi();
 
-var q64 = "q64_example"; // String | q64
-
-var opts = { 
+let q64 = "q64_example"; // String | q64
+let opts = { 
   'expand': ["expand_example"] // [String] | expand
 };
+
 apiInstance.getGroupsSearch(q64, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getGroupsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getGroupsSearch');
+  .catch((err) => {
+    console.log('There was a failure calling getGroupsSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -567,33 +558,33 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GroupsApi();
+let apiInstance = new platformClient.GroupsApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'id': ["id_example"], // [String] | id
   'sortOrder': "ASC" // String | Ascending or descending sort order
 };
+
 apiInstance.getProfilesGroups(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getProfilesGroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getProfilesGroups');
+  .catch((err) => {
+    console.log('There was a failure calling getProfilesGroups');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -628,57 +619,56 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyGroupMembersUpdateExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#GroupMembersUpdateExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#GroupMembersUpdateExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-GroupMembersUpdate <a style="cursor: pointer" onclick="copyGroupMembersUpdateExample()">Copy</a>
+GroupMembersUpdate <a href="#" onclick="return copyGroupMembersUpdateExample()">Copy</a>
 
-<div id="GroupMembersUpdateExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="GroupMembersUpdateExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "memberIds": [String], 
   "version": Number, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GroupsApi();
+let apiInstance = new platformClient.GroupsApi();
 
-var groupId = "groupId_example"; // String | Group ID
-
-var body = {}; // Object | Add members
+let groupId = "groupId_example"; // String | Group ID
+let body = {}; // Object | Add members
 
 apiInstance.postGroupMembers(groupId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postGroupMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postGroupMembers');
+  .catch((err) => {
+    console.log('There was a failure calling postGroupMembers');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -713,22 +703,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyGroupCreateExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#GroupCreateExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#GroupCreateExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-GroupCreate <a style="cursor: pointer" onclick="copyGroupCreateExample()">Copy</a>
+GroupCreate <a href="#" onclick="return copyGroupCreateExample()">Copy</a>
 
-<div id="GroupCreateExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="GroupCreateExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -753,35 +743,35 @@ GroupCreate <a style="cursor: pointer" onclick="copyGroupCreateExample()">Copy</
   "ownerIds": [String], 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GroupsApi();
+let apiInstance = new platformClient.GroupsApi();
 
-var body = {}; // Object | Group
+let body = {}; // Object | Group
 
 apiInstance.postGroups(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postGroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postGroups');
+  .catch((err) => {
+    console.log('There was a failure calling postGroups');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -813,22 +803,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyGroupSearchRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#GroupSearchRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#GroupSearchRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-GroupSearchRequest <a style="cursor: pointer" onclick="copyGroupSearchRequestExample()">Copy</a>
+GroupSearchRequest <a href="#" onclick="return copyGroupSearchRequestExample()">Copy</a>
 
-<div id="GroupSearchRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="GroupSearchRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "sortOrder": String, 
   "sortBy": String, 
@@ -903,35 +893,35 @@ GroupSearchRequest <a style="cursor: pointer" onclick="copyGroupSearchRequestExa
     "type": String, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GroupsApi();
+let apiInstance = new platformClient.GroupsApi();
 
-var body = {}; // Object | Search request options
+let body = {}; // Object | Search request options
 
 apiInstance.postGroupsSearch(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postGroupsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postGroupsSearch');
+  .catch((err) => {
+    console.log('There was a failure calling postGroupsSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -965,22 +955,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyGroupUpdateExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#GroupUpdateExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#GroupUpdateExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-GroupUpdate <a style="cursor: pointer" onclick="copyGroupUpdateExample()">Copy</a>
+GroupUpdate <a href="#" onclick="return copyGroupUpdateExample()">Copy</a>
 
-<div id="GroupUpdateExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="GroupUpdateExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1002,38 +992,38 @@ GroupUpdate <a style="cursor: pointer" onclick="copyGroupUpdateExample()">Copy</
   "ownerIds": [String], 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GroupsApi();
+let apiInstance = new platformClient.GroupsApi();
 
-var groupId = "groupId_example"; // String | Group ID
-
-var opts = { 
+let groupId = "groupId_example"; // String | Group ID
+let opts = { 
   'body': {} // Object | Group
 };
+
 apiInstance.putGroup(groupId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putGroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putGroup');
+  .catch((err) => {
+    console.log('There was a failure calling putGroup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

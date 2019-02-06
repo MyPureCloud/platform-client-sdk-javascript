@@ -59,29 +59,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var contactId = "contactId_example"; // String | ExternalContact ID
+let contactId = "contactId_example"; // String | ExternalContact ID
 
 apiInstance.deleteExternalcontactsContact(contactId)
-  .then(function() {
+  .then(() => {
     console.log('deleteExternalcontactsContact returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteExternalcontactsContact');
+  .catch((err) => {
+    console.log('There was a failure calling deleteExternalcontactsContact');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -115,31 +114,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var contactId = "contactId_example"; // String | ExternalContact Id
-
-var noteId = "noteId_example"; // String | Note Id
+let contactId = "contactId_example"; // String | ExternalContact Id
+let noteId = "noteId_example"; // String | Note Id
 
 apiInstance.deleteExternalcontactsContactNote(contactId, noteId)
-  .then(function() {
+  .then(() => {
     console.log('deleteExternalcontactsContactNote returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteExternalcontactsContactNote');
+  .catch((err) => {
+    console.log('There was a failure calling deleteExternalcontactsContactNote');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -174,29 +171,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
 
 apiInstance.deleteExternalcontactsOrganization(externalOrganizationId)
-  .then(function() {
+  .then(() => {
     console.log('deleteExternalcontactsOrganization returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteExternalcontactsOrganization');
+  .catch((err) => {
+    console.log('There was a failure calling deleteExternalcontactsOrganization');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -230,31 +226,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
-
-var noteId = "noteId_example"; // String | Note Id
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
+let noteId = "noteId_example"; // String | Note Id
 
 apiInstance.deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId)
-  .then(function() {
+  .then(() => {
     console.log('deleteExternalcontactsOrganizationNote returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteExternalcontactsOrganizationNote');
+  .catch((err) => {
+    console.log('There was a failure calling deleteExternalcontactsOrganizationNote');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -289,29 +283,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
 
 apiInstance.deleteExternalcontactsOrganizationTrustor(externalOrganizationId)
-  .then(function() {
+  .then(() => {
     console.log('deleteExternalcontactsOrganizationTrustor returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteExternalcontactsOrganizationTrustor');
+  .catch((err) => {
+    console.log('There was a failure calling deleteExternalcontactsOrganizationTrustor');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -345,29 +338,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var relationshipId = "relationshipId_example"; // String | Relationship Id
+let relationshipId = "relationshipId_example"; // String | Relationship Id
 
 apiInstance.deleteExternalcontactsRelationship(relationshipId)
-  .then(function() {
+  .then(() => {
     console.log('deleteExternalcontactsRelationship returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteExternalcontactsRelationship');
+  .catch((err) => {
+    console.log('There was a failure calling deleteExternalcontactsRelationship');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -401,32 +393,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var contactId = "contactId_example"; // String | ExternalContact ID
-
-var opts = { 
+let contactId = "contactId_example"; // String | ExternalContact ID
+let opts = { 
   'expand': ["expand_example"] // [String] | which fields, if any, to expand (externalOrganization,externalDataSources)
 };
+
 apiInstance.getExternalcontactsContact(contactId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getExternalcontactsContact success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getExternalcontactsContact');
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsContact');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -461,34 +452,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var contactId = "contactId_example"; // String | ExternalContact Id
-
-var noteId = "noteId_example"; // String | Note Id
-
-var opts = { 
+let contactId = "contactId_example"; // String | ExternalContact Id
+let noteId = "noteId_example"; // String | Note Id
+let opts = { 
   'expand': ["expand_example"] // [String] | which fields, if any, to expand
 };
+
 apiInstance.getExternalcontactsContactNote(contactId, noteId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getExternalcontactsContactNote success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getExternalcontactsContactNote');
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsContactNote');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -524,35 +513,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var contactId = "contactId_example"; // String | ExternalContact Id
-
-var opts = { 
+let contactId = "contactId_example"; // String | ExternalContact Id
+let opts = { 
   'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'sortOrder': "sortOrder_example", // String | Sort order
   'expand': ["expand_example"] // [String] | which fields, if any, to expand
 };
+
 apiInstance.getExternalcontactsContactNotes(contactId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getExternalcontactsContactNotes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getExternalcontactsContactNotes');
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsContactNotes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -590,34 +578,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'q': "q_example", // String | User supplied search keywords (no special syntax is currently supported)
   'sortOrder': "sortOrder_example", // String | Sort order
   'expand': ["expand_example"] // [String] | which fields, if any, to expand
 };
+
 apiInstance.getExternalcontactsContacts(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getExternalcontactsContacts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getExternalcontactsContacts');
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsContacts');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -655,33 +643,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
-
-var opts = { 
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+let opts = { 
   'expand': "expand_example", // String | which fields, if any, to expand (externalDataSources)
   'includeTrustors': true // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
 };
+
 apiInstance.getExternalcontactsOrganization(externalOrganizationId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getExternalcontactsOrganization success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getExternalcontactsOrganization');
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsOrganization');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -717,36 +704,35 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
-
-var opts = { 
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+let opts = { 
   'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'q': "q_example", // String | User supplied search keywords (no special syntax is currently supported)
   'sortOrder': "sortOrder_example", // String | Sort order
   'expand': ["expand_example"] // [String] | which fields, if any, to expand
 };
+
 apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getExternalcontactsOrganizationContacts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getExternalcontactsOrganizationContacts');
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsOrganizationContacts');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -785,34 +771,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
-
-var noteId = "noteId_example"; // String | Note Id
-
-var opts = { 
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
+let noteId = "noteId_example"; // String | Note Id
+let opts = { 
   'expand': ["expand_example"] // [String] | which fields, if any, to expand
 };
+
 apiInstance.getExternalcontactsOrganizationNote(externalOrganizationId, noteId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getExternalcontactsOrganizationNote success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getExternalcontactsOrganizationNote');
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsOrganizationNote');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -848,35 +832,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
-
-var opts = { 
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
+let opts = { 
   'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'sortOrder': "sortOrder_example", // String | Sort order
   'expand': ["expand_example"] // [String] | which fields, if any, to expand
 };
+
 apiInstance.getExternalcontactsOrganizationNotes(externalOrganizationId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getExternalcontactsOrganizationNotes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getExternalcontactsOrganizationNotes');
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsOrganizationNotes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -914,35 +897,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
-
-var opts = { 
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+let opts = { 
   'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'expand': "expand_example", // String | which fields, if any, to expand
   'sortOrder': "sortOrder_example" // String | Sort order
 };
+
 apiInstance.getExternalcontactsOrganizationRelationships(externalOrganizationId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getExternalcontactsOrganizationRelationships success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getExternalcontactsOrganizationRelationships');
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsOrganizationRelationships');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -980,18 +962,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'q': "q_example", // String | Search query
@@ -1000,16 +982,16 @@ var opts = {
   'expand': ["expand_example"], // [String] | which fields, if any, to expand
   'includeTrustors': true // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
 };
+
 apiInstance.getExternalcontactsOrganizations(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getExternalcontactsOrganizations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getExternalcontactsOrganizations');
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsOrganizations');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1049,32 +1031,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var relationshipId = "relationshipId_example"; // String | Relationship Id
-
-var opts = { 
+let relationshipId = "relationshipId_example"; // String | Relationship Id
+let opts = { 
   'expand': "expand_example" // String | which fields, if any, to expand
 };
+
 apiInstance.getExternalcontactsRelationship(relationshipId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getExternalcontactsRelationship success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getExternalcontactsRelationship');
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsRelationship');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1109,32 +1090,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var lookupVal = "lookupVal_example"; // String | User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names)
-
-var opts = { 
+let lookupVal = "lookupVal_example"; // String | User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names)
+let opts = { 
   'expand': ["expand_example"] // [String] | which field, if any, to expand
 };
+
 apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getExternalcontactsReversewhitepageslookup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getExternalcontactsReversewhitepageslookup');
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsReversewhitepageslookup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1168,22 +1148,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyNoteExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#NoteExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#NoteExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Note <a style="cursor: pointer" onclick="copyNoteExample()">Copy</a>
+Note <a href="#" onclick="return copyNoteExample()">Copy</a>
 
-<div id="NoteExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="NoteExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1534,37 +1514,36 @@ Note <a style="cursor: pointer" onclick="copyNoteExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var contactId = "contactId_example"; // String | ExternalContact Id
-
-var body = {}; // Object | ExternalContact
+let contactId = "contactId_example"; // String | ExternalContact Id
+let body = {}; // Object | ExternalContact
 
 apiInstance.postExternalcontactsContactNotes(contactId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postExternalcontactsContactNotes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postExternalcontactsContactNotes');
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsContactNotes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1598,22 +1577,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyExternalContactExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ExternalContactExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ExternalContactExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ExternalContact <a style="cursor: pointer" onclick="copyExternalContactExample()">Copy</a>
+ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</a>
 
-<div id="ExternalContactExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ExternalContactExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "firstName": String, 
@@ -2428,35 +2407,35 @@ ExternalContact <a style="cursor: pointer" onclick="copyExternalContactExample()
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var body = {}; // Object | ExternalContact
+let body = {}; // Object | ExternalContact
 
 apiInstance.postExternalcontactsContacts(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postExternalcontactsContacts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postExternalcontactsContacts');
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsContacts');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2489,22 +2468,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyNoteExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#NoteExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#NoteExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Note <a style="cursor: pointer" onclick="copyNoteExample()">Copy</a>
+Note <a href="#" onclick="return copyNoteExample()">Copy</a>
 
-<div id="NoteExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="NoteExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -2855,37 +2834,36 @@ Note <a style="cursor: pointer" onclick="copyNoteExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
-
-var body = {}; // Object | ExternalContact
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
+let body = {}; // Object | ExternalContact
 
 apiInstance.postExternalcontactsOrganizationNotes(externalOrganizationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postExternalcontactsOrganizationNotes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postExternalcontactsOrganizationNotes');
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsOrganizationNotes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2919,22 +2897,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyExternalOrganizationExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ExternalOrganizationExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ExternalOrganizationExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ExternalOrganization <a style="cursor: pointer" onclick="copyExternalOrganizationExample()">Copy</a>
+ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample()">Copy</a>
 
-<div id="ExternalOrganizationExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ExternalOrganizationExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -3677,35 +3655,35 @@ ExternalOrganization <a style="cursor: pointer" onclick="copyExternalOrganizatio
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var body = {}; // Object | ExternalOrganization
+let body = {}; // Object | ExternalOrganization
 
 apiInstance.postExternalcontactsOrganizations(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postExternalcontactsOrganizations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postExternalcontactsOrganizations');
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsOrganizations');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3738,22 +3716,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyRelationshipExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#RelationshipExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#RelationshipExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Relationship <a style="cursor: pointer" onclick="copyRelationshipExample()">Copy</a>
+Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
 
-<div id="RelationshipExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="RelationshipExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -4826,35 +4804,35 @@ Relationship <a style="cursor: pointer" onclick="copyRelationshipExample()">Copy
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var body = {}; // Object | Relationship
+let body = {}; // Object | Relationship
 
 apiInstance.postExternalcontactsRelationships(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postExternalcontactsRelationships success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postExternalcontactsRelationships');
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsRelationships');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4887,22 +4865,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyExternalContactExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ExternalContactExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ExternalContactExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ExternalContact <a style="cursor: pointer" onclick="copyExternalContactExample()">Copy</a>
+ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</a>
 
-<div id="ExternalContactExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ExternalContactExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "firstName": String, 
@@ -5717,37 +5695,36 @@ ExternalContact <a style="cursor: pointer" onclick="copyExternalContactExample()
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var contactId = "contactId_example"; // String | ExternalContact ID
-
-var body = {}; // Object | ExternalContact
+let contactId = "contactId_example"; // String | ExternalContact ID
+let body = {}; // Object | ExternalContact
 
 apiInstance.putExternalcontactsContact(contactId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putExternalcontactsContact success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putExternalcontactsContact');
+  .catch((err) => {
+    console.log('There was a failure calling putExternalcontactsContact');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5781,22 +5758,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyNoteExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#NoteExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#NoteExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Note <a style="cursor: pointer" onclick="copyNoteExample()">Copy</a>
+Note <a href="#" onclick="return copyNoteExample()">Copy</a>
 
-<div id="NoteExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="NoteExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -6147,39 +6124,37 @@ Note <a style="cursor: pointer" onclick="copyNoteExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var contactId = "contactId_example"; // String | ExternalContact Id
-
-var noteId = "noteId_example"; // String | Note Id
-
-var body = {}; // Object | Note
+let contactId = "contactId_example"; // String | ExternalContact Id
+let noteId = "noteId_example"; // String | Note Id
+let body = {}; // Object | Note
 
 apiInstance.putExternalcontactsContactNote(contactId, noteId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putExternalcontactsContactNote success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putExternalcontactsContactNote');
+  .catch((err) => {
+    console.log('There was a failure calling putExternalcontactsContactNote');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6214,59 +6189,58 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyConversationAssociationExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ConversationAssociationExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ConversationAssociationExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ConversationAssociation <a style="cursor: pointer" onclick="copyConversationAssociationExample()">Copy</a>
+ConversationAssociation <a href="#" onclick="return copyConversationAssociationExample()">Copy</a>
 
-<div id="ConversationAssociationExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ConversationAssociationExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "externalContactId": String, 
   "conversationId": String, 
   "communicationId": String, 
   "mediaType": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var conversationId = "conversationId_example"; // String | Conversation ID
-
-var body = {}; // Object | ConversationAssociation
+let conversationId = "conversationId_example"; // String | Conversation ID
+let body = {}; // Object | ConversationAssociation
 
 apiInstance.putExternalcontactsConversation(conversationId, body)
-  .then(function() {
+  .then(() => {
     console.log('putExternalcontactsConversation returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putExternalcontactsConversation');
+  .catch((err) => {
+    console.log('There was a failure calling putExternalcontactsConversation');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6300,22 +6274,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyExternalOrganizationExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ExternalOrganizationExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ExternalOrganizationExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ExternalOrganization <a style="cursor: pointer" onclick="copyExternalOrganizationExample()">Copy</a>
+ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample()">Copy</a>
 
-<div id="ExternalOrganizationExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ExternalOrganizationExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -7058,37 +7032,36 @@ ExternalOrganization <a style="cursor: pointer" onclick="copyExternalOrganizatio
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
-
-var body = {}; // Object | ExternalOrganization
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+let body = {}; // Object | ExternalOrganization
 
 apiInstance.putExternalcontactsOrganization(externalOrganizationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putExternalcontactsOrganization success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putExternalcontactsOrganization');
+  .catch((err) => {
+    console.log('There was a failure calling putExternalcontactsOrganization');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -7122,22 +7095,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyNoteExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#NoteExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#NoteExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Note <a style="cursor: pointer" onclick="copyNoteExample()">Copy</a>
+Note <a href="#" onclick="return copyNoteExample()">Copy</a>
 
-<div id="NoteExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="NoteExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -7488,39 +7461,37 @@ Note <a style="cursor: pointer" onclick="copyNoteExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
-
-var noteId = "noteId_example"; // String | Note Id
-
-var body = {}; // Object | Note
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
+let noteId = "noteId_example"; // String | Note Id
+let body = {}; // Object | Note
 
 apiInstance.putExternalcontactsOrganizationNote(externalOrganizationId, noteId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putExternalcontactsOrganizationNote success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putExternalcontactsOrganizationNote');
+  .catch((err) => {
+    console.log('There was a failure calling putExternalcontactsOrganizationNote');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -7556,31 +7527,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
-
-var trustorId = "trustorId_example"; // String | Trustor ID
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+let trustorId = "trustorId_example"; // String | Trustor ID
 
 apiInstance.putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putExternalcontactsOrganizationTrustorTrustorId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putExternalcontactsOrganizationTrustorTrustorId');
+  .catch((err) => {
+    console.log('There was a failure calling putExternalcontactsOrganizationTrustorTrustorId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -7614,22 +7583,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyRelationshipExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#RelationshipExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#RelationshipExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Relationship <a style="cursor: pointer" onclick="copyRelationshipExample()">Copy</a>
+Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
 
-<div id="RelationshipExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="RelationshipExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -8702,37 +8671,36 @@ Relationship <a style="cursor: pointer" onclick="copyRelationshipExample()">Copy
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ExternalContactsApi();
+let apiInstance = new platformClient.ExternalContactsApi();
 
-var relationshipId = "relationshipId_example"; // String | Relationship Id
-
-var body = {}; // Object | Relationship
+let relationshipId = "relationshipId_example"; // String | Relationship Id
+let body = {}; // Object | Relationship
 
 apiInstance.putExternalcontactsRelationship(relationshipId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putExternalcontactsRelationship success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putExternalcontactsRelationship');
+  .catch((err) => {
+    console.log('There was a failure calling putExternalcontactsRelationship');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

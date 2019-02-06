@@ -37,29 +37,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ObjectsApi();
+let apiInstance = new platformClient.ObjectsApi();
 
-var divisionId = "divisionId_example"; // String | Division ID
+let divisionId = "divisionId_example"; // String | Division ID
 
 apiInstance.deleteAuthorizationDivision(divisionId)
-  .then(function() {
+  .then(() => {
     console.log('deleteAuthorizationDivision returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteAuthorizationDivision');
+  .catch((err) => {
+    console.log('There was a failure calling deleteAuthorizationDivision');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -92,32 +91,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ObjectsApi();
+let apiInstance = new platformClient.ObjectsApi();
 
-var divisionId = "divisionId_example"; // String | Division ID
-
-var opts = { 
+let divisionId = "divisionId_example"; // String | Division ID
+let opts = { 
   'objectCount': false // Boolean | Get count of objects in this division, grouped by type
 };
+
 apiInstance.getAuthorizationDivision(divisionId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAuthorizationDivision success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAuthorizationDivision');
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationDivision');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -151,18 +149,18 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ObjectsApi();
+let apiInstance = new platformClient.ObjectsApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
@@ -173,16 +171,16 @@ var opts = {
   'id': ["id_example"], // [String] | Optionally request specific divisions by their IDs
   'name': "name_example" // String | Search term to filter by division name
 };
+
 apiInstance.getAuthorizationDivisions(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAuthorizationDivisions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAuthorizationDivisions');
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationDivisions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -223,26 +221,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ObjectsApi();
+let apiInstance = new platformClient.ObjectsApi();
+
 apiInstance.getAuthorizationDivisionsHome()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAuthorizationDivisionsHome success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAuthorizationDivisionsHome');
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationDivisionsHome');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -272,26 +270,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ObjectsApi();
+let apiInstance = new platformClient.ObjectsApi();
+
 apiInstance.getAuthorizationDivisionsLimit()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAuthorizationDivisionsLimit success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAuthorizationDivisionsLimit');
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationDivisionsLimit');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -321,33 +319,30 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ObjectsApi();
+let apiInstance = new platformClient.ObjectsApi();
 
-var divisionId = "divisionId_example"; // String | Division ID
-
-var objectType = "objectType_example"; // String | The type of the objects. Must be one of the valid object types
-
-var body = [{}]; // Object | Object Id List
+let divisionId = "divisionId_example"; // String | Division ID
+let objectType = "objectType_example"; // String | The type of the objects. Must be one of the valid object types
+let body = [{}]; // Object | Object Id List
 
 apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
-  .then(function() {
+  .then(() => {
     console.log('postAuthorizationDivisionObject returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAuthorizationDivisionObject');
+  .catch((err) => {
+    console.log('There was a failure calling postAuthorizationDivisionObject');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -383,22 +378,22 @@ Requires ALL permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyAuthzDivisionExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#AuthzDivisionExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#AuthzDivisionExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-AuthzDivision <a style="cursor: pointer" onclick="copyAuthzDivisionExample()">Copy</a>
+AuthzDivision <a href="#" onclick="return copyAuthzDivisionExample()">Copy</a>
 
-<div id="AuthzDivisionExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="AuthzDivisionExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -407,35 +402,35 @@ AuthzDivision <a style="cursor: pointer" onclick="copyAuthzDivisionExample()">Co
   "objectCounts": {String: Number}, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ObjectsApi();
+let apiInstance = new platformClient.ObjectsApi();
 
-var body = {}; // Object | Division
+let body = {}; // Object | Division
 
 apiInstance.postAuthorizationDivisions(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAuthorizationDivisions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAuthorizationDivisions');
+  .catch((err) => {
+    console.log('There was a failure calling postAuthorizationDivisions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -468,22 +463,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyAuthzDivisionExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#AuthzDivisionExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#AuthzDivisionExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-AuthzDivision <a style="cursor: pointer" onclick="copyAuthzDivisionExample()">Copy</a>
+AuthzDivision <a href="#" onclick="return copyAuthzDivisionExample()">Copy</a>
 
-<div id="AuthzDivisionExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="AuthzDivisionExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -492,37 +487,36 @@ AuthzDivision <a style="cursor: pointer" onclick="copyAuthzDivisionExample()">Co
   "objectCounts": {String: Number}, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ObjectsApi();
+let apiInstance = new platformClient.ObjectsApi();
 
-var divisionId = "divisionId_example"; // String | Division ID
-
-var body = {}; // Object | Updated division data
+let divisionId = "divisionId_example"; // String | Division ID
+let body = {}; // Object | Updated division data
 
 apiInstance.putAuthorizationDivision(divisionId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putAuthorizationDivision success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putAuthorizationDivision');
+  .catch((err) => {
+    console.log('There was a failure calling putAuthorizationDivision');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

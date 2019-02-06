@@ -33,29 +33,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.MobileDevicesApi();
+let apiInstance = new platformClient.MobileDevicesApi();
 
-var deviceId = "deviceId_example"; // String | Device ID
+let deviceId = "deviceId_example"; // String | Device ID
 
 apiInstance.deleteMobiledevice(deviceId)
-  .then(function() {
+  .then(() => {
     console.log('deleteMobiledevice returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteMobiledevice');
+  .catch((err) => {
+    console.log('There was a failure calling deleteMobiledevice');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -88,29 +87,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.MobileDevicesApi();
+let apiInstance = new platformClient.MobileDevicesApi();
 
-var deviceId = "deviceId_example"; // String | Device ID
+let deviceId = "deviceId_example"; // String | Device ID
 
 apiInstance.getMobiledevice(deviceId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getMobiledevice success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getMobiledevice');
+  .catch((err) => {
+    console.log('There was a failure calling getMobiledevice');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -143,32 +141,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.MobileDevicesApi();
+let apiInstance = new platformClient.MobileDevicesApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortOrder': "ascending" // String | Ascending or descending sort order
 };
+
 apiInstance.getMobiledevices(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getMobiledevices success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getMobiledevices');
+  .catch((err) => {
+    console.log('There was a failure calling getMobiledevices');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -202,22 +200,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUserDeviceExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UserDeviceExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UserDeviceExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UserDevice <a style="cursor: pointer" onclick="copyUserDeviceExample()">Copy</a>
+UserDevice <a href="#" onclick="return copyUserDeviceExample()">Copy</a>
 
-<div id="UserDeviceExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UserDeviceExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -230,35 +228,35 @@ UserDevice <a style="cursor: pointer" onclick="copyUserDeviceExample()">Copy</a>
   "sessionHash": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.MobileDevicesApi();
+let apiInstance = new platformClient.MobileDevicesApi();
 
-var body = {}; // Object | Device
+let body = {}; // Object | Device
 
 apiInstance.postMobiledevices(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postMobiledevices success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postMobiledevices');
+  .catch((err) => {
+    console.log('There was a failure calling postMobiledevices');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -290,22 +288,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUserDeviceExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UserDeviceExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UserDeviceExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UserDevice <a style="cursor: pointer" onclick="copyUserDeviceExample()">Copy</a>
+UserDevice <a href="#" onclick="return copyUserDeviceExample()">Copy</a>
 
-<div id="UserDeviceExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UserDeviceExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -318,38 +316,38 @@ UserDevice <a style="cursor: pointer" onclick="copyUserDeviceExample()">Copy</a>
   "sessionHash": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.MobileDevicesApi();
+let apiInstance = new platformClient.MobileDevicesApi();
 
-var deviceId = "deviceId_example"; // String | Device ID
-
-var opts = { 
+let deviceId = "deviceId_example"; // String | Device ID
+let opts = { 
   'body': {} // Object | Device
 };
+
 apiInstance.putMobiledevice(deviceId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putMobiledevice success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putMobiledevice');
+  .catch((err) => {
+    console.log('There was a failure calling putMobiledevice');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

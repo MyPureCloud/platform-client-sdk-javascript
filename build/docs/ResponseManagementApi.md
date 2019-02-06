@@ -39,29 +39,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ResponseManagementApi();
+let apiInstance = new platformClient.ResponseManagementApi();
 
-var libraryId = "libraryId_example"; // String | Library ID
+let libraryId = "libraryId_example"; // String | Library ID
 
 apiInstance.deleteResponsemanagementLibrary(libraryId)
-  .then(function() {
+  .then(() => {
     console.log('deleteResponsemanagementLibrary returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteResponsemanagementLibrary');
+  .catch((err) => {
+    console.log('There was a failure calling deleteResponsemanagementLibrary');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -94,29 +93,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ResponseManagementApi();
+let apiInstance = new platformClient.ResponseManagementApi();
 
-var responseId = "responseId_example"; // String | Response ID
+let responseId = "responseId_example"; // String | Response ID
 
 apiInstance.deleteResponsemanagementResponse(responseId)
-  .then(function() {
+  .then(() => {
     console.log('deleteResponsemanagementResponse returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteResponsemanagementResponse');
+  .catch((err) => {
+    console.log('There was a failure calling deleteResponsemanagementResponse');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -149,31 +147,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ResponseManagementApi();
+let apiInstance = new platformClient.ResponseManagementApi();
 
-var opts = { 
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25 // Number | Page size
 };
+
 apiInstance.getResponsemanagementLibraries(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getResponsemanagementLibraries success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getResponsemanagementLibraries');
+  .catch((err) => {
+    console.log('There was a failure calling getResponsemanagementLibraries');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -207,29 +205,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ResponseManagementApi();
+let apiInstance = new platformClient.ResponseManagementApi();
 
-var libraryId = "libraryId_example"; // String | Library ID
+let libraryId = "libraryId_example"; // String | Library ID
 
 apiInstance.getResponsemanagementLibrary(libraryId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getResponsemanagementLibrary success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getResponsemanagementLibrary');
+  .catch((err) => {
+    console.log('There was a failure calling getResponsemanagementLibrary');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -262,32 +259,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ResponseManagementApi();
+let apiInstance = new platformClient.ResponseManagementApi();
 
-var responseId = "responseId_example"; // String | Response ID
-
-var opts = { 
+let responseId = "responseId_example"; // String | Response ID
+let opts = { 
   'expand': "expand_example" // String | Expand instructions for the return value.
 };
+
 apiInstance.getResponsemanagementResponse(responseId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getResponsemanagementResponse success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getResponsemanagementResponse');
+  .catch((err) => {
+    console.log('There was a failure calling getResponsemanagementResponse');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -321,34 +317,33 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ResponseManagementApi();
+let apiInstance = new platformClient.ResponseManagementApi();
 
-var libraryId = "libraryId_example"; // String | Library ID
-
-var opts = { 
+let libraryId = "libraryId_example"; // String | Library ID
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'expand': "expand_example" // String | Expand instructions for the return value.
 };
+
 apiInstance.getResponsemanagementResponses(libraryId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getResponsemanagementResponses success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getResponsemanagementResponses');
+  .catch((err) => {
+    console.log('There was a failure calling getResponsemanagementResponses');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -383,22 +378,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyLibraryExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#LibraryExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#LibraryExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Library <a style="cursor: pointer" onclick="copyLibraryExample()">Copy</a>
+Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
 
-<div id="LibraryExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="LibraryExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -744,35 +739,35 @@ Library <a style="cursor: pointer" onclick="copyLibraryExample()">Copy</a>
   "dateCreated": Date, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ResponseManagementApi();
+let apiInstance = new platformClient.ResponseManagementApi();
 
-var body = {}; // Object | Library
+let body = {}; // Object | Library
 
 apiInstance.postResponsemanagementLibraries(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postResponsemanagementLibraries success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postResponsemanagementLibraries');
+  .catch((err) => {
+    console.log('There was a failure calling postResponsemanagementLibraries');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -804,22 +799,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyResponseExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ResponseExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ResponseExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Response <a style="cursor: pointer" onclick="copyResponseExample()">Copy</a>
+Response <a href="#" onclick="return copyResponseExample()">Copy</a>
 
-<div id="ResponseExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ResponseExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1190,38 +1185,38 @@ Response <a style="cursor: pointer" onclick="copyResponseExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ResponseManagementApi();
+let apiInstance = new platformClient.ResponseManagementApi();
 
-var body = {}; // Object | Response
-
-var opts = { 
+let body = {}; // Object | Response
+let opts = { 
   'expand': "expand_example" // String | Expand instructions for the return value.
 };
+
 apiInstance.postResponsemanagementResponses(body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postResponsemanagementResponses success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postResponsemanagementResponses');
+  .catch((err) => {
+    console.log('There was a failure calling postResponsemanagementResponses');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1254,22 +1249,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyResponseQueryRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ResponseQueryRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ResponseQueryRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ResponseQueryRequest <a style="cursor: pointer" onclick="copyResponseQueryRequestExample()">Copy</a>
+ResponseQueryRequest <a href="#" onclick="return copyResponseQueryRequestExample()">Copy</a>
 
-<div id="ResponseQueryRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ResponseQueryRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "queryPhrase": String, 
   "pageSize": Number, 
@@ -1279,35 +1274,35 @@ ResponseQueryRequest <a style="cursor: pointer" onclick="copyResponseQueryReques
     "values": [String], 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ResponseManagementApi();
+let apiInstance = new platformClient.ResponseManagementApi();
 
-var body = {}; // Object | Response
+let body = {}; // Object | Response
 
 apiInstance.postResponsemanagementResponsesQuery(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postResponsemanagementResponsesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postResponsemanagementResponsesQuery');
+  .catch((err) => {
+    console.log('There was a failure calling postResponsemanagementResponsesQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1339,22 +1334,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyLibraryExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#LibraryExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#LibraryExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Library <a style="cursor: pointer" onclick="copyLibraryExample()">Copy</a>
+Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
 
-<div id="LibraryExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="LibraryExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1700,37 +1695,36 @@ Library <a style="cursor: pointer" onclick="copyLibraryExample()">Copy</a>
   "dateCreated": Date, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ResponseManagementApi();
+let apiInstance = new platformClient.ResponseManagementApi();
 
-var libraryId = "libraryId_example"; // String | Library ID
-
-var body = {}; // Object | Library
+let libraryId = "libraryId_example"; // String | Library ID
+let body = {}; // Object | Library
 
 apiInstance.putResponsemanagementLibrary(libraryId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putResponsemanagementLibrary success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putResponsemanagementLibrary');
+  .catch((err) => {
+    console.log('There was a failure calling putResponsemanagementLibrary');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1763,22 +1757,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyResponseExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ResponseExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ResponseExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Response <a style="cursor: pointer" onclick="copyResponseExample()">Copy</a>
+Response <a href="#" onclick="return copyResponseExample()">Copy</a>
 
-<div id="ResponseExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ResponseExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -2149,40 +2143,39 @@ Response <a style="cursor: pointer" onclick="copyResponseExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ResponseManagementApi();
+let apiInstance = new platformClient.ResponseManagementApi();
 
-var responseId = "responseId_example"; // String | Response ID
-
-var body = {}; // Object | Response
-
-var opts = { 
+let responseId = "responseId_example"; // String | Response ID
+let body = {}; // Object | Response
+let opts = { 
   'expand': "expand_example" // String | Expand instructions for the return value.
 };
+
 apiInstance.putResponsemanagementResponse(responseId, body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putResponsemanagementResponse success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putResponsemanagementResponse');
+  .catch((err) => {
+    console.log('There was a failure calling putResponsemanagementResponse');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

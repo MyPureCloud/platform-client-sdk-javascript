@@ -154,29 +154,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
+let edgeId = "edgeId_example"; // String | Edge ID
 
 apiInstance.deleteTelephonyProvidersEdge(edgeId)
-  .then(function() {
+  .then(() => {
     console.log('deleteTelephonyProvidersEdge returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteTelephonyProvidersEdge');
+  .catch((err) => {
+    console.log('There was a failure calling deleteTelephonyProvidersEdge');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -210,31 +209,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
-
-var interfaceId = "interfaceId_example"; // String | Interface ID
+let edgeId = "edgeId_example"; // String | Edge ID
+let interfaceId = "interfaceId_example"; // String | Interface ID
 
 apiInstance.deleteTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId)
-  .then(function() {
+  .then(() => {
     console.log('deleteTelephonyProvidersEdgeLogicalinterface returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteTelephonyProvidersEdgeLogicalinterface');
+  .catch((err) => {
+    console.log('There was a failure calling deleteTelephonyProvidersEdgeLogicalinterface');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -268,29 +265,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
+let edgeId = "edgeId_example"; // String | Edge ID
 
 apiInstance.deleteTelephonyProvidersEdgeSoftwareupdate(edgeId)
-  .then(function() {
+  .then(() => {
     console.log('deleteTelephonyProvidersEdgeSoftwareupdate returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteTelephonyProvidersEdgeSoftwareupdate');
+  .catch((err) => {
+    console.log('There was a failure calling deleteTelephonyProvidersEdgeSoftwareupdate');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -324,29 +320,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var certificateId = "certificateId_example"; // String | Certificate ID
+let certificateId = "certificateId_example"; // String | Certificate ID
 
 apiInstance.deleteTelephonyProvidersEdgesCertificateauthority(certificateId)
-  .then(function() {
+  .then(() => {
     console.log('deleteTelephonyProvidersEdgesCertificateauthority returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteTelephonyProvidersEdgesCertificateauthority');
+  .catch((err) => {
+    console.log('There was a failure calling deleteTelephonyProvidersEdgesCertificateauthority');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -380,29 +375,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var didPoolId = "didPoolId_example"; // String | DID pool ID
+let didPoolId = "didPoolId_example"; // String | DID pool ID
 
 apiInstance.deleteTelephonyProvidersEdgesDidpool(didPoolId)
-  .then(function() {
+  .then(() => {
     console.log('deleteTelephonyProvidersEdgesDidpool returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteTelephonyProvidersEdgesDidpool');
+  .catch((err) => {
+    console.log('There was a failure calling deleteTelephonyProvidersEdgesDidpool');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -436,29 +430,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeGroupId = "edgeGroupId_example"; // String | Edge group ID
+let edgeGroupId = "edgeGroupId_example"; // String | Edge group ID
 
 apiInstance.deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId)
-  .then(function() {
+  .then(() => {
     console.log('deleteTelephonyProvidersEdgesEdgegroup returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteTelephonyProvidersEdgesEdgegroup');
+  .catch((err) => {
+    console.log('There was a failure calling deleteTelephonyProvidersEdgesEdgegroup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -492,29 +485,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var endpointId = "endpointId_example"; // String | Endpoint ID
+let endpointId = "endpointId_example"; // String | Endpoint ID
 
 apiInstance.deleteTelephonyProvidersEdgesEndpoint(endpointId)
-  .then(function() {
+  .then(() => {
     console.log('deleteTelephonyProvidersEdgesEndpoint returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteTelephonyProvidersEdgesEndpoint');
+  .catch((err) => {
+    console.log('There was a failure calling deleteTelephonyProvidersEdgesEndpoint');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -548,29 +540,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var extensionPoolId = "extensionPoolId_example"; // String | Extension pool ID
+let extensionPoolId = "extensionPoolId_example"; // String | Extension pool ID
 
 apiInstance.deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId)
-  .then(function() {
+  .then(() => {
     console.log('deleteTelephonyProvidersEdgesExtensionpool returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteTelephonyProvidersEdgesExtensionpool');
+  .catch((err) => {
+    console.log('There was a failure calling deleteTelephonyProvidersEdgesExtensionpool');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -604,29 +595,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
+let outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
 
 apiInstance.deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId)
-  .then(function() {
+  .then(() => {
     console.log('deleteTelephonyProvidersEdgesOutboundroute returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteTelephonyProvidersEdgesOutboundroute');
+  .catch((err) => {
+    console.log('There was a failure calling deleteTelephonyProvidersEdgesOutboundroute');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -660,29 +650,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var phoneId = "phoneId_example"; // String | Phone ID
+let phoneId = "phoneId_example"; // String | Phone ID
 
 apiInstance.deleteTelephonyProvidersEdgesPhone(phoneId)
-  .then(function() {
+  .then(() => {
     console.log('deleteTelephonyProvidersEdgesPhone returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteTelephonyProvidersEdgesPhone');
+  .catch((err) => {
+    console.log('There was a failure calling deleteTelephonyProvidersEdgesPhone');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -716,29 +705,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var phoneBaseId = "phoneBaseId_example"; // String | Phone base ID
+let phoneBaseId = "phoneBaseId_example"; // String | Phone base ID
 
 apiInstance.deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
-  .then(function() {
+  .then(() => {
     console.log('deleteTelephonyProvidersEdgesPhonebasesetting returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteTelephonyProvidersEdgesPhonebasesetting');
+  .catch((err) => {
+    console.log('There was a failure calling deleteTelephonyProvidersEdgesPhonebasesetting');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -772,29 +760,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var siteId = "siteId_example"; // String | Site ID
+let siteId = "siteId_example"; // String | Site ID
 
 apiInstance.deleteTelephonyProvidersEdgesSite(siteId)
-  .then(function() {
+  .then(() => {
     console.log('deleteTelephonyProvidersEdgesSite returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteTelephonyProvidersEdgesSite');
+  .catch((err) => {
+    console.log('There was a failure calling deleteTelephonyProvidersEdgesSite');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -828,31 +815,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var siteId = "siteId_example"; // String | Site ID
-
-var outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
+let siteId = "siteId_example"; // String | Site ID
+let outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
 
 apiInstance.deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
-  .then(function() {
+  .then(() => {
     console.log('deleteTelephonyProvidersEdgesSiteOutboundroute returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteTelephonyProvidersEdgesSiteOutboundroute');
+  .catch((err) => {
+    console.log('There was a failure calling deleteTelephonyProvidersEdgesSiteOutboundroute');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -887,29 +872,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var trunkBaseSettingsId = "trunkBaseSettingsId_example"; // String | Trunk Base ID
+let trunkBaseSettingsId = "trunkBaseSettingsId_example"; // String | Trunk Base ID
 
 apiInstance.deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId)
-  .then(function() {
+  .then(() => {
     console.log('deleteTelephonyProvidersEdgesTrunkbasesetting returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteTelephonyProvidersEdgesTrunkbasesetting');
+  .catch((err) => {
+    console.log('There was a failure calling deleteTelephonyProvidersEdgesTrunkbasesetting');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -942,31 +926,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getConfigurationSchemasEdgesVnext(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConfigurationSchemasEdgesVnext success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConfigurationSchemasEdgesVnext');
+  .catch((err) => {
+    console.log('There was a failure calling getConfigurationSchemasEdgesVnext');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1000,33 +984,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var schemaCategory = "schemaCategory_example"; // String | Schema category
-
-var opts = { 
+let schemaCategory = "schemaCategory_example"; // String | Schema category
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getConfigurationSchemasEdgesVnextSchemaCategory(schemaCategory, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConfigurationSchemasEdgesVnextSchemaCategory success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategory');
+  .catch((err) => {
+    console.log('There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategory');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1061,35 +1044,33 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var schemaCategory = "schemaCategory_example"; // String | Schema category
-
-var schemaType = "schemaType_example"; // String | Schema type
-
-var opts = { 
+let schemaCategory = "schemaCategory_example"; // String | Schema category
+let schemaType = "schemaType_example"; // String | Schema type
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(schemaCategory, schemaType, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConfigurationSchemasEdgesVnextSchemaCategorySchemaType success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaType');
+  .catch((err) => {
+    console.log('There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaType');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1125,33 +1106,30 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var schemaCategory = "schemaCategory_example"; // String | Schema category
-
-var schemaType = "schemaType_example"; // String | Schema type
-
-var schemaId = "schemaId_example"; // String | Schema ID
+let schemaCategory = "schemaCategory_example"; // String | Schema category
+let schemaType = "schemaType_example"; // String | Schema type
+let schemaId = "schemaId_example"; // String | Schema ID
 
 apiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(schemaCategory, schemaType, schemaId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId');
+  .catch((err) => {
+    console.log('There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1186,40 +1164,35 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var schemaCategory = "schemaCategory_example"; // String | Schema category
-
-var schemaType = "schemaType_example"; // String | Schema type
-
-var schemaId = "schemaId_example"; // String | Schema ID
-
-var extensionType = "extensionType_example"; // String | extension
-
-var metadataId = "metadataId_example"; // String | Metadata ID
-
-var opts = { 
+let schemaCategory = "schemaCategory_example"; // String | Schema category
+let schemaType = "schemaType_example"; // String | Schema type
+let schemaId = "schemaId_example"; // String | Schema ID
+let extensionType = "extensionType_example"; // String | extension
+let metadataId = "metadataId_example"; // String | Metadata ID
+let opts = { 
   'type': "type_example" // String | Type
 };
+
 apiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(schemaCategory, schemaType, schemaId, extensionType, metadataId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId');
+  .catch((err) => {
+    console.log('There was a failure calling getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1258,32 +1231,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
-
-var opts = { 
+let edgeId = "edgeId_example"; // String | Edge ID
+let opts = { 
   'expand': ["expand_example"] // [String] | Fields to expand in the response, comma-separated
 };
+
 apiInstance.getTelephonyProvidersEdge(edgeId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdge success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdge');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdge');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1318,31 +1290,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
-
-var lineId = "lineId_example"; // String | Line ID
+let edgeId = "edgeId_example"; // String | Edge ID
+let lineId = "lineId_example"; // String | Line ID
 
 apiInstance.getTelephonyProvidersEdgeLine(edgeId, lineId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgeLine success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgeLine');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgeLine');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1377,33 +1347,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
-
-var opts = { 
+let edgeId = "edgeId_example"; // String | Edge ID
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getTelephonyProvidersEdgeLines(edgeId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgeLines success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgeLines');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgeLines');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1439,34 +1408,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
-
-var interfaceId = "interfaceId_example"; // String | Interface ID
-
-var opts = { 
+let edgeId = "edgeId_example"; // String | Edge ID
+let interfaceId = "interfaceId_example"; // String | Interface ID
+let opts = { 
   'expand': ["expand_example"] // [String] | Field to expand in the response
 };
+
 apiInstance.getTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgeLogicalinterface success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgeLogicalinterface');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgeLogicalinterface');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1502,32 +1469,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
-
-var opts = { 
+let edgeId = "edgeId_example"; // String | Edge ID
+let opts = { 
   'expand': ["expand_example"] // [String] | Field to expand in the response
 };
+
 apiInstance.getTelephonyProvidersEdgeLogicalinterfaces(edgeId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgeLogicalinterfaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgeLogicalinterfaces');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgeLogicalinterfaces');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1562,31 +1528,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
-
-var jobId = "jobId_example"; // String | Job ID
+let edgeId = "edgeId_example"; // String | Edge ID
+let jobId = "jobId_example"; // String | Job ID
 
 apiInstance.getTelephonyProvidersEdgeLogsJob(edgeId, jobId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgeLogsJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgeLogsJob');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgeLogsJob');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1621,29 +1585,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge Id
+let edgeId = "edgeId_example"; // String | Edge Id
 
 apiInstance.getTelephonyProvidersEdgeMetrics(edgeId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgeMetrics success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgeMetrics');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgeMetrics');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1677,31 +1640,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
-
-var interfaceId = "interfaceId_example"; // String | Interface ID
+let edgeId = "edgeId_example"; // String | Edge ID
+let interfaceId = "interfaceId_example"; // String | Interface ID
 
 apiInstance.getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgePhysicalinterface success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgePhysicalinterface');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgePhysicalinterface');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1736,29 +1697,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
+let edgeId = "edgeId_example"; // String | Edge ID
 
 apiInstance.getTelephonyProvidersEdgePhysicalinterfaces(edgeId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgePhysicalinterfaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgePhysicalinterfaces');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgePhysicalinterfaces');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1792,29 +1752,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
+let edgeId = "edgeId_example"; // String | Edge ID
 
 apiInstance.getTelephonyProvidersEdgeSetuppackage(edgeId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgeSetuppackage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgeSetuppackage');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgeSetuppackage');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1847,29 +1806,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
+let edgeId = "edgeId_example"; // String | Edge ID
 
 apiInstance.getTelephonyProvidersEdgeSoftwareupdate(edgeId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgeSoftwareupdate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgeSoftwareupdate');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgeSoftwareupdate');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1902,29 +1860,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
+let edgeId = "edgeId_example"; // String | Edge ID
 
 apiInstance.getTelephonyProvidersEdgeSoftwareversions(edgeId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgeSoftwareversions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgeSoftwareversions');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgeSoftwareversions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1958,20 +1915,19 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
-
-var opts = { 
+let edgeId = "edgeId_example"; // String | Edge ID
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortBy': "name", // String | Value by which to sort
@@ -1979,16 +1935,16 @@ var opts = {
   'trunkBaseId': "trunkBaseId_example", // String | Filter by Trunk Base Ids
   'trunkType': "trunkType_example" // String | Filter by a Trunk type
 };
+
 apiInstance.getTelephonyProvidersEdgeTrunks(edgeId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgeTrunks success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgeTrunks');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgeTrunks');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2028,18 +1984,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'name': "name_example", // String | Name
@@ -2048,16 +2004,16 @@ var opts = {
   'sortBy': "name", // String | Sort by
   'managed': true // Boolean | Filter by managed
 };
+
 apiInstance.getTelephonyProvidersEdges(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdges success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdges');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdges');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2096,26 +2052,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
 apiInstance.getTelephonyProvidersEdgesAvailablelanguages()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesAvailablelanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesAvailablelanguages');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesAvailablelanguages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2146,26 +2102,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
 apiInstance.getTelephonyProvidersEdgesCertificateauthorities()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesCertificateauthorities success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesCertificateauthorities');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesCertificateauthorities');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2196,29 +2152,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var certificateId = "certificateId_example"; // String | Certificate ID
+let certificateId = "certificateId_example"; // String | Certificate ID
 
 apiInstance.getTelephonyProvidersEdgesCertificateauthority(certificateId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesCertificateauthority success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesCertificateauthority');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesCertificateauthority');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2252,29 +2207,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var didId = "didId_example"; // String | DID ID
+let didId = "didId_example"; // String | DID ID
 
 apiInstance.getTelephonyProvidersEdgesDid(didId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesDid success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesDid');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesDid');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2308,29 +2262,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var didPoolId = "didPoolId_example"; // String | DID pool ID
+let didPoolId = "didPoolId_example"; // String | DID pool ID
 
 apiInstance.getTelephonyProvidersEdgesDidpool(didPoolId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesDidpool success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesDidpool');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesDidpool');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2364,32 +2317,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "number" // String | Sort by
 };
+
 apiInstance.getTelephonyProvidersEdgesDidpools(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesDidpools success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesDidpools');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesDidpools');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2425,34 +2378,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "number", // String | Sort by
   'sortOrder': "ASC", // String | Sort order
   'phoneNumber': "phoneNumber_example" // String | Filter by phoneNumber
 };
+
 apiInstance.getTelephonyProvidersEdgesDids(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesDids success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesDids');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesDids');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2490,32 +2443,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeGroupId = "edgeGroupId_example"; // String | Edge group ID
-
-var opts = { 
+let edgeGroupId = "edgeGroupId_example"; // String | Edge group ID
+let opts = { 
   'expand': ["expand_example"] // [String] | Fields to expand in the response
 };
+
 apiInstance.getTelephonyProvidersEdgesEdgegroup(edgeGroupId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesEdgegroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesEdgegroup');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesEdgegroup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2550,31 +2502,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgegroupId = "edgegroupId_example"; // String | Edge Group ID
-
-var edgetrunkbaseId = "edgetrunkbaseId_example"; // String | Edge Trunk Base ID
+let edgegroupId = "edgegroupId_example"; // String | Edge Group ID
+let edgetrunkbaseId = "edgetrunkbaseId_example"; // String | Edge Trunk Base ID
 
 apiInstance.getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesEdgegroupEdgetrunkbase success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbase');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesEdgegroupEdgetrunkbase');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2609,34 +2559,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'name': "name_example", // String | Name
   'sortBy': "name", // String | Sort by
   'managed': true // Boolean | Filter by managed
 };
+
 apiInstance.getTelephonyProvidersEdgesEdgegroups(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesEdgegroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesEdgegroups');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesEdgegroups');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2673,26 +2623,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
 apiInstance.getTelephonyProvidersEdgesEdgeversionreport()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesEdgeversionreport success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesEdgeversionreport');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesEdgeversionreport');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2723,29 +2673,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var endpointId = "endpointId_example"; // String | Endpoint ID
+let endpointId = "endpointId_example"; // String | Endpoint ID
 
 apiInstance.getTelephonyProvidersEdgesEndpoint(endpointId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesEndpoint success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesEndpoint');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesEndpoint');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2779,33 +2728,33 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'name': "name_example", // String | Name
   'sortBy': "name" // String | Sort by
 };
+
 apiInstance.getTelephonyProvidersEdgesEndpoints(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesEndpoints success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesEndpoints');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesEndpoints');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2842,29 +2791,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var extensionId = "extensionId_example"; // String | Extension ID
+let extensionId = "extensionId_example"; // String | Extension ID
 
 apiInstance.getTelephonyProvidersEdgesExtension(extensionId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesExtension success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesExtension');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesExtension');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2898,29 +2846,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var extensionPoolId = "extensionPoolId_example"; // String | Extension pool ID
+let extensionPoolId = "extensionPoolId_example"; // String | Extension pool ID
 
 apiInstance.getTelephonyProvidersEdgesExtensionpool(extensionPoolId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesExtensionpool success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesExtensionpool');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesExtensionpool');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2954,33 +2901,33 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "startNumber", // String | Sort by
   '_number': "_number_example" // String | Number
 };
+
 apiInstance.getTelephonyProvidersEdgesExtensionpools(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesExtensionpools success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesExtensionpools');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesExtensionpools');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3017,34 +2964,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "number", // String | Sort by
   'sortOrder': "ASC", // String | Sort order
   '_number': "_number_example" // String | Filter by number
 };
+
 apiInstance.getTelephonyProvidersEdgesExtensions(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesExtensions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesExtensions');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesExtensions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3082,29 +3029,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var lineId = "lineId_example"; // String | Line ID
+let lineId = "lineId_example"; // String | Line ID
 
 apiInstance.getTelephonyProvidersEdgesLine(lineId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesLine success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesLine');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesLine');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3138,29 +3084,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var lineBaseId = "lineBaseId_example"; // String | Line base ID
+let lineBaseId = "lineBaseId_example"; // String | Line base ID
 
 apiInstance.getTelephonyProvidersEdgesLinebasesetting(lineBaseId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesLinebasesetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesLinebasesetting');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesLinebasesetting');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3194,33 +3139,33 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortBy': "name", // String | Value by which to sort
   'sortOrder': "ASC" // String | Sort order
 };
+
 apiInstance.getTelephonyProvidersEdgesLinebasesettings(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesLinebasesettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesLinebasesettings');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesLinebasesettings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3257,34 +3202,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'name': "name_example", // String | Name
   'sortBy': "name", // String | Value by which to sort
   'expand': ["expand_example"] // [String] | Fields to expand in the response, comma-separated
 };
+
 apiInstance.getTelephonyProvidersEdgesLines(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesLines success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesLines');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesLines');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3322,29 +3267,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var lineBaseSettingsId = "lineBaseSettingsId_example"; // String | The id of a Line Base Settings object upon which to base this Line
+let lineBaseSettingsId = "lineBaseSettingsId_example"; // String | The id of a Line Base Settings object upon which to base this Line
 
 apiInstance.getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesLinesTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesLinesTemplate');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesLinesTemplate');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3378,32 +3322,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's
-
-var opts = { 
+let edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's
+let opts = { 
   'expand': ["expand_example"] // [String] | Field to expand in the response
 };
+
 apiInstance.getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesLogicalinterfaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesLogicalinterfaces');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesLogicalinterfaces');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3438,29 +3381,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's
+let edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's
 
 apiInstance.getTelephonyProvidersEdgesMetrics(edgeIds)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesMetrics success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesMetrics');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesMetrics');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3494,29 +3436,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
+let outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
 
 apiInstance.getTelephonyProvidersEdgesOutboundroute(outboundRouteId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesOutboundroute success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesOutboundroute');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesOutboundroute');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3550,34 +3491,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'name': "name_example", // String | Name
   'siteId': "siteId_example", // String | Filter by site.id
   'sortBy': "name" // String | Sort by
 };
+
 apiInstance.getTelephonyProvidersEdgesOutboundroutes(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesOutboundroutes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesOutboundroutes');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesOutboundroutes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3615,29 +3556,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var phoneId = "phoneId_example"; // String | Phone ID
+let phoneId = "phoneId_example"; // String | Phone ID
 
 apiInstance.getTelephonyProvidersEdgesPhone(phoneId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesPhone success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesPhone');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesPhone');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3671,29 +3611,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var phoneBaseId = "phoneBaseId_example"; // String | Phone base ID
+let phoneBaseId = "phoneBaseId_example"; // String | Phone base ID
 
 apiInstance.getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesPhonebasesetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesPhonebasesetting');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesPhonebasesetting');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3727,18 +3666,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "name", // String | Value by which to sort
@@ -3746,16 +3685,16 @@ var opts = {
   'expand': ["expand_example"], // [String] | Fields to expand in the response, comma-separated
   'name': "name_example" // String | Name
 };
+
 apiInstance.getTelephonyProvidersEdgesPhonebasesettings(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesPhonebasesettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesPhonebasesettings');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesPhonebasesettings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3794,31 +3733,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3853,29 +3792,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var phoneMetabaseId = "phoneMetabaseId_example"; // String | The id of a metabase object upon which to base this Phone Base Settings
+let phoneMetabaseId = "phoneMetabaseId_example"; // String | The id of a metabase object upon which to base this Phone Base Settings
 
 apiInstance.getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesPhonebasesettingsTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesPhonebasesettingsTemplate');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesPhonebasesettingsTemplate');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3909,18 +3847,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortBy': "name", // String | Value by which to sort
@@ -3936,16 +3874,16 @@ var opts = {
   'expand': ["expand_example"], // [String] | Fields to expand in the response, comma-separated
   'fields': ["fields_example"] // [String] | Fields and properties to get, comma-separated
 };
+
 apiInstance.getTelephonyProvidersEdgesPhones(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesPhones success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesPhones');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesPhones');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3992,29 +3930,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var phoneBaseSettingsId = "phoneBaseSettingsId_example"; // String | The id of a Phone Base Settings object upon which to base this Phone
+let phoneBaseSettingsId = "phoneBaseSettingsId_example"; // String | The id of a Phone Base Settings object upon which to base this Phone
 
 apiInstance.getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesPhonesTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesPhonesTemplate');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesPhonesTemplate');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4048,29 +3985,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's
+let edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's
 
 apiInstance.getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesPhysicalinterfaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesPhysicalinterfaces');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesPhysicalinterfaces');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4105,29 +4041,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var siteId = "siteId_example"; // String | Site ID
+let siteId = "siteId_example"; // String | Site ID
 
 apiInstance.getTelephonyProvidersEdgesSite(siteId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesSite success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesSite');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesSite');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4161,31 +4096,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var siteId = "siteId_example"; // String | Site ID
-
-var numberPlanId = "numberPlanId_example"; // String | Number Plan ID
+let siteId = "siteId_example"; // String | Site ID
+let numberPlanId = "numberPlanId_example"; // String | Number Plan ID
 
 apiInstance.getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesSiteNumberplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesSiteNumberplan');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesSiteNumberplan');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4220,29 +4153,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var siteId = "siteId_example"; // String | Site ID
+let siteId = "siteId_example"; // String | Site ID
 
 apiInstance.getTelephonyProvidersEdgesSiteNumberplans(siteId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesSiteNumberplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesSiteNumberplans');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesSiteNumberplans');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4276,32 +4208,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var siteId = "siteId_example"; // String | Site ID
-
-var opts = { 
+let siteId = "siteId_example"; // String | Site ID
+let opts = { 
   'classification': "classification_example" // String | Classification
 };
+
 apiInstance.getTelephonyProvidersEdgesSiteNumberplansClassifications(siteId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesSiteNumberplansClassifications success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesSiteNumberplansClassifications');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesSiteNumberplansClassifications');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4336,31 +4267,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var siteId = "siteId_example"; // String | Site ID
-
-var outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
+let siteId = "siteId_example"; // String | Site ID
+let outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
 
 apiInstance.getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesSiteOutboundroute success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesSiteOutboundroute');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesSiteOutboundroute');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4395,35 +4324,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var siteId = "siteId_example"; // String | Site ID
-
-var opts = { 
+let siteId = "siteId_example"; // String | Site ID
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'name': "name_example", // String | Name
   'sortBy': "name" // String | Sort by
 };
+
 apiInstance.getTelephonyProvidersEdgesSiteOutboundroutes(siteId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesSiteOutboundroutes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesSiteOutboundroutes');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesSiteOutboundroutes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4460,18 +4388,18 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "name", // String | Sort by
@@ -4480,16 +4408,16 @@ var opts = {
   'locationId': "locationId_example", // String | Location Id
   'managed': true // Boolean | Filter by managed
 };
+
 apiInstance.getTelephonyProvidersEdgesSites(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesSites success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesSites');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesSites');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4528,31 +4456,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 1000, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getTelephonyProvidersEdgesTimezones(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesTimezones success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesTimezones');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesTimezones');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4587,29 +4515,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var trunkId = "trunkId_example"; // String | Trunk ID
+let trunkId = "trunkId_example"; // String | Trunk ID
 
 apiInstance.getTelephonyProvidersEdgesTrunk(trunkId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesTrunk success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesTrunk');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesTrunk');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4643,29 +4570,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var trunkId = "trunkId_example"; // String | Trunk Id
+let trunkId = "trunkId_example"; // String | Trunk Id
 
 apiInstance.getTelephonyProvidersEdgesTrunkMetrics(trunkId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesTrunkMetrics success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesTrunkMetrics');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesTrunkMetrics');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4699,32 +4625,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var trunkBaseSettingsId = "trunkBaseSettingsId_example"; // String | Trunk Base ID
-
-var opts = { 
+let trunkBaseSettingsId = "trunkBaseSettingsId_example"; // String | Trunk Base ID
+let opts = { 
   'ignoreHidden': true // Boolean | Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only.
 };
+
 apiInstance.getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesTrunkbasesetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesTrunkbasesetting');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesTrunkbasesetting');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4759,18 +4684,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortBy': "name", // String | Value by which to sort
@@ -4781,16 +4706,16 @@ var opts = {
   'expand': ["expand_example"], // [String] | Fields to expand in the response, comma-separated
   'name': "name_example" // String | Name of the TrunkBase to filter by
 };
+
 apiInstance.getTelephonyProvidersEdgesTrunkbasesettings(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesTrunkbasesettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesTrunkbasesettings');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesTrunkbasesettings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4832,32 +4757,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'type': "type_example", // String | 
   'pageSize': 25, // Number | 
   'pageNumber': 1 // Number | 
 };
+
 apiInstance.getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4893,29 +4818,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var trunkMetabaseId = "trunkMetabaseId_example"; // String | The id of a metabase object upon which to base this Trunk Base Settings
+let trunkMetabaseId = "trunkMetabaseId_example"; // String | The id of a metabase object upon which to base this Trunk Base Settings
 
 apiInstance.getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesTrunkbasesettingsTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesTrunkbasesettingsTemplate');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesTrunkbasesettingsTemplate');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4949,18 +4873,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortBy': "name", // String | Value by which to sort
@@ -4969,16 +4893,16 @@ var opts = {
   'trunkBaseId': "trunkBaseId_example", // String | Filter by Trunk Base Ids
   'trunkType': "trunkType_example" // String | Filter by a Trunk type
 };
+
 apiInstance.getTelephonyProvidersEdgesTrunks(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesTrunks success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesTrunks');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesTrunks');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5018,29 +4942,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var trunkIds = "trunkIds_example"; // String | Comma separated list of Trunk Id's
+let trunkIds = "trunkIds_example"; // String | Comma separated list of Trunk Id's
 
 apiInstance.getTelephonyProvidersEdgesTrunksMetrics(trunkIds)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesTrunksMetrics success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesTrunksMetrics');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesTrunksMetrics');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5075,30 +4998,30 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var opts = { 
+let opts = { 
   'trunkType': "trunkType_example" // String | The type of this trunk base.
 };
+
 apiInstance.getTelephonyProvidersEdgesTrunkswithrecording(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTelephonyProvidersEdgesTrunkswithrecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTelephonyProvidersEdgesTrunkswithrecording');
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesTrunkswithrecording');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5131,22 +5054,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyDomainLogicalInterfaceExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#DomainLogicalInterfaceExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DomainLogicalInterfaceExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-DomainLogicalInterface <a style="cursor: pointer" onclick="copyDomainLogicalInterfaceExample()">Copy</a>
+DomainLogicalInterface <a href="#" onclick="return copyDomainLogicalInterfaceExample()">Copy</a>
 
-<div id="DomainLogicalInterfaceExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="DomainLogicalInterfaceExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -5314,37 +5237,36 @@ DomainLogicalInterface <a style="cursor: pointer" onclick="copyDomainLogicalInte
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
-
-var body = {}; // Object | Logical interface
+let edgeId = "edgeId_example"; // String | Edge ID
+let body = {}; // Object | Logical interface
 
 apiInstance.postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postTelephonyProvidersEdgeLogicalinterfaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgeLogicalinterfaces');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgeLogicalinterfaces');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5378,58 +5300,56 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEdgeLogsJobUploadRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EdgeLogsJobUploadRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EdgeLogsJobUploadRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-EdgeLogsJobUploadRequest <a style="cursor: pointer" onclick="copyEdgeLogsJobUploadRequestExample()">Copy</a>
+EdgeLogsJobUploadRequest <a href="#" onclick="return copyEdgeLogsJobUploadRequestExample()">Copy</a>
 
-<div id="EdgeLogsJobUploadRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EdgeLogsJobUploadRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "fileIds": [String], 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
-
-var jobId = "jobId_example"; // String | Job ID
-
-var body = {}; // Object | Log upload request
+let edgeId = "edgeId_example"; // String | Edge ID
+let jobId = "jobId_example"; // String | Job ID
+let body = {}; // Object | Log upload request
 
 apiInstance.postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body)
-  .then(function() {
+  .then(() => {
     console.log('postTelephonyProvidersEdgeLogsJobUpload returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgeLogsJobUpload');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgeLogsJobUpload');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5464,58 +5384,57 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEdgeLogsJobRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EdgeLogsJobRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EdgeLogsJobRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-EdgeLogsJobRequest <a style="cursor: pointer" onclick="copyEdgeLogsJobRequestExample()">Copy</a>
+EdgeLogsJobRequest <a href="#" onclick="return copyEdgeLogsJobRequestExample()">Copy</a>
 
-<div id="EdgeLogsJobRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EdgeLogsJobRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "path": String, 
   "query": String, 
   "recurse": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
-
-var body = {}; // Object | EdgeLogsJobRequest
+let edgeId = "edgeId_example"; // String | Edge ID
+let body = {}; // Object | EdgeLogsJobRequest
 
 apiInstance.postTelephonyProvidersEdgeLogsJobs(edgeId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postTelephonyProvidersEdgeLogsJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgeLogsJobs');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgeLogsJobs');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5549,57 +5468,57 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEdgeRebootParametersExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EdgeRebootParametersExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EdgeRebootParametersExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-EdgeRebootParameters <a style="cursor: pointer" onclick="copyEdgeRebootParametersExample()">Copy</a>
+EdgeRebootParameters <a href="#" onclick="return copyEdgeRebootParametersExample()">Copy</a>
 
-<div id="EdgeRebootParametersExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EdgeRebootParametersExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "callDrainingWaitTimeSeconds": Number, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
-
-var opts = { 
+let edgeId = "edgeId_example"; // String | Edge ID
+let opts = { 
   'body': {} // Object | Parameters for the edge reboot
 };
+
 apiInstance.postTelephonyProvidersEdgeReboot(edgeId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postTelephonyProvidersEdgeReboot success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgeReboot');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgeReboot');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5632,22 +5551,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyDomainEdgeSoftwareUpdateDtoExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#DomainEdgeSoftwareUpdateDtoExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DomainEdgeSoftwareUpdateDtoExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-DomainEdgeSoftwareUpdateDto <a style="cursor: pointer" onclick="copyDomainEdgeSoftwareUpdateDtoExample()">Copy</a>
+DomainEdgeSoftwareUpdateDto <a href="#" onclick="return copyDomainEdgeSoftwareUpdateDtoExample()">Copy</a>
 
-<div id="DomainEdgeSoftwareUpdateDtoExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="DomainEdgeSoftwareUpdateDtoExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "version": { 
     "id": String, 
@@ -5669,37 +5588,36 @@ DomainEdgeSoftwareUpdateDto <a style="cursor: pointer" onclick="copyDomainEdgeSo
   "callDrainingWaitTimeSeconds": Number, 
   "current": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
-
-var body = {}; // Object | Software update request
+let edgeId = "edgeId_example"; // String | Edge ID
+let body = {}; // Object | Software update request
 
 apiInstance.postTelephonyProvidersEdgeSoftwareupdate(edgeId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postTelephonyProvidersEdgeSoftwareupdate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgeSoftwareupdate');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgeSoftwareupdate');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5733,58 +5651,58 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEdgeServiceStateRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EdgeServiceStateRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EdgeServiceStateRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-EdgeServiceStateRequest <a style="cursor: pointer" onclick="copyEdgeServiceStateRequestExample()">Copy</a>
+EdgeServiceStateRequest <a href="#" onclick="return copyEdgeServiceStateRequestExample()">Copy</a>
 
-<div id="EdgeServiceStateRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EdgeServiceStateRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "inService": Boolean, 
   "callDrainingWaitTimeSeconds": Number, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
-
-var opts = { 
+let edgeId = "edgeId_example"; // String | Edge ID
+let opts = { 
   'body': {} // Object | Edge Service State
 };
+
 apiInstance.postTelephonyProvidersEdgeStatuscode(edgeId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postTelephonyProvidersEdgeStatuscode success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgeStatuscode');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgeStatuscode');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5819,29 +5737,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge Id
+let edgeId = "edgeId_example"; // String | Edge Id
 
 apiInstance.postTelephonyProvidersEdgeUnpair(edgeId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postTelephonyProvidersEdgeUnpair success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgeUnpair');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgeUnpair');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5874,22 +5791,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEdgeExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EdgeExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EdgeExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Edge <a style="cursor: pointer" onclick="copyEdgeExample()">Copy</a>
+Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
 
-<div id="EdgeExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EdgeExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -11208,35 +11125,35 @@ Edge <a style="cursor: pointer" onclick="copyEdgeExample()">Copy</a>
   "osName": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = {}; // Object | Edge
+let body = {}; // Object | Edge
 
 apiInstance.postTelephonyProvidersEdges(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postTelephonyProvidersEdges success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdges');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdges');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -11268,22 +11185,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyValidateAddressRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ValidateAddressRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ValidateAddressRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ValidateAddressRequest <a style="cursor: pointer" onclick="copyValidateAddressRequestExample()">Copy</a>
+ValidateAddressRequest <a href="#" onclick="return copyValidateAddressRequestExample()">Copy</a>
 
-<div id="ValidateAddressRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ValidateAddressRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "address": { 
     "country": String, 
@@ -11296,35 +11213,35 @@ ValidateAddressRequest <a style="cursor: pointer" onclick="copyValidateAddressRe
     "PC": String, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = {}; // Object | Address
+let body = {}; // Object | Address
 
 apiInstance.postTelephonyProvidersEdgesAddressvalidation(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postTelephonyProvidersEdgesAddressvalidation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgesAddressvalidation');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgesAddressvalidation');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -11357,22 +11274,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyDomainCertificateAuthorityExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#DomainCertificateAuthorityExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DomainCertificateAuthorityExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-DomainCertificateAuthority <a style="cursor: pointer" onclick="copyDomainCertificateAuthorityExample()">Copy</a>
+DomainCertificateAuthority <a href="#" onclick="return copyDomainCertificateAuthorityExample()">Copy</a>
 
-<div id="DomainCertificateAuthorityExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="DomainCertificateAuthorityExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -11399,35 +11316,35 @@ DomainCertificateAuthority <a style="cursor: pointer" onclick="copyDomainCertifi
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = {}; // Object | CertificateAuthority
+let body = {}; // Object | CertificateAuthority
 
 apiInstance.postTelephonyProvidersEdgesCertificateauthorities(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postTelephonyProvidersEdgesCertificateauthorities success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgesCertificateauthorities');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgesCertificateauthorities');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -11460,22 +11377,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyDIDPoolExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#DIDPoolExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DIDPoolExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-DIDPool <a style="cursor: pointer" onclick="copyDIDPoolExample()">Copy</a>
+DIDPool <a href="#" onclick="return copyDIDPoolExample()">Copy</a>
 
-<div id="DIDPoolExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="DIDPoolExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -11494,35 +11411,35 @@ DIDPool <a style="cursor: pointer" onclick="copyDIDPoolExample()">Copy</a>
   "provider": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = {}; // Object | DID pool
+let body = {}; // Object | DID pool
 
 apiInstance.postTelephonyProvidersEdgesDidpools(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postTelephonyProvidersEdgesDidpools success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgesDidpools');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgesDidpools');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -11555,22 +11472,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEdgeGroupExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EdgeGroupExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EdgeGroupExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-EdgeGroup <a style="cursor: pointer" onclick="copyEdgeGroupExample()">Copy</a>
+EdgeGroup <a href="#" onclick="return copyEdgeGroupExample()">Copy</a>
 
-<div id="EdgeGroupExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EdgeGroupExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -11633,35 +11550,35 @@ EdgeGroup <a style="cursor: pointer" onclick="copyEdgeGroupExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = {}; // Object | EdgeGroup
+let body = {}; // Object | EdgeGroup
 
 apiInstance.postTelephonyProvidersEdgesEdgegroups(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postTelephonyProvidersEdgesEdgegroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgesEdgegroups');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgesEdgegroups');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -11694,22 +11611,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEndpointExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EndpointExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EndpointExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Endpoint <a style="cursor: pointer" onclick="copyEndpointExample()">Copy</a>
+Endpoint <a href="#" onclick="return copyEndpointExample()">Copy</a>
 
-<div id="EndpointExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EndpointExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -11738,35 +11655,35 @@ Endpoint <a style="cursor: pointer" onclick="copyEndpointExample()">Copy</a>
   "dids": [String], 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = {}; // Object | EndpointTemplate
+let body = {}; // Object | EndpointTemplate
 
 apiInstance.postTelephonyProvidersEdgesEndpoints(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postTelephonyProvidersEdgesEndpoints success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgesEndpoints');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgesEndpoints');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -11799,22 +11716,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyExtensionPoolExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ExtensionPoolExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ExtensionPoolExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ExtensionPool <a style="cursor: pointer" onclick="copyExtensionPoolExample()">Copy</a>
+ExtensionPool <a href="#" onclick="return copyExtensionPoolExample()">Copy</a>
 
-<div id="ExtensionPoolExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ExtensionPoolExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -11831,35 +11748,35 @@ ExtensionPool <a style="cursor: pointer" onclick="copyExtensionPoolExample()">Co
   "endNumber": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = {}; // Object | ExtensionPool
+let body = {}; // Object | ExtensionPool
 
 apiInstance.postTelephonyProvidersEdgesExtensionpools(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postTelephonyProvidersEdgesExtensionpools success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgesExtensionpools');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgesExtensionpools');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -11892,22 +11809,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyOutboundRouteExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#OutboundRouteExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#OutboundRouteExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-OutboundRoute <a style="cursor: pointer" onclick="copyOutboundRouteExample()">Copy</a>
+OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
 
-<div id="OutboundRouteExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="OutboundRouteExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -17113,35 +17030,35 @@ OutboundRoute <a style="cursor: pointer" onclick="copyOutboundRouteExample()">Co
   "managed": Boolean, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = {}; // Object | OutboundRoute
+let body = {}; // Object | OutboundRoute
 
 apiInstance.postTelephonyProvidersEdgesOutboundroutes(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postTelephonyProvidersEdgesOutboundroutes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgesOutboundroutes');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgesOutboundroutes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -17175,29 +17092,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var phoneId = "phoneId_example"; // String | Phone Id
+let phoneId = "phoneId_example"; // String | Phone Id
 
 apiInstance.postTelephonyProvidersEdgesPhoneReboot(phoneId)
-  .then(function() {
+  .then(() => {
     console.log('postTelephonyProvidersEdgesPhoneReboot returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgesPhoneReboot');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgesPhoneReboot');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -17230,22 +17146,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyPhoneBaseExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#PhoneBaseExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PhoneBaseExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-PhoneBase <a style="cursor: pointer" onclick="copyPhoneBaseExample()">Copy</a>
+PhoneBase <a href="#" onclick="return copyPhoneBaseExample()">Copy</a>
 
-<div id="PhoneBaseExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="PhoneBaseExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -17295,35 +17211,35 @@ PhoneBase <a style="cursor: pointer" onclick="copyPhoneBaseExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = {}; // Object | Phone base settings
+let body = {}; // Object | Phone base settings
 
 apiInstance.postTelephonyProvidersEdgesPhonebasesettings(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postTelephonyProvidersEdgesPhonebasesettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgesPhonebasesettings');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgesPhonebasesettings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -17356,22 +17272,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyPhoneExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#PhoneExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PhoneExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Phone <a style="cursor: pointer" onclick="copyPhoneExample()">Copy</a>
+Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
 
-<div id="PhoneExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="PhoneExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -27791,35 +27707,35 @@ Phone <a style="cursor: pointer" onclick="copyPhoneExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = {}; // Object | Phone
+let body = {}; // Object | Phone
 
 apiInstance.postTelephonyProvidersEdgesPhones(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postTelephonyProvidersEdgesPhones success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgesPhones');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgesPhones');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -27852,55 +27768,55 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyPhonesRebootExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#PhonesRebootExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PhonesRebootExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-PhonesReboot <a style="cursor: pointer" onclick="copyPhonesRebootExample()">Copy</a>
+PhonesReboot <a href="#" onclick="return copyPhonesRebootExample()">Copy</a>
 
-<div id="PhonesRebootExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="PhonesRebootExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "phoneIds": [String], 
   "siteId": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = {}; // Object | Phones
+let body = {}; // Object | Phones
 
 apiInstance.postTelephonyProvidersEdgesPhonesReboot(body)
-  .then(function() {
+  .then(() => {
     console.log('postTelephonyProvidersEdgesPhonesReboot returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgesPhonesReboot');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgesPhonesReboot');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -27933,22 +27849,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyOutboundRouteBaseExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#OutboundRouteBaseExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#OutboundRouteBaseExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-OutboundRouteBase <a style="cursor: pointer" onclick="copyOutboundRouteBaseExample()">Copy</a>
+OutboundRouteBase <a href="#" onclick="return copyOutboundRouteBaseExample()">Copy</a>
 
-<div id="OutboundRouteBaseExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="OutboundRouteBaseExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -27971,37 +27887,36 @@ OutboundRouteBase <a style="cursor: pointer" onclick="copyOutboundRouteBaseExamp
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var siteId = "siteId_example"; // String | Site ID
-
-var body = {}; // Object | OutboundRoute
+let siteId = "siteId_example"; // String | Site ID
+let body = {}; // Object | OutboundRoute
 
 apiInstance.postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postTelephonyProvidersEdgesSiteOutboundroutes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgesSiteOutboundroutes');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgesSiteOutboundroutes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -28036,29 +27951,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var siteId = "siteId_example"; // String | Site ID
+let siteId = "siteId_example"; // String | Site ID
 
 apiInstance.postTelephonyProvidersEdgesSiteRebalance(siteId)
-  .then(function() {
+  .then(() => {
     console.log('postTelephonyProvidersEdgesSiteRebalance returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgesSiteRebalance');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgesSiteRebalance');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -28091,22 +28005,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copySiteExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#SiteExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#SiteExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Site <a style="cursor: pointer" onclick="copySiteExample()">Copy</a>
+Site <a href="#" onclick="return copySiteExample()">Copy</a>
 
-<div id="SiteExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="SiteExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -38455,35 +38369,35 @@ Site <a style="cursor: pointer" onclick="copySiteExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = {}; // Object | Site
+let body = {}; // Object | Site
 
 apiInstance.postTelephonyProvidersEdgesSites(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postTelephonyProvidersEdgesSites success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgesSites');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgesSites');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -38516,22 +38430,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTrunkBaseExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TrunkBaseExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TrunkBaseExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TrunkBase <a style="cursor: pointer" onclick="copyTrunkBaseExample()">Copy</a>
+TrunkBase <a href="#" onclick="return copyTrunkBaseExample()">Copy</a>
 
-<div id="TrunkBaseExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TrunkBaseExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -38554,35 +38468,35 @@ TrunkBase <a style="cursor: pointer" onclick="copyTrunkBaseExample()">Copy</a>
   "managed": Boolean, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var body = {}; // Object | Trunk base settings
+let body = {}; // Object | Trunk base settings
 
 apiInstance.postTelephonyProvidersEdgesTrunkbasesettings(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postTelephonyProvidersEdgesTrunkbasesettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postTelephonyProvidersEdgesTrunkbasesettings');
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgesTrunkbasesettings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -38615,22 +38529,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEdgeExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EdgeExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EdgeExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Edge <a style="cursor: pointer" onclick="copyEdgeExample()">Copy</a>
+Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
 
-<div id="EdgeExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EdgeExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -43949,37 +43863,36 @@ Edge <a style="cursor: pointer" onclick="copyEdgeExample()">Copy</a>
   "osName": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
-
-var body = {}; // Object | Edge
+let edgeId = "edgeId_example"; // String | Edge ID
+let body = {}; // Object | Edge
 
 apiInstance.putTelephonyProvidersEdge(edgeId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putTelephonyProvidersEdge success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putTelephonyProvidersEdge');
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdge');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -44013,22 +43926,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEdgeLineExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EdgeLineExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EdgeLineExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-EdgeLine <a style="cursor: pointer" onclick="copyEdgeLineExample()">Copy</a>
+EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
 
-<div id="EdgeLineExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EdgeLineExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -47570,39 +47483,37 @@ EdgeLine <a style="cursor: pointer" onclick="copyEdgeLineExample()">Copy</a>
   "logicalInterfaceId": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
-
-var lineId = "lineId_example"; // String | Line ID
-
-var body = {}; // Object | Line
+let edgeId = "edgeId_example"; // String | Edge ID
+let lineId = "lineId_example"; // String | Line ID
+let body = {}; // Object | Line
 
 apiInstance.putTelephonyProvidersEdgeLine(edgeId, lineId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putTelephonyProvidersEdgeLine success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putTelephonyProvidersEdgeLine');
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdgeLine');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -47637,22 +47548,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyDomainLogicalInterfaceExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#DomainLogicalInterfaceExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DomainLogicalInterfaceExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-DomainLogicalInterface <a style="cursor: pointer" onclick="copyDomainLogicalInterfaceExample()">Copy</a>
+DomainLogicalInterface <a href="#" onclick="return copyDomainLogicalInterfaceExample()">Copy</a>
 
-<div id="DomainLogicalInterfaceExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="DomainLogicalInterfaceExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -47820,39 +47731,37 @@ DomainLogicalInterface <a style="cursor: pointer" onclick="copyDomainLogicalInte
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeId = "edgeId_example"; // String | Edge ID
-
-var interfaceId = "interfaceId_example"; // String | Interface ID
-
-var body = {}; // Object | Logical interface
+let edgeId = "edgeId_example"; // String | Edge ID
+let interfaceId = "interfaceId_example"; // String | Interface ID
+let body = {}; // Object | Logical interface
 
 apiInstance.putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putTelephonyProvidersEdgeLogicalinterface success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putTelephonyProvidersEdgeLogicalinterface');
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdgeLogicalinterface');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -47887,22 +47796,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyDomainCertificateAuthorityExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#DomainCertificateAuthorityExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DomainCertificateAuthorityExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-DomainCertificateAuthority <a style="cursor: pointer" onclick="copyDomainCertificateAuthorityExample()">Copy</a>
+DomainCertificateAuthority <a href="#" onclick="return copyDomainCertificateAuthorityExample()">Copy</a>
 
-<div id="DomainCertificateAuthorityExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="DomainCertificateAuthorityExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -47929,37 +47838,36 @@ DomainCertificateAuthority <a style="cursor: pointer" onclick="copyDomainCertifi
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var certificateId = "certificateId_example"; // String | Certificate ID
-
-var body = {}; // Object | Certificate authority
+let certificateId = "certificateId_example"; // String | Certificate ID
+let body = {}; // Object | Certificate authority
 
 apiInstance.putTelephonyProvidersEdgesCertificateauthority(certificateId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putTelephonyProvidersEdgesCertificateauthority success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putTelephonyProvidersEdgesCertificateauthority');
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdgesCertificateauthority');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -47993,22 +47901,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyDIDExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#DIDExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DIDExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-DID <a style="cursor: pointer" onclick="copyDIDExample()">Copy</a>
+DID <a href="#" onclick="return copyDIDExample()">Copy</a>
 
-<div id="DIDExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="DIDExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -48035,37 +47943,36 @@ DID <a style="cursor: pointer" onclick="copyDIDExample()">Copy</a>
   "ownerType": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var didId = "didId_example"; // String | DID ID
-
-var body = {}; // Object | DID
+let didId = "didId_example"; // String | DID ID
+let body = {}; // Object | DID
 
 apiInstance.putTelephonyProvidersEdgesDid(didId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putTelephonyProvidersEdgesDid success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putTelephonyProvidersEdgesDid');
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdgesDid');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -48099,22 +48006,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyDIDPoolExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#DIDPoolExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DIDPoolExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-DIDPool <a style="cursor: pointer" onclick="copyDIDPoolExample()">Copy</a>
+DIDPool <a href="#" onclick="return copyDIDPoolExample()">Copy</a>
 
-<div id="DIDPoolExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="DIDPoolExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -48133,37 +48040,36 @@ DIDPool <a style="cursor: pointer" onclick="copyDIDPoolExample()">Copy</a>
   "provider": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var didPoolId = "didPoolId_example"; // String | DID pool ID
-
-var body = {}; // Object | DID pool
+let didPoolId = "didPoolId_example"; // String | DID pool ID
+let body = {}; // Object | DID pool
 
 apiInstance.putTelephonyProvidersEdgesDidpool(didPoolId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putTelephonyProvidersEdgesDidpool success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putTelephonyProvidersEdgesDidpool');
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdgesDidpool');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -48197,22 +48103,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEdgeGroupExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EdgeGroupExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EdgeGroupExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-EdgeGroup <a style="cursor: pointer" onclick="copyEdgeGroupExample()">Copy</a>
+EdgeGroup <a href="#" onclick="return copyEdgeGroupExample()">Copy</a>
 
-<div id="EdgeGroupExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EdgeGroupExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -48275,37 +48181,36 @@ EdgeGroup <a style="cursor: pointer" onclick="copyEdgeGroupExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgeGroupId = "edgeGroupId_example"; // String | Edge group ID
-
-var body = {}; // Object | EdgeGroup
+let edgeGroupId = "edgeGroupId_example"; // String | Edge group ID
+let body = {}; // Object | EdgeGroup
 
 apiInstance.putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putTelephonyProvidersEdgesEdgegroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putTelephonyProvidersEdgesEdgegroup');
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdgesEdgegroup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -48339,22 +48244,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEdgeTrunkBaseExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EdgeTrunkBaseExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EdgeTrunkBaseExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-EdgeTrunkBase <a style="cursor: pointer" onclick="copyEdgeTrunkBaseExample()">Copy</a>
+EdgeTrunkBase <a href="#" onclick="return copyEdgeTrunkBaseExample()">Copy</a>
 
-<div id="EdgeTrunkBaseExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EdgeTrunkBaseExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -48376,39 +48281,37 @@ EdgeTrunkBase <a style="cursor: pointer" onclick="copyEdgeTrunkBaseExample()">Co
   "trunkType": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var edgegroupId = "edgegroupId_example"; // String | Edge Group ID
-
-var edgetrunkbaseId = "edgetrunkbaseId_example"; // String | Edge Trunk Base ID
-
-var body = {}; // Object | EdgeTrunkBase
+let edgegroupId = "edgegroupId_example"; // String | Edge Group ID
+let edgetrunkbaseId = "edgetrunkbaseId_example"; // String | Edge Trunk Base ID
+let body = {}; // Object | EdgeTrunkBase
 
 apiInstance.putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putTelephonyProvidersEdgesEdgegroupEdgetrunkbase success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbase');
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdgesEdgegroupEdgetrunkbase');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -48443,22 +48346,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEndpointExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EndpointExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EndpointExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Endpoint <a style="cursor: pointer" onclick="copyEndpointExample()">Copy</a>
+Endpoint <a href="#" onclick="return copyEndpointExample()">Copy</a>
 
-<div id="EndpointExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EndpointExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -48487,37 +48390,36 @@ Endpoint <a style="cursor: pointer" onclick="copyEndpointExample()">Copy</a>
   "dids": [String], 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var endpointId = "endpointId_example"; // String | Endpoint ID
-
-var body = {}; // Object | EndpointTemplate
+let endpointId = "endpointId_example"; // String | Endpoint ID
+let body = {}; // Object | EndpointTemplate
 
 apiInstance.putTelephonyProvidersEdgesEndpoint(endpointId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putTelephonyProvidersEdgesEndpoint success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putTelephonyProvidersEdgesEndpoint');
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdgesEndpoint');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -48551,22 +48453,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyExtensionExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ExtensionExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ExtensionExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Extension <a style="cursor: pointer" onclick="copyExtensionExample()">Copy</a>
+Extension <a href="#" onclick="return copyExtensionExample()">Copy</a>
 
-<div id="ExtensionExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ExtensionExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -48593,37 +48495,36 @@ Extension <a style="cursor: pointer" onclick="copyExtensionExample()">Copy</a>
   "ownerType": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var extensionId = "extensionId_example"; // String | Extension ID
-
-var body = {}; // Object | Extension
+let extensionId = "extensionId_example"; // String | Extension ID
+let body = {}; // Object | Extension
 
 apiInstance.putTelephonyProvidersEdgesExtension(extensionId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putTelephonyProvidersEdgesExtension success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putTelephonyProvidersEdgesExtension');
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdgesExtension');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -48657,22 +48558,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyExtensionPoolExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ExtensionPoolExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ExtensionPoolExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ExtensionPool <a style="cursor: pointer" onclick="copyExtensionPoolExample()">Copy</a>
+ExtensionPool <a href="#" onclick="return copyExtensionPoolExample()">Copy</a>
 
-<div id="ExtensionPoolExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ExtensionPoolExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -48689,37 +48590,36 @@ ExtensionPool <a style="cursor: pointer" onclick="copyExtensionPoolExample()">Co
   "endNumber": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var extensionPoolId = "extensionPoolId_example"; // String | Extension pool ID
-
-var body = {}; // Object | ExtensionPool
+let extensionPoolId = "extensionPoolId_example"; // String | Extension pool ID
+let body = {}; // Object | ExtensionPool
 
 apiInstance.putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putTelephonyProvidersEdgesExtensionpool success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putTelephonyProvidersEdgesExtensionpool');
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdgesExtensionpool');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -48753,22 +48653,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyOutboundRouteExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#OutboundRouteExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#OutboundRouteExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-OutboundRoute <a style="cursor: pointer" onclick="copyOutboundRouteExample()">Copy</a>
+OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
 
-<div id="OutboundRouteExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="OutboundRouteExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -53974,37 +53874,36 @@ OutboundRoute <a style="cursor: pointer" onclick="copyOutboundRouteExample()">Co
   "managed": Boolean, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
-
-var body = {}; // Object | OutboundRoute
+let outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
+let body = {}; // Object | OutboundRoute
 
 apiInstance.putTelephonyProvidersEdgesOutboundroute(outboundRouteId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putTelephonyProvidersEdgesOutboundroute success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putTelephonyProvidersEdgesOutboundroute');
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdgesOutboundroute');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -54038,22 +53937,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyPhoneExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#PhoneExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PhoneExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Phone <a style="cursor: pointer" onclick="copyPhoneExample()">Copy</a>
+Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
 
-<div id="PhoneExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="PhoneExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -64473,37 +64372,36 @@ Phone <a style="cursor: pointer" onclick="copyPhoneExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var phoneId = "phoneId_example"; // String | Phone ID
-
-var body = {}; // Object | Phone
+let phoneId = "phoneId_example"; // String | Phone ID
+let body = {}; // Object | Phone
 
 apiInstance.putTelephonyProvidersEdgesPhone(phoneId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putTelephonyProvidersEdgesPhone success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putTelephonyProvidersEdgesPhone');
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdgesPhone');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -64537,22 +64435,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyPhoneBaseExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#PhoneBaseExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PhoneBaseExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-PhoneBase <a style="cursor: pointer" onclick="copyPhoneBaseExample()">Copy</a>
+PhoneBase <a href="#" onclick="return copyPhoneBaseExample()">Copy</a>
 
-<div id="PhoneBaseExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="PhoneBaseExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -64602,37 +64500,36 @@ PhoneBase <a style="cursor: pointer" onclick="copyPhoneBaseExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var phoneBaseId = "phoneBaseId_example"; // String | Phone base ID
-
-var body = {}; // Object | Phone base settings
+let phoneBaseId = "phoneBaseId_example"; // String | Phone base ID
+let body = {}; // Object | Phone base settings
 
 apiInstance.putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putTelephonyProvidersEdgesPhonebasesetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putTelephonyProvidersEdgesPhonebasesetting');
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdgesPhonebasesetting');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -64666,22 +64563,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copySiteExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#SiteExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#SiteExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Site <a style="cursor: pointer" onclick="copySiteExample()">Copy</a>
+Site <a href="#" onclick="return copySiteExample()">Copy</a>
 
-<div id="SiteExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="SiteExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -75030,37 +74927,36 @@ Site <a style="cursor: pointer" onclick="copySiteExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var siteId = "siteId_example"; // String | Site ID
-
-var body = {}; // Object | Site
+let siteId = "siteId_example"; // String | Site ID
+let body = {}; // Object | Site
 
 apiInstance.putTelephonyProvidersEdgesSite(siteId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putTelephonyProvidersEdgesSite success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putTelephonyProvidersEdgesSite');
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdgesSite');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -75094,22 +74990,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyNumberPlanExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#NumberPlanExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#NumberPlanExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-NumberPlan <a style="cursor: pointer" onclick="copyNumberPlanExample()">Copy</a>
+NumberPlan <a href="#" onclick="return copyNumberPlanExample()">Copy</a>
 
-<div id="NumberPlanExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="NumberPlanExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -75137,37 +75033,36 @@ NumberPlan <a style="cursor: pointer" onclick="copyNumberPlanExample()">Copy</a>
   "matchType": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var siteId = "siteId_example"; // String | Site ID
-
-var body = [{}]; // Object | List of number plans
+let siteId = "siteId_example"; // String | Site ID
+let body = [{}]; // Object | List of number plans
 
 apiInstance.putTelephonyProvidersEdgesSiteNumberplans(siteId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putTelephonyProvidersEdgesSiteNumberplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putTelephonyProvidersEdgesSiteNumberplans');
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdgesSiteNumberplans');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -75201,22 +75096,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyOutboundRouteBaseExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#OutboundRouteBaseExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#OutboundRouteBaseExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-OutboundRouteBase <a style="cursor: pointer" onclick="copyOutboundRouteBaseExample()">Copy</a>
+OutboundRouteBase <a href="#" onclick="return copyOutboundRouteBaseExample()">Copy</a>
 
-<div id="OutboundRouteBaseExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="OutboundRouteBaseExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -75239,39 +75134,37 @@ OutboundRouteBase <a style="cursor: pointer" onclick="copyOutboundRouteBaseExamp
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var siteId = "siteId_example"; // String | Site ID
-
-var outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
-
-var body = {}; // Object | OutboundRoute
+let siteId = "siteId_example"; // String | Site ID
+let outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
+let body = {}; // Object | OutboundRoute
 
 apiInstance.putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putTelephonyProvidersEdgesSiteOutboundroute success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putTelephonyProvidersEdgesSiteOutboundroute');
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdgesSiteOutboundroute');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -75306,22 +75199,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTrunkBaseExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TrunkBaseExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TrunkBaseExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TrunkBase <a style="cursor: pointer" onclick="copyTrunkBaseExample()">Copy</a>
+TrunkBase <a href="#" onclick="return copyTrunkBaseExample()">Copy</a>
 
-<div id="TrunkBaseExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TrunkBaseExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -75344,37 +75237,36 @@ TrunkBase <a style="cursor: pointer" onclick="copyTrunkBaseExample()">Copy</a>
   "managed": Boolean, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
-var trunkBaseSettingsId = "trunkBaseSettingsId_example"; // String | Trunk Base ID
-
-var body = {}; // Object | Trunk base settings
+let trunkBaseSettingsId = "trunkBaseSettingsId_example"; // String | Trunk Base ID
+let body = {}; // Object | Trunk base settings
 
 apiInstance.putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putTelephonyProvidersEdgesTrunkbasesetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putTelephonyProvidersEdgesTrunkbasesetting');
+  .catch((err) => {
+    console.log('There was a failure calling putTelephonyProvidersEdgesTrunkbasesetting');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

@@ -34,31 +34,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.BillingApi();
+let apiInstance = new platformClient.BillingApi();
 
-var startDate = new Date("2013-10-20T19:20:30+01:00"); // Date | The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-
-var endDate = new Date("2013-10-20T19:20:30+01:00"); // Date | The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+let startDate = new Date("2013-10-20T19:20:30+01:00"); // Date | The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+let endDate = new Date("2013-10-20T19:20:30+01:00"); // Date | The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 
 apiInstance.getBillingReportsBillableusage(startDate, endDate)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getBillingReportsBillableusage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getBillingReportsBillableusage');
+  .catch((err) => {
+    console.log('There was a failure calling getBillingReportsBillableusage');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -93,32 +91,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.BillingApi();
+let apiInstance = new platformClient.BillingApi();
 
-var trustorOrgId = "trustorOrgId_example"; // String | The organization ID of the trustor (customer) organization.
-
-var opts = { 
+let trustorOrgId = "trustorOrgId_example"; // String | The organization ID of the trustor (customer) organization.
+let opts = { 
   'billingPeriodIndex': 0 // Number | Billing Period Index
 };
+
 apiInstance.getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getBillingTrusteebillingoverviewTrustorOrgId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getBillingTrusteebillingoverviewTrustorOrgId');
+  .catch((err) => {
+    console.log('There was a failure calling getBillingTrusteebillingoverviewTrustorOrgId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

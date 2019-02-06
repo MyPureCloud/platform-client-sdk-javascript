@@ -5,7 +5,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 43.0.0
+	 * @version 43.0.1
 	 */
 
 	/**

@@ -32,26 +32,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.UtilitiesApi();
+let apiInstance = new platformClient.UtilitiesApi();
+
 apiInstance.getDate()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getDate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getDate');
+  .catch((err) => {
+    console.log('There was a failure calling getDate');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -81,31 +81,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.UtilitiesApi();
+let apiInstance = new platformClient.UtilitiesApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getTimezones(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTimezones success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTimezones');
+  .catch((err) => {
+    console.log('There was a failure calling getTimezones');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -138,54 +138,54 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCertificateExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CertificateExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CertificateExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Certificate <a style="cursor: pointer" onclick="copyCertificateExample()">Copy</a>
+Certificate <a href="#" onclick="return copyCertificateExample()">Copy</a>
 
-<div id="CertificateExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CertificateExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "certificate": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.UtilitiesApi();
+let apiInstance = new platformClient.UtilitiesApi();
 
-var body = {}; // Object | Certificate
+let body = {}; // Object | Certificate
 
 apiInstance.postCertificateDetails(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postCertificateDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postCertificateDetails');
+  .catch((err) => {
+    console.log('There was a failure calling postCertificateDetails');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -218,26 +218,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.UtilitiesApi();
+let apiInstance = new platformClient.UtilitiesApi();
+
 apiInstance.postGmscTokens()
-  .then(function(data) {
+  .then((data) => {
     console.log(`postGmscTokens success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postGmscTokens');
+  .catch((err) => {
+    console.log('There was a failure calling postGmscTokens');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

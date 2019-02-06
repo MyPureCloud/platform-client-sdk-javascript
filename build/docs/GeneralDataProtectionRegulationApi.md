@@ -33,29 +33,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GeneralDataProtectionRegulationApi();
+let apiInstance = new platformClient.GeneralDataProtectionRegulationApi();
 
-var requestId = "requestId_example"; // String | Request id
+let requestId = "requestId_example"; // String | Request id
 
 apiInstance.getGdprRequest(requestId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getGdprRequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getGdprRequest');
+  .catch((err) => {
+    console.log('There was a failure calling getGdprRequest');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -89,31 +88,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GeneralDataProtectionRegulationApi();
+let apiInstance = new platformClient.GeneralDataProtectionRegulationApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getGdprRequests(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getGdprRequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getGdprRequests');
+  .catch((err) => {
+    console.log('There was a failure calling getGdprRequests');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -148,31 +147,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GeneralDataProtectionRegulationApi();
+let apiInstance = new platformClient.GeneralDataProtectionRegulationApi();
 
-var searchType = "searchType_example"; // String | Search Type
-
-var searchValue = "searchValue_example"; // String | Search Value
+let searchType = "searchType_example"; // String | Search Type
+let searchValue = "searchValue_example"; // String | Search Value
 
 apiInstance.getGdprSubjects(searchType, searchValue)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getGdprSubjects success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getGdprSubjects');
+  .catch((err) => {
+    console.log('There was a failure calling getGdprSubjects');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -206,22 +203,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyGDPRRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#GDPRRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#GDPRRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-GDPRRequest <a style="cursor: pointer" onclick="copyGDPRRequestExample()">Copy</a>
+GDPRRequest <a href="#" onclick="return copyGDPRRequestExample()">Copy</a>
 
-<div id="GDPRRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="GDPRRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -253,38 +250,38 @@ GDPRRequest <a style="cursor: pointer" onclick="copyGDPRRequestExample()">Copy</
   "resultsUrl": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GeneralDataProtectionRegulationApi();
+let apiInstance = new platformClient.GeneralDataProtectionRegulationApi();
 
-var body = {}; // Object | GDPR request
-
-var opts = { 
+let body = {}; // Object | GDPR request
+let opts = { 
   'deleteConfirmed': false // Boolean | Confirm delete
 };
+
 apiInstance.postGdprRequests(body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postGdprRequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postGdprRequests');
+  .catch((err) => {
+    console.log('There was a failure calling postGdprRequests');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

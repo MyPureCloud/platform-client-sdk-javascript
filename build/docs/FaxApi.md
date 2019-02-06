@@ -34,29 +34,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.FaxApi();
+let apiInstance = new platformClient.FaxApi();
 
-var documentId = "documentId_example"; // String | Document ID
+let documentId = "documentId_example"; // String | Document ID
 
 apiInstance.deleteFaxDocument(documentId)
-  .then(function() {
+  .then(() => {
     console.log('deleteFaxDocument returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteFaxDocument');
+  .catch((err) => {
+    console.log('There was a failure calling deleteFaxDocument');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -89,29 +88,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.FaxApi();
+let apiInstance = new platformClient.FaxApi();
 
-var documentId = "documentId_example"; // String | Document ID
+let documentId = "documentId_example"; // String | Document ID
 
 apiInstance.getFaxDocument(documentId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getFaxDocument success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getFaxDocument');
+  .catch((err) => {
+    console.log('There was a failure calling getFaxDocument');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -144,29 +142,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.FaxApi();
+let apiInstance = new platformClient.FaxApi();
 
-var documentId = "documentId_example"; // String | Document ID
+let documentId = "documentId_example"; // String | Document ID
 
 apiInstance.getFaxDocumentContent(documentId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getFaxDocumentContent success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getFaxDocumentContent');
+  .catch((err) => {
+    console.log('There was a failure calling getFaxDocumentContent');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -199,31 +196,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.FaxApi();
+let apiInstance = new platformClient.FaxApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getFaxDocuments(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getFaxDocuments success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getFaxDocuments');
+  .catch((err) => {
+    console.log('There was a failure calling getFaxDocuments');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -257,26 +254,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.FaxApi();
+let apiInstance = new platformClient.FaxApi();
+
 apiInstance.getFaxSummary()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getFaxSummary success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getFaxSummary');
+  .catch((err) => {
+    console.log('There was a failure calling getFaxSummary');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -305,22 +302,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyFaxDocumentExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#FaxDocumentExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#FaxDocumentExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-FaxDocument <a style="cursor: pointer" onclick="copyFaxDocumentExample()">Copy</a>
+FaxDocument <a href="#" onclick="return copyFaxDocumentExample()">Copy</a>
 
-<div id="FaxDocumentExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="FaxDocumentExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -354,37 +351,36 @@ FaxDocument <a style="cursor: pointer" onclick="copyFaxDocumentExample()">Copy</
   "downloadSharingUri": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.FaxApi();
+let apiInstance = new platformClient.FaxApi();
 
-var documentId = "documentId_example"; // String | Document ID
-
-var body = {}; // Object | Document
+let documentId = "documentId_example"; // String | Document ID
+let body = {}; // Object | Document
 
 apiInstance.putFaxDocument(documentId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putFaxDocument success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putFaxDocument');
+  .catch((err) => {
+    console.log('There was a failure calling putFaxDocument');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

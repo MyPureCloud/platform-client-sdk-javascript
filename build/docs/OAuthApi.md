@@ -35,29 +35,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OAuthApi();
+let apiInstance = new platformClient.OAuthApi();
 
-var clientId = "clientId_example"; // String | Client ID
+let clientId = "clientId_example"; // String | Client ID
 
 apiInstance.deleteOauthClient(clientId)
-  .then(function() {
+  .then(() => {
     console.log('deleteOauthClient returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteOauthClient');
+  .catch((err) => {
+    console.log('There was a failure calling deleteOauthClient');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -91,29 +90,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OAuthApi();
+let apiInstance = new platformClient.OAuthApi();
 
-var clientId = "clientId_example"; // String | Client ID
+let clientId = "clientId_example"; // String | Client ID
 
 apiInstance.getOauthClient(clientId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getOauthClient success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getOauthClient');
+  .catch((err) => {
+    console.log('There was a failure calling getOauthClient');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -147,26 +145,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OAuthApi();
+let apiInstance = new platformClient.OAuthApi();
+
 apiInstance.getOauthClients()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getOauthClients success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getOauthClients');
+  .catch((err) => {
+    console.log('There was a failure calling getOauthClients');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -197,29 +195,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OAuthApi();
+let apiInstance = new platformClient.OAuthApi();
 
-var clientId = "clientId_example"; // String | Client ID
+let clientId = "clientId_example"; // String | Client ID
 
 apiInstance.postOauthClientSecret(clientId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postOauthClientSecret success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postOauthClientSecret');
+  .catch((err) => {
+    console.log('There was a failure calling postOauthClientSecret');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -252,22 +249,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyOAuthClientExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#OAuthClientExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#OAuthClientExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-OAuthClient <a style="cursor: pointer" onclick="copyOAuthClientExample()">Copy</a>
+OAuthClient <a href="#" onclick="return copyOAuthClientExample()">Copy</a>
 
-<div id="OAuthClientExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="OAuthClientExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -296,35 +293,35 @@ OAuthClient <a style="cursor: pointer" onclick="copyOAuthClientExample()">Copy</
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OAuthApi();
+let apiInstance = new platformClient.OAuthApi();
 
-var body = {}; // Object | Client
+let body = {}; // Object | Client
 
 apiInstance.postOauthClients(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postOauthClients success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postOauthClients');
+  .catch((err) => {
+    console.log('There was a failure calling postOauthClients');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -357,22 +354,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyOAuthClientExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#OAuthClientExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#OAuthClientExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-OAuthClient <a style="cursor: pointer" onclick="copyOAuthClientExample()">Copy</a>
+OAuthClient <a href="#" onclick="return copyOAuthClientExample()">Copy</a>
 
-<div id="OAuthClientExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="OAuthClientExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -401,37 +398,36 @@ OAuthClient <a style="cursor: pointer" onclick="copyOAuthClientExample()">Copy</
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OAuthApi();
+let apiInstance = new platformClient.OAuthApi();
 
-var clientId = "clientId_example"; // String | Client ID
-
-var body = {}; // Object | Client
+let clientId = "clientId_example"; // String | Client ID
+let body = {}; // Object | Client
 
 apiInstance.putOauthClient(clientId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putOauthClient success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putOauthClient');
+  .catch((err) => {
+    console.log('There was a failure calling putOauthClient');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

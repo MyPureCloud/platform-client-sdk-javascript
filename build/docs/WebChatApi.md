@@ -37,29 +37,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WebChatApi();
+let apiInstance = new platformClient.WebChatApi();
 
-var deploymentId = "deploymentId_example"; // String | Deployment Id
+let deploymentId = "deploymentId_example"; // String | Deployment Id
 
 apiInstance.deleteWebchatDeployment(deploymentId)
-  .then(function() {
+  .then(() => {
     console.log('deleteWebchatDeployment returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteWebchatDeployment');
+  .catch((err) => {
+    console.log('There was a failure calling deleteWebchatDeployment');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -93,26 +92,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WebChatApi();
+let apiInstance = new platformClient.WebChatApi();
+
 apiInstance.deleteWebchatSettings()
-  .then(function() {
+  .then(() => {
     console.log('deleteWebchatSettings returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteWebchatSettings');
+  .catch((err) => {
+    console.log('There was a failure calling deleteWebchatSettings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -143,29 +142,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WebChatApi();
+let apiInstance = new platformClient.WebChatApi();
 
-var deploymentId = "deploymentId_example"; // String | Deployment Id
+let deploymentId = "deploymentId_example"; // String | Deployment Id
 
 apiInstance.getWebchatDeployment(deploymentId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWebchatDeployment success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWebchatDeployment');
+  .catch((err) => {
+    console.log('There was a failure calling getWebchatDeployment');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -199,26 +197,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WebChatApi();
+let apiInstance = new platformClient.WebChatApi();
+
 apiInstance.getWebchatDeployments()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWebchatDeployments success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWebchatDeployments');
+  .catch((err) => {
+    console.log('There was a failure calling getWebchatDeployments');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -249,26 +247,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WebChatApi();
+let apiInstance = new platformClient.WebChatApi();
+
 apiInstance.getWebchatSettings()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWebchatSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWebchatSettings');
+  .catch((err) => {
+    console.log('There was a failure calling getWebchatSettings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -298,22 +296,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyWebChatDeploymentExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#WebChatDeploymentExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#WebChatDeploymentExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-WebChatDeployment <a style="cursor: pointer" onclick="copyWebChatDeploymentExample()">Copy</a>
+WebChatDeployment <a href="#" onclick="return copyWebChatDeploymentExample()">Copy</a>
 
-<div id="WebChatDeploymentExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="WebChatDeploymentExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -327,35 +325,35 @@ WebChatDeployment <a style="cursor: pointer" onclick="copyWebChatDeploymentExamp
   "allowedDomains": [String], 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WebChatApi();
+let apiInstance = new platformClient.WebChatApi();
 
-var body = {}; // Object | Deployment
+let body = {}; // Object | Deployment
 
 apiInstance.postWebchatDeployments(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWebchatDeployments success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWebchatDeployments');
+  .catch((err) => {
+    console.log('There was a failure calling postWebchatDeployments');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -388,22 +386,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyWebChatDeploymentExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#WebChatDeploymentExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#WebChatDeploymentExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-WebChatDeployment <a style="cursor: pointer" onclick="copyWebChatDeploymentExample()">Copy</a>
+WebChatDeployment <a href="#" onclick="return copyWebChatDeploymentExample()">Copy</a>
 
-<div id="WebChatDeploymentExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="WebChatDeploymentExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -417,37 +415,36 @@ WebChatDeployment <a style="cursor: pointer" onclick="copyWebChatDeploymentExamp
   "allowedDomains": [String], 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WebChatApi();
+let apiInstance = new platformClient.WebChatApi();
 
-var deploymentId = "deploymentId_example"; // String | Deployment Id
-
-var body = {}; // Object | Deployment
+let deploymentId = "deploymentId_example"; // String | Deployment Id
+let body = {}; // Object | Deployment
 
 apiInstance.putWebchatDeployment(deploymentId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putWebchatDeployment success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putWebchatDeployment');
+  .catch((err) => {
+    console.log('There was a failure calling putWebchatDeployment');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -481,54 +478,54 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyWebChatSettingsExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#WebChatSettingsExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#WebChatSettingsExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-WebChatSettings <a style="cursor: pointer" onclick="copyWebChatSettingsExample()">Copy</a>
+WebChatSettings <a href="#" onclick="return copyWebChatSettingsExample()">Copy</a>
 
-<div id="WebChatSettingsExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="WebChatSettingsExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "requireDeployment": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WebChatApi();
+let apiInstance = new platformClient.WebChatApi();
 
-var body = {}; // Object | webChatSettings
+let body = {}; // Object | webChatSettings
 
 apiInstance.putWebchatSettings(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putWebchatSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putWebchatSettings');
+  .catch((err) => {
+    console.log('There was a failure calling putWebchatSettings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

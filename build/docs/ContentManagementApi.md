@@ -66,32 +66,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var documentId = "documentId_example"; // String | Document ID
-
-var opts = { 
+let documentId = "documentId_example"; // String | Document ID
+let opts = { 
   'override': true // Boolean | Override any lock on the document
 };
+
 apiInstance.deleteContentmanagementDocument(documentId, opts)
-  .then(function() {
+  .then(() => {
     console.log('deleteContentmanagementDocument returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteContentmanagementDocument');
+  .catch((err) => {
+    console.log('There was a failure calling deleteContentmanagementDocument');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -125,29 +124,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var shareId = "shareId_example"; // String | Share ID
+let shareId = "shareId_example"; // String | Share ID
 
 apiInstance.deleteContentmanagementShare(shareId)
-  .then(function() {
+  .then(() => {
     console.log('deleteContentmanagementShare returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteContentmanagementShare');
+  .catch((err) => {
+    console.log('There was a failure calling deleteContentmanagementShare');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -180,29 +178,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var statusId = "statusId_example"; // String | Status ID
+let statusId = "statusId_example"; // String | Status ID
 
 apiInstance.deleteContentmanagementStatusStatusId(statusId)
-  .then(function() {
+  .then(() => {
     console.log('deleteContentmanagementStatusStatusId returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteContentmanagementStatusStatusId');
+  .catch((err) => {
+    console.log('There was a failure calling deleteContentmanagementStatusStatusId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -235,32 +232,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var workspaceId = "workspaceId_example"; // String | Workspace ID
-
-var opts = { 
+let workspaceId = "workspaceId_example"; // String | Workspace ID
+let opts = { 
   'moveChildrenToWorkspaceId': "moveChildrenToWorkspaceId_example" // String | New location for objects in deleted workspace.
 };
+
 apiInstance.deleteContentmanagementWorkspace(workspaceId, opts)
-  .then(function() {
+  .then(() => {
     console.log('deleteContentmanagementWorkspace returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteContentmanagementWorkspace');
+  .catch((err) => {
+    console.log('There was a failure calling deleteContentmanagementWorkspace');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -294,31 +290,29 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var workspaceId = "workspaceId_example"; // String | Workspace ID
-
-var memberId = "memberId_example"; // String | Member ID
+let workspaceId = "workspaceId_example"; // String | Workspace ID
+let memberId = "memberId_example"; // String | Member ID
 
 apiInstance.deleteContentmanagementWorkspaceMember(workspaceId, memberId)
-  .then(function() {
+  .then(() => {
     console.log('deleteContentmanagementWorkspaceMember returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteContentmanagementWorkspaceMember');
+  .catch((err) => {
+    console.log('There was a failure calling deleteContentmanagementWorkspaceMember');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -352,31 +346,29 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var workspaceId = "workspaceId_example"; // String | Workspace ID
-
-var tagId = "tagId_example"; // String | Tag ID
+let workspaceId = "workspaceId_example"; // String | Workspace ID
+let tagId = "tagId_example"; // String | Tag ID
 
 apiInstance.deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId)
-  .then(function() {
+  .then(() => {
     console.log('deleteContentmanagementWorkspaceTagvalue returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteContentmanagementWorkspaceTagvalue');
+  .catch((err) => {
+    console.log('There was a failure calling deleteContentmanagementWorkspaceTagvalue');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -410,32 +402,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var documentId = "documentId_example"; // String | Document ID
-
-var opts = { 
+let documentId = "documentId_example"; // String | Document ID
+let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
+
 apiInstance.getContentmanagementDocument(documentId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementDocument success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementDocument');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementDocument');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -469,20 +460,19 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var documentId = "documentId_example"; // String | Document ID
-
-var opts = { 
+let documentId = "documentId_example"; // String | Document ID
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'transactionFilter': "transactionFilter_example", // String | Transaction filter
@@ -490,16 +480,16 @@ var opts = {
   'sortBy': "sortBy_example", // String | Sort by
   'sortOrder': "ascending" // String | Sort order
 };
+
 apiInstance.getContentmanagementDocumentAudits(documentId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementDocumentAudits success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementDocumentAudits');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementDocumentAudits');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -538,33 +528,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var documentId = "documentId_example"; // String | Document ID
-
-var opts = { 
+let documentId = "documentId_example"; // String | Document ID
+let opts = { 
   'disposition': "disposition_example", // String | Request how the content will be downloaded: a file attachment or inline. Default is attachment.
   'contentType': "contentType_example" // String | The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav
 };
+
 apiInstance.getContentmanagementDocumentContent(documentId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementDocumentContent success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementDocumentContent');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementDocumentContent');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -599,20 +588,19 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var workspaceId = "workspaceId_example"; // String | Workspace ID
-
-var opts = { 
+let workspaceId = "workspaceId_example"; // String | Workspace ID
+let opts = { 
   'name': "name_example", // String | Name
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
   'pageSize': 25, // Number | Page size
@@ -620,16 +608,16 @@ var opts = {
   'sortBy': "sortBy_example", // String | name or dateCreated
   'sortOrder': "ascending" // String | ascending or descending
 };
+
 apiInstance.getContentmanagementDocuments(workspaceId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementDocuments success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementDocuments');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementDocuments');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -668,36 +656,35 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var queryPhrase = "queryPhrase_example"; // String | Phrase tokens are ANDed together over all searchable fields
-
-var opts = { 
+let queryPhrase = "queryPhrase_example"; // String | Phrase tokens are ANDed together over all searchable fields
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "name", // String | name or dateCreated
   'sortOrder': "ascending", // String | ascending or descending
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
+
 apiInstance.getContentmanagementQuery(queryPhrase, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementQuery');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -735,29 +722,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var securityProfileId = "securityProfileId_example"; // String | Security Profile Id
+let securityProfileId = "securityProfileId_example"; // String | Security Profile Id
 
 apiInstance.getContentmanagementSecurityprofile(securityProfileId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementSecurityprofile success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementSecurityprofile');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementSecurityprofile');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -790,26 +776,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
+
 apiInstance.getContentmanagementSecurityprofiles()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementSecurityprofiles success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementSecurityprofiles');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementSecurityprofiles');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -839,32 +825,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var shareId = "shareId_example"; // String | Share ID
-
-var opts = { 
+let shareId = "shareId_example"; // String | Share ID
+let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
+
 apiInstance.getContentmanagementShare(shareId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementShare success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementShare');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementShare');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -898,35 +883,34 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var sharedId = "sharedId_example"; // String | Shared ID
-
-var opts = { 
+let sharedId = "sharedId_example"; // String | Shared ID
+let opts = { 
   'redirect': true, // Boolean | Turn on or off redirect
   'disposition': "attachment", // String | Request how the share content will be downloaded: attached as a file or inline. Default is attachment.
   'contentType': "contentType_example", // String | The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav
   'expand': "expand_example" // String | Expand some document fields
 };
+
 apiInstance.getContentmanagementSharedSharedId(sharedId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementSharedSharedId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementSharedSharedId');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementSharedSharedId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -963,33 +947,33 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var opts = { 
+let opts = { 
   'entityId': "entityId_example", // String | Filters the shares returned to only the entity specified by the value of this parameter.
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getContentmanagementShares(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementShares success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementShares');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementShares');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1025,31 +1009,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getContentmanagementStatus(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementStatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementStatus');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementStatus');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1083,29 +1067,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var statusId = "statusId_example"; // String | Status ID
+let statusId = "statusId_example"; // String | Status ID
 
 apiInstance.getContentmanagementStatusStatusId(statusId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementStatusStatusId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementStatusStatusId');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementStatusStatusId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1138,26 +1121,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
+
 apiInstance.getContentmanagementUsage()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementUsage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementUsage');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementUsage');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1187,32 +1170,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var workspaceId = "workspaceId_example"; // String | Workspace ID
-
-var opts = { 
+let workspaceId = "workspaceId_example"; // String | Workspace ID
+let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
+
 apiInstance.getContentmanagementWorkspace(workspaceId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementWorkspace success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementWorkspace');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementWorkspace');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1246,36 +1228,35 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var workspaceId = "workspaceId_example"; // String | Workspace ID
-
-var opts = { 
+let workspaceId = "workspaceId_example"; // String | Workspace ID
+let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "sortBy_example", // String | name or dateCreated
   'sortOrder': "ascending" // String | ascending or descending
 };
+
 apiInstance.getContentmanagementWorkspaceDocuments(workspaceId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementWorkspaceDocuments success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementWorkspaceDocuments');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementWorkspaceDocuments');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1313,34 +1294,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var workspaceId = "workspaceId_example"; // String | Workspace ID
-
-var memberId = "memberId_example"; // String | Member ID
-
-var opts = { 
+let workspaceId = "workspaceId_example"; // String | Workspace ID
+let memberId = "memberId_example"; // String | Member ID
+let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
+
 apiInstance.getContentmanagementWorkspaceMember(workspaceId, memberId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementWorkspaceMember success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementWorkspaceMember');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementWorkspaceMember');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1375,34 +1354,33 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var workspaceId = "workspaceId_example"; // String | Workspace ID
-
-var opts = { 
+let workspaceId = "workspaceId_example"; // String | Workspace ID
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
+
 apiInstance.getContentmanagementWorkspaceMembers(workspaceId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementWorkspaceMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementWorkspaceMembers');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementWorkspaceMembers');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1438,34 +1416,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var workspaceId = "workspaceId_example"; // String | Workspace ID
-
-var tagId = "tagId_example"; // String | Tag ID
-
-var opts = { 
+let workspaceId = "workspaceId_example"; // String | Workspace ID
+let tagId = "tagId_example"; // String | Tag ID
+let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
+
 apiInstance.getContentmanagementWorkspaceTagvalue(workspaceId, tagId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementWorkspaceTagvalue success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementWorkspaceTagvalue');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementWorkspaceTagvalue');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1500,35 +1476,34 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var workspaceId = "workspaceId_example"; // String | Workspace ID
-
-var opts = { 
+let workspaceId = "workspaceId_example"; // String | Workspace ID
+let opts = { 
   'value': "value_example", // String | filter the list of tags returned
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
+
 apiInstance.getContentmanagementWorkspaceTagvalues(workspaceId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementWorkspaceTagvalues success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementWorkspaceTagvalues');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementWorkspaceTagvalues');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1565,33 +1540,33 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'access': ["access_example"], // [String] | Requested access level.
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
+
 apiInstance.getContentmanagementWorkspaces(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getContentmanagementWorkspaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getContentmanagementWorkspaces');
+  .catch((err) => {
+    console.log('There was a failure calling getContentmanagementWorkspaces');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1626,22 +1601,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyContentQueryRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ContentQueryRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ContentQueryRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ContentQueryRequest <a style="cursor: pointer" onclick="copyContentQueryRequestExample()">Copy</a>
+ContentQueryRequest <a href="#" onclick="return copyContentQueryRequestExample()">Copy</a>
 
-<div id="ContentQueryRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ContentQueryRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "queryPhrase": String, 
   "pageNumber": Number, 
@@ -1664,35 +1639,35 @@ ContentQueryRequest <a style="cursor: pointer" onclick="copyContentQueryRequestE
   },  
   "includeShares": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var body = {}; // Object | Allows for a filtered query returning facet information
+let body = {}; // Object | Allows for a filtered query returning facet information
 
 apiInstance.postContentmanagementAuditquery(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postContentmanagementAuditquery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postContentmanagementAuditquery');
+  .catch((err) => {
+    console.log('There was a failure calling postContentmanagementAuditquery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1724,22 +1699,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyDocumentUpdateExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#DocumentUpdateExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DocumentUpdateExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-DocumentUpdate <a style="cursor: pointer" onclick="copyDocumentUpdateExample()">Copy</a>
+DocumentUpdate <a href="#" onclick="return copyDocumentUpdateExample()">Copy</a>
 
-<div id="DocumentUpdateExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="DocumentUpdateExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "changeNumber": Number, 
   "name": String, 
@@ -1772,41 +1747,40 @@ DocumentUpdate <a style="cursor: pointer" onclick="copyDocumentUpdateExample()">
   },  
   "removeAttributes": [String], 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var documentId = "documentId_example"; // String | Document ID
-
-var body = {}; // Object | Document
-
-var opts = { 
+let documentId = "documentId_example"; // String | Document ID
+let body = {}; // Object | Document
+let opts = { 
   'expand': "expand_example", // String | Expand some document fields
   'override': true // Boolean | Override any lock on the document
 };
+
 apiInstance.postContentmanagementDocument(documentId, body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postContentmanagementDocument success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postContentmanagementDocument');
+  .catch((err) => {
+    console.log('There was a failure calling postContentmanagementDocument');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1841,61 +1815,60 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyReplaceRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ReplaceRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ReplaceRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ReplaceRequest <a style="cursor: pointer" onclick="copyReplaceRequestExample()">Copy</a>
+ReplaceRequest <a href="#" onclick="return copyReplaceRequestExample()">Copy</a>
 
-<div id="ReplaceRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ReplaceRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "changeNumber": Number, 
   "name": String, 
   "authToken": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var documentId = "documentId_example"; // String | Document ID
-
-var body = {}; // Object | Replace Request
-
-var opts = { 
+let documentId = "documentId_example"; // String | Document ID
+let body = {}; // Object | Replace Request
+let opts = { 
   'override': true // Boolean | Override any lock on the document
 };
+
 apiInstance.postContentmanagementDocumentContent(documentId, body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postContentmanagementDocumentContent success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postContentmanagementDocumentContent');
+  .catch((err) => {
+    console.log('There was a failure calling postContentmanagementDocumentContent');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1929,22 +1902,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyDocumentUploadExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#DocumentUploadExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DocumentUploadExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-DocumentUpload <a style="cursor: pointer" onclick="copyDocumentUploadExample()">Copy</a>
+DocumentUpload <a href="#" onclick="return copyDocumentUploadExample()">Copy</a>
 
-<div id="DocumentUploadExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="DocumentUploadExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "name": String, 
   "workspace": { 
@@ -1955,40 +1928,40 @@ DocumentUpload <a style="cursor: pointer" onclick="copyDocumentUploadExample()">
   "tags": [String], 
   "tagIds": [String], 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var body = {}; // Object | Document
-
-var opts = { 
+let body = {}; // Object | Document
+let opts = { 
   'copySource': "copySource_example", // String | Copy a document within a workspace or to a new workspace. Provide a document ID as the copy source.
   'moveSource': "moveSource_example", // String | Move a document to a new workspace. Provide a document ID as the move source.
   'override': true // Boolean | Override any lock on the source document
 };
+
 apiInstance.postContentmanagementDocuments(body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postContentmanagementDocuments success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postContentmanagementDocuments');
+  .catch((err) => {
+    console.log('There was a failure calling postContentmanagementDocuments');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2023,22 +1996,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyQueryRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#QueryRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#QueryRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-QueryRequest <a style="cursor: pointer" onclick="copyQueryRequestExample()">Copy</a>
+QueryRequest <a href="#" onclick="return copyQueryRequestExample()">Copy</a>
 
-<div id="QueryRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="QueryRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "queryPhrase": String, 
   "pageNumber": Number, 
@@ -2061,38 +2034,38 @@ QueryRequest <a style="cursor: pointer" onclick="copyQueryRequestExample()">Copy
   },  
   "includeShares": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var body = {}; // Object | Allows for a filtered query returning facet information
-
-var opts = { 
+let body = {}; // Object | Allows for a filtered query returning facet information
+let opts = { 
   'expand': "expand_example" // String | Expand some document fields
 };
+
 apiInstance.postContentmanagementQuery(body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postContentmanagementQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postContentmanagementQuery');
+  .catch((err) => {
+    console.log('There was a failure calling postContentmanagementQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2125,22 +2098,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCreateShareRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CreateShareRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CreateShareRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CreateShareRequest <a style="cursor: pointer" onclick="copyCreateShareRequestExample()">Copy</a>
+CreateShareRequest <a href="#" onclick="return copyCreateShareRequestExample()">Copy</a>
 
-<div id="CreateShareRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CreateShareRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "sharedEntityType": String, 
   "sharedEntity": { 
@@ -2157,35 +2130,35 @@ CreateShareRequest <a style="cursor: pointer" onclick="copyCreateShareRequestExa
     },  
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var body = {}; // Object | CreateShareRequest - entity id and type and a single member or list of members are required
+let body = {}; // Object | CreateShareRequest - entity id and type and a single member or list of members are required
 
 apiInstance.postContentmanagementShares(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postContentmanagementShares success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postContentmanagementShares');
+  .catch((err) => {
+    console.log('There was a failure calling postContentmanagementShares');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2217,22 +2190,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTagValueExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TagValueExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TagValueExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TagValue <a style="cursor: pointer" onclick="copyTagValueExample()">Copy</a>
+TagValue <a href="#" onclick="return copyTagValueExample()">Copy</a>
 
-<div id="TagValueExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TagValueExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -2240,37 +2213,36 @@ TagValue <a style="cursor: pointer" onclick="copyTagValueExample()">Copy</a>
   "acl": [String], 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var workspaceId = "workspaceId_example"; // String | Workspace ID
-
-var body = {}; // Object | tag
+let workspaceId = "workspaceId_example"; // String | Workspace ID
+let body = {}; // Object | tag
 
 apiInstance.postContentmanagementWorkspaceTagvalues(workspaceId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postContentmanagementWorkspaceTagvalues success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postContentmanagementWorkspaceTagvalues');
+  .catch((err) => {
+    console.log('There was a failure calling postContentmanagementWorkspaceTagvalues');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2303,61 +2275,60 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTagQueryRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TagQueryRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TagQueryRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TagQueryRequest <a style="cursor: pointer" onclick="copyTagQueryRequestExample()">Copy</a>
+TagQueryRequest <a href="#" onclick="return copyTagQueryRequestExample()">Copy</a>
 
-<div id="TagQueryRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TagQueryRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "query": String, 
   "pageNumber": Number, 
   "pageSize": Number, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var workspaceId = "workspaceId_example"; // String | Workspace ID
-
-var body = {}; // Object | query
-
-var opts = { 
+let workspaceId = "workspaceId_example"; // String | Workspace ID
+let body = {}; // Object | query
+let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
+
 apiInstance.postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postContentmanagementWorkspaceTagvaluesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postContentmanagementWorkspaceTagvaluesQuery');
+  .catch((err) => {
+    console.log('There was a failure calling postContentmanagementWorkspaceTagvaluesQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2391,56 +2362,56 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyWorkspaceCreateExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#WorkspaceCreateExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#WorkspaceCreateExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-WorkspaceCreate <a style="cursor: pointer" onclick="copyWorkspaceCreateExample()">Copy</a>
+WorkspaceCreate <a href="#" onclick="return copyWorkspaceCreateExample()">Copy</a>
 
-<div id="WorkspaceCreateExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="WorkspaceCreateExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "name": String, 
   "bucket": String, 
   "description": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var body = {}; // Object | Workspace
+let body = {}; // Object | Workspace
 
 apiInstance.postContentmanagementWorkspaces(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postContentmanagementWorkspaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postContentmanagementWorkspaces');
+  .catch((err) => {
+    console.log('There was a failure calling postContentmanagementWorkspaces');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2472,22 +2443,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyWorkspaceExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#WorkspaceExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#WorkspaceExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Workspace <a style="cursor: pointer" onclick="copyWorkspaceExample()">Copy</a>
+Workspace <a href="#" onclick="return copyWorkspaceExample()">Copy</a>
 
-<div id="WorkspaceExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="WorkspaceExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -2509,37 +2480,36 @@ Workspace <a style="cursor: pointer" onclick="copyWorkspaceExample()">Copy</a>
   "description": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var workspaceId = "workspaceId_example"; // String | Workspace ID
-
-var body = {}; // Object | Workspace
+let workspaceId = "workspaceId_example"; // String | Workspace ID
+let body = {}; // Object | Workspace
 
 apiInstance.putContentmanagementWorkspace(workspaceId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putContentmanagementWorkspace success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putContentmanagementWorkspace');
+  .catch((err) => {
+    console.log('There was a failure calling putContentmanagementWorkspace');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2572,22 +2542,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyWorkspaceMemberExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#WorkspaceMemberExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#WorkspaceMemberExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-WorkspaceMember <a style="cursor: pointer" onclick="copyWorkspaceMemberExample()">Copy</a>
+WorkspaceMember <a href="#" onclick="return copyWorkspaceMemberExample()">Copy</a>
 
-<div id="WorkspaceMemberExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="WorkspaceMemberExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -2972,39 +2942,37 @@ WorkspaceMember <a style="cursor: pointer" onclick="copyWorkspaceMemberExample()
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var workspaceId = "workspaceId_example"; // String | Workspace ID
-
-var memberId = "memberId_example"; // String | Member ID
-
-var body = {}; // Object | Workspace Member
+let workspaceId = "workspaceId_example"; // String | Workspace ID
+let memberId = "memberId_example"; // String | Member ID
+let body = {}; // Object | Workspace Member
 
 apiInstance.putContentmanagementWorkspaceMember(workspaceId, memberId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putContentmanagementWorkspaceMember success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putContentmanagementWorkspaceMember');
+  .catch((err) => {
+    console.log('There was a failure calling putContentmanagementWorkspaceMember');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3038,22 +3006,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTagValueExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TagValueExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TagValueExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TagValue <a style="cursor: pointer" onclick="copyTagValueExample()">Copy</a>
+TagValue <a href="#" onclick="return copyTagValueExample()">Copy</a>
 
-<div id="TagValueExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TagValueExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -3061,39 +3029,37 @@ TagValue <a style="cursor: pointer" onclick="copyTagValueExample()">Copy</a>
   "acl": [String], 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ContentManagementApi();
+let apiInstance = new platformClient.ContentManagementApi();
 
-var workspaceId = "workspaceId_example"; // String | Workspace ID
-
-var tagId = "tagId_example"; // String | Tag ID
-
-var body = {}; // Object | Workspace
+let workspaceId = "workspaceId_example"; // String | Workspace ID
+let tagId = "tagId_example"; // String | Tag ID
+let body = {}; // Object | Workspace
 
 apiInstance.putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putContentmanagementWorkspaceTagvalue success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putContentmanagementWorkspaceTagvalue');
+  .catch((err) => {
+    console.log('There was a failure calling putContentmanagementWorkspaceTagvalue');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

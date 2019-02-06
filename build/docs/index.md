@@ -13,41 +13,41 @@ A JavaScript library to interface with the PureCloud Platform API. View the docu
 
 For node.js via [NPM](https://www.npmjs.com/package/purecloud-platform-client-v2):
 
-~~~ sh
+```{"language":"sh"}
 npm install purecloud-platform-client-v2
-~~~
+```
 
-~~~ javascript
+```{"language":"javascript"}
 // Obtain a reference to the platformClient object
 const platformClient = require('purecloud-platform-client-v2');
-~~~
+```
 
 For direct use in a browser script:
 
-~~~ html
+```{"language":"html"}
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/43.0.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/43.0.1/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
   const platformClient = require('platformClient');
 </script>
-~~~
+```
 
 
 ## AMD
 
-~~~ html
+```{"language":"html"}
 <!-- Include requirejs -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/43.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/43.0.1/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
-~~~
+```
 
 ## ES6 Classes and Other Entry Points
 
@@ -74,7 +74,7 @@ After authentication has completed, the access token is stored on the `ApiClient
 
 The Client Credentials grant only works when used in node.js. This is restricted intentionally because it is impossible for client credentials to be handled securely in a browser application.
 
-~~~ javascript
+```{"language":"javascript"}
 const client = platformClient.ApiClient.instance;
 client.loginClientCredentialsGrant(clientId, clientSecret)
   .then(() => {
@@ -84,7 +84,7 @@ client.loginClientCredentialsGrant(clientId, clientSecret)
     // Handle failure response
     console.log(err);
   });
-~~~
+```
 
 **Web** [Implicit grant](https://developer.mypurecloud.com/api/rest/authorization/use-implicit-grant.html)
 
@@ -94,7 +94,7 @@ Optional parameters may be specified in the optional third parameter for `loginI
 
 * `state` - An arbitrary string used to associate a login request with a login response. This value will be provided in the `state` property on the object when the promise is resolved. The state in the resolved promise will be identical to what was passed into `loginImplicitGrant`, except when the state is retrieved from the auth hash upon completing a login; in that case, the state from the auth hash will override the passed in state.
 
-~~~ javascript
+```{"language":"javascript"}
 const client = platformClient.ApiClient.instance;
 client.loginImplicitGrant(clientId, redirectUri, { state: state })
   .then((data) => {
@@ -105,35 +105,35 @@ client.loginImplicitGrant(clientId, redirectUri, { state: state })
     // Handle failure response
     console.log(err);
   });
-~~~
+```
 
 **Any platform** Provide an existing auth token
 
-~~~ javascript
+```{"language":"javascript"}
 const client = platformClient.ApiClient.instance;
 client.setAccessToken(yourAccessToken);
 // Do authenticated things; no authentication function needed
-~~~
+```
 
 
 ## Environments
 
 If connecting to a PureCloud environment other than mypurecloud.com (e.g. mypurecloud.ie), set the environment on the `ApiClient` instance.
 
-~~~ js
+```{"language":"javascript"}
 const client = platformClient.ApiClient.instance;
 client.setEnvironment('mypurecloud.ie');
-~~~
+```
 
 
 ## Access Token persistence
 
 In a web environment, it is possible to persist the access token to prevent an authentication request from being made on each page load. To enable this function, simply enable settings persistence prior to attempting a login. To maintain multiple auth tokens in storage, specify the prefix to use for storage/retrieval when enabling persistence. Otherwise, the prefix is optional and will default to `purecloud`.
 
-~~~ js
+```{"language":"javascript"}
 const client = platformClient.ApiClient.instance;
 client.setPersistSettings(true, 'optional_prefix');
-~~~
+```
 
 
 ## Making Requests
@@ -142,7 +142,7 @@ All API requests return a Promise which resolves to the response body, otherwise
 
 **Node.js**
 
-~~~ js
+```{"language":"javascript"}
 // Create API instance
 const authorizationApi = new platformClient.AuthorizationApi();
 
@@ -160,11 +160,11 @@ client.loginClientCredentialsGrant(clientId, clientSecret)
     // Handle failure response
     console.log(err);
   });
-~~~
+```
 
 **Web**
 
-~~~ js
+```{"language":"javascript"}
 // Create API instance
 const usersApi = new platformClient.UsersApi();
 
@@ -182,21 +182,21 @@ client.loginImplicitGrant(clientId, redirectUri)
     // Handle failure response
     console.log(err);
   });
-~~~
+```
 
 
 ### Extended Responses
 
 By default, the SDK will return only the response body as the result of an API function call. To retrieve additional information about the response, enable extended responses. This will return the extended response for all API function calls:
 
-~~~ js
+```{"language":"javascript"}
 const client = platformClient.ApiClient.instance;
 client.setReturnExtendedResponses(true);
-~~~
+```
 
 Extended response object example (`body` and `text` have been truncated):
 
-~~~ json
+```{"language":"json"}
 {
   "status": 200,
   "statusText": "",
@@ -214,7 +214,7 @@ Extended response object example (`body` and `text` have been truncated):
   "text": "",
   "error": null
 }
-~~~
+```
 
 
 ### Using a Proxy (Node.js only)
@@ -228,7 +228,7 @@ After both steps have been completed, the configured proxy server will be used f
 
 NOTE: SDK proxy configuration is only available in the node.js package due to `superagent-proxy`'s incompatibility with browserify. Additionally, `superagent-proxy` is not included a dependency of the SDK and must be provided by your node application's dependencies.
 
-~~~ js
+```{"language":"javascript"}
 const client = platformClient.ApiClient.instance;
 require('superagent-proxy')(client.superagent);
 // Configure settings for your proxy here
@@ -238,7 +238,7 @@ client.proxy = {
   port: 443,
   protocol: 'https',
 };
-~~~
+```
 
 
 ### Error Responses
@@ -247,7 +247,7 @@ Error responses will always be thrown as an extended response object. Note that 
 
 Example error response object:
 
-~~~ json
+```{"language":"json"}
 {
   "status": 404,
   "statusText": "",
@@ -274,17 +274,17 @@ Example error response object:
     "original": null
   }
 }
-~~~
+```
 
 
 ## Debug Logging
 
 There are hooks to trace requests and responses.  To enable debug tracing, provide a log object. Optionally, specify a maximum number of lines. If specified, the response body trace will be truncated. If not specified, the entire response body will be traced out.
 
-~~~ js
+```{"language":"javascript"}
 const client = platformClient.ApiClient.instance;
 client.setDebugLog(console.log, 25);
-~~~
+```
 
 
 ## Versioning

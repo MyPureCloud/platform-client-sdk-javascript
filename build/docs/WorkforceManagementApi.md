@@ -94,29 +94,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 apiInstance.deleteWorkforcemanagementManagementunit(muId)
-  .then(function() {
+  .then(() => {
     console.log('deleteWorkforcemanagementManagementunit returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteWorkforcemanagementManagementunit');
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementManagementunit');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -151,31 +150,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var acId = "acId_example"; // String | The ID of the activity code to delete
+let muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let acId = "acId_example"; // String | The ID of the activity code to delete
 
 apiInstance.deleteWorkforcemanagementManagementunitActivitycode(muId, acId)
-  .then(function() {
+  .then(() => {
     console.log('deleteWorkforcemanagementManagementunitActivitycode returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteWorkforcemanagementManagementunitActivitycode');
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementManagementunitActivitycode');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -210,31 +207,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
-
-var runId = "runId_example"; // String | The ID of the schedule run
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
+let runId = "runId_example"; // String | The ID of the schedule run
 
 apiInstance.deleteWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId)
-  .then(function() {
+  .then(() => {
     console.log('deleteWorkforcemanagementManagementunitSchedulingRun returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteWorkforcemanagementManagementunitSchedulingRun');
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementManagementunitSchedulingRun');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -270,31 +265,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var serviceGoalGroupId = "serviceGoalGroupId_example"; // String | The ID of the service goal group to delete
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let serviceGoalGroupId = "serviceGoalGroupId_example"; // String | The ID of the service goal group to delete
 
 apiInstance.deleteWorkforcemanagementManagementunitServicegoalgroup(managementUnitId, serviceGoalGroupId)
-  .then(function() {
+  .then(() => {
     console.log('deleteWorkforcemanagementManagementunitServicegoalgroup returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteWorkforcemanagementManagementunitServicegoalgroup');
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementManagementunitServicegoalgroup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -330,33 +323,30 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
-
-var scheduleId = "scheduleId_example"; // String | The ID of theschedule to delete
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
+let scheduleId = "scheduleId_example"; // String | The ID of theschedule to delete
 
 apiInstance.deleteWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId)
-  .then(function() {
+  .then(() => {
     console.log('deleteWorkforcemanagementManagementunitWeekSchedule returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteWorkforcemanagementManagementunitWeekSchedule');
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementManagementunitWeekSchedule');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -393,33 +383,30 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
-
-var weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format
-
-var forecastId = "forecastId_example"; // String | The ID of the forecast
+let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
+let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format
+let forecastId = "forecastId_example"; // String | The ID of the forecast
 
 apiInstance.deleteWorkforcemanagementManagementunitWeekShorttermforecast(managementUnitId, weekDateId, forecastId)
-  .then(function() {
+  .then(() => {
     console.log('deleteWorkforcemanagementManagementunitWeekShorttermforecast returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteWorkforcemanagementManagementunitWeekShorttermforecast');
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementManagementunitWeekShorttermforecast');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -456,31 +443,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var workPlanId = "workPlanId_example"; // String | The ID of the work plan to delete
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let workPlanId = "workPlanId_example"; // String | The ID of the work plan to delete
 
 apiInstance.deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId)
-  .then(function() {
+  .then(() => {
     console.log('deleteWorkforcemanagementManagementunitWorkplan returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteWorkforcemanagementManagementunitWorkplan');
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementManagementunitWorkplan');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -515,29 +500,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var userId = ["userId_example"]; // [String] | User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request
+let userId = ["userId_example"]; // [String] | User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request
 
 apiInstance.getWorkforcemanagementAdherence(userId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementAdherence success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementAdherence');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementAdherence');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -614,32 +598,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var opts = { 
+let muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
   'expand': "expand_example" // String | 
 };
+
 apiInstance.getWorkforcemanagementManagementunit(muId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunit success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunit');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunit');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -675,31 +658,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var acId = "acId_example"; // String | The ID of the activity code to fetch
+let muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let acId = "acId_example"; // String | The ID of the activity code to fetch
 
 apiInstance.getWorkforcemanagementManagementunitActivitycode(muId, acId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitActivitycode success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitActivitycode');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitActivitycode');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -777,29 +758,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 apiInstance.getWorkforcemanagementManagementunitActivitycodes(muId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitActivitycodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitActivitycodes');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitActivitycodes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -834,31 +814,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The id of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var agentId = "agentId_example"; // String | The agent id
+let managementUnitId = "managementUnitId_example"; // String | The id of the management unit, or 'mine' for the management unit of the logged-in user.
+let agentId = "agentId_example"; // String | The agent id
 
 apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitAgent success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitAgent');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitAgent');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -893,31 +871,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The management unit ID of the management unit
-
-var _date = "_date_example"; // String | yyyy-MM-dd date string interpreted in the configured management unit time zone
+let muId = "muId_example"; // String | The management unit ID of the management unit
+let _date = "_date_example"; // String | yyyy-MM-dd date string interpreted in the configured management unit time zone
 
 apiInstance.getWorkforcemanagementManagementunitIntradayQueues(muId, _date)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitIntradayQueues success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitIntradayQueues');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitIntradayQueues');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -952,31 +928,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
-
-var runId = "runId_example"; // String | The ID of the schedule run
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
+let runId = "runId_example"; // String | The ID of the schedule run
 
 apiInstance.getWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitSchedulingRun success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitSchedulingRun');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitSchedulingRun');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1011,31 +985,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
-
-var runId = "runId_example"; // String | The ID of the schedule run
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
+let runId = "runId_example"; // String | The ID of the schedule run
 
 apiInstance.getWorkforcemanagementManagementunitSchedulingRunResult(managementUnitId, runId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitSchedulingRunResult success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitSchedulingRunResult');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitSchedulingRunResult');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1070,29 +1042,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 
 apiInstance.getWorkforcemanagementManagementunitSchedulingRuns(managementUnitId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitSchedulingRuns success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitSchedulingRuns');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitSchedulingRuns');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1127,31 +1098,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var serviceGoalGroupId = "serviceGoalGroupId_example"; // String | The ID of the service goal group to fetch
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let serviceGoalGroupId = "serviceGoalGroupId_example"; // String | The ID of the service goal group to fetch
 
 apiInstance.getWorkforcemanagementManagementunitServicegoalgroup(managementUnitId, serviceGoalGroupId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitServicegoalgroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitServicegoalgroup');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitServicegoalgroup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1189,29 +1158,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 apiInstance.getWorkforcemanagementManagementunitServicegoalgroups(managementUnitId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitServicegoalgroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitServicegoalgroups');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitServicegoalgroups');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1246,29 +1214,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 apiInstance.getWorkforcemanagementManagementunitSettings(muId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitSettings');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitSettings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1303,33 +1270,30 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
-
-var timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
+let muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+let userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
+let timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
 
 apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitUserTimeoffrequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitUserTimeoffrequest');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitUserTimeoffrequest');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1366,34 +1330,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
-
-var opts = { 
+let muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+let userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
+let opts = { 
   'recentlyReviewed': false // Boolean | Limit results to requests that have been reviewed within the preceding 30 days
 };
+
 apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(muId, userId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitUserTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitUserTimeoffrequests');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitUserTimeoffrequests');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1439,29 +1401,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 apiInstance.getWorkforcemanagementManagementunitUsers(muId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitUsers');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitUsers');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1497,37 +1458,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
-
-var scheduleId = "scheduleId_example"; // String | The ID of the schedule to fetch
-
-var opts = { 
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
+let scheduleId = "scheduleId_example"; // String | The ID of the schedule to fetch
+let opts = { 
   'expand': "expand_example", // String | Which fields, if any, to expand
   'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
 };
+
 apiInstance.getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitWeekSchedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitWeekSchedule');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitWeekSchedule');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1567,33 +1525,30 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
-
-var scheduleId = "scheduleId_example"; // String | The ID of the schedule to fetch generation results
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
+let scheduleId = "scheduleId_example"; // String | The ID of the schedule to fetch generation results
 
 apiInstance.getWorkforcemanagementManagementunitWeekScheduleGenerationresults(managementUnitId, weekId, scheduleId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitWeekScheduleGenerationresults success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitWeekScheduleGenerationresults');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitWeekScheduleGenerationresults');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1631,31 +1586,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
 
 apiInstance.getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitWeekSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitWeekSchedules');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitWeekSchedules');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1691,36 +1644,33 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
-
-var weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format
-
-var forecastId = "forecastId_example"; // String | The ID of the forecast
-
-var opts = { 
+let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
+let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format
+let forecastId = "forecastId_example"; // String | The ID of the forecast
+let opts = { 
   'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
 };
+
 apiInstance.getWorkforcemanagementManagementunitWeekShorttermforecastFinal(managementUnitId, weekDateId, forecastId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitWeekShorttermforecastFinal success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitWeekShorttermforecastFinal');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitWeekShorttermforecastFinal');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1759,31 +1709,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
-
-var weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format
+let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
+let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format
 
 apiInstance.getWorkforcemanagementManagementunitWeekShorttermforecasts(managementUnitId, weekDateId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitWeekShorttermforecasts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitWeekShorttermforecasts');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitWeekShorttermforecasts');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1821,31 +1769,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var workPlanId = "workPlanId_example"; // String | The ID of the work plan to fetch
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let workPlanId = "workPlanId_example"; // String | The ID of the work plan to fetch
 
 apiInstance.getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitWorkplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitWorkplan');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitWorkplan');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1886,32 +1832,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var opts = { 
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
   'expand': ["expand_example"] // [String] | 
 };
+
 apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitWorkplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitWorkplans');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitWorkplans');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1945,34 +1890,34 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 56, // Number | 
   'pageNumber': 56, // Number | 
   'expand': "expand_example", // String | 
   'feature': "feature_example", // String | 
   'divisionId': "divisionId_example" // String | 
 };
+
 apiInstance.getWorkforcemanagementManagementunits(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunits success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunits');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunits');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2010,30 +1955,30 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var opts = { 
+let opts = { 
   'divisionId': ["divisionId_example"] // [String] | The divisionIds to filter by. If omitted, will return all divisions
 };
+
 apiInstance.getWorkforcemanagementManagementunitsDivisionviews(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementManagementunitsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementManagementunitsDivisionviews');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitsDivisionviews');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2068,29 +2013,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
+let timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
 
 apiInstance.getWorkforcemanagementTimeoffrequest(timeOffRequestId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementTimeoffrequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementTimeoffrequest');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementTimeoffrequest');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2125,30 +2069,30 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var opts = { 
+let opts = { 
   'recentlyReviewed': false // Boolean | Limit results to requests that have been reviewed within the preceding 30 days
 };
+
 apiInstance.getWorkforcemanagementTimeoffrequests(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getWorkforcemanagementTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getWorkforcemanagementTimeoffrequests');
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementTimeoffrequests');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2182,22 +2126,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUpdateActivityCodeRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UpdateActivityCodeRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UpdateActivityCodeRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UpdateActivityCodeRequest <a style="cursor: pointer" onclick="copyUpdateActivityCodeRequestExample()">Copy</a>
+UpdateActivityCodeRequest <a href="#" onclick="return copyUpdateActivityCodeRequestExample()">Copy</a>
 
-<div id="UpdateActivityCodeRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UpdateActivityCodeRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "name": String, 
   "category": String, 
@@ -2214,40 +2158,39 @@ UpdateActivityCodeRequest <a style="cursor: pointer" onclick="copyUpdateActivity
     "dateModified": Date, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var acId = "acId_example"; // String | The ID of the activity code to update
-
-var opts = { 
+let muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let acId = "acId_example"; // String | The ID of the activity code to update
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.patchWorkforcemanagementManagementunitActivitycode(muId, acId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitActivitycode success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchWorkforcemanagementManagementunitActivitycode');
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementManagementunitActivitycode');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2282,59 +2225,58 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUpdateSchedulingRunRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UpdateSchedulingRunRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UpdateSchedulingRunRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UpdateSchedulingRunRequest <a style="cursor: pointer" onclick="copyUpdateSchedulingRunRequestExample()">Copy</a>
+UpdateSchedulingRunRequest <a href="#" onclick="return copyUpdateSchedulingRunRequestExample()">Copy</a>
 
-<div id="UpdateSchedulingRunRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UpdateSchedulingRunRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "applied": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
-
-var runId = "runId_example"; // String | The ID of the schedule run
-
-var opts = { 
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
+let runId = "runId_example"; // String | The ID of the schedule run
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.patchWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitSchedulingRun success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchWorkforcemanagementManagementunitSchedulingRun');
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementManagementunitSchedulingRun');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2370,22 +2312,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyServiceGoalGroupExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ServiceGoalGroupExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ServiceGoalGroupExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ServiceGoalGroup <a style="cursor: pointer" onclick="copyServiceGoalGroupExample()">Copy</a>
+ServiceGoalGroup <a href="#" onclick="return copyServiceGoalGroupExample()">Copy</a>
 
-<div id="ServiceGoalGroupExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ServiceGoalGroupExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -2423,40 +2365,39 @@ ServiceGoalGroup <a style="cursor: pointer" onclick="copyServiceGoalGroupExample
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var serviceGoalGroupId = "serviceGoalGroupId_example"; // String | The ID of the service goal group to update
-
-var opts = { 
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let serviceGoalGroupId = "serviceGoalGroupId_example"; // String | The ID of the service goal group to update
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.patchWorkforcemanagementManagementunitServicegoalgroup(managementUnitId, serviceGoalGroupId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitServicegoalgroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchWorkforcemanagementManagementunitServicegoalgroup');
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementManagementunitServicegoalgroup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2492,22 +2433,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyManagementUnitSettingsExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ManagementUnitSettingsExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ManagementUnitSettingsExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ManagementUnitSettings <a style="cursor: pointer" onclick="copyManagementUnitSettingsExample()">Copy</a>
+ManagementUnitSettings <a href="#" onclick="return copyManagementUnitSettingsExample()">Copy</a>
 
-<div id="ManagementUnitSettingsExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ManagementUnitSettingsExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "adherence": { 
     "severeAlertThresholdMinutes": Number, 
@@ -2547,38 +2488,38 @@ ManagementUnitSettings <a style="cursor: pointer" onclick="copyManagementUnitSet
     "dateModified": Date, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var opts = { 
+let muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
   'body': {} // Object | config
 };
+
 apiInstance.patchWorkforcemanagementManagementunitSettings(muId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchWorkforcemanagementManagementunitSettings');
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementManagementunitSettings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2613,22 +2554,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyAdminTimeOffRequestPatchExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#AdminTimeOffRequestPatchExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#AdminTimeOffRequestPatchExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-AdminTimeOffRequestPatch <a style="cursor: pointer" onclick="copyAdminTimeOffRequestPatchExample()">Copy</a>
+AdminTimeOffRequestPatch <a href="#" onclick="return copyAdminTimeOffRequestPatchExample()">Copy</a>
 
-<div id="AdminTimeOffRequestPatchExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="AdminTimeOffRequestPatchExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "status": String, 
   "activityCodeId": String, 
@@ -2645,42 +2586,40 @@ AdminTimeOffRequestPatch <a style="cursor: pointer" onclick="copyAdminTimeOffReq
     "dateModified": Date, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var userId = "userId_example"; // String | The id of the user the requested time off request belongs to
-
-var timeOffRequestId = "timeOffRequestId_example"; // String | The id of the time off request to update
-
-var opts = { 
+let muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+let userId = "userId_example"; // String | The id of the user the requested time off request belongs to
+let timeOffRequestId = "timeOffRequestId_example"; // String | The id of the time off request to update
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitUserTimeoffrequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchWorkforcemanagementManagementunitUserTimeoffrequest');
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementManagementunitUserTimeoffrequest');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2717,22 +2656,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUpdateWeekScheduleRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UpdateWeekScheduleRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UpdateWeekScheduleRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UpdateWeekScheduleRequest <a style="cursor: pointer" onclick="copyUpdateWeekScheduleRequestExample()">Copy</a>
+UpdateWeekScheduleRequest <a href="#" onclick="return copyUpdateWeekScheduleRequestExample()">Copy</a>
 
-<div id="UpdateWeekScheduleRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UpdateWeekScheduleRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "description": String, 
   "published": Boolean, 
@@ -2800,44 +2739,42 @@ UpdateWeekScheduleRequest <a style="cursor: pointer" onclick="copyUpdateWeekSche
   },  
   "agentUpdateFilter": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
-
-var scheduleId = "scheduleId_example"; // String | The ID of the schedule to update. Use partial uploads of user schedules if activity count in schedule is greater than 17500
-
-var opts = { 
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
+let scheduleId = "scheduleId_example"; // String | The ID of the schedule to update. Use partial uploads of user schedules if activity count in schedule is greater than 17500
+let opts = { 
   'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
   'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
   'body': {} // Object | body
 };
+
 apiInstance.patchWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitWeekSchedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchWorkforcemanagementManagementunitWeekSchedule');
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementManagementunitWeekSchedule');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2876,22 +2813,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyWorkPlanExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#WorkPlanExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#WorkPlanExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-WorkPlan <a style="cursor: pointer" onclick="copyWorkPlanExample()">Copy</a>
+WorkPlan <a href="#" onclick="return copyWorkPlanExample()">Copy</a>
 
-<div id="WorkPlanExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="WorkPlanExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -2967,40 +2904,39 @@ WorkPlan <a style="cursor: pointer" onclick="copyWorkPlanExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var workPlanId = "workPlanId_example"; // String | The ID of the work plan to update
-
-var opts = { 
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let workPlanId = "workPlanId_example"; // String | The ID of the work plan to update
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitWorkplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchWorkforcemanagementManagementunitWorkplan');
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementManagementunitWorkplan');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3035,59 +2971,59 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyAgentTimeOffRequestPatchExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#AgentTimeOffRequestPatchExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#AgentTimeOffRequestPatchExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-AgentTimeOffRequestPatch <a style="cursor: pointer" onclick="copyAgentTimeOffRequestPatchExample()">Copy</a>
+AgentTimeOffRequestPatch <a href="#" onclick="return copyAgentTimeOffRequestPatchExample()">Copy</a>
 
-<div id="AgentTimeOffRequestPatchExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="AgentTimeOffRequestPatchExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "markedAsRead": Boolean, 
   "status": String, 
   "notes": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
-
-var opts = { 
+let timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchWorkforcemanagementTimeoffrequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchWorkforcemanagementTimeoffrequest');
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementTimeoffrequest');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3121,22 +3057,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyWfmHistoricalAdherenceQueryForUsersExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#WfmHistoricalAdherenceQueryForUsersExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#WfmHistoricalAdherenceQueryForUsersExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-WfmHistoricalAdherenceQueryForUsers <a style="cursor: pointer" onclick="copyWfmHistoricalAdherenceQueryForUsersExample()">Copy</a>
+WfmHistoricalAdherenceQueryForUsers <a href="#" onclick="return copyWfmHistoricalAdherenceQueryForUsersExample()">Copy</a>
 
-<div id="WfmHistoricalAdherenceQueryForUsersExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="WfmHistoricalAdherenceQueryForUsersExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "startDate": Date, 
   "endDate": Date, 
@@ -3144,36 +3080,37 @@ WfmHistoricalAdherenceQueryForUsers <a style="cursor: pointer" onclick="copyWfmH
   "userIds": [String], 
   "includeExceptions": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var opts = { 
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.postWorkforcemanagementAdherenceHistorical(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementAdherenceHistorical success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementAdherenceHistorical');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementAdherenceHistorical');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3207,22 +3144,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCreateActivityCodeRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CreateActivityCodeRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CreateActivityCodeRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CreateActivityCodeRequest <a style="cursor: pointer" onclick="copyCreateActivityCodeRequestExample()">Copy</a>
+CreateActivityCodeRequest <a href="#" onclick="return copyCreateActivityCodeRequestExample()">Copy</a>
 
-<div id="CreateActivityCodeRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CreateActivityCodeRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "name": String, 
   "category": String, 
@@ -3231,38 +3168,38 @@ CreateActivityCodeRequest <a style="cursor: pointer" onclick="copyCreateActivity
   "countsAsWorkTime": Boolean, 
   "agentTimeOffSelectable": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var opts = { 
+let muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.postWorkforcemanagementManagementunitActivitycodes(muId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunitActivitycodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunitActivitycodes');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitActivitycodes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3296,22 +3233,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyWfmHistoricalAdherenceQueryExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#WfmHistoricalAdherenceQueryExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#WfmHistoricalAdherenceQueryExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-WfmHistoricalAdherenceQuery <a style="cursor: pointer" onclick="copyWfmHistoricalAdherenceQueryExample()">Copy</a>
+WfmHistoricalAdherenceQuery <a href="#" onclick="return copyWfmHistoricalAdherenceQueryExample()">Copy</a>
 
-<div id="WfmHistoricalAdherenceQueryExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="WfmHistoricalAdherenceQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "startDate": Date, 
   "endDate": Date, 
@@ -3319,38 +3256,38 @@ WfmHistoricalAdherenceQuery <a style="cursor: pointer" onclick="copyWfmHistorica
   "userIds": [String], 
   "includeExceptions": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The management unit ID of the management unit
-
-var opts = { 
+let muId = "muId_example"; // String | The management unit ID of the management unit
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(muId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunitHistoricaladherencequery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunitHistoricaladherencequery');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitHistoricaladherencequery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3384,22 +3321,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyIntradayQueryDataCommandExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#IntradayQueryDataCommandExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#IntradayQueryDataCommandExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-IntradayQueryDataCommand <a style="cursor: pointer" onclick="copyIntradayQueryDataCommandExample()">Copy</a>
+IntradayQueryDataCommand <a href="#" onclick="return copyIntradayQueryDataCommandExample()">Copy</a>
 
-<div id="IntradayQueryDataCommandExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="IntradayQueryDataCommandExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "startDate": Date, 
   "endDate": Date, 
@@ -3410,38 +3347,38 @@ IntradayQueryDataCommand <a style="cursor: pointer" onclick="copyIntradayQueryDa
   "queueIds": [String], 
   "intervalLengthMinutes": Number, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The management unit ID of the management unit
-
-var opts = { 
+let muId = "muId_example"; // String | The management unit ID of the management unit
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.postWorkforcemanagementManagementunitIntraday(muId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunitIntraday success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunitIntraday');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitIntraday');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3477,59 +3414,59 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUserListScheduleRequestBodyExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UserListScheduleRequestBodyExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UserListScheduleRequestBodyExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UserListScheduleRequestBody <a style="cursor: pointer" onclick="copyUserListScheduleRequestBodyExample()">Copy</a>
+UserListScheduleRequestBody <a href="#" onclick="return copyUserListScheduleRequestBodyExample()">Copy</a>
 
-<div id="UserListScheduleRequestBodyExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UserListScheduleRequestBodyExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "userIds": [String], 
   "startDate": Date, 
   "endDate": Date, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var opts = { 
+let muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(muId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunitSchedulesSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunitSchedulesSearch');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitSchedulesSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3564,22 +3501,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCreateServiceGoalGroupRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CreateServiceGoalGroupRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CreateServiceGoalGroupRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CreateServiceGoalGroupRequest <a style="cursor: pointer" onclick="copyCreateServiceGoalGroupRequestExample()">Copy</a>
+CreateServiceGoalGroupRequest <a href="#" onclick="return copyCreateServiceGoalGroupRequestExample()">Copy</a>
 
-<div id="CreateServiceGoalGroupRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CreateServiceGoalGroupRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "name": String, 
   "goals": { 
@@ -3605,38 +3542,38 @@ CreateServiceGoalGroupRequest <a style="cursor: pointer" onclick="copyCreateServ
     "mediaTypes": [String], 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var opts = { 
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.postWorkforcemanagementManagementunitServicegoalgroups(managementUnitId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunitServicegoalgroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunitServicegoalgroups');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitServicegoalgroups');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3671,22 +3608,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCreateAdminTimeOffRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CreateAdminTimeOffRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CreateAdminTimeOffRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CreateAdminTimeOffRequest <a style="cursor: pointer" onclick="copyCreateAdminTimeOffRequestExample()">Copy</a>
+CreateAdminTimeOffRequest <a href="#" onclick="return copyCreateAdminTimeOffRequestExample()">Copy</a>
 
-<div id="CreateAdminTimeOffRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CreateAdminTimeOffRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "status": String, 
   "users": { 
@@ -3699,38 +3636,38 @@ CreateAdminTimeOffRequest <a style="cursor: pointer" onclick="copyCreateAdminTim
   "partialDayStartDateTimes": [Date], 
   "dailyDurationMinutes": Number, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var opts = { 
+let muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(muId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunitTimeoffrequests');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitTimeoffrequests');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3765,22 +3702,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTimeOffRequestLookupListExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TimeOffRequestLookupListExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TimeOffRequestLookupListExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TimeOffRequestLookupList <a style="cursor: pointer" onclick="copyTimeOffRequestLookupListExample()">Copy</a>
+TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupListExample()">Copy</a>
 
-<div id="TimeOffRequestLookupListExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TimeOffRequestLookupListExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "entities": { 
     "id": String, 
@@ -5288,38 +5225,38 @@ TimeOffRequestLookupList <a style="cursor: pointer" onclick="copyTimeOffRequestL
     "selfUri": String, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var opts = { 
+let muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsFetchdetails(muId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeoffrequestsFetchdetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunitTimeoffrequestsFetchdetails');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitTimeoffrequestsFetchdetails');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5354,22 +5291,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTimeOffRequestQueryBodyExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TimeOffRequestQueryBodyExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TimeOffRequestQueryBodyExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TimeOffRequestQueryBody <a style="cursor: pointer" onclick="copyTimeOffRequestQueryBodyExample()">Copy</a>
+TimeOffRequestQueryBody <a href="#" onclick="return copyTimeOffRequestQueryBodyExample()">Copy</a>
 
-<div id="TimeOffRequestQueryBodyExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TimeOffRequestQueryBodyExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "userIds": [String], 
   "statuses": [String], 
@@ -5378,38 +5315,38 @@ TimeOffRequestQueryBody <a style="cursor: pointer" onclick="copyTimeOffRequestQu
     "endDate": String, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var opts = { 
+let muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(muId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeoffrequestsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunitTimeoffrequestsQuery');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitTimeoffrequestsQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5444,64 +5381,62 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCopyWeekScheduleRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CopyWeekScheduleRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CopyWeekScheduleRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CopyWeekScheduleRequest <a style="cursor: pointer" onclick="copyCopyWeekScheduleRequestExample()">Copy</a>
+CopyWeekScheduleRequest <a href="#" onclick="return copyCopyWeekScheduleRequestExample()">Copy</a>
 
-<div id="CopyWeekScheduleRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CopyWeekScheduleRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "description": String, 
   "weekDate": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
-
-var scheduleId = "scheduleId_example"; // String | The ID of the schedule to copy from
-
-var opts = { 
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
+let scheduleId = "scheduleId_example"; // String | The ID of the schedule to copy from
+let opts = { 
   'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
   'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
   'body': {} // Object | body
 };
+
 apiInstance.postWorkforcemanagementManagementunitWeekScheduleCopy(managementUnitId, weekId, scheduleId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWeekScheduleCopy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunitWeekScheduleCopy');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitWeekScheduleCopy');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5540,22 +5475,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyRescheduleRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#RescheduleRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#RescheduleRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-RescheduleRequest <a style="cursor: pointer" onclick="copyRescheduleRequestExample()">Copy</a>
+RescheduleRequest <a href="#" onclick="return copyRescheduleRequestExample()">Copy</a>
 
-<div id="RescheduleRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="RescheduleRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "startDate": Date, 
   "endDate": Date, 
@@ -5566,42 +5501,40 @@ RescheduleRequest <a style="cursor: pointer" onclick="copyRescheduleRequestExamp
   "doNotChangeShiftStartTimes": Boolean, 
   "doNotChangeManuallyEditedShifts": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
-
-var scheduleId = "scheduleId_example"; // String | The ID of the schedule to re-optimize
-
-var opts = { 
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
+let scheduleId = "scheduleId_example"; // String | The ID of the schedule to re-optimize
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.postWorkforcemanagementManagementunitWeekScheduleReschedule(managementUnitId, weekId, scheduleId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWeekScheduleReschedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunitWeekScheduleReschedule');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitWeekScheduleReschedule');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5638,22 +5571,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyImportWeekScheduleRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ImportWeekScheduleRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ImportWeekScheduleRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ImportWeekScheduleRequest <a style="cursor: pointer" onclick="copyImportWeekScheduleRequestExample()">Copy</a>
+ImportWeekScheduleRequest <a href="#" onclick="return copyImportWeekScheduleRequestExample()">Copy</a>
 
-<div id="ImportWeekScheduleRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ImportWeekScheduleRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "description": String, 
   "userSchedules": { 
@@ -5696,42 +5629,41 @@ ImportWeekScheduleRequest <a style="cursor: pointer" onclick="copyImportWeekSche
   "shortTermForecastId": String, 
   "partialUploadIds": [String], 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
-
-var opts = { 
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
+let opts = { 
   'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
   'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
   'body': {} // Object | body
 };
+
 apiInstance.postWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWeekSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunitWeekSchedules');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitWeekSchedules');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5768,60 +5700,59 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyGenerateWeekScheduleRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#GenerateWeekScheduleRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#GenerateWeekScheduleRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-GenerateWeekScheduleRequest <a style="cursor: pointer" onclick="copyGenerateWeekScheduleRequestExample()">Copy</a>
+GenerateWeekScheduleRequest <a href="#" onclick="return copyGenerateWeekScheduleRequestExample()">Copy</a>
 
-<div id="GenerateWeekScheduleRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="GenerateWeekScheduleRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "description": String, 
   "shortTermForecastId": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
-
-var opts = { 
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.postWorkforcemanagementManagementunitWeekSchedulesGenerate(managementUnitId, weekId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWeekSchedulesGenerate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunitWeekSchedulesGenerate');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitWeekSchedulesGenerate');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5858,22 +5789,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUserSchedulesPartialUploadRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UserSchedulesPartialUploadRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UserSchedulesPartialUploadRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UserSchedulesPartialUploadRequest <a style="cursor: pointer" onclick="copyUserSchedulesPartialUploadRequestExample()">Copy</a>
+UserSchedulesPartialUploadRequest <a href="#" onclick="return copyUserSchedulesPartialUploadRequestExample()">Copy</a>
 
-<div id="UserSchedulesPartialUploadRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UserSchedulesPartialUploadRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "userSchedules": { 
     "shifts": { 
@@ -5912,40 +5843,39 @@ UserSchedulesPartialUploadRequest <a style="cursor: pointer" onclick="copyUserSc
     "workPlanId": String, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
-
-var opts = { 
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.postWorkforcemanagementManagementunitWeekSchedulesPartialupload(managementUnitId, weekId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWeekSchedulesPartialupload success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunitWeekSchedulesPartialupload');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitWeekSchedulesPartialupload');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5981,64 +5911,61 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCopyShortTermForecastRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CopyShortTermForecastRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CopyShortTermForecastRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CopyShortTermForecastRequest <a style="cursor: pointer" onclick="copyCopyShortTermForecastRequestExample()">Copy</a>
+CopyShortTermForecastRequest <a href="#" onclick="return copyCopyShortTermForecastRequestExample()">Copy</a>
 
-<div id="CopyShortTermForecastRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CopyShortTermForecastRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "weekDate": String, 
   "description": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
-
-var weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format
-
-var forecastId = "forecastId_example"; // String | The ID of the forecast to copy
-
-var body = {}; // Object | body
-
-var opts = { 
+let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
+let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format
+let forecastId = "forecastId_example"; // String | The ID of the forecast to copy
+let body = {}; // Object | body
+let opts = { 
   'forceAsync': true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 };
+
 apiInstance.postWorkforcemanagementManagementunitWeekShorttermforecastCopy(managementUnitId, weekDateId, forecastId, body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWeekShorttermforecastCopy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunitWeekShorttermforecastCopy');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitWeekShorttermforecastCopy');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6076,22 +6003,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyImportShortTermForecastRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ImportShortTermForecastRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ImportShortTermForecastRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ImportShortTermForecastRequest <a style="cursor: pointer" onclick="copyImportShortTermForecastRequestExample()">Copy</a>
+ImportShortTermForecastRequest <a href="#" onclick="return copyImportShortTermForecastRequestExample()">Copy</a>
 
-<div id="ImportShortTermForecastRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ImportShortTermForecastRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "fileName": String, 
   "description": String, 
@@ -6122,42 +6049,40 @@ ImportShortTermForecastRequest <a style="cursor: pointer" onclick="copyImportSho
   },  
   "partialUploadIds": [String], 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
-
-var weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format
-
-var body = {}; // Object | body
-
-var opts = { 
+let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
+let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format
+let body = {}; // Object | body
+let opts = { 
   'forceAsync': true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 };
+
 apiInstance.postWorkforcemanagementManagementunitWeekShorttermforecasts(managementUnitId, weekDateId, body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWeekShorttermforecasts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunitWeekShorttermforecasts');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitWeekShorttermforecasts');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6194,61 +6119,59 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyGenerateShortTermForecastRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#GenerateShortTermForecastRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#GenerateShortTermForecastRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-GenerateShortTermForecastRequest <a style="cursor: pointer" onclick="copyGenerateShortTermForecastRequestExample()">Copy</a>
+GenerateShortTermForecastRequest <a href="#" onclick="return copyGenerateShortTermForecastRequestExample()">Copy</a>
 
-<div id="GenerateShortTermForecastRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="GenerateShortTermForecastRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "description": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
-
-var weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format
-
-var body = {}; // Object | 
-
-var opts = { 
+let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
+let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format
+let body = {}; // Object | 
+let opts = { 
   'forceAsync': true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 };
+
 apiInstance.postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate(managementUnitId, weekDateId, body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6285,22 +6208,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyRouteGroupListExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#RouteGroupListExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#RouteGroupListExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-RouteGroupList <a style="cursor: pointer" onclick="copyRouteGroupListExample()">Copy</a>
+RouteGroupList <a href="#" onclick="return copyRouteGroupListExample()">Copy</a>
 
-<div id="RouteGroupListExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="RouteGroupListExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "startDate": Date, 
   "routeGroups": { 
@@ -6326,39 +6249,37 @@ RouteGroupList <a style="cursor: pointer" onclick="copyRouteGroupListExample()">
     "abandonedPerInterval": [Number], 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
-
-var weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format
-
-var body = {}; // Object | body
+let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
+let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format
+let body = {}; // Object | body
 
 apiInstance.postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload(managementUnitId, weekDateId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6394,59 +6315,58 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCopyWorkPlanExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CopyWorkPlanExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CopyWorkPlanExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CopyWorkPlan <a style="cursor: pointer" onclick="copyCopyWorkPlanExample()">Copy</a>
+CopyWorkPlan <a href="#" onclick="return copyCopyWorkPlanExample()">Copy</a>
 
-<div id="CopyWorkPlanExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CopyWorkPlanExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "name": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var workPlanId = "workPlanId_example"; // String | The ID of the work plan to create a copy
-
-var opts = { 
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let workPlanId = "workPlanId_example"; // String | The ID of the work plan to create a copy
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWorkplanCopy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunitWorkplanCopy');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitWorkplanCopy');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6482,22 +6402,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCreateWorkPlanExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CreateWorkPlanExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CreateWorkPlanExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CreateWorkPlan <a style="cursor: pointer" onclick="copyCreateWorkPlanExample()">Copy</a>
+CreateWorkPlan <a href="#" onclick="return copyCreateWorkPlanExample()">Copy</a>
 
-<div id="CreateWorkPlanExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CreateWorkPlanExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "name": String, 
   "enabled": Boolean, 
@@ -6558,38 +6478,38 @@ CreateWorkPlan <a style="cursor: pointer" onclick="copyCreateWorkPlanExample()">
     "selfUri": String, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-
-var opts = { 
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWorkplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunitWorkplans');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitWorkplans');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6624,22 +6544,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCreateManagementUnitApiRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CreateManagementUnitApiRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CreateManagementUnitApiRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CreateManagementUnitApiRequest <a style="cursor: pointer" onclick="copyCreateManagementUnitApiRequestExample()">Copy</a>
+CreateManagementUnitApiRequest <a href="#" onclick="return copyCreateManagementUnitApiRequestExample()">Copy</a>
 
-<div id="CreateManagementUnitApiRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CreateManagementUnitApiRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "name": String, 
   "timeZone": String, 
@@ -6677,36 +6597,37 @@ CreateManagementUnitApiRequest <a style="cursor: pointer" onclick="copyCreateMan
   },  
   "divisionId": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var opts = { 
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.postWorkforcemanagementManagementunits(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementManagementunits success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementManagementunits');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunits');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6741,56 +6662,57 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCurrentUserScheduleRequestBodyExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CurrentUserScheduleRequestBodyExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CurrentUserScheduleRequestBodyExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CurrentUserScheduleRequestBody <a style="cursor: pointer" onclick="copyCurrentUserScheduleRequestBodyExample()">Copy</a>
+CurrentUserScheduleRequestBody <a href="#" onclick="return copyCurrentUserScheduleRequestBodyExample()">Copy</a>
 
-<div id="CurrentUserScheduleRequestBodyExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CurrentUserScheduleRequestBodyExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "startDate": Date, 
   "endDate": Date, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var opts = { 
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.postWorkforcemanagementSchedules(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementSchedules');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementSchedules');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6823,22 +6745,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCreateAgentTimeOffRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CreateAgentTimeOffRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CreateAgentTimeOffRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CreateAgentTimeOffRequest <a style="cursor: pointer" onclick="copyCreateAgentTimeOffRequestExample()">Copy</a>
+CreateAgentTimeOffRequest <a href="#" onclick="return copyCreateAgentTimeOffRequestExample()">Copy</a>
 
-<div id="CreateAgentTimeOffRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CreateAgentTimeOffRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "activityCodeId": String, 
   "notes": String, 
@@ -6846,36 +6768,37 @@ CreateAgentTimeOffRequest <a style="cursor: pointer" onclick="copyCreateAgentTim
   "partialDayStartDateTimes": [Date], 
   "dailyDurationMinutes": Number, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.WorkforceManagementApi();
+let apiInstance = new platformClient.WorkforceManagementApi();
 
-var opts = { 
+let opts = { 
   'body': {} // Object | body
 };
+
 apiInstance.postWorkforcemanagementTimeoffrequests(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postWorkforcemanagementTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postWorkforcemanagementTimeoffrequests');
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementTimeoffrequests');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

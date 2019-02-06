@@ -69,29 +69,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var integrationId = "integrationId_example"; // String | Integration Id
+let integrationId = "integrationId_example"; // String | Integration Id
 
 apiInstance.deleteIntegration(integrationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`deleteIntegration success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteIntegration');
+  .catch((err) => {
+    console.log('There was a failure calling deleteIntegration');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -125,29 +124,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var actionId = "actionId_example"; // String | actionId
+let actionId = "actionId_example"; // String | actionId
 
 apiInstance.deleteIntegrationsAction(actionId)
-  .then(function() {
+  .then(() => {
     console.log('deleteIntegrationsAction returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteIntegrationsAction');
+  .catch((err) => {
+    console.log('There was a failure calling deleteIntegrationsAction');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -181,29 +179,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var actionId = "actionId_example"; // String | actionId
+let actionId = "actionId_example"; // String | actionId
 
 apiInstance.deleteIntegrationsActionDraft(actionId)
-  .then(function() {
+  .then(() => {
     console.log('deleteIntegrationsActionDraft returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteIntegrationsActionDraft');
+  .catch((err) => {
+    console.log('There was a failure calling deleteIntegrationsActionDraft');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -236,29 +233,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var credentialId = "credentialId_example"; // String | Credential ID
+let credentialId = "credentialId_example"; // String | Credential ID
 
 apiInstance.deleteIntegrationsCredential(credentialId)
-  .then(function() {
+  .then(() => {
     console.log('deleteIntegrationsCredential returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteIntegrationsCredential');
+  .catch((err) => {
+    console.log('There was a failure calling deleteIntegrationsCredential');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -291,20 +287,19 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var integrationId = "integrationId_example"; // String | Integration Id
-
-var opts = { 
+let integrationId = "integrationId_example"; // String | Integration Id
+let opts = { 
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
@@ -312,16 +307,16 @@ var opts = {
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example" // String | Previous page token
 };
+
 apiInstance.getIntegration(integrationId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegration success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegration');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegration');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -360,29 +355,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var integrationId = "integrationId_example"; // String | Integration Id
+let integrationId = "integrationId_example"; // String | Integration Id
 
 apiInstance.getIntegrationConfigCurrent(integrationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationConfigCurrent success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationConfigCurrent');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationConfigCurrent');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -415,18 +409,18 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
@@ -434,16 +428,16 @@ var opts = {
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example" // String | Previous page token
 };
+
 apiInstance.getIntegrations(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrations');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrations');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -483,33 +477,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var actionId = "actionId_example"; // String | actionId
-
-var opts = { 
+let actionId = "actionId_example"; // String | actionId
+let opts = { 
   'expand': "expand_example", // String | Indicates fields of the response which should be expanded.
   'includeConfig': false // Boolean | Show config when available
 };
+
 apiInstance.getIntegrationsAction(actionId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationsAction success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationsAction');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsAction');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -546,33 +539,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var actionId = "actionId_example"; // String | actionId
-
-var opts = { 
+let actionId = "actionId_example"; // String | actionId
+let opts = { 
   'expand': "expand_example", // String | Indicates fields of the response which should be expanded.
   'includeConfig': false // Boolean | Show config when available
 };
+
 apiInstance.getIntegrationsActionDraft(actionId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationsActionDraft success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationsActionDraft');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsActionDraft');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -609,31 +601,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var actionId = "actionId_example"; // String | actionId
-
-var fileName = "fileName_example"; // String | Name of schema file to be retrieved for this draft.
+let actionId = "actionId_example"; // String | actionId
+let fileName = "fileName_example"; // String | Name of schema file to be retrieved for this draft.
 
 apiInstance.getIntegrationsActionDraftSchema(actionId, fileName)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationsActionDraftSchema success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationsActionDraftSchema');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsActionDraftSchema');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -669,31 +659,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var actionId = "actionId_example"; // String | actionId
-
-var fileName = "fileName_example"; // String | Name of template file to be retrieved for this action draft.
+let actionId = "actionId_example"; // String | actionId
+let fileName = "fileName_example"; // String | Name of template file to be retrieved for this action draft.
 
 apiInstance.getIntegrationsActionDraftTemplate(actionId, fileName)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationsActionDraftTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationsActionDraftTemplate');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsActionDraftTemplate');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -728,29 +716,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var actionId = "actionId_example"; // String | actionId
+let actionId = "actionId_example"; // String | actionId
 
 apiInstance.getIntegrationsActionDraftValidation(actionId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationsActionDraftValidation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationsActionDraftValidation');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsActionDraftValidation');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -785,31 +772,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var actionId = "actionId_example"; // String | actionId
-
-var fileName = "fileName_example"; // String | Name of schema file to be retrieved for this action.
+let actionId = "actionId_example"; // String | actionId
+let fileName = "fileName_example"; // String | Name of schema file to be retrieved for this action.
 
 apiInstance.getIntegrationsActionSchema(actionId, fileName)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationsActionSchema success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationsActionSchema');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsActionSchema');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -845,31 +830,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var actionId = "actionId_example"; // String | actionId
-
-var fileName = "fileName_example"; // String | Name of template file to be retrieved for this action.
+let actionId = "actionId_example"; // String | actionId
+let fileName = "fileName_example"; // String | Name of template file to be retrieved for this action.
 
 apiInstance.getIntegrationsActionTemplate(actionId, fileName)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationsActionTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationsActionTemplate');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsActionTemplate');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -905,18 +888,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var opts = { 
+let opts = { 
   'category': "category_example", // String | Filter by category name
   'secure': "secure_example", // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
   'includeAuthActions': "includeAuthActions_example", // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
@@ -927,16 +910,16 @@ var opts = {
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example" // String | Previous page token
 };
+
 apiInstance.getIntegrationsActions(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationsActions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationsActions');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsActions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -979,18 +962,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var opts = { 
+let opts = { 
   'secure': "secure_example", // String | Filter to only include/exclude Action categories based on if they are considered secure. True will only include categories with Actions marked secured. False will only include categories of unsecured Actions.
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
@@ -999,16 +982,16 @@ var opts = {
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example" // String | Previous page token
 };
+
 apiInstance.getIntegrationsActionsCategories(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationsActionsCategories success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationsActionsCategories');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsActionsCategories');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1049,18 +1032,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var opts = { 
+let opts = { 
   'category': "category_example", // String | Filter by category name
   'secure': "secure_example", // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
   'includeAuthActions': "includeAuthActions_example", // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
@@ -1071,16 +1054,16 @@ var opts = {
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example" // String | Previous page token
 };
+
 apiInstance.getIntegrationsActionsDrafts(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationsActionsDrafts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationsActionsDrafts');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsActionsDrafts');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1121,18 +1104,18 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
@@ -1140,16 +1123,16 @@ var opts = {
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example" // String | Previous page token
 };
+
 apiInstance.getIntegrationsClientapps(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationsClientapps success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationsClientapps');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsClientapps');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1187,29 +1170,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var credentialId = "credentialId_example"; // String | Credential ID
+let credentialId = "credentialId_example"; // String | Credential ID
 
 apiInstance.getIntegrationsCredential(credentialId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationsCredential success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationsCredential');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsCredential');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1242,31 +1224,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var opts = { 
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25 // Number | Page size
 };
+
 apiInstance.getIntegrationsCredentials(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationsCredentials success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationsCredentials');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsCredentials');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1300,26 +1282,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
+
 apiInstance.getIntegrationsCredentialsTypes()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationsCredentialsTypes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationsCredentialsTypes');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsCredentialsTypes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1351,34 +1333,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "timestamp", // String | Sort by
   'sortOrder': "descending", // String | Order by
   'entityId': "entityId_example" // String | Include only events with this entity ID
 };
+
 apiInstance.getIntegrationsEventlog(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationsEventlog success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationsEventlog');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsEventlog');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1417,29 +1399,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var eventId = "eventId_example"; // String | Event Id
+let eventId = "eventId_example"; // String | Event Id
 
 apiInstance.getIntegrationsEventlogEventId(eventId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationsEventlogEventId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationsEventlogEventId');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsEventlogEventId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1472,29 +1453,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var typeId = "typeId_example"; // String | Integration Type Id
+let typeId = "typeId_example"; // String | Integration Type Id
 
 apiInstance.getIntegrationsType(typeId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationsType success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationsType');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsType');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1527,31 +1507,29 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var typeId = "typeId_example"; // String | Integration Type Id
-
-var configType = "configType_example"; // String | Config schema type
+let typeId = "typeId_example"; // String | Integration Type Id
+let configType = "configType_example"; // String | Config schema type
 
 apiInstance.getIntegrationsTypeConfigschema(typeId, configType)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationsTypeConfigschema success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationsTypeConfigschema');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsTypeConfigschema');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1585,18 +1563,18 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
@@ -1604,16 +1582,16 @@ var opts = {
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example" // String | Previous page token
 };
+
 apiInstance.getIntegrationsTypes(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIntegrationsTypes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIntegrationsTypes');
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsTypes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1650,22 +1628,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyIntegrationExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#IntegrationExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#IntegrationExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Integration <a style="cursor: pointer" onclick="copyIntegrationExample()">Copy</a>
+Integration <a href="#" onclick="return copyIntegrationExample()">Copy</a>
 
-<div id="IntegrationExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="IntegrationExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1746,26 +1724,26 @@ Integration <a style="cursor: pointer" onclick="copyIntegrationExample()">Copy</
   "attributes": {String: String}, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var integrationId = "integrationId_example"; // String | Integration Id
-
-var opts = { 
+let integrationId = "integrationId_example"; // String | Integration Id
+let opts = { 
   'body': {}, // Object | Integration Update
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
@@ -1774,16 +1752,16 @@ var opts = {
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example" // String | Previous page token
 };
+
 apiInstance.patchIntegration(integrationId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchIntegration success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchIntegration');
+  .catch((err) => {
+    console.log('There was a failure calling patchIntegration');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1823,22 +1801,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUpdateActionInputExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UpdateActionInputExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UpdateActionInputExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UpdateActionInput <a style="cursor: pointer" onclick="copyUpdateActionInputExample()">Copy</a>
+UpdateActionInput <a href="#" onclick="return copyUpdateActionInputExample()">Copy</a>
 
-<div id="UpdateActionInputExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UpdateActionInputExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "category": String, 
   "name": String, 
@@ -1859,37 +1837,36 @@ UpdateActionInput <a style="cursor: pointer" onclick="copyUpdateActionInputExamp
   },  
   "version": Number, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var actionId = "actionId_example"; // String | actionId
-
-var body = {}; // Object | Input used to patch the Action.
+let actionId = "actionId_example"; // String | actionId
+let body = {}; // Object | Input used to patch the Action.
 
 apiInstance.patchIntegrationsAction(actionId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchIntegrationsAction success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchIntegrationsAction');
+  .catch((err) => {
+    console.log('There was a failure calling patchIntegrationsAction');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1923,22 +1900,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUpdateDraftInputExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UpdateDraftInputExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UpdateDraftInputExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UpdateDraftInput <a style="cursor: pointer" onclick="copyUpdateDraftInputExample()">Copy</a>
+UpdateDraftInput <a href="#" onclick="return copyUpdateDraftInputExample()">Copy</a>
 
-<div id="UpdateDraftInputExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UpdateDraftInputExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "category": String, 
   "name": String, 
@@ -1986,37 +1963,36 @@ UpdateDraftInput <a style="cursor: pointer" onclick="copyUpdateDraftInputExample
   "secure": Boolean, 
   "version": Number, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var actionId = "actionId_example"; // String | actionId
-
-var body = {}; // Object | Input used to patch the Action Draft.
+let actionId = "actionId_example"; // String | actionId
+let body = {}; // Object | Input used to patch the Action Draft.
 
 apiInstance.patchIntegrationsActionDraft(actionId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchIntegrationsActionDraft success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchIntegrationsActionDraft');
+  .catch((err) => {
+    console.log('There was a failure calling patchIntegrationsActionDraft');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2049,22 +2025,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCreateIntegrationRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CreateIntegrationRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CreateIntegrationRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CreateIntegrationRequest <a style="cursor: pointer" onclick="copyCreateIntegrationRequestExample()">Copy</a>
+CreateIntegrationRequest <a href="#" onclick="return copyCreateIntegrationRequestExample()">Copy</a>
 
-<div id="CreateIntegrationRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CreateIntegrationRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -2106,36 +2082,37 @@ CreateIntegrationRequest <a style="cursor: pointer" onclick="copyCreateIntegrati
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var opts = { 
+let opts = { 
   'body': {} // Object | Integration
 };
+
 apiInstance.postIntegrations(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postIntegrations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postIntegrations');
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrations');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2169,29 +2146,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var actionId = "actionId_example"; // String | actionId
+let actionId = "actionId_example"; // String | actionId
 
 apiInstance.postIntegrationsActionDraft(actionId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postIntegrationsActionDraft success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postIntegrationsActionDraft');
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrationsActionDraft');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2224,56 +2200,55 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyPublishDraftInputExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#PublishDraftInputExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PublishDraftInputExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-PublishDraftInput <a style="cursor: pointer" onclick="copyPublishDraftInputExample()">Copy</a>
+PublishDraftInput <a href="#" onclick="return copyPublishDraftInputExample()">Copy</a>
 
-<div id="PublishDraftInputExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="PublishDraftInputExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "version": Number, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var actionId = "actionId_example"; // String | actionId
-
-var body = {}; // Object | Input used to patch the Action.
+let actionId = "actionId_example"; // String | actionId
+let body = {}; // Object | Input used to patch the Action.
 
 apiInstance.postIntegrationsActionDraftPublish(actionId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postIntegrationsActionDraftPublish success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postIntegrationsActionDraftPublish');
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrationsActionDraftPublish');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2308,31 +2283,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var actionId = "actionId_example"; // String | actionId
-
-var body = null; // Object | Map of parameters used for variable substitution.
+let actionId = "actionId_example"; // String | actionId
+let body = null; // Object | Map of parameters used for variable substitution.
 
 apiInstance.postIntegrationsActionDraftTest(actionId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postIntegrationsActionDraftTest success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postIntegrationsActionDraftTest');
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrationsActionDraftTest');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2368,31 +2341,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var actionId = "actionId_example"; // String | actionId
-
-var body = null; // Object | Map of parameters used for variable substitution.
+let actionId = "actionId_example"; // String | actionId
+let body = null; // Object | Map of parameters used for variable substitution.
 
 apiInstance.postIntegrationsActionExecute(actionId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postIntegrationsActionExecute success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postIntegrationsActionExecute');
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrationsActionExecute');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2428,31 +2399,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var actionId = "actionId_example"; // String | actionId
-
-var body = null; // Object | Map of parameters used for variable substitution.
+let actionId = "actionId_example"; // String | actionId
+let body = null; // Object | Map of parameters used for variable substitution.
 
 apiInstance.postIntegrationsActionTest(actionId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postIntegrationsActionTest success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postIntegrationsActionTest');
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrationsActionTest');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2486,22 +2455,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyPostActionInputExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#PostActionInputExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PostActionInputExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-PostActionInput <a style="cursor: pointer" onclick="copyPostActionInputExample()">Copy</a>
+PostActionInput <a href="#" onclick="return copyPostActionInputExample()">Copy</a>
 
-<div id="PostActionInputExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="PostActionInputExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "category": String, 
   "name": String, 
@@ -2549,35 +2518,35 @@ PostActionInput <a style="cursor: pointer" onclick="copyPostActionInputExample()
   },  
   "secure": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var body = {}; // Object | Input used to create Action.
+let body = {}; // Object | Input used to create Action.
 
 apiInstance.postIntegrationsActions(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postIntegrationsActions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postIntegrationsActions');
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrationsActions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2610,22 +2579,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyPostActionInputExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#PostActionInputExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PostActionInputExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-PostActionInput <a style="cursor: pointer" onclick="copyPostActionInputExample()">Copy</a>
+PostActionInput <a href="#" onclick="return copyPostActionInputExample()">Copy</a>
 
-<div id="PostActionInputExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="PostActionInputExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "category": String, 
   "name": String, 
@@ -2673,35 +2642,35 @@ PostActionInput <a style="cursor: pointer" onclick="copyPostActionInputExample()
   },  
   "secure": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var body = {}; // Object | Input used to create Action Draft.
+let body = {}; // Object | Input used to create Action Draft.
 
 apiInstance.postIntegrationsActionsDrafts(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postIntegrationsActionsDrafts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postIntegrationsActionsDrafts');
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrationsActionsDrafts');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2733,22 +2702,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCredentialExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CredentialExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CredentialExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Credential <a style="cursor: pointer" onclick="copyCredentialExample()">Copy</a>
+Credential <a href="#" onclick="return copyCredentialExample()">Copy</a>
 
-<div id="CredentialExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CredentialExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -2762,36 +2731,37 @@ Credential <a style="cursor: pointer" onclick="copyCredentialExample()">Copy</a>
   "credentialFields": {String: String}, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var opts = { 
+let opts = { 
   'body': {} // Object | Credential
 };
+
 apiInstance.postIntegrationsCredentials(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postIntegrationsCredentials success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postIntegrationsCredentials');
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrationsCredentials');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2823,57 +2793,58 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyVendorConnectionRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#VendorConnectionRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#VendorConnectionRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-VendorConnectionRequest <a style="cursor: pointer" onclick="copyVendorConnectionRequestExample()">Copy</a>
+VendorConnectionRequest <a href="#" onclick="return copyVendorConnectionRequestExample()">Copy</a>
 
-<div id="VendorConnectionRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="VendorConnectionRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "publisher": String, 
   "type": String, 
   "name": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var opts = { 
+let opts = { 
   'body': {} // Object | 
 };
+
 apiInstance.postIntegrationsWorkforcemanagementVendorconnection(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postIntegrationsWorkforcemanagementVendorconnection success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postIntegrationsWorkforcemanagementVendorconnection');
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrationsWorkforcemanagementVendorconnection');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2905,22 +2876,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyIntegrationConfigurationExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#IntegrationConfigurationExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#IntegrationConfigurationExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-IntegrationConfiguration <a style="cursor: pointer" onclick="copyIntegrationConfigurationExample()">Copy</a>
+IntegrationConfiguration <a href="#" onclick="return copyIntegrationConfigurationExample()">Copy</a>
 
-<div id="IntegrationConfigurationExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="IntegrationConfigurationExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -2944,38 +2915,38 @@ IntegrationConfiguration <a style="cursor: pointer" onclick="copyIntegrationConf
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var integrationId = "integrationId_example"; // String | Integration Id
-
-var opts = { 
+let integrationId = "integrationId_example"; // String | Integration Id
+let opts = { 
   'body': {} // Object | Integration Configuration
 };
+
 apiInstance.putIntegrationConfigCurrent(integrationId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putIntegrationConfigCurrent success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putIntegrationConfigCurrent');
+  .catch((err) => {
+    console.log('There was a failure calling putIntegrationConfigCurrent');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3008,22 +2979,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCredentialExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CredentialExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CredentialExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Credential <a style="cursor: pointer" onclick="copyCredentialExample()">Copy</a>
+Credential <a href="#" onclick="return copyCredentialExample()">Copy</a>
 
-<div id="CredentialExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CredentialExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -3037,38 +3008,38 @@ Credential <a style="cursor: pointer" onclick="copyCredentialExample()">Copy</a>
   "credentialFields": {String: String}, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IntegrationsApi();
+let apiInstance = new platformClient.IntegrationsApi();
 
-var credentialId = "credentialId_example"; // String | Credential ID
-
-var opts = { 
+let credentialId = "credentialId_example"; // String | Credential ID
+let opts = { 
   'body': {} // Object | Credential
 };
+
 apiInstance.putIntegrationsCredential(credentialId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putIntegrationsCredential success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putIntegrationsCredential');
+  .catch((err) => {
+    console.log('There was a failure calling putIntegrationsCredential');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

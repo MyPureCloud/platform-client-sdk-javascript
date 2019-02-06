@@ -92,29 +92,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var domainId = "domainId_example"; // String | domain ID
+let domainId = "domainId_example"; // String | domain ID
 
 apiInstance.deleteRoutingEmailDomain(domainId)
-  .then(function() {
+  .then(() => {
     console.log('deleteRoutingEmailDomain returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteRoutingEmailDomain');
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingEmailDomain');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -148,31 +147,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var domainName = "domainName_example"; // String | email domain
-
-var routeId = "routeId_example"; // String | route ID
+let domainName = "domainName_example"; // String | email domain
+let routeId = "routeId_example"; // String | route ID
 
 apiInstance.deleteRoutingEmailDomainRoute(domainName, routeId)
-  .then(function() {
+  .then(() => {
     console.log('deleteRoutingEmailDomainRoute returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteRoutingEmailDomainRoute');
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingEmailDomainRoute');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -207,32 +204,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var queueId = "queueId_example"; // String | Queue ID
-
-var opts = { 
+let queueId = "queueId_example"; // String | Queue ID
+let opts = { 
   'forceDelete': true // Boolean | forceDelete
 };
+
 apiInstance.deleteRoutingQueue(queueId, opts)
-  .then(function() {
+  .then(() => {
     console.log('deleteRoutingQueue returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteRoutingQueue');
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingQueue');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -267,31 +263,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var queueId = "queueId_example"; // String | Queue ID
-
-var memberId = "memberId_example"; // String | Member ID
+let queueId = "queueId_example"; // String | Queue ID
+let memberId = "memberId_example"; // String | Member ID
 
 apiInstance.deleteRoutingQueueUser(queueId, memberId)
-  .then(function() {
+  .then(() => {
     console.log('deleteRoutingQueueUser returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteRoutingQueueUser');
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingQueueUser');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -326,31 +320,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var queueId = "queueId_example"; // String | Queue ID
-
-var codeId = "codeId_example"; // String | Code ID
+let queueId = "queueId_example"; // String | Queue ID
+let codeId = "codeId_example"; // String | Code ID
 
 apiInstance.deleteRoutingQueueWrapupcode(queueId, codeId)
-  .then(function() {
+  .then(() => {
     console.log('deleteRoutingQueueWrapupcode returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteRoutingQueueWrapupcode');
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingQueueWrapupcode');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -385,29 +377,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var skillId = "skillId_example"; // String | Skill ID
+let skillId = "skillId_example"; // String | Skill ID
 
 apiInstance.deleteRoutingSkill(skillId)
-  .then(function() {
+  .then(() => {
     console.log('deleteRoutingSkill returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteRoutingSkill');
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingSkill');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -441,29 +432,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var addressId = "addressId_example"; // String | Address ID
+let addressId = "addressId_example"; // String | Address ID
 
 apiInstance.deleteRoutingSmsPhonenumber(addressId)
-  .then(function() {
+  .then(() => {
     console.log('deleteRoutingSmsPhonenumber returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteRoutingSmsPhonenumber');
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingSmsPhonenumber');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -497,26 +487,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
+
 apiInstance.deleteRoutingUtilization()
-  .then(function() {
+  .then(() => {
     console.log('deleteRoutingUtilization returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteRoutingUtilization');
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingUtilization');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -547,29 +537,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var codeId = "codeId_example"; // String | Wrapup Code ID
+let codeId = "codeId_example"; // String | Wrapup Code ID
 
 apiInstance.deleteRoutingWrapupcode(codeId)
-  .then(function() {
+  .then(() => {
     console.log('deleteRoutingWrapupcode returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteRoutingWrapupcode');
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingWrapupcode');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -604,31 +593,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var userId = "userId_example"; // String | User ID
-
-var languageId = "languageId_example"; // String | languageId
+let userId = "userId_example"; // String | User ID
+let languageId = "languageId_example"; // String | languageId
 
 apiInstance.deleteUserRoutinglanguage(userId, languageId)
-  .then(function() {
+  .then(() => {
     console.log('deleteUserRoutinglanguage returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteUserRoutinglanguage');
+  .catch((err) => {
+    console.log('There was a failure calling deleteUserRoutinglanguage');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -664,31 +651,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var userId = "userId_example"; // String | User ID
-
-var skillId = "skillId_example"; // String | skillId
+let userId = "userId_example"; // String | User ID
+let skillId = "skillId_example"; // String | skillId
 
 apiInstance.deleteUserRoutingskill(userId, skillId)
-  .then(function() {
+  .then(() => {
     console.log('deleteUserRoutingskill returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteUserRoutingskill');
+  .catch((err) => {
+    console.log('There was a failure calling deleteUserRoutingskill');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -723,29 +708,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var domainId = "domainId_example"; // String | domain ID
+let domainId = "domainId_example"; // String | domain ID
 
 apiInstance.getRoutingEmailDomain(domainId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingEmailDomain success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingEmailDomain');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingEmailDomain');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -779,31 +763,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var domainName = "domainName_example"; // String | email domain
-
-var routeId = "routeId_example"; // String | route ID
+let domainName = "domainName_example"; // String | email domain
+let routeId = "routeId_example"; // String | route ID
 
 apiInstance.getRoutingEmailDomainRoute(domainName, routeId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingEmailDomainRoute success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingEmailDomainRoute');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingEmailDomainRoute');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -838,34 +820,33 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var domainName = "domainName_example"; // String | email domain
-
-var opts = { 
+let domainName = "domainName_example"; // String | email domain
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'pattern': "pattern_example" // String | Filter routes by the route's pattern property
 };
+
 apiInstance.getRoutingEmailDomainRoutes(domainName, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingEmailDomainRoutes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingEmailDomainRoutes');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingEmailDomainRoutes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -902,26 +883,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
+
 apiInstance.getRoutingEmailDomains()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingEmailDomains success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingEmailDomains');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingEmailDomains');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -952,26 +933,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
+
 apiInstance.getRoutingEmailSetup()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingEmailSetup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingEmailSetup');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingEmailSetup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1001,34 +982,34 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortOrder': "ASC", // String | Ascending or descending sort order
   'name': "name_example", // String | Name
   'id': ["id_example"] // [String] | id
 };
+
 apiInstance.getRoutingLanguages(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingLanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingLanguages');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingLanguages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1066,29 +1047,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var recipientId = "recipientId_example"; // String | Recipient ID
+let recipientId = "recipientId_example"; // String | Recipient ID
 
 apiInstance.getRoutingMessageRecipient(recipientId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingMessageRecipient success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingMessageRecipient');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingMessageRecipient');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1122,32 +1102,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var opts = { 
+let opts = { 
   'messengerType': "messengerType_example", // String | Messenger Type
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getRoutingMessageRecipients(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingMessageRecipients success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingMessageRecipients');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingMessageRecipients');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1183,29 +1163,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var queueId = "queueId_example"; // String | Queue ID
+let queueId = "queueId_example"; // String | Queue ID
 
 apiInstance.getRoutingQueue(queueId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingQueue success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingQueue');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingQueue');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1239,32 +1218,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var queueId = "queueId_example"; // String | queueId
-
-var opts = { 
+let queueId = "queueId_example"; // String | queueId
+let opts = { 
   'conversationId': "conversationId_example" // String | conversationId
 };
+
 apiInstance.getRoutingQueueEstimatedwaittime(queueId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingQueueEstimatedwaittime success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingQueueEstimatedwaittime');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingQueueEstimatedwaittime');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1299,31 +1277,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var queueId = "queueId_example"; // String | queueId
-
-var mediaType = "mediaType_example"; // String | mediaType
+let queueId = "queueId_example"; // String | queueId
+let mediaType = "mediaType_example"; // String | mediaType
 
 apiInstance.getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingQueueMediatypeEstimatedwaittime success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingQueueMediatypeEstimatedwaittime');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingQueueMediatypeEstimatedwaittime');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1358,20 +1334,19 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var queueId = "queueId_example"; // String | Queue ID
-
-var opts = { 
+let queueId = "queueId_example"; // String | Queue ID
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "name", // String | Sort by
@@ -1384,16 +1359,16 @@ var opts = {
   'routingStatus': ["routingStatus_example"], // [String] | Filter by routing status
   'presence': ["presence_example"] // [String] | Filter by presence
 };
+
 apiInstance.getRoutingQueueUsers(queueId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingQueueUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingQueueUsers');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingQueueUsers');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1438,29 +1413,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var queueId = "queueId_example"; // String | Queue ID
+let queueId = "queueId_example"; // String | Queue ID
 
 apiInstance.getRoutingQueueWrapupcodes(queueId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingQueueWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingQueueWrapupcodes');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingQueueWrapupcodes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1494,18 +1468,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "name", // String | Sort by
@@ -1513,16 +1487,16 @@ var opts = {
   'active': true, // Boolean | Active
   'divisionId': ["divisionId_example"] // [String] | Division ID(s)
 };
+
 apiInstance.getRoutingQueues(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingQueues success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingQueues');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingQueues');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1561,18 +1535,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size [max value is 100]
   'pageNumber': 1, // Number | Page number [max value is 5]
   'sortBy': "name", // String | Sort by
@@ -1581,16 +1555,16 @@ var opts = {
   'id': ["id_example"], // [String] | Queue ID(s)
   'divisionId': ["divisionId_example"] // [String] | Division ID(s)
 };
+
 apiInstance.getRoutingQueuesDivisionviews(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingQueuesDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingQueuesDivisionviews');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingQueuesDivisionviews');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1630,33 +1604,33 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size [max value is 500]
   'pageNumber': 1, // Number | Page number
   'sortBy': "name", // String | Sort by
   'sortOrder': "asc" // String | Sort order
 };
+
 apiInstance.getRoutingQueuesDivisionviewsAll(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingQueuesDivisionviewsAll success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingQueuesDivisionviewsAll');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingQueuesDivisionviewsAll');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1692,34 +1666,34 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var opts = { 
+let opts = { 
   'joined': true, // Boolean | Joined
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "name", // String | Sort by
   'sortOrder': "asc" // String | Sort order
 };
+
 apiInstance.getRoutingQueuesMe(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingQueuesMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingQueuesMe');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingQueuesMe');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1756,29 +1730,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var skillId = "skillId_example"; // String | Skill ID
+let skillId = "skillId_example"; // String | Skill ID
 
 apiInstance.getRoutingSkill(skillId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingSkill success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingSkill');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingSkill');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1811,33 +1784,33 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'name': "name_example", // String | Filter for results that start with this value
   'id': ["id_example"] // [String] | id
 };
+
 apiInstance.getRoutingSkills(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingSkills success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingSkills');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingSkills');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1874,38 +1847,36 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var countryCode = "countryCode_example"; // String | The ISO 3166-1 alpha-2 country code of the county for which available phone numbers should be returned
-
-var phoneNumberType = "phoneNumberType_example"; // String | Type of available phone numbers searched
-
-var opts = { 
+let countryCode = "countryCode_example"; // String | The ISO 3166-1 alpha-2 country code of the county for which available phone numbers should be returned
+let phoneNumberType = "phoneNumberType_example"; // String | Type of available phone numbers searched
+let opts = { 
   'region': "region_example", // String | Region/province/state that can be used to restrict the numbers returned
   'city': "city_example", // String | City that can be used to restrict the numbers returned
   'areaCode': "areaCode_example", // String | Area code that can be used to restrict the numbers returned
   'pattern': "pattern_example", // String | A pattern to match phone numbers. Valid characters are '*' and [0-9a-zA-Z]. The '*' character will match any single digit.
   'addressRequirement': "addressRequirement_example" // String | This indicates whether the phone number requires to have an Address registered.
 };
+
 apiInstance.getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingSmsAvailablephonenumbers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingSmsAvailablephonenumbers');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingSmsAvailablephonenumbers');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1945,29 +1916,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var addressId = "addressId_example"; // String | Address ID
+let addressId = "addressId_example"; // String | Address ID
 
 apiInstance.getRoutingSmsPhonenumber(addressId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingSmsPhonenumber success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingSmsPhonenumber');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingSmsPhonenumber');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2001,34 +1971,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var opts = { 
+let opts = { 
   'phoneNumber': "phoneNumber_example", // String | Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used.
   'phoneNumberType': "phoneNumberType_example", // String | Filter on phone number type
   'phoneNumberStatus': "phoneNumberStatus_example", // String | Filter on phone number status
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getRoutingSmsPhonenumbers(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingSmsPhonenumbers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingSmsPhonenumbers');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingSmsPhonenumbers');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2067,26 +2037,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
+
 apiInstance.getRoutingUtilization()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingUtilization success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingUtilization');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingUtilization');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2117,29 +2087,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var codeId = "codeId_example"; // String | Wrapup Code ID
+let codeId = "codeId_example"; // String | Wrapup Code ID
 
 apiInstance.getRoutingWrapupcode(codeId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingWrapupcode success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingWrapupcode');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingWrapupcode');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2173,33 +2142,33 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "name", // String | Sort by
   'name': "name_example" // String | Name
 };
+
 apiInstance.getRoutingWrapupcodes(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingWrapupcodes');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingWrapupcodes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2235,34 +2204,33 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var userId = "userId_example"; // String | User ID
-
-var opts = { 
+let userId = "userId_example"; // String | User ID
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortOrder': "ASC" // String | Ascending or descending sort order
 };
+
 apiInstance.getUserRoutinglanguages(userId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getUserRoutinglanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getUserRoutinglanguages');
+  .catch((err) => {
+    console.log('There was a failure calling getUserRoutinglanguages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2298,34 +2266,33 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var userId = "userId_example"; // String | User ID
-
-var opts = { 
+let userId = "userId_example"; // String | User ID
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortOrder': "ASC" // String | Ascending or descending sort order
 };
+
 apiInstance.getUserRoutingskills(userId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getUserRoutingskills success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getUserRoutingskills');
+  .catch((err) => {
+    console.log('There was a failure calling getUserRoutingskills');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2361,22 +2328,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyQueueMemberExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#QueueMemberExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#QueueMemberExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-QueueMember <a style="cursor: pointer" onclick="copyQueueMemberExample()">Copy</a>
+QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
 
-<div id="QueueMemberExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="QueueMemberExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -2728,39 +2695,37 @@ QueueMember <a style="cursor: pointer" onclick="copyQueueMemberExample()">Copy</
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var queueId = "queueId_example"; // String | Queue ID
-
-var memberId = "memberId_example"; // String | Member ID
-
-var body = {}; // Object | Queue Member
+let queueId = "queueId_example"; // String | Queue ID
+let memberId = "memberId_example"; // String | Member ID
+let body = {}; // Object | Queue Member
 
 apiInstance.patchRoutingQueueUser(queueId, memberId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchRoutingQueueUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchRoutingQueueUser');
+  .catch((err) => {
+    console.log('There was a failure calling patchRoutingQueueUser');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2795,22 +2760,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyQueueMemberExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#QueueMemberExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#QueueMemberExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-QueueMember <a style="cursor: pointer" onclick="copyQueueMemberExample()">Copy</a>
+QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
 
-<div id="QueueMemberExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="QueueMemberExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -3162,37 +3127,36 @@ QueueMember <a style="cursor: pointer" onclick="copyQueueMemberExample()">Copy</
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var queueId = "queueId_example"; // String | Queue ID
-
-var body = [{}]; // Object | Queue Members
+let queueId = "queueId_example"; // String | Queue ID
+let body = [{}]; // Object | Queue Members
 
 apiInstance.patchRoutingQueueUsers(queueId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchRoutingQueueUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchRoutingQueueUsers');
+  .catch((err) => {
+    console.log('There was a failure calling patchRoutingQueueUsers');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3227,22 +3191,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUserRoutingLanguageExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UserRoutingLanguageExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UserRoutingLanguageExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UserRoutingLanguage <a style="cursor: pointer" onclick="copyUserRoutingLanguageExample()">Copy</a>
+UserRoutingLanguage <a href="#" onclick="return copyUserRoutingLanguageExample()">Copy</a>
 
-<div id="UserRoutingLanguageExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UserRoutingLanguageExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -3251,39 +3215,37 @@ UserRoutingLanguage <a style="cursor: pointer" onclick="copyUserRoutingLanguageE
   "languageUri": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var userId = "userId_example"; // String | User ID
-
-var languageId = "languageId_example"; // String | languageId
-
-var body = {}; // Object | Language
+let userId = "userId_example"; // String | User ID
+let languageId = "languageId_example"; // String | languageId
+let body = {}; // Object | Language
 
 apiInstance.patchUserRoutinglanguage(userId, languageId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchUserRoutinglanguage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchUserRoutinglanguage');
+  .catch((err) => {
+    console.log('There was a failure calling patchUserRoutinglanguage');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3319,59 +3281,58 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUserRoutingLanguagePostExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UserRoutingLanguagePostExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UserRoutingLanguagePostExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UserRoutingLanguagePost <a style="cursor: pointer" onclick="copyUserRoutingLanguagePostExample()">Copy</a>
+UserRoutingLanguagePost <a href="#" onclick="return copyUserRoutingLanguagePostExample()">Copy</a>
 
-<div id="UserRoutingLanguagePostExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UserRoutingLanguagePostExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "proficiency": Number, 
   "languageUri": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var userId = "userId_example"; // String | User ID
-
-var body = [{}]; // Object | Language
+let userId = "userId_example"; // String | User ID
+let body = [{}]; // Object | Language
 
 apiInstance.patchUserRoutinglanguagesBulk(userId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchUserRoutinglanguagesBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchUserRoutinglanguagesBulk');
+  .catch((err) => {
+    console.log('There was a failure calling patchUserRoutinglanguagesBulk');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3406,59 +3367,58 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUserRoutingSkillPostExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UserRoutingSkillPostExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UserRoutingSkillPostExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UserRoutingSkillPost <a style="cursor: pointer" onclick="copyUserRoutingSkillPostExample()">Copy</a>
+UserRoutingSkillPost <a href="#" onclick="return copyUserRoutingSkillPostExample()">Copy</a>
 
-<div id="UserRoutingSkillPostExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UserRoutingSkillPostExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "proficiency": Number, 
   "skillUri": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var userId = "userId_example"; // String | User ID
-
-var body = [{}]; // Object | Skill
+let userId = "userId_example"; // String | User ID
+let body = [{}]; // Object | Skill
 
 apiInstance.patchUserRoutingskillsBulk(userId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchUserRoutingskillsBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchUserRoutingskillsBulk');
+  .catch((err) => {
+    console.log('There was a failure calling patchUserRoutingskillsBulk');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3492,22 +3452,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyObservationQueryExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ObservationQueryExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ObservationQueryExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ObservationQuery <a style="cursor: pointer" onclick="copyObservationQueryExample()">Copy</a>
+ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy</a>
 
-<div id="ObservationQueryExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ObservationQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "filter": { 
     "type": String, 
@@ -3547,35 +3507,35 @@ ObservationQuery <a style="cursor: pointer" onclick="copyObservationQueryExample
   },  
   "metrics": [String], 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var body = {}; // Object | query
+let body = {}; // Object | query
 
 apiInstance.postAnalyticsQueuesObservationsQuery(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsQueuesObservationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsQueuesObservationsQuery');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsQueuesObservationsQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3608,22 +3568,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyInboundRouteExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#InboundRouteExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#InboundRouteExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-InboundRoute <a style="cursor: pointer" onclick="copyInboundRouteExample()">Copy</a>
+InboundRoute <a href="#" onclick="return copyInboundRouteExample()">Copy</a>
 
-<div id="InboundRouteExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="InboundRouteExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -3765,37 +3725,36 @@ InboundRoute <a style="cursor: pointer" onclick="copyInboundRouteExample()">Copy
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var domainName = "domainName_example"; // String | email domain
-
-var body = {}; // Object | Route
+let domainName = "domainName_example"; // String | email domain
+let body = {}; // Object | Route
 
 apiInstance.postRoutingEmailDomainRoutes(domainName, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postRoutingEmailDomainRoutes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postRoutingEmailDomainRoutes');
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingEmailDomainRoutes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3829,22 +3788,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyInboundDomainExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#InboundDomainExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#InboundDomainExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-InboundDomain <a style="cursor: pointer" onclick="copyInboundDomainExample()">Copy</a>
+InboundDomain <a href="#" onclick="return copyInboundDomainExample()">Copy</a>
 
-<div id="InboundDomainExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="InboundDomainExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -3852,35 +3811,35 @@ InboundDomain <a style="cursor: pointer" onclick="copyInboundDomainExample()">Co
   "subDomain": Boolean, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var body = {}; // Object | Domain
+let body = {}; // Object | Domain
 
 apiInstance.postRoutingEmailDomains(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postRoutingEmailDomains success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postRoutingEmailDomains');
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingEmailDomains');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3913,22 +3872,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyLanguageExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#LanguageExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#LanguageExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Language <a style="cursor: pointer" onclick="copyLanguageExample()">Copy</a>
+Language <a href="#" onclick="return copyLanguageExample()">Copy</a>
 
-<div id="LanguageExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="LanguageExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -3937,35 +3896,35 @@ Language <a style="cursor: pointer" onclick="copyLanguageExample()">Copy</a>
   "version": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var body = {}; // Object | Language
+let body = {}; // Object | Language
 
 apiInstance.postRoutingLanguages(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postRoutingLanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postRoutingLanguages');
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingLanguages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3998,59 +3957,58 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyWritableEntityExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#WritableEntityExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#WritableEntityExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-WritableEntity <a style="cursor: pointer" onclick="copyWritableEntityExample()">Copy</a>
+WritableEntity <a href="#" onclick="return copyWritableEntityExample()">Copy</a>
 
-<div id="WritableEntityExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="WritableEntityExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var queueId = "queueId_example"; // String | Queue ID
-
-var body = [{}]; // Object | Queue Members
-
-var opts = { 
+let queueId = "queueId_example"; // String | Queue ID
+let body = [{}]; // Object | Queue Members
+let opts = { 
   '_delete': false // Boolean | True to delete queue members
 };
+
 apiInstance.postRoutingQueueUsers(queueId, body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postRoutingQueueUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postRoutingQueueUsers');
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingQueueUsers');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4085,56 +4043,55 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyWrapUpCodeReferenceExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#WrapUpCodeReferenceExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#WrapUpCodeReferenceExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-WrapUpCodeReference <a style="cursor: pointer" onclick="copyWrapUpCodeReferenceExample()">Copy</a>
+WrapUpCodeReference <a href="#" onclick="return copyWrapUpCodeReferenceExample()">Copy</a>
 
-<div id="WrapUpCodeReferenceExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="WrapUpCodeReferenceExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var queueId = "queueId_example"; // String | Queue ID
-
-var body = [{}]; // Object | List of wrapup codes
+let queueId = "queueId_example"; // String | Queue ID
+let body = [{}]; // Object | List of wrapup codes
 
 apiInstance.postRoutingQueueWrapupcodes(queueId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postRoutingQueueWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postRoutingQueueWrapupcodes');
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingQueueWrapupcodes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4168,22 +4125,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCreateQueueRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CreateQueueRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CreateQueueRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CreateQueueRequest <a style="cursor: pointer" onclick="copyCreateQueueRequestExample()">Copy</a>
+CreateQueueRequest <a href="#" onclick="return copyCreateQueueRequestExample()">Copy</a>
 
-<div id="CreateQueueRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CreateQueueRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -4389,35 +4346,35 @@ CreateQueueRequest <a style="cursor: pointer" onclick="copyCreateQueueRequestExa
   "memberCount": Number, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var body = {}; // Object | Queue
+let body = {}; // Object | Queue
 
 apiInstance.postRoutingQueues(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postRoutingQueues success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postRoutingQueues');
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingQueues');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4450,22 +4407,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyRoutingSkillExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#RoutingSkillExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#RoutingSkillExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-RoutingSkill <a style="cursor: pointer" onclick="copyRoutingSkillExample()">Copy</a>
+RoutingSkill <a href="#" onclick="return copyRoutingSkillExample()">Copy</a>
 
-<div id="RoutingSkillExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="RoutingSkillExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -4474,35 +4431,35 @@ RoutingSkill <a style="cursor: pointer" onclick="copyRoutingSkillExample()">Copy
   "version": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var body = {}; // Object | Skill
+let body = {}; // Object | Skill
 
 apiInstance.postRoutingSkills(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postRoutingSkills success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postRoutingSkills');
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingSkills');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4535,22 +4492,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copySmsAddressProvisionExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#SmsAddressProvisionExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#SmsAddressProvisionExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-SmsAddressProvision <a style="cursor: pointer" onclick="copySmsAddressProvisionExample()">Copy</a>
+SmsAddressProvision <a href="#" onclick="return copySmsAddressProvisionExample()">Copy</a>
 
-<div id="SmsAddressProvisionExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="SmsAddressProvisionExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -4562,35 +4519,35 @@ SmsAddressProvision <a style="cursor: pointer" onclick="copySmsAddressProvisionE
   "autoCorrectAddress": Boolean, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var body = {}; // Object | SmsAddress
+let body = {}; // Object | SmsAddress
 
 apiInstance.postRoutingSmsAddresses(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postRoutingSmsAddresses success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postRoutingSmsAddresses');
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingSmsAddresses');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4623,22 +4580,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copySmsPhoneNumberProvisionExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#SmsPhoneNumberProvisionExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#SmsPhoneNumberProvisionExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-SmsPhoneNumberProvision <a style="cursor: pointer" onclick="copySmsPhoneNumberProvisionExample()">Copy</a>
+SmsPhoneNumberProvision <a href="#" onclick="return copySmsPhoneNumberProvisionExample()">Copy</a>
 
-<div id="SmsPhoneNumberProvisionExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="SmsPhoneNumberProvisionExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -4647,35 +4604,35 @@ SmsPhoneNumberProvision <a style="cursor: pointer" onclick="copySmsPhoneNumberPr
   "countryCode": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var body = {}; // Object | SmsPhoneNumber
+let body = {}; // Object | SmsPhoneNumber
 
 apiInstance.postRoutingSmsPhonenumbers(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postRoutingSmsPhonenumbers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postRoutingSmsPhonenumbers');
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingSmsPhonenumbers');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4708,22 +4665,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyWrapupCodeExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#WrapupCodeExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#WrapupCodeExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-WrapupCode <a style="cursor: pointer" onclick="copyWrapupCodeExample()">Copy</a>
+WrapupCode <a href="#" onclick="return copyWrapupCodeExample()">Copy</a>
 
-<div id="WrapupCodeExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="WrapupCodeExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -4733,35 +4690,35 @@ WrapupCode <a style="cursor: pointer" onclick="copyWrapupCodeExample()">Copy</a>
   "createdBy": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var body = {}; // Object | WrapupCode
+let body = {}; // Object | WrapupCode
 
 apiInstance.postRoutingWrapupcodes(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postRoutingWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postRoutingWrapupcodes');
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingWrapupcodes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4795,59 +4752,58 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUserRoutingLanguagePostExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UserRoutingLanguagePostExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UserRoutingLanguagePostExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UserRoutingLanguagePost <a style="cursor: pointer" onclick="copyUserRoutingLanguagePostExample()">Copy</a>
+UserRoutingLanguagePost <a href="#" onclick="return copyUserRoutingLanguagePostExample()">Copy</a>
 
-<div id="UserRoutingLanguagePostExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UserRoutingLanguagePostExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "proficiency": Number, 
   "languageUri": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var userId = "userId_example"; // String | User ID
-
-var body = {}; // Object | Language
+let userId = "userId_example"; // String | User ID
+let body = {}; // Object | Language
 
 apiInstance.postUserRoutinglanguages(userId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postUserRoutinglanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postUserRoutinglanguages');
+  .catch((err) => {
+    console.log('There was a failure calling postUserRoutinglanguages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4882,59 +4838,58 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUserRoutingSkillPostExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UserRoutingSkillPostExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UserRoutingSkillPostExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UserRoutingSkillPost <a style="cursor: pointer" onclick="copyUserRoutingSkillPostExample()">Copy</a>
+UserRoutingSkillPost <a href="#" onclick="return copyUserRoutingSkillPostExample()">Copy</a>
 
-<div id="UserRoutingSkillPostExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UserRoutingSkillPostExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "proficiency": Number, 
   "skillUri": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var userId = "userId_example"; // String | User ID
-
-var body = {}; // Object | Skill
+let userId = "userId_example"; // String | User ID
+let body = {}; // Object | Skill
 
 apiInstance.postUserRoutingskills(userId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postUserRoutingskills success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postUserRoutingskills');
+  .catch((err) => {
+    console.log('There was a failure calling postUserRoutingskills');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4968,22 +4923,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyInboundRouteExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#InboundRouteExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#InboundRouteExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-InboundRoute <a style="cursor: pointer" onclick="copyInboundRouteExample()">Copy</a>
+InboundRoute <a href="#" onclick="return copyInboundRouteExample()">Copy</a>
 
-<div id="InboundRouteExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="InboundRouteExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -5125,39 +5080,37 @@ InboundRoute <a style="cursor: pointer" onclick="copyInboundRouteExample()">Copy
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var domainName = "domainName_example"; // String | email domain
-
-var routeId = "routeId_example"; // String | route ID
-
-var body = {}; // Object | Route
+let domainName = "domainName_example"; // String | email domain
+let routeId = "routeId_example"; // String | route ID
+let body = {}; // Object | Route
 
 apiInstance.putRoutingEmailDomainRoute(domainName, routeId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putRoutingEmailDomainRoute success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putRoutingEmailDomainRoute');
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingEmailDomainRoute');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5192,22 +5145,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyRecipientExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#RecipientExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#RecipientExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Recipient <a style="cursor: pointer" onclick="copyRecipientExample()">Copy</a>
+Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
 
-<div id="RecipientExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="RecipientExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -6607,37 +6560,36 @@ Recipient <a style="cursor: pointer" onclick="copyRecipientExample()">Copy</a>
   "messengerType": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var recipientId = "recipientId_example"; // String | Recipient ID
-
-var body = {}; // Object | Recipient
+let recipientId = "recipientId_example"; // String | Recipient ID
+let body = {}; // Object | Recipient
 
 apiInstance.putRoutingMessageRecipient(recipientId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putRoutingMessageRecipient success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putRoutingMessageRecipient');
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingMessageRecipient');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6671,22 +6623,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyQueueRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#QueueRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#QueueRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-QueueRequest <a style="cursor: pointer" onclick="copyQueueRequestExample()">Copy</a>
+QueueRequest <a href="#" onclick="return copyQueueRequestExample()">Copy</a>
 
-<div id="QueueRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="QueueRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -6891,37 +6843,36 @@ QueueRequest <a style="cursor: pointer" onclick="copyQueueRequestExample()">Copy
   "memberCount": Number, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var queueId = "queueId_example"; // String | Queue ID
-
-var body = {}; // Object | Queue
+let queueId = "queueId_example"; // String | Queue ID
+let body = {}; // Object | Queue
 
 apiInstance.putRoutingQueue(queueId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putRoutingQueue success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putRoutingQueue');
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingQueue');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6955,22 +6906,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copySmsPhoneNumberExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#SmsPhoneNumberExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#SmsPhoneNumberExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-SmsPhoneNumber <a style="cursor: pointer" onclick="copySmsPhoneNumberExample()">Copy</a>
+SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
 
-<div id="SmsPhoneNumberExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="SmsPhoneNumberExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -7323,37 +7274,36 @@ SmsPhoneNumber <a style="cursor: pointer" onclick="copySmsPhoneNumberExample()">
   "version": Number, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var addressId = "addressId_example"; // String | Address ID
-
-var body = {}; // Object | SmsPhoneNumber
+let addressId = "addressId_example"; // String | Address ID
+let body = {}; // Object | SmsPhoneNumber
 
 apiInstance.putRoutingSmsPhonenumber(addressId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putRoutingSmsPhonenumber success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putRoutingSmsPhonenumber');
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingSmsPhonenumber');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -7387,22 +7337,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUtilizationExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UtilizationExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UtilizationExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Utilization <a style="cursor: pointer" onclick="copyUtilizationExample()">Copy</a>
+Utilization <a href="#" onclick="return copyUtilizationExample()">Copy</a>
 
-<div id="UtilizationExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UtilizationExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "utilization": { 
     "maximumCapacity": Number, 
@@ -7410,35 +7360,35 @@ Utilization <a style="cursor: pointer" onclick="copyUtilizationExample()">Copy</
     "includeNonAcd": Boolean, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var body = {}; // Object | utilization
+let body = {}; // Object | utilization
 
 apiInstance.putRoutingUtilization(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putRoutingUtilization success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putRoutingUtilization');
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingUtilization');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -7471,22 +7421,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyWrapupCodeExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#WrapupCodeExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#WrapupCodeExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-WrapupCode <a style="cursor: pointer" onclick="copyWrapupCodeExample()">Copy</a>
+WrapupCode <a href="#" onclick="return copyWrapupCodeExample()">Copy</a>
 
-<div id="WrapupCodeExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="WrapupCodeExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -7496,37 +7446,36 @@ WrapupCode <a style="cursor: pointer" onclick="copyWrapupCodeExample()">Copy</a>
   "createdBy": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var codeId = "codeId_example"; // String | Wrapup Code ID
-
-var body = {}; // Object | WrapupCode
+let codeId = "codeId_example"; // String | Wrapup Code ID
+let body = {}; // Object | WrapupCode
 
 apiInstance.putRoutingWrapupcode(codeId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putRoutingWrapupcode success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putRoutingWrapupcode');
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingWrapupcode');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -7561,22 +7510,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUserRoutingSkillExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UserRoutingSkillExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UserRoutingSkillExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UserRoutingSkill <a style="cursor: pointer" onclick="copyUserRoutingSkillExample()">Copy</a>
+UserRoutingSkill <a href="#" onclick="return copyUserRoutingSkillExample()">Copy</a>
 
-<div id="UserRoutingSkillExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UserRoutingSkillExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -7585,39 +7534,37 @@ UserRoutingSkill <a style="cursor: pointer" onclick="copyUserRoutingSkillExample
   "skillUri": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.RoutingApi();
+let apiInstance = new platformClient.RoutingApi();
 
-var userId = "userId_example"; // String | User ID
-
-var skillId = "skillId_example"; // String | skillId
-
-var body = {}; // Object | Skill
+let userId = "userId_example"; // String | User ID
+let skillId = "skillId_example"; // String | skillId
+let body = {}; // Object | Skill
 
 apiInstance.putUserRoutingskill(userId, skillId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putUserRoutingskill success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putUserRoutingskill');
+  .catch((err) => {
+    console.log('There was a failure calling putUserRoutingskill');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

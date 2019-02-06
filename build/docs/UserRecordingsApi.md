@@ -34,29 +34,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.UserRecordingsApi();
+let apiInstance = new platformClient.UserRecordingsApi();
 
-var recordingId = "recordingId_example"; // String | User Recording ID
+let recordingId = "recordingId_example"; // String | User Recording ID
 
 apiInstance.deleteUserrecording(recordingId)
-  .then(function() {
+  .then(() => {
     console.log('deleteUserrecording returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteUserrecording');
+  .catch((err) => {
+    console.log('There was a failure calling deleteUserrecording');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -89,32 +88,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.UserRecordingsApi();
+let apiInstance = new platformClient.UserRecordingsApi();
 
-var recordingId = "recordingId_example"; // String | User Recording ID
-
-var opts = { 
+let recordingId = "recordingId_example"; // String | User Recording ID
+let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
+
 apiInstance.getUserrecording(recordingId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getUserrecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getUserrecording');
+  .catch((err) => {
+    console.log('There was a failure calling getUserrecording');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -148,32 +146,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.UserRecordingsApi();
+let apiInstance = new platformClient.UserRecordingsApi();
 
-var recordingId = "recordingId_example"; // String | User Recording ID
-
-var opts = { 
+let recordingId = "recordingId_example"; // String | User Recording ID
+let opts = { 
   'formatId': "WEBM" // String | The desired media format.
 };
+
 apiInstance.getUserrecordingMedia(recordingId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getUserrecordingMedia success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getUserrecordingMedia');
+  .catch((err) => {
+    console.log('There was a failure calling getUserrecordingMedia');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -207,32 +204,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.UserRecordingsApi();
+let apiInstance = new platformClient.UserRecordingsApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
+
 apiInstance.getUserrecordings(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getUserrecordings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getUserrecordings');
+  .catch((err) => {
+    console.log('There was a failure calling getUserrecordings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -267,26 +264,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.UserRecordingsApi();
+let apiInstance = new platformClient.UserRecordingsApi();
+
 apiInstance.getUserrecordingsSummary()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getUserrecordingsSummary success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getUserrecordingsSummary');
+  .catch((err) => {
+    console.log('There was a failure calling getUserrecordingsSummary');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -315,22 +312,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUserRecordingExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UserRecordingExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UserRecordingExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Copy</a>
+UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
 
-<div id="UserRecordingExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UserRecordingExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -3988,40 +3985,39 @@ UserRecording <a style="cursor: pointer" onclick="copyUserRecordingExample()">Co
   "read": Boolean, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.UserRecordingsApi();
+let apiInstance = new platformClient.UserRecordingsApi();
 
-var recordingId = "recordingId_example"; // String | User Recording ID
-
-var body = {}; // Object | UserRecording
-
-var opts = { 
+let recordingId = "recordingId_example"; // String | User Recording ID
+let body = {}; // Object | UserRecording
+let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
+
 apiInstance.putUserrecording(recordingId, body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putUserrecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putUserrecording');
+  .catch((err) => {
+    console.log('There was a failure calling putUserrecording');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

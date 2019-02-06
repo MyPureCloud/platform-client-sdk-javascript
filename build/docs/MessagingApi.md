@@ -43,29 +43,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.MessagingApi();
+let apiInstance = new platformClient.MessagingApi();
 
-var integrationId = "integrationId_example"; // String | Integration ID
+let integrationId = "integrationId_example"; // String | Integration ID
 
 apiInstance.deleteMessagingIntegrationsFacebookIntegrationId(integrationId)
-  .then(function() {
+  .then(() => {
     console.log('deleteMessagingIntegrationsFacebookIntegrationId returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteMessagingIntegrationsFacebookIntegrationId');
+  .catch((err) => {
+    console.log('There was a failure calling deleteMessagingIntegrationsFacebookIntegrationId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -99,29 +98,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.MessagingApi();
+let apiInstance = new platformClient.MessagingApi();
 
-var integrationId = "integrationId_example"; // String | Integration ID
+let integrationId = "integrationId_example"; // String | Integration ID
 
 apiInstance.deleteMessagingIntegrationsLineIntegrationId(integrationId)
-  .then(function() {
+  .then(() => {
     console.log('deleteMessagingIntegrationsLineIntegrationId returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteMessagingIntegrationsLineIntegrationId');
+  .catch((err) => {
+    console.log('There was a failure calling deleteMessagingIntegrationsLineIntegrationId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -155,29 +153,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.MessagingApi();
+let apiInstance = new platformClient.MessagingApi();
 
-var integrationId = "integrationId_example"; // String | Integration ID
+let integrationId = "integrationId_example"; // String | Integration ID
 
 apiInstance.deleteMessagingIntegrationsTwitterIntegrationId(integrationId)
-  .then(function() {
+  .then(() => {
     console.log('deleteMessagingIntegrationsTwitterIntegrationId returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteMessagingIntegrationsTwitterIntegrationId');
+  .catch((err) => {
+    console.log('There was a failure calling deleteMessagingIntegrationsTwitterIntegrationId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -211,31 +208,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.MessagingApi();
+let apiInstance = new platformClient.MessagingApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getMessagingIntegrationsFacebook(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getMessagingIntegrationsFacebook success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getMessagingIntegrationsFacebook');
+  .catch((err) => {
+    console.log('There was a failure calling getMessagingIntegrationsFacebook');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -270,29 +267,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.MessagingApi();
+let apiInstance = new platformClient.MessagingApi();
 
-var integrationId = "integrationId_example"; // String | Integration ID
+let integrationId = "integrationId_example"; // String | Integration ID
 
 apiInstance.getMessagingIntegrationsFacebookIntegrationId(integrationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getMessagingIntegrationsFacebookIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getMessagingIntegrationsFacebookIntegrationId');
+  .catch((err) => {
+    console.log('There was a failure calling getMessagingIntegrationsFacebookIntegrationId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -326,31 +322,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.MessagingApi();
+let apiInstance = new platformClient.MessagingApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getMessagingIntegrationsLine(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getMessagingIntegrationsLine success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getMessagingIntegrationsLine');
+  .catch((err) => {
+    console.log('There was a failure calling getMessagingIntegrationsLine');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -385,29 +381,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.MessagingApi();
+let apiInstance = new platformClient.MessagingApi();
 
-var integrationId = "integrationId_example"; // String | Integration ID
+let integrationId = "integrationId_example"; // String | Integration ID
 
 apiInstance.getMessagingIntegrationsLineIntegrationId(integrationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getMessagingIntegrationsLineIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getMessagingIntegrationsLineIntegrationId');
+  .catch((err) => {
+    console.log('There was a failure calling getMessagingIntegrationsLineIntegrationId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -441,31 +436,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.MessagingApi();
+let apiInstance = new platformClient.MessagingApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getMessagingIntegrationsTwitter(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getMessagingIntegrationsTwitter success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getMessagingIntegrationsTwitter');
+  .catch((err) => {
+    console.log('There was a failure calling getMessagingIntegrationsTwitter');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -500,29 +495,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.MessagingApi();
+let apiInstance = new platformClient.MessagingApi();
 
-var integrationId = "integrationId_example"; // String | Integration ID
+let integrationId = "integrationId_example"; // String | Integration ID
 
 apiInstance.getMessagingIntegrationsTwitterIntegrationId(integrationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getMessagingIntegrationsTwitterIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getMessagingIntegrationsTwitterIntegrationId');
+  .catch((err) => {
+    console.log('There was a failure calling getMessagingIntegrationsTwitterIntegrationId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -556,33 +550,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.MessagingApi();
+let apiInstance = new platformClient.MessagingApi();
 
-var messengerType = "messengerType_example"; // String | Messenger Type
-
-var opts = { 
+let messengerType = "messengerType_example"; // String | Messenger Type
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getMessagingSticker(messengerType, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getMessagingSticker success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getMessagingSticker');
+  .catch((err) => {
+    console.log('There was a failure calling getMessagingSticker');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -617,22 +610,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyFacebookIntegrationRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#FacebookIntegrationRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#FacebookIntegrationRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-FacebookIntegrationRequest <a style="cursor: pointer" onclick="copyFacebookIntegrationRequestExample()">Copy</a>
+FacebookIntegrationRequest <a href="#" onclick="return copyFacebookIntegrationRequestExample()">Copy</a>
 
-<div id="FacebookIntegrationRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="FacebookIntegrationRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -643,35 +636,35 @@ FacebookIntegrationRequest <a style="cursor: pointer" onclick="copyFacebookInteg
   "appSecret": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.MessagingApi();
+let apiInstance = new platformClient.MessagingApi();
 
-var body = {}; // Object | FacebookIntegrationRequest
+let body = {}; // Object | FacebookIntegrationRequest
 
 apiInstance.postMessagingIntegrationsFacebook(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postMessagingIntegrationsFacebook success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postMessagingIntegrationsFacebook');
+  .catch((err) => {
+    console.log('There was a failure calling postMessagingIntegrationsFacebook');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -704,22 +697,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyLineIntegrationRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#LineIntegrationRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#LineIntegrationRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-LineIntegrationRequest <a style="cursor: pointer" onclick="copyLineIntegrationRequestExample()">Copy</a>
+LineIntegrationRequest <a href="#" onclick="return copyLineIntegrationRequestExample()">Copy</a>
 
-<div id="LineIntegrationRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="LineIntegrationRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -728,35 +721,35 @@ LineIntegrationRequest <a style="cursor: pointer" onclick="copyLineIntegrationRe
   "switcherSecret": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.MessagingApi();
+let apiInstance = new platformClient.MessagingApi();
 
-var body = {}; // Object | LineIntegrationRequest
+let body = {}; // Object | LineIntegrationRequest
 
 apiInstance.postMessagingIntegrationsLine(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postMessagingIntegrationsLine success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postMessagingIntegrationsLine');
+  .catch((err) => {
+    console.log('There was a failure calling postMessagingIntegrationsLine');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -789,22 +782,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTwitterIntegrationRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TwitterIntegrationRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TwitterIntegrationRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TwitterIntegrationRequest <a style="cursor: pointer" onclick="copyTwitterIntegrationRequestExample()">Copy</a>
+TwitterIntegrationRequest <a href="#" onclick="return copyTwitterIntegrationRequestExample()">Copy</a>
 
-<div id="TwitterIntegrationRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TwitterIntegrationRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -816,35 +809,35 @@ TwitterIntegrationRequest <a style="cursor: pointer" onclick="copyTwitterIntegra
   "envName": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.MessagingApi();
+let apiInstance = new platformClient.MessagingApi();
 
-var body = {}; // Object | TwitterIntegrationRequest
+let body = {}; // Object | TwitterIntegrationRequest
 
 apiInstance.postMessagingIntegrationsTwitter(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postMessagingIntegrationsTwitter success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postMessagingIntegrationsTwitter');
+  .catch((err) => {
+    console.log('There was a failure calling postMessagingIntegrationsTwitter');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -877,22 +870,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyLineIntegrationRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#LineIntegrationRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#LineIntegrationRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-LineIntegrationRequest <a style="cursor: pointer" onclick="copyLineIntegrationRequestExample()">Copy</a>
+LineIntegrationRequest <a href="#" onclick="return copyLineIntegrationRequestExample()">Copy</a>
 
-<div id="LineIntegrationRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="LineIntegrationRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -901,37 +894,36 @@ LineIntegrationRequest <a style="cursor: pointer" onclick="copyLineIntegrationRe
   "switcherSecret": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.MessagingApi();
+let apiInstance = new platformClient.MessagingApi();
 
-var integrationId = "integrationId_example"; // String | Integration ID
-
-var body = {}; // Object | LineIntegrationRequest
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | LineIntegrationRequest
 
 apiInstance.putMessagingIntegrationsLineIntegrationId(integrationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putMessagingIntegrationsLineIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putMessagingIntegrationsLineIntegrationId');
+  .catch((err) => {
+    console.log('There was a failure calling putMessagingIntegrationsLineIntegrationId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

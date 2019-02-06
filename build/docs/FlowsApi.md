@@ -29,22 +29,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyAggregationQueryExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#AggregationQueryExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#AggregationQueryExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample()">Copy</a>
+AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy</a>
 
-<div id="AggregationQueryExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="AggregationQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "interval": String, 
   "granularity": String, 
@@ -98,35 +98,35 @@ AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample
     },  
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.FlowsApi();
+let apiInstance = new platformClient.FlowsApi();
 
-var body = {}; // Object | query
+let body = {}; // Object | query
 
 apiInstance.postAnalyticsFlowsAggregatesQuery(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsFlowsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsFlowsAggregatesQuery');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsFlowsAggregatesQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

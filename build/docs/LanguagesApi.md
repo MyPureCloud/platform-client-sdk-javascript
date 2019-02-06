@@ -39,29 +39,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LanguagesApi();
+let apiInstance = new platformClient.LanguagesApi();
 
-var languageId = "languageId_example"; // String | Language ID
+let languageId = "languageId_example"; // String | Language ID
 
 apiInstance.deleteLanguage(languageId)
-  .then(function() {
+  .then(() => {
     console.log('deleteLanguage returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteLanguage');
+  .catch((err) => {
+    console.log('There was a failure calling deleteLanguage');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -95,29 +94,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LanguagesApi();
+let apiInstance = new platformClient.LanguagesApi();
 
-var languageId = "languageId_example"; // String | Language ID
+let languageId = "languageId_example"; // String | Language ID
 
 apiInstance.deleteRoutingLanguage(languageId)
-  .then(function() {
+  .then(() => {
     console.log('deleteRoutingLanguage returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteRoutingLanguage');
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingLanguage');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -151,29 +149,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LanguagesApi();
+let apiInstance = new platformClient.LanguagesApi();
 
-var languageId = "languageId_example"; // String | Language ID
+let languageId = "languageId_example"; // String | Language ID
 
 apiInstance.getLanguage(languageId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getLanguage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getLanguage');
+  .catch((err) => {
+    console.log('There was a failure calling getLanguage');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -207,33 +204,33 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LanguagesApi();
+let apiInstance = new platformClient.LanguagesApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortOrder': "ASC", // String | Ascending or descending sort order
   'name': "name_example" // String | Name
 };
+
 apiInstance.getLanguages(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getLanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getLanguages');
+  .catch((err) => {
+    console.log('There was a failure calling getLanguages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -269,26 +266,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LanguagesApi();
+let apiInstance = new platformClient.LanguagesApi();
+
 apiInstance.getLanguagesTranslations()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getLanguagesTranslations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getLanguagesTranslations');
+  .catch((err) => {
+    console.log('There was a failure calling getLanguagesTranslations');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -318,29 +315,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LanguagesApi();
+let apiInstance = new platformClient.LanguagesApi();
 
-var language = "language_example"; // String | The language of the builtin translation to retrieve
+let language = "language_example"; // String | The language of the builtin translation to retrieve
 
 apiInstance.getLanguagesTranslationsBuiltin(language)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getLanguagesTranslationsBuiltin success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getLanguagesTranslationsBuiltin');
+  .catch((err) => {
+    console.log('There was a failure calling getLanguagesTranslationsBuiltin');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -373,29 +369,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LanguagesApi();
+let apiInstance = new platformClient.LanguagesApi();
 
-var language = "language_example"; // String | The language of the translation to retrieve for the organization
+let language = "language_example"; // String | The language of the translation to retrieve for the organization
 
 apiInstance.getLanguagesTranslationsOrganization(language)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getLanguagesTranslationsOrganization success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getLanguagesTranslationsOrganization');
+  .catch((err) => {
+    console.log('There was a failure calling getLanguagesTranslationsOrganization');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -428,29 +423,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LanguagesApi();
+let apiInstance = new platformClient.LanguagesApi();
 
-var userId = "userId_example"; // String | The user id
+let userId = "userId_example"; // String | The user id
 
 apiInstance.getLanguagesTranslationsUser(userId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getLanguagesTranslationsUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getLanguagesTranslationsUser');
+  .catch((err) => {
+    console.log('There was a failure calling getLanguagesTranslationsUser');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -483,29 +477,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LanguagesApi();
+let apiInstance = new platformClient.LanguagesApi();
 
-var languageId = "languageId_example"; // String | Language ID
+let languageId = "languageId_example"; // String | Language ID
 
 apiInstance.getRoutingLanguage(languageId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getRoutingLanguage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getRoutingLanguage');
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingLanguage');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -538,22 +531,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyLanguageExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#LanguageExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#LanguageExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Language <a style="cursor: pointer" onclick="copyLanguageExample()">Copy</a>
+Language <a href="#" onclick="return copyLanguageExample()">Copy</a>
 
-<div id="LanguageExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="LanguageExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -562,35 +555,35 @@ Language <a style="cursor: pointer" onclick="copyLanguageExample()">Copy</a>
   "version": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LanguagesApi();
+let apiInstance = new platformClient.LanguagesApi();
 
-var body = {}; // Object | Language
+let body = {}; // Object | Language
 
 apiInstance.postLanguages(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postLanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postLanguages');
+  .catch((err) => {
+    console.log('There was a failure calling postLanguages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

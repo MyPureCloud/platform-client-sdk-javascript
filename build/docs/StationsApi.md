@@ -33,29 +33,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.StationsApi();
+let apiInstance = new platformClient.StationsApi();
 
-var stationId = "stationId_example"; // String | Station ID
+let stationId = "stationId_example"; // String | Station ID
 
 apiInstance.deleteStationAssociateduser(stationId)
-  .then(function() {
+  .then(() => {
     console.log('deleteStationAssociateduser returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteStationAssociateduser');
+  .catch((err) => {
+    console.log('There was a failure calling deleteStationAssociateduser');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -88,29 +87,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.StationsApi();
+let apiInstance = new platformClient.StationsApi();
 
-var stationId = "stationId_example"; // String | Station ID
+let stationId = "stationId_example"; // String | Station ID
 
 apiInstance.getStation(stationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getStation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getStation');
+  .catch((err) => {
+    console.log('There was a failure calling getStation');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -143,18 +141,18 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.StationsApi();
+let apiInstance = new platformClient.StationsApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "name", // String | Sort by
@@ -164,16 +162,16 @@ var opts = {
   'id': "id_example", // String | Comma separated list of stationIds
   'lineAppearanceId': "lineAppearanceId_example" // String | lineAppearanceId
 };
+
 apiInstance.getStations(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getStations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getStations');
+  .catch((err) => {
+    console.log('There was a failure calling getStations');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -214,26 +212,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.StationsApi();
+let apiInstance = new platformClient.StationsApi();
+
 apiInstance.getStationsSettings()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getStationsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getStationsSettings');
+  .catch((err) => {
+    console.log('There was a failure calling getStationsSettings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -263,57 +261,57 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyStationSettingsExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#StationSettingsExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#StationSettingsExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-StationSettings <a style="cursor: pointer" onclick="copyStationSettingsExample()">Copy</a>
+StationSettings <a href="#" onclick="return copyStationSettingsExample()">Copy</a>
 
-<div id="StationSettingsExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="StationSettingsExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "freeSeatingConfiguration": { 
     "freeSeatingState": String, 
     "ttlMinutes": Number, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.StationsApi();
+let apiInstance = new platformClient.StationsApi();
 
-var body = {}; // Object | Station settings
+let body = {}; // Object | Station settings
 
 apiInstance.patchStationsSettings(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchStationsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchStationsSettings');
+  .catch((err) => {
+    console.log('There was a failure calling patchStationsSettings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

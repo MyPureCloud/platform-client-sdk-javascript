@@ -128,33 +128,30 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversation ID
-
-var participantId = "participantId_example"; // String | participant ID
-
-var addCommunicationCode = "addCommunicationCode_example"; // String | addCommunicationCode
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let addCommunicationCode = "addCommunicationCode_example"; // String | addCommunicationCode
 
 apiInstance.deleteConversationParticipantCode(conversationId, participantId, addCommunicationCode)
-  .then(function() {
+  .then(() => {
     console.log('deleteConversationParticipantCode returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteConversationParticipantCode');
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationParticipantCode');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -189,31 +186,29 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
 
 apiInstance.deleteConversationsCallParticipantConsult(conversationId, participantId)
-  .then(function() {
+  .then(() => {
     console.log('deleteConversationsCallParticipantConsult returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteConversationsCallParticipantConsult');
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsCallParticipantConsult');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -247,31 +242,29 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var attachmentId = "attachmentId_example"; // String | attachmentId
+let conversationId = "conversationId_example"; // String | conversationId
+let attachmentId = "attachmentId_example"; // String | attachmentId
 
 apiInstance.deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId)
-  .then(function() {
+  .then(() => {
     console.log('deleteConversationsEmailMessagesDraftAttachment returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteConversationsEmailMessagesDraftAttachment');
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsEmailMessagesDraftAttachment');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -306,29 +299,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
+let conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getAnalyticsConversationDetails(conversationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAnalyticsConversationDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAnalyticsConversationDetails');
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsConversationDetails');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -362,30 +354,30 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var opts = { 
+let opts = { 
   'id': ["id_example"] // [String] | Comma-separated conversation ids
 };
+
 apiInstance.getAnalyticsConversationsDetails(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAnalyticsConversationsDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAnalyticsConversationsDetails');
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsConversationsDetails');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -419,29 +411,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversation ID
+let conversationId = "conversationId_example"; // String | conversation ID
 
 apiInstance.getConversation(conversationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversation');
+  .catch((err) => {
+    console.log('There was a failure calling getConversation');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -474,33 +465,30 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversation ID
-
-var participantId = "participantId_example"; // String | participant ID
-
-var secureSessionId = "secureSessionId_example"; // String | secure IVR session ID
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let secureSessionId = "secureSessionId_example"; // String | secure IVR session ID
 
 apiInstance.getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationParticipantSecureivrsession success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationParticipantSecureivrsession');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationParticipantSecureivrsession');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -535,31 +523,29 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversation ID
-
-var participantId = "participantId_example"; // String | participant ID
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
 
 apiInstance.getConversationParticipantSecureivrsessions(conversationId, participantId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationParticipantSecureivrsessions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationParticipantSecureivrsessions');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationParticipantSecureivrsessions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -593,34 +579,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversation ID
-
-var participantId = "participantId_example"; // String | participant ID
-
-var opts = { 
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let opts = { 
   'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
 };
+
 apiInstance.getConversationParticipantWrapup(conversationId, participantId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationParticipantWrapup');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationParticipantWrapup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -655,31 +639,29 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversation ID
-
-var participantId = "participantId_example"; // String | participant ID
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
 
 apiInstance.getConversationParticipantWrapupcodes(conversationId, participantId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationParticipantWrapupcodes');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationParticipantWrapupcodes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -713,30 +695,30 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var opts = { 
+let opts = { 
   'communicationType': "communicationType_example" // String | Call or Chat communication filtering
 };
+
 apiInstance.getConversations(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversations');
+  .catch((err) => {
+    console.log('There was a failure calling getConversations');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -769,29 +751,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
+let conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getConversationsCall(conversationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsCall success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsCall');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCall');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -824,34 +805,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var opts = { 
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let opts = { 
   'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
 };
+
 apiInstance.getConversationsCallParticipantWrapup(conversationId, participantId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsCallParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsCallParticipantWrapup');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCallParticipantWrapup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -886,31 +865,29 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
 
 apiInstance.getConversationsCallParticipantWrapupcodes(conversationId, participantId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsCallParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsCallParticipantWrapupcodes');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCallParticipantWrapupcodes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -944,29 +921,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
+let conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getConversationsCallback(conversationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsCallback success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsCallback');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCallback');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -999,34 +975,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var opts = { 
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let opts = { 
   'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
 };
+
 apiInstance.getConversationsCallbackParticipantWrapup(conversationId, participantId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsCallbackParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsCallbackParticipantWrapup');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCallbackParticipantWrapup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1061,31 +1035,29 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
 
 apiInstance.getConversationsCallbackParticipantWrapupcodes(conversationId, participantId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsCallbackParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsCallbackParticipantWrapupcodes');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCallbackParticipantWrapupcodes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1119,26 +1091,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
+
 apiInstance.getConversationsCallbacks()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsCallbacks success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsCallbacks');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCallbacks');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1168,26 +1140,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
+
 apiInstance.getConversationsCalls()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsCalls success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsCalls');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCalls');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1217,33 +1189,33 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size, maximum 50
   'pageNumber': 1, // Number | Page number
   'interval': "interval_example", // String | Interval string; format is ISO-8601. Separate start and end times with forward slash '/'
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
+
 apiInstance.getConversationsCallsHistory(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsCallsHistory success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsCallsHistory');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCallsHistory');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1279,26 +1251,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
+
 apiInstance.getConversationsCallsMaximumconferenceparties()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsCallsMaximumconferenceparties success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsCallsMaximumconferenceparties');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCallsMaximumconferenceparties');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1328,29 +1300,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
+let conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getConversationsChat(conversationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsChat success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsChat');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsChat');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1383,34 +1354,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var opts = { 
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let opts = { 
   'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
 };
+
 apiInstance.getConversationsChatParticipantWrapup(conversationId, participantId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsChatParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsChatParticipantWrapup');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsChatParticipantWrapup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1445,31 +1414,29 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
 
 apiInstance.getConversationsChatParticipantWrapupcodes(conversationId, participantId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsChatParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsChatParticipantWrapupcodes');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsChatParticipantWrapupcodes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1503,26 +1470,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
+
 apiInstance.getConversationsChats()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsChats success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsChats');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsChats');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1552,29 +1519,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
+let conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getConversationsCobrowsesession(conversationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsCobrowsesession success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsCobrowsesession');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCobrowsesession');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1607,34 +1573,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var opts = { 
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let opts = { 
   'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
 };
+
 apiInstance.getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsCobrowsesessionParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsCobrowsesessionParticipantWrapup');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCobrowsesessionParticipantWrapup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1669,31 +1633,29 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
 
 apiInstance.getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsCobrowsesessionParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsCobrowsesessionParticipantWrapupcodes');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCobrowsesessionParticipantWrapupcodes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1727,26 +1689,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
+
 apiInstance.getConversationsCobrowsesessions()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsCobrowsesessions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsCobrowsesessions');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCobrowsesessions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1776,29 +1738,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
+let conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getConversationsEmail(conversationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsEmail success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsEmail');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsEmail');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1831,31 +1792,29 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var messageId = "messageId_example"; // String | messageId
+let conversationId = "conversationId_example"; // String | conversationId
+let messageId = "messageId_example"; // String | messageId
 
 apiInstance.getConversationsEmailMessage(conversationId, messageId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsEmailMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsEmailMessage');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsEmailMessage');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1889,29 +1848,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
+let conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getConversationsEmailMessages(conversationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsEmailMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsEmailMessages');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsEmailMessages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1944,29 +1902,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
+let conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getConversationsEmailMessagesDraft(conversationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsEmailMessagesDraft success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsEmailMessagesDraft');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsEmailMessagesDraft');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1999,34 +1956,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var opts = { 
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let opts = { 
   'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
 };
+
 apiInstance.getConversationsEmailParticipantWrapup(conversationId, participantId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsEmailParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsEmailParticipantWrapup');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsEmailParticipantWrapup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2061,31 +2016,29 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
 
 apiInstance.getConversationsEmailParticipantWrapupcodes(conversationId, participantId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsEmailParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsEmailParticipantWrapupcodes');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsEmailParticipantWrapupcodes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2119,26 +2072,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
+
 apiInstance.getConversationsEmails()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsEmails success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsEmails');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsEmails');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2168,29 +2121,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
+let conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getConversationsMessage(conversationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsMessage');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessage');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2224,33 +2176,30 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var communicationId = "communicationId_example"; // String | communicationId
-
-var mediaId = "mediaId_example"; // String | mediaId
+let conversationId = "conversationId_example"; // String | conversationId
+let communicationId = "communicationId_example"; // String | communicationId
+let mediaId = "mediaId_example"; // String | mediaId
 
 apiInstance.getConversationsMessageCommunicationMessagesMediaMediaId(conversationId, communicationId, mediaId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsMessageCommunicationMessagesMediaMediaId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsMessageCommunicationMessagesMediaMediaId');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessageCommunicationMessagesMediaMediaId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2286,31 +2235,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var messageId = "messageId_example"; // String | messageId
+let conversationId = "conversationId_example"; // String | conversationId
+let messageId = "messageId_example"; // String | messageId
 
 apiInstance.getConversationsMessageMessage(conversationId, messageId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsMessageMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsMessageMessage');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessageMessage');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2344,34 +2291,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var opts = { 
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let opts = { 
   'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
 };
+
 apiInstance.getConversationsMessageParticipantWrapup(conversationId, participantId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsMessageParticipantWrapup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsMessageParticipantWrapup');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessageParticipantWrapup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2406,31 +2351,29 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String |  conversationId
-
-var participantId = "participantId_example"; // String | participantId
+let conversationId = "conversationId_example"; // String |  conversationId
+let participantId = "participantId_example"; // String | participantId
 
 apiInstance.getConversationsMessageParticipantWrapupcodes(conversationId, participantId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsMessageParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsMessageParticipantWrapupcodes');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessageParticipantWrapupcodes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2464,26 +2407,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
+
 apiInstance.getConversationsMessages()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getConversationsMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getConversationsMessages');
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2512,22 +2455,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyMediaParticipantRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#MediaParticipantRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#MediaParticipantRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipantRequestExample()">Copy</a>
+MediaParticipantRequest <a href="#" onclick="return copyMediaParticipantRequestExample()">Copy</a>
 
-<div id="MediaParticipantRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="MediaParticipantRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "wrapup": { 
     "code": String, 
@@ -2545,39 +2488,37 @@ MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipant
   "held": Boolean, 
   "wrapupSkipped": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversation ID
-
-var participantId = "participantId_example"; // String | participant ID
-
-var body = {}; // Object | Update request
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let body = {}; // Object | Update request
 
 apiInstance.patchConversationParticipant(conversationId, participantId, body)
-  .then(function() {
+  .then(() => {
     console.log('patchConversationParticipant returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationParticipant');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationParticipant');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2611,58 +2552,56 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyParticipantAttributesExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ParticipantAttributesExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ParticipantAttributesExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ParticipantAttributes <a style="cursor: pointer" onclick="copyParticipantAttributesExample()">Copy</a>
+ParticipantAttributes <a href="#" onclick="return copyParticipantAttributesExample()">Copy</a>
 
-<div id="ParticipantAttributesExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ParticipantAttributesExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "attributes": {String: String}, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversation ID
-
-var participantId = "participantId_example"; // String | participant ID
-
-var body = {}; // Object | Participant attributes
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let body = {}; // Object | Participant attributes
 
 apiInstance.patchConversationParticipantAttributes(conversationId, participantId, body)
-  .then(function() {
+  .then(() => {
     console.log('patchConversationParticipantAttributes returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationParticipantAttributes');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationParticipantAttributes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2697,22 +2636,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyConversationExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ConversationExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ConversationExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy</a>
+Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
 
-<div id="ConversationExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ConversationExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -7399,37 +7338,36 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
   "state": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var body = {}; // Object | Conversation
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | Conversation
 
 apiInstance.patchConversationsCall(conversationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchConversationsCall success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsCall');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCall');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -7462,22 +7400,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyMediaParticipantRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#MediaParticipantRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#MediaParticipantRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipantRequestExample()">Copy</a>
+MediaParticipantRequest <a href="#" onclick="return copyMediaParticipantRequestExample()">Copy</a>
 
-<div id="MediaParticipantRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="MediaParticipantRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "wrapup": { 
     "code": String, 
@@ -7495,39 +7433,37 @@ MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipant
   "held": Boolean, 
   "wrapupSkipped": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var body = {}; // Object | Participant request
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Participant request
 
 apiInstance.patchConversationsCallParticipant(conversationId, participantId, body)
-  .then(function() {
+  .then(() => {
     console.log('patchConversationsCallParticipant returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsCallParticipant');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCallParticipant');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -7561,58 +7497,56 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyParticipantAttributesExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ParticipantAttributesExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ParticipantAttributesExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ParticipantAttributes <a style="cursor: pointer" onclick="copyParticipantAttributesExample()">Copy</a>
+ParticipantAttributes <a href="#" onclick="return copyParticipantAttributesExample()">Copy</a>
 
-<div id="ParticipantAttributesExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ParticipantAttributesExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "attributes": {String: String}, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var body = {}; // Object | Participant attributes
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Participant attributes
 
 apiInstance.patchConversationsCallParticipantAttributes(conversationId, participantId, body)
-  .then(function() {
+  .then(() => {
     console.log('patchConversationsCallParticipantAttributes returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsCallParticipantAttributes');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCallParticipantAttributes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -7646,22 +7580,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyMediaParticipantRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#MediaParticipantRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#MediaParticipantRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipantRequestExample()">Copy</a>
+MediaParticipantRequest <a href="#" onclick="return copyMediaParticipantRequestExample()">Copy</a>
 
-<div id="MediaParticipantRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="MediaParticipantRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "wrapup": { 
     "code": String, 
@@ -7679,41 +7613,38 @@ MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipant
   "held": Boolean, 
   "wrapupSkipped": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var communicationId = "communicationId_example"; // String | communicationId
-
-var body = {}; // Object | Participant
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let communicationId = "communicationId_example"; // String | communicationId
+let body = {}; // Object | Participant
 
 apiInstance.patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchConversationsCallParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsCallParticipantCommunication');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCallParticipantCommunication');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -7748,58 +7679,56 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyConsultTransferUpdateExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ConsultTransferUpdateExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ConsultTransferUpdateExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ConsultTransferUpdate <a style="cursor: pointer" onclick="copyConsultTransferUpdateExample()">Copy</a>
+ConsultTransferUpdate <a href="#" onclick="return copyConsultTransferUpdateExample()">Copy</a>
 
-<div id="ConsultTransferUpdateExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ConsultTransferUpdateExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "speakTo": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var body = {}; // Object | new speak to
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | new speak to
 
 apiInstance.patchConversationsCallParticipantConsult(conversationId, participantId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchConversationsCallParticipantConsult success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsCallParticipantConsult');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCallParticipantConsult');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -7834,22 +7763,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyConversationExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ConversationExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ConversationExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy</a>
+Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
 
-<div id="ConversationExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ConversationExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -12536,37 +12465,36 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
   "state": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var body = {}; // Object | Conversation
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | Conversation
 
 apiInstance.patchConversationsCallback(conversationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchConversationsCallback success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsCallback');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCallback');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -12599,22 +12527,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyMediaParticipantRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#MediaParticipantRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#MediaParticipantRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipantRequestExample()">Copy</a>
+MediaParticipantRequest <a href="#" onclick="return copyMediaParticipantRequestExample()">Copy</a>
 
-<div id="MediaParticipantRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="MediaParticipantRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "wrapup": { 
     "code": String, 
@@ -12632,39 +12560,37 @@ MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipant
   "held": Boolean, 
   "wrapupSkipped": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var body = {}; // Object | Participant
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Participant
 
 apiInstance.patchConversationsCallbackParticipant(conversationId, participantId, body)
-  .then(function() {
+  .then(() => {
     console.log('patchConversationsCallbackParticipant returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsCallbackParticipant');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCallbackParticipant');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -12698,58 +12624,56 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyParticipantAttributesExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ParticipantAttributesExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ParticipantAttributesExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ParticipantAttributes <a style="cursor: pointer" onclick="copyParticipantAttributesExample()">Copy</a>
+ParticipantAttributes <a href="#" onclick="return copyParticipantAttributesExample()">Copy</a>
 
-<div id="ParticipantAttributesExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ParticipantAttributesExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "attributes": {String: String}, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var body = {}; // Object | Attributes
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Attributes
 
 apiInstance.patchConversationsCallbackParticipantAttributes(conversationId, participantId, body)
-  .then(function() {
+  .then(() => {
     console.log('patchConversationsCallbackParticipantAttributes returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsCallbackParticipantAttributes');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCallbackParticipantAttributes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -12783,22 +12707,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyMediaParticipantRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#MediaParticipantRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#MediaParticipantRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipantRequestExample()">Copy</a>
+MediaParticipantRequest <a href="#" onclick="return copyMediaParticipantRequestExample()">Copy</a>
 
-<div id="MediaParticipantRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="MediaParticipantRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "wrapup": { 
     "code": String, 
@@ -12816,41 +12740,38 @@ MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipant
   "held": Boolean, 
   "wrapupSkipped": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var communicationId = "communicationId_example"; // String | communicationId
-
-var body = {}; // Object | Participant
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let communicationId = "communicationId_example"; // String | communicationId
+let body = {}; // Object | Participant
 
 apiInstance.patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchConversationsCallbackParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsCallbackParticipantCommunication');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCallbackParticipantCommunication');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -12886,22 +12807,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyConversationExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ConversationExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ConversationExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy</a>
+Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
 
-<div id="ConversationExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ConversationExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -17588,37 +17509,36 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
   "state": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var body = {}; // Object | Conversation
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | Conversation
 
 apiInstance.patchConversationsChat(conversationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchConversationsChat success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsChat');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsChat');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -17651,22 +17571,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyMediaParticipantRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#MediaParticipantRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#MediaParticipantRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipantRequestExample()">Copy</a>
+MediaParticipantRequest <a href="#" onclick="return copyMediaParticipantRequestExample()">Copy</a>
 
-<div id="MediaParticipantRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="MediaParticipantRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "wrapup": { 
     "code": String, 
@@ -17684,39 +17604,37 @@ MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipant
   "held": Boolean, 
   "wrapupSkipped": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var body = {}; // Object | Update request
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Update request
 
 apiInstance.patchConversationsChatParticipant(conversationId, participantId, body)
-  .then(function() {
+  .then(() => {
     console.log('patchConversationsChatParticipant returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsChatParticipant');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsChatParticipant');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -17750,58 +17668,56 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyParticipantAttributesExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ParticipantAttributesExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ParticipantAttributesExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ParticipantAttributes <a style="cursor: pointer" onclick="copyParticipantAttributesExample()">Copy</a>
+ParticipantAttributes <a href="#" onclick="return copyParticipantAttributesExample()">Copy</a>
 
-<div id="ParticipantAttributesExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ParticipantAttributesExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "attributes": {String: String}, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var body = {}; // Object | Participant attributes
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Participant attributes
 
 apiInstance.patchConversationsChatParticipantAttributes(conversationId, participantId, body)
-  .then(function() {
+  .then(() => {
     console.log('patchConversationsChatParticipantAttributes returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsChatParticipantAttributes');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsChatParticipantAttributes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -17835,22 +17751,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyMediaParticipantRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#MediaParticipantRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#MediaParticipantRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipantRequestExample()">Copy</a>
+MediaParticipantRequest <a href="#" onclick="return copyMediaParticipantRequestExample()">Copy</a>
 
-<div id="MediaParticipantRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="MediaParticipantRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "wrapup": { 
     "code": String, 
@@ -17868,41 +17784,38 @@ MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipant
   "held": Boolean, 
   "wrapupSkipped": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var communicationId = "communicationId_example"; // String | communicationId
-
-var body = {}; // Object | Participant
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let communicationId = "communicationId_example"; // String | communicationId
+let body = {}; // Object | Participant
 
 apiInstance.patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchConversationsChatParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsChatParticipantCommunication');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsChatParticipantCommunication');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -17938,22 +17851,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyConversationExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ConversationExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ConversationExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy</a>
+Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
 
-<div id="ConversationExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ConversationExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -22640,37 +22553,36 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
   "state": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var body = {}; // Object | Conversation
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | Conversation
 
 apiInstance.patchConversationsCobrowsesession(conversationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchConversationsCobrowsesession success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsCobrowsesession');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCobrowsesession');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -22703,22 +22615,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyMediaParticipantRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#MediaParticipantRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#MediaParticipantRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipantRequestExample()">Copy</a>
+MediaParticipantRequest <a href="#" onclick="return copyMediaParticipantRequestExample()">Copy</a>
 
-<div id="MediaParticipantRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="MediaParticipantRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "wrapup": { 
     "code": String, 
@@ -22736,40 +22648,39 @@ MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipant
   "held": Boolean, 
   "wrapupSkipped": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var opts = { 
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let opts = { 
   'body': {} // Object | 
 };
+
 apiInstance.patchConversationsCobrowsesessionParticipant(conversationId, participantId, opts)
-  .then(function() {
+  .then(() => {
     console.log('patchConversationsCobrowsesessionParticipant returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsCobrowsesessionParticipant');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCobrowsesessionParticipant');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -22803,59 +22714,58 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyParticipantAttributesExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ParticipantAttributesExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ParticipantAttributesExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ParticipantAttributes <a style="cursor: pointer" onclick="copyParticipantAttributesExample()">Copy</a>
+ParticipantAttributes <a href="#" onclick="return copyParticipantAttributesExample()">Copy</a>
 
-<div id="ParticipantAttributesExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ParticipantAttributesExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "attributes": {String: String}, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var opts = { 
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let opts = { 
   'body': {} // Object | 
 };
+
 apiInstance.patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, opts)
-  .then(function() {
+  .then(() => {
     console.log('patchConversationsCobrowsesessionParticipantAttributes returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsCobrowsesessionParticipantAttributes');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCobrowsesessionParticipantAttributes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -22889,22 +22799,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyMediaParticipantRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#MediaParticipantRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#MediaParticipantRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipantRequestExample()">Copy</a>
+MediaParticipantRequest <a href="#" onclick="return copyMediaParticipantRequestExample()">Copy</a>
 
-<div id="MediaParticipantRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="MediaParticipantRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "wrapup": { 
     "code": String, 
@@ -22922,41 +22832,38 @@ MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipant
   "held": Boolean, 
   "wrapupSkipped": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var communicationId = "communicationId_example"; // String | communicationId
-
-var body = {}; // Object | Participant
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let communicationId = "communicationId_example"; // String | communicationId
+let body = {}; // Object | Participant
 
 apiInstance.patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchConversationsCobrowsesessionParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsCobrowsesessionParticipantCommunication');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCobrowsesessionParticipantCommunication');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -22992,22 +22899,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyConversationExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ConversationExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ConversationExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy</a>
+Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
 
-<div id="ConversationExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ConversationExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -27694,37 +27601,36 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
   "state": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var body = {}; // Object | Conversation
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | Conversation
 
 apiInstance.patchConversationsEmail(conversationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchConversationsEmail success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsEmail');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsEmail');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -27757,22 +27663,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyMediaParticipantRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#MediaParticipantRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#MediaParticipantRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipantRequestExample()">Copy</a>
+MediaParticipantRequest <a href="#" onclick="return copyMediaParticipantRequestExample()">Copy</a>
 
-<div id="MediaParticipantRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="MediaParticipantRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "wrapup": { 
     "code": String, 
@@ -27790,39 +27696,37 @@ MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipant
   "held": Boolean, 
   "wrapupSkipped": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var body = {}; // Object | Update request
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Update request
 
 apiInstance.patchConversationsEmailParticipant(conversationId, participantId, body)
-  .then(function() {
+  .then(() => {
     console.log('patchConversationsEmailParticipant returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsEmailParticipant');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsEmailParticipant');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -27856,58 +27760,56 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyParticipantAttributesExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ParticipantAttributesExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ParticipantAttributesExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ParticipantAttributes <a style="cursor: pointer" onclick="copyParticipantAttributesExample()">Copy</a>
+ParticipantAttributes <a href="#" onclick="return copyParticipantAttributesExample()">Copy</a>
 
-<div id="ParticipantAttributesExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ParticipantAttributesExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "attributes": {String: String}, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var body = {}; // Object | Participant attributes
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Participant attributes
 
 apiInstance.patchConversationsEmailParticipantAttributes(conversationId, participantId, body)
-  .then(function() {
+  .then(() => {
     console.log('patchConversationsEmailParticipantAttributes returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsEmailParticipantAttributes');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsEmailParticipantAttributes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -27941,22 +27843,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyMediaParticipantRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#MediaParticipantRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#MediaParticipantRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipantRequestExample()">Copy</a>
+MediaParticipantRequest <a href="#" onclick="return copyMediaParticipantRequestExample()">Copy</a>
 
-<div id="MediaParticipantRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="MediaParticipantRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "wrapup": { 
     "code": String, 
@@ -27974,41 +27876,38 @@ MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipant
   "held": Boolean, 
   "wrapupSkipped": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var communicationId = "communicationId_example"; // String | communicationId
-
-var body = {}; // Object | Participant
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let communicationId = "communicationId_example"; // String | communicationId
+let body = {}; // Object | Participant
 
 apiInstance.patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchConversationsEmailParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsEmailParticipantCommunication');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsEmailParticipantCommunication');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -28044,22 +27943,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyConversationExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ConversationExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ConversationExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy</a>
+Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
 
-<div id="ConversationExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ConversationExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -32746,37 +32645,36 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
   "state": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var body = {}; // Object | Conversation
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | Conversation
 
 apiInstance.patchConversationsMessage(conversationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchConversationsMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsMessage');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsMessage');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -32809,22 +32707,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyMediaParticipantRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#MediaParticipantRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#MediaParticipantRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipantRequestExample()">Copy</a>
+MediaParticipantRequest <a href="#" onclick="return copyMediaParticipantRequestExample()">Copy</a>
 
-<div id="MediaParticipantRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="MediaParticipantRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "wrapup": { 
     "code": String, 
@@ -32842,40 +32740,39 @@ MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipant
   "held": Boolean, 
   "wrapupSkipped": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String |  conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var opts = { 
+let conversationId = "conversationId_example"; // String |  conversationId
+let participantId = "participantId_example"; // String | participantId
+let opts = { 
   'body': {} // Object | 
 };
+
 apiInstance.patchConversationsMessageParticipant(conversationId, participantId, opts)
-  .then(function() {
+  .then(() => {
     console.log('patchConversationsMessageParticipant returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsMessageParticipant');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsMessageParticipant');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -32909,59 +32806,58 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyParticipantAttributesExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ParticipantAttributesExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ParticipantAttributesExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ParticipantAttributes <a style="cursor: pointer" onclick="copyParticipantAttributesExample()">Copy</a>
+ParticipantAttributes <a href="#" onclick="return copyParticipantAttributesExample()">Copy</a>
 
-<div id="ParticipantAttributesExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ParticipantAttributesExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "attributes": {String: String}, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String |  conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var opts = { 
+let conversationId = "conversationId_example"; // String |  conversationId
+let participantId = "participantId_example"; // String | participantId
+let opts = { 
   'body': {} // Object | 
 };
+
 apiInstance.patchConversationsMessageParticipantAttributes(conversationId, participantId, opts)
-  .then(function() {
+  .then(() => {
     console.log('patchConversationsMessageParticipantAttributes returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsMessageParticipantAttributes');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsMessageParticipantAttributes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -32995,22 +32891,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyMediaParticipantRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#MediaParticipantRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#MediaParticipantRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipantRequestExample()">Copy</a>
+MediaParticipantRequest <a href="#" onclick="return copyMediaParticipantRequestExample()">Copy</a>
 
-<div id="MediaParticipantRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="MediaParticipantRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "wrapup": { 
     "code": String, 
@@ -33028,41 +32924,38 @@ MediaParticipantRequest <a style="cursor: pointer" onclick="copyMediaParticipant
   "held": Boolean, 
   "wrapupSkipped": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String |  conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var communicationId = "communicationId_example"; // String | communicationId
-
-var body = {}; // Object | Participant
+let conversationId = "conversationId_example"; // String |  conversationId
+let participantId = "participantId_example"; // String | participantId
+let communicationId = "communicationId_example"; // String | communicationId
+let body = {}; // Object | Participant
 
 apiInstance.patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchConversationsMessageParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchConversationsMessageParticipantCommunication');
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsMessageParticipantCommunication');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -33098,22 +32991,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyPropertyIndexRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#PropertyIndexRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PropertyIndexRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-PropertyIndexRequest <a style="cursor: pointer" onclick="copyPropertyIndexRequestExample()">Copy</a>
+PropertyIndexRequest <a href="#" onclick="return copyPropertyIndexRequestExample()">Copy</a>
 
-<div id="PropertyIndexRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="PropertyIndexRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "sessionId": String, 
   "targetDate": Date, 
@@ -33123,37 +33016,36 @@ PropertyIndexRequest <a style="cursor: pointer" onclick="copyPropertyIndexReques
     "value": String, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var body = {}; // Object | request
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | request
 
 apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsConversationDetailsProperties success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsConversationDetailsProperties');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsConversationDetailsProperties');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -33187,22 +33079,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyAggregationQueryExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#AggregationQueryExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#AggregationQueryExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample()">Copy</a>
+AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy</a>
 
-<div id="AggregationQueryExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="AggregationQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "interval": String, 
   "granularity": String, 
@@ -33256,35 +33148,35 @@ AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample
     },  
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var body = {}; // Object | query
+let body = {}; // Object | query
 
 apiInstance.postAnalyticsConversationsAggregatesQuery(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsConversationsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsConversationsAggregatesQuery');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsConversationsAggregatesQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -33317,22 +33209,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyConversationQueryExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ConversationQueryExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ConversationQueryExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ConversationQuery <a style="cursor: pointer" onclick="copyConversationQueryExample()">Copy</a>
+ConversationQuery <a href="#" onclick="return copyConversationQueryExample()">Copy</a>
 
-<div id="ConversationQueryExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ConversationQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "interval": String, 
   "conversationFilters": { 
@@ -33532,35 +33424,35 @@ ConversationQuery <a style="cursor: pointer" onclick="copyConversationQueryExamp
   "order": String, 
   "orderBy": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var body = {}; // Object | query
+let body = {}; // Object | query
 
 apiInstance.postAnalyticsConversationsDetailsQuery(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsConversationsDetailsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsConversationsDetailsQuery');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsConversationsDetailsQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -33594,29 +33486,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversation ID
+let conversationId = "conversationId_example"; // String | conversation ID
 
 apiInstance.postConversationDisconnect(conversationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postConversationDisconnect success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationDisconnect');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationDisconnect');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -33649,22 +33540,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCreateCallbackOnConversationCommandExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CreateCallbackOnConversationCommandExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CreateCallbackOnConversationCommandExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CreateCallbackOnConversationCommand <a style="cursor: pointer" onclick="copyCreateCallbackOnConversationCommandExample()">Copy</a>
+CreateCallbackOnConversationCommand <a href="#" onclick="return copyCreateCallbackOnConversationCommandExample()">Copy</a>
 
-<div id="CreateCallbackOnConversationCommandExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CreateCallbackOnConversationCommandExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "scriptId": String, 
   "queueId": String, 
@@ -33682,40 +33573,39 @@ CreateCallbackOnConversationCommand <a style="cursor: pointer" onclick="copyCrea
   "validateCallbackNumbers": Boolean, 
   "data": {String: String}, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversation ID
-
-var participantId = "participantId_example"; // String | participant ID
-
-var opts = { 
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let opts = { 
   'body': {} // Object | 
 };
+
 apiInstance.postConversationParticipantCallbacks(conversationId, participantId, opts)
-  .then(function() {
+  .then(() => {
     console.log('postConversationParticipantCallbacks returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationParticipantCallbacks');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationParticipantCallbacks');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -33749,59 +33639,58 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyDigitsExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#DigitsExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DigitsExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Digits <a style="cursor: pointer" onclick="copyDigitsExample()">Copy</a>
+Digits <a href="#" onclick="return copyDigitsExample()">Copy</a>
 
-<div id="DigitsExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="DigitsExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "digits": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversation ID
-
-var participantId = "participantId_example"; // String | participant ID
-
-var opts = { 
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let opts = { 
   'body': {} // Object | Digits
 };
+
 apiInstance.postConversationParticipantDigits(conversationId, participantId, opts)
-  .then(function() {
+  .then(() => {
     console.log('postConversationParticipantDigits returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationParticipantDigits');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationParticipantDigits');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -33835,22 +33724,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTransferRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TransferRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TransferRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TransferRequest <a style="cursor: pointer" onclick="copyTransferRequestExample()">Copy</a>
+TransferRequest <a href="#" onclick="return copyTransferRequestExample()">Copy</a>
 
-<div id="TransferRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TransferRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "userId": String, 
   "address": String, 
@@ -33858,39 +33747,37 @@ TransferRequest <a style="cursor: pointer" onclick="copyTransferRequestExample()
   "queueId": String, 
   "voicemail": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversation ID
-
-var participantId = "participantId_example"; // String | participant ID
-
-var body = {}; // Object | Transfer request
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let body = {}; // Object | Transfer request
 
 apiInstance.postConversationParticipantReplace(conversationId, participantId, body)
-  .then(function() {
+  .then(() => {
     console.log('postConversationParticipantReplace returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationParticipantReplace');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationParticipantReplace');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -33924,62 +33811,61 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCreateSecureSessionExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CreateSecureSessionExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CreateSecureSessionExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CreateSecureSession <a style="cursor: pointer" onclick="copyCreateSecureSessionExample()">Copy</a>
+CreateSecureSession <a href="#" onclick="return copyCreateSecureSessionExample()">Copy</a>
 
-<div id="CreateSecureSessionExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CreateSecureSessionExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "sourceParticipantId": String, 
   "flowId": String, 
   "userData": String, 
   "disconnect": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversation ID
-
-var participantId = "participantId_example"; // String | participant ID
-
-var opts = { 
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let opts = { 
   'body': {} // Object | 
 };
+
 apiInstance.postConversationParticipantSecureivrsessions(conversationId, participantId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postConversationParticipantSecureivrsessions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationParticipantSecureivrsessions');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationParticipantSecureivrsessions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -34013,57 +33899,56 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCallCommandExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CallCommandExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CallCommandExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CallCommand <a style="cursor: pointer" onclick="copyCallCommandExample()">Copy</a>
+CallCommand <a href="#" onclick="return copyCallCommandExample()">Copy</a>
 
-<div id="CallCommandExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CallCommandExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "callNumber": String, 
   "phoneColumn": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var body = {}; // Object | Conversation
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | Conversation
 
 apiInstance.postConversationsCall(conversationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postConversationsCall success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsCall');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCall');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -34096,22 +33981,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyConsultTransferExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ConsultTransferExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ConsultTransferExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ConsultTransfer <a style="cursor: pointer" onclick="copyConsultTransferExample()">Copy</a>
+ConsultTransfer <a href="#" onclick="return copyConsultTransferExample()">Copy</a>
 
-<div id="ConsultTransferExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ConsultTransferExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "speakTo": String, 
   "destination": { 
@@ -34121,39 +34006,37 @@ ConsultTransfer <a style="cursor: pointer" onclick="copyConsultTransferExample()
     "queueId": String, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var body = {}; // Object | Destination address & initial speak to
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Destination address & initial speak to
 
 apiInstance.postConversationsCallParticipantConsult(conversationId, participantId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postConversationsCallParticipantConsult success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsCallParticipantConsult');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallParticipantConsult');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -34189,31 +34072,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
 
 apiInstance.postConversationsCallParticipantMonitor(conversationId, participantId)
-  .then(function() {
+  .then(() => {
     console.log('postConversationsCallParticipantMonitor returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsCallParticipantMonitor');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallParticipantMonitor');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -34246,22 +34127,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTransferRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TransferRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TransferRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TransferRequest <a style="cursor: pointer" onclick="copyTransferRequestExample()">Copy</a>
+TransferRequest <a href="#" onclick="return copyTransferRequestExample()">Copy</a>
 
-<div id="TransferRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TransferRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "userId": String, 
   "address": String, 
@@ -34269,39 +34150,37 @@ TransferRequest <a style="cursor: pointer" onclick="copyTransferRequestExample()
   "queueId": String, 
   "voicemail": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var body = {}; // Object | Transfer request
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Transfer request
 
 apiInstance.postConversationsCallParticipantReplace(conversationId, participantId, body)
-  .then(function() {
+  .then(() => {
     console.log('postConversationsCallParticipantReplace returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsCallParticipantReplace');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallParticipantReplace');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -34335,22 +34214,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyConversationExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ConversationExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ConversationExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy</a>
+Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
 
-<div id="ConversationExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ConversationExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -39037,37 +38916,36 @@ Conversation <a style="cursor: pointer" onclick="copyConversationExample()">Copy
   "state": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var body = {}; // Object | Conversation
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | Conversation
 
 apiInstance.postConversationsCallParticipants(conversationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postConversationsCallParticipants success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsCallParticipants');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallParticipants');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -39100,22 +38978,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTransferRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TransferRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TransferRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TransferRequest <a style="cursor: pointer" onclick="copyTransferRequestExample()">Copy</a>
+TransferRequest <a href="#" onclick="return copyTransferRequestExample()">Copy</a>
 
-<div id="TransferRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TransferRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "userId": String, 
   "address": String, 
@@ -39123,39 +39001,37 @@ TransferRequest <a style="cursor: pointer" onclick="copyTransferRequestExample()
   "queueId": String, 
   "voicemail": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var body = {}; // Object | Transfer request
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Transfer request
 
 apiInstance.postConversationsCallbackParticipantReplace(conversationId, participantId, body)
-  .then(function() {
+  .then(() => {
     console.log('postConversationsCallbackParticipantReplace returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsCallbackParticipantReplace');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallbackParticipantReplace');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -39190,22 +39066,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCreateCallbackCommandExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CreateCallbackCommandExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CreateCallbackCommandExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CreateCallbackCommand <a style="cursor: pointer" onclick="copyCreateCallbackCommandExample()">Copy</a>
+CreateCallbackCommand <a href="#" onclick="return copyCreateCallbackCommandExample()">Copy</a>
 
-<div id="CreateCallbackCommandExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CreateCallbackCommandExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "scriptId": String, 
   "queueId": String, 
@@ -39223,35 +39099,35 @@ CreateCallbackCommand <a style="cursor: pointer" onclick="copyCreateCallbackComm
   "validateCallbackNumbers": Boolean, 
   "data": {String: String}, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var body = {}; // Object | Callback
+let body = {}; // Object | Callback
 
 apiInstance.postConversationsCallbacks(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postConversationsCallbacks success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsCallbacks');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallbacks');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -39284,22 +39160,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCreateCallRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CreateCallRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CreateCallRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CreateCallRequest <a style="cursor: pointer" onclick="copyCreateCallRequestExample()">Copy</a>
+CreateCallRequest <a href="#" onclick="return copyCreateCallRequestExample()">Copy</a>
 
-<div id="CreateCallRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CreateCallRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "phoneNumber": String, 
   "callerId": String, 
@@ -39319,35 +39195,35 @@ CreateCallRequest <a style="cursor: pointer" onclick="copyCreateCallRequestExamp
   },  
   "uuiData": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var body = {}; // Object | Call request
+let body = {}; // Object | Call request
 
 apiInstance.postConversationsCalls(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postConversationsCalls success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsCalls');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCalls');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -39379,22 +39255,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTransferRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TransferRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TransferRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TransferRequest <a style="cursor: pointer" onclick="copyTransferRequestExample()">Copy</a>
+TransferRequest <a href="#" onclick="return copyTransferRequestExample()">Copy</a>
 
-<div id="TransferRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TransferRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "userId": String, 
   "address": String, 
@@ -39402,39 +39278,37 @@ TransferRequest <a style="cursor: pointer" onclick="copyTransferRequestExample()
   "queueId": String, 
   "voicemail": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var body = {}; // Object | Transfer request
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Transfer request
 
 apiInstance.postConversationsChatParticipantReplace(conversationId, participantId, body)
-  .then(function() {
+  .then(() => {
     console.log('postConversationsChatParticipantReplace returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsChatParticipantReplace');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsChatParticipantReplace');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -39469,22 +39343,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCreateWebChatRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CreateWebChatRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CreateWebChatRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CreateWebChatRequest <a style="cursor: pointer" onclick="copyCreateWebChatRequestExample()">Copy</a>
+CreateWebChatRequest <a href="#" onclick="return copyCreateWebChatRequestExample()">Copy</a>
 
-<div id="CreateWebChatRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CreateWebChatRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "queueId": String, 
   "provider": String, 
@@ -39494,35 +39368,35 @@ CreateWebChatRequest <a style="cursor: pointer" onclick="copyCreateWebChatReques
   "attributes": {String: String}, 
   "customerName": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var body = {}; // Object | Create web chat request
+let body = {}; // Object | Create web chat request
 
 apiInstance.postConversationsChats(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postConversationsChats success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsChats');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsChats');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -39554,22 +39428,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTransferRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TransferRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TransferRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TransferRequest <a style="cursor: pointer" onclick="copyTransferRequestExample()">Copy</a>
+TransferRequest <a href="#" onclick="return copyTransferRequestExample()">Copy</a>
 
-<div id="TransferRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TransferRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "userId": String, 
   "address": String, 
@@ -39577,40 +39451,39 @@ TransferRequest <a style="cursor: pointer" onclick="copyTransferRequestExample()
   "queueId": String, 
   "voicemail": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var opts = { 
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let opts = { 
   'body': {} // Object | 
 };
+
 apiInstance.postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, opts)
-  .then(function() {
+  .then(() => {
     console.log('postConversationsCobrowsesessionParticipantReplace returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsCobrowsesessionParticipantReplace');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCobrowsesessionParticipantReplace');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -39644,22 +39517,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyInboundMessageRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#InboundMessageRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#InboundMessageRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-InboundMessageRequest <a style="cursor: pointer" onclick="copyInboundMessageRequestExample()">Copy</a>
+InboundMessageRequest <a href="#" onclick="return copyInboundMessageRequestExample()">Copy</a>
 
-<div id="InboundMessageRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="InboundMessageRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "queueId": String, 
   "flowId": String, 
@@ -39674,37 +39547,36 @@ InboundMessageRequest <a style="cursor: pointer" onclick="copyInboundMessageRequ
   "fromName": String, 
   "subject": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var body = {}; // Object | Send external email reply
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | Send external email reply
 
 apiInstance.postConversationsEmailInboundmessages(conversationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postConversationsEmailInboundmessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsEmailInboundmessages');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsEmailInboundmessages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -39737,22 +39609,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEmailMessageExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EmailMessageExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EmailMessageExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-EmailMessage <a style="cursor: pointer" onclick="copyEmailMessageExample()">Copy</a>
+EmailMessage <a href="#" onclick="return copyEmailMessageExample()">Copy</a>
 
-<div id="EmailMessageExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EmailMessageExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -39786,37 +39658,36 @@ EmailMessage <a style="cursor: pointer" onclick="copyEmailMessageExample()">Copy
   "time": Date, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var body = {}; // Object | Reply
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | Reply
 
 apiInstance.postConversationsEmailMessages(conversationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postConversationsEmailMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsEmailMessages');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsEmailMessages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -39849,22 +39720,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTransferRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TransferRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TransferRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TransferRequest <a style="cursor: pointer" onclick="copyTransferRequestExample()">Copy</a>
+TransferRequest <a href="#" onclick="return copyTransferRequestExample()">Copy</a>
 
-<div id="TransferRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TransferRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "userId": String, 
   "address": String, 
@@ -39872,39 +39743,37 @@ TransferRequest <a style="cursor: pointer" onclick="copyTransferRequestExample()
   "queueId": String, 
   "voicemail": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var body = {}; // Object | Transfer request
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Transfer request
 
 apiInstance.postConversationsEmailParticipantReplace(conversationId, participantId, body)
-  .then(function() {
+  .then(() => {
     console.log('postConversationsEmailParticipantReplace returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsEmailParticipantReplace');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsEmailParticipantReplace');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -39939,22 +39808,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCreateEmailRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CreateEmailRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CreateEmailRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CreateEmailRequest <a style="cursor: pointer" onclick="copyCreateEmailRequestExample()">Copy</a>
+CreateEmailRequest <a href="#" onclick="return copyCreateEmailRequestExample()">Copy</a>
 
-<div id="CreateEmailRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CreateEmailRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "queueId": String, 
   "flowId": String, 
@@ -39972,35 +39841,35 @@ CreateEmailRequest <a style="cursor: pointer" onclick="copyCreateEmailRequestExa
   "htmlBody": String, 
   "textBody": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var body = {}; // Object | Create email request
+let body = {}; // Object | Create email request
 
 apiInstance.postConversationsEmails(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postConversationsEmails success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsEmails');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsEmails');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -40032,22 +39901,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyFaxSendRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#FaxSendRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#FaxSendRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-FaxSendRequest <a style="cursor: pointer" onclick="copyFaxSendRequestExample()">Copy</a>
+FaxSendRequest <a href="#" onclick="return copyFaxSendRequestExample()">Copy</a>
 
-<div id="FaxSendRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="FaxSendRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -40082,35 +39951,35 @@ FaxSendRequest <a style="cursor: pointer" onclick="copyFaxSendRequestExample()">
   "timeZoneOffsetMinutes": Number, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var body = {}; // Object | Fax
+let body = {}; // Object | Fax
 
 apiInstance.postConversationsFaxes(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postConversationsFaxes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsFaxes');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsFaxes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -40143,60 +40012,58 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyAdditionalMessageExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#AdditionalMessageExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#AdditionalMessageExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-AdditionalMessage <a style="cursor: pointer" onclick="copyAdditionalMessageExample()">Copy</a>
+AdditionalMessage <a href="#" onclick="return copyAdditionalMessageExample()">Copy</a>
 
-<div id="AdditionalMessageExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="AdditionalMessageExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "textBody": String, 
   "mediaIds": [String], 
   "stickerIds": [String], 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var communicationId = "communicationId_example"; // String | communicationId
-
-var body = {}; // Object | Message
+let conversationId = "conversationId_example"; // String | conversationId
+let communicationId = "communicationId_example"; // String | communicationId
+let body = {}; // Object | Message
 
 apiInstance.postConversationsMessageCommunicationMessages(conversationId, communicationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postConversationsMessageCommunicationMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsMessageCommunicationMessages');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessageCommunicationMessages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -40232,31 +40099,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var communicationId = "communicationId_example"; // String | communicationId
+let conversationId = "conversationId_example"; // String | conversationId
+let communicationId = "communicationId_example"; // String | communicationId
 
 apiInstance.postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postConversationsMessageCommunicationMessagesMedia success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsMessageCommunicationMessagesMedia');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessageCommunicationMessagesMedia');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -40291,32 +40156,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var opts = { 
+let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
   'body': [{}] // Object | messageIds
 };
+
 apiInstance.postConversationsMessageMessagesBulk(conversationId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postConversationsMessageMessagesBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsMessageMessagesBulk');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessageMessagesBulk');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -40349,22 +40213,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTransferRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TransferRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TransferRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TransferRequest <a style="cursor: pointer" onclick="copyTransferRequestExample()">Copy</a>
+TransferRequest <a href="#" onclick="return copyTransferRequestExample()">Copy</a>
 
-<div id="TransferRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TransferRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "userId": String, 
   "address": String, 
@@ -40372,39 +40236,37 @@ TransferRequest <a style="cursor: pointer" onclick="copyTransferRequestExample()
   "queueId": String, 
   "voicemail": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var body = {}; // Object | Transfer request
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Transfer request
 
 apiInstance.postConversationsMessageParticipantReplace(conversationId, participantId, body)
-  .then(function() {
+  .then(() => {
     console.log('postConversationsMessageParticipantReplace returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsMessageParticipantReplace');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessageParticipantReplace');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -40439,22 +40301,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCreateOutboundMessagingConversationRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CreateOutboundMessagingConversationRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CreateOutboundMessagingConversationRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CreateOutboundMessagingConversationRequest <a style="cursor: pointer" onclick="copyCreateOutboundMessagingConversationRequestExample()">Copy</a>
+CreateOutboundMessagingConversationRequest <a href="#" onclick="return copyCreateOutboundMessagingConversationRequestExample()">Copy</a>
 
-<div id="CreateOutboundMessagingConversationRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CreateOutboundMessagingConversationRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "queueId": String, 
   "toAddress": String, 
@@ -40463,35 +40325,35 @@ CreateOutboundMessagingConversationRequest <a style="cursor: pointer" onclick="c
   "externalContactId": String, 
   "externalOrganizationId": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var body = {}; // Object | Create outbound messaging conversation
+let body = {}; // Object | Create outbound messaging conversation
 
 apiInstance.postConversationsMessages(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postConversationsMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postConversationsMessages');
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -40523,60 +40385,57 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copySetUuiDataRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#SetUuiDataRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#SetUuiDataRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-SetUuiDataRequest <a style="cursor: pointer" onclick="copySetUuiDataRequestExample()">Copy</a>
+SetUuiDataRequest <a href="#" onclick="return copySetUuiDataRequestExample()">Copy</a>
 
-<div id="SetUuiDataRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="SetUuiDataRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "uuiData": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var participantId = "participantId_example"; // String | participantId
-
-var communicationId = "communicationId_example"; // String | communicationId
-
-var body = {}; // Object | UUIData Request
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let communicationId = "communicationId_example"; // String | communicationId
+let body = {}; // Object | UUIData Request
 
 apiInstance.putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putConversationsCallParticipantCommunicationUuidata success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putConversationsCallParticipantCommunicationUuidata');
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsCallParticipantCommunicationUuidata');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -40611,22 +40470,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEmailMessageExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EmailMessageExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EmailMessageExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-EmailMessage <a style="cursor: pointer" onclick="copyEmailMessageExample()">Copy</a>
+EmailMessage <a href="#" onclick="return copyEmailMessageExample()">Copy</a>
 
-<div id="EmailMessageExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EmailMessageExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -40660,37 +40519,36 @@ EmailMessage <a style="cursor: pointer" onclick="copyEmailMessageExample()">Copy
   "time": Date, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ConversationsApi();
+let apiInstance = new platformClient.ConversationsApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var body = {}; // Object | Draft
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | Draft
 
 apiInstance.putConversationsEmailMessagesDraft(conversationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putConversationsEmailMessagesDraft success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putConversationsEmailMessagesDraft');
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsEmailMessagesDraft');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

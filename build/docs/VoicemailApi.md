@@ -52,29 +52,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
 
-var messageId = "messageId_example"; // String | Message ID
+let messageId = "messageId_example"; // String | Message ID
 
 apiInstance.deleteVoicemailMessage(messageId)
-  .then(function() {
+  .then(() => {
     console.log('deleteVoicemailMessage returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteVoicemailMessage');
+  .catch((err) => {
+    console.log('There was a failure calling deleteVoicemailMessage');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -107,26 +106,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
+
 apiInstance.deleteVoicemailMessages()
-  .then(function() {
+  .then(() => {
     console.log('deleteVoicemailMessages returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteVoicemailMessages');
+  .catch((err) => {
+    console.log('There was a failure calling deleteVoicemailMessages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -156,29 +155,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
 
-var groupId = "groupId_example"; // String | groupId
+let groupId = "groupId_example"; // String | groupId
 
 apiInstance.getVoicemailGroupMailbox(groupId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getVoicemailGroupMailbox success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getVoicemailGroupMailbox');
+  .catch((err) => {
+    console.log('There was a failure calling getVoicemailGroupMailbox');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -211,33 +209,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
 
-var groupId = "groupId_example"; // String | Group ID
-
-var opts = { 
+let groupId = "groupId_example"; // String | Group ID
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getVoicemailGroupMessages(groupId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getVoicemailGroupMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getVoicemailGroupMessages');
+  .catch((err) => {
+    console.log('There was a failure calling getVoicemailGroupMessages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -276,29 +273,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
 
-var groupId = "groupId_example"; // String | Group ID
+let groupId = "groupId_example"; // String | Group ID
 
 apiInstance.getVoicemailGroupPolicy(groupId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getVoicemailGroupPolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getVoicemailGroupPolicy');
+  .catch((err) => {
+    console.log('There was a failure calling getVoicemailGroupPolicy');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -331,26 +327,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
+
 apiInstance.getVoicemailMailbox()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getVoicemailMailbox success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getVoicemailMailbox');
+  .catch((err) => {
+    console.log('There was a failure calling getVoicemailMailbox');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -380,26 +376,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
+
 apiInstance.getVoicemailMeMailbox()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getVoicemailMeMailbox success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getVoicemailMeMailbox');
+  .catch((err) => {
+    console.log('There was a failure calling getVoicemailMeMailbox');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -429,31 +425,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getVoicemailMeMessages(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getVoicemailMeMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getVoicemailMeMessages');
+  .catch((err) => {
+    console.log('There was a failure calling getVoicemailMeMessages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -487,26 +483,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
+
 apiInstance.getVoicemailMePolicy()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getVoicemailMePolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getVoicemailMePolicy');
+  .catch((err) => {
+    console.log('There was a failure calling getVoicemailMePolicy');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -536,32 +532,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
 
-var messageId = "messageId_example"; // String | Message ID
-
-var opts = { 
+let messageId = "messageId_example"; // String | Message ID
+let opts = { 
   'expand': ["expand_example"] // [String] | If the caller is a known user, which fields, if any, to expand
 };
+
 apiInstance.getVoicemailMessage(messageId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getVoicemailMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getVoicemailMessage');
+  .catch((err) => {
+    console.log('There was a failure calling getVoicemailMessage');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -595,32 +590,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
 
-var messageId = "messageId_example"; // String | Message ID
-
-var opts = { 
+let messageId = "messageId_example"; // String | Message ID
+let opts = { 
   'formatId': "WEBM" // String | The desired media format.
 };
+
 apiInstance.getVoicemailMessageMedia(messageId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getVoicemailMessageMedia success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getVoicemailMessageMedia');
+  .catch((err) => {
+    console.log('There was a failure calling getVoicemailMessageMedia');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -654,31 +648,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
 
-var opts = { 
+let opts = { 
   'ids': "ids_example", // String | An optional comma separated list of VoicemailMessage ids
   'expand': ["expand_example"] // [String] | If the caller is a known user, which fields, if any, to expand
 };
+
 apiInstance.getVoicemailMessages(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getVoicemailMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getVoicemailMessages');
+  .catch((err) => {
+    console.log('There was a failure calling getVoicemailMessages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -713,26 +707,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
+
 apiInstance.getVoicemailPolicy()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getVoicemailPolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getVoicemailPolicy');
+  .catch((err) => {
+    console.log('There was a failure calling getVoicemailPolicy');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -763,33 +757,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
 
-var queueId = "queueId_example"; // String | Queue ID
-
-var opts = { 
+let queueId = "queueId_example"; // String | Queue ID
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getVoicemailQueueMessages(queueId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getVoicemailQueueMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getVoicemailQueueMessages');
+  .catch((err) => {
+    console.log('There was a failure calling getVoicemailQueueMessages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -824,32 +817,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
 
-var q64 = "q64_example"; // String | q64
-
-var opts = { 
+let q64 = "q64_example"; // String | q64
+let opts = { 
   'expand': ["expand_example"] // [String] | expand
 };
+
 apiInstance.getVoicemailSearch(q64, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getVoicemailSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getVoicemailSearch');
+  .catch((err) => {
+    console.log('There was a failure calling getVoicemailSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -883,29 +875,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
 
-var userId = "userId_example"; // String | User ID
+let userId = "userId_example"; // String | User ID
 
 apiInstance.getVoicemailUserpolicy(userId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getVoicemailUserpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getVoicemailUserpolicy');
+  .catch((err) => {
+    console.log('There was a failure calling getVoicemailUserpolicy');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -941,22 +932,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyVoicemailGroupPolicyExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#VoicemailGroupPolicyExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#VoicemailGroupPolicyExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-VoicemailGroupPolicy <a style="cursor: pointer" onclick="copyVoicemailGroupPolicyExample()">Copy</a>
+VoicemailGroupPolicy <a href="#" onclick="return copyVoicemailGroupPolicyExample()">Copy</a>
 
-<div id="VoicemailGroupPolicyExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="VoicemailGroupPolicyExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "name": String, 
   "group": { 
@@ -2490,37 +2481,36 @@ VoicemailGroupPolicy <a style="cursor: pointer" onclick="copyVoicemailGroupPolic
   "overflowGroupId": String, 
   "groupAlertType": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
 
-var groupId = "groupId_example"; // String | Group ID
-
-var body = {}; // Object | The group's voicemail policy
+let groupId = "groupId_example"; // String | Group ID
+let body = {}; // Object | The group's voicemail policy
 
 apiInstance.patchVoicemailGroupPolicy(groupId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchVoicemailGroupPolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchVoicemailGroupPolicy');
+  .catch((err) => {
+    console.log('There was a failure calling patchVoicemailGroupPolicy');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2553,57 +2543,57 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyVoicemailUserPolicyExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#VoicemailUserPolicyExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#VoicemailUserPolicyExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-VoicemailUserPolicy <a style="cursor: pointer" onclick="copyVoicemailUserPolicyExample()">Copy</a>
+VoicemailUserPolicy <a href="#" onclick="return copyVoicemailUserPolicyExample()">Copy</a>
 
-<div id="VoicemailUserPolicyExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="VoicemailUserPolicyExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "enabled": Boolean, 
   "alertTimeoutSeconds": Number, 
   "pin": String, 
   "modifiedDate": Date, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
 
-var body = {}; // Object | The user's voicemail policy
+let body = {}; // Object | The user's voicemail policy
 
 apiInstance.patchVoicemailMePolicy(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchVoicemailMePolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchVoicemailMePolicy');
+  .catch((err) => {
+    console.log('There was a failure calling patchVoicemailMePolicy');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2635,22 +2625,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyVoicemailMessageExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#VoicemailMessageExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#VoicemailMessageExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample()">Copy</a>
+VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy</a>
 
-<div id="VoicemailMessageExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="VoicemailMessageExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "conversation": { 
@@ -14842,37 +14832,36 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
 
-var messageId = "messageId_example"; // String | Message ID
-
-var body = {}; // Object | VoicemailMessage
+let messageId = "messageId_example"; // String | Message ID
+let body = {}; // Object | VoicemailMessage
 
 apiInstance.patchVoicemailMessage(messageId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchVoicemailMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchVoicemailMessage');
+  .catch((err) => {
+    console.log('There was a failure calling patchVoicemailMessage');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -14905,59 +14894,58 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyVoicemailUserPolicyExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#VoicemailUserPolicyExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#VoicemailUserPolicyExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-VoicemailUserPolicy <a style="cursor: pointer" onclick="copyVoicemailUserPolicyExample()">Copy</a>
+VoicemailUserPolicy <a href="#" onclick="return copyVoicemailUserPolicyExample()">Copy</a>
 
-<div id="VoicemailUserPolicyExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="VoicemailUserPolicyExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "enabled": Boolean, 
   "alertTimeoutSeconds": Number, 
   "pin": String, 
   "modifiedDate": Date, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
 
-var userId = "userId_example"; // String | User ID
-
-var body = {}; // Object | The user's voicemail policy
+let userId = "userId_example"; // String | User ID
+let body = {}; // Object | The user's voicemail policy
 
 apiInstance.patchVoicemailUserpolicy(userId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchVoicemailUserpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchVoicemailUserpolicy');
+  .catch((err) => {
+    console.log('There was a failure calling patchVoicemailUserpolicy');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -14990,57 +14978,58 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCopyVoicemailMessageExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CopyVoicemailMessageExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CopyVoicemailMessageExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CopyVoicemailMessage <a style="cursor: pointer" onclick="copyCopyVoicemailMessageExample()">Copy</a>
+CopyVoicemailMessage <a href="#" onclick="return copyCopyVoicemailMessageExample()">Copy</a>
 
-<div id="CopyVoicemailMessageExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CopyVoicemailMessageExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "voicemailMessageId": String, 
   "userId": String, 
   "groupId": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
 
-var opts = { 
+let opts = { 
   'body': {} // Object | 
 };
+
 apiInstance.postVoicemailMessages(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postVoicemailMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postVoicemailMessages');
+  .catch((err) => {
+    console.log('There was a failure calling postVoicemailMessages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -15072,22 +15061,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyVoicemailSearchRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#VoicemailSearchRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#VoicemailSearchRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-VoicemailSearchRequest <a style="cursor: pointer" onclick="copyVoicemailSearchRequestExample()">Copy</a>
+VoicemailSearchRequest <a href="#" onclick="return copyVoicemailSearchRequestExample()">Copy</a>
 
-<div id="VoicemailSearchRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="VoicemailSearchRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "sortOrder": String, 
   "sortBy": String, 
@@ -15163,35 +15152,35 @@ VoicemailSearchRequest <a style="cursor: pointer" onclick="copyVoicemailSearchRe
     "type": String, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
 
-var body = {}; // Object | Search request options
+let body = {}; // Object | Search request options
 
 apiInstance.postVoicemailSearch(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postVoicemailSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postVoicemailSearch');
+  .catch((err) => {
+    console.log('There was a failure calling postVoicemailSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -15223,22 +15212,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyVoicemailMessageExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#VoicemailMessageExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#VoicemailMessageExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample()">Copy</a>
+VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy</a>
 
-<div id="VoicemailMessageExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="VoicemailMessageExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "conversation": { 
@@ -27430,37 +27419,36 @@ VoicemailMessage <a style="cursor: pointer" onclick="copyVoicemailMessageExample
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
 
-var messageId = "messageId_example"; // String | Message ID
-
-var body = {}; // Object | VoicemailMessage
+let messageId = "messageId_example"; // String | Message ID
+let body = {}; // Object | VoicemailMessage
 
 apiInstance.putVoicemailMessage(messageId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putVoicemailMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putVoicemailMessage');
+  .catch((err) => {
+    console.log('There was a failure calling putVoicemailMessage');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -27494,22 +27482,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyVoicemailOrganizationPolicyExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#VoicemailOrganizationPolicyExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#VoicemailOrganizationPolicyExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-VoicemailOrganizationPolicy <a style="cursor: pointer" onclick="copyVoicemailOrganizationPolicyExample()">Copy</a>
+VoicemailOrganizationPolicy <a href="#" onclick="return copyVoicemailOrganizationPolicyExample()">Copy</a>
 
-<div id="VoicemailOrganizationPolicyExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="VoicemailOrganizationPolicyExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "enabled": Boolean, 
   "alertTimeoutSeconds": Number, 
@@ -27522,35 +27510,35 @@ VoicemailOrganizationPolicy <a style="cursor: pointer" onclick="copyVoicemailOrg
   "sendEmailNotifications": Boolean, 
   "modifiedDate": Date, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.VoicemailApi();
+let apiInstance = new platformClient.VoicemailApi();
 
-var body = {}; // Object | Policy
+let body = {}; // Object | Policy
 
 apiInstance.putVoicemailPolicy(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putVoicemailPolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putVoicemailPolicy');
+  .catch((err) => {
+    console.log('There was a failure calling putVoicemailPolicy');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

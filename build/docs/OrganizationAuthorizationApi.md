@@ -52,29 +52,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 
 apiInstance.deleteOrgauthorizationTrustee(trusteeOrgId)
-  .then(function() {
+  .then(() => {
     console.log('deleteOrgauthorizationTrustee returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteOrgauthorizationTrustee');
+  .catch((err) => {
+    console.log('There was a failure calling deleteOrgauthorizationTrustee');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -110,31 +109,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
-
-var trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
 
 apiInstance.deleteOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)
-  .then(function() {
+  .then(() => {
     console.log('deleteOrgauthorizationTrusteeUser returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteOrgauthorizationTrusteeUser');
+  .catch((err) => {
+    console.log('There was a failure calling deleteOrgauthorizationTrusteeUser');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -171,31 +168,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
-
-var trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
 
 apiInstance.deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)
-  .then(function() {
+  .then(() => {
     console.log('deleteOrgauthorizationTrusteeUserRoles returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteOrgauthorizationTrusteeUserRoles');
+  .catch((err) => {
+    console.log('There was a failure calling deleteOrgauthorizationTrusteeUserRoles');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -230,29 +225,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
+let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
 
 apiInstance.deleteOrgauthorizationTrustor(trustorOrgId)
-  .then(function() {
+  .then(() => {
     console.log('deleteOrgauthorizationTrustor returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteOrgauthorizationTrustor');
+  .catch((err) => {
+    console.log('There was a failure calling deleteOrgauthorizationTrustor');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -286,31 +280,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
-
-var trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
+let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
 
 apiInstance.deleteOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
-  .then(function() {
+  .then(() => {
     console.log('deleteOrgauthorizationTrustorUser returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteOrgauthorizationTrustorUser');
+  .catch((err) => {
+    console.log('There was a failure calling deleteOrgauthorizationTrustorUser');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -346,29 +338,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var pairingId = "pairingId_example"; // String | Pairing Id
+let pairingId = "pairingId_example"; // String | Pairing Id
 
 apiInstance.getOrgauthorizationPairing(pairingId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getOrgauthorizationPairing success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getOrgauthorizationPairing');
+  .catch((err) => {
+    console.log('There was a failure calling getOrgauthorizationPairing');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -402,29 +393,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
 
 apiInstance.getOrgauthorizationTrustee(trusteeOrgId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getOrgauthorizationTrustee success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getOrgauthorizationTrustee');
+  .catch((err) => {
+    console.log('There was a failure calling getOrgauthorizationTrustee');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -458,31 +448,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
-
-var trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
 
 apiInstance.getOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getOrgauthorizationTrusteeUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getOrgauthorizationTrusteeUser');
+  .catch((err) => {
+    console.log('There was a failure calling getOrgauthorizationTrusteeUser');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -517,31 +505,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
-
-var trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
 
 apiInstance.getOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getOrgauthorizationTrusteeUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getOrgauthorizationTrusteeUserRoles');
+  .catch((err) => {
+    console.log('There was a failure calling getOrgauthorizationTrusteeUserRoles');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -576,33 +562,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
-
-var opts = { 
+let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getOrgauthorizationTrusteeUsers(trusteeOrgId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getOrgauthorizationTrusteeUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getOrgauthorizationTrusteeUsers');
+  .catch((err) => {
+    console.log('There was a failure calling getOrgauthorizationTrusteeUsers');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -638,31 +623,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getOrgauthorizationTrustees(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getOrgauthorizationTrustees success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getOrgauthorizationTrustees');
+  .catch((err) => {
+    console.log('There was a failure calling getOrgauthorizationTrustees');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -697,29 +682,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
+let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
 
 apiInstance.getOrgauthorizationTrustor(trustorOrgId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getOrgauthorizationTrustor success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getOrgauthorizationTrustor');
+  .catch((err) => {
+    console.log('There was a failure calling getOrgauthorizationTrustor');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -753,31 +737,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
-
-var trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
+let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
 
 apiInstance.getOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getOrgauthorizationTrustorUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getOrgauthorizationTrustorUser');
+  .catch((err) => {
+    console.log('There was a failure calling getOrgauthorizationTrustorUser');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -812,33 +794,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var trustorOrgId = "trustorOrgId_example"; // String | Trustee Organization Id
-
-var opts = { 
+let trustorOrgId = "trustorOrgId_example"; // String | Trustee Organization Id
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getOrgauthorizationTrustorUsers(trustorOrgId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getOrgauthorizationTrustorUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getOrgauthorizationTrustorUsers');
+  .catch((err) => {
+    console.log('There was a failure calling getOrgauthorizationTrustorUsers');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -874,31 +855,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getOrgauthorizationTrustors(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getOrgauthorizationTrustors success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getOrgauthorizationTrustors');
+  .catch((err) => {
+    console.log('There was a failure calling getOrgauthorizationTrustors');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -932,55 +913,55 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTrustRequestCreateExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TrustRequestCreateExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TrustRequestCreateExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TrustRequestCreate <a style="cursor: pointer" onclick="copyTrustRequestCreateExample()">Copy</a>
+TrustRequestCreate <a href="#" onclick="return copyTrustRequestCreateExample()">Copy</a>
 
-<div id="TrustRequestCreateExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TrustRequestCreateExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "userIds": [String], 
   "groupIds": [String], 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var body = {}; // Object | Pairing Info
+let body = {}; // Object | Pairing Info
 
 apiInstance.postOrgauthorizationPairings(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postOrgauthorizationPairings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postOrgauthorizationPairings');
+  .catch((err) => {
+    console.log('There was a failure calling postOrgauthorizationPairings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1015,57 +996,56 @@ Requires ALL permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTrustMemberCreateExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TrustMemberCreateExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TrustMemberCreateExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TrustMemberCreate <a style="cursor: pointer" onclick="copyTrustMemberCreateExample()">Copy</a>
+TrustMemberCreate <a href="#" onclick="return copyTrustMemberCreateExample()">Copy</a>
 
-<div id="TrustMemberCreateExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TrustMemberCreateExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "roleIds": [String], 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
-
-var body = {}; // Object | Trust
+let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+let body = {}; // Object | Trust
 
 apiInstance.postOrgauthorizationTrusteeUsers(trusteeOrgId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postOrgauthorizationTrusteeUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postOrgauthorizationTrusteeUsers');
+  .catch((err) => {
+    console.log('There was a failure calling postOrgauthorizationTrusteeUsers');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1100,22 +1080,22 @@ Requires ALL permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTrustCreateExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TrustCreateExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TrustCreateExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TrustCreate <a style="cursor: pointer" onclick="copyTrustCreateExample()">Copy</a>
+TrustCreate <a href="#" onclick="return copyTrustCreateExample()">Copy</a>
 
-<div id="TrustCreateExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TrustCreateExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "pairingId": String, 
   "enabled": Boolean, 
@@ -1128,35 +1108,35 @@ TrustCreate <a style="cursor: pointer" onclick="copyTrustCreateExample()">Copy</
     "roleIds": [String], 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var body = {}; // Object | Trust
+let body = {}; // Object | Trust
 
 apiInstance.postOrgauthorizationTrustees(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postOrgauthorizationTrustees success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postOrgauthorizationTrustees');
+  .catch((err) => {
+    console.log('There was a failure calling postOrgauthorizationTrustees');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1189,22 +1169,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTrusteeAuditQueryRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TrusteeAuditQueryRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TrusteeAuditQueryRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TrusteeAuditQueryRequest <a style="cursor: pointer" onclick="copyTrusteeAuditQueryRequestExample()">Copy</a>
+TrusteeAuditQueryRequest <a href="#" onclick="return copyTrusteeAuditQueryRequestExample()">Copy</a>
 
-<div id="TrusteeAuditQueryRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TrusteeAuditQueryRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "trusteeOrganizationIds": [String], 
   "trusteeUserIds": [String], 
@@ -1222,41 +1202,41 @@ TrusteeAuditQueryRequest <a style="cursor: pointer" onclick="copyTrusteeAuditQue
     "values": [String], 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var body = {}; // Object | Values to scope the request.
-
-var opts = { 
+let body = {}; // Object | Values to scope the request.
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "timestamp", // String | Sort by
   'sortOrder': "descending" // String | Sort order
 };
+
 apiInstance.postOrgauthorizationTrusteesAudits(body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postOrgauthorizationTrusteesAudits success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postOrgauthorizationTrusteesAudits');
+  .catch((err) => {
+    console.log('There was a failure calling postOrgauthorizationTrusteesAudits');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1293,22 +1273,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTrustorAuditQueryRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TrustorAuditQueryRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TrustorAuditQueryRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-TrustorAuditQueryRequest <a style="cursor: pointer" onclick="copyTrustorAuditQueryRequestExample()">Copy</a>
+TrustorAuditQueryRequest <a href="#" onclick="return copyTrustorAuditQueryRequestExample()">Copy</a>
 
-<div id="TrustorAuditQueryRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TrustorAuditQueryRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "trustorOrganizationId": String, 
   "trusteeUserIds": [String], 
@@ -1326,41 +1306,41 @@ TrustorAuditQueryRequest <a style="cursor: pointer" onclick="copyTrustorAuditQue
     "values": [String], 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var body = {}; // Object | Values to scope the request.
-
-var opts = { 
+let body = {}; // Object | Values to scope the request.
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "timestamp", // String | Sort by
   'sortOrder': "descending" // String | Sort order
 };
+
 apiInstance.postOrgauthorizationTrustorAudits(body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postOrgauthorizationTrustorAudits success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postOrgauthorizationTrustorAudits');
+  .catch((err) => {
+    console.log('There was a failure calling postOrgauthorizationTrustorAudits');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1397,22 +1377,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyTrusteeExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#TrusteeExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TrusteeExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Trustee <a style="cursor: pointer" onclick="copyTrusteeExample()">Copy</a>
+Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
 
-<div id="TrusteeExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="TrusteeExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "enabled": Boolean, 
@@ -2116,37 +2096,36 @@ Trustee <a style="cursor: pointer" onclick="copyTrusteeExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
-
-var body = {}; // Object | Client
+let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+let body = {}; // Object | Client
 
 apiInstance.putOrgauthorizationTrustee(trusteeOrgId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putOrgauthorizationTrustee success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putOrgauthorizationTrustee');
+  .catch((err) => {
+    console.log('There was a failure calling putOrgauthorizationTrustee');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2183,33 +2162,30 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
-
-var trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
-
-var body = [{}]; // Object | List of roles
+let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+let body = [{}]; // Object | List of roles
 
 apiInstance.putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putOrgauthorizationTrusteeUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putOrgauthorizationTrusteeUserRoles');
+  .catch((err) => {
+    console.log('There was a failure calling putOrgauthorizationTrusteeUserRoles');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2245,31 +2221,29 @@ Requires ALL permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationAuthorizationApi();
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
 
-var trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
-
-var trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
+let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
 
 apiInstance.putOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putOrgauthorizationTrustorUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putOrgauthorizationTrustorUser');
+  .catch((err) => {
+    console.log('There was a failure calling putOrgauthorizationTrustorUser');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

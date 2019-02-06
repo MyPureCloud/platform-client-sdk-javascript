@@ -57,26 +57,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
+
 apiInstance.deleteIdentityprovidersAdfs()
-  .then(function(data) {
+  .then((data) => {
     console.log(`deleteIdentityprovidersAdfs success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteIdentityprovidersAdfs');
+  .catch((err) => {
+    console.log('There was a failure calling deleteIdentityprovidersAdfs');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -107,26 +107,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
+
 apiInstance.deleteIdentityprovidersCic()
-  .then(function(data) {
+  .then((data) => {
     console.log(`deleteIdentityprovidersCic success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteIdentityprovidersCic');
+  .catch((err) => {
+    console.log('There was a failure calling deleteIdentityprovidersCic');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -157,26 +157,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
+
 apiInstance.deleteIdentityprovidersGsuite()
-  .then(function(data) {
+  .then((data) => {
     console.log(`deleteIdentityprovidersGsuite success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteIdentityprovidersGsuite');
+  .catch((err) => {
+    console.log('There was a failure calling deleteIdentityprovidersGsuite');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -207,26 +207,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
+
 apiInstance.deleteIdentityprovidersIdentitynow()
-  .then(function(data) {
+  .then((data) => {
     console.log(`deleteIdentityprovidersIdentitynow success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteIdentityprovidersIdentitynow');
+  .catch((err) => {
+    console.log('There was a failure calling deleteIdentityprovidersIdentitynow');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -257,26 +257,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
+
 apiInstance.deleteIdentityprovidersOkta()
-  .then(function(data) {
+  .then((data) => {
     console.log(`deleteIdentityprovidersOkta success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteIdentityprovidersOkta');
+  .catch((err) => {
+    console.log('There was a failure calling deleteIdentityprovidersOkta');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -307,26 +307,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
+
 apiInstance.deleteIdentityprovidersOnelogin()
-  .then(function(data) {
+  .then((data) => {
     console.log(`deleteIdentityprovidersOnelogin success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteIdentityprovidersOnelogin');
+  .catch((err) => {
+    console.log('There was a failure calling deleteIdentityprovidersOnelogin');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -357,26 +357,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
+
 apiInstance.deleteIdentityprovidersPing()
-  .then(function(data) {
+  .then((data) => {
     console.log(`deleteIdentityprovidersPing success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteIdentityprovidersPing');
+  .catch((err) => {
+    console.log('There was a failure calling deleteIdentityprovidersPing');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -407,26 +407,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
+
 apiInstance.deleteIdentityprovidersPurecloud()
-  .then(function(data) {
+  .then((data) => {
     console.log(`deleteIdentityprovidersPurecloud success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteIdentityprovidersPurecloud');
+  .catch((err) => {
+    console.log('There was a failure calling deleteIdentityprovidersPurecloud');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -457,26 +457,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
+
 apiInstance.deleteIdentityprovidersSalesforce()
-  .then(function(data) {
+  .then((data) => {
     console.log(`deleteIdentityprovidersSalesforce success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteIdentityprovidersSalesforce');
+  .catch((err) => {
+    console.log('There was a failure calling deleteIdentityprovidersSalesforce');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -507,26 +507,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
+
 apiInstance.getIdentityproviders()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIdentityproviders success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIdentityproviders');
+  .catch((err) => {
+    console.log('There was a failure calling getIdentityproviders');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -557,26 +557,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
+
 apiInstance.getIdentityprovidersAdfs()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIdentityprovidersAdfs success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIdentityprovidersAdfs');
+  .catch((err) => {
+    console.log('There was a failure calling getIdentityprovidersAdfs');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -607,26 +607,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
+
 apiInstance.getIdentityprovidersCic()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIdentityprovidersCic success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIdentityprovidersCic');
+  .catch((err) => {
+    console.log('There was a failure calling getIdentityprovidersCic');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -657,26 +657,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
+
 apiInstance.getIdentityprovidersGsuite()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIdentityprovidersGsuite success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIdentityprovidersGsuite');
+  .catch((err) => {
+    console.log('There was a failure calling getIdentityprovidersGsuite');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -707,26 +707,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
+
 apiInstance.getIdentityprovidersIdentitynow()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIdentityprovidersIdentitynow success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIdentityprovidersIdentitynow');
+  .catch((err) => {
+    console.log('There was a failure calling getIdentityprovidersIdentitynow');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -757,26 +757,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
+
 apiInstance.getIdentityprovidersOkta()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIdentityprovidersOkta success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIdentityprovidersOkta');
+  .catch((err) => {
+    console.log('There was a failure calling getIdentityprovidersOkta');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -807,26 +807,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
+
 apiInstance.getIdentityprovidersOnelogin()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIdentityprovidersOnelogin success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIdentityprovidersOnelogin');
+  .catch((err) => {
+    console.log('There was a failure calling getIdentityprovidersOnelogin');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -857,26 +857,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
+
 apiInstance.getIdentityprovidersPing()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIdentityprovidersPing success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIdentityprovidersPing');
+  .catch((err) => {
+    console.log('There was a failure calling getIdentityprovidersPing');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -907,26 +907,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
+
 apiInstance.getIdentityprovidersPurecloud()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIdentityprovidersPurecloud success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIdentityprovidersPurecloud');
+  .catch((err) => {
+    console.log('There was a failure calling getIdentityprovidersPurecloud');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -957,26 +957,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
+
 apiInstance.getIdentityprovidersSalesforce()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getIdentityprovidersSalesforce success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getIdentityprovidersSalesforce');
+  .catch((err) => {
+    console.log('There was a failure calling getIdentityprovidersSalesforce');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1007,22 +1007,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyADFSExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ADFSExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ADFSExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ADFS <a style="cursor: pointer" onclick="copyADFSExample()">Copy</a>
+ADFS <a href="#" onclick="return copyADFSExample()">Copy</a>
 
-<div id="ADFSExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ADFSExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1033,35 +1033,35 @@ ADFS <a style="cursor: pointer" onclick="copyADFSExample()">Copy</a>
   "disabled": Boolean, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
 
-var body = {}; // Object | Provider
+let body = {}; // Object | Provider
 
 apiInstance.putIdentityprovidersAdfs(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putIdentityprovidersAdfs success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putIdentityprovidersAdfs');
+  .catch((err) => {
+    console.log('There was a failure calling putIdentityprovidersAdfs');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1095,22 +1095,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCustomerInteractionCenterExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CustomerInteractionCenterExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CustomerInteractionCenterExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CustomerInteractionCenter <a style="cursor: pointer" onclick="copyCustomerInteractionCenterExample()">Copy</a>
+CustomerInteractionCenter <a href="#" onclick="return copyCustomerInteractionCenterExample()">Copy</a>
 
-<div id="CustomerInteractionCenterExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CustomerInteractionCenterExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1120,35 +1120,35 @@ CustomerInteractionCenter <a style="cursor: pointer" onclick="copyCustomerIntera
   "disabled": Boolean, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
 
-var body = {}; // Object | Provider
+let body = {}; // Object | Provider
 
 apiInstance.putIdentityprovidersCic(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putIdentityprovidersCic success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putIdentityprovidersCic');
+  .catch((err) => {
+    console.log('There was a failure calling putIdentityprovidersCic');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1182,22 +1182,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyGSuiteExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#GSuiteExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#GSuiteExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-GSuite <a style="cursor: pointer" onclick="copyGSuiteExample()">Copy</a>
+GSuite <a href="#" onclick="return copyGSuiteExample()">Copy</a>
 
-<div id="GSuiteExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="GSuiteExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1208,35 +1208,35 @@ GSuite <a style="cursor: pointer" onclick="copyGSuiteExample()">Copy</a>
   "disabled": Boolean, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
 
-var body = {}; // Object | Provider
+let body = {}; // Object | Provider
 
 apiInstance.putIdentityprovidersGsuite(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putIdentityprovidersGsuite success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putIdentityprovidersGsuite');
+  .catch((err) => {
+    console.log('There was a failure calling putIdentityprovidersGsuite');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1270,22 +1270,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyIdentityNowExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#IdentityNowExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#IdentityNowExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-IdentityNow <a style="cursor: pointer" onclick="copyIdentityNowExample()">Copy</a>
+IdentityNow <a href="#" onclick="return copyIdentityNowExample()">Copy</a>
 
-<div id="IdentityNowExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="IdentityNowExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1296,35 +1296,35 @@ IdentityNow <a style="cursor: pointer" onclick="copyIdentityNowExample()">Copy</
   "disabled": Boolean, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
 
-var body = {}; // Object | Provider
+let body = {}; // Object | Provider
 
 apiInstance.putIdentityprovidersIdentitynow(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putIdentityprovidersIdentitynow success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putIdentityprovidersIdentitynow');
+  .catch((err) => {
+    console.log('There was a failure calling putIdentityprovidersIdentitynow');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1358,22 +1358,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyOktaExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#OktaExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#OktaExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Okta <a style="cursor: pointer" onclick="copyOktaExample()">Copy</a>
+Okta <a href="#" onclick="return copyOktaExample()">Copy</a>
 
-<div id="OktaExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="OktaExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1383,35 +1383,35 @@ Okta <a style="cursor: pointer" onclick="copyOktaExample()">Copy</a>
   "disabled": Boolean, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
 
-var body = {}; // Object | Provider
+let body = {}; // Object | Provider
 
 apiInstance.putIdentityprovidersOkta(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putIdentityprovidersOkta success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putIdentityprovidersOkta');
+  .catch((err) => {
+    console.log('There was a failure calling putIdentityprovidersOkta');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1445,22 +1445,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyOneLoginExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#OneLoginExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#OneLoginExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-OneLogin <a style="cursor: pointer" onclick="copyOneLoginExample()">Copy</a>
+OneLogin <a href="#" onclick="return copyOneLoginExample()">Copy</a>
 
-<div id="OneLoginExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="OneLoginExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1470,35 +1470,35 @@ OneLogin <a style="cursor: pointer" onclick="copyOneLoginExample()">Copy</a>
   "disabled": Boolean, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
 
-var body = {}; // Object | Provider
+let body = {}; // Object | Provider
 
 apiInstance.putIdentityprovidersOnelogin(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putIdentityprovidersOnelogin success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putIdentityprovidersOnelogin');
+  .catch((err) => {
+    console.log('There was a failure calling putIdentityprovidersOnelogin');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1532,22 +1532,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyPingIdentityExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#PingIdentityExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PingIdentityExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-PingIdentity <a style="cursor: pointer" onclick="copyPingIdentityExample()">Copy</a>
+PingIdentity <a href="#" onclick="return copyPingIdentityExample()">Copy</a>
 
-<div id="PingIdentityExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="PingIdentityExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1558,35 +1558,35 @@ PingIdentity <a style="cursor: pointer" onclick="copyPingIdentityExample()">Copy
   "disabled": Boolean, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
 
-var body = {}; // Object | Provider
+let body = {}; // Object | Provider
 
 apiInstance.putIdentityprovidersPing(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putIdentityprovidersPing success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putIdentityprovidersPing');
+  .catch((err) => {
+    console.log('There was a failure calling putIdentityprovidersPing');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1620,57 +1620,57 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyPureCloudExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#PureCloudExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PureCloudExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-PureCloud <a style="cursor: pointer" onclick="copyPureCloudExample()">Copy</a>
+PureCloud <a href="#" onclick="return copyPureCloudExample()">Copy</a>
 
-<div id="PureCloudExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="PureCloudExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
   "disabled": Boolean, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
 
-var body = {}; // Object | Provider
+let body = {}; // Object | Provider
 
 apiInstance.putIdentityprovidersPurecloud(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putIdentityprovidersPurecloud success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putIdentityprovidersPurecloud');
+  .catch((err) => {
+    console.log('There was a failure calling putIdentityprovidersPurecloud');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1704,22 +1704,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copySalesforceExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#SalesforceExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#SalesforceExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Salesforce <a style="cursor: pointer" onclick="copySalesforceExample()">Copy</a>
+Salesforce <a href="#" onclick="return copySalesforceExample()">Copy</a>
 
-<div id="SalesforceExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="SalesforceExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1729,35 +1729,35 @@ Salesforce <a style="cursor: pointer" onclick="copySalesforceExample()">Copy</a>
   "disabled": Boolean, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.IdentityProviderApi();
+let apiInstance = new platformClient.IdentityProviderApi();
 
-var body = {}; // Object | Provider
+let body = {}; // Object | Provider
 
 apiInstance.putIdentityprovidersSalesforce(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putIdentityprovidersSalesforce success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putIdentityprovidersSalesforce');
+  .catch((err) => {
+    console.log('There was a failure calling putIdentityprovidersSalesforce');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

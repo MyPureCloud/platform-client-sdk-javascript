@@ -34,29 +34,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationApi();
+let apiInstance = new platformClient.OrganizationApi();
 
-var type = "type_example"; // String | Field type
+let type = "type_example"; // String | Field type
 
 apiInstance.getFieldconfig(type)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getFieldconfig success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getFieldconfig');
+  .catch((err) => {
+    console.log('There was a failure calling getFieldconfig');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -89,26 +88,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationApi();
+let apiInstance = new platformClient.OrganizationApi();
+
 apiInstance.getOrganizationsMe()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getOrganizationsMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getOrganizationsMe');
+  .catch((err) => {
+    console.log('There was a failure calling getOrganizationsMe');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -138,26 +137,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationApi();
+let apiInstance = new platformClient.OrganizationApi();
+
 apiInstance.getOrganizationsWhitelist()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getOrganizationsWhitelist success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getOrganizationsWhitelist');
+  .catch((err) => {
+    console.log('There was a failure calling getOrganizationsWhitelist');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -187,56 +186,55 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyFeatureStateExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#FeatureStateExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#FeatureStateExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-FeatureState <a style="cursor: pointer" onclick="copyFeatureStateExample()">Copy</a>
+FeatureState <a href="#" onclick="return copyFeatureStateExample()">Copy</a>
 
-<div id="FeatureStateExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="FeatureStateExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "enabled": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationApi();
+let apiInstance = new platformClient.OrganizationApi();
 
-var featureName = "featureName_example"; // String | Organization feature
-
-var enabled = {}; // Object | New state of feature
+let featureName = "featureName_example"; // String | Organization feature
+let enabled = {}; // Object | New state of feature
 
 apiInstance.patchOrganizationsFeature(featureName, enabled)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchOrganizationsFeature success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchOrganizationsFeature');
+  .catch((err) => {
+    console.log('There was a failure calling patchOrganizationsFeature');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -270,22 +268,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyOrganizationExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#OrganizationExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#OrganizationExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Organization <a style="cursor: pointer" onclick="copyOrganizationExample()">Copy</a>
+Organization <a href="#" onclick="return copyOrganizationExample()">Copy</a>
 
-<div id="OrganizationExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="OrganizationExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -302,36 +300,37 @@ Organization <a style="cursor: pointer" onclick="copyOrganizationExample()">Copy
   "selfUri": String, 
   "features": {String: Boolean}, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationApi();
+let apiInstance = new platformClient.OrganizationApi();
 
-var opts = { 
+let opts = { 
   'body': {} // Object | Organization
 };
+
 apiInstance.putOrganizationsMe(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putOrganizationsMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putOrganizationsMe');
+  .catch((err) => {
+    console.log('There was a failure calling putOrganizationsMe');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -364,55 +363,55 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyOrgWhitelistSettingsExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#OrgWhitelistSettingsExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#OrgWhitelistSettingsExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-OrgWhitelistSettings <a style="cursor: pointer" onclick="copyOrgWhitelistSettingsExample()">Copy</a>
+OrgWhitelistSettings <a href="#" onclick="return copyOrgWhitelistSettingsExample()">Copy</a>
 
-<div id="OrgWhitelistSettingsExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="OrgWhitelistSettingsExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "enableWhitelist": Boolean, 
   "domainWhitelist": [String], 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.OrganizationApi();
+let apiInstance = new platformClient.OrganizationApi();
 
-var body = {}; // Object | Whitelist settings
+let body = {}; // Object | Whitelist settings
 
 apiInstance.putOrganizationsWhitelist(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putOrganizationsWhitelist success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putOrganizationsWhitelist');
+  .catch((err) => {
+    console.log('There was a failure calling putOrganizationsWhitelist');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

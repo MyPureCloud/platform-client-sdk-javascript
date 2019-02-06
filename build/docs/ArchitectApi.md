@@ -110,29 +110,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var emergencyGroupId = "emergencyGroupId_example"; // String | Emergency group ID
+let emergencyGroupId = "emergencyGroupId_example"; // String | Emergency group ID
 
 apiInstance.deleteArchitectEmergencygroup(emergencyGroupId)
-  .then(function() {
+  .then(() => {
     console.log('deleteArchitectEmergencygroup returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteArchitectEmergencygroup');
+  .catch((err) => {
+    console.log('There was a failure calling deleteArchitectEmergencygroup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -166,29 +165,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var ivrId = "ivrId_example"; // String | IVR id
+let ivrId = "ivrId_example"; // String | IVR id
 
 apiInstance.deleteArchitectIvr(ivrId)
-  .then(function() {
+  .then(() => {
     console.log('deleteArchitectIvr returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteArchitectIvr');
+  .catch((err) => {
+    console.log('There was a failure calling deleteArchitectIvr');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -222,32 +220,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var promptId = "promptId_example"; // String | Prompt ID
-
-var opts = { 
+let promptId = "promptId_example"; // String | Prompt ID
+let opts = { 
   'allResources': true // Boolean | Whether or not to delete all the prompt resources
 };
+
 apiInstance.deleteArchitectPrompt(promptId, opts)
-  .then(function() {
+  .then(() => {
     console.log('deleteArchitectPrompt returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteArchitectPrompt');
+  .catch((err) => {
+    console.log('There was a failure calling deleteArchitectPrompt');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -282,31 +279,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var promptId = "promptId_example"; // String | Prompt ID
-
-var languageCode = "languageCode_example"; // String | Language
+let promptId = "promptId_example"; // String | Prompt ID
+let languageCode = "languageCode_example"; // String | Language
 
 apiInstance.deleteArchitectPromptResource(promptId, languageCode)
-  .then(function() {
+  .then(() => {
     console.log('deleteArchitectPromptResource returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteArchitectPromptResource');
+  .catch((err) => {
+    console.log('There was a failure calling deleteArchitectPromptResource');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -341,29 +336,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var id = ["id_example"]; // [String] | List of Prompt IDs
+let id = ["id_example"]; // [String] | List of Prompt IDs
 
 apiInstance.deleteArchitectPrompts(id)
-  .then(function(data) {
+  .then((data) => {
     console.log(`deleteArchitectPrompts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteArchitectPrompts');
+  .catch((err) => {
+    console.log('There was a failure calling deleteArchitectPrompts');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -397,29 +391,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var scheduleId = "scheduleId_example"; // String | Schedule ID
+let scheduleId = "scheduleId_example"; // String | Schedule ID
 
 apiInstance.deleteArchitectSchedule(scheduleId)
-  .then(function() {
+  .then(() => {
     console.log('deleteArchitectSchedule returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteArchitectSchedule');
+  .catch((err) => {
+    console.log('There was a failure calling deleteArchitectSchedule');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -453,29 +446,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var scheduleGroupId = "scheduleGroupId_example"; // String | Schedule group ID
+let scheduleGroupId = "scheduleGroupId_example"; // String | Schedule group ID
 
 apiInstance.deleteArchitectSchedulegroup(scheduleGroupId)
-  .then(function() {
+  .then(() => {
     console.log('deleteArchitectSchedulegroup returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteArchitectSchedulegroup');
+  .catch((err) => {
+    console.log('There was a failure calling deleteArchitectSchedulegroup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -509,31 +501,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var promptId = "promptId_example"; // String | Prompt ID
-
-var languageCode = "languageCode_example"; // String | Language
+let promptId = "promptId_example"; // String | Prompt ID
+let languageCode = "languageCode_example"; // String | Language
 
 apiInstance.deleteArchitectSystempromptResource(promptId, languageCode)
-  .then(function() {
+  .then(() => {
     console.log('deleteArchitectSystempromptResource returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteArchitectSystempromptResource');
+  .catch((err) => {
+    console.log('There was a failure calling deleteArchitectSystempromptResource');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -568,29 +558,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var flowId = "flowId_example"; // String | Flow ID
+let flowId = "flowId_example"; // String | Flow ID
 
 apiInstance.deleteFlow(flowId)
-  .then(function() {
+  .then(() => {
     console.log('deleteFlow returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteFlow');
+  .catch((err) => {
+    console.log('There was a failure calling deleteFlow');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -624,29 +613,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var id = ["id_example"]; // [String] | List of Flow IDs
+let id = ["id_example"]; // [String] | List of Flow IDs
 
 apiInstance.deleteFlows(id)
-  .then(function(data) {
+  .then((data) => {
     console.log(`deleteFlows success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteFlows');
+  .catch((err) => {
+    console.log('There was a failure calling deleteFlows');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -680,32 +668,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var datatableId = "datatableId_example"; // String | id of datatable
-
-var opts = { 
+let datatableId = "datatableId_example"; // String | id of datatable
+let opts = { 
   'force': false // Boolean | force delete, even if in use
 };
+
 apiInstance.deleteFlowsDatatable(datatableId, opts)
-  .then(function() {
+  .then(() => {
     console.log('deleteFlowsDatatable returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteFlowsDatatable');
+  .catch((err) => {
+    console.log('There was a failure calling deleteFlowsDatatable');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -740,31 +727,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var datatableId = "datatableId_example"; // String | id of datatable
-
-var rowId = "rowId_example"; // String | the key for the row
+let datatableId = "datatableId_example"; // String | id of datatable
+let rowId = "rowId_example"; // String | the key for the row
 
 apiInstance.deleteFlowsDatatableRow(datatableId, rowId)
-  .then(function() {
+  .then(() => {
     console.log('deleteFlowsDatatableRow returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteFlowsDatatableRow');
+  .catch((err) => {
+    console.log('There was a failure calling deleteFlowsDatatableRow');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -799,20 +784,19 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var name = "name_example"; // String | Object name to search for
-
-var opts = { 
+let name = "name_example"; // String | Object name to search for
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'objectType': ["objectType_example"], // [String] | Object type(s) to search for
@@ -821,16 +805,16 @@ var opts = {
   'consumedResourceType': ["consumedResourceType_example"], // [String] | Types of consumed resources to return, if consumed resources are requested
   'consumingResourceType': ["consumingResourceType_example"] // [String] | Types of consuming resources to return, if consuming resources are requested
 };
+
 apiInstance.getArchitectDependencytracking(name, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectDependencytracking success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectDependencytracking');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectDependencytracking');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -871,26 +855,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
+
 apiInstance.getArchitectDependencytrackingBuild()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectDependencytrackingBuild success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectDependencytrackingBuild');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectDependencytrackingBuild');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -921,36 +905,33 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var id = "id_example"; // String | Consuming object ID
-
-var version = "version_example"; // String | Consuming object version
-
-var objectType = "objectType_example"; // String | Consuming object type.  Only versioned types are allowed here.
-
-var opts = { 
+let id = "id_example"; // String | Consuming object ID
+let version = "version_example"; // String | Consuming object version
+let objectType = "objectType_example"; // String | Consuming object type.  Only versioned types are allowed here.
+let opts = { 
   'resourceType': ["resourceType_example"] // [String] | Types of consumed resources to show
 };
+
 apiInstance.getArchitectDependencytrackingConsumedresources(id, version, objectType, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectDependencytrackingConsumedresources success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectDependencytrackingConsumedresources');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectDependencytrackingConsumedresources');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -987,34 +968,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var id = "id_example"; // String | Consumed object ID
-
-var objectType = "objectType_example"; // String | Consumed object type
-
-var opts = { 
+let id = "id_example"; // String | Consumed object ID
+let objectType = "objectType_example"; // String | Consumed object type
+let opts = { 
   'resourceType': ["resourceType_example"] // [String] | Types of consuming resources to show.  Only versioned types are allowed here.
 };
+
 apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectDependencytrackingConsumingresources success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectDependencytrackingConsumingresources');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectDependencytrackingConsumingresources');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1050,18 +1029,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var opts = { 
+let opts = { 
   'name': "name_example", // String | Name to search for
   'objectType': ["objectType_example"], // [String] | Object type(s) to search for
   'flowFilter': "flowFilter_example", // String | Show only checkedIn or published flows
@@ -1070,16 +1049,16 @@ var opts = {
   'pageNumber': 1, // Number | Page number
   'pageSize': 25 // Number | Page size
 };
+
 apiInstance.getArchitectDependencytrackingDeletedresourceconsumers(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectDependencytrackingDeletedresourceconsumers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectDependencytrackingDeletedresourceconsumers');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectDependencytrackingDeletedresourceconsumers');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1119,20 +1098,19 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var id = "id_example"; // String | Object ID
-
-var opts = { 
+let id = "id_example"; // String | Object ID
+let opts = { 
   'version': "version_example", // String | Object version
   'objectType': "objectType_example", // String | Object type
   'consumedResources': true, // Boolean | Include resources this item consumes
@@ -1140,16 +1118,16 @@ var opts = {
   'consumedResourceType': ["consumedResourceType_example"], // [String] | Types of consumed resources to return, if consumed resources are requested
   'consumingResourceType': ["consumingResourceType_example"] // [String] | Types of consuming resources to return, if consuming resources are requested
 };
+
 apiInstance.getArchitectDependencytrackingObject(id, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectDependencytrackingObject success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectDependencytrackingObject');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectDependencytrackingObject');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1189,29 +1167,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var typeId = "typeId_example"; // String | Type ID
+let typeId = "typeId_example"; // String | Type ID
 
 apiInstance.getArchitectDependencytrackingType(typeId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectDependencytrackingType success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectDependencytrackingType');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectDependencytrackingType');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1245,31 +1222,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var opts = { 
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25 // Number | Page size
 };
+
 apiInstance.getArchitectDependencytrackingTypes(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectDependencytrackingTypes success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectDependencytrackingTypes');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectDependencytrackingTypes');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1304,18 +1281,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var opts = { 
+let opts = { 
   'name': "name_example", // String | Name to search for
   'objectType': ["objectType_example"], // [String] | Object type(s) to search for
   'consumedResources': false, // Boolean | Return consumed resources?
@@ -1323,16 +1300,16 @@ var opts = {
   'pageNumber': 1, // Number | Page number
   'pageSize': 25 // Number | Page size
 };
+
 apiInstance.getArchitectDependencytrackingUpdatedresourceconsumers(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectDependencytrackingUpdatedresourceconsumers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectDependencytrackingUpdatedresourceconsumers');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectDependencytrackingUpdatedresourceconsumers');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1371,29 +1348,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var emergencyGroupId = "emergencyGroupId_example"; // String | Emergency group ID
+let emergencyGroupId = "emergencyGroupId_example"; // String | Emergency group ID
 
 apiInstance.getArchitectEmergencygroup(emergencyGroupId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectEmergencygroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectEmergencygroup');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectEmergencygroup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1427,34 +1403,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var opts = { 
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortBy': "name", // String | Sort by
   'sortOrder': "ASC", // String | Sort order
   'name': "name_example" // String | Name of the Emergency Group to filter by.
 };
+
 apiInstance.getArchitectEmergencygroups(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectEmergencygroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectEmergencygroups');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectEmergencygroups');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1492,29 +1468,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var ivrId = "ivrId_example"; // String | IVR id
+let ivrId = "ivrId_example"; // String | IVR id
 
 apiInstance.getArchitectIvr(ivrId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectIvr success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectIvr');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectIvr');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1548,34 +1523,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var opts = { 
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortBy': "name", // String | Sort by
   'sortOrder': "ASC", // String | Sort order
   'name': "name_example" // String | Name of the IVR to filter by.
 };
+
 apiInstance.getArchitectIvrs(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectIvrs success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectIvrs');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectIvrs');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1613,29 +1588,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var promptId = "promptId_example"; // String | Prompt ID
+let promptId = "promptId_example"; // String | Prompt ID
 
 apiInstance.getArchitectPrompt(promptId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectPrompt success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectPrompt');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectPrompt');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1669,38 +1643,36 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var promptId = "promptId_example"; // String | Prompt ID
-
-var historyId = "historyId_example"; // String | History request ID
-
-var opts = { 
+let promptId = "promptId_example"; // String | Prompt ID
+let historyId = "historyId_example"; // String | History request ID
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortOrder': "desc", // String | Sort order
   'sortBy': "timestamp", // String | Sort by
   'action': ["action_example"] // [String] | Flow actions to include (omit to include all)
 };
+
 apiInstance.getArchitectPromptHistoryHistoryId(promptId, historyId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectPromptHistoryHistoryId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectPromptHistoryHistoryId');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectPromptHistoryHistoryId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1740,31 +1712,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var promptId = "promptId_example"; // String | Prompt ID
-
-var languageCode = "languageCode_example"; // String | Language
+let promptId = "promptId_example"; // String | Prompt ID
+let languageCode = "languageCode_example"; // String | Language
 
 apiInstance.getArchitectPromptResource(promptId, languageCode)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectPromptResource success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectPromptResource');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectPromptResource');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1799,33 +1769,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var promptId = "promptId_example"; // String | Prompt ID
-
-var opts = { 
+let promptId = "promptId_example"; // String | Prompt ID
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25 // Number | Page size
 };
+
 apiInstance.getArchitectPromptResources(promptId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectPromptResources success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectPromptResources');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectPromptResources');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1861,18 +1830,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var opts = { 
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'name': "name_example", // String | Name
@@ -1881,16 +1850,16 @@ var opts = {
   'sortBy': "id", // String | Sort by
   'sortOrder': "asc" // String | Sort order
 };
+
 apiInstance.getArchitectPrompts(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectPrompts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectPrompts');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectPrompts');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1930,29 +1899,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var scheduleId = "scheduleId_example"; // String | Schedule ID
+let scheduleId = "scheduleId_example"; // String | Schedule ID
 
 apiInstance.getArchitectSchedule(scheduleId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectSchedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectSchedule');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectSchedule');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1986,29 +1954,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var scheduleGroupId = "scheduleGroupId_example"; // String | Schedule group ID
+let scheduleGroupId = "scheduleGroupId_example"; // String | Schedule group ID
 
 apiInstance.getArchitectSchedulegroup(scheduleGroupId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectSchedulegroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectSchedulegroup');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectSchedulegroup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2042,34 +2009,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var opts = { 
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortBy': "name", // String | Sort by
   'sortOrder': "ASC", // String | Sort order
   'name': "name_example" // String | Name of the Schedule Group to filter by.
 };
+
 apiInstance.getArchitectSchedulegroups(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectSchedulegroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectSchedulegroups');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectSchedulegroups');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2107,34 +2074,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var opts = { 
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortBy': "name", // String | Sort by
   'sortOrder': "ASC", // String | Sort order
   'name': "name_example" // String | Name of the Schedule to filter by.
 };
+
 apiInstance.getArchitectSchedules(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectSchedules');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectSchedules');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2172,29 +2139,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var promptId = "promptId_example"; // String | promptId
+let promptId = "promptId_example"; // String | promptId
 
 apiInstance.getArchitectSystemprompt(promptId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectSystemprompt success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectSystemprompt');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectSystemprompt');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2228,38 +2194,36 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var promptId = "promptId_example"; // String | promptId
-
-var historyId = "historyId_example"; // String | History request ID
-
-var opts = { 
+let promptId = "promptId_example"; // String | promptId
+let historyId = "historyId_example"; // String | History request ID
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortOrder': "desc", // String | Sort order
   'sortBy': "timestamp", // String | Sort by
   'action': ["action_example"] // [String] | Flow actions to include (omit to include all)
 };
+
 apiInstance.getArchitectSystempromptHistoryHistoryId(promptId, historyId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectSystempromptHistoryHistoryId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectSystempromptHistoryHistoryId');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectSystempromptHistoryHistoryId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2299,31 +2263,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var promptId = "promptId_example"; // String | Prompt ID
-
-var languageCode = "languageCode_example"; // String | Language
+let promptId = "promptId_example"; // String | Prompt ID
+let languageCode = "languageCode_example"; // String | Language
 
 apiInstance.getArchitectSystempromptResource(promptId, languageCode)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectSystempromptResource success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectSystempromptResource');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectSystempromptResource');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2358,35 +2320,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var promptId = "promptId_example"; // String | Prompt ID
-
-var opts = { 
+let promptId = "promptId_example"; // String | Prompt ID
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortBy': "id", // String | Sort by
   'sortOrder': "asc" // String | Sort order
 };
+
 apiInstance.getArchitectSystempromptResources(promptId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectSystempromptResources success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectSystempromptResources');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectSystempromptResources');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2424,18 +2385,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var opts = { 
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortBy': "id", // String | Sort by
@@ -2444,16 +2405,16 @@ var opts = {
   'description': "description_example", // String | Description
   'nameOrDescription': "nameOrDescription_example" // String | Name or description
 };
+
 apiInstance.getArchitectSystemprompts(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getArchitectSystemprompts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getArchitectSystemprompts');
+  .catch((err) => {
+    console.log('There was a failure calling getArchitectSystemprompts');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2493,32 +2454,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var flowId = "flowId_example"; // String | Flow ID
-
-var opts = { 
+let flowId = "flowId_example"; // String | Flow ID
+let opts = { 
   'deleted': false // Boolean | Include deleted flows
 };
+
 apiInstance.getFlow(flowId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getFlow success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getFlow');
+  .catch((err) => {
+    console.log('There was a failure calling getFlow');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2553,38 +2513,36 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var flowId = "flowId_example"; // String | Flow ID
-
-var historyId = "historyId_example"; // String | History request ID
-
-var opts = { 
+let flowId = "flowId_example"; // String | Flow ID
+let historyId = "historyId_example"; // String | History request ID
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortOrder': "desc", // String | Sort order
   'sortBy': "timestamp", // String | Sort by
   'action': ["action_example"] // [String] | Flow actions to include (omit to include all)
 };
+
 apiInstance.getFlowHistoryHistoryId(flowId, historyId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getFlowHistoryHistoryId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getFlowHistoryHistoryId');
+  .catch((err) => {
+    console.log('There was a failure calling getFlowHistoryHistoryId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2624,32 +2582,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var flowId = "flowId_example"; // String | Flow ID
-
-var opts = { 
+let flowId = "flowId_example"; // String | Flow ID
+let opts = { 
   'deleted': false // Boolean | Include deleted flows
 };
+
 apiInstance.getFlowLatestconfiguration(flowId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getFlowLatestconfiguration success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getFlowLatestconfiguration');
+  .catch((err) => {
+    console.log('There was a failure calling getFlowLatestconfiguration');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2684,34 +2641,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var flowId = "flowId_example"; // String | Flow ID
-
-var versionId = "versionId_example"; // String | Version ID
-
-var opts = { 
+let flowId = "flowId_example"; // String | Flow ID
+let versionId = "versionId_example"; // String | Version ID
+let opts = { 
   'deleted': "deleted_example" // String | Include deleted flows
 };
+
 apiInstance.getFlowVersion(flowId, versionId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getFlowVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getFlowVersion');
+  .catch((err) => {
+    console.log('There was a failure calling getFlowVersion');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2747,34 +2702,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var flowId = "flowId_example"; // String | Flow ID
-
-var versionId = "versionId_example"; // String | Version ID
-
-var opts = { 
+let flowId = "flowId_example"; // String | Flow ID
+let versionId = "versionId_example"; // String | Version ID
+let opts = { 
   'deleted': "deleted_example" // String | Include deleted flows
 };
+
 apiInstance.getFlowVersionConfiguration(flowId, versionId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getFlowVersionConfiguration success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getFlowVersionConfiguration');
+  .catch((err) => {
+    console.log('There was a failure calling getFlowVersionConfiguration');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2810,34 +2763,33 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var flowId = "flowId_example"; // String | Flow ID
-
-var opts = { 
+let flowId = "flowId_example"; // String | Flow ID
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'deleted': true // Boolean | Include deleted flows
 };
+
 apiInstance.getFlowVersions(flowId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getFlowVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getFlowVersions');
+  .catch((err) => {
+    console.log('There was a failure calling getFlowVersions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2874,18 +2826,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var opts = { 
+let opts = { 
   'type': ["type_example"], // [String] | Type
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
@@ -2905,16 +2857,16 @@ var opts = {
   'publishedBefore': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01", // String | Published before
   'divisionId': ["divisionId_example"] // [String] | division ID(s)
 };
+
 apiInstance.getFlows(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getFlows success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getFlows');
+  .catch((err) => {
+    console.log('There was a failure calling getFlows');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2965,32 +2917,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var datatableId = "datatableId_example"; // String | id of datatable
-
-var opts = { 
+let datatableId = "datatableId_example"; // String | id of datatable
+let opts = { 
   'expand': "expand_example" // String | Expand instructions for the result
 };
+
 apiInstance.getFlowsDatatable(datatableId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getFlowsDatatable success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getFlowsDatatable');
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsDatatable');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3025,34 +2976,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var datatableId = "datatableId_example"; // String | id of datatable
-
-var rowId = "rowId_example"; // String | The key for the row
-
-var opts = { 
+let datatableId = "datatableId_example"; // String | id of datatable
+let rowId = "rowId_example"; // String | The key for the row
+let opts = { 
   'showbrief': true // Boolean | if true returns just the key field for the row
 };
+
 apiInstance.getFlowsDatatableRow(datatableId, rowId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getFlowsDatatableRow success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getFlowsDatatableRow');
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsDatatableRow');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3088,34 +3037,33 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var datatableId = "datatableId_example"; // String | id of datatable
-
-var opts = { 
+let datatableId = "datatableId_example"; // String | id of datatable
+let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'showbrief': true // Boolean | If true returns just the key value of the row
 };
+
 apiInstance.getFlowsDatatableRows(datatableId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getFlowsDatatableRows success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getFlowsDatatableRows');
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsDatatableRows');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3152,34 +3100,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var opts = { 
+let opts = { 
   'expand': "expand_example", // String | Expand instructions for the result
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortBy': "id", // String | Sort by
   'sortOrder': "ascending" // String | Sort order
 };
+
 apiInstance.getFlowsDatatables(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getFlowsDatatables success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getFlowsDatatables');
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsDatatables');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3217,18 +3165,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var opts = { 
+let opts = { 
   'type': ["type_example"], // [String] | Type
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
@@ -3241,16 +3189,16 @@ var opts = {
   'publishedBefore': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01", // String | Published before
   'divisionId': ["divisionId_example"] // [String] | division ID(s)
 };
+
 apiInstance.getFlowsDivisionviews(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getFlowsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getFlowsDivisionviews');
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsDivisionviews');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3294,26 +3242,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
+
 apiInstance.postArchitectDependencytrackingBuild()
-  .then(function() {
+  .then(() => {
     console.log('postArchitectDependencytrackingBuild returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postArchitectDependencytrackingBuild');
+  .catch((err) => {
+    console.log('There was a failure calling postArchitectDependencytrackingBuild');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3343,22 +3291,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEmergencyGroupExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EmergencyGroupExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EmergencyGroupExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-EmergencyGroup <a style="cursor: pointer" onclick="copyEmergencyGroupExample()">Copy</a>
+EmergencyGroup <a href="#" onclick="return copyEmergencyGroupExample()">Copy</a>
 
-<div id="EmergencyGroupExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EmergencyGroupExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -3386,35 +3334,35 @@ EmergencyGroup <a style="cursor: pointer" onclick="copyEmergencyGroupExample()">
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var body = {}; // Object | 
+let body = {}; // Object | 
 
 apiInstance.postArchitectEmergencygroups(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postArchitectEmergencygroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postArchitectEmergencygroups');
+  .catch((err) => {
+    console.log('There was a failure calling postArchitectEmergencygroups');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3447,22 +3395,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyIVRExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#IVRExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#IVRExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-IVR <a style="cursor: pointer" onclick="copyIVRExample()">Copy</a>
+IVR <a href="#" onclick="return copyIVRExample()">Copy</a>
 
-<div id="IVRExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="IVRExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -3498,35 +3446,35 @@ IVR <a style="cursor: pointer" onclick="copyIVRExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var body = {}; // Object | 
+let body = {}; // Object | 
 
 apiInstance.postArchitectIvrs(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postArchitectIvrs success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postArchitectIvrs');
+  .catch((err) => {
+    console.log('There was a failure calling postArchitectIvrs');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3560,29 +3508,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var promptId = "promptId_example"; // String | Prompt ID
+let promptId = "promptId_example"; // String | Prompt ID
 
 apiInstance.postArchitectPromptHistory(promptId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postArchitectPromptHistory success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postArchitectPromptHistory');
+  .catch((err) => {
+    console.log('There was a failure calling postArchitectPromptHistory');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3615,22 +3562,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyPromptAssetCreateExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#PromptAssetCreateExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PromptAssetCreateExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-PromptAssetCreate <a style="cursor: pointer" onclick="copyPromptAssetCreateExample()">Copy</a>
+PromptAssetCreate <a href="#" onclick="return copyPromptAssetCreateExample()">Copy</a>
 
-<div id="PromptAssetCreateExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="PromptAssetCreateExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -3646,37 +3593,36 @@ PromptAssetCreate <a style="cursor: pointer" onclick="copyPromptAssetCreateExamp
   "durationSeconds": Number, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var promptId = "promptId_example"; // String | Prompt ID
-
-var body = {}; // Object | 
+let promptId = "promptId_example"; // String | Prompt ID
+let body = {}; // Object | 
 
 apiInstance.postArchitectPromptResources(promptId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postArchitectPromptResources success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postArchitectPromptResources');
+  .catch((err) => {
+    console.log('There was a failure calling postArchitectPromptResources');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -3710,22 +3656,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyPromptExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#PromptExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PromptExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Prompt <a style="cursor: pointer" onclick="copyPromptExample()">Copy</a>
+Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
 
-<div id="PromptExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="PromptExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -4091,35 +4037,35 @@ Prompt <a style="cursor: pointer" onclick="copyPromptExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var body = {}; // Object | 
+let body = {}; // Object | 
 
 apiInstance.postArchitectPrompts(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postArchitectPrompts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postArchitectPrompts');
+  .catch((err) => {
+    console.log('There was a failure calling postArchitectPrompts');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4152,22 +4098,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyScheduleGroupExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ScheduleGroupExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ScheduleGroupExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ScheduleGroup <a style="cursor: pointer" onclick="copyScheduleGroupExample()">Copy</a>
+ScheduleGroup <a href="#" onclick="return copyScheduleGroupExample()">Copy</a>
 
-<div id="ScheduleGroupExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ScheduleGroupExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -4198,35 +4144,35 @@ ScheduleGroup <a style="cursor: pointer" onclick="copyScheduleGroupExample()">Co
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var body = {}; // Object | 
+let body = {}; // Object | 
 
 apiInstance.postArchitectSchedulegroups(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postArchitectSchedulegroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postArchitectSchedulegroups');
+  .catch((err) => {
+    console.log('There was a failure calling postArchitectSchedulegroups');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4259,22 +4205,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyScheduleExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ScheduleExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ScheduleExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Schedule <a style="cursor: pointer" onclick="copyScheduleExample()">Copy</a>
+Schedule <a href="#" onclick="return copyScheduleExample()">Copy</a>
 
-<div id="ScheduleExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ScheduleExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -4292,35 +4238,35 @@ Schedule <a style="cursor: pointer" onclick="copyScheduleExample()">Copy</a>
   "rrule": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var body = {}; // Object | 
+let body = {}; // Object | 
 
 apiInstance.postArchitectSchedules(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postArchitectSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postArchitectSchedules');
+  .catch((err) => {
+    console.log('There was a failure calling postArchitectSchedules');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4354,29 +4300,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var promptId = "promptId_example"; // String | promptId
+let promptId = "promptId_example"; // String | promptId
 
 apiInstance.postArchitectSystempromptHistory(promptId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postArchitectSystempromptHistory success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postArchitectSystempromptHistory');
+  .catch((err) => {
+    console.log('There was a failure calling postArchitectSystempromptHistory');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4409,22 +4354,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copySystemPromptAssetExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#SystemPromptAssetExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#SystemPromptAssetExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-SystemPromptAsset <a style="cursor: pointer" onclick="copySystemPromptAssetExample()">Copy</a>
+SystemPromptAsset <a href="#" onclick="return copySystemPromptAssetExample()">Copy</a>
 
-<div id="SystemPromptAssetExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="SystemPromptAssetExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -4441,37 +4386,36 @@ SystemPromptAsset <a style="cursor: pointer" onclick="copySystemPromptAssetExamp
   "tags": {String: [String]}, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var promptId = "promptId_example"; // String | Prompt ID
-
-var body = {}; // Object | 
+let promptId = "promptId_example"; // String | Prompt ID
+let body = {}; // Object | 
 
 apiInstance.postArchitectSystempromptResources(promptId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postArchitectSystempromptResources success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postArchitectSystempromptResources');
+  .catch((err) => {
+    console.log('There was a failure calling postArchitectSystempromptResources');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4506,31 +4450,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var flowId = "flowId_example"; // String | Flow ID
-
-var body = null; // Object | 
+let flowId = "flowId_example"; // String | Flow ID
+let body = null; // Object | 
 
 apiInstance.postFlowVersions(flowId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postFlowVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postFlowVersions');
+  .catch((err) => {
+    console.log('There was a failure calling postFlowVersions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -4564,22 +4506,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyFlowExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#FlowExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#FlowExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Flow <a style="cursor: pointer" onclick="copyFlowExample()">Copy</a>
+Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
 
-<div id="FlowExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="FlowExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -5659,35 +5601,35 @@ Flow <a style="cursor: pointer" onclick="copyFlowExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var body = {}; // Object | 
+let body = {}; // Object | 
 
 apiInstance.postFlows(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postFlows success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postFlows');
+  .catch((err) => {
+    console.log('There was a failure calling postFlows');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5722,29 +5664,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var flow = "flow_example"; // String | Flow ID
+let flow = "flow_example"; // String | Flow ID
 
 apiInstance.postFlowsActionsCheckin(flow)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postFlowsActionsCheckin success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postFlowsActionsCheckin');
+  .catch((err) => {
+    console.log('There was a failure calling postFlowsActionsCheckin');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5778,29 +5719,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var flow = "flow_example"; // String | Flow ID
+let flow = "flow_example"; // String | Flow ID
 
 apiInstance.postFlowsActionsCheckout(flow)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postFlowsActionsCheckout success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postFlowsActionsCheckout');
+  .catch((err) => {
+    console.log('There was a failure calling postFlowsActionsCheckout');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5834,29 +5774,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var flow = "flow_example"; // String | Flow ID
+let flow = "flow_example"; // String | Flow ID
 
 apiInstance.postFlowsActionsDeactivate(flow)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postFlowsActionsDeactivate success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postFlowsActionsDeactivate');
+  .catch((err) => {
+    console.log('There was a failure calling postFlowsActionsDeactivate');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5891,32 +5830,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var flow = "flow_example"; // String | Flow ID
-
-var opts = { 
+let flow = "flow_example"; // String | Flow ID
+let opts = { 
   'version': "version_example" // String | version
 };
+
 apiInstance.postFlowsActionsPublish(flow, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postFlowsActionsPublish success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postFlowsActionsPublish');
+  .catch((err) => {
+    console.log('There was a failure calling postFlowsActionsPublish');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -5951,29 +5889,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var flow = "flow_example"; // String | Flow ID
+let flow = "flow_example"; // String | Flow ID
 
 apiInstance.postFlowsActionsRevert(flow)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postFlowsActionsRevert success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postFlowsActionsRevert');
+  .catch((err) => {
+    console.log('There was a failure calling postFlowsActionsRevert');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6007,29 +5944,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var flow = "flow_example"; // String | Flow ID
+let flow = "flow_example"; // String | Flow ID
 
 apiInstance.postFlowsActionsUnlock(flow)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postFlowsActionsUnlock success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postFlowsActionsUnlock');
+  .catch((err) => {
+    console.log('There was a failure calling postFlowsActionsUnlock');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6063,31 +5999,29 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var datatableId = "datatableId_example"; // String | id of datatable
-
-var dataTableRow = null; // Object | 
+let datatableId = "datatableId_example"; // String | id of datatable
+let dataTableRow = null; // Object | 
 
 apiInstance.postFlowsDatatableRows(datatableId, dataTableRow)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postFlowsDatatableRows success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postFlowsDatatableRows');
+  .catch((err) => {
+    console.log('There was a failure calling postFlowsDatatableRows');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6121,22 +6055,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyDataTableExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#DataTableExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DataTableExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-DataTable <a style="cursor: pointer" onclick="copyDataTableExample()">Copy</a>
+DataTable <a href="#" onclick="return copyDataTableExample()">Copy</a>
 
-<div id="DataTableExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="DataTableExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -6153,35 +6087,35 @@ DataTable <a style="cursor: pointer" onclick="copyDataTableExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var body = {}; // Object | datatable json-schema
+let body = {}; // Object | datatable json-schema
 
 apiInstance.postFlowsDatatables(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postFlowsDatatables success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postFlowsDatatables');
+  .catch((err) => {
+    console.log('There was a failure calling postFlowsDatatables');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6214,22 +6148,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEmergencyGroupExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EmergencyGroupExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EmergencyGroupExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-EmergencyGroup <a style="cursor: pointer" onclick="copyEmergencyGroupExample()">Copy</a>
+EmergencyGroup <a href="#" onclick="return copyEmergencyGroupExample()">Copy</a>
 
-<div id="EmergencyGroupExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EmergencyGroupExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -6257,37 +6191,36 @@ EmergencyGroup <a style="cursor: pointer" onclick="copyEmergencyGroupExample()">
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var emergencyGroupId = "emergencyGroupId_example"; // String | Emergency group ID
-
-var body = {}; // Object | 
+let emergencyGroupId = "emergencyGroupId_example"; // String | Emergency group ID
+let body = {}; // Object | 
 
 apiInstance.putArchitectEmergencygroup(emergencyGroupId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putArchitectEmergencygroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putArchitectEmergencygroup');
+  .catch((err) => {
+    console.log('There was a failure calling putArchitectEmergencygroup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6321,22 +6254,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyIVRExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#IVRExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#IVRExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-IVR <a style="cursor: pointer" onclick="copyIVRExample()">Copy</a>
+IVR <a href="#" onclick="return copyIVRExample()">Copy</a>
 
-<div id="IVRExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="IVRExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -6372,37 +6305,36 @@ IVR <a style="cursor: pointer" onclick="copyIVRExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var ivrId = "ivrId_example"; // String | IVR id
-
-var body = {}; // Object | 
+let ivrId = "ivrId_example"; // String | IVR id
+let body = {}; // Object | 
 
 apiInstance.putArchitectIvr(ivrId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putArchitectIvr success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putArchitectIvr');
+  .catch((err) => {
+    console.log('There was a failure calling putArchitectIvr');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6436,22 +6368,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyPromptExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#PromptExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PromptExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Prompt <a style="cursor: pointer" onclick="copyPromptExample()">Copy</a>
+Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
 
-<div id="PromptExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="PromptExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -6817,37 +6749,36 @@ Prompt <a style="cursor: pointer" onclick="copyPromptExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var promptId = "promptId_example"; // String | Prompt ID
-
-var body = {}; // Object | 
+let promptId = "promptId_example"; // String | Prompt ID
+let body = {}; // Object | 
 
 apiInstance.putArchitectPrompt(promptId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putArchitectPrompt success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putArchitectPrompt');
+  .catch((err) => {
+    console.log('There was a failure calling putArchitectPrompt');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6881,22 +6812,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyPromptAssetExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#PromptAssetExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PromptAssetExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-PromptAsset <a style="cursor: pointer" onclick="copyPromptAssetExample()">Copy</a>
+PromptAsset <a href="#" onclick="return copyPromptAssetExample()">Copy</a>
 
-<div id="PromptAssetExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="PromptAssetExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -6912,39 +6843,37 @@ PromptAsset <a style="cursor: pointer" onclick="copyPromptAssetExample()">Copy</
   "durationSeconds": Number, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var promptId = "promptId_example"; // String | Prompt ID
-
-var languageCode = "languageCode_example"; // String | Language
-
-var body = {}; // Object | 
+let promptId = "promptId_example"; // String | Prompt ID
+let languageCode = "languageCode_example"; // String | Language
+let body = {}; // Object | 
 
 apiInstance.putArchitectPromptResource(promptId, languageCode, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putArchitectPromptResource success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putArchitectPromptResource');
+  .catch((err) => {
+    console.log('There was a failure calling putArchitectPromptResource');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -6979,22 +6908,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyScheduleExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ScheduleExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ScheduleExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Schedule <a style="cursor: pointer" onclick="copyScheduleExample()">Copy</a>
+Schedule <a href="#" onclick="return copyScheduleExample()">Copy</a>
 
-<div id="ScheduleExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ScheduleExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -7012,37 +6941,36 @@ Schedule <a style="cursor: pointer" onclick="copyScheduleExample()">Copy</a>
   "rrule": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var scheduleId = "scheduleId_example"; // String | Schedule ID
-
-var body = {}; // Object | 
+let scheduleId = "scheduleId_example"; // String | Schedule ID
+let body = {}; // Object | 
 
 apiInstance.putArchitectSchedule(scheduleId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putArchitectSchedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putArchitectSchedule');
+  .catch((err) => {
+    console.log('There was a failure calling putArchitectSchedule');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -7076,22 +7004,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyScheduleGroupExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ScheduleGroupExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ScheduleGroupExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ScheduleGroup <a style="cursor: pointer" onclick="copyScheduleGroupExample()">Copy</a>
+ScheduleGroup <a href="#" onclick="return copyScheduleGroupExample()">Copy</a>
 
-<div id="ScheduleGroupExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ScheduleGroupExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -7122,37 +7050,36 @@ ScheduleGroup <a style="cursor: pointer" onclick="copyScheduleGroupExample()">Co
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var scheduleGroupId = "scheduleGroupId_example"; // String | Schedule group ID
-
-var body = {}; // Object | 
+let scheduleGroupId = "scheduleGroupId_example"; // String | Schedule group ID
+let body = {}; // Object | 
 
 apiInstance.putArchitectSchedulegroup(scheduleGroupId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putArchitectSchedulegroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putArchitectSchedulegroup');
+  .catch((err) => {
+    console.log('There was a failure calling putArchitectSchedulegroup');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -7186,22 +7113,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copySystemPromptAssetExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#SystemPromptAssetExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#SystemPromptAssetExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-SystemPromptAsset <a style="cursor: pointer" onclick="copySystemPromptAssetExample()">Copy</a>
+SystemPromptAsset <a href="#" onclick="return copySystemPromptAssetExample()">Copy</a>
 
-<div id="SystemPromptAssetExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="SystemPromptAssetExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -7218,39 +7145,37 @@ SystemPromptAsset <a style="cursor: pointer" onclick="copySystemPromptAssetExamp
   "tags": {String: [String]}, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var promptId = "promptId_example"; // String | Prompt ID
-
-var languageCode = "languageCode_example"; // String | Language
-
-var body = {}; // Object | 
+let promptId = "promptId_example"; // String | Prompt ID
+let languageCode = "languageCode_example"; // String | Language
+let body = {}; // Object | 
 
 apiInstance.putArchitectSystempromptResource(promptId, languageCode, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putArchitectSystempromptResource success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putArchitectSystempromptResource');
+  .catch((err) => {
+    console.log('There was a failure calling putArchitectSystempromptResource');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -7285,22 +7210,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyFlowExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#FlowExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#FlowExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Flow <a style="cursor: pointer" onclick="copyFlowExample()">Copy</a>
+Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
 
-<div id="FlowExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="FlowExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -8380,37 +8305,36 @@ Flow <a style="cursor: pointer" onclick="copyFlowExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var flowId = "flowId_example"; // String | Flow ID
-
-var body = {}; // Object | 
+let flowId = "flowId_example"; // String | Flow ID
+let body = {}; // Object | 
 
 apiInstance.putFlow(flowId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putFlow success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putFlow');
+  .catch((err) => {
+    console.log('There was a failure calling putFlow');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -8444,22 +8368,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyDataTableExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#DataTableExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DataTableExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-DataTable <a style="cursor: pointer" onclick="copyDataTableExample()">Copy</a>
+DataTable <a href="#" onclick="return copyDataTableExample()">Copy</a>
 
-<div id="DataTableExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="DataTableExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -8476,39 +8400,39 @@ DataTable <a style="cursor: pointer" onclick="copyDataTableExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var datatableId = "datatableId_example"; // String | id of datatable
-
-var opts = { 
+let datatableId = "datatableId_example"; // String | id of datatable
+let opts = { 
   'expand': "expand_example", // String | Expand instructions for the result
   'body': {} // Object | datatable json-schema
 };
+
 apiInstance.putFlowsDatatable(datatableId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putFlowsDatatable success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putFlowsDatatable');
+  .catch((err) => {
+    console.log('There was a failure calling putFlowsDatatable');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -8544,34 +8468,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ArchitectApi();
+let apiInstance = new platformClient.ArchitectApi();
 
-var datatableId = "datatableId_example"; // String | id of datatable
-
-var rowId = "rowId_example"; // String | the key for the row
-
-var opts = { 
+let datatableId = "datatableId_example"; // String | id of datatable
+let rowId = "rowId_example"; // String | the key for the row
+let opts = { 
   'body': null // Object | datatable row
 };
+
 apiInstance.putFlowsDatatableRow(datatableId, rowId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putFlowsDatatableRow success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putFlowsDatatableRow');
+  .catch((err) => {
+    console.log('There was a failure calling putFlowsDatatableRow');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

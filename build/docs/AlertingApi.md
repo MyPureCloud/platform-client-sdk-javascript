@@ -40,29 +40,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AlertingApi();
+let apiInstance = new platformClient.AlertingApi();
 
-var alertId = "alertId_example"; // String | Alert ID
+let alertId = "alertId_example"; // String | Alert ID
 
 apiInstance.deleteAlertingInteractionstatsAlert(alertId)
-  .then(function() {
+  .then(() => {
     console.log('deleteAlertingInteractionstatsAlert returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteAlertingInteractionstatsAlert');
+  .catch((err) => {
+    console.log('There was a failure calling deleteAlertingInteractionstatsAlert');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -96,29 +95,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AlertingApi();
+let apiInstance = new platformClient.AlertingApi();
 
-var ruleId = "ruleId_example"; // String | Rule ID
+let ruleId = "ruleId_example"; // String | Rule ID
 
 apiInstance.deleteAlertingInteractionstatsRule(ruleId)
-  .then(function() {
+  .then(() => {
     console.log('deleteAlertingInteractionstatsRule returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteAlertingInteractionstatsRule');
+  .catch((err) => {
+    console.log('There was a failure calling deleteAlertingInteractionstatsRule');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -151,26 +149,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AlertingApi();
+let apiInstance = new platformClient.AlertingApi();
+
 apiInstance.getAlertingAlertsActive()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAlertingAlertsActive success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAlertingAlertsActive');
+  .catch((err) => {
+    console.log('There was a failure calling getAlertingAlertsActive');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -201,32 +199,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AlertingApi();
+let apiInstance = new platformClient.AlertingApi();
 
-var alertId = "alertId_example"; // String | Alert ID
-
-var opts = { 
+let alertId = "alertId_example"; // String | Alert ID
+let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand
 };
+
 apiInstance.getAlertingInteractionstatsAlert(alertId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAlertingInteractionstatsAlert success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAlertingInteractionstatsAlert');
+  .catch((err) => {
+    console.log('There was a failure calling getAlertingInteractionstatsAlert');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -261,30 +258,30 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AlertingApi();
+let apiInstance = new platformClient.AlertingApi();
 
-var opts = { 
+let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand
 };
+
 apiInstance.getAlertingInteractionstatsAlerts(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAlertingInteractionstatsAlerts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAlertingInteractionstatsAlerts');
+  .catch((err) => {
+    console.log('There was a failure calling getAlertingInteractionstatsAlerts');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -317,26 +314,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AlertingApi();
+let apiInstance = new platformClient.AlertingApi();
+
 apiInstance.getAlertingInteractionstatsAlertsUnread()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAlertingInteractionstatsAlertsUnread success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAlertingInteractionstatsAlertsUnread');
+  .catch((err) => {
+    console.log('There was a failure calling getAlertingInteractionstatsAlertsUnread');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -367,32 +364,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AlertingApi();
+let apiInstance = new platformClient.AlertingApi();
 
-var ruleId = "ruleId_example"; // String | Rule ID
-
-var opts = { 
+let ruleId = "ruleId_example"; // String | Rule ID
+let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand
 };
+
 apiInstance.getAlertingInteractionstatsRule(ruleId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAlertingInteractionstatsRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAlertingInteractionstatsRule');
+  .catch((err) => {
+    console.log('There was a failure calling getAlertingInteractionstatsRule');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -427,30 +423,30 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AlertingApi();
+let apiInstance = new platformClient.AlertingApi();
 
-var opts = { 
+let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand
 };
+
 apiInstance.getAlertingInteractionstatsRules(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getAlertingInteractionstatsRules success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getAlertingInteractionstatsRules');
+  .catch((err) => {
+    console.log('There was a failure calling getAlertingInteractionstatsRules');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -483,22 +479,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyInteractionStatsRuleExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#InteractionStatsRuleExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#InteractionStatsRuleExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-InteractionStatsRule <a style="cursor: pointer" onclick="copyInteractionStatsRuleExample()">Copy</a>
+InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample()">Copy</a>
 
-<div id="InteractionStatsRuleExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="InteractionStatsRuleExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -852,38 +848,38 @@ InteractionStatsRule <a style="cursor: pointer" onclick="copyInteractionStatsRul
   "alertTypes": [String], 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AlertingApi();
+let apiInstance = new platformClient.AlertingApi();
 
-var body = {}; // Object | AlertingRule
-
-var opts = { 
+let body = {}; // Object | AlertingRule
+let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand
 };
+
 apiInstance.postAlertingInteractionstatsRules(body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAlertingInteractionstatsRules success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAlertingInteractionstatsRules');
+  .catch((err) => {
+    console.log('There was a failure calling postAlertingInteractionstatsRules');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -917,59 +913,58 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUnreadStatusExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UnreadStatusExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UnreadStatusExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UnreadStatus <a style="cursor: pointer" onclick="copyUnreadStatusExample()">Copy</a>
+UnreadStatus <a href="#" onclick="return copyUnreadStatusExample()">Copy</a>
 
-<div id="UnreadStatusExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UnreadStatusExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "unread": Boolean, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AlertingApi();
+let apiInstance = new platformClient.AlertingApi();
 
-var alertId = "alertId_example"; // String | Alert ID
-
-var body = {}; // Object | InteractionStatsAlert
-
-var opts = { 
+let alertId = "alertId_example"; // String | Alert ID
+let body = {}; // Object | InteractionStatsAlert
+let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand
 };
+
 apiInstance.putAlertingInteractionstatsAlert(alertId, body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putAlertingInteractionstatsAlert success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putAlertingInteractionstatsAlert');
+  .catch((err) => {
+    console.log('There was a failure calling putAlertingInteractionstatsAlert');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1004,22 +999,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyInteractionStatsRuleExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#InteractionStatsRuleExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#InteractionStatsRuleExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-InteractionStatsRule <a style="cursor: pointer" onclick="copyInteractionStatsRuleExample()">Copy</a>
+InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample()">Copy</a>
 
-<div id="InteractionStatsRuleExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="InteractionStatsRuleExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1373,40 +1368,39 @@ InteractionStatsRule <a style="cursor: pointer" onclick="copyInteractionStatsRul
   "alertTypes": [String], 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.AlertingApi();
+let apiInstance = new platformClient.AlertingApi();
 
-var ruleId = "ruleId_example"; // String | Rule ID
-
-var body = {}; // Object | AlertingRule
-
-var opts = { 
+let ruleId = "ruleId_example"; // String | Rule ID
+let body = {}; // Object | AlertingRule
+let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand
 };
+
 apiInstance.putAlertingInteractionstatsRule(ruleId, body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putAlertingInteractionstatsRule success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putAlertingInteractionstatsRule');
+  .catch((err) => {
+    console.log('There was a failure calling putAlertingInteractionstatsRule');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

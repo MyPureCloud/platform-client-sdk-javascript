@@ -30,26 +30,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TokensApi();
+let apiInstance = new platformClient.TokensApi();
+
 apiInstance.deleteTokensMe()
-  .then(function() {
+  .then(() => {
     console.log('deleteTokensMe returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteTokensMe');
+  .catch((err) => {
+    console.log('There was a failure calling deleteTokensMe');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -79,26 +79,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.TokensApi();
+let apiInstance = new platformClient.TokensApi();
+
 apiInstance.getTokensMe()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getTokensMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getTokensMe');
+  .catch((err) => {
+    console.log('There was a failure calling getTokensMe');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

@@ -40,29 +40,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ScriptsApi();
+let apiInstance = new platformClient.ScriptsApi();
 
-var scriptId = "scriptId_example"; // String | Script ID
+let scriptId = "scriptId_example"; // String | Script ID
 
 apiInstance.getScript(scriptId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getScript success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getScript');
+  .catch((err) => {
+    console.log('There was a failure calling getScript');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -96,34 +95,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ScriptsApi();
+let apiInstance = new platformClient.ScriptsApi();
 
-var scriptId = "scriptId_example"; // String | Script ID
-
-var pageId = "pageId_example"; // String | Page ID
-
-var opts = { 
+let scriptId = "scriptId_example"; // String | Script ID
+let pageId = "pageId_example"; // String | Page ID
+let opts = { 
   'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
 };
+
 apiInstance.getScriptPage(scriptId, pageId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getScriptPage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getScriptPage');
+  .catch((err) => {
+    console.log('There was a failure calling getScriptPage');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -159,32 +156,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ScriptsApi();
+let apiInstance = new platformClient.ScriptsApi();
 
-var scriptId = "scriptId_example"; // String | Script ID
-
-var opts = { 
+let scriptId = "scriptId_example"; // String | Script ID
+let opts = { 
   'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
 };
+
 apiInstance.getScriptPages(scriptId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getScriptPages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getScriptPages');
+  .catch((err) => {
+    console.log('There was a failure calling getScriptPages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -219,18 +215,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ScriptsApi();
+let apiInstance = new platformClient.ScriptsApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'expand': "expand_example", // String | Expand
@@ -241,16 +237,16 @@ var opts = {
   'sortOrder': "sortOrder_example", // String | SortOrder
   'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
 };
+
 apiInstance.getScripts(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getScripts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getScripts');
+  .catch((err) => {
+    console.log('There was a failure calling getScripts');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -292,20 +288,19 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ScriptsApi();
+let apiInstance = new platformClient.ScriptsApi();
 
-var scriptId = "scriptId_example"; // String | Script ID
-
-var opts = { 
+let scriptId = "scriptId_example"; // String | Script ID
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'expand': "expand_example", // String | Expand
@@ -314,16 +309,16 @@ var opts = {
   'flowId': "flowId_example", // String | Secure flow id filter
   'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
 };
+
 apiInstance.getScriptsPublished(scriptId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getScriptsPublished success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getScriptsPublished');
+  .catch((err) => {
+    console.log('There was a failure calling getScriptsPublished');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -364,32 +359,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ScriptsApi();
+let apiInstance = new platformClient.ScriptsApi();
 
-var scriptId = "scriptId_example"; // String | Script ID
-
-var opts = { 
+let scriptId = "scriptId_example"; // String | Script ID
+let opts = { 
   'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
 };
+
 apiInstance.getScriptsPublishedScriptId(scriptId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getScriptsPublishedScriptId success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getScriptsPublishedScriptId');
+  .catch((err) => {
+    console.log('There was a failure calling getScriptsPublishedScriptId');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -424,34 +418,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ScriptsApi();
+let apiInstance = new platformClient.ScriptsApi();
 
-var scriptId = "scriptId_example"; // String | Script ID
-
-var pageId = "pageId_example"; // String | Page ID
-
-var opts = { 
+let scriptId = "scriptId_example"; // String | Script ID
+let pageId = "pageId_example"; // String | Page ID
+let opts = { 
   'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
 };
+
 apiInstance.getScriptsPublishedScriptIdPage(scriptId, pageId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getScriptsPublishedScriptIdPage success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getScriptsPublishedScriptIdPage');
+  .catch((err) => {
+    console.log('There was a failure calling getScriptsPublishedScriptIdPage');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -487,32 +479,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ScriptsApi();
+let apiInstance = new platformClient.ScriptsApi();
 
-var scriptId = "scriptId_example"; // String | Script ID
-
-var opts = { 
+let scriptId = "scriptId_example"; // String | Script ID
+let opts = { 
   'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
 };
+
 apiInstance.getScriptsPublishedScriptIdPages(scriptId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getScriptsPublishedScriptIdPages success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getScriptsPublishedScriptIdPages');
+  .catch((err) => {
+    console.log('There was a failure calling getScriptsPublishedScriptIdPages');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -547,35 +538,34 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ScriptsApi();
+let apiInstance = new platformClient.ScriptsApi();
 
-var scriptId = "scriptId_example"; // String | Script ID
-
-var opts = { 
+let scriptId = "scriptId_example"; // String | Script ID
+let opts = { 
   'input': "input_example", // String | input
   'output': "output_example", // String | output
   'type': "type_example", // String | type
   'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
 };
+
 apiInstance.getScriptsPublishedScriptIdVariables(scriptId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getScriptsPublishedScriptIdVariables success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getScriptsPublishedScriptIdVariables');
+  .catch((err) => {
+    console.log('There was a failure calling getScriptsPublishedScriptIdVariables');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -613,32 +603,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ScriptsApi();
+let apiInstance = new platformClient.ScriptsApi();
 
-var uploadId = "uploadId_example"; // String | Upload ID
-
-var opts = { 
+let uploadId = "uploadId_example"; // String | Upload ID
+let opts = { 
   'longPoll': false // Boolean | Enable longPolling endpoint
 };
+
 apiInstance.getScriptsUploadStatus(uploadId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getScriptsUploadStatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getScriptsUploadStatus');
+  .catch((err) => {
+    console.log('There was a failure calling getScriptsUploadStatus');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -672,58 +661,58 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyExportScriptRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ExportScriptRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ExportScriptRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ExportScriptRequest <a style="cursor: pointer" onclick="copyExportScriptRequestExample()">Copy</a>
+ExportScriptRequest <a href="#" onclick="return copyExportScriptRequestExample()">Copy</a>
 
-<div id="ExportScriptRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ExportScriptRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "fileName": String, 
   "versionId": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.ScriptsApi();
+let apiInstance = new platformClient.ScriptsApi();
 
-var scriptId = "scriptId_example"; // String | Script ID
-
-var opts = { 
+let scriptId = "scriptId_example"; // String | Script ID
+let opts = { 
   'body': {} // Object | 
 };
+
 apiInstance.postScriptExport(scriptId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postScriptExport success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postScriptExport');
+  .catch((err) => {
+    console.log('There was a failure calling postScriptExport');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

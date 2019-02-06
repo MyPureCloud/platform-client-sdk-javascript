@@ -32,26 +32,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GeolocationApi();
+let apiInstance = new platformClient.GeolocationApi();
+
 apiInstance.getGeolocationsSettings()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getGeolocationsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getGeolocationsSettings');
+  .catch((err) => {
+    console.log('There was a failure calling getGeolocationsSettings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -81,31 +81,29 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GeolocationApi();
+let apiInstance = new platformClient.GeolocationApi();
 
-var userId = "userId_example"; // String | user Id
-
-var clientId = "clientId_example"; // String | client Id
+let userId = "userId_example"; // String | user Id
+let clientId = "clientId_example"; // String | client Id
 
 apiInstance.getUserGeolocation(userId, clientId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getUserGeolocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getUserGeolocation');
+  .catch((err) => {
+    console.log('There was a failure calling getUserGeolocation');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -139,22 +137,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyGeolocationSettingsExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#GeolocationSettingsExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#GeolocationSettingsExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-GeolocationSettings <a style="cursor: pointer" onclick="copyGeolocationSettingsExample()">Copy</a>
+GeolocationSettings <a href="#" onclick="return copyGeolocationSettingsExample()">Copy</a>
 
-<div id="GeolocationSettingsExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="GeolocationSettingsExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -162,35 +160,35 @@ GeolocationSettings <a style="cursor: pointer" onclick="copyGeolocationSettingsE
   "mapboxKey": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GeolocationApi();
+let apiInstance = new platformClient.GeolocationApi();
 
-var body = {}; // Object | Geolocation settings
+let body = {}; // Object | Geolocation settings
 
 apiInstance.patchGeolocationsSettings(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchGeolocationsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchGeolocationsSettings');
+  .catch((err) => {
+    console.log('There was a failure calling patchGeolocationsSettings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -222,22 +220,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyGeolocationExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#GeolocationExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#GeolocationExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Geolocation <a style="cursor: pointer" onclick="copyGeolocationExample()">Copy</a>
+Geolocation <a href="#" onclick="return copyGeolocationExample()">Copy</a>
 
-<div id="GeolocationExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="GeolocationExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -273,39 +271,37 @@ Geolocation <a style="cursor: pointer" onclick="copyGeolocationExample()">Copy</
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GeolocationApi();
+let apiInstance = new platformClient.GeolocationApi();
 
-var userId = "userId_example"; // String | user Id
-
-var clientId = "clientId_example"; // String | client Id
-
-var body = {}; // Object | Geolocation
+let userId = "userId_example"; // String | user Id
+let clientId = "clientId_example"; // String | client Id
+let body = {}; // Object | Geolocation
 
 apiInstance.patchUserGeolocation(userId, clientId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchUserGeolocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchUserGeolocation');
+  .catch((err) => {
+    console.log('There was a failure calling patchUserGeolocation');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

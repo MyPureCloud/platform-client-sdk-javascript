@@ -44,29 +44,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GreetingsApi();
+let apiInstance = new platformClient.GreetingsApi();
 
-var greetingId = "greetingId_example"; // String | Greeting ID
+let greetingId = "greetingId_example"; // String | Greeting ID
 
 apiInstance.deleteGreeting(greetingId)
-  .then(function() {
+  .then(() => {
     console.log('deleteGreeting returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteGreeting');
+  .catch((err) => {
+    console.log('There was a failure calling deleteGreeting');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -99,29 +98,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GreetingsApi();
+let apiInstance = new platformClient.GreetingsApi();
 
-var greetingId = "greetingId_example"; // String | Greeting ID
+let greetingId = "greetingId_example"; // String | Greeting ID
 
 apiInstance.getGreeting(greetingId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getGreeting success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getGreeting');
+  .catch((err) => {
+    console.log('There was a failure calling getGreeting');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -154,32 +152,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GreetingsApi();
+let apiInstance = new platformClient.GreetingsApi();
 
-var greetingId = "greetingId_example"; // String | Greeting ID
-
-var opts = { 
+let greetingId = "greetingId_example"; // String | Greeting ID
+let opts = { 
   'formatId': "WAV" // String | The desired media format.
 };
+
 apiInstance.getGreetingMedia(greetingId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getGreetingMedia success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getGreetingMedia');
+  .catch((err) => {
+    console.log('There was a failure calling getGreetingMedia');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -213,31 +210,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GreetingsApi();
+let apiInstance = new platformClient.GreetingsApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getGreetings(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getGreetings');
+  .catch((err) => {
+    console.log('There was a failure calling getGreetings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -271,26 +268,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GreetingsApi();
+let apiInstance = new platformClient.GreetingsApi();
+
 apiInstance.getGreetingsDefaults()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getGreetingsDefaults');
+  .catch((err) => {
+    console.log('There was a failure calling getGreetingsDefaults');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -320,33 +317,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GreetingsApi();
+let apiInstance = new platformClient.GreetingsApi();
 
-var groupId = "groupId_example"; // String | Group ID
-
-var opts = { 
+let groupId = "groupId_example"; // String | Group ID
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getGroupGreetings(groupId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getGroupGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getGroupGreetings');
+  .catch((err) => {
+    console.log('There was a failure calling getGroupGreetings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -381,29 +377,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GreetingsApi();
+let apiInstance = new platformClient.GreetingsApi();
 
-var groupId = "groupId_example"; // String | Group ID
+let groupId = "groupId_example"; // String | Group ID
 
 apiInstance.getGroupGreetingsDefaults(groupId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getGroupGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getGroupGreetingsDefaults');
+  .catch((err) => {
+    console.log('There was a failure calling getGroupGreetingsDefaults');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -436,33 +431,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GreetingsApi();
+let apiInstance = new platformClient.GreetingsApi();
 
-var userId = "userId_example"; // String | User ID
-
-var opts = { 
+let userId = "userId_example"; // String | User ID
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getUserGreetings(userId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getUserGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getUserGreetings');
+  .catch((err) => {
+    console.log('There was a failure calling getUserGreetings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -497,29 +491,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GreetingsApi();
+let apiInstance = new platformClient.GreetingsApi();
 
-var userId = "userId_example"; // String | User ID
+let userId = "userId_example"; // String | User ID
 
 apiInstance.getUserGreetingsDefaults(userId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getUserGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getUserGreetingsDefaults');
+  .catch((err) => {
+    console.log('There was a failure calling getUserGreetingsDefaults');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -551,22 +544,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyGreetingExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#GreetingExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#GreetingExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Greeting <a style="cursor: pointer" onclick="copyGreetingExample()">Copy</a>
+Greeting <a href="#" onclick="return copyGreetingExample()">Copy</a>
 
-<div id="GreetingExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="GreetingExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -589,35 +582,35 @@ Greeting <a style="cursor: pointer" onclick="copyGreetingExample()">Copy</a>
   "modifiedBy": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GreetingsApi();
+let apiInstance = new platformClient.GreetingsApi();
 
-var body = {}; // Object | The Greeting to create
+let body = {}; // Object | The Greeting to create
 
 apiInstance.postGreetings(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postGreetings');
+  .catch((err) => {
+    console.log('There was a failure calling postGreetings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -649,22 +642,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyGreetingExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#GreetingExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#GreetingExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Greeting <a style="cursor: pointer" onclick="copyGreetingExample()">Copy</a>
+Greeting <a href="#" onclick="return copyGreetingExample()">Copy</a>
 
-<div id="GreetingExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="GreetingExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -687,37 +680,36 @@ Greeting <a style="cursor: pointer" onclick="copyGreetingExample()">Copy</a>
   "modifiedBy": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GreetingsApi();
+let apiInstance = new platformClient.GreetingsApi();
 
-var groupId = "groupId_example"; // String | Group ID
-
-var body = {}; // Object | The Greeting to create
+let groupId = "groupId_example"; // String | Group ID
+let body = {}; // Object | The Greeting to create
 
 apiInstance.postGroupGreetings(groupId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postGroupGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postGroupGreetings');
+  .catch((err) => {
+    console.log('There was a failure calling postGroupGreetings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -750,22 +742,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyGreetingExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#GreetingExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#GreetingExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Greeting <a style="cursor: pointer" onclick="copyGreetingExample()">Copy</a>
+Greeting <a href="#" onclick="return copyGreetingExample()">Copy</a>
 
-<div id="GreetingExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="GreetingExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -788,37 +780,36 @@ Greeting <a style="cursor: pointer" onclick="copyGreetingExample()">Copy</a>
   "modifiedBy": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GreetingsApi();
+let apiInstance = new platformClient.GreetingsApi();
 
-var userId = "userId_example"; // String | User ID
-
-var body = {}; // Object | The Greeting to create
+let userId = "userId_example"; // String | User ID
+let body = {}; // Object | The Greeting to create
 
 apiInstance.postUserGreetings(userId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postUserGreetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postUserGreetings');
+  .catch((err) => {
+    console.log('There was a failure calling postUserGreetings');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -851,22 +842,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyGreetingExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#GreetingExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#GreetingExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Greeting <a style="cursor: pointer" onclick="copyGreetingExample()">Copy</a>
+Greeting <a href="#" onclick="return copyGreetingExample()">Copy</a>
 
-<div id="GreetingExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="GreetingExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -889,37 +880,36 @@ Greeting <a style="cursor: pointer" onclick="copyGreetingExample()">Copy</a>
   "modifiedBy": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GreetingsApi();
+let apiInstance = new platformClient.GreetingsApi();
 
-var greetingId = "greetingId_example"; // String | Greeting ID
-
-var body = {}; // Object | The updated Greeting
+let greetingId = "greetingId_example"; // String | Greeting ID
+let body = {}; // Object | The updated Greeting
 
 apiInstance.putGreeting(greetingId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putGreeting success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putGreeting');
+  .catch((err) => {
+    console.log('There was a failure calling putGreeting');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -952,22 +942,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyDefaultGreetingListExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#DefaultGreetingListExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DefaultGreetingListExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-DefaultGreetingList <a style="cursor: pointer" onclick="copyDefaultGreetingListExample()">Copy</a>
+DefaultGreetingList <a href="#" onclick="return copyDefaultGreetingListExample()">Copy</a>
 
-<div id="DefaultGreetingListExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="DefaultGreetingListExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1005,35 +995,35 @@ DefaultGreetingList <a style="cursor: pointer" onclick="copyDefaultGreetingListE
   "modifiedBy": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GreetingsApi();
+let apiInstance = new platformClient.GreetingsApi();
 
-var body = {}; // Object | The updated defaultGreetingList
+let body = {}; // Object | The updated defaultGreetingList
 
 apiInstance.putGreetingsDefaults(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putGreetingsDefaults');
+  .catch((err) => {
+    console.log('There was a failure calling putGreetingsDefaults');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1065,22 +1055,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyDefaultGreetingListExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#DefaultGreetingListExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DefaultGreetingListExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-DefaultGreetingList <a style="cursor: pointer" onclick="copyDefaultGreetingListExample()">Copy</a>
+DefaultGreetingList <a href="#" onclick="return copyDefaultGreetingListExample()">Copy</a>
 
-<div id="DefaultGreetingListExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="DefaultGreetingListExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1118,37 +1108,36 @@ DefaultGreetingList <a style="cursor: pointer" onclick="copyDefaultGreetingListE
   "modifiedBy": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GreetingsApi();
+let apiInstance = new platformClient.GreetingsApi();
 
-var groupId = "groupId_example"; // String | Group ID
-
-var body = {}; // Object | The updated defaultGreetingList
+let groupId = "groupId_example"; // String | Group ID
+let body = {}; // Object | The updated defaultGreetingList
 
 apiInstance.putGroupGreetingsDefaults(groupId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putGroupGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putGroupGreetingsDefaults');
+  .catch((err) => {
+    console.log('There was a failure calling putGroupGreetingsDefaults');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1181,22 +1170,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyDefaultGreetingListExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#DefaultGreetingListExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DefaultGreetingListExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-DefaultGreetingList <a style="cursor: pointer" onclick="copyDefaultGreetingListExample()">Copy</a>
+DefaultGreetingList <a href="#" onclick="return copyDefaultGreetingListExample()">Copy</a>
 
-<div id="DefaultGreetingListExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="DefaultGreetingListExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -1234,37 +1223,36 @@ DefaultGreetingList <a style="cursor: pointer" onclick="copyDefaultGreetingListE
   "modifiedBy": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.GreetingsApi();
+let apiInstance = new platformClient.GreetingsApi();
 
-var userId = "userId_example"; // String | User ID
-
-var body = {}; // Object | The updated defaultGreetingList
+let userId = "userId_example"; // String | User ID
+let body = {}; // Object | The updated defaultGreetingList
 
 apiInstance.putUserGreetingsDefaults(userId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putUserGreetingsDefaults success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putUserGreetingsDefaults');
+  .catch((err) => {
+    console.log('There was a failure calling putUserGreetingsDefaults');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

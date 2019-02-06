@@ -35,29 +35,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.NotificationsApi();
+let apiInstance = new platformClient.NotificationsApi();
 
-var channelId = "channelId_example"; // String | Channel ID
+let channelId = "channelId_example"; // String | Channel ID
 
 apiInstance.deleteNotificationsChannelSubscriptions(channelId)
-  .then(function() {
+  .then(() => {
     console.log('deleteNotificationsChannelSubscriptions returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteNotificationsChannelSubscriptions');
+  .catch((err) => {
+    console.log('There was a failure calling deleteNotificationsChannelSubscriptions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -90,30 +89,30 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.NotificationsApi();
+let apiInstance = new platformClient.NotificationsApi();
 
-var opts = { 
+let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand
 };
+
 apiInstance.getNotificationsAvailabletopics(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getNotificationsAvailabletopics success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getNotificationsAvailabletopics');
+  .catch((err) => {
+    console.log('There was a failure calling getNotificationsAvailabletopics');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -146,29 +145,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.NotificationsApi();
+let apiInstance = new platformClient.NotificationsApi();
 
-var channelId = "channelId_example"; // String | Channel ID
+let channelId = "channelId_example"; // String | Channel ID
 
 apiInstance.getNotificationsChannelSubscriptions(channelId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getNotificationsChannelSubscriptions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getNotificationsChannelSubscriptions');
+  .catch((err) => {
+    console.log('There was a failure calling getNotificationsChannelSubscriptions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -201,30 +199,30 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.NotificationsApi();
+let apiInstance = new platformClient.NotificationsApi();
 
-var opts = { 
+let opts = { 
   'includechannels': "token" // String | Show user's channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence.
 };
+
 apiInstance.getNotificationsChannels(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getNotificationsChannels success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getNotificationsChannels');
+  .catch((err) => {
+    console.log('There was a failure calling getNotificationsChannels');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -256,57 +254,56 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyChannelTopicExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ChannelTopicExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ChannelTopicExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ChannelTopic <a style="cursor: pointer" onclick="copyChannelTopicExample()">Copy</a>
+ChannelTopic <a href="#" onclick="return copyChannelTopicExample()">Copy</a>
 
-<div id="ChannelTopicExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ChannelTopicExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.NotificationsApi();
+let apiInstance = new platformClient.NotificationsApi();
 
-var channelId = "channelId_example"; // String | Channel ID
-
-var body = [{}]; // Object | Body
+let channelId = "channelId_example"; // String | Channel ID
+let body = [{}]; // Object | Body
 
 apiInstance.postNotificationsChannelSubscriptions(channelId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postNotificationsChannelSubscriptions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postNotificationsChannelSubscriptions');
+  .catch((err) => {
+    console.log('There was a failure calling postNotificationsChannelSubscriptions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -340,26 +337,26 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.NotificationsApi();
+let apiInstance = new platformClient.NotificationsApi();
+
 apiInstance.postNotificationsChannels()
-  .then(function(data) {
+  .then((data) => {
     console.log(`postNotificationsChannels success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postNotificationsChannels');
+  .catch((err) => {
+    console.log('There was a failure calling postNotificationsChannels');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -388,57 +385,56 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyChannelTopicExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ChannelTopicExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ChannelTopicExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ChannelTopic <a style="cursor: pointer" onclick="copyChannelTopicExample()">Copy</a>
+ChannelTopic <a href="#" onclick="return copyChannelTopicExample()">Copy</a>
 
-<div id="ChannelTopicExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ChannelTopicExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.NotificationsApi();
+let apiInstance = new platformClient.NotificationsApi();
 
-var channelId = "channelId_example"; // String | Channel ID
-
-var body = [{}]; // Object | Body
+let channelId = "channelId_example"; // String | Channel ID
+let body = [{}]; // Object | Body
 
 apiInstance.putNotificationsChannelSubscriptions(channelId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putNotificationsChannelSubscriptions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putNotificationsChannelSubscriptions');
+  .catch((err) => {
+    console.log('There was a failure calling putNotificationsChannelSubscriptions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

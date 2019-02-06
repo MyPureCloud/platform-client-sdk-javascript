@@ -86,31 +86,29 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var calibrationId = "calibrationId_example"; // String | Calibration ID
-
-var calibratorId = "calibratorId_example"; // String | calibratorId
+let calibrationId = "calibrationId_example"; // String | Calibration ID
+let calibratorId = "calibratorId_example"; // String | calibratorId
 
 apiInstance.deleteQualityCalibration(calibrationId, calibratorId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`deleteQualityCalibration success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteQualityCalibration');
+  .catch((err) => {
+    console.log('There was a failure calling deleteQualityCalibration');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -144,34 +142,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var evaluationId = "evaluationId_example"; // String | evaluationId
-
-var opts = { 
+let conversationId = "conversationId_example"; // String | conversationId
+let evaluationId = "evaluationId_example"; // String | evaluationId
+let opts = { 
   'expand': "expand_example" // String | evaluatorId
 };
+
 apiInstance.deleteQualityConversationEvaluation(conversationId, evaluationId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`deleteQualityConversationEvaluation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteQualityConversationEvaluation');
+  .catch((err) => {
+    console.log('There was a failure calling deleteQualityConversationEvaluation');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -207,29 +203,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var formId = "formId_example"; // String | Form ID
+let formId = "formId_example"; // String | Form ID
 
 apiInstance.deleteQualityForm(formId)
-  .then(function() {
+  .then(() => {
     console.log('deleteQualityForm returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteQualityForm');
+  .catch((err) => {
+    console.log('There was a failure calling deleteQualityForm');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -263,29 +258,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var formId = "formId_example"; // String | Form ID
+let formId = "formId_example"; // String | Form ID
 
 apiInstance.deleteQualityFormsEvaluation(formId)
-  .then(function() {
+  .then(() => {
     console.log('deleteQualityFormsEvaluation returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteQualityFormsEvaluation');
+  .catch((err) => {
+    console.log('There was a failure calling deleteQualityFormsEvaluation');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -319,29 +313,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var formId = "formId_example"; // String | Form ID
+let formId = "formId_example"; // String | Form ID
 
 apiInstance.deleteQualityFormsSurvey(formId)
-  .then(function() {
+  .then(() => {
     console.log('deleteQualityFormsSurvey returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteQualityFormsSurvey');
+  .catch((err) => {
+    console.log('There was a failure calling deleteQualityFormsSurvey');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -374,29 +367,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var keywordSetId = "keywordSetId_example"; // String | KeywordSet ID
+let keywordSetId = "keywordSetId_example"; // String | KeywordSet ID
 
 apiInstance.deleteQualityKeywordset(keywordSetId)
-  .then(function() {
+  .then(() => {
     console.log('deleteQualityKeywordset returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteQualityKeywordset');
+  .catch((err) => {
+    console.log('There was a failure calling deleteQualityKeywordset');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -429,29 +421,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var ids = "ids_example"; // String | A comma-delimited list of valid KeywordSet ids
+let ids = "ids_example"; // String | A comma-delimited list of valid KeywordSet ids
 
 apiInstance.deleteQualityKeywordsets(ids)
-  .then(function() {
+  .then(() => {
     console.log('deleteQualityKeywordsets returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteQualityKeywordsets');
+  .catch((err) => {
+    console.log('There was a failure calling deleteQualityKeywordsets');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -484,18 +475,18 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
@@ -509,16 +500,16 @@ var opts = {
   'name': "name_example", // String | name
   'group': "group_example" // String | group id
 };
+
 apiInstance.getQualityAgentsActivity(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityAgentsActivity success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityAgentsActivity');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityAgentsActivity');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -562,33 +553,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var calibrationId = "calibrationId_example"; // String | Calibration ID
-
-var opts = { 
+let calibrationId = "calibrationId_example"; // String | Calibration ID
+let opts = { 
   'calibratorId': "calibratorId_example", // String | calibratorId
   'conversationId': "conversationId_example" // String | conversationId
 };
+
 apiInstance.getQualityCalibration(calibrationId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityCalibration success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityCalibration');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityCalibration');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -623,20 +613,19 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var calibratorId = "calibratorId_example"; // String | user id of calibrator
-
-var opts = { 
+let calibratorId = "calibratorId_example"; // String | user id of calibrator
+let opts = { 
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
@@ -647,16 +636,16 @@ var opts = {
   'startTime': new Date("2013-10-20T19:20:30+01:00"), // Date | Beginning of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
   'endTime': new Date("2013-10-20T19:20:30+01:00") // Date | end of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 };
+
 apiInstance.getQualityCalibrations(calibratorId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityCalibrations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityCalibrations');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityCalibrations');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -698,20 +687,19 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var conversationId = "conversationId_example"; // String | Conversation ID
-
-var opts = { 
+let conversationId = "conversationId_example"; // String | Conversation ID
+let opts = { 
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
@@ -721,16 +709,16 @@ var opts = {
   'recordingId': "recordingId_example", // String | id of the recording
   'entityType': "RECORDING" // String | entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording
 };
+
 apiInstance.getQualityConversationAudits(conversationId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityConversationAudits success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityConversationAudits');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityConversationAudits');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -771,34 +759,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var evaluationId = "evaluationId_example"; // String | evaluationId
-
-var opts = { 
+let conversationId = "conversationId_example"; // String | conversationId
+let evaluationId = "evaluationId_example"; // String | evaluationId
+let opts = { 
   'expand': "expand_example" // String | agent, evaluator, evaluationForm
 };
+
 apiInstance.getQualityConversationEvaluation(conversationId, evaluationId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityConversationEvaluation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityConversationEvaluation');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityConversationEvaluation');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -833,29 +819,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
+let conversationId = "conversationId_example"; // String | conversationId
 
 apiInstance.getQualityConversationSurveys(conversationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityConversationSurveys success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityConversationSurveys');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityConversationSurveys');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -888,18 +873,18 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
@@ -919,16 +904,16 @@ var opts = {
   'maximum': 56, // Number | maximum
   'sortOrder': "sortOrder_example" // String | sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'
 };
+
 apiInstance.getQualityEvaluationsQuery(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityEvaluationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityEvaluationsQuery');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityEvaluationsQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -978,18 +963,18 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
@@ -1002,16 +987,16 @@ var opts = {
   'permission': ["permission_example"], // [String] | permission strings
   'group': "group_example" // String | group id
 };
+
 apiInstance.getQualityEvaluatorsActivity(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityEvaluatorsActivity success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityEvaluatorsActivity');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityEvaluatorsActivity');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1055,29 +1040,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var formId = "formId_example"; // String | Form ID
+let formId = "formId_example"; // String | Form ID
 
 apiInstance.getQualityForm(formId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityForm success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityForm');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityForm');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1111,33 +1095,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var formId = "formId_example"; // String | Form ID
-
-var opts = { 
+let formId = "formId_example"; // String | Form ID
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getQualityFormVersions(formId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityFormVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityFormVersions');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityFormVersions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1173,18 +1156,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
@@ -1194,16 +1177,16 @@ var opts = {
   'name': "name_example", // String | Name
   'sortOrder': "sortOrder_example" // String | Order to sort results, either asc or desc
 };
+
 apiInstance.getQualityForms(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityForms success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityForms');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityForms');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1244,29 +1227,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var formId = "formId_example"; // String | Form ID
+let formId = "formId_example"; // String | Form ID
 
 apiInstance.getQualityFormsEvaluation(formId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityFormsEvaluation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityFormsEvaluation');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityFormsEvaluation');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1300,33 +1282,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var formId = "formId_example"; // String | Form ID
-
-var opts = { 
+let formId = "formId_example"; // String | Form ID
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getQualityFormsEvaluationVersions(formId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityFormsEvaluationVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityFormsEvaluationVersions');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityFormsEvaluationVersions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1362,18 +1343,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
@@ -1383,16 +1364,16 @@ var opts = {
   'name': "name_example", // String | Name
   'sortOrder': "sortOrder_example" // String | Order to sort results, either asc or desc
 };
+
 apiInstance.getQualityFormsEvaluations(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityFormsEvaluations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityFormsEvaluations');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityFormsEvaluations');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1433,29 +1414,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var formId = "formId_example"; // String | Form ID
+let formId = "formId_example"; // String | Form ID
 
 apiInstance.getQualityFormsSurvey(formId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityFormsSurvey success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityFormsSurvey');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityFormsSurvey');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1489,33 +1469,32 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var formId = "formId_example"; // String | Form ID
-
-var opts = { 
+let formId = "formId_example"; // String | Form ID
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1 // Number | Page number
 };
+
 apiInstance.getQualityFormsSurveyVersions(formId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityFormsSurveyVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityFormsSurveyVersions');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityFormsSurveyVersions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1551,18 +1530,18 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
@@ -1572,16 +1551,16 @@ var opts = {
   'name': "name_example", // String | Name
   'sortOrder': "sortOrder_example" // String | Order to sort results, either asc or desc
 };
+
 apiInstance.getQualityFormsSurveys(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityFormsSurveys success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityFormsSurveys');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityFormsSurveys');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1622,29 +1601,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var id = ["id_example"]; // [String] | A comma-delimited list of valid survey form ids
+let id = ["id_example"]; // [String] | A comma-delimited list of valid survey form ids
 
 apiInstance.getQualityFormsSurveysBulk(id)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityFormsSurveysBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityFormsSurveysBulk');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityFormsSurveysBulk');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1678,32 +1656,31 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var contextId = ["contextId_example"]; // [String] | A comma-delimited list of valid survey form context ids
-
-var opts = { 
+let contextId = ["contextId_example"]; // [String] | A comma-delimited list of valid survey form context ids
+let opts = { 
   'published': true // Boolean | If true, the latest published version will be included. If false, only the unpublished version will be included.
 };
+
 apiInstance.getQualityFormsSurveysBulkContexts(contextId, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityFormsSurveysBulkContexts success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityFormsSurveysBulkContexts');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityFormsSurveysBulkContexts');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1737,29 +1714,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var keywordSetId = "keywordSetId_example"; // String | KeywordSet ID
+let keywordSetId = "keywordSetId_example"; // String | KeywordSet ID
 
 apiInstance.getQualityKeywordset(keywordSetId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityKeywordset success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityKeywordset');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityKeywordset');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1792,18 +1768,18 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
@@ -1815,16 +1791,16 @@ var opts = {
   'agentId': "agentId_example", // String | the agent id - used for filtering results in searches.
   'operator': "operator_example" // String | If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters.
 };
+
 apiInstance.getQualityKeywordsets(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityKeywordsets success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityKeywordsets');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityKeywordsets');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1867,29 +1843,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var formId = "formId_example"; // String | Form ID
+let formId = "formId_example"; // String | Form ID
 
 apiInstance.getQualityPublishedform(formId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityPublishedform success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityPublishedform');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityPublishedform');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1923,33 +1898,33 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'name': "name_example", // String | Name
   'onlyLatestPerContext': false // Boolean | onlyLatestPerContext
 };
+
 apiInstance.getQualityPublishedforms(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityPublishedforms success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityPublishedforms');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityPublishedforms');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1986,29 +1961,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var formId = "formId_example"; // String | Form ID
+let formId = "formId_example"; // String | Form ID
 
 apiInstance.getQualityPublishedformsEvaluation(formId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityPublishedformsEvaluation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityPublishedformsEvaluation');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityPublishedformsEvaluation');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2042,33 +2016,33 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'name': "name_example", // String | Name
   'onlyLatestPerContext': false // Boolean | onlyLatestPerContext
 };
+
 apiInstance.getQualityPublishedformsEvaluations(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityPublishedformsEvaluations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityPublishedformsEvaluations');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityPublishedformsEvaluations');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2105,29 +2079,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var formId = "formId_example"; // String | Form ID
+let formId = "formId_example"; // String | Form ID
 
 apiInstance.getQualityPublishedformsSurvey(formId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityPublishedformsSurvey success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityPublishedformsSurvey');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityPublishedformsSurvey');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2161,33 +2134,33 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'name': "name_example", // String | Name
   'onlyLatestEnabledPerContext': false // Boolean | onlyLatestEnabledPerContext
 };
+
 apiInstance.getQualityPublishedformsSurveys(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualityPublishedformsSurveys success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualityPublishedformsSurveys');
+  .catch((err) => {
+    console.log('There was a failure calling getQualityPublishedformsSurveys');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2223,29 +2196,28 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var surveyId = "surveyId_example"; // String | surveyId
+let surveyId = "surveyId_example"; // String | surveyId
 
 apiInstance.getQualitySurvey(surveyId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualitySurvey success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualitySurvey');
+  .catch((err) => {
+    console.log('There was a failure calling getQualitySurvey');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2278,27 +2250,27 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var opts = { 
+let opts = { 
   'customerSurveyUrl': "customerSurveyUrl_example" // String | customerSurveyUrl
 };
+
 apiInstance.getQualitySurveysScorable(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getQualitySurveysScorable success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getQualitySurveysScorable');
+  .catch((err) => {
+    console.log('There was a failure calling getQualitySurveysScorable');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2331,22 +2303,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copySurveyFormExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#SurveyFormExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#SurveyFormExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-SurveyForm <a style="cursor: pointer" onclick="copySurveyFormExample()">Copy</a>
+SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
 
-<div id="SurveyFormExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="SurveyFormExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -2540,37 +2512,36 @@ SurveyForm <a style="cursor: pointer" onclick="copySurveyFormExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var formId = "formId_example"; // String | Form ID
-
-var body = {}; // Object | Survey form
+let formId = "formId_example"; // String | Form ID
+let body = {}; // Object | Survey form
 
 apiInstance.patchQualityFormsSurvey(formId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchQualityFormsSurvey success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchQualityFormsSurvey');
+  .catch((err) => {
+    console.log('There was a failure calling patchQualityFormsSurvey');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2604,22 +2575,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyAggregationQueryExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#AggregationQueryExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#AggregationQueryExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample()">Copy</a>
+AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy</a>
 
-<div id="AggregationQueryExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="AggregationQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "interval": String, 
   "granularity": String, 
@@ -2673,35 +2644,35 @@ AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample
     },  
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var body = {}; // Object | query
+let body = {}; // Object | query
 
 apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsEvaluationsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsEvaluationsAggregatesQuery');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsEvaluationsAggregatesQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2734,22 +2705,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyAggregationQueryExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#AggregationQueryExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#AggregationQueryExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample()">Copy</a>
+AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy</a>
 
-<div id="AggregationQueryExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="AggregationQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "interval": String, 
   "granularity": String, 
@@ -2803,35 +2774,35 @@ AggregationQuery <a style="cursor: pointer" onclick="copyAggregationQueryExample
     },  
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var body = {}; // Object | query
+let body = {}; // Object | query
 
 apiInstance.postAnalyticsSurveysAggregatesQuery(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postAnalyticsSurveysAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postAnalyticsSurveysAggregatesQuery');
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsSurveysAggregatesQuery');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -2863,22 +2834,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCalibrationCreateExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CalibrationCreateExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CalibrationCreateExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExample()">Copy</a>
+CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Copy</a>
 
-<div id="CalibrationCreateExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CalibrationCreateExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -28231,38 +28202,38 @@ CalibrationCreate <a style="cursor: pointer" onclick="copyCalibrationCreateExamp
   "expertEvaluator": User, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var body = {}; // Object | calibration
-
-var opts = { 
+let body = {}; // Object | calibration
+let opts = { 
   'expand': "expand_example" // String | calibratorId
 };
+
 apiInstance.postQualityCalibrations(body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postQualityCalibrations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postQualityCalibrations');
+  .catch((err) => {
+    console.log('There was a failure calling postQualityCalibrations');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -28295,22 +28266,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEvaluationExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EvaluationExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EvaluationExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
+Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
 
-<div id="EvaluationExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EvaluationExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -47050,40 +47021,39 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
   "isScoringIndex": Boolean, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var body = {}; // Object | evaluation
-
-var opts = { 
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | evaluation
+let opts = { 
   'expand': "expand_example" // String | evaluatorId
 };
+
 apiInstance.postQualityConversationEvaluations(conversationId, body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postQualityConversationEvaluations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postQualityConversationEvaluations');
+  .catch((err) => {
+    console.log('There was a failure calling postQualityConversationEvaluations');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -47117,22 +47087,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEvaluationFormAndScoringSetExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EvaluationFormAndScoringSetExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EvaluationFormAndScoringSetExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-EvaluationFormAndScoringSet <a style="cursor: pointer" onclick="copyEvaluationFormAndScoringSetExample()">Copy</a>
+EvaluationFormAndScoringSet <a href="#" onclick="return copyEvaluationFormAndScoringSetExample()">Copy</a>
 
-<div id="EvaluationFormAndScoringSetExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EvaluationFormAndScoringSetExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "evaluationForm": { 
     "id": String, 
@@ -47321,35 +47291,35 @@ EvaluationFormAndScoringSet <a style="cursor: pointer" onclick="copyEvaluationFo
     "agentComments": String, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var body = {}; // Object | evaluationAndScoringSet
+let body = {}; // Object | evaluationAndScoringSet
 
 apiInstance.postQualityEvaluationsScoring(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postQualityEvaluationsScoring success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postQualityEvaluationsScoring');
+  .catch((err) => {
+    console.log('There was a failure calling postQualityEvaluationsScoring');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -47382,22 +47352,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEvaluationFormExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EvaluationFormExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EvaluationFormExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-EvaluationForm <a style="cursor: pointer" onclick="copyEvaluationFormExample()">Copy</a>
+EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
 
-<div id="EvaluationFormExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EvaluationFormExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -47586,35 +47556,35 @@ EvaluationForm <a style="cursor: pointer" onclick="copyEvaluationFormExample()">
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var body = {}; // Object | Evaluation form
+let body = {}; // Object | Evaluation form
 
 apiInstance.postQualityForms(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postQualityForms success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postQualityForms');
+  .catch((err) => {
+    console.log('There was a failure calling postQualityForms');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -47647,22 +47617,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEvaluationFormExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EvaluationFormExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EvaluationFormExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-EvaluationForm <a style="cursor: pointer" onclick="copyEvaluationFormExample()">Copy</a>
+EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
 
-<div id="EvaluationFormExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EvaluationFormExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -47851,35 +47821,35 @@ EvaluationForm <a style="cursor: pointer" onclick="copyEvaluationFormExample()">
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var body = {}; // Object | Evaluation form
+let body = {}; // Object | Evaluation form
 
 apiInstance.postQualityFormsEvaluations(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postQualityFormsEvaluations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postQualityFormsEvaluations');
+  .catch((err) => {
+    console.log('There was a failure calling postQualityFormsEvaluations');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -47912,22 +47882,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copySurveyFormExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#SurveyFormExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#SurveyFormExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-SurveyForm <a style="cursor: pointer" onclick="copySurveyFormExample()">Copy</a>
+SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
 
-<div id="SurveyFormExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="SurveyFormExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -48121,35 +48091,35 @@ SurveyForm <a style="cursor: pointer" onclick="copySurveyFormExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var body = {}; // Object | Survey form
+let body = {}; // Object | Survey form
 
 apiInstance.postQualityFormsSurveys(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postQualityFormsSurveys success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postQualityFormsSurveys');
+  .catch((err) => {
+    console.log('There was a failure calling postQualityFormsSurveys');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -48181,22 +48151,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyKeywordSetExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#KeywordSetExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#KeywordSetExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-KeywordSet <a style="cursor: pointer" onclick="copyKeywordSetExample()">Copy</a>
+KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
 
-<div id="KeywordSetExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="KeywordSetExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -48743,38 +48713,38 @@ KeywordSet <a style="cursor: pointer" onclick="copyKeywordSetExample()">Copy</a>
   "participantPurposes": [String], 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var body = {}; // Object | keywordSet
-
-var opts = { 
+let body = {}; // Object | keywordSet
+let opts = { 
   'expand': "expand_example" // String | queueId
 };
+
 apiInstance.postQualityKeywordsets(body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postQualityKeywordsets success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postQualityKeywordsets');
+  .catch((err) => {
+    console.log('There was a failure calling postQualityKeywordsets');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -48808,55 +48778,55 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyPublishFormExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#PublishFormExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PublishFormExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-PublishForm <a style="cursor: pointer" onclick="copyPublishFormExample()">Copy</a>
+PublishForm <a href="#" onclick="return copyPublishFormExample()">Copy</a>
 
-<div id="PublishFormExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="PublishFormExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "published": Boolean, 
   "id": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var body = {}; // Object | Publish request containing id of form to publish
+let body = {}; // Object | Publish request containing id of form to publish
 
 apiInstance.postQualityPublishedforms(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postQualityPublishedforms success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postQualityPublishedforms');
+  .catch((err) => {
+    console.log('There was a failure calling postQualityPublishedforms');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -48889,55 +48859,55 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyPublishFormExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#PublishFormExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PublishFormExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-PublishForm <a style="cursor: pointer" onclick="copyPublishFormExample()">Copy</a>
+PublishForm <a href="#" onclick="return copyPublishFormExample()">Copy</a>
 
-<div id="PublishFormExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="PublishFormExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "published": Boolean, 
   "id": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var body = {}; // Object | Publish request containing id of form to publish
+let body = {}; // Object | Publish request containing id of form to publish
 
 apiInstance.postQualityPublishedformsEvaluations(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postQualityPublishedformsEvaluations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postQualityPublishedformsEvaluations');
+  .catch((err) => {
+    console.log('There was a failure calling postQualityPublishedformsEvaluations');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -48970,55 +48940,55 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyPublishFormExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#PublishFormExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PublishFormExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-PublishForm <a style="cursor: pointer" onclick="copyPublishFormExample()">Copy</a>
+PublishForm <a href="#" onclick="return copyPublishFormExample()">Copy</a>
 
-<div id="PublishFormExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="PublishFormExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "published": Boolean, 
   "id": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var body = {}; // Object | Survey form
+let body = {}; // Object | Survey form
 
 apiInstance.postQualityPublishedformsSurveys(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postQualityPublishedformsSurveys success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postQualityPublishedformsSurveys');
+  .catch((err) => {
+    console.log('There was a failure calling postQualityPublishedformsSurveys');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -49050,22 +49020,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyKeywordSetExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#KeywordSetExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#KeywordSetExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-KeywordSet <a style="cursor: pointer" onclick="copyKeywordSetExample()">Copy</a>
+KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
 
-<div id="KeywordSetExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="KeywordSetExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -49612,36 +49582,37 @@ KeywordSet <a style="cursor: pointer" onclick="copyKeywordSetExample()">Copy</a>
   "participantPurposes": [String], 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var opts = { 
+let opts = { 
   'body': {} // Object | Keyword Set
 };
+
 apiInstance.postQualitySpotability(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postQualitySpotability success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postQualitySpotability');
+  .catch((err) => {
+    console.log('There was a failure calling postQualitySpotability');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -49673,22 +49644,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copySurveyFormAndScoringSetExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#SurveyFormAndScoringSetExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#SurveyFormAndScoringSetExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-SurveyFormAndScoringSet <a style="cursor: pointer" onclick="copySurveyFormAndScoringSetExample()">Copy</a>
+SurveyFormAndScoringSet <a href="#" onclick="return copySurveyFormAndScoringSetExample()">Copy</a>
 
-<div id="SurveyFormAndScoringSetExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="SurveyFormAndScoringSetExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "surveyForm": { 
     "id": String, 
@@ -49878,35 +49849,35 @@ SurveyFormAndScoringSet <a style="cursor: pointer" onclick="copySurveyFormAndSco
     },  
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var body = {}; // Object | surveyAndScoringSet
+let body = {}; // Object | surveyAndScoringSet
 
 apiInstance.postQualitySurveysScoring(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postQualitySurveysScoring success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postQualitySurveysScoring');
+  .catch((err) => {
+    console.log('There was a failure calling postQualitySurveysScoring');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -49938,22 +49909,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyCalibrationExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#CalibrationExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CalibrationExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</a>
+Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
 
-<div id="CalibrationExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="CalibrationExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -75306,37 +75277,36 @@ Calibration <a style="cursor: pointer" onclick="copyCalibrationExample()">Copy</
   "expertEvaluator": User, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var calibrationId = "calibrationId_example"; // String | Calibration ID
-
-var body = {}; // Object | Calibration
+let calibrationId = "calibrationId_example"; // String | Calibration ID
+let body = {}; // Object | Calibration
 
 apiInstance.putQualityCalibration(calibrationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putQualityCalibration success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putQualityCalibration');
+  .catch((err) => {
+    console.log('There was a failure calling putQualityCalibration');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -75369,22 +75339,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEvaluationExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EvaluationExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EvaluationExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
+Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
 
-<div id="EvaluationExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EvaluationExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -94124,42 +94094,40 @@ Evaluation <a style="cursor: pointer" onclick="copyEvaluationExample()">Copy</a>
   "isScoringIndex": Boolean, 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var conversationId = "conversationId_example"; // String | conversationId
-
-var evaluationId = "evaluationId_example"; // String | evaluationId
-
-var body = {}; // Object | evaluation
-
-var opts = { 
+let conversationId = "conversationId_example"; // String | conversationId
+let evaluationId = "evaluationId_example"; // String | evaluationId
+let body = {}; // Object | evaluation
+let opts = { 
   'expand': "expand_example" // String | evaluatorId
 };
+
 apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putQualityConversationEvaluation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putQualityConversationEvaluation');
+  .catch((err) => {
+    console.log('There was a failure calling putQualityConversationEvaluation');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -94195,22 +94163,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEvaluationFormExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EvaluationFormExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EvaluationFormExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-EvaluationForm <a style="cursor: pointer" onclick="copyEvaluationFormExample()">Copy</a>
+EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
 
-<div id="EvaluationFormExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EvaluationFormExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -94399,37 +94367,36 @@ EvaluationForm <a style="cursor: pointer" onclick="copyEvaluationFormExample()">
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var formId = "formId_example"; // String | Form ID
-
-var body = {}; // Object | Evaluation form
+let formId = "formId_example"; // String | Form ID
+let body = {}; // Object | Evaluation form
 
 apiInstance.putQualityForm(formId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putQualityForm success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putQualityForm');
+  .catch((err) => {
+    console.log('There was a failure calling putQualityForm');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -94463,22 +94430,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyEvaluationFormExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#EvaluationFormExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EvaluationFormExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-EvaluationForm <a style="cursor: pointer" onclick="copyEvaluationFormExample()">Copy</a>
+EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
 
-<div id="EvaluationFormExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="EvaluationFormExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -94667,37 +94634,36 @@ EvaluationForm <a style="cursor: pointer" onclick="copyEvaluationFormExample()">
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var formId = "formId_example"; // String | Form ID
-
-var body = {}; // Object | Evaluation form
+let formId = "formId_example"; // String | Form ID
+let body = {}; // Object | Evaluation form
 
 apiInstance.putQualityFormsEvaluation(formId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putQualityFormsEvaluation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putQualityFormsEvaluation');
+  .catch((err) => {
+    console.log('There was a failure calling putQualityFormsEvaluation');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -94731,22 +94697,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copySurveyFormExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#SurveyFormExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#SurveyFormExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-SurveyForm <a style="cursor: pointer" onclick="copySurveyFormExample()">Copy</a>
+SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
 
-<div id="SurveyFormExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="SurveyFormExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -94940,37 +94906,36 @@ SurveyForm <a style="cursor: pointer" onclick="copySurveyFormExample()">Copy</a>
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var formId = "formId_example"; // String | Form ID
-
-var body = {}; // Object | Survey form
+let formId = "formId_example"; // String | Form ID
+let body = {}; // Object | Survey form
 
 apiInstance.putQualityFormsSurvey(formId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putQualityFormsSurvey success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putQualityFormsSurvey');
+  .catch((err) => {
+    console.log('There was a failure calling putQualityFormsSurvey');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -95003,22 +94968,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyKeywordSetExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#KeywordSetExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#KeywordSetExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-KeywordSet <a style="cursor: pointer" onclick="copyKeywordSetExample()">Copy</a>
+KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
 
-<div id="KeywordSetExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="KeywordSetExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -95565,37 +95530,36 @@ KeywordSet <a style="cursor: pointer" onclick="copyKeywordSetExample()">Copy</a>
   "participantPurposes": [String], 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var keywordSetId = "keywordSetId_example"; // String | KeywordSet ID
-
-var body = {}; // Object | keywordSet
+let keywordSetId = "keywordSetId_example"; // String | KeywordSet ID
+let body = {}; // Object | keywordSet
 
 apiInstance.putQualityKeywordset(keywordSetId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putQualityKeywordset success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putQualityKeywordset');
+  .catch((err) => {
+    console.log('There was a failure calling putQualityKeywordset');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -95628,22 +95592,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyScorableSurveyExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#ScorableSurveyExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ScorableSurveyExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-ScorableSurvey <a style="cursor: pointer" onclick="copyScorableSurveyExample()">Copy</a>
+ScorableSurvey <a href="#" onclick="return copyScorableSurveyExample()">Copy</a>
 
-<div id="ScorableSurveyExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="ScorableSurveyExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -95837,35 +95801,35 @@ ScorableSurvey <a style="cursor: pointer" onclick="copyScorableSurveyExample()">
   },  
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-var apiInstance = new platformClient.QualityApi();
+let apiInstance = new platformClient.QualityApi();
 
-var body = {}; // Object | survey
-
-var opts = { 
+let body = {}; // Object | survey
+let opts = { 
   'customerSurveyUrl': "customerSurveyUrl_example" // String | customerSurveyUrl
 };
+
 apiInstance.putQualitySurveysScorable(body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`putQualitySurveysScorable success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling putQualitySurveysScorable');
+  .catch((err) => {
+    console.log('There was a failure calling putQualitySurveysScorable');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

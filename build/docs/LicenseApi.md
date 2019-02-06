@@ -39,29 +39,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LicenseApi();
+let apiInstance = new platformClient.LicenseApi();
 
-var licenseId = "licenseId_example"; // String | ID
+let licenseId = "licenseId_example"; // String | ID
 
 apiInstance.getLicenseDefinition(licenseId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getLicenseDefinition success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getLicenseDefinition');
+  .catch((err) => {
+    console.log('There was a failure calling getLicenseDefinition');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -97,26 +96,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LicenseApi();
+let apiInstance = new platformClient.LicenseApi();
+
 apiInstance.getLicenseDefinitions()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getLicenseDefinitions success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getLicenseDefinitions');
+  .catch((err) => {
+    console.log('There was a failure calling getLicenseDefinitions');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -149,26 +148,26 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LicenseApi();
+let apiInstance = new platformClient.LicenseApi();
+
 apiInstance.getLicenseOrganization()
-  .then(function(data) {
+  .then((data) => {
     console.log(`getLicenseOrganization success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getLicenseOrganization');
+  .catch((err) => {
+    console.log('There was a failure calling getLicenseOrganization');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -201,29 +200,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LicenseApi();
+let apiInstance = new platformClient.LicenseApi();
 
-var featureName = "featureName_example"; // String | featureName
+let featureName = "featureName_example"; // String | featureName
 
 apiInstance.getLicenseToggle(featureName)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getLicenseToggle success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getLicenseToggle');
+  .catch((err) => {
+    console.log('There was a failure calling getLicenseToggle');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -259,29 +257,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LicenseApi();
+let apiInstance = new platformClient.LicenseApi();
 
-var userId = "userId_example"; // String | ID
+let userId = "userId_example"; // String | ID
 
 apiInstance.getLicenseUser(userId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getLicenseUser success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getLicenseUser');
+  .catch((err) => {
+    console.log('There was a failure calling getLicenseUser');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -316,22 +313,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyLicenseBatchAssignmentRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#LicenseBatchAssignmentRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#LicenseBatchAssignmentRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-LicenseBatchAssignmentRequest <a style="cursor: pointer" onclick="copyLicenseBatchAssignmentRequestExample()">Copy</a>
+LicenseBatchAssignmentRequest <a href="#" onclick="return copyLicenseBatchAssignmentRequestExample()">Copy</a>
 
-<div id="LicenseBatchAssignmentRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="LicenseBatchAssignmentRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "assignments": { 
     "licenseId": String, 
@@ -339,36 +336,37 @@ LicenseBatchAssignmentRequest <a style="cursor: pointer" onclick="copyLicenseBat
     "userIdsRemove": [String], 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LicenseApi();
+let apiInstance = new platformClient.LicenseApi();
 
-var opts = { 
+let opts = { 
   'body': {} // Object | The license assignments to update.
 };
+
 apiInstance.postLicenseOrganization(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postLicenseOrganization success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postLicenseOrganization');
+  .catch((err) => {
+    console.log('There was a failure calling postLicenseOrganization');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -404,29 +402,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LicenseApi();
+let apiInstance = new platformClient.LicenseApi();
 
-var featureName = "featureName_example"; // String | featureName
+let featureName = "featureName_example"; // String | featureName
 
 apiInstance.postLicenseToggle(featureName)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postLicenseToggle success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postLicenseToggle');
+  .catch((err) => {
+    console.log('There was a failure calling postLicenseToggle');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -459,30 +456,30 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LicenseApi();
+let apiInstance = new platformClient.LicenseApi();
 
-var opts = { 
+let opts = { 
   'body': [{}] // Object | The user IDs to fetch.
 };
+
 apiInstance.postLicenseUsers(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postLicenseUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postLicenseUsers');
+  .catch((err) => {
+    console.log('There was a failure calling postLicenseUsers');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

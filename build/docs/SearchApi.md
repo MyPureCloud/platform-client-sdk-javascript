@@ -44,26 +44,25 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-var apiInstance = new platformClient.SearchApi();
+let apiInstance = new platformClient.SearchApi();
 
-var q64 = "q64_example"; // String | q64
+let q64 = "q64_example"; // String | q64
 
 apiInstance.getDocumentationGknSearch(q64)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getDocumentationGknSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getDocumentationGknSearch');
+  .catch((err) => {
+    console.log('There was a failure calling getDocumentationGknSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -96,26 +95,25 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-var apiInstance = new platformClient.SearchApi();
+let apiInstance = new platformClient.SearchApi();
 
-var q64 = "q64_example"; // String | q64
+let q64 = "q64_example"; // String | q64
 
 apiInstance.getDocumentationSearch(q64)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getDocumentationSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getDocumentationSearch');
+  .catch((err) => {
+    console.log('There was a failure calling getDocumentationSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -148,32 +146,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.SearchApi();
+let apiInstance = new platformClient.SearchApi();
 
-var q64 = "q64_example"; // String | q64
-
-var opts = { 
+let q64 = "q64_example"; // String | q64
+let opts = { 
   'expand': ["expand_example"] // [String] | expand
 };
+
 apiInstance.getGroupsSearch(q64, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getGroupsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getGroupsSearch');
+  .catch((err) => {
+    console.log('There was a failure calling getGroupsSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -207,32 +204,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.SearchApi();
+let apiInstance = new platformClient.SearchApi();
 
-var q64 = "q64_example"; // String | q64
-
-var opts = { 
+let q64 = "q64_example"; // String | q64
+let opts = { 
   'expand': ["expand_example"] // [String] | expand
 };
+
 apiInstance.getLocationsSearch(q64, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getLocationsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getLocationsSearch');
+  .catch((err) => {
+    console.log('There was a failure calling getLocationsSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -266,33 +262,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.SearchApi();
+let apiInstance = new platformClient.SearchApi();
 
-var q64 = "q64_example"; // String | q64
-
-var opts = { 
+let q64 = "q64_example"; // String | q64
+let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand
   'profile': true // Boolean | profile
 };
+
 apiInstance.getSearch(q64, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getSearch');
+  .catch((err) => {
+    console.log('There was a failure calling getSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -327,33 +322,32 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.SearchApi();
+let apiInstance = new platformClient.SearchApi();
 
-var q64 = "q64_example"; // String | q64
-
-var opts = { 
+let q64 = "q64_example"; // String | q64
+let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand
   'profile': true // Boolean | profile
 };
+
 apiInstance.getSearchSuggest(q64, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getSearchSuggest success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getSearchSuggest');
+  .catch((err) => {
+    console.log('There was a failure calling getSearchSuggest');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -388,32 +382,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.SearchApi();
+let apiInstance = new platformClient.SearchApi();
 
-var q64 = "q64_example"; // String | q64
-
-var opts = { 
+let q64 = "q64_example"; // String | q64
+let opts = { 
   'expand': ["expand_example"] // [String] | expand
 };
+
 apiInstance.getUsersSearch(q64, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getUsersSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getUsersSearch');
+  .catch((err) => {
+    console.log('There was a failure calling getUsersSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -447,32 +440,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.SearchApi();
+let apiInstance = new platformClient.SearchApi();
 
-var q64 = "q64_example"; // String | q64
-
-var opts = { 
+let q64 = "q64_example"; // String | q64
+let opts = { 
   'expand': ["expand_example"] // [String] | expand
 };
+
 apiInstance.getVoicemailSearch(q64, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getVoicemailSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getVoicemailSearch');
+  .catch((err) => {
+    console.log('There was a failure calling getVoicemailSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -505,22 +497,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyGKNDocumentationSearchRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#GKNDocumentationSearchRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#GKNDocumentationSearchRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-GKNDocumentationSearchRequest <a style="cursor: pointer" onclick="copyGKNDocumentationSearchRequestExample()">Copy</a>
+GKNDocumentationSearchRequest <a href="#" onclick="return copyGKNDocumentationSearchRequestExample()">Copy</a>
 
-<div id="GKNDocumentationSearchRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="GKNDocumentationSearchRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "sortOrder": String, 
   "sortBy": String, 
@@ -595,32 +587,32 @@ GKNDocumentationSearchRequest <a style="cursor: pointer" onclick="copyGKNDocumen
     "type": String, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-var apiInstance = new platformClient.SearchApi();
+let apiInstance = new platformClient.SearchApi();
 
-var body = {}; // Object | Search request options
+let body = {}; // Object | Search request options
 
 apiInstance.postDocumentationGknSearch(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postDocumentationGknSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postDocumentationGknSearch');
+  .catch((err) => {
+    console.log('There was a failure calling postDocumentationGknSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -652,22 +644,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyDocumentationSearchRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#DocumentationSearchRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DocumentationSearchRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-DocumentationSearchRequest <a style="cursor: pointer" onclick="copyDocumentationSearchRequestExample()">Copy</a>
+DocumentationSearchRequest <a href="#" onclick="return copyDocumentationSearchRequestExample()">Copy</a>
 
-<div id="DocumentationSearchRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="DocumentationSearchRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "sortOrder": String, 
   "sortBy": String, 
@@ -742,32 +734,32 @@ DocumentationSearchRequest <a style="cursor: pointer" onclick="copyDocumentation
     "type": String, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-var apiInstance = new platformClient.SearchApi();
+let apiInstance = new platformClient.SearchApi();
 
-var body = {}; // Object | Search request options
+let body = {}; // Object | Search request options
 
 apiInstance.postDocumentationSearch(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postDocumentationSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postDocumentationSearch');
+  .catch((err) => {
+    console.log('There was a failure calling postDocumentationSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -799,22 +791,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyGroupSearchRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#GroupSearchRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#GroupSearchRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-GroupSearchRequest <a style="cursor: pointer" onclick="copyGroupSearchRequestExample()">Copy</a>
+GroupSearchRequest <a href="#" onclick="return copyGroupSearchRequestExample()">Copy</a>
 
-<div id="GroupSearchRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="GroupSearchRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "sortOrder": String, 
   "sortBy": String, 
@@ -889,35 +881,35 @@ GroupSearchRequest <a style="cursor: pointer" onclick="copyGroupSearchRequestExa
     "type": String, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.SearchApi();
+let apiInstance = new platformClient.SearchApi();
 
-var body = {}; // Object | Search request options
+let body = {}; // Object | Search request options
 
 apiInstance.postGroupsSearch(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postGroupsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postGroupsSearch');
+  .catch((err) => {
+    console.log('There was a failure calling postGroupsSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -949,22 +941,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyLocationSearchRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#LocationSearchRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#LocationSearchRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-LocationSearchRequest <a style="cursor: pointer" onclick="copyLocationSearchRequestExample()">Copy</a>
+LocationSearchRequest <a href="#" onclick="return copyLocationSearchRequestExample()">Copy</a>
 
-<div id="LocationSearchRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="LocationSearchRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "sortOrder": String, 
   "sortBy": String, 
@@ -1039,35 +1031,35 @@ LocationSearchRequest <a style="cursor: pointer" onclick="copyLocationSearchRequ
     "type": String, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.SearchApi();
+let apiInstance = new platformClient.SearchApi();
 
-var body = {}; // Object | Search request options
+let body = {}; // Object | Search request options
 
 apiInstance.postLocationsSearch(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postLocationsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postLocationsSearch');
+  .catch((err) => {
+    console.log('There was a failure calling postLocationsSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1099,22 +1091,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copySearchRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#SearchRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#SearchRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-SearchRequest <a style="cursor: pointer" onclick="copySearchRequestExample()">Copy</a>
+SearchRequest <a href="#" onclick="return copySearchRequestExample()">Copy</a>
 
-<div id="SearchRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="SearchRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "sortOrder": String, 
   "sortBy": String, 
@@ -1200,38 +1192,38 @@ SearchRequest <a style="cursor: pointer" onclick="copySearchRequestExample()">Co
     "order": [String], 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.SearchApi();
+let apiInstance = new platformClient.SearchApi();
 
-var body = {}; // Object | Search request options
-
-var opts = { 
+let body = {}; // Object | Search request options
+let opts = { 
   'profile': true // Boolean | profile
 };
+
 apiInstance.postSearch(body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postSearch');
+  .catch((err) => {
+    console.log('There was a failure calling postSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1264,22 +1256,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copySuggestSearchRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#SuggestSearchRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#SuggestSearchRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-SuggestSearchRequest <a style="cursor: pointer" onclick="copySuggestSearchRequestExample()">Copy</a>
+SuggestSearchRequest <a href="#" onclick="return copySuggestSearchRequestExample()">Copy</a>
 
-<div id="SuggestSearchRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="SuggestSearchRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "expand": [String], 
   "types": [String], 
@@ -1341,38 +1333,38 @@ SuggestSearchRequest <a style="cursor: pointer" onclick="copySuggestSearchReques
     },  
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.SearchApi();
+let apiInstance = new platformClient.SearchApi();
 
-var body = {}; // Object | Search request options
-
-var opts = { 
+let body = {}; // Object | Search request options
+let opts = { 
   'profile': true // Boolean | profile
 };
+
 apiInstance.postSearchSuggest(body, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postSearchSuggest success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postSearchSuggest');
+  .catch((err) => {
+    console.log('There was a failure calling postSearchSuggest');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1405,22 +1397,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyUserSearchRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#UserSearchRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UserSearchRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-UserSearchRequest <a style="cursor: pointer" onclick="copyUserSearchRequestExample()">Copy</a>
+UserSearchRequest <a href="#" onclick="return copyUserSearchRequestExample()">Copy</a>
 
-<div id="UserSearchRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="UserSearchRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "sortOrder": String, 
   "sortBy": String, 
@@ -1496,35 +1488,35 @@ UserSearchRequest <a style="cursor: pointer" onclick="copyUserSearchRequestExamp
     "type": String, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.SearchApi();
+let apiInstance = new platformClient.SearchApi();
 
-var body = {}; // Object | Search request options
+let body = {}; // Object | Search request options
 
 apiInstance.postUsersSearch(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postUsersSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postUsersSearch');
+  .catch((err) => {
+    console.log('There was a failure calling postUsersSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -1556,22 +1548,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyVoicemailSearchRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#VoicemailSearchRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#VoicemailSearchRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-VoicemailSearchRequest <a style="cursor: pointer" onclick="copyVoicemailSearchRequestExample()">Copy</a>
+VoicemailSearchRequest <a href="#" onclick="return copyVoicemailSearchRequestExample()">Copy</a>
 
-<div id="VoicemailSearchRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="VoicemailSearchRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "sortOrder": String, 
   "sortBy": String, 
@@ -1647,35 +1639,35 @@ VoicemailSearchRequest <a style="cursor: pointer" onclick="copyVoicemailSearchRe
     "type": String, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.SearchApi();
+let apiInstance = new platformClient.SearchApi();
 
-var body = {}; // Object | Search request options
+let body = {}; // Object | Search request options
 
 apiInstance.postVoicemailSearch(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postVoicemailSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postVoicemailSearch');
+  .catch((err) => {
+    console.log('There was a failure calling postVoicemailSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 

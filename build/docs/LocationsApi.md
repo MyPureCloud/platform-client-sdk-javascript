@@ -36,29 +36,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LocationsApi();
+let apiInstance = new platformClient.LocationsApi();
 
-var locationId = "locationId_example"; // String | Location ID
+let locationId = "locationId_example"; // String | Location ID
 
 apiInstance.deleteLocation(locationId)
-  .then(function() {
+  .then(() => {
     console.log('deleteLocation returned successfully.');
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling deleteLocation');
+  .catch((err) => {
+    console.log('There was a failure calling deleteLocation');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -92,29 +91,28 @@ Requires ANY permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LocationsApi();
+let apiInstance = new platformClient.LocationsApi();
 
-var locationId = "locationId_example"; // String | Location ID
+let locationId = "locationId_example"; // String | Location ID
 
 apiInstance.getLocation(locationId)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getLocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getLocation');
+  .catch((err) => {
+    console.log('There was a failure calling getLocation');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -147,33 +145,33 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LocationsApi();
+let apiInstance = new platformClient.LocationsApi();
 
-var opts = { 
+let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'id': ["id_example"], // [String] | id
   'sortOrder': "sortOrder_example" // String | Sort order
 };
+
 apiInstance.getLocations(opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getLocations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getLocations');
+  .catch((err) => {
+    console.log('There was a failure calling getLocations');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -209,32 +207,31 @@ Requires NO permissions:
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LocationsApi();
+let apiInstance = new platformClient.LocationsApi();
 
-var q64 = "q64_example"; // String | q64
-
-var opts = { 
+let q64 = "q64_example"; // String | q64
+let opts = { 
   'expand': ["expand_example"] // [String] | expand
 };
+
 apiInstance.getLocationsSearch(q64, opts)
-  .then(function(data) {
+  .then((data) => {
     console.log(`getLocationsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling getLocationsSearch');
+  .catch((err) => {
+    console.log('There was a failure calling getLocationsSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -268,22 +265,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyLocationUpdateDefinitionExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#LocationUpdateDefinitionExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#LocationUpdateDefinitionExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-LocationUpdateDefinition <a style="cursor: pointer" onclick="copyLocationUpdateDefinitionExample()">Copy</a>
+LocationUpdateDefinition <a href="#" onclick="return copyLocationUpdateDefinitionExample()">Copy</a>
 
-<div id="LocationUpdateDefinitionExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="LocationUpdateDefinitionExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "name": String, 
   "address": { 
@@ -305,37 +302,36 @@ LocationUpdateDefinition <a style="cursor: pointer" onclick="copyLocationUpdateD
   "version": Number, 
   "path": [String], 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LocationsApi();
+let apiInstance = new platformClient.LocationsApi();
 
-var locationId = "locationId_example"; // String | Location ID
-
-var body = {}; // Object | Location
+let locationId = "locationId_example"; // String | Location ID
+let body = {}; // Object | Location
 
 apiInstance.patchLocation(locationId, body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`patchLocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling patchLocation');
+  .catch((err) => {
+    console.log('There was a failure calling patchLocation');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -369,22 +365,22 @@ Requires ANY permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyLocationDefinitionExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#LocationDefinitionExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#LocationDefinitionExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-LocationDefinition <a style="cursor: pointer" onclick="copyLocationDefinitionExample()">Copy</a>
+LocationDefinition <a href="#" onclick="return copyLocationDefinitionExample()">Copy</a>
 
-<div id="LocationDefinitionExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="LocationDefinitionExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
   "name": String, 
@@ -408,35 +404,35 @@ LocationDefinition <a style="cursor: pointer" onclick="copyLocationDefinitionExa
   "path": [String], 
   "selfUri": String, 
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LocationsApi();
+let apiInstance = new platformClient.LocationsApi();
 
-var body = {}; // Object | Location
+let body = {}; // Object | Location
 
 apiInstance.postLocations(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postLocations success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postLocations');
+  .catch((err) => {
+    console.log('There was a failure calling postLocations');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
@@ -468,22 +464,22 @@ Requires NO permissions:
 
 ### Request Body Schema
 
-{::options parse_block_html="true" /}
-
 <script type="text/javascript">
 	function copyLocationSearchRequestExample() {
-		var $temp = $("<textarea>");
-		$("body").append($temp);
-		$temp.val($('#LocationSearchRequestExample').text()).select();
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#LocationSearchRequestExample').text()).select();
 		document.execCommand("copy");
-		$temp.remove();
+		temp.remove();
+		return false;
 	}
 </script>
 
-LocationSearchRequest <a style="cursor: pointer" onclick="copyLocationSearchRequestExample()">Copy</a>
+LocationSearchRequest <a href="#" onclick="return copyLocationSearchRequestExample()">Copy</a>
 
-<div id="LocationSearchRequestExample" style="max-height: 250px; overflow-y: scroll;">
-~~~ json
+<div id="LocationSearchRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
 { 
   "sortOrder": String, 
   "sortBy": String, 
@@ -558,35 +554,35 @@ LocationSearchRequest <a style="cursor: pointer" onclick="copyLocationSearchRequ
     "type": String, 
   },  
 }
-~~~
+```
+
 </div>
 
 
 ### Example Usage
 
-~~~ javascript
+```{"language":"javascript"}
 // Browser
 const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-platformClient.ApiClient.instance.authentications['PureCloud OAuth'].accessToken = 'YOUR ACCESS TOKEN';
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
-var apiInstance = new platformClient.LocationsApi();
+let apiInstance = new platformClient.LocationsApi();
 
-var body = {}; // Object | Search request options
+let body = {}; // Object | Search request options
 
 apiInstance.postLocationsSearch(body)
-  .then(function(data) {
+  .then((data) => {
     console.log(`postLocationsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
-  .catch(function(err) {
-  	console.log('There was a failure calling postLocationsSearch');
+  .catch((err) => {
+    console.log('There was a failure calling postLocationsSearch');
     console.error(err);
   });
-
-~~~
+```
 
 ### Parameters
 
