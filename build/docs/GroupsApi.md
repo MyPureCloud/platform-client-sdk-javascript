@@ -37,6 +37,7 @@ Delete group
 
 Requires ANY permissions: 
 
+* directory:group:delete
 * group_administration
 * admin
 
@@ -697,6 +698,7 @@ Create a group
 
 Requires ANY permissions: 
 
+* directory:group:add
 * group_administration
 * group_creation
 
@@ -949,6 +951,7 @@ Update group
 
 Requires ANY permissions: 
 
+* directory:group:edit
 * group_administration
 * admin
 

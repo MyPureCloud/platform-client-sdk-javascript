@@ -1395,7 +1395,7 @@ apiInstance.getRoutingQueueUsers(queueId, opts)
 
 <a name="getRoutingQueueWrapupcodes"></a>
 
-# WrapupCodeEntityListing getRoutingQueueWrapupcodes(queueId)
+# WrapupCodeEntityListing getRoutingQueueWrapupcodes(queueId, opts)
 
 
 
@@ -1425,8 +1425,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | Queue ID
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
 
-apiInstance.getRoutingQueueWrapupcodes(queueId)
+apiInstance.getRoutingQueueWrapupcodes(queueId, opts)
   .then((data) => {
     console.log(`getRoutingQueueWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1442,6 +1446,8 @@ apiInstance.getRoutingQueueWrapupcodes(queueId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type

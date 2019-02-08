@@ -6,7 +6,7 @@ var superagent = _interopDefault(require('superagent'));
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 43.0.1
+ * @version 44.0.0
  */
 class ApiClient {
 	/**
@@ -699,7 +699,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '43.0.1' });
+		//request.set({ 'purecloud-sdk': '44.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -826,7 +826,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -1140,7 +1140,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -1845,7 +1845,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -4205,7 +4205,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -4738,6 +4738,30 @@ class AuthorizationApi {
 	}
 
 	/**
+	 * Get the count of roles granted to a list of subjects
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.id id
+	 */
+	getAuthorizationSubjectsRolecounts(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/subjects/rolecounts', 
+			'GET', 
+			{  }, 
+			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Returns a listing of roles and permissions for a user.
 	 * 
 	 * @param {String} userId User ID
@@ -5190,7 +5214,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -5270,7 +5294,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -6410,7 +6434,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -9490,7 +9514,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -10398,7 +10422,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -10569,7 +10593,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -10615,7 +10639,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -10745,7 +10769,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -10876,7 +10900,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -11331,7 +11355,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -11735,7 +11759,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -12361,7 +12385,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -12569,8 +12593,8 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Indicates fields of the response which should be expanded.
-	 * @param {Boolean} opts.includeConfig Show config when available (default to false)
+	 * @param {Object} opts.expand Indicates a field in the response which should be expanded.
+	 * @param {Boolean} opts.includeConfig Return config in response. (default to false)
 	 */
 	getIntegrationsAction(actionId, opts) { 
 		opts = opts || {};
@@ -12599,8 +12623,8 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Indicates fields of the response which should be expanded.
-	 * @param {Boolean} opts.includeConfig Show config when available (default to false)
+	 * @param {Object} opts.expand Indicates a field in the response which should be expanded.
+	 * @param {Boolean} opts.includeConfig Return config in response. (default to false)
 	 */
 	getIntegrationsActionDraft(actionId, opts) { 
 		opts = opts || {};
@@ -12773,15 +12797,16 @@ class IntegrationsApi {
 	 * Retrieves all actions associated with filters passed in via query param.
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.category Filter by category name
-	 * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
-	 * @param {Object} opts.includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
-	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
+	 * @param {String} opts.sortBy Root level field name to sort on.
+	 * @param {Object} opts.sortOrder Direction to sort &#39;sortBy&#39; field. (default to asc)
+	 * @param {String} opts.category Filter by category name
+	 * @param {String} opts.name Filter by action name. Provide full or just the first part of name.
+	 * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+	 * @param {Object} opts.includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (default to false)
 	 */
 	getIntegrationsActions(opts) { 
 		opts = opts || {};
@@ -12791,7 +12816,7 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions', 
 			'GET', 
 			{  }, 
-			{ 'category': opts['category'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'category': opts['category'],'name': opts['name'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -12805,13 +12830,13 @@ class IntegrationsApi {
 	 * Retrieves all categories of available Actions
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.secure Filter to only include/exclude Action categories based on if they are considered secure. True will only include categories with Actions marked secured. False will only include categories of unsecured Actions.
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
-	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
+	 * @param {String} opts.sortBy Root level field name to sort on.
+	 * @param {Object} opts.sortOrder Direction to sort &#39;sortBy&#39; field. (default to asc)
+	 * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
 	 */
 	getIntegrationsActionsCategories(opts) { 
 		opts = opts || {};
@@ -12821,7 +12846,7 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/categories', 
 			'GET', 
 			{  }, 
-			{ 'secure': opts['secure'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'secure': opts['secure'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -12835,15 +12860,16 @@ class IntegrationsApi {
 	 * Retrieves all action drafts associated with the filters passed in via query param.
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.category Filter by category name
-	 * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
-	 * @param {Object} opts.includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
-	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
+	 * @param {String} opts.sortBy Root level field name to sort on.
+	 * @param {Object} opts.sortOrder Direction to sort &#39;sortBy&#39; field. (default to asc)
+	 * @param {String} opts.category Filter by category name
+	 * @param {String} opts.name Filter by action name. Provide full or just the first part of name.
+	 * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+	 * @param {Object} opts.includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (default to false)
 	 */
 	getIntegrationsActionsDrafts(opts) { 
 		opts = opts || {};
@@ -12853,7 +12879,7 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/drafts', 
 			'GET', 
 			{  }, 
-			{ 'category': opts['category'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'category': opts['category'],'name': opts['name'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -13525,7 +13551,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -13793,7 +13819,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -14002,7 +14028,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -14209,7 +14235,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -14590,7 +14616,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -14741,7 +14767,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -14940,7 +14966,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -15111,7 +15137,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -15348,7 +15374,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -15513,7 +15539,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -16188,7 +16214,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -18826,7 +18852,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -19093,7 +19119,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -20764,7 +20790,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -21818,7 +21844,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -22142,7 +22168,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -22788,8 +22814,13 @@ class RoutingApi {
 	 * Get the wrap-up codes for a queue
 	 * 
 	 * @param {String} queueId Queue ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 */
-	getRoutingQueueWrapupcodes(queueId) { 
+	getRoutingQueueWrapupcodes(queueId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null) {
 			throw 'Missing the required parameter "queueId" when calling getRoutingQueueWrapupcodes';
@@ -22799,7 +22830,7 @@ class RoutingApi {
 			'/api/v2/routing/queues/{queueId}/wrapupcodes', 
 			'GET', 
 			{ 'queueId': queueId }, 
-			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -23935,7 +23966,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -24293,7 +24324,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -24748,7 +24779,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -24895,7 +24926,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -25034,7 +25065,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -28516,7 +28547,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -28577,7 +28608,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -28761,7 +28792,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -29622,7 +29653,8 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Array.<String>} opts.id id
+	 * @param {Array.<String>} opts.id A list of user IDs to fetch by bulk
+	 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 * @param {Object} opts.state Only list users of this state (default to active)
@@ -29635,7 +29667,7 @@ class UsersApi {
 			'/api/v2/users', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'state': opts['state'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jabberId': this.apiClient.buildCollectionParam(opts['jabberId'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'state': opts['state'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -30541,7 +30573,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -30652,7 +30684,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -31289,7 +31321,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -31500,7 +31532,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -33529,7 +33561,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 43.0.1
+ * @version 44.0.0
  */
 class platformClient {
 	constructor() {

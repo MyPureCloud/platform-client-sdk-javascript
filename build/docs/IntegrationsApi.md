@@ -490,8 +490,8 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
 let opts = { 
-  'expand': "expand_example", // String | Indicates fields of the response which should be expanded.
-  'includeConfig': false // Boolean | Show config when available
+  'expand': "expand_example", // String | Indicates a field in the response which should be expanded.
+  'includeConfig': false // Boolean | Return config in response.
 };
 
 apiInstance.getIntegrationsAction(actionId, opts)
@@ -510,8 +510,8 @@ apiInstance.getIntegrationsAction(actionId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
- **expand** | **String** | Indicates fields of the response which should be expanded. | [optional] <br />**Values**: contract |
- **includeConfig** | **Boolean** | Show config when available | [optional] [default to false] |
+ **expand** | **String** | Indicates a field in the response which should be expanded. | [optional] <br />**Values**: contract |
+ **includeConfig** | **Boolean** | Return config in response. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -552,8 +552,8 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
 let opts = { 
-  'expand': "expand_example", // String | Indicates fields of the response which should be expanded.
-  'includeConfig': false // Boolean | Show config when available
+  'expand': "expand_example", // String | Indicates a field in the response which should be expanded.
+  'includeConfig': false // Boolean | Return config in response.
 };
 
 apiInstance.getIntegrationsActionDraft(actionId, opts)
@@ -572,8 +572,8 @@ apiInstance.getIntegrationsActionDraft(actionId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
- **expand** | **String** | Indicates fields of the response which should be expanded. | [optional] <br />**Values**: contract |
- **includeConfig** | **Boolean** | Show config when available | [optional] [default to false] |
+ **expand** | **String** | Indicates a field in the response which should be expanded. | [optional] <br />**Values**: contract |
+ **includeConfig** | **Boolean** | Return config in response. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -900,15 +900,16 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let opts = { 
-  'category': "category_example", // String | Filter by category name
-  'secure': "secure_example", // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
-  'includeAuthActions': "includeAuthActions_example", // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
-  'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
-  'previousPage': "previousPage_example" // String | Previous page token
+  'previousPage': "previousPage_example", // String | Previous page token
+  'sortBy': "sortBy_example", // String | Root level field name to sort on.
+  'sortOrder': "asc", // String | Direction to sort 'sortBy' field.
+  'category': "category_example", // String | Filter by category name
+  'name': "name_example", // String | Filter by action name. Provide full or just the first part of name.
+  'secure': "secure_example", // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+  'includeAuthActions': "false" // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
 };
 
 apiInstance.getIntegrationsActions(opts)
@@ -926,15 +927,16 @@ apiInstance.getIntegrationsActions(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **category** | **String** | Filter by category name | [optional]  |
- **secure** | **String** | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
- **includeAuthActions** | **String** | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] <br />**Values**: true, false |
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
- **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
+ **sortBy** | **String** | Root level field name to sort on. | [optional]  |
+ **sortOrder** | **String** | Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
+ **category** | **String** | Filter by category name | [optional]  |
+ **name** | **String** | Filter by action name. Provide full or just the first part of name. | [optional]  |
+ **secure** | **String** | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
+ **includeAuthActions** | **String** | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type
@@ -974,13 +976,13 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let opts = { 
-  'secure': "secure_example", // String | Filter to only include/exclude Action categories based on if they are considered secure. True will only include categories with Actions marked secured. False will only include categories of unsecured Actions.
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
-  'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
-  'previousPage': "previousPage_example" // String | Previous page token
+  'previousPage': "previousPage_example", // String | Previous page token
+  'sortBy': "sortBy_example", // String | Root level field name to sort on.
+  'sortOrder': "asc", // String | Direction to sort 'sortBy' field.
+  'secure': "secure_example" // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
 };
 
 apiInstance.getIntegrationsActionsCategories(opts)
@@ -998,13 +1000,13 @@ apiInstance.getIntegrationsActionsCategories(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **secure** | **String** | Filter to only include/exclude Action categories based on if they are considered secure. True will only include categories with Actions marked secured. False will only include categories of unsecured Actions. | [optional] <br />**Values**: true, false |
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
- **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
+ **sortBy** | **String** | Root level field name to sort on. | [optional]  |
+ **sortOrder** | **String** | Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
+ **secure** | **String** | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type
@@ -1044,15 +1046,16 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let opts = { 
-  'category': "category_example", // String | Filter by category name
-  'secure': "secure_example", // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
-  'includeAuthActions': "includeAuthActions_example", // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
-  'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
-  'previousPage': "previousPage_example" // String | Previous page token
+  'previousPage': "previousPage_example", // String | Previous page token
+  'sortBy': "sortBy_example", // String | Root level field name to sort on.
+  'sortOrder': "asc", // String | Direction to sort 'sortBy' field.
+  'category': "category_example", // String | Filter by category name
+  'name': "name_example", // String | Filter by action name. Provide full or just the first part of name.
+  'secure': "secure_example", // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+  'includeAuthActions': "false" // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
 };
 
 apiInstance.getIntegrationsActionsDrafts(opts)
@@ -1070,15 +1073,16 @@ apiInstance.getIntegrationsActionsDrafts(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **category** | **String** | Filter by category name | [optional]  |
- **secure** | **String** | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
- **includeAuthActions** | **String** | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] <br />**Values**: true, false |
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
- **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
+ **sortBy** | **String** | Root level field name to sort on. | [optional]  |
+ **sortOrder** | **String** | Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
+ **category** | **String** | Filter by category name | [optional]  |
+ **name** | **String** | Filter by action name. Provide full or just the first part of name. | [optional]  |
+ **secure** | **String** | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
+ **includeAuthActions** | **String** | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type

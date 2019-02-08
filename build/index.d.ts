@@ -440,6 +440,7 @@ declare class AuthorizationApi {
   	getAuthorizationRoles(opts?: AuthorizationApi.getAuthorizationRolesOptions): Promise<Models.OrganizationRoleEntityListing>; 
   	getAuthorizationSubject(subjectId: string): Promise<Models.AuthzSubject>; 
   	getAuthorizationSubjectsMe(): Promise<Models.AuthzSubject>; 
+  	getAuthorizationSubjectsRolecounts(opts?: AuthorizationApi.getAuthorizationSubjectsRolecountsOptions): Promise<{ [key: string]: object; }>; 
   	getUserRoles(userId: string): Promise<Models.UserAuthorization>; 
   	patchAuthorizationRole(roleId: string, body: Models.DomainOrganizationRole): Promise<Models.DomainOrganizationRole>; 
   	postAuthorizationDivisionObject(divisionId: string, objectType: string, body: Array<string>): Promise<void>; 
@@ -505,6 +506,9 @@ declare namespace AuthorizationApi {
 		"permission"?: Array<string>;
 		"defaultRoleId"?: Array<string>;
 		"userCount"?: boolean;
+		"id"?: Array<string>;
+	}
+	export interface getAuthorizationSubjectsRolecountsOptions { 
 		"id"?: Array<string>;
 	}
 	export interface postAuthorizationRoleOptions { 
@@ -1179,35 +1183,37 @@ declare namespace IntegrationsApi {
 		"includeConfig"?: boolean;
 	}
 	export interface getIntegrationsActionsOptions { 
-		"category"?: string;
-		"secure"?: string;
-		"includeAuthActions"?: string;
 		"pageSize"?: number;
 		"pageNumber"?: number;
-		"sortBy"?: string;
-		"expand"?: Array<string>;
 		"nextPage"?: string;
 		"previousPage"?: string;
+		"sortBy"?: string;
+		"sortOrder"?: string;
+		"category"?: string;
+		"name"?: string;
+		"secure"?: string;
+		"includeAuthActions"?: string;
 	}
 	export interface getIntegrationsActionsCategoriesOptions { 
-		"secure"?: string;
 		"pageSize"?: number;
 		"pageNumber"?: number;
-		"sortBy"?: string;
-		"expand"?: Array<string>;
 		"nextPage"?: string;
 		"previousPage"?: string;
+		"sortBy"?: string;
+		"sortOrder"?: string;
+		"secure"?: string;
 	}
 	export interface getIntegrationsActionsDraftsOptions { 
-		"category"?: string;
-		"secure"?: string;
-		"includeAuthActions"?: string;
 		"pageSize"?: number;
 		"pageNumber"?: number;
-		"sortBy"?: string;
-		"expand"?: Array<string>;
 		"nextPage"?: string;
 		"previousPage"?: string;
+		"sortBy"?: string;
+		"sortOrder"?: string;
+		"category"?: string;
+		"name"?: string;
+		"secure"?: string;
+		"includeAuthActions"?: string;
 	}
 	export interface getIntegrationsClientappsOptions { 
 		"pageSize"?: number;
@@ -2201,7 +2207,7 @@ declare class RoutingApi {
   	getRoutingQueueEstimatedwaittime(queueId: string, opts?: RoutingApi.getRoutingQueueEstimatedwaittimeOptions): Promise<Models.EstimatedWaitTimePredictions>; 
   	getRoutingQueueMediatypeEstimatedwaittime(queueId: string, mediaType: string): Promise<Models.EstimatedWaitTimePredictions>; 
   	getRoutingQueueUsers(queueId: string, opts?: RoutingApi.getRoutingQueueUsersOptions): Promise<Models.QueueMemberEntityListing>; 
-  	getRoutingQueueWrapupcodes(queueId: string): Promise<Models.WrapupCodeEntityListing>; 
+  	getRoutingQueueWrapupcodes(queueId: string, opts?: RoutingApi.getRoutingQueueWrapupcodesOptions): Promise<Models.WrapupCodeEntityListing>; 
   	getRoutingQueues(opts?: RoutingApi.getRoutingQueuesOptions): Promise<Models.QueueEntityListing>; 
   	getRoutingQueuesDivisionviews(opts?: RoutingApi.getRoutingQueuesDivisionviewsOptions): Promise<Models.QueueEntityListing>; 
   	getRoutingQueuesDivisionviewsAll(opts?: RoutingApi.getRoutingQueuesDivisionviewsAllOptions): Promise<Models.QueueEntityListing>; 
@@ -2279,6 +2285,10 @@ declare namespace RoutingApi {
 		"languages"?: Array<string>;
 		"routingStatus"?: Array<string>;
 		"presence"?: Array<string>;
+	}
+	export interface getRoutingQueueWrapupcodesOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
 	}
 	export interface getRoutingQueuesOptions { 
 		"pageSize"?: number;
@@ -2995,6 +3005,7 @@ declare namespace UsersApi {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"id"?: Array<string>;
+		"jabberId"?: Array<string>;
 		"sortOrder"?: string;
 		"expand"?: Array<string>;
 		"state"?: string;
@@ -3668,6 +3679,7 @@ declare namespace Models {
 		"formId"?: string;
 		"contextId"?: string;
 		"formName"?: string;
+		"calibrationId"?: string;
 		"oTotalScore"?: number;
 		"oTotalCriticalScore"?: number;
 	}
@@ -4069,15 +4081,11 @@ declare namespace Models {
 	
 	export interface ArrayNode { 
 		"nodeType"?: string;
-		"object"?: boolean;
 		"boolean"?: boolean;
 		"number"?: boolean;
 		"float"?: boolean;
+		"object"?: boolean;
 		"floatingPointNumber"?: boolean;
-		"valueNode"?: boolean;
-		"containerNode"?: boolean;
-		"missingNode"?: boolean;
-		"pojo"?: boolean;
 		"integralNumber"?: boolean;
 		"short"?: boolean;
 		"int"?: boolean;
@@ -4087,6 +4095,10 @@ declare namespace Models {
 		"bigInteger"?: boolean;
 		"textual"?: boolean;
 		"binary"?: boolean;
+		"valueNode"?: boolean;
+		"containerNode"?: boolean;
+		"missingNode"?: boolean;
+		"pojo"?: boolean;
 		"array"?: boolean;
 		"null"?: boolean;
 	}
@@ -8430,8 +8442,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"base"?: boolean;
 		"default"?: boolean;
+		"base"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -8444,8 +8456,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"base"?: boolean;
 		"default"?: boolean;
+		"base"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -8458,8 +8470,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"base"?: boolean;
 		"default"?: boolean;
+		"base"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -12435,9 +12447,9 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"user"?: Models.User;
-		"timestamp"?: string;
 		"level"?: string;
 		"entity"?: Models.AuditEntity;
+		"timestamp"?: string;
 		"action"?: string;
 		"status"?: string;
 		"changes"?: Array<Models.Change>;
@@ -15847,10 +15859,10 @@ declare namespace Models {
 	}
 	
 	export interface TimeZone { 
+		"displayName"?: string;
+		"id"?: string;
 		"dstsavings"?: number;
 		"rawOffset"?: number;
-		"id"?: string;
-		"displayName"?: string;
 	}
 	
 	export interface TimeZoneEntityListing { 
@@ -16953,8 +16965,10 @@ declare namespace Models {
 		"languageIds"?: Array<string>;
 		"languageGroups"?: Array<string>;
 		"directions"?: Array<string>;
+		"originatingDirections"?: Array<string>;
 		"wrapUpCodes"?: Array<string>;
 		"dnisList"?: Array<string>;
+		"sessionDnisList"?: Array<string>;
 		"filterQueuesByUserIds"?: Array<string>;
 		"filterUsersByQueueIds"?: Array<string>;
 		"userIds"?: Array<string>;
@@ -17009,7 +17023,11 @@ declare namespace Models {
 		"flowTypes"?: Array<string>;
 		"flowEntryTypes"?: Array<string>;
 		"flowEntryReasons"?: Array<string>;
+		"flowVersions"?: Array<string>;
 		"groupIds"?: Array<string>;
+		"hasJourneyCustomerId"?: boolean;
+		"hasJourneyActionMapId"?: boolean;
+		"hasJourneyVisitId"?: boolean;
 	}
 	
 	export interface VisibilityCondition { 

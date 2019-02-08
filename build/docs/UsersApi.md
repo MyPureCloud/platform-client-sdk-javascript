@@ -1834,7 +1834,8 @@ let apiInstance = new platformClient.UsersApi();
 let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'id': ["id_example"], // [String] | id
+  'id': ["id_example"], // [String] | A list of user IDs to fetch by bulk
+  'jabberId': ["jabberId_example"], // [String] | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
   'sortOrder': "ASC", // String | Ascending or descending sort order
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand
   'state': "active" // String | Only list users of this state
@@ -1857,7 +1858,8 @@ apiInstance.getUsers(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **id** | **[String]** | id | [optional]  |
+ **id** | **[String]** | A list of user IDs to fetch by bulk | [optional]  |
+ **jabberId** | **[String]** | A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, languagePreference |
  **state** | **String** | Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted |

@@ -4,7 +4,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
 	/**
 	 * @module purecloud-platform-client-v2/ApiClient
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 	class ApiClient {
 		/**
@@ -697,7 +697,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
 			// set header parameters
 			request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-			//request.set({ 'purecloud-sdk': '43.0.1' });
+			//request.set({ 'purecloud-sdk': '44.0.0' });
 
 			// set request timeout
 			request.timeout(this.timeout);
@@ -824,7 +824,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Alerting service.
 		 * @module purecloud-platform-client-v2/api/AlertingApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -1138,7 +1138,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Analytics service.
 		 * @module purecloud-platform-client-v2/api/AnalyticsApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -1843,7 +1843,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Architect service.
 		 * @module purecloud-platform-client-v2/api/ArchitectApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -4203,7 +4203,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Authorization service.
 		 * @module purecloud-platform-client-v2/api/AuthorizationApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -4736,6 +4736,30 @@ define(['superagent'], function (superagent) { 'use strict';
 		}
 
 		/**
+		 * Get the count of roles granted to a list of subjects
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {Array.<String>} opts.id id
+		 */
+		getAuthorizationSubjectsRolecounts(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/authorization/subjects/rolecounts', 
+				'GET', 
+				{  }, 
+				{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
 		 * Returns a listing of roles and permissions for a user.
 		 * 
 		 * @param {String} userId User ID
@@ -5188,7 +5212,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Billing service.
 		 * @module purecloud-platform-client-v2/api/BillingApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -5268,7 +5292,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * ContentManagement service.
 		 * @module purecloud-platform-client-v2/api/ContentManagementApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -6408,7 +6432,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Conversations service.
 		 * @module purecloud-platform-client-v2/api/ConversationsApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -9488,7 +9512,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * ExternalContacts service.
 		 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -10396,7 +10420,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Fax service.
 		 * @module purecloud-platform-client-v2/api/FaxApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -10567,7 +10591,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Flows service.
 		 * @module purecloud-platform-client-v2/api/FlowsApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -10613,7 +10637,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * GeneralDataProtectionRegulation service.
 		 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -10743,7 +10767,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Geolocation service.
 		 * @module purecloud-platform-client-v2/api/GeolocationApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -10874,7 +10898,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Greetings service.
 		 * @module purecloud-platform-client-v2/api/GreetingsApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -11329,7 +11353,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Groups service.
 		 * @module purecloud-platform-client-v2/api/GroupsApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -11733,7 +11757,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * IdentityProvider service.
 		 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -12359,7 +12383,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Integrations service.
 		 * @module purecloud-platform-client-v2/api/IntegrationsApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -12567,8 +12591,8 @@ define(['superagent'], function (superagent) { 'use strict';
 		 * 
 		 * @param {String} actionId actionId
 		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.expand Indicates fields of the response which should be expanded.
-		 * @param {Boolean} opts.includeConfig Show config when available (default to false)
+		 * @param {Object} opts.expand Indicates a field in the response which should be expanded.
+		 * @param {Boolean} opts.includeConfig Return config in response. (default to false)
 		 */
 		getIntegrationsAction(actionId, opts) { 
 			opts = opts || {};
@@ -12597,8 +12621,8 @@ define(['superagent'], function (superagent) { 'use strict';
 		 * 
 		 * @param {String} actionId actionId
 		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.expand Indicates fields of the response which should be expanded.
-		 * @param {Boolean} opts.includeConfig Show config when available (default to false)
+		 * @param {Object} opts.expand Indicates a field in the response which should be expanded.
+		 * @param {Boolean} opts.includeConfig Return config in response. (default to false)
 		 */
 		getIntegrationsActionDraft(actionId, opts) { 
 			opts = opts || {};
@@ -12771,15 +12795,16 @@ define(['superagent'], function (superagent) { 'use strict';
 		 * Retrieves all actions associated with filters passed in via query param.
 		 * 
 		 * @param {Object} opts Optional parameters
-		 * @param {String} opts.category Filter by category name
-		 * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
-		 * @param {Object} opts.includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
 		 * @param {Number} opts.pageSize The total page size requested (default to 25)
 		 * @param {Number} opts.pageNumber The page number requested (default to 1)
-		 * @param {String} opts.sortBy variable name requested to sort by
-		 * @param {Array.<String>} opts.expand variable name requested by expand list
 		 * @param {String} opts.nextPage next page token
 		 * @param {String} opts.previousPage Previous page token
+		 * @param {String} opts.sortBy Root level field name to sort on.
+		 * @param {Object} opts.sortOrder Direction to sort &#39;sortBy&#39; field. (default to asc)
+		 * @param {String} opts.category Filter by category name
+		 * @param {String} opts.name Filter by action name. Provide full or just the first part of name.
+		 * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+		 * @param {Object} opts.includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (default to false)
 		 */
 		getIntegrationsActions(opts) { 
 			opts = opts || {};
@@ -12789,7 +12814,7 @@ define(['superagent'], function (superagent) { 'use strict';
 				'/api/v2/integrations/actions', 
 				'GET', 
 				{  }, 
-				{ 'category': opts['category'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'category': opts['category'],'name': opts['name'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'] }, 
 				{  }, 
 				{  }, 
 				null, 
@@ -12803,13 +12828,13 @@ define(['superagent'], function (superagent) { 'use strict';
 		 * Retrieves all categories of available Actions
 		 * 
 		 * @param {Object} opts Optional parameters
-		 * @param {Object} opts.secure Filter to only include/exclude Action categories based on if they are considered secure. True will only include categories with Actions marked secured. False will only include categories of unsecured Actions.
 		 * @param {Number} opts.pageSize The total page size requested (default to 25)
 		 * @param {Number} opts.pageNumber The page number requested (default to 1)
-		 * @param {String} opts.sortBy variable name requested to sort by
-		 * @param {Array.<String>} opts.expand variable name requested by expand list
 		 * @param {String} opts.nextPage next page token
 		 * @param {String} opts.previousPage Previous page token
+		 * @param {String} opts.sortBy Root level field name to sort on.
+		 * @param {Object} opts.sortOrder Direction to sort &#39;sortBy&#39; field. (default to asc)
+		 * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
 		 */
 		getIntegrationsActionsCategories(opts) { 
 			opts = opts || {};
@@ -12819,7 +12844,7 @@ define(['superagent'], function (superagent) { 'use strict';
 				'/api/v2/integrations/actions/categories', 
 				'GET', 
 				{  }, 
-				{ 'secure': opts['secure'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'secure': opts['secure'] }, 
 				{  }, 
 				{  }, 
 				null, 
@@ -12833,15 +12858,16 @@ define(['superagent'], function (superagent) { 'use strict';
 		 * Retrieves all action drafts associated with the filters passed in via query param.
 		 * 
 		 * @param {Object} opts Optional parameters
-		 * @param {String} opts.category Filter by category name
-		 * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
-		 * @param {Object} opts.includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
 		 * @param {Number} opts.pageSize The total page size requested (default to 25)
 		 * @param {Number} opts.pageNumber The page number requested (default to 1)
-		 * @param {String} opts.sortBy variable name requested to sort by
-		 * @param {Array.<String>} opts.expand variable name requested by expand list
 		 * @param {String} opts.nextPage next page token
 		 * @param {String} opts.previousPage Previous page token
+		 * @param {String} opts.sortBy Root level field name to sort on.
+		 * @param {Object} opts.sortOrder Direction to sort &#39;sortBy&#39; field. (default to asc)
+		 * @param {String} opts.category Filter by category name
+		 * @param {String} opts.name Filter by action name. Provide full or just the first part of name.
+		 * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+		 * @param {Object} opts.includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (default to false)
 		 */
 		getIntegrationsActionsDrafts(opts) { 
 			opts = opts || {};
@@ -12851,7 +12877,7 @@ define(['superagent'], function (superagent) { 'use strict';
 				'/api/v2/integrations/actions/drafts', 
 				'GET', 
 				{  }, 
-				{ 'category': opts['category'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'category': opts['category'],'name': opts['name'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'] }, 
 				{  }, 
 				{  }, 
 				null, 
@@ -13523,7 +13549,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Languages service.
 		 * @module purecloud-platform-client-v2/api/LanguagesApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -13791,7 +13817,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * License service.
 		 * @module purecloud-platform-client-v2/api/LicenseApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -14000,7 +14026,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Locations service.
 		 * @module purecloud-platform-client-v2/api/LocationsApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -14207,7 +14233,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Messaging service.
 		 * @module purecloud-platform-client-v2/api/MessagingApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -14588,7 +14614,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * MobileDevices service.
 		 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -14739,7 +14765,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Notifications service.
 		 * @module purecloud-platform-client-v2/api/NotificationsApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -14938,7 +14964,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * OAuth service.
 		 * @module purecloud-platform-client-v2/api/OAuthApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -15109,7 +15135,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Objects service.
 		 * @module purecloud-platform-client-v2/api/ObjectsApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -15346,7 +15372,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Organization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -15511,7 +15537,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * OrganizationAuthorization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -16186,7 +16212,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Outbound service.
 		 * @module purecloud-platform-client-v2/api/OutboundApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -18824,7 +18850,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Presence service.
 		 * @module purecloud-platform-client-v2/api/PresenceApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -19091,7 +19117,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Quality service.
 		 * @module purecloud-platform-client-v2/api/QualityApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -20762,7 +20788,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Recording service.
 		 * @module purecloud-platform-client-v2/api/RecordingApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -21816,7 +21842,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * ResponseManagement service.
 		 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -22140,7 +22166,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Routing service.
 		 * @module purecloud-platform-client-v2/api/RoutingApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -22786,8 +22812,13 @@ define(['superagent'], function (superagent) { 'use strict';
 		 * Get the wrap-up codes for a queue
 		 * 
 		 * @param {String} queueId Queue ID
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * @param {Number} opts.pageNumber Page number (default to 1)
 		 */
-		getRoutingQueueWrapupcodes(queueId) { 
+		getRoutingQueueWrapupcodes(queueId, opts) { 
+			opts = opts || {};
+			
 			// verify the required parameter 'queueId' is set
 			if (queueId === undefined || queueId === null) {
 				throw 'Missing the required parameter "queueId" when calling getRoutingQueueWrapupcodes';
@@ -22797,7 +22828,7 @@ define(['superagent'], function (superagent) { 'use strict';
 				'/api/v2/routing/queues/{queueId}/wrapupcodes', 
 				'GET', 
 				{ 'queueId': queueId }, 
-				{  }, 
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
 				{  }, 
 				{  }, 
 				null, 
@@ -23933,7 +23964,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Scripts service.
 		 * @module purecloud-platform-client-v2/api/ScriptsApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -24291,7 +24322,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Search service.
 		 * @module purecloud-platform-client-v2/api/SearchApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -24746,7 +24777,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Stations service.
 		 * @module purecloud-platform-client-v2/api/StationsApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -24893,7 +24924,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Suggest service.
 		 * @module purecloud-platform-client-v2/api/SuggestApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -25032,7 +25063,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * TelephonyProvidersEdge service.
 		 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -28514,7 +28545,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Tokens service.
 		 * @module purecloud-platform-client-v2/api/TokensApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -28575,7 +28606,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * UserRecordings service.
 		 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -28759,7 +28790,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Users service.
 		 * @module purecloud-platform-client-v2/api/UsersApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -29620,7 +29651,8 @@ define(['superagent'], function (superagent) { 'use strict';
 		 * @param {Object} opts Optional parameters
 		 * @param {Number} opts.pageSize Page size (default to 25)
 		 * @param {Number} opts.pageNumber Page number (default to 1)
-		 * @param {Array.<String>} opts.id id
+		 * @param {Array.<String>} opts.id A list of user IDs to fetch by bulk
+		 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter)
 		 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 		 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 		 * @param {Object} opts.state Only list users of this state (default to active)
@@ -29633,7 +29665,7 @@ define(['superagent'], function (superagent) { 'use strict';
 				'/api/v2/users', 
 				'GET', 
 				{  }, 
-				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'state': opts['state'] }, 
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jabberId': this.apiClient.buildCollectionParam(opts['jabberId'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'state': opts['state'] }, 
 				{  }, 
 				{  }, 
 				null, 
@@ -30539,7 +30571,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Utilities service.
 		 * @module purecloud-platform-client-v2/api/UtilitiesApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -30650,7 +30682,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Voicemail service.
 		 * @module purecloud-platform-client-v2/api/VoicemailApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -31287,7 +31319,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * WebChat service.
 		 * @module purecloud-platform-client-v2/api/WebChatApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -31498,7 +31530,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * WorkforceManagement service.
 		 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-		 * @version 43.0.1
+		 * @version 44.0.0
 		 */
 
 		/**
@@ -33527,7 +33559,7 @@ define(['superagent'], function (superagent) { 'use strict';
 	 * </pre>
 	 * </p>
 	 * @module purecloud-platform-client-v2/index
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 	class platformClient {
 		constructor() {

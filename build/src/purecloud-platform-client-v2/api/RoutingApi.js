@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 43.0.1
+	 * @version 44.0.0
 	 */
 
 	/**
@@ -651,8 +651,13 @@ class RoutingApi {
 	 * Get the wrap-up codes for a queue
 	 * 
 	 * @param {String} queueId Queue ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 */
-	getRoutingQueueWrapupcodes(queueId) { 
+	getRoutingQueueWrapupcodes(queueId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null) {
 			throw 'Missing the required parameter "queueId" when calling getRoutingQueueWrapupcodes';
@@ -662,7 +667,7 @@ class RoutingApi {
 			'/api/v2/routing/queues/{queueId}/wrapupcodes', 
 			'GET', 
 			{ 'queueId': queueId }, 
-			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
 			{  }, 
 			{  }, 
 			null, 
