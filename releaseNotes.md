@@ -1,115 +1,190 @@
-Platform API version: 3021
+Platform API version: 3060
 
 
-# Major Changes (11 changes)
+# Major Changes (22 changes)
 
-**GET /api/v2/users** (1 change)
+**Queue** (5 changes)
 
-* Parameter jabberId was added
-
-**GET /api/v2/integrations/actions/categories** (2 changes)
-
-* Parameter expand was removed
-* Parameter sortOrder was added
-
-**GET /api/v2/integrations/actions/drafts** (3 changes)
-
-* Parameter expand was removed
-* Parameter sortOrder was added
-* Parameter name was added
-
-**GET /api/v2/routing/queues/{queueId}/wrapupcodes** (2 changes)
-
-* Parameter pageSize was added
-* Parameter pageNumber was added
-
-**GET /api/v2/integrations/actions** (3 changes)
-
-* Parameter expand was removed
-* Parameter sortOrder was added
-* Parameter name was added
-
-
-# Minor Changes (19 changes)
-
-**/api/v2/authorization/subjects/rolecounts** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**ViewFilter** (8 changes)
-
-* Optional property originatingDirections was added
-* Optional property sessionDnisList was added
-* Enum value whatsapp was added to property messageTypes
-* Enum value inboundchat was added to property flowTypes
-* Optional property flowVersions was added
-* Optional property hasJourneyCustomerId was added
-* Optional property hasJourneyActionMapId was added
-* Optional property hasJourneyVisitId was added
-
-**Voicemail** (1 change)
-
-* Enum value none was added to property uploadStatus
+* Property version was removed
+* Property state was removed
+* Property modifiedByApp was removed
+* Property createdByApp was removed
+* memberCount has been made readonly
 
 **Dependency** (1 change)
 
-* Enum value INBOUNDCHATFLOW was added to property type
+* Enum value VOICEXML was removed from property type
 
 **DependencyObject** (1 change)
 
-* Enum value INBOUNDCHATFLOW was added to property type
+* Enum value VOICEXML was removed from property type
+
+**QueueRequest** (5 changes)
+
+* Property version was removed
+* Property state was removed
+* Property modifiedByApp was removed
+* Property createdByApp was removed
+* memberCount has been made readonly
+
+**UserQueue** (5 changes)
+
+* Property version was removed
+* Property state was removed
+* Property modifiedByApp was removed
+* Property createdByApp was removed
+* memberCount has been made readonly
+
+**CreateQueueRequest** (5 changes)
+
+* Property version was removed
+* Property state was removed
+* Property modifiedByApp was removed
+* Property createdByApp was removed
+* memberCount has been made readonly
+
+
+# Minor Changes (45 changes)
+
+**/api/v2/tokens/{userId}** (2 changes)
+
+* Path was added
+* Operation DELETE was added
+
+**Biography** (1 change)
+
+* Model was added
+
+**EmployerInfo** (1 change)
+
+* Model was added
+
+**User** (3 changes)
+
+* Optional property certifications was added
+* Optional property biography was added
+* Optional property employerInfo was added
+
+**JourneyAction** (1 change)
+
+* Model was added
+
+**JourneyActionMap** (1 change)
+
+* Model was added
+
+**JourneyContext** (1 change)
+
+* Model was added
+
+**JourneyCustomer** (1 change)
+
+* Model was added
+
+**JourneyCustomerSession** (1 change)
+
+* Model was added
+
+**ConversationChat** (1 change)
+
+* Optional property journeyContext was added
+
+**EmailMediaParticipant** (1 change)
+
+* Optional property journeyContext was added
+
+**MessageMediaParticipant** (1 change)
+
+* Optional property journeyContext was added
+
+**OrgUser** (3 changes)
+
+* Optional property certifications was added
+* Optional property biography was added
+* Optional property employerInfo was added
+
+**AggregateMetricData** (1 change)
+
+* Enum value nConnected was added to property metric
 
 **AggregationQuery** (1 change)
 
-* Enum value calibrationId was added to property groupBy
+* Enum value nConnected was added to property metrics
 
 **AnalyticsQueryPredicate** (1 change)
 
-* Enum value calibrationId was added to property dimension
+* Enum value nConnected was added to property metric
 
-**AnalyticsEvaluation** (1 change)
+**EventMessage** (4 changes)
 
-* Optional property calibrationId was added
+* Enum value CALL_RULE_MISSING_DATA_ACTION_INPUT was added to property code
+* Enum value DATA_ACTION_EXECUTION_FAILED was added to property code
+* Enum value DATA_ACTION_AUTHENTICATION_FAILURE was added to property code
+* Enum value DATA_ACTION_NOT_FOUND was added to property code
 
-**AnalyticsFlow** (1 change)
+**PatchUser** (3 changes)
 
-* Enum value INBOUNDCHAT was added to property flowType
+* Optional property certifications was added
+* Optional property biography was added
+* Optional property employerInfo was added
 
-**Flow** (1 change)
+**CobrowseMediaParticipant** (1 change)
 
-* Enum value INBOUNDCHAT was added to property type
+* Optional property journeyContext was added
 
-**FlowDivisionView** (1 change)
+**TrustUser** (3 changes)
 
-* Enum value INBOUNDCHAT was added to property type
+* Optional property certifications was added
+* Optional property biography was added
+* Optional property employerInfo was added
+
+**ObservationMetricData** (1 change)
+
+* Enum value nConnected was added to property metric
+
+**ObservationQuery** (1 change)
+
+* Enum value nConnected was added to property metrics
+
+**UpdateUser** (3 changes)
+
+* Optional property certifications was added
+* Optional property biography was added
+* Optional property employerInfo was added
+
+**ChatMediaParticipant** (1 change)
+
+* Optional property journeyContext was added
+
+**CallMediaParticipant** (1 change)
+
+* Optional property journeyContext was added
+
+**WebChatDeployment** (1 change)
+
+* Optional property flow was added
+
+**UserSearchCriteria** (1 change)
+
+* Enum value QUERY_STRING was added to property type
+
+**CallbackMediaParticipant** (1 change)
+
+* Optional property journeyContext was added
+
+**UserMe** (3 changes)
+
+* Optional property certifications was added
+* Optional property biography was added
+* Optional property employerInfo was added
 
 
-# Point Changes (9 changes)
+# Point Changes (2 changes)
 
-**GET /api/v2/users** (1 change)
+**PATCH /api/v2/routing/queues/{queueId}/users/{memberId}** (1 change)
 
-* Description was changed for parameter id
+* Summary was changed
 
-**GET /api/v2/integrations/actions/{actionId}** (2 changes)
+**GET /api/v2/billing/trusteebillingoverview/{trustorOrgId}** (1 change)
 
-* Description was changed for parameter expand
-* Description was changed for parameter includeConfig
-
-**GET /api/v2/integrations/actions/categories** (2 changes)
-
-* Description was changed for parameter sortBy
-* Description was changed for parameter secure
-
-**GET /api/v2/integrations/actions/drafts** (1 change)
-
-* Description was changed for parameter sortBy
-
-**GET /api/v2/integrations/actions/{actionId}/draft** (2 changes)
-
-* Description was changed for parameter expand
-* Description was changed for parameter includeConfig
-
-**GET /api/v2/integrations/actions** (1 change)
-
-* Description was changed for parameter sortBy
+* Description was changed for parameter billingPeriodIndex

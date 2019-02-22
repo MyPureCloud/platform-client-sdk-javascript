@@ -1463,6 +1463,19 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
         "imageUri": String, 
       },  
       "version": Number, 
+      "certifications": [String], 
+      "biography": { 
+        "biography": String, 
+        "interests": [String], 
+        "hobbies": [String], 
+        "spouse": String, 
+      },  
+      "employerInfo": { 
+        "officialName": String, 
+        "employeeId": String, 
+        "employeeType": String, 
+        "dateHire": String, 
+      },  
       "routingStatus": { 
         "userId": String, 
         "status": String, 
@@ -1761,6 +1774,19 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
       "imageUri": String, 
     },  
     "version": Number, 
+    "certifications": [String], 
+    "biography": { 
+      "biography": String, 
+      "interests": [String], 
+      "hobbies": [String], 
+      "spouse": String, 
+    },  
+    "employerInfo": { 
+      "officialName": String, 
+      "employeeId": String, 
+      "employeeType": String, 
+      "dateHire": String, 
+    },  
     "routingStatus": { 
       "userId": String, 
       "status": String, 

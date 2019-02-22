@@ -5,7 +5,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 44.0.0
+	 * @version 45.0.0
 	 */
 
 	/**
@@ -19,6 +19,31 @@ class TokensApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete all auth tokens for the specified user.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	deleteToken(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling deleteToken';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/tokens/{userId}', 
+			'DELETE', 
+			{ 'userId': userId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
 
 	/**
 	 * Delete  auth token used to make the request.

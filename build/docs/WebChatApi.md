@@ -323,6 +323,11 @@ WebChatDeployment <a href="#" onclick="return copyWebChatDeploymentExample()">Co
     "webChatSkin": String, 
   },  
   "allowedDomains": [String], 
+  "flow": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
   "selfUri": String, 
 }
 ```
@@ -413,6 +418,11 @@ WebChatDeployment <a href="#" onclick="return copyWebChatDeploymentExample()">Co
     "webChatSkin": String, 
   },  
   "allowedDomains": [String], 
+  "flow": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
   "selfUri": String, 
 }
 ```

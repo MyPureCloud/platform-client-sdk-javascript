@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 44.0.0
+	 * @version 45.0.0
 	 */
 
 	/**
@@ -1069,7 +1069,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Update the ring number or joined status for a User in a Queue
+	 * Update the ring number OR joined status for a User in a Queue
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {String} memberId Member ID

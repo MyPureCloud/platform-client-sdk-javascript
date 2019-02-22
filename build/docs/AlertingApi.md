@@ -543,6 +543,19 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       "imageUri": String, 
     },  
     "version": Number, 
+    "certifications": [String], 
+    "biography": { 
+      "biography": String, 
+      "interests": [String], 
+      "hobbies": [String], 
+      "spouse": String, 
+    },  
+    "employerInfo": { 
+      "officialName": String, 
+      "employeeId": String, 
+      "employeeType": String, 
+      "dateHire": String, 
+    },  
     "routingStatus": { 
       "userId": String, 
       "status": String, 
@@ -1063,6 +1076,19 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       "imageUri": String, 
     },  
     "version": Number, 
+    "certifications": [String], 
+    "biography": { 
+      "biography": String, 
+      "interests": [String], 
+      "hobbies": [String], 
+      "spouse": String, 
+    },  
+    "employerInfo": { 
+      "officialName": String, 
+      "employeeId": String, 
+      "employeeType": String, 
+      "dateHire": String, 
+    },  
     "routingStatus": { 
       "userId": String, 
       "status": String, 

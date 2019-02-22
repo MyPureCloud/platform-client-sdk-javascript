@@ -470,6 +470,19 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "imageUri": String, 
     },  
     "version": Number, 
+    "certifications": [String], 
+    "biography": { 
+      "biography": String, 
+      "interests": [String], 
+      "hobbies": [String], 
+      "spouse": String, 
+    },  
+    "employerInfo": { 
+      "officialName": String, 
+      "employeeId": String, 
+      "employeeType": String, 
+      "dateHire": String, 
+    },  
     "routingStatus": { 
       "userId": String, 
       "status": String, 
@@ -809,6 +822,19 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "imageUri": String, 
     },  
     "version": Number, 
+    "certifications": [String], 
+    "biography": { 
+      "biography": String, 
+      "interests": [String], 
+      "hobbies": [String], 
+      "spouse": String, 
+    },  
+    "employerInfo": { 
+      "officialName": String, 
+      "employeeId": String, 
+      "employeeType": String, 
+      "dateHire": String, 
+    },  
     "routingStatus": { 
       "userId": String, 
       "status": String, 
@@ -1234,6 +1260,19 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "imageUri": String, 
     },  
     "version": Number, 
+    "certifications": [String], 
+    "biography": { 
+      "biography": String, 
+      "interests": [String], 
+      "hobbies": [String], 
+      "spouse": String, 
+    },  
+    "employerInfo": { 
+      "officialName": String, 
+      "employeeId": String, 
+      "employeeType": String, 
+      "dateHire": String, 
+    },  
     "routingStatus": { 
       "userId": String, 
       "status": String, 
@@ -1573,6 +1612,19 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "imageUri": String, 
     },  
     "version": Number, 
+    "certifications": [String], 
+    "biography": { 
+      "biography": String, 
+      "interests": [String], 
+      "hobbies": [String], 
+      "spouse": String, 
+    },  
+    "employerInfo": { 
+      "officialName": String, 
+      "employeeId": String, 
+      "employeeType": String, 
+      "dateHire": String, 
+    },  
     "routingStatus": { 
       "userId": String, 
       "status": String, 
