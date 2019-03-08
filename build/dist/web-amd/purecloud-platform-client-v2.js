@@ -4,7 +4,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
 	/**
 	 * @module purecloud-platform-client-v2/ApiClient
-	 * @version 45.0.0
+	 * @version 46.0.0
 	 */
 	class ApiClient {
 		/**
@@ -697,7 +697,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
 			// set header parameters
 			request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-			//request.set({ 'purecloud-sdk': '45.0.0' });
+			//request.set({ 'purecloud-sdk': '46.0.0' });
 
 			// set request timeout
 			request.timeout(this.timeout);
@@ -824,7 +824,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Alerting service.
 		 * @module purecloud-platform-client-v2/api/AlertingApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -1138,7 +1138,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Analytics service.
 		 * @module purecloud-platform-client-v2/api/AnalyticsApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -1843,7 +1843,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Architect service.
 		 * @module purecloud-platform-client-v2/api/ArchitectApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -3169,7 +3169,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
 		/**
 		 * Get a pageable list of flows, filtered by query parameters
-		 * Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
+		 * If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
 		 * @param {Object} opts Optional parameters
 		 * @param {Array.<String>} opts.type Type
 		 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -3332,7 +3332,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
 		/**
 		 * Get a pageable list of basic flow information objects filterable by query parameters.
-		 * This returns a simplified version of /flow consisting of name and type.
+		 * This returns a simplified version of /flow consisting of name and type. If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
 		 * @param {Object} opts Optional parameters
 		 * @param {Array.<String>} opts.type Type
 		 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -4203,7 +4203,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Authorization service.
 		 * @module purecloud-platform-client-v2/api/AuthorizationApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -5212,7 +5212,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Billing service.
 		 * @module purecloud-platform-client-v2/api/BillingApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -5292,7 +5292,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * ContentManagement service.
 		 * @module purecloud-platform-client-v2/api/ContentManagementApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -6432,7 +6432,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Conversations service.
 		 * @module purecloud-platform-client-v2/api/ConversationsApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -9512,7 +9512,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * ExternalContacts service.
 		 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -10420,7 +10420,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Fax service.
 		 * @module purecloud-platform-client-v2/api/FaxApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -10591,7 +10591,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Flows service.
 		 * @module purecloud-platform-client-v2/api/FlowsApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -10637,7 +10637,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * GeneralDataProtectionRegulation service.
 		 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -10767,7 +10767,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Geolocation service.
 		 * @module purecloud-platform-client-v2/api/GeolocationApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -10898,7 +10898,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Greetings service.
 		 * @module purecloud-platform-client-v2/api/GreetingsApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -11353,7 +11353,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Groups service.
 		 * @module purecloud-platform-client-v2/api/GroupsApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -11566,6 +11566,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		 * @param {Number} opts.pageSize Page size (default to 25)
 		 * @param {Number} opts.pageNumber Page number (default to 1)
 		 * @param {Array.<String>} opts.id id
+		 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter)
 		 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 		 */
 		getGroups(opts) { 
@@ -11576,7 +11577,7 @@ define(['superagent'], function (superagent) { 'use strict';
 				'/api/v2/groups', 
 				'GET', 
 				{  }, 
-				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortOrder': opts['sortOrder'] }, 
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jabberId': this.apiClient.buildCollectionParam(opts['jabberId'], 'multi'),'sortOrder': opts['sortOrder'] }, 
 				{  }, 
 				{  }, 
 				null, 
@@ -11757,7 +11758,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * IdentityProvider service.
 		 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -12383,7 +12384,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Integrations service.
 		 * @module purecloud-platform-client-v2/api/IntegrationsApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -13549,7 +13550,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Languages service.
 		 * @module purecloud-platform-client-v2/api/LanguagesApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -13817,7 +13818,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * License service.
 		 * @module purecloud-platform-client-v2/api/LicenseApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -14026,7 +14027,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Locations service.
 		 * @module purecloud-platform-client-v2/api/LocationsApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -14233,7 +14234,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Messaging service.
 		 * @module purecloud-platform-client-v2/api/MessagingApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -14614,7 +14615,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * MobileDevices service.
 		 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -14765,7 +14766,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Notifications service.
 		 * @module purecloud-platform-client-v2/api/NotificationsApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -14964,7 +14965,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * OAuth service.
 		 * @module purecloud-platform-client-v2/api/OAuthApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -15135,7 +15136,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Objects service.
 		 * @module purecloud-platform-client-v2/api/ObjectsApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -15372,7 +15373,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Organization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -15537,7 +15538,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * OrganizationAuthorization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -16212,7 +16213,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Outbound service.
 		 * @module purecloud-platform-client-v2/api/OutboundApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -17005,6 +17006,31 @@ define(['superagent'], function (superagent) { 'use strict';
 				'GET', 
 				{  }, 
 				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'contactListId': opts['contactListId'],'dncListIds': opts['dncListIds'],'distributionQueueId': opts['distributionQueueId'],'edgeGroupId': opts['edgeGroupId'],'callAnalysisResponseSetId': opts['callAnalysisResponseSetId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a basic Campaign information object
+		 * This returns a simplified version of a Campaign, consisting of name and division.
+		 * @param {String} campaignId Campaign ID
+		 */
+		getOutboundCampaignsDivisionview(campaignId) { 
+			// verify the required parameter 'campaignId' is set
+			if (campaignId === undefined || campaignId === null) {
+				throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignsDivisionview';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/outbound/campaigns/divisionviews/{campaignId}', 
+				'GET', 
+				{ 'campaignId': campaignId }, 
+				{  }, 
 				{  }, 
 				{  }, 
 				null, 
@@ -18850,7 +18876,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Presence service.
 		 * @module purecloud-platform-client-v2/api/PresenceApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -19117,7 +19143,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Quality service.
 		 * @module purecloud-platform-client-v2/api/QualityApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -20788,7 +20814,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Recording service.
 		 * @module purecloud-platform-client-v2/api/RecordingApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -21842,7 +21868,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * ResponseManagement service.
 		 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -22166,7 +22192,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Routing service.
 		 * @module purecloud-platform-client-v2/api/RoutingApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -23964,7 +23990,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Scripts service.
 		 * @module purecloud-platform-client-v2/api/ScriptsApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -24322,7 +24348,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Search service.
 		 * @module purecloud-platform-client-v2/api/SearchApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -24777,7 +24803,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Stations service.
 		 * @module purecloud-platform-client-v2/api/StationsApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -24924,7 +24950,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Suggest service.
 		 * @module purecloud-platform-client-v2/api/SuggestApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -25063,7 +25089,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * TelephonyProvidersEdge service.
 		 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -25223,31 +25249,6 @@ define(['superagent'], function (superagent) { 'use strict';
 				'/api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}', 
 				'DELETE', 
 				{ 'edgeGroupId': edgeGroupId }, 
-				{  }, 
-				{  }, 
-				{  }, 
-				null, 
-				['PureCloud OAuth'], 
-				['application/json'], 
-				['application/json']
-			);
-		}
-
-		/**
-		 * Delete endpoint
-		 * 
-		 * @param {String} endpointId Endpoint ID
-		 */
-		deleteTelephonyProvidersEdgesEndpoint(endpointId) { 
-			// verify the required parameter 'endpointId' is set
-			if (endpointId === undefined || endpointId === null) {
-				throw 'Missing the required parameter "endpointId" when calling deleteTelephonyProvidersEdgesEndpoint';
-			}
-
-			return this.apiClient.callApi(
-				'/api/v2/telephony/providers/edges/endpoints/{endpointId}', 
-				'DELETE', 
-				{ 'endpointId': endpointId }, 
 				{  }, 
 				{  }, 
 				{  }, 
@@ -26280,58 +26281,6 @@ define(['superagent'], function (superagent) { 'use strict';
 				'GET', 
 				{  }, 
 				{  }, 
-				{  }, 
-				{  }, 
-				null, 
-				['PureCloud OAuth'], 
-				['application/json'], 
-				['application/json']
-			);
-		}
-
-		/**
-		 * Get endpoint
-		 * 
-		 * @param {String} endpointId Endpoint ID
-		 */
-		getTelephonyProvidersEdgesEndpoint(endpointId) { 
-			// verify the required parameter 'endpointId' is set
-			if (endpointId === undefined || endpointId === null) {
-				throw 'Missing the required parameter "endpointId" when calling getTelephonyProvidersEdgesEndpoint';
-			}
-
-			return this.apiClient.callApi(
-				'/api/v2/telephony/providers/edges/endpoints/{endpointId}', 
-				'GET', 
-				{ 'endpointId': endpointId }, 
-				{  }, 
-				{  }, 
-				{  }, 
-				null, 
-				['PureCloud OAuth'], 
-				['application/json'], 
-				['application/json']
-			);
-		}
-
-		/**
-		 * Get endpoints
-		 * 
-		 * @param {Object} opts Optional parameters
-		 * @param {Number} opts.pageSize Page size (default to 25)
-		 * @param {Number} opts.pageNumber Page number (default to 1)
-		 * @param {String} opts.name Name
-		 * @param {String} opts.sortBy Sort by (default to name)
-		 */
-		getTelephonyProvidersEdgesEndpoints(opts) { 
-			opts = opts || {};
-			
-
-			return this.apiClient.callApi(
-				'/api/v2/telephony/providers/edges/endpoints', 
-				'GET', 
-				{  }, 
-				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'sortBy': opts['sortBy'] }, 
 				{  }, 
 				{  }, 
 				null, 
@@ -27700,31 +27649,6 @@ define(['superagent'], function (superagent) { 'use strict';
 		}
 
 		/**
-		 * Create endpoint
-		 * 
-		 * @param {Object} body EndpointTemplate
-		 */
-		postTelephonyProvidersEdgesEndpoints(body) { 
-			// verify the required parameter 'body' is set
-			if (body === undefined || body === null) {
-				throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesEndpoints';
-			}
-
-			return this.apiClient.callApi(
-				'/api/v2/telephony/providers/edges/endpoints', 
-				'POST', 
-				{  }, 
-				{  }, 
-				{  }, 
-				{  }, 
-				body, 
-				['PureCloud OAuth'], 
-				['application/json'], 
-				['application/json']
-			);
-		}
-
-		/**
 		 * Create a new extension pool
 		 * 
 		 * @param {Object} body ExtensionPool
@@ -28235,36 +28159,6 @@ define(['superagent'], function (superagent) { 'use strict';
 		}
 
 		/**
-		 * Update endpoint
-		 * 
-		 * @param {String} endpointId Endpoint ID
-		 * @param {Object} body EndpointTemplate
-		 */
-		putTelephonyProvidersEdgesEndpoint(endpointId, body) { 
-			// verify the required parameter 'endpointId' is set
-			if (endpointId === undefined || endpointId === null) {
-				throw 'Missing the required parameter "endpointId" when calling putTelephonyProvidersEdgesEndpoint';
-			}
-			// verify the required parameter 'body' is set
-			if (body === undefined || body === null) {
-				throw 'Missing the required parameter "body" when calling putTelephonyProvidersEdgesEndpoint';
-			}
-
-			return this.apiClient.callApi(
-				'/api/v2/telephony/providers/edges/endpoints/{endpointId}', 
-				'PUT', 
-				{ 'endpointId': endpointId }, 
-				{  }, 
-				{  }, 
-				{  }, 
-				body, 
-				['PureCloud OAuth'], 
-				['application/json'], 
-				['application/json']
-			);
-		}
-
-		/**
 		 * Update an extension by ID.
 		 * 
 		 * @param {String} extensionId Extension ID
@@ -28545,7 +28439,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Tokens service.
 		 * @module purecloud-platform-client-v2/api/TokensApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -28631,7 +28525,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * UserRecordings service.
 		 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -28815,7 +28709,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Users service.
 		 * @module purecloud-platform-client-v2/api/UsersApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -30596,7 +30490,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Utilities service.
 		 * @module purecloud-platform-client-v2/api/UtilitiesApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -30707,7 +30601,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Voicemail service.
 		 * @module purecloud-platform-client-v2/api/VoicemailApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -31344,7 +31238,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * WebChat service.
 		 * @module purecloud-platform-client-v2/api/WebChatApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -31555,7 +31449,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * WorkforceManagement service.
 		 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-		 * @version 45.0.0
+		 * @version 46.0.0
 		 */
 
 		/**
@@ -33584,7 +33478,7 @@ define(['superagent'], function (superagent) { 'use strict';
 	 * </pre>
 	 * </p>
 	 * @module purecloud-platform-client-v2/index
-	 * @version 45.0.0
+	 * @version 46.0.0
 	 */
 	class platformClient {
 		constructor() {

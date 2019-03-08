@@ -1063,6 +1063,7 @@ declare namespace GroupsApi {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"id"?: Array<string>;
+		"jabberId"?: Array<string>;
 		"sortOrder"?: string;
 	}
 	export interface getGroupsSearchOptions { 
@@ -1549,6 +1550,7 @@ declare class OutboundApi {
   	getOutboundCampaignrule(campaignRuleId: string): Promise<Models.CampaignRule>; 
   	getOutboundCampaignrules(opts?: OutboundApi.getOutboundCampaignrulesOptions): Promise<Models.CampaignRuleEntityListing>; 
   	getOutboundCampaigns(opts?: OutboundApi.getOutboundCampaignsOptions): Promise<Models.CampaignEntityListing>; 
+  	getOutboundCampaignsDivisionview(campaignId: string): Promise<Models.CampaignDivisionView>; 
   	getOutboundCampaignsDivisionviews(opts?: OutboundApi.getOutboundCampaignsDivisionviewsOptions): Promise<Models.CampaignDivisionViewListing>; 
   	getOutboundContactlist(contactListId: string, opts?: OutboundApi.getOutboundContactlistOptions): Promise<Models.ContactList>; 
   	getOutboundContactlistContact(contactListId: string, contactId: string): Promise<Models.DialerContact>; 
@@ -2525,7 +2527,6 @@ declare class TelephonyProvidersEdgeApi {
   	deleteTelephonyProvidersEdgesCertificateauthority(certificateId: string): Promise<void>; 
   	deleteTelephonyProvidersEdgesDidpool(didPoolId: string): Promise<void>; 
   	deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId: string): Promise<void>; 
-  	deleteTelephonyProvidersEdgesEndpoint(endpointId: string): Promise<void>; 
   	deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId: string): Promise<void>; 
   	deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId: string): Promise<void>; 
   	deleteTelephonyProvidersEdgesPhone(phoneId: string): Promise<void>; 
@@ -2563,8 +2564,6 @@ declare class TelephonyProvidersEdgeApi {
   	getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId: string, edgetrunkbaseId: string): Promise<Models.EdgeTrunkBase>; 
   	getTelephonyProvidersEdgesEdgegroups(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesEdgegroupsOptions): Promise<Models.EdgeGroupEntityListing>; 
   	getTelephonyProvidersEdgesEdgeversionreport(): Promise<Models.EdgeVersionReport>; 
-  	getTelephonyProvidersEdgesEndpoint(endpointId: string): Promise<Models.Endpoint>; 
-  	getTelephonyProvidersEdgesEndpoints(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesEndpointsOptions): Promise<Models.EndpointEntityListing>; 
   	getTelephonyProvidersEdgesExtension(extensionId: string): Promise<Models.Extension>; 
   	getTelephonyProvidersEdgesExtensionpool(extensionPoolId: string): Promise<Models.ExtensionPool>; 
   	getTelephonyProvidersEdgesExtensionpools(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesExtensionpoolsOptions): Promise<Models.ExtensionPoolEntityListing>; 
@@ -2615,7 +2614,6 @@ declare class TelephonyProvidersEdgeApi {
   	postTelephonyProvidersEdgesCertificateauthorities(body: Models.DomainCertificateAuthority): Promise<Models.DomainCertificateAuthority>; 
   	postTelephonyProvidersEdgesDidpools(body: Models.DIDPool): Promise<Models.DIDPool>; 
   	postTelephonyProvidersEdgesEdgegroups(body: Models.EdgeGroup): Promise<Models.EdgeGroup>; 
-  	postTelephonyProvidersEdgesEndpoints(body: Models.Endpoint): Promise<Models.Endpoint>; 
   	postTelephonyProvidersEdgesExtensionpools(body: Models.ExtensionPool): Promise<Models.ExtensionPool>; 
   	postTelephonyProvidersEdgesOutboundroutes(body: Models.OutboundRoute): Promise<Models.OutboundRoute>; 
   	postTelephonyProvidersEdgesPhoneReboot(phoneId: string): Promise<void>; 
@@ -2634,7 +2632,6 @@ declare class TelephonyProvidersEdgeApi {
   	putTelephonyProvidersEdgesDidpool(didPoolId: string, body: Models.DIDPool): Promise<Models.DIDPool>; 
   	putTelephonyProvidersEdgesEdgegroup(edgeGroupId: string, body: Models.EdgeGroup): Promise<Models.EdgeGroup>; 
   	putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId: string, edgetrunkbaseId: string, body: Models.EdgeTrunkBase): Promise<Models.EdgeTrunkBase>; 
-  	putTelephonyProvidersEdgesEndpoint(endpointId: string, body: Models.Endpoint): Promise<Models.Endpoint>; 
   	putTelephonyProvidersEdgesExtension(extensionId: string, body: Models.Extension): Promise<Models.Extension>; 
   	putTelephonyProvidersEdgesExtensionpool(extensionPoolId: string, body: Models.ExtensionPool): Promise<Models.ExtensionPool>; 
   	putTelephonyProvidersEdgesOutboundroute(outboundRouteId: string, body: Models.OutboundRoute): Promise<Models.OutboundRoute>; 
@@ -2713,12 +2710,6 @@ declare namespace TelephonyProvidersEdgeApi {
 		"name"?: string;
 		"sortBy"?: string;
 		"managed"?: boolean;
-	}
-	export interface getTelephonyProvidersEdgesEndpointsOptions { 
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"name"?: string;
-		"sortBy"?: string;
 	}
 	export interface getTelephonyProvidersEdgesExtensionpoolsOptions { 
 		"pageSize"?: number;
@@ -3681,8 +3672,8 @@ declare namespace Models {
 		"contextId"?: string;
 		"formName"?: string;
 		"calibrationId"?: string;
-		"oTotalScore"?: number;
 		"oTotalCriticalScore"?: number;
+		"oTotalScore"?: number;
 	}
 	
 	export interface AnalyticsFlow { 
@@ -4084,13 +4075,9 @@ declare namespace Models {
 		"nodeType"?: string;
 		"boolean"?: boolean;
 		"number"?: boolean;
-		"float"?: boolean;
 		"object"?: boolean;
-		"valueNode"?: boolean;
-		"containerNode"?: boolean;
-		"missingNode"?: boolean;
+		"float"?: boolean;
 		"floatingPointNumber"?: boolean;
-		"pojo"?: boolean;
 		"integralNumber"?: boolean;
 		"short"?: boolean;
 		"int"?: boolean;
@@ -4100,6 +4087,10 @@ declare namespace Models {
 		"bigInteger"?: boolean;
 		"textual"?: boolean;
 		"binary"?: boolean;
+		"valueNode"?: boolean;
+		"containerNode"?: boolean;
+		"missingNode"?: boolean;
+		"pojo"?: boolean;
 		"array"?: boolean;
 		"null"?: boolean;
 	}
@@ -4859,6 +4850,7 @@ declare namespace Models {
 		"callAnalysisLanguage"?: string;
 		"priority"?: number;
 		"contactListFilters"?: Array<Models.UriReference>;
+		"division"?: Models.UriReference;
 		"selfUri"?: string;
 	}
 	
@@ -5091,8 +5083,8 @@ declare namespace Models {
 		"expirationDate"?: string;
 		"issueDate"?: string;
 		"expired"?: boolean;
-		"valid"?: boolean;
 		"signatureValid"?: boolean;
+		"valid"?: boolean;
 	}
 	
 	export interface Change { 
@@ -5458,6 +5450,7 @@ declare namespace Models {
 		"dateCreated"?: string;
 		"dateModified"?: string;
 		"version"?: number;
+		"division"?: Models.UriReference;
 		"columnNames": Array<string>;
 		"phoneColumns": Array<Models.ContactPhoneNumberColumn>;
 		"importStatus"?: Models.ImportStatus;
@@ -8016,6 +8009,7 @@ declare namespace Models {
 		"loginId"?: string;
 		"dncCodes"?: Array<string>;
 		"licenseId"?: string;
+		"division"?: Models.UriReference;
 		"selfUri"?: string;
 	}
 	
@@ -8031,6 +8025,7 @@ declare namespace Models {
 		"loginId"?: string;
 		"dncCodes"?: Array<string>;
 		"licenseId"?: string;
+		"division"?: Models.UriReference;
 		"selfUri"?: string;
 	}
 	
@@ -8113,8 +8108,8 @@ declare namespace Models {
 		"lockInfo"?: Models.LockInfo;
 		"acl"?: Array<string>;
 		"sharingStatus"?: string;
-		"sharingUri"?: string;
 		"downloadSharingUri"?: string;
+		"sharingUri"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -9109,19 +9104,6 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
-	export interface EndpointEntityListing { 
-		"entities"?: Array<Models.Endpoint>;
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"total"?: number;
-		"firstUri"?: string;
-		"selfUri"?: string;
-		"nextUri"?: string;
-		"previousUri"?: string;
-		"lastUri"?: string;
-		"pageCount"?: number;
-	}
-	
 	export interface Entity { 
 		"id"?: string;
 	}
@@ -9607,8 +9589,8 @@ declare namespace Models {
 		"callerAddress"?: string;
 		"receiverAddress"?: string;
 		"thumbnails"?: Array<Models.DocumentThumbnail>;
-		"sharingUri"?: string;
 		"downloadSharingUri"?: string;
+		"sharingUri"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -10652,7 +10634,7 @@ declare namespace Models {
 	
 	export interface JourneyCustomer { 
 		"id": string;
-		"type": string;
+		"idType": string;
 	}
 	
 	export interface JourneyCustomerSession { 

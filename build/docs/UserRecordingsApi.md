@@ -567,7 +567,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
         "journeyContext": { 
           "customer": { 
             "id": String, 
-            "type": String, 
+            "idType": String, 
           },  
           "customerSession": { 
             "id": String, 

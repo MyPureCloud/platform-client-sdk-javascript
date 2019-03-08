@@ -454,6 +454,7 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'id': ["id_example"], // [String] | id
+  'jabberId': ["jabberId_example"], // [String] | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
   'sortOrder': "ASC" // String | Ascending or descending sort order
 };
 
@@ -475,6 +476,7 @@ apiInstance.getGroups(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **id** | **[String]** | id | [optional]  |
+ **jabberId** | **[String]** | A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 

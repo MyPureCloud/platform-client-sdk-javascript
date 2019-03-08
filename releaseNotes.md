@@ -1,190 +1,84 @@
-Platform API version: 3060
+Platform API version: 3102
 
 
-# Major Changes (22 changes)
+# Major Changes (6 changes)
 
-**Queue** (5 changes)
+**/api/v2/telephony/providers/edges/endpoints** (1 change)
 
-* Property version was removed
-* Property state was removed
-* Property modifiedByApp was removed
-* Property createdByApp was removed
-* memberCount has been made readonly
+* Path /api/v2/telephony/providers/edges/endpoints was removed
 
-**Dependency** (1 change)
+**/api/v2/telephony/providers/edges/endpoints/{endpointId}** (1 change)
 
-* Enum value VOICEXML was removed from property type
+* Path /api/v2/telephony/providers/edges/endpoints/{endpointId} was removed
 
-**DependencyObject** (1 change)
+**GET /api/v2/groups** (1 change)
 
-* Enum value VOICEXML was removed from property type
+* Parameter jabberId was added
 
-**QueueRequest** (5 changes)
+**EndpointEntityListing** (1 change)
 
-* Property version was removed
-* Property state was removed
-* Property modifiedByApp was removed
-* Property createdByApp was removed
-* memberCount has been made readonly
+* Model EndpointEntityListing was removed
 
-**UserQueue** (5 changes)
+**JourneyCustomer** (2 changes)
 
-* Property version was removed
-* Property state was removed
-* Property modifiedByApp was removed
-* Property createdByApp was removed
-* memberCount has been made readonly
-
-**CreateQueueRequest** (5 changes)
-
-* Property version was removed
-* Property state was removed
-* Property modifiedByApp was removed
-* Property createdByApp was removed
-* memberCount has been made readonly
+* Property type was removed
+* Required property idType was added
 
 
-# Minor Changes (45 changes)
+# Minor Changes (12 changes)
 
-**/api/v2/tokens/{userId}** (2 changes)
+**POST /api/v2/authorization/divisions** (1 change)
+
+* Response 409 was added
+
+**/api/v2/outbound/campaigns/divisionviews/{campaignId}** (2 changes)
 
 * Path was added
-* Operation DELETE was added
+* Operation GET was added
 
-**Biography** (1 change)
+**DncList** (1 change)
 
-* Model was added
+* Optional property division was added
 
-**EmployerInfo** (1 change)
+**DncListCreate** (1 change)
 
-* Model was added
+* Optional property division was added
 
-**User** (3 changes)
+**ContactList** (1 change)
 
-* Optional property certifications was added
-* Optional property biography was added
-* Optional property employerInfo was added
-
-**JourneyAction** (1 change)
-
-* Model was added
-
-**JourneyActionMap** (1 change)
-
-* Model was added
-
-**JourneyContext** (1 change)
-
-* Model was added
-
-**JourneyCustomer** (1 change)
-
-* Model was added
-
-**JourneyCustomerSession** (1 change)
-
-* Model was added
-
-**ConversationChat** (1 change)
-
-* Optional property journeyContext was added
-
-**EmailMediaParticipant** (1 change)
-
-* Optional property journeyContext was added
-
-**MessageMediaParticipant** (1 change)
-
-* Optional property journeyContext was added
-
-**OrgUser** (3 changes)
-
-* Optional property certifications was added
-* Optional property biography was added
-* Optional property employerInfo was added
+* Optional property division was added
 
 **AggregateMetricData** (1 change)
 
-* Enum value nConnected was added to property metric
+* Enum value oFlow was added to property metric
 
 **AggregationQuery** (1 change)
 
-* Enum value nConnected was added to property metrics
+* Enum value oFlow was added to property metrics
 
 **AnalyticsQueryPredicate** (1 change)
 
-* Enum value nConnected was added to property metric
-
-**EventMessage** (4 changes)
-
-* Enum value CALL_RULE_MISSING_DATA_ACTION_INPUT was added to property code
-* Enum value DATA_ACTION_EXECUTION_FAILED was added to property code
-* Enum value DATA_ACTION_AUTHENTICATION_FAILURE was added to property code
-* Enum value DATA_ACTION_NOT_FOUND was added to property code
-
-**PatchUser** (3 changes)
-
-* Optional property certifications was added
-* Optional property biography was added
-* Optional property employerInfo was added
-
-**CobrowseMediaParticipant** (1 change)
-
-* Optional property journeyContext was added
-
-**TrustUser** (3 changes)
-
-* Optional property certifications was added
-* Optional property biography was added
-* Optional property employerInfo was added
+* Enum value oFlow was added to property metric
 
 **ObservationMetricData** (1 change)
 
-* Enum value nConnected was added to property metric
+* Enum value oFlow was added to property metric
 
 **ObservationQuery** (1 change)
 
-* Enum value nConnected was added to property metrics
+* Enum value oFlow was added to property metrics
 
-**UpdateUser** (3 changes)
+**Campaign** (1 change)
 
-* Optional property certifications was added
-* Optional property biography was added
-* Optional property employerInfo was added
-
-**ChatMediaParticipant** (1 change)
-
-* Optional property journeyContext was added
-
-**CallMediaParticipant** (1 change)
-
-* Optional property journeyContext was added
-
-**WebChatDeployment** (1 change)
-
-* Optional property flow was added
-
-**UserSearchCriteria** (1 change)
-
-* Enum value QUERY_STRING was added to property type
-
-**CallbackMediaParticipant** (1 change)
-
-* Optional property journeyContext was added
-
-**UserMe** (3 changes)
-
-* Optional property certifications was added
-* Optional property biography was added
-* Optional property employerInfo was added
+* Optional property division was added
 
 
 # Point Changes (2 changes)
 
-**PATCH /api/v2/routing/queues/{queueId}/users/{memberId}** (1 change)
+**GET /api/v2/flows** (1 change)
 
-* Summary was changed
+* Description was changed
 
-**GET /api/v2/billing/trusteebillingoverview/{trustorOrgId}** (1 change)
+**GET /api/v2/flows/divisionviews** (1 change)
 
-* Description was changed for parameter billingPeriodIndex
+* Description was changed

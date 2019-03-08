@@ -2957,7 +2957,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
         "journeyContext": { 
           "customer": { 
             "id": String, 
-            "type": String, 
+            "idType": String, 
           },  
           "customerSession": { 
             "id": String, 
@@ -16131,7 +16131,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
         "journeyContext": { 
           "customer": { 
             "id": String, 
-            "type": String, 
+            "idType": String, 
           },  
           "customerSession": { 
             "id": String, 

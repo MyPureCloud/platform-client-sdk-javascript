@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 45.0.0
+	 * @version 46.0.0
 	 */
 
 	/**
@@ -1331,7 +1331,7 @@ class ArchitectApi {
 
 	/**
 	 * Get a pageable list of flows, filtered by query parameters
-	 * Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
+	 * If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.type Type
 	 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -1494,7 +1494,7 @@ class ArchitectApi {
 
 	/**
 	 * Get a pageable list of basic flow information objects filterable by query parameters.
-	 * This returns a simplified version of /flow consisting of name and type.
+	 * This returns a simplified version of /flow consisting of name and type. If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.type Type
 	 * @param {Number} opts.pageNumber Page number (default to 1)

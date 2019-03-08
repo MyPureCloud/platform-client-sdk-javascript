@@ -13,7 +13,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteTelephonyProvidersEdgesCertificateauthority**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesCertificateauthority) | **DELETE** /api/v2/telephony/providers/edges/certificateauthorities/{certificateId} | Delete a certificate authority.
 [**deleteTelephonyProvidersEdgesDidpool**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesDidpool) | **DELETE** /api/v2/telephony/providers/edges/didpools/{didPoolId} | Delete a DID Pool by ID.
 [**deleteTelephonyProvidersEdgesEdgegroup**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesEdgegroup) | **DELETE** /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId} | Delete an edge group.
-[**deleteTelephonyProvidersEdgesEndpoint**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesEndpoint) | **DELETE** /api/v2/telephony/providers/edges/endpoints/{endpointId} | Delete endpoint
 [**deleteTelephonyProvidersEdgesExtensionpool**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesExtensionpool) | **DELETE** /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId} | Delete an extension pool by ID
 [**deleteTelephonyProvidersEdgesOutboundroute**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesOutboundroute) | **DELETE** /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} | Delete Outbound Route
 [**deleteTelephonyProvidersEdgesPhone**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesPhone) | **DELETE** /api/v2/telephony/providers/edges/phones/{phoneId} | Delete a Phone by ID
@@ -51,8 +50,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTelephonyProvidersEdgesEdgegroupEdgetrunkbase**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgegroupEdgetrunkbase) | **GET** /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId} | Gets the edge trunk base associated with the edge group
 [**getTelephonyProvidersEdgesEdgegroups**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgegroups) | **GET** /api/v2/telephony/providers/edges/edgegroups | Get the list of edge groups.
 [**getTelephonyProvidersEdgesEdgeversionreport**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgeversionreport) | **GET** /api/v2/telephony/providers/edges/edgeversionreport | Get the edge version report.
-[**getTelephonyProvidersEdgesEndpoint**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEndpoint) | **GET** /api/v2/telephony/providers/edges/endpoints/{endpointId} | Get endpoint
-[**getTelephonyProvidersEdgesEndpoints**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEndpoints) | **GET** /api/v2/telephony/providers/edges/endpoints | Get endpoints
 [**getTelephonyProvidersEdgesExtension**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesExtension) | **GET** /api/v2/telephony/providers/edges/extensions/{extensionId} | Get an extension by ID.
 [**getTelephonyProvidersEdgesExtensionpool**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesExtensionpool) | **GET** /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId} | Get an extension pool by ID
 [**getTelephonyProvidersEdgesExtensionpools**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesExtensionpools) | **GET** /api/v2/telephony/providers/edges/extensionpools | Get a listing of extension pools
@@ -103,7 +100,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postTelephonyProvidersEdgesCertificateauthorities**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesCertificateauthorities) | **POST** /api/v2/telephony/providers/edges/certificateauthorities | Create a certificate authority.
 [**postTelephonyProvidersEdgesDidpools**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesDidpools) | **POST** /api/v2/telephony/providers/edges/didpools | Create a new DID pool
 [**postTelephonyProvidersEdgesEdgegroups**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesEdgegroups) | **POST** /api/v2/telephony/providers/edges/edgegroups | Create an edge group.
-[**postTelephonyProvidersEdgesEndpoints**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesEndpoints) | **POST** /api/v2/telephony/providers/edges/endpoints | Create endpoint
 [**postTelephonyProvidersEdgesExtensionpools**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesExtensionpools) | **POST** /api/v2/telephony/providers/edges/extensionpools | Create a new extension pool
 [**postTelephonyProvidersEdgesOutboundroutes**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesOutboundroutes) | **POST** /api/v2/telephony/providers/edges/outboundroutes | Create outbound rule
 [**postTelephonyProvidersEdgesPhoneReboot**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesPhoneReboot) | **POST** /api/v2/telephony/providers/edges/phones/{phoneId}/reboot | Reboot a Phone
@@ -122,7 +118,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putTelephonyProvidersEdgesDidpool**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesDidpool) | **PUT** /api/v2/telephony/providers/edges/didpools/{didPoolId} | Update a DID Pool by ID.
 [**putTelephonyProvidersEdgesEdgegroup**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesEdgegroup) | **PUT** /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId} | Update an edge group.
 [**putTelephonyProvidersEdgesEdgegroupEdgetrunkbase**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesEdgegroupEdgetrunkbase) | **PUT** /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId} | Update the edge trunk base associated with the edge group
-[**putTelephonyProvidersEdgesEndpoint**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesEndpoint) | **PUT** /api/v2/telephony/providers/edges/endpoints/{endpointId} | Update endpoint
 [**putTelephonyProvidersEdgesExtension**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesExtension) | **PUT** /api/v2/telephony/providers/edges/extensions/{extensionId} | Update an extension by ID.
 [**putTelephonyProvidersEdgesExtensionpool**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesExtensionpool) | **PUT** /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId} | Update an extension pool by ID
 [**putTelephonyProvidersEdgesOutboundroute**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesOutboundroute) | **PUT** /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} | Update outbound route
@@ -459,61 +454,6 @@ apiInstance.deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeGroupId** | **String** | Edge group ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (no response body)
-
-<a name="deleteTelephonyProvidersEdgesEndpoint"></a>
-
-# void deleteTelephonyProvidersEdgesEndpoint(endpointId)
-
-
-
-DELETE /api/v2/telephony/providers/edges/endpoints/{endpointId}
-
-Delete endpoint
-
-
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
-
-let endpointId = "endpointId_example"; // String | Endpoint ID
-
-apiInstance.deleteTelephonyProvidersEdgesEndpoint(endpointId)
-  .then(() => {
-    console.log('deleteTelephonyProvidersEdgesEndpoint returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling deleteTelephonyProvidersEdgesEndpoint');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **endpointId** | **String** | Endpoint ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2652,124 +2592,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 **EdgeVersionReport**
-
-<a name="getTelephonyProvidersEdgesEndpoint"></a>
-
-# Endpoint getTelephonyProvidersEdgesEndpoint(endpointId)
-
-
-
-GET /api/v2/telephony/providers/edges/endpoints/{endpointId}
-
-Get endpoint
-
-
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
-
-let endpointId = "endpointId_example"; // String | Endpoint ID
-
-apiInstance.getTelephonyProvidersEdgesEndpoint(endpointId)
-  .then((data) => {
-    console.log(`getTelephonyProvidersEdgesEndpoint success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getTelephonyProvidersEdgesEndpoint');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **endpointId** | **String** | Endpoint ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**Endpoint**
-
-<a name="getTelephonyProvidersEdgesEndpoints"></a>
-
-# EndpointEntityListing getTelephonyProvidersEdgesEndpoints(opts)
-
-
-
-GET /api/v2/telephony/providers/edges/endpoints
-
-Get endpoints
-
-
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
-
-let opts = { 
-  'pageSize': 25, // Number | Page size
-  'pageNumber': 1, // Number | Page number
-  'name': "name_example", // String | Name
-  'sortBy': "name" // String | Sort by
-};
-
-apiInstance.getTelephonyProvidersEdgesEndpoints(opts)
-  .then((data) => {
-    console.log(`getTelephonyProvidersEdgesEndpoints success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getTelephonyProvidersEdgesEndpoints');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **name** | **String** | Name | [optional]  |
- **sortBy** | **String** | Sort by | [optional] [default to name] |
-{: class="table table-striped"}
-
-### Return type
-
-**EndpointEntityListing**
 
 <a name="getTelephonyProvidersEdgesExtension"></a>
 
@@ -11311,8 +11133,8 @@ DomainCertificateAuthority <a href="#" onclick="return copyDomainCertificateAuth
     "expirationDate": Date, 
     "issueDate": Date, 
     "expired": Boolean, 
-    "valid": Boolean, 
     "signatureValid": Boolean, 
+    "valid": Boolean, 
   },  
   "selfUri": String, 
 }
@@ -11591,111 +11413,6 @@ apiInstance.postTelephonyProvidersEdgesEdgegroups(body)
 ### Return type
 
 **EdgeGroup**
-
-<a name="postTelephonyProvidersEdgesEndpoints"></a>
-
-# Endpoint postTelephonyProvidersEdgesEndpoints(body)
-
-
-
-POST /api/v2/telephony/providers/edges/endpoints
-
-Create endpoint
-
-
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyEndpointExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#EndpointExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Endpoint <a href="#" onclick="return copyEndpointExample()">Copy</a>
-
-<div id="EndpointExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "description": String, 
-  "version": Number, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "modifiedBy": String, 
-  "createdBy": String, 
-  "state": String, 
-  "modifiedByApp": String, 
-  "createdByApp": String, 
-  "count": Number, 
-  "properties": {String: Object}, 
-  "schema": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "enabled": Boolean, 
-  "site": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "dids": [String], 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
-
-let body = {}; // Object | EndpointTemplate
-
-apiInstance.postTelephonyProvidersEdgesEndpoints(body)
-  .then((data) => {
-    console.log(`postTelephonyProvidersEdgesEndpoints success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postTelephonyProvidersEdgesEndpoints');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | EndpointTemplate |  |
-{: class="table table-striped"}
-
-### Return type
-
-**Endpoint**
 
 <a name="postTelephonyProvidersEdgesExtensionpools"></a>
 
@@ -47833,8 +47550,8 @@ DomainCertificateAuthority <a href="#" onclick="return copyDomainCertificateAuth
     "expirationDate": Date, 
     "issueDate": Date, 
     "expired": Boolean, 
-    "valid": Boolean, 
     "signatureValid": Boolean, 
+    "valid": Boolean, 
   },  
   "selfUri": String, 
 }
@@ -48326,113 +48043,6 @@ apiInstance.putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetr
 ### Return type
 
 **EdgeTrunkBase**
-
-<a name="putTelephonyProvidersEdgesEndpoint"></a>
-
-# Endpoint putTelephonyProvidersEdgesEndpoint(endpointId, body)
-
-
-
-PUT /api/v2/telephony/providers/edges/endpoints/{endpointId}
-
-Update endpoint
-
-
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyEndpointExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#EndpointExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Endpoint <a href="#" onclick="return copyEndpointExample()">Copy</a>
-
-<div id="EndpointExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "description": String, 
-  "version": Number, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "modifiedBy": String, 
-  "createdBy": String, 
-  "state": String, 
-  "modifiedByApp": String, 
-  "createdByApp": String, 
-  "count": Number, 
-  "properties": {String: Object}, 
-  "schema": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "enabled": Boolean, 
-  "site": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "dids": [String], 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
-
-let endpointId = "endpointId_example"; // String | Endpoint ID
-let body = {}; // Object | EndpointTemplate
-
-apiInstance.putTelephonyProvidersEdgesEndpoint(endpointId, body)
-  .then((data) => {
-    console.log(`putTelephonyProvidersEdgesEndpoint success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling putTelephonyProvidersEdgesEndpoint');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **endpointId** | **String** | Endpoint ID |  |
- **body** | **Object** | EndpointTemplate |  |
-{: class="table table-striped"}
-
-### Return type
-
-**Endpoint**
 
 <a name="putTelephonyProvidersEdgesExtension"></a>
 

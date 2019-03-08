@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 45.0.0
+	 * @version 46.0.0
 	 */
 
 	/**
@@ -798,6 +798,31 @@ class OutboundApi {
 			'GET', 
 			{  }, 
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'contactListId': opts['contactListId'],'dncListIds': opts['dncListIds'],'distributionQueueId': opts['distributionQueueId'],'edgeGroupId': opts['edgeGroupId'],'callAnalysisResponseSetId': opts['callAnalysisResponseSetId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a basic Campaign information object
+	 * This returns a simplified version of a Campaign, consisting of name and division.
+	 * @param {String} campaignId Campaign ID
+	 */
+	getOutboundCampaignsDivisionview(campaignId) { 
+		// verify the required parameter 'campaignId' is set
+		if (campaignId === undefined || campaignId === null) {
+			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignsDivisionview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/divisionviews/{campaignId}', 
+			'GET', 
+			{ 'campaignId': campaignId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 

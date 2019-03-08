@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 45.0.0
+	 * @version 46.0.0
 	 */
 
 	/**
@@ -165,31 +165,6 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}', 
 			'DELETE', 
 			{ 'edgeGroupId': edgeGroupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete endpoint
-	 * 
-	 * @param {String} endpointId Endpoint ID
-	 */
-	deleteTelephonyProvidersEdgesEndpoint(endpointId) { 
-		// verify the required parameter 'endpointId' is set
-		if (endpointId === undefined || endpointId === null) {
-			throw 'Missing the required parameter "endpointId" when calling deleteTelephonyProvidersEdgesEndpoint';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/endpoints/{endpointId}', 
-			'DELETE', 
-			{ 'endpointId': endpointId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1222,58 +1197,6 @@ class TelephonyProvidersEdgeApi {
 			'GET', 
 			{  }, 
 			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get endpoint
-	 * 
-	 * @param {String} endpointId Endpoint ID
-	 */
-	getTelephonyProvidersEdgesEndpoint(endpointId) { 
-		// verify the required parameter 'endpointId' is set
-		if (endpointId === undefined || endpointId === null) {
-			throw 'Missing the required parameter "endpointId" when calling getTelephonyProvidersEdgesEndpoint';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/endpoints/{endpointId}', 
-			'GET', 
-			{ 'endpointId': endpointId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get endpoints
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.name Name
-	 * @param {String} opts.sortBy Sort by (default to name)
-	 */
-	getTelephonyProvidersEdgesEndpoints(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/endpoints', 
-			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'sortBy': opts['sortBy'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -2642,31 +2565,6 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
-	 * Create endpoint
-	 * 
-	 * @param {Object} body EndpointTemplate
-	 */
-	postTelephonyProvidersEdgesEndpoints(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesEndpoints';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/endpoints', 
-			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create a new extension pool
 	 * 
 	 * @param {Object} body ExtensionPool
@@ -3166,36 +3064,6 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}', 
 			'PUT', 
 			{ 'edgegroupId': edgegroupId,'edgetrunkbaseId': edgetrunkbaseId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update endpoint
-	 * 
-	 * @param {String} endpointId Endpoint ID
-	 * @param {Object} body EndpointTemplate
-	 */
-	putTelephonyProvidersEdgesEndpoint(endpointId, body) { 
-		// verify the required parameter 'endpointId' is set
-		if (endpointId === undefined || endpointId === null) {
-			throw 'Missing the required parameter "endpointId" when calling putTelephonyProvidersEdgesEndpoint';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putTelephonyProvidersEdgesEndpoint';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/endpoints/{endpointId}', 
-			'PUT', 
-			{ 'endpointId': endpointId }, 
 			{  }, 
 			{  }, 
 			{  }, 

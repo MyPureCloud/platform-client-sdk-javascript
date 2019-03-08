@@ -2891,7 +2891,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "journeyContext": { 
         "customer": { 
           "id": String, 
-          "type": String, 
+          "idType": String, 
         },  
         "customerSession": { 
           "id": String, 
@@ -3427,7 +3427,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "journeyContext": { 
               "customer": { 
                 "id": String, 
-                "type": String, 
+                "idType": String, 
               },  
               "customerSession": { 
                 "id": String, 
@@ -8087,7 +8087,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "journeyContext": { 
         "customer": { 
           "id": String, 
-          "type": String, 
+          "idType": String, 
         },  
         "customerSession": { 
           "id": String, 
@@ -8623,7 +8623,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "journeyContext": { 
               "customer": { 
                 "id": String, 
-                "type": String, 
+                "idType": String, 
               },  
               "customerSession": { 
                 "id": String, 
@@ -13200,7 +13200,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "journeyContext": { 
         "customer": { 
           "id": String, 
-          "type": String, 
+          "idType": String, 
         },  
         "customerSession": { 
           "id": String, 
@@ -13736,7 +13736,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "journeyContext": { 
               "customer": { 
                 "id": String, 
-                "type": String, 
+                "idType": String, 
               },  
               "customerSession": { 
                 "id": String, 
@@ -18313,7 +18313,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "journeyContext": { 
         "customer": { 
           "id": String, 
-          "type": String, 
+          "idType": String, 
         },  
         "customerSession": { 
           "id": String, 
@@ -18849,7 +18849,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "journeyContext": { 
               "customer": { 
                 "id": String, 
-                "type": String, 
+                "idType": String, 
               },  
               "customerSession": { 
                 "id": String, 
@@ -23430,7 +23430,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "journeyContext": { 
         "customer": { 
           "id": String, 
-          "type": String, 
+          "idType": String, 
         },  
         "customerSession": { 
           "id": String, 
@@ -23966,7 +23966,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "journeyContext": { 
               "customer": { 
                 "id": String, 
-                "type": String, 
+                "idType": String, 
               },  
               "customerSession": { 
                 "id": String, 
@@ -28543,7 +28543,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "journeyContext": { 
         "customer": { 
           "id": String, 
-          "type": String, 
+          "idType": String, 
         },  
         "customerSession": { 
           "id": String, 
@@ -29079,7 +29079,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "journeyContext": { 
               "customer": { 
                 "id": String, 
-                "type": String, 
+                "idType": String, 
               },  
               "customerSession": { 
                 "id": String, 
@@ -34883,7 +34883,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "journeyContext": { 
         "customer": { 
           "id": String, 
-          "type": String, 
+          "idType": String, 
         },  
         "customerSession": { 
           "id": String, 
@@ -35419,7 +35419,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "journeyContext": { 
               "customer": { 
                 "id": String, 
-                "type": String, 
+                "idType": String, 
               },  
               "customerSession": { 
                 "id": String, 

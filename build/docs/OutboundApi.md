@@ -37,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundCampaignrule**](OutboundApi.html#getOutboundCampaignrule) | **GET** /api/v2/outbound/campaignrules/{campaignRuleId} | Get Campaign Rule
 [**getOutboundCampaignrules**](OutboundApi.html#getOutboundCampaignrules) | **GET** /api/v2/outbound/campaignrules | Query Campaign Rule list
 [**getOutboundCampaigns**](OutboundApi.html#getOutboundCampaigns) | **GET** /api/v2/outbound/campaigns | Query a list of dialer campaigns.
+[**getOutboundCampaignsDivisionview**](OutboundApi.html#getOutboundCampaignsDivisionview) | **GET** /api/v2/outbound/campaigns/divisionviews/{campaignId} | Get a basic Campaign information object
 [**getOutboundCampaignsDivisionviews**](OutboundApi.html#getOutboundCampaignsDivisionviews) | **GET** /api/v2/outbound/campaigns/divisionviews | Query a list of basic Campaign information objects
 [**getOutboundContactlist**](OutboundApi.html#getOutboundContactlist) | **GET** /api/v2/outbound/contactlists/{contactListId} | Get a dialer contact list.
 [**getOutboundContactlistContact**](OutboundApi.html#getOutboundContactlistContact) | **GET** /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} | Get a contact.
@@ -1832,6 +1833,61 @@ apiInstance.getOutboundCampaigns(opts)
 ### Return type
 
 **CampaignEntityListing**
+
+<a name="getOutboundCampaignsDivisionview"></a>
+
+# CampaignDivisionView getOutboundCampaignsDivisionview(campaignId)
+
+
+
+GET /api/v2/outbound/campaigns/divisionviews/{campaignId}
+
+Get a basic Campaign information object
+
+This returns a simplified version of a Campaign, consisting of name and division.
+
+Requires ANY permissions: 
+
+* outbound:campaign:search
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let campaignId = "campaignId_example"; // String | Campaign ID
+
+apiInstance.getOutboundCampaignsDivisionview(campaignId)
+  .then((data) => {
+    console.log(`getOutboundCampaignsDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundCampaignsDivisionview');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **campaignId** | **String** | Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**CampaignDivisionView**
 
 <a name="getOutboundCampaignsDivisionviews"></a>
 
@@ -4393,6 +4449,11 @@ Campaign <a href="#" onclick="return copyCampaignExample()">Copy</a>
     "name": String, 
     "selfUri": String, 
   },  
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
   "selfUri": String, 
 }
 ```
@@ -5013,6 +5074,11 @@ ContactList <a href="#" onclick="return copyContactListExample()">Copy</a>
   "dateCreated": Date, 
   "dateModified": Date, 
   "version": Number, 
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
   "columnNames": [String], 
   "phoneColumns": { 
     "columnName": String, 
@@ -5301,6 +5367,11 @@ DncListCreate <a href="#" onclick="return copyDncListCreateExample()">Copy</a>
   "loginId": String, 
   "dncCodes": [String], 
   "licenseId": String, 
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
   "selfUri": String, 
 }
 ```
@@ -5960,6 +6031,11 @@ Campaign <a href="#" onclick="return copyCampaignExample()">Copy</a>
     "name": String, 
     "selfUri": String, 
   },  
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
   "selfUri": String, 
 }
 ```
@@ -6264,6 +6340,11 @@ ContactList <a href="#" onclick="return copyContactListExample()">Copy</a>
   "dateCreated": Date, 
   "dateModified": Date, 
   "version": Number, 
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
   "columnNames": [String], 
   "phoneColumns": { 
     "columnName": String, 
@@ -6596,6 +6677,11 @@ DncList <a href="#" onclick="return copyDncListExample()">Copy</a>
   "loginId": String, 
   "dncCodes": [String], 
   "licenseId": String, 
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
   "selfUri": String, 
 }
 ```

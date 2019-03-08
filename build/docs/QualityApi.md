@@ -3428,7 +3428,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "journeyContext": { 
           "customer": { 
             "id": String, 
-            "type": String, 
+            "idType": String, 
           },  
           "customerSession": { 
             "id": String, 
@@ -7319,7 +7319,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "journeyContext": { 
             "customer": { 
               "id": String, 
-              "type": String, 
+              "idType": String, 
             },  
             "customerSession": { 
               "id": String, 
@@ -10462,7 +10462,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "journeyContext": { 
               "customer": { 
                 "id": String, 
-                "type": String, 
+                "idType": String, 
               },  
               "customerSession": { 
                 "id": String, 
@@ -18243,7 +18243,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "journeyContext": { 
             "customer": { 
               "id": String, 
-              "type": String, 
+              "idType": String, 
             },  
             "customerSession": { 
               "id": String, 
@@ -21386,7 +21386,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "journeyContext": { 
               "customer": { 
                 "id": String, 
-                "type": String, 
+                "idType": String, 
               },  
               "customerSession": { 
                 "id": String, 
@@ -29265,7 +29265,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         "journeyContext": { 
           "customer": { 
             "id": String, 
-            "type": String, 
+            "idType": String, 
           },  
           "customerSession": { 
             "id": String, 
@@ -34196,7 +34196,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "journeyContext": { 
             "customer": { 
               "id": String, 
-              "type": String, 
+              "idType": String, 
             },  
             "customerSession": { 
               "id": String, 
@@ -36326,7 +36326,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "journeyContext": { 
               "customer": { 
                 "id": String, 
-                "type": String, 
+                "idType": String, 
               },  
               "customerSession": { 
                 "id": String, 
@@ -42300,7 +42300,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "journeyContext": { 
               "customer": { 
                 "id": String, 
-                "type": String, 
+                "idType": String, 
               },  
               "customerSession": { 
                 "id": String, 
@@ -51802,7 +51802,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "journeyContext": { 
           "customer": { 
             "id": String, 
-            "type": String, 
+            "idType": String, 
           },  
           "customerSession": { 
             "id": String, 
@@ -55693,7 +55693,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "journeyContext": { 
             "customer": { 
               "id": String, 
-              "type": String, 
+              "idType": String, 
             },  
             "customerSession": { 
               "id": String, 
@@ -58836,7 +58836,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "journeyContext": { 
               "customer": { 
                 "id": String, 
-                "type": String, 
+                "idType": String, 
               },  
               "customerSession": { 
                 "id": String, 
@@ -66617,7 +66617,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "journeyContext": { 
             "customer": { 
               "id": String, 
-              "type": String, 
+              "idType": String, 
             },  
             "customerSession": { 
               "id": String, 
@@ -69760,7 +69760,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "journeyContext": { 
               "customer": { 
                 "id": String, 
-                "type": String, 
+                "idType": String, 
               },  
               "customerSession": { 
                 "id": String, 
@@ -77637,7 +77637,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         "journeyContext": { 
           "customer": { 
             "id": String, 
-            "type": String, 
+            "idType": String, 
           },  
           "customerSession": { 
             "id": String, 
@@ -82568,7 +82568,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "journeyContext": { 
             "customer": { 
               "id": String, 
-              "type": String, 
+              "idType": String, 
             },  
             "customerSession": { 
               "id": String, 
@@ -84698,7 +84698,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "journeyContext": { 
               "customer": { 
                 "id": String, 
-                "type": String, 
+                "idType": String, 
               },  
               "customerSession": { 
                 "id": String, 
@@ -90672,7 +90672,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "journeyContext": { 
               "customer": { 
                 "id": String, 
-                "type": String, 
+                "idType": String, 
               },  
               "customerSession": { 
                 "id": String, 
