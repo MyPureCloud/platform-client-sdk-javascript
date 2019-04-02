@@ -3538,6 +3538,7 @@ ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy
     },  
   },  
   "metrics": [String], 
+  "detailMetrics": [String], 
 }
 ```
 
@@ -3746,14 +3747,50 @@ InboundRoute <a href="#" onclick="return copyInboundRouteExample()">Copy</a>
                 "domain": UriReference, 
                 "route": InboundRoute, 
               },  
+              "autoBcc": { 
+                "email": String, 
+                "name": String, 
+              },  
+              "spamFlow": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "selfUri": String, 
             },  
+          },  
+          "autoBcc": { 
+            "email": String, 
+            "name": String, 
+          },  
+          "spamFlow": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
           },  
           "selfUri": String, 
         },  
       },  
+      "autoBcc": { 
+        "email": String, 
+        "name": String, 
+      },  
+      "spamFlow": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "selfUri": String, 
     },  
+  },  
+  "autoBcc": { 
+    "email": String, 
+    "name": String, 
+  },  
+  "spamFlow": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
   },  
   "selfUri": String, 
 }
@@ -4362,11 +4399,38 @@ CreateQueueRequest <a href="#" onclick="return copyCreateQueueRequestExample()">
                 "domain": UriReference, 
                 "route": InboundRoute, 
               },  
+              "autoBcc": { 
+                "email": String, 
+                "name": String, 
+              },  
+              "spamFlow": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
+          "autoBcc": { 
+            "email": String, 
+            "name": String, 
+          },  
+          "spamFlow": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "selfUri": String, 
         },  
+      },  
+      "autoBcc": { 
+        "email": String, 
+        "name": String, 
+      },  
+      "spamFlow": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
       },  
       "selfUri": String, 
     },  
@@ -5097,14 +5161,50 @@ InboundRoute <a href="#" onclick="return copyInboundRouteExample()">Copy</a>
                 "domain": UriReference, 
                 "route": InboundRoute, 
               },  
+              "autoBcc": { 
+                "email": String, 
+                "name": String, 
+              },  
+              "spamFlow": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "selfUri": String, 
             },  
+          },  
+          "autoBcc": { 
+            "email": String, 
+            "name": String, 
+          },  
+          "spamFlow": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
           },  
           "selfUri": String, 
         },  
       },  
+      "autoBcc": { 
+        "email": String, 
+        "name": String, 
+      },  
+      "spamFlow": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "selfUri": String, 
     },  
+  },  
+  "autoBcc": { 
+    "email": String, 
+    "name": String, 
+  },  
+  "spamFlow": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
   },  
   "selfUri": String, 
 }
@@ -6908,11 +7008,38 @@ QueueRequest <a href="#" onclick="return copyQueueRequestExample()">Copy</a>
                 "domain": UriReference, 
                 "route": InboundRoute, 
               },  
+              "autoBcc": { 
+                "email": String, 
+                "name": String, 
+              },  
+              "spamFlow": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
+          "autoBcc": { 
+            "email": String, 
+            "name": String, 
+          },  
+          "spamFlow": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "selfUri": String, 
         },  
+      },  
+      "autoBcc": { 
+        "email": String, 
+        "name": String, 
+      },  
+      "spamFlow": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
       },  
       "selfUri": String, 
     },  

@@ -4,7 +4,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
 	/**
 	 * @module purecloud-platform-client-v2/ApiClient
-	 * @version 46.0.0
+	 * @version 47.0.0
 	 */
 	class ApiClient {
 		/**
@@ -697,7 +697,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
 			// set header parameters
 			request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-			//request.set({ 'purecloud-sdk': '46.0.0' });
+			//request.set({ 'purecloud-sdk': '47.0.0' });
 
 			// set request timeout
 			request.timeout(this.timeout);
@@ -824,7 +824,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Alerting service.
 		 * @module purecloud-platform-client-v2/api/AlertingApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -1138,7 +1138,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Analytics service.
 		 * @module purecloud-platform-client-v2/api/AnalyticsApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -1843,7 +1843,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Architect service.
 		 * @module purecloud-platform-client-v2/api/ArchitectApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -1955,6 +1955,36 @@ define(['superagent'], function (superagent) { 'use strict';
 
 			return this.apiClient.callApi(
 				'/api/v2/architect/prompts/{promptId}/resources/{languageCode}', 
+				'DELETE', 
+				{ 'promptId': promptId,'languageCode': languageCode }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Delete specified user prompt resource audio
+		 * 
+		 * @param {String} promptId Prompt ID
+		 * @param {String} languageCode Language
+		 */
+		deleteArchitectPromptResourceAudio(promptId, languageCode) { 
+			// verify the required parameter 'promptId' is set
+			if (promptId === undefined || promptId === null) {
+				throw 'Missing the required parameter "promptId" when calling deleteArchitectPromptResourceAudio';
+			}
+			// verify the required parameter 'languageCode' is set
+			if (languageCode === undefined || languageCode === null) {
+				throw 'Missing the required parameter "languageCode" when calling deleteArchitectPromptResourceAudio';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/architect/prompts/{promptId}/resources/{languageCode}/audio', 
 				'DELETE', 
 				{ 'promptId': promptId,'languageCode': languageCode }, 
 				{  }, 
@@ -2124,7 +2154,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
 		/**
 		 * deletes a specific datatable by id
-		 * deletes an entire datatable (including schema and data) with a given id)
+		 * Deletes an entire datatable (including the schema and data) with a given datatableId
 		 * @param {String} datatableId id of datatable
 		 * @param {Object} opts Optional parameters
 		 * @param {Boolean} opts.force force delete, even if in use (default to false)
@@ -2153,7 +2183,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
 		/**
 		 * Delete a row entry
-		 * Deletes a row with a given rowId.
+		 * Deletes a row with a given rowId (the value of the key field).
 		 * @param {String} datatableId id of datatable
 		 * @param {String} rowId the key for the row
 		 */
@@ -2687,7 +2717,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		 * @param {Object} opts Optional parameters
 		 * @param {Number} opts.pageNumber Page number (default to 1)
 		 * @param {Number} opts.pageSize Page size (default to 25)
-		 * @param {String} opts.name Name
+		 * @param {Array.<String>} opts.name Name
 		 * @param {String} opts.description Description
 		 * @param {String} opts.nameOrDescription Name or description
 		 * @param {String} opts.sortBy Sort by (default to id)
@@ -2701,7 +2731,7 @@ define(['superagent'], function (superagent) { 'use strict';
 				'/api/v2/architect/prompts', 
 				'GET', 
 				{  }, 
-				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': this.apiClient.buildCollectionParam(opts['name'], 'multi'),'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
 				{  }, 
 				{  }, 
 				null, 
@@ -3210,7 +3240,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
 		/**
 		 * Returns a specific datatable by id
-		 * Given a datableid returns the schema associated with it.
+		 * Given a datatableId returns the datatable object and schema associated with it.
 		 * @param {String} datatableId id of datatable
 		 * @param {Object} opts Optional parameters
 		 * @param {Object} opts.expand Expand instructions for the result
@@ -3239,7 +3269,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
 		/**
 		 * Returns a specific row for the datatable
-		 * Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+		 * Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
 		 * @param {String} datatableId id of datatable
 		 * @param {String} rowId The key for the row
 		 * @param {Object} opts Optional parameters
@@ -3272,8 +3302,8 @@ define(['superagent'], function (superagent) { 'use strict';
 		}
 
 		/**
-		 * Returns the rows for the datatable
-		 * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+		 * Returns the rows for the datatable with the given id
+		 * Returns all of the rows for the datatable with the given datatableId.  By default this will just be a truncated list returning the key for each row. Set showBrief to false to return all of the row contents.
 		 * @param {String} datatableId id of datatable
 		 * @param {Object} opts Optional parameters
 		 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -3304,7 +3334,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
 		/**
 		 * Retrieve a list of datatables for the org
-		 * Returns a metadata list of the datatables associated with this org, including ID, name and description.
+		 * Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
 		 * @param {Object} opts Optional parameters
 		 * @param {Object} opts.expand Expand instructions for the result
 		 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -3829,8 +3859,8 @@ define(['superagent'], function (superagent) { 'use strict';
 		}
 
 		/**
-		 * Create a new row entry
-		 * Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+		 * Create a new row entry for the datatable.
+		 * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
 		 * @param {String} datatableId id of datatable
 		 * @param {Object} dataTableRow 
 		 */
@@ -3860,7 +3890,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
 		/**
 		 * Create a new datatable with the specified json-schema definition
-		 * This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+		 * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema&#39;s title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
 		 * @param {Object} body datatable json-schema
 		 */
 		postFlowsDatatables(body) { 
@@ -4135,7 +4165,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
 		/**
 		 * Updates a specific datatable by id
-		 * Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
+		 * Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
 		 * @param {String} datatableId id of datatable
 		 * @param {Object} opts Optional parameters
 		 * @param {Object} opts.expand Expand instructions for the result
@@ -4165,7 +4195,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
 		/**
 		 * Update a row entry
-		 * Updates a row with the given to the new values.
+		 * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {     \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,     \&quot;Field2\&quot;: false,     \&quot;KEY\&quot;: \&quot;27272\&quot; }
 		 * @param {String} datatableId id of datatable
 		 * @param {String} rowId the key for the row
 		 * @param {Object} opts Optional parameters
@@ -4203,7 +4233,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Authorization service.
 		 * @module purecloud-platform-client-v2/api/AuthorizationApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -5212,7 +5242,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Billing service.
 		 * @module purecloud-platform-client-v2/api/BillingApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -5292,7 +5322,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * ContentManagement service.
 		 * @module purecloud-platform-client-v2/api/ContentManagementApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -6432,7 +6462,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Conversations service.
 		 * @module purecloud-platform-client-v2/api/ConversationsApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -9512,7 +9542,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * ExternalContacts service.
 		 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -10420,7 +10450,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Fax service.
 		 * @module purecloud-platform-client-v2/api/FaxApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -10591,7 +10621,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Flows service.
 		 * @module purecloud-platform-client-v2/api/FlowsApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -10637,7 +10667,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * GeneralDataProtectionRegulation service.
 		 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -10767,7 +10797,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Geolocation service.
 		 * @module purecloud-platform-client-v2/api/GeolocationApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -10898,7 +10928,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Greetings service.
 		 * @module purecloud-platform-client-v2/api/GreetingsApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -11353,7 +11383,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Groups service.
 		 * @module purecloud-platform-client-v2/api/GroupsApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -11758,7 +11788,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * IdentityProvider service.
 		 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -12384,7 +12414,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Integrations service.
 		 * @module purecloud-platform-client-v2/api/IntegrationsApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -13546,11 +13576,63 @@ define(['superagent'], function (superagent) { 'use strict';
 
 	}
 
+	class JourneyApi {
+		/**
+		 * Journey service.
+		 * @module purecloud-platform-client-v2/api/JourneyApi
+		 * @version 47.0.0
+		 */
+
+		/**
+		 * Constructs a new JourneyApi. 
+		 * @alias module:purecloud-platform-client-v2/api/JourneyApi
+		 * @class
+		 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+		 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+		 */
+		constructor(apiClient) {
+			this.apiClient = apiClient || ApiClient.instance;
+		}
+
+
+		/**
+		 * Retrieve all events for a given session.
+		 * 
+		 * @param {String} sessionId System-generated UUID that represents the session the event is a part of.
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+		 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+		 * @param {String} opts.limit Number of entities to return. Maximum of 200.
+		 */
+		getJourneySessionEvents(sessionId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'sessionId' is set
+			if (sessionId === undefined || sessionId === null) {
+				throw 'Missing the required parameter "sessionId" when calling getJourneySessionEvents';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/journey/sessions/{sessionId}/events', 
+				'GET', 
+				{ 'sessionId': sessionId }, 
+				{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'] }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+	}
+
 	class LanguagesApi {
 		/**
 		 * Languages service.
 		 * @module purecloud-platform-client-v2/api/LanguagesApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -13818,7 +13900,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * License service.
 		 * @module purecloud-platform-client-v2/api/LicenseApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -13949,6 +14031,31 @@ define(['superagent'], function (superagent) { 'use strict';
 		}
 
 		/**
+		 * Get a page of users and their licenses
+		 * Retrieve a page of users in an organization along with the licenses they possess.
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 */
+		getLicenseUsers(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/license/users', 
+				'GET', 
+				{  }, 
+				{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
 		 * Update the organization&#39;s license assignments in a batch.
 		 * 
 		 * @param {Object} opts Optional parameters
@@ -14027,7 +14134,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Locations service.
 		 * @module purecloud-platform-client-v2/api/LocationsApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -14234,7 +14341,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Messaging service.
 		 * @module purecloud-platform-client-v2/api/MessagingApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -14615,7 +14722,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * MobileDevices service.
 		 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -14766,7 +14873,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Notifications service.
 		 * @module purecloud-platform-client-v2/api/NotificationsApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -14965,7 +15072,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * OAuth service.
 		 * @module purecloud-platform-client-v2/api/OAuthApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -15136,7 +15243,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Objects service.
 		 * @module purecloud-platform-client-v2/api/ObjectsApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -15373,7 +15480,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Organization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -15538,7 +15645,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * OrganizationAuthorization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -16213,7 +16320,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Outbound service.
 		 * @module purecloud-platform-client-v2/api/OutboundApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -18876,7 +18983,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Presence service.
 		 * @module purecloud-platform-client-v2/api/PresenceApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -19143,7 +19250,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Quality service.
 		 * @module purecloud-platform-client-v2/api/QualityApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -20814,7 +20921,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Recording service.
 		 * @module purecloud-platform-client-v2/api/RecordingApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -21868,7 +21975,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * ResponseManagement service.
 		 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -22192,7 +22299,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Routing service.
 		 * @module purecloud-platform-client-v2/api/RoutingApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -23990,7 +24097,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Scripts service.
 		 * @module purecloud-platform-client-v2/api/ScriptsApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -24348,7 +24455,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Search service.
 		 * @module purecloud-platform-client-v2/api/SearchApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -24803,7 +24910,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Stations service.
 		 * @module purecloud-platform-client-v2/api/StationsApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -24950,7 +25057,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Suggest service.
 		 * @module purecloud-platform-client-v2/api/SuggestApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -25089,7 +25196,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * TelephonyProvidersEdge service.
 		 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -28439,7 +28546,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Tokens service.
 		 * @module purecloud-platform-client-v2/api/TokensApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -28525,7 +28632,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * UserRecordings service.
 		 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -28709,7 +28816,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Users service.
 		 * @module purecloud-platform-client-v2/api/UsersApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -30490,7 +30597,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Utilities service.
 		 * @module purecloud-platform-client-v2/api/UtilitiesApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -30601,7 +30708,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * Voicemail service.
 		 * @module purecloud-platform-client-v2/api/VoicemailApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -31238,7 +31345,7 @@ define(['superagent'], function (superagent) { 'use strict';
 		/**
 		 * WebChat service.
 		 * @module purecloud-platform-client-v2/api/WebChatApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -31445,11 +31552,157 @@ define(['superagent'], function (superagent) { 'use strict';
 
 	}
 
+	class WidgetsApi {
+		/**
+		 * Widgets service.
+		 * @module purecloud-platform-client-v2/api/WidgetsApi
+		 * @version 47.0.0
+		 */
+
+		/**
+		 * Constructs a new WidgetsApi. 
+		 * @alias module:purecloud-platform-client-v2/api/WidgetsApi
+		 * @class
+		 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+		 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+		 */
+		constructor(apiClient) {
+			this.apiClient = apiClient || ApiClient.instance;
+		}
+
+
+		/**
+		 * Delete a Widget deployment
+		 * 
+		 * @param {String} deploymentId Widget Config Id
+		 */
+		deleteWidgetsDeployment(deploymentId) { 
+			// verify the required parameter 'deploymentId' is set
+			if (deploymentId === undefined || deploymentId === null) {
+				throw 'Missing the required parameter "deploymentId" when calling deleteWidgetsDeployment';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/widgets/deployments/{deploymentId}', 
+				'DELETE', 
+				{ 'deploymentId': deploymentId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get a Widget deployment
+		 * 
+		 * @param {String} deploymentId Widget Config Id
+		 */
+		getWidgetsDeployment(deploymentId) { 
+			// verify the required parameter 'deploymentId' is set
+			if (deploymentId === undefined || deploymentId === null) {
+				throw 'Missing the required parameter "deploymentId" when calling getWidgetsDeployment';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/widgets/deployments/{deploymentId}', 
+				'GET', 
+				{ 'deploymentId': deploymentId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * List Widget deployments
+		 * 
+		 */
+		getWidgetsDeployments() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/widgets/deployments', 
+				'GET', 
+				{  }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Create Widget deployment
+		 * 
+		 * @param {Object} body Deployment
+		 */
+		postWidgetsDeployments(body) { 
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWidgetsDeployments';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/widgets/deployments', 
+				'POST', 
+				{  }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update a Widget deployment
+		 * 
+		 * @param {String} deploymentId Widget Config Id
+		 * @param {Object} body Deployment
+		 */
+		putWidgetsDeployment(deploymentId, body) { 
+			// verify the required parameter 'deploymentId' is set
+			if (deploymentId === undefined || deploymentId === null) {
+				throw 'Missing the required parameter "deploymentId" when calling putWidgetsDeployment';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling putWidgetsDeployment';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/widgets/deployments/{deploymentId}', 
+				'PUT', 
+				{ 'deploymentId': deploymentId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+	}
+
 	class WorkforceManagementApi {
 		/**
 		 * WorkforceManagement service.
 		 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-		 * @version 46.0.0
+		 * @version 47.0.0
 		 */
 
 		/**
@@ -31705,6 +31958,31 @@ define(['superagent'], function (superagent) { 'use strict';
 		}
 
 		/**
+		 * Get status of the modeling job
+		 * 
+		 * @param {String} jobId The id of the modeling job
+		 */
+		getWorkforcemanagementAdhocmodelingjob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAdhocmodelingjob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/adhocmodelingjobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get management unit
 		 * 
 		 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
@@ -31806,6 +32084,36 @@ define(['superagent'], function (superagent) { 'use strict';
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}', 
+				'GET', 
+				{ 'managementUnitId': managementUnitId,'agentId': agentId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Gets all the shift trades for a given agent
+		 * 
+		 * @param {String} managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+		 * @param {String} agentId The agent id
+		 */
+		getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId) { 
+			// verify the required parameter 'managementUnitId' is set
+			if (managementUnitId === undefined || managementUnitId === null) {
+				throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitAgentShifttrades';
+			}
+			// verify the required parameter 'agentId' is set
+			if (agentId === undefined || agentId === null) {
+				throw 'Missing the required parameter "agentId" when calling getWorkforcemanagementManagementunitAgentShifttrades';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades', 
 				'GET', 
 				{ 'managementUnitId': managementUnitId,'agentId': agentId }, 
 				{  }, 
@@ -32001,6 +32309,56 @@ define(['superagent'], function (superagent) { 'use strict';
 
 			return this.apiClient.callApi(
 				'/api/v2/workforcemanagement/managementunits/{muId}/settings', 
+				'GET', 
+				{ 'muId': muId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Gets a summary of all shift trades in the matched state
+		 * 
+		 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+		 */
+		getWorkforcemanagementManagementunitShifttradesMatched(muId) { 
+			// verify the required parameter 'muId' is set
+			if (muId === undefined || muId === null) {
+				throw 'Missing the required parameter "muId" when calling getWorkforcemanagementManagementunitShifttradesMatched';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/managementunits/{muId}/shifttrades/matched', 
+				'GET', 
+				{ 'muId': muId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Gets list of users available for whom you can send direct shift trade requests
+		 * 
+		 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+		 */
+		getWorkforcemanagementManagementunitShifttradesUsers(muId) { 
+			// verify the required parameter 'muId' is set
+			if (muId === undefined || muId === null) {
+				throw 'Missing the required parameter "muId" when calling getWorkforcemanagementManagementunitShifttradesUsers';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/managementunits/{muId}/shifttrades/users', 
 				'GET', 
 				{ 'muId': muId }, 
 				{  }, 
@@ -32213,6 +32571,40 @@ define(['superagent'], function (superagent) { 'use strict';
 		}
 
 		/**
+		 * Gets all the shift trades for a given week
+		 * 
+		 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+		 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {Object} opts Optional parameters
+		 * @param {Boolean} opts.evaluateMatches Whether to evaluate the matches for violations (default to true)
+		 */
+		getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'managementUnitId' is set
+			if (managementUnitId === undefined || managementUnitId === null) {
+				throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWeekShifttrades';
+			}
+			// verify the required parameter 'weekDateId' is set
+			if (weekDateId === undefined || weekDateId === null) {
+				throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementManagementunitWeekShifttrades';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades', 
+				'GET', 
+				{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId }, 
+				{ 'evaluateMatches': opts['evaluateMatches'] }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get the final result of a short term forecast calculation with modifications applied
 		 * 
 		 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
@@ -32393,6 +32785,71 @@ define(['superagent'], function (superagent) { 'use strict';
 		}
 
 		/**
+		 * Get a list of notifications for the current user
+		 * 
+		 */
+		getWorkforcemanagementNotifications() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/notifications', 
+				'GET', 
+				{  }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get status of the scheduling job
+		 * 
+		 * @param {String} jobId The id of the scheduling job
+		 */
+		getWorkforcemanagementSchedulingjob(jobId) { 
+			// verify the required parameter 'jobId' is set
+			if (jobId === undefined || jobId === null) {
+				throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementSchedulingjob';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/schedulingjobs/{jobId}', 
+				'GET', 
+				{ 'jobId': jobId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Gets all of my shift trades
+		 * 
+		 */
+		getWorkforcemanagementShifttrades() { 
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/shifttrades', 
+				'GET', 
+				{  }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get a time off request for the current user
 		 * 
 		 * @param {String} timeOffRequestId Time Off Request Id
@@ -32469,6 +32926,41 @@ define(['superagent'], function (superagent) { 'use strict';
 				{  }, 
 				{  }, 
 				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Update agent details
+		 * 
+		 * @param {String} managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+		 * @param {String} agentId The agent id
+		 * @param {Object} body The request body
+		 */
+		patchWorkforcemanagementManagementunitAgent(managementUnitId, agentId, body) { 
+			// verify the required parameter 'managementUnitId' is set
+			if (managementUnitId === undefined || managementUnitId === null) {
+				throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitAgent';
+			}
+			// verify the required parameter 'agentId' is set
+			if (agentId === undefined || agentId === null) {
+				throw 'Missing the required parameter "agentId" when calling patchWorkforcemanagementManagementunitAgent';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitAgent';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}', 
+				'PATCH', 
+				{ 'managementUnitId': managementUnitId,'agentId': agentId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
 				['PureCloud OAuth'], 
 				['application/json'], 
 				['application/json']
@@ -33156,6 +33648,156 @@ define(['superagent'], function (superagent) { 'use strict';
 		}
 
 		/**
+		 * Matches a shift trade. This route can only be called by the receiving agent
+		 * 
+		 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+		 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {Object} body body
+		 * @param {String} tradeId The ID of the shift trade to update
+		 */
+		postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, body, tradeId) { 
+			// verify the required parameter 'managementUnitId' is set
+			if (managementUnitId === undefined || managementUnitId === null) {
+				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
+			}
+			// verify the required parameter 'weekDateId' is set
+			if (weekDateId === undefined || weekDateId === null) {
+				throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
+			}
+			// verify the required parameter 'tradeId' is set
+			if (tradeId === undefined || tradeId === null) {
+				throw 'Missing the required parameter "tradeId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match', 
+				'POST', 
+				{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId,'tradeId': tradeId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Updates a shift trade. This route can only be called by the initiating agent
+		 * 
+		 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+		 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {Object} body body
+		 * @param {String} tradeId The ID of the shift trade to update
+		 */
+		postWorkforcemanagementManagementunitWeekShifttradeUpdate(managementUnitId, weekDateId, body, tradeId) { 
+			// verify the required parameter 'managementUnitId' is set
+			if (managementUnitId === undefined || managementUnitId === null) {
+				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradeUpdate';
+			}
+			// verify the required parameter 'weekDateId' is set
+			if (weekDateId === undefined || weekDateId === null) {
+				throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradeUpdate';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradeUpdate';
+			}
+			// verify the required parameter 'tradeId' is set
+			if (tradeId === undefined || tradeId === null) {
+				throw 'Missing the required parameter "tradeId" when calling postWorkforcemanagementManagementunitWeekShifttradeUpdate';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/update', 
+				'POST', 
+				{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId,'tradeId': tradeId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Adds a shift trade
+		 * 
+		 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+		 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {Object} body body
+		 */
+		postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body) { 
+			// verify the required parameter 'managementUnitId' is set
+			if (managementUnitId === undefined || managementUnitId === null) {
+				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttrades';
+			}
+			// verify the required parameter 'weekDateId' is set
+			if (weekDateId === undefined || weekDateId === null) {
+				throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttrades';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttrades';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades', 
+				'POST', 
+				{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
+		 * Searches for potential shift trade matches for the current agent
+		 * 
+		 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+		 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {Object} body body
+		 */
+		postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body) { 
+			// verify the required parameter 'managementUnitId' is set
+			if (managementUnitId === undefined || managementUnitId === null) {
+				throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';
+			}
+			// verify the required parameter 'weekDateId' is set
+			if (weekDateId === undefined || weekDateId === null) {
+				throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search', 
+				'POST', 
+				{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
 		 * Copy a short term forecast
 		 * 
 		 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
@@ -33400,6 +34042,30 @@ define(['superagent'], function (superagent) { 'use strict';
 		}
 
 		/**
+		 * Mark a list of notifications as read or unread
+		 * 
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.body body
+		 */
+		postWorkforcemanagementNotificationsUpdate(opts) { 
+			opts = opts || {};
+			
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/notifications/update', 
+				'POST', 
+				{  }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				opts['body'], 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
+		/**
 		 * Get published schedule for the current user
 		 * 
 		 * @param {Object} opts Optional parameters
@@ -33447,6 +34113,46 @@ define(['superagent'], function (superagent) { 'use strict';
 			);
 		}
 
+		/**
+		 * Updates a shift trade state
+		 * 
+		 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+		 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} tradeId The ID of the shift trade to update
+		 * @param {Object} body body
+		 */
+		putWorkforcemanagementManagementunitWeekShifttradeState(managementUnitId, weekDateId, tradeId, body) { 
+			// verify the required parameter 'managementUnitId' is set
+			if (managementUnitId === undefined || managementUnitId === null) {
+				throw 'Missing the required parameter "managementUnitId" when calling putWorkforcemanagementManagementunitWeekShifttradeState';
+			}
+			// verify the required parameter 'weekDateId' is set
+			if (weekDateId === undefined || weekDateId === null) {
+				throw 'Missing the required parameter "weekDateId" when calling putWorkforcemanagementManagementunitWeekShifttradeState';
+			}
+			// verify the required parameter 'tradeId' is set
+			if (tradeId === undefined || tradeId === null) {
+				throw 'Missing the required parameter "tradeId" when calling putWorkforcemanagementManagementunitWeekShifttradeState';
+			}
+			// verify the required parameter 'body' is set
+			if (body === undefined || body === null) {
+				throw 'Missing the required parameter "body" when calling putWorkforcemanagementManagementunitWeekShifttradeState';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/state', 
+				'PUT', 
+				{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId,'tradeId': tradeId }, 
+				{  }, 
+				{  }, 
+				{  }, 
+				body, 
+				['PureCloud OAuth'], 
+				['application/json'], 
+				['application/json']
+			);
+		}
+
 	}
 
 	/**
@@ -33478,7 +34184,7 @@ define(['superagent'], function (superagent) { 'use strict';
 	 * </pre>
 	 * </p>
 	 * @module purecloud-platform-client-v2/index
-	 * @version 46.0.0
+	 * @version 47.0.0
 	 */
 	class platformClient {
 		constructor() {
@@ -33567,6 +34273,11 @@ define(['superagent'], function (superagent) { 'use strict';
 			 * @property {module:purecloud-platform-client-v2/api/IntegrationsApi}
 			 */
 			this.IntegrationsApi = IntegrationsApi;
+			/**
+			 * The JourneyApi service constructor.
+			 * @property {module:purecloud-platform-client-v2/api/JourneyApi}
+			 */
+			this.JourneyApi = JourneyApi;
 			/**
 			 * The LanguagesApi service constructor.
 			 * @property {module:purecloud-platform-client-v2/api/LanguagesApi}
@@ -33702,6 +34413,11 @@ define(['superagent'], function (superagent) { 'use strict';
 			 * @property {module:purecloud-platform-client-v2/api/WebChatApi}
 			 */
 			this.WebChatApi = WebChatApi;
+			/**
+			 * The WidgetsApi service constructor.
+			 * @property {module:purecloud-platform-client-v2/api/WidgetsApi}
+			 */
+			this.WidgetsApi = WidgetsApi;
 			/**
 			 * The WorkforceManagementApi service constructor.
 			 * @property {module:purecloud-platform-client-v2/api/WorkforceManagementApi}

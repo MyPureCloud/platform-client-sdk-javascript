@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 46.0.0
+	 * @version 47.0.0
 	 */
 
 	/**
@@ -117,6 +117,36 @@ class ArchitectApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/architect/prompts/{promptId}/resources/{languageCode}', 
+			'DELETE', 
+			{ 'promptId': promptId,'languageCode': languageCode }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete specified user prompt resource audio
+	 * 
+	 * @param {String} promptId Prompt ID
+	 * @param {String} languageCode Language
+	 */
+	deleteArchitectPromptResourceAudio(promptId, languageCode) { 
+		// verify the required parameter 'promptId' is set
+		if (promptId === undefined || promptId === null) {
+			throw 'Missing the required parameter "promptId" when calling deleteArchitectPromptResourceAudio';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling deleteArchitectPromptResourceAudio';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/prompts/{promptId}/resources/{languageCode}/audio', 
 			'DELETE', 
 			{ 'promptId': promptId,'languageCode': languageCode }, 
 			{  }, 
@@ -286,7 +316,7 @@ class ArchitectApi {
 
 	/**
 	 * deletes a specific datatable by id
-	 * deletes an entire datatable (including schema and data) with a given id)
+	 * Deletes an entire datatable (including the schema and data) with a given datatableId
 	 * @param {String} datatableId id of datatable
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.force force delete, even if in use (default to false)
@@ -315,7 +345,7 @@ class ArchitectApi {
 
 	/**
 	 * Delete a row entry
-	 * Deletes a row with a given rowId.
+	 * Deletes a row with a given rowId (the value of the key field).
 	 * @param {String} datatableId id of datatable
 	 * @param {String} rowId the key for the row
 	 */
@@ -849,7 +879,7 @@ class ArchitectApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {String} opts.name Name
+	 * @param {Array.<String>} opts.name Name
 	 * @param {String} opts.description Description
 	 * @param {String} opts.nameOrDescription Name or description
 	 * @param {String} opts.sortBy Sort by (default to id)
@@ -863,7 +893,7 @@ class ArchitectApi {
 			'/api/v2/architect/prompts', 
 			'GET', 
 			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': this.apiClient.buildCollectionParam(opts['name'], 'multi'),'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1372,7 +1402,7 @@ class ArchitectApi {
 
 	/**
 	 * Returns a specific datatable by id
-	 * Given a datableid returns the schema associated with it.
+	 * Given a datatableId returns the datatable object and schema associated with it.
 	 * @param {String} datatableId id of datatable
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand instructions for the result
@@ -1401,7 +1431,7 @@ class ArchitectApi {
 
 	/**
 	 * Returns a specific row for the datatable
-	 * Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+	 * Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
 	 * @param {String} datatableId id of datatable
 	 * @param {String} rowId The key for the row
 	 * @param {Object} opts Optional parameters
@@ -1434,8 +1464,8 @@ class ArchitectApi {
 	}
 
 	/**
-	 * Returns the rows for the datatable
-	 * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+	 * Returns the rows for the datatable with the given id
+	 * Returns all of the rows for the datatable with the given datatableId.  By default this will just be a truncated list returning the key for each row. Set showBrief to false to return all of the row contents.
 	 * @param {String} datatableId id of datatable
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -1466,7 +1496,7 @@ class ArchitectApi {
 
 	/**
 	 * Retrieve a list of datatables for the org
-	 * Returns a metadata list of the datatables associated with this org, including ID, name and description.
+	 * Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand instructions for the result
 	 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -1991,8 +2021,8 @@ class ArchitectApi {
 	}
 
 	/**
-	 * Create a new row entry
-	 * Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+	 * Create a new row entry for the datatable.
+	 * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
 	 * @param {String} datatableId id of datatable
 	 * @param {Object} dataTableRow 
 	 */
@@ -2022,7 +2052,7 @@ class ArchitectApi {
 
 	/**
 	 * Create a new datatable with the specified json-schema definition
-	 * This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+	 * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema&#39;s title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
 	 * @param {Object} body datatable json-schema
 	 */
 	postFlowsDatatables(body) { 
@@ -2297,7 +2327,7 @@ class ArchitectApi {
 
 	/**
 	 * Updates a specific datatable by id
-	 * Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
+	 * Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
 	 * @param {String} datatableId id of datatable
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand instructions for the result
@@ -2327,7 +2357,7 @@ class ArchitectApi {
 
 	/**
 	 * Update a row entry
-	 * Updates a row with the given to the new values.
+	 * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {     \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,     \&quot;Field2\&quot;: false,     \&quot;KEY\&quot;: \&quot;27272\&quot; }
 	 * @param {String} datatableId id of datatable
 	 * @param {String} rowId the key for the row
 	 * @param {Object} opts Optional parameters

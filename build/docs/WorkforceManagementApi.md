@@ -15,10 +15,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteWorkforcemanagementManagementunitWeekShorttermforecast**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunitWeekShorttermforecast) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId} | Delete a short term forecast
 [**deleteWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunitWorkplan) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} | Delete a work plan
 [**getWorkforcemanagementAdherence**](WorkforceManagementApi.html#getWorkforcemanagementAdherence) | **GET** /api/v2/workforcemanagement/adherence | Get a list of UserScheduleAdherence records for the requested users
+[**getWorkforcemanagementAdhocmodelingjob**](WorkforceManagementApi.html#getWorkforcemanagementAdhocmodelingjob) | **GET** /api/v2/workforcemanagement/adhocmodelingjobs/{jobId} | Get status of the modeling job
 [**getWorkforcemanagementManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementManagementunit) | **GET** /api/v2/workforcemanagement/managementunits/{muId} | Get management unit
 [**getWorkforcemanagementManagementunitActivitycode**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitActivitycode) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/activitycodes/{acId} | Get an activity code
 [**getWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitActivitycodes) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/activitycodes | Get activity codes
 [**getWorkforcemanagementManagementunitAgent**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitAgent) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId} | Get data for agent in the management unit
+[**getWorkforcemanagementManagementunitAgentShifttrades**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitAgentShifttrades) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades | Gets all the shift trades for a given agent
 [**getWorkforcemanagementManagementunitIntradayQueues**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitIntradayQueues) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/intraday/queues | Get intraday queues for the given date
 [**getWorkforcemanagementManagementunitSchedulingRun**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitSchedulingRun) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId} | Gets the status for a specific scheduling run
 [**getWorkforcemanagementManagementunitSchedulingRunResult**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitSchedulingRunResult) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId}/result | Gets the result of a specific scheduling run
@@ -26,21 +28,28 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementManagementunitServicegoalgroup**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitServicegoalgroup) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/servicegoalgroups/{serviceGoalGroupId} | Get a service goal group
 [**getWorkforcemanagementManagementunitServicegoalgroups**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitServicegoalgroups) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/servicegoalgroups | Get service goal groups
 [**getWorkforcemanagementManagementunitSettings**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitSettings) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/settings | Get the settings for the requested management unit
+[**getWorkforcemanagementManagementunitShifttradesMatched**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitShifttradesMatched) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/shifttrades/matched | Gets a summary of all shift trades in the matched state
+[**getWorkforcemanagementManagementunitShifttradesUsers**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitShifttradesUsers) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/shifttrades/users | Gets list of users available for whom you can send direct shift trade requests
 [**getWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequest) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Get a time off request
 [**getWorkforcemanagementManagementunitUserTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequests) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests | Get a list of time off requests for a given user
 [**getWorkforcemanagementManagementunitUsers**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUsers) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/users | Get users in the management unit
 [**getWorkforcemanagementManagementunitWeekSchedule**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWeekSchedule) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId} | Get a week schedule
 [**getWorkforcemanagementManagementunitWeekScheduleGenerationresults**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWeekScheduleGenerationresults) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults | Get week schedule generation results
 [**getWorkforcemanagementManagementunitWeekSchedules**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWeekSchedules) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules | Get the list of schedules in a week in management unit
+[**getWorkforcemanagementManagementunitWeekShifttrades**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWeekShifttrades) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades | Gets all the shift trades for a given week
 [**getWorkforcemanagementManagementunitWeekShorttermforecastFinal**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWeekShorttermforecastFinal) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/final | Get the final result of a short term forecast calculation with modifications applied
 [**getWorkforcemanagementManagementunitWeekShorttermforecasts**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWeekShorttermforecasts) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts | Get short term forecasts
 [**getWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWorkplan) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} | Get a work plan
 [**getWorkforcemanagementManagementunitWorkplans**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWorkplans) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans | Get work plans
 [**getWorkforcemanagementManagementunits**](WorkforceManagementApi.html#getWorkforcemanagementManagementunits) | **GET** /api/v2/workforcemanagement/managementunits | Get management units
 [**getWorkforcemanagementManagementunitsDivisionviews**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitsDivisionviews) | **GET** /api/v2/workforcemanagement/managementunits/divisionviews | Get management units across divisions
+[**getWorkforcemanagementNotifications**](WorkforceManagementApi.html#getWorkforcemanagementNotifications) | **GET** /api/v2/workforcemanagement/notifications | Get a list of notifications for the current user
+[**getWorkforcemanagementSchedulingjob**](WorkforceManagementApi.html#getWorkforcemanagementSchedulingjob) | **GET** /api/v2/workforcemanagement/schedulingjobs/{jobId} | Get status of the scheduling job
+[**getWorkforcemanagementShifttrades**](WorkforceManagementApi.html#getWorkforcemanagementShifttrades) | **GET** /api/v2/workforcemanagement/shifttrades | Gets all of my shift trades
 [**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequest) | **GET** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Get a time off request for the current user
 [**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequests) | **GET** /api/v2/workforcemanagement/timeoffrequests | Get a list of time off requests for the current user
 [**patchWorkforcemanagementManagementunitActivitycode**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitActivitycode) | **PATCH** /api/v2/workforcemanagement/managementunits/{muId}/activitycodes/{acId} | Update an activity code
+[**patchWorkforcemanagementManagementunitAgent**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitAgent) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId} | Update agent details
 [**patchWorkforcemanagementManagementunitSchedulingRun**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitSchedulingRun) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId} | Marks a specific scheduling run as applied, allowing a new rescheduling run to be started
 [**patchWorkforcemanagementManagementunitServicegoalgroup**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitServicegoalgroup) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/servicegoalgroups/{serviceGoalGroupId} | Update a service goal group
 [**patchWorkforcemanagementManagementunitSettings**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitSettings) | **PATCH** /api/v2/workforcemanagement/managementunits/{muId}/settings | Patch the settings for the requested management unit
@@ -62,6 +71,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementManagementunitWeekSchedules**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekSchedules) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules | Add a schedule for a week in management unit using imported data. Use partial uploads of user schedules if activity count in schedule is greater than 17500
 [**postWorkforcemanagementManagementunitWeekSchedulesGenerate**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekSchedulesGenerate) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/generate | Generate a week schedule
 [**postWorkforcemanagementManagementunitWeekSchedulesPartialupload**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekSchedulesPartialupload) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/partialupload | Partial upload of user schedules where activity count is greater than 17500
+[**postWorkforcemanagementManagementunitWeekShifttradeMatch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShifttradeMatch) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match | Matches a shift trade. This route can only be called by the receiving agent
+[**postWorkforcemanagementManagementunitWeekShifttradeUpdate**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShifttradeUpdate) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/update | Updates a shift trade. This route can only be called by the initiating agent
+[**postWorkforcemanagementManagementunitWeekShifttrades**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShifttrades) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades | Adds a shift trade
+[**postWorkforcemanagementManagementunitWeekShifttradesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShifttradesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search | Searches for potential shift trade matches for the current agent
 [**postWorkforcemanagementManagementunitWeekShorttermforecastCopy**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShorttermforecastCopy) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy | Copy a short term forecast
 [**postWorkforcemanagementManagementunitWeekShorttermforecasts**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShorttermforecasts) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts | Import a short term forecast
 [**postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/generate | Generate a short term forecast
@@ -69,8 +82,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementManagementunitWorkplanCopy**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWorkplanCopy) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/copy | Create a copy of work plan
 [**postWorkforcemanagementManagementunitWorkplans**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWorkplans) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans | Create a new work plan
 [**postWorkforcemanagementManagementunits**](WorkforceManagementApi.html#postWorkforcemanagementManagementunits) | **POST** /api/v2/workforcemanagement/managementunits | Add a management unit
+[**postWorkforcemanagementNotificationsUpdate**](WorkforceManagementApi.html#postWorkforcemanagementNotificationsUpdate) | **POST** /api/v2/workforcemanagement/notifications/update | Mark a list of notifications as read or unread
 [**postWorkforcemanagementSchedules**](WorkforceManagementApi.html#postWorkforcemanagementSchedules) | **POST** /api/v2/workforcemanagement/schedules | Get published schedule for the current user
 [**postWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#postWorkforcemanagementTimeoffrequests) | **POST** /api/v2/workforcemanagement/timeoffrequests | Create a time off request for the current user
+[**putWorkforcemanagementManagementunitWeekShifttradeState**](WorkforceManagementApi.html#putWorkforcemanagementManagementunitWeekShifttradeState) | **PUT** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/state | Updates a shift trade state
 {: class="table table-striped"}
 
 <a name="deleteWorkforcemanagementManagementunit"></a>
@@ -535,6 +550,61 @@ apiInstance.getWorkforcemanagementAdherence(userId)
 
 **[UserScheduleAdherence]**
 
+<a name="getWorkforcemanagementAdhocmodelingjob"></a>
+
+# ModelingStatusResponse getWorkforcemanagementAdhocmodelingjob(jobId)
+
+
+
+GET /api/v2/workforcemanagement/adhocmodelingjobs/{jobId}
+
+Get status of the modeling job
+
+
+
+Requires ANY permissions: 
+
+* wfm:adhocModel:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let jobId = "jobId_example"; // String | The id of the modeling job
+
+apiInstance.getWorkforcemanagementAdhocmodelingjob(jobId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementAdhocmodelingjob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementAdhocmodelingjob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | The id of the modeling job |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ModelingStatusResponse**
+
 <a name="getWorkforcemanagementManagementunit"></a>
 
 # ManagementUnit getWorkforcemanagementManagementunit(muId, opts)
@@ -850,6 +920,64 @@ apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId)
 ### Return type
 
 **WfmAgent**
+
+<a name="getWorkforcemanagementManagementunitAgentShifttrades"></a>
+
+# ShiftTradeListResponse getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId)
+
+
+
+GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades
+
+Gets all the shift trades for a given agent
+
+
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:edit
+* wfm:shiftTradeRequest:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let managementUnitId = "managementUnitId_example"; // String | The id of the management unit, or 'mine' for the management unit of the logged-in user.
+let agentId = "agentId_example"; // String | The agent id
+
+apiInstance.getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementManagementunitAgentShifttrades success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitAgentShifttrades');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **agentId** | **String** | The agent id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ShiftTradeListResponse**
 
 <a name="getWorkforcemanagementManagementunitIntradayQueues"></a>
 
@@ -1249,6 +1377,117 @@ apiInstance.getWorkforcemanagementManagementunitSettings(muId)
 
 **ManagementUnitSettings**
 
+<a name="getWorkforcemanagementManagementunitShifttradesMatched"></a>
+
+# ShiftTradeMatchesSummaryResponse getWorkforcemanagementManagementunitShifttradesMatched(muId)
+
+
+
+GET /api/v2/workforcemanagement/managementunits/{muId}/shifttrades/matched
+
+Gets a summary of all shift trades in the matched state
+
+
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+
+apiInstance.getWorkforcemanagementManagementunitShifttradesMatched(muId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementManagementunitShifttradesMatched success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitShifttradesMatched');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ShiftTradeMatchesSummaryResponse**
+
+<a name="getWorkforcemanagementManagementunitShifttradesUsers"></a>
+
+# WfmUserEntityListing getWorkforcemanagementManagementunitShifttradesUsers(muId)
+
+
+
+GET /api/v2/workforcemanagement/managementunits/{muId}/shifttrades/users
+
+Gets list of users available for whom you can send direct shift trade requests
+
+
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+
+apiInstance.getWorkforcemanagementManagementunitShifttradesUsers(muId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementManagementunitShifttradesUsers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitShifttradesUsers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**WfmUserEntityListing**
+
 <a name="getWorkforcemanagementManagementunitUserTimeoffrequest"></a>
 
 # TimeOffRequestResponse getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId)
@@ -1623,6 +1862,68 @@ apiInstance.getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, 
 
 **WeekScheduleListResponse**
 
+<a name="getWorkforcemanagementManagementunitWeekShifttrades"></a>
+
+# WeekShiftTradeListResponse getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, opts)
+
+
+
+GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades
+
+Gets all the shift trades for a given week
+
+
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let weekDateId = "2013-10-20"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'evaluateMatches': true // Boolean | Whether to evaluate the matches for violations
+};
+
+apiInstance.getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementManagementunitWeekShifttrades success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunitWeekShifttrades');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **evaluateMatches** | **Boolean** | Whether to evaluate the matches for violations | [optional] [default to true] |
+{: class="table table-striped"}
+
+### Return type
+
+**WeekShiftTradeListResponse**
+
 <a name="getWorkforcemanagementManagementunitWeekShorttermforecastFinal"></a>
 
 # ForecastResultResponse getWorkforcemanagementManagementunitWeekShorttermforecastFinal(managementUnitId, weekDateId, forecastId, opts)
@@ -1927,7 +2228,7 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
  **pageSize** | **Number** |  | [optional]  |
  **pageNumber** | **Number** |  | [optional]  |
  **expand** | **String** |  | [optional] <br />**Values**: details |
- **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ShortTermForecasts, TimeOffRequests, WorkPlans |
+ **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ShiftTrading, ShortTermForecasts, TimeOffRequests, WorkPlans |
  **divisionId** | **String** |  | [optional]  |
 {: class="table table-striped"}
 
@@ -1991,6 +2292,162 @@ apiInstance.getWorkforcemanagementManagementunitsDivisionviews(opts)
 ### Return type
 
 **ManagementUnitListing**
+
+<a name="getWorkforcemanagementNotifications"></a>
+
+# NotificationsResponse getWorkforcemanagementNotifications()
+
+
+
+GET /api/v2/workforcemanagement/notifications
+
+Get a list of notifications for the current user
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+apiInstance.getWorkforcemanagementNotifications()
+  .then((data) => {
+    console.log(`getWorkforcemanagementNotifications success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementNotifications');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**NotificationsResponse**
+
+<a name="getWorkforcemanagementSchedulingjob"></a>
+
+# SchedulingStatusResponse getWorkforcemanagementSchedulingjob(jobId)
+
+
+
+GET /api/v2/workforcemanagement/schedulingjobs/{jobId}
+
+Get status of the scheduling job
+
+
+
+Requires ANY permissions: 
+
+* wfm:schedulingrequest:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let jobId = "jobId_example"; // String | The id of the scheduling job
+
+apiInstance.getWorkforcemanagementSchedulingjob(jobId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementSchedulingjob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementSchedulingjob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | The id of the scheduling job |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SchedulingStatusResponse**
+
+<a name="getWorkforcemanagementShifttrades"></a>
+
+# ShiftTradeListResponse getWorkforcemanagementShifttrades()
+
+
+
+GET /api/v2/workforcemanagement/shifttrades
+
+Gets all of my shift trades
+
+
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:edit
+* wfm:shiftTradeRequest:view
+* wfm:agentShiftTradeRequest:participate
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+apiInstance.getWorkforcemanagementShifttrades()
+  .then((data) => {
+    console.log(`getWorkforcemanagementShifttrades success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementShifttrades');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**ShiftTradeListResponse**
 
 <a name="getWorkforcemanagementTimeoffrequest"></a>
 
@@ -2205,6 +2662,89 @@ apiInstance.patchWorkforcemanagementManagementunitActivitycode(muId, acId, opts)
 ### Return type
 
 **ActivityCode**
+
+<a name="patchWorkforcemanagementManagementunitAgent"></a>
+
+# void patchWorkforcemanagementManagementunitAgent(managementUnitId, agentId, body)
+
+
+
+PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}
+
+Update agent details
+
+
+
+Requires NO permissions: 
+
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyUpdateAgentRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UpdateAgentRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+UpdateAgentRequest <a href="#" onclick="return copyUpdateAgentRequestExample()">Copy</a>
+
+<div id="UpdateAgentRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "acceptDirectShiftTrades": Boolean, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let managementUnitId = "managementUnitId_example"; // String | The id of the management unit, or 'mine' for the management unit of the logged-in user.
+let agentId = "agentId_example"; // String | The agent id
+let body = {}; // Object | The request body
+
+apiInstance.patchWorkforcemanagementManagementunitAgent(managementUnitId, agentId, body)
+  .then(() => {
+    console.log('patchWorkforcemanagementManagementunitAgent returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementManagementunitAgent');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **agentId** | **String** | The agent id |  |
+ **body** | **Object** | The request body |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="patchWorkforcemanagementManagementunitSchedulingRun"></a>
 
@@ -2479,6 +3019,24 @@ ManagementUnitSettings <a href="#" onclick="return copyManagementUnitSettingsExa
       },  
     },  
   },  
+  "shiftTrading": { 
+    "enabled": Boolean, 
+    "autoReview": Boolean, 
+    "allowDirectTrades": Boolean, 
+    "minHoursInFuture": Number, 
+    "unequalPaid": String, 
+    "oneSided": String, 
+    "weeklyMinPaidViolations": String, 
+    "weeklyMaxPaidViolations": String, 
+    "requiresMatchingQueues": Boolean, 
+    "requiresMatchingLanguages": Boolean, 
+    "requiresMatchingSkills": Boolean, 
+    "activityCategoryRules": { 
+      "activityCategory": String, 
+      "action": String, 
+      "activityCodeIdReplacement": String, 
+    },  
+  },  
   "metadata": { 
     "version": Number, 
     "modifiedBy": { 
@@ -2677,6 +3235,11 @@ UpdateWeekScheduleRequest <a href="#" onclick="return copyUpdateWeekScheduleRequ
   "published": Boolean, 
   "userSchedules": { 
     "shifts": { 
+      "weekSchedule": { 
+        "id": String, 
+        "weekDate": String, 
+        "selfUri": String, 
+      },  
       "id": String, 
       "startDate": Date, 
       "lengthInMinutes": Number, 
@@ -3434,6 +3997,7 @@ UserListScheduleRequestBody <a href="#" onclick="return copyUserListScheduleRequ
   "userIds": [String], 
   "startDate": Date, 
   "endDate": Date, 
+  "loadFullWeeks": Boolean, 
 }
 ```
 
@@ -5682,6 +6246,11 @@ ImportWeekScheduleRequest <a href="#" onclick="return copyImportWeekScheduleRequ
   "description": String, 
   "userSchedules": { 
     "shifts": { 
+      "weekSchedule": { 
+        "id": String, 
+        "weekDate": String, 
+        "selfUri": String, 
+      },  
       "id": String, 
       "startDate": Date, 
       "lengthInMinutes": Number, 
@@ -5899,6 +6468,11 @@ UserSchedulesPartialUploadRequest <a href="#" onclick="return copyUserSchedulesP
 { 
   "userSchedules": { 
     "shifts": { 
+      "weekSchedule": { 
+        "id": String, 
+        "weekDate": String, 
+        "selfUri": String, 
+      },  
       "id": String, 
       "startDate": Date, 
       "lengthInMinutes": Number, 
@@ -5981,6 +6555,376 @@ apiInstance.postWorkforcemanagementManagementunitWeekSchedulesPartialupload(mana
 ### Return type
 
 **PartialUploadResponse**
+
+<a name="postWorkforcemanagementManagementunitWeekShifttradeMatch"></a>
+
+# MatchShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, body, tradeId)
+
+
+
+POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match
+
+Matches a shift trade. This route can only be called by the receiving agent
+
+
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyMatchShiftTradeRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#MatchShiftTradeRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+MatchShiftTradeRequest <a href="#" onclick="return copyMatchShiftTradeRequestExample()">Copy</a>
+
+<div id="MatchShiftTradeRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "receivingScheduleId": String, 
+  "receivingShiftId": String, 
+  "metadata": { 
+    "version": Number, 
+    "modifiedBy": { 
+      "id": String, 
+      "selfUri": String, 
+    },  
+    "dateModified": Date, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let weekDateId = "2013-10-20"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let body = {}; // Object | body
+let tradeId = "tradeId_example"; // String | The ID of the shift trade to update
+
+apiInstance.postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, body, tradeId)
+  .then((data) => {
+    console.log(`postWorkforcemanagementManagementunitWeekShifttradeMatch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitWeekShifttradeMatch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **body** | **Object** | body |  |
+ **tradeId** | **String** | The ID of the shift trade to update |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MatchShiftTradeResponse**
+
+<a name="postWorkforcemanagementManagementunitWeekShifttradeUpdate"></a>
+
+# ShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttradeUpdate(managementUnitId, weekDateId, body, tradeId)
+
+
+
+POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/update
+
+Updates a shift trade. This route can only be called by the initiating agent
+
+
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyUpdateShiftTradeRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UpdateShiftTradeRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+UpdateShiftTradeRequest <a href="#" onclick="return copyUpdateShiftTradeRequestExample()">Copy</a>
+
+<div id="UpdateShiftTradeRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "receivingUserId": String, 
+  "expiration": Date, 
+  "acceptableIntervals": { 
+    "start": Date, 
+    "end": Date, 
+  },  
+  "metadata": { 
+    "version": Number, 
+    "modifiedBy": { 
+      "id": String, 
+      "selfUri": String, 
+    },  
+    "dateModified": Date, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let weekDateId = "2013-10-20"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let body = {}; // Object | body
+let tradeId = "tradeId_example"; // String | The ID of the shift trade to update
+
+apiInstance.postWorkforcemanagementManagementunitWeekShifttradeUpdate(managementUnitId, weekDateId, body, tradeId)
+  .then((data) => {
+    console.log(`postWorkforcemanagementManagementunitWeekShifttradeUpdate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitWeekShifttradeUpdate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **body** | **Object** | body |  |
+ **tradeId** | **String** | The ID of the shift trade to update |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ShiftTradeResponse**
+
+<a name="postWorkforcemanagementManagementunitWeekShifttrades"></a>
+
+# ShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body)
+
+
+
+POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades
+
+Adds a shift trade
+
+
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyAddShiftTradeRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#AddShiftTradeRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+AddShiftTradeRequest <a href="#" onclick="return copyAddShiftTradeRequestExample()">Copy</a>
+
+<div id="AddShiftTradeRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "scheduleId": String, 
+  "initiatingShiftId": String, 
+  "receivingUserId": String, 
+  "expiration": Date, 
+  "acceptableIntervals": { 
+    "start": Date, 
+    "end": Date, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let weekDateId = "2013-10-20"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementManagementunitWeekShifttrades success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitWeekShifttrades');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **body** | **Object** | body |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ShiftTradeResponse**
+
+<a name="postWorkforcemanagementManagementunitWeekShifttradesSearch"></a>
+
+# SearchShiftTradesResponse postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body)
+
+
+
+POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search
+
+Searches for potential shift trade matches for the current agent
+
+
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copySearchShiftTradesRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#SearchShiftTradesRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+SearchShiftTradesRequest <a href="#" onclick="return copySearchShiftTradesRequestExample()">Copy</a>
+
+<div id="SearchShiftTradesRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "receivingScheduleId": String, 
+  "receivingShiftIds": [String], 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let weekDateId = "2013-10-20"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementManagementunitWeekShifttradesSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitWeekShifttradesSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **body** | **Object** | body |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SearchShiftTradesResponse**
 
 <a name="postWorkforcemanagementManagementunitWeekShorttermforecastCopy"></a>
 
@@ -6685,6 +7629,24 @@ CreateManagementUnitApiRequest <a href="#" onclick="return copyCreateManagementU
         },  
       },  
     },  
+    "shiftTrading": { 
+      "enabled": Boolean, 
+      "autoReview": Boolean, 
+      "allowDirectTrades": Boolean, 
+      "minHoursInFuture": Number, 
+      "unequalPaid": String, 
+      "oneSided": String, 
+      "weeklyMinPaidViolations": String, 
+      "weeklyMaxPaidViolations": String, 
+      "requiresMatchingQueues": Boolean, 
+      "requiresMatchingLanguages": Boolean, 
+      "requiresMatchingSkills": Boolean, 
+      "activityCategoryRules": { 
+        "activityCategory": String, 
+        "action": String, 
+        "activityCodeIdReplacement": String, 
+      },  
+    },  
   },  
   "divisionId": String, 
 }
@@ -6732,6 +7694,111 @@ apiInstance.postWorkforcemanagementManagementunits(opts)
 
 **ManagementUnit**
 
+<a name="postWorkforcemanagementNotificationsUpdate"></a>
+
+# UpdateNotificationsResponse postWorkforcemanagementNotificationsUpdate(opts)
+
+
+
+POST /api/v2/workforcemanagement/notifications/update
+
+Mark a list of notifications as read or unread
+
+
+
+Requires NO permissions: 
+
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyUpdateNotificationsRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UpdateNotificationsRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+UpdateNotificationsRequest <a href="#" onclick="return copyUpdateNotificationsRequestExample()">Copy</a>
+
+<div id="UpdateNotificationsRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "entities": { 
+    "id": String, 
+    "mutableGroupId": String, 
+    "timestamp": Date, 
+    "type": String, 
+    "shiftTrade": { 
+      "weekDate": String, 
+      "tradeId": String, 
+      "oneSided": Boolean, 
+      "newState": String, 
+      "initiatingUser": { 
+        "id": String, 
+        "selfUri": String, 
+      },  
+      "initiatingShiftDate": Date, 
+      "receivingUser": { 
+        "id": String, 
+        "selfUri": String, 
+      },  
+      "receivingShiftDate": Date, 
+    },  
+    "markedAsRead": Boolean, 
+    "agentNotification": Boolean, 
+    "otherNotificationIdsInGroup": [String], 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let opts = { 
+  'body': {} // Object | body
+};
+
+apiInstance.postWorkforcemanagementNotificationsUpdate(opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementNotificationsUpdate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementNotificationsUpdate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**UpdateNotificationsResponse**
+
 <a name="postWorkforcemanagementSchedules"></a>
 
 # UserScheduleContainer postWorkforcemanagementSchedules(opts)
@@ -6772,6 +7839,7 @@ CurrentUserScheduleRequestBody <a href="#" onclick="return copyCurrentUserSchedu
 { 
   "startDate": Date, 
   "endDate": Date, 
+  "loadFullWeeks": Boolean, 
 }
 ```
 
@@ -6902,4 +7970,99 @@ apiInstance.postWorkforcemanagementTimeoffrequests(opts)
 ### Return type
 
 **TimeOffRequestResponse**
+
+<a name="putWorkforcemanagementManagementunitWeekShifttradeState"></a>
+
+# ShiftTradeResponse putWorkforcemanagementManagementunitWeekShifttradeState(managementUnitId, weekDateId, tradeId, body)
+
+
+
+PUT /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/state
+
+Updates a shift trade state
+
+
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+* wfm:shiftTradeRequest:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyUpdateShiftTradeStateRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UpdateShiftTradeStateRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+UpdateShiftTradeStateRequest <a href="#" onclick="return copyUpdateShiftTradeStateRequestExample()">Copy</a>
+
+<div id="UpdateShiftTradeStateRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "state": String, 
+  "metadata": { 
+    "version": Number, 
+    "modifiedBy": { 
+      "id": String, 
+      "selfUri": String, 
+    },  
+    "dateModified": Date, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let weekDateId = "2013-10-20"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let tradeId = "tradeId_example"; // String | The ID of the shift trade to update
+let body = {}; // Object | body
+
+apiInstance.putWorkforcemanagementManagementunitWeekShifttradeState(managementUnitId, weekDateId, tradeId, body)
+  .then((data) => {
+    console.log(`putWorkforcemanagementManagementunitWeekShifttradeState success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putWorkforcemanagementManagementunitWeekShifttradeState');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **tradeId** | **String** | The ID of the shift trade to update |  |
+ **body** | **Object** | body |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ShiftTradeResponse**
 

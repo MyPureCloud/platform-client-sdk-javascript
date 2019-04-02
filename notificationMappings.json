@@ -297,6 +297,10 @@
       "class": "WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice"
     },
     {
+      "topic": "v2.users.{id}.workforcemanagement.notifications",
+      "class": "WfmUserNotificationTopicWfmUserNotification"
+    },
+    {
       "topic": "v2.users.{id}.workforcemanagement.schedules",
       "class": "WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification"
     },

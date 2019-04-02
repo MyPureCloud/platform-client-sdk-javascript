@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getLicenseOrganization**](LicenseApi.html#getLicenseOrganization) | **GET** /api/v2/license/organization | Get license assignments for the organization.
 [**getLicenseToggle**](LicenseApi.html#getLicenseToggle) | **GET** /api/v2/license/toggles/{featureName} | Get PureCloud license feature toggle value.
 [**getLicenseUser**](LicenseApi.html#getLicenseUser) | **GET** /api/v2/license/users/{userId} | Get licenses for specified user.
+[**getLicenseUsers**](LicenseApi.html#getLicenseUsers) | **GET** /api/v2/license/users | Get a page of users and their licenses
 [**postLicenseOrganization**](LicenseApi.html#postLicenseOrganization) | **POST** /api/v2/license/organization | Update the organization&#39;s license assignments in a batch.
 [**postLicenseToggle**](LicenseApi.html#postLicenseToggle) | **POST** /api/v2/license/toggles/{featureName} | Switch PureCloud license feature toggle value.
 [**postLicenseUsers**](LicenseApi.html#postLicenseUsers) | **POST** /api/v2/license/users | Fetch user licenses in a batch.
@@ -291,6 +292,67 @@ apiInstance.getLicenseUser(userId)
 ### Return type
 
 **LicenseUser**
+
+<a name="getLicenseUsers"></a>
+
+# UserLicensesEntityListing getLicenseUsers(opts)
+
+
+
+GET /api/v2/license/users
+
+Get a page of users and their licenses
+
+Retrieve a page of users in an organization along with the licenses they possess.
+
+Requires ANY permissions: 
+
+* admin
+* role_manager
+* authorization:grant:add
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LicenseApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getLicenseUsers(opts)
+  .then((data) => {
+    console.log(`getLicenseUsers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLicenseUsers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**UserLicensesEntityListing**
 
 <a name="postLicenseOrganization"></a>
 

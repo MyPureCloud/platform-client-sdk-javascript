@@ -21,7 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # void deleteWebchatDeployment(deploymentId)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 DELETE /api/v2/webchat/deployments/{deploymentId}
 
@@ -126,7 +126,7 @@ void (no response body)
 
 # WebChatDeployment getWebchatDeployment(deploymentId)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/webchat/deployments/{deploymentId}
 
@@ -181,7 +181,7 @@ apiInstance.getWebchatDeployment(deploymentId)
 
 # WebChatDeploymentEntityListing getWebchatDeployments()
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/webchat/deployments
 
@@ -281,7 +281,7 @@ This endpoint does not need any parameter.
 
 # WebChatDeployment postWebchatDeployments(body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/webchat/deployments
 
@@ -376,7 +376,7 @@ apiInstance.postWebchatDeployments(body)
 
 # WebChatDeployment putWebchatDeployment(deploymentId, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 PUT /api/v2/webchat/deployments/{deploymentId}
 

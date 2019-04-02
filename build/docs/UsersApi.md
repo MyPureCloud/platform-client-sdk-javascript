@@ -6471,11 +6471,38 @@ UserQueue <a href="#" onclick="return copyUserQueueExample()">Copy</a>
                 "domain": UriReference, 
                 "route": InboundRoute, 
               },  
+              "autoBcc": { 
+                "email": String, 
+                "name": String, 
+              },  
+              "spamFlow": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
+          "autoBcc": { 
+            "email": String, 
+            "name": String, 
+          },  
+          "spamFlow": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "selfUri": String, 
         },  
+      },  
+      "autoBcc": { 
+        "email": String, 
+        "name": String, 
+      },  
+      "spamFlow": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
       },  
       "selfUri": String, 
     },  
@@ -6752,11 +6779,38 @@ UserQueue <a href="#" onclick="return copyUserQueueExample()">Copy</a>
                 "domain": UriReference, 
                 "route": InboundRoute, 
               },  
+              "autoBcc": { 
+                "email": String, 
+                "name": String, 
+              },  
+              "spamFlow": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
+          "autoBcc": { 
+            "email": String, 
+            "name": String, 
+          },  
+          "spamFlow": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "selfUri": String, 
         },  
+      },  
+      "autoBcc": { 
+        "email": String, 
+        "name": String, 
+      },  
+      "spamFlow": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
       },  
       "selfUri": String, 
     },  
@@ -7587,6 +7641,7 @@ ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy
     },  
   },  
   "metrics": [String], 
+  "detailMetrics": [String], 
 }
 ```
 

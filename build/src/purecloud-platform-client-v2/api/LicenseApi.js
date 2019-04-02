@@ -5,7 +5,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 46.0.0
+	 * @version 47.0.0
 	 */
 
 	/**
@@ -126,6 +126,31 @@ class LicenseApi {
 			'GET', 
 			{ 'userId': userId }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a page of users and their licenses
+	 * Retrieve a page of users in an organization along with the licenses they possess.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getLicenseUsers(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/license/users', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
 			{  }, 
 			{  }, 
 			null, 

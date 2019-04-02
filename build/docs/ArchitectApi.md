@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteArchitectIvr**](ArchitectApi.html#deleteArchitectIvr) | **DELETE** /api/v2/architect/ivrs/{ivrId} | Delete an IVR Config.
 [**deleteArchitectPrompt**](ArchitectApi.html#deleteArchitectPrompt) | **DELETE** /api/v2/architect/prompts/{promptId} | Delete specified user prompt
 [**deleteArchitectPromptResource**](ArchitectApi.html#deleteArchitectPromptResource) | **DELETE** /api/v2/architect/prompts/{promptId}/resources/{languageCode} | Delete specified user prompt resource
+[**deleteArchitectPromptResourceAudio**](ArchitectApi.html#deleteArchitectPromptResourceAudio) | **DELETE** /api/v2/architect/prompts/{promptId}/resources/{languageCode}/audio | Delete specified user prompt resource audio
 [**deleteArchitectPrompts**](ArchitectApi.html#deleteArchitectPrompts) | **DELETE** /api/v2/architect/prompts | Batch-delete a list of prompts
 [**deleteArchitectSchedule**](ArchitectApi.html#deleteArchitectSchedule) | **DELETE** /api/v2/architect/schedules/{scheduleId} | Delete a schedule by id
 [**deleteArchitectSchedulegroup**](ArchitectApi.html#deleteArchitectSchedulegroup) | **DELETE** /api/v2/architect/schedulegroups/{scheduleGroupId} | Deletes a schedule group by ID
@@ -55,7 +56,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlows**](ArchitectApi.html#getFlows) | **GET** /api/v2/flows | Get a pageable list of flows, filtered by query parameters
 [**getFlowsDatatable**](ArchitectApi.html#getFlowsDatatable) | **GET** /api/v2/flows/datatables/{datatableId} | Returns a specific datatable by id
 [**getFlowsDatatableRow**](ArchitectApi.html#getFlowsDatatableRow) | **GET** /api/v2/flows/datatables/{datatableId}/rows/{rowId} | Returns a specific row for the datatable
-[**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | **GET** /api/v2/flows/datatables/{datatableId}/rows | Returns the rows for the datatable
+[**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | **GET** /api/v2/flows/datatables/{datatableId}/rows | Returns the rows for the datatable with the given id
 [**getFlowsDatatables**](ArchitectApi.html#getFlowsDatatables) | **GET** /api/v2/flows/datatables | Retrieve a list of datatables for the org
 [**getFlowsDivisionviews**](ArchitectApi.html#getFlowsDivisionviews) | **GET** /api/v2/flows/divisionviews | Get a pageable list of basic flow information objects filterable by query parameters.
 [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | **POST** /api/v2/architect/dependencytracking/build | Rebuild Dependency Tracking data for an organization
@@ -76,7 +77,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postFlowsActionsPublish**](ArchitectApi.html#postFlowsActionsPublish) | **POST** /api/v2/flows/actions/publish | Publish flow
 [**postFlowsActionsRevert**](ArchitectApi.html#postFlowsActionsRevert) | **POST** /api/v2/flows/actions/revert | Revert flow
 [**postFlowsActionsUnlock**](ArchitectApi.html#postFlowsActionsUnlock) | **POST** /api/v2/flows/actions/unlock | Unlock flow
-[**postFlowsDatatableRows**](ArchitectApi.html#postFlowsDatatableRows) | **POST** /api/v2/flows/datatables/{datatableId}/rows | Create a new row entry
+[**postFlowsDatatableRows**](ArchitectApi.html#postFlowsDatatableRows) | **POST** /api/v2/flows/datatables/{datatableId}/rows | Create a new row entry for the datatable.
 [**postFlowsDatatables**](ArchitectApi.html#postFlowsDatatables) | **POST** /api/v2/flows/datatables | Create a new datatable with the specified json-schema definition
 [**putArchitectEmergencygroup**](ArchitectApi.html#putArchitectEmergencygroup) | **PUT** /api/v2/architect/emergencygroups/{emergencyGroupId} | Updates a emergency group by ID
 [**putArchitectIvr**](ArchitectApi.html#putArchitectIvr) | **PUT** /api/v2/architect/ivrs/{ivrId} | Update an IVR Config.
@@ -299,6 +300,63 @@ apiInstance.deleteArchitectPromptResource(promptId, languageCode)
   })
   .catch((err) => {
     console.log('There was a failure calling deleteArchitectPromptResource');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **promptId** | **String** | Prompt ID |  |
+ **languageCode** | **String** | Language |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteArchitectPromptResourceAudio"></a>
+
+# void deleteArchitectPromptResourceAudio(promptId, languageCode)
+
+
+
+DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}/audio
+
+Delete specified user prompt resource audio
+
+
+
+Requires ANY permissions: 
+
+* architect:userPrompt:edit
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let promptId = "promptId_example"; // String | Prompt ID
+let languageCode = "languageCode_example"; // String | Language
+
+apiInstance.deleteArchitectPromptResourceAudio(promptId, languageCode)
+  .then(() => {
+    console.log('deleteArchitectPromptResourceAudio returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteArchitectPromptResourceAudio');
     console.error(err);
   });
 ```
@@ -658,7 +716,7 @@ DELETE /api/v2/flows/datatables/{datatableId}
 
 deletes a specific datatable by id
 
-deletes an entire datatable (including schema and data) with a given id)
+Deletes an entire datatable (including the schema and data) with a given datatableId
 
 Requires ANY permissions: 
 
@@ -717,7 +775,7 @@ DELETE /api/v2/flows/datatables/{datatableId}/rows/{rowId}
 
 Delete a row entry
 
-Deletes a row with a given rowId.
+Deletes a row with a given rowId (the value of the key field).
 
 Requires ANY permissions: 
 
@@ -1844,7 +1902,7 @@ let apiInstance = new platformClient.ArchitectApi();
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'name': "name_example", // String | Name
+  'name': ["name_example"], // [String] | Name
   'description': "description_example", // String | Description
   'nameOrDescription': "nameOrDescription_example", // String | Name or description
   'sortBy': "id", // String | Sort by
@@ -1868,7 +1926,7 @@ apiInstance.getArchitectPrompts(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **name** | **String** | Name | [optional]  |
+ **name** | **[String]** | Name | [optional]  |
  **description** | **String** | Description | [optional]  |
  **nameOrDescription** | **String** | Name or description | [optional]  |
  **sortBy** | **String** | Sort by | [optional] [default to id] |
@@ -2907,7 +2965,7 @@ GET /api/v2/flows/datatables/{datatableId}
 
 Returns a specific datatable by id
 
-Given a datableid returns the schema associated with it.
+Given a datatableId returns the datatable object and schema associated with it.
 
 Requires ANY permissions: 
 
@@ -2966,7 +3024,7 @@ GET /api/v2/flows/datatables/{datatableId}/rows/{rowId}
 
 Returns a specific row for the datatable
 
-Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
 
 Requires ANY permissions: 
 
@@ -3025,9 +3083,9 @@ apiInstance.getFlowsDatatableRow(datatableId, rowId, opts)
 
 GET /api/v2/flows/datatables/{datatableId}/rows
 
-Returns the rows for the datatable
+Returns the rows for the datatable with the given id
 
-Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+Returns all of the rows for the datatable with the given datatableId.  By default this will just be a truncated list returning the key for each row. Set showBrief to false to return all of the row contents.
 
 Requires ANY permissions: 
 
@@ -3090,7 +3148,7 @@ GET /api/v2/flows/datatables
 
 Retrieve a list of datatables for the org
 
-Returns a metadata list of the datatables associated with this org, including ID, name and description.
+Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
 
 Requires ANY permissions: 
 
@@ -5697,7 +5755,7 @@ apiInstance.postFlows(body)
 
 <a name="postFlowsActionsCheckin"></a>
 
-# Flow postFlowsActionsCheckin(flow)
+# Operation postFlowsActionsCheckin(flow)
 
 
 
@@ -5749,7 +5807,7 @@ apiInstance.postFlowsActionsCheckin(flow)
 
 ### Return type
 
-**Flow**
+**Operation**
 
 <a name="postFlowsActionsCheckout"></a>
 
@@ -6039,9 +6097,9 @@ apiInstance.postFlowsActionsUnlock(flow)
 
 POST /api/v2/flows/datatables/{datatableId}/rows
 
-Create a new row entry
+Create a new row entry for the datatable.
 
-Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
 
 Requires ANY permissions: 
 
@@ -6098,7 +6156,7 @@ POST /api/v2/flows/datatables
 
 Create a new datatable with the specified json-schema definition
 
-This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema&#39;s title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
 
 Requires ANY permissions: 
 
@@ -8463,7 +8521,7 @@ PUT /api/v2/flows/datatables/{datatableId}
 
 Updates a specific datatable by id
 
-Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
+Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
 
 Requires ANY permissions: 
 
@@ -8562,7 +8620,7 @@ PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId}
 
 Update a row entry
 
-Updates a row with the given to the new values.
+Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {     \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,     \&quot;Field2\&quot;: false,     \&quot;KEY\&quot;: \&quot;27272\&quot; }
 
 Requires ANY permissions: 
 

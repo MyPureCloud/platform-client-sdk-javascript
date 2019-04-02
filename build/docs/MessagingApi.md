@@ -719,6 +719,7 @@ LineIntegrationRequest <a href="#" onclick="return copyLineIntegrationRequestExa
   "channelId": String, 
   "channelSecret": String, 
   "switcherSecret": String, 
+  "serviceCode": String, 
   "selfUri": String, 
 }
 ```
@@ -892,6 +893,7 @@ LineIntegrationRequest <a href="#" onclick="return copyLineIntegrationRequestExa
   "channelId": String, 
   "channelSecret": String, 
   "switcherSecret": String, 
+  "serviceCode": String, 
   "selfUri": String, 
 }
 ```

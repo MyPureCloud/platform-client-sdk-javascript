@@ -15,6 +15,7 @@ import GreetingsApi from './api/GreetingsApi.js';
 import GroupsApi from './api/GroupsApi.js';
 import IdentityProviderApi from './api/IdentityProviderApi.js';
 import IntegrationsApi from './api/IntegrationsApi.js';
+import JourneyApi from './api/JourneyApi.js';
 import LanguagesApi from './api/LanguagesApi.js';
 import LicenseApi from './api/LicenseApi.js';
 import LocationsApi from './api/LocationsApi.js';
@@ -42,6 +43,7 @@ import UsersApi from './api/UsersApi.js';
 import UtilitiesApi from './api/UtilitiesApi.js';
 import VoicemailApi from './api/VoicemailApi.js';
 import WebChatApi from './api/WebChatApi.js';
+import WidgetsApi from './api/WidgetsApi.js';
 import WorkforceManagementApi from './api/WorkforceManagementApi.js';
 
 
@@ -74,7 +76,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 46.0.0
+ * @version 47.0.0
  */
 class platformClient {
 	constructor() {
@@ -163,6 +165,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/IntegrationsApi}
 		 */
 		this.IntegrationsApi = IntegrationsApi;
+		/**
+		 * The JourneyApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/JourneyApi}
+		 */
+		this.JourneyApi = JourneyApi;
 		/**
 		 * The LanguagesApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/LanguagesApi}
@@ -298,6 +305,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/WebChatApi}
 		 */
 		this.WebChatApi = WebChatApi;
+		/**
+		 * The WidgetsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/WidgetsApi}
+		 */
+		this.WidgetsApi = WidgetsApi;
 		/**
 		 * The WorkforceManagementApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/WorkforceManagementApi}

@@ -147,7 +147,7 @@ apiInstance.getAnalyticsConversationDetails(conversationId)
 
 <a name="getAnalyticsConversationsDetails"></a>
 
-# AnalyticsConversation getAnalyticsConversationsDetails(opts)
+# AnalyticsConversationMultiGetResponse getAnalyticsConversationsDetails(opts)
 
 
 
@@ -200,7 +200,7 @@ apiInstance.getAnalyticsConversationsDetails(opts)
 
 ### Return type
 
-**AnalyticsConversation**
+**AnalyticsConversationMultiGetResponse**
 
 <a name="getAnalyticsReportingExports"></a>
 
@@ -1185,6 +1185,8 @@ ConversationQuery <a href="#" onclick="return copyConversationQueryExample()">Co
       },  
     },  
   },  
+  "order": String, 
+  "orderBy": String, 
   "aggregations": { 
     "type": String, 
     "dimension": String, 
@@ -1199,8 +1201,6 @@ ConversationQuery <a href="#" onclick="return copyConversationQueryExample()">Co
     "pageSize": Number, 
     "pageNumber": Number, 
   },  
-  "order": String, 
-  "orderBy": String, 
 }
 ```
 
@@ -1577,6 +1577,7 @@ ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy
     },  
   },  
   "metrics": [String], 
+  "detailMetrics": [String], 
 }
 ```
 
@@ -1753,6 +1754,7 @@ ReportingExportJobRequest <a href="#" onclick="return copyReportingExportJobRequ
     },  
     "surveyFormContextIds": [String], 
     "conversationIds": [String], 
+    "sipCallIds": [String], 
     "isEnded": Boolean, 
     "isSurveyed": Boolean, 
     "surveyScores": { 
@@ -2551,6 +2553,7 @@ ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy
     },  
   },  
   "metrics": [String], 
+  "detailMetrics": [String], 
 }
 ```
 
