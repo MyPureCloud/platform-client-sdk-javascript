@@ -15,7 +15,6 @@ import GreetingsApi from './api/GreetingsApi.js';
 import GroupsApi from './api/GroupsApi.js';
 import IdentityProviderApi from './api/IdentityProviderApi.js';
 import IntegrationsApi from './api/IntegrationsApi.js';
-import JourneyApi from './api/JourneyApi.js';
 import LanguagesApi from './api/LanguagesApi.js';
 import LicenseApi from './api/LicenseApi.js';
 import LocationsApi from './api/LocationsApi.js';
@@ -76,7 +75,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 47.0.0
+ * @version 48.0.0
  */
 class platformClient {
 	constructor() {
@@ -165,11 +164,6 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/IntegrationsApi}
 		 */
 		this.IntegrationsApi = IntegrationsApi;
-		/**
-		 * The JourneyApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/JourneyApi}
-		 */
-		this.JourneyApi = JourneyApi;
 		/**
 		 * The LanguagesApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/LanguagesApi}

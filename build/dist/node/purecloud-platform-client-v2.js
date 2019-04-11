@@ -6,7 +6,7 @@ var superagent = _interopDefault(require('superagent'));
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 47.0.0
+ * @version 48.0.0
  */
 class ApiClient {
 	/**
@@ -699,7 +699,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '47.0.0' });
+		//request.set({ 'purecloud-sdk': '48.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -826,7 +826,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -1140,7 +1140,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -1845,7 +1845,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -4235,7 +4235,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -5244,7 +5244,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -5324,7 +5324,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -6464,7 +6464,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -9544,7 +9544,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -10452,7 +10452,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -10623,7 +10623,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -10669,7 +10669,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -10799,7 +10799,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -10930,7 +10930,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -11385,7 +11385,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -11790,7 +11790,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -12416,7 +12416,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -13578,63 +13578,11 @@ class IntegrationsApi {
 
 }
 
-class JourneyApi {
-	/**
-	 * Journey service.
-	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 47.0.0
-	 */
-
-	/**
-	 * Constructs a new JourneyApi. 
-	 * @alias module:purecloud-platform-client-v2/api/JourneyApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Retrieve all events for a given session.
-	 * 
-	 * @param {String} sessionId System-generated UUID that represents the session the event is a part of.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200.
-	 */
-	getJourneySessionEvents(sessionId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
-			throw 'Missing the required parameter "sessionId" when calling getJourneySessionEvents';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/sessions/{sessionId}/events', 
-			'GET', 
-			{ 'sessionId': sessionId }, 
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'] }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-}
-
 class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -13902,7 +13850,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -14136,7 +14084,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -14343,7 +14291,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -14724,7 +14672,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -14875,7 +14823,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -15074,7 +15022,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -15245,7 +15193,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -15482,7 +15430,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -15647,7 +15595,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -16322,7 +16270,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -18985,7 +18933,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -19252,7 +19200,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -20923,7 +20871,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -21977,7 +21925,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -22301,7 +22249,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -24099,7 +24047,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -24457,7 +24405,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -24912,7 +24860,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -25059,7 +25007,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -25198,7 +25146,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -28548,7 +28496,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -28634,7 +28582,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -28818,7 +28766,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -30599,7 +30547,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -30710,7 +30658,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -31347,7 +31295,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -31558,7 +31506,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -31704,7 +31652,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -32086,36 +32034,6 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}', 
-			'GET', 
-			{ 'managementUnitId': managementUnitId,'agentId': agentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets all the shift trades for a given agent
-	 * 
-	 * @param {String} managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} agentId The agent id
-	 */
-	getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId) { 
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitAgentShifttrades';
-		}
-		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
-			throw 'Missing the required parameter "agentId" when calling getWorkforcemanagementManagementunitAgentShifttrades';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades', 
 			'GET', 
 			{ 'managementUnitId': managementUnitId,'agentId': agentId }, 
 			{  }, 
@@ -32573,40 +32491,6 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Gets all the shift trades for a given week
-	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.evaluateMatches Whether to evaluate the matches for violations (default to true)
-	 */
-	getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWeekShifttrades';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementManagementunitWeekShifttrades';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades', 
-			'GET', 
-			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId }, 
-			{ 'evaluateMatches': opts['evaluateMatches'] }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the final result of a short term forecast calculation with modifications applied
 	 * 
 	 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
@@ -32928,41 +32812,6 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update agent details
-	 * 
-	 * @param {String} managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} agentId The agent id
-	 * @param {Object} body The request body
-	 */
-	patchWorkforcemanagementManagementunitAgent(managementUnitId, agentId, body) { 
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitAgent';
-		}
-		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
-			throw 'Missing the required parameter "agentId" when calling patchWorkforcemanagementManagementunitAgent';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitAgent';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}', 
-			'PATCH', 
-			{ 'managementUnitId': managementUnitId,'agentId': agentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -33650,156 +33499,6 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Matches a shift trade. This route can only be called by the receiving agent
-	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {Object} body body
-	 * @param {String} tradeId The ID of the shift trade to update
-	 */
-	postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, body, tradeId) { 
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
-		}
-		// verify the required parameter 'tradeId' is set
-		if (tradeId === undefined || tradeId === null) {
-			throw 'Missing the required parameter "tradeId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match', 
-			'POST', 
-			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId,'tradeId': tradeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Updates a shift trade. This route can only be called by the initiating agent
-	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {Object} body body
-	 * @param {String} tradeId The ID of the shift trade to update
-	 */
-	postWorkforcemanagementManagementunitWeekShifttradeUpdate(managementUnitId, weekDateId, body, tradeId) { 
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradeUpdate';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradeUpdate';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradeUpdate';
-		}
-		// verify the required parameter 'tradeId' is set
-		if (tradeId === undefined || tradeId === null) {
-			throw 'Missing the required parameter "tradeId" when calling postWorkforcemanagementManagementunitWeekShifttradeUpdate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/update', 
-			'POST', 
-			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId,'tradeId': tradeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Adds a shift trade
-	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {Object} body body
-	 */
-	postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body) { 
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttrades';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttrades';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttrades';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades', 
-			'POST', 
-			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Searches for potential shift trade matches for the current agent
-	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {Object} body body
-	 */
-	postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body) { 
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search', 
-			'POST', 
-			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
 	 * Copy a short term forecast
 	 * 
 	 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
@@ -34115,46 +33814,6 @@ class WorkforceManagementApi {
 		);
 	}
 
-	/**
-	 * Updates a shift trade state
-	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {String} tradeId The ID of the shift trade to update
-	 * @param {Object} body body
-	 */
-	putWorkforcemanagementManagementunitWeekShifttradeState(managementUnitId, weekDateId, tradeId, body) { 
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling putWorkforcemanagementManagementunitWeekShifttradeState';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling putWorkforcemanagementManagementunitWeekShifttradeState';
-		}
-		// verify the required parameter 'tradeId' is set
-		if (tradeId === undefined || tradeId === null) {
-			throw 'Missing the required parameter "tradeId" when calling putWorkforcemanagementManagementunitWeekShifttradeState';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putWorkforcemanagementManagementunitWeekShifttradeState';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/state', 
-			'PUT', 
-			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId,'tradeId': tradeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
 }
 
 /**
@@ -34186,7 +33845,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 47.0.0
+ * @version 48.0.0
  */
 class platformClient {
 	constructor() {
@@ -34275,11 +33934,6 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/IntegrationsApi}
 		 */
 		this.IntegrationsApi = IntegrationsApi;
-		/**
-		 * The JourneyApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/JourneyApi}
-		 */
-		this.JourneyApi = JourneyApi;
 		/**
 		 * The LanguagesApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/LanguagesApi}

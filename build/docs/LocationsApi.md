@@ -83,9 +83,8 @@ Get Location by ID.
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
 
 
 

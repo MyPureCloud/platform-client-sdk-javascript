@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 47.0.0
+	 * @version 48.0.0
 	 */
 
 	/**
@@ -387,36 +387,6 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}', 
-			'GET', 
-			{ 'managementUnitId': managementUnitId,'agentId': agentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gets all the shift trades for a given agent
-	 * 
-	 * @param {String} managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} agentId The agent id
-	 */
-	getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId) { 
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitAgentShifttrades';
-		}
-		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
-			throw 'Missing the required parameter "agentId" when calling getWorkforcemanagementManagementunitAgentShifttrades';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades', 
 			'GET', 
 			{ 'managementUnitId': managementUnitId,'agentId': agentId }, 
 			{  }, 
@@ -874,40 +844,6 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Gets all the shift trades for a given week
-	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.evaluateMatches Whether to evaluate the matches for violations (default to true)
-	 */
-	getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWeekShifttrades';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementManagementunitWeekShifttrades';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades', 
-			'GET', 
-			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId }, 
-			{ 'evaluateMatches': opts['evaluateMatches'] }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the final result of a short term forecast calculation with modifications applied
 	 * 
 	 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
@@ -1229,41 +1165,6 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update agent details
-	 * 
-	 * @param {String} managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} agentId The agent id
-	 * @param {Object} body The request body
-	 */
-	patchWorkforcemanagementManagementunitAgent(managementUnitId, agentId, body) { 
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitAgent';
-		}
-		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
-			throw 'Missing the required parameter "agentId" when calling patchWorkforcemanagementManagementunitAgent';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitAgent';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}', 
-			'PATCH', 
-			{ 'managementUnitId': managementUnitId,'agentId': agentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -1951,156 +1852,6 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Matches a shift trade. This route can only be called by the receiving agent
-	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {Object} body body
-	 * @param {String} tradeId The ID of the shift trade to update
-	 */
-	postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, body, tradeId) { 
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
-		}
-		// verify the required parameter 'tradeId' is set
-		if (tradeId === undefined || tradeId === null) {
-			throw 'Missing the required parameter "tradeId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match', 
-			'POST', 
-			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId,'tradeId': tradeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Updates a shift trade. This route can only be called by the initiating agent
-	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {Object} body body
-	 * @param {String} tradeId The ID of the shift trade to update
-	 */
-	postWorkforcemanagementManagementunitWeekShifttradeUpdate(managementUnitId, weekDateId, body, tradeId) { 
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradeUpdate';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradeUpdate';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradeUpdate';
-		}
-		// verify the required parameter 'tradeId' is set
-		if (tradeId === undefined || tradeId === null) {
-			throw 'Missing the required parameter "tradeId" when calling postWorkforcemanagementManagementunitWeekShifttradeUpdate';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/update', 
-			'POST', 
-			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId,'tradeId': tradeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Adds a shift trade
-	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {Object} body body
-	 */
-	postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body) { 
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttrades';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttrades';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttrades';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades', 
-			'POST', 
-			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Searches for potential shift trade matches for the current agent
-	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {Object} body body
-	 */
-	postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body) { 
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search', 
-			'POST', 
-			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
 	 * Copy a short term forecast
 	 * 
 	 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
@@ -2410,46 +2161,6 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Updates a shift trade state
-	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {String} tradeId The ID of the shift trade to update
-	 * @param {Object} body body
-	 */
-	putWorkforcemanagementManagementunitWeekShifttradeState(managementUnitId, weekDateId, tradeId, body) { 
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling putWorkforcemanagementManagementunitWeekShifttradeState';
-		}
-		// verify the required parameter 'weekDateId' is set
-		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling putWorkforcemanagementManagementunitWeekShifttradeState';
-		}
-		// verify the required parameter 'tradeId' is set
-		if (tradeId === undefined || tradeId === null) {
-			throw 'Missing the required parameter "tradeId" when calling putWorkforcemanagementManagementunitWeekShifttradeState';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putWorkforcemanagementManagementunitWeekShifttradeState';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/state', 
-			'PUT', 
-			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId,'tradeId': tradeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
