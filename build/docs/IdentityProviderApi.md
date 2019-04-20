@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteIdentityprovidersOnelogin**](IdentityProviderApi.html#deleteIdentityprovidersOnelogin) | **DELETE** /api/v2/identityproviders/onelogin | Delete OneLogin Identity Provider
 [**deleteIdentityprovidersPing**](IdentityProviderApi.html#deleteIdentityprovidersPing) | **DELETE** /api/v2/identityproviders/ping | Delete Ping Identity Provider
 [**deleteIdentityprovidersPurecloud**](IdentityProviderApi.html#deleteIdentityprovidersPurecloud) | **DELETE** /api/v2/identityproviders/purecloud | Delete PureCloud Identity Provider
+[**deleteIdentityprovidersPureengage**](IdentityProviderApi.html#deleteIdentityprovidersPureengage) | **DELETE** /api/v2/identityproviders/pureengage | Delete PureEngage Identity Provider
 [**deleteIdentityprovidersSalesforce**](IdentityProviderApi.html#deleteIdentityprovidersSalesforce) | **DELETE** /api/v2/identityproviders/salesforce | Delete Salesforce Identity Provider
 [**getIdentityproviders**](IdentityProviderApi.html#getIdentityproviders) | **GET** /api/v2/identityproviders | The list of identity providers
 [**getIdentityprovidersAdfs**](IdentityProviderApi.html#getIdentityprovidersAdfs) | **GET** /api/v2/identityproviders/adfs | Get ADFS Identity Provider
@@ -25,6 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIdentityprovidersOnelogin**](IdentityProviderApi.html#getIdentityprovidersOnelogin) | **GET** /api/v2/identityproviders/onelogin | Get OneLogin Identity Provider
 [**getIdentityprovidersPing**](IdentityProviderApi.html#getIdentityprovidersPing) | **GET** /api/v2/identityproviders/ping | Get Ping Identity Provider
 [**getIdentityprovidersPurecloud**](IdentityProviderApi.html#getIdentityprovidersPurecloud) | **GET** /api/v2/identityproviders/purecloud | Get PureCloud Identity Provider
+[**getIdentityprovidersPureengage**](IdentityProviderApi.html#getIdentityprovidersPureengage) | **GET** /api/v2/identityproviders/pureengage | Get PureEngage Identity Provider
 [**getIdentityprovidersSalesforce**](IdentityProviderApi.html#getIdentityprovidersSalesforce) | **GET** /api/v2/identityproviders/salesforce | Get Salesforce Identity Provider
 [**putIdentityprovidersAdfs**](IdentityProviderApi.html#putIdentityprovidersAdfs) | **PUT** /api/v2/identityproviders/adfs | Update/Create ADFS Identity Provider
 [**putIdentityprovidersCic**](IdentityProviderApi.html#putIdentityprovidersCic) | **PUT** /api/v2/identityproviders/cic | Update/Create Customer Interaction Center (CIC) Identity Provider
@@ -34,6 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putIdentityprovidersOnelogin**](IdentityProviderApi.html#putIdentityprovidersOnelogin) | **PUT** /api/v2/identityproviders/onelogin | Update/Create OneLogin Identity Provider
 [**putIdentityprovidersPing**](IdentityProviderApi.html#putIdentityprovidersPing) | **PUT** /api/v2/identityproviders/ping | Update/Create Ping Identity Provider
 [**putIdentityprovidersPurecloud**](IdentityProviderApi.html#putIdentityprovidersPurecloud) | **PUT** /api/v2/identityproviders/purecloud | Update/Create PureCloud Identity Provider
+[**putIdentityprovidersPureengage**](IdentityProviderApi.html#putIdentityprovidersPureengage) | **PUT** /api/v2/identityproviders/pureengage | Update/Create PureEngage Identity Provider
 [**putIdentityprovidersSalesforce**](IdentityProviderApi.html#putIdentityprovidersSalesforce) | **PUT** /api/v2/identityproviders/salesforce | Update/Create Salesforce Identity Provider
 {: class="table table-striped"}
 
@@ -424,6 +427,56 @@ apiInstance.deleteIdentityprovidersPurecloud()
   })
   .catch((err) => {
     console.log('There was a failure calling deleteIdentityprovidersPurecloud');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**Empty**
+
+<a name="deleteIdentityprovidersPureengage"></a>
+
+# Empty deleteIdentityprovidersPureengage()
+
+
+
+DELETE /api/v2/identityproviders/pureengage
+
+Delete PureEngage Identity Provider
+
+
+
+Requires ANY permissions: 
+
+* sso:provider:delete
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IdentityProviderApi();
+
+apiInstance.deleteIdentityprovidersPureengage()
+  .then((data) => {
+    console.log(`deleteIdentityprovidersPureengage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteIdentityprovidersPureengage');
     console.error(err);
   });
 ```
@@ -936,6 +989,56 @@ This endpoint does not need any parameter.
 ### Return type
 
 **PureCloud**
+
+<a name="getIdentityprovidersPureengage"></a>
+
+# PureEnage getIdentityprovidersPureengage()
+
+
+
+GET /api/v2/identityproviders/pureengage
+
+Get PureEngage Identity Provider
+
+
+
+Requires ANY permissions: 
+
+* sso:provider:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IdentityProviderApi();
+
+apiInstance.getIdentityprovidersPureengage()
+  .then((data) => {
+    console.log(`getIdentityprovidersPureengage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIdentityprovidersPureengage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**PureEnage**
 
 <a name="getIdentityprovidersSalesforce"></a>
 
@@ -1668,6 +1771,94 @@ apiInstance.putIdentityprovidersPurecloud(body)
   })
   .catch((err) => {
     console.log('There was a failure calling putIdentityprovidersPurecloud');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Provider |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OAuthProvider**
+
+<a name="putIdentityprovidersPureengage"></a>
+
+# OAuthProvider putIdentityprovidersPureengage(body)
+
+
+
+PUT /api/v2/identityproviders/pureengage
+
+Update/Create PureEngage Identity Provider
+
+
+
+Requires ANY permissions: 
+
+* sso:provider:add
+* sso:provider:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyPureEnageExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PureEnageExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+PureEnage <a href="#" onclick="return copyPureEnageExample()">Copy</a>
+
+<div id="PureEnageExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "autoProvisionUsers": Boolean, 
+  "certificate": String, 
+  "issuerURI": String, 
+  "ssoTargetURI": String, 
+  "disabled": Boolean, 
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IdentityProviderApi();
+
+let body = {}; // Object | Provider
+
+apiInstance.putIdentityprovidersPureengage(body)
+  .then((data) => {
+    console.log(`putIdentityprovidersPureengage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putIdentityprovidersPureengage');
     console.error(err);
   });
 ```

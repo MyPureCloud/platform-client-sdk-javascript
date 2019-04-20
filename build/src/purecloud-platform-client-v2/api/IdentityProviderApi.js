@@ -5,7 +5,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 48.0.0
+	 * @version 49.0.0
 	 */
 
 	/**
@@ -168,6 +168,26 @@ class IdentityProviderApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/purecloud', 
+			'DELETE', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete PureEngage Identity Provider
+	 * 
+	 */
+	deleteIdentityprovidersPureengage() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/identityproviders/pureengage', 
 			'DELETE', 
 			{  }, 
 			{  }, 
@@ -368,6 +388,26 @@ class IdentityProviderApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/purecloud', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get PureEngage Identity Provider
+	 * 
+	 */
+	getIdentityprovidersPureengage() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/identityproviders/pureengage', 
 			'GET', 
 			{  }, 
 			{  }, 
@@ -588,6 +628,31 @@ class IdentityProviderApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/purecloud', 
+			'PUT', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update/Create PureEngage Identity Provider
+	 * 
+	 * @param {Object} body Provider
+	 */
+	putIdentityprovidersPureengage(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putIdentityprovidersPureengage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/identityproviders/pureengage', 
 			'PUT', 
 			{  }, 
 			{  }, 

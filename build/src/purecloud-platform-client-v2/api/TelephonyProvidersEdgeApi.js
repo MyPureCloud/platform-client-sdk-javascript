@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 48.0.0
+	 * @version 49.0.0
 	 */
 
 	/**
@@ -2042,7 +2042,7 @@ class TelephonyProvidersEdgeApi {
 
 	/**
 	 * Get a Trunk Base Settings object by ID
-	 * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+	 * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
 	 * @param {String} trunkBaseSettingsId Trunk Base ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.ignoreHidden Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only.
@@ -2071,7 +2071,7 @@ class TelephonyProvidersEdgeApi {
 
 	/**
 	 * Get Trunk Base Settings listing
-	 * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+	 * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)

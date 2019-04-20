@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 48.0.0
+	 * @version 49.0.0
 	 */
 
 	/**
@@ -436,6 +436,8 @@ class ArchitectApi {
 	 * @param {Object} objectType Consuming object type.  Only versioned types are allowed here.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.resourceType Types of consumed resources to show
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
 	 */
 	getArchitectDependencytrackingConsumedresources(id, version, objectType, opts) { 
 		opts = opts || {};
@@ -457,7 +459,7 @@ class ArchitectApi {
 			'/api/v2/architect/dependencytracking/consumedresources', 
 			'GET', 
 			{  }, 
-			{ 'id': id,'version': version,'objectType': objectType,'resourceType': this.apiClient.buildCollectionParam(opts['resourceType'], 'multi') }, 
+			{ 'id': id,'version': version,'objectType': objectType,'resourceType': this.apiClient.buildCollectionParam(opts['resourceType'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -474,6 +476,8 @@ class ArchitectApi {
 	 * @param {Object} objectType Consumed object type
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.resourceType Types of consuming resources to show.  Only versioned types are allowed here.
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
 	 */
 	getArchitectDependencytrackingConsumingresources(id, objectType, opts) { 
 		opts = opts || {};
@@ -491,7 +495,7 @@ class ArchitectApi {
 			'/api/v2/architect/dependencytracking/consumingresources', 
 			'GET', 
 			{  }, 
-			{ 'id': id,'objectType': objectType,'resourceType': this.apiClient.buildCollectionParam(opts['resourceType'], 'multi') }, 
+			{ 'id': id,'objectType': objectType,'resourceType': this.apiClient.buildCollectionParam(opts['resourceType'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
 			{  }, 
 			{  }, 
 			null, 

@@ -250,48 +250,33 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyOAuthClientExample() {
+	function copyOAuthClientRequestExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#OAuthClientExample').text()).select();
+		temp.val($('#OAuthClientRequestExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-OAuthClient <a href="#" onclick="return copyOAuthClientExample()">Copy</a>
+OAuthClientRequest <a href="#" onclick="return copyOAuthClientRequestExample()">Copy</a>
 
-<div id="OAuthClientExample">
+<div id="OAuthClientRequestExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
-  "id": String, 
   "name": String, 
   "accessTokenValiditySeconds": Number, 
   "description": String, 
   "registeredRedirectUri": [String], 
-  "secret": String, 
   "roleIds": [String], 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "createdBy": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "modifiedBy": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
   "authorizedGrantType": String, 
   "scope": [String], 
   "roleDivisions": { 
     "roleId": String, 
     "divisionId": String, 
   },  
-  "selfUri": String, 
 }
 ```
 
@@ -355,48 +340,33 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyOAuthClientExample() {
+	function copyOAuthClientRequestExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#OAuthClientExample').text()).select();
+		temp.val($('#OAuthClientRequestExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-OAuthClient <a href="#" onclick="return copyOAuthClientExample()">Copy</a>
+OAuthClientRequest <a href="#" onclick="return copyOAuthClientRequestExample()">Copy</a>
 
-<div id="OAuthClientExample">
+<div id="OAuthClientRequestExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
-  "id": String, 
   "name": String, 
   "accessTokenValiditySeconds": Number, 
   "description": String, 
   "registeredRedirectUri": [String], 
-  "secret": String, 
   "roleIds": [String], 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "createdBy": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "modifiedBy": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
   "authorizedGrantType": String, 
   "scope": [String], 
   "roleDivisions": { 
     "roleId": String, 
     "divisionId": String, 
   },  
-  "selfUri": String, 
 }
 ```
 

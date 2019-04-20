@@ -978,7 +978,9 @@ let id = "id_example"; // String | Consuming object ID
 let version = "version_example"; // String | Consuming object version
 let objectType = "objectType_example"; // String | Consuming object type.  Only versioned types are allowed here.
 let opts = { 
-  'resourceType': ["resourceType_example"] // [String] | Types of consumed resources to show
+  'resourceType': ["resourceType_example"], // [String] | Types of consumed resources to show
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
 };
 
 apiInstance.getArchitectDependencytrackingConsumedresources(id, version, objectType, opts)
@@ -1000,6 +1002,8 @@ apiInstance.getArchitectDependencytrackingConsumedresources(id, version, objectT
  **version** | **String** | Consuming object version |  |
  **objectType** | **String** | Consuming object type.  Only versioned types are allowed here. | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WORKFLOW |
  **resourceType** | **[String]** | Types of consumed resources to show | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WORKFLOW |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1040,7 +1044,9 @@ let apiInstance = new platformClient.ArchitectApi();
 let id = "id_example"; // String | Consumed object ID
 let objectType = "objectType_example"; // String | Consumed object type
 let opts = { 
-  'resourceType': ["resourceType_example"] // [String] | Types of consuming resources to show.  Only versioned types are allowed here.
+  'resourceType': ["resourceType_example"], // [String] | Types of consuming resources to show.  Only versioned types are allowed here.
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
 };
 
 apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, opts)
@@ -1061,6 +1067,8 @@ apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, opt
  **id** | **String** | Consumed object ID |  |
  **objectType** | **String** | Consumed object type | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WORKFLOW |
  **resourceType** | **[String]** | Types of consuming resources to show.  Only versioned types are allowed here. | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WORKFLOW |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
