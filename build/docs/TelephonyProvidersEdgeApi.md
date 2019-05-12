@@ -2334,7 +2334,9 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'sortBy': "number", // String | Sort by
   'sortOrder': "ASC", // String | Sort order
-  'phoneNumber': "phoneNumber_example" // String | Filter by phoneNumber
+  'phoneNumber': "phoneNumber_example", // String | Filter by phoneNumber
+  'ownerId': "ownerId_example", // String | Filter by the owner of a phone number
+  'didPoolId': "didPoolId_example" // String | Filter by the DID Pool assignment
 };
 
 apiInstance.getTelephonyProvidersEdgesDids(opts)
@@ -2357,6 +2359,8 @@ apiInstance.getTelephonyProvidersEdgesDids(opts)
  **sortBy** | **String** | Sort by | [optional] [default to number] |
  **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
  **phoneNumber** | **String** | Filter by phoneNumber | [optional]  |
+ **ownerId** | **String** | Filter by the owner of a phone number | [optional]  |
+ **didPoolId** | **String** | Filter by the DID Pool assignment | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

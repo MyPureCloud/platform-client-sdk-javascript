@@ -2,7 +2,7 @@ import superagent from 'superagent';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 49.0.0
+ * @version 50.0.0
  */
 class ApiClient {
 	/**
@@ -695,7 +695,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '49.0.0' });
+		//request.set({ 'purecloud-sdk': '50.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -733,9 +733,7 @@ class ApiClient {
 		return new Promise((resolve, reject) => {
 			request.end((error, response) => {
 				if (error) {
-					console.log(error);
 					if (!response) {
-						console.log('Response object was not defined!');
 						reject({
 							status: 0,
 							statusText: 'error',

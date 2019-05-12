@@ -992,7 +992,7 @@ This endpoint does not need any parameter.
 
 <a name="getIdentityprovidersPureengage"></a>
 
-# PureEnage getIdentityprovidersPureengage()
+# PureEngage getIdentityprovidersPureengage()
 
 
 
@@ -1038,7 +1038,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**PureEnage**
+**PureEngage**
 
 <a name="getIdentityprovidersSalesforce"></a>
 
@@ -1808,19 +1808,19 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyPureEnageExample() {
+	function copyPureEngageExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#PureEnageExample').text()).select();
+		temp.val($('#PureEngageExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-PureEnage <a href="#" onclick="return copyPureEnageExample()">Copy</a>
+PureEngage <a href="#" onclick="return copyPureEngageExample()">Copy</a>
 
-<div id="PureEnageExample">
+<div id="PureEngageExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 

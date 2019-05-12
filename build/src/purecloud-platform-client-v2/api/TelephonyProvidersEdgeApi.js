@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 49.0.0
+	 * @version 50.0.0
 	 */
 
 	/**
@@ -1080,6 +1080,8 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.sortBy Sort by (default to number)
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {String} opts.phoneNumber Filter by phoneNumber
+	 * @param {String} opts.ownerId Filter by the owner of a phone number
+	 * @param {String} opts.didPoolId Filter by the DID Pool assignment
 	 */
 	getTelephonyProvidersEdgesDids(opts) { 
 		opts = opts || {};
@@ -1089,7 +1091,7 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/dids', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'phoneNumber': opts['phoneNumber'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'phoneNumber': opts['phoneNumber'],'owner.id': opts['ownerId'],'didPool.id': opts['didPoolId'] }, 
 			{  }, 
 			{  }, 
 			null, 

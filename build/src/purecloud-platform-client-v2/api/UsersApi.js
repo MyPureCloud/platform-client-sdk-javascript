@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 49.0.0
+	 * @version 50.0.0
 	 */
 
 	/**
@@ -1173,7 +1173,7 @@ class UsersApi {
 	}
 
 	/**
-	 * Add bulk routing skills to user
+	 * Bulk add routing skills to user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Array.<Object>} body Skill
@@ -1680,6 +1680,36 @@ class UsersApi {
 			'/api/v2/users/{userId}/routingskills/{skillId}', 
 			'PUT', 
 			{ 'userId': userId,'skillId': skillId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Replace all routing skills assigned to a user
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Array.<Object>} body Skill
+	 */
+	putUserRoutingskillsBulk(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling putUserRoutingskillsBulk';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putUserRoutingskillsBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/routingskills/bulk', 
+			'PUT', 
+			{ 'userId': userId }, 
 			{  }, 
 			{  }, 
 			{  }, 

@@ -49,7 +49,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchRoutingQueueUsers**](RoutingApi.html#patchRoutingQueueUsers) | **PATCH** /api/v2/routing/queues/{queueId}/users | Join or unjoin a set of users for a queue
 [**patchUserRoutinglanguage**](RoutingApi.html#patchUserRoutinglanguage) | **PATCH** /api/v2/users/{userId}/routinglanguages/{languageId} | Update routing language proficiency or state.
 [**patchUserRoutinglanguagesBulk**](RoutingApi.html#patchUserRoutinglanguagesBulk) | **PATCH** /api/v2/users/{userId}/routinglanguages/bulk | Add bulk routing language to user. Max limit 50 languages
-[**patchUserRoutingskillsBulk**](RoutingApi.html#patchUserRoutingskillsBulk) | **PATCH** /api/v2/users/{userId}/routingskills/bulk | Add bulk routing skills to user
+[**patchUserRoutingskillsBulk**](RoutingApi.html#patchUserRoutingskillsBulk) | **PATCH** /api/v2/users/{userId}/routingskills/bulk | Bulk add routing skills to user
 [**postAnalyticsQueuesObservationsQuery**](RoutingApi.html#postAnalyticsQueuesObservationsQuery) | **POST** /api/v2/analytics/queues/observations/query | Query for queue observations
 [**postRoutingEmailDomainRoutes**](RoutingApi.html#postRoutingEmailDomainRoutes) | **POST** /api/v2/routing/email/domains/{domainName}/routes | Create a route
 [**postRoutingEmailDomains**](RoutingApi.html#postRoutingEmailDomains) | **POST** /api/v2/routing/email/domains | Create a domain
@@ -70,6 +70,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putRoutingUtilization**](RoutingApi.html#putRoutingUtilization) | **PUT** /api/v2/routing/utilization | Update the utilization settings.
 [**putRoutingWrapupcode**](RoutingApi.html#putRoutingWrapupcode) | **PUT** /api/v2/routing/wrapupcodes/{codeId} | Update wrap-up code
 [**putUserRoutingskill**](RoutingApi.html#putUserRoutingskill) | **PUT** /api/v2/users/{userId}/routingskills/{skillId} | Update routing skill proficiency or state.
+[**putUserRoutingskillsBulk**](RoutingApi.html#putUserRoutingskillsBulk) | **PUT** /api/v2/users/{userId}/routingskills/bulk | Replace all routing skills assigned to a user
 {: class="table table-striped"}
 
 <a name="deleteRoutingEmailDomain"></a>
@@ -1134,7 +1135,7 @@ apiInstance.getRoutingMessageRecipients(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **messengerType** | **String** | Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, line, whatsapp, telegram, kakao |
+ **messengerType** | **String** | Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, line, whatsapp |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
@@ -3387,7 +3388,7 @@ apiInstance.patchUserRoutinglanguagesBulk(userId, body)
 
 PATCH /api/v2/users/{userId}/routingskills/bulk
 
-Add bulk routing skills to user
+Bulk add routing skills to user
 
 
 
@@ -7488,6 +7489,10 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
   },  
   "modifiedBy": User, 
   "version": Number, 
+  "purchaseDate": Date, 
+  "cancellationDate": Date, 
+  "renewalDate": Date, 
+  "autoRenewable": String, 
   "selfUri": String, 
 }
 ```
@@ -7795,4 +7800,90 @@ apiInstance.putUserRoutingskill(userId, skillId, body)
 ### Return type
 
 **UserRoutingSkill**
+
+<a name="putUserRoutingskillsBulk"></a>
+
+# UserSkillEntityListing putUserRoutingskillsBulk(userId, body)
+
+
+
+PUT /api/v2/users/{userId}/routingskills/bulk
+
+Replace all routing skills assigned to a user
+
+
+
+Requires ANY permissions: 
+
+* routing:skill:assign
+* admin
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyUserRoutingSkillPostExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UserRoutingSkillPostExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+UserRoutingSkillPost <a href="#" onclick="return copyUserRoutingSkillPostExample()">Copy</a>
+
+<div id="UserRoutingSkillPostExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "proficiency": Number, 
+  "skillUri": String, 
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let userId = "userId_example"; // String | User ID
+let body = [{}]; // Object | Skill
+
+apiInstance.putUserRoutingskillsBulk(userId, body)
+  .then((data) => {
+    console.log(`putUserRoutingskillsBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putUserRoutingskillsBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **body** | **Object** | Skill |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserSkillEntityListing**
 
