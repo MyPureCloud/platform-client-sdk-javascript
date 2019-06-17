@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**postAnalyticsFlowsAggregatesQuery**](FlowsApi.html#postAnalyticsFlowsAggregatesQuery) | **POST** /api/v2/analytics/flows/aggregates/query | Query for flow aggregates
+[**postAnalyticsFlowsObservationsQuery**](FlowsApi.html#postAnalyticsFlowsObservationsQuery) | **POST** /api/v2/analytics/flows/observations/query | Query for flow observations
 {: class="table table-striped"}
 
 <a name="postAnalyticsFlowsAggregatesQuery"></a>
@@ -139,4 +140,121 @@ apiInstance.postAnalyticsFlowsAggregatesQuery(body)
 ### Return type
 
 **AggregateQueryResponse**
+
+<a name="postAnalyticsFlowsObservationsQuery"></a>
+
+# QualifierMappingObservationQueryResponse postAnalyticsFlowsObservationsQuery(body)
+
+
+
+POST /api/v2/analytics/flows/observations/query
+
+Query for flow observations
+
+
+
+Requires ANY permissions: 
+
+* analytics:flowObservation:view
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyObservationQueryExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ObservationQueryExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy</a>
+
+<div id="ObservationQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "filter": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "metrics": [String], 
+  "detailMetrics": [String], 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.FlowsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsFlowsObservationsQuery(body)
+  .then((data) => {
+    console.log(`postAnalyticsFlowsObservationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsFlowsObservationsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**QualifierMappingObservationQueryResponse**
 

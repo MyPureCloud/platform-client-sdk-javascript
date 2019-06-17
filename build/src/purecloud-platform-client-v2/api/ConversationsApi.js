@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 50.0.0
+	 * @version 51.0.0
 	 */
 
 	/**
@@ -45,6 +45,36 @@ class ConversationsApi {
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode}', 
 			'DELETE', 
 			{ 'conversationId': conversationId,'participantId': participantId,'addCommunicationCode': addCommunicationCode }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Remove flagged reason from conversation participant.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {String} participantId participant ID
+	 */
+	deleteConversationParticipantFlaggedreason(conversationId, participantId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling deleteConversationParticipantFlaggedreason';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling deleteConversationParticipantFlaggedreason';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason', 
+			'DELETE', 
+			{ 'conversationId': conversationId,'participantId': participantId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -3003,6 +3033,36 @@ class ConversationsApi {
 			{  }, 
 			{  }, 
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Set flagged reason on conversation participant to indicate bad conversation quality.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {String} participantId participant ID
+	 */
+	putConversationParticipantFlaggedreason(conversationId, participantId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationParticipantFlaggedreason';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling putConversationParticipantFlaggedreason';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason', 
+			'PUT', 
+			{ 'conversationId': conversationId,'participantId': participantId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

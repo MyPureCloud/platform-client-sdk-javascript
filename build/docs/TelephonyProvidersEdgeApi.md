@@ -3697,6 +3697,7 @@ let opts = {
   'phoneHardwareId': "phoneHardwareId_example", // String | Filter by phone_hardwareId
   'linesId': "linesId_example", // String | Filter by lines.id
   'linesName': "linesName_example", // String | Filter by lines.name
+  'name': "name_example", // String | Name of the Phone to filter by
   'expand': ["expand_example"], // [String] | Fields to expand in the response, comma-separated
   'fields': ["fields_example"] // [String] | Fields and properties to get, comma-separated
 };
@@ -3728,6 +3729,7 @@ apiInstance.getTelephonyProvidersEdgesPhones(opts)
  **phoneHardwareId** | **String** | Filter by phone_hardwareId | [optional]  |
  **linesId** | **String** | Filter by lines.id | [optional]  |
  **linesName** | **String** | Filter by lines.name | [optional]  |
+ **name** | **String** | Name of the Phone to filter by | [optional]  |
  **expand** | **[String]** | Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties, site, status, status.primaryEdgesStatus, status.secondaryEdgesStatus, phoneBaseSettings, lines |
  **fields** | **[String]** | Fields and properties to get, comma-separated | [optional] <br />**Values**: webRtcUser, properties.*, lines.loggedInUser, lines.defaultForUser |
 {: class="table table-striped"}

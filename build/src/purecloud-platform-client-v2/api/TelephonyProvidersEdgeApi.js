@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 50.0.0
+	 * @version 51.0.0
 	 */
 
 	/**
@@ -1695,6 +1695,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.phoneHardwareId Filter by phone_hardwareId
 	 * @param {String} opts.linesId Filter by lines.id
 	 * @param {String} opts.linesName Filter by lines.name
+	 * @param {String} opts.name Name of the Phone to filter by
 	 * @param {Array.<String>} opts.expand Fields to expand in the response, comma-separated
 	 * @param {Array.<String>} opts.fields Fields and properties to get, comma-separated
 	 */
@@ -1706,7 +1707,7 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/phones', 
 			'GET', 
 			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'site.id': opts['siteId'],'webRtcUser.id': opts['webRtcUserId'],'phoneBaseSettings.id': opts['phoneBaseSettingsId'],'lines.loggedInUser.id': opts['linesLoggedInUserId'],'lines.defaultForUser.id': opts['linesDefaultForUserId'],'phone_hardwareId': opts['phoneHardwareId'],'lines.id': opts['linesId'],'lines.name': opts['linesName'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi') }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'site.id': opts['siteId'],'webRtcUser.id': opts['webRtcUserId'],'phoneBaseSettings.id': opts['phoneBaseSettingsId'],'lines.loggedInUser.id': opts['linesLoggedInUserId'],'lines.defaultForUser.id': opts['linesDefaultForUserId'],'phone_hardwareId': opts['phoneHardwareId'],'lines.id': opts['linesId'],'lines.name': opts['linesName'],'name': opts['name'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 

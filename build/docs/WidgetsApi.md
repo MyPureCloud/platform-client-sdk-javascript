@@ -233,6 +233,10 @@ WidgetDeployment <a href="#" onclick="return copyWidgetDeploymentExample()">Copy
     },  
     "v2": { 
     },  
+    "v1-http": { 
+      "webChatSkin": String, 
+      "authenticationUrl": String, 
+    },  
     "third-party": { 
     },  
   },  
@@ -335,6 +339,10 @@ WidgetDeployment <a href="#" onclick="return copyWidgetDeploymentExample()">Copy
       "authenticationUrl": String, 
     },  
     "v2": { 
+    },  
+    "v1-http": { 
+      "webChatSkin": String, 
+      "authenticationUrl": String, 
     },  
     "third-party": { 
     },  

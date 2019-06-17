@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 50.0.0
+	 * @version 51.0.0
 	 */
 
 	/**
@@ -462,6 +462,31 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/flows/aggregates/query', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for flow observations
+	 * 
+	 * @param {Object} body query
+	 */
+	postAnalyticsFlowsObservationsQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsFlowsObservationsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/flows/observations/query', 
 			'POST', 
 			{  }, 
 			{  }, 

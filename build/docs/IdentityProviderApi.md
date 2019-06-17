@@ -1131,8 +1131,8 @@ ADFS <a href="#" onclick="return copyADFSExample()">Copy</a>
   "name": String, 
   "relyingPartyIdentifier": String, 
   "certificate": String, 
-  "issuerURI": String, 
   "ssoTargetURI": String, 
+  "issuerURI": String, 
   "disabled": Boolean, 
   "selfUri": String, 
 }
@@ -1218,8 +1218,8 @@ CustomerInteractionCenter <a href="#" onclick="return copyCustomerInteractionCen
   "id": String, 
   "name": String, 
   "certificate": String, 
-  "issuerURI": String, 
   "ssoTargetURI": String, 
+  "issuerURI": String, 
   "disabled": Boolean, 
   "selfUri": String, 
 }
@@ -1306,8 +1306,8 @@ GSuite <a href="#" onclick="return copyGSuiteExample()">Copy</a>
   "name": String, 
   "relyingPartyIdentifier": String, 
   "certificate": String, 
-  "issuerURI": String, 
   "ssoTargetURI": String, 
+  "issuerURI": String, 
   "disabled": Boolean, 
   "selfUri": String, 
 }
@@ -1394,8 +1394,8 @@ IdentityNow <a href="#" onclick="return copyIdentityNowExample()">Copy</a>
   "name": String, 
   "relyingPartyIdentifier": String, 
   "certificate": String, 
-  "issuerURI": String, 
   "ssoTargetURI": String, 
+  "issuerURI": String, 
   "disabled": Boolean, 
   "selfUri": String, 
 }
@@ -1481,8 +1481,8 @@ Okta <a href="#" onclick="return copyOktaExample()">Copy</a>
   "id": String, 
   "name": String, 
   "certificate": String, 
-  "issuerURI": String, 
   "ssoTargetURI": String, 
+  "issuerURI": String, 
   "disabled": Boolean, 
   "selfUri": String, 
 }
@@ -1568,8 +1568,8 @@ OneLogin <a href="#" onclick="return copyOneLoginExample()">Copy</a>
   "id": String, 
   "name": String, 
   "certificate": String, 
-  "issuerURI": String, 
   "ssoTargetURI": String, 
+  "issuerURI": String, 
   "disabled": Boolean, 
   "selfUri": String, 
 }
@@ -1656,8 +1656,8 @@ PingIdentity <a href="#" onclick="return copyPingIdentityExample()">Copy</a>
   "name": String, 
   "relyingPartyIdentifier": String, 
   "certificate": String, 
-  "issuerURI": String, 
   "ssoTargetURI": String, 
+  "issuerURI": String, 
   "disabled": Boolean, 
   "selfUri": String, 
 }
@@ -1828,8 +1828,8 @@ PureEngage <a href="#" onclick="return copyPureEngageExample()">Copy</a>
   "name": String, 
   "autoProvisionUsers": Boolean, 
   "certificate": String, 
-  "issuerURI": String, 
   "ssoTargetURI": String, 
+  "issuerURI": String, 
   "disabled": Boolean, 
   "selfUri": String, 
 }
@@ -1915,8 +1915,8 @@ Salesforce <a href="#" onclick="return copySalesforceExample()">Copy</a>
   "id": String, 
   "name": String, 
   "certificate": String, 
-  "issuerURI": String, 
   "ssoTargetURI": String, 
+  "issuerURI": String, 
   "disabled": Boolean, 
   "selfUri": String, 
 }

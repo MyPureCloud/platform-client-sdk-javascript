@@ -176,7 +176,7 @@ apiInstance.getGdprSubjects(searchType, searchValue)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **searchType** | **String** | Search Type | <br />**Values**: NAME, ADDRESS, PHONE, EMAIL |
+ **searchType** | **String** | Search Type | <br />**Values**: NAME, ADDRESS, PHONE, EMAIL, TWITTER |
  **searchValue** | **String** | Search Value |  |
 {: class="table table-striped"}
 
@@ -242,6 +242,14 @@ GDPRRequest <a href="#" onclick="return copyGDPRRequestExample()">Copy</a>
     "dialerContactId": { 
       "id": String, 
       "contactListId": String, 
+    },  
+    "journeyCustomer": { 
+      "type": String, 
+      "id": String, 
+    },  
+    "socialHandle": { 
+      "type": String, 
+      "value": String, 
     },  
     "addresses": [String], 
     "phoneNumbers": [String], 
