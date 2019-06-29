@@ -616,6 +616,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -738,6 +739,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
     },  
@@ -968,6 +970,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -1090,6 +1093,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
     },  
@@ -1406,6 +1410,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -1528,6 +1533,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
     },  
@@ -1758,6 +1764,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -1880,6 +1887,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
     },  
@@ -1988,7 +1996,7 @@ Update bulk user Presences
 
 Requires ANY permissions: 
 
-* user_administration
+* directory:user:edit
 
 
 ### Request Body Schema

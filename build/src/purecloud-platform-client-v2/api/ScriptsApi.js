@@ -5,7 +5,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 51.0.0
+	 * @version 52.0.0
 	 */
 
 	/**
@@ -143,7 +143,6 @@ class ScriptsApi {
 	/**
 	 * Get the published scripts.
 	 * 
-	 * @param {String} scriptId Script ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -153,18 +152,14 @@ class ScriptsApi {
 	 * @param {String} opts.flowId Secure flow id filter
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
 	 */
-	getScriptsPublished(scriptId, opts) { 
+	getScriptsPublished(opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'scriptId' is set
-		if (scriptId === undefined || scriptId === null) {
-			throw 'Missing the required parameter "scriptId" when calling getScriptsPublished';
-		}
 
 		return this.apiClient.callApi(
 			'/api/v2/scripts/published', 
 			'GET', 
-			{ 'scriptId': scriptId }, 
+			{  }, 
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'] }, 
 			{  }, 
 			{  }, 

@@ -613,6 +613,10 @@ Requires ANY permissions:
 * wfm:agentSchedule:view
 * wfm:agentTimeOffRequest:submit
 * wfm:agent:view
+* wfm:businessUnit:add
+* wfm:businessUnit:delete
+* wfm:businessUnit:edit
+* wfm:businessUnit:view
 * wfm:historicalAdherence:view
 * wfm:intraday:view
 * wfm:managementUnit:add
@@ -630,6 +634,9 @@ Requires ANY permissions:
 * wfm:serviceGoalGroup:delete
 * wfm:serviceGoalGroup:edit
 * wfm:serviceGoalGroup:view
+* wfm:shiftTradeRequest:edit
+* wfm:shiftTradeRequest:view
+* wfm:agentShiftTradeRequest:participate
 * wfm:shortTermForecast:add
 * wfm:shortTermForecast:delete
 * wfm:shortTermForecast:edit
@@ -764,6 +771,10 @@ Requires ANY permissions:
 * wfm:agentSchedule:view
 * wfm:agentTimeOffRequest:submit
 * wfm:agent:view
+* wfm:businessUnit:add
+* wfm:businessUnit:delete
+* wfm:businessUnit:edit
+* wfm:businessUnit:view
 * wfm:historicalAdherence:view
 * wfm:intraday:view
 * wfm:managementUnit:add
@@ -1703,7 +1714,7 @@ apiInstance.getWorkforcemanagementManagementunitWeekScheduleGenerationresults(ma
 
 <a name="getWorkforcemanagementManagementunitWeekSchedules"></a>
 
-# WeekScheduleListResponse getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId)
+# WeekScheduleListResponse getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, opts)
 
 
 
@@ -1735,8 +1746,13 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
+let opts = { 
+  'includeOnlyPublished': true, // Boolean | Return only published schedules
+  'earliestWeekDate': "earliestWeekDate_example", // String | The start date of the earliest week to query in yyyy-MM-dd format
+  'latestWeekDate': "latestWeekDate_example" // String | The start date of the latest week to query in yyyy-MM-dd format
+};
 
-apiInstance.getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId)
+apiInstance.getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitWeekSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1753,6 +1769,9 @@ apiInstance.getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, 
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. |  |
+ **includeOnlyPublished** | **Boolean** | Return only published schedules | [optional]  |
+ **earliestWeekDate** | **String** | The start date of the earliest week to query in yyyy-MM-dd format | [optional]  |
+ **latestWeekDate** | **String** | The start date of the latest week to query in yyyy-MM-dd format | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2056,7 +2075,7 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
  **pageSize** | **Number** |  | [optional]  |
  **pageNumber** | **Number** |  | [optional]  |
  **expand** | **String** |  | [optional] <br />**Values**: details |
- **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ShiftTrading, ShortTermForecasts, TimeOffRequests, WorkPlans |
+ **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BusinessUnits, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ServiceGoalTemplates, ShiftTrading, ShortTermForecasts, TimeOffRequests, WorkPlans |
  **divisionId** | **String** |  | [optional]  |
 {: class="table table-striped"}
 
@@ -4496,6 +4515,7 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
               "state": String, 
               "version": Number, 
               "path": [String], 
+              "notes": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -4591,6 +4611,7 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
               "state": String, 
               "version": Number, 
               "path": [String], 
+              "notes": String, 
               "selfUri": String, 
             },  
           },  
@@ -4826,6 +4847,7 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
           "state": String, 
           "version": Number, 
           "path": [String], 
+          "notes": String, 
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -4939,6 +4961,7 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
           "state": String, 
           "version": Number, 
           "path": [String], 
+          "notes": String, 
           "selfUri": String, 
         },  
       },  
@@ -5296,6 +5319,7 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
               "state": String, 
               "version": Number, 
               "path": [String], 
+              "notes": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -5391,6 +5415,7 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
               "state": String, 
               "version": Number, 
               "path": [String], 
+              "notes": String, 
               "selfUri": String, 
             },  
           },  
@@ -7101,6 +7126,17 @@ UpdateNotificationsRequest <a href="#" onclick="return copyUpdateNotificationsRe
         "selfUri": String, 
       },  
       "receivingShiftDate": Date, 
+    },  
+    "timeOffRequest": { 
+      "timeOffRequestId": String, 
+      "user": { 
+        "id": String, 
+        "selfUri": String, 
+      },  
+      "isFullDayRequest": Boolean, 
+      "status": String, 
+      "partialDayStartDateTimes": [Date], 
+      "fullDayManagementUnitDates": [String], 
     },  
     "markedAsRead": Boolean, 
     "agentNotification": Boolean, 

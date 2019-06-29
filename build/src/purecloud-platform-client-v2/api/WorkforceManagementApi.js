@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 51.0.0
+	 * @version 52.0.0
 	 */
 
 	/**
@@ -818,8 +818,14 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeOnlyPublished Return only published schedules
+	 * @param {String} opts.earliestWeekDate The start date of the earliest week to query in yyyy-MM-dd format
+	 * @param {String} opts.latestWeekDate The start date of the latest week to query in yyyy-MM-dd format
 	 */
-	getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId) { 
+	getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWeekSchedules';
@@ -833,7 +839,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules', 
 			'GET', 
 			{ 'managementUnitId': managementUnitId,'weekId': weekId }, 
-			{  }, 
+			{ 'includeOnlyPublished': opts['includeOnlyPublished'],'earliestWeekDate': opts['earliestWeekDate'],'latestWeekDate': opts['latestWeekDate'] }, 
 			{  }, 
 			{  }, 
 			null, 

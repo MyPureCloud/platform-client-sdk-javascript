@@ -102,8 +102,6 @@ Delete Trustee User
 Requires ANY permissions: 
 
 * authorization:orgTrusteeUser:delete
-* admin
-* role_manager
 
 
 
@@ -161,8 +159,6 @@ Delete Trustee User Roles
 Requires ANY permissions: 
 
 * authorization:orgTrusteeUser:delete
-* admin
-* role_manager
 
 
 
@@ -987,11 +983,9 @@ Add a user to the trust.
 
 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * authorization:orgTrusteeUser:add
-* admin
-* role_manager
 
 
 ### Request Body Schema
@@ -1609,6 +1603,7 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
           "state": String, 
           "version": Number, 
           "path": [String], 
+          "notes": String, 
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -1722,6 +1717,7 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
           "state": String, 
           "version": Number, 
           "path": [String], 
+          "notes": String, 
           "selfUri": String, 
         },  
       },  
@@ -1920,6 +1916,7 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -2042,6 +2039,7 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
     },  
@@ -2181,8 +2179,6 @@ Update Trustee User Roles
 Requires ANY permissions: 
 
 * authorization:orgTrusteeUser:edit
-* admin
-* role_manager
 
 
 

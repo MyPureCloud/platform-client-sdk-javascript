@@ -113,8 +113,6 @@ Delete an organization role.
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:role:delete
 
 
@@ -229,8 +227,6 @@ Removes all the roles from the user.
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:delete
 
 
@@ -1273,8 +1269,6 @@ Patch Organization Role for needsUpdate Field
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:role:edit
 
 
@@ -1496,6 +1490,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "state": String, 
               "version": Number, 
               "path": [String], 
+              "notes": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -1591,6 +1586,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "state": String, 
               "version": Number, 
               "path": [String], 
+              "notes": String, 
               "selfUri": String, 
             },  
           },  
@@ -1907,6 +1903,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "state": String, 
                 "version": Number, 
                 "path": [String], 
+                "notes": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -1984,6 +1981,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "state": String, 
                 "version": Number, 
                 "path": [String], 
+                "notes": String, 
                 "selfUri": String, 
               },  
             },  
@@ -2550,7 +2548,7 @@ apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
- **objectType** | **String** | The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, USER |
+ **objectType** | **String** | The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, USER |
  **body** | **Object** | Object Id List |  |
 {: class="table table-striped"}
 
@@ -2966,6 +2964,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "state": String, 
               "version": Number, 
               "path": [String], 
+              "notes": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -3061,6 +3060,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "state": String, 
               "version": Number, 
               "path": [String], 
+              "notes": String, 
               "selfUri": String, 
             },  
           },  
@@ -3377,6 +3377,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "state": String, 
                 "version": Number, 
                 "path": [String], 
+                "notes": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -3454,6 +3455,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "state": String, 
                 "version": Number, 
                 "path": [String], 
+                "notes": String, 
                 "selfUri": String, 
               },  
             },  
@@ -4207,6 +4209,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
               "state": String, 
               "version": Number, 
               "path": [String], 
+              "notes": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -4302,6 +4305,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
               "state": String, 
               "version": Number, 
               "path": [String], 
+              "notes": String, 
               "selfUri": String, 
             },  
           },  
@@ -4618,6 +4622,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "state": String, 
                 "version": Number, 
                 "path": [String], 
+                "notes": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -4695,6 +4700,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "state": String, 
                 "version": Number, 
                 "path": [String], 
+                "notes": String, 
                 "selfUri": String, 
               },  
             },  
@@ -5430,8 +5436,6 @@ Update
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:role:edit
 
 
@@ -5653,6 +5657,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
               "state": String, 
               "version": Number, 
               "path": [String], 
+              "notes": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -5748,6 +5753,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
               "state": String, 
               "version": Number, 
               "path": [String], 
+              "notes": String, 
               "selfUri": String, 
             },  
           },  
@@ -6064,6 +6070,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "state": String, 
                 "version": Number, 
                 "path": [String], 
+                "notes": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -6141,6 +6148,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "state": String, 
                 "version": Number, 
                 "path": [String], 
+                "notes": String, 
                 "selfUri": String, 
               },  
             },  
@@ -7006,6 +7014,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "state": String, 
               "version": Number, 
               "path": [String], 
+              "notes": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -7101,6 +7110,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "state": String, 
               "version": Number, 
               "path": [String], 
+              "notes": String, 
               "selfUri": String, 
             },  
           },  
@@ -7417,6 +7427,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "state": String, 
                 "version": Number, 
                 "path": [String], 
+                "notes": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -7494,6 +7505,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "state": String, 
                 "version": Number, 
                 "path": [String], 
+                "notes": String, 
                 "selfUri": String, 
               },  
             },  
@@ -8022,8 +8034,6 @@ Sets the user&#39;s roles
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 

@@ -833,20 +833,20 @@ ScimV2PatchRequest <a href="#" onclick="return copyScimV2PatchRequestExample()">
       "number": Boolean, 
       "object": Boolean, 
       "boolean": Boolean, 
-      "valueNode": Boolean, 
-      "binary": Boolean, 
-      "pojo": Boolean, 
-      "containerNode": Boolean, 
-      "missingNode": Boolean, 
       "floatingPointNumber": Boolean, 
+      "integralNumber": Boolean, 
+      "short": Boolean, 
+      "int": Boolean, 
+      "long": Boolean, 
       "double": Boolean, 
       "bigDecimal": Boolean, 
       "bigInteger": Boolean, 
       "textual": Boolean, 
-      "int": Boolean, 
-      "integralNumber": Boolean, 
-      "short": Boolean, 
-      "long": Boolean, 
+      "binary": Boolean, 
+      "valueNode": Boolean, 
+      "containerNode": Boolean, 
+      "missingNode": Boolean, 
+      "pojo": Boolean, 
       "array": Boolean, 
       "null": Boolean, 
     },  
@@ -1048,20 +1048,20 @@ ScimV2PatchRequest <a href="#" onclick="return copyScimV2PatchRequestExample()">
       "number": Boolean, 
       "object": Boolean, 
       "boolean": Boolean, 
-      "valueNode": Boolean, 
-      "binary": Boolean, 
-      "pojo": Boolean, 
-      "containerNode": Boolean, 
-      "missingNode": Boolean, 
       "floatingPointNumber": Boolean, 
+      "integralNumber": Boolean, 
+      "short": Boolean, 
+      "int": Boolean, 
+      "long": Boolean, 
       "double": Boolean, 
       "bigDecimal": Boolean, 
       "bigInteger": Boolean, 
       "textual": Boolean, 
-      "int": Boolean, 
-      "integralNumber": Boolean, 
-      "short": Boolean, 
-      "long": Boolean, 
+      "binary": Boolean, 
+      "valueNode": Boolean, 
+      "containerNode": Boolean, 
+      "missingNode": Boolean, 
+      "pojo": Boolean, 
       "array": Boolean, 
       "null": Boolean, 
     },  
@@ -1171,6 +1171,7 @@ ScimV2CreateUser <a href="#" onclick="return copyScimV2CreateUserExample()">Copy
     "value": String, 
     "type": String, 
   },  
+  "externalId": String, 
   "groups": { 
     "displayName": String, 
     "meta": { 
@@ -1212,6 +1213,7 @@ ScimV2CreateUser <a href="#" onclick="return copyScimV2CreateUserExample()">Copy
         "value": String, 
         "type": String, 
       },  
+      "externalId": String, 
       "groups": { 
         "displayName": String, 
         "meta": { 
@@ -1253,6 +1255,7 @@ ScimV2CreateUser <a href="#" onclick="return copyScimV2CreateUserExample()">Copy
             "value": String, 
             "type": String, 
           },  
+          "externalId": String, 
           "groups": { 
             "displayName": String, 
             "meta": { 
@@ -1294,6 +1297,7 @@ ScimV2CreateUser <a href="#" onclick="return copyScimV2CreateUserExample()">Copy
                 "value": String, 
                 "type": String, 
               },  
+              "externalId": String, 
               "groups": { 
                 "displayName": String, 
                 "meta": ScimMetadata, 
@@ -1423,6 +1427,7 @@ ScimV2CreateUser <a href="#" onclick="return copyScimV2CreateUserExample()">Copy
     "value": String, 
     "type": String, 
   },  
+  "externalId": String, 
   "groups": { 
     "displayName": String, 
     "meta": { 
@@ -1464,6 +1469,7 @@ ScimV2CreateUser <a href="#" onclick="return copyScimV2CreateUserExample()">Copy
         "value": String, 
         "type": String, 
       },  
+      "externalId": String, 
       "groups": { 
         "displayName": String, 
         "meta": { 
@@ -1505,6 +1511,7 @@ ScimV2CreateUser <a href="#" onclick="return copyScimV2CreateUserExample()">Copy
             "value": String, 
             "type": String, 
           },  
+          "externalId": String, 
           "groups": { 
             "displayName": String, 
             "meta": { 
@@ -1546,6 +1553,7 @@ ScimV2CreateUser <a href="#" onclick="return copyScimV2CreateUserExample()">Copy
                 "value": String, 
                 "type": String, 
               },  
+              "externalId": String, 
               "groups": { 
                 "displayName": String, 
                 "meta": ScimMetadata, 
@@ -1783,6 +1791,7 @@ ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
     "value": String, 
     "type": String, 
   },  
+  "externalId": String, 
   "groups": { 
     "displayName": String, 
     "meta": { 
@@ -1824,6 +1833,7 @@ ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
         "value": String, 
         "type": String, 
       },  
+      "externalId": String, 
       "groups": { 
         "displayName": String, 
         "meta": { 
@@ -1865,6 +1875,7 @@ ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
             "value": String, 
             "type": String, 
           },  
+          "externalId": String, 
           "groups": { 
             "displayName": String, 
             "meta": { 
@@ -1906,6 +1917,7 @@ ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
                 "value": String, 
                 "type": String, 
               },  
+              "externalId": String, 
               "groups": { 
                 "displayName": String, 
                 "meta": ScimMetadata, 
@@ -2149,6 +2161,7 @@ ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
     "value": String, 
     "type": String, 
   },  
+  "externalId": String, 
   "groups": { 
     "displayName": String, 
     "meta": { 
@@ -2190,6 +2203,7 @@ ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
         "value": String, 
         "type": String, 
       },  
+      "externalId": String, 
       "groups": { 
         "displayName": String, 
         "meta": { 
@@ -2231,6 +2245,7 @@ ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
             "value": String, 
             "type": String, 
           },  
+          "externalId": String, 
           "groups": { 
             "displayName": String, 
             "meta": { 
@@ -2272,6 +2287,7 @@ ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
                 "value": String, 
                 "type": String, 
               },  
+              "externalId": String, 
               "groups": { 
                 "displayName": String, 
                 "meta": ScimMetadata, 

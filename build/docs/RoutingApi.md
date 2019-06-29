@@ -588,7 +588,6 @@ Remove routing language from user
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 
 
@@ -646,7 +645,6 @@ Remove routing skill from user
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 
 
@@ -2536,6 +2534,7 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -2658,6 +2657,7 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
     },  
@@ -2981,6 +2981,7 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -3103,6 +3104,7 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
     },  
@@ -3219,7 +3221,6 @@ Update routing language proficiency or state.
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 
 ### Request Body Schema
@@ -3309,7 +3310,6 @@ Add bulk routing language to user. Max limit 50 languages
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 
 ### Request Body Schema
@@ -3395,7 +3395,6 @@ Bulk add routing skills to user
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 
 ### Request Body Schema
@@ -4840,7 +4839,6 @@ Add routing language to user
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 
 ### Request Body Schema
@@ -4926,7 +4924,6 @@ Add routing skill to user
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 
 ### Request Body Schema
@@ -5485,6 +5482,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "state": String, 
           "version": Number, 
           "path": [String], 
+          "notes": String, 
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -5598,6 +5596,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "state": String, 
           "version": Number, 
           "path": [String], 
+          "notes": String, 
           "selfUri": String, 
         },  
       },  
@@ -5874,6 +5873,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "state": String, 
           "version": Number, 
           "path": [String], 
+          "notes": String, 
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -5987,6 +5987,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "state": String, 
           "version": Number, 
           "path": [String], 
+          "notes": String, 
           "selfUri": String, 
         },  
       },  
@@ -6219,6 +6220,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
             "state": String, 
             "version": Number, 
             "path": [String], 
+            "notes": String, 
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -6323,6 +6325,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
             "state": String, 
             "version": Number, 
             "path": [String], 
+            "notes": String, 
             "selfUri": String, 
           },  
         },  
@@ -6568,6 +6571,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -6690,6 +6694,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
     },  
@@ -7318,6 +7323,7 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -7440,6 +7446,7 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
     },  
@@ -7726,7 +7733,6 @@ Update routing skill proficiency or state.
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 
 ### Request Body Schema
@@ -7816,7 +7822,6 @@ Replace all routing skills assigned to a user
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 
 ### Request Body Schema

@@ -1,387 +1,226 @@
-Platform API version: 3238
+Platform API version: 3279
 
 
-# Major Changes (2 changes)
+# Major Changes (9 changes)
 
-**GET /api/v2/telephony/providers/edges/phones** (1 change)
+**GET /api/v2/architect/dependencytracking/consumingresources** (1 change)
 
-* Parameter name was added
+* Parameter flowFilter was added
 
-**SmsPhoneNumber** (1 change)
+**GET /api/v2/scripts/published** (1 change)
 
-* phoneNumberType has been made readonly
+* Parameter scriptId was removed
+
+**/api/v2/license/organization** (1 change)
+
+* Operation GET was removed
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules** (3 changes)
+
+* Parameter includeOnlyPublished was added
+* Parameter earliestWeekDate was added
+* Parameter latestWeekDate was added
+
+**AddressableEntityUser** (1 change)
+
+* Model AddressableEntityUser was removed
+
+**LicenseOrganization** (1 change)
+
+* Model LicenseOrganization was removed
+
+**Agent** (1 change)
+
+* Property stage was removed
 
 
-# Minor Changes (123 changes)
+# Minor Changes (63 changes)
 
-**POST /api/v2/externalcontacts/organizations** (1 change)
-
-* Response 422 was added
-
-**/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason** (3 changes)
+**/api/v2/users/externalid/{authorityName}/{externalKey}** (2 changes)
 
 * Path was added
-* Operation PUT was added
+* Operation GET was added
+
+**/api/v2/users/{userId}/externalid/{authorityName}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/users/{userId}/externalid** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}** (2 changes)
+
+* Path was added
 * Operation DELETE was added
 
-**PUT /api/v2/externalcontacts/relationships/{relationshipId}** (1 change)
+**LocationDefinition** (1 change)
 
-* Response 422 was added
+* Optional property notes was added
 
-**PUT /api/v2/externalcontacts/contacts/{contactId}** (1 change)
+**Trunk** (9 changes)
 
-* Response 422 was added
+* Optional property logicalInterface was added
+* Optional property connectedStatus was added
+* Optional property optionsStatus was added
+* Optional property registersStatus was added
+* Optional property ipStatus was added
+* Optional property optionsEnabledStatus was added
+* Optional property registersEnabledStatus was added
+* Optional property family was added
+* Optional property proxyAddressList was added
 
-**POST /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes** (1 change)
+**PhoneCapabilities** (1 change)
 
-* Response 422 was added
+* Optional property mediaCodecs was added
 
-**POST /api/v2/externalcontacts/relationships** (1 change)
+**Agent** (2 changes)
 
-* Response 422 was added
+* Optional property id was added
+* Optional property selfUri was added
 
-**/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}** (1 change)
-
-* Response 422 was added
-
-**/api/v2/scim/users** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/scim/users/{userId}** (5 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/scim/v2/serviceproviderconfig** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/webchat/guest/conversations/{conversationId}/messages** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**POST /api/v2/externalcontacts/contacts/{contactId}/notes** (1 change)
-
-* Response 422 was added
-
-**/api/v2/webchat/guest/conversations/{conversationId}/messages/{messageId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}** (1 change)
-
-* Response 422 was added
-
-**/api/v2/scim/v2/groups/{groupId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation PATCH was added
-
-**/api/v2/scim/v2/groups** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**POST /api/v2/externalcontacts/contacts** (1 change)
-
-* Response 422 was added
-
-**PUT /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}** (1 change)
-
-* Response 422 was added
-
-**/api/v2/scim/groups/{groupId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation PATCH was added
-
-**/api/v2/scim/groups** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/webchat/guest/conversations/{conversationId}/members** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/webchat/guest/conversations/{conversationId}/mediarequests** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/webchat/guest/conversations** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/scim/v2/users** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/scim/v2/users/{userId}** (5 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/analytics/flows/observations/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**ConversationChat** (1 change)
-
-* Optional property avatarImageUrl was added
-
-**Evaluation** (3 changes)
-
-* Optional property mediaType was added
-* Optional property rescore was added
-* Optional property conversationDate was added
-
-**Message** (2 changes)
-
-* Enum value telegram was added to property type
-* Enum value kakao was added to property type
-
-**MeteredAssignmentByAgent** (1 change)
+**ConversationRoutingData** (1 change)
 
 * Model was added
 
-**PolicyActions** (1 change)
-
-* Optional property assignMeteredAssignmentByAgent was added
-
-**TimeInterval** (2 changes)
-
-* Optional property months was added
-* Optional property weeks was added
-
-**GDPRJourneyCustomer** (1 change)
+**FlowDiagnosticInfo** (1 change)
 
 * Model was added
 
-**GDPRSubject** (2 changes)
+**Participant** (1 change)
 
-* Optional property journeyCustomer was added
-* Optional property socialHandle was added
+* Optional property conversationRoutingData was added
 
-**ReplacementTerm** (1 change)
-
-* Enum value TWITTER was added to property type
-
-**SocialHandle** (1 change)
+**ScoredAgent** (1 change)
 
 * Model was added
 
-**WebChatMemberInfo** (1 change)
+**Skill** (1 change)
 
 * Model was added
 
-**WebChatConversation** (1 change)
+**Survey** (1 change)
+
+* Optional property surveyErrorDetails was added
+
+**SurveyErrorDetails** (1 change)
 
 * Model was added
 
-**WebChatMessage** (1 change)
+**CallbackMediaParticipant** (1 change)
+
+* Optional property conversationRoutingData was added
+
+**AnalyticsQueryPredicate** (3 changes)
+
+* Enum value scoredAgentId was added to property dimension
+* Enum value agentScore was added to property dimension
+* Enum value provider was added to property dimension
+
+**ChatMessage** (2 changes)
+
+* Optional property senderCommunicationId was added
+* Optional property participantPurpose was added
+
+**Recording** (2 changes)
+
+* Optional property outputDurationMs was added
+* Optional property outputSizeInBytes was added
+
+**BusinessUnitReference** (1 change)
 
 * Model was added
 
-**CreateWebChatMessageRequest** (1 change)
+**ManagementUnit** (1 change)
 
-* Model was added
-
-**WebChatTyping** (1 change)
-
-* Model was added
-
-**ChatMediaParticipant** (1 change)
-
-* Optional property avatarImageUrl was added
-
-**ScimListResponse** (1 change)
-
-* Model was added
-
-**ScimMetadata** (1 change)
-
-* Model was added
-
-**ScimResource** (1 change)
-
-* Model was added
+* Optional property businessUnit was added
 
 **Manager** (1 change)
 
-* Model was added
-
-**Photo** (1 change)
-
-* Model was added
-
-**ScimEmail** (1 change)
-
-* Model was added
-
-**ScimPhoneNumber** (1 change)
-
-* Model was added
-
-**ScimV2EnterpriseUser** (1 change)
-
-* Model was added
-
-**ScimV2GroupReference** (1 change)
-
-* Model was added
+* Optional property externalId was added
 
 **ScimV2User** (1 change)
 
-* Model was added
+* Optional property externalId was added
 
 **ScimV2CreateUser** (1 change)
 
-* Model was added
+* Optional property externalId was added
 
-**JsonNode** (1 change)
+**AggregationQuery** (3 changes)
 
-* Model was added
+* Enum value scoredAgentId was added to property groupBy
+* Enum value agentScore was added to property groupBy
+* Enum value provider was added to property groupBy
 
-**ScimV2PatchOperation** (1 change)
+**AnalyticsConversationSegment** (1 change)
 
-* Model was added
+* Optional property scoredAgents was added
 
-**ScimV2PatchRequest** (1 change)
-
-* Model was added
-
-**WidgetClientConfig** (1 change)
-
-* Optional property v1-http was added
-
-**WidgetClientConfigV1Http** (1 change)
+**AnalyticsScoredAgent** (1 change)
 
 * Model was added
 
-**WidgetDeployment** (1 change)
+**AnalyticsSession** (1 change)
 
-* Enum value v1-http was added to property clientType
+* Optional property provider was added
+
+**SystemPromptAsset** (1 change)
+
+* Enum value transcodeFailed was added to property uploadStatus
 
 **ObservationValue** (1 change)
 
-* Optional property routingPriority was added
+* Optional property scoredAgents was added
 
-**AnalyticsQueryPredicate** (1 change)
+**EmailMediaParticipant** (1 change)
 
-* Enum value routingPriority was added to property dimension
+* Optional property conversationRoutingData was added
 
-**ScimServiceProviderConfig** (1 change)
+**MessageMediaParticipant** (1 change)
 
-* Model was added
+* Optional property conversationRoutingData was added
 
-**MessageMediaParticipant** (2 changes)
-
-* Enum value telegram was added to property type
-* Enum value kakao was added to property type
-
-**WebChatMessageEntityList** (1 change)
+**TimeOffRequestNotification** (1 change)
 
 * Model was added
 
-**ScimV2Group** (1 change)
+**WfmUserNotification** (2 changes)
+
+* Enum value TimeOffRequest was added to property type
+* Optional property timeOffRequest was added
+
+**CallMediaParticipant** (1 change)
+
+* Optional property conversationRoutingData was added
+
+**ReportingExportJobResponse** (2 changes)
+
+* Enum value REACHED_MAXIMUM_ATTEMPT_OF_RETRY was added to property exportErrorMessagesType
+* Enum value FAILED_LONG_RUNNING_EXPORT was added to property exportErrorMessagesType
+
+**ChatMediaParticipant** (1 change)
+
+* Optional property conversationRoutingData was added
+
+**UserExternalIdentifier** (1 change)
 
 * Model was added
 
-**ScimV2MemberReference** (1 change)
+**CobrowseMediaParticipant** (1 change)
 
-* Model was added
+* Optional property conversationRoutingData was added
 
-**Meta** (1 change)
+**ParticipantBasic** (1 change)
 
-* Model was added
+* Optional property conversationRoutingData was added
 
-**PatchOperation** (1 change)
+**LocationUpdateDefinition** (1 change)
 
-* Model was added
-
-**PatchRequest** (1 change)
-
-* Model was added
-
-**Path** (1 change)
-
-* Model was added
-
-**AggregationQuery** (1 change)
-
-* Enum value routingPriority was added to property groupBy
-
-**WebChatMemberInfoEntityList** (1 change)
-
-* Model was added
-
-**WebChatGuestMediaRequest** (1 change)
-
-* Model was added
-
-**WebChatGuestMediaRequestEntityList** (1 change)
-
-* Model was added
-
-**CreateWebChatConversationResponse** (1 change)
-
-* Model was added
-
-**CreateWebChatConversationRequest** (1 change)
-
-* Model was added
-
-**GuestMemberInfo** (1 change)
-
-* Model was added
-
-**WebChatRoutingTarget** (1 change)
-
-* Model was added
+* Optional property notes was added
 
 
 # Point Changes (0 changes)

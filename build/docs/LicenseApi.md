@@ -9,7 +9,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**getLicenseDefinition**](LicenseApi.html#getLicenseDefinition) | **GET** /api/v2/license/definitions/{licenseId} | Get PureCloud license definition.
 [**getLicenseDefinitions**](LicenseApi.html#getLicenseDefinitions) | **GET** /api/v2/license/definitions | Get all PureCloud license definitions available for the organization.
-[**getLicenseOrganization**](LicenseApi.html#getLicenseOrganization) | **GET** /api/v2/license/organization | Get license assignments for the organization.
 [**getLicenseToggle**](LicenseApi.html#getLicenseToggle) | **GET** /api/v2/license/toggles/{featureName} | Get PureCloud license feature toggle value.
 [**getLicenseUser**](LicenseApi.html#getLicenseUser) | **GET** /api/v2/license/users/{userId} | Get licenses for specified user.
 [**getLicenseUsers**](LicenseApi.html#getLicenseUsers) | **GET** /api/v2/license/users | Get a page of users and their licenses
@@ -32,8 +31,6 @@ Get PureCloud license definition.
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 
@@ -89,8 +86,6 @@ Get all PureCloud license definitions available for the organization.
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 
@@ -127,58 +122,6 @@ This endpoint does not need any parameter.
 
 **[LicenseDefinition]**
 
-<a name="getLicenseOrganization"></a>
-
-# LicenseOrganization getLicenseOrganization()
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-GET /api/v2/license/organization
-
-Get license assignments for the organization.
-
-
-
-Requires ANY permissions: 
-
-* admin
-* role_manager
-* authorization:grant:add
-
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.LicenseApi();
-
-apiInstance.getLicenseOrganization()
-  .then((data) => {
-    console.log(`getLicenseOrganization success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getLicenseOrganization');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-{: class="table table-striped"}
-
-### Return type
-
-**LicenseOrganization**
-
 <a name="getLicenseToggle"></a>
 
 # LicenseOrgToggle getLicenseToggle(featureName)
@@ -193,8 +136,6 @@ Get PureCloud license feature toggle value.
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 
@@ -250,8 +191,6 @@ Get licenses for specified user.
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 
@@ -305,11 +244,8 @@ Get a page of users and their licenses
 
 Retrieve a page of users in an organization along with the licenses they possess.
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* admin
-* role_manager
-* authorization:grant:add
 
 
 
@@ -368,8 +304,6 @@ Update the organization&#39;s license assignments in a batch.
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 
@@ -456,8 +390,6 @@ Switch PureCloud license feature toggle value.
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 

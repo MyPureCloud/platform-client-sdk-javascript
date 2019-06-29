@@ -26,7 +26,7 @@ For direct use in a browser script:
 
 ```{"language":"html"}
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/51.0.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/52.0.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -43,7 +43,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/51.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/52.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -118,11 +118,11 @@ client.setAccessToken(yourAccessToken);
 
 ## Environments
 
-If connecting to a PureCloud environment other than mypurecloud.com (e.g. mypurecloud.ie), set the environment on the `ApiClient` instance.
+If connecting to a PureCloud environment other than mypurecloud.com (e.g. mypurecloud.ie), set the environment on the `ApiClient` instance with the PureCloudRegionHosts object.
 
 ```{"language":"javascript"}
 const client = platformClient.ApiClient.instance;
-client.setEnvironment('mypurecloud.ie');
+client.setEnvironment(platformClient.PureCloudRegionHosts.eu_west_1);
 ```
 
 

@@ -5,7 +5,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 51.0.0
+	 * @version 52.0.0
 	 */
 
 	/**
@@ -53,26 +53,6 @@ class LicenseApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/license/definitions', 
-			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get license assignments for the organization.
-	 * 
-	 */
-	getLicenseOrganization() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/license/organization', 
 			'GET', 
 			{  }, 
 			{  }, 

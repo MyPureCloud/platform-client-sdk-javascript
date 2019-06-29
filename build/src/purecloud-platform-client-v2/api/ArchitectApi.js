@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 51.0.0
+	 * @version 52.0.0
 	 */
 
 	/**
@@ -478,6 +478,7 @@ class ArchitectApi {
 	 * @param {Array.<String>} opts.resourceType Types of consuming resources to show.  Only versioned types are allowed here.
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object} opts.flowFilter Show only checkedIn or published flows
 	 */
 	getArchitectDependencytrackingConsumingresources(id, objectType, opts) { 
 		opts = opts || {};
@@ -495,7 +496,7 @@ class ArchitectApi {
 			'/api/v2/architect/dependencytracking/consumingresources', 
 			'GET', 
 			{  }, 
-			{ 'id': id,'objectType': objectType,'resourceType': this.apiClient.buildCollectionParam(opts['resourceType'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{ 'id': id,'objectType': objectType,'resourceType': this.apiClient.buildCollectionParam(opts['resourceType'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'flowFilter': opts['flowFilter'] }, 
 			{  }, 
 			{  }, 
 			null, 

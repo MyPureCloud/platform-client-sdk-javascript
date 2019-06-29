@@ -181,7 +181,7 @@ Update organization
 
 Requires ANY permissions: 
 
-* admin
+* directory:organization:admin
 
 
 ### Request Body Schema
@@ -263,7 +263,7 @@ Update organization.
 
 Requires ANY permissions: 
 
-* admin
+* directory:organization:admin
 
 
 ### Request Body Schema
@@ -358,7 +358,7 @@ Update organization whitelist settings
 
 Requires ANY permissions: 
 
-* admin
+* directory:organization:admin
 
 
 ### Request Body Schema

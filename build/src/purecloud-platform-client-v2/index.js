@@ -1,3 +1,5 @@
+
+import PureCloudRegionHosts from './PureCloudRegionHosts.js';
 import ApiClient from './ApiClient.js';
 import AlertingApi from './api/AlertingApi.js';
 import AnalyticsApi from './api/AnalyticsApi.js';
@@ -76,7 +78,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 51.0.0
+ * @version 52.0.0
  */
 class platformClient {
 	constructor() {
@@ -320,6 +322,13 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/WorkforceManagementApi}
 		 */
 		this.WorkforceManagementApi = WorkforceManagementApi;
+		/**
+		 * The PureCloudRegionsHost Object.
+		 * @property {module:purecloud-platform-client-v2/MyPureCloudRegionHost}
+		 */
+		this.PureCloudRegionHosts = PureCloudRegionHosts;
+		
+		
 	}
 }
 

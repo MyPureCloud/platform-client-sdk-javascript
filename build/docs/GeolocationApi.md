@@ -267,6 +267,7 @@ Geolocation <a href="#" onclick="return copyGeolocationExample()">Copy</a>
     "state": String, 
     "version": Number, 
     "path": [String], 
+    "notes": String, 
     "selfUri": String, 
   },  
   "selfUri": String, 

@@ -1046,7 +1046,8 @@ let objectType = "objectType_example"; // String | Consumed object type
 let opts = { 
   'resourceType': ["resourceType_example"], // [String] | Types of consuming resources to show.  Only versioned types are allowed here.
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'flowFilter': "flowFilter_example" // String | Show only checkedIn or published flows
 };
 
 apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, opts)
@@ -1069,6 +1070,7 @@ apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, opt
  **resourceType** | **[String]** | Types of consuming resources to show.  Only versioned types are allowed here. | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WORKFLOW |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **flowFilter** | **String** | Show only checkedIn or published flows | [optional] <br />**Values**: checkedIn, published |
 {: class="table table-striped"}
 
 ### Return type
@@ -3942,6 +3944,7 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
           "state": String, 
           "version": Number, 
           "path": [String], 
+          "notes": String, 
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -4055,6 +4058,7 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
           "state": String, 
           "version": Number, 
           "path": [String], 
+          "notes": String, 
           "selfUri": String, 
         },  
       },  
@@ -4373,7 +4377,7 @@ Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
 
 Requires ANY permissions: 
 
-* architect:systemPrompt:edit
+* architect:systemPrompt:view
 
 
 
@@ -4793,6 +4797,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -4915,6 +4920,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
     },  
@@ -5191,6 +5197,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -5313,6 +5320,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
     },  
@@ -5545,6 +5553,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "state": String, 
           "version": Number, 
           "path": [String], 
+          "notes": String, 
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -5658,6 +5667,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "state": String, 
           "version": Number, 
           "path": [String], 
+          "notes": String, 
           "selfUri": String, 
         },  
       },  
@@ -6706,6 +6716,7 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
           "state": String, 
           "version": Number, 
           "path": [String], 
+          "notes": String, 
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -6819,6 +6830,7 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
           "state": String, 
           "version": Number, 
           "path": [String], 
+          "notes": String, 
           "selfUri": String, 
         },  
       },  
@@ -7549,6 +7561,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -7671,6 +7684,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
     },  
@@ -7947,6 +7961,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -8069,6 +8084,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "state": String, 
         "version": Number, 
         "path": [String], 
+        "notes": String, 
         "selfUri": String, 
       },  
     },  
@@ -8301,6 +8317,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "state": String, 
           "version": Number, 
           "path": [String], 
+          "notes": String, 
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -8414,6 +8431,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "state": String, 
           "version": Number, 
           "path": [String], 
+          "notes": String, 
           "selfUri": String, 
         },  
       },  

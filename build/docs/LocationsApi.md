@@ -300,6 +300,7 @@ LocationUpdateDefinition <a href="#" onclick="return copyLocationUpdateDefinitio
   "state": String, 
   "version": Number, 
   "path": [String], 
+  "notes": String, 
 }
 ```
 
@@ -401,6 +402,7 @@ LocationDefinition <a href="#" onclick="return copyLocationDefinitionExample()">
   "state": String, 
   "version": Number, 
   "path": [String], 
+  "notes": String, 
   "selfUri": String, 
 }
 ```
