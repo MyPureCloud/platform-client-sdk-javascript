@@ -5965,6 +5965,7 @@ declare namespace Models {
 		"externalContact"?: Models.ConversationCallEventTopicUriReference;
 		"externalOrganization"?: Models.ConversationCallEventTopicUriReference;
 		"wrapup"?: Models.ConversationCallEventTopicWrapup;
+		"conversationRoutingData"?: Models.ConversationCallEventTopicConversationRoutingData;
 		"peer"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
@@ -5980,6 +5981,14 @@ declare namespace Models {
 		"monitoredParticipantId"?: string;
 		"consultParticipantId"?: string;
 		"faxStatus"?: Models.ConversationCallEventTopicFaxStatus;
+	}
+	
+	export interface ConversationCallEventTopicConversationRoutingData { 
+		"queue"?: Models.ConversationCallEventTopicUriReference;
+		"language"?: Models.ConversationCallEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.ConversationCallEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.ConversationCallEventTopicScoredAgent>;
 	}
 	
 	export interface ConversationCallEventTopicDetail { 
@@ -6039,6 +6048,11 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface ConversationCallEventTopicScoredAgent { 
+		"agent"?: Models.ConversationCallEventTopicUriReference;
+		"score"?: number;
+	}
+	
 	export interface ConversationCallEventTopicUriReference { 
 		"id"?: string;
 		"name"?: string;
@@ -6087,6 +6101,7 @@ declare namespace Models {
 		"externalContact"?: Models.ConversationCallbackEventTopicUriReference;
 		"externalOrganization"?: Models.ConversationCallbackEventTopicUriReference;
 		"wrapup"?: Models.ConversationCallbackEventTopicWrapup;
+		"conversationRoutingData"?: Models.ConversationCallbackEventTopicConversationRoutingData;
 		"peer"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
@@ -6099,6 +6114,14 @@ declare namespace Models {
 		"timeoutSeconds"?: number;
 		"callbackScheduledTime"?: string;
 		"automatedCallbackConfigId"?: string;
+	}
+	
+	export interface ConversationCallbackEventTopicConversationRoutingData { 
+		"queue"?: Models.ConversationCallbackEventTopicUriReference;
+		"language"?: Models.ConversationCallbackEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.ConversationCallbackEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.ConversationCallbackEventTopicScoredAgent>;
 	}
 	
 	export interface ConversationCallbackEventTopicDetail { 
@@ -6160,6 +6183,11 @@ declare namespace Models {
 		"columnName"?: string;
 		"type"?: string;
 		"additionalProperties"?: object;
+	}
+	
+	export interface ConversationCallbackEventTopicScoredAgent { 
+		"agent"?: Models.ConversationCallbackEventTopicUriReference;
+		"score"?: number;
 	}
 	
 	export interface ConversationCallbackEventTopicUriReference { 
@@ -6235,11 +6263,20 @@ declare namespace Models {
 		"externalContact"?: Models.ConversationChatEventTopicUriReference;
 		"externalOrganization"?: Models.ConversationChatEventTopicUriReference;
 		"wrapup"?: Models.ConversationChatEventTopicWrapup;
+		"conversationRoutingData"?: Models.ConversationChatEventTopicConversationRoutingData;
 		"peer"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
 		"journeyContext"?: Models.ConversationChatEventTopicJourneyContext;
 		"roomId"?: string;
+	}
+	
+	export interface ConversationChatEventTopicConversationRoutingData { 
+		"queue"?: Models.ConversationChatEventTopicUriReference;
+		"language"?: Models.ConversationChatEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.ConversationChatEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.ConversationChatEventTopicScoredAgent>;
 	}
 	
 	export interface ConversationChatEventTopicDetail { 
@@ -6286,6 +6323,11 @@ declare namespace Models {
 	export interface ConversationChatEventTopicJourneyCustomerSession { 
 		"id"?: string;
 		"type"?: string;
+	}
+	
+	export interface ConversationChatEventTopicScoredAgent { 
+		"agent"?: Models.ConversationChatEventTopicUriReference;
+		"score"?: number;
 	}
 	
 	export interface ConversationChatEventTopicUriReference { 
@@ -6336,6 +6378,7 @@ declare namespace Models {
 		"externalContact"?: Models.ConversationCobrowseEventTopicUriReference;
 		"externalOrganization"?: Models.ConversationCobrowseEventTopicUriReference;
 		"wrapup"?: Models.ConversationCobrowseEventTopicWrapup;
+		"conversationRoutingData"?: Models.ConversationCobrowseEventTopicConversationRoutingData;
 		"peer"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
@@ -6345,6 +6388,14 @@ declare namespace Models {
 		"viewerUrl"?: string;
 		"providerEventTime"?: string;
 		"controlling"?: Array<string>;
+	}
+	
+	export interface ConversationCobrowseEventTopicConversationRoutingData { 
+		"queue"?: Models.ConversationCobrowseEventTopicUriReference;
+		"language"?: Models.ConversationCobrowseEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.ConversationCobrowseEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.ConversationCobrowseEventTopicScoredAgent>;
 	}
 	
 	export interface ConversationCobrowseEventTopicDetail { 
@@ -6393,6 +6444,11 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface ConversationCobrowseEventTopicScoredAgent { 
+		"agent"?: Models.ConversationCobrowseEventTopicUriReference;
+		"score"?: number;
+	}
+	
 	export interface ConversationCobrowseEventTopicUriReference { 
 		"id"?: string;
 		"name"?: string;
@@ -6419,6 +6475,14 @@ declare namespace Models {
 		"contentType"?: string;
 		"contentLength"?: number;
 		"additionalProperties"?: object;
+	}
+	
+	export interface ConversationEmailEventTopicConversationRoutingData { 
+		"queue"?: Models.ConversationEmailEventTopicUriReference;
+		"language"?: Models.ConversationEmailEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.ConversationEmailEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.ConversationEmailEventTopicScoredAgent>;
 	}
 	
 	export interface ConversationEmailEventTopicDetail { 
@@ -6462,6 +6526,7 @@ declare namespace Models {
 		"externalContact"?: Models.ConversationEmailEventTopicUriReference;
 		"externalOrganization"?: Models.ConversationEmailEventTopicUriReference;
 		"wrapup"?: Models.ConversationEmailEventTopicWrapup;
+		"conversationRoutingData"?: Models.ConversationEmailEventTopicConversationRoutingData;
 		"peer"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
@@ -6511,6 +6576,11 @@ declare namespace Models {
 	export interface ConversationEmailEventTopicJourneyCustomerSession { 
 		"id"?: string;
 		"type"?: string;
+	}
+	
+	export interface ConversationEmailEventTopicScoredAgent { 
+		"agent"?: Models.ConversationEmailEventTopicUriReference;
+		"score"?: number;
 	}
 	
 	export interface ConversationEmailEventTopicUriReference { 
@@ -6648,6 +6718,14 @@ declare namespace Models {
 		"participants"?: Array<Models.ConversationEventTopicParticipant>;
 		"recordingState"?: string;
 		"address"?: string;
+	}
+	
+	export interface ConversationEventTopicConversationRoutingData { 
+		"queue"?: Models.ConversationEventTopicUriReference;
+		"language"?: Models.ConversationEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.ConversationEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.ConversationEventTopicScoredAgent>;
 	}
 	
 	export interface ConversationEventTopicDialerPreview { 
@@ -6796,6 +6874,7 @@ declare namespace Models {
 		"wrapupPrompt"?: string;
 		"wrapupTimeoutMs"?: number;
 		"wrapup"?: Models.ConversationEventTopicWrapup;
+		"conversationRoutingData"?: Models.ConversationEventTopicConversationRoutingData;
 		"alertingTimeoutMs"?: number;
 		"monitoredParticipantId"?: string;
 		"screenRecordingState"?: string;
@@ -6817,6 +6896,11 @@ declare namespace Models {
 		"columnName"?: string;
 		"type"?: string;
 		"additionalProperties"?: object;
+	}
+	
+	export interface ConversationEventTopicScoredAgent { 
+		"agent"?: Models.ConversationEventTopicUriReference;
+		"score"?: number;
 	}
 	
 	export interface ConversationEventTopicScreenshare { 
@@ -6853,6 +6937,11 @@ declare namespace Models {
 		"additionalProperties"?: object;
 	}
 	
+	export interface ConversationEventTopicUriReference { 
+		"id"?: string;
+		"name"?: string;
+	}
+	
 	export interface ConversationEventTopicVideo { 
 		"state"?: string;
 		"self"?: Models.ConversationEventTopicAddress;
@@ -6883,6 +6972,14 @@ declare namespace Models {
 		"durationSeconds"?: number;
 		"endTime"?: string;
 		"additionalProperties"?: object;
+	}
+	
+	export interface ConversationMessageEventTopicConversationRoutingData { 
+		"queue"?: Models.ConversationMessageEventTopicUriReference;
+		"language"?: Models.ConversationMessageEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.ConversationMessageEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.ConversationMessageEventTopicScoredAgent>;
 	}
 	
 	export interface ConversationMessageEventTopicDetail { 
@@ -6982,6 +7079,7 @@ declare namespace Models {
 		"externalContact"?: Models.ConversationMessageEventTopicUriReference;
 		"externalOrganization"?: Models.ConversationMessageEventTopicUriReference;
 		"wrapup"?: Models.ConversationMessageEventTopicWrapup;
+		"conversationRoutingData"?: Models.ConversationMessageEventTopicConversationRoutingData;
 		"peer"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
@@ -6995,6 +7093,11 @@ declare namespace Models {
 	export interface ConversationMessageEventTopicMessageSticker { 
 		"url"?: string;
 		"id"?: string;
+	}
+	
+	export interface ConversationMessageEventTopicScoredAgent { 
+		"agent"?: Models.ConversationMessageEventTopicUriReference;
+		"score"?: number;
 	}
 	
 	export interface ConversationMessageEventTopicUriReference { 
@@ -7044,6 +7147,14 @@ declare namespace Models {
 		"scoredAgents"?: Array<Models.ScoredAgent>;
 	}
 	
+	export interface ConversationScreenShareEventTopicConversationRoutingData { 
+		"queue"?: Models.ConversationScreenShareEventTopicUriReference;
+		"language"?: Models.ConversationScreenShareEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.ConversationScreenShareEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.ConversationScreenShareEventTopicScoredAgent>;
+	}
+	
 	export interface ConversationScreenShareEventTopicDetail { 
 		"errorCode"?: string;
 		"fieldName"?: string;
@@ -7090,6 +7201,11 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface ConversationScreenShareEventTopicScoredAgent { 
+		"agent"?: Models.ConversationScreenShareEventTopicUriReference;
+		"score"?: number;
+	}
+	
 	export interface ConversationScreenShareEventTopicScreenShareConversation { 
 		"id"?: string;
 		"name"?: string;
@@ -7124,6 +7240,7 @@ declare namespace Models {
 		"externalContact"?: Models.ConversationScreenShareEventTopicUriReference;
 		"externalOrganization"?: Models.ConversationScreenShareEventTopicUriReference;
 		"wrapup"?: Models.ConversationScreenShareEventTopicWrapup;
+		"conversationRoutingData"?: Models.ConversationScreenShareEventTopicConversationRoutingData;
 		"peer"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
@@ -7145,6 +7262,14 @@ declare namespace Models {
 		"durationSeconds"?: number;
 		"endTime"?: string;
 		"additionalProperties"?: object;
+	}
+	
+	export interface ConversationSocialExpressionEventTopicConversationRoutingData { 
+		"queue"?: Models.ConversationSocialExpressionEventTopicUriReference;
+		"language"?: Models.ConversationSocialExpressionEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.ConversationSocialExpressionEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.ConversationSocialExpressionEventTopicScoredAgent>;
 	}
 	
 	export interface ConversationSocialExpressionEventTopicDetail { 
@@ -7193,6 +7318,11 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface ConversationSocialExpressionEventTopicScoredAgent { 
+		"agent"?: Models.ConversationSocialExpressionEventTopicUriReference;
+		"score"?: number;
+	}
+	
 	export interface ConversationSocialExpressionEventTopicSocialConversation { 
 		"id"?: string;
 		"name"?: string;
@@ -7227,6 +7357,7 @@ declare namespace Models {
 		"externalContact"?: Models.ConversationSocialExpressionEventTopicUriReference;
 		"externalOrganization"?: Models.ConversationSocialExpressionEventTopicUriReference;
 		"wrapup"?: Models.ConversationSocialExpressionEventTopicWrapup;
+		"conversationRoutingData"?: Models.ConversationSocialExpressionEventTopicConversationRoutingData;
 		"peer"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
@@ -7249,6 +7380,14 @@ declare namespace Models {
 		"durationSeconds"?: number;
 		"endTime"?: string;
 		"additionalProperties"?: object;
+	}
+	
+	export interface ConversationVideoEventTopicConversationRoutingData { 
+		"queue"?: Models.ConversationVideoEventTopicUriReference;
+		"language"?: Models.ConversationVideoEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.ConversationVideoEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.ConversationVideoEventTopicScoredAgent>;
 	}
 	
 	export interface ConversationVideoEventTopicDetail { 
@@ -7297,6 +7436,11 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface ConversationVideoEventTopicScoredAgent { 
+		"agent"?: Models.ConversationVideoEventTopicUriReference;
+		"score"?: number;
+	}
+	
 	export interface ConversationVideoEventTopicUriReference { 
 		"id"?: string;
 		"name"?: string;
@@ -7336,6 +7480,7 @@ declare namespace Models {
 		"externalContact"?: Models.ConversationVideoEventTopicUriReference;
 		"externalOrganization"?: Models.ConversationVideoEventTopicUriReference;
 		"wrapup"?: Models.ConversationVideoEventTopicWrapup;
+		"conversationRoutingData"?: Models.ConversationVideoEventTopicConversationRoutingData;
 		"peer"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
@@ -13323,6 +13468,7 @@ declare namespace Models {
 		"externalContact"?: Models.QueueConversationCallEventTopicUriReference;
 		"externalOrganization"?: Models.QueueConversationCallEventTopicUriReference;
 		"wrapup"?: Models.QueueConversationCallEventTopicWrapup;
+		"conversationRoutingData"?: Models.QueueConversationCallEventTopicConversationRoutingData;
 		"peer"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
@@ -13338,6 +13484,14 @@ declare namespace Models {
 		"monitoredParticipantId"?: string;
 		"consultParticipantId"?: string;
 		"faxStatus"?: Models.QueueConversationCallEventTopicFaxStatus;
+	}
+	
+	export interface QueueConversationCallEventTopicConversationRoutingData { 
+		"queue"?: Models.QueueConversationCallEventTopicUriReference;
+		"language"?: Models.QueueConversationCallEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.QueueConversationCallEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.QueueConversationCallEventTopicScoredAgent>;
 	}
 	
 	export interface QueueConversationCallEventTopicDetail { 
@@ -13397,6 +13551,11 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface QueueConversationCallEventTopicScoredAgent { 
+		"agent"?: Models.QueueConversationCallEventTopicUriReference;
+		"score"?: number;
+	}
+	
 	export interface QueueConversationCallEventTopicUriReference { 
 		"id"?: string;
 		"name"?: string;
@@ -13445,6 +13604,7 @@ declare namespace Models {
 		"externalContact"?: Models.QueueConversationCallbackEventTopicUriReference;
 		"externalOrganization"?: Models.QueueConversationCallbackEventTopicUriReference;
 		"wrapup"?: Models.QueueConversationCallbackEventTopicWrapup;
+		"conversationRoutingData"?: Models.QueueConversationCallbackEventTopicConversationRoutingData;
 		"peer"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
@@ -13457,6 +13617,14 @@ declare namespace Models {
 		"timeoutSeconds"?: number;
 		"callbackScheduledTime"?: string;
 		"automatedCallbackConfigId"?: string;
+	}
+	
+	export interface QueueConversationCallbackEventTopicConversationRoutingData { 
+		"queue"?: Models.QueueConversationCallbackEventTopicUriReference;
+		"language"?: Models.QueueConversationCallbackEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.QueueConversationCallbackEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.QueueConversationCallbackEventTopicScoredAgent>;
 	}
 	
 	export interface QueueConversationCallbackEventTopicDetail { 
@@ -13520,6 +13688,11 @@ declare namespace Models {
 		"additionalProperties"?: object;
 	}
 	
+	export interface QueueConversationCallbackEventTopicScoredAgent { 
+		"agent"?: Models.QueueConversationCallbackEventTopicUriReference;
+		"score"?: number;
+	}
+	
 	export interface QueueConversationCallbackEventTopicUriReference { 
 		"id"?: string;
 		"name"?: string;
@@ -13573,11 +13746,20 @@ declare namespace Models {
 		"externalContact"?: Models.QueueConversationChatEventTopicUriReference;
 		"externalOrganization"?: Models.QueueConversationChatEventTopicUriReference;
 		"wrapup"?: Models.QueueConversationChatEventTopicWrapup;
+		"conversationRoutingData"?: Models.QueueConversationChatEventTopicConversationRoutingData;
 		"peer"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
 		"journeyContext"?: Models.QueueConversationChatEventTopicJourneyContext;
 		"roomId"?: string;
+	}
+	
+	export interface QueueConversationChatEventTopicConversationRoutingData { 
+		"queue"?: Models.QueueConversationChatEventTopicUriReference;
+		"language"?: Models.QueueConversationChatEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.QueueConversationChatEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.QueueConversationChatEventTopicScoredAgent>;
 	}
 	
 	export interface QueueConversationChatEventTopicDetail { 
@@ -13624,6 +13806,11 @@ declare namespace Models {
 	export interface QueueConversationChatEventTopicJourneyCustomerSession { 
 		"id"?: string;
 		"type"?: string;
+	}
+	
+	export interface QueueConversationChatEventTopicScoredAgent { 
+		"agent"?: Models.QueueConversationChatEventTopicUriReference;
+		"score"?: number;
 	}
 	
 	export interface QueueConversationChatEventTopicUriReference { 
@@ -13674,6 +13861,7 @@ declare namespace Models {
 		"externalContact"?: Models.QueueConversationCobrowseEventTopicUriReference;
 		"externalOrganization"?: Models.QueueConversationCobrowseEventTopicUriReference;
 		"wrapup"?: Models.QueueConversationCobrowseEventTopicWrapup;
+		"conversationRoutingData"?: Models.QueueConversationCobrowseEventTopicConversationRoutingData;
 		"peer"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
@@ -13683,6 +13871,14 @@ declare namespace Models {
 		"viewerUrl"?: string;
 		"providerEventTime"?: string;
 		"controlling"?: Array<string>;
+	}
+	
+	export interface QueueConversationCobrowseEventTopicConversationRoutingData { 
+		"queue"?: Models.QueueConversationCobrowseEventTopicUriReference;
+		"language"?: Models.QueueConversationCobrowseEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.QueueConversationCobrowseEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.QueueConversationCobrowseEventTopicScoredAgent>;
 	}
 	
 	export interface QueueConversationCobrowseEventTopicDetail { 
@@ -13731,6 +13927,11 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface QueueConversationCobrowseEventTopicScoredAgent { 
+		"agent"?: Models.QueueConversationCobrowseEventTopicUriReference;
+		"score"?: number;
+	}
+	
 	export interface QueueConversationCobrowseEventTopicUriReference { 
 		"id"?: string;
 		"name"?: string;
@@ -13752,6 +13953,14 @@ declare namespace Models {
 		"contentType"?: string;
 		"contentLength"?: number;
 		"additionalProperties"?: object;
+	}
+	
+	export interface QueueConversationEmailEventTopicConversationRoutingData { 
+		"queue"?: Models.QueueConversationEmailEventTopicUriReference;
+		"language"?: Models.QueueConversationEmailEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.QueueConversationEmailEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.QueueConversationEmailEventTopicScoredAgent>;
 	}
 	
 	export interface QueueConversationEmailEventTopicDetail { 
@@ -13795,6 +14004,7 @@ declare namespace Models {
 		"externalContact"?: Models.QueueConversationEmailEventTopicUriReference;
 		"externalOrganization"?: Models.QueueConversationEmailEventTopicUriReference;
 		"wrapup"?: Models.QueueConversationEmailEventTopicWrapup;
+		"conversationRoutingData"?: Models.QueueConversationEmailEventTopicConversationRoutingData;
 		"peer"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
@@ -13844,6 +14054,11 @@ declare namespace Models {
 	export interface QueueConversationEmailEventTopicJourneyCustomerSession { 
 		"id"?: string;
 		"type"?: string;
+	}
+	
+	export interface QueueConversationEmailEventTopicScoredAgent { 
+		"agent"?: Models.QueueConversationEmailEventTopicUriReference;
+		"score"?: number;
 	}
 	
 	export interface QueueConversationEmailEventTopicUriReference { 
@@ -13968,6 +14183,14 @@ declare namespace Models {
 		"participants"?: Array<Models.QueueConversationEventTopicParticipant>;
 		"recordingState"?: string;
 		"address"?: string;
+	}
+	
+	export interface QueueConversationEventTopicConversationRoutingData { 
+		"queue"?: Models.QueueConversationEventTopicUriReference;
+		"language"?: Models.QueueConversationEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.QueueConversationEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.QueueConversationEventTopicScoredAgent>;
 	}
 	
 	export interface QueueConversationEventTopicDialerPreview { 
@@ -14116,6 +14339,7 @@ declare namespace Models {
 		"wrapupPrompt"?: string;
 		"wrapupTimeoutMs"?: number;
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
+		"conversationRoutingData"?: Models.QueueConversationEventTopicConversationRoutingData;
 		"alertingTimeoutMs"?: number;
 		"monitoredParticipantId"?: string;
 		"screenRecordingState"?: string;
@@ -14137,6 +14361,11 @@ declare namespace Models {
 		"columnName"?: string;
 		"type"?: string;
 		"additionalProperties"?: object;
+	}
+	
+	export interface QueueConversationEventTopicScoredAgent { 
+		"agent"?: Models.QueueConversationEventTopicUriReference;
+		"score"?: number;
 	}
 	
 	export interface QueueConversationEventTopicScreenshare { 
@@ -14173,6 +14402,11 @@ declare namespace Models {
 		"additionalProperties"?: object;
 	}
 	
+	export interface QueueConversationEventTopicUriReference { 
+		"id"?: string;
+		"name"?: string;
+	}
+	
 	export interface QueueConversationEventTopicVideo { 
 		"state"?: string;
 		"self"?: Models.QueueConversationEventTopicAddress;
@@ -14203,6 +14437,14 @@ declare namespace Models {
 		"durationSeconds"?: number;
 		"endTime"?: string;
 		"additionalProperties"?: object;
+	}
+	
+	export interface QueueConversationMessageEventTopicConversationRoutingData { 
+		"queue"?: Models.QueueConversationMessageEventTopicUriReference;
+		"language"?: Models.QueueConversationMessageEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.QueueConversationMessageEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.QueueConversationMessageEventTopicScoredAgent>;
 	}
 	
 	export interface QueueConversationMessageEventTopicDetail { 
@@ -14302,6 +14544,7 @@ declare namespace Models {
 		"externalContact"?: Models.QueueConversationMessageEventTopicUriReference;
 		"externalOrganization"?: Models.QueueConversationMessageEventTopicUriReference;
 		"wrapup"?: Models.QueueConversationMessageEventTopicWrapup;
+		"conversationRoutingData"?: Models.QueueConversationMessageEventTopicConversationRoutingData;
 		"peer"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
@@ -14317,6 +14560,11 @@ declare namespace Models {
 		"id"?: string;
 	}
 	
+	export interface QueueConversationMessageEventTopicScoredAgent { 
+		"agent"?: Models.QueueConversationMessageEventTopicUriReference;
+		"score"?: number;
+	}
+	
 	export interface QueueConversationMessageEventTopicUriReference { 
 		"id"?: string;
 		"name"?: string;
@@ -14329,6 +14577,14 @@ declare namespace Models {
 		"durationSeconds"?: number;
 		"endTime"?: string;
 		"additionalProperties"?: object;
+	}
+	
+	export interface QueueConversationScreenShareEventTopicConversationRoutingData { 
+		"queue"?: Models.QueueConversationScreenShareEventTopicUriReference;
+		"language"?: Models.QueueConversationScreenShareEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.QueueConversationScreenShareEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.QueueConversationScreenShareEventTopicScoredAgent>;
 	}
 	
 	export interface QueueConversationScreenShareEventTopicDetail { 
@@ -14377,6 +14633,11 @@ declare namespace Models {
 		"type"?: string;
 	}
 	
+	export interface QueueConversationScreenShareEventTopicScoredAgent { 
+		"agent"?: Models.QueueConversationScreenShareEventTopicUriReference;
+		"score"?: number;
+	}
+	
 	export interface QueueConversationScreenShareEventTopicScreenShareConversation { 
 		"id"?: string;
 		"name"?: string;
@@ -14411,6 +14672,7 @@ declare namespace Models {
 		"externalContact"?: Models.QueueConversationScreenShareEventTopicUriReference;
 		"externalOrganization"?: Models.QueueConversationScreenShareEventTopicUriReference;
 		"wrapup"?: Models.QueueConversationScreenShareEventTopicWrapup;
+		"conversationRoutingData"?: Models.QueueConversationScreenShareEventTopicConversationRoutingData;
 		"peer"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
@@ -14542,6 +14804,14 @@ declare namespace Models {
 		"participants"?: Array<Models.QueueConversationSocialExpressionEventTopicParticipant>;
 		"recordingState"?: string;
 		"address"?: string;
+	}
+	
+	export interface QueueConversationSocialExpressionEventTopicConversationRoutingData { 
+		"queue"?: Models.QueueConversationSocialExpressionEventTopicUriReference;
+		"language"?: Models.QueueConversationSocialExpressionEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.QueueConversationSocialExpressionEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.QueueConversationSocialExpressionEventTopicScoredAgent>;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicDialerPreview { 
@@ -14690,6 +14960,7 @@ declare namespace Models {
 		"wrapupPrompt"?: string;
 		"wrapupTimeoutMs"?: number;
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
+		"conversationRoutingData"?: Models.QueueConversationSocialExpressionEventTopicConversationRoutingData;
 		"alertingTimeoutMs"?: number;
 		"monitoredParticipantId"?: string;
 		"screenRecordingState"?: string;
@@ -14711,6 +14982,11 @@ declare namespace Models {
 		"columnName"?: string;
 		"type"?: string;
 		"additionalProperties"?: object;
+	}
+	
+	export interface QueueConversationSocialExpressionEventTopicScoredAgent { 
+		"agent"?: Models.QueueConversationSocialExpressionEventTopicUriReference;
+		"score"?: number;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicScreenshare { 
@@ -14745,6 +15021,11 @@ declare namespace Models {
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
 		"additionalProperties"?: object;
+	}
+	
+	export interface QueueConversationSocialExpressionEventTopicUriReference { 
+		"id"?: string;
+		"name"?: string;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicVideo { 
@@ -14887,6 +15168,14 @@ declare namespace Models {
 		"participants"?: Array<Models.QueueConversationVideoEventTopicParticipant>;
 		"recordingState"?: string;
 		"address"?: string;
+	}
+	
+	export interface QueueConversationVideoEventTopicConversationRoutingData { 
+		"queue"?: Models.QueueConversationVideoEventTopicUriReference;
+		"language"?: Models.QueueConversationVideoEventTopicUriReference;
+		"priority"?: number;
+		"skills"?: Array<Models.QueueConversationVideoEventTopicUriReference>;
+		"scoredAgents"?: Array<Models.QueueConversationVideoEventTopicScoredAgent>;
 	}
 	
 	export interface QueueConversationVideoEventTopicDialerPreview { 
@@ -15035,6 +15324,7 @@ declare namespace Models {
 		"wrapupPrompt"?: string;
 		"wrapupTimeoutMs"?: number;
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
+		"conversationRoutingData"?: Models.QueueConversationVideoEventTopicConversationRoutingData;
 		"alertingTimeoutMs"?: number;
 		"monitoredParticipantId"?: string;
 		"screenRecordingState"?: string;
@@ -15056,6 +15346,11 @@ declare namespace Models {
 		"columnName"?: string;
 		"type"?: string;
 		"additionalProperties"?: object;
+	}
+	
+	export interface QueueConversationVideoEventTopicScoredAgent { 
+		"agent"?: Models.QueueConversationVideoEventTopicUriReference;
+		"score"?: number;
 	}
 	
 	export interface QueueConversationVideoEventTopicScreenshare { 
@@ -15090,6 +15385,11 @@ declare namespace Models {
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
 		"additionalProperties"?: object;
+	}
+	
+	export interface QueueConversationVideoEventTopicUriReference { 
+		"id"?: string;
+		"name"?: string;
 	}
 	
 	export interface QueueConversationVideoEventTopicVideo { 
