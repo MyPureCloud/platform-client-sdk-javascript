@@ -26,7 +26,7 @@ For direct use in a browser script:
 
 ```{"language":"html"}
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/52.1.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/52.1.1/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -43,7 +43,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/52.1.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/52.1.1/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -76,7 +76,24 @@ The Client Credentials grant only works when used in node.js. This is restricted
 
 ```{"language":"javascript"}
 const client = platformClient.ApiClient.instance;
-client.loginClientCredentialsGrant(clientId, clientSecret)
+client.loginClientCredentialsGrant(clientId,clientSecret)
+.then(()=> {
+  // Do authenticated things
+})
+.catch((err) => {
+ // Handle failure response
+ console.log(err);
+});
+
+```
+
+**Node.js** [Saml2bearer Grant](https://developer.mypurecloud.com/api/rest/authorization/use-saml2-bearer.html)
+
+The Saml2bearer grant only works when used in node.js. This is restricted intentionally because it is impossible for client credentials to be handled securely in a browser application.
+
+```{"language":"javascript"}
+const client = platformClient.ApiClient.instance;
+client.loginSaml2BearerGrant(clientId,clientSecret,orgName,encodedAssertionString)
   .then(() => {
     // Do authenticated things
   })
@@ -114,6 +131,10 @@ const client = platformClient.ApiClient.instance;
 client.setAccessToken(yourAccessToken);
 // Do authenticated things; no authentication function needed
 ```
+
+### Authorization Failure
+
+When authenticating in a browser using `loginClientCredentialsGrant(...)`, if the user completes the authentication process but their session is unable to be authorized, they will still be redirected back to the redirect URI. When `loginClientCredentialsGrant(...)` is invoked after the failure redirect, the promise returned will be rejected with an error message built from the `error` and `error_description`. The error information, as well as the state, can be accessed via `platformClient.ApiClient.instance.authData`. The application is expected to identify these login failures and interact with the user in a manner appropriate for the application.
 
 
 ## Environments

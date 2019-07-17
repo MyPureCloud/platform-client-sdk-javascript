@@ -6048,7 +6048,7 @@ function isSlowBuffer (obj) {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 52.1.0
+ * @version 52.1.1
  */
 class ApiClient {
 	/**
@@ -6207,6 +6207,9 @@ class ApiClient {
 				this.authData.state = opts.state;
 			}
 
+			this.authData.error = opts.error;
+			this.authData.error_description = opts.error_description;
+
 			if (opts.tokenExpiryTime) {
 				this.authData.tokenExpiryTime = opts.tokenExpiryTime;
 				this.authData.tokenExpiryTimeString = opts.tokenExpiryTimeString;
@@ -6291,7 +6294,7 @@ class ApiClient {
 	 */
 	loginImplicitGrant(clientId, redirectUri, opts) {
 		// Check for auth token in hash
-		this._setValuesFromUrlHash();
+		const hash = this._setValuesFromUrlHash();
 
 		this.clientId = clientId;
 		this.redirectUri = redirectUri;
@@ -6299,6 +6302,14 @@ class ApiClient {
 		if (!opts) opts = {};
 
 		return new Promise((resolve, reject) => {
+			// Abort on auth error
+			if (hash && hash.error) {
+				hash.accessToken = undefined;
+				this._saveSettings(hash);
+				return reject(new Error(`[${hash.error}] ${hash.error_description}`));
+			}
+
+			// Test token and proceed with login
 			this._testTokenAccess()
 				.then(() => {
 					if (!this.authData.state && opts.state)
@@ -6368,6 +6379,50 @@ class ApiClient {
 	}
 
 	/**
+	 * @description Initiates the Saml2Bearerflow. Only available in node apps.
+	 * @param {string} clientId - The client ID of an OAuth Implicit Grant client
+	 * @param {string} clientSecret - The client secret of an OAuth Implicit Grant client
+	 * @param {string} orgName - The orgName of an OAuth Implicit Grant client
+	 * @param {string} assertion - The saml2bearer assertion
+	 */
+    loginSaml2BearerGrant(clientId, clientSecret, orgName, assertion) {
+		this.clientId = clientId;
+		return new Promise((resolve, reject) => {
+			if (typeof window !== 'undefined') {
+				reject(new Error('The saml2bearer grant is not supported in a browser.'));
+				return;
+			}
+			var encodedData = new Buffer(clientId + ':' + clientSecret).toString('base64');
+			var request = superagent('POST', `https://login.${this.environment}/oauth/token`);
+			// Set the headers
+			request.set('Authorization', 'Basic ' + encodedData);
+			request.set('Content-Type', 'application/x-www-form-urlencoded');
+			// Add form data
+			request.type('form');
+			request.send({ grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer' });
+			request.send({ orgName: orgName });
+			request.send({ assertion: assertion });
+			// Handle response
+			request.end((error, response) => {
+				if (error) {
+					reject(error);
+				} else {
+					// Get access token from response
+					var access_token = response.body.access_token;
+
+					this.setAccessToken(access_token);
+					this.authData.tokenExpiryTime = new Date().getTime() + response.body['expires_in'] * 1000;
+					this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
+					this._debugTrace(`Access token expires in ${response.body['expires_in']} seconds`);
+
+					// Return auth data
+					resolve(this.authData);
+				}
+			});
+		});
+	}
+
+	/**
 	 * @description Loads token from storage, if enabled, and checks to ensure it works.
 	 */
 	_testTokenAccess() {
@@ -6406,28 +6461,33 @@ class ApiClient {
 			.slice(1).split('&')
 			.reduce((obj, pair) => {
 				var keyValue = pair.split('=');
-				obj[keyValue[0]] = keyValue[1];
+				/* Auth does some interesting things with encoding. It encodes the data twice, except 
+				 * for spaces, then replaces all spaces with a plus sign. This process must be done 
+				 * in reverse order to properly extract the state data. 
+				 */
+				obj[keyValue[0]] = decodeURIComponent(decodeURIComponent(keyValue[1].replace(/\+/g, '%20')));
 				return obj;
 			}, {});
+		
+		// Check for error
+		if (hash.error) {
+			return hash;
+		}
 
 		// Everything goes in here because we only want to act if we found an access token
 		if (hash.access_token) {
 			let opts = {};
 
 			if (hash.state) {
-				/* Auth does some interesting things with encoding. It encodes the data twice, except 
-				 * for spaces, then replaces all spaces with a plus sign. This process must be done 
-				 * in reverse order to properly extract the state data. 
-				 */
-				opts.state = decodeURIComponent(decodeURIComponent(hash.state.replace(/\+/g, '%20')));
+				opts.state = hash.state;
 			}
 
 			if (hash.expires_in) {
-				opts.tokenExpiryTime = (new Date()).getTime() + (parseInt(decodeURIComponent(decodeURIComponent(hash.expires_in.replace(/\+/g, '%20')))) * 1000);
+				opts.tokenExpiryTime = (new Date()).getTime() + (parseInt(hash.expires_in.replace(/\+/g, '%20')) * 1000);
 				opts.tokenExpiryTimeString = (new Date(opts.tokenExpiryTime)).toUTCString();
 			}
 			// Set access token
-			opts.accessToken = decodeURIComponent(decodeURIComponent(hash.access_token.replace(/\+/g, '%20')));
+			opts.accessToken = hash.access_token.replace(/\+/g, '%20');
 
 			// Remove hash from URL
 			// Credit: https://stackoverflow.com/questions/1397329/how-to-remove-the-hash-from-window-location-with-javascript-without-page-refresh/5298684#5298684
@@ -6741,7 +6801,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '52.1.0' });
+		//request.set({ 'purecloud-sdk': '52.1.1' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -6866,7 +6926,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -7180,7 +7240,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -7910,7 +7970,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -10305,7 +10365,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -11314,7 +11374,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -11394,7 +11454,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -12534,7 +12594,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -15674,7 +15734,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -16582,7 +16642,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -16753,7 +16813,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -16824,7 +16884,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -16954,7 +17014,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -17085,7 +17145,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -17540,7 +17600,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -17945,7 +18005,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -18636,7 +18696,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -19802,7 +19862,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -20070,7 +20130,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -20284,7 +20344,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -20491,7 +20551,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -20872,7 +20932,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -21023,7 +21083,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -21222,7 +21282,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -21393,7 +21453,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -21630,7 +21690,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -21795,7 +21855,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -22470,7 +22530,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -25133,7 +25193,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -25400,7 +25460,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -27071,7 +27131,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -28125,7 +28185,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -28449,7 +28509,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -30277,7 +30337,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -30934,7 +30994,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -31287,7 +31347,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -31742,7 +31802,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -31889,7 +31949,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -32028,7 +32088,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -35381,7 +35441,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -35467,7 +35527,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -35651,7 +35711,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -37616,7 +37676,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -37727,7 +37787,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -38364,7 +38424,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -38908,7 +38968,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -39054,7 +39114,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 52.1.0
+	 * @version 52.1.1
 	 */
 
 	/**
@@ -41253,7 +41313,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 52.1.0
+ * @version 52.1.1
  */
 class platformClient {
 	constructor() {
