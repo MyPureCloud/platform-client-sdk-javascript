@@ -6117,8 +6117,7 @@ Agent <a href="#" onclick="return copyAgentExample()">Copy</a>
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
-  "id": String, 
-  "selfUri": String, 
+  "stage": String, 
 }
 ```
 

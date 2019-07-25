@@ -1893,6 +1893,7 @@ ReportingExportJobRequest <a href="#" onclick="return copyReportingExportJobRequ
       "isWaiting": Boolean, 
       "isActive": Boolean, 
       "isAcd": Boolean, 
+      "isPreferred": Boolean, 
       "isScreenshare": Boolean, 
       "isCobrowse": Boolean, 
       "isVoicemail": Boolean, 

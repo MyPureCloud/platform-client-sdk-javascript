@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 52.1.1
+	 * @version 53.0.0
 	 */
 
 	/**
@@ -662,6 +662,277 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Get details about a Dialogflow agent
+	 * 
+	 * @param {String} agentId The agent ID
+	 */
+	getIntegrationsSpeechDialogflowAgent(agentId) { 
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null) {
+			throw 'Missing the required parameter "agentId" when calling getIntegrationsSpeechDialogflowAgent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/dialogflow/agents/{agentId}', 
+			'GET', 
+			{ 'agentId': agentId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Dialogflow agents in the customers&#39; Google accounts
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.name Filter on agent name
+	 */
+	getIntegrationsSpeechDialogflowAgents(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/dialogflow/agents', 
+			'GET', 
+			{  }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get details about a Lex bot alias
+	 * 
+	 * @param {String} aliasId The alias ID
+	 */
+	getIntegrationsSpeechLexBotAlias(aliasId) { 
+		// verify the required parameter 'aliasId' is set
+		if (aliasId === undefined || aliasId === null) {
+			throw 'Missing the required parameter "aliasId" when calling getIntegrationsSpeechLexBotAlias';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/lex/bot/alias/{aliasId}', 
+			'GET', 
+			{ 'aliasId': aliasId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of aliases for a bot in the customer&#39;s AWS accounts
+	 * 
+	 * @param {String} botId The bot ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object} opts.status Filter on alias status
+	 * @param {String} opts.name Filter on alias name
+	 */
+	getIntegrationsSpeechLexBotBotIdAliases(botId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'botId' is set
+		if (botId === undefined || botId === null) {
+			throw 'Missing the required parameter "botId" when calling getIntegrationsSpeechLexBotBotIdAliases';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/lex/bot/{botId}/aliases', 
+			'GET', 
+			{ 'botId': botId }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'status': opts['status'],'name': opts['name'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Lex bots in the customers&#39; AWS accounts
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.name Filter on bot name
+	 */
+	getIntegrationsSpeechLexBots(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/lex/bots', 
+			'GET', 
+			{  }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get details about a TTS engine
+	 * 
+	 * @param {String} engineId The engine ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeVoices Include voices for the engine (default to false)
+	 */
+	getIntegrationsSpeechTtsEngine(engineId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'engineId' is set
+		if (engineId === undefined || engineId === null) {
+			throw 'Missing the required parameter "engineId" when calling getIntegrationsSpeechTtsEngine';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/tts/engines/{engineId}', 
+			'GET', 
+			{ 'engineId': engineId }, 
+			{ 'includeVoices': opts['includeVoices'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get details about a specific voice for a TTS engine
+	 * 
+	 * @param {String} engineId The engine ID
+	 * @param {String} voiceId The voice ID
+	 */
+	getIntegrationsSpeechTtsEngineVoice(engineId, voiceId) { 
+		// verify the required parameter 'engineId' is set
+		if (engineId === undefined || engineId === null) {
+			throw 'Missing the required parameter "engineId" when calling getIntegrationsSpeechTtsEngineVoice';
+		}
+		// verify the required parameter 'voiceId' is set
+		if (voiceId === undefined || voiceId === null) {
+			throw 'Missing the required parameter "voiceId" when calling getIntegrationsSpeechTtsEngineVoice';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/tts/engines/{engineId}/voices/{voiceId}', 
+			'GET', 
+			{ 'engineId': engineId,'voiceId': voiceId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of voices for a TTS engine
+	 * 
+	 * @param {String} engineId The engine ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getIntegrationsSpeechTtsEngineVoices(engineId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'engineId' is set
+		if (engineId === undefined || engineId === null) {
+			throw 'Missing the required parameter "engineId" when calling getIntegrationsSpeechTtsEngineVoices';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/tts/engines/{engineId}/voices', 
+			'GET', 
+			{ 'engineId': engineId }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of TTS engines enabled for org
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Boolean} opts.includeVoices Include voices for the engine (default to false)
+	 * @param {String} opts.name Filter on engine name
+	 * @param {String} opts.language Filter on supported language. If includeVoices=true then the voices are also filtered.
+	 */
+	getIntegrationsSpeechTtsEngines(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/tts/engines', 
+			'GET', 
+			{  }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'includeVoices': opts['includeVoices'],'name': opts['name'],'language': opts['language'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get TTS settings for an org
+	 * 
+	 */
+	getIntegrationsSpeechTtsSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/tts/settings', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get integration type.
 	 * 
 	 * @param {String} typeId Integration Type Id
@@ -1159,6 +1430,31 @@ class IntegrationsApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update TTS settings for an org
+	 * 
+	 * @param {Object} body Updated TtsSettings
+	 */
+	putIntegrationsSpeechTtsSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putIntegrationsSpeechTtsSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/tts/settings', 
+			'PUT', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

@@ -2011,7 +2011,7 @@ apiInstance.getRoutingSmsPhonenumbers(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **phoneNumber** | **String** | Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. | [optional]  |
- **phoneNumberType** | **String** | Filter on phone number type | [optional] <br />**Values**: local, mobile, tollfree |
+ **phoneNumberType** | **String** | Filter on phone number type | [optional] <br />**Values**: local, mobile, tollfree, shortcode |
  **phoneNumberStatus** | **String** | Filter on phone number status | [optional] <br />**Values**: active, invalid, porting |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
@@ -2535,6 +2535,14 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -2658,6 +2666,14 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
     },  
@@ -2982,6 +2998,14 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -3105,6 +3129,14 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
     },  
@@ -5483,6 +5515,14 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -5597,6 +5637,14 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
       },  
@@ -5874,6 +5922,14 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -5988,6 +6044,14 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
       },  
@@ -6221,6 +6285,14 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -6326,6 +6398,14 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
         },  
@@ -6572,6 +6652,14 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -6695,6 +6783,14 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
     },  
@@ -7324,6 +7420,14 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -7447,6 +7551,14 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
     },  

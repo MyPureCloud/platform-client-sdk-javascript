@@ -1353,6 +1353,14 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -1476,6 +1484,14 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
     },  
@@ -1955,6 +1971,14 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -2051,6 +2075,14 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
@@ -2250,6 +2282,14 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -2355,6 +2395,14 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
         },  
@@ -2718,6 +2766,14 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -2841,6 +2897,14 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
     },  
@@ -3238,6 +3302,14 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -3343,6 +3415,14 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
         },  
@@ -3542,6 +3622,14 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -3656,6 +3744,14 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
       },  
@@ -4008,6 +4104,14 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -4131,6 +4235,14 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
     },  
@@ -4443,6 +4555,14 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -4539,6 +4659,14 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
@@ -4738,6 +4866,14 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -4843,6 +4979,14 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
         },  
@@ -5363,6 +5507,14 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -5459,6 +5611,14 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
@@ -5658,6 +5818,14 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -5763,6 +5931,14 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
         },  
@@ -6128,6 +6304,14 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -6251,6 +6435,14 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
     },  
@@ -6735,6 +6927,14 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -6840,6 +7040,14 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
         },  
@@ -7039,6 +7247,14 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -7153,6 +7369,14 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
       },  
@@ -7510,6 +7734,14 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -7633,6 +7865,14 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
     },  
@@ -8010,6 +8250,14 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -8133,6 +8381,14 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
     },  
@@ -8445,6 +8701,14 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -8541,6 +8805,14 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
@@ -8740,6 +9012,14 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -8845,6 +9125,14 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
         },  

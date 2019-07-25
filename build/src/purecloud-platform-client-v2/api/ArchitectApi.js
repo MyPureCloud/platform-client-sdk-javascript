@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 52.1.1
+	 * @version 53.0.0
 	 */
 
 	/**
@@ -1562,6 +1562,62 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Get a flow outcome
+	 * Returns a specified flow outcome
+	 * @param {String} flowOutcomeId flow outcome ID
+	 */
+	getFlowsOutcome(flowOutcomeId) { 
+		// verify the required parameter 'flowOutcomeId' is set
+		if (flowOutcomeId === undefined || flowOutcomeId === null) {
+			throw 'Missing the required parameter "flowOutcomeId" when calling getFlowsOutcome';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/outcomes/{flowOutcomeId}', 
+			'GET', 
+			{ 'flowOutcomeId': flowOutcomeId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a pageable list of flow outcomes, filtered by query parameters
+	 * Multiple IDs can be specified, in which case all matching flow outcomes will be returned, and no other parameters will be evaluated.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Sort by (default to id)
+	 * @param {String} opts.sortOrder Sort order (default to asc)
+	 * @param {Array.<String>} opts.id ID
+	 * @param {String} opts.name Name
+	 * @param {String} opts.description Description
+	 * @param {String} opts.nameOrDescription Name or description
+	 */
+	getFlowsOutcomes(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/outcomes', 
+			'GET', 
+			{  }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Rebuild Dependency Tracking data for an organization
 	 * Asynchronous.  Notification topic: v2.architect.dependencytracking.build
 	 */
@@ -2081,6 +2137,30 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Create a flow outcome
+	 * Asynchronous.  Notification topic: v2.flows.outcomes.{flowOutcomeId}
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postFlowsOutcomes(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/outcomes', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Updates a emergency group by ID
 	 * 
 	 * @param {String} emergencyGroupId Emergency group ID
@@ -2384,6 +2464,35 @@ class ArchitectApi {
 			'/api/v2/flows/datatables/{datatableId}/rows/{rowId}', 
 			'PUT', 
 			{ 'datatableId': datatableId,'rowId': rowId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Updates a flow outcome
+	 * Updates a flow outcome.  Asynchronous.  Notification topic: v2.flowoutcomes.{flowoutcomeId}
+	 * @param {String} flowOutcomeId flow outcome ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	putFlowsOutcome(flowOutcomeId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'flowOutcomeId' is set
+		if (flowOutcomeId === undefined || flowOutcomeId === null) {
+			throw 'Missing the required parameter "flowOutcomeId" when calling putFlowsOutcome';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/outcomes/{flowOutcomeId}', 
+			'PUT', 
+			{ 'flowOutcomeId': flowOutcomeId }, 
 			{  }, 
 			{  }, 
 			{  }, 

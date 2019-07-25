@@ -73,7 +73,7 @@ void (no response body)
 
 <a name="getLocation"></a>
 
-# LocationDefinition getLocation(locationId)
+# LocationDefinition getLocation(locationId, opts)
 
 
 
@@ -102,8 +102,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LocationsApi();
 
 let locationId = "locationId_example"; // String | Location ID
+let opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+};
 
-apiInstance.getLocation(locationId)
+apiInstance.getLocation(locationId, opts)
   .then((data) => {
     console.log(`getLocation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -119,6 +122,7 @@ apiInstance.getLocation(locationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **locationId** | **String** | Location ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: images |
 {: class="table table-striped"}
 
 ### Return type
@@ -403,6 +407,14 @@ LocationDefinition <a href="#" onclick="return copyLocationDefinitionExample()">
   "version": Number, 
   "path": [String], 
   "notes": String, 
+  "profileImage": { 
+    "resolution": String, 
+    "imageUri": String, 
+  },  
+  "floorplanImage": { 
+    "resolution": String, 
+    "imageUri": String, 
+  },  
   "selfUri": String, 
 }
 ```

@@ -30,6 +30,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIntegrationsCredentialsTypes**](IntegrationsApi.html#getIntegrationsCredentialsTypes) | **GET** /api/v2/integrations/credentials/types | List all credential types
 [**getIntegrationsEventlog**](IntegrationsApi.html#getIntegrationsEventlog) | **GET** /api/v2/integrations/eventlog | List all events
 [**getIntegrationsEventlogEventId**](IntegrationsApi.html#getIntegrationsEventlogEventId) | **GET** /api/v2/integrations/eventlog/{eventId} | Get a single event
+[**getIntegrationsSpeechDialogflowAgent**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgent) | **GET** /api/v2/integrations/speech/dialogflow/agents/{agentId} | Get details about a Dialogflow agent
+[**getIntegrationsSpeechDialogflowAgents**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgents) | **GET** /api/v2/integrations/speech/dialogflow/agents | Get a list of Dialogflow agents in the customers&#39; Google accounts
+[**getIntegrationsSpeechLexBotAlias**](IntegrationsApi.html#getIntegrationsSpeechLexBotAlias) | **GET** /api/v2/integrations/speech/lex/bot/alias/{aliasId} | Get details about a Lex bot alias
+[**getIntegrationsSpeechLexBotBotIdAliases**](IntegrationsApi.html#getIntegrationsSpeechLexBotBotIdAliases) | **GET** /api/v2/integrations/speech/lex/bot/{botId}/aliases | Get a list of aliases for a bot in the customer&#39;s AWS accounts
+[**getIntegrationsSpeechLexBots**](IntegrationsApi.html#getIntegrationsSpeechLexBots) | **GET** /api/v2/integrations/speech/lex/bots | Get a list of Lex bots in the customers&#39; AWS accounts
+[**getIntegrationsSpeechTtsEngine**](IntegrationsApi.html#getIntegrationsSpeechTtsEngine) | **GET** /api/v2/integrations/speech/tts/engines/{engineId} | Get details about a TTS engine
+[**getIntegrationsSpeechTtsEngineVoice**](IntegrationsApi.html#getIntegrationsSpeechTtsEngineVoice) | **GET** /api/v2/integrations/speech/tts/engines/{engineId}/voices/{voiceId} | Get details about a specific voice for a TTS engine
+[**getIntegrationsSpeechTtsEngineVoices**](IntegrationsApi.html#getIntegrationsSpeechTtsEngineVoices) | **GET** /api/v2/integrations/speech/tts/engines/{engineId}/voices | Get a list of voices for a TTS engine
+[**getIntegrationsSpeechTtsEngines**](IntegrationsApi.html#getIntegrationsSpeechTtsEngines) | **GET** /api/v2/integrations/speech/tts/engines | Get a list of TTS engines enabled for org
+[**getIntegrationsSpeechTtsSettings**](IntegrationsApi.html#getIntegrationsSpeechTtsSettings) | **GET** /api/v2/integrations/speech/tts/settings | Get TTS settings for an org
 [**getIntegrationsType**](IntegrationsApi.html#getIntegrationsType) | **GET** /api/v2/integrations/types/{typeId} | Get integration type.
 [**getIntegrationsTypeConfigschema**](IntegrationsApi.html#getIntegrationsTypeConfigschema) | **GET** /api/v2/integrations/types/{typeId}/configschemas/{configType} | Get properties config schema for an integration type.
 [**getIntegrationsTypes**](IntegrationsApi.html#getIntegrationsTypes) | **GET** /api/v2/integrations/types | List integration types
@@ -48,6 +58,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postIntegrationsWorkforcemanagementVendorconnection**](IntegrationsApi.html#postIntegrationsWorkforcemanagementVendorconnection) | **POST** /api/v2/integrations/workforcemanagement/vendorconnection | Add a vendor connection
 [**putIntegrationConfigCurrent**](IntegrationsApi.html#putIntegrationConfigCurrent) | **PUT** /api/v2/integrations/{integrationId}/config/current | Update integration configuration.
 [**putIntegrationsCredential**](IntegrationsApi.html#putIntegrationsCredential) | **PUT** /api/v2/integrations/credentials/{credentialId} | Update a set of credentials
+[**putIntegrationsSpeechTtsSettings**](IntegrationsApi.html#putIntegrationsSpeechTtsSettings) | **PUT** /api/v2/integrations/speech/tts/settings | Update TTS settings for an org
 {: class="table table-striped"}
 
 <a name="deleteIntegration"></a>
@@ -1437,6 +1448,595 @@ apiInstance.getIntegrationsEventlogEventId(eventId)
 ### Return type
 
 **IntegrationEvent**
+
+<a name="getIntegrationsSpeechDialogflowAgent"></a>
+
+# DialogflowAgent getIntegrationsSpeechDialogflowAgent(agentId)
+
+
+
+GET /api/v2/integrations/speech/dialogflow/agents/{agentId}
+
+Get details about a Dialogflow agent
+
+
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let agentId = "agentId_example"; // String | The agent ID
+
+apiInstance.getIntegrationsSpeechDialogflowAgent(agentId)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechDialogflowAgent success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechDialogflowAgent');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **agentId** | **String** | The agent ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DialogflowAgent**
+
+<a name="getIntegrationsSpeechDialogflowAgents"></a>
+
+# DialogflowAgentSummaryEntityListing getIntegrationsSpeechDialogflowAgents(opts)
+
+
+
+GET /api/v2/integrations/speech/dialogflow/agents
+
+Get a list of Dialogflow agents in the customers&#39; Google accounts
+
+
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'name': "name_example" // String | Filter on agent name
+};
+
+apiInstance.getIntegrationsSpeechDialogflowAgents(opts)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechDialogflowAgents success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechDialogflowAgents');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **name** | **String** | Filter on agent name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**DialogflowAgentSummaryEntityListing**
+
+<a name="getIntegrationsSpeechLexBotAlias"></a>
+
+# LexBotAlias getIntegrationsSpeechLexBotAlias(aliasId)
+
+
+
+GET /api/v2/integrations/speech/lex/bot/alias/{aliasId}
+
+Get details about a Lex bot alias
+
+
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let aliasId = "aliasId_example"; // String | The alias ID
+
+apiInstance.getIntegrationsSpeechLexBotAlias(aliasId)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechLexBotAlias success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechLexBotAlias');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **aliasId** | **String** | The alias ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LexBotAlias**
+
+<a name="getIntegrationsSpeechLexBotBotIdAliases"></a>
+
+# LexBotAliasEntityListing getIntegrationsSpeechLexBotBotIdAliases(botId, opts)
+
+
+
+GET /api/v2/integrations/speech/lex/bot/{botId}/aliases
+
+Get a list of aliases for a bot in the customer&#39;s AWS accounts
+
+
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let botId = "botId_example"; // String | The bot ID
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'status': "status_example", // String | Filter on alias status
+  'name': "name_example" // String | Filter on alias name
+};
+
+apiInstance.getIntegrationsSpeechLexBotBotIdAliases(botId, opts)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechLexBotBotIdAliases success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechLexBotBotIdAliases');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **botId** | **String** | The bot ID |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **status** | **String** | Filter on alias status | [optional] <br />**Values**: READY, FAILED, BUILDING, NOT_BUILT |
+ **name** | **String** | Filter on alias name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**LexBotAliasEntityListing**
+
+<a name="getIntegrationsSpeechLexBots"></a>
+
+# LexBotEntityListing getIntegrationsSpeechLexBots(opts)
+
+
+
+GET /api/v2/integrations/speech/lex/bots
+
+Get a list of Lex bots in the customers&#39; AWS accounts
+
+
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'name': "name_example" // String | Filter on bot name
+};
+
+apiInstance.getIntegrationsSpeechLexBots(opts)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechLexBots success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechLexBots');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **name** | **String** | Filter on bot name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**LexBotEntityListing**
+
+<a name="getIntegrationsSpeechTtsEngine"></a>
+
+# TtsEngineEntity getIntegrationsSpeechTtsEngine(engineId, opts)
+
+
+
+GET /api/v2/integrations/speech/tts/engines/{engineId}
+
+Get details about a TTS engine
+
+
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let engineId = "engineId_example"; // String | The engine ID
+let opts = { 
+  'includeVoices': false // Boolean | Include voices for the engine
+};
+
+apiInstance.getIntegrationsSpeechTtsEngine(engineId, opts)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechTtsEngine success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechTtsEngine');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **engineId** | **String** | The engine ID |  |
+ **includeVoices** | **Boolean** | Include voices for the engine | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+**TtsEngineEntity**
+
+<a name="getIntegrationsSpeechTtsEngineVoice"></a>
+
+# TtsVoiceEntity getIntegrationsSpeechTtsEngineVoice(engineId, voiceId)
+
+
+
+GET /api/v2/integrations/speech/tts/engines/{engineId}/voices/{voiceId}
+
+Get details about a specific voice for a TTS engine
+
+
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let engineId = "engineId_example"; // String | The engine ID
+let voiceId = "voiceId_example"; // String | The voice ID
+
+apiInstance.getIntegrationsSpeechTtsEngineVoice(engineId, voiceId)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechTtsEngineVoice success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechTtsEngineVoice');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **engineId** | **String** | The engine ID |  |
+ **voiceId** | **String** | The voice ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**TtsVoiceEntity**
+
+<a name="getIntegrationsSpeechTtsEngineVoices"></a>
+
+# TtsVoiceEntityListing getIntegrationsSpeechTtsEngineVoices(engineId, opts)
+
+
+
+GET /api/v2/integrations/speech/tts/engines/{engineId}/voices
+
+Get a list of voices for a TTS engine
+
+
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let engineId = "engineId_example"; // String | The engine ID
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+apiInstance.getIntegrationsSpeechTtsEngineVoices(engineId, opts)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechTtsEngineVoices success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechTtsEngineVoices');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **engineId** | **String** | The engine ID |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+**TtsVoiceEntityListing**
+
+<a name="getIntegrationsSpeechTtsEngines"></a>
+
+# TtsEngineEntityListing getIntegrationsSpeechTtsEngines(opts)
+
+
+
+GET /api/v2/integrations/speech/tts/engines
+
+Get a list of TTS engines enabled for org
+
+
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'includeVoices': false, // Boolean | Include voices for the engine
+  'name': "name_example", // String | Filter on engine name
+  'language': "language_example" // String | Filter on supported language. If includeVoices=true then the voices are also filtered.
+};
+
+apiInstance.getIntegrationsSpeechTtsEngines(opts)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechTtsEngines success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechTtsEngines');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **includeVoices** | **Boolean** | Include voices for the engine | [optional] [default to false] |
+ **name** | **String** | Filter on engine name | [optional]  |
+ **language** | **String** | Filter on supported language. If includeVoices=true then the voices are also filtered. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**TtsEngineEntityListing**
+
+<a name="getIntegrationsSpeechTtsSettings"></a>
+
+# TtsSettings getIntegrationsSpeechTtsSettings()
+
+
+
+GET /api/v2/integrations/speech/tts/settings
+
+Get TTS settings for an org
+
+
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+apiInstance.getIntegrationsSpeechTtsSettings()
+  .then((data) => {
+    console.log(`getIntegrationsSpeechTtsSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechTtsSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**TtsSettings**
 
 <a name="getIntegrationsType"></a>
 
@@ -3057,4 +3657,89 @@ apiInstance.putIntegrationsCredential(credentialId, opts)
 ### Return type
 
 **CredentialInfo**
+
+<a name="putIntegrationsSpeechTtsSettings"></a>
+
+# TtsSettings putIntegrationsSpeechTtsSettings(body)
+
+
+
+PUT /api/v2/integrations/speech/tts/settings
+
+Update TTS settings for an org
+
+
+
+Requires ANY permissions: 
+
+* integrations:integration:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyTtsSettingsExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TtsSettingsExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+TtsSettings <a href="#" onclick="return copyTtsSettingsExample()">Copy</a>
+
+<div id="TtsSettingsExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "defaultEngine": String, 
+  "languageOverrides": { 
+    "language": String, 
+    "engine": String, 
+    "voice": String, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let body = {}; // Object | Updated TtsSettings
+
+apiInstance.putIntegrationsSpeechTtsSettings(body)
+  .then((data) => {
+    console.log(`putIntegrationsSpeechTtsSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putIntegrationsSpeechTtsSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Updated TtsSettings |  |
+{: class="table table-striped"}
+
+### Return type
+
+**TtsSettings**
 

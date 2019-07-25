@@ -2755,6 +2755,14 @@ WorkspaceMember <a href="#" onclick="return copyWorkspaceMemberExample()">Copy</
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -2878,6 +2886,14 @@ WorkspaceMember <a href="#" onclick="return copyWorkspaceMemberExample()">Copy</
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
     },  

@@ -5,7 +5,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 52.1.1
+	 * @version 53.0.0
 	 */
 
 	/**
@@ -49,8 +49,12 @@ class LocationsApi {
 	 * Get Location by ID.
 	 * 
 	 * @param {String} locationId Location ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 */
-	getLocation(locationId) { 
+	getLocation(locationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'locationId' is set
 		if (locationId === undefined || locationId === null) {
 			throw 'Missing the required parameter "locationId" when calling getLocation';
@@ -60,7 +64,7 @@ class LocationsApi {
 			'/api/v2/locations/{locationId}', 
 			'GET', 
 			{ 'locationId': locationId }, 
-			{  }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 

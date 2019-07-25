@@ -7,27 +7,27 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteScimUser**](SCIMApi.html#deleteScimUser) | **DELETE** /api/v2/scim/users/{userId} | Soft delete user with specified ID
-[**deleteScimV2User**](SCIMApi.html#deleteScimV2User) | **DELETE** /api/v2/scim/v2/users/{userId} | Soft delete user with specified ID
-[**getScimGroup**](SCIMApi.html#getScimGroup) | **GET** /api/v2/scim/groups/{groupId} | Return Group with specified ID
-[**getScimGroups**](SCIMApi.html#getScimGroups) | **GET** /api/v2/scim/groups | Query Groups
-[**getScimUser**](SCIMApi.html#getScimUser) | **GET** /api/v2/scim/users/{userId} | Return user with specified ID (default version)
-[**getScimUsers**](SCIMApi.html#getScimUsers) | **GET** /api/v2/scim/users | Query Users
-[**getScimV2Group**](SCIMApi.html#getScimV2Group) | **GET** /api/v2/scim/v2/groups/{groupId} | Return Group with specified ID
-[**getScimV2Groups**](SCIMApi.html#getScimV2Groups) | **GET** /api/v2/scim/v2/groups | Query Groups
-[**getScimV2Serviceproviderconfig**](SCIMApi.html#getScimV2Serviceproviderconfig) | **GET** /api/v2/scim/v2/serviceproviderconfig | Get SCIM Configuration
-[**getScimV2User**](SCIMApi.html#getScimV2User) | **GET** /api/v2/scim/v2/users/{userId} | Return User with specified ID
-[**getScimV2Users**](SCIMApi.html#getScimV2Users) | **GET** /api/v2/scim/v2/users | Query Users
-[**patchScimGroup**](SCIMApi.html#patchScimGroup) | **PATCH** /api/v2/scim/groups/{groupId} | Update Group with specified ID
-[**patchScimUser**](SCIMApi.html#patchScimUser) | **PATCH** /api/v2/scim/users/{userId} | Patch user with specified ID
-[**patchScimV2Group**](SCIMApi.html#patchScimV2Group) | **PATCH** /api/v2/scim/v2/groups/{groupId} | Update Group with specified ID
-[**patchScimV2User**](SCIMApi.html#patchScimV2User) | **PATCH** /api/v2/scim/v2/users/{userId} | Update user with specified ID
-[**postScimUsers**](SCIMApi.html#postScimUsers) | **POST** /api/v2/scim/users | Create user
-[**postScimV2Users**](SCIMApi.html#postScimV2Users) | **POST** /api/v2/scim/v2/users | Create user
-[**putScimGroup**](SCIMApi.html#putScimGroup) | **PUT** /api/v2/scim/groups/{groupId} | Update Group with specified ID
-[**putScimUser**](SCIMApi.html#putScimUser) | **PUT** /api/v2/scim/users/{userId} | Update user with specified ID
-[**putScimV2Group**](SCIMApi.html#putScimV2Group) | **PUT** /api/v2/scim/v2/groups/{groupId} | Update Group with specified ID
-[**putScimV2User**](SCIMApi.html#putScimV2User) | **PUT** /api/v2/scim/v2/users/{userId} | Update user with specified ID
+[**deleteScimUser**](SCIMApi.html#deleteScimUser) | **DELETE** /api/v2/scim/users/{userId} | Delete a user
+[**deleteScimV2User**](SCIMApi.html#deleteScimV2User) | **DELETE** /api/v2/scim/v2/users/{userId} | Delete a user
+[**getScimGroup**](SCIMApi.html#getScimGroup) | **GET** /api/v2/scim/groups/{groupId} | Get a group
+[**getScimGroups**](SCIMApi.html#getScimGroups) | **GET** /api/v2/scim/groups | Get a list of groups
+[**getScimUser**](SCIMApi.html#getScimUser) | **GET** /api/v2/scim/users/{userId} | Get a user
+[**getScimUsers**](SCIMApi.html#getScimUsers) | **GET** /api/v2/scim/users | Get a list of users
+[**getScimV2Group**](SCIMApi.html#getScimV2Group) | **GET** /api/v2/scim/v2/groups/{groupId} | Get a group
+[**getScimV2Groups**](SCIMApi.html#getScimV2Groups) | **GET** /api/v2/scim/v2/groups | Get a list of groups
+[**getScimV2Serviceproviderconfig**](SCIMApi.html#getScimV2Serviceproviderconfig) | **GET** /api/v2/scim/v2/serviceproviderconfig | Get the SCIM configuration
+[**getScimV2User**](SCIMApi.html#getScimV2User) | **GET** /api/v2/scim/v2/users/{userId} | Get a user
+[**getScimV2Users**](SCIMApi.html#getScimV2Users) | **GET** /api/v2/scim/v2/users | Get a list of users
+[**patchScimGroup**](SCIMApi.html#patchScimGroup) | **PATCH** /api/v2/scim/groups/{groupId} | Modify a group
+[**patchScimUser**](SCIMApi.html#patchScimUser) | **PATCH** /api/v2/scim/users/{userId} | Modify a user
+[**patchScimV2Group**](SCIMApi.html#patchScimV2Group) | **PATCH** /api/v2/scim/v2/groups/{groupId} | Modify a group
+[**patchScimV2User**](SCIMApi.html#patchScimV2User) | **PATCH** /api/v2/scim/v2/users/{userId} | Modify a user
+[**postScimUsers**](SCIMApi.html#postScimUsers) | **POST** /api/v2/scim/users | Create a user
+[**postScimV2Users**](SCIMApi.html#postScimV2Users) | **POST** /api/v2/scim/v2/users | Create a user
+[**putScimGroup**](SCIMApi.html#putScimGroup) | **PUT** /api/v2/scim/groups/{groupId} | Replace a group
+[**putScimUser**](SCIMApi.html#putScimUser) | **PUT** /api/v2/scim/users/{userId} | Replace a user
+[**putScimV2Group**](SCIMApi.html#putScimV2Group) | **PUT** /api/v2/scim/v2/groups/{groupId} | Replace a group
+[**putScimV2User**](SCIMApi.html#putScimV2User) | **PUT** /api/v2/scim/v2/users/{userId} | Replace a user
 {: class="table table-striped"}
 
 <a name="deleteScimUser"></a>
@@ -38,7 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 DELETE /api/v2/scim/users/{userId}
 
-Soft delete user with specified ID
+Delete a user
 
 
 
@@ -61,9 +61,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SCIMApi();
 
-let userId = "userId_example"; // String | 
+let userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/users.
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | If-Match for ETag version checking
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 };
 
 apiInstance.deleteScimUser(userId, opts)
@@ -81,8 +81,8 @@ apiInstance.deleteScimUser(userId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** |  |  |
- **ifMatch** | **String** | If-Match for ETag version checking | [optional]  |
+ **userId** | **String** | The ID of a user. Returned with GET /api/v2/scim/users. |  |
+ **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -97,7 +97,7 @@ apiInstance.deleteScimUser(userId, opts)
 
 DELETE /api/v2/scim/v2/users/{userId}
 
-Soft delete user with specified ID
+Delete a user
 
 
 
@@ -120,9 +120,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SCIMApi();
 
-let userId = "userId_example"; // String | 
+let userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | If-Match for ETag version checking
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 };
 
 apiInstance.deleteScimV2User(userId, opts)
@@ -140,8 +140,8 @@ apiInstance.deleteScimV2User(userId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** |  |  |
- **ifMatch** | **String** | If-Match for ETag version checking | [optional]  |
+ **userId** | **String** | The ID of a user. Returned with GET /api/v2/scim/v2/users. |  |
+ **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -156,7 +156,7 @@ apiInstance.deleteScimV2User(userId, opts)
 
 GET /api/v2/scim/groups/{groupId}
 
-Return Group with specified ID
+Get a group
 
 
 
@@ -179,9 +179,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SCIMApi();
 
-let groupId = "groupId_example"; // String | 
+let groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/groups.
 let opts = { 
-  'ifNoneMatch': "ifNoneMatch_example" // String | If-None-Match for ETag version checking
+  'ifNoneMatch': "ifNoneMatch_example" // String | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
 };
 
 apiInstance.getScimGroup(groupId, opts)
@@ -199,8 +199,8 @@ apiInstance.getScimGroup(groupId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String** |  |  |
- **ifNoneMatch** | **String** | If-None-Match for ETag version checking | [optional]  |
+ **groupId** | **String** | The ID of a group. Returned with GET /api/v2/scim/groups. |  |
+ **ifNoneMatch** | **String** | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -215,7 +215,7 @@ apiInstance.getScimGroup(groupId, opts)
 
 GET /api/v2/scim/groups
 
-Query Groups
+Get a list of groups
 
 
 
@@ -239,9 +239,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SCIMApi();
 
 let opts = { 
-  'startIndex': 1, // Number | Starting item of request. 1-based
-  'count': 25, // Number | The requested number of items per page. A value of 0 will return no results other than the totalResults count.
-  'filter': "displayName eq groupName" // String | filter parameter e.g. displayName eq groupName
+  'startIndex': 1, // Number | The 1-based index of the first query result.
+  'count': 25, // Number | The requested number of items per page. A value of 0 returns totalResults.
+  'filter': "displayName eq groupName" // String | Filters results.
 };
 
 apiInstance.getScimGroups(opts)
@@ -259,9 +259,9 @@ apiInstance.getScimGroups(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **startIndex** | **Number** | Starting item of request. 1-based | [optional] [default to 1] |
- **count** | **Number** | The requested number of items per page. A value of 0 will return no results other than the totalResults count. | [optional] [default to 25] |
- **filter** | **String** | filter parameter e.g. displayName eq groupName | [optional]  |
+ **startIndex** | **Number** | The 1-based index of the first query result. | [optional] [default to 1] |
+ **count** | **Number** | The requested number of items per page. A value of 0 returns totalResults. | [optional] [default to 25] |
+ **filter** | **String** | Filters results. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -276,7 +276,7 @@ apiInstance.getScimGroups(opts)
 
 GET /api/v2/scim/users/{userId}
 
-Return user with specified ID (default version)
+Get a user
 
 
 
@@ -300,9 +300,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SCIMApi();
 
-let userId = "userId_example"; // String | 
+let userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/users.
 let opts = { 
-  'ifNoneMatch': "ifNoneMatch_example" // String | If-None-Match for ETag version checking
+  'ifNoneMatch': "ifNoneMatch_example" // String | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
 };
 
 apiInstance.getScimUser(userId, opts)
@@ -320,8 +320,8 @@ apiInstance.getScimUser(userId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** |  |  |
- **ifNoneMatch** | **String** | If-None-Match for ETag version checking | [optional]  |
+ **userId** | **String** | The ID of a user. Returned with GET /api/v2/scim/users. |  |
+ **ifNoneMatch** | **String** | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -336,7 +336,7 @@ apiInstance.getScimUser(userId, opts)
 
 GET /api/v2/scim/users
 
-Query Users
+Get a list of users
 
 
 
@@ -360,10 +360,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SCIMApi();
 
-let filter = "filter_example"; // String | filter parameter e.g. userName eq search@sample.org
+let filter = "filter_example"; // String | Filters results.
 let opts = { 
-  'startIndex': 1, // Number | Starting item of request. 1-based
-  'count': 25 // Number | The requested number of items per page. A value of 0 will return no results other than the totalResults count.
+  'startIndex': 1, // Number | The 1-based index of the first query result.
+  'count': 25 // Number | The requested number of items per page. A value of 0 returns totalResults.
 };
 
 apiInstance.getScimUsers(filter, opts)
@@ -381,9 +381,9 @@ apiInstance.getScimUsers(filter, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **filter** | **String** | filter parameter e.g. userName eq search@sample.org |  |
- **startIndex** | **Number** | Starting item of request. 1-based | [optional] [default to 1] |
- **count** | **Number** | The requested number of items per page. A value of 0 will return no results other than the totalResults count. | [optional] [default to 25] |
+ **filter** | **String** | Filters results. |  |
+ **startIndex** | **Number** | The 1-based index of the first query result. | [optional] [default to 1] |
+ **count** | **Number** | The requested number of items per page. A value of 0 returns totalResults. | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
@@ -398,7 +398,7 @@ apiInstance.getScimUsers(filter, opts)
 
 GET /api/v2/scim/v2/groups/{groupId}
 
-Return Group with specified ID
+Get a group
 
 
 
@@ -421,9 +421,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SCIMApi();
 
-let groupId = "groupId_example"; // String | 
+let groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
 let opts = { 
-  'ifNoneMatch': "ifNoneMatch_example" // String | If-None-Match for ETag version checking
+  'ifNoneMatch': "ifNoneMatch_example" // String | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
 };
 
 apiInstance.getScimV2Group(groupId, opts)
@@ -441,8 +441,8 @@ apiInstance.getScimV2Group(groupId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String** |  |  |
- **ifNoneMatch** | **String** | If-None-Match for ETag version checking | [optional]  |
+ **groupId** | **String** | The ID of a group. Returned with GET /api/v2/scim/v2/groups. |  |
+ **ifNoneMatch** | **String** | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -457,7 +457,7 @@ apiInstance.getScimV2Group(groupId, opts)
 
 GET /api/v2/scim/v2/groups
 
-Query Groups
+Get a list of groups
 
 
 
@@ -480,10 +480,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SCIMApi();
 
-let filter = "displayName eq groupName"; // String | filter parameter e.g. displayName eq groupName
+let filter = "displayName eq groupName"; // String | Filters results.
 let opts = { 
-  'startIndex': 1, // Number | Starting item of request. 1-based
-  'count': 25 // Number | The requested number of items per page. A value of 0 will return no results other than the totalResults count.
+  'startIndex': 1, // Number | The 1-based index of the first query result.
+  'count': 25 // Number | The requested number of items per page. A value of 0 returns totalResults.
 };
 
 apiInstance.getScimV2Groups(filter, opts)
@@ -501,9 +501,9 @@ apiInstance.getScimV2Groups(filter, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **filter** | **String** | filter parameter e.g. displayName eq groupName |  |
- **startIndex** | **Number** | Starting item of request. 1-based | [optional] [default to 1] |
- **count** | **Number** | The requested number of items per page. A value of 0 will return no results other than the totalResults count. | [optional] [default to 25] |
+ **filter** | **String** | Filters results. |  |
+ **startIndex** | **Number** | The 1-based index of the first query result. | [optional] [default to 1] |
+ **count** | **Number** | The requested number of items per page. A value of 0 returns totalResults. | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
@@ -518,7 +518,7 @@ apiInstance.getScimV2Groups(filter, opts)
 
 GET /api/v2/scim/v2/serviceproviderconfig
 
-Get SCIM Configuration
+Get the SCIM configuration
 
 
 
@@ -538,7 +538,7 @@ const platformClient = require('purecloud-platform-client-v2');
 let apiInstance = new platformClient.SCIMApi();
 
 let opts = { 
-  'ifNoneMatch': "ifNoneMatch_example" // String | If-None-Match for ETag version checking
+  'ifNoneMatch': "ifNoneMatch_example" // String | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
 };
 
 apiInstance.getScimV2Serviceproviderconfig(opts)
@@ -556,7 +556,7 @@ apiInstance.getScimV2Serviceproviderconfig(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **ifNoneMatch** | **String** | If-None-Match for ETag version checking | [optional]  |
+ **ifNoneMatch** | **String** | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -571,7 +571,7 @@ apiInstance.getScimV2Serviceproviderconfig(opts)
 
 GET /api/v2/scim/v2/users/{userId}
 
-Return User with specified ID
+Get a user
 
 
 
@@ -595,9 +595,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SCIMApi();
 
-let userId = "userId_example"; // String | 
+let userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.
 let opts = { 
-  'ifNoneMatch': "ifNoneMatch_example" // String | If-None-Match for ETag version checking
+  'ifNoneMatch': "ifNoneMatch_example" // String | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
 };
 
 apiInstance.getScimV2User(userId, opts)
@@ -615,8 +615,8 @@ apiInstance.getScimV2User(userId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** |  |  |
- **ifNoneMatch** | **String** | If-None-Match for ETag version checking | [optional]  |
+ **userId** | **String** | The ID of a user. Returned with GET /api/v2/scim/v2/users. |  |
+ **ifNoneMatch** | **String** | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -631,7 +631,7 @@ apiInstance.getScimV2User(userId, opts)
 
 GET /api/v2/scim/v2/users
 
-Query Users
+Get a list of users
 
 
 
@@ -655,10 +655,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SCIMApi();
 
-let filter = "filter_example"; // String | filter parameter e.g. userName eq search@sample.org
+let filter = "filter_example"; // String | Filters results.
 let opts = { 
-  'startIndex': 1, // Number | Starting item of request. 1-based
-  'count': 25 // Number | The requested number of items per page. A value of 0 will return no results other than the totalResults count.
+  'startIndex': 1, // Number | The 1-based index of the first query result.
+  'count': 25 // Number | The requested number of items per page. A value of 0 returns totalResults.
 };
 
 apiInstance.getScimV2Users(filter, opts)
@@ -676,9 +676,9 @@ apiInstance.getScimV2Users(filter, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **filter** | **String** | filter parameter e.g. userName eq search@sample.org |  |
- **startIndex** | **Number** | Starting item of request. 1-based | [optional] [default to 1] |
- **count** | **Number** | The requested number of items per page. A value of 0 will return no results other than the totalResults count. | [optional] [default to 25] |
+ **filter** | **String** | Filters results. |  |
+ **startIndex** | **Number** | The 1-based index of the first query result. | [optional] [default to 1] |
+ **count** | **Number** | The requested number of items per page. A value of 0 returns totalResults. | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
@@ -693,7 +693,7 @@ apiInstance.getScimV2Users(filter, opts)
 
 PATCH /api/v2/scim/groups/{groupId}
 
-Update Group with specified ID
+Modify a group
 
 
 
@@ -756,10 +756,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SCIMApi();
 
-let groupId = "groupId_example"; // String | 
+let groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/groups.
 let body = {}; // Object | Group
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | If-Match for ETag version checking
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 };
 
 apiInstance.patchScimGroup(groupId, body, opts)
@@ -777,9 +777,9 @@ apiInstance.patchScimGroup(groupId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String** |  |  |
+ **groupId** | **String** | The ID of a group. Returned with GET /api/v2/scim/groups. |  |
  **body** | **Object** | Group |  |
- **ifMatch** | **String** | If-Match for ETag version checking | [optional]  |
+ **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -794,7 +794,7 @@ apiInstance.patchScimGroup(groupId, body, opts)
 
 PATCH /api/v2/scim/users/{userId}
 
-Patch user with specified ID
+Modify a user
 
 
 
@@ -870,10 +870,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SCIMApi();
 
-let userId = "userId_example"; // String | 
+let userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/users.
 let body = {}; // Object | SCIM Patch Request
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | If-Match for ETag version checking
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 };
 
 apiInstance.patchScimUser(userId, body, opts)
@@ -891,9 +891,9 @@ apiInstance.patchScimUser(userId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** |  |  |
+ **userId** | **String** | The ID of a user. Returned with GET /api/v2/scim/users. |  |
  **body** | **Object** | SCIM Patch Request |  |
- **ifMatch** | **String** | If-Match for ETag version checking | [optional]  |
+ **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -908,7 +908,7 @@ apiInstance.patchScimUser(userId, body, opts)
 
 PATCH /api/v2/scim/v2/groups/{groupId}
 
-Update Group with specified ID
+Modify a group
 
 
 
@@ -971,10 +971,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SCIMApi();
 
-let groupId = "groupId_example"; // String | 
+let groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
 let body = {}; // Object | Group
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | If-Match for ETag version checking
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 };
 
 apiInstance.patchScimV2Group(groupId, body, opts)
@@ -992,9 +992,9 @@ apiInstance.patchScimV2Group(groupId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String** |  |  |
+ **groupId** | **String** | The ID of a group. Returned with GET /api/v2/scim/v2/groups. |  |
  **body** | **Object** | Group |  |
- **ifMatch** | **String** | If-Match for ETag version checking | [optional]  |
+ **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1009,7 +1009,7 @@ apiInstance.patchScimV2Group(groupId, body, opts)
 
 PATCH /api/v2/scim/v2/users/{userId}
 
-Update user with specified ID
+Modify a user
 
 
 
@@ -1085,10 +1085,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SCIMApi();
 
-let userId = "userId_example"; // String | User Id
+let userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.
 let body = {}; // Object | SCIM Patch Request
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | If-Match for ETag version checking
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 };
 
 apiInstance.patchScimV2User(userId, body, opts)
@@ -1106,9 +1106,9 @@ apiInstance.patchScimV2User(userId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** | User Id |  |
+ **userId** | **String** | The ID of a user. Returned with GET /api/v2/scim/v2/users. |  |
  **body** | **Object** | SCIM Patch Request |  |
- **ifMatch** | **String** | If-Match for ETag version checking | [optional]  |
+ **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1123,7 +1123,7 @@ apiInstance.patchScimV2User(userId, body, opts)
 
 POST /api/v2/scim/users
 
-Create user
+Create a user
 
 
 
@@ -1379,7 +1379,7 @@ apiInstance.postScimUsers(body)
 
 POST /api/v2/scim/v2/users
 
-Create user
+Create a user
 
 
 
@@ -1635,7 +1635,7 @@ apiInstance.postScimV2Users(body)
 
 PUT /api/v2/scim/groups/{groupId}
 
-Update Group with specified ID
+Replace a group
 
 
 
@@ -1703,10 +1703,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SCIMApi();
 
-let groupId = "groupId_example"; // String | 
+let groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/groups.
 let body = {}; // Object | Group
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | If-Match for ETag version checking
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 };
 
 apiInstance.putScimGroup(groupId, body, opts)
@@ -1724,9 +1724,9 @@ apiInstance.putScimGroup(groupId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String** |  |  |
+ **groupId** | **String** | The ID of a group. Returned with GET /api/v2/scim/groups. |  |
  **body** | **Object** | Group |  |
- **ifMatch** | **String** | If-Match for ETag version checking | [optional]  |
+ **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1741,7 +1741,7 @@ apiInstance.putScimGroup(groupId, body, opts)
 
 PUT /api/v2/scim/users/{userId}
 
-Update user with specified ID
+Replace a user
 
 
 
@@ -1967,10 +1967,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SCIMApi();
 
-let userId = "userId_example"; // String | 
+let userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/users.
 let body = {}; // Object | User
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | If-Match for ETag version checking
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 };
 
 apiInstance.putScimUser(userId, body, opts)
@@ -1988,9 +1988,9 @@ apiInstance.putScimUser(userId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** |  |  |
+ **userId** | **String** | The ID of a user. Returned with GET /api/v2/scim/users. |  |
  **body** | **Object** | User |  |
- **ifMatch** | **String** | If-Match for ETag version checking | [optional]  |
+ **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2005,7 +2005,7 @@ apiInstance.putScimUser(userId, body, opts)
 
 PUT /api/v2/scim/v2/groups/{groupId}
 
-Update Group with specified ID
+Replace a group
 
 
 
@@ -2073,10 +2073,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SCIMApi();
 
-let groupId = "groupId_example"; // String | 
+let groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
 let body = {}; // Object | Group
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | If-Match for ETag version checking
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 };
 
 apiInstance.putScimV2Group(groupId, body, opts)
@@ -2094,9 +2094,9 @@ apiInstance.putScimV2Group(groupId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **groupId** | **String** |  |  |
+ **groupId** | **String** | The ID of a group. Returned with GET /api/v2/scim/v2/groups. |  |
  **body** | **Object** | Group |  |
- **ifMatch** | **String** | If-Match for ETag version checking | [optional]  |
+ **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2111,7 +2111,7 @@ apiInstance.putScimV2Group(groupId, body, opts)
 
 PUT /api/v2/scim/v2/users/{userId}
 
-Update user with specified ID
+Replace a user
 
 
 
@@ -2337,10 +2337,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SCIMApi();
 
-let userId = "userId_example"; // String | User Id
+let userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.
 let body = {}; // Object | User
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | If-Match for ETag version checking
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 };
 
 apiInstance.putScimV2User(userId, body, opts)
@@ -2358,9 +2358,9 @@ apiInstance.putScimV2User(userId, body, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** | User Id |  |
+ **userId** | **String** | The ID of a user. Returned with GET /api/v2/scim/v2/users. |  |
  **body** | **Object** | User |  |
- **ifMatch** | **String** | If-Match for ETag version checking | [optional]  |
+ **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

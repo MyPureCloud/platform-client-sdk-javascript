@@ -5,7 +5,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 52.1.1
+	 * @version 53.0.0
 	 */
 
 	/**
@@ -21,11 +21,11 @@ class SCIMApi {
 
 
 	/**
-	 * Soft delete user with specified ID
+	 * Delete a user
 	 * 
-	 * @param {String} userId 
+	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/users.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch If-Match for ETag version checking
+	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 	 */
 	deleteScimUser(userId, opts) { 
 		opts = opts || {};
@@ -50,11 +50,11 @@ class SCIMApi {
 	}
 
 	/**
-	 * Soft delete user with specified ID
+	 * Delete a user
 	 * 
-	 * @param {String} userId 
+	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/v2/users.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch If-Match for ETag version checking
+	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 	 */
 	deleteScimV2User(userId, opts) { 
 		opts = opts || {};
@@ -79,11 +79,11 @@ class SCIMApi {
 	}
 
 	/**
-	 * Return Group with specified ID
+	 * Get a group
 	 * 
-	 * @param {String} groupId 
+	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/groups.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifNoneMatch If-None-Match for ETag version checking
+	 * @param {String} opts.ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
 	 */
 	getScimGroup(groupId, opts) { 
 		opts = opts || {};
@@ -108,12 +108,12 @@ class SCIMApi {
 	}
 
 	/**
-	 * Query Groups
+	 * Get a list of groups
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.startIndex Starting item of request. 1-based (default to 1)
-	 * @param {Number} opts.count The requested number of items per page. A value of 0 will return no results other than the totalResults count. (default to 25)
-	 * @param {String} opts.filter filter parameter e.g. displayName eq groupName
+	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
+	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns totalResults. (default to 25)
+	 * @param {String} opts.filter Filters results.
 	 */
 	getScimGroups(opts) { 
 		opts = opts || {};
@@ -134,11 +134,11 @@ class SCIMApi {
 	}
 
 	/**
-	 * Return user with specified ID (default version)
+	 * Get a user
 	 * 
-	 * @param {String} userId 
+	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/users.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifNoneMatch If-None-Match for ETag version checking
+	 * @param {String} opts.ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
 	 */
 	getScimUser(userId, opts) { 
 		opts = opts || {};
@@ -163,12 +163,12 @@ class SCIMApi {
 	}
 
 	/**
-	 * Query Users
+	 * Get a list of users
 	 * 
-	 * @param {String} filter filter parameter e.g. userName eq search@sample.org
+	 * @param {String} filter Filters results.
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.startIndex Starting item of request. 1-based (default to 1)
-	 * @param {Number} opts.count The requested number of items per page. A value of 0 will return no results other than the totalResults count. (default to 25)
+	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
+	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns totalResults. (default to 25)
 	 */
 	getScimUsers(filter, opts) { 
 		opts = opts || {};
@@ -193,11 +193,11 @@ class SCIMApi {
 	}
 
 	/**
-	 * Return Group with specified ID
+	 * Get a group
 	 * 
-	 * @param {String} groupId 
+	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifNoneMatch If-None-Match for ETag version checking
+	 * @param {String} opts.ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
 	 */
 	getScimV2Group(groupId, opts) { 
 		opts = opts || {};
@@ -222,12 +222,12 @@ class SCIMApi {
 	}
 
 	/**
-	 * Query Groups
+	 * Get a list of groups
 	 * 
-	 * @param {String} filter filter parameter e.g. displayName eq groupName
+	 * @param {String} filter Filters results.
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.startIndex Starting item of request. 1-based (default to 1)
-	 * @param {Number} opts.count The requested number of items per page. A value of 0 will return no results other than the totalResults count. (default to 25)
+	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
+	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns totalResults. (default to 25)
 	 */
 	getScimV2Groups(filter, opts) { 
 		opts = opts || {};
@@ -252,10 +252,10 @@ class SCIMApi {
 	}
 
 	/**
-	 * Get SCIM Configuration
+	 * Get the SCIM configuration
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifNoneMatch If-None-Match for ETag version checking
+	 * @param {String} opts.ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
 	 */
 	getScimV2Serviceproviderconfig(opts) { 
 		opts = opts || {};
@@ -276,11 +276,11 @@ class SCIMApi {
 	}
 
 	/**
-	 * Return User with specified ID
+	 * Get a user
 	 * 
-	 * @param {String} userId 
+	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/v2/users.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifNoneMatch If-None-Match for ETag version checking
+	 * @param {String} opts.ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
 	 */
 	getScimV2User(userId, opts) { 
 		opts = opts || {};
@@ -305,12 +305,12 @@ class SCIMApi {
 	}
 
 	/**
-	 * Query Users
+	 * Get a list of users
 	 * 
-	 * @param {String} filter filter parameter e.g. userName eq search@sample.org
+	 * @param {String} filter Filters results.
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.startIndex Starting item of request. 1-based (default to 1)
-	 * @param {Number} opts.count The requested number of items per page. A value of 0 will return no results other than the totalResults count. (default to 25)
+	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
+	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns totalResults. (default to 25)
 	 */
 	getScimV2Users(filter, opts) { 
 		opts = opts || {};
@@ -335,12 +335,12 @@ class SCIMApi {
 	}
 
 	/**
-	 * Update Group with specified ID
+	 * Modify a group
 	 * 
-	 * @param {String} groupId 
+	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/groups.
 	 * @param {Object} body Group
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch If-Match for ETag version checking
+	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 	 */
 	patchScimGroup(groupId, body, opts) { 
 		opts = opts || {};
@@ -369,12 +369,12 @@ class SCIMApi {
 	}
 
 	/**
-	 * Patch user with specified ID
+	 * Modify a user
 	 * 
-	 * @param {String} userId 
+	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/users.
 	 * @param {Object} body SCIM Patch Request
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch If-Match for ETag version checking
+	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 	 */
 	patchScimUser(userId, body, opts) { 
 		opts = opts || {};
@@ -403,12 +403,12 @@ class SCIMApi {
 	}
 
 	/**
-	 * Update Group with specified ID
+	 * Modify a group
 	 * 
-	 * @param {String} groupId 
+	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups.
 	 * @param {Object} body Group
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch If-Match for ETag version checking
+	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 	 */
 	patchScimV2Group(groupId, body, opts) { 
 		opts = opts || {};
@@ -437,12 +437,12 @@ class SCIMApi {
 	}
 
 	/**
-	 * Update user with specified ID
+	 * Modify a user
 	 * 
-	 * @param {String} userId User Id
+	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/v2/users.
 	 * @param {Object} body SCIM Patch Request
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch If-Match for ETag version checking
+	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 	 */
 	patchScimV2User(userId, body, opts) { 
 		opts = opts || {};
@@ -471,7 +471,7 @@ class SCIMApi {
 	}
 
 	/**
-	 * Create user
+	 * Create a user
 	 * 
 	 * @param {Object} body SCIM Create User
 	 */
@@ -496,7 +496,7 @@ class SCIMApi {
 	}
 
 	/**
-	 * Create user
+	 * Create a user
 	 * 
 	 * @param {Object} body SCIM Create User
 	 */
@@ -521,12 +521,12 @@ class SCIMApi {
 	}
 
 	/**
-	 * Update Group with specified ID
+	 * Replace a group
 	 * 
-	 * @param {String} groupId 
+	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/groups.
 	 * @param {Object} body Group
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch If-Match for ETag version checking
+	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 	 */
 	putScimGroup(groupId, body, opts) { 
 		opts = opts || {};
@@ -555,12 +555,12 @@ class SCIMApi {
 	}
 
 	/**
-	 * Update user with specified ID
+	 * Replace a user
 	 * 
-	 * @param {String} userId 
+	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/users.
 	 * @param {Object} body User
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch If-Match for ETag version checking
+	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 	 */
 	putScimUser(userId, body, opts) { 
 		opts = opts || {};
@@ -589,12 +589,12 @@ class SCIMApi {
 	}
 
 	/**
-	 * Update Group with specified ID
+	 * Replace a group
 	 * 
-	 * @param {String} groupId 
+	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups.
 	 * @param {Object} body Group
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch If-Match for ETag version checking
+	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 	 */
 	putScimV2Group(groupId, body, opts) { 
 		opts = opts || {};
@@ -623,12 +623,12 @@ class SCIMApi {
 	}
 
 	/**
-	 * Update user with specified ID
+	 * Replace a user
 	 * 
-	 * @param {String} userId User Id
+	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/v2/users.
 	 * @param {Object} body User
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch If-Match for ETag version checking
+	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 	 */
 	putScimV2User(userId, body, opts) { 
 		opts = opts || {};

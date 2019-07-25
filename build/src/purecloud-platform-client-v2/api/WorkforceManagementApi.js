@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 52.1.1
+	 * @version 53.0.0
 	 */
 
 	/**
@@ -23,7 +23,7 @@ class WorkforceManagementApi {
 	/**
 	 * Delete management unit
 	 * 
-	 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
 	deleteWorkforcemanagementManagementunit(muId) { 
 		// verify the required parameter 'muId' is set
@@ -288,9 +288,9 @@ class WorkforceManagementApi {
 	/**
 	 * Get management unit
 	 * 
-	 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand 
+	 * @param {Array.<String>} opts.expand 
 	 */
 	getWorkforcemanagementManagementunit(muId, opts) { 
 		opts = opts || {};
@@ -304,7 +304,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{muId}', 
 			'GET', 
 			{ 'muId': muId }, 
-			{ 'expand': opts['expand'] }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -570,9 +570,9 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get the settings for the requested management unit
+	 * Get the settings for the requested management unit. Deprecated, use the GET management unit route instead
 	 * 
-	 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
 	getWorkforcemanagementManagementunitSettings(muId) { 
 		// verify the required parameter 'muId' is set
@@ -1144,6 +1144,35 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Update the requested management unit
+	 * 
+	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	patchWorkforcemanagementManagementunit(muId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'muId' is set
+		if (muId === undefined || muId === null) {
+			throw 'Missing the required parameter "muId" when calling patchWorkforcemanagementManagementunit';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{muId}', 
+			'PATCH', 
+			{ 'muId': muId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update an activity code
 	 * 
 	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
@@ -1246,9 +1275,9 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Patch the settings for the requested management unit
+	 * Update the settings for the requested management unit
 	 * 
-	 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body config
 	 */
@@ -1516,6 +1545,35 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{muId}/intraday', 
+			'POST', 
+			{ 'muId': muId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Move the requested management unit to a new business unit
+	 * Returns status 200 if the management unit is already in the requested business unit
+	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementManagementunitMove(muId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'muId' is set
+		if (muId === undefined || muId === null) {
+			throw 'Missing the required parameter "muId" when calling postWorkforcemanagementManagementunitMove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{muId}/move', 
 			'POST', 
 			{ 'muId': muId }, 
 			{  }, 

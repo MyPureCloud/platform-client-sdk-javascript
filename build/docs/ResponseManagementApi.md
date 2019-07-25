@@ -581,6 +581,14 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -704,6 +712,14 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
     },  
@@ -1026,6 +1042,14 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -1149,6 +1173,14 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
     },  
@@ -1567,6 +1599,14 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -1690,6 +1730,14 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
     },  
@@ -2014,6 +2062,14 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -2137,6 +2193,14 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
     },  

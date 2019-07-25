@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteConversationRecordingAnnotation**](RecordingApi.html#deleteConversationRecordingAnnotation) | **DELETE** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Delete annotation
 [**deleteOrphanrecording**](RecordingApi.html#deleteOrphanrecording) | **DELETE** /api/v2/orphanrecordings/{orphanId} | Deletes a single orphan recording
+[**deleteRecordingJob**](RecordingApi.html#deleteRecordingJob) | **DELETE** /api/v2/recording/jobs/{jobId} | Delete the recording bulk job
 [**deleteRecordingMediaretentionpolicies**](RecordingApi.html#deleteRecordingMediaretentionpolicies) | **DELETE** /api/v2/recording/mediaretentionpolicies | Delete media retention policies
 [**deleteRecordingMediaretentionpolicy**](RecordingApi.html#deleteRecordingMediaretentionpolicy) | **DELETE** /api/v2/recording/mediaretentionpolicies/{policyId} | Delete a media retention policy
 [**getConversationRecording**](RecordingApi.html#getConversationRecording) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId} | Gets a specific recording.
@@ -21,6 +22,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOrphanrecordingMedia**](RecordingApi.html#getOrphanrecordingMedia) | **GET** /api/v2/orphanrecordings/{orphanId}/media | Gets the media of a single orphan recording
 [**getOrphanrecordings**](RecordingApi.html#getOrphanrecordings) | **GET** /api/v2/orphanrecordings | Gets all orphan recordings
 [**getRecordingBatchrequest**](RecordingApi.html#getRecordingBatchrequest) | **GET** /api/v2/recording/batchrequests/{jobId} | Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+[**getRecordingJob**](RecordingApi.html#getRecordingJob) | **GET** /api/v2/recording/jobs/{jobId} | Get the status of the job associated with the job id.
+[**getRecordingJobs**](RecordingApi.html#getRecordingJobs) | **GET** /api/v2/recording/jobs | Get the status of all jobs within the user&#39;s organization
 [**getRecordingLocalkeysSetting**](RecordingApi.html#getRecordingLocalkeysSetting) | **GET** /api/v2/recording/localkeys/settings/{settingsId} | Get the local encryption settings
 [**getRecordingLocalkeysSettings**](RecordingApi.html#getRecordingLocalkeysSettings) | **GET** /api/v2/recording/localkeys/settings | gets a list local key settings data
 [**getRecordingMediaretentionpolicies**](RecordingApi.html#getRecordingMediaretentionpolicies) | **GET** /api/v2/recording/mediaretentionpolicies | Gets media retention policy list with query options to filter on name and enabled.
@@ -33,6 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchRecordingsScreensession**](RecordingApi.html#patchRecordingsScreensession) | **PATCH** /api/v2/recordings/screensessions/{recordingSessionId} | Update a screen recording session
 [**postConversationRecordingAnnotations**](RecordingApi.html#postConversationRecordingAnnotations) | **POST** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations | Create annotation
 [**postRecordingBatchrequests**](RecordingApi.html#postRecordingBatchrequests) | **POST** /api/v2/recording/batchrequests | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+[**postRecordingJobs**](RecordingApi.html#postRecordingJobs) | **POST** /api/v2/recording/jobs | Create a recording bulk job
 [**postRecordingLocalkeys**](RecordingApi.html#postRecordingLocalkeys) | **POST** /api/v2/recording/localkeys | create a local recording key
 [**postRecordingLocalkeysSettings**](RecordingApi.html#postRecordingLocalkeysSettings) | **POST** /api/v2/recording/localkeys/settings | create settings for local key creation
 [**postRecordingMediaretentionpolicies**](RecordingApi.html#postRecordingMediaretentionpolicies) | **POST** /api/v2/recording/mediaretentionpolicies | Create media retention policy
@@ -40,6 +44,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putConversationRecording**](RecordingApi.html#putConversationRecording) | **PUT** /api/v2/conversations/{conversationId}/recordings/{recordingId} | Updates the retention records on a recording.
 [**putConversationRecordingAnnotation**](RecordingApi.html#putConversationRecordingAnnotation) | **PUT** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Update annotation
 [**putOrphanrecording**](RecordingApi.html#putOrphanrecording) | **PUT** /api/v2/orphanrecordings/{orphanId} | Updates an orphan recording to a regular recording with retention values
+[**putRecordingJob**](RecordingApi.html#putRecordingJob) | **PUT** /api/v2/recording/jobs/{jobId} | Execute the recording bulk job
 [**putRecordingLocalkeysSetting**](RecordingApi.html#putRecordingLocalkeysSetting) | **PUT** /api/v2/recording/localkeys/settings/{settingsId} | Update the local encryption settings
 [**putRecordingMediaretentionpolicy**](RecordingApi.html#putRecordingMediaretentionpolicy) | **PUT** /api/v2/recording/mediaretentionpolicies/{policyId} | Update a media retention policy
 [**putRecordingRecordingkeysRotationschedule**](RecordingApi.html#putRecordingRecordingkeysRotationschedule) | **PUT** /api/v2/recording/recordingkeys/rotationschedule | Update key rotation schedule
@@ -158,6 +163,61 @@ apiInstance.deleteOrphanrecording(orphanId)
 ### Return type
 
 **OrphanRecording**
+
+<a name="deleteRecordingJob"></a>
+
+# void deleteRecordingJob(jobId)
+
+
+
+DELETE /api/v2/recording/jobs/{jobId}
+
+Delete the recording bulk job
+
+
+
+Requires ANY permissions: 
+
+* recording:job:delete
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RecordingApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteRecordingJob(jobId)
+  .then(() => {
+    console.log('deleteRecordingJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRecordingJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deleteRecordingMediaretentionpolicies"></a>
 
@@ -860,6 +920,120 @@ apiInstance.getRecordingBatchrequest(jobId)
 
 **BatchDownloadJobStatusResult**
 
+<a name="getRecordingJob"></a>
+
+# RecordingJob getRecordingJob(jobId)
+
+
+
+GET /api/v2/recording/jobs/{jobId}
+
+Get the status of the job associated with the job id.
+
+
+
+Requires ANY permissions: 
+
+* recording:job:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RecordingApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.getRecordingJob(jobId)
+  .then((data) => {
+    console.log(`getRecordingJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRecordingJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**RecordingJob**
+
+<a name="getRecordingJobs"></a>
+
+# RecordingJobEntityListing getRecordingJobs(opts)
+
+
+
+GET /api/v2/recording/jobs
+
+Get the status of all jobs within the user&#39;s organization
+
+
+
+Requires ANY permissions: 
+
+* recording:job:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RecordingApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getRecordingJobs(opts)
+  .then((data) => {
+    console.log(`getRecordingJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRecordingJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**RecordingJobEntityListing**
+
 <a name="getRecordingLocalkeysSetting"></a>
 
 # LocalEncryptionConfiguration getRecordingLocalkeysSetting(settingsId)
@@ -1416,8 +1590,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -1552,6 +1726,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -1630,6 +1806,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -1809,6 +1987,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -1887,6 +2067,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -1983,8 +2165,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -2129,6 +2311,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -2207,6 +2391,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -2303,8 +2489,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -2448,6 +2634,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -2526,6 +2714,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -2622,8 +2812,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -2856,6 +3046,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -2952,6 +3150,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
@@ -3221,8 +3427,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -3357,6 +3563,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -3435,6 +3643,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -3614,6 +3824,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -3692,6 +3904,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -3788,8 +4002,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -3934,6 +4148,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -4012,6 +4228,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -4108,8 +4326,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -4253,6 +4471,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -4331,6 +4551,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -4427,8 +4649,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -4661,6 +4883,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -4757,6 +4987,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
@@ -5025,8 +5263,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -5161,6 +5399,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -5239,6 +5479,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -5418,6 +5660,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -5496,6 +5740,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -5592,8 +5838,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -5738,6 +5984,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -5816,6 +6064,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -5912,8 +6162,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -6057,6 +6307,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -6135,6 +6387,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -6231,8 +6485,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -6465,6 +6719,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -6561,6 +6823,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
@@ -6824,8 +7094,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -6960,6 +7230,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -7038,6 +7310,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -7217,6 +7491,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -7295,6 +7571,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -7391,8 +7669,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -7537,6 +7815,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -7615,6 +7895,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -7711,8 +7993,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -7856,6 +8138,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -7934,6 +8218,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -8030,8 +8316,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -8264,6 +8550,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -8360,6 +8654,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
@@ -8754,6 +9056,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -8868,6 +9178,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
       },  
@@ -9217,8 +9535,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -9229,8 +9547,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "nextUri": String, 
           "previousUri": String, 
+          "nextUri": String, 
           "lastUri": String, 
           "pageCount": Number, 
         },  
@@ -9419,6 +9737,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -9524,6 +9850,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
         },  
@@ -9757,6 +10091,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -9862,6 +10204,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
         },  
@@ -9998,8 +10348,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -10010,8 +10360,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "nextUri": String, 
           "previousUri": String, 
+          "nextUri": String, 
           "lastUri": String, 
           "pageCount": Number, 
         },  
@@ -10210,6 +10560,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -10315,6 +10673,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
         },  
@@ -10451,8 +10817,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -10463,8 +10829,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "nextUri": String, 
           "previousUri": String, 
+          "nextUri": String, 
           "lastUri": String, 
           "pageCount": Number, 
         },  
@@ -10662,6 +11028,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -10767,6 +11141,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
         },  
@@ -10903,8 +11285,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -10915,8 +11297,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "nextUri": String, 
           "previousUri": String, 
+          "nextUri": String, 
           "lastUri": String, 
           "pageCount": Number, 
         },  
@@ -11337,6 +11719,14 @@ Annotation <a href="#" onclick="return copyAnnotationExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -11460,6 +11850,14 @@ Annotation <a href="#" onclick="return copyAnnotationExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
     },  
@@ -11647,6 +12045,273 @@ apiInstance.postRecordingBatchrequests(body)
 ### Return type
 
 **BatchDownloadJobSubmissionResult**
+
+<a name="postRecordingJobs"></a>
+
+# RecordingJob postRecordingJobs(body)
+
+
+
+POST /api/v2/recording/jobs
+
+Create a recording bulk job
+
+
+
+Requires ANY permissions: 
+
+* recording:job:add
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyRecordingJobsQueryExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#RecordingJobsQueryExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+RecordingJobsQuery <a href="#" onclick="return copyRecordingJobsQueryExample()">Copy</a>
+
+<div id="RecordingJobsQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "action": String, 
+  "actionDate": Date, 
+  "conversationQuery": { 
+    "interval": String, 
+    "conversationFilters": { 
+      "type": String, 
+      "clauses": { 
+        "type": String, 
+        "predicates": { 
+          "type": String, 
+          "dimension": String, 
+          "propertyType": String, 
+          "property": String, 
+          "metric": String, 
+          "operator": String, 
+          "value": String, 
+          "range": { 
+            "gt": Number, 
+            "gte": Number, 
+            "lt": Number, 
+            "lte": Number, 
+          },  
+        },  
+      },  
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "evaluationFilters": { 
+      "type": String, 
+      "clauses": { 
+        "type": String, 
+        "predicates": { 
+          "type": String, 
+          "dimension": String, 
+          "propertyType": String, 
+          "property": String, 
+          "metric": String, 
+          "operator": String, 
+          "value": String, 
+          "range": { 
+            "gt": Number, 
+            "gte": Number, 
+            "lt": Number, 
+            "lte": Number, 
+          },  
+        },  
+      },  
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "surveyFilters": { 
+      "type": String, 
+      "clauses": { 
+        "type": String, 
+        "predicates": { 
+          "type": String, 
+          "dimension": String, 
+          "propertyType": String, 
+          "property": String, 
+          "metric": String, 
+          "operator": String, 
+          "value": String, 
+          "range": { 
+            "gt": Number, 
+            "gte": Number, 
+            "lt": Number, 
+            "lte": Number, 
+          },  
+        },  
+      },  
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "mediaEndpointStatFilters": { 
+      "type": String, 
+      "clauses": { 
+        "type": String, 
+        "predicates": { 
+          "type": String, 
+          "dimension": String, 
+          "propertyType": String, 
+          "property": String, 
+          "metric": String, 
+          "operator": String, 
+          "value": String, 
+          "range": { 
+            "gt": Number, 
+            "gte": Number, 
+            "lt": Number, 
+            "lte": Number, 
+          },  
+        },  
+      },  
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "segmentFilters": { 
+      "type": String, 
+      "clauses": { 
+        "type": String, 
+        "predicates": { 
+          "type": String, 
+          "dimension": String, 
+          "propertyType": String, 
+          "property": String, 
+          "metric": String, 
+          "operator": String, 
+          "value": String, 
+          "range": { 
+            "gt": Number, 
+            "gte": Number, 
+            "lt": Number, 
+            "lte": Number, 
+          },  
+        },  
+      },  
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "order": String, 
+    "orderBy": String, 
+    "limit": Number, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RecordingApi();
+
+let body = {}; // Object | query
+
+apiInstance.postRecordingJobs(body)
+  .then((data) => {
+    console.log(`postRecordingJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRecordingJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**RecordingJob**
 
 <a name="postRecordingLocalkeys"></a>
 
@@ -11913,8 +12578,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -12049,6 +12714,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -12127,6 +12794,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -12306,6 +12975,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -12384,6 +13055,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -12480,8 +13153,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -12626,6 +13299,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -12704,6 +13379,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -12800,8 +13477,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -12945,6 +13622,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -13023,6 +13702,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -13119,8 +13800,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -13353,6 +14034,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -13449,6 +14138,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
@@ -13718,8 +14415,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -13854,6 +14551,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -13932,6 +14631,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -14111,6 +14812,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -14189,6 +14892,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -14285,8 +14990,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -14431,6 +15136,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -14509,6 +15216,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -14605,8 +15314,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -14750,6 +15459,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -14828,6 +15539,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -14924,8 +15637,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -15158,6 +15871,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -15254,6 +15975,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
@@ -15522,8 +16251,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -15658,6 +16387,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -15736,6 +16467,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -15915,6 +16648,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -15993,6 +16728,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -16089,8 +16826,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -16235,6 +16972,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -16313,6 +17052,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -16409,8 +17150,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -16554,6 +17295,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -16632,6 +17375,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -16728,8 +17473,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -16962,6 +17707,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -17058,6 +17811,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
@@ -17321,8 +18082,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -17457,6 +18218,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -17535,6 +18298,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -17714,6 +18479,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -17792,6 +18559,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -17888,8 +18657,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -18034,6 +18803,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -18112,6 +18883,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -18208,8 +18981,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -18353,6 +19126,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -18431,6 +19206,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -18527,8 +19304,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -18761,6 +19538,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -18857,6 +19642,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
@@ -19251,6 +20044,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -19365,6 +20166,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
       },  
@@ -19714,8 +20523,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -19726,8 +20535,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "nextUri": String, 
           "previousUri": String, 
+          "nextUri": String, 
           "lastUri": String, 
           "pageCount": Number, 
         },  
@@ -19916,6 +20725,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -20021,6 +20838,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
         },  
@@ -20254,6 +21079,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -20359,6 +21192,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
         },  
@@ -20495,8 +21336,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -20507,8 +21348,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "nextUri": String, 
           "previousUri": String, 
+          "nextUri": String, 
           "lastUri": String, 
           "pageCount": Number, 
         },  
@@ -20707,6 +21548,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -20812,6 +21661,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
         },  
@@ -20948,8 +21805,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -20960,8 +21817,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "nextUri": String, 
           "previousUri": String, 
+          "nextUri": String, 
           "lastUri": String, 
           "pageCount": Number, 
         },  
@@ -21159,6 +22016,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -21264,6 +22129,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
         },  
@@ -21400,8 +22273,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -21412,8 +22285,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "nextUri": String, 
           "previousUri": String, 
+          "nextUri": String, 
           "lastUri": String, 
           "pageCount": Number, 
         },  
@@ -21805,6 +22678,14 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -21919,6 +22800,14 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
       },  
@@ -22217,6 +23106,14 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -22331,6 +23228,14 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
       },  
@@ -22792,6 +23697,8 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -22870,6 +23777,8 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -23182,6 +24091,14 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -23305,6 +24222,14 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
     },  
@@ -23627,6 +24552,14 @@ Annotation <a href="#" onclick="return copyAnnotationExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -23750,6 +24683,14 @@ Annotation <a href="#" onclick="return copyAnnotationExample()">Copy</a>
         "version": Number, 
         "path": [String], 
         "notes": String, 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
         "selfUri": String, 
       },  
     },  
@@ -23944,6 +24885,88 @@ apiInstance.putOrphanrecording(orphanId, opts)
 
 **Recording**
 
+<a name="putRecordingJob"></a>
+
+# RecordingJob putRecordingJob(jobId, body)
+
+
+
+PUT /api/v2/recording/jobs/{jobId}
+
+Execute the recording bulk job
+
+
+
+Requires ANY permissions: 
+
+* recording:job:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyExecuteRecordingJobsQueryExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ExecuteRecordingJobsQueryExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+ExecuteRecordingJobsQuery <a href="#" onclick="return copyExecuteRecordingJobsQueryExample()">Copy</a>
+
+<div id="ExecuteRecordingJobsQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "state": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RecordingApi();
+
+let jobId = "jobId_example"; // String | jobId
+let body = {}; // Object | query
+
+apiInstance.putRecordingJob(jobId, body)
+  .then((data) => {
+    console.log(`putRecordingJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putRecordingJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**RecordingJob**
+
 <a name="putRecordingLocalkeysSetting"></a>
 
 # LocalEncryptionConfiguration putRecordingLocalkeysSetting(settingsId, body)
@@ -24129,8 +25152,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -24265,6 +25288,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -24343,6 +25368,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -24522,6 +25549,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -24600,6 +25629,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -24696,8 +25727,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -24842,6 +25873,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -24920,6 +25953,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -25016,8 +26051,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -25161,6 +26196,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -25239,6 +26276,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -25335,8 +26374,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -25569,6 +26608,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -25665,6 +26712,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
@@ -25934,8 +26989,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -26070,6 +27125,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -26148,6 +27205,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -26327,6 +27386,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -26405,6 +27466,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -26501,8 +27564,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -26647,6 +27710,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -26725,6 +27790,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -26821,8 +27888,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -26966,6 +28033,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -27044,6 +28113,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -27140,8 +28211,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -27374,6 +28445,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -27470,6 +28549,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
@@ -27738,8 +28825,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -27874,6 +28961,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -27952,6 +29041,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -28131,6 +29222,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -28209,6 +29302,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -28305,8 +29400,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -28451,6 +29546,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -28529,6 +29626,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -28625,8 +29724,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -28770,6 +29869,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -28848,6 +29949,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -28944,8 +30047,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -29178,6 +30281,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -29274,6 +30385,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
@@ -29537,8 +30656,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -29673,6 +30792,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -29751,6 +30872,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -29930,6 +31053,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -30008,6 +31133,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -30104,8 +31231,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -30250,6 +31377,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -30328,6 +31457,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -30424,8 +31555,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -30569,6 +31700,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -30647,6 +31780,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "version": Number, 
                 "path": [String], 
                 "notes": String, 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
                 "selfUri": String, 
               },  
             },  
@@ -30743,8 +31878,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -30977,6 +32112,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -31073,6 +32216,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
@@ -31467,6 +32618,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -31581,6 +32740,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
       },  
@@ -31930,8 +33097,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -31942,8 +33109,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "nextUri": String, 
           "previousUri": String, 
+          "nextUri": String, 
           "lastUri": String, 
           "pageCount": Number, 
         },  
@@ -32132,6 +33299,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -32237,6 +33412,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
         },  
@@ -32470,6 +33653,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -32575,6 +33766,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
         },  
@@ -32711,8 +33910,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -32723,8 +33922,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "nextUri": String, 
           "previousUri": String, 
+          "nextUri": String, 
           "lastUri": String, 
           "pageCount": Number, 
         },  
@@ -32923,6 +34122,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -33028,6 +34235,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
         },  
@@ -33164,8 +34379,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -33176,8 +34391,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "nextUri": String, 
           "previousUri": String, 
+          "nextUri": String, 
           "lastUri": String, 
           "pageCount": Number, 
         },  
@@ -33375,6 +34590,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
           "selfUri": String, 
@@ -33480,6 +34703,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "version": Number, 
             "path": [String], 
             "notes": String, 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
             "selfUri": String, 
           },  
         },  
@@ -33616,8 +34847,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "nextUri": String, 
               "lastUri": String, 
               "pageCount": Number, 
             },  
@@ -33628,8 +34859,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "nextUri": String, 
           "previousUri": String, 
+          "nextUri": String, 
           "lastUri": String, 
           "pageCount": Number, 
         },  

@@ -268,6 +268,14 @@ Geolocation <a href="#" onclick="return copyGeolocationExample()">Copy</a>
     "version": Number, 
     "path": [String], 
     "notes": String, 
+    "profileImage": { 
+      "resolution": String, 
+      "imageUri": String, 
+    },  
+    "floorplanImage": { 
+      "resolution": String, 
+      "imageUri": String, 
+    },  
     "selfUri": String, 
   },  
   "selfUri": String, 

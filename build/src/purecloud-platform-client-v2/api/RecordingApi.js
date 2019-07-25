@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 52.1.1
+	 * @version 53.0.0
 	 */
 
 	/**
@@ -70,6 +70,31 @@ class RecordingApi {
 			'/api/v2/orphanrecordings/{orphanId}', 
 			'DELETE', 
 			{ 'orphanId': orphanId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete the recording bulk job
+	 * 
+	 * @param {String} jobId jobId
+	 */
+	deleteRecordingJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling deleteRecordingJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -429,6 +454,56 @@ class RecordingApi {
 	}
 
 	/**
+	 * Get the status of the job associated with the job id.
+	 * 
+	 * @param {String} jobId jobId
+	 */
+	getRecordingJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getRecordingJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the status of all jobs within the user&#39;s organization
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getRecordingJobs(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/jobs', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the local encryption settings
 	 * 
 	 * @param {String} settingsId Settings Id
@@ -745,6 +820,31 @@ class RecordingApi {
 	}
 
 	/**
+	 * Create a recording bulk job
+	 * 
+	 * @param {Object} body query
+	 */
+	postRecordingJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRecordingJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/jobs', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * create a local recording key
 	 * 
 	 * @param {Object} body Local Encryption body
@@ -937,6 +1037,36 @@ class RecordingApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Execute the recording bulk job
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} body query
+	 */
+	putRecordingJob(jobId, body) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling putRecordingJob';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRecordingJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/jobs/{jobId}', 
+			'PUT', 
+			{ 'jobId': jobId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

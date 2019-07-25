@@ -26,7 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementManagementunitSchedulingRuns**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitSchedulingRuns) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs | Get the status of all the ongoing schedule runs
 [**getWorkforcemanagementManagementunitServicegoalgroup**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitServicegoalgroup) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/servicegoalgroups/{serviceGoalGroupId} | Get a service goal group
 [**getWorkforcemanagementManagementunitServicegoalgroups**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitServicegoalgroups) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/servicegoalgroups | Get service goal groups
-[**getWorkforcemanagementManagementunitSettings**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitSettings) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/settings | Get the settings for the requested management unit
+[**getWorkforcemanagementManagementunitSettings**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitSettings) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/settings | Get the settings for the requested management unit. Deprecated, use the GET management unit route instead
 [**getWorkforcemanagementManagementunitShifttradesMatched**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitShifttradesMatched) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/shifttrades/matched | Gets a summary of all shift trades in the matched state
 [**getWorkforcemanagementManagementunitShifttradesUsers**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitShifttradesUsers) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/shifttrades/users | Gets list of users available for whom you can send direct shift trade requests
 [**getWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequest) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Get a time off request
@@ -46,10 +46,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementShifttrades**](WorkforceManagementApi.html#getWorkforcemanagementShifttrades) | **GET** /api/v2/workforcemanagement/shifttrades | Gets all of my shift trades
 [**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequest) | **GET** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Get a time off request for the current user
 [**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequests) | **GET** /api/v2/workforcemanagement/timeoffrequests | Get a list of time off requests for the current user
+[**patchWorkforcemanagementManagementunit**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunit) | **PATCH** /api/v2/workforcemanagement/managementunits/{muId} | Update the requested management unit
 [**patchWorkforcemanagementManagementunitActivitycode**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitActivitycode) | **PATCH** /api/v2/workforcemanagement/managementunits/{muId}/activitycodes/{acId} | Update an activity code
 [**patchWorkforcemanagementManagementunitSchedulingRun**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitSchedulingRun) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId} | Marks a specific scheduling run as applied, allowing a new rescheduling run to be started
 [**patchWorkforcemanagementManagementunitServicegoalgroup**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitServicegoalgroup) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/servicegoalgroups/{serviceGoalGroupId} | Update a service goal group
-[**patchWorkforcemanagementManagementunitSettings**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitSettings) | **PATCH** /api/v2/workforcemanagement/managementunits/{muId}/settings | Patch the settings for the requested management unit
+[**patchWorkforcemanagementManagementunitSettings**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitSettings) | **PATCH** /api/v2/workforcemanagement/managementunits/{muId}/settings | Update the settings for the requested management unit
 [**patchWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitUserTimeoffrequest) | **PATCH** /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Update a time off request
 [**patchWorkforcemanagementManagementunitWeekSchedule**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWeekSchedule) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId} | Update a week schedule
 [**patchWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWorkplan) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} | Update a work plan
@@ -58,6 +59,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitActivitycodes) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/activitycodes | Create a new activity code
 [**postWorkforcemanagementManagementunitHistoricaladherencequery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitHistoricaladherencequery) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/historicaladherencequery | Request a historical adherence report
 [**postWorkforcemanagementManagementunitIntraday**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitIntraday) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/intraday | Get intraday data for the given date for the requested queueIds
+[**postWorkforcemanagementManagementunitMove**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitMove) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/move | Move the requested management unit to a new business unit
 [**postWorkforcemanagementManagementunitSchedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitSchedulesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/schedules/search | Query published schedules for given given time range for set of users
 [**postWorkforcemanagementManagementunitServicegoalgroups**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitServicegoalgroups) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/servicegoalgroups | Create a new service goal group
 [**postWorkforcemanagementManagementunitTimeoffrequests**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffrequests) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests | Create a new time off request
@@ -111,7 +113,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 apiInstance.deleteWorkforcemanagementManagementunit(muId)
   .then(() => {
@@ -128,7 +130,7 @@ apiInstance.deleteWorkforcemanagementManagementunit(muId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **muId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -664,9 +666,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
-  'expand': "expand_example" // String | 
+  'expand': ["expand_example"] // [String] | 
 };
 
 apiInstance.getWorkforcemanagementManagementunit(muId, opts)
@@ -684,8 +686,8 @@ apiInstance.getWorkforcemanagementManagementunit(muId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
- **expand** | **String** |  | [optional] <br />**Values**: settings |
+ **muId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **expand** | **[String]** |  | [optional] <br />**Values**: settings, settings.adherence, settings.timeOff, settings.scheduling, settings.shortTermForecasting, settings.shiftTrading |
 {: class="table table-striped"}
 
 ### Return type
@@ -1243,11 +1245,11 @@ apiInstance.getWorkforcemanagementManagementunitServicegoalgroups(managementUnit
 
 # ManagementUnitSettings getWorkforcemanagementManagementunitSettings(muId)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/workforcemanagement/managementunits/{muId}/settings
 
-Get the settings for the requested management unit
+Get the settings for the requested management unit. Deprecated, use the GET management unit route instead
 
 
 
@@ -1270,7 +1272,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 apiInstance.getWorkforcemanagementManagementunitSettings(muId)
   .then((data) => {
@@ -1287,7 +1289,7 @@ apiInstance.getWorkforcemanagementManagementunitSettings(muId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **muId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2075,7 +2077,7 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
  **pageSize** | **Number** |  | [optional]  |
  **pageNumber** | **Number** |  | [optional]  |
  **expand** | **String** |  | [optional] <br />**Values**: details |
- **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BusinessUnits, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ServiceGoalTemplates, ShiftTrading, ShortTermForecasts, TimeOffRequests, WorkPlans |
+ **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BusinessUnitActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ServiceGoalTemplates, ShiftTrading, ShortTermForecasts, TimeOffRequests, WorkPlans |
  **divisionId** | **String** |  | [optional]  |
 {: class="table table-striped"}
 
@@ -2410,6 +2412,148 @@ apiInstance.getWorkforcemanagementTimeoffrequests(opts)
 
 **TimeOffRequestList**
 
+<a name="patchWorkforcemanagementManagementunit"></a>
+
+# ManagementUnit patchWorkforcemanagementManagementunit(muId, opts)
+
+
+
+PATCH /api/v2/workforcemanagement/managementunits/{muId}
+
+Update the requested management unit
+
+
+
+Requires ANY permissions: 
+
+* wfm:managementUnit:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyUpdateManagementUnitRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UpdateManagementUnitRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+UpdateManagementUnitRequest <a href="#" onclick="return copyUpdateManagementUnitRequestExample()">Copy</a>
+
+<div id="UpdateManagementUnitRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "name": String, 
+  "divisionId": String, 
+  "settings": { 
+    "adherence": { 
+      "severeAlertThresholdMinutes": Number, 
+      "adherenceTargetPercent": Number, 
+      "adherenceExceptionThresholdSeconds": Number, 
+      "nonOnQueueActivitiesEquivalent": Boolean, 
+      "trackOnQueueActivity": Boolean, 
+      "ignoredActivityCategories": { 
+        "values": [String], 
+      },  
+    },  
+    "shortTermForecasting": { 
+      "defaultHistoryWeeks": Number, 
+    },  
+    "timeOff": { 
+      "submissionRangeEnforced": Boolean, 
+      "submissionEarliestDaysFromNow": Number, 
+      "submissionLatestDaysFromNow": Number, 
+    },  
+    "scheduling": { 
+      "maxOccupancyPercentForDeferredWork": Number, 
+      "defaultShrinkagePercent": Number, 
+      "shrinkageOverrides": { 
+        "clear": Boolean, 
+        "values": { 
+          "intervalIndex": Number, 
+          "shrinkagePercent": Number, 
+        },  
+      },  
+    },  
+    "shiftTrading": { 
+      "enabled": Boolean, 
+      "autoReview": Boolean, 
+      "allowDirectTrades": Boolean, 
+      "minHoursInFuture": Number, 
+      "unequalPaid": String, 
+      "oneSided": String, 
+      "weeklyMinPaidViolations": String, 
+      "weeklyMaxPaidViolations": String, 
+      "requiresMatchingQueues": Boolean, 
+      "requiresMatchingLanguages": Boolean, 
+      "requiresMatchingSkills": Boolean, 
+      "activityCategoryRules": { 
+        "activityCategory": String, 
+        "action": String, 
+        "activityCodeIdReplacement": String, 
+      },  
+    },  
+    "metadata": { 
+      "version": Number, 
+      "modifiedBy": { 
+        "id": String, 
+        "selfUri": String, 
+      },  
+      "dateModified": Date, 
+    },  
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
+  'body': {} // Object | body
+};
+
+apiInstance.patchWorkforcemanagementManagementunit(muId, opts)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementManagementunit success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementManagementunit');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **muId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ManagementUnit**
+
 <a name="patchWorkforcemanagementManagementunitActivitycode"></a>
 
 # ActivityCode patchWorkforcemanagementManagementunitActivitycode(muId, acId, opts)
@@ -2723,7 +2867,7 @@ apiInstance.patchWorkforcemanagementManagementunitServicegoalgroup(managementUni
 
 PATCH /api/v2/workforcemanagement/managementunits/{muId}/settings
 
-Patch the settings for the requested management unit
+Update the settings for the requested management unit
 
 
 
@@ -2825,7 +2969,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
   'body': {} // Object | config
 };
@@ -2845,7 +2989,7 @@ apiInstance.patchWorkforcemanagementManagementunitSettings(muId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **muId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **body** | **Object** | config | [optional]  |
 {: class="table table-striped"}
 
@@ -3713,6 +3857,90 @@ apiInstance.postWorkforcemanagementManagementunitIntraday(muId, opts)
 
 **IntradayResponse**
 
+<a name="postWorkforcemanagementManagementunitMove"></a>
+
+# MoveManagementUnitResponse postWorkforcemanagementManagementunitMove(muId, opts)
+
+
+
+POST /api/v2/workforcemanagement/managementunits/{muId}/move
+
+Move the requested management unit to a new business unit
+
+Returns status 200 if the management unit is already in the requested business unit
+
+Requires ANY permissions: 
+
+* wfm:managementUnit:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyMoveManagementUnitRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#MoveManagementUnitRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+MoveManagementUnitRequest <a href="#" onclick="return copyMoveManagementUnitRequestExample()">Copy</a>
+
+<div id="MoveManagementUnitRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "businessUnitId": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
+  'body': {} // Object | body
+};
+
+apiInstance.postWorkforcemanagementManagementunitMove(muId, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementManagementunitMove success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitMove');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **muId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**MoveManagementUnitResponse**
+
 <a name="postWorkforcemanagementManagementunitSchedulesSearch"></a>
 
 # UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(muId, opts)
@@ -4516,6 +4744,14 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -4612,6 +4848,14 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  
@@ -4848,6 +5092,14 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -4962,6 +5214,14 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
           "version": Number, 
           "path": [String], 
           "notes": String, 
+          "profileImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "floorplanImage": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
           "selfUri": String, 
         },  
       },  
@@ -5320,6 +5580,14 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -5416,6 +5684,14 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
               "version": Number, 
               "path": [String], 
               "notes": String, 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
               "selfUri": String, 
             },  
           },  

@@ -313,6 +313,10 @@
       "class": "WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete"
     },
     {
+      "topic": "v2.workforcemanagement.managementunits.{id}",
+      "class": "WfmMoveManagementUnitTopicMoveManagementUnitNotification"
+    },
+    {
       "topic": "v2.workforcemanagement.managementunits.{id}.agents.sync",
       "class": "WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete"
     },
