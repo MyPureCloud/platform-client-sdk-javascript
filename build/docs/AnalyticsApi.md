@@ -1919,6 +1919,8 @@ ReportingExportJobRequest <a href="#" onclick="return copyReportingExportJobRequ
     "hasJourneyCustomerId": Boolean, 
     "hasJourneyActionMapId": Boolean, 
     "hasJourneyVisitId": Boolean, 
+    "oauthClientIds": [String], 
+    "apiOperations": [String], 
   },  
   "read": Boolean, 
   "locale": String, 

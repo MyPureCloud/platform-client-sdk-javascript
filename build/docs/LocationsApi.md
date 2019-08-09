@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteLocation**](LocationsApi.html#deleteLocation) | **DELETE** /api/v2/locations/{locationId} | Delete a location
 [**getLocation**](LocationsApi.html#getLocation) | **GET** /api/v2/locations/{locationId} | Get Location by ID.
+[**getLocationSublocations**](LocationsApi.html#getLocationSublocations) | **GET** /api/v2/locations/{locationId}/sublocations | Get sublocations for location ID.
 [**getLocations**](LocationsApi.html#getLocations) | **GET** /api/v2/locations | Get a list of all locations.
 [**getLocationsSearch**](LocationsApi.html#getLocationsSearch) | **GET** /api/v2/locations/search | Search locations using the q64 value returned from a previous search
 [**patchLocation**](LocationsApi.html#patchLocation) | **PATCH** /api/v2/locations/{locationId} | Update a location
@@ -128,6 +129,60 @@ apiInstance.getLocation(locationId, opts)
 ### Return type
 
 **LocationDefinition**
+
+<a name="getLocationSublocations"></a>
+
+# LocationEntityListing getLocationSublocations(locationId)
+
+
+
+GET /api/v2/locations/{locationId}/sublocations
+
+Get sublocations for location ID.
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LocationsApi();
+
+let locationId = "locationId_example"; // String | Location ID
+
+apiInstance.getLocationSublocations(locationId)
+  .then((data) => {
+    console.log(`getLocationSublocations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLocationSublocations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **locationId** | **String** | Location ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LocationEntityListing**
 
 <a name="getLocations"></a>
 
@@ -388,6 +443,11 @@ LocationDefinition <a href="#" onclick="return copyLocationDefinitionExample()">
 { 
   "id": String, 
   "name": String, 
+  "emergencyNumber": { 
+    "e164": String, 
+    "number": String, 
+    "type": String, 
+  },  
   "address": { 
     "city": String, 
     "country": String, 
@@ -398,15 +458,10 @@ LocationDefinition <a href="#" onclick="return copyLocationDefinitionExample()">
     "zipcode": String, 
   },  
   "addressVerified": Boolean, 
-  "emergencyNumber": { 
-    "e164": String, 
-    "number": String, 
-    "type": String, 
-  },  
   "state": String, 
+  "notes": String, 
   "version": Number, 
   "path": [String], 
-  "notes": String, 
   "profileImage": { 
     "resolution": String, 
     "imageUri": String, 

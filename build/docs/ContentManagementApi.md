@@ -2736,6 +2736,11 @@ WorkspaceMember <a href="#" onclick="return copyWorkspaceMemberExample()">Copy</
       "locations": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -2746,15 +2751,10 @@ WorkspaceMember <a href="#" onclick="return copyWorkspaceMemberExample()">Copy</
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 
@@ -2867,6 +2867,11 @@ WorkspaceMember <a href="#" onclick="return copyWorkspaceMemberExample()">Copy</
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -2877,15 +2882,10 @@ WorkspaceMember <a href="#" onclick="return copyWorkspaceMemberExample()">Copy</
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 

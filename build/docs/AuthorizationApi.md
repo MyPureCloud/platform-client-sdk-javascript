@@ -1472,6 +1472,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "locations": { 
               "id": String, 
               "name": String, 
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
               "address": { 
                 "city": String, 
                 "country": String, 
@@ -1482,15 +1487,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "zipcode": String, 
               },  
               "addressVerified": Boolean, 
-              "emergencyNumber": { 
-                "e164": String, 
-                "number": String, 
-                "type": String, 
-              },  
               "state": String, 
+              "notes": String, 
               "version": Number, 
               "path": [String], 
-              "notes": String, 
               "profileImage": { 
                 "resolution": String, 
                 "imageUri": String, 
@@ -1576,6 +1576,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
               "address": { 
                 "city": String, 
                 "country": String, 
@@ -1586,15 +1591,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "zipcode": String, 
               },  
               "addressVerified": Boolean, 
-              "emergencyNumber": { 
-                "e164": String, 
-                "number": String, 
-                "type": String, 
-              },  
               "state": String, 
+              "notes": String, 
               "version": Number, 
               "path": [String], 
-              "notes": String, 
               "profileImage": { 
                 "resolution": String, 
                 "imageUri": String, 
@@ -1913,13 +1913,13 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
-                "emergencyNumber": LocationEmergencyNumber, 
                 "state": String, 
+                "notes": String, 
                 "version": Number, 
                 "path": [String], 
-                "notes": String, 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
                 "selfUri": String, 
@@ -1993,13 +1993,13 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
-                "emergencyNumber": LocationEmergencyNumber, 
                 "state": String, 
+                "notes": String, 
                 "version": Number, 
                 "path": [String], 
-                "notes": String, 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
                 "selfUri": String, 
@@ -2966,6 +2966,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "locations": { 
               "id": String, 
               "name": String, 
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
               "address": { 
                 "city": String, 
                 "country": String, 
@@ -2976,15 +2981,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "zipcode": String, 
               },  
               "addressVerified": Boolean, 
-              "emergencyNumber": { 
-                "e164": String, 
-                "number": String, 
-                "type": String, 
-              },  
               "state": String, 
+              "notes": String, 
               "version": Number, 
               "path": [String], 
-              "notes": String, 
               "profileImage": { 
                 "resolution": String, 
                 "imageUri": String, 
@@ -3070,6 +3070,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
               "address": { 
                 "city": String, 
                 "country": String, 
@@ -3080,15 +3085,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "zipcode": String, 
               },  
               "addressVerified": Boolean, 
-              "emergencyNumber": { 
-                "e164": String, 
-                "number": String, 
-                "type": String, 
-              },  
               "state": String, 
+              "notes": String, 
               "version": Number, 
               "path": [String], 
-              "notes": String, 
               "profileImage": { 
                 "resolution": String, 
                 "imageUri": String, 
@@ -3407,13 +3407,13 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
-                "emergencyNumber": LocationEmergencyNumber, 
                 "state": String, 
+                "notes": String, 
                 "version": Number, 
                 "path": [String], 
-                "notes": String, 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
                 "selfUri": String, 
@@ -3487,13 +3487,13 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
-                "emergencyNumber": LocationEmergencyNumber, 
                 "state": String, 
+                "notes": String, 
                 "version": Number, 
                 "path": [String], 
-                "notes": String, 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
                 "selfUri": String, 
@@ -4231,6 +4231,11 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
             "locations": { 
               "id": String, 
               "name": String, 
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
               "address": { 
                 "city": String, 
                 "country": String, 
@@ -4241,15 +4246,10 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "zipcode": String, 
               },  
               "addressVerified": Boolean, 
-              "emergencyNumber": { 
-                "e164": String, 
-                "number": String, 
-                "type": String, 
-              },  
               "state": String, 
+              "notes": String, 
               "version": Number, 
               "path": [String], 
-              "notes": String, 
               "profileImage": { 
                 "resolution": String, 
                 "imageUri": String, 
@@ -4335,6 +4335,11 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
               "address": { 
                 "city": String, 
                 "country": String, 
@@ -4345,15 +4350,10 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "zipcode": String, 
               },  
               "addressVerified": Boolean, 
-              "emergencyNumber": { 
-                "e164": String, 
-                "number": String, 
-                "type": String, 
-              },  
               "state": String, 
+              "notes": String, 
               "version": Number, 
               "path": [String], 
-              "notes": String, 
               "profileImage": { 
                 "resolution": String, 
                 "imageUri": String, 
@@ -4672,13 +4672,13 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
-                "emergencyNumber": LocationEmergencyNumber, 
                 "state": String, 
+                "notes": String, 
                 "version": Number, 
                 "path": [String], 
-                "notes": String, 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
                 "selfUri": String, 
@@ -4752,13 +4752,13 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
-                "emergencyNumber": LocationEmergencyNumber, 
                 "state": String, 
+                "notes": String, 
                 "version": Number, 
                 "path": [String], 
-                "notes": String, 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
                 "selfUri": String, 
@@ -5699,6 +5699,11 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
             "locations": { 
               "id": String, 
               "name": String, 
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
               "address": { 
                 "city": String, 
                 "country": String, 
@@ -5709,15 +5714,10 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "zipcode": String, 
               },  
               "addressVerified": Boolean, 
-              "emergencyNumber": { 
-                "e164": String, 
-                "number": String, 
-                "type": String, 
-              },  
               "state": String, 
+              "notes": String, 
               "version": Number, 
               "path": [String], 
-              "notes": String, 
               "profileImage": { 
                 "resolution": String, 
                 "imageUri": String, 
@@ -5803,6 +5803,11 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
               "address": { 
                 "city": String, 
                 "country": String, 
@@ -5813,15 +5818,10 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "zipcode": String, 
               },  
               "addressVerified": Boolean, 
-              "emergencyNumber": { 
-                "e164": String, 
-                "number": String, 
-                "type": String, 
-              },  
               "state": String, 
+              "notes": String, 
               "version": Number, 
               "path": [String], 
-              "notes": String, 
               "profileImage": { 
                 "resolution": String, 
                 "imageUri": String, 
@@ -6140,13 +6140,13 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
-                "emergencyNumber": LocationEmergencyNumber, 
                 "state": String, 
+                "notes": String, 
                 "version": Number, 
                 "path": [String], 
-                "notes": String, 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
                 "selfUri": String, 
@@ -6220,13 +6220,13 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
-                "emergencyNumber": LocationEmergencyNumber, 
                 "state": String, 
+                "notes": String, 
                 "version": Number, 
                 "path": [String], 
-                "notes": String, 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
                 "selfUri": String, 
@@ -7076,6 +7076,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "locations": { 
               "id": String, 
               "name": String, 
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
               "address": { 
                 "city": String, 
                 "country": String, 
@@ -7086,15 +7091,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "zipcode": String, 
               },  
               "addressVerified": Boolean, 
-              "emergencyNumber": { 
-                "e164": String, 
-                "number": String, 
-                "type": String, 
-              },  
               "state": String, 
+              "notes": String, 
               "version": Number, 
               "path": [String], 
-              "notes": String, 
               "profileImage": { 
                 "resolution": String, 
                 "imageUri": String, 
@@ -7180,6 +7180,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
               "address": { 
                 "city": String, 
                 "country": String, 
@@ -7190,15 +7195,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "zipcode": String, 
               },  
               "addressVerified": Boolean, 
-              "emergencyNumber": { 
-                "e164": String, 
-                "number": String, 
-                "type": String, 
-              },  
               "state": String, 
+              "notes": String, 
               "version": Number, 
               "path": [String], 
-              "notes": String, 
               "profileImage": { 
                 "resolution": String, 
                 "imageUri": String, 
@@ -7517,13 +7517,13 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
-                "emergencyNumber": LocationEmergencyNumber, 
                 "state": String, 
+                "notes": String, 
                 "version": Number, 
                 "path": [String], 
-                "notes": String, 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
                 "selfUri": String, 
@@ -7597,13 +7597,13 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
-                "emergencyNumber": LocationEmergencyNumber, 
                 "state": String, 
+                "notes": String, 
                 "version": Number, 
                 "path": [String], 
-                "notes": String, 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
                 "selfUri": String, 

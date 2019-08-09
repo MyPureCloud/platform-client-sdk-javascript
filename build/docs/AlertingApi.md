@@ -671,6 +671,11 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       "locations": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -681,15 +686,10 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 
@@ -802,6 +802,11 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -812,15 +817,10 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 
@@ -1222,6 +1222,11 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       "locations": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -1232,15 +1237,10 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 
@@ -1353,6 +1353,11 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -1363,15 +1368,10 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 

@@ -63,7 +63,7 @@ let apiInstance = new platformClient.SCIMApi();
 
 let userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/users.
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\".
 };
 
 apiInstance.deleteScimUser(userId, opts)
@@ -82,7 +82,7 @@ apiInstance.deleteScimUser(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | The ID of a user. Returned with GET /api/v2/scim/users. |  |
- **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+ **ifMatch** | **String** | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -122,7 +122,7 @@ let apiInstance = new platformClient.SCIMApi();
 
 let userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\".
 };
 
 apiInstance.deleteScimV2User(userId, opts)
@@ -141,7 +141,7 @@ apiInstance.deleteScimV2User(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | The ID of a user. Returned with GET /api/v2/scim/v2/users. |  |
- **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+ **ifMatch** | **String** | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -181,7 +181,7 @@ let apiInstance = new platformClient.SCIMApi();
 
 let groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/groups.
 let opts = { 
-  'ifNoneMatch': "ifNoneMatch_example" // String | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
+  'ifNoneMatch': "ifNoneMatch_example" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
 };
 
 apiInstance.getScimGroup(groupId, opts)
@@ -200,7 +200,7 @@ apiInstance.getScimGroup(groupId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | The ID of a group. Returned with GET /api/v2/scim/groups. |  |
- **ifNoneMatch** | **String** | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
+ **ifNoneMatch** | **String** | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -209,7 +209,7 @@ apiInstance.getScimGroup(groupId, opts)
 
 <a name="getScimGroups"></a>
 
-# ScimListResponse getScimGroups(opts)
+# ScimGroupListResponse getScimGroups(opts)
 
 
 
@@ -266,7 +266,7 @@ apiInstance.getScimGroups(opts)
 
 ### Return type
 
-**ScimListResponse**
+**ScimGroupListResponse**
 
 <a name="getScimUser"></a>
 
@@ -302,7 +302,7 @@ let apiInstance = new platformClient.SCIMApi();
 
 let userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/users.
 let opts = { 
-  'ifNoneMatch': "ifNoneMatch_example" // String | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
+  'ifNoneMatch': "ifNoneMatch_example" // String | TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
 };
 
 apiInstance.getScimUser(userId, opts)
@@ -321,7 +321,7 @@ apiInstance.getScimUser(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | The ID of a user. Returned with GET /api/v2/scim/users. |  |
- **ifNoneMatch** | **String** | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
+ **ifNoneMatch** | **String** | TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -330,7 +330,7 @@ apiInstance.getScimUser(userId, opts)
 
 <a name="getScimUsers"></a>
 
-# ScimListResponse getScimUsers(filter, opts)
+# ScimUserListResponse getScimUsers(filter, opts)
 
 
 
@@ -388,7 +388,7 @@ apiInstance.getScimUsers(filter, opts)
 
 ### Return type
 
-**ScimListResponse**
+**ScimUserListResponse**
 
 <a name="getScimV2Group"></a>
 
@@ -423,7 +423,7 @@ let apiInstance = new platformClient.SCIMApi();
 
 let groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
 let opts = { 
-  'ifNoneMatch': "ifNoneMatch_example" // String | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
+  'ifNoneMatch': "ifNoneMatch_example" // String | TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. 
 };
 
 apiInstance.getScimV2Group(groupId, opts)
@@ -442,7 +442,7 @@ apiInstance.getScimV2Group(groupId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | The ID of a group. Returned with GET /api/v2/scim/v2/groups. |  |
- **ifNoneMatch** | **String** | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
+ **ifNoneMatch** | **String** | TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -451,7 +451,7 @@ apiInstance.getScimV2Group(groupId, opts)
 
 <a name="getScimV2Groups"></a>
 
-# ScimListResponse getScimV2Groups(filter, opts)
+# ScimGroupListResponse getScimV2Groups(filter, opts)
 
 
 
@@ -508,7 +508,7 @@ apiInstance.getScimV2Groups(filter, opts)
 
 ### Return type
 
-**ScimListResponse**
+**ScimGroupListResponse**
 
 <a name="getScimV2Serviceproviderconfig"></a>
 
@@ -538,7 +538,7 @@ const platformClient = require('purecloud-platform-client-v2');
 let apiInstance = new platformClient.SCIMApi();
 
 let opts = { 
-  'ifNoneMatch': "ifNoneMatch_example" // String | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
+  'ifNoneMatch': "ifNoneMatch_example" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. 
 };
 
 apiInstance.getScimV2Serviceproviderconfig(opts)
@@ -556,7 +556,7 @@ apiInstance.getScimV2Serviceproviderconfig(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **ifNoneMatch** | **String** | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
+ **ifNoneMatch** | **String** | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -597,7 +597,7 @@ let apiInstance = new platformClient.SCIMApi();
 
 let userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.
 let opts = { 
-  'ifNoneMatch': "ifNoneMatch_example" // String | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
+  'ifNoneMatch': "ifNoneMatch_example" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
 };
 
 apiInstance.getScimV2User(userId, opts)
@@ -616,7 +616,7 @@ apiInstance.getScimV2User(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | The ID of a user. Returned with GET /api/v2/scim/v2/users. |  |
- **ifNoneMatch** | **String** | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional]  |
+ **ifNoneMatch** | **String** | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -625,7 +625,7 @@ apiInstance.getScimV2User(userId, opts)
 
 <a name="getScimV2Users"></a>
 
-# ScimListResponse getScimV2Users(filter, opts)
+# ScimUserListResponse getScimV2Users(filter, opts)
 
 
 
@@ -683,7 +683,7 @@ apiInstance.getScimV2Users(filter, opts)
 
 ### Return type
 
-**ScimListResponse**
+**ScimUserListResponse**
 
 <a name="patchScimGroup"></a>
 
@@ -705,37 +705,49 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyPatchRequestExample() {
+	function copyScimV2PatchRequestExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#PatchRequestExample').text()).select();
+		temp.val($('#ScimV2PatchRequestExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-PatchRequest <a href="#" onclick="return copyPatchRequestExample()">Copy</a>
+ScimV2PatchRequest <a href="#" onclick="return copyScimV2PatchRequestExample()">Copy</a>
 
-<div id="PatchRequestExample">
+<div id="ScimV2PatchRequestExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
   "schemas": [String], 
-  "id": String, 
-  "externalId": String, 
   "Operations": { 
-    "path": { 
-      "schemaUrn": String, 
-      "root": Boolean, 
+    "op": String, 
+    "path": String, 
+    "value": { 
+      "nodeType": String, 
+      "float": Boolean, 
+      "number": Boolean, 
+      "object": Boolean, 
+      "boolean": Boolean, 
+      "floatingPointNumber": Boolean, 
+      "integralNumber": Boolean, 
+      "short": Boolean, 
+      "int": Boolean, 
+      "long": Boolean, 
+      "double": Boolean, 
+      "bigDecimal": Boolean, 
+      "bigInteger": Boolean, 
+      "textual": Boolean, 
+      "binary": Boolean, 
+      "valueNode": Boolean, 
+      "containerNode": Boolean, 
+      "missingNode": Boolean, 
+      "pojo": Boolean, 
+      "array": Boolean, 
+      "null": Boolean, 
     },  
-  },  
-  "meta": { 
-    "resourceType": String, 
-    "created": Date, 
-    "lastModified": Date, 
-    "location": String, 
-    "version": String, 
   },  
 }
 ```
@@ -757,9 +769,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SCIMApi();
 
 let groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/groups.
-let body = {}; // Object | Group
+let body = {}; // Object | The information used to modify a group.
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\".
 };
 
 apiInstance.patchScimGroup(groupId, body, opts)
@@ -778,8 +790,8 @@ apiInstance.patchScimGroup(groupId, body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | The ID of a group. Returned with GET /api/v2/scim/groups. |  |
- **body** | **Object** | Group |  |
- **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+ **body** | **Object** | The information used to modify a group. |  |
+ **ifMatch** | **String** | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -871,9 +883,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SCIMApi();
 
 let userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/users.
-let body = {}; // Object | SCIM Patch Request
+let body = {}; // Object | The information used to modify a user.
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\".
 };
 
 apiInstance.patchScimUser(userId, body, opts)
@@ -892,8 +904,8 @@ apiInstance.patchScimUser(userId, body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | The ID of a user. Returned with GET /api/v2/scim/users. |  |
- **body** | **Object** | SCIM Patch Request |  |
- **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+ **body** | **Object** | The information used to modify a user. |  |
+ **ifMatch** | **String** | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -920,37 +932,49 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyPatchRequestExample() {
+	function copyScimV2PatchRequestExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#PatchRequestExample').text()).select();
+		temp.val($('#ScimV2PatchRequestExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-PatchRequest <a href="#" onclick="return copyPatchRequestExample()">Copy</a>
+ScimV2PatchRequest <a href="#" onclick="return copyScimV2PatchRequestExample()">Copy</a>
 
-<div id="PatchRequestExample">
+<div id="ScimV2PatchRequestExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
   "schemas": [String], 
-  "id": String, 
-  "externalId": String, 
   "Operations": { 
-    "path": { 
-      "schemaUrn": String, 
-      "root": Boolean, 
+    "op": String, 
+    "path": String, 
+    "value": { 
+      "nodeType": String, 
+      "float": Boolean, 
+      "number": Boolean, 
+      "object": Boolean, 
+      "boolean": Boolean, 
+      "floatingPointNumber": Boolean, 
+      "integralNumber": Boolean, 
+      "short": Boolean, 
+      "int": Boolean, 
+      "long": Boolean, 
+      "double": Boolean, 
+      "bigDecimal": Boolean, 
+      "bigInteger": Boolean, 
+      "textual": Boolean, 
+      "binary": Boolean, 
+      "valueNode": Boolean, 
+      "containerNode": Boolean, 
+      "missingNode": Boolean, 
+      "pojo": Boolean, 
+      "array": Boolean, 
+      "null": Boolean, 
     },  
-  },  
-  "meta": { 
-    "resourceType": String, 
-    "created": Date, 
-    "lastModified": Date, 
-    "location": String, 
-    "version": String, 
   },  
 }
 ```
@@ -972,9 +996,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SCIMApi();
 
 let groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
-let body = {}; // Object | Group
+let body = {}; // Object | The information used to modify a group.
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\".
 };
 
 apiInstance.patchScimV2Group(groupId, body, opts)
@@ -993,8 +1017,8 @@ apiInstance.patchScimV2Group(groupId, body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | The ID of a group. Returned with GET /api/v2/scim/v2/groups. |  |
- **body** | **Object** | Group |  |
- **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+ **body** | **Object** | The information used to modify a group. |  |
+ **ifMatch** | **String** | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1086,9 +1110,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SCIMApi();
 
 let userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.
-let body = {}; // Object | SCIM Patch Request
+let body = {}; // Object | The information used to modify a user.
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\".
 };
 
 apiInstance.patchScimV2User(userId, body, opts)
@@ -1107,8 +1131,8 @@ apiInstance.patchScimV2User(userId, body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | The ID of a user. Returned with GET /api/v2/scim/v2/users. |  |
- **body** | **Object** | SCIM Patch Request |  |
- **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+ **body** | **Object** | The information used to modify a user. |  |
+ **ifMatch** | **String** | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1151,10 +1175,10 @@ ScimV2CreateUser <a href="#" onclick="return copyScimV2CreateUserExample()">Copy
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
-  "displayName": String, 
   "schemas": [String], 
   "active": Boolean, 
   "userName": String, 
+  "displayName": String, 
   "password": String, 
   "title": String, 
   "phoneNumbers": { 
@@ -1173,7 +1197,6 @@ ScimV2CreateUser <a href="#" onclick="return copyScimV2CreateUserExample()">Copy
   },  
   "externalId": String, 
   "groups": { 
-    "displayName": String, 
     "meta": { 
       "resourceType": String, 
       "lastModified": Date, 
@@ -1194,136 +1217,6 @@ ScimV2CreateUser <a href="#" onclick="return copyScimV2CreateUserExample()">Copy
     "division": String, 
     "department": String, 
     "manager": { 
-      "displayName": String, 
-      "active": Boolean, 
-      "userName": String, 
-      "password": String, 
-      "title": String, 
-      "phoneNumbers": { 
-        "value": String, 
-        "type": String, 
-        "primary": Boolean, 
-      },  
-      "emails": { 
-        "value": String, 
-        "type": String, 
-        "primary": Boolean, 
-      },  
-      "photos": { 
-        "value": String, 
-        "type": String, 
-      },  
-      "externalId": String, 
-      "groups": { 
-        "displayName": String, 
-        "meta": { 
-          "resourceType": String, 
-          "lastModified": Date, 
-          "location": String, 
-          "version": String, 
-        },  
-        "type": String, 
-        "value": String, 
-        "$ref": String, 
-      },  
-      "meta": { 
-        "resourceType": String, 
-        "lastModified": Date, 
-        "location": String, 
-        "version": String, 
-      },  
-      "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": { 
-        "division": String, 
-        "department": String, 
-        "manager": { 
-          "displayName": String, 
-          "active": Boolean, 
-          "userName": String, 
-          "password": String, 
-          "title": String, 
-          "phoneNumbers": { 
-            "value": String, 
-            "type": String, 
-            "primary": Boolean, 
-          },  
-          "emails": { 
-            "value": String, 
-            "type": String, 
-            "primary": Boolean, 
-          },  
-          "photos": { 
-            "value": String, 
-            "type": String, 
-          },  
-          "externalId": String, 
-          "groups": { 
-            "displayName": String, 
-            "meta": { 
-              "resourceType": String, 
-              "lastModified": Date, 
-              "location": String, 
-              "version": String, 
-            },  
-            "type": String, 
-            "value": String, 
-            "$ref": String, 
-          },  
-          "meta": { 
-            "resourceType": String, 
-            "lastModified": Date, 
-            "location": String, 
-            "version": String, 
-          },  
-          "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": { 
-            "division": String, 
-            "department": String, 
-            "manager": { 
-              "displayName": String, 
-              "active": Boolean, 
-              "userName": String, 
-              "password": String, 
-              "title": String, 
-              "phoneNumbers": { 
-                "value": String, 
-                "type": String, 
-                "primary": Boolean, 
-              },  
-              "emails": { 
-                "value": String, 
-                "type": String, 
-                "primary": Boolean, 
-              },  
-              "photos": { 
-                "value": String, 
-                "type": String, 
-              },  
-              "externalId": String, 
-              "groups": { 
-                "displayName": String, 
-                "meta": ScimMetadata, 
-                "type": String, 
-                "value": String, 
-                "$ref": String, 
-              },  
-              "meta": { 
-                "resourceType": String, 
-                "lastModified": Date, 
-                "location": String, 
-                "version": String, 
-              },  
-              "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": { 
-                "division": String, 
-                "department": String, 
-                "manager": Manager, 
-              },  
-              "value": String, 
-              "$ref": String, 
-            },  
-          },  
-          "value": String, 
-          "$ref": String, 
-        },  
-      },  
       "value": String, 
       "$ref": String, 
     },  
@@ -1347,7 +1240,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SCIMApi();
 
-let body = {}; // Object | SCIM Create User
+let body = {}; // Object | The information used to create a user.
 
 apiInstance.postScimUsers(body)
   .then((data) => {
@@ -1364,7 +1257,7 @@ apiInstance.postScimUsers(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | SCIM Create User |  |
+ **body** | **Object** | The information used to create a user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1407,10 +1300,10 @@ ScimV2CreateUser <a href="#" onclick="return copyScimV2CreateUserExample()">Copy
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
-  "displayName": String, 
   "schemas": [String], 
   "active": Boolean, 
   "userName": String, 
+  "displayName": String, 
   "password": String, 
   "title": String, 
   "phoneNumbers": { 
@@ -1429,7 +1322,6 @@ ScimV2CreateUser <a href="#" onclick="return copyScimV2CreateUserExample()">Copy
   },  
   "externalId": String, 
   "groups": { 
-    "displayName": String, 
     "meta": { 
       "resourceType": String, 
       "lastModified": Date, 
@@ -1450,136 +1342,6 @@ ScimV2CreateUser <a href="#" onclick="return copyScimV2CreateUserExample()">Copy
     "division": String, 
     "department": String, 
     "manager": { 
-      "displayName": String, 
-      "active": Boolean, 
-      "userName": String, 
-      "password": String, 
-      "title": String, 
-      "phoneNumbers": { 
-        "value": String, 
-        "type": String, 
-        "primary": Boolean, 
-      },  
-      "emails": { 
-        "value": String, 
-        "type": String, 
-        "primary": Boolean, 
-      },  
-      "photos": { 
-        "value": String, 
-        "type": String, 
-      },  
-      "externalId": String, 
-      "groups": { 
-        "displayName": String, 
-        "meta": { 
-          "resourceType": String, 
-          "lastModified": Date, 
-          "location": String, 
-          "version": String, 
-        },  
-        "type": String, 
-        "value": String, 
-        "$ref": String, 
-      },  
-      "meta": { 
-        "resourceType": String, 
-        "lastModified": Date, 
-        "location": String, 
-        "version": String, 
-      },  
-      "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": { 
-        "division": String, 
-        "department": String, 
-        "manager": { 
-          "displayName": String, 
-          "active": Boolean, 
-          "userName": String, 
-          "password": String, 
-          "title": String, 
-          "phoneNumbers": { 
-            "value": String, 
-            "type": String, 
-            "primary": Boolean, 
-          },  
-          "emails": { 
-            "value": String, 
-            "type": String, 
-            "primary": Boolean, 
-          },  
-          "photos": { 
-            "value": String, 
-            "type": String, 
-          },  
-          "externalId": String, 
-          "groups": { 
-            "displayName": String, 
-            "meta": { 
-              "resourceType": String, 
-              "lastModified": Date, 
-              "location": String, 
-              "version": String, 
-            },  
-            "type": String, 
-            "value": String, 
-            "$ref": String, 
-          },  
-          "meta": { 
-            "resourceType": String, 
-            "lastModified": Date, 
-            "location": String, 
-            "version": String, 
-          },  
-          "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": { 
-            "division": String, 
-            "department": String, 
-            "manager": { 
-              "displayName": String, 
-              "active": Boolean, 
-              "userName": String, 
-              "password": String, 
-              "title": String, 
-              "phoneNumbers": { 
-                "value": String, 
-                "type": String, 
-                "primary": Boolean, 
-              },  
-              "emails": { 
-                "value": String, 
-                "type": String, 
-                "primary": Boolean, 
-              },  
-              "photos": { 
-                "value": String, 
-                "type": String, 
-              },  
-              "externalId": String, 
-              "groups": { 
-                "displayName": String, 
-                "meta": ScimMetadata, 
-                "type": String, 
-                "value": String, 
-                "$ref": String, 
-              },  
-              "meta": { 
-                "resourceType": String, 
-                "lastModified": Date, 
-                "location": String, 
-                "version": String, 
-              },  
-              "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": { 
-                "division": String, 
-                "department": String, 
-                "manager": Manager, 
-              },  
-              "value": String, 
-              "$ref": String, 
-            },  
-          },  
-          "value": String, 
-          "$ref": String, 
-        },  
-      },  
       "value": String, 
       "$ref": String, 
     },  
@@ -1603,7 +1365,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SCIMApi();
 
-let body = {}; // Object | SCIM Create User
+let body = {}; // Object | The information used to create a user.
 
 apiInstance.postScimV2Users(body)
   .then((data) => {
@@ -1620,7 +1382,7 @@ apiInstance.postScimV2Users(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | SCIM Create User |  |
+ **body** | **Object** | The information used to create a user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1664,11 +1426,10 @@ ScimV2Group <a href="#" onclick="return copyScimV2GroupExample()">Copy</a>
 ```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
-  "displayName": String, 
   "schemas": [String], 
+  "displayName": String, 
   "members": { 
     "type": String, 
-    "displayName": String, 
     "meta": { 
       "resourceType": String, 
       "lastModified": Date, 
@@ -1704,9 +1465,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SCIMApi();
 
 let groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/groups.
-let body = {}; // Object | Group
+let body = {}; // Object | The information used to replace a group.
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\".
 };
 
 apiInstance.putScimGroup(groupId, body, opts)
@@ -1725,8 +1486,8 @@ apiInstance.putScimGroup(groupId, body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | The ID of a group. Returned with GET /api/v2/scim/groups. |  |
- **body** | **Object** | Group |  |
- **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+ **body** | **Object** | The information used to replace a group. |  |
+ **ifMatch** | **String** | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1771,10 +1532,10 @@ ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
 ```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
-  "displayName": String, 
   "schemas": [String], 
   "active": Boolean, 
   "userName": String, 
+  "displayName": String, 
   "password": String, 
   "title": String, 
   "phoneNumbers": { 
@@ -1793,7 +1554,6 @@ ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
   },  
   "externalId": String, 
   "groups": { 
-    "displayName": String, 
     "meta": { 
       "resourceType": String, 
       "lastModified": Date, 
@@ -1814,136 +1574,6 @@ ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
     "division": String, 
     "department": String, 
     "manager": { 
-      "displayName": String, 
-      "active": Boolean, 
-      "userName": String, 
-      "password": String, 
-      "title": String, 
-      "phoneNumbers": { 
-        "value": String, 
-        "type": String, 
-        "primary": Boolean, 
-      },  
-      "emails": { 
-        "value": String, 
-        "type": String, 
-        "primary": Boolean, 
-      },  
-      "photos": { 
-        "value": String, 
-        "type": String, 
-      },  
-      "externalId": String, 
-      "groups": { 
-        "displayName": String, 
-        "meta": { 
-          "resourceType": String, 
-          "lastModified": Date, 
-          "location": String, 
-          "version": String, 
-        },  
-        "type": String, 
-        "value": String, 
-        "$ref": String, 
-      },  
-      "meta": { 
-        "resourceType": String, 
-        "lastModified": Date, 
-        "location": String, 
-        "version": String, 
-      },  
-      "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": { 
-        "division": String, 
-        "department": String, 
-        "manager": { 
-          "displayName": String, 
-          "active": Boolean, 
-          "userName": String, 
-          "password": String, 
-          "title": String, 
-          "phoneNumbers": { 
-            "value": String, 
-            "type": String, 
-            "primary": Boolean, 
-          },  
-          "emails": { 
-            "value": String, 
-            "type": String, 
-            "primary": Boolean, 
-          },  
-          "photos": { 
-            "value": String, 
-            "type": String, 
-          },  
-          "externalId": String, 
-          "groups": { 
-            "displayName": String, 
-            "meta": { 
-              "resourceType": String, 
-              "lastModified": Date, 
-              "location": String, 
-              "version": String, 
-            },  
-            "type": String, 
-            "value": String, 
-            "$ref": String, 
-          },  
-          "meta": { 
-            "resourceType": String, 
-            "lastModified": Date, 
-            "location": String, 
-            "version": String, 
-          },  
-          "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": { 
-            "division": String, 
-            "department": String, 
-            "manager": { 
-              "displayName": String, 
-              "active": Boolean, 
-              "userName": String, 
-              "password": String, 
-              "title": String, 
-              "phoneNumbers": { 
-                "value": String, 
-                "type": String, 
-                "primary": Boolean, 
-              },  
-              "emails": { 
-                "value": String, 
-                "type": String, 
-                "primary": Boolean, 
-              },  
-              "photos": { 
-                "value": String, 
-                "type": String, 
-              },  
-              "externalId": String, 
-              "groups": { 
-                "displayName": String, 
-                "meta": ScimMetadata, 
-                "type": String, 
-                "value": String, 
-                "$ref": String, 
-              },  
-              "meta": { 
-                "resourceType": String, 
-                "lastModified": Date, 
-                "location": String, 
-                "version": String, 
-              },  
-              "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": { 
-                "division": String, 
-                "department": String, 
-                "manager": Manager, 
-              },  
-              "value": String, 
-              "$ref": String, 
-            },  
-          },  
-          "value": String, 
-          "$ref": String, 
-        },  
-      },  
       "value": String, 
       "$ref": String, 
     },  
@@ -1968,9 +1598,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SCIMApi();
 
 let userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/users.
-let body = {}; // Object | User
+let body = {}; // Object | The information used to replace a user.
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\".
 };
 
 apiInstance.putScimUser(userId, body, opts)
@@ -1989,8 +1619,8 @@ apiInstance.putScimUser(userId, body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | The ID of a user. Returned with GET /api/v2/scim/users. |  |
- **body** | **Object** | User |  |
- **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+ **body** | **Object** | The information used to replace a user. |  |
+ **ifMatch** | **String** | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2034,11 +1664,10 @@ ScimV2Group <a href="#" onclick="return copyScimV2GroupExample()">Copy</a>
 ```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
-  "displayName": String, 
   "schemas": [String], 
+  "displayName": String, 
   "members": { 
     "type": String, 
-    "displayName": String, 
     "meta": { 
       "resourceType": String, 
       "lastModified": Date, 
@@ -2074,9 +1703,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SCIMApi();
 
 let groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
-let body = {}; // Object | Group
+let body = {}; // Object | The information used to replace a group.
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\".
 };
 
 apiInstance.putScimV2Group(groupId, body, opts)
@@ -2095,8 +1724,8 @@ apiInstance.putScimV2Group(groupId, body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | The ID of a group. Returned with GET /api/v2/scim/v2/groups. |  |
- **body** | **Object** | Group |  |
- **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+ **body** | **Object** | The information used to replace a group. |  |
+ **ifMatch** | **String** | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2141,10 +1770,10 @@ ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
 ```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
-  "displayName": String, 
   "schemas": [String], 
   "active": Boolean, 
   "userName": String, 
+  "displayName": String, 
   "password": String, 
   "title": String, 
   "phoneNumbers": { 
@@ -2163,7 +1792,6 @@ ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
   },  
   "externalId": String, 
   "groups": { 
-    "displayName": String, 
     "meta": { 
       "resourceType": String, 
       "lastModified": Date, 
@@ -2184,136 +1812,6 @@ ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
     "division": String, 
     "department": String, 
     "manager": { 
-      "displayName": String, 
-      "active": Boolean, 
-      "userName": String, 
-      "password": String, 
-      "title": String, 
-      "phoneNumbers": { 
-        "value": String, 
-        "type": String, 
-        "primary": Boolean, 
-      },  
-      "emails": { 
-        "value": String, 
-        "type": String, 
-        "primary": Boolean, 
-      },  
-      "photos": { 
-        "value": String, 
-        "type": String, 
-      },  
-      "externalId": String, 
-      "groups": { 
-        "displayName": String, 
-        "meta": { 
-          "resourceType": String, 
-          "lastModified": Date, 
-          "location": String, 
-          "version": String, 
-        },  
-        "type": String, 
-        "value": String, 
-        "$ref": String, 
-      },  
-      "meta": { 
-        "resourceType": String, 
-        "lastModified": Date, 
-        "location": String, 
-        "version": String, 
-      },  
-      "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": { 
-        "division": String, 
-        "department": String, 
-        "manager": { 
-          "displayName": String, 
-          "active": Boolean, 
-          "userName": String, 
-          "password": String, 
-          "title": String, 
-          "phoneNumbers": { 
-            "value": String, 
-            "type": String, 
-            "primary": Boolean, 
-          },  
-          "emails": { 
-            "value": String, 
-            "type": String, 
-            "primary": Boolean, 
-          },  
-          "photos": { 
-            "value": String, 
-            "type": String, 
-          },  
-          "externalId": String, 
-          "groups": { 
-            "displayName": String, 
-            "meta": { 
-              "resourceType": String, 
-              "lastModified": Date, 
-              "location": String, 
-              "version": String, 
-            },  
-            "type": String, 
-            "value": String, 
-            "$ref": String, 
-          },  
-          "meta": { 
-            "resourceType": String, 
-            "lastModified": Date, 
-            "location": String, 
-            "version": String, 
-          },  
-          "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": { 
-            "division": String, 
-            "department": String, 
-            "manager": { 
-              "displayName": String, 
-              "active": Boolean, 
-              "userName": String, 
-              "password": String, 
-              "title": String, 
-              "phoneNumbers": { 
-                "value": String, 
-                "type": String, 
-                "primary": Boolean, 
-              },  
-              "emails": { 
-                "value": String, 
-                "type": String, 
-                "primary": Boolean, 
-              },  
-              "photos": { 
-                "value": String, 
-                "type": String, 
-              },  
-              "externalId": String, 
-              "groups": { 
-                "displayName": String, 
-                "meta": ScimMetadata, 
-                "type": String, 
-                "value": String, 
-                "$ref": String, 
-              },  
-              "meta": { 
-                "resourceType": String, 
-                "lastModified": Date, 
-                "location": String, 
-                "version": String, 
-              },  
-              "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": { 
-                "division": String, 
-                "department": String, 
-                "manager": Manager, 
-              },  
-              "value": String, 
-              "$ref": String, 
-            },  
-          },  
-          "value": String, 
-          "$ref": String, 
-        },  
-      },  
       "value": String, 
       "$ref": String, 
     },  
@@ -2338,9 +1836,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SCIMApi();
 
 let userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.
-let body = {}; // Object | User
+let body = {}; // Object | The information used to replace a user.
 let opts = { 
-  'ifMatch': "ifMatch_example" // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a scimType of \"invalidVers\".
 };
 
 apiInstance.putScimV2User(userId, body, opts)
@@ -2359,8 +1857,8 @@ apiInstance.putScimV2User(userId, body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | The ID of a user. Returned with GET /api/v2/scim/v2/users. |  |
- **body** | **Object** | User |  |
- **ifMatch** | **String** | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional]  |
+ **body** | **Object** | The information used to replace a user. |  |
+ **ifMatch** | **String** | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

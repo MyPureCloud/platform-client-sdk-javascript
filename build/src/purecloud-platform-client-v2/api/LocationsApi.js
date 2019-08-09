@@ -5,7 +5,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -65,6 +65,31 @@ class LocationsApi {
 			'GET', 
 			{ 'locationId': locationId }, 
 			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get sublocations for location ID.
+	 * 
+	 * @param {String} locationId Location ID
+	 */
+	getLocationSublocations(locationId) { 
+		// verify the required parameter 'locationId' is set
+		if (locationId === undefined || locationId === null) {
+			throw 'Missing the required parameter "locationId" when calling getLocationSublocations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/locations/{locationId}/sublocations', 
+			'GET', 
+			{ 'locationId': locationId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 

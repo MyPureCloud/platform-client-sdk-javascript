@@ -562,6 +562,11 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -572,15 +577,10 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 
@@ -693,6 +693,11 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -703,15 +708,10 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 
@@ -1023,6 +1023,11 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -1033,15 +1038,10 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 
@@ -1154,6 +1154,11 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -1164,15 +1169,10 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 
@@ -1580,6 +1580,11 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -1590,15 +1595,10 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 
@@ -1711,6 +1711,11 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -1721,15 +1726,10 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 
@@ -2043,6 +2043,11 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -2053,15 +2058,10 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 
@@ -2174,6 +2174,11 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -2184,15 +2189,10 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 

@@ -2077,7 +2077,7 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
  **pageSize** | **Number** |  | [optional]  |
  **pageNumber** | **Number** |  | [optional]  |
  **expand** | **String** |  | [optional] <br />**Values**: details |
- **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BusinessUnitActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ServiceGoalTemplates, ShiftTrading, ShortTermForecasts, TimeOffRequests, WorkPlans |
+ **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BusinessUnitActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, TimeOffRequests, WorkPlans |
  **divisionId** | **String** |  | [optional]  |
 {: class="table table-striped"}
 
@@ -4725,6 +4725,11 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
             "locations": { 
               "id": String, 
               "name": String, 
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
               "address": { 
                 "city": String, 
                 "country": String, 
@@ -4735,15 +4740,10 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
                 "zipcode": String, 
               },  
               "addressVerified": Boolean, 
-              "emergencyNumber": { 
-                "e164": String, 
-                "number": String, 
-                "type": String, 
-              },  
               "state": String, 
+              "notes": String, 
               "version": Number, 
               "path": [String], 
-              "notes": String, 
               "profileImage": { 
                 "resolution": String, 
                 "imageUri": String, 
@@ -4829,6 +4829,11 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
               "address": { 
                 "city": String, 
                 "country": String, 
@@ -4839,15 +4844,10 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
                 "zipcode": String, 
               },  
               "addressVerified": Boolean, 
-              "emergencyNumber": { 
-                "e164": String, 
-                "number": String, 
-                "type": String, 
-              },  
               "state": String, 
+              "notes": String, 
               "version": Number, 
               "path": [String], 
-              "notes": String, 
               "profileImage": { 
                 "resolution": String, 
                 "imageUri": String, 
@@ -5073,6 +5073,11 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
         "locations": { 
           "id": String, 
           "name": String, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
           "address": { 
             "city": String, 
             "country": String, 
@@ -5083,15 +5088,10 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
             "zipcode": String, 
           },  
           "addressVerified": Boolean, 
-          "emergencyNumber": { 
-            "e164": String, 
-            "number": String, 
-            "type": String, 
-          },  
           "state": String, 
+          "notes": String, 
           "version": Number, 
           "path": [String], 
-          "notes": String, 
           "profileImage": { 
             "resolution": String, 
             "imageUri": String, 
@@ -5195,6 +5195,11 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
           "address": { 
             "city": String, 
             "country": String, 
@@ -5205,15 +5210,10 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
             "zipcode": String, 
           },  
           "addressVerified": Boolean, 
-          "emergencyNumber": { 
-            "e164": String, 
-            "number": String, 
-            "type": String, 
-          },  
           "state": String, 
+          "notes": String, 
           "version": Number, 
           "path": [String], 
-          "notes": String, 
           "profileImage": { 
             "resolution": String, 
             "imageUri": String, 
@@ -5561,6 +5561,11 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
             "locations": { 
               "id": String, 
               "name": String, 
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
               "address": { 
                 "city": String, 
                 "country": String, 
@@ -5571,15 +5576,10 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
                 "zipcode": String, 
               },  
               "addressVerified": Boolean, 
-              "emergencyNumber": { 
-                "e164": String, 
-                "number": String, 
-                "type": String, 
-              },  
               "state": String, 
+              "notes": String, 
               "version": Number, 
               "path": [String], 
-              "notes": String, 
               "profileImage": { 
                 "resolution": String, 
                 "imageUri": String, 
@@ -5665,6 +5665,11 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
               "address": { 
                 "city": String, 
                 "country": String, 
@@ -5675,15 +5680,10 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
                 "zipcode": String, 
               },  
               "addressVerified": Boolean, 
-              "emergencyNumber": { 
-                "e164": String, 
-                "number": String, 
-                "type": String, 
-              },  
               "state": String, 
+              "notes": String, 
               "version": Number, 
               "path": [String], 
-              "notes": String, 
               "profileImage": { 
                 "resolution": String, 
                 "imageUri": String, 

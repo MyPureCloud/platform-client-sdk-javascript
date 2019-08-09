@@ -588,6 +588,7 @@ Remove routing language from user
 Requires ANY permissions: 
 
 * routing:skill:assign
+* routing:language:assign
 
 
 
@@ -2516,6 +2517,11 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -2526,15 +2532,10 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 
@@ -2647,6 +2648,11 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -2657,15 +2663,10 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 
@@ -2979,6 +2980,11 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -2989,15 +2995,10 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 
@@ -3110,6 +3111,11 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -3120,15 +3126,10 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 
@@ -3253,6 +3254,7 @@ Update routing language proficiency or state.
 Requires ANY permissions: 
 
 * routing:skill:assign
+* routing:language:assign
 
 
 ### Request Body Schema
@@ -3342,6 +3344,7 @@ Add bulk routing language to user. Max limit 50 languages
 Requires ANY permissions: 
 
 * routing:skill:assign
+* routing:language:assign
 
 
 ### Request Body Schema
@@ -4871,6 +4874,7 @@ Add routing language to user
 Requires ANY permissions: 
 
 * routing:skill:assign
+* routing:language:assign
 
 
 ### Request Body Schema
@@ -5496,6 +5500,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
           "address": { 
             "city": String, 
             "country": String, 
@@ -5506,15 +5515,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
             "zipcode": String, 
           },  
           "addressVerified": Boolean, 
-          "emergencyNumber": { 
-            "e164": String, 
-            "number": String, 
-            "type": String, 
-          },  
           "state": String, 
+          "notes": String, 
           "version": Number, 
           "path": [String], 
-          "notes": String, 
           "profileImage": { 
             "resolution": String, 
             "imageUri": String, 
@@ -5618,6 +5622,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
           "address": { 
             "city": String, 
             "country": String, 
@@ -5628,15 +5637,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
             "zipcode": String, 
           },  
           "addressVerified": Boolean, 
-          "emergencyNumber": { 
-            "e164": String, 
-            "number": String, 
-            "type": String, 
-          },  
           "state": String, 
+          "notes": String, 
           "version": Number, 
           "path": [String], 
-          "notes": String, 
           "profileImage": { 
             "resolution": String, 
             "imageUri": String, 
@@ -5903,6 +5907,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
           "address": { 
             "city": String, 
             "country": String, 
@@ -5913,15 +5922,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
             "zipcode": String, 
           },  
           "addressVerified": Boolean, 
-          "emergencyNumber": { 
-            "e164": String, 
-            "number": String, 
-            "type": String, 
-          },  
           "state": String, 
+          "notes": String, 
           "version": Number, 
           "path": [String], 
-          "notes": String, 
           "profileImage": { 
             "resolution": String, 
             "imageUri": String, 
@@ -6025,6 +6029,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "emergencyNumber": { 
+            "e164": String, 
+            "number": String, 
+            "type": String, 
+          },  
           "address": { 
             "city": String, 
             "country": String, 
@@ -6035,15 +6044,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
             "zipcode": String, 
           },  
           "addressVerified": Boolean, 
-          "emergencyNumber": { 
-            "e164": String, 
-            "number": String, 
-            "type": String, 
-          },  
           "state": String, 
+          "notes": String, 
           "version": Number, 
           "path": [String], 
-          "notes": String, 
           "profileImage": { 
             "resolution": String, 
             "imageUri": String, 
@@ -6266,6 +6270,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "emergencyNumber": { 
+              "e164": String, 
+              "number": String, 
+              "type": String, 
+            },  
             "address": { 
               "city": String, 
               "country": String, 
@@ -6276,15 +6285,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
               "zipcode": String, 
             },  
             "addressVerified": Boolean, 
-            "emergencyNumber": { 
-              "e164": String, 
-              "number": String, 
-              "type": String, 
-            },  
             "state": String, 
+            "notes": String, 
             "version": Number, 
             "path": [String], 
-            "notes": String, 
             "profileImage": { 
               "resolution": String, 
               "imageUri": String, 
@@ -6379,6 +6383,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "emergencyNumber": { 
+              "e164": String, 
+              "number": String, 
+              "type": String, 
+            },  
             "address": { 
               "city": String, 
               "country": String, 
@@ -6389,15 +6398,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
               "zipcode": String, 
             },  
             "addressVerified": Boolean, 
-            "emergencyNumber": { 
-              "e164": String, 
-              "number": String, 
-              "type": String, 
-            },  
             "state": String, 
+            "notes": String, 
             "version": Number, 
             "path": [String], 
-            "notes": String, 
             "profileImage": { 
               "resolution": String, 
               "imageUri": String, 
@@ -6633,6 +6637,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -6643,15 +6652,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 
@@ -6764,6 +6768,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -6774,15 +6783,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 
@@ -7401,6 +7405,11 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -7411,15 +7420,10 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 
@@ -7532,6 +7536,11 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
         "address": { 
           "city": String, 
           "country": String, 
@@ -7542,15 +7551,10 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
           "zipcode": String, 
         },  
         "addressVerified": Boolean, 
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
         "state": String, 
+        "notes": String, 
         "version": Number, 
         "path": [String], 
-        "notes": String, 
         "profileImage": { 
           "resolution": String, 
           "imageUri": String, 

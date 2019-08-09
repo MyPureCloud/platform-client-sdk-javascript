@@ -1979,7 +1979,7 @@ function isSlowBuffer (obj) {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 53.0.0
+ * @version 54.0.0
  */
 class ApiClient {
 	/**
@@ -2732,7 +2732,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '53.0.0' });
+		//request.set({ 'purecloud-sdk': '54.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -2857,7 +2857,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -3171,7 +3171,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -3901,7 +3901,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -6405,7 +6405,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -7414,7 +7414,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -7494,7 +7494,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -8634,7 +8634,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -11774,7 +11774,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -12682,7 +12682,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -12853,7 +12853,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -12924,7 +12924,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -13054,7 +13054,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -13185,7 +13185,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -13640,7 +13640,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -14045,7 +14045,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -14736,7 +14736,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -16198,7 +16198,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -16466,7 +16466,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -16680,7 +16680,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -16740,6 +16740,31 @@ class LocationsApi {
 			'GET', 
 			{ 'locationId': locationId }, 
 			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get sublocations for location ID.
+	 * 
+	 * @param {String} locationId Location ID
+	 */
+	getLocationSublocations(locationId) { 
+		// verify the required parameter 'locationId' is set
+		if (locationId === undefined || locationId === null) {
+			throw 'Missing the required parameter "locationId" when calling getLocationSublocations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/locations/{locationId}/sublocations', 
+			'GET', 
+			{ 'locationId': locationId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -16891,7 +16916,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -17682,7 +17707,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -17833,7 +17858,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -18032,7 +18057,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -18203,7 +18228,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -18440,7 +18465,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -18605,7 +18630,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -19280,7 +19305,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -21943,7 +21968,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -22210,7 +22235,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -23881,7 +23906,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -25065,7 +25090,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -25389,7 +25414,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -27217,7 +27242,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -27237,7 +27262,7 @@ class SCIMApi {
 	 * 
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/users.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
 	 */
 	deleteScimUser(userId, opts) { 
 		opts = opts || {};
@@ -27266,7 +27291,7 @@ class SCIMApi {
 	 * 
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/v2/users.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
 	 */
 	deleteScimV2User(userId, opts) { 
 		opts = opts || {};
@@ -27295,7 +27320,7 @@ class SCIMApi {
 	 * 
 	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/groups.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
+	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
 	 */
 	getScimGroup(groupId, opts) { 
 		opts = opts || {};
@@ -27350,7 +27375,7 @@ class SCIMApi {
 	 * 
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/users.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
+	 * @param {String} opts.ifNoneMatch TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
 	 */
 	getScimUser(userId, opts) { 
 		opts = opts || {};
@@ -27409,7 +27434,7 @@ class SCIMApi {
 	 * 
 	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
+	 * @param {String} opts.ifNoneMatch TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. 
 	 */
 	getScimV2Group(groupId, opts) { 
 		opts = opts || {};
@@ -27467,7 +27492,7 @@ class SCIMApi {
 	 * Get the SCIM configuration
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
+	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. 
 	 */
 	getScimV2Serviceproviderconfig(opts) { 
 		opts = opts || {};
@@ -27492,7 +27517,7 @@ class SCIMApi {
 	 * 
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/v2/users.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
+	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
 	 */
 	getScimV2User(userId, opts) { 
 		opts = opts || {};
@@ -27550,9 +27575,9 @@ class SCIMApi {
 	 * Modify a group
 	 * 
 	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/groups.
-	 * @param {Object} body Group
+	 * @param {Object} body The information used to modify a group.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
 	 */
 	patchScimGroup(groupId, body, opts) { 
 		opts = opts || {};
@@ -27584,9 +27609,9 @@ class SCIMApi {
 	 * Modify a user
 	 * 
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/users.
-	 * @param {Object} body SCIM Patch Request
+	 * @param {Object} body The information used to modify a user.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
 	 */
 	patchScimUser(userId, body, opts) { 
 		opts = opts || {};
@@ -27618,9 +27643,9 @@ class SCIMApi {
 	 * Modify a group
 	 * 
 	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups.
-	 * @param {Object} body Group
+	 * @param {Object} body The information used to modify a group.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
 	 */
 	patchScimV2Group(groupId, body, opts) { 
 		opts = opts || {};
@@ -27652,9 +27677,9 @@ class SCIMApi {
 	 * Modify a user
 	 * 
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/v2/users.
-	 * @param {Object} body SCIM Patch Request
+	 * @param {Object} body The information used to modify a user.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
 	 */
 	patchScimV2User(userId, body, opts) { 
 		opts = opts || {};
@@ -27685,7 +27710,7 @@ class SCIMApi {
 	/**
 	 * Create a user
 	 * 
-	 * @param {Object} body SCIM Create User
+	 * @param {Object} body The information used to create a user.
 	 */
 	postScimUsers(body) { 
 		// verify the required parameter 'body' is set
@@ -27710,7 +27735,7 @@ class SCIMApi {
 	/**
 	 * Create a user
 	 * 
-	 * @param {Object} body SCIM Create User
+	 * @param {Object} body The information used to create a user.
 	 */
 	postScimV2Users(body) { 
 		// verify the required parameter 'body' is set
@@ -27736,9 +27761,9 @@ class SCIMApi {
 	 * Replace a group
 	 * 
 	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/groups.
-	 * @param {Object} body Group
+	 * @param {Object} body The information used to replace a group.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
 	 */
 	putScimGroup(groupId, body, opts) { 
 		opts = opts || {};
@@ -27770,9 +27795,9 @@ class SCIMApi {
 	 * Replace a user
 	 * 
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/users.
-	 * @param {Object} body User
+	 * @param {Object} body The information used to replace a user.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
 	 */
 	putScimUser(userId, body, opts) { 
 		opts = opts || {};
@@ -27804,9 +27829,9 @@ class SCIMApi {
 	 * Replace a group
 	 * 
 	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups.
-	 * @param {Object} body Group
+	 * @param {Object} body The information used to replace a group.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
 	 */
 	putScimV2Group(groupId, body, opts) { 
 		opts = opts || {};
@@ -27838,9 +27863,9 @@ class SCIMApi {
 	 * Replace a user
 	 * 
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/v2/users.
-	 * @param {Object} body User
+	 * @param {Object} body The information used to replace a user.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
 	 */
 	putScimV2User(userId, body, opts) { 
 		opts = opts || {};
@@ -27874,7 +27899,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -28227,7 +28252,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -28678,11 +28703,107 @@ class SearchApi {
 
 }
 
+class SpeechTextAnalyticsApi {
+	/**
+	 * SpeechTextAnalytics service.
+	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
+	 * @version 54.0.0
+	 */
+
+	/**
+	 * Constructs a new SpeechTextAnalyticsApi. 
+	 * @alias module:purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
+	 * @class
+	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+	 */
+	constructor(apiClient) {
+		this.apiClient = apiClient || ApiClient.instance;
+	}
+
+
+	/**
+	 * Get a Speech &amp; Text Analytics program by id
+	 * 
+	 * @param {String} programId The id of the topic to get
+	 */
+	getSpeechandtextanalyticsProgram(programId) { 
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null) {
+			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgram';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/{programId}', 
+			'GET', 
+			{ 'programId': programId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Speech &amp; Text Analytics topic by id
+	 * 
+	 * @param {String} topicId The id of the topic to get
+	 */
+	getSpeechandtextanalyticsTopic(topicId) { 
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null) {
+			throw 'Missing the required parameter "topicId" when calling getSpeechandtextanalyticsTopic';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/topics/{topicId}', 
+			'GET', 
+			{ 'topicId': topicId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create new Speech &amp; Text Analytics topic
+	 * 
+	 * @param {Object} body The topic to create
+	 */
+	postSpeechandtextanalyticsTopics(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTopics';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/topics', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+}
+
 class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -28829,7 +28950,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -28968,7 +29089,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -32321,7 +32442,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -32407,7 +32528,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -32591,7 +32712,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -32979,7 +33100,6 @@ class UsersApi {
 	 * @param {Array.<String>} opts.jid jid
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
-	 * @param {Object} opts.state Only list users of this state (default to active)
 	 */
 	getProfilesUsers(opts) { 
 		opts = opts || {};
@@ -32989,7 +33109,7 @@ class UsersApi {
 			'/api/v2/profiles/users', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jid': this.apiClient.buildCollectionParam(opts['jid'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'state': opts['state'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jid': this.apiClient.buildCollectionParam(opts['jid'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -34556,7 +34676,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -34667,7 +34787,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -35304,7 +35424,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -35848,7 +35968,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -35994,7 +36114,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 53.0.0
+	 * @version 54.0.0
 	 */
 
 	/**
@@ -38251,7 +38371,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 53.0.0
+ * @version 54.0.0
  */
 class platformClient {
 	constructor() {
@@ -38440,6 +38560,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/SearchApi}
 		 */
 		this.SearchApi = SearchApi;
+		/**
+		 * The SpeechTextAnalyticsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/SpeechTextAnalyticsApi}
+		 */
+		this.SpeechTextAnalyticsApi = SpeechTextAnalyticsApi;
 		/**
 		 * The StationsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/StationsApi}
