@@ -37,6 +37,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingQueuesMe**](RoutingApi.html#getRoutingQueuesMe) | **GET** /api/v2/routing/queues/me | Get a paged listing of queues the user is a member of.
 [**getRoutingSkill**](RoutingApi.html#getRoutingSkill) | **GET** /api/v2/routing/skills/{skillId} | Get Routing Skill
 [**getRoutingSkills**](RoutingApi.html#getRoutingSkills) | **GET** /api/v2/routing/skills | Get the list of routing skills.
+[**getRoutingSmsAddress**](RoutingApi.html#getRoutingSmsAddress) | **GET** /api/v2/routing/sms/addresses/{addressId} | Get an Address by Id for SMS
+[**getRoutingSmsAddresses**](RoutingApi.html#getRoutingSmsAddresses) | **GET** /api/v2/routing/sms/addresses | Get a list of Addresses for SMS
 [**getRoutingSmsAvailablephonenumbers**](RoutingApi.html#getRoutingSmsAvailablephonenumbers) | **GET** /api/v2/routing/sms/availablephonenumbers | Get a list of available phone numbers for SMS provisioning.
 [**getRoutingSmsPhonenumber**](RoutingApi.html#getRoutingSmsPhonenumber) | **GET** /api/v2/routing/sms/phonenumbers/{addressId} | Get a phone number provisioned for SMS.
 [**getRoutingSmsPhonenumbers**](RoutingApi.html#getRoutingSmsPhonenumbers) | **GET** /api/v2/routing/sms/phonenumbers | Get a list of provisioned phone numbers.
@@ -1833,6 +1835,120 @@ apiInstance.getRoutingSkills(opts)
 
 **SkillEntityListing**
 
+<a name="getRoutingSmsAddress"></a>
+
+# SmsAddress getRoutingSmsAddress(addressId)
+
+
+
+GET /api/v2/routing/sms/addresses/{addressId}
+
+Get an Address by Id for SMS
+
+
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let addressId = "addressId_example"; // String | Address ID
+
+apiInstance.getRoutingSmsAddress(addressId)
+  .then((data) => {
+    console.log(`getRoutingSmsAddress success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingSmsAddress');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **addressId** | **String** | Address ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SmsAddress**
+
+<a name="getRoutingSmsAddresses"></a>
+
+# SmsAddressEntityListing getRoutingSmsAddresses(opts)
+
+
+
+GET /api/v2/routing/sms/addresses
+
+Get a list of Addresses for SMS
+
+
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getRoutingSmsAddresses(opts)
+  .then((data) => {
+    console.log(`getRoutingSmsAddresses success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingSmsAddresses');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**SmsAddressEntityListing**
+
 <a name="getRoutingSmsAvailablephonenumbers"></a>
 
 # SMSAvailablePhoneNumberEntityListing getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, opts)
@@ -2693,6 +2809,7 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -3156,6 +3273,7 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -4602,7 +4720,7 @@ apiInstance.postRoutingSkills(body)
 
 <a name="postRoutingSmsAddresses"></a>
 
-# SmsPhoneNumber postRoutingSmsAddresses(body)
+# SmsAddress postRoutingSmsAddresses(body)
 
 
 
@@ -4686,7 +4804,7 @@ apiInstance.postRoutingSmsAddresses(body)
 
 ### Return type
 
-**SmsPhoneNumber**
+**SmsAddress**
 
 <a name="postRoutingSmsPhonenumbers"></a>
 
@@ -4729,6 +4847,7 @@ SmsPhoneNumberProvision <a href="#" onclick="return copySmsPhoneNumberProvisionE
   "phoneNumber": String, 
   "phoneNumberType": String, 
   "countryCode": String, 
+  "addressId": String, 
   "selfUri": String, 
 }
 ```
@@ -5667,6 +5786,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         },  
         "addresses": { 
           "address": String, 
+          "extension": String, 
           "display": String, 
           "type": String, 
           "mediaType": String, 
@@ -6074,6 +6194,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         },  
         "addresses": { 
           "address": String, 
+          "extension": String, 
           "display": String, 
           "type": String, 
           "mediaType": String, 
@@ -6428,6 +6549,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 
@@ -6813,6 +6935,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -7581,6 +7704,7 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -7616,6 +7740,17 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
   "cancellationDate": Date, 
   "renewalDate": Date, 
   "autoRenewable": String, 
+  "addressId": { 
+    "id": String, 
+    "name": String, 
+    "street": String, 
+    "city": String, 
+    "region": String, 
+    "postalCode": String, 
+    "countryCode": String, 
+    "validated": Boolean, 
+    "selfUri": String, 
+  },  
   "selfUri": String, 
 }
 ```

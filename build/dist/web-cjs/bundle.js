@@ -1979,7 +1979,7 @@ function isSlowBuffer (obj) {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 54.0.0
+ * @version 55.0.0
  */
 class ApiClient {
 	/**
@@ -2222,6 +2222,8 @@ class ApiClient {
 	 * @param {string} redirectUri - The redirect URI of the OAuth Implicit Grant client
 	 * @param {object} opts - (optional) Additional options 
 	 * @param {string} opts.state - (optional) An arbitrary string to be passed back with the login response. Used for client apps to associate login responses with a request.
+	 * @param {string} opts.org - (optional) The organization name that would normally used when specifying an organization name when logging in. This is only used when a provider is also specified.
+	 * @param {string} opts.provider - (optional) Authentication provider to log in with e.g. okta, adfs, salesforce, onelogin. This is only used when an org is also specified.
 	 */
 	loginImplicitGrant(clientId, redirectUri, opts) {
 		// Check for auth token in hash
@@ -2233,6 +2235,13 @@ class ApiClient {
 		if (!opts) opts = {};
 
 		return new Promise((resolve, reject) => {
+			// Abort if org and provider are not set together
+			if (opts.org && !opts.provider) {
+				reject(new Error('opts.provider must be set if opts.org is set'));
+			} else if (opts.provider && !opts.org) {
+				reject(new Error('opts.org must be set if opts.provider is set'));
+			}
+
 			// Abort on auth error
 			if (hash && hash.error) {
 				hash.accessToken = undefined;
@@ -2255,8 +2264,9 @@ class ApiClient {
 						redirect_uri: encodeURI(this.redirectUri),
 						response_type: 'token'
 					};
-					if (opts.state)
-						query.state = encodeURIComponent(opts.state);
+					if (opts.state) query.state = encodeURIComponent(opts.state);
+					if (opts.org) query.org = encodeURIComponent(opts.org);
+					if (opts.provider) query.provider = encodeURIComponent(opts.provider);
 
 					var url = this._buildAuthUrl('oauth/authorize', query);
 					this._debugTrace(`Implicit grant: redirecting to ${url} for authorization...`);
@@ -2732,7 +2742,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '54.0.0' });
+		//request.set({ 'purecloud-sdk': '55.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -2857,7 +2867,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -3171,7 +3181,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -3901,7 +3911,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -6405,7 +6415,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -7414,7 +7424,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -7494,7 +7504,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -8634,7 +8644,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -8764,6 +8774,81 @@ class ConversationsApi {
 			'/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId}', 
 			'DELETE', 
 			{ 'conversationId': conversationId,'attachmentId': attachmentId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a Facebook messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 */
+	deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsFacebookIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/facebook/{integrationId}', 
+			'DELETE', 
+			{ 'integrationId': integrationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a LINE messenger integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 */
+	deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsLineIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
+			'DELETE', 
+			{ 'integrationId': integrationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a Twitter messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 */
+	deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsTwitterIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
+			'DELETE', 
+			{ 'integrationId': integrationId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -9838,6 +9923,211 @@ class ConversationsApi {
 			'GET', 
 			{  }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Integrations
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getConversationsMessagingIntegrations(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Facebook Integrations
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getConversationsMessagingIntegrationsFacebook(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/facebook', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Facebook messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 */
+	getConversationsMessagingIntegrationsFacebookIntegrationId(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsFacebookIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/facebook/{integrationId}', 
+			'GET', 
+			{ 'integrationId': integrationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of LINE messenger Integrations
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getConversationsMessagingIntegrationsLine(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/line', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a LINE messenger integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 */
+	getConversationsMessagingIntegrationsLineIntegrationId(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsLineIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
+			'GET', 
+			{ 'integrationId': integrationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Twitter Integrations
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getConversationsMessagingIntegrationsTwitter(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/twitter', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Twitter messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 */
+	getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsTwitterIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
+			'GET', 
+			{ 'integrationId': integrationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Messaging Stickers
+	 * 
+	 * @param {String} messengerType Messenger Type
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getConversationsMessagingSticker(messengerType, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'messengerType' is set
+		if (messengerType === undefined || messengerType === null) {
+			throw 'Missing the required parameter "messengerType" when calling getConversationsMessagingSticker';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/stickers/{messengerType}', 
+			'GET', 
+			{ 'messengerType': messengerType }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -11669,6 +11959,81 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Create a Facebook Integration
+	 * 
+	 * @param {Object} body FacebookIntegrationRequest
+	 */
+	postConversationsMessagingIntegrationsFacebook(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsFacebook';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/facebook', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a LINE messenger Integration
+	 * 
+	 * @param {Object} body LineIntegrationRequest
+	 */
+	postConversationsMessagingIntegrationsLine(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsLine';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/line', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a Twitter Integration
+	 * 
+	 * @param {Object} body TwitterIntegrationRequest
+	 */
+	postConversationsMessagingIntegrationsTwitter(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsTwitter';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/twitter', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Set flagged reason on conversation participant to indicate bad conversation quality.
 	 * 
 	 * @param {String} conversationId conversation ID
@@ -11768,13 +12133,43 @@ class ConversationsApi {
 		);
 	}
 
+	/**
+	 * Update a LINE messenger integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} body LineIntegrationRequest
+	 */
+	putConversationsMessagingIntegrationsLineIntegrationId(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling putConversationsMessagingIntegrationsLineIntegrationId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsMessagingIntegrationsLineIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
+			'PUT', 
+			{ 'integrationId': integrationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
 }
 
 class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -12682,7 +13077,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -12853,7 +13248,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -12924,7 +13319,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -13054,7 +13449,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -13185,7 +13580,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -13640,7 +14035,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -14045,7 +14440,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -14736,7 +15131,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -16198,7 +16593,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -16466,7 +16861,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -16680,7 +17075,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -16916,7 +17311,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -16930,81 +17325,6 @@ class MessagingApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
-
-	/**
-	 * Delete a Facebook messaging integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 */
-	deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsFacebookIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/facebook/{integrationId}', 
-			'DELETE', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a LINE messenger integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 */
-	deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsLineIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
-			'DELETE', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a Twitter messaging integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 */
-	deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsTwitterIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
-			'DELETE', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
 
 	/**
 	 * Delete a Facebook messaging integration
@@ -17072,211 +17392,6 @@ class MessagingApi {
 			'DELETE', 
 			{ 'integrationId': integrationId }, 
 			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of Integrations
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getConversationsMessagingIntegrations(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations', 
-			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of Facebook Integrations
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getConversationsMessagingIntegrationsFacebook(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/facebook', 
-			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a Facebook messaging integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 */
-	getConversationsMessagingIntegrationsFacebookIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsFacebookIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/facebook/{integrationId}', 
-			'GET', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of LINE messenger Integrations
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getConversationsMessagingIntegrationsLine(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/line', 
-			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a LINE messenger integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 */
-	getConversationsMessagingIntegrationsLineIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsLineIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
-			'GET', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of Twitter Integrations
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getConversationsMessagingIntegrationsTwitter(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/twitter', 
-			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a Twitter messaging integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 */
-	getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsTwitterIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
-			'GET', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of Messaging Stickers
-	 * 
-	 * @param {String} messengerType Messenger Type
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getConversationsMessagingSticker(messengerType, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'messengerType' is set
-		if (messengerType === undefined || messengerType === null) {
-			throw 'Missing the required parameter "messengerType" when calling getConversationsMessagingSticker';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/stickers/{messengerType}', 
-			'GET', 
-			{ 'messengerType': messengerType }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -17496,81 +17611,6 @@ class MessagingApi {
 	 * 
 	 * @param {Object} body FacebookIntegrationRequest
 	 */
-	postConversationsMessagingIntegrationsFacebook(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsFacebook';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/facebook', 
-			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a LINE messenger Integration
-	 * 
-	 * @param {Object} body LineIntegrationRequest
-	 */
-	postConversationsMessagingIntegrationsLine(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsLine';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/line', 
-			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a Twitter Integration
-	 * 
-	 * @param {Object} body TwitterIntegrationRequest
-	 */
-	postConversationsMessagingIntegrationsTwitter(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsTwitter';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/twitter', 
-			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a Facebook Integration
-	 * 
-	 * @param {Object} body FacebookIntegrationRequest
-	 */
 	postMessagingIntegrationsFacebook(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
@@ -17647,36 +17687,6 @@ class MessagingApi {
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body LineIntegrationRequest
 	 */
-	putConversationsMessagingIntegrationsLineIntegrationId(integrationId, body) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling putConversationsMessagingIntegrationsLineIntegrationId';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putConversationsMessagingIntegrationsLineIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
-			'PUT', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a LINE messenger integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} body LineIntegrationRequest
-	 */
 	putMessagingIntegrationsLineIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
@@ -17707,7 +17717,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -17858,7 +17868,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -18057,7 +18067,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -18228,7 +18238,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -18465,7 +18475,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -18506,6 +18516,26 @@ class OrganizationApi {
 	}
 
 	/**
+	 * Get the list of domains that will be allowed to embed PureCloud applications
+	 * 
+	 */
+	getOrganizationsEmbeddedintegration() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/embeddedintegration', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get organization.
 	 * 
 	 */
@@ -18526,7 +18556,7 @@ class OrganizationApi {
 	}
 
 	/**
-	 * Get organization whitelist settings
+	 * Use PUT /api/v2/organizations/embeddedintegration instead
 	 * 
 	 */
 	getOrganizationsWhitelist() { 
@@ -18576,6 +18606,31 @@ class OrganizationApi {
 	}
 
 	/**
+	 * Update the list of domains that will be allowed to embed PureCloud applications
+	 * 
+	 * @param {Object} body Whitelist settings
+	 */
+	putOrganizationsEmbeddedintegration(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOrganizationsEmbeddedintegration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/embeddedintegration', 
+			'PUT', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update organization.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -18600,7 +18655,7 @@ class OrganizationApi {
 	}
 
 	/**
-	 * Update organization whitelist settings
+	 * Use PUT /api/v2/organizations/embeddedintegration instead
 	 * 
 	 * @param {Object} body Whitelist settings
 	 */
@@ -18630,7 +18685,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -19305,7 +19360,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -21968,7 +22023,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -22235,7 +22290,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -23906,7 +23961,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -24385,6 +24440,10 @@ class RecordingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.sortBy Sort by (default to userId)
+	 * @param {Object} opts.state Filter by state
+	 * @param {Boolean} opts.showOnlyMyJobs Show only my jobs
+	 * @param {Object} opts.jobType Job Type (Can be left empty for both)
 	 */
 	getRecordingJobs(opts) { 
 		opts = opts || {};
@@ -24394,7 +24453,7 @@ class RecordingApi {
 			'/api/v2/recording/jobs', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'state': opts['state'],'showOnlyMyJobs': opts['showOnlyMyJobs'],'jobType': opts['jobType'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -25090,7 +25149,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -25414,7 +25473,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -26243,6 +26302,56 @@ class RoutingApi {
 			'GET', 
 			{  }, 
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an Address by Id for SMS
+	 * 
+	 * @param {String} addressId Address ID
+	 */
+	getRoutingSmsAddress(addressId) { 
+		// verify the required parameter 'addressId' is set
+		if (addressId === undefined || addressId === null) {
+			throw 'Missing the required parameter "addressId" when calling getRoutingSmsAddress';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/sms/addresses/{addressId}', 
+			'GET', 
+			{ 'addressId': addressId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Addresses for SMS
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getRoutingSmsAddresses(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/sms/addresses', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -27242,7 +27351,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -27899,7 +28008,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -28252,7 +28361,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -28703,107 +28812,11 @@ class SearchApi {
 
 }
 
-class SpeechTextAnalyticsApi {
-	/**
-	 * SpeechTextAnalytics service.
-	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 54.0.0
-	 */
-
-	/**
-	 * Constructs a new SpeechTextAnalyticsApi. 
-	 * @alias module:purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @class
-	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
-	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
-	 */
-	constructor(apiClient) {
-		this.apiClient = apiClient || ApiClient.instance;
-	}
-
-
-	/**
-	 * Get a Speech &amp; Text Analytics program by id
-	 * 
-	 * @param {String} programId The id of the topic to get
-	 */
-	getSpeechandtextanalyticsProgram(programId) { 
-		// verify the required parameter 'programId' is set
-		if (programId === undefined || programId === null) {
-			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgram';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/speechandtextanalytics/programs/{programId}', 
-			'GET', 
-			{ 'programId': programId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a Speech &amp; Text Analytics topic by id
-	 * 
-	 * @param {String} topicId The id of the topic to get
-	 */
-	getSpeechandtextanalyticsTopic(topicId) { 
-		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
-			throw 'Missing the required parameter "topicId" when calling getSpeechandtextanalyticsTopic';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/speechandtextanalytics/topics/{topicId}', 
-			'GET', 
-			{ 'topicId': topicId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create new Speech &amp; Text Analytics topic
-	 * 
-	 * @param {Object} body The topic to create
-	 */
-	postSpeechandtextanalyticsTopics(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTopics';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/speechandtextanalytics/topics', 
-			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-}
-
 class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -28950,7 +28963,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -29089,7 +29102,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -30614,6 +30627,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.name Name
 	 * @param {String} opts.siteId Filter by site.id
+	 * @param {String} opts.externalTrunkBasesIds Filter by externalTrunkBases.ids
 	 * @param {String} opts.sortBy Sort by (default to name)
 	 */
 	getTelephonyProvidersEdgesOutboundroutes(opts) { 
@@ -30624,7 +30638,7 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/outboundroutes', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'site.id': opts['siteId'],'sortBy': opts['sortBy'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'site.id': opts['siteId'],'externalTrunkBases.ids': opts['externalTrunkBasesIds'],'sortBy': opts['sortBy'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -30998,6 +31012,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.name Name
+	 * @param {String} opts.externalTrunkBasesIds externalTrunkBases.ids
 	 * @param {String} opts.sortBy Sort by (default to name)
 	 */
 	getTelephonyProvidersEdgesSiteOutboundroutes(siteId, opts) { 
@@ -31012,7 +31027,7 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes', 
 			'GET', 
 			{ 'siteId': siteId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'sortBy': opts['sortBy'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'externalTrunkBases.ids': opts['externalTrunkBasesIds'],'sortBy': opts['sortBy'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -32442,7 +32457,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -32528,7 +32543,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -32712,7 +32727,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -34676,7 +34691,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -34787,7 +34802,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -35424,7 +35439,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -35968,7 +35983,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -36114,7 +36129,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -38371,7 +38386,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 54.0.0
+ * @version 55.0.0
  */
 class platformClient {
 	constructor() {
@@ -38560,11 +38575,6 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/SearchApi}
 		 */
 		this.SearchApi = SearchApi;
-		/**
-		 * The SpeechTextAnalyticsApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/SpeechTextAnalyticsApi}
-		 */
-		this.SpeechTextAnalyticsApi = SpeechTextAnalyticsApi;
 		/**
 		 * The StationsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/StationsApi}

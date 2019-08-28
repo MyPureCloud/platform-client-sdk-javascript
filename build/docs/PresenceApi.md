@@ -774,6 +774,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -1144,6 +1145,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -1600,6 +1602,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -1970,6 +1973,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 

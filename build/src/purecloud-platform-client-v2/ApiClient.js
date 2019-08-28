@@ -2,7 +2,7 @@ import superagent from 'superagent';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 54.0.0
+ * @version 55.0.0
  */
 class ApiClient {
 	/**
@@ -245,6 +245,8 @@ class ApiClient {
 	 * @param {string} redirectUri - The redirect URI of the OAuth Implicit Grant client
 	 * @param {object} opts - (optional) Additional options 
 	 * @param {string} opts.state - (optional) An arbitrary string to be passed back with the login response. Used for client apps to associate login responses with a request.
+	 * @param {string} opts.org - (optional) The organization name that would normally used when specifying an organization name when logging in. This is only used when a provider is also specified.
+	 * @param {string} opts.provider - (optional) Authentication provider to log in with e.g. okta, adfs, salesforce, onelogin. This is only used when an org is also specified.
 	 */
 	loginImplicitGrant(clientId, redirectUri, opts) {
 		// Check for auth token in hash
@@ -256,6 +258,13 @@ class ApiClient {
 		if (!opts) opts = {};
 
 		return new Promise((resolve, reject) => {
+			// Abort if org and provider are not set together
+			if (opts.org && !opts.provider) {
+				reject(new Error('opts.provider must be set if opts.org is set'));
+			} else if (opts.provider && !opts.org) {
+				reject(new Error('opts.org must be set if opts.provider is set'));
+			}
+
 			// Abort on auth error
 			if (hash && hash.error) {
 				hash.accessToken = undefined;
@@ -278,8 +287,9 @@ class ApiClient {
 						redirect_uri: encodeURI(this.redirectUri),
 						response_type: 'token'
 					};
-					if (opts.state)
-						query.state = encodeURIComponent(opts.state);
+					if (opts.state) query.state = encodeURIComponent(opts.state);
+					if (opts.org) query.org = encodeURIComponent(opts.org);
+					if (opts.provider) query.provider = encodeURIComponent(opts.provider);
 
 					var url = this._buildAuthUrl('oauth/authorize', query);
 					this._debugTrace(`Implicit grant: redirecting to ${url} for authorization...`);
@@ -755,7 +765,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '54.0.0' });
+		//request.set({ 'purecloud-sdk': '55.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);

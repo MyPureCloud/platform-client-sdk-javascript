@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -834,6 +834,56 @@ class RoutingApi {
 			'GET', 
 			{  }, 
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an Address by Id for SMS
+	 * 
+	 * @param {String} addressId Address ID
+	 */
+	getRoutingSmsAddress(addressId) { 
+		// verify the required parameter 'addressId' is set
+		if (addressId === undefined || addressId === null) {
+			throw 'Missing the required parameter "addressId" when calling getRoutingSmsAddress';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/sms/addresses/{addressId}', 
+			'GET', 
+			{ 'addressId': addressId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Addresses for SMS
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getRoutingSmsAddresses(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/sms/addresses', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
 			{  }, 
 			{  }, 
 			null, 

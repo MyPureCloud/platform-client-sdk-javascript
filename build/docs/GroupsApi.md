@@ -734,6 +734,7 @@ GroupCreate <a href="#" onclick="return copyGroupCreateExample()">Copy</a>
   },  
   "addresses": { 
     "address": String, 
+    "extension": String, 
     "display": String, 
     "type": String, 
     "mediaType": String, 
@@ -982,6 +983,7 @@ GroupUpdate <a href="#" onclick="return copyGroupUpdateExample()">Copy</a>
   },  
   "addresses": { 
     "address": String, 
+    "extension": String, 
     "display": String, 
     "type": String, 
     "mediaType": String, 

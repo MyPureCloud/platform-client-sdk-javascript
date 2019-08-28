@@ -11,6 +11,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteConversationParticipantFlaggedreason**](ConversationsApi.html#deleteConversationParticipantFlaggedreason) | **DELETE** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Remove flagged reason from conversation participant.
 [**deleteConversationsCallParticipantConsult**](ConversationsApi.html#deleteConversationsCallParticipantConsult) | **DELETE** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Cancel the transfer
 [**deleteConversationsEmailMessagesDraftAttachment**](ConversationsApi.html#deleteConversationsEmailMessagesDraftAttachment) | **DELETE** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId} | Delete attachment from draft
+[**deleteConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsFacebookIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Delete a Facebook messaging integration
+[**deleteConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsLineIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/line/{integrationId} | Delete a LINE messenger integration
+[**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Delete a Twitter messaging integration
 [**getAnalyticsConversationDetails**](ConversationsApi.html#getAnalyticsConversationDetails) | **GET** /api/v2/analytics/conversations/{conversationId}/details | Get a conversation by id
 [**getAnalyticsConversationsDetails**](ConversationsApi.html#getAnalyticsConversationsDetails) | **GET** /api/v2/analytics/conversations/details | Gets multiple conversations by id
 [**getConversation**](ConversationsApi.html#getConversation) | **GET** /api/v2/conversations/{conversationId} | Get conversation
@@ -50,6 +53,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsMessageParticipantWrapup**](ConversationsApi.html#getConversationsMessageParticipantWrapup) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
 [**getConversationsMessageParticipantWrapupcodes**](ConversationsApi.html#getConversationsMessageParticipantWrapupcodes) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
 [**getConversationsMessages**](ConversationsApi.html#getConversationsMessages) | **GET** /api/v2/conversations/messages | Get active message conversations for the logged in user
+[**getConversationsMessagingIntegrations**](ConversationsApi.html#getConversationsMessagingIntegrations) | **GET** /api/v2/conversations/messaging/integrations | Get a list of Integrations
+[**getConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebook) | **GET** /api/v2/conversations/messaging/integrations/facebook | Get a list of Facebook Integrations
+[**getConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebookIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Get a Facebook messaging integration
+[**getConversationsMessagingIntegrationsLine**](ConversationsApi.html#getConversationsMessagingIntegrationsLine) | **GET** /api/v2/conversations/messaging/integrations/line | Get a list of LINE messenger Integrations
+[**getConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsLineIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/line/{integrationId} | Get a LINE messenger integration
+[**getConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#getConversationsMessagingIntegrationsTwitter) | **GET** /api/v2/conversations/messaging/integrations/twitter | Get a list of Twitter Integrations
+[**getConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsTwitterIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Get a Twitter messaging integration
+[**getConversationsMessagingSticker**](ConversationsApi.html#getConversationsMessagingSticker) | **GET** /api/v2/conversations/messaging/stickers/{messengerType} | Get a list of Messaging Stickers
 [**patchConversationParticipant**](ConversationsApi.html#patchConversationParticipant) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId} | Update a participant.
 [**patchConversationParticipantAttributes**](ConversationsApi.html#patchConversationParticipantAttributes) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationsCall**](ConversationsApi.html#patchConversationsCall) | **PATCH** /api/v2/conversations/calls/{conversationId} | Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants
@@ -106,9 +117,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsMessageMessagesBulk**](ConversationsApi.html#postConversationsMessageMessagesBulk) | **POST** /api/v2/conversations/messages/{conversationId}/messages/bulk | Get messages in batch
 [**postConversationsMessageParticipantReplace**](ConversationsApi.html#postConversationsMessageParticipantReplace) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationsMessages**](ConversationsApi.html#postConversationsMessages) | **POST** /api/v2/conversations/messages | Create an outbound messaging conversation.
+[**postConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#postConversationsMessagingIntegrationsFacebook) | **POST** /api/v2/conversations/messaging/integrations/facebook | Create a Facebook Integration
+[**postConversationsMessagingIntegrationsLine**](ConversationsApi.html#postConversationsMessagingIntegrationsLine) | **POST** /api/v2/conversations/messaging/integrations/line | Create a LINE messenger Integration
+[**postConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#postConversationsMessagingIntegrationsTwitter) | **POST** /api/v2/conversations/messaging/integrations/twitter | Create a Twitter Integration
 [**putConversationParticipantFlaggedreason**](ConversationsApi.html#putConversationParticipantFlaggedreason) | **PUT** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Set flagged reason on conversation participant to indicate bad conversation quality.
 [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | **PUT** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata | Set uuiData to be sent on future commands.
 [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | **PUT** /api/v2/conversations/emails/{conversationId}/messages/draft | Update conversation draft reply
+[**putConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#putConversationsMessagingIntegrationsLineIntegrationId) | **PUT** /api/v2/conversations/messaging/integrations/line/{integrationId} | Update a LINE messenger integration
 {: class="table table-striped"}
 
 <a name="deleteConversationParticipantCode"></a>
@@ -331,6 +346,171 @@ apiInstance.deleteConversationsEmailMessagesDraftAttachment(conversationId, atta
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **attachmentId** | **String** | attachmentId |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteConversationsMessagingIntegrationsFacebookIntegrationId"></a>
+
+# void deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId)
+
+
+
+DELETE /api/v2/conversations/messaging/integrations/facebook/{integrationId}
+
+Delete a Facebook messaging integration
+
+
+
+Requires ANY permissions: 
+
+* messaging:integration:delete
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId)
+  .then(() => {
+    console.log('deleteConversationsMessagingIntegrationsFacebookIntegrationId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsMessagingIntegrationsFacebookIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteConversationsMessagingIntegrationsLineIntegrationId"></a>
+
+# void deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId)
+
+
+
+DELETE /api/v2/conversations/messaging/integrations/line/{integrationId}
+
+Delete a LINE messenger integration
+
+
+
+Requires ANY permissions: 
+
+* messaging:integration:delete
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId)
+  .then(() => {
+    console.log('deleteConversationsMessagingIntegrationsLineIntegrationId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsMessagingIntegrationsLineIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteConversationsMessagingIntegrationsTwitterIntegrationId"></a>
+
+# void deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId)
+
+
+
+DELETE /api/v2/conversations/messaging/integrations/twitter/{integrationId}
+
+Delete a Twitter messaging integration
+
+
+
+Requires ANY permissions: 
+
+* messaging:integration:delete
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId)
+  .then(() => {
+    console.log('deleteConversationsMessagingIntegrationsTwitterIntegrationId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsMessagingIntegrationsTwitterIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2495,6 +2675,468 @@ This endpoint does not need any parameter.
 
 **MessageConversationEntityListing**
 
+<a name="getConversationsMessagingIntegrations"></a>
+
+# MessagingIntegrationEntityListing getConversationsMessagingIntegrations(opts)
+
+
+
+GET /api/v2/conversations/messaging/integrations
+
+Get a list of Integrations
+
+
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getConversationsMessagingIntegrations(opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingIntegrationEntityListing**
+
+<a name="getConversationsMessagingIntegrationsFacebook"></a>
+
+# FacebookIntegrationEntityListing getConversationsMessagingIntegrationsFacebook(opts)
+
+
+
+GET /api/v2/conversations/messaging/integrations/facebook
+
+Get a list of Facebook Integrations
+
+
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getConversationsMessagingIntegrationsFacebook(opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsFacebook success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsFacebook');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**FacebookIntegrationEntityListing**
+
+<a name="getConversationsMessagingIntegrationsFacebookIntegrationId"></a>
+
+# FacebookIntegration getConversationsMessagingIntegrationsFacebookIntegrationId(integrationId)
+
+
+
+GET /api/v2/conversations/messaging/integrations/facebook/{integrationId}
+
+Get a Facebook messaging integration
+
+
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.getConversationsMessagingIntegrationsFacebookIntegrationId(integrationId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsFacebookIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsFacebookIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**FacebookIntegration**
+
+<a name="getConversationsMessagingIntegrationsLine"></a>
+
+# LineIntegrationEntityListing getConversationsMessagingIntegrationsLine(opts)
+
+
+
+GET /api/v2/conversations/messaging/integrations/line
+
+Get a list of LINE messenger Integrations
+
+
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getConversationsMessagingIntegrationsLine(opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsLine success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsLine');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**LineIntegrationEntityListing**
+
+<a name="getConversationsMessagingIntegrationsLineIntegrationId"></a>
+
+# LineIntegration getConversationsMessagingIntegrationsLineIntegrationId(integrationId)
+
+
+
+GET /api/v2/conversations/messaging/integrations/line/{integrationId}
+
+Get a LINE messenger integration
+
+
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.getConversationsMessagingIntegrationsLineIntegrationId(integrationId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsLineIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsLineIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LineIntegration**
+
+<a name="getConversationsMessagingIntegrationsTwitter"></a>
+
+# TwitterIntegrationEntityListing getConversationsMessagingIntegrationsTwitter(opts)
+
+
+
+GET /api/v2/conversations/messaging/integrations/twitter
+
+Get a list of Twitter Integrations
+
+
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getConversationsMessagingIntegrationsTwitter(opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsTwitter success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsTwitter');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**TwitterIntegrationEntityListing**
+
+<a name="getConversationsMessagingIntegrationsTwitterIntegrationId"></a>
+
+# TwitterIntegration getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId)
+
+
+
+GET /api/v2/conversations/messaging/integrations/twitter/{integrationId}
+
+Get a Twitter messaging integration
+
+
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsTwitterIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsTwitterIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**TwitterIntegration**
+
+<a name="getConversationsMessagingSticker"></a>
+
+# MessagingStickerEntityListing getConversationsMessagingSticker(messengerType, opts)
+
+
+
+GET /api/v2/conversations/messaging/stickers/{messengerType}
+
+Get a list of Messaging Stickers
+
+
+
+Requires ANY permissions: 
+
+* conversation:message:create
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let messengerType = "messengerType_example"; // String | Messenger Type
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getConversationsMessagingSticker(messengerType, opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingSticker success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingSticker');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messengerType** | **String** | Messenger Type |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingStickerEntityListing**
+
 <a name="patchConversationParticipant"></a>
 
 # void patchConversationParticipant(conversationId, participantId, body)
@@ -3895,9 +4537,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -4351,9 +4993,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -4363,9 +5005,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "nextUri": String, 
-          "previousUri": String, 
           "lastUri": String, 
+          "previousUri": String, 
+          "nextUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -4692,6 +5334,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 
@@ -5342,9 +5985,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -5354,9 +5997,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
-            "nextUri": String, 
-            "previousUri": String, 
             "lastUri": String, 
+            "previousUri": String, 
+            "nextUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -5695,9 +6338,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -5931,6 +6574,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -6050,9 +6694,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -6794,9 +7438,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -7030,6 +7674,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -7149,9 +7794,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -9411,9 +10056,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -9867,9 +10512,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -9879,9 +10524,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "nextUri": String, 
-          "previousUri": String, 
           "lastUri": String, 
+          "previousUri": String, 
+          "nextUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -10208,6 +10853,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 
@@ -10858,9 +11504,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -10870,9 +11516,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
-            "nextUri": String, 
-            "previousUri": String, 
             "lastUri": String, 
+            "previousUri": String, 
+            "nextUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -11211,9 +11857,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -11447,6 +12093,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -11566,9 +12213,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -12310,9 +12957,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -12546,6 +13193,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -12665,9 +13313,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -14844,9 +15492,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -15300,9 +15948,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -15312,9 +15960,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "nextUri": String, 
-          "previousUri": String, 
           "lastUri": String, 
+          "previousUri": String, 
+          "nextUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -15641,6 +16289,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 
@@ -16291,9 +16940,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -16303,9 +16952,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
-            "nextUri": String, 
-            "previousUri": String, 
             "lastUri": String, 
+            "previousUri": String, 
+            "nextUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -16644,9 +17293,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -16880,6 +17529,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -16999,9 +17649,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -17743,9 +18393,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -17979,6 +18629,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -18098,9 +18749,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -20277,9 +20928,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -20733,9 +21384,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -20745,9 +21396,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "nextUri": String, 
-          "previousUri": String, 
           "lastUri": String, 
+          "previousUri": String, 
+          "nextUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -21074,6 +21725,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 
@@ -21724,9 +22376,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -21736,9 +22388,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
-            "nextUri": String, 
-            "previousUri": String, 
             "lastUri": String, 
+            "previousUri": String, 
+            "nextUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -22077,9 +22729,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -22313,6 +22965,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -22432,9 +23085,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -23176,9 +23829,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -23412,6 +24065,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -23531,9 +24185,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -25714,9 +26368,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -26170,9 +26824,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -26182,9 +26836,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "nextUri": String, 
-          "previousUri": String, 
           "lastUri": String, 
+          "previousUri": String, 
+          "nextUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -26511,6 +27165,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 
@@ -27161,9 +27816,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -27173,9 +27828,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
-            "nextUri": String, 
-            "previousUri": String, 
             "lastUri": String, 
+            "previousUri": String, 
+            "nextUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -27514,9 +28169,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -27750,6 +28405,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -27869,9 +28525,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -28613,9 +29269,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -28849,6 +29505,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -28968,9 +29625,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -31147,9 +31804,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -31603,9 +32260,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -31615,9 +32272,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "nextUri": String, 
-          "previousUri": String, 
           "lastUri": String, 
+          "previousUri": String, 
+          "nextUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -31944,6 +32601,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 
@@ -32594,9 +33252,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -32606,9 +33264,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
-            "nextUri": String, 
-            "previousUri": String, 
             "lastUri": String, 
+            "previousUri": String, 
+            "nextUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -32947,9 +33605,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -33183,6 +33841,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -33302,9 +33961,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -34046,9 +34705,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -34282,6 +34941,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -34401,9 +35061,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -37807,9 +38467,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -38263,9 +38923,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -38275,9 +38935,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "nextUri": String, 
-          "previousUri": String, 
           "lastUri": String, 
+          "previousUri": String, 
+          "nextUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -38604,6 +39264,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 
@@ -39254,9 +39915,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -39266,9 +39927,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
-            "nextUri": String, 
-            "previousUri": String, 
             "lastUri": String, 
+            "previousUri": String, 
+            "nextUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -39607,9 +40268,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -39843,6 +40504,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -39962,9 +40624,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -40706,9 +41368,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -40942,6 +41604,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -41061,9 +41724,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -43149,6 +43812,267 @@ apiInstance.postConversationsMessages(body)
 
 **MessageConversation**
 
+<a name="postConversationsMessagingIntegrationsFacebook"></a>
+
+# FacebookIntegration postConversationsMessagingIntegrationsFacebook(body)
+
+
+
+POST /api/v2/conversations/messaging/integrations/facebook
+
+Create a Facebook Integration
+
+
+
+Requires ANY permissions: 
+
+* messaging:integration:add
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyFacebookIntegrationRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#FacebookIntegrationRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+FacebookIntegrationRequest <a href="#" onclick="return copyFacebookIntegrationRequestExample()">Copy</a>
+
+<div id="FacebookIntegrationRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "pageAccessToken": String, 
+  "userAccessToken": String, 
+  "pageId": String, 
+  "appId": String, 
+  "appSecret": String, 
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | FacebookIntegrationRequest
+
+apiInstance.postConversationsMessagingIntegrationsFacebook(body)
+  .then((data) => {
+    console.log(`postConversationsMessagingIntegrationsFacebook success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessagingIntegrationsFacebook');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | FacebookIntegrationRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**FacebookIntegration**
+
+<a name="postConversationsMessagingIntegrationsLine"></a>
+
+# LineIntegration postConversationsMessagingIntegrationsLine(body)
+
+
+
+POST /api/v2/conversations/messaging/integrations/line
+
+Create a LINE messenger Integration
+
+
+
+Requires ANY permissions: 
+
+* messaging:integration:add
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyLineIntegrationRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#LineIntegrationRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+LineIntegrationRequest <a href="#" onclick="return copyLineIntegrationRequestExample()">Copy</a>
+
+<div id="LineIntegrationRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "channelId": String, 
+  "channelSecret": String, 
+  "switcherSecret": String, 
+  "serviceCode": String, 
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | LineIntegrationRequest
+
+apiInstance.postConversationsMessagingIntegrationsLine(body)
+  .then((data) => {
+    console.log(`postConversationsMessagingIntegrationsLine success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessagingIntegrationsLine');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | LineIntegrationRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LineIntegration**
+
+<a name="postConversationsMessagingIntegrationsTwitter"></a>
+
+# TwitterIntegration postConversationsMessagingIntegrationsTwitter(body)
+
+
+
+POST /api/v2/conversations/messaging/integrations/twitter
+
+Create a Twitter Integration
+
+
+
+Requires ANY permissions: 
+
+* messaging:integration:add
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyTwitterIntegrationRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TwitterIntegrationRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+TwitterIntegrationRequest <a href="#" onclick="return copyTwitterIntegrationRequestExample()">Copy</a>
+
+<div id="TwitterIntegrationRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "accessTokenKey": String, 
+  "accessTokenSecret": String, 
+  "consumerKey": String, 
+  "consumerSecret": String, 
+  "tier": String, 
+  "envName": String, 
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | TwitterIntegrationRequest
+
+apiInstance.postConversationsMessagingIntegrationsTwitter(body)
+  .then((data) => {
+    console.log(`postConversationsMessagingIntegrationsTwitter success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessagingIntegrationsTwitter');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | TwitterIntegrationRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**TwitterIntegration**
+
 <a name="putConversationParticipantFlaggedreason"></a>
 
 # void putConversationParticipantFlaggedreason(conversationId, participantId)
@@ -43401,4 +44325,92 @@ apiInstance.putConversationsEmailMessagesDraft(conversationId, body)
 ### Return type
 
 **EmailMessage**
+
+<a name="putConversationsMessagingIntegrationsLineIntegrationId"></a>
+
+# LineIntegration putConversationsMessagingIntegrationsLineIntegrationId(integrationId, body)
+
+
+
+PUT /api/v2/conversations/messaging/integrations/line/{integrationId}
+
+Update a LINE messenger integration
+
+
+
+Requires ANY permissions: 
+
+* messaging:integration:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyLineIntegrationRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#LineIntegrationRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+LineIntegrationRequest <a href="#" onclick="return copyLineIntegrationRequestExample()">Copy</a>
+
+<div id="LineIntegrationRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "channelId": String, 
+  "channelSecret": String, 
+  "switcherSecret": String, 
+  "serviceCode": String, 
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | LineIntegrationRequest
+
+apiInstance.putConversationsMessagingIntegrationsLineIntegrationId(integrationId, body)
+  .then((data) => {
+    console.log(`putConversationsMessagingIntegrationsLineIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsMessagingIntegrationsLineIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **body** | **Object** | LineIntegrationRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LineIntegration**
 

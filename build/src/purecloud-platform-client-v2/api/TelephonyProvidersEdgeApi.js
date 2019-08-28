@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -1530,6 +1530,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.name Name
 	 * @param {String} opts.siteId Filter by site.id
+	 * @param {String} opts.externalTrunkBasesIds Filter by externalTrunkBases.ids
 	 * @param {String} opts.sortBy Sort by (default to name)
 	 */
 	getTelephonyProvidersEdgesOutboundroutes(opts) { 
@@ -1540,7 +1541,7 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/outboundroutes', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'site.id': opts['siteId'],'sortBy': opts['sortBy'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'site.id': opts['siteId'],'externalTrunkBases.ids': opts['externalTrunkBasesIds'],'sortBy': opts['sortBy'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1914,6 +1915,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.name Name
+	 * @param {String} opts.externalTrunkBasesIds externalTrunkBases.ids
 	 * @param {String} opts.sortBy Sort by (default to name)
 	 */
 	getTelephonyProvidersEdgesSiteOutboundroutes(siteId, opts) { 
@@ -1928,7 +1930,7 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes', 
 			'GET', 
 			{ 'siteId': siteId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'sortBy': opts['sortBy'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'externalTrunkBases.ids': opts['externalTrunkBasesIds'],'sortBy': opts['sortBy'] }, 
 			{  }, 
 			{  }, 
 			null, 

@@ -8,11 +8,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**getFieldconfig**](OrganizationApi.html#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
+[**getOrganizationsEmbeddedintegration**](OrganizationApi.html#getOrganizationsEmbeddedintegration) | **GET** /api/v2/organizations/embeddedintegration | Get the list of domains that will be allowed to embed PureCloud applications
 [**getOrganizationsMe**](OrganizationApi.html#getOrganizationsMe) | **GET** /api/v2/organizations/me | Get organization.
-[**getOrganizationsWhitelist**](OrganizationApi.html#getOrganizationsWhitelist) | **GET** /api/v2/organizations/whitelist | Get organization whitelist settings
+[**getOrganizationsWhitelist**](OrganizationApi.html#getOrganizationsWhitelist) | **GET** /api/v2/organizations/whitelist | Use PUT /api/v2/organizations/embeddedintegration instead
 [**patchOrganizationsFeature**](OrganizationApi.html#patchOrganizationsFeature) | **PATCH** /api/v2/organizations/features/{featureName} | Update organization
+[**putOrganizationsEmbeddedintegration**](OrganizationApi.html#putOrganizationsEmbeddedintegration) | **PUT** /api/v2/organizations/embeddedintegration | Update the list of domains that will be allowed to embed PureCloud applications
 [**putOrganizationsMe**](OrganizationApi.html#putOrganizationsMe) | **PUT** /api/v2/organizations/me | Update organization.
-[**putOrganizationsWhitelist**](OrganizationApi.html#putOrganizationsWhitelist) | **PUT** /api/v2/organizations/whitelist | Update organization whitelist settings
+[**putOrganizationsWhitelist**](OrganizationApi.html#putOrganizationsWhitelist) | **PUT** /api/v2/organizations/whitelist | Use PUT /api/v2/organizations/embeddedintegration instead
 {: class="table table-striped"}
 
 <a name="getFieldconfig"></a>
@@ -69,6 +71,55 @@ apiInstance.getFieldconfig(type)
 
 **FieldConfig**
 
+<a name="getOrganizationsEmbeddedintegration"></a>
+
+# EmbeddedIntegration getOrganizationsEmbeddedintegration()
+
+
+
+GET /api/v2/organizations/embeddedintegration
+
+Get the list of domains that will be allowed to embed PureCloud applications
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationApi();
+
+apiInstance.getOrganizationsEmbeddedintegration()
+  .then((data) => {
+    console.log(`getOrganizationsEmbeddedintegration success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOrganizationsEmbeddedintegration');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**EmbeddedIntegration**
+
 <a name="getOrganizationsMe"></a>
 
 # Organization getOrganizationsMe()
@@ -122,11 +173,11 @@ This endpoint does not need any parameter.
 
 # OrgWhitelistSettings getOrganizationsWhitelist()
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/organizations/whitelist
 
-Get organization whitelist settings
+Use PUT /api/v2/organizations/embeddedintegration instead
 
 
 
@@ -249,6 +300,87 @@ apiInstance.patchOrganizationsFeature(featureName, enabled)
 
 **OrganizationFeatures**
 
+<a name="putOrganizationsEmbeddedintegration"></a>
+
+# EmbeddedIntegration putOrganizationsEmbeddedintegration(body)
+
+
+
+PUT /api/v2/organizations/embeddedintegration
+
+Update the list of domains that will be allowed to embed PureCloud applications
+
+
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyEmbeddedIntegrationExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EmbeddedIntegrationExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+EmbeddedIntegration <a href="#" onclick="return copyEmbeddedIntegrationExample()">Copy</a>
+
+<div id="EmbeddedIntegrationExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "enableWhitelist": Boolean, 
+  "domainWhitelist": [String], 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationApi();
+
+let body = {}; // Object | Whitelist settings
+
+apiInstance.putOrganizationsEmbeddedintegration(body)
+  .then((data) => {
+    console.log(`putOrganizationsEmbeddedintegration success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putOrganizationsEmbeddedintegration');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Whitelist settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EmbeddedIntegration**
+
 <a name="putOrganizationsMe"></a>
 
 # Organization putOrganizationsMe(opts)
@@ -348,11 +480,11 @@ apiInstance.putOrganizationsMe(opts)
 
 # OrgWhitelistSettings putOrganizationsWhitelist(body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 PUT /api/v2/organizations/whitelist
 
-Update organization whitelist settings
+Use PUT /api/v2/organizations/embeddedintegration instead
 
 
 

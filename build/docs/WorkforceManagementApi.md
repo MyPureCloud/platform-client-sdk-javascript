@@ -2077,7 +2077,7 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
  **pageSize** | **Number** |  | [optional]  |
  **pageNumber** | **Number** |  | [optional]  |
  **expand** | **String** |  | [optional] <br />**Values**: details |
- **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BusinessUnitActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, TimeOffRequests, WorkPlans |
+ **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BusinessUnitActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlans |
  **divisionId** | **String** |  | [optional]  |
 {: class="table table-striped"}
 
@@ -4874,6 +4874,7 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
             },  
             "addresses": { 
               "address": String, 
+              "extension": String, 
               "display": String, 
               "type": String, 
               "mediaType": String, 
@@ -5240,6 +5241,7 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
         },  
         "addresses": { 
           "address": String, 
+          "extension": String, 
           "display": String, 
           "type": String, 
           "mediaType": String, 
@@ -5710,6 +5712,7 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
             },  
             "addresses": { 
               "address": String, 
+              "extension": String, 
               "display": String, 
               "type": String, 
               "mediaType": String, 

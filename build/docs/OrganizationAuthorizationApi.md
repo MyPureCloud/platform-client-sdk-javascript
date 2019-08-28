@@ -1752,6 +1752,7 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
         },  
         "addresses": { 
           "address": String, 
+          "extension": String, 
           "display": String, 
           "type": String, 
           "mediaType": String, 
@@ -2090,6 +2091,7 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 

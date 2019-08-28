@@ -1621,6 +1621,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             },  
             "addresses": { 
               "address": String, 
+              "extension": String, 
               "display": String, 
               "type": String, 
               "mediaType": String, 
@@ -2020,6 +2021,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -3115,6 +3117,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             },  
             "addresses": { 
               "address": String, 
+              "extension": String, 
               "display": String, 
               "type": String, 
               "mediaType": String, 
@@ -3514,6 +3517,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -4380,6 +4384,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
             },  
             "addresses": { 
               "address": String, 
+              "extension": String, 
               "display": String, 
               "type": String, 
               "mediaType": String, 
@@ -4779,6 +4784,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -5848,6 +5854,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
             },  
             "addresses": { 
               "address": String, 
+              "extension": String, 
               "display": String, 
               "type": String, 
               "mediaType": String, 
@@ -6247,6 +6254,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -7225,6 +7233,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             },  
             "addresses": { 
               "address": String, 
+              "extension": String, 
               "display": String, 
               "type": String, 
               "mediaType": String, 
@@ -7624,6 +7633,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 

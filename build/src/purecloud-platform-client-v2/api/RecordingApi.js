@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -484,6 +484,10 @@ class RecordingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.sortBy Sort by (default to userId)
+	 * @param {Object} opts.state Filter by state
+	 * @param {Boolean} opts.showOnlyMyJobs Show only my jobs
+	 * @param {Object} opts.jobType Job Type (Can be left empty for both)
 	 */
 	getRecordingJobs(opts) { 
 		opts = opts || {};
@@ -493,7 +497,7 @@ class RecordingApi {
 			'/api/v2/recording/jobs', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'state': opts['state'],'showOnlyMyJobs': opts['showOnlyMyJobs'],'jobType': opts['jobType'] }, 
 			{  }, 
 			{  }, 
 			null, 

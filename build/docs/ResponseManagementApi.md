@@ -738,6 +738,7 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -1199,6 +1200,7 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -1756,6 +1758,7 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -2219,6 +2222,7 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 

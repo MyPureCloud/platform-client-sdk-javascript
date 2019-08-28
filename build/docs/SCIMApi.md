@@ -1207,6 +1207,7 @@ ScimV2CreateUser <a href="#" onclick="return copyScimV2CreateUserExample()">Copy
     "value": String, 
     "$ref": String, 
   },  
+  "roles": [String], 
   "meta": { 
     "resourceType": String, 
     "lastModified": Date, 
@@ -1332,6 +1333,7 @@ ScimV2CreateUser <a href="#" onclick="return copyScimV2CreateUserExample()">Copy
     "value": String, 
     "$ref": String, 
   },  
+  "roles": [String], 
   "meta": { 
     "resourceType": String, 
     "lastModified": Date, 
@@ -1564,6 +1566,7 @@ ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
     "value": String, 
     "$ref": String, 
   },  
+  "roles": [String], 
   "meta": { 
     "resourceType": String, 
     "lastModified": Date, 
@@ -1802,6 +1805,7 @@ ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
     "value": String, 
     "$ref": String, 
   },  
+  "roles": [String], 
   "meta": { 
     "resourceType": String, 
     "lastModified": Date, 

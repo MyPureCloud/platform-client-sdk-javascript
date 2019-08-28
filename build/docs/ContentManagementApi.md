@@ -2912,6 +2912,7 @@ WorkspaceMember <a href="#" onclick="return copyWorkspaceMemberExample()">Copy</
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -2956,6 +2957,7 @@ WorkspaceMember <a href="#" onclick="return copyWorkspaceMemberExample()">Copy</
     },  
     "addresses": { 
       "address": String, 
+      "extension": String, 
       "display": String, 
       "type": String, 
       "mediaType": String, 

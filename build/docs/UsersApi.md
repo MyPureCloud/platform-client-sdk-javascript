@@ -2331,6 +2331,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
     },  
     "addresses": { 
       "address": String, 
+      "extension": String, 
       "display": String, 
       "type": String, 
       "mediaType": String, 
@@ -2945,6 +2946,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
             },  
             "addresses": { 
               "address": String, 
+              "extension": String, 
               "display": String, 
               "type": String, 
               "mediaType": String, 
@@ -3311,6 +3313,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
         },  
         "addresses": { 
           "address": String, 
+          "extension": String, 
           "display": String, 
           "type": String, 
           "mediaType": String, 
@@ -3781,6 +3784,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
             },  
             "addresses": { 
               "address": String, 
+              "extension": String, 
               "display": String, 
               "type": String, 
               "mediaType": String, 
@@ -4633,6 +4637,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -4872,6 +4877,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 
@@ -5140,6 +5146,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -5419,6 +5426,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -5831,6 +5839,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -6070,6 +6079,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 
@@ -6338,6 +6348,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -9427,6 +9438,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -9666,6 +9678,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 
@@ -9934,6 +9947,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -10213,6 +10227,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -10625,6 +10640,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -10864,6 +10880,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 
@@ -11132,6 +11149,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -11881,6 +11899,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -12120,6 +12139,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 
@@ -12388,6 +12408,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -12667,6 +12688,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -13079,6 +13101,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 
@@ -13318,6 +13341,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 
@@ -13586,6 +13610,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               },  
               "addresses": { 
                 "address": String, 
+                "extension": String, 
                 "display": String, 
                 "type": String, 
                 "mediaType": String, 

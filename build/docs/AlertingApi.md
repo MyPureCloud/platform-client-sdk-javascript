@@ -847,6 +847,7 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -1398,6 +1399,7 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 

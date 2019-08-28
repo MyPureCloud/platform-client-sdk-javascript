@@ -5,7 +5,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 54.0.0
+	 * @version 55.0.0
 	 */
 
 	/**
@@ -46,6 +46,26 @@ class OrganizationApi {
 	}
 
 	/**
+	 * Get the list of domains that will be allowed to embed PureCloud applications
+	 * 
+	 */
+	getOrganizationsEmbeddedintegration() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/embeddedintegration', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get organization.
 	 * 
 	 */
@@ -66,7 +86,7 @@ class OrganizationApi {
 	}
 
 	/**
-	 * Get organization whitelist settings
+	 * Use PUT /api/v2/organizations/embeddedintegration instead
 	 * 
 	 */
 	getOrganizationsWhitelist() { 
@@ -116,6 +136,31 @@ class OrganizationApi {
 	}
 
 	/**
+	 * Update the list of domains that will be allowed to embed PureCloud applications
+	 * 
+	 * @param {Object} body Whitelist settings
+	 */
+	putOrganizationsEmbeddedintegration(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOrganizationsEmbeddedintegration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/embeddedintegration', 
+			'PUT', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update organization.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -140,7 +185,7 @@ class OrganizationApi {
 	}
 
 	/**
-	 * Update organization whitelist settings
+	 * Use PUT /api/v2/organizations/embeddedintegration instead
 	 * 
 	 * @param {Object} body Whitelist settings
 	 */

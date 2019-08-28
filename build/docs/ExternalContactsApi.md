@@ -1510,6 +1510,7 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -2101,6 +2102,7 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
             },  
             "addresses": { 
               "address": String, 
+              "extension": String, 
               "display": String, 
               "type": String, 
               "mediaType": String, 
@@ -2421,6 +2423,7 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 
@@ -2923,6 +2926,7 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -3441,6 +3445,7 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 
@@ -3770,6 +3775,7 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
         },  
         "addresses": { 
           "address": String, 
+          "extension": String, 
           "display": String, 
           "type": String, 
           "mediaType": String, 
@@ -4261,6 +4267,7 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -4685,6 +4692,7 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
             },  
             "addresses": { 
               "address": String, 
+              "extension": String, 
               "display": String, 
               "type": String, 
               "mediaType": String, 
@@ -5005,6 +5013,7 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 
@@ -5637,6 +5646,7 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
             },  
             "addresses": { 
               "address": String, 
+              "extension": String, 
               "display": String, 
               "type": String, 
               "mediaType": String, 
@@ -5957,6 +5967,7 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 
@@ -6461,6 +6472,7 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -7066,6 +7078,7 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 
@@ -7395,6 +7408,7 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
         },  
         "addresses": { 
           "address": String, 
+          "extension": String, 
           "display": String, 
           "type": String, 
           "mediaType": String, 
@@ -7891,6 +7905,7 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -8407,6 +8422,7 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
       },  
       "addresses": { 
         "address": String, 
+        "extension": String, 
         "display": String, 
         "type": String, 
         "mediaType": String, 
@@ -8831,6 +8847,7 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
             },  
             "addresses": { 
               "address": String, 
+              "extension": String, 
               "display": String, 
               "type": String, 
               "mediaType": String, 
@@ -9151,6 +9168,7 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
           },  
           "addresses": { 
             "address": String, 
+            "extension": String, 
             "display": String, 
             "type": String, 
             "mediaType": String, 

@@ -3333,6 +3333,7 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'name': "name_example", // String | Name
   'siteId': "siteId_example", // String | Filter by site.id
+  'externalTrunkBasesIds': "externalTrunkBasesIds_example", // String | Filter by externalTrunkBases.ids
   'sortBy': "name" // String | Sort by
 };
 
@@ -3355,6 +3356,7 @@ apiInstance.getTelephonyProvidersEdgesOutboundroutes(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **name** | **String** | Name | [optional]  |
  **siteId** | **String** | Filter by site.id | [optional]  |
+ **externalTrunkBasesIds** | **String** | Filter by externalTrunkBases.ids | [optional]  |
  **sortBy** | **String** | Sort by | [optional] [default to name] |
 {: class="table table-striped"}
 
@@ -4168,6 +4170,7 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'name': "name_example", // String | Name
+  'externalTrunkBasesIds': "externalTrunkBasesIds_example", // String | externalTrunkBases.ids
   'sortBy': "name" // String | Sort by
 };
 
@@ -4190,6 +4193,7 @@ apiInstance.getTelephonyProvidersEdgesSiteOutboundroutes(siteId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **name** | **String** | Name | [optional]  |
+ **externalTrunkBasesIds** | **String** | externalTrunkBases.ids | [optional]  |
  **sortBy** | **String** | Sort by | [optional] [default to name] |
 {: class="table table-striped"}
 
