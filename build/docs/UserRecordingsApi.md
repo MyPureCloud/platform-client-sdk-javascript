@@ -1462,8 +1462,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -1568,9 +1568,9 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -1580,9 +1580,9 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
-            "lastUri": String, 
-            "previousUri": String, 
             "nextUri": String, 
+            "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -1822,6 +1822,10 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           },  
           "authorization": { 
             "roles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "unusedRoles": { 
               "id": String, 
               "name": String, 
             },  
@@ -2168,6 +2172,10 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -2451,6 +2459,10 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -2862,9 +2874,9 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -2931,8 +2943,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -2961,9 +2973,9 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -3073,6 +3085,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -3225,6 +3238,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -3474,10 +3488,10 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "selfUri": String, 
               },  
               "outboundMessagingAddresses": { 
-                "smsAddress": UriReference, 
+                "smsAddress": DomainEntityRef, 
               },  
               "outboundEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "selfUri": String, 
@@ -3550,8 +3564,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -3580,9 +3594,9 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -3692,6 +3706,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -3844,6 +3859,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -4093,10 +4109,10 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "selfUri": String, 
               },  
               "outboundMessagingAddresses": { 
-                "smsAddress": UriReference, 
+                "smsAddress": DomainEntityRef, 
               },  
               "outboundEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "selfUri": String, 
@@ -4262,7 +4278,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 

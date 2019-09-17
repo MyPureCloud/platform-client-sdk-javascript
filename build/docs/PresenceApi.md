@@ -672,6 +672,10 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
         "id": String, 
         "name": String, 
       },  
+      "unusedRoles": { 
+        "id": String, 
+        "name": String, 
+      },  
       "permissions": [String], 
       "permissionPolicies": { 
         "id": String, 
@@ -1040,6 +1044,10 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  
@@ -1500,6 +1508,10 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
         "id": String, 
         "name": String, 
       },  
+      "unusedRoles": { 
+        "id": String, 
+        "name": String, 
+      },  
       "permissions": [String], 
       "permissionPolicies": { 
         "id": String, 
@@ -1868,6 +1880,10 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  

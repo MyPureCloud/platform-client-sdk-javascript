@@ -1598,9 +1598,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -1780,6 +1780,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -2045,6 +2049,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -2175,9 +2183,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -2370,6 +2378,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -2500,9 +2512,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -2694,6 +2706,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -2824,9 +2840,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -3113,6 +3129,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -3335,7 +3355,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -3440,9 +3460,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -3622,6 +3642,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -3887,6 +3911,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -4017,9 +4045,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -4212,6 +4240,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -4342,9 +4374,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -4536,6 +4568,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -4666,9 +4702,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -4955,6 +4991,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -5177,7 +5217,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -5281,9 +5321,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -5463,6 +5503,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -5728,6 +5772,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -5858,9 +5906,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -6053,6 +6101,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -6183,9 +6235,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -6377,6 +6429,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -6507,9 +6563,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -6796,6 +6852,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -7018,7 +7078,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -7117,9 +7177,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -7299,6 +7359,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -7564,6 +7628,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -7694,9 +7762,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -7889,6 +7957,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -8019,9 +8091,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -8213,6 +8285,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -8343,9 +8419,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -8632,6 +8708,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -8854,7 +8934,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -9139,6 +9219,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "id": String, 
           "name": String, 
         },  
+        "unusedRoles": { 
+          "id": String, 
+          "name": String, 
+        },  
         "permissions": [String], 
         "permissionPolicies": { 
           "id": String, 
@@ -9418,7 +9502,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -9564,9 +9648,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -9576,9 +9660,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "lastUri": String, 
-          "previousUri": String, 
           "nextUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -9818,6 +9902,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -10176,6 +10264,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "id": String, 
             "name": String, 
           },  
+          "unusedRoles": { 
+            "id": String, 
+            "name": String, 
+          },  
           "permissions": [String], 
           "permissionPolicies": { 
             "id": String, 
@@ -10379,9 +10471,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -10391,9 +10483,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "lastUri": String, 
-          "previousUri": String, 
           "nextUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -10646,6 +10738,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "id": String, 
             "name": String, 
           },  
+          "unusedRoles": { 
+            "id": String, 
+            "name": String, 
+          },  
           "permissions": [String], 
           "permissionPolicies": { 
             "id": String, 
@@ -10849,9 +10945,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -10861,9 +10957,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "lastUri": String, 
-          "previousUri": String, 
           "nextUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -11115,6 +11211,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "id": String, 
             "name": String, 
           },  
+          "unusedRoles": { 
+            "id": String, 
+            "name": String, 
+          },  
           "permissions": [String], 
           "permissionPolicies": { 
             "id": String, 
@@ -11318,9 +11418,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -11330,9 +11430,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "lastUri": String, 
-          "previousUri": String, 
           "nextUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -11807,6 +11907,10 @@ Annotation <a href="#" onclick="return copyAnnotationExample()">Copy</a>
         "id": String, 
         "name": String, 
       },  
+      "unusedRoles": { 
+        "id": String, 
+        "name": String, 
+      },  
       "permissions": [String], 
       "permissionPolicies": { 
         "id": String, 
@@ -12119,6 +12223,7 @@ RecordingJobsQuery <a href="#" onclick="return copyRecordingJobsQueryExample()">
   "action": String, 
   "actionDate": Date, 
   "integrationId": String, 
+  "includeScreenRecordings": Boolean, 
   "conversationQuery": { 
     "interval": String, 
     "conversationFilters": { 
@@ -12613,9 +12718,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -12795,6 +12900,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -13060,6 +13169,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -13190,9 +13303,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -13385,6 +13498,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -13515,9 +13632,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -13709,6 +13826,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -13839,9 +13960,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -14128,6 +14249,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -14350,7 +14475,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -14455,9 +14580,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -14637,6 +14762,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -14902,6 +15031,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -15032,9 +15165,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -15227,6 +15360,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -15357,9 +15494,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -15551,6 +15688,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -15681,9 +15822,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -15970,6 +16111,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -16192,7 +16337,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -16296,9 +16441,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -16478,6 +16623,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -16743,6 +16892,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -16873,9 +17026,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -17068,6 +17221,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -17198,9 +17355,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -17392,6 +17549,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -17522,9 +17683,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -17811,6 +17972,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -18033,7 +18198,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -18132,9 +18297,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -18314,6 +18479,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -18579,6 +18748,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -18709,9 +18882,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -18904,6 +19077,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -19034,9 +19211,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -19228,6 +19405,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -19358,9 +19539,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -19647,6 +19828,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -19869,7 +20054,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -20154,6 +20339,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "id": String, 
           "name": String, 
         },  
+        "unusedRoles": { 
+          "id": String, 
+          "name": String, 
+        },  
         "permissions": [String], 
         "permissionPolicies": { 
           "id": String, 
@@ -20433,7 +20622,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -20579,9 +20768,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -20591,9 +20780,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "lastUri": String, 
-          "previousUri": String, 
           "nextUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -20833,6 +21022,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -21191,6 +21384,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "id": String, 
             "name": String, 
           },  
+          "unusedRoles": { 
+            "id": String, 
+            "name": String, 
+          },  
           "permissions": [String], 
           "permissionPolicies": { 
             "id": String, 
@@ -21394,9 +21591,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -21406,9 +21603,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "lastUri": String, 
-          "previousUri": String, 
           "nextUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -21661,6 +21858,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "id": String, 
             "name": String, 
           },  
+          "unusedRoles": { 
+            "id": String, 
+            "name": String, 
+          },  
           "permissions": [String], 
           "permissionPolicies": { 
             "id": String, 
@@ -21864,9 +22065,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -21876,9 +22077,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "lastUri": String, 
-          "previousUri": String, 
           "nextUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -22130,6 +22331,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "id": String, 
             "name": String, 
           },  
+          "unusedRoles": { 
+            "id": String, 
+            "name": String, 
+          },  
           "permissions": [String], 
           "permissionPolicies": { 
             "id": String, 
@@ -22333,9 +22538,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -22345,9 +22550,9 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "lastUri": String, 
-          "previousUri": String, 
           "nextUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -22793,6 +22998,10 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
           "id": String, 
           "name": String, 
         },  
+        "unusedRoles": { 
+          "id": String, 
+          "name": String, 
+        },  
         "permissions": [String], 
         "permissionPolicies": { 
           "id": String, 
@@ -23222,6 +23431,10 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
           "id": String, 
           "name": String, 
         },  
+        "unusedRoles": { 
+          "id": String, 
+          "name": String, 
+        },  
         "permissions": [String], 
         "permissionPolicies": { 
           "id": String, 
@@ -23614,6 +23827,7 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -23805,6 +24019,10 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -24206,6 +24424,10 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  
@@ -24668,6 +24890,10 @@ Annotation <a href="#" onclick="return copyAnnotationExample()">Copy</a>
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  
@@ -25217,9 +25443,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -25399,6 +25625,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -25664,6 +25894,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -25794,9 +26028,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -25989,6 +26223,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -26119,9 +26357,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -26313,6 +26551,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -26443,9 +26685,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -26732,6 +26974,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -26954,7 +27200,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -27059,9 +27305,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -27241,6 +27487,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -27506,6 +27756,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -27636,9 +27890,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -27831,6 +28085,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -27961,9 +28219,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -28155,6 +28413,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -28285,9 +28547,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -28574,6 +28836,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -28796,7 +29062,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -28900,9 +29166,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -29082,6 +29348,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -29347,6 +29617,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -29477,9 +29751,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -29672,6 +29946,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -29802,9 +30080,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -29996,6 +30274,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -30126,9 +30408,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -30415,6 +30697,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -30637,7 +30923,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -30736,9 +31022,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -30918,6 +31204,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -31183,6 +31473,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -31313,9 +31607,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -31508,6 +31802,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -31638,9 +31936,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -31832,6 +32130,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -31962,9 +32264,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -32251,6 +32553,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -32473,7 +32779,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -32758,6 +33064,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "id": String, 
           "name": String, 
         },  
+        "unusedRoles": { 
+          "id": String, 
+          "name": String, 
+        },  
         "permissions": [String], 
         "permissionPolicies": { 
           "id": String, 
@@ -33037,7 +33347,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -33183,9 +33493,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -33195,9 +33505,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "lastUri": String, 
-          "previousUri": String, 
           "nextUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -33437,6 +33747,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -33795,6 +34109,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "id": String, 
             "name": String, 
           },  
+          "unusedRoles": { 
+            "id": String, 
+            "name": String, 
+          },  
           "permissions": [String], 
           "permissionPolicies": { 
             "id": String, 
@@ -33998,9 +34316,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -34010,9 +34328,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "lastUri": String, 
-          "previousUri": String, 
           "nextUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -34265,6 +34583,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "id": String, 
             "name": String, 
           },  
+          "unusedRoles": { 
+            "id": String, 
+            "name": String, 
+          },  
           "permissions": [String], 
           "permissionPolicies": { 
             "id": String, 
@@ -34468,9 +34790,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -34480,9 +34802,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "lastUri": String, 
-          "previousUri": String, 
           "nextUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -34734,6 +35056,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "id": String, 
             "name": String, 
           },  
+          "unusedRoles": { 
+            "id": String, 
+            "name": String, 
+          },  
           "permissions": [String], 
           "permissionPolicies": { 
             "id": String, 
@@ -34937,9 +35263,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -34949,9 +35275,9 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "lastUri": String, 
-          "previousUri": String, 
           "nextUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 

@@ -4130,6 +4130,10 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
           "id": String, 
           "name": String, 
         },  
+        "unusedRoles": { 
+          "id": String, 
+          "name": String, 
+        },  
         "permissions": [String], 
         "permissionPolicies": { 
           "id": String, 
@@ -5000,6 +5004,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "id": String, 
         "name": String, 
       },  
+      "unusedRoles": { 
+        "id": String, 
+        "name": String, 
+      },  
       "permissions": [String], 
       "permissionPolicies": { 
         "id": String, 
@@ -5417,6 +5425,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "id": String, 
         "name": String, 
       },  
+      "unusedRoles": { 
+        "id": String, 
+        "name": String, 
+      },  
       "permissions": [String], 
       "permissionPolicies": { 
         "id": String, 
@@ -5787,6 +5799,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       },  
       "authorization": { 
         "roles": { 
+          "id": String, 
+          "name": String, 
+        },  
+        "unusedRoles": { 
           "id": String, 
           "name": String, 
         },  
@@ -6735,6 +6751,10 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
           "id": String, 
           "name": String, 
         },  
+        "unusedRoles": { 
+          "id": String, 
+          "name": String, 
+        },  
         "permissions": [String], 
         "permissionPolicies": { 
           "id": String, 
@@ -7428,6 +7448,10 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
       },  
       "authorization": { 
         "roles": { 
+          "id": String, 
+          "name": String, 
+        },  
+        "unusedRoles": { 
           "id": String, 
           "name": String, 
         },  
@@ -8293,6 +8317,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "id": String, 
         "name": String, 
       },  
+      "unusedRoles": { 
+        "id": String, 
+        "name": String, 
+      },  
       "permissions": [String], 
       "permissionPolicies": { 
         "id": String, 
@@ -8710,6 +8738,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "id": String, 
         "name": String, 
       },  
+      "unusedRoles": { 
+        "id": String, 
+        "name": String, 
+      },  
       "permissions": [String], 
       "permissionPolicies": { 
         "id": String, 
@@ -9080,6 +9112,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       },  
       "authorization": { 
         "roles": { 
+          "id": String, 
+          "name": String, 
+        },  
+        "unusedRoles": { 
           "id": String, 
           "name": String, 
         },  
@@ -9701,6 +9737,10 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
       },  
       "authorization": { 
         "roles": { 
+          "id": String, 
+          "name": String, 
+        },  
+        "unusedRoles": { 
           "id": String, 
           "name": String, 
         },  

@@ -4659,6 +4659,7 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -4796,6 +4797,10 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
           },  
           "authorization": { 
             "roles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "unusedRoles": { 
               "id": String, 
               "name": String, 
             },  
@@ -4986,6 +4991,7 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -5145,6 +5151,10 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
       },  
       "authorization": { 
         "roles": { 
+          "id": String, 
+          "name": String, 
+        },  
+        "unusedRoles": { 
           "id": String, 
           "name": String, 
         },  
@@ -5497,6 +5507,7 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -5634,6 +5645,10 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
           },  
           "authorization": { 
             "roles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "unusedRoles": { 
               "id": String, 
               "name": String, 
             },  
@@ -5824,6 +5839,7 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  

@@ -723,7 +723,7 @@ This endpoint does not need any parameter.
 
 <a name="getAuthorizationRole"></a>
 
-# DomainOrganizationRole getAuthorizationRole(roleId)
+# DomainOrganizationRole getAuthorizationRole(roleId, opts)
 
 
 
@@ -753,8 +753,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.AuthorizationApi();
 
 let roleId = "roleId_example"; // String | Role ID
+let opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+};
 
-apiInstance.getAuthorizationRole(roleId)
+apiInstance.getAuthorizationRole(roleId, opts)
   .then((data) => {
     console.log(`getAuthorizationRole success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -770,6 +773,7 @@ apiInstance.getAuthorizationRole(roleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: unusedPermissions |
 {: class="table table-striped"}
 
 ### Return type
@@ -1296,6 +1300,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
   "description": String, 
   "defaultRoleId": String, 
   "permissions": [String], 
+  "unusedPermissions": [String], 
   "permissionPolicies": { 
     "domain": String, 
     "entityName": String, 
@@ -1546,6 +1551,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -1767,7 +1776,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -1970,6 +1979,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -2138,16 +2151,16 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -2266,6 +2279,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -2369,10 +2383,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "selfUri": String, 
               },  
               "outboundMessagingAddresses": { 
-                "smsAddress": UriReference, 
+                "smsAddress": DomainEntityRef, 
               },  
               "outboundEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "selfUri": String, 
@@ -2433,8 +2447,8 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -2792,6 +2806,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
   "description": String, 
   "defaultRoleId": String, 
   "permissions": [String], 
+  "unusedPermissions": [String], 
   "permissionPolicies": { 
     "domain": String, 
     "entityName": String, 
@@ -3042,6 +3057,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -3263,7 +3282,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -3466,6 +3485,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -3634,16 +3657,16 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -3762,6 +3785,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -3865,10 +3889,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "selfUri": String, 
               },  
               "outboundMessagingAddresses": { 
-                "smsAddress": UriReference, 
+                "smsAddress": DomainEntityRef, 
               },  
               "outboundEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "selfUri": String, 
@@ -3929,8 +3953,8 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -4059,6 +4083,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
   "description": String, 
   "defaultRoleId": String, 
   "permissions": [String], 
+  "unusedPermissions": [String], 
   "permissionPolicies": { 
     "domain": String, 
     "entityName": String, 
@@ -4309,6 +4334,10 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -4530,7 +4559,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -4733,6 +4762,10 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -4901,16 +4934,16 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -5029,6 +5062,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -5132,10 +5166,10 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "selfUri": String, 
               },  
               "outboundMessagingAddresses": { 
-                "smsAddress": UriReference, 
+                "smsAddress": DomainEntityRef, 
               },  
               "outboundEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "selfUri": String, 
@@ -5196,8 +5230,8 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -5529,6 +5563,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
   "description": String, 
   "defaultRoleId": String, 
   "permissions": [String], 
+  "unusedPermissions": [String], 
   "permissionPolicies": { 
     "domain": String, 
     "entityName": String, 
@@ -5779,6 +5814,10 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -6000,7 +6039,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -6203,6 +6242,10 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -6371,16 +6414,16 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -6499,6 +6542,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -6602,10 +6646,10 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "selfUri": String, 
               },  
               "outboundMessagingAddresses": { 
-                "smsAddress": UriReference, 
+                "smsAddress": DomainEntityRef, 
               },  
               "outboundEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "selfUri": String, 
@@ -6666,8 +6710,8 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -6908,6 +6952,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
   "description": String, 
   "defaultRoleId": String, 
   "permissions": [String], 
+  "unusedPermissions": [String], 
   "permissionPolicies": { 
     "domain": String, 
     "entityName": String, 
@@ -7158,6 +7203,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -7379,7 +7428,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -7582,6 +7631,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -7750,16 +7803,16 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -7878,6 +7931,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -7981,10 +8035,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "selfUri": String, 
               },  
               "outboundMessagingAddresses": { 
-                "smsAddress": UriReference, 
+                "smsAddress": DomainEntityRef, 
               },  
               "outboundEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "selfUri": String, 
@@ -8045,8 +8099,8 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 

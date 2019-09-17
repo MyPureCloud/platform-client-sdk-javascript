@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 55.0.0
+	 * @version 56.0.0
 	 */
 
 	/**
@@ -19,6 +19,31 @@ class ConversationsApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete/cancel an async request
+	 * 
+	 * @param {String} jobId jobId
+	 */
+	deleteAnalyticsConversationsDetailsJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsConversationsDetailsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/details/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
 
 	/**
 	 * Delete a code used to add a communication to this participant
@@ -260,6 +285,60 @@ class ConversationsApi {
 			'GET', 
 			{  }, 
 			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get status for async query for conversation details
+	 * 
+	 * @param {String} jobId jobId
+	 */
+	getAnalyticsConversationsDetailsJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsDetailsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/details/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch a page of results for an async query
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
+	 */
+	getAnalyticsConversationsDetailsJobResults(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsDetailsJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/details/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId }, 
+			{ 'cursor': opts['cursor'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1469,6 +1548,56 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Get a list of WhatsApp Integrations
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getConversationsMessagingIntegrationsWhatsapp(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/whatsapp', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a WhatsApp messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 */
+	getConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsWhatsappIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}', 
+			'GET', 
+			{ 'integrationId': integrationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a list of Messaging Stickers
 	 * 
 	 * @param {String} messengerType Messenger Type
@@ -2440,6 +2569,36 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Activate a WhatsApp messaging integration.
+	 * The following steps are required in order to fully activate a Whatsapp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} body WhatsAppIntegrationUpdateRequest
+	 */
+	patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsWhatsappIntegrationId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsWhatsappIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}', 
+			'PATCH', 
+			{ 'integrationId': integrationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Index conversation properties
 	 * 
 	 * @param {String} conversationId conversationId
@@ -2482,6 +2641,31 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/aggregates/query', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for conversation details asynchronously
+	 * 
+	 * @param {Object} body query
+	 */
+	postAnalyticsConversationsDetailsJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsDetailsJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/details/jobs', 
 			'POST', 
 			{  }, 
 			{  }, 

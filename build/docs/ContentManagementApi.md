@@ -2810,6 +2810,10 @@ WorkspaceMember <a href="#" onclick="return copyWorkspaceMemberExample()">Copy</
         "id": String, 
         "name": String, 
       },  
+      "unusedRoles": { 
+        "id": String, 
+        "name": String, 
+      },  
       "permissions": [String], 
       "permissionPolicies": { 
         "id": String, 

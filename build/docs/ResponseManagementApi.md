@@ -636,6 +636,10 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
         "id": String, 
         "name": String, 
       },  
+      "unusedRoles": { 
+        "id": String, 
+        "name": String, 
+      },  
       "permissions": [String], 
       "permissionPolicies": { 
         "id": String, 
@@ -1095,6 +1099,10 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  
@@ -1656,6 +1664,10 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
         "id": String, 
         "name": String, 
       },  
+      "unusedRoles": { 
+        "id": String, 
+        "name": String, 
+      },  
       "permissions": [String], 
       "permissionPolicies": { 
         "id": String, 
@@ -2117,6 +2129,10 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  

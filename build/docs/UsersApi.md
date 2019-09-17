@@ -923,7 +923,7 @@ apiInstance.getUser(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, authorization.unusedRoles, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
  **state** | **String** | Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
 {: class="table table-striped"}
 
@@ -982,7 +982,7 @@ apiInstance.getUserAdjacents(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, authorization.unusedRoles, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 {: class="table table-striped"}
 
 ### Return type
@@ -1094,7 +1094,7 @@ apiInstance.getUserDirectreports(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, authorization.unusedRoles, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 {: class="table table-striped"}
 
 ### Return type
@@ -1268,7 +1268,7 @@ apiInstance.getUserFavorites(userId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, authorization.unusedRoles, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 {: class="table table-striped"}
 
 ### Return type
@@ -1436,7 +1436,7 @@ apiInstance.getUserProfile(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, authorization.unusedRoles, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 {: class="table table-striped"}
 
 ### Return type
@@ -1902,7 +1902,7 @@ apiInstance.getUserSuperiors(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, authorization.unusedRoles, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 {: class="table table-striped"}
 
 ### Return type
@@ -2030,7 +2030,7 @@ apiInstance.getUsers(opts)
  **id** | **[String]** | A list of user IDs to fetch by bulk | [optional]  |
  **jabberId** | **[String]** | A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, authorization.unusedRoles, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
  **state** | **String** | Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any |
 {: class="table table-striped"}
 
@@ -2091,7 +2091,7 @@ apiInstance.getUsersExternalidAuthorityNameExternalKey(authorityName, externalKe
 | ------------- | ------------- | ------------- | ------------- |
  **authorityName** | **String** | Authority Name |  |
  **externalKey** | **String** | External Key |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, authorization.unusedRoles, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 {: class="table table-striped"}
 
 ### Return type
@@ -2147,7 +2147,7 @@ apiInstance.getUsersMe(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, authorization.unusedRoles, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
 {: class="table table-striped"}
 
 ### Return type
@@ -2731,6 +2731,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -2868,6 +2869,10 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
           },  
           "authorization": { 
             "roles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "unusedRoles": { 
               "id": String, 
               "name": String, 
             },  
@@ -3058,6 +3063,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -3217,6 +3223,10 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
       },  
       "authorization": { 
         "roles": { 
+          "id": String, 
+          "name": String, 
+        },  
+        "unusedRoles": { 
           "id": String, 
           "name": String, 
         },  
@@ -3569,6 +3579,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -3706,6 +3717,10 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
           },  
           "authorization": { 
             "roles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "unusedRoles": { 
               "id": String, 
               "name": String, 
             },  
@@ -3896,6 +3911,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -4586,6 +4602,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -4790,6 +4810,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -5095,6 +5119,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -5321,6 +5349,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  
@@ -5788,6 +5820,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -5992,6 +6028,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -6294,6 +6334,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -6855,7 +6899,7 @@ UserQueue <a href="#" onclick="return copyUserQueueExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -7163,7 +7207,7 @@ UserQueue <a href="#" onclick="return copyUserQueueExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -8577,6 +8621,7 @@ CreateUser <a href="#" onclick="return copyCreateUserExample()">Copy</a>
   "title": String, 
   "password": String, 
   "divisionId": String, 
+  "state": String, 
 }
 ```
 
@@ -9387,6 +9432,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -9591,6 +9640,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -9896,6 +9949,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -10122,6 +10179,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  
@@ -10589,6 +10650,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -10793,6 +10858,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -11095,6 +11164,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -11848,6 +11921,10 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -12052,6 +12129,10 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -12357,6 +12438,10 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -12583,6 +12668,10 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  
@@ -13050,6 +13139,10 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -13254,6 +13347,10 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -13556,6 +13653,10 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  

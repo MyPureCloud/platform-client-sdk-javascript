@@ -1408,6 +1408,10 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
         "id": String, 
         "name": String, 
       },  
+      "unusedRoles": { 
+        "id": String, 
+        "name": String, 
+      },  
       "permissions": [String], 
       "permissionPolicies": { 
         "id": String, 
@@ -2027,6 +2031,10 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -2336,6 +2344,10 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -2821,6 +2833,10 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  
@@ -3361,6 +3377,10 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
             "id": String, 
             "name": String, 
           },  
+          "unusedRoles": { 
+            "id": String, 
+            "name": String, 
+          },  
           "permissions": [String], 
           "permissionPolicies": { 
             "id": String, 
@@ -3679,6 +3699,10 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
       },  
       "authorization": { 
         "roles": { 
+          "id": String, 
+          "name": String, 
+        },  
+        "unusedRoles": { 
           "id": String, 
           "name": String, 
         },  
@@ -4165,6 +4189,10 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
         "id": String, 
         "name": String, 
       },  
+      "unusedRoles": { 
+        "id": String, 
+        "name": String, 
+      },  
       "permissions": [String], 
       "permissionPolicies": { 
         "id": String, 
@@ -4617,6 +4645,10 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -4926,6 +4958,10 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -5571,6 +5607,10 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -5880,6 +5920,10 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -6367,6 +6411,10 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  
@@ -6994,6 +7042,10 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
             "id": String, 
             "name": String, 
           },  
+          "unusedRoles": { 
+            "id": String, 
+            "name": String, 
+          },  
           "permissions": [String], 
           "permissionPolicies": { 
             "id": String, 
@@ -7312,6 +7364,10 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
       },  
       "authorization": { 
         "roles": { 
+          "id": String, 
+          "name": String, 
+        },  
+        "unusedRoles": { 
           "id": String, 
           "name": String, 
         },  
@@ -7800,6 +7856,10 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  
@@ -8320,6 +8380,10 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
         "id": String, 
         "name": String, 
       },  
+      "unusedRoles": { 
+        "id": String, 
+        "name": String, 
+      },  
       "permissions": [String], 
       "permissionPolicies": { 
         "id": String, 
@@ -8772,6 +8836,10 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
               "id": String, 
               "name": String, 
             },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
             "permissions": [String], 
             "permissionPolicies": { 
               "id": String, 
@@ -9081,6 +9149,10 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  

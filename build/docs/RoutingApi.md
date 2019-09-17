@@ -1381,7 +1381,7 @@ apiInstance.getRoutingQueueUsers(queueId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortBy** | **String** | Sort by | [optional] [default to name] |
- **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, authorization.unusedRoles, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
  **joined** | **Boolean** | Filter by joined status | [optional]  |
  **name** | **String** | Filter by queue member name | [optional]  |
  **profileSkills** | **[String]** | Filter by profile skill | [optional]  |
@@ -1493,6 +1493,7 @@ let opts = {
   'sortBy': "name", // String | Sort by
   'name': "name_example", // String | Name
   'active': true, // Boolean | Active
+  'id': ["id_example"], // [String] | ID(s)
   'divisionId': ["divisionId_example"] // [String] | Division ID(s)
 };
 
@@ -1516,6 +1517,7 @@ apiInstance.getRoutingQueues(opts)
  **sortBy** | **String** | Sort by | [optional] [default to name] |
  **name** | **String** | Name | [optional]  |
  **active** | **Boolean** | Active | [optional]  |
+ **id** | **[String]** | ID(s) | [optional]  |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
 {: class="table table-striped"}
 
@@ -2707,6 +2709,10 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
         "id": String, 
         "name": String, 
       },  
+      "unusedRoles": { 
+        "id": String, 
+        "name": String, 
+      },  
       "permissions": [String], 
       "permissionPolicies": { 
         "id": String, 
@@ -3168,6 +3174,10 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  
@@ -3897,7 +3907,7 @@ InboundRoute <a href="#" onclick="return copyInboundRouteExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -4549,7 +4559,7 @@ CreateQueueRequest <a href="#" onclick="return copyCreateQueueRequestExample()">
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -5311,7 +5321,7 @@ InboundRoute <a href="#" onclick="return copyInboundRouteExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -5690,6 +5700,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       },  
       "authorization": { 
         "roles": { 
+          "id": String, 
+          "name": String, 
+        },  
+        "unusedRoles": { 
           "id": String, 
           "name": String, 
         },  
@@ -6101,6 +6115,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "id": String, 
           "name": String, 
         },  
+        "unusedRoles": { 
+          "id": String, 
+          "name": String, 
+        },  
         "permissions": [String], 
         "permissionPolicies": { 
           "id": String, 
@@ -6462,6 +6480,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -6830,6 +6852,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  
@@ -7234,7 +7260,7 @@ QueueRequest <a href="#" onclick="return copyQueueRequestExample()">Copy</a>
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -7599,6 +7625,10 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  

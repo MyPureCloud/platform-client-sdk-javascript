@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 55.0.0
+	 * @version 56.0.0
 	 */
 
 	/**
@@ -343,8 +343,12 @@ class AuthorizationApi {
 	 * Get a single organization role.
 	 * Get the organization role specified by its ID.
 	 * @param {String} roleId Role ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
 	 */
-	getAuthorizationRole(roleId) { 
+	getAuthorizationRole(roleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'roleId' is set
 		if (roleId === undefined || roleId === null) {
 			throw 'Missing the required parameter "roleId" when calling getAuthorizationRole';
@@ -354,7 +358,7 @@ class AuthorizationApi {
 			'/api/v2/authorization/roles/{roleId}', 
 			'GET', 
 			{ 'roleId': roleId }, 
-			{  }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 

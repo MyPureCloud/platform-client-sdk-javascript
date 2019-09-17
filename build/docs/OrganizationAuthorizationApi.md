@@ -1659,6 +1659,10 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
           "id": String, 
           "name": String, 
         },  
+        "unusedRoles": { 
+          "id": String, 
+          "name": String, 
+        },  
         "permissions": [String], 
         "permissionPolicies": { 
           "id": String, 
@@ -1986,6 +1990,10 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  

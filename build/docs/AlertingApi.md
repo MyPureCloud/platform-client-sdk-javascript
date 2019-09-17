@@ -745,6 +745,10 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
         "id": String, 
         "name": String, 
       },  
+      "unusedRoles": { 
+        "id": String, 
+        "name": String, 
+      },  
       "permissions": [String], 
       "permissionPolicies": { 
         "id": String, 
@@ -1294,6 +1298,10 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  

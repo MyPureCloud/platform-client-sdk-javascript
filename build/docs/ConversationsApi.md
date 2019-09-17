@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteAnalyticsConversationsDetailsJob**](ConversationsApi.html#deleteAnalyticsConversationsDetailsJob) | **DELETE** /api/v2/analytics/conversations/details/jobs/{jobId} | Delete/cancel an async request
 [**deleteConversationParticipantCode**](ConversationsApi.html#deleteConversationParticipantCode) | **DELETE** /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode} | Delete a code used to add a communication to this participant
 [**deleteConversationParticipantFlaggedreason**](ConversationsApi.html#deleteConversationParticipantFlaggedreason) | **DELETE** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Remove flagged reason from conversation participant.
 [**deleteConversationsCallParticipantConsult**](ConversationsApi.html#deleteConversationsCallParticipantConsult) | **DELETE** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Cancel the transfer
@@ -16,6 +17,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Delete a Twitter messaging integration
 [**getAnalyticsConversationDetails**](ConversationsApi.html#getAnalyticsConversationDetails) | **GET** /api/v2/analytics/conversations/{conversationId}/details | Get a conversation by id
 [**getAnalyticsConversationsDetails**](ConversationsApi.html#getAnalyticsConversationsDetails) | **GET** /api/v2/analytics/conversations/details | Gets multiple conversations by id
+[**getAnalyticsConversationsDetailsJob**](ConversationsApi.html#getAnalyticsConversationsDetailsJob) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId} | Get status for async query for conversation details
+[**getAnalyticsConversationsDetailsJobResults**](ConversationsApi.html#getAnalyticsConversationsDetailsJobResults) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async query
 [**getConversation**](ConversationsApi.html#getConversation) | **GET** /api/v2/conversations/{conversationId} | Get conversation
 [**getConversationParticipantSecureivrsession**](ConversationsApi.html#getConversationParticipantSecureivrsession) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId} | Fetch info on a secure session
 [**getConversationParticipantSecureivrsessions**](ConversationsApi.html#getConversationParticipantSecureivrsessions) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Get a list of secure sessions for this participant.
@@ -60,6 +63,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsLineIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/line/{integrationId} | Get a LINE messenger integration
 [**getConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#getConversationsMessagingIntegrationsTwitter) | **GET** /api/v2/conversations/messaging/integrations/twitter | Get a list of Twitter Integrations
 [**getConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsTwitterIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Get a Twitter messaging integration
+[**getConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#getConversationsMessagingIntegrationsWhatsapp) | **GET** /api/v2/conversations/messaging/integrations/whatsapp | Get a list of WhatsApp Integrations
+[**getConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsWhatsappIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Get a WhatsApp messaging integration
 [**getConversationsMessagingSticker**](ConversationsApi.html#getConversationsMessagingSticker) | **GET** /api/v2/conversations/messaging/stickers/{messengerType} | Get a list of Messaging Stickers
 [**patchConversationParticipant**](ConversationsApi.html#patchConversationParticipant) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId} | Update a participant.
 [**patchConversationParticipantAttributes**](ConversationsApi.html#patchConversationParticipantAttributes) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
@@ -88,8 +93,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsMessageParticipant**](ConversationsApi.html#patchConversationsMessageParticipant) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsMessageParticipantAttributes**](ConversationsApi.html#patchConversationsMessageParticipantAttributes) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationsMessageParticipantCommunication**](ConversationsApi.html#patchConversationsMessageParticipantCommunication) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant&#39;s communication by disconnecting it.
+[**patchConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsWhatsappIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Activate a WhatsApp messaging integration.
 [**postAnalyticsConversationDetailsProperties**](ConversationsApi.html#postAnalyticsConversationDetailsProperties) | **POST** /api/v2/analytics/conversations/{conversationId}/details/properties | Index conversation properties
 [**postAnalyticsConversationsAggregatesQuery**](ConversationsApi.html#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
+[**postAnalyticsConversationsDetailsJobs**](ConversationsApi.html#postAnalyticsConversationsDetailsJobs) | **POST** /api/v2/analytics/conversations/details/jobs | Query for conversation details asynchronously
 [**postAnalyticsConversationsDetailsQuery**](ConversationsApi.html#postAnalyticsConversationsDetailsQuery) | **POST** /api/v2/analytics/conversations/details/query | Query for conversation details
 [**postConversationDisconnect**](ConversationsApi.html#postConversationDisconnect) | **POST** /api/v2/conversations/{conversationId}/disconnect | Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resyncronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
 [**postConversationParticipantCallbacks**](ConversationsApi.html#postConversationParticipantCallbacks) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks | Create a new callback for the specified participant on the conversation.
@@ -125,6 +132,61 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | **PUT** /api/v2/conversations/emails/{conversationId}/messages/draft | Update conversation draft reply
 [**putConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#putConversationsMessagingIntegrationsLineIntegrationId) | **PUT** /api/v2/conversations/messaging/integrations/line/{integrationId} | Update a LINE messenger integration
 {: class="table table-striped"}
+
+<a name="deleteAnalyticsConversationsDetailsJob"></a>
+
+# void deleteAnalyticsConversationsDetailsJob(jobId)
+
+
+
+DELETE /api/v2/analytics/conversations/details/jobs/{jobId}
+
+Delete/cancel an async request
+
+
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsConversationsDetailsJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsConversationsDetailsJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsConversationsDetailsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deleteConversationParticipantCode"></a>
 
@@ -628,6 +690,120 @@ apiInstance.getAnalyticsConversationsDetails(opts)
 ### Return type
 
 **AnalyticsConversationMultiGetResponse**
+
+<a name="getAnalyticsConversationsDetailsJob"></a>
+
+# AsyncQueryStatus getAnalyticsConversationsDetailsJob(jobId)
+
+
+
+GET /api/v2/analytics/conversations/details/jobs/{jobId}
+
+Get status for async query for conversation details
+
+
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.getAnalyticsConversationsDetailsJob(jobId)
+  .then((data) => {
+    console.log(`getAnalyticsConversationsDetailsJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsConversationsDetailsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncQueryStatus**
+
+<a name="getAnalyticsConversationsDetailsJobResults"></a>
+
+# AnalyticsConversationAsyncQueryResponse getAnalyticsConversationsDetailsJobResults(jobId, opts)
+
+
+
+GET /api/v2/analytics/conversations/details/jobs/{jobId}/results
+
+Fetch a page of results for an async query
+
+
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page)
+};
+
+apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsConversationsDetailsJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsConversationsDetailsJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**AnalyticsConversationAsyncQueryResponse**
 
 <a name="getConversation"></a>
 
@@ -3076,6 +3252,120 @@ apiInstance.getConversationsMessagingIntegrationsTwitterIntegrationId(integratio
 
 **TwitterIntegration**
 
+<a name="getConversationsMessagingIntegrationsWhatsapp"></a>
+
+# WhatsAppIntegrationEntityListing getConversationsMessagingIntegrationsWhatsapp(opts)
+
+
+
+GET /api/v2/conversations/messaging/integrations/whatsapp
+
+Get a list of WhatsApp Integrations
+
+
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getConversationsMessagingIntegrationsWhatsapp(opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsWhatsapp success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsWhatsapp');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**WhatsAppIntegrationEntityListing**
+
+<a name="getConversationsMessagingIntegrationsWhatsappIntegrationId"></a>
+
+# WhatsAppIntegration getConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId)
+
+
+
+GET /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}
+
+Get a WhatsApp messaging integration
+
+
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.getConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsWhatsappIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsWhatsappIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**WhatsAppIntegration**
+
 <a name="getConversationsMessagingSticker"></a>
 
 # MessagingStickerEntityListing getConversationsMessagingSticker(messengerType, opts)
@@ -4507,8 +4797,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -4537,9 +4827,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -4649,6 +4939,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -4866,10 +5157,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "outboundMessagingAddresses": { 
-                "smsAddress": UriReference, 
+                "smsAddress": DomainEntityRef, 
               },  
               "outboundEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "selfUri": String, 
@@ -4993,9 +5284,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -5005,9 +5296,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "lastUri": String, 
-          "previousUri": String, 
           "nextUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -5247,6 +5538,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -5879,8 +6174,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -5985,9 +6280,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -5997,9 +6292,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
-            "lastUri": String, 
-            "previousUri": String, 
             "nextUri": String, 
+            "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -6338,9 +6633,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -6523,6 +6818,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -6664,8 +6963,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -6694,9 +6993,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -6813,8 +7112,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -6941,8 +7240,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -7083,16 +7382,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -7438,9 +7737,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -7623,6 +7922,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -7764,8 +8067,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -7794,9 +8097,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -7913,8 +8216,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -8041,8 +8344,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -8183,16 +8486,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -8372,16 +8675,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -10026,8 +10329,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -10056,9 +10359,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -10168,6 +10471,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -10385,10 +10689,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "outboundMessagingAddresses": { 
-                "smsAddress": UriReference, 
+                "smsAddress": DomainEntityRef, 
               },  
               "outboundEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "selfUri": String, 
@@ -10512,9 +10816,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -10524,9 +10828,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "lastUri": String, 
-          "previousUri": String, 
           "nextUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -10766,6 +11070,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -11398,8 +11706,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -11504,9 +11812,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -11516,9 +11824,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
-            "lastUri": String, 
-            "previousUri": String, 
             "nextUri": String, 
+            "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -11857,9 +12165,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -12042,6 +12350,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -12183,8 +12495,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -12213,9 +12525,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -12332,8 +12644,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -12460,8 +12772,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -12602,16 +12914,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -12957,9 +13269,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -13142,6 +13454,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -13283,8 +13599,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -13313,9 +13629,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -13432,8 +13748,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -13560,8 +13876,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -13702,16 +14018,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -13891,16 +14207,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -15462,8 +15778,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -15492,9 +15808,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -15604,6 +15920,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -15821,10 +16138,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "outboundMessagingAddresses": { 
-                "smsAddress": UriReference, 
+                "smsAddress": DomainEntityRef, 
               },  
               "outboundEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "selfUri": String, 
@@ -15948,9 +16265,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -15960,9 +16277,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "lastUri": String, 
-          "previousUri": String, 
           "nextUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -16202,6 +16519,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -16834,8 +17155,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -16940,9 +17261,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -16952,9 +17273,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
-            "lastUri": String, 
-            "previousUri": String, 
             "nextUri": String, 
+            "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -17293,9 +17614,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -17478,6 +17799,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -17619,8 +17944,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -17649,9 +17974,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -17768,8 +18093,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -17896,8 +18221,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -18038,16 +18363,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -18393,9 +18718,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -18578,6 +18903,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -18719,8 +19048,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -18749,9 +19078,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -18868,8 +19197,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -18996,8 +19325,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -19138,16 +19467,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -19327,16 +19656,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -20898,8 +21227,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -20928,9 +21257,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -21040,6 +21369,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -21257,10 +21587,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "outboundMessagingAddresses": { 
-                "smsAddress": UriReference, 
+                "smsAddress": DomainEntityRef, 
               },  
               "outboundEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "selfUri": String, 
@@ -21384,9 +21714,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -21396,9 +21726,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "lastUri": String, 
-          "previousUri": String, 
           "nextUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -21638,6 +21968,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -22270,8 +22604,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -22376,9 +22710,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -22388,9 +22722,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
-            "lastUri": String, 
-            "previousUri": String, 
             "nextUri": String, 
+            "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -22729,9 +23063,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -22914,6 +23248,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -23055,8 +23393,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -23085,9 +23423,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -23204,8 +23542,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -23332,8 +23670,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -23474,16 +23812,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -23829,9 +24167,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -24014,6 +24352,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -24155,8 +24497,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -24185,9 +24527,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -24304,8 +24646,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -24432,8 +24774,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -24574,16 +24916,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -24763,16 +25105,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -26338,8 +26680,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -26368,9 +26710,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -26480,6 +26822,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -26697,10 +27040,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "outboundMessagingAddresses": { 
-                "smsAddress": UriReference, 
+                "smsAddress": DomainEntityRef, 
               },  
               "outboundEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "selfUri": String, 
@@ -26824,9 +27167,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -26836,9 +27179,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "lastUri": String, 
-          "previousUri": String, 
           "nextUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -27078,6 +27421,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -27710,8 +28057,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -27816,9 +28163,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -27828,9 +28175,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
-            "lastUri": String, 
-            "previousUri": String, 
             "nextUri": String, 
+            "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -28169,9 +28516,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -28354,6 +28701,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -28495,8 +28846,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -28525,9 +28876,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -28644,8 +28995,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -28772,8 +29123,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -28914,16 +29265,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -29269,9 +29620,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -29454,6 +29805,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -29595,8 +29950,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -29625,9 +29980,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -29744,8 +30099,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -29872,8 +30227,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -30014,16 +30369,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -30203,16 +30558,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -31774,8 +32129,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -31804,9 +32159,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -31916,6 +32271,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -32133,10 +32489,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "outboundMessagingAddresses": { 
-                "smsAddress": UriReference, 
+                "smsAddress": DomainEntityRef, 
               },  
               "outboundEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "selfUri": String, 
@@ -32260,9 +32616,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -32272,9 +32628,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "lastUri": String, 
-          "previousUri": String, 
           "nextUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -32514,6 +32870,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -33146,8 +33506,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -33252,9 +33612,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -33264,9 +33624,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
-            "lastUri": String, 
-            "previousUri": String, 
             "nextUri": String, 
+            "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -33605,9 +33965,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -33790,6 +34150,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -33931,8 +34295,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -33961,9 +34325,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -34080,8 +34444,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -34208,8 +34572,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -34350,16 +34714,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -34705,9 +35069,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -34890,6 +35254,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -35031,8 +35399,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -35061,9 +35429,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -35180,8 +35548,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -35308,8 +35676,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -35450,16 +35818,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -35639,16 +36007,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -36024,6 +36392,93 @@ apiInstance.patchConversationsMessageParticipantCommunication(conversationId, pa
 
 **Empty**
 
+<a name="patchConversationsMessagingIntegrationsWhatsappIntegrationId"></a>
+
+# WhatsAppIntegration patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, body)
+
+
+
+PATCH /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}
+
+Activate a WhatsApp messaging integration.
+
+The following steps are required in order to fully activate a Whatsapp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+
+Requires ANY permissions: 
+
+* messaging:integration:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyWhatsAppIntegrationUpdateRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#WhatsAppIntegrationUpdateRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+WhatsAppIntegrationUpdateRequest <a href="#" onclick="return copyWhatsAppIntegrationUpdateRequestExample()">Copy</a>
+
+<div id="WhatsAppIntegrationUpdateRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "action": String, 
+  "authenticationMethod": String, 
+  "confirmationCode": String, 
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | WhatsAppIntegrationUpdateRequest
+
+apiInstance.patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, body)
+  .then((data) => {
+    console.log(`patchConversationsMessagingIntegrationsWhatsappIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsMessagingIntegrationsWhatsappIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **body** | **Object** | WhatsAppIntegrationUpdateRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**WhatsAppIntegration**
+
 <a name="postAnalyticsConversationDetailsProperties"></a>
 
 # PropertyIndexRequest postAnalyticsConversationDetailsProperties(conversationId, body)
@@ -36241,6 +36696,269 @@ apiInstance.postAnalyticsConversationsAggregatesQuery(body)
 ### Return type
 
 **AggregateQueryResponse**
+
+<a name="postAnalyticsConversationsDetailsJobs"></a>
+
+# AsyncQueryResponse postAnalyticsConversationsDetailsJobs(body)
+
+
+
+POST /api/v2/analytics/conversations/details/jobs
+
+Query for conversation details asynchronously
+
+
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyAsyncConversationQueryExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#AsyncConversationQueryExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+AsyncConversationQuery <a href="#" onclick="return copyAsyncConversationQueryExample()">Copy</a>
+
+<div id="AsyncConversationQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "interval": String, 
+  "conversationFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "evaluationFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "surveyFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "mediaEndpointStatFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "segmentFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "propertyType": String, 
+        "property": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "propertyType": String, 
+      "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "order": String, 
+  "orderBy": String, 
+  "limit": Number, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsConversationsDetailsJobs(body)
+  .then((data) => {
+    console.log(`postAnalyticsConversationsDetailsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsConversationsDetailsJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncQueryResponse**
 
 <a name="postAnalyticsConversationsDetailsQuery"></a>
 
@@ -38437,8 +39155,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -38467,9 +39185,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -38579,6 +39297,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -38796,10 +39515,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "outboundMessagingAddresses": { 
-                "smsAddress": UriReference, 
+                "smsAddress": DomainEntityRef, 
               },  
               "outboundEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "selfUri": String, 
@@ -38923,9 +39642,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -38935,9 +39654,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
-          "lastUri": String, 
-          "previousUri": String, 
           "nextUri": String, 
+          "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -39177,6 +39896,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -39809,8 +40532,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -39915,9 +40638,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -39927,9 +40650,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
-            "lastUri": String, 
-            "previousUri": String, 
             "nextUri": String, 
+            "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -40268,9 +40991,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -40453,6 +41176,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -40594,8 +41321,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -40624,9 +41351,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -40743,8 +41470,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -40871,8 +41598,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -41013,16 +41740,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -41368,9 +42095,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -41553,6 +42280,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -41694,8 +42425,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -41724,9 +42455,9 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -41843,8 +42574,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -41971,8 +42702,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -42113,16 +42844,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -42302,16 +43033,16 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  

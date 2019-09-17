@@ -4763,7 +4763,7 @@ apiInstance.postOutboundContactlistContactsBulk(contactListId, body)
 
 <a name="postOutboundContactlistExport"></a>
 
-# UriReference postOutboundContactlistExport(contactListId)
+# DomainEntityRef postOutboundContactlistExport(contactListId)
 
 
 
@@ -4815,7 +4815,7 @@ apiInstance.postOutboundContactlistExport(contactListId)
 
 ### Return type
 
-**UriReference**
+**DomainEntityRef**
 
 <a name="postOutboundContactlistfilters"></a>
 
@@ -5203,7 +5203,7 @@ void (no response body)
 
 <a name="postOutboundDnclistExport"></a>
 
-# UriReference postOutboundDnclistExport(dncListId)
+# DomainEntityRef postOutboundDnclistExport(dncListId)
 
 
 
@@ -5255,7 +5255,7 @@ apiInstance.postOutboundDnclistExport(dncListId)
 
 ### Return type
 
-**UriReference**
+**DomainEntityRef**
 
 <a name="postOutboundDnclistPhonenumbers"></a>
 

@@ -1361,6 +1361,7 @@ VoicemailGroupPolicy <a href="#" onclick="return copyVoicemailGroupPolicyExample
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -1498,6 +1499,10 @@ VoicemailGroupPolicy <a href="#" onclick="return copyVoicemailGroupPolicyExample
           },  
           "authorization": { 
             "roles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "unusedRoles": { 
               "id": String, 
               "name": String, 
             },  
@@ -1688,6 +1693,7 @@ VoicemailGroupPolicy <a href="#" onclick="return copyVoicemailGroupPolicyExample
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -1847,6 +1853,10 @@ VoicemailGroupPolicy <a href="#" onclick="return copyVoicemailGroupPolicyExample
       },  
       "authorization": { 
         "roles": { 
+          "id": String, 
+          "name": String, 
+        },  
+        "unusedRoles": { 
           "id": String, 
           "name": String, 
         },  
@@ -2199,6 +2209,7 @@ VoicemailGroupPolicy <a href="#" onclick="return copyVoicemailGroupPolicyExample
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -2336,6 +2347,10 @@ VoicemailGroupPolicy <a href="#" onclick="return copyVoicemailGroupPolicyExample
           },  
           "authorization": { 
             "roles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "unusedRoles": { 
               "id": String, 
               "name": String, 
             },  
@@ -2526,6 +2541,7 @@ VoicemailGroupPolicy <a href="#" onclick="return copyVoicemailGroupPolicyExample
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -3906,8 +3922,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -4012,9 +4028,9 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -4024,9 +4040,9 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
-            "lastUri": String, 
-            "previousUri": String, 
             "nextUri": String, 
+            "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -4280,6 +4296,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -4417,6 +4434,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           },  
           "authorization": { 
             "roles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "unusedRoles": { 
               "id": String, 
               "name": String, 
             },  
@@ -4607,6 +4628,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -4925,6 +4947,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -5062,6 +5085,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           },  
           "authorization": { 
             "roles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "unusedRoles": { 
               "id": String, 
               "name": String, 
             },  
@@ -5252,6 +5279,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -5532,6 +5560,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -5976,9 +6008,9 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -6045,8 +6077,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -6075,9 +6107,9 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -6187,6 +6219,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -6339,6 +6372,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -6588,10 +6622,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "selfUri": String, 
               },  
               "outboundMessagingAddresses": { 
-                "smsAddress": UriReference, 
+                "smsAddress": DomainEntityRef, 
               },  
               "outboundEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "selfUri": String, 
@@ -6664,8 +6698,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -6694,9 +6728,9 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -6806,6 +6840,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -6958,6 +6993,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -7207,10 +7243,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "selfUri": String, 
               },  
               "outboundMessagingAddresses": { 
-                "smsAddress": UriReference, 
+                "smsAddress": DomainEntityRef, 
               },  
               "outboundEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "selfUri": String, 
@@ -7376,7 +7412,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -7931,6 +7967,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -8135,6 +8175,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -8440,6 +8484,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -8666,6 +8714,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  
@@ -9133,6 +9185,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -9337,6 +9393,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -9639,6 +9699,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -10301,6 +10365,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -10505,6 +10573,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -10810,6 +10882,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -11036,6 +11112,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  
@@ -11503,6 +11583,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -11707,6 +11791,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -12009,6 +12097,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -12585,6 +12677,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -12722,6 +12815,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           },  
           "authorization": { 
             "roles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "unusedRoles": { 
               "id": String, 
               "name": String, 
             },  
@@ -12912,6 +13009,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -13071,6 +13169,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
       },  
       "authorization": { 
         "roles": { 
+          "id": String, 
+          "name": String, 
+        },  
+        "unusedRoles": { 
           "id": String, 
           "name": String, 
         },  
@@ -13423,6 +13525,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -13560,6 +13663,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           },  
           "authorization": { 
             "roles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "unusedRoles": { 
               "id": String, 
               "name": String, 
             },  
@@ -13750,6 +13857,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -14005,16 +14113,16 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -14423,6 +14531,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -14627,6 +14739,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -14929,6 +15045,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -15451,6 +15571,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -15655,6 +15779,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -15957,6 +16085,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -17622,8 +17754,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
-                "queueFlow": UriReference, 
-                "whisperPrompt": UriReference, 
+                "queueFlow": DomainEntityRef, 
+                "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
@@ -17728,9 +17860,9 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -17740,9 +17872,9 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
-            "lastUri": String, 
-            "previousUri": String, 
             "nextUri": String, 
+            "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -17996,6 +18128,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -18133,6 +18266,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           },  
           "authorization": { 
             "roles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "unusedRoles": { 
               "id": String, 
               "name": String, 
             },  
@@ -18323,6 +18460,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -18641,6 +18779,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -18778,6 +18917,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           },  
           "authorization": { 
             "roles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "unusedRoles": { 
               "id": String, 
               "name": String, 
             },  
@@ -18968,6 +19111,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -19248,6 +19392,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -19692,9 +19840,9 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
-              "previousUri": String, 
               "nextUri": String, 
+              "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -19761,8 +19909,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -19791,9 +19939,9 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -19903,6 +20051,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -20055,6 +20204,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -20304,10 +20454,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "selfUri": String, 
               },  
               "outboundMessagingAddresses": { 
-                "smsAddress": UriReference, 
+                "smsAddress": DomainEntityRef, 
               },  
               "outboundEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "selfUri": String, 
@@ -20380,8 +20530,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               "recordingState": String, 
               "state": String, 
               "divisions": { 
-                "division": UriReference, 
-                "entities": [UriReference], 
+                "division": DomainEntityRef, 
+                "entities": [DomainEntityRef], 
               },  
               "selfUri": String, 
             },  
@@ -20410,9 +20560,9 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
-                "previousUri": String, 
                 "nextUri": String, 
+                "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -20522,6 +20672,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -20674,6 +20825,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -20923,10 +21075,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "selfUri": String, 
               },  
               "outboundMessagingAddresses": { 
-                "smsAddress": UriReference, 
+                "smsAddress": DomainEntityRef, 
               },  
               "outboundEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "selfUri": String, 
@@ -21092,7 +21244,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "selfUri": String, 
               },  
               "replyEmailAddress": { 
-                "domain": UriReference, 
+                "domain": DomainEntityRef, 
                 "route": InboundRoute, 
               },  
               "autoBcc": { 
@@ -21647,6 +21799,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -21851,6 +22007,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -22156,6 +22316,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -22382,6 +22546,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  
@@ -22849,6 +23017,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -23053,6 +23225,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -23355,6 +23531,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -24017,6 +24197,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -24221,6 +24405,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -24526,6 +24714,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -24752,6 +24944,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
     },  
     "authorization": { 
       "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
         "id": String, 
         "name": String, 
       },  
@@ -25219,6 +25415,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -25423,6 +25623,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -25725,6 +25929,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -26301,6 +26509,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -26438,6 +26647,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           },  
           "authorization": { 
             "roles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "unusedRoles": { 
               "id": String, 
               "name": String, 
             },  
@@ -26628,6 +26841,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -26787,6 +27001,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
       },  
       "authorization": { 
         "roles": { 
+          "id": String, 
+          "name": String, 
+        },  
+        "unusedRoles": { 
           "id": String, 
           "name": String, 
         },  
@@ -27139,6 +27357,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -27276,6 +27495,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           },  
           "authorization": { 
             "roles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "unusedRoles": { 
               "id": String, 
               "name": String, 
             },  
@@ -27466,6 +27689,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "authorization": { 
                 "roles": [DomainRole], 
+                "unusedRoles": [DomainRole], 
                 "permissions": [String], 
                 "permissionPolicies": [ResourcePermissionPolicy], 
               },  
@@ -27721,16 +27945,16 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "id": String, 
                 "name": String, 
                 "pattern": String, 
-                "queue": UriReference, 
+                "queue": DomainEntityRef, 
                 "priority": Number, 
-                "skills": [UriReference], 
-                "language": UriReference, 
+                "skills": [DomainEntityRef], 
+                "language": DomainEntityRef, 
                 "fromName": String, 
                 "fromEmail": String, 
-                "flow": UriReference, 
+                "flow": DomainEntityRef, 
                 "replyEmailAddress": QueueEmailAddress, 
                 "autoBcc": [EmailAddress], 
-                "spamFlow": UriReference, 
+                "spamFlow": DomainEntityRef, 
                 "selfUri": String, 
               },  
             },  
@@ -28139,6 +28363,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -28343,6 +28571,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -28645,6 +28877,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
@@ -29167,6 +29403,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "id": String, 
                 "name": String, 
               },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
               "permissions": [String], 
               "permissionPolicies": { 
                 "id": String, 
@@ -29371,6 +29611,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
         },  
         "authorization": { 
           "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
             "id": String, 
             "name": String, 
           },  
@@ -29673,6 +29917,10 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             },  
             "authorization": { 
               "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
                 "id": String, 
                 "name": String, 
               },  
