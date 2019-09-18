@@ -1014,7 +1014,7 @@ apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
 
 <a name="postAnalyticsConversationsAggregatesQuery"></a>
 
-# AggregateQueryResponse postAnalyticsConversationsAggregatesQuery(body)
+# ConversationAggregateQueryResponse postAnalyticsConversationsAggregatesQuery(body)
 
 
 
@@ -1032,19 +1032,19 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyAggregationQueryExample() {
+	function copyConversationAggregationQueryExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#AggregationQueryExample').text()).select();
+		temp.val($('#ConversationAggregationQueryExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy</a>
+ConversationAggregationQuery <a href="#" onclick="return copyConversationAggregationQueryExample()">Copy</a>
 
-<div id="AggregationQueryExample">
+<div id="ConversationAggregationQueryExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
@@ -1059,9 +1059,6 @@ AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy
       "predicates": { 
         "type": String, 
         "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
         "operator": String, 
         "value": String, 
         "range": { 
@@ -1075,9 +1072,6 @@ AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy
     "predicates": { 
       "type": String, 
       "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
       "operator": String, 
       "value": String, 
       "range": { 
@@ -1140,7 +1134,7 @@ apiInstance.postAnalyticsConversationsAggregatesQuery(body)
 
 ### Return type
 
-**AggregateQueryResponse**
+**ConversationAggregateQueryResponse**
 
 <a name="postAnalyticsConversationsDetailsJobs"></a>
 
@@ -1186,8 +1180,6 @@ AsyncConversationQuery <a href="#" onclick="return copyAsyncConversationQueryExa
       "predicates": { 
         "type": String, 
         "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
         "metric": String, 
         "operator": String, 
         "value": String, 
@@ -1202,116 +1194,6 @@ AsyncConversationQuery <a href="#" onclick="return copyAsyncConversationQueryExa
     "predicates": { 
       "type": String, 
       "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "evaluationFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "surveyFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "mediaEndpointStatFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
       "metric": String, 
       "operator": String, 
       "value": String, 
@@ -1348,6 +1230,100 @@ AsyncConversationQuery <a href="#" onclick="return copyAsyncConversationQueryExa
       "dimension": String, 
       "propertyType": String, 
       "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "evaluationFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "mediaEndpointStatFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "surveyFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
       "metric": String, 
       "operator": String, 
       "value": String, 
@@ -1449,8 +1425,6 @@ ConversationQuery <a href="#" onclick="return copyConversationQueryExample()">Co
       "predicates": { 
         "type": String, 
         "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
         "metric": String, 
         "operator": String, 
         "value": String, 
@@ -1465,116 +1439,6 @@ ConversationQuery <a href="#" onclick="return copyConversationQueryExample()">Co
     "predicates": { 
       "type": String, 
       "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "evaluationFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "surveyFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "mediaEndpointStatFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
       "metric": String, 
       "operator": String, 
       "value": String, 
@@ -1611,6 +1475,100 @@ ConversationQuery <a href="#" onclick="return copyConversationQueryExample()">Co
       "dimension": String, 
       "propertyType": String, 
       "property": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "evaluationFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "metric": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "mediaEndpointStatFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "surveyFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "metric": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
       "metric": String, 
       "operator": String, 
       "value": String, 
@@ -1683,7 +1641,7 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
 
 <a name="postAnalyticsEvaluationsAggregatesQuery"></a>
 
-# AggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(body)
+# EvaluationAggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(body)
 
 
 
@@ -1701,19 +1659,19 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyAggregationQueryExample() {
+	function copyEvaluationAggregationQueryExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#AggregationQueryExample').text()).select();
+		temp.val($('#EvaluationAggregationQueryExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy</a>
+EvaluationAggregationQuery <a href="#" onclick="return copyEvaluationAggregationQueryExample()">Copy</a>
 
-<div id="AggregationQueryExample">
+<div id="EvaluationAggregationQueryExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
@@ -1728,9 +1686,6 @@ AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy
       "predicates": { 
         "type": String, 
         "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
         "operator": String, 
         "value": String, 
         "range": { 
@@ -1744,9 +1699,6 @@ AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy
     "predicates": { 
       "type": String, 
       "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
       "operator": String, 
       "value": String, 
       "range": { 
@@ -1809,11 +1761,11 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
 
 ### Return type
 
-**AggregateQueryResponse**
+**EvaluationAggregateQueryResponse**
 
 <a name="postAnalyticsFlowsAggregatesQuery"></a>
 
-# AggregateQueryResponse postAnalyticsFlowsAggregatesQuery(body)
+# FlowAggregateQueryResponse postAnalyticsFlowsAggregatesQuery(body)
 
 
 
@@ -1831,19 +1783,19 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyAggregationQueryExample() {
+	function copyFlowAggregationQueryExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#AggregationQueryExample').text()).select();
+		temp.val($('#FlowAggregationQueryExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy</a>
+FlowAggregationQuery <a href="#" onclick="return copyFlowAggregationQueryExample()">Copy</a>
 
-<div id="AggregationQueryExample">
+<div id="FlowAggregationQueryExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
@@ -1858,9 +1810,6 @@ AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy
       "predicates": { 
         "type": String, 
         "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
         "operator": String, 
         "value": String, 
         "range": { 
@@ -1874,9 +1823,6 @@ AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy
     "predicates": { 
       "type": String, 
       "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
       "operator": String, 
       "value": String, 
       "range": { 
@@ -1939,11 +1885,11 @@ apiInstance.postAnalyticsFlowsAggregatesQuery(body)
 
 ### Return type
 
-**AggregateQueryResponse**
+**FlowAggregateQueryResponse**
 
 <a name="postAnalyticsFlowsObservationsQuery"></a>
 
-# QualifierMappingObservationQueryResponse postAnalyticsFlowsObservationsQuery(body)
+# FlowObservationQueryResponse postAnalyticsFlowsObservationsQuery(body)
 
 
 
@@ -1961,19 +1907,19 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyObservationQueryExample() {
+	function copyFlowObservationQueryExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#ObservationQueryExample').text()).select();
+		temp.val($('#FlowObservationQueryExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy</a>
+FlowObservationQuery <a href="#" onclick="return copyFlowObservationQueryExample()">Copy</a>
 
-<div id="ObservationQueryExample">
+<div id="FlowObservationQueryExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
@@ -1984,9 +1930,6 @@ ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy
       "predicates": { 
         "type": String, 
         "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
         "operator": String, 
         "value": String, 
         "range": { 
@@ -2000,9 +1943,6 @@ ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy
     "predicates": { 
       "type": String, 
       "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
       "operator": String, 
       "value": String, 
       "range": { 
@@ -2056,11 +1996,11 @@ apiInstance.postAnalyticsFlowsObservationsQuery(body)
 
 ### Return type
 
-**QualifierMappingObservationQueryResponse**
+**FlowObservationQueryResponse**
 
 <a name="postAnalyticsQueuesObservationsQuery"></a>
 
-# QualifierMappingObservationQueryResponse postAnalyticsQueuesObservationsQuery(body)
+# QueueObservationQueryResponse postAnalyticsQueuesObservationsQuery(body)
 
 
 
@@ -2078,19 +2018,19 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyObservationQueryExample() {
+	function copyQueueObservationQueryExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#ObservationQueryExample').text()).select();
+		temp.val($('#QueueObservationQueryExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy</a>
+QueueObservationQuery <a href="#" onclick="return copyQueueObservationQueryExample()">Copy</a>
 
-<div id="ObservationQueryExample">
+<div id="QueueObservationQueryExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
@@ -2101,9 +2041,6 @@ ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy
       "predicates": { 
         "type": String, 
         "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
         "operator": String, 
         "value": String, 
         "range": { 
@@ -2117,9 +2054,6 @@ ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy
     "predicates": { 
       "type": String, 
       "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
       "operator": String, 
       "value": String, 
       "range": { 
@@ -2173,7 +2107,7 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 
 ### Return type
 
-**QualifierMappingObservationQueryResponse**
+**QueueObservationQueryResponse**
 
 <a name="postAnalyticsReportingExports"></a>
 
@@ -2566,7 +2500,7 @@ apiInstance.postAnalyticsReportingSchedules(body)
 
 <a name="postAnalyticsSurveysAggregatesQuery"></a>
 
-# AggregateQueryResponse postAnalyticsSurveysAggregatesQuery(body)
+# SurveyAggregateQueryResponse postAnalyticsSurveysAggregatesQuery(body)
 
 
 
@@ -2584,19 +2518,19 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyAggregationQueryExample() {
+	function copySurveyAggregationQueryExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#AggregationQueryExample').text()).select();
+		temp.val($('#SurveyAggregationQueryExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy</a>
+SurveyAggregationQuery <a href="#" onclick="return copySurveyAggregationQueryExample()">Copy</a>
 
-<div id="AggregationQueryExample">
+<div id="SurveyAggregationQueryExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
@@ -2611,9 +2545,6 @@ AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy
       "predicates": { 
         "type": String, 
         "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
         "operator": String, 
         "value": String, 
         "range": { 
@@ -2627,9 +2558,6 @@ AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy
     "predicates": { 
       "type": String, 
       "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
       "operator": String, 
       "value": String, 
       "range": { 
@@ -2692,11 +2620,11 @@ apiInstance.postAnalyticsSurveysAggregatesQuery(body)
 
 ### Return type
 
-**AggregateQueryResponse**
+**SurveyAggregateQueryResponse**
 
 <a name="postAnalyticsUsersAggregatesQuery"></a>
 
-# PresenceQueryResponse postAnalyticsUsersAggregatesQuery(body)
+# UserAggregateQueryResponse postAnalyticsUsersAggregatesQuery(body)
 
 
 
@@ -2714,19 +2642,19 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyAggregationQueryExample() {
+	function copyUserAggregationQueryExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#AggregationQueryExample').text()).select();
+		temp.val($('#UserAggregationQueryExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy</a>
+UserAggregationQuery <a href="#" onclick="return copyUserAggregationQueryExample()">Copy</a>
 
-<div id="AggregationQueryExample">
+<div id="UserAggregationQueryExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
@@ -2741,9 +2669,6 @@ AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy
       "predicates": { 
         "type": String, 
         "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
         "operator": String, 
         "value": String, 
         "range": { 
@@ -2757,9 +2682,6 @@ AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy
     "predicates": { 
       "type": String, 
       "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
       "operator": String, 
       "value": String, 
       "range": { 
@@ -2822,7 +2744,7 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 
 ### Return type
 
-**PresenceQueryResponse**
+**UserAggregateQueryResponse**
 
 <a name="postAnalyticsUsersDetailsQuery"></a>
 
@@ -2868,9 +2790,6 @@ UserDetailsQuery <a href="#" onclick="return copyUserDetailsQueryExample()">Copy
       "predicates": { 
         "type": String, 
         "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
         "operator": String, 
         "value": String, 
         "range": { 
@@ -2884,45 +2803,6 @@ UserDetailsQuery <a href="#" onclick="return copyUserDetailsQueryExample()">Copy
     "predicates": { 
       "type": String, 
       "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "presenceFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
       "operator": String, 
       "value": String, 
       "range": { 
@@ -2940,9 +2820,6 @@ UserDetailsQuery <a href="#" onclick="return copyUserDetailsQueryExample()">Copy
       "predicates": { 
         "type": String, 
         "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
         "operator": String, 
         "value": String, 
         "range": { 
@@ -2956,9 +2833,6 @@ UserDetailsQuery <a href="#" onclick="return copyUserDetailsQueryExample()">Copy
     "predicates": { 
       "type": String, 
       "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
       "operator": String, 
       "value": String, 
       "range": { 
@@ -2994,6 +2868,36 @@ UserDetailsQuery <a href="#" onclick="return copyUserDetailsQueryExample()">Copy
     "pageNumber": Number, 
   },  
   "order": String, 
+  "presenceDetailFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
 }
 ```
 
@@ -3039,7 +2943,7 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
 
 <a name="postAnalyticsUsersObservationsQuery"></a>
 
-# ObservationQueryResponse postAnalyticsUsersObservationsQuery(body)
+# UserObservationQueryResponse postAnalyticsUsersObservationsQuery(body)
 
 
 
@@ -3057,19 +2961,19 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyObservationQueryExample() {
+	function copyUserObservationQueryExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#ObservationQueryExample').text()).select();
+		temp.val($('#UserObservationQueryExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy</a>
+UserObservationQuery <a href="#" onclick="return copyUserObservationQueryExample()">Copy</a>
 
-<div id="ObservationQueryExample">
+<div id="UserObservationQueryExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
@@ -3080,9 +2984,6 @@ ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy
       "predicates": { 
         "type": String, 
         "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
         "operator": String, 
         "value": String, 
         "range": { 
@@ -3096,9 +2997,6 @@ ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy
     "predicates": { 
       "type": String, 
       "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
       "operator": String, 
       "value": String, 
       "range": { 
@@ -3152,7 +3050,7 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 
 ### Return type
 
-**ObservationQueryResponse**
+**UserObservationQueryResponse**
 
 <a name="putAnalyticsReportingSchedule"></a>
 

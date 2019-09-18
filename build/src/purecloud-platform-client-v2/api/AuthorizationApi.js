@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -344,7 +344,7 @@ class AuthorizationApi {
 	 * Get the organization role specified by its ID.
 	 * @param {String} roleId Role ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. \&quot;unusedPermissions\&quot; returns the permissions not used for the role
 	 */
 	getAuthorizationRole(roleId, opts) { 
 		opts = opts || {};
@@ -686,7 +686,7 @@ class AuthorizationApi {
 	 * @param {String} roleId Role ID
 	 * @param {Object} body Subjects and Divisions
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.subjectType what the type of the subject is, PC_GROUP or PC_USER (default to PC_USER)
+	 * @param {String} opts.subjectType what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (default to PC_USER)
 	 */
 	postAuthorizationRole(roleId, body, opts) { 
 		opts = opts || {};
@@ -805,7 +805,7 @@ class AuthorizationApi {
 	 * @param {String} divisionId the id of the division to which to make the grant
 	 * @param {String} roleId the id of the role to grant
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.subjectType what the type of the subject is, PC_GROUP or PC_USER (default to PC_USER)
+	 * @param {String} opts.subjectType what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) (default to PC_USER)
 	 */
 	postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts) { 
 		opts = opts || {};

@@ -1,595 +1,668 @@
-Platform API version: 3448
+Platform API version: 3472
 
 
-# Major Changes (200 changes)
+# Major Changes (37 changes)
 
-**GET /api/v2/authorization/roles/{roleId}** (1 change)
+**POST /api/v2/analytics/evaluations/aggregates/query** (1 change)
 
-* Parameter expand was added
+* Response 200 type was changed from AggregateQueryResponse to EvaluationAggregateQueryResponse
 
-**POST /api/v2/outbound/dnclists/{dncListId}/export** (1 change)
+**POST /api/v2/analytics/users/observations/query** (1 change)
 
-* Response 200 type was changed from UriReference to DomainEntityRef
+* Response 200 type was changed from ObservationQueryResponse to UserObservationQueryResponse
 
-**GET /api/v2/routing/queues** (1 change)
+**POST /api/v2/analytics/users/aggregates/query** (1 change)
 
-* Parameter id was added
+* Response 200 type was changed from PresenceQueryResponse to UserAggregateQueryResponse
 
-**POST /api/v2/outbound/contactlists/{contactListId}/export** (1 change)
+**POST /api/v2/analytics/surveys/aggregates/query** (1 change)
 
-* Response 200 type was changed from UriReference to DomainEntityRef
+* Response 200 type was changed from AggregateQueryResponse to SurveyAggregateQueryResponse
 
-**UriReference** (1 change)
+**POST /api/v2/analytics/flows/aggregates/query** (1 change)
 
-* Model UriReference was removed
+* Response 200 type was changed from AggregateQueryResponse to FlowAggregateQueryResponse
 
-**DataSchema** (1 change)
+**POST /api/v2/analytics/flows/observations/query** (1 change)
 
-* Property createdBy was changed from UriReference to DomainEntityRef
+* Response 200 type was changed from QualifierMappingObservationQueryResponse to FlowObservationQueryResponse
 
-**IVR** (4 changes)
+**POST /api/v2/analytics/conversations/aggregates/query** (1 change)
 
-* Property openHoursFlow was changed from UriReference to DomainEntityRef
-* Property closedHoursFlow was changed from UriReference to DomainEntityRef
-* Property holidayHoursFlow was changed from UriReference to DomainEntityRef
-* Property scheduleGroup was changed from UriReference to DomainEntityRef
+* Response 200 type was changed from AggregateQueryResponse to ConversationAggregateQueryResponse
 
-**SecureSession** (1 change)
+**POST /api/v2/analytics/queues/observations/query** (1 change)
 
-* Property flow was changed from UriReference to DomainEntityRef
+* Response 200 type was changed from QualifierMappingObservationQueryResponse to QueueObservationQueryResponse
 
-**MessagingIntegration** (3 changes)
+**AggregateDataContainer** (1 change)
 
-* Property recipient was changed from UriReference to DomainEntityRef
-* Property createdBy was changed from UriReference to DomainEntityRef
-* Property modifiedBy was changed from UriReference to DomainEntityRef
+* Model AggregateDataContainer was removed
 
-**InboundRoute** (5 changes)
+**AggregateQueryResponse** (1 change)
 
-* Property queue was changed from UriReference to DomainEntityRef
-* Property skills was changed from UriReference[] to DomainEntityRef[]
-* Property language was changed from UriReference to DomainEntityRef
-* Property flow was changed from UriReference to DomainEntityRef
-* Property spamFlow was changed from UriReference to DomainEntityRef
+* Model AggregateQueryResponse was removed
 
-**Queue** (2 changes)
+**AggregationQuery** (1 change)
 
-* Property queueFlow was changed from UriReference to DomainEntityRef
-* Property whisperPrompt was changed from UriReference to DomainEntityRef
+* Model AggregationQuery was removed
 
-**QueueEmailAddress** (1 change)
+**AnalyticsQueryClause** (1 change)
 
-* Property domain was changed from UriReference to DomainEntityRef
+* Model AnalyticsQueryClause was removed
 
-**QueueMessagingAddresses** (1 change)
+**AnalyticsQueryFilter** (1 change)
 
-* Property smsAddress was changed from UriReference to DomainEntityRef
+* Model AnalyticsQueryFilter was removed
 
-**Workspace** (1 change)
+**AnalyticsQueryPredicate** (1 change)
 
-* Property user was changed from UriReference to DomainEntityRef
+* Model AnalyticsQueryPredicate was removed
 
-**ReplaceResponse** (1 change)
+**AnalyticsView** (1 change)
 
-* Property uploadStatus was changed from UriReference to DomainEntityRef
+* Model AnalyticsView was removed
 
-**LineBase** (1 change)
+**ObservationDataContainer** (1 change)
 
-* Property lineMetaBase was changed from UriReference to DomainEntityRef
+* Model ObservationDataContainer was removed
 
-**ConversationDivisionMembership** (2 changes)
+**QualifierMappingObservationQueryResponse** (1 change)
 
-* Property division was changed from UriReference to DomainEntityRef
-* Property entities was changed from UriReference[] to DomainEntityRef[]
+* Model QualifierMappingObservationQueryResponse was removed
 
-**EmailMediaParticipant** (5 changes)
+**ObservationQuery** (1 change)
 
-* Property user was changed from UriReference to DomainEntityRef
-* Property queue was changed from UriReference to DomainEntityRef
-* Property script was changed from UriReference to DomainEntityRef
-* Property externalContact was changed from UriReference to DomainEntityRef
-* Property externalOrganization was changed from UriReference to DomainEntityRef
+* Model ObservationQuery was removed
 
-**GDPRRequest** (1 change)
+**PresenceQueryResponse** (1 change)
 
-* Property createdBy was changed from UriReference to DomainEntityRef
+* Model PresenceQueryResponse was removed
 
-**CallbackMediaParticipant** (5 changes)
+**ObservationQueryResponse** (1 change)
 
-* Property user was changed from UriReference to DomainEntityRef
-* Property queue was changed from UriReference to DomainEntityRef
-* Property script was changed from UriReference to DomainEntityRef
-* Property externalContact was changed from UriReference to DomainEntityRef
-* Property externalOrganization was changed from UriReference to DomainEntityRef
+* Model ObservationQueryResponse was removed
 
-**CreateCallbackResponse** (1 change)
+**UserAuthorization** (1 change)
 
-* Property conversation was changed from UriReference to DomainEntityRef
+* unusedRoles has been made readonly
 
-**ChatMediaParticipant** (5 changes)
+**DomainOrganizationRole** (1 change)
 
-* Property user was changed from UriReference to DomainEntityRef
-* Property queue was changed from UriReference to DomainEntityRef
-* Property script was changed from UriReference to DomainEntityRef
-* Property externalContact was changed from UriReference to DomainEntityRef
-* Property externalOrganization was changed from UriReference to DomainEntityRef
+* unusedPermissions has been made readonly
 
-**ContactListFilter** (1 change)
+**DomainOrganizationRoleCreate** (1 change)
 
-* Property contactList was changed from UriReference to DomainEntityRef
+* unusedPermissions has been made readonly
 
-**EdgeInterface** (1 change)
+**UserDetailsQuery** (3 changes)
 
-* Property endpoints was changed from UriReference[] to DomainEntityRef[]
+* Property presenceFilters was removed
+* Property userFilters was changed from AnalyticsQueryFilter[] to UserDetailQueryFilter[]
+* Property routingStatusFilters was changed from AnalyticsQueryFilter[] to RoutingStatusDetailQueryFilter[]
 
-**Site** (2 changes)
+**DomainOrganizationRoleUpdate** (1 change)
 
-* Property primarySites was changed from UriReference[] to DomainEntityRef[]
-* Property secondarySites was changed from UriReference[] to DomainEntityRef[]
+* unusedPermissions has been made readonly
 
-**TrunkBase** (1 change)
+**AsyncConversationQuery** (5 changes)
 
-* Property trunkMetabase was changed from UriReference to DomainEntityRef
+* Property conversationFilters was changed from AnalyticsQueryFilter[] to ConversationDetailQueryFilter[]
+* Property segmentFilters was changed from AnalyticsQueryFilter[] to SegmentDetailQueryFilter[]
+* Property evaluationFilters was changed from AnalyticsQueryFilter[] to EvaluationDetailQueryFilter[]
+* Property mediaEndpointStatFilters was changed from AnalyticsQueryFilter[] to MediaEndpointStatDetailQueryFilter[]
+* Property surveyFilters was changed from AnalyticsQueryFilter[] to SurveyDetailQueryFilter[]
 
-**TwitterIntegration** (3 changes)
+**ConversationQuery** (5 changes)
 
-* Property recipient was changed from UriReference to DomainEntityRef
-* Property createdBy was changed from UriReference to DomainEntityRef
-* Property modifiedBy was changed from UriReference to DomainEntityRef
+* Property conversationFilters was changed from AnalyticsQueryFilter[] to ConversationDetailQueryFilter[]
+* Property segmentFilters was changed from AnalyticsQueryFilter[] to SegmentDetailQueryFilter[]
+* Property evaluationFilters was changed from AnalyticsQueryFilter[] to EvaluationDetailQueryFilter[]
+* Property mediaEndpointStatFilters was changed from AnalyticsQueryFilter[] to MediaEndpointStatDetailQueryFilter[]
+* Property surveyFilters was changed from AnalyticsQueryFilter[] to SurveyDetailQueryFilter[]
 
-**OAuthClient** (2 changes)
 
-* Property createdBy was changed from UriReference to DomainEntityRef
-* Property modifiedBy was changed from UriReference to DomainEntityRef
+# Minor Changes (144 changes)
 
-**EventLog** (2 changes)
+**GET /api/v2/scim/groups/{groupId}** (1 change)
 
-* Property errorEntity was changed from UriReference to DomainEntityRef
-* Property relatedEntity was changed from UriReference to DomainEntityRef
+* Response 304 was added
 
-**IntegrationExport** (1 change)
+**PUT /api/v2/scim/groups/{groupId}** (1 change)
 
-* Property integration was changed from UriReference to DomainEntityRef
+* Response 409 was added
 
-**SurveyAssignment** (1 change)
+**PATCH /api/v2/scim/groups/{groupId}** (1 change)
 
-* Property flow was changed from UriReference to DomainEntityRef
+* Response 409 was added
 
-**UserQueue** (2 changes)
+**POST /api/v2/scim/users** (2 changes)
 
-* Property queueFlow was changed from UriReference to DomainEntityRef
-* Property whisperPrompt was changed from UriReference to DomainEntityRef
+* Response 201 was added
+* Response 409 was added
 
-**OutboundRoute** (1 change)
+**GET /api/v2/scim/users/{userId}** (1 change)
 
-* Property externalTrunkBases was changed from UriReference[] to DomainEntityRef[]
+* Response 304 was added
 
-**UserRecording** (2 changes)
+**PUT /api/v2/scim/users/{userId}** (1 change)
 
-* Property workspace was changed from UriReference to DomainEntityRef
-* Property createdBy was changed from UriReference to DomainEntityRef
+* Response 409 was added
 
-**LineIntegration** (3 changes)
+**DELETE /api/v2/scim/users/{userId}** (1 change)
 
-* Property recipient was changed from UriReference to DomainEntityRef
-* Property createdBy was changed from UriReference to DomainEntityRef
-* Property modifiedBy was changed from UriReference to DomainEntityRef
+* Response 409 was added
 
-**EmergencyCallFlow** (2 changes)
+**PATCH /api/v2/scim/users/{userId}** (1 change)
 
-* Property emergencyFlow was changed from UriReference to DomainEntityRef
-* Property ivrs was changed from UriReference[] to DomainEntityRef[]
+* Response 409 was added
 
-**Trunk** (5 changes)
+**GET /api/v2/scim/v2/groups/{groupId}** (1 change)
 
-* Property edge was changed from UriReference to DomainEntityRef
-* Property trunkBase was changed from UriReference to DomainEntityRef
-* Property trunkMetabase was changed from UriReference to DomainEntityRef
-* Property edgeGroup was changed from UriReference to DomainEntityRef
-* Property logicalInterface was changed from UriReference to DomainEntityRef
+* Response 304 was added
 
-**EdgeLine** (1 change)
+**PUT /api/v2/scim/v2/groups/{groupId}** (1 change)
 
-* Property schema was changed from UriReference to DomainEntityRef
+* Response 409 was added
 
-**Endpoint** (2 changes)
+**PATCH /api/v2/scim/v2/groups/{groupId}** (1 change)
 
-* Property schema was changed from UriReference to DomainEntityRef
-* Property site was changed from UriReference to DomainEntityRef
+* Response 409 was added
 
-**MessageMediaParticipant** (5 changes)
+**/api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}** (2 changes)
 
-* Property user was changed from UriReference to DomainEntityRef
-* Property queue was changed from UriReference to DomainEntityRef
-* Property script was changed from UriReference to DomainEntityRef
-* Property externalContact was changed from UriReference to DomainEntityRef
-* Property externalOrganization was changed from UriReference to DomainEntityRef
+* Path was added
+* Operation GET was added
 
-**WidgetDeployment** (1 change)
+**/api/v2/scim/v2/resourcetypes/{resourceType}** (2 changes)
 
-* Property flow was changed from UriReference to DomainEntityRef
+* Path was added
+* Operation GET was added
 
-**ScimV2GroupReference** (1 change)
+**/api/v2/scim/v2/resourcetypes** (2 changes)
 
-* Property meta was removed
+* Path was added
+* Operation GET was added
 
-**ScimV2CreateUser** (1 change)
+**/api/v2/conversations/chats/{conversationId}/messages** (2 changes)
 
-* Property meta was removed
+* Path was added
+* Operation GET was added
 
-**Attribute** (2 changes)
+**/api/v2/scim/serviceproviderconfig** (2 changes)
 
-* Property createdBy was changed from UriReference to DomainEntityRef
-* Property modifiedBy was changed from UriReference to DomainEntityRef
+* Path was added
+* Operation GET was added
 
-**Document** (4 changes)
+**POST /api/v2/scim/v2/users** (2 changes)
 
-* Property workspace was changed from UriReference to DomainEntityRef
-* Property createdBy was changed from UriReference to DomainEntityRef
-* Property uploadedBy was changed from UriReference to DomainEntityRef
-* Property uploadStatus was changed from UriReference to DomainEntityRef
+* Response 201 was added
+* Response 409 was added
 
-**LockInfo** (1 change)
+**GET /api/v2/scim/v2/users/{userId}** (1 change)
 
-* Property lockedBy was changed from UriReference to DomainEntityRef
+* Response 304 was added
 
-**SequenceSchedule** (1 change)
+**PUT /api/v2/scim/v2/users/{userId}** (1 change)
 
-* Property sequence was changed from UriReference to DomainEntityRef
+* Response 409 was added
 
-**TrunkMetrics** (2 changes)
+**DELETE /api/v2/scim/v2/users/{userId}** (1 change)
 
-* Property logicalInterface was changed from UriReference to DomainEntityRef
-* Property trunk was changed from UriReference to DomainEntityRef
+* Response 409 was added
 
-**Line** (6 changes)
+**PATCH /api/v2/scim/v2/users/{userId}** (1 change)
 
-* Property edgeGroup was changed from UriReference to DomainEntityRef
-* Property template was changed from UriReference to DomainEntityRef
-* Property site was changed from UriReference to DomainEntityRef
-* Property lineBaseSettings was changed from UriReference to DomainEntityRef
-* Property loggedInUser was changed from UriReference to DomainEntityRef
-* Property defaultForUser was changed from UriReference to DomainEntityRef
+* Response 409 was added
 
-**Phone** (5 changes)
-
-* Property site was changed from UriReference to DomainEntityRef
-* Property phoneBaseSettings was changed from UriReference to DomainEntityRef
-* Property lineBaseSettings was changed from UriReference to DomainEntityRef
-* Property phoneMetaBase was changed from UriReference to DomainEntityRef
-* Property webRtcUser was changed from UriReference to DomainEntityRef
-
-**PhoneStatus** (1 change)
-
-* Property edge was changed from UriReference to DomainEntityRef
-
-**Station** (2 changes)
-
-* Property primaryEdge was changed from UriReference to DomainEntityRef
-* Property secondaryEdge was changed from UriReference to DomainEntityRef
-
-**Share** (4 changes)
-
-* Property sharedEntity was changed from UriReference to DomainEntityRef
-* Property member was changed from UriReference to DomainEntityRef
-* Property sharedBy was changed from UriReference to DomainEntityRef
-* Property workspace was changed from UriReference to DomainEntityRef
-
-**FacebookIntegration** (3 changes)
-
-* Property recipient was changed from UriReference to DomainEntityRef
-* Property createdBy was changed from UriReference to DomainEntityRef
-* Property modifiedBy was changed from UriReference to DomainEntityRef
-
-**OrgOAuthClient** (2 changes)
-
-* Property createdBy was changed from UriReference to DomainEntityRef
-* Property modifiedBy was changed from UriReference to DomainEntityRef
-
-**Campaign** (11 changes)
-
-* Property contactList was changed from UriReference to DomainEntityRef
-* Property queue was changed from UriReference to DomainEntityRef
-* Property script was changed from UriReference to DomainEntityRef
-* Property edgeGroup was changed from UriReference to DomainEntityRef
-* Property site was changed from UriReference to DomainEntityRef
-* Property dncLists was changed from UriReference[] to DomainEntityRef[]
-* Property callableTimeSet was changed from UriReference to DomainEntityRef
-* Property callAnalysisResponseSet was changed from UriReference to DomainEntityRef
-* Property ruleSets was changed from UriReference[] to DomainEntityRef[]
-* Property contactListFilters was changed from UriReference[] to DomainEntityRef[]
-* Property division was changed from UriReference to DomainEntityRef
-
-**CallableContactsDiagnostic** (4 changes)
-
-* Property attemptLimits was changed from UriReference to DomainEntityRef
-* Property dncLists was changed from UriReference[] to DomainEntityRef[]
-* Property callableTimeSet was changed from UriReference to DomainEntityRef
-* Property ruleSets was changed from UriReference[] to DomainEntityRef[]
-
-**QueueUtilizationDiagnostic** (1 change)
-
-* Property queue was changed from UriReference to DomainEntityRef
-
-**RuleSetDiagnostic** (1 change)
-
-* Property ruleSet was changed from UriReference to DomainEntityRef
-
-**CampaignProgress** (2 changes)
-
-* Property campaign was changed from UriReference to DomainEntityRef
-* Property contactList was changed from UriReference to DomainEntityRef
-
-**Survey** (1 change)
-
-* Property agent was changed from UriReference to DomainEntityRef
-
-**CampaignInteraction** (6 changes)
-
-* Property campaign was changed from UriReference to DomainEntityRef
-* Property agent was changed from UriReference to DomainEntityRef
-* Property contact was changed from UriReference to DomainEntityRef
-* Property queue was changed from UriReference to DomainEntityRef
-* Property script was changed from UriReference to DomainEntityRef
-* Property skills was changed from UriReference[] to DomainEntityRef[]
-
-**CampaignInteractions** (1 change)
-
-* Property campaign was changed from UriReference to DomainEntityRef
-
-**DncList** (1 change)
-
-* Property division was changed from UriReference to DomainEntityRef
-
-**CreateQueueRequest** (2 changes)
-
-* Property queueFlow was changed from UriReference to DomainEntityRef
-* Property whisperPrompt was changed from UriReference to DomainEntityRef
-
-**ContactList** (2 changes)
-
-* Property division was changed from UriReference to DomainEntityRef
-* Property attemptLimits was changed from UriReference to DomainEntityRef
-
-**Extension** (2 changes)
-
-* Property owner was changed from UriReference to DomainEntityRef
-* Property extensionPool was changed from UriReference to DomainEntityRef
-
-**WebChatDeployment** (1 change)
-
-* Property flow was changed from UriReference to DomainEntityRef
-
-**OAuthClientListing** (2 changes)
-
-* Property createdBy was changed from UriReference to DomainEntityRef
-* Property modifiedBy was changed from UriReference to DomainEntityRef
-
-**WorkspaceMember** (2 changes)
-
-* Property workspace was changed from UriReference to DomainEntityRef
-* Property member was changed from UriReference to DomainEntityRef
-
-**Response** (1 change)
-
-* Property libraries was changed from UriReference[] to DomainEntityRef[]
-
-**OutboundRouteBase** (1 change)
-
-* Property externalTrunkBases was changed from UriReference[] to DomainEntityRef[]
-
-**ScheduleGroup** (3 changes)
-
-* Property openSchedules was changed from UriReference[] to DomainEntityRef[]
-* Property closedSchedules was changed from UriReference[] to DomainEntityRef[]
-* Property holidaySchedules was changed from UriReference[] to DomainEntityRef[]
-
-**CampaignSequence** (1 change)
-
-* Property campaigns was changed from UriReference[] to DomainEntityRef[]
-
-**CampaignSchedule** (1 change)
-
-* Property campaign was changed from UriReference to DomainEntityRef
-
-**EdgeTrunkBase** (1 change)
-
-* Property trunkMetabase was changed from UriReference to DomainEntityRef
-
-**FaxDocument** (2 changes)
-
-* Property workspace was changed from UriReference to DomainEntityRef
-* Property createdBy was changed from UriReference to DomainEntityRef
-
-**RuleSet** (2 changes)
-
-* Property contactList was changed from UriReference to DomainEntityRef
-* Property queue was changed from UriReference to DomainEntityRef
-
-**DID** (2 changes)
-
-* Property didPool was changed from UriReference to DomainEntityRef
-* Property owner was changed from UriReference to DomainEntityRef
-
-**EdgeMetrics** (1 change)
-
-* Property edge was changed from UriReference to DomainEntityRef
-
-**CampaignRuleActionEntities** (2 changes)
-
-* Property campaigns was changed from UriReference[] to DomainEntityRef[]
-* Property sequences was changed from UriReference[] to DomainEntityRef[]
-
-**CampaignRuleEntities** (2 changes)
-
-* Property campaigns was changed from UriReference[] to DomainEntityRef[]
-* Property sequences was changed from UriReference[] to DomainEntityRef[]
-
-**CreateShareResponse** (4 changes)
-
-* Property sharedEntity was changed from UriReference to DomainEntityRef
-* Property member was changed from UriReference to DomainEntityRef
-* Property sharedBy was changed from UriReference to DomainEntityRef
-* Property workspace was changed from UriReference to DomainEntityRef
-
-**ScimV2MemberReference** (1 change)
-
-* Property meta was removed
-
-**PhoneBase** (1 change)
-
-* Property phoneMetaBase was changed from UriReference to DomainEntityRef
-
-**TimeZoneMappingPreview** (1 change)
-
-* Property contactList was changed from UriReference to DomainEntityRef
-
-**CallMediaParticipant** (6 changes)
-
-* Property user was changed from UriReference to DomainEntityRef
-* Property queue was changed from UriReference to DomainEntityRef
-* Property script was changed from UriReference to DomainEntityRef
-* Property externalContact was changed from UriReference to DomainEntityRef
-* Property externalOrganization was changed from UriReference to DomainEntityRef
-* Property group was changed from UriReference to DomainEntityRef
-
-**DocumentUpload** (1 change)
-
-* Property workspace was changed from UriReference to DomainEntityRef
-
-**DncListCreate** (1 change)
-
-* Property division was changed from UriReference to DomainEntityRef
-
-**DocumentAudit** (2 changes)
-
-* Property user was changed from UriReference to DomainEntityRef
-* Property workspace was changed from UriReference to DomainEntityRef
-
-**QueueRequest** (2 changes)
-
-* Property queueFlow was changed from UriReference to DomainEntityRef
-* Property whisperPrompt was changed from UriReference to DomainEntityRef
-
-**CobrowseMediaParticipant** (5 changes)
-
-* Property user was changed from UriReference to DomainEntityRef
-* Property queue was changed from UriReference to DomainEntityRef
-* Property script was changed from UriReference to DomainEntityRef
-* Property externalContact was changed from UriReference to DomainEntityRef
-* Property externalOrganization was changed from UriReference to DomainEntityRef
-
-
-# Minor Changes (32 changes)
-
-**/api/v2/analytics/conversations/details/jobs** (2 changes)
+**/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/analytics/conversations/details/jobs/{jobId}** (3 changes)
+**/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages** (2 changes)
 
 * Path was added
-* Operation GET was added
-* Operation DELETE was added
+* Operation POST was added
 
-**/api/v2/analytics/conversations/details/jobs/{jobId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/{conversationId}/transcriptproperties/{communicationId}** (2 changes)
+**/api/v2/conversations/chats/{conversationId}/messages/{messageId}** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/conversations/messaging/integrations/whatsapp** (2 changes)
+**/api/v2/scim/resourcetypes/{resourceType}** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**AggregationQuery** (1 change)
+**/api/v2/scim/resourcetypes** (2 changes)
 
-* Enum value flowOutType was added to property groupBy
+* Path was added
+* Operation GET was added
 
-**AnalyticsQueryPredicate** (1 change)
+**AggregateMetricData** (1 change)
 
-* Enum value flowOutType was added to property dimension
+* Values are no longer constrained by enum members
 
-**DomainEntityRef** (1 change)
-
-* Model was added
-
-**UserAuthorization** (1 change)
-
-* Optional property unusedRoles was added
-
-**Edge** (1 change)
-
-* Enum value INITIALIZING was added to property statusCode
-
-**AsyncQueryResponse** (1 change)
+**EvaluationAggregateDataContainer** (1 change)
 
 * Model was added
 
-**AsyncQueryStatus** (1 change)
+**EvaluationAggregateQueryResponse** (1 change)
 
 * Model was added
 
-**AnalyticsConversationAsyncQueryResponse** (1 change)
+**EvaluationAggregateQueryClause** (1 change)
 
 * Model was added
 
-**DomainOrganizationRole** (1 change)
-
-* Optional property unusedPermissions was added
-
-**DomainOrganizationRoleCreate** (1 change)
-
-* Optional property unusedPermissions was added
-
-**TranscriptProperty** (1 change)
+**EvaluationAggregateQueryFilter** (1 change)
 
 * Model was added
 
-**DomainOrganizationRoleUpdate** (1 change)
-
-* Optional property unusedPermissions was added
-
-**WhatsAppIntegration** (1 change)
+**EvaluationAggregateQueryPredicate** (1 change)
 
 * Model was added
 
-**WhatsAppIntegrationEntityListing** (1 change)
+**EvaluationAggregationQuery** (1 change)
 
 * Model was added
 
-**WhatsAppIntegrationUpdateRequest** (1 change)
+**EvaluationAggregationView** (1 change)
 
 * Model was added
 
-**RecordingJobsQuery** (1 change)
+**SmsPhoneNumber** (1 change)
 
-* Optional property includeScreenRecordings was added
+* Optional property shortCodeBillingType was added
 
-**CreateUser** (1 change)
+**ScimMetadata** (1 change)
 
-* Optional property state was added
+* Enum value ResourceType was added to property resourceType
 
-**BillingUsageReport** (1 change)
+**ScimV2MemberReference** (1 change)
 
-* Optional property status was added
+* Enum value ResourceType was added to property type
+
+**ScimError** (1 change)
+
+* Model was added
+
+**ScimV2GroupReference** (1 change)
+
+* Enum value ResourceType was added to property type
+
+**ScimServiceProviderConfig** (8 changes)
+
+* Optional property schemas was added
+* Optional property patch was added
+* Optional property filter was added
+* Optional property etag was added
+* Optional property sort was added
+* Optional property bulk was added
+* Optional property changePassword was added
+* Optional property authenticationSchemes was added
+
+**ScimServiceProviderConfigAuthenticationScheme** (1 change)
+
+* Model was added
+
+**ScimServiceProviderConfigBulkFeature** (1 change)
+
+* Model was added
+
+**ScimServiceProviderConfigFilterFeature** (1 change)
+
+* Model was added
+
+**ScimServiceProviderConfigSimpleFeature** (1 change)
+
+* Model was added
+
+**DataTableImportJob** (1 change)
+
+* Model was added
+
+**ScimConfigResourceType** (1 change)
+
+* Model was added
+
+**ScimConfigResourceTypeSchemaExtension** (1 change)
+
+* Model was added
+
+**ScimConfigResourceTypesListResponse** (1 change)
+
+* Model was added
+
+**LocationSearchRequest** (1 change)
+
+* Optional property expand was added
+
+**PresenceDetailQueryClause** (1 change)
+
+* Model was added
+
+**PresenceDetailQueryFilter** (1 change)
+
+* Model was added
+
+**PresenceDetailQueryPredicate** (1 change)
+
+* Model was added
+
+**RoutingStatusDetailQueryClause** (1 change)
+
+* Model was added
+
+**RoutingStatusDetailQueryFilter** (1 change)
+
+* Model was added
+
+**RoutingStatusDetailQueryPredicate** (1 change)
+
+* Model was added
+
+**UserDetailQueryClause** (1 change)
+
+* Model was added
+
+**UserDetailQueryFilter** (1 change)
+
+* Model was added
+
+**UserDetailQueryPredicate** (1 change)
+
+* Model was added
+
+**UserDetailsQuery** (1 change)
+
+* Optional property presenceDetailFilters was added
+
+**ObservationMetricData** (1 change)
+
+* Values are no longer constrained by enum members
+
+**UserObservationDataContainer** (1 change)
+
+* Model was added
+
+**UserObservationQueryResponse** (1 change)
+
+* Model was added
+
+**UserObservationQuery** (1 change)
+
+* Model was added
+
+**UserObservationQueryClause** (1 change)
+
+* Model was added
+
+**UserObservationQueryFilter** (1 change)
+
+* Model was added
+
+**UserObservationQueryPredicate** (1 change)
+
+* Model was added
+
+**UserAggregateDataContainer** (1 change)
+
+* Model was added
+
+**UserAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**UserAggregateQueryClause** (1 change)
+
+* Model was added
+
+**UserAggregateQueryFilter** (1 change)
+
+* Model was added
+
+**UserAggregateQueryPredicate** (1 change)
+
+* Model was added
+
+**UserAggregationQuery** (1 change)
+
+* Model was added
+
+**UserAggregationView** (1 change)
+
+* Model was added
+
+**SurveyAggregateDataContainer** (1 change)
+
+* Model was added
+
+**SurveyAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**SurveyAggregateQueryClause** (1 change)
+
+* Model was added
+
+**SurveyAggregateQueryFilter** (1 change)
+
+* Model was added
+
+**SurveyAggregateQueryPredicate** (1 change)
+
+* Model was added
+
+**SurveyAggregationQuery** (1 change)
+
+* Model was added
+
+**SurveyAggregationView** (1 change)
+
+* Model was added
+
+**FlowAggregateDataContainer** (1 change)
+
+* Model was added
+
+**FlowAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**FlowAggregateQueryClause** (1 change)
+
+* Model was added
+
+**FlowAggregateQueryFilter** (1 change)
+
+* Model was added
+
+**FlowAggregateQueryPredicate** (1 change)
+
+* Model was added
+
+**FlowAggregationQuery** (1 change)
+
+* Model was added
+
+**FlowAggregationView** (1 change)
+
+* Model was added
+
+**FlowObservationDataContainer** (1 change)
+
+* Model was added
+
+**FlowObservationQueryResponse** (1 change)
+
+* Model was added
+
+**FlowObservationQuery** (1 change)
+
+* Model was added
+
+**FlowObservationQueryClause** (1 change)
+
+* Model was added
+
+**FlowObservationQueryFilter** (1 change)
+
+* Model was added
+
+**FlowObservationQueryPredicate** (1 change)
+
+* Model was added
+
+**ConversationDetailQueryClause** (1 change)
+
+* Model was added
+
+**ConversationDetailQueryFilter** (1 change)
+
+* Model was added
+
+**ConversationDetailQueryPredicate** (1 change)
+
+* Model was added
+
+**EvaluationDetailQueryClause** (1 change)
+
+* Model was added
+
+**EvaluationDetailQueryFilter** (1 change)
+
+* Model was added
+
+**EvaluationDetailQueryPredicate** (1 change)
+
+* Model was added
+
+**MediaEndpointStatDetailQueryClause** (1 change)
+
+* Model was added
+
+**MediaEndpointStatDetailQueryFilter** (1 change)
+
+* Model was added
+
+**MediaEndpointStatDetailQueryPredicate** (1 change)
+
+* Model was added
+
+**RecordingJob** (1 change)
+
+* Optional property user was added
+
+**SegmentDetailQueryClause** (1 change)
+
+* Model was added
+
+**SegmentDetailQueryFilter** (1 change)
+
+* Model was added
+
+**SegmentDetailQueryPredicate** (1 change)
+
+* Model was added
+
+**SurveyDetailQueryClause** (1 change)
+
+* Model was added
+
+**SurveyDetailQueryFilter** (1 change)
+
+* Model was added
+
+**SurveyDetailQueryPredicate** (1 change)
+
+* Model was added
+
+**AnalyticsParticipant** (2 changes)
+
+* Optional property attributes was added
+* Enum value api was added to property purpose
+
+**ConversationAggregateDataContainer** (1 change)
+
+* Model was added
+
+**ConversationAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**ConversationAggregateQueryClause** (1 change)
+
+* Model was added
+
+**ConversationAggregateQueryFilter** (1 change)
+
+* Model was added
+
+**ConversationAggregateQueryPredicate** (1 change)
+
+* Model was added
+
+**ConversationAggregationQuery** (1 change)
+
+* Model was added
+
+**ConversationAggregationView** (1 change)
+
+* Model was added
+
+**CreateQueueMediaAssociationRequest** (1 change)
+
+* Optional property id was added
+
+**QueueObservationDataContainer** (1 change)
+
+* Model was added
+
+**QueueObservationQueryResponse** (1 change)
+
+* Model was added
+
+**QueueObservationQuery** (1 change)
+
+* Model was added
+
+**QueueObservationQueryClause** (1 change)
+
+* Model was added
+
+**QueueObservationQueryFilter** (1 change)
+
+* Model was added
+
+**QueueObservationQueryPredicate** (1 change)
+
+* Model was added
 
 
-# Point Changes (2 changes)
+# Point Changes (6 changes)
 
-**GET /api/v2/billing/reports/billableusage** (2 changes)
+**POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}** (1 change)
 
-* Description was changed
-* Summary was changed
+* Description was changed for parameter subjectType
+
+**DELETE /api/v2/scim/users/{userId}** (1 change)
+
+* Response 204 was changed from User Deleted to User Deleted with no content returned.
+
+**GET /api/v2/locations/search** (1 change)
+
+* Description was changed for parameter expand
+
+**DELETE /api/v2/scim/v2/users/{userId}** (1 change)
+
+* Response 204 was changed from User Deleted to User Deleted with no content returned.
+
+**GET /api/v2/authorization/roles/{roleId}** (1 change)
+
+* Description was changed for parameter expand
+
+**POST /api/v2/authorization/roles/{roleId}** (1 change)
+
+* Description was changed for parameter subjectType

@@ -3630,7 +3630,7 @@ apiInstance.patchUserRoutingskillsBulk(userId, body)
 
 <a name="postAnalyticsQueuesObservationsQuery"></a>
 
-# QualifierMappingObservationQueryResponse postAnalyticsQueuesObservationsQuery(body)
+# QueueObservationQueryResponse postAnalyticsQueuesObservationsQuery(body)
 
 
 
@@ -3648,19 +3648,19 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyObservationQueryExample() {
+	function copyQueueObservationQueryExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#ObservationQueryExample').text()).select();
+		temp.val($('#QueueObservationQueryExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy</a>
+QueueObservationQuery <a href="#" onclick="return copyQueueObservationQueryExample()">Copy</a>
 
-<div id="ObservationQueryExample">
+<div id="QueueObservationQueryExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
@@ -3671,9 +3671,6 @@ ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy
       "predicates": { 
         "type": String, 
         "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
         "operator": String, 
         "value": String, 
         "range": { 
@@ -3687,9 +3684,6 @@ ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy
     "predicates": { 
       "type": String, 
       "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
       "operator": String, 
       "value": String, 
       "range": { 
@@ -3743,7 +3737,7 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 
 ### Return type
 
-**QualifierMappingObservationQueryResponse**
+**QueueObservationQueryResponse**
 
 <a name="postRoutingEmailDomainRoutes"></a>
 
@@ -7781,6 +7775,7 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
     "validated": Boolean, 
     "selfUri": String, 
   },  
+  "shortCodeBillingType": String, 
   "selfUri": String, 
 }
 ```

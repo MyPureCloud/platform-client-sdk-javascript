@@ -7655,7 +7655,7 @@ apiInstance.patchUsersBulk(body)
 
 <a name="postAnalyticsUsersAggregatesQuery"></a>
 
-# PresenceQueryResponse postAnalyticsUsersAggregatesQuery(body)
+# UserAggregateQueryResponse postAnalyticsUsersAggregatesQuery(body)
 
 
 
@@ -7673,19 +7673,19 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyAggregationQueryExample() {
+	function copyUserAggregationQueryExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#AggregationQueryExample').text()).select();
+		temp.val($('#UserAggregationQueryExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy</a>
+UserAggregationQuery <a href="#" onclick="return copyUserAggregationQueryExample()">Copy</a>
 
-<div id="AggregationQueryExample">
+<div id="UserAggregationQueryExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
@@ -7700,9 +7700,6 @@ AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy
       "predicates": { 
         "type": String, 
         "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
         "operator": String, 
         "value": String, 
         "range": { 
@@ -7716,9 +7713,6 @@ AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy
     "predicates": { 
       "type": String, 
       "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
       "operator": String, 
       "value": String, 
       "range": { 
@@ -7781,7 +7775,7 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 
 ### Return type
 
-**PresenceQueryResponse**
+**UserAggregateQueryResponse**
 
 <a name="postAnalyticsUsersDetailsQuery"></a>
 
@@ -7827,9 +7821,6 @@ UserDetailsQuery <a href="#" onclick="return copyUserDetailsQueryExample()">Copy
       "predicates": { 
         "type": String, 
         "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
         "operator": String, 
         "value": String, 
         "range": { 
@@ -7843,45 +7834,6 @@ UserDetailsQuery <a href="#" onclick="return copyUserDetailsQueryExample()">Copy
     "predicates": { 
       "type": String, 
       "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "presenceFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
       "operator": String, 
       "value": String, 
       "range": { 
@@ -7899,9 +7851,6 @@ UserDetailsQuery <a href="#" onclick="return copyUserDetailsQueryExample()">Copy
       "predicates": { 
         "type": String, 
         "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
         "operator": String, 
         "value": String, 
         "range": { 
@@ -7915,9 +7864,6 @@ UserDetailsQuery <a href="#" onclick="return copyUserDetailsQueryExample()">Copy
     "predicates": { 
       "type": String, 
       "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
       "operator": String, 
       "value": String, 
       "range": { 
@@ -7953,6 +7899,36 @@ UserDetailsQuery <a href="#" onclick="return copyUserDetailsQueryExample()">Copy
     "pageNumber": Number, 
   },  
   "order": String, 
+  "presenceDetailFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
 }
 ```
 
@@ -7998,7 +7974,7 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
 
 <a name="postAnalyticsUsersObservationsQuery"></a>
 
-# ObservationQueryResponse postAnalyticsUsersObservationsQuery(body)
+# UserObservationQueryResponse postAnalyticsUsersObservationsQuery(body)
 
 
 
@@ -8016,19 +7992,19 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyObservationQueryExample() {
+	function copyUserObservationQueryExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#ObservationQueryExample').text()).select();
+		temp.val($('#UserObservationQueryExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy</a>
+UserObservationQuery <a href="#" onclick="return copyUserObservationQueryExample()">Copy</a>
 
-<div id="ObservationQueryExample">
+<div id="UserObservationQueryExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
@@ -8039,9 +8015,6 @@ ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy
       "predicates": { 
         "type": String, 
         "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
         "operator": String, 
         "value": String, 
         "range": { 
@@ -8055,9 +8028,6 @@ ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy
     "predicates": { 
       "type": String, 
       "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
       "operator": String, 
       "value": String, 
       "range": { 
@@ -8111,7 +8081,7 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 
 ### Return type
 
-**ObservationQueryResponse**
+**UserObservationQueryResponse**
 
 <a name="postAuthorizationSubjectDivisionRole"></a>
 
@@ -8148,7 +8118,7 @@ let subjectId = "subjectId_example"; // String | Subject ID (user or group)
 let divisionId = "divisionId_example"; // String | the id of the division to which to make the grant
 let roleId = "roleId_example"; // String | the id of the role to grant
 let opts = { 
-  'subjectType': "PC_USER" // String | what the type of the subject is, PC_GROUP or PC_USER
+  'subjectType': "PC_USER" // String | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints)
 };
 
 apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
@@ -8169,7 +8139,7 @@ apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, 
  **subjectId** | **String** | Subject ID (user or group) |  |
  **divisionId** | **String** | the id of the division to which to make the grant |  |
  **roleId** | **String** | the id of the role to grant |  |
- **subjectType** | **String** | what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] |
+ **subjectType** | **String** | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) | [optional] [default to PC_USER] |
 {: class="table table-striped"}
 
 ### Return type

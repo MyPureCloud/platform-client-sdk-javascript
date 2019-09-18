@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -1432,7 +1432,7 @@ class UsersApi {
 	 * @param {String} divisionId the id of the division to which to make the grant
 	 * @param {String} roleId the id of the role to grant
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.subjectType what the type of the subject is, PC_GROUP or PC_USER (default to PC_USER)
+	 * @param {String} opts.subjectType what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) (default to PC_USER)
 	 */
 	postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts) { 
 		opts = opts || {};

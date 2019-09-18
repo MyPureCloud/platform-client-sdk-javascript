@@ -754,7 +754,7 @@ let apiInstance = new platformClient.AuthorizationApi();
 
 let roleId = "roleId_example"; // String | Role ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand. \"unusedPermissions\" returns the permissions not used for the role
 };
 
 apiInstance.getAuthorizationRole(roleId, opts)
@@ -773,7 +773,7 @@ apiInstance.getAuthorizationRole(roleId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
- **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: unusedPermissions |
+ **expand** | **[String]** | Which fields, if any, to expand. \&quot;unusedPermissions\&quot; returns the permissions not used for the role | [optional] <br />**Values**: unusedPermissions |
 {: class="table table-striped"}
 
 ### Return type
@@ -2584,7 +2584,7 @@ apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
- **objectType** | **String** | The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, USER |
+ **objectType** | **String** | The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, USER |
  **body** | **Object** | Object Id List |  |
 {: class="table table-striped"}
 
@@ -2738,7 +2738,7 @@ let apiInstance = new platformClient.AuthorizationApi();
 let roleId = "roleId_example"; // String | Role ID
 let body = {}; // Object | Subjects and Divisions
 let opts = { 
-  'subjectType': "PC_USER" // String | what the type of the subject is, PC_GROUP or PC_USER
+  'subjectType': "PC_USER" // String | what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)
 };
 
 apiInstance.postAuthorizationRole(roleId, body, opts)
@@ -2758,7 +2758,7 @@ apiInstance.postAuthorizationRole(roleId, body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
  **body** | **Object** | Subjects and Divisions |  |
- **subjectType** | **String** | what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] |
+ **subjectType** | **String** | what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
 {: class="table table-striped"}
 
 ### Return type
@@ -5407,7 +5407,7 @@ let subjectId = "subjectId_example"; // String | Subject ID (user or group)
 let divisionId = "divisionId_example"; // String | the id of the division to which to make the grant
 let roleId = "roleId_example"; // String | the id of the role to grant
 let opts = { 
-  'subjectType': "PC_USER" // String | what the type of the subject is, PC_GROUP or PC_USER
+  'subjectType': "PC_USER" // String | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints)
 };
 
 apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
@@ -5428,7 +5428,7 @@ apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, 
  **subjectId** | **String** | Subject ID (user or group) |  |
  **divisionId** | **String** | the id of the division to which to make the grant |  |
  **roleId** | **String** | the id of the role to grant |  |
- **subjectType** | **String** | what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] |
+ **subjectType** | **String** | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) | [optional] [default to PC_USER] |
 {: class="table table-striped"}
 
 ### Return type

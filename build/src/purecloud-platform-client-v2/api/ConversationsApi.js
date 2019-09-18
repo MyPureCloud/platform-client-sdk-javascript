@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -807,6 +807,68 @@ class ConversationsApi {
 			'GET', 
 			{ 'conversationId': conversationId }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a web chat conversation message
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} messageId messageId
+	 */
+	getConversationsChatMessage(conversationId, messageId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationsChatMessage';
+		}
+		// verify the required parameter 'messageId' is set
+		if (messageId === undefined || messageId === null) {
+			throw 'Missing the required parameter "messageId" when calling getConversationsChatMessage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/chats/{conversationId}/messages/{messageId}', 
+			'GET', 
+			{ 'conversationId': conversationId,'messageId': messageId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the messages of a chat conversation.
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after If specified, get the messages chronologically after the id of this message
+	 * @param {String} opts.before If specified, get the messages chronologically before the id of this message
+	 * @param {Object} opts.sortOrder Sort order (default to ascending)
+	 * @param {Number} opts.maxResults Limit the returned number of messages, up to a maximum of 100 (default to 100)
+	 */
+	getConversationsChatMessages(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationsChatMessages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/chats/{conversationId}/messages', 
+			'GET', 
+			{ 'conversationId': conversationId }, 
+			{ 'after': opts['after'],'before': opts['before'],'sortOrder': opts['sortOrder'],'maxResults': opts['maxResults'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -3104,6 +3166,71 @@ class ConversationsApi {
 			{  }, 
 			{  }, 
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send a message on behalf of a communication in a chat conversation.
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} body Message
+	 */
+	postConversationsChatCommunicationMessages(conversationId, communicationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsChatCommunicationMessages';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsChatCommunicationMessages';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsChatCommunicationMessages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages', 
+			'POST', 
+			{ 'conversationId': conversationId,'communicationId': communicationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send a typing-indicator on behalf of a communication in a chat conversation.
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} communicationId communicationId
+	 */
+	postConversationsChatCommunicationTyping(conversationId, communicationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsChatCommunicationTyping';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsChatCommunicationTyping';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing', 
+			'POST', 
+			{ 'conversationId': conversationId,'communicationId': communicationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

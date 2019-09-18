@@ -1979,7 +1979,7 @@ function isSlowBuffer (obj) {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 56.0.0
+ * @version 57.0.0
  */
 class ApiClient {
 	/**
@@ -2742,7 +2742,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '56.0.0' });
+		//request.set({ 'purecloud-sdk': '57.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -2867,7 +2867,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -3181,7 +3181,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -4015,7 +4015,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -5445,6 +5445,36 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Returns the state information about an import job
+	 * Returns the state information about an import job.
+	 * @param {String} datatableId id of datatable
+	 * @param {String} importJobId id of import job
+	 */
+	getFlowsDatatableImportJob(datatableId, importJobId) { 
+		// verify the required parameter 'datatableId' is set
+		if (datatableId === undefined || datatableId === null) {
+			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableImportJob';
+		}
+		// verify the required parameter 'importJobId' is set
+		if (importJobId === undefined || importJobId === null) {
+			throw 'Missing the required parameter "importJobId" when calling getFlowsDatatableImportJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}', 
+			'GET', 
+			{ 'datatableId': datatableId,'importJobId': importJobId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Returns a specific row for the datatable
 	 * Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
 	 * @param {String} datatableId id of datatable
@@ -6519,7 +6549,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -6858,7 +6888,7 @@ class AuthorizationApi {
 	 * Get the organization role specified by its ID.
 	 * @param {String} roleId Role ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. \&quot;unusedPermissions\&quot; returns the permissions not used for the role
 	 */
 	getAuthorizationRole(roleId, opts) { 
 		opts = opts || {};
@@ -7200,7 +7230,7 @@ class AuthorizationApi {
 	 * @param {String} roleId Role ID
 	 * @param {Object} body Subjects and Divisions
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.subjectType what the type of the subject is, PC_GROUP or PC_USER (default to PC_USER)
+	 * @param {String} opts.subjectType what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (default to PC_USER)
 	 */
 	postAuthorizationRole(roleId, body, opts) { 
 		opts = opts || {};
@@ -7319,7 +7349,7 @@ class AuthorizationApi {
 	 * @param {String} divisionId the id of the division to which to make the grant
 	 * @param {String} roleId the id of the role to grant
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.subjectType what the type of the subject is, PC_GROUP or PC_USER (default to PC_USER)
+	 * @param {String} opts.subjectType what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) (default to PC_USER)
 	 */
 	postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts) { 
 		opts = opts || {};
@@ -7532,7 +7562,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -7612,7 +7642,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -8752,7 +8782,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -9554,6 +9584,68 @@ class ConversationsApi {
 			'GET', 
 			{ 'conversationId': conversationId }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a web chat conversation message
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} messageId messageId
+	 */
+	getConversationsChatMessage(conversationId, messageId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationsChatMessage';
+		}
+		// verify the required parameter 'messageId' is set
+		if (messageId === undefined || messageId === null) {
+			throw 'Missing the required parameter "messageId" when calling getConversationsChatMessage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/chats/{conversationId}/messages/{messageId}', 
+			'GET', 
+			{ 'conversationId': conversationId,'messageId': messageId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the messages of a chat conversation.
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after If specified, get the messages chronologically after the id of this message
+	 * @param {String} opts.before If specified, get the messages chronologically before the id of this message
+	 * @param {Object} opts.sortOrder Sort order (default to ascending)
+	 * @param {Number} opts.maxResults Limit the returned number of messages, up to a maximum of 100 (default to 100)
+	 */
+	getConversationsChatMessages(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationsChatMessages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/chats/{conversationId}/messages', 
+			'GET', 
+			{ 'conversationId': conversationId }, 
+			{ 'after': opts['after'],'before': opts['before'],'sortOrder': opts['sortOrder'],'maxResults': opts['maxResults'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -11858,6 +11950,71 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Send a message on behalf of a communication in a chat conversation.
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} body Message
+	 */
+	postConversationsChatCommunicationMessages(conversationId, communicationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsChatCommunicationMessages';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsChatCommunicationMessages';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsChatCommunicationMessages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages', 
+			'POST', 
+			{ 'conversationId': conversationId,'communicationId': communicationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send a typing-indicator on behalf of a communication in a chat conversation.
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} communicationId communicationId
+	 */
+	postConversationsChatCommunicationTyping(conversationId, communicationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsChatCommunicationTyping';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsChatCommunicationTyping';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing', 
+			'POST', 
+			{ 'conversationId': conversationId,'communicationId': communicationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Replace this participant with the specified user and/or address
 	 * 
 	 * @param {String} conversationId conversationId
@@ -12461,7 +12618,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -13369,7 +13526,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -13540,7 +13697,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -13611,7 +13768,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -13741,7 +13898,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -13872,7 +14029,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -14327,7 +14484,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -14732,7 +14889,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -15423,7 +15580,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -16885,7 +17042,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -17153,7 +17310,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -17367,7 +17524,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -17493,7 +17650,7 @@ class LocationsApi {
 	 * 
 	 * @param {String} q64 q64
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand expand
+	 * @param {Array.<String>} opts.expand Provides more details about a specified resource
 	 */
 	getLocationsSearch(q64, opts) { 
 		opts = opts || {};
@@ -17603,7 +17760,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -18009,7 +18166,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -18160,7 +18317,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -18359,7 +18516,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -18530,7 +18687,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -18767,7 +18924,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -18977,7 +19134,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -19652,7 +19809,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -22315,7 +22472,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -22582,7 +22739,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -24253,7 +24410,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -25441,7 +25598,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -25765,7 +25922,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -27644,7 +27801,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -27773,6 +27930,79 @@ class SCIMApi {
 	}
 
 	/**
+	 * Get the SCIM configuration
+	 * 
+	 * @param {Object} resourceType The ID of a resource.
+	 */
+	getScimResourcetype(resourceType) { 
+		// verify the required parameter 'resourceType' is set
+		if (resourceType === undefined || resourceType === null) {
+			throw 'Missing the required parameter "resourceType" when calling getScimResourcetype';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scim/resourcetypes/{resourceType}', 
+			'GET', 
+			{ 'resourceType': resourceType }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
+		);
+	}
+
+	/**
+	 * Get the SCIM resource types
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.filter Filtered results are invalid and will result in a 403 (Unauthorized) return.
+	 */
+	getScimResourcetypes(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scim/resourcetypes', 
+			'GET', 
+			{  }, 
+			{ 'filter': opts['filter'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
+		);
+	}
+
+	/**
+	 * Get the SCIM configuration
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. 
+	 */
+	getScimServiceproviderconfig(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scim/serviceproviderconfig', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{ 'If-None-Match': opts['ifNoneMatch'] }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
+		);
+	}
+
+	/**
 	 * Get a user
 	 * 
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/users.
@@ -27881,6 +28111,55 @@ class SCIMApi {
 			'GET', 
 			{  }, 
 			{ 'startIndex': opts['startIndex'],'count': opts['count'],'filter': filter }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
+		);
+	}
+
+	/**
+	 * Get the SCIM configuration
+	 * 
+	 * @param {Object} resourceType The ID of a resource.
+	 */
+	getScimV2Resourcetype(resourceType) { 
+		// verify the required parameter 'resourceType' is set
+		if (resourceType === undefined || resourceType === null) {
+			throw 'Missing the required parameter "resourceType" when calling getScimV2Resourcetype';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scim/v2/resourcetypes/{resourceType}', 
+			'GET', 
+			{ 'resourceType': resourceType }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
+		);
+	}
+
+	/**
+	 * Get the SCIM resource types
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.filter Filtered results are invalid and will result in a 403 (Unauthorized) return.
+	 */
+	getScimV2Resourcetypes(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scim/v2/resourcetypes', 
+			'GET', 
+			{  }, 
+			{ 'filter': opts['filter'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -28301,7 +28580,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -28654,7 +28933,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -28753,7 +29032,7 @@ class SearchApi {
 	 * 
 	 * @param {String} q64 q64
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand expand
+	 * @param {Array.<String>} opts.expand Provides more details about a specified resource
 	 */
 	getLocationsSearch(q64, opts) { 
 		opts = opts || {};
@@ -29109,7 +29388,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -29160,7 +29439,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -29307,7 +29586,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -29446,7 +29725,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -32801,7 +33080,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -32887,7 +33166,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -33071,7 +33350,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -34498,7 +34777,7 @@ class UsersApi {
 	 * @param {String} divisionId the id of the division to which to make the grant
 	 * @param {String} roleId the id of the role to grant
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.subjectType what the type of the subject is, PC_GROUP or PC_USER (default to PC_USER)
+	 * @param {String} opts.subjectType what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) (default to PC_USER)
 	 */
 	postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts) { 
 		opts = opts || {};
@@ -35035,7 +35314,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -35146,7 +35425,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -35783,7 +36062,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -36327,7 +36606,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -36473,7 +36752,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -38730,7 +39009,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 56.0.0
+ * @version 57.0.0
  */
 class platformClient {
 	constructor() {

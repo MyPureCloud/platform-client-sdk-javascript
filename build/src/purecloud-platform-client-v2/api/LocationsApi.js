@@ -5,7 +5,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -131,7 +131,7 @@ class LocationsApi {
 	 * 
 	 * @param {String} q64 q64
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand expand
+	 * @param {Array.<String>} opts.expand Provides more details about a specified resource
 	 */
 	getLocationsSearch(q64, opts) { 
 		opts = opts || {};

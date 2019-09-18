@@ -2793,12 +2793,12 @@ ServiceGoalGroup <a href="#" onclick="return copyServiceGoalGroupExample()">Copy
     },  
   },  
   "queueMediaAssociations": { 
+    "id": String, 
     "queue": { 
       "id": String, 
       "selfUri": String, 
     },  
     "mediaTypes": [String], 
-    "id": String, 
     "delete": Boolean, 
   },  
   "metadata": { 
@@ -4082,6 +4082,7 @@ CreateServiceGoalGroupRequest <a href="#" onclick="return copyCreateServiceGoalG
     },  
   },  
   "queueMediaAssociations": { 
+    "id": String, 
     "queue": { 
       "id": String, 
       "selfUri": String, 

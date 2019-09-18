@@ -5,7 +5,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 56.0.0
+	 * @version 57.0.0
 	 */
 
 	/**
@@ -134,6 +134,79 @@ class SCIMApi {
 	}
 
 	/**
+	 * Get the SCIM configuration
+	 * 
+	 * @param {Object} resourceType The ID of a resource.
+	 */
+	getScimResourcetype(resourceType) { 
+		// verify the required parameter 'resourceType' is set
+		if (resourceType === undefined || resourceType === null) {
+			throw 'Missing the required parameter "resourceType" when calling getScimResourcetype';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scim/resourcetypes/{resourceType}', 
+			'GET', 
+			{ 'resourceType': resourceType }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
+		);
+	}
+
+	/**
+	 * Get the SCIM resource types
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.filter Filtered results are invalid and will result in a 403 (Unauthorized) return.
+	 */
+	getScimResourcetypes(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scim/resourcetypes', 
+			'GET', 
+			{  }, 
+			{ 'filter': opts['filter'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
+		);
+	}
+
+	/**
+	 * Get the SCIM configuration
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. 
+	 */
+	getScimServiceproviderconfig(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scim/serviceproviderconfig', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{ 'If-None-Match': opts['ifNoneMatch'] }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
+		);
+	}
+
+	/**
 	 * Get a user
 	 * 
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/users.
@@ -242,6 +315,55 @@ class SCIMApi {
 			'GET', 
 			{  }, 
 			{ 'startIndex': opts['startIndex'],'count': opts['count'],'filter': filter }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
+		);
+	}
+
+	/**
+	 * Get the SCIM configuration
+	 * 
+	 * @param {Object} resourceType The ID of a resource.
+	 */
+	getScimV2Resourcetype(resourceType) { 
+		// verify the required parameter 'resourceType' is set
+		if (resourceType === undefined || resourceType === null) {
+			throw 'Missing the required parameter "resourceType" when calling getScimV2Resourcetype';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scim/v2/resourcetypes/{resourceType}', 
+			'GET', 
+			{ 'resourceType': resourceType }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
+		);
+	}
+
+	/**
+	 * Get the SCIM resource types
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.filter Filtered results are invalid and will result in a 403 (Unauthorized) return.
+	 */
+	getScimV2Resourcetypes(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scim/v2/resourcetypes', 
+			'GET', 
+			{  }, 
+			{ 'filter': opts['filter'] }, 
 			{  }, 
 			{  }, 
 			null, 

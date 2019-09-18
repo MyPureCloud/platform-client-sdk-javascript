@@ -24,8 +24,9 @@ Delete all auth tokens for the specified user.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* oauth:token:delete
 
 
 

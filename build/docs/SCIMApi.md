@@ -11,10 +11,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteScimV2User**](SCIMApi.html#deleteScimV2User) | **DELETE** /api/v2/scim/v2/users/{userId} | Delete a user
 [**getScimGroup**](SCIMApi.html#getScimGroup) | **GET** /api/v2/scim/groups/{groupId} | Get a group
 [**getScimGroups**](SCIMApi.html#getScimGroups) | **GET** /api/v2/scim/groups | Get a list of groups
+[**getScimResourcetype**](SCIMApi.html#getScimResourcetype) | **GET** /api/v2/scim/resourcetypes/{resourceType} | Get the SCIM configuration
+[**getScimResourcetypes**](SCIMApi.html#getScimResourcetypes) | **GET** /api/v2/scim/resourcetypes | Get the SCIM resource types
+[**getScimServiceproviderconfig**](SCIMApi.html#getScimServiceproviderconfig) | **GET** /api/v2/scim/serviceproviderconfig | Get the SCIM configuration
 [**getScimUser**](SCIMApi.html#getScimUser) | **GET** /api/v2/scim/users/{userId} | Get a user
 [**getScimUsers**](SCIMApi.html#getScimUsers) | **GET** /api/v2/scim/users | Get a list of users
 [**getScimV2Group**](SCIMApi.html#getScimV2Group) | **GET** /api/v2/scim/v2/groups/{groupId} | Get a group
 [**getScimV2Groups**](SCIMApi.html#getScimV2Groups) | **GET** /api/v2/scim/v2/groups | Get a list of groups
+[**getScimV2Resourcetype**](SCIMApi.html#getScimV2Resourcetype) | **GET** /api/v2/scim/v2/resourcetypes/{resourceType} | Get the SCIM configuration
+[**getScimV2Resourcetypes**](SCIMApi.html#getScimV2Resourcetypes) | **GET** /api/v2/scim/v2/resourcetypes | Get the SCIM resource types
 [**getScimV2Serviceproviderconfig**](SCIMApi.html#getScimV2Serviceproviderconfig) | **GET** /api/v2/scim/v2/serviceproviderconfig | Get the SCIM configuration
 [**getScimV2User**](SCIMApi.html#getScimV2User) | **GET** /api/v2/scim/v2/users/{userId} | Get a user
 [**getScimV2Users**](SCIMApi.html#getScimV2Users) | **GET** /api/v2/scim/v2/users | Get a list of users
@@ -268,6 +273,163 @@ apiInstance.getScimGroups(opts)
 
 **ScimGroupListResponse**
 
+<a name="getScimResourcetype"></a>
+
+# ScimConfigResourceType getScimResourcetype(resourceType)
+
+
+
+GET /api/v2/scim/resourcetypes/{resourceType}
+
+Get the SCIM configuration
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.SCIMApi();
+
+let resourceType = "resourceType_example"; // String | The ID of a resource.
+
+apiInstance.getScimResourcetype(resourceType)
+  .then((data) => {
+    console.log(`getScimResourcetype success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getScimResourcetype');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **resourceType** | **String** | The ID of a resource. | <br />**Values**: User, Group, ServiceProviderConfig, ResourceType |
+{: class="table table-striped"}
+
+### Return type
+
+**ScimConfigResourceType**
+
+<a name="getScimResourcetypes"></a>
+
+# ScimConfigResourceTypesListResponse getScimResourcetypes(opts)
+
+
+
+GET /api/v2/scim/resourcetypes
+
+Get the SCIM resource types
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.SCIMApi();
+
+let opts = { 
+  'filter': "displayName eq groupName" // String | Filtered results are invalid and will result in a 403 (Unauthorized) return.
+};
+
+apiInstance.getScimResourcetypes(opts)
+  .then((data) => {
+    console.log(`getScimResourcetypes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getScimResourcetypes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **filter** | **String** | Filtered results are invalid and will result in a 403 (Unauthorized) return. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ScimConfigResourceTypesListResponse**
+
+<a name="getScimServiceproviderconfig"></a>
+
+# ScimServiceProviderConfig getScimServiceproviderconfig(opts)
+
+
+
+GET /api/v2/scim/serviceproviderconfig
+
+Get the SCIM configuration
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.SCIMApi();
+
+let opts = { 
+  'ifNoneMatch': "ifNoneMatch_example" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. 
+};
+
+apiInstance.getScimServiceproviderconfig(opts)
+  .then((data) => {
+    console.log(`getScimServiceproviderconfig success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getScimServiceproviderconfig');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **ifNoneMatch** | **String** | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ScimServiceProviderConfig**
+
 <a name="getScimUser"></a>
 
 # ScimV2User getScimUser(userId, opts)
@@ -510,6 +672,110 @@ apiInstance.getScimV2Groups(filter, opts)
 
 **ScimGroupListResponse**
 
+<a name="getScimV2Resourcetype"></a>
+
+# ScimConfigResourceType getScimV2Resourcetype(resourceType)
+
+
+
+GET /api/v2/scim/v2/resourcetypes/{resourceType}
+
+Get the SCIM configuration
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.SCIMApi();
+
+let resourceType = "resourceType_example"; // String | The ID of a resource.
+
+apiInstance.getScimV2Resourcetype(resourceType)
+  .then((data) => {
+    console.log(`getScimV2Resourcetype success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getScimV2Resourcetype');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **resourceType** | **String** | The ID of a resource. | <br />**Values**: User, Group, ServiceProviderConfig, ResourceType |
+{: class="table table-striped"}
+
+### Return type
+
+**ScimConfigResourceType**
+
+<a name="getScimV2Resourcetypes"></a>
+
+# ScimConfigResourceTypesListResponse getScimV2Resourcetypes(opts)
+
+
+
+GET /api/v2/scim/v2/resourcetypes
+
+Get the SCIM resource types
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.SCIMApi();
+
+let opts = { 
+  'filter': "displayName eq groupName" // String | Filtered results are invalid and will result in a 403 (Unauthorized) return.
+};
+
+apiInstance.getScimV2Resourcetypes(opts)
+  .then((data) => {
+    console.log(`getScimV2Resourcetypes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getScimV2Resourcetypes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **filter** | **String** | Filtered results are invalid and will result in a 403 (Unauthorized) return. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ScimConfigResourceTypesListResponse**
+
 <a name="getScimV2Serviceproviderconfig"></a>
 
 # ScimServiceProviderConfig getScimV2Serviceproviderconfig(opts)
@@ -731,20 +997,20 @@ ScimV2PatchRequest <a href="#" onclick="return copyScimV2PatchRequestExample()">
       "number": Boolean, 
       "object": Boolean, 
       "boolean": Boolean, 
-      "missingNode": Boolean, 
       "valueNode": Boolean, 
-      "binary": Boolean, 
-      "pojo": Boolean, 
       "containerNode": Boolean, 
-      "int": Boolean, 
+      "missingNode": Boolean, 
+      "pojo": Boolean, 
+      "floatingPointNumber": Boolean, 
       "integralNumber": Boolean, 
       "short": Boolean, 
+      "int": Boolean, 
       "long": Boolean, 
-      "floatingPointNumber": Boolean, 
       "double": Boolean, 
       "bigDecimal": Boolean, 
       "bigInteger": Boolean, 
       "textual": Boolean, 
+      "binary": Boolean, 
       "array": Boolean, 
       "null": Boolean, 
     },  
@@ -845,20 +1111,20 @@ ScimV2PatchRequest <a href="#" onclick="return copyScimV2PatchRequestExample()">
       "number": Boolean, 
       "object": Boolean, 
       "boolean": Boolean, 
-      "missingNode": Boolean, 
       "valueNode": Boolean, 
-      "binary": Boolean, 
-      "pojo": Boolean, 
       "containerNode": Boolean, 
-      "int": Boolean, 
+      "missingNode": Boolean, 
+      "pojo": Boolean, 
+      "floatingPointNumber": Boolean, 
       "integralNumber": Boolean, 
       "short": Boolean, 
+      "int": Boolean, 
       "long": Boolean, 
-      "floatingPointNumber": Boolean, 
       "double": Boolean, 
       "bigDecimal": Boolean, 
       "bigInteger": Boolean, 
       "textual": Boolean, 
+      "binary": Boolean, 
       "array": Boolean, 
       "null": Boolean, 
     },  
@@ -958,20 +1224,20 @@ ScimV2PatchRequest <a href="#" onclick="return copyScimV2PatchRequestExample()">
       "number": Boolean, 
       "object": Boolean, 
       "boolean": Boolean, 
-      "missingNode": Boolean, 
       "valueNode": Boolean, 
-      "binary": Boolean, 
-      "pojo": Boolean, 
       "containerNode": Boolean, 
-      "int": Boolean, 
+      "missingNode": Boolean, 
+      "pojo": Boolean, 
+      "floatingPointNumber": Boolean, 
       "integralNumber": Boolean, 
       "short": Boolean, 
+      "int": Boolean, 
       "long": Boolean, 
-      "floatingPointNumber": Boolean, 
       "double": Boolean, 
       "bigDecimal": Boolean, 
       "bigInteger": Boolean, 
       "textual": Boolean, 
+      "binary": Boolean, 
       "array": Boolean, 
       "null": Boolean, 
     },  
@@ -1072,20 +1338,20 @@ ScimV2PatchRequest <a href="#" onclick="return copyScimV2PatchRequestExample()">
       "number": Boolean, 
       "object": Boolean, 
       "boolean": Boolean, 
-      "missingNode": Boolean, 
       "valueNode": Boolean, 
-      "binary": Boolean, 
-      "pojo": Boolean, 
       "containerNode": Boolean, 
-      "int": Boolean, 
+      "missingNode": Boolean, 
+      "pojo": Boolean, 
+      "floatingPointNumber": Boolean, 
       "integralNumber": Boolean, 
       "short": Boolean, 
+      "int": Boolean, 
       "long": Boolean, 
-      "floatingPointNumber": Boolean, 
       "double": Boolean, 
       "bigDecimal": Boolean, 
       "bigInteger": Boolean, 
       "textual": Boolean, 
+      "binary": Boolean, 
       "array": Boolean, 
       "null": Boolean, 
     },  

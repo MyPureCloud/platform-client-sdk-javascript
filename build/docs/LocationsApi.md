@@ -278,7 +278,7 @@ let apiInstance = new platformClient.LocationsApi();
 
 let q64 = "q64_example"; // String | q64
 let opts = { 
-  'expand': ["expand_example"] // [String] | expand
+  'expand': ["expand_example"] // [String] | Provides more details about a specified resource
 };
 
 apiInstance.getLocationsSearch(q64, opts)
@@ -297,7 +297,7 @@ apiInstance.getLocationsSearch(q64, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
- **expand** | **[String]** | expand | [optional]  |
+ **expand** | **[String]** | Provides more details about a specified resource | [optional] <br />**Values**: images |
 {: class="table table-striped"}
 
 ### Return type
@@ -557,6 +557,7 @@ LocationSearchRequest <a href="#" onclick="return copyLocationSearchRequestExamp
     "sortOrder": String, 
     "sortBy": String, 
   },  
+  "expand": [String], 
   "query": { 
     "endValue": String, 
     "values": [String], 

@@ -13,7 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="postAnalyticsFlowsAggregatesQuery"></a>
 
-# AggregateQueryResponse postAnalyticsFlowsAggregatesQuery(body)
+# FlowAggregateQueryResponse postAnalyticsFlowsAggregatesQuery(body)
 
 
 
@@ -31,19 +31,19 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyAggregationQueryExample() {
+	function copyFlowAggregationQueryExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#AggregationQueryExample').text()).select();
+		temp.val($('#FlowAggregationQueryExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy</a>
+FlowAggregationQuery <a href="#" onclick="return copyFlowAggregationQueryExample()">Copy</a>
 
-<div id="AggregationQueryExample">
+<div id="FlowAggregationQueryExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
@@ -58,9 +58,6 @@ AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy
       "predicates": { 
         "type": String, 
         "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
         "operator": String, 
         "value": String, 
         "range": { 
@@ -74,9 +71,6 @@ AggregationQuery <a href="#" onclick="return copyAggregationQueryExample()">Copy
     "predicates": { 
       "type": String, 
       "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
       "operator": String, 
       "value": String, 
       "range": { 
@@ -139,11 +133,11 @@ apiInstance.postAnalyticsFlowsAggregatesQuery(body)
 
 ### Return type
 
-**AggregateQueryResponse**
+**FlowAggregateQueryResponse**
 
 <a name="postAnalyticsFlowsObservationsQuery"></a>
 
-# QualifierMappingObservationQueryResponse postAnalyticsFlowsObservationsQuery(body)
+# FlowObservationQueryResponse postAnalyticsFlowsObservationsQuery(body)
 
 
 
@@ -161,19 +155,19 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyObservationQueryExample() {
+	function copyFlowObservationQueryExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#ObservationQueryExample').text()).select();
+		temp.val($('#FlowObservationQueryExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy</a>
+FlowObservationQuery <a href="#" onclick="return copyFlowObservationQueryExample()">Copy</a>
 
-<div id="ObservationQueryExample">
+<div id="FlowObservationQueryExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
@@ -184,9 +178,6 @@ ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy
       "predicates": { 
         "type": String, 
         "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
         "operator": String, 
         "value": String, 
         "range": { 
@@ -200,9 +191,6 @@ ObservationQuery <a href="#" onclick="return copyObservationQueryExample()">Copy
     "predicates": { 
       "type": String, 
       "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
       "operator": String, 
       "value": String, 
       "range": { 
@@ -256,5 +244,5 @@ apiInstance.postAnalyticsFlowsObservationsQuery(body)
 
 ### Return type
 
-**QualifierMappingObservationQueryResponse**
+**FlowObservationQueryResponse**
 
