@@ -2736,6 +2736,10 @@ WorkspaceMember <a href="#" onclick="return copyWorkspaceMemberExample()">Copy</
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -2871,6 +2875,10 @@ WorkspaceMember <a href="#" onclick="return copyWorkspaceMemberExample()">Copy</
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 

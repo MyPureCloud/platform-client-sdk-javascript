@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 57.0.0
+	 * @version 58.0.0
 	 */
 
 	/**
@@ -1824,7 +1824,7 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
-	 * Get the list of Number Plans for this Site.
+	 * Get the list of Number Plans for this Site. Only fetches the first 200 records.
 	 * 
 	 * @param {String} siteId Site ID
 	 */
@@ -3260,7 +3260,7 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
-	 * Update the list of Number Plans.
+	 * Update the list of Number Plans. A user can update maximum 200 number plans at a time.
 	 * 
 	 * @param {String} siteId Site ID
 	 * @param {Array.<Object>} body List of number plans

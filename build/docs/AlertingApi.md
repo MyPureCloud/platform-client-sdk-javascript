@@ -671,6 +671,10 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -806,6 +810,10 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -1227,6 +1235,10 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -1362,6 +1374,10 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 

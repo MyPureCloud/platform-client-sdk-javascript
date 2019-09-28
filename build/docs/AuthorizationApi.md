@@ -1477,6 +1477,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -1585,6 +1589,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -1923,6 +1931,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -2007,6 +2016,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -2983,6 +2993,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -3091,6 +3105,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -3429,6 +3447,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -3513,6 +3532,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -4260,6 +4280,10 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -4368,6 +4392,10 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -4706,6 +4734,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -4790,6 +4819,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -5740,6 +5770,10 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -5848,6 +5882,10 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -6186,6 +6224,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -6270,6 +6309,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -7129,6 +7169,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -7237,6 +7281,10 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -7575,6 +7623,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -7659,6 +7708,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 

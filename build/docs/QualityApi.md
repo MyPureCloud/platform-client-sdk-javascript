@@ -2470,8 +2470,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -2482,8 +2482,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -2494,8 +2494,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -2506,8 +2506,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
     "firstUri": String, 
     "selfUri": String, 
     "nextUri": String, 
-    "lastUri": String, 
     "previousUri": String, 
+    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -3005,6 +3005,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -3140,6 +3144,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -4441,8 +4449,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -4453,8 +4461,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -4623,6 +4631,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -4731,6 +4743,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -4970,6 +4986,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -5078,6 +5098,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -5278,6 +5302,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -5362,6 +5387,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -5747,8 +5773,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -5846,8 +5872,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -6467,8 +6493,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -7327,8 +7353,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -7339,8 +7365,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -7351,8 +7377,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
       "firstUri": String, 
       "selfUri": String, 
       "nextUri": String, 
-      "lastUri": String, 
       "previousUri": String, 
+      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 
@@ -8220,8 +8246,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -8348,6 +8374,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -8432,6 +8459,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -8611,6 +8639,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -8695,6 +8724,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -8994,8 +9024,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -9600,8 +9630,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -9612,8 +9642,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -9624,8 +9654,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -9794,6 +9824,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -9920,6 +9954,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -10159,6 +10197,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -10285,6 +10327,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -10527,6 +10573,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -10644,6 +10694,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -11282,8 +11336,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -11924,8 +11978,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -11936,8 +11990,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -12599,8 +12653,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -12611,8 +12665,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -12781,6 +12835,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -12889,6 +12947,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -13128,6 +13190,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -13236,6 +13302,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -13436,6 +13506,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -13520,6 +13591,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -13905,8 +13977,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -14004,8 +14076,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -14625,8 +14697,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -15988,8 +16060,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -16000,8 +16072,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -16170,6 +16242,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -16278,6 +16354,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -16517,6 +16597,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -16625,6 +16709,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -16825,6 +16913,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -16909,6 +16998,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -17294,8 +17384,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -17393,8 +17483,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -18014,8 +18104,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -19810,8 +19900,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -19938,6 +20028,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -20022,6 +20113,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -20201,6 +20293,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -20285,6 +20378,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -20584,8 +20678,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -21190,8 +21284,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -21202,8 +21296,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -21214,8 +21308,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -21384,6 +21478,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -21510,6 +21608,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -21749,6 +21851,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -21875,6 +21981,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -22117,6 +22227,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -22234,6 +22348,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -22872,8 +22990,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -23514,8 +23632,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -23526,8 +23644,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -24189,8 +24307,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -24201,8 +24319,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -24371,6 +24489,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -24479,6 +24601,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -24718,6 +24844,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -24826,6 +24956,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -25026,6 +25160,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -25110,6 +25245,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -25495,8 +25631,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -25594,8 +25730,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -26215,8 +26351,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -27578,8 +27714,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -27590,8 +27726,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -27760,6 +27896,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -27868,6 +28008,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -28107,6 +28251,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -28215,6 +28363,10 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -28415,6 +28567,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -28499,6 +28652,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -28884,8 +29038,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -28983,8 +29137,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -29604,8 +29758,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -31852,8 +32006,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -31864,8 +32018,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -32034,6 +32188,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -32142,6 +32300,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -32381,6 +32543,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -32489,6 +32655,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -32689,6 +32859,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -32773,6 +32944,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -33158,8 +33330,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -33257,8 +33429,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -33878,8 +34050,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -34738,8 +34910,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -34750,8 +34922,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -34762,8 +34934,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "firstUri": String, 
       "selfUri": String, 
       "nextUri": String, 
-      "lastUri": String, 
       "previousUri": String, 
+      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 
@@ -34932,6 +35104,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -35067,6 +35243,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -35306,6 +35486,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -35441,6 +35625,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -35683,6 +35871,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -35809,6 +36001,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -36740,8 +36936,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -36868,6 +37064,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -36952,6 +37149,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -37131,6 +37329,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -37215,6 +37414,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -37514,8 +37714,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -38120,8 +38320,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -38132,8 +38332,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -38144,8 +38344,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -38720,8 +38920,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -39362,8 +39562,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -39374,8 +39574,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -39544,6 +39744,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -39661,6 +39865,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -39900,6 +40108,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -40017,6 +40229,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -40259,6 +40475,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -40367,6 +40587,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -41092,8 +41316,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -41104,8 +41328,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -41445,8 +41669,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -41573,6 +41797,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -41657,6 +41882,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -41836,6 +42062,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -41920,6 +42147,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -42219,8 +42447,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -43029,8 +43257,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -43157,6 +43385,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -43241,6 +43470,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -43420,6 +43650,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -43504,6 +43735,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -43803,8 +44035,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -45049,8 +45281,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -45691,8 +45923,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -45703,8 +45935,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -45873,6 +46105,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -45990,6 +46226,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -46229,6 +46469,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -46346,6 +46590,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -46588,6 +46836,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -46696,6 +46948,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -47421,8 +47677,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -47433,8 +47689,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -47774,8 +48030,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -47902,6 +48158,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -47986,6 +48243,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -48165,6 +48423,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -48249,6 +48508,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -48548,8 +48808,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -49358,8 +49618,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -49486,6 +49746,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -49570,6 +49831,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -49749,6 +50011,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -49833,6 +50096,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -50132,8 +50396,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -51270,8 +51534,8 @@ EvaluationFormAndScoringSet <a href="#" onclick="return copyEvaluationFormAndSco
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -51282,8 +51546,8 @@ EvaluationFormAndScoringSet <a href="#" onclick="return copyEvaluationFormAndSco
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -51294,8 +51558,8 @@ EvaluationFormAndScoringSet <a href="#" onclick="return copyEvaluationFormAndSco
       "firstUri": String, 
       "selfUri": String, 
       "nextUri": String, 
-      "lastUri": String, 
       "previousUri": String, 
+      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 
@@ -51551,8 +51815,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -51563,8 +51827,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -51575,8 +51839,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -51587,8 +51851,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
     "firstUri": String, 
     "selfUri": String, 
     "nextUri": String, 
-    "lastUri": String, 
     "previousUri": String, 
+    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -51816,8 +52080,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -51828,8 +52092,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -51840,8 +52104,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -51852,8 +52116,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
     "firstUri": String, 
     "selfUri": String, 
     "nextUri": String, 
-    "lastUri": String, 
     "previousUri": String, 
+    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -52086,8 +52350,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -52098,8 +52362,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -52110,8 +52374,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -52122,8 +52386,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
     "firstUri": String, 
     "selfUri": String, 
     "nextUri": String, 
-    "lastUri": String, 
     "previousUri": String, 
+    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -52574,6 +52838,10 @@ KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -52709,6 +52977,10 @@ KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -53495,6 +53767,10 @@ KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -53630,6 +53906,10 @@ KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -53940,8 +54220,8 @@ SurveyFormAndScoringSet <a href="#" onclick="return copySurveyFormAndScoringSetE
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -53952,8 +54232,8 @@ SurveyFormAndScoringSet <a href="#" onclick="return copySurveyFormAndScoringSetE
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -53964,8 +54244,8 @@ SurveyFormAndScoringSet <a href="#" onclick="return copySurveyFormAndScoringSetE
       "firstUri": String, 
       "selfUri": String, 
       "nextUri": String, 
-      "lastUri": String, 
       "previousUri": String, 
+      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 
@@ -54233,6 +54513,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -54368,6 +54652,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -55669,8 +55957,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -55681,8 +55969,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -55851,6 +56139,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -55959,6 +56251,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -56198,6 +56494,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -56306,6 +56606,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -56506,6 +56810,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -56590,6 +56895,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -56975,8 +57281,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -57074,8 +57380,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -57695,8 +58001,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -58555,8 +58861,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -58567,8 +58873,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -58579,8 +58885,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
       "firstUri": String, 
       "selfUri": String, 
       "nextUri": String, 
-      "lastUri": String, 
       "previousUri": String, 
+      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 
@@ -59448,8 +59754,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -59576,6 +59882,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -59660,6 +59967,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -59839,6 +60147,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -59923,6 +60232,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -60222,8 +60532,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -60828,8 +61138,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -60840,8 +61150,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -60852,8 +61162,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -61022,6 +61332,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -61148,6 +61462,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -61387,6 +61705,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -61513,6 +61835,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -61755,6 +62081,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -61872,6 +62202,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -62510,8 +62844,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -63152,8 +63486,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -63164,8 +63498,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -63827,8 +64161,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -63839,8 +64173,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -64009,6 +64343,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -64117,6 +64455,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -64356,6 +64698,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -64464,6 +64810,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -64664,6 +65014,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -64748,6 +65099,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -65133,8 +65485,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -65232,8 +65584,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -65853,8 +66205,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -67216,8 +67568,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -67228,8 +67580,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -67398,6 +67750,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -67506,6 +67862,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -67745,6 +68105,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -67853,6 +68217,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -68053,6 +68421,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -68137,6 +68506,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -68522,8 +68892,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -68621,8 +68991,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -69242,8 +69612,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -71038,8 +71408,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -71166,6 +71536,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -71250,6 +71621,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -71429,6 +71801,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -71513,6 +71886,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -71812,8 +72186,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -72418,8 +72792,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -72430,8 +72804,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -72442,8 +72816,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -72612,6 +72986,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -72738,6 +73116,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -72977,6 +73359,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -73103,6 +73489,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -73345,6 +73735,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -73462,6 +73856,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -74100,8 +74498,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -74742,8 +75140,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -74754,8 +75152,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -75417,8 +75815,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -75429,8 +75827,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -75599,6 +75997,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -75707,6 +76109,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -75946,6 +76352,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -76054,6 +76464,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -76254,6 +76668,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -76338,6 +76753,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -76723,8 +77139,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -76822,8 +77238,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -77443,8 +77859,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -78806,8 +79222,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -78818,8 +79234,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -78988,6 +79404,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -79096,6 +79516,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -79335,6 +79759,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -79443,6 +79871,10 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -79643,6 +80075,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -79727,6 +80160,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -80112,8 +80546,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -80211,8 +80645,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -80832,8 +81266,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -83078,8 +83512,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -83090,8 +83524,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -83260,6 +83694,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -83368,6 +83806,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -83607,6 +84049,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -83715,6 +84161,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -83915,6 +84365,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -83999,6 +84450,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -84384,8 +84836,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -84483,8 +84935,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -85104,8 +85556,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -85964,8 +86416,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -85976,8 +86428,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -85988,8 +86440,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "firstUri": String, 
       "selfUri": String, 
       "nextUri": String, 
-      "lastUri": String, 
       "previousUri": String, 
+      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 
@@ -86158,6 +86610,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -86293,6 +86749,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -86532,6 +86992,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -86667,6 +87131,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -86909,6 +87377,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -87035,6 +87507,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -87966,8 +88442,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -88094,6 +88570,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -88178,6 +88655,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -88357,6 +88835,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -88441,6 +88920,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -88740,8 +89220,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -89346,8 +89826,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -89358,8 +89838,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -89370,8 +89850,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -89946,8 +90426,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -90588,8 +91068,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -90600,8 +91080,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -90770,6 +91250,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -90887,6 +91371,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -91126,6 +91614,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -91243,6 +91735,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -91485,6 +91981,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -91593,6 +92093,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -92318,8 +92822,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -92330,8 +92834,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -92671,8 +93175,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -92799,6 +93303,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -92883,6 +93388,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -93062,6 +93568,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -93146,6 +93653,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -93445,8 +93953,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -94255,8 +94763,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -94383,6 +94891,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -94467,6 +94976,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -94646,6 +95156,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -94730,6 +95241,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -95029,8 +95541,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -96275,8 +96787,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -96917,8 +97429,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -96929,8 +97441,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -97099,6 +97611,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -97216,6 +97732,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -97455,6 +97975,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -97572,6 +98096,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -97814,6 +98342,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -97922,6 +98454,10 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -98647,8 +99183,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -98659,8 +99195,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -99000,8 +99536,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -99128,6 +99664,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -99212,6 +99749,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -99391,6 +99929,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -99475,6 +100014,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -99774,8 +100314,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -100584,8 +101124,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -100712,6 +101252,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -100796,6 +101337,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -100975,6 +101517,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -101059,6 +101602,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -101358,8 +101902,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -102515,8 +103059,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -102527,8 +103071,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -102539,8 +103083,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -102551,8 +103095,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
     "firstUri": String, 
     "selfUri": String, 
     "nextUri": String, 
-    "lastUri": String, 
     "previousUri": String, 
+    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -102782,8 +103326,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -102794,8 +103338,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -102806,8 +103350,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -102818,8 +103362,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
     "firstUri": String, 
     "selfUri": String, 
     "nextUri": String, 
-    "lastUri": String, 
     "previousUri": String, 
+    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -103054,8 +103598,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -103066,8 +103610,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -103078,8 +103622,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -103090,8 +103634,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
     "firstUri": String, 
     "selfUri": String, 
     "nextUri": String, 
-    "lastUri": String, 
     "previousUri": String, 
+    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -103544,6 +104088,10 @@ KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -103679,6 +104227,10 @@ KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -103991,8 +104543,8 @@ ScorableSurvey <a href="#" onclick="return copyScorableSurveyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -104003,8 +104555,8 @@ ScorableSurvey <a href="#" onclick="return copyScorableSurveyExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -104015,8 +104567,8 @@ ScorableSurvey <a href="#" onclick="return copyScorableSurveyExample()">Copy</a>
       "firstUri": String, 
       "selfUri": String, 
       "nextUri": String, 
-      "lastUri": String, 
       "previousUri": String, 
+      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 

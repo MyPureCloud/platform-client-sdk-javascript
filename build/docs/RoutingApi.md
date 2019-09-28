@@ -2635,6 +2635,10 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -2770,6 +2774,10 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -3103,6 +3111,10 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -3238,6 +3250,10 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -5623,6 +5639,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -5749,6 +5769,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -5824,6 +5848,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "languagePreference": String, 
       "selfUri": String, 
     },  
+    "lockedClient": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "active": Boolean, 
     "system": Boolean, 
     "deleted": Boolean, 
@@ -5835,6 +5864,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "type": String, 
       "secure": Boolean, 
       "createdBy": User, 
+      "createdByClient": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "configurationUri": String, 
       "dateCreated": Number, 
       "generationId": String, 
@@ -5849,6 +5883,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "type": String, 
       "secure": Boolean, 
       "createdBy": User, 
+      "createdByClient": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "configurationUri": String, 
       "dateCreated": Number, 
       "generationId": String, 
@@ -5865,6 +5904,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "type": String, 
       "secure": Boolean, 
       "createdBy": User, 
+      "createdByClient": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "configurationUri": String, 
       "dateCreated": Number, 
       "generationId": String, 
@@ -6035,6 +6079,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -6161,6 +6209,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -6403,6 +6455,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -6520,6 +6576,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -6593,6 +6653,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         },  
         "acdAutoAnswer": Boolean, 
         "languagePreference": String, 
+        "selfUri": String, 
+      },  
+      "client": { 
+        "id": String, 
+        "name": String, 
         "selfUri": String, 
       },  
       "errorMessage": String, 
@@ -6775,6 +6840,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -6910,6 +6979,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -7548,6 +7621,10 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -7683,6 +7760,10 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 

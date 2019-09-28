@@ -598,6 +598,10 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -733,6 +737,10 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -973,6 +981,10 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -1108,6 +1120,10 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -1434,6 +1450,10 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -1569,6 +1589,10 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -1809,6 +1833,10 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -1944,6 +1972,10 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 

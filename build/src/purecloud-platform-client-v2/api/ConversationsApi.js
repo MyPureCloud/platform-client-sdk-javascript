@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 57.0.0
+	 * @version 58.0.0
 	 */
 
 	/**
@@ -818,7 +818,7 @@ class ConversationsApi {
 
 	/**
 	 * Get a web chat conversation message
-	 * 
+	 * The current user must be involved with the conversation to get its messages.
 	 * @param {String} conversationId conversationId
 	 * @param {String} messageId messageId
 	 */
@@ -848,7 +848,7 @@ class ConversationsApi {
 
 	/**
 	 * Get the messages of a chat conversation.
-	 * 
+	 * The current user must be involved with the conversation to get its messages.
 	 * @param {String} conversationId conversationId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after If specified, get the messages chronologically after the id of this message

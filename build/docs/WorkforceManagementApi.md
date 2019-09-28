@@ -4727,6 +4727,10 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -4835,6 +4839,10 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -5081,6 +5089,10 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -5207,6 +5219,10 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -5575,6 +5591,10 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -5683,6 +5703,10 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 

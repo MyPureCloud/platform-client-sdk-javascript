@@ -249,6 +249,10 @@ Geolocation <a href="#" onclick="return copyGeolocationExample()">Copy</a>
   "locations": { 
     "id": String, 
     "name": String, 
+    "contactUser": { 
+      "id": String, 
+      "selfUri": String, 
+    },  
     "emergencyNumber": { 
       "e164": String, 
       "number": String, 

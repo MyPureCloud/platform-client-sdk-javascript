@@ -1569,8 +1569,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -1581,8 +1581,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -1751,6 +1751,10 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -1859,6 +1863,10 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -2098,6 +2106,10 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -2206,6 +2218,10 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -2406,6 +2422,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -2490,6 +2507,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -2875,8 +2893,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -2974,8 +2992,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -3595,8 +3613,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 

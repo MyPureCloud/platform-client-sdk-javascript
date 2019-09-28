@@ -1334,6 +1334,10 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -1469,6 +1473,10 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -1957,6 +1965,10 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -2065,6 +2077,10 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -2273,6 +2289,10 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -2390,6 +2410,10 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -2762,6 +2786,10 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -2897,6 +2925,10 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -3303,6 +3335,10 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -3420,6 +3456,10 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -3628,6 +3668,10 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -3754,6 +3798,10 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -4115,6 +4163,10 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -4250,6 +4302,10 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -4571,6 +4627,10 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -4679,6 +4739,10 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -4887,6 +4951,10 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -5004,6 +5072,10 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -5533,6 +5605,10 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -5641,6 +5717,10 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -5849,6 +5929,10 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -5966,6 +6050,10 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -6340,6 +6428,10 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -6475,6 +6567,10 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -6968,6 +7064,10 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -7085,6 +7185,10 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -7293,6 +7397,10 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -7419,6 +7527,10 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -7785,6 +7897,10 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -7920,6 +8036,10 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -8306,6 +8426,10 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -8441,6 +8565,10 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -8762,6 +8890,10 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -8870,6 +9002,10 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -9078,6 +9214,10 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -9195,6 +9335,10 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 

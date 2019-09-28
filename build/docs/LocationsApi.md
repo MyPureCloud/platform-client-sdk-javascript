@@ -324,19 +324,19 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyLocationUpdateDefinitionExample() {
+	function copyLocationCreateUpdateDefinitionExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#LocationUpdateDefinitionExample').text()).select();
+		temp.val($('#LocationCreateUpdateDefinitionExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-LocationUpdateDefinition <a href="#" onclick="return copyLocationUpdateDefinitionExample()">Copy</a>
+LocationCreateUpdateDefinition <a href="#" onclick="return copyLocationCreateUpdateDefinitionExample()">Copy</a>
 
-<div id="LocationUpdateDefinitionExample">
+<div id="LocationCreateUpdateDefinitionExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
@@ -350,16 +350,17 @@ LocationUpdateDefinition <a href="#" onclick="return copyLocationUpdateDefinitio
     "street2": String, 
     "zipcode": String, 
   },  
-  "addressVerified": Boolean, 
   "emergencyNumber": { 
     "e164": String, 
     "number": String, 
     "type": String, 
   },  
-  "state": String, 
   "version": Number, 
-  "path": [String], 
+  "state": String, 
   "notes": String, 
+  "contactUser": String, 
+  "path": [String], 
+  "addressVerified": Boolean, 
 }
 ```
 
@@ -425,29 +426,23 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyLocationDefinitionExample() {
+	function copyLocationCreateUpdateDefinitionExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#LocationDefinitionExample').text()).select();
+		temp.val($('#LocationCreateUpdateDefinitionExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-LocationDefinition <a href="#" onclick="return copyLocationDefinitionExample()">Copy</a>
+LocationCreateUpdateDefinition <a href="#" onclick="return copyLocationCreateUpdateDefinitionExample()">Copy</a>
 
-<div id="LocationDefinitionExample">
+<div id="LocationCreateUpdateDefinitionExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
-  "id": String, 
   "name": String, 
-  "emergencyNumber": { 
-    "e164": String, 
-    "number": String, 
-    "type": String, 
-  },  
   "address": { 
     "city": String, 
     "country": String, 
@@ -457,20 +452,17 @@ LocationDefinition <a href="#" onclick="return copyLocationDefinitionExample()">
     "street2": String, 
     "zipcode": String, 
   },  
-  "addressVerified": Boolean, 
+  "emergencyNumber": { 
+    "e164": String, 
+    "number": String, 
+    "type": String, 
+  },  
+  "version": Number, 
   "state": String, 
   "notes": String, 
-  "version": Number, 
+  "contactUser": String, 
   "path": [String], 
-  "profileImage": { 
-    "resolution": String, 
-    "imageUri": String, 
-  },  
-  "floorplanImage": { 
-    "resolution": String, 
-    "imageUri": String, 
-  },  
-  "selfUri": String, 
+  "addressVerified": Boolean, 
 }
 ```
 

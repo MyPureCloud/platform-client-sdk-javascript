@@ -562,6 +562,10 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -697,6 +701,10 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -1028,6 +1036,10 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -1163,6 +1175,10 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -1590,6 +1606,10 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -1725,6 +1745,10 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -2058,6 +2082,10 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -2193,6 +2221,10 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 

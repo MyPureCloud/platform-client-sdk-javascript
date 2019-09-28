@@ -4114,6 +4114,10 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -4240,6 +4244,10 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -4313,6 +4321,11 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
       },  
       "acdAutoAnswer": Boolean, 
       "languagePreference": String, 
+      "selfUri": String, 
+    },  
+    "client": { 
+      "id": String, 
+      "name": String, 
       "selfUri": String, 
     },  
     "errorMessage": String, 
@@ -4988,6 +5001,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -5123,6 +5140,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -5198,6 +5219,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "languagePreference": String, 
     "selfUri": String, 
   },  
+  "lockedClient": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
   "active": Boolean, 
   "system": Boolean, 
   "deleted": Boolean, 
@@ -5209,6 +5235,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "type": String, 
     "secure": Boolean, 
     "createdBy": User, 
+    "createdByClient": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "configurationUri": String, 
     "dateCreated": Number, 
     "generationId": String, 
@@ -5223,6 +5254,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "type": String, 
     "secure": Boolean, 
     "createdBy": User, 
+    "createdByClient": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "configurationUri": String, 
     "dateCreated": Number, 
     "generationId": String, 
@@ -5239,6 +5275,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "type": String, 
     "secure": Boolean, 
     "createdBy": User, 
+    "createdByClient": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "configurationUri": String, 
     "dateCreated": Number, 
     "generationId": String, 
@@ -5409,6 +5450,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -5544,6 +5589,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -5786,6 +5835,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -5912,6 +5965,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -5985,6 +6042,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       },  
       "acdAutoAnswer": Boolean, 
       "languagePreference": String, 
+      "selfUri": String, 
+    },  
+    "client": { 
+      "id": String, 
+      "name": String, 
       "selfUri": String, 
     },  
     "errorMessage": String, 
@@ -6735,6 +6797,10 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -6861,6 +6927,10 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -6934,6 +7004,11 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
       },  
       "acdAutoAnswer": Boolean, 
       "languagePreference": String, 
+      "selfUri": String, 
+    },  
+    "client": { 
+      "id": String, 
+      "name": String, 
       "selfUri": String, 
     },  
     "errorMessage": String, 
@@ -7435,6 +7510,10 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -7561,6 +7640,10 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -7634,6 +7717,11 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
       },  
       "acdAutoAnswer": Boolean, 
       "languagePreference": String, 
+      "selfUri": String, 
+    },  
+    "client": { 
+      "id": String, 
+      "name": String, 
       "selfUri": String, 
     },  
     "errorMessage": String, 
@@ -8301,6 +8389,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -8436,6 +8528,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -8511,6 +8607,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "languagePreference": String, 
     "selfUri": String, 
   },  
+  "lockedClient": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
   "active": Boolean, 
   "system": Boolean, 
   "deleted": Boolean, 
@@ -8522,6 +8623,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "type": String, 
     "secure": Boolean, 
     "createdBy": User, 
+    "createdByClient": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "configurationUri": String, 
     "dateCreated": Number, 
     "generationId": String, 
@@ -8536,6 +8642,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "type": String, 
     "secure": Boolean, 
     "createdBy": User, 
+    "createdByClient": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "configurationUri": String, 
     "dateCreated": Number, 
     "generationId": String, 
@@ -8552,6 +8663,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "type": String, 
     "secure": Boolean, 
     "createdBy": User, 
+    "createdByClient": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
     "configurationUri": String, 
     "dateCreated": Number, 
     "generationId": String, 
@@ -8722,6 +8838,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -8857,6 +8977,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -9099,6 +9223,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -9225,6 +9353,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -9298,6 +9430,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       },  
       "acdAutoAnswer": Boolean, 
       "languagePreference": String, 
+      "selfUri": String, 
+    },  
+    "client": { 
+      "id": String, 
+      "name": String, 
       "selfUri": String, 
     },  
     "errorMessage": String, 
@@ -9724,6 +9861,10 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -9850,6 +9991,10 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -9923,6 +10068,11 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
       },  
       "acdAutoAnswer": Boolean, 
       "languagePreference": String, 
+      "selfUri": String, 
+    },  
+    "client": { 
+      "id": String, 
+      "name": String, 
       "selfUri": String, 
     },  
     "errorMessage": String, 

@@ -563,7 +563,7 @@ apiInstance.getConversationRecordingmetadata(conversationId)
 
 <a name="getConversationRecordingmetadataRecordingId"></a>
 
-# Recording getConversationRecordingmetadataRecordingId(conversationId, recordingId)
+# RecordingMetadata getConversationRecordingmetadataRecordingId(conversationId, recordingId)
 
 
 
@@ -615,7 +615,7 @@ apiInstance.getConversationRecordingmetadataRecordingId(conversationId, recordin
 
 ### Return type
 
-**Recording**
+**RecordingMetadata**
 
 <a name="getConversationRecordings"></a>
 
@@ -1599,8 +1599,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -1727,6 +1727,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -1811,6 +1812,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -1993,6 +1995,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -2077,6 +2080,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -2184,8 +2188,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -2322,6 +2326,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -2406,6 +2411,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -2513,8 +2519,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -2650,6 +2656,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -2734,6 +2741,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -2841,8 +2849,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -3055,6 +3063,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -3163,6 +3175,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -3461,8 +3477,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -3589,6 +3605,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -3673,6 +3690,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -3855,6 +3873,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -3939,6 +3958,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -4046,8 +4066,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -4184,6 +4204,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -4268,6 +4289,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -4375,8 +4397,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -4512,6 +4534,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -4596,6 +4619,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -4703,8 +4727,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -4917,6 +4941,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -5025,6 +5053,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -5322,8 +5354,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -5450,6 +5482,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -5534,6 +5567,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -5716,6 +5750,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -5800,6 +5835,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -5907,8 +5943,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -6045,6 +6081,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -6129,6 +6166,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -6236,8 +6274,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -6373,6 +6411,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -6457,6 +6496,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -6564,8 +6604,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -6778,6 +6818,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -6886,6 +6930,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -7178,8 +7226,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -7306,6 +7354,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -7390,6 +7439,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -7572,6 +7622,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -7656,6 +7707,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -7763,8 +7815,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -7901,6 +7953,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -7985,6 +8038,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -8092,8 +8146,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -8229,6 +8283,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -8313,6 +8368,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -8420,8 +8476,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -8634,6 +8690,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -8742,6 +8802,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -9145,6 +9209,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -9271,6 +9339,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -9649,8 +9721,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -9661,8 +9733,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -9831,6 +9903,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -9948,6 +10024,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -10190,6 +10270,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -10307,6 +10391,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -10472,8 +10560,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -10484,8 +10572,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -10664,6 +10752,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -10781,6 +10873,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -10946,8 +11042,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -10958,8 +11054,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -11137,6 +11233,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -11254,6 +11354,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -11419,8 +11523,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -11431,8 +11535,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -11833,6 +11937,10 @@ Annotation <a href="#" onclick="return copyAnnotationExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -11968,6 +12076,10 @@ Annotation <a href="#" onclick="return copyAnnotationExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -12701,8 +12813,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -12829,6 +12941,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -12913,6 +13026,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -13095,6 +13209,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -13179,6 +13294,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -13286,8 +13402,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -13424,6 +13540,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -13508,6 +13625,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -13615,8 +13733,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -13752,6 +13870,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -13836,6 +13955,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -13943,8 +14063,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -14157,6 +14277,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -14265,6 +14389,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -14563,8 +14691,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -14691,6 +14819,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -14775,6 +14904,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -14957,6 +15087,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -15041,6 +15172,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -15148,8 +15280,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -15286,6 +15418,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -15370,6 +15503,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -15477,8 +15611,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -15614,6 +15748,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -15698,6 +15833,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -15805,8 +15941,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -16019,6 +16155,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -16127,6 +16267,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -16424,8 +16568,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -16552,6 +16696,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -16636,6 +16781,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -16818,6 +16964,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -16902,6 +17049,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -17009,8 +17157,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -17147,6 +17295,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -17231,6 +17380,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -17338,8 +17488,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -17475,6 +17625,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -17559,6 +17710,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -17666,8 +17818,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -17880,6 +18032,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -17988,6 +18144,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -18280,8 +18440,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -18408,6 +18568,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -18492,6 +18653,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -18674,6 +18836,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -18758,6 +18921,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -18865,8 +19029,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -19003,6 +19167,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -19087,6 +19252,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -19194,8 +19360,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -19331,6 +19497,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -19415,6 +19582,7 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -19522,8 +19690,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -19736,6 +19904,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -19844,6 +20016,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -20247,6 +20423,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -20373,6 +20553,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -20751,8 +20935,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -20763,8 +20947,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -20933,6 +21117,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -21050,6 +21238,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -21292,6 +21484,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -21409,6 +21605,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -21574,8 +21774,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -21586,8 +21786,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -21766,6 +21966,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -21883,6 +22087,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -22048,8 +22256,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -22060,8 +22268,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -22239,6 +22447,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -22356,6 +22568,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -22521,8 +22737,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -22533,8 +22749,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -22906,6 +23122,10 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -23032,6 +23252,10 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -23339,6 +23563,10 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -23465,6 +23693,10 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -23948,6 +24180,7 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -24032,6 +24265,7 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -24335,6 +24569,10 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -24470,6 +24708,10 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -24801,6 +25043,10 @@ Annotation <a href="#" onclick="return copyAnnotationExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -24936,6 +25182,10 @@ Annotation <a href="#" onclick="return copyAnnotationExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -25426,8 +25676,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -25554,6 +25804,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -25638,6 +25889,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -25820,6 +26072,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -25904,6 +26157,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -26011,8 +26265,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -26149,6 +26403,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -26233,6 +26488,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -26340,8 +26596,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -26477,6 +26733,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -26561,6 +26818,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -26668,8 +26926,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -26882,6 +27140,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -26990,6 +27252,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -27288,8 +27554,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -27416,6 +27682,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -27500,6 +27767,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -27682,6 +27950,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -27766,6 +28035,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -27873,8 +28143,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -28011,6 +28281,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -28095,6 +28366,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -28202,8 +28474,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -28339,6 +28611,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -28423,6 +28696,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -28530,8 +28804,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -28744,6 +29018,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -28852,6 +29130,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -29149,8 +29431,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -29277,6 +29559,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -29361,6 +29644,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -29543,6 +29827,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -29627,6 +29912,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -29734,8 +30020,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -29872,6 +30158,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -29956,6 +30243,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -30063,8 +30351,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -30200,6 +30488,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -30284,6 +30573,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -30391,8 +30681,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -30605,6 +30895,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -30713,6 +31007,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -31005,8 +31303,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -31133,6 +31431,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -31217,6 +31516,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -31399,6 +31699,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -31483,6 +31784,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -31590,8 +31892,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -31728,6 +32030,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -31812,6 +32115,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -31919,8 +32223,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -32056,6 +32360,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -32140,6 +32445,7 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -32247,8 +32553,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -32461,6 +32767,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -32569,6 +32879,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -32972,6 +33286,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -33098,6 +33416,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -33476,8 +33798,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -33488,8 +33810,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -33658,6 +33980,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -33775,6 +34101,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -34017,6 +34347,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -34134,6 +34468,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -34299,8 +34637,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -34311,8 +34649,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -34491,6 +34829,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -34608,6 +34950,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -34773,8 +35119,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -34785,8 +35131,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -34964,6 +35310,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -35081,6 +35431,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -35246,8 +35600,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -35258,8 +35612,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 

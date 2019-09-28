@@ -2294,6 +2294,7 @@ ReportingExportJobRequest <a href="#" onclick="return copyReportingExportJobRequ
   },  
   "read": Boolean, 
   "locale": String, 
+  "hasFormatDurations": Boolean, 
 }
 ```
 

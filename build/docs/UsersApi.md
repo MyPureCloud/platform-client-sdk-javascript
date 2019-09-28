@@ -2286,6 +2286,10 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
     "locationDefinition": { 
       "id": String, 
       "name": String, 
+      "contactUser": { 
+        "id": String, 
+        "selfUri": String, 
+      },  
       "emergencyNumber": { 
         "e164": String, 
         "number": String, 
@@ -2798,6 +2802,10 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -2906,6 +2914,10 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -3152,6 +3164,10 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
         "locations": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -3278,6 +3294,10 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
         "locationDefinition": { 
           "id": String, 
           "name": String, 
+          "contactUser": { 
+            "id": String, 
+            "selfUri": String, 
+          },  
           "emergencyNumber": { 
             "e164": String, 
             "number": String, 
@@ -3646,6 +3666,10 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
             "locations": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -3754,6 +3778,10 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
             "locationDefinition": { 
               "id": String, 
               "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
               "emergencyNumber": { 
                 "e164": String, 
                 "number": String, 
@@ -4546,6 +4574,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -4630,6 +4659,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -4739,6 +4769,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -4856,6 +4890,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -5063,6 +5101,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -5147,6 +5186,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -5278,6 +5318,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -5413,6 +5457,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -5764,6 +5812,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -5848,6 +5897,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -5957,6 +6007,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -6074,6 +6128,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -6281,6 +6339,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -6365,6 +6424,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -6602,6 +6662,10 @@ Geolocation <a href="#" onclick="return copyGeolocationExample()">Copy</a>
   "locations": { 
     "id": String, 
     "name": String, 
+    "contactUser": { 
+      "id": String, 
+      "selfUri": String, 
+    },  
     "emergencyNumber": { 
       "e164": String, 
       "number": String, 
@@ -9346,6 +9410,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -9430,6 +9495,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -9539,6 +9605,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -9656,6 +9726,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -9863,6 +9937,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -9947,6 +10022,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -10078,6 +10154,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -10213,6 +10293,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -10564,6 +10648,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -10648,6 +10733,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -10757,6 +10843,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -10874,6 +10964,10 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -11081,6 +11175,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -11165,6 +11260,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -11835,6 +11931,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -11919,6 +12016,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -12028,6 +12126,10 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -12145,6 +12247,10 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -12352,6 +12458,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -12436,6 +12543,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -12567,6 +12675,10 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
       "locations": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -12702,6 +12814,10 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
       "locationDefinition": { 
         "id": String, 
         "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "emergencyNumber": { 
           "e164": String, 
           "number": String, 
@@ -13053,6 +13169,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -13137,6 +13254,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -13246,6 +13364,10 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
           "locations": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -13363,6 +13485,10 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
           "locationDefinition": { 
             "id": String, 
             "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
             "emergencyNumber": { 
               "e164": String, 
               "number": String, 
@@ -13570,6 +13696,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "locations": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
@@ -13654,6 +13781,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "locationDefinition": { 
                 "id": String, 
                 "name": String, 
+                "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
                 "addressVerified": Boolean, 
