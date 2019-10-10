@@ -1338,6 +1338,7 @@ AsyncConversationQuery <a href="#" onclick="return copyAsyncConversationQueryExa
   "order": String, 
   "orderBy": String, 
   "limit": Number, 
+  "startOfDayIntervalMatching": Boolean, 
 }
 ```
 
@@ -2844,6 +2845,7 @@ UserDetailsQuery <a href="#" onclick="return copyUserDetailsQueryExample()">Copy
       },  
     },  
   },  
+  "order": String, 
   "presenceAggregations": { 
     "type": String, 
     "dimension": String, 
@@ -2868,7 +2870,6 @@ UserDetailsQuery <a href="#" onclick="return copyUserDetailsQueryExample()">Copy
     "pageSize": Number, 
     "pageNumber": Number, 
   },  
-  "order": String, 
   "presenceDetailFilters": { 
     "type": String, 
     "clauses": { 

@@ -1,87 +1,124 @@
-Platform API version: 3496
+Platform API version: 3526
 
 
-# Major Changes (3 changes)
+# Major Changes (2 changes)
 
-**GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}** (1 change)
+**/api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}** (1 change)
 
-* Response 200 type was changed from Recording to RecordingMetadata
+* Path /api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId} was removed
 
-**LocationUpdateDefinition** (1 change)
+**DataTableImportJob** (1 change)
 
-* Model LocationUpdateDefinition was removed
-
-**Location** (1 change)
-
-* floorplanId has been made readonly
+* Model DataTableImportJob was removed
 
 
-# Minor Changes (13 changes)
+# Minor Changes (34 changes)
 
-**LocationDefinition** (1 change)
+**GET /api/v2/analytics/conversations/details/jobs/{jobId}** (1 change)
 
-* Optional property contactUser was added
+* Response 202 was added
 
-**Operation** (1 change)
+**/api/v2/ipranges** (2 changes)
 
-* Optional property client was added
+* Path was added
+* Operation GET was added
 
-**DependencyStatus** (1 change)
+**/api/v2/telephony/siptraces** (2 changes)
 
-* Optional property client was added
+* Path was added
+* Operation GET was added
 
-**Flow** (1 change)
+**/api/v2/telephony/siptraces/download** (2 changes)
 
-* Optional property lockedClient was added
+* Path was added
+* Operation POST was added
 
-**FlowVersion** (1 change)
+**/api/v2/telephony/siptraces/download/{downloadId}** (2 changes)
 
-* Optional property createdByClient was added
+* Path was added
+* Operation GET was added
 
-**HistoryEntry** (1 change)
+**Site** (1 change)
 
-* Optional property client was added
+* Optional property mediaRegionsUseLatencyBased was added
 
-**HistoryListing** (1 change)
+**EventMessage** (1 change)
 
-* Optional property client was added
+* Enum value CONTACT_LIST_FILTER_INTERNAL_ERROR was added to property code
 
-**LocationCreateUpdateDefinition** (1 change)
+**EvaluationDetailQueryPredicate** (2 changes)
+
+* Enum value deleted was added to property dimension
+* Enum value rescored was added to property dimension
+
+**AsyncConversationQuery** (1 change)
+
+* Optional property startOfDayIntervalMatching was added
+
+**IpAddressRange** (1 change)
 
 * Model was added
+
+**IpAddressRangeListing** (1 change)
+
+* Model was added
+
+**EvaluationAggregateQueryPredicate** (2 changes)
+
+* Enum value evaluationCreatedDate was added to property dimension
+* Enum value rescored was added to property dimension
+
+**EvaluationAggregationQuery** (4 changes)
+
+* Enum value evaluationCreatedDate was added to property groupBy
+* Enum value rescored was added to property groupBy
+* Enum value nEvaluationsDeleted was added to property metrics
+* Enum value nEvaluationsRescored was added to property metrics
+
+**EvaluationAggregationView** (2 changes)
+
+* Enum value nEvaluationsDeleted was added to property target
+* Enum value nEvaluationsRescored was added to property target
+
+**TrusteeBillingOverview** (1 change)
+
+* Optional property minimumMonthlyAmount was added
 
 **ReportingExportJobResponse** (1 change)
 
-* Optional property hasFormatDurations was added
+* Enum value PDF was added to property exportFormat
 
 **ReportingExportJobRequest** (1 change)
 
-* Optional property hasFormatDurations was added
+* Enum value PDF was added to property exportFormat
 
-**SubjectDivisionGrants** (2 changes)
+**FlowAggregateQueryPredicate** (1 change)
 
-* Enum value PC_TRUSTEE_USER was added to property type
-* Enum value PC_TRUSTEE_GROUP was added to property type
+* Enum value flowOutType was added to property dimension
 
-**RecordingMetadata** (1 change)
+**FlowAggregationQuery** (1 change)
+
+* Enum value flowOutType was added to property groupBy
+
+**HomerRecord** (1 change)
+
+* Model was added
+
+**SipSearchResult** (1 change)
+
+* Model was added
+
+**SipDownloadResponse** (1 change)
+
+* Model was added
+
+**SIPSearchPublicRequest** (1 change)
+
+* Model was added
+
+**SignedUrlResponse** (1 change)
 
 * Model was added
 
 
-# Point Changes (4 changes)
-
-**GET /api/v2/conversations/chats/{conversationId}/messages/{messageId}** (1 change)
-
-* Description was changed
-
-**GET /api/v2/conversations/chats/{conversationId}/messages** (1 change)
-
-* Description was changed
-
-**GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans** (1 change)
-
-* Summary was changed
-
-**PUT /api/v2/telephony/providers/edges/sites/{siteId}/numberplans** (1 change)
-
-* Summary was changed
+# Point Changes (0 changes)

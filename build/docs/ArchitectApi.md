@@ -55,7 +55,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowVersions**](ArchitectApi.html#getFlowVersions) | **GET** /api/v2/flows/{flowId}/versions | Get flow version list
 [**getFlows**](ArchitectApi.html#getFlows) | **GET** /api/v2/flows | Get a pageable list of flows, filtered by query parameters
 [**getFlowsDatatable**](ArchitectApi.html#getFlowsDatatable) | **GET** /api/v2/flows/datatables/{datatableId} | Returns a specific datatable by id
-[**getFlowsDatatableImportJob**](ArchitectApi.html#getFlowsDatatableImportJob) | **GET** /api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId} | Returns the state information about an import job
 [**getFlowsDatatableRow**](ArchitectApi.html#getFlowsDatatableRow) | **GET** /api/v2/flows/datatables/{datatableId}/rows/{rowId} | Returns a specific row for the datatable
 [**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | **GET** /api/v2/flows/datatables/{datatableId}/rows | Returns the rows for the datatable with the given id
 [**getFlowsDatatables**](ArchitectApi.html#getFlowsDatatables) | **GET** /api/v2/flows/datatables | Retrieve a list of datatables for the org
@@ -3028,63 +3027,6 @@ apiInstance.getFlowsDatatable(datatableId, opts)
 ### Return type
 
 **DataTable**
-
-<a name="getFlowsDatatableImportJob"></a>
-
-# DataTableImportJob getFlowsDatatableImportJob(datatableId, importJobId)
-
-
-
-GET /api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}
-
-Returns the state information about an import job
-
-Returns the state information about an import job.
-
-Requires ANY permissions: 
-
-* architect:datatable:view
-
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ArchitectApi();
-
-let datatableId = "datatableId_example"; // String | id of datatable
-let importJobId = "importJobId_example"; // String | id of import job
-
-apiInstance.getFlowsDatatableImportJob(datatableId, importJobId)
-  .then((data) => {
-    console.log(`getFlowsDatatableImportJob success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getFlowsDatatableImportJob');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **datatableId** | **String** | id of datatable |  |
- **importJobId** | **String** | id of import job |  |
-{: class="table table-striped"}
-
-### Return type
-
-**DataTableImportJob**
 
 <a name="getFlowsDatatableRow"></a>
 

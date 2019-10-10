@@ -5,7 +5,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 58.0.0
+	 * @version 59.0.0
 	 */
 
 	/**
@@ -28,6 +28,26 @@ class UtilitiesApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/date', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get public ip address ranges for PureCloud
+	 * 
+	 */
+	getIpranges() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/ipranges', 
 			'GET', 
 			{  }, 
 			{  }, 

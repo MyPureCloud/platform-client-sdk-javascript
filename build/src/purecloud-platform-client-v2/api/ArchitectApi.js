@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 58.0.0
+	 * @version 59.0.0
 	 */
 
 	/**
@@ -1425,36 +1425,6 @@ class ArchitectApi {
 			'GET', 
 			{ 'datatableId': datatableId }, 
 			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Returns the state information about an import job
-	 * Returns the state information about an import job.
-	 * @param {String} datatableId id of datatable
-	 * @param {String} importJobId id of import job
-	 */
-	getFlowsDatatableImportJob(datatableId, importJobId) { 
-		// verify the required parameter 'datatableId' is set
-		if (datatableId === undefined || datatableId === null) {
-			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableImportJob';
-		}
-		// verify the required parameter 'importJobId' is set
-		if (importJobId === undefined || importJobId === null) {
-			throw 'Missing the required parameter "importJobId" when calling getFlowsDatatableImportJob';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}', 
-			'GET', 
-			{ 'datatableId': datatableId,'importJobId': importJobId }, 
-			{  }, 
 			{  }, 
 			{  }, 
 			null, 

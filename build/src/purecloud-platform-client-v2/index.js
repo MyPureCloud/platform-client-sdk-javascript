@@ -39,6 +39,7 @@ import SearchApi from './api/SearchApi.js';
 import SpeechTextAnalyticsApi from './api/SpeechTextAnalyticsApi.js';
 import StationsApi from './api/StationsApi.js';
 import SuggestApi from './api/SuggestApi.js';
+import TelephonyApi from './api/TelephonyApi.js';
 import TelephonyProvidersEdgeApi from './api/TelephonyProvidersEdgeApi.js';
 import TokensApi from './api/TokensApi.js';
 import UserRecordingsApi from './api/UserRecordingsApi.js';
@@ -79,7 +80,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 58.0.0
+ * @version 59.0.0
  */
 class platformClient {
 	constructor() {
@@ -283,6 +284,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/SuggestApi}
 		 */
 		this.SuggestApi = SuggestApi;
+		/**
+		 * The TelephonyApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/TelephonyApi}
+		 */
+		this.TelephonyApi = TelephonyApi;
 		/**
 		 * The TelephonyProvidersEdgeApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi}
