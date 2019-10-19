@@ -5,7 +5,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 59.0.0
+	 * @version 60.0.0
 	 */
 
 	/**
@@ -25,7 +25,7 @@ class SCIMApi {
 	 * 
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/users.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;.
 	 */
 	deleteScimUser(userId, opts) { 
 		opts = opts || {};
@@ -54,7 +54,7 @@ class SCIMApi {
 	 * 
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/v2/users.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;.
 	 */
 	deleteScimV2User(userId, opts) { 
 		opts = opts || {};
@@ -112,7 +112,7 @@ class SCIMApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
-	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns totalResults. (default to 25)
+	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
 	 * @param {String} opts.filter Filters results.
 	 */
 	getScimGroups(opts) { 
@@ -134,9 +134,9 @@ class SCIMApi {
 	}
 
 	/**
-	 * Get the SCIM configuration
+	 * Get a resource type
 	 * 
-	 * @param {Object} resourceType The ID of a resource.
+	 * @param {Object} resourceType The type of resource. Returned with GET /api/v2/scim/resourcetypes.
 	 */
 	getScimResourcetype(resourceType) { 
 		// verify the required parameter 'resourceType' is set
@@ -159,20 +159,16 @@ class SCIMApi {
 	}
 
 	/**
-	 * Get the SCIM resource types
+	 * Get a list of resource types
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.filter Filtered results are invalid and will result in a 403 (Unauthorized) return.
 	 */
-	getScimResourcetypes(opts) { 
-		opts = opts || {};
-		
+	getScimResourcetypes() { 
 
 		return this.apiClient.callApi(
 			'/api/v2/scim/resourcetypes', 
 			'GET', 
 			{  }, 
-			{ 'filter': opts['filter'] }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -183,10 +179,10 @@ class SCIMApi {
 	}
 
 	/**
-	 * Get the SCIM configuration
+	 * Get a service provider&#39;s configuration
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. 
+	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. 
 	 */
 	getScimServiceproviderconfig(opts) { 
 		opts = opts || {};
@@ -241,7 +237,7 @@ class SCIMApi {
 	 * @param {String} filter Filters results.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
-	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns totalResults. (default to 25)
+	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
 	 */
 	getScimUsers(filter, opts) { 
 		opts = opts || {};
@@ -300,7 +296,7 @@ class SCIMApi {
 	 * @param {String} filter Filters results.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
-	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns totalResults. (default to 25)
+	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
 	 */
 	getScimV2Groups(filter, opts) { 
 		opts = opts || {};
@@ -325,9 +321,9 @@ class SCIMApi {
 	}
 
 	/**
-	 * Get the SCIM configuration
+	 * Get a resource type
 	 * 
-	 * @param {Object} resourceType The ID of a resource.
+	 * @param {Object} resourceType The type of resource. Returned with GET /api/v2/scim/v2/resourcetypes.
 	 */
 	getScimV2Resourcetype(resourceType) { 
 		// verify the required parameter 'resourceType' is set
@@ -350,20 +346,16 @@ class SCIMApi {
 	}
 
 	/**
-	 * Get the SCIM resource types
+	 * Get a list of resource types
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.filter Filtered results are invalid and will result in a 403 (Unauthorized) return.
 	 */
-	getScimV2Resourcetypes(opts) { 
-		opts = opts || {};
-		
+	getScimV2Resourcetypes() { 
 
 		return this.apiClient.callApi(
 			'/api/v2/scim/v2/resourcetypes', 
 			'GET', 
 			{  }, 
-			{ 'filter': opts['filter'] }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -374,7 +366,7 @@ class SCIMApi {
 	}
 
 	/**
-	 * Get the SCIM configuration
+	 * Get a service provider&#39;s configuration
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. 
@@ -432,7 +424,7 @@ class SCIMApi {
 	 * @param {String} filter Filters results.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
-	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns totalResults. (default to 25)
+	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
 	 */
 	getScimV2Users(filter, opts) { 
 		opts = opts || {};
@@ -462,7 +454,7 @@ class SCIMApi {
 	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/groups.
 	 * @param {Object} body The information used to modify a group.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;.
 	 */
 	patchScimGroup(groupId, body, opts) { 
 		opts = opts || {};
@@ -496,7 +488,7 @@ class SCIMApi {
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/users.
 	 * @param {Object} body The information used to modify a user.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;.
 	 */
 	patchScimUser(userId, body, opts) { 
 		opts = opts || {};
@@ -530,7 +522,7 @@ class SCIMApi {
 	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups.
 	 * @param {Object} body The information used to modify a group.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;.
 	 */
 	patchScimV2Group(groupId, body, opts) { 
 		opts = opts || {};
@@ -564,7 +556,7 @@ class SCIMApi {
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/v2/users.
 	 * @param {Object} body The information used to modify a user.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;.
 	 */
 	patchScimV2User(userId, body, opts) { 
 		opts = opts || {};
@@ -648,7 +640,7 @@ class SCIMApi {
 	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/groups.
 	 * @param {Object} body The information used to replace a group.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;.
 	 */
 	putScimGroup(groupId, body, opts) { 
 		opts = opts || {};
@@ -682,7 +674,7 @@ class SCIMApi {
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/users.
 	 * @param {Object} body The information used to replace a user.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;.
 	 */
 	putScimUser(userId, body, opts) { 
 		opts = opts || {};
@@ -716,7 +708,7 @@ class SCIMApi {
 	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups.
 	 * @param {Object} body The information used to replace a group.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;.
 	 */
 	putScimV2Group(groupId, body, opts) { 
 		opts = opts || {};
@@ -750,7 +742,7 @@ class SCIMApi {
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/v2/users.
 	 * @param {Object} body The information used to replace a user.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;.
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;.
 	 */
 	putScimV2User(userId, body, opts) { 
 		opts = opts || {};

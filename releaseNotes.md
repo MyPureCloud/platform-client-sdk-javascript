@@ -1,124 +1,130 @@
-Platform API version: 3526
+Platform API version: 3540
 
 
 # Major Changes (2 changes)
 
-**/api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}** (1 change)
+**GET /api/v2/scim/resourcetypes** (1 change)
 
-* Path /api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId} was removed
+* Parameter filter was removed
 
-**DataTableImportJob** (1 change)
+**GET /api/v2/scim/v2/resourcetypes** (1 change)
 
-* Model DataTableImportJob was removed
+* Parameter filter was removed
 
 
-# Minor Changes (34 changes)
-
-**GET /api/v2/analytics/conversations/details/jobs/{jobId}** (1 change)
-
-* Response 202 was added
-
-**/api/v2/ipranges** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/siptraces** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/telephony/siptraces/download** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/telephony/siptraces/download/{downloadId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**Site** (1 change)
-
-* Optional property mediaRegionsUseLatencyBased was added
-
-**EventMessage** (1 change)
-
-* Enum value CONTACT_LIST_FILTER_INTERNAL_ERROR was added to property code
-
-**EvaluationDetailQueryPredicate** (2 changes)
-
-* Enum value deleted was added to property dimension
-* Enum value rescored was added to property dimension
-
-**AsyncConversationQuery** (1 change)
-
-* Optional property startOfDayIntervalMatching was added
-
-**IpAddressRange** (1 change)
-
-* Model was added
-
-**IpAddressRangeListing** (1 change)
-
-* Model was added
-
-**EvaluationAggregateQueryPredicate** (2 changes)
-
-* Enum value evaluationCreatedDate was added to property dimension
-* Enum value rescored was added to property dimension
-
-**EvaluationAggregationQuery** (4 changes)
-
-* Enum value evaluationCreatedDate was added to property groupBy
-* Enum value rescored was added to property groupBy
-* Enum value nEvaluationsDeleted was added to property metrics
-* Enum value nEvaluationsRescored was added to property metrics
-
-**EvaluationAggregationView** (2 changes)
-
-* Enum value nEvaluationsDeleted was added to property target
-* Enum value nEvaluationsRescored was added to property target
-
-**TrusteeBillingOverview** (1 change)
-
-* Optional property minimumMonthlyAmount was added
+# Minor Changes (8 changes)
 
 **ReportingExportJobResponse** (1 change)
 
-* Enum value PDF was added to property exportFormat
+* Optional property hasSplitFilters was added
 
 **ReportingExportJobRequest** (1 change)
 
-* Enum value PDF was added to property exportFormat
+* Optional property hasSplitFilters was added
 
-**FlowAggregateQueryPredicate** (1 change)
+**CallConversation** (1 change)
 
-* Enum value flowOutType was added to property dimension
+* Optional property maxParticipants was added
 
-**FlowAggregationQuery** (1 change)
+**EvaluationAggregationQuery** (1 change)
 
-* Enum value flowOutType was added to property groupBy
+* Optional property alternateTimeDimension was added
 
-**HomerRecord** (1 change)
+**RecordingMetadata** (1 change)
 
-* Model was added
+* Optional property exportDate was added
 
-**SipSearchResult** (1 change)
+**Recording** (1 change)
 
-* Model was added
+* Optional property exportDate was added
 
-**SipDownloadResponse** (1 change)
+**AnalyticsEvaluation** (2 changes)
 
-* Model was added
-
-**SIPSearchPublicRequest** (1 change)
-
-* Model was added
-
-**SignedUrlResponse** (1 change)
-
-* Model was added
+* Optional property rescored was added
+* Optional property deleted was added
 
 
-# Point Changes (0 changes)
+# Point Changes (23 changes)
+
+**GET /api/v2/scim/v2/serviceproviderconfig** (1 change)
+
+* Summary was changed
+
+**GET /api/v2/scim/resourcetypes/{resourceType}** (2 changes)
+
+* Summary was changed
+* Description was changed for parameter resourceType
+
+**GET /api/v2/scim/resourcetypes** (1 change)
+
+* Summary was changed
+
+**GET /api/v2/scim/serviceproviderconfig** (2 changes)
+
+* Summary was changed
+* Description was changed for parameter If-None-Match
+
+**GET /api/v2/scim/v2/groups** (1 change)
+
+* Description was changed for parameter count
+
+**PUT /api/v2/scim/v2/groups/{groupId}** (1 change)
+
+* Description was changed for parameter If-Match
+
+**PATCH /api/v2/scim/v2/groups/{groupId}** (1 change)
+
+* Description was changed for parameter If-Match
+
+**PUT /api/v2/scim/users/{userId}** (1 change)
+
+* Description was changed for parameter If-Match
+
+**DELETE /api/v2/scim/users/{userId}** (1 change)
+
+* Description was changed for parameter If-Match
+
+**PATCH /api/v2/scim/users/{userId}** (1 change)
+
+* Description was changed for parameter If-Match
+
+**GET /api/v2/scim/users** (1 change)
+
+* Description was changed for parameter count
+
+**PUT /api/v2/scim/groups/{groupId}** (1 change)
+
+* Description was changed for parameter If-Match
+
+**PATCH /api/v2/scim/groups/{groupId}** (1 change)
+
+* Description was changed for parameter If-Match
+
+**GET /api/v2/scim/groups** (1 change)
+
+* Description was changed for parameter count
+
+**PUT /api/v2/scim/v2/users/{userId}** (1 change)
+
+* Description was changed for parameter If-Match
+
+**DELETE /api/v2/scim/v2/users/{userId}** (1 change)
+
+* Description was changed for parameter If-Match
+
+**PATCH /api/v2/scim/v2/users/{userId}** (1 change)
+
+* Description was changed for parameter If-Match
+
+**GET /api/v2/scim/v2/users** (1 change)
+
+* Description was changed for parameter count
+
+**GET /api/v2/scim/v2/resourcetypes/{resourceType}** (2 changes)
+
+* Summary was changed
+* Description was changed for parameter resourceType
+
+**GET /api/v2/scim/v2/resourcetypes** (1 change)
+
+* Summary was changed
