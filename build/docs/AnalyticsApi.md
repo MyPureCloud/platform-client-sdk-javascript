@@ -2817,6 +2817,36 @@ UserDetailsQuery <a href="#" onclick="return copyUserDetailsQueryExample()">Copy
       },  
     },  
   },  
+  "presenceFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
   "routingStatusFilters": { 
     "type": String, 
     "clauses": { 
@@ -2871,36 +2901,6 @@ UserDetailsQuery <a href="#" onclick="return copyUserDetailsQueryExample()">Copy
   "paging": { 
     "pageSize": Number, 
     "pageNumber": Number, 
-  },  
-  "presenceDetailFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
   },  
 }
 ```

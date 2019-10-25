@@ -1,130 +1,98 @@
-Platform API version: 3540
+Platform API version: 3548
 
 
-# Major Changes (2 changes)
+# Major Changes (1 change)
 
-**GET /api/v2/scim/resourcetypes** (1 change)
+**UserDetailsQuery** (1 change)
 
-* Parameter filter was removed
+* Property presenceDetailFilters was removed
 
-**GET /api/v2/scim/v2/resourcetypes** (1 change)
 
-* Parameter filter was removed
+# Minor Changes (54 changes)
 
+**PlanningPeriodSettings** (1 change)
 
-# Minor Changes (8 changes)
+* Model was added
 
-**ReportingExportJobResponse** (1 change)
+**SchedulingSettings** (1 change)
 
-* Optional property hasSplitFilters was added
+* Optional property planningPeriod was added
 
-**ReportingExportJobRequest** (1 change)
+**WorkPlan** (11 changes)
 
-* Optional property hasSplitFilters was added
+* Optional property startDayOfWeekend was added
+* Optional property minimumConsecutiveTimeOffPerWeekMinutes was added
+* Optional property constrainMaximumConsecutiveWorkingWeekends was added
+* Optional property maximumConsecutiveWorkingWeekends was added
+* Optional property minimumWorkingDaysPerWeek was added
+* Optional property maximumConsecutiveWorkingDays was added
+* Optional property minimumShiftStartDistanceMinutes was added
+* Optional property minimumDaysOffPerPlanningPeriod was added
+* Optional property maximumDaysOffPerPlanningPeriod was added
+* Optional property minimumPaidHoursPerPlanningPeriod was added
+* Optional property maximumPaidHoursPerPlanningPeriod was added
 
-**CallConversation** (1 change)
+**WorkPlanActivity** (2 changes)
 
-* Optional property maxParticipants was added
+* Optional property minimumLengthFromShiftStartMinutes was added
+* Optional property minimumLengthFromShiftEndMinutes was added
 
-**EvaluationAggregationQuery** (1 change)
+**WorkPlanShift** (7 changes)
 
-* Optional property alternateTimeDimension was added
+* Optional property constrainLatestStopTime was added
+* Optional property constrainEarliestStopTime was added
+* Optional property earliestStopTimeMinutesFromMidnight was added
+* Optional property synchronizeAgentsSchedules was added
+* Optional property synchronizationType was added
+* Optional property constrainDayOff was added
+* Optional property dayOffRule was added
 
-**RecordingMetadata** (1 change)
+**CreateWorkPlan** (11 changes)
 
-* Optional property exportDate was added
+* Optional property startDayOfWeekend was added
+* Optional property minimumConsecutiveTimeOffPerWeekMinutes was added
+* Optional property constrainMaximumConsecutiveWorkingWeekends was added
+* Optional property maximumConsecutiveWorkingWeekends was added
+* Optional property minimumWorkingDaysPerWeek was added
+* Optional property maximumConsecutiveWorkingDays was added
+* Optional property minimumShiftStartDistanceMinutes was added
+* Optional property minimumDaysOffPerPlanningPeriod was added
+* Optional property maximumDaysOffPerPlanningPeriod was added
+* Optional property minimumPaidHoursPerPlanningPeriod was added
+* Optional property maximumPaidHoursPerPlanningPeriod was added
 
-**Recording** (1 change)
+**CreateWorkPlanActivity** (2 changes)
 
-* Optional property exportDate was added
+* Optional property minimumLengthFromShiftStartMinutes was added
+* Optional property minimumLengthFromShiftEndMinutes was added
 
-**AnalyticsEvaluation** (2 changes)
+**CreateWorkPlanShift** (7 changes)
 
-* Optional property rescored was added
-* Optional property deleted was added
+* Optional property constrainLatestStopTime was added
+* Optional property constrainEarliestStopTime was added
+* Optional property earliestStopTimeMinutesFromMidnight was added
+* Optional property synchronizeAgentsSchedules was added
+* Optional property synchronizationType was added
+* Optional property constrainDayOff was added
+* Optional property dayOffRule was added
 
+**WorkPlanListItemResponse** (11 changes)
 
-# Point Changes (23 changes)
+* Optional property startDayOfWeekend was added
+* Optional property minimumConsecutiveTimeOffPerWeekMinutes was added
+* Optional property constrainMaximumConsecutiveWorkingWeekends was added
+* Optional property maximumConsecutiveWorkingWeekends was added
+* Optional property minimumWorkingDaysPerWeek was added
+* Optional property maximumConsecutiveWorkingDays was added
+* Optional property minimumShiftStartDistanceMinutes was added
+* Optional property minimumDaysOffPerPlanningPeriod was added
+* Optional property maximumDaysOffPerPlanningPeriod was added
+* Optional property minimumPaidHoursPerPlanningPeriod was added
+* Optional property maximumPaidHoursPerPlanningPeriod was added
 
-**GET /api/v2/scim/v2/serviceproviderconfig** (1 change)
+**UserDetailsQuery** (1 change)
 
-* Summary was changed
+* Optional property presenceFilters was added
 
-**GET /api/v2/scim/resourcetypes/{resourceType}** (2 changes)
 
-* Summary was changed
-* Description was changed for parameter resourceType
-
-**GET /api/v2/scim/resourcetypes** (1 change)
-
-* Summary was changed
-
-**GET /api/v2/scim/serviceproviderconfig** (2 changes)
-
-* Summary was changed
-* Description was changed for parameter If-None-Match
-
-**GET /api/v2/scim/v2/groups** (1 change)
-
-* Description was changed for parameter count
-
-**PUT /api/v2/scim/v2/groups/{groupId}** (1 change)
-
-* Description was changed for parameter If-Match
-
-**PATCH /api/v2/scim/v2/groups/{groupId}** (1 change)
-
-* Description was changed for parameter If-Match
-
-**PUT /api/v2/scim/users/{userId}** (1 change)
-
-* Description was changed for parameter If-Match
-
-**DELETE /api/v2/scim/users/{userId}** (1 change)
-
-* Description was changed for parameter If-Match
-
-**PATCH /api/v2/scim/users/{userId}** (1 change)
-
-* Description was changed for parameter If-Match
-
-**GET /api/v2/scim/users** (1 change)
-
-* Description was changed for parameter count
-
-**PUT /api/v2/scim/groups/{groupId}** (1 change)
-
-* Description was changed for parameter If-Match
-
-**PATCH /api/v2/scim/groups/{groupId}** (1 change)
-
-* Description was changed for parameter If-Match
-
-**GET /api/v2/scim/groups** (1 change)
-
-* Description was changed for parameter count
-
-**PUT /api/v2/scim/v2/users/{userId}** (1 change)
-
-* Description was changed for parameter If-Match
-
-**DELETE /api/v2/scim/v2/users/{userId}** (1 change)
-
-* Description was changed for parameter If-Match
-
-**PATCH /api/v2/scim/v2/users/{userId}** (1 change)
-
-* Description was changed for parameter If-Match
-
-**GET /api/v2/scim/v2/users** (1 change)
-
-* Description was changed for parameter count
-
-**GET /api/v2/scim/v2/resourcetypes/{resourceType}** (2 changes)
-
-* Summary was changed
-* Description was changed for parameter resourceType
-
-**GET /api/v2/scim/v2/resourcetypes** (1 change)
-
-* Summary was changed
+# Point Changes (0 changes)
