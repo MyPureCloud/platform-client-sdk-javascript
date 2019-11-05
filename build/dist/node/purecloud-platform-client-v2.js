@@ -14,7 +14,7 @@ var PureCloudRegionHosts = {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 61.0.0
+ * @version 62.0.0
  */
 class ApiClient {
 	/**
@@ -777,7 +777,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '61.0.0' });
+		//request.set({ 'purecloud-sdk': '62.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -902,7 +902,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -1216,7 +1216,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -2050,7 +2050,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -3425,6 +3425,7 @@ class ArchitectApi {
 	 * @param {String} opts.publishVersionId Publish version ID
 	 * @param {String} opts.editableBy Editable by
 	 * @param {String} opts.lockedBy Locked by
+	 * @param {String} opts.lockedByClientId Locked by client ID
 	 * @param {Object} opts.secure Secure
 	 * @param {Boolean} opts.deleted Include deleted (default to false)
 	 * @param {Boolean} opts.includeSchemas Include variable schemas (default to false)
@@ -3440,7 +3441,7 @@ class ArchitectApi {
 			'/api/v2/flows', 
 			'GET', 
 			{  }, 
-			{ 'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'publishVersionId': opts['publishVersionId'],'editableBy': opts['editableBy'],'lockedBy': opts['lockedBy'],'secure': opts['secure'],'deleted': opts['deleted'],'includeSchemas': opts['includeSchemas'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
+			{ 'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'publishVersionId': opts['publishVersionId'],'editableBy': opts['editableBy'],'lockedBy': opts['lockedBy'],'lockedByClientId': opts['lockedByClientId'],'secure': opts['secure'],'deleted': opts['deleted'],'includeSchemas': opts['includeSchemas'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -4554,7 +4555,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -5348,6 +5349,70 @@ class AuthorizationApi {
 	}
 
 	/**
+	 * Bulk-grant roles and divisions to a subject.
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {Object} body Pairs of role and division IDs
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.subjectType what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (default to PC_USER)
+	 */
+	postAuthorizationSubjectBulkadd(subjectId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkadd';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationSubjectBulkadd';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/subjects/{subjectId}/bulkadd', 
+			'POST', 
+			{ 'subjectId': subjectId }, 
+			{ 'subjectType': opts['subjectType'] }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk-remove grants from a subject.
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {Object} body Pairs of role and division IDs
+	 */
+	postAuthorizationSubjectBulkremove(subjectId, body) { 
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkremove';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationSubjectBulkremove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/subjects/{subjectId}/bulkremove', 
+			'POST', 
+			{ 'subjectId': subjectId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Make a grant of a role in a division
 	 * 
 	 * @param {String} subjectId Subject ID (user or group)
@@ -5567,7 +5632,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -5647,7 +5712,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -6787,7 +6852,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -10623,7 +10688,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -11531,7 +11596,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -11702,7 +11767,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -11773,7 +11838,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -11903,7 +11968,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -12034,7 +12099,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -12489,7 +12554,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -12894,7 +12959,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -13585,7 +13650,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -15047,7 +15112,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -15315,7 +15380,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -15529,7 +15594,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -15765,7 +15830,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -16171,7 +16236,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -16322,7 +16387,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -16467,7 +16532,7 @@ class NotificationsApi {
 
 	/**
 	 * Create a new channel
-	 * There is a limit of 5 channels per user/app combination. Creating a 6th channel will remove the channel with oldest last used date.
+	 * There is a limit of 10 channels per user/app combination. Creating an 11th channel will remove the channel with oldest last used date.
 	 */
 	postNotificationsChannels() { 
 
@@ -16521,7 +16586,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -16692,7 +16757,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -16929,7 +16994,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -17139,7 +17204,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -17814,7 +17879,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -20477,7 +20542,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -20744,7 +20809,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -22415,7 +22480,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -23603,7 +23668,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -23927,7 +23992,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -25806,7 +25871,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -26008,6 +26073,8 @@ class SCIMApi {
 	 * 
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/users.
 	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes.
 	 * @param {String} opts.ifNoneMatch TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
 	 */
 	getScimUser(userId, opts) { 
@@ -26022,7 +26089,7 @@ class SCIMApi {
 			'/api/v2/scim/users/{userId}', 
 			'GET', 
 			{ 'userId': userId }, 
-			{  }, 
+			{ 'attributes': this.apiClient.buildCollectionParam(opts['attributes'], 'multi'),'excludedAttributes': this.apiClient.buildCollectionParam(opts['excludedAttributes'], 'multi') }, 
 			{ 'If-None-Match': opts['ifNoneMatch'] }, 
 			{  }, 
 			null, 
@@ -26034,25 +26101,23 @@ class SCIMApi {
 
 	/**
 	 * Get a list of users
-	 * 
-	 * @param {String} filter Filters results.
+	 * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
 	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {String} opts.filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;.
 	 */
-	getScimUsers(filter, opts) { 
+	getScimUsers(opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'filter' is set
-		if (filter === undefined || filter === null) {
-			throw 'Missing the required parameter "filter" when calling getScimUsers';
-		}
 
 		return this.apiClient.callApi(
 			'/api/v2/scim/users', 
 			'GET', 
 			{  }, 
-			{ 'startIndex': opts['startIndex'],'count': opts['count'],'filter': filter }, 
+			{ 'startIndex': opts['startIndex'],'count': opts['count'],'attributes': this.apiClient.buildCollectionParam(opts['attributes'], 'multi'),'excludedAttributes': this.apiClient.buildCollectionParam(opts['excludedAttributes'], 'multi'),'filter': opts['filter'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -26195,6 +26260,8 @@ class SCIMApi {
 	 * 
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/v2/users.
 	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes.
 	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
 	 */
 	getScimV2User(userId, opts) { 
@@ -26209,7 +26276,7 @@ class SCIMApi {
 			'/api/v2/scim/v2/users/{userId}', 
 			'GET', 
 			{ 'userId': userId }, 
-			{  }, 
+			{ 'attributes': this.apiClient.buildCollectionParam(opts['attributes'], 'multi'),'excludedAttributes': this.apiClient.buildCollectionParam(opts['excludedAttributes'], 'multi') }, 
 			{ 'If-None-Match': opts['ifNoneMatch'] }, 
 			{  }, 
 			null, 
@@ -26221,25 +26288,23 @@ class SCIMApi {
 
 	/**
 	 * Get a list of users
-	 * 
-	 * @param {String} filter Filters results.
+	 * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
 	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {String} opts.filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;.
 	 */
-	getScimV2Users(filter, opts) { 
+	getScimV2Users(opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'filter' is set
-		if (filter === undefined || filter === null) {
-			throw 'Missing the required parameter "filter" when calling getScimV2Users';
-		}
 
 		return this.apiClient.callApi(
 			'/api/v2/scim/v2/users', 
 			'GET', 
 			{  }, 
-			{ 'startIndex': opts['startIndex'],'count': opts['count'],'filter': filter }, 
+			{ 'startIndex': opts['startIndex'],'count': opts['count'],'attributes': this.apiClient.buildCollectionParam(opts['attributes'], 'multi'),'excludedAttributes': this.apiClient.buildCollectionParam(opts['excludedAttributes'], 'multi'),'filter': opts['filter'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -26577,7 +26642,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -26930,7 +26995,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -27385,7 +27450,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -27436,7 +27501,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -27583,7 +27648,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -27722,7 +27787,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -27830,7 +27895,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -31185,7 +31250,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -31271,7 +31336,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -31455,7 +31520,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -32876,6 +32941,70 @@ class UsersApi {
 	}
 
 	/**
+	 * Bulk-grant roles and divisions to a subject.
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {Object} body Pairs of role and division IDs
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.subjectType what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (default to PC_USER)
+	 */
+	postAuthorizationSubjectBulkadd(subjectId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkadd';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationSubjectBulkadd';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/subjects/{subjectId}/bulkadd', 
+			'POST', 
+			{ 'subjectId': subjectId }, 
+			{ 'subjectType': opts['subjectType'] }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk-remove grants from a subject.
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {Object} body Pairs of role and division IDs
+	 */
+	postAuthorizationSubjectBulkremove(subjectId, body) { 
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkremove';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationSubjectBulkremove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/subjects/{subjectId}/bulkremove', 
+			'POST', 
+			{ 'subjectId': subjectId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Make a grant of a role in a division
 	 * 
 	 * @param {String} subjectId Subject ID (user or group)
@@ -33419,7 +33548,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -33550,7 +33679,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -34187,7 +34316,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -34731,7 +34860,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -34877,7 +35006,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -37134,7 +37263,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 61.0.0
+ * @version 62.0.0
  */
 class platformClient {
 	constructor() {

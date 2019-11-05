@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -792,6 +792,70 @@ class AuthorizationApi {
 			{  }, 
 			{  }, 
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk-grant roles and divisions to a subject.
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {Object} body Pairs of role and division IDs
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.subjectType what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (default to PC_USER)
+	 */
+	postAuthorizationSubjectBulkadd(subjectId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkadd';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationSubjectBulkadd';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/subjects/{subjectId}/bulkadd', 
+			'POST', 
+			{ 'subjectId': subjectId }, 
+			{ 'subjectType': opts['subjectType'] }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk-remove grants from a subject.
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {Object} body Pairs of role and division IDs
+	 */
+	postAuthorizationSubjectBulkremove(subjectId, body) { 
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkremove';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationSubjectBulkremove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/subjects/{subjectId}/bulkremove', 
+			'POST', 
+			{ 'subjectId': subjectId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

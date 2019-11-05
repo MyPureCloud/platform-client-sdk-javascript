@@ -1,98 +1,174 @@
-Platform API version: 3548
+Platform API version: 3578
 
 
-# Major Changes (1 change)
+# Major Changes (13 changes)
 
-**UserDetailsQuery** (1 change)
+**GET /api/v2/flows** (1 change)
 
-* Property presenceDetailFilters was removed
+* Parameter lockedByClientId was added
+
+**GET /api/v2/scim/v2/users** (2 changes)
+
+* Parameter attributes was added
+* Parameter excludedAttributes was added
+
+**GET /api/v2/scim/v2/users/{userId}** (2 changes)
+
+* Parameter attributes was added
+* Parameter excludedAttributes was added
+
+**GET /api/v2/scim/users** (2 changes)
+
+* Parameter attributes was added
+* Parameter excludedAttributes was added
+
+**GET /api/v2/scim/users/{userId}** (2 changes)
+
+* Parameter attributes was added
+* Parameter excludedAttributes was added
+
+**LocationDefinition** (3 changes)
+
+* path has been made readonly
+* floorplanImage has been made readonly
+* addressVerified has been made readonly
+
+**WfmForecastModificationIntervalOffsetValue** (1 change)
+
+* Property value was changed from integer to number
 
 
-# Minor Changes (54 changes)
+# Minor Changes (41 changes)
 
-**PlanningPeriodSettings** (1 change)
+**PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}** (1 change)
+
+* Response 422 was added
+
+**DELETE /api/v2/users/{userId}/routingskills/{skillId}** (1 change)
+
+* Response 409 was added
+
+**DELETE /api/v2/architect/ivrs/{ivrId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/conversations/emails/{conversationId}/messages** (1 change)
+
+* Response 409 was added
+
+**/api/v2/authorization/subjects/{subjectId}/bulkadd** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/authorization/subjects/{subjectId}/bulkremove** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**PUT /api/v2/integrations/{integrationId}/config/current** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scim/v2/users** (1 change)
+
+* Parameter filter was made optional
+
+**PATCH /api/v2/locations/{locationId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/scim/users** (1 change)
+
+* Parameter filter was made optional
+
+**POST /api/v2/users** (1 change)
+
+* Response 409 was added
+
+**LocationAddressVerificationDetails** (1 change)
 
 * Model was added
 
-**SchedulingSettings** (1 change)
+**LocationDefinition** (3 changes)
 
-* Optional property planningPeriod was added
+* Optional property addressVerificationDetails was added
+* Optional property addressStored was added
+* Optional property images was added
 
-**WorkPlan** (11 changes)
+**Dependency** (1 change)
 
-* Optional property startDayOfWeekend was added
-* Optional property minimumConsecutiveTimeOffPerWeekMinutes was added
-* Optional property constrainMaximumConsecutiveWorkingWeekends was added
-* Optional property maximumConsecutiveWorkingWeekends was added
-* Optional property minimumWorkingDaysPerWeek was added
-* Optional property maximumConsecutiveWorkingDays was added
-* Optional property minimumShiftStartDistanceMinutes was added
-* Optional property minimumDaysOffPerPlanningPeriod was added
-* Optional property maximumDaysOffPerPlanningPeriod was added
-* Optional property minimumPaidHoursPerPlanningPeriod was added
-* Optional property maximumPaidHoursPerPlanningPeriod was added
+* Enum value WORKFLOW was added to property type
 
-**WorkPlanActivity** (2 changes)
+**Flow** (1 change)
 
-* Optional property minimumLengthFromShiftStartMinutes was added
-* Optional property minimumLengthFromShiftEndMinutes was added
+* Enum value WORKFLOW was added to property type
 
-**WorkPlanShift** (7 changes)
+**ViewFilter** (1 change)
 
-* Optional property constrainLatestStopTime was added
-* Optional property constrainEarliestStopTime was added
-* Optional property earliestStopTimeMinutesFromMidnight was added
-* Optional property synchronizeAgentsSchedules was added
-* Optional property synchronizationType was added
-* Optional property constrainDayOff was added
-* Optional property dayOffRule was added
+* Enum value workflow was added to property flowTypes
 
-**CreateWorkPlan** (11 changes)
+**RoleDivisionGrants** (1 change)
 
-* Optional property startDayOfWeekend was added
-* Optional property minimumConsecutiveTimeOffPerWeekMinutes was added
-* Optional property constrainMaximumConsecutiveWorkingWeekends was added
-* Optional property maximumConsecutiveWorkingWeekends was added
-* Optional property minimumWorkingDaysPerWeek was added
-* Optional property maximumConsecutiveWorkingDays was added
-* Optional property minimumShiftStartDistanceMinutes was added
-* Optional property minimumDaysOffPerPlanningPeriod was added
-* Optional property maximumDaysOffPerPlanningPeriod was added
-* Optional property minimumPaidHoursPerPlanningPeriod was added
-* Optional property maximumPaidHoursPerPlanningPeriod was added
+* Model was added
 
-**CreateWorkPlanActivity** (2 changes)
+**RoleDivisionPair** (1 change)
 
-* Optional property minimumLengthFromShiftStartMinutes was added
-* Optional property minimumLengthFromShiftEndMinutes was added
+* Model was added
 
-**CreateWorkPlanShift** (7 changes)
+**DependencyObject** (1 change)
 
-* Optional property constrainLatestStopTime was added
-* Optional property constrainEarliestStopTime was added
-* Optional property earliestStopTimeMinutesFromMidnight was added
-* Optional property synchronizeAgentsSchedules was added
-* Optional property synchronizationType was added
-* Optional property constrainDayOff was added
-* Optional property dayOffRule was added
+* Enum value WORKFLOW was added to property type
 
-**WorkPlanListItemResponse** (11 changes)
+**IntegrationType** (1 change)
 
-* Optional property startDayOfWeekend was added
-* Optional property minimumConsecutiveTimeOffPerWeekMinutes was added
-* Optional property constrainMaximumConsecutiveWorkingWeekends was added
-* Optional property maximumConsecutiveWorkingWeekends was added
-* Optional property minimumWorkingDaysPerWeek was added
-* Optional property maximumConsecutiveWorkingDays was added
-* Optional property minimumShiftStartDistanceMinutes was added
-* Optional property minimumDaysOffPerPlanningPeriod was added
-* Optional property maximumDaysOffPerPlanningPeriod was added
-* Optional property minimumPaidHoursPerPlanningPeriod was added
-* Optional property maximumPaidHoursPerPlanningPeriod was added
+* Optional property vendorOAuthClientIds was added
 
-**UserDetailsQuery** (1 change)
+**TimeOffRequestLookup** (13 changes)
 
-* Optional property presenceFilters was added
+* Optional property isFullDayRequest was added
+* Optional property markedAsRead was added
+* Optional property activityCodeId was added
+* Optional property status was added
+* Optional property partialDayStartDateTimes was added
+* Optional property fullDayManagementUnitDates was added
+* Optional property dailyDurationMinutes was added
+* Optional property notes was added
+* Optional property submittedBy was added
+* Optional property submittedDate was added
+* Optional property reviewedBy was added
+* Optional property reviewedDate was added
+* Optional property metadata was added
+
+**ConversationAggregationQuery** (1 change)
+
+* Enum value tShortAbandon was added to property metrics
+
+**ConversationAggregationView** (1 change)
+
+* Enum value tShortAbandon was added to property target
+
+**AnalyticsFlow** (1 change)
+
+* Enum value WORKFLOW was added to property flowType
+
+**FlowDivisionView** (1 change)
+
+* Enum value WORKFLOW was added to property type
 
 
-# Point Changes (0 changes)
+# Point Changes (5 changes)
+
+**POST /api/v2/notifications/channels** (1 change)
+
+* Description was changed
+
+**GET /api/v2/scim/v2/users** (2 changes)
+
+* Description was changed
+* Description was changed for parameter filter
+
+**GET /api/v2/scim/users** (2 changes)
+
+* Description was changed
+* Description was changed for parameter filter

@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 61.0.0
+	 * @version 62.0.0
 	 */
 
 	/**
@@ -1380,6 +1380,7 @@ class ArchitectApi {
 	 * @param {String} opts.publishVersionId Publish version ID
 	 * @param {String} opts.editableBy Editable by
 	 * @param {String} opts.lockedBy Locked by
+	 * @param {String} opts.lockedByClientId Locked by client ID
 	 * @param {Object} opts.secure Secure
 	 * @param {Boolean} opts.deleted Include deleted (default to false)
 	 * @param {Boolean} opts.includeSchemas Include variable schemas (default to false)
@@ -1395,7 +1396,7 @@ class ArchitectApi {
 			'/api/v2/flows', 
 			'GET', 
 			{  }, 
-			{ 'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'publishVersionId': opts['publishVersionId'],'editableBy': opts['editableBy'],'lockedBy': opts['lockedBy'],'secure': opts['secure'],'deleted': opts['deleted'],'includeSchemas': opts['includeSchemas'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
+			{ 'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'publishVersionId': opts['publishVersionId'],'editableBy': opts['editableBy'],'lockedBy': opts['lockedBy'],'lockedByClientId': opts['lockedByClientId'],'secure': opts['secure'],'deleted': opts['deleted'],'includeSchemas': opts['includeSchemas'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 

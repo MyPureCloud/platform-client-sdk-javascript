@@ -886,11 +886,11 @@ apiInstance.getArchitectDependencytracking(name, opts)
  **name** | **String** | Object name to search for |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET |
+ **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
  **consumedResources** | **Boolean** | Include resources each result item consumes | [optional]  |
  **consumingResources** | **Boolean** | Include resources that consume each result item | [optional]  |
- **consumedResourceType** | **[String]** | Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET |
- **consumingResourceType** | **[String]** | Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET |
+ **consumedResourceType** | **[String]** | Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
+ **consumingResourceType** | **[String]** | Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
 {: class="table table-striped"}
 
 ### Return type
@@ -1004,8 +1004,8 @@ apiInstance.getArchitectDependencytrackingConsumedresources(id, version, objectT
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **String** | Consuming object ID |  |
  **version** | **String** | Consuming object version |  |
- **objectType** | **String** | Consuming object type.  Only versioned types are allowed here. | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET |
- **resourceType** | **[String]** | Types of consumed resources to show | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET |
+ **objectType** | **String** | Consuming object type.  Only versioned types are allowed here. | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
+ **resourceType** | **[String]** | Types of consumed resources to show | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
 {: class="table table-striped"}
@@ -1070,8 +1070,8 @@ apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, opt
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **String** | Consumed object ID |  |
- **objectType** | **String** | Consumed object type | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET |
- **resourceType** | **[String]** | Types of consuming resources to show.  Only versioned types are allowed here. | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET |
+ **objectType** | **String** | Consumed object type | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
+ **resourceType** | **[String]** | Types of consuming resources to show.  Only versioned types are allowed here. | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **flowFilter** | **String** | Show only checkedIn or published flows | [optional] <br />**Values**: checkedIn, published |
@@ -1138,10 +1138,10 @@ apiInstance.getArchitectDependencytrackingDeletedresourceconsumers(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **name** | **String** | Name to search for | [optional]  |
- **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET |
+ **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
  **flowFilter** | **String** | Show only checkedIn or published flows | [optional] <br />**Values**: checkedIn, published |
  **consumedResources** | **Boolean** | Return consumed resources? | [optional] [default to false] |
- **consumedResourceType** | **[String]** | Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET |
+ **consumedResourceType** | **[String]** | Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
 {: class="table table-striped"}
@@ -1208,11 +1208,11 @@ apiInstance.getArchitectDependencytrackingObject(id, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **String** | Object ID |  |
  **version** | **String** | Object version | [optional]  |
- **objectType** | **String** | Object type | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET |
+ **objectType** | **String** | Object type | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
  **consumedResources** | **Boolean** | Include resources this item consumes | [optional]  |
  **consumingResources** | **Boolean** | Include resources that consume this item | [optional]  |
- **consumedResourceType** | **[String]** | Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET |
- **consumingResourceType** | **[String]** | Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET |
+ **consumedResourceType** | **[String]** | Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
+ **consumingResourceType** | **[String]** | Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
 {: class="table table-striped"}
 
 ### Return type
@@ -1389,9 +1389,9 @@ apiInstance.getArchitectDependencytrackingUpdatedresourceconsumers(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **name** | **String** | Name to search for | [optional]  |
- **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET |
+ **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
  **consumedResources** | **Boolean** | Return consumed resources? | [optional] [default to false] |
- **consumedResourceType** | **[String]** | Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET |
+ **consumedResourceType** | **[String]** | Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
 {: class="table table-striped"}
@@ -2922,6 +2922,7 @@ let opts = {
   'publishVersionId': "publishVersionId_example", // String | Publish version ID
   'editableBy': "editableBy_example", // String | Editable by
   'lockedBy': "lockedBy_example", // String | Locked by
+  'lockedByClientId': "lockedByClientId_example", // String | Locked by client ID
   'secure': "secure_example", // String | Secure
   'deleted': false, // Boolean | Include deleted
   'includeSchemas': false, // Boolean | Include variable schemas
@@ -2945,7 +2946,7 @@ apiInstance.getFlows(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **type** | **[String]** | Type | [optional] <br />**Values**: commonmodule, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite |
+ **type** | **[String]** | Type | [optional] <br />**Values**: commonmodule, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **sortBy** | **String** | Sort by | [optional] [default to id] |
@@ -2957,6 +2958,7 @@ apiInstance.getFlows(opts)
  **publishVersionId** | **String** | Publish version ID | [optional]  |
  **editableBy** | **String** | Editable by | [optional]  |
  **lockedBy** | **String** | Locked by | [optional]  |
+ **lockedByClientId** | **String** | Locked by client ID | [optional]  |
  **secure** | **String** | Secure | [optional] <br />**Values**: any, checkedin, published |
  **deleted** | **Boolean** | Include deleted | [optional] [default to false] |
  **includeSchemas** | **Boolean** | Include variable schemas | [optional] [default to false] |
@@ -3277,7 +3279,7 @@ apiInstance.getFlowsDivisionviews(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **type** | **[String]** | Type | [optional] <br />**Values**: commonmodule, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite |
+ **type** | **[String]** | Type | [optional] <br />**Values**: commonmodule, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **sortBy** | **String** | Sort by | [optional] [default to id] |
@@ -4074,7 +4076,6 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
             "street2": String, 
             "zipcode": String, 
           },  
-          "addressVerified": Boolean, 
           "state": String, 
           "notes": String, 
           "version": Number, 
@@ -4087,6 +4088,15 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
             "resolution": String, 
             "imageUri": String, 
           },  
+          "addressVerificationDetails": { 
+            "status": String, 
+            "dateFinished": Date, 
+            "dateStarted": Date, 
+            "service": String, 
+          },  
+          "addressVerified": Boolean, 
+          "addressStored": Boolean, 
+          "images": String, 
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -4204,7 +4214,6 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
             "street2": String, 
             "zipcode": String, 
           },  
-          "addressVerified": Boolean, 
           "state": String, 
           "notes": String, 
           "version": Number, 
@@ -4217,6 +4226,15 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
             "resolution": String, 
             "imageUri": String, 
           },  
+          "addressVerificationDetails": { 
+            "status": String, 
+            "dateFinished": Date, 
+            "dateStarted": Date, 
+            "service": String, 
+          },  
+          "addressVerified": Boolean, 
+          "addressStored": Boolean, 
+          "images": String, 
           "selfUri": String, 
         },  
       },  
@@ -4961,7 +4979,6 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "street2": String, 
           "zipcode": String, 
         },  
-        "addressVerified": Boolean, 
         "state": String, 
         "notes": String, 
         "version": Number, 
@@ -4974,6 +4991,15 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "resolution": String, 
           "imageUri": String, 
         },  
+        "addressVerificationDetails": { 
+          "status": String, 
+          "dateFinished": Date, 
+          "dateStarted": Date, 
+          "service": String, 
+        },  
+        "addressVerified": Boolean, 
+        "addressStored": Boolean, 
+        "images": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -5100,7 +5126,6 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "street2": String, 
           "zipcode": String, 
         },  
-        "addressVerified": Boolean, 
         "state": String, 
         "notes": String, 
         "version": Number, 
@@ -5113,6 +5138,15 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "resolution": String, 
           "imageUri": String, 
         },  
+        "addressVerificationDetails": { 
+          "status": String, 
+          "dateFinished": Date, 
+          "dateStarted": Date, 
+          "service": String, 
+        },  
+        "addressVerified": Boolean, 
+        "addressStored": Boolean, 
+        "images": String, 
         "selfUri": String, 
       },  
     },  
@@ -5410,7 +5444,6 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "street2": String, 
           "zipcode": String, 
         },  
-        "addressVerified": Boolean, 
         "state": String, 
         "notes": String, 
         "version": Number, 
@@ -5423,6 +5456,15 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "resolution": String, 
           "imageUri": String, 
         },  
+        "addressVerificationDetails": { 
+          "status": String, 
+          "dateFinished": Date, 
+          "dateStarted": Date, 
+          "service": String, 
+        },  
+        "addressVerified": Boolean, 
+        "addressStored": Boolean, 
+        "images": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -5549,7 +5591,6 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "street2": String, 
           "zipcode": String, 
         },  
-        "addressVerified": Boolean, 
         "state": String, 
         "notes": String, 
         "version": Number, 
@@ -5562,6 +5603,15 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "resolution": String, 
           "imageUri": String, 
         },  
+        "addressVerificationDetails": { 
+          "status": String, 
+          "dateFinished": Date, 
+          "dateStarted": Date, 
+          "service": String, 
+        },  
+        "addressVerified": Boolean, 
+        "addressStored": Boolean, 
+        "images": String, 
         "selfUri": String, 
       },  
     },  
@@ -5795,7 +5845,6 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
             "street2": String, 
             "zipcode": String, 
           },  
-          "addressVerified": Boolean, 
           "state": String, 
           "notes": String, 
           "version": Number, 
@@ -5808,6 +5857,15 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
             "resolution": String, 
             "imageUri": String, 
           },  
+          "addressVerificationDetails": { 
+            "status": String, 
+            "dateFinished": Date, 
+            "dateStarted": Date, 
+            "service": String, 
+          },  
+          "addressVerified": Boolean, 
+          "addressStored": Boolean, 
+          "images": String, 
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -5925,7 +5983,6 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
             "street2": String, 
             "zipcode": String, 
           },  
-          "addressVerified": Boolean, 
           "state": String, 
           "notes": String, 
           "version": Number, 
@@ -5938,6 +5995,15 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
             "resolution": String, 
             "imageUri": String, 
           },  
+          "addressVerificationDetails": { 
+            "status": String, 
+            "dateFinished": Date, 
+            "dateStarted": Date, 
+            "service": String, 
+          },  
+          "addressVerified": Boolean, 
+          "addressStored": Boolean, 
+          "images": String, 
           "selfUri": String, 
         },  
       },  
@@ -6757,7 +6823,6 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
             "street2": String, 
             "zipcode": String, 
           },  
-          "addressVerified": Boolean, 
           "state": String, 
           "notes": String, 
           "version": Number, 
@@ -6770,6 +6835,15 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
             "resolution": String, 
             "imageUri": String, 
           },  
+          "addressVerificationDetails": { 
+            "status": String, 
+            "dateFinished": Date, 
+            "dateStarted": Date, 
+            "service": String, 
+          },  
+          "addressVerified": Boolean, 
+          "addressStored": Boolean, 
+          "images": String, 
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -6887,7 +6961,6 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
             "street2": String, 
             "zipcode": String, 
           },  
-          "addressVerified": Boolean, 
           "state": String, 
           "notes": String, 
           "version": Number, 
@@ -6900,6 +6973,15 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
             "resolution": String, 
             "imageUri": String, 
           },  
+          "addressVerificationDetails": { 
+            "status": String, 
+            "dateFinished": Date, 
+            "dateStarted": Date, 
+            "service": String, 
+          },  
+          "addressVerified": Boolean, 
+          "addressStored": Boolean, 
+          "images": String, 
           "selfUri": String, 
         },  
       },  
@@ -7470,7 +7552,6 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
             "street2": String, 
             "zipcode": String, 
           },  
-          "addressVerified": Boolean, 
           "state": String, 
           "notes": String, 
           "version": Number, 
@@ -7483,6 +7564,15 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
             "resolution": String, 
             "imageUri": String, 
           },  
+          "addressVerificationDetails": { 
+            "status": String, 
+            "dateFinished": Date, 
+            "dateStarted": Date, 
+            "service": String, 
+          },  
+          "addressVerified": Boolean, 
+          "addressStored": Boolean, 
+          "images": String, 
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -7600,7 +7690,6 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
             "street2": String, 
             "zipcode": String, 
           },  
-          "addressVerified": Boolean, 
           "state": String, 
           "notes": String, 
           "version": Number, 
@@ -7613,6 +7702,15 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
             "resolution": String, 
             "imageUri": String, 
           },  
+          "addressVerificationDetails": { 
+            "status": String, 
+            "dateFinished": Date, 
+            "dateStarted": Date, 
+            "service": String, 
+          },  
+          "addressVerified": Boolean, 
+          "addressStored": Boolean, 
+          "images": String, 
           "selfUri": String, 
         },  
       },  
@@ -8349,7 +8447,6 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "street2": String, 
           "zipcode": String, 
         },  
-        "addressVerified": Boolean, 
         "state": String, 
         "notes": String, 
         "version": Number, 
@@ -8362,6 +8459,15 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "resolution": String, 
           "imageUri": String, 
         },  
+        "addressVerificationDetails": { 
+          "status": String, 
+          "dateFinished": Date, 
+          "dateStarted": Date, 
+          "service": String, 
+        },  
+        "addressVerified": Boolean, 
+        "addressStored": Boolean, 
+        "images": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -8488,7 +8594,6 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "street2": String, 
           "zipcode": String, 
         },  
-        "addressVerified": Boolean, 
         "state": String, 
         "notes": String, 
         "version": Number, 
@@ -8501,6 +8606,15 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "resolution": String, 
           "imageUri": String, 
         },  
+        "addressVerificationDetails": { 
+          "status": String, 
+          "dateFinished": Date, 
+          "dateStarted": Date, 
+          "service": String, 
+        },  
+        "addressVerified": Boolean, 
+        "addressStored": Boolean, 
+        "images": String, 
         "selfUri": String, 
       },  
     },  
@@ -8798,7 +8912,6 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "street2": String, 
           "zipcode": String, 
         },  
-        "addressVerified": Boolean, 
         "state": String, 
         "notes": String, 
         "version": Number, 
@@ -8811,6 +8924,15 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "resolution": String, 
           "imageUri": String, 
         },  
+        "addressVerificationDetails": { 
+          "status": String, 
+          "dateFinished": Date, 
+          "dateStarted": Date, 
+          "service": String, 
+        },  
+        "addressVerified": Boolean, 
+        "addressStored": Boolean, 
+        "images": String, 
         "selfUri": String, 
       },  
       "selfUri": String, 
@@ -8937,7 +9059,6 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "street2": String, 
           "zipcode": String, 
         },  
-        "addressVerified": Boolean, 
         "state": String, 
         "notes": String, 
         "version": Number, 
@@ -8950,6 +9071,15 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
           "resolution": String, 
           "imageUri": String, 
         },  
+        "addressVerificationDetails": { 
+          "status": String, 
+          "dateFinished": Date, 
+          "dateStarted": Date, 
+          "service": String, 
+        },  
+        "addressVerified": Boolean, 
+        "addressStored": Boolean, 
+        "images": String, 
         "selfUri": String, 
       },  
     },  
@@ -9183,7 +9313,6 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
             "street2": String, 
             "zipcode": String, 
           },  
-          "addressVerified": Boolean, 
           "state": String, 
           "notes": String, 
           "version": Number, 
@@ -9196,6 +9325,15 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
             "resolution": String, 
             "imageUri": String, 
           },  
+          "addressVerificationDetails": { 
+            "status": String, 
+            "dateFinished": Date, 
+            "dateStarted": Date, 
+            "service": String, 
+          },  
+          "addressVerified": Boolean, 
+          "addressStored": Boolean, 
+          "images": String, 
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -9313,7 +9451,6 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
             "street2": String, 
             "zipcode": String, 
           },  
-          "addressVerified": Boolean, 
           "state": String, 
           "notes": String, 
           "version": Number, 
@@ -9326,6 +9463,15 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
             "resolution": String, 
             "imageUri": String, 
           },  
+          "addressVerificationDetails": { 
+            "status": String, 
+            "dateFinished": Date, 
+            "dateStarted": Date, 
+            "service": String, 
+          },  
+          "addressVerified": Boolean, 
+          "addressStored": Boolean, 
+          "images": String, 
           "selfUri": String, 
         },  
       },  
@@ -9821,7 +9967,6 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
             "street2": String, 
             "zipcode": String, 
           },  
-          "addressVerified": Boolean, 
           "state": String, 
           "notes": String, 
           "version": Number, 
@@ -9834,6 +9979,15 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
             "resolution": String, 
             "imageUri": String, 
           },  
+          "addressVerificationDetails": { 
+            "status": String, 
+            "dateFinished": Date, 
+            "dateStarted": Date, 
+            "service": String, 
+          },  
+          "addressVerified": Boolean, 
+          "addressStored": Boolean, 
+          "images": String, 
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -9951,7 +10105,6 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
             "street2": String, 
             "zipcode": String, 
           },  
-          "addressVerified": Boolean, 
           "state": String, 
           "notes": String, 
           "version": Number, 
@@ -9964,6 +10117,15 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
             "resolution": String, 
             "imageUri": String, 
           },  
+          "addressVerificationDetails": { 
+            "status": String, 
+            "dateFinished": Date, 
+            "dateStarted": Date, 
+            "service": String, 
+          },  
+          "addressVerified": Boolean, 
+          "addressStored": Boolean, 
+          "images": String, 
           "selfUri": String, 
         },  
       },  

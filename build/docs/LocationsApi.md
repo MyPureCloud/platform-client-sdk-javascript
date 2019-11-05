@@ -123,7 +123,7 @@ apiInstance.getLocation(locationId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **locationId** | **String** | Location ID |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: images |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: images, addressVerificationDetails |
 {: class="table table-striped"}
 
 ### Return type
@@ -297,7 +297,7 @@ apiInstance.getLocationsSearch(q64, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
- **expand** | **[String]** | Provides more details about a specified resource | [optional] <br />**Values**: images |
+ **expand** | **[String]** | Provides more details about a specified resource | [optional] <br />**Values**: images, addressVerificationDetails |
 {: class="table table-striped"}
 
 ### Return type
@@ -341,6 +341,17 @@ LocationCreateUpdateDefinition <a href="#" onclick="return copyLocationCreateUpd
 ```{"language":"json", "maxHeight": "250px"}
 { 
   "name": String, 
+  "version": Number, 
+  "state": String, 
+  "path": [String], 
+  "addressVerified": Boolean, 
+  "notes": String, 
+  "contactUser": String, 
+  "emergencyNumber": { 
+    "e164": String, 
+    "number": String, 
+    "type": String, 
+  },  
   "address": { 
     "city": String, 
     "country": String, 
@@ -350,17 +361,6 @@ LocationCreateUpdateDefinition <a href="#" onclick="return copyLocationCreateUpd
     "street2": String, 
     "zipcode": String, 
   },  
-  "emergencyNumber": { 
-    "e164": String, 
-    "number": String, 
-    "type": String, 
-  },  
-  "version": Number, 
-  "state": String, 
-  "notes": String, 
-  "contactUser": String, 
-  "path": [String], 
-  "addressVerified": Boolean, 
 }
 ```
 
@@ -443,6 +443,17 @@ LocationCreateUpdateDefinition <a href="#" onclick="return copyLocationCreateUpd
 ```{"language":"json", "maxHeight": "250px"}
 { 
   "name": String, 
+  "version": Number, 
+  "state": String, 
+  "path": [String], 
+  "addressVerified": Boolean, 
+  "notes": String, 
+  "contactUser": String, 
+  "emergencyNumber": { 
+    "e164": String, 
+    "number": String, 
+    "type": String, 
+  },  
   "address": { 
     "city": String, 
     "country": String, 
@@ -452,17 +463,6 @@ LocationCreateUpdateDefinition <a href="#" onclick="return copyLocationCreateUpd
     "street2": String, 
     "zipcode": String, 
   },  
-  "emergencyNumber": { 
-    "e164": String, 
-    "number": String, 
-    "type": String, 
-  },  
-  "version": Number, 
-  "state": String, 
-  "notes": String, 
-  "contactUser": String, 
-  "path": [String], 
-  "addressVerified": Boolean, 
 }
 ```
 

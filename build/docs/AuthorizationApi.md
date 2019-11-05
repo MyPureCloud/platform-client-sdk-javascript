@@ -35,6 +35,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi.html#postAuthorizationRoleComparedefaultRightRoleId) | **POST** /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId} | Get an unsaved org role to default role comparison
 [**postAuthorizationRoles**](AuthorizationApi.html#postAuthorizationRoles) | **POST** /api/v2/authorization/roles | Create an organization role.
 [**postAuthorizationRolesDefault**](AuthorizationApi.html#postAuthorizationRolesDefault) | **POST** /api/v2/authorization/roles/default | Restores all default roles
+[**postAuthorizationSubjectBulkadd**](AuthorizationApi.html#postAuthorizationSubjectBulkadd) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkadd | Bulk-grant roles and divisions to a subject.
+[**postAuthorizationSubjectBulkremove**](AuthorizationApi.html#postAuthorizationSubjectBulkremove) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkremove | Bulk-remove grants from a subject.
 [**postAuthorizationSubjectDivisionRole**](AuthorizationApi.html#postAuthorizationSubjectDivisionRole) | **POST** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Make a grant of a role in a division
 [**putAuthorizationDivision**](AuthorizationApi.html#putAuthorizationDivision) | **PUT** /api/v2/authorization/divisions/{divisionId} | Update a division.
 [**putAuthorizationRole**](AuthorizationApi.html#putAuthorizationRole) | **PUT** /api/v2/authorization/roles/{roleId} | Update an organization role.
@@ -1495,7 +1497,6 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "street2": String, 
                 "zipcode": String, 
               },  
-              "addressVerified": Boolean, 
               "state": String, 
               "notes": String, 
               "version": Number, 
@@ -1508,6 +1509,15 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "resolution": String, 
                 "imageUri": String, 
               },  
+              "addressVerificationDetails": { 
+                "status": String, 
+                "dateFinished": Date, 
+                "dateStarted": Date, 
+                "service": String, 
+              },  
+              "addressVerified": Boolean, 
+              "addressStored": Boolean, 
+              "images": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -1607,7 +1617,6 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "street2": String, 
                 "zipcode": String, 
               },  
-              "addressVerified": Boolean, 
               "state": String, 
               "notes": String, 
               "version": Number, 
@@ -1620,6 +1629,15 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "resolution": String, 
                 "imageUri": String, 
               },  
+              "addressVerificationDetails": { 
+                "status": String, 
+                "dateFinished": Date, 
+                "dateStarted": Date, 
+                "service": String, 
+              },  
+              "addressVerified": Boolean, 
+              "addressStored": Boolean, 
+              "images": String, 
               "selfUri": String, 
             },  
           },  
@@ -1934,13 +1952,16 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
-                "addressVerified": Boolean, 
                 "state": String, 
                 "notes": String, 
                 "version": Number, 
                 "path": [String], 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
+                "addressVerificationDetails": LocationAddressVerificationDetails, 
+                "addressVerified": Boolean, 
+                "addressStored": Boolean, 
+                "images": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -2019,13 +2040,16 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
-                "addressVerified": Boolean, 
                 "state": String, 
                 "notes": String, 
                 "version": Number, 
                 "path": [String], 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
+                "addressVerificationDetails": LocationAddressVerificationDetails, 
+                "addressVerified": Boolean, 
+                "addressStored": Boolean, 
+                "images": String, 
                 "selfUri": String, 
               },  
             },  
@@ -3011,7 +3035,6 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "street2": String, 
                 "zipcode": String, 
               },  
-              "addressVerified": Boolean, 
               "state": String, 
               "notes": String, 
               "version": Number, 
@@ -3024,6 +3047,15 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "resolution": String, 
                 "imageUri": String, 
               },  
+              "addressVerificationDetails": { 
+                "status": String, 
+                "dateFinished": Date, 
+                "dateStarted": Date, 
+                "service": String, 
+              },  
+              "addressVerified": Boolean, 
+              "addressStored": Boolean, 
+              "images": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -3123,7 +3155,6 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "street2": String, 
                 "zipcode": String, 
               },  
-              "addressVerified": Boolean, 
               "state": String, 
               "notes": String, 
               "version": Number, 
@@ -3136,6 +3167,15 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "resolution": String, 
                 "imageUri": String, 
               },  
+              "addressVerificationDetails": { 
+                "status": String, 
+                "dateFinished": Date, 
+                "dateStarted": Date, 
+                "service": String, 
+              },  
+              "addressVerified": Boolean, 
+              "addressStored": Boolean, 
+              "images": String, 
               "selfUri": String, 
             },  
           },  
@@ -3450,13 +3490,16 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
-                "addressVerified": Boolean, 
                 "state": String, 
                 "notes": String, 
                 "version": Number, 
                 "path": [String], 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
+                "addressVerificationDetails": LocationAddressVerificationDetails, 
+                "addressVerified": Boolean, 
+                "addressStored": Boolean, 
+                "images": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -3535,13 +3578,16 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
-                "addressVerified": Boolean, 
                 "state": String, 
                 "notes": String, 
                 "version": Number, 
                 "path": [String], 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
+                "addressVerificationDetails": LocationAddressVerificationDetails, 
+                "addressVerified": Boolean, 
+                "addressStored": Boolean, 
+                "images": String, 
                 "selfUri": String, 
               },  
             },  
@@ -4298,7 +4344,6 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "street2": String, 
                 "zipcode": String, 
               },  
-              "addressVerified": Boolean, 
               "state": String, 
               "notes": String, 
               "version": Number, 
@@ -4311,6 +4356,15 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "resolution": String, 
                 "imageUri": String, 
               },  
+              "addressVerificationDetails": { 
+                "status": String, 
+                "dateFinished": Date, 
+                "dateStarted": Date, 
+                "service": String, 
+              },  
+              "addressVerified": Boolean, 
+              "addressStored": Boolean, 
+              "images": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -4410,7 +4464,6 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "street2": String, 
                 "zipcode": String, 
               },  
-              "addressVerified": Boolean, 
               "state": String, 
               "notes": String, 
               "version": Number, 
@@ -4423,6 +4476,15 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "resolution": String, 
                 "imageUri": String, 
               },  
+              "addressVerificationDetails": { 
+                "status": String, 
+                "dateFinished": Date, 
+                "dateStarted": Date, 
+                "service": String, 
+              },  
+              "addressVerified": Boolean, 
+              "addressStored": Boolean, 
+              "images": String, 
               "selfUri": String, 
             },  
           },  
@@ -4737,13 +4799,16 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
-                "addressVerified": Boolean, 
                 "state": String, 
                 "notes": String, 
                 "version": Number, 
                 "path": [String], 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
+                "addressVerificationDetails": LocationAddressVerificationDetails, 
+                "addressVerified": Boolean, 
+                "addressStored": Boolean, 
+                "images": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -4822,13 +4887,16 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
-                "addressVerified": Boolean, 
                 "state": String, 
                 "notes": String, 
                 "version": Number, 
                 "path": [String], 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
+                "addressVerificationDetails": LocationAddressVerificationDetails, 
+                "addressVerified": Boolean, 
+                "addressStored": Boolean, 
+                "images": String, 
                 "selfUri": String, 
               },  
             },  
@@ -5402,6 +5470,180 @@ apiInstance.postAuthorizationRolesDefault(opts)
 
 **OrganizationRoleEntityListing**
 
+<a name="postAuthorizationSubjectBulkadd"></a>
+
+# void postAuthorizationSubjectBulkadd(subjectId, body, opts)
+
+
+
+POST /api/v2/authorization/subjects/{subjectId}/bulkadd
+
+Bulk-grant roles and divisions to a subject.
+
+
+
+Requires ANY permissions: 
+
+* authorization:grant:add
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyRoleDivisionGrantsExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#RoleDivisionGrantsExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+RoleDivisionGrants <a href="#" onclick="return copyRoleDivisionGrantsExample()">Copy</a>
+
+<div id="RoleDivisionGrantsExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "grants": { 
+    "roleId": String, 
+    "divisionId": String, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let subjectId = "subjectId_example"; // String | Subject ID (user or group)
+let body = {}; // Object | Pairs of role and division IDs
+let opts = { 
+  'subjectType': "PC_USER" // String | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)
+};
+
+apiInstance.postAuthorizationSubjectBulkadd(subjectId, body, opts)
+  .then(() => {
+    console.log('postAuthorizationSubjectBulkadd returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAuthorizationSubjectBulkadd');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **subjectId** | **String** | Subject ID (user or group) |  |
+ **body** | **Object** | Pairs of role and division IDs |  |
+ **subjectType** | **String** | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="postAuthorizationSubjectBulkremove"></a>
+
+# void postAuthorizationSubjectBulkremove(subjectId, body)
+
+
+
+POST /api/v2/authorization/subjects/{subjectId}/bulkremove
+
+Bulk-remove grants from a subject.
+
+
+
+Requires ANY permissions: 
+
+* authorization:grant:delete
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyRoleDivisionGrantsExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#RoleDivisionGrantsExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+RoleDivisionGrants <a href="#" onclick="return copyRoleDivisionGrantsExample()">Copy</a>
+
+<div id="RoleDivisionGrantsExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "grants": { 
+    "roleId": String, 
+    "divisionId": String, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let subjectId = "subjectId_example"; // String | Subject ID (user or group)
+let body = {}; // Object | Pairs of role and division IDs
+
+apiInstance.postAuthorizationSubjectBulkremove(subjectId, body)
+  .then(() => {
+    console.log('postAuthorizationSubjectBulkremove returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAuthorizationSubjectBulkremove');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **subjectId** | **String** | Subject ID (user or group) |  |
+ **body** | **Object** | Pairs of role and division IDs |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="postAuthorizationSubjectDivisionRole"></a>
 
 # void postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
@@ -5788,7 +6030,6 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "street2": String, 
                 "zipcode": String, 
               },  
-              "addressVerified": Boolean, 
               "state": String, 
               "notes": String, 
               "version": Number, 
@@ -5801,6 +6042,15 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "resolution": String, 
                 "imageUri": String, 
               },  
+              "addressVerificationDetails": { 
+                "status": String, 
+                "dateFinished": Date, 
+                "dateStarted": Date, 
+                "service": String, 
+              },  
+              "addressVerified": Boolean, 
+              "addressStored": Boolean, 
+              "images": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -5900,7 +6150,6 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "street2": String, 
                 "zipcode": String, 
               },  
-              "addressVerified": Boolean, 
               "state": String, 
               "notes": String, 
               "version": Number, 
@@ -5913,6 +6162,15 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "resolution": String, 
                 "imageUri": String, 
               },  
+              "addressVerificationDetails": { 
+                "status": String, 
+                "dateFinished": Date, 
+                "dateStarted": Date, 
+                "service": String, 
+              },  
+              "addressVerified": Boolean, 
+              "addressStored": Boolean, 
+              "images": String, 
               "selfUri": String, 
             },  
           },  
@@ -6227,13 +6485,16 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
-                "addressVerified": Boolean, 
                 "state": String, 
                 "notes": String, 
                 "version": Number, 
                 "path": [String], 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
+                "addressVerificationDetails": LocationAddressVerificationDetails, 
+                "addressVerified": Boolean, 
+                "addressStored": Boolean, 
+                "images": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -6312,13 +6573,16 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
-                "addressVerified": Boolean, 
                 "state": String, 
                 "notes": String, 
                 "version": Number, 
                 "path": [String], 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
+                "addressVerificationDetails": LocationAddressVerificationDetails, 
+                "addressVerified": Boolean, 
+                "addressStored": Boolean, 
+                "images": String, 
                 "selfUri": String, 
               },  
             },  
@@ -7187,7 +7451,6 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "street2": String, 
                 "zipcode": String, 
               },  
-              "addressVerified": Boolean, 
               "state": String, 
               "notes": String, 
               "version": Number, 
@@ -7200,6 +7463,15 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "resolution": String, 
                 "imageUri": String, 
               },  
+              "addressVerificationDetails": { 
+                "status": String, 
+                "dateFinished": Date, 
+                "dateStarted": Date, 
+                "service": String, 
+              },  
+              "addressVerified": Boolean, 
+              "addressStored": Boolean, 
+              "images": String, 
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -7299,7 +7571,6 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "street2": String, 
                 "zipcode": String, 
               },  
-              "addressVerified": Boolean, 
               "state": String, 
               "notes": String, 
               "version": Number, 
@@ -7312,6 +7583,15 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "resolution": String, 
                 "imageUri": String, 
               },  
+              "addressVerificationDetails": { 
+                "status": String, 
+                "dateFinished": Date, 
+                "dateStarted": Date, 
+                "service": String, 
+              },  
+              "addressVerified": Boolean, 
+              "addressStored": Boolean, 
+              "images": String, 
               "selfUri": String, 
             },  
           },  
@@ -7626,13 +7906,16 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
-                "addressVerified": Boolean, 
                 "state": String, 
                 "notes": String, 
                 "version": Number, 
                 "path": [String], 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
+                "addressVerificationDetails": LocationAddressVerificationDetails, 
+                "addressVerified": Boolean, 
+                "addressStored": Boolean, 
+                "images": String, 
                 "selfUri": String, 
               },  
               "selfUri": String, 
@@ -7711,13 +7994,16 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "contactUser": AddressableEntityRef, 
                 "emergencyNumber": LocationEmergencyNumber, 
                 "address": LocationAddress, 
-                "addressVerified": Boolean, 
                 "state": String, 
                 "notes": String, 
                 "version": Number, 
                 "path": [String], 
                 "profileImage": [LocationImage], 
                 "floorplanImage": [LocationImage], 
+                "addressVerificationDetails": LocationAddressVerificationDetails, 
+                "addressVerified": Boolean, 
+                "addressStored": Boolean, 
+                "images": String, 
                 "selfUri": String, 
               },  
             },  
