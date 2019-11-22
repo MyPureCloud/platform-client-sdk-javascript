@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 62.0.0
+	 * @version 63.0.0
 	 */
 
 	/**
@@ -1543,6 +1543,7 @@ class ArchitectApi {
 	 * @param {String} opts.publishedAfter Published after
 	 * @param {String} opts.publishedBefore Published before
 	 * @param {Array.<String>} opts.divisionId division ID(s)
+	 * @param {Boolean} opts.includeSchemas Include variable schemas (default to false)
 	 */
 	getFlowsDivisionviews(opts) { 
 		opts = opts || {};
@@ -1552,7 +1553,7 @@ class ArchitectApi {
 			'/api/v2/flows/divisionviews', 
 			'GET', 
 			{  }, 
-			{ 'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'publishVersionId': opts['publishVersionId'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
+			{ 'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'publishVersionId': opts['publishVersionId'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'includeSchemas': opts['includeSchemas'] }, 
 			{  }, 
 			{  }, 
 			null, 

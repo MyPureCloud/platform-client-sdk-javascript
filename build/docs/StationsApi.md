@@ -204,9 +204,8 @@ Get an organization&#39;s StationSettings
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
 
 
 

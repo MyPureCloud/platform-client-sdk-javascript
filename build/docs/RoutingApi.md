@@ -1492,7 +1492,6 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'sortBy': "name", // String | Sort by
   'name': "name_example", // String | Name
-  'active': true, // Boolean | Active
   'id': ["id_example"], // [String] | ID(s)
   'divisionId': ["divisionId_example"] // [String] | Division ID(s)
 };
@@ -1516,7 +1515,6 @@ apiInstance.getRoutingQueues(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortBy** | **String** | Sort by | [optional] [default to name] |
  **name** | **String** | Name | [optional]  |
- **active** | **Boolean** | Active | [optional]  |
  **id** | **[String]** | ID(s) | [optional]  |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
 {: class="table table-striped"}
@@ -7550,6 +7548,7 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
   "phoneNumberType": String, 
   "provisionedThroughPureCloud": Boolean, 
   "phoneNumberStatus": String, 
+  "capabilities": [String], 
   "countryCode": String, 
   "dateCreated": Date, 
   "dateModified": Date, 

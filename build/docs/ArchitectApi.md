@@ -3261,7 +3261,8 @@ let opts = {
   'publishVersionId': "publishVersionId_example", // String | Publish version ID
   'publishedAfter': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01", // String | Published after
   'publishedBefore': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01", // String | Published before
-  'divisionId': ["divisionId_example"] // [String] | division ID(s)
+  'divisionId': ["divisionId_example"], // [String] | division ID(s)
+  'includeSchemas': false // Boolean | Include variable schemas
 };
 
 apiInstance.getFlowsDivisionviews(opts)
@@ -3290,6 +3291,7 @@ apiInstance.getFlowsDivisionviews(opts)
  **publishedAfter** | **String** | Published after | [optional]  |
  **publishedBefore** | **String** | Published before | [optional]  |
  **divisionId** | **[String]** | division ID(s) | [optional]  |
+ **includeSchemas** | **Boolean** | Include variable schemas | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type

@@ -5017,6 +5017,9 @@ DomainLogicalInterface <a href="#" onclick="return copyDomainLogicalInterfaceExa
   "inheritPhoneTrunkBasesIPv4": Boolean, 
   "inheritPhoneTrunkBasesIPv6": Boolean, 
   "useForInternalEdgeCommunication": Boolean, 
+  "useForIndirectEdgeCommunication": Boolean, 
+  "useForCloudProxyEdgeCommunication": Boolean, 
+  "publicNatIpAddress": String, 
   "externalTrunkBaseAssignments": { 
     "family": Number, 
     "trunkBase": { 
@@ -49526,6 +49529,9 @@ DomainLogicalInterface <a href="#" onclick="return copyDomainLogicalInterfaceExa
   "inheritPhoneTrunkBasesIPv4": Boolean, 
   "inheritPhoneTrunkBasesIPv6": Boolean, 
   "useForInternalEdgeCommunication": Boolean, 
+  "useForIndirectEdgeCommunication": Boolean, 
+  "useForCloudProxyEdgeCommunication": Boolean, 
+  "publicNatIpAddress": String, 
   "externalTrunkBaseAssignments": { 
     "family": Number, 
     "trunkBase": { 

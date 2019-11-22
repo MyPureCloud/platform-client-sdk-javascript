@@ -1,174 +1,182 @@
-Platform API version: 3578
+Platform API version: 3616
 
 
-# Major Changes (13 changes)
+# Major Changes (19 changes)
 
-**GET /api/v2/flows** (1 change)
+**/api/v2/users/{userId}/externalid/{authorityName}** (1 change)
 
-* Parameter lockedByClientId was added
+* Path /api/v2/users/{userId}/externalid/{authorityName} was removed
 
-**GET /api/v2/scim/v2/users** (2 changes)
+**/api/v2/users/{userId}/externalid** (1 change)
 
-* Parameter attributes was added
-* Parameter excludedAttributes was added
+* Path /api/v2/users/{userId}/externalid was removed
 
-**GET /api/v2/scim/v2/users/{userId}** (2 changes)
+**/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}** (1 change)
 
-* Parameter attributes was added
-* Parameter excludedAttributes was added
+* Path /api/v2/users/{userId}/externalid/{authorityName}/{externalKey} was removed
 
-**GET /api/v2/scim/users** (2 changes)
+**/api/v2/users/externalid/{authorityName}/{externalKey}** (1 change)
 
-* Parameter attributes was added
-* Parameter excludedAttributes was added
+* Path /api/v2/users/externalid/{authorityName}/{externalKey} was removed
 
-**GET /api/v2/scim/users/{userId}** (2 changes)
+**GET /api/v2/flows/divisionviews** (1 change)
 
-* Parameter attributes was added
-* Parameter excludedAttributes was added
+* Parameter includeSchemas was added
 
-**LocationDefinition** (3 changes)
+**GET /api/v2/routing/queues** (1 change)
 
-* path has been made readonly
-* floorplanImage has been made readonly
-* addressVerified has been made readonly
+* Parameter active was removed
 
-**WfmForecastModificationIntervalOffsetValue** (1 change)
+**LocationCreateUpdateDefinition** (1 change)
 
-* Property value was changed from integer to number
+* Model LocationCreateUpdateDefinition was removed
+
+**UserExternalIdentifier** (1 change)
+
+* Model UserExternalIdentifier was removed
+
+**EvaluationAggregationQuery** (11 changes)
+
+* Enum value calibrationId was removed from property alternateTimeDimension
+* Enum value contextId was removed from property alternateTimeDimension
+* Enum value conversationId was removed from property alternateTimeDimension
+* Enum value divisionId was removed from property alternateTimeDimension
+* Enum value evaluationId was removed from property alternateTimeDimension
+* Enum value evaluatorId was removed from property alternateTimeDimension
+* Enum value formId was removed from property alternateTimeDimension
+* Enum value queueId was removed from property alternateTimeDimension
+* Enum value rescind was removed from property alternateTimeDimension
+* Enum value rescored was removed from property alternateTimeDimension
+* Enum value userId was removed from property alternateTimeDimension
 
 
-# Minor Changes (41 changes)
+# Minor Changes (39 changes)
 
-**PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}** (1 change)
-
-* Response 422 was added
-
-**DELETE /api/v2/users/{userId}/routingskills/{skillId}** (1 change)
-
-* Response 409 was added
-
-**DELETE /api/v2/architect/ivrs/{ivrId}** (1 change)
-
-* Response 409 was added
-
-**POST /api/v2/conversations/emails/{conversationId}/messages** (1 change)
-
-* Response 409 was added
-
-**/api/v2/authorization/subjects/{subjectId}/bulkadd** (2 changes)
+**/api/v2/recordings/deletionprotection** (3 changes)
 
 * Path was added
 * Operation POST was added
+* Operation PUT was added
 
-**/api/v2/authorization/subjects/{subjectId}/bulkremove** (2 changes)
+**DomainLogicalInterface** (3 changes)
 
-* Path was added
-* Operation POST was added
+* Optional property useForIndirectEdgeCommunication was added
+* Optional property useForCloudProxyEdgeCommunication was added
+* Optional property publicNatIpAddress was added
 
-**PUT /api/v2/integrations/{integrationId}/config/current** (1 change)
+**Participant** (2 changes)
 
-* Response 409 was added
+* Optional property startAcwTime was added
+* Optional property endAcwTime was added
 
-**GET /api/v2/scim/v2/users** (1 change)
-
-* Parameter filter was made optional
-
-**PATCH /api/v2/locations/{locationId}** (1 change)
-
-* Response 409 was added
-
-**GET /api/v2/scim/users** (1 change)
-
-* Parameter filter was made optional
-
-**POST /api/v2/users** (1 change)
-
-* Response 409 was added
-
-**LocationAddressVerificationDetails** (1 change)
+**MessageEvaluation** (1 change)
 
 * Model was added
-
-**LocationDefinition** (3 changes)
-
-* Optional property addressVerificationDetails was added
-* Optional property addressStored was added
-* Optional property images was added
-
-**Dependency** (1 change)
-
-* Enum value WORKFLOW was added to property type
-
-**Flow** (1 change)
-
-* Enum value WORKFLOW was added to property type
-
-**ViewFilter** (1 change)
-
-* Enum value workflow was added to property flowTypes
-
-**RoleDivisionGrants** (1 change)
-
-* Model was added
-
-**RoleDivisionPair** (1 change)
-
-* Model was added
-
-**DependencyObject** (1 change)
-
-* Enum value WORKFLOW was added to property type
-
-**IntegrationType** (1 change)
-
-* Optional property vendorOAuthClientIds was added
-
-**TimeOffRequestLookup** (13 changes)
-
-* Optional property isFullDayRequest was added
-* Optional property markedAsRead was added
-* Optional property activityCodeId was added
-* Optional property status was added
-* Optional property partialDayStartDateTimes was added
-* Optional property fullDayManagementUnitDates was added
-* Optional property dailyDurationMinutes was added
-* Optional property notes was added
-* Optional property submittedBy was added
-* Optional property submittedDate was added
-* Optional property reviewedBy was added
-* Optional property reviewedDate was added
-* Optional property metadata was added
 
 **ConversationAggregationQuery** (1 change)
 
-* Enum value tShortAbandon was added to property metrics
+* Optional property alternateTimeDimension was added
 
-**ConversationAggregationView** (1 change)
+**SurveyAggregationQuery** (1 change)
 
-* Enum value tShortAbandon was added to property target
+* Optional property alternateTimeDimension was added
 
-**AnalyticsFlow** (1 change)
+**CallbackMediaParticipant** (2 changes)
 
-* Enum value WORKFLOW was added to property flowType
+* Optional property startAcwTime was added
+* Optional property endAcwTime was added
 
-**FlowDivisionView** (1 change)
+**ReportingExportJobResponse** (1 change)
 
-* Enum value WORKFLOW was added to property type
+* Optional property selectedColumns was added
+
+**SelectedColumns** (1 change)
+
+* Model was added
+
+**ReportingExportJobRequest** (1 change)
+
+* Optional property selectedColumns was added
+
+**ChatMediaParticipant** (2 changes)
+
+* Optional property startAcwTime was added
+* Optional property endAcwTime was added
+
+**EvaluationAggregationQuery** (1 change)
+
+* Enum value eventTime was added to property alternateTimeDimension
+
+**ParticipantBasic** (2 changes)
+
+* Optional property startAcwTime was added
+* Optional property endAcwTime was added
+
+**SubscriptionOverviewUsage** (2 changes)
+
+* Optional property bundleQuantity was added
+* Optional property isThirdParty was added
+
+**UserAggregationQuery** (1 change)
+
+* Optional property alternateTimeDimension was added
+
+**ConversationDeletionProtectionQuery** (1 change)
+
+* Model was added
+
+**CobrowseMediaParticipant** (2 changes)
+
+* Optional property startAcwTime was added
+* Optional property endAcwTime was added
+
+**FlowDivisionView** (2 changes)
+
+* Optional property inputSchema was added
+* Optional property outputSchema was added
+
+**SmsPhoneNumber** (1 change)
+
+* Optional property capabilities was added
+
+**EmailMediaParticipant** (2 changes)
+
+* Optional property startAcwTime was added
+* Optional property endAcwTime was added
+
+**MessageMediaParticipant** (2 changes)
+
+* Optional property startAcwTime was added
+* Optional property endAcwTime was added
+
+**CallMediaParticipant** (2 changes)
+
+* Optional property startAcwTime was added
+* Optional property endAcwTime was added
+
+**LocationCreateDefinition** (1 change)
+
+* Model was added
+
+**FlowAggregationQuery** (1 change)
+
+* Optional property alternateTimeDimension was added
+
+**LocationUpdateDefinition** (1 change)
+
+* Model was added
 
 
-# Point Changes (5 changes)
+# Point Changes (3 changes)
 
-**POST /api/v2/notifications/channels** (1 change)
+**PUT /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}** (1 change)
 
 * Description was changed
 
-**GET /api/v2/scim/v2/users** (2 changes)
+**GET /api/v2/quality/conversations/{conversationId}/audits** (1 change)
 
 * Description was changed
-* Description was changed for parameter filter
 
-**GET /api/v2/scim/users** (2 changes)
+**PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}** (1 change)
 
 * Description was changed
-* Description was changed for parameter filter

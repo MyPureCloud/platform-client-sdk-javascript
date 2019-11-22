@@ -92,6 +92,7 @@ FlowAggregationQuery <a href="#" onclick="return copyFlowAggregationQueryExample
       "lt": Number, 
     },  
   },  
+  "alternateTimeDimension": String, 
 }
 ```
 

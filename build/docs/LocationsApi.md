@@ -324,19 +324,19 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyLocationCreateUpdateDefinitionExample() {
+	function copyLocationUpdateDefinitionExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#LocationCreateUpdateDefinitionExample').text()).select();
+		temp.val($('#LocationUpdateDefinitionExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-LocationCreateUpdateDefinition <a href="#" onclick="return copyLocationCreateUpdateDefinitionExample()">Copy</a>
+LocationUpdateDefinition <a href="#" onclick="return copyLocationUpdateDefinitionExample()">Copy</a>
 
-<div id="LocationCreateUpdateDefinitionExample">
+<div id="LocationUpdateDefinitionExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
@@ -344,7 +344,6 @@ LocationCreateUpdateDefinition <a href="#" onclick="return copyLocationCreateUpd
   "version": Number, 
   "state": String, 
   "path": [String], 
-  "addressVerified": Boolean, 
   "notes": String, 
   "contactUser": String, 
   "emergencyNumber": { 
@@ -426,19 +425,19 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyLocationCreateUpdateDefinitionExample() {
+	function copyLocationCreateDefinitionExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#LocationCreateUpdateDefinitionExample').text()).select();
+		temp.val($('#LocationCreateDefinitionExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-LocationCreateUpdateDefinition <a href="#" onclick="return copyLocationCreateUpdateDefinitionExample()">Copy</a>
+LocationCreateDefinition <a href="#" onclick="return copyLocationCreateDefinitionExample()">Copy</a>
 
-<div id="LocationCreateUpdateDefinitionExample">
+<div id="LocationCreateDefinitionExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
@@ -446,7 +445,6 @@ LocationCreateUpdateDefinition <a href="#" onclick="return copyLocationCreateUpd
   "version": Number, 
   "state": String, 
   "path": [String], 
-  "addressVerified": Boolean, 
   "notes": String, 
   "contactUser": String, 
   "emergencyNumber": { 

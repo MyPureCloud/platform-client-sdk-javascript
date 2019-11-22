@@ -1093,6 +1093,7 @@ ConversationAggregationQuery <a href="#" onclick="return copyConversationAggrega
       "lt": Number, 
     },  
   },  
+  "alternateTimeDimension": String, 
 }
 ```
 
@@ -1846,6 +1847,7 @@ FlowAggregationQuery <a href="#" onclick="return copyFlowAggregationQueryExample
       "lt": Number, 
     },  
   },  
+  "alternateTimeDimension": String, 
 }
 ```
 
@@ -2298,6 +2300,10 @@ ReportingExportJobRequest <a href="#" onclick="return copyReportingExportJobRequ
   "locale": String, 
   "hasFormatDurations": Boolean, 
   "hasSplitFilters": Boolean, 
+  "selectedColumns": { 
+    "columnOrder": Number, 
+    "columnName": String, 
+  },  
 }
 ```
 
@@ -2583,6 +2589,7 @@ SurveyAggregationQuery <a href="#" onclick="return copySurveyAggregationQueryExa
       "lt": Number, 
     },  
   },  
+  "alternateTimeDimension": String, 
 }
 ```
 
@@ -2707,6 +2714,7 @@ UserAggregationQuery <a href="#" onclick="return copyUserAggregationQueryExample
       "lt": Number, 
     },  
   },  
+  "alternateTimeDimension": String, 
 }
 ```
 
