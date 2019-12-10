@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 63.0.0
+	 * @version 64.0.0
 	 */
 
 	/**
@@ -792,6 +792,26 @@ class RoutingApi {
 	}
 
 	/**
+	 * Get Contact Center Settings
+	 * 
+	 */
+	getRoutingSettingsContactcenter() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/settings/contactcenter', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get Routing Skill
 	 * 
 	 * @param {String} skillId Skill ID
@@ -1173,6 +1193,31 @@ class RoutingApi {
 			'/api/v2/routing/queues/{queueId}/users', 
 			'PATCH', 
 			{ 'queueId': queueId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Contact Center Settings
+	 * 
+	 * @param {Object} body Contact Center Settings
+	 */
+	patchRoutingSettingsContactcenter(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingSettingsContactcenter';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/settings/contactcenter', 
+			'PATCH', 
+			{  }, 
 			{  }, 
 			{  }, 
 			{  }, 

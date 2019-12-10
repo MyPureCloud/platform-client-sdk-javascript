@@ -4922,6 +4922,8 @@ DomainLogicalInterface <a href="#" onclick="return copyDomainLogicalInterfaceExa
   "physicalAdapterId": String, 
   "ifStatus": String, 
   "interfaceType": String, 
+  "publicNatAddressIpV4": String, 
+  "publicNatAddressIpV6": String, 
   "routes": { 
     "prefix": String, 
     "nexthop": String, 
@@ -5019,7 +5021,6 @@ DomainLogicalInterface <a href="#" onclick="return copyDomainLogicalInterfaceExa
   "useForInternalEdgeCommunication": Boolean, 
   "useForIndirectEdgeCommunication": Boolean, 
   "useForCloudProxyEdgeCommunication": Boolean, 
-  "publicNatIpAddress": String, 
   "externalTrunkBaseAssignments": { 
     "family": Number, 
     "trunkBase": { 
@@ -49434,6 +49435,8 @@ DomainLogicalInterface <a href="#" onclick="return copyDomainLogicalInterfaceExa
   "physicalAdapterId": String, 
   "ifStatus": String, 
   "interfaceType": String, 
+  "publicNatAddressIpV4": String, 
+  "publicNatAddressIpV6": String, 
   "routes": { 
     "prefix": String, 
     "nexthop": String, 
@@ -49531,7 +49534,6 @@ DomainLogicalInterface <a href="#" onclick="return copyDomainLogicalInterfaceExa
   "useForInternalEdgeCommunication": Boolean, 
   "useForIndirectEdgeCommunication": Boolean, 
   "useForCloudProxyEdgeCommunication": Boolean, 
-  "publicNatIpAddress": String, 
   "externalTrunkBaseAssignments": { 
     "family": Number, 
     "trunkBase": { 

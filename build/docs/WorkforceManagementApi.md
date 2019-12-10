@@ -1243,7 +1243,7 @@ apiInstance.getWorkforcemanagementManagementunitServicegoalgroups(managementUnit
 
 <a name="getWorkforcemanagementManagementunitSettings"></a>
 
-# ManagementUnitSettings getWorkforcemanagementManagementunitSettings(muId)
+# ManagementUnitSettingsResponse getWorkforcemanagementManagementunitSettings(muId)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -1294,7 +1294,7 @@ apiInstance.getWorkforcemanagementManagementunitSettings(muId)
 
 ### Return type
 
-**ManagementUnitSettings**
+**ManagementUnitSettingsResponse**
 
 <a name="getWorkforcemanagementManagementunitShifttradesMatched"></a>
 
@@ -2479,10 +2479,6 @@ UpdateManagementUnitRequest <a href="#" onclick="return copyUpdateManagementUnit
           "shrinkagePercent": Number, 
         },  
       },  
-      "planningPeriod": { 
-        "weekCount": Number, 
-        "startDate": Date, 
-      },  
     },  
     "shiftTrading": { 
       "enabled": Boolean, 
@@ -2865,7 +2861,7 @@ apiInstance.patchWorkforcemanagementManagementunitServicegoalgroup(managementUni
 
 <a name="patchWorkforcemanagementManagementunitSettings"></a>
 
-# ManagementUnitSettings patchWorkforcemanagementManagementunitSettings(muId, opts)
+# ManagementUnitSettingsResponse patchWorkforcemanagementManagementunitSettings(muId, opts)
 
 
 
@@ -2883,19 +2879,19 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyManagementUnitSettingsExample() {
+	function copyManagementUnitSettingsRequestExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#ManagementUnitSettingsExample').text()).select();
+		temp.val($('#ManagementUnitSettingsRequestExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-ManagementUnitSettings <a href="#" onclick="return copyManagementUnitSettingsExample()">Copy</a>
+ManagementUnitSettingsRequest <a href="#" onclick="return copyManagementUnitSettingsRequestExample()">Copy</a>
 
-<div id="ManagementUnitSettingsExample">
+<div id="ManagementUnitSettingsRequestExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
@@ -2926,10 +2922,6 @@ ManagementUnitSettings <a href="#" onclick="return copyManagementUnitSettingsExa
         "intervalIndex": Number, 
         "shrinkagePercent": Number, 
       },  
-    },  
-    "planningPeriod": { 
-      "weekCount": Number, 
-      "startDate": Date, 
     },  
   },  
   "shiftTrading": { 
@@ -3003,7 +2995,7 @@ apiInstance.patchWorkforcemanagementManagementunitSettings(muId, opts)
 
 ### Return type
 
-**ManagementUnitSettings**
+**ManagementUnitSettingsResponse**
 
 <a name="patchWorkforcemanagementManagementunitUserTimeoffrequest"></a>
 
@@ -3316,17 +3308,7 @@ WorkPlan <a href="#" onclick="return copyWorkPlanExample()">Copy</a>
   "constrainMinimumTimeBetweenShifts": Boolean, 
   "minimumTimeBetweenShiftsMinutes": Number, 
   "maximumDays": Number, 
-  "startDayOfWeekend": String, 
-  "minimumConsecutiveTimeOffPerWeekMinutes": Number, 
-  "constrainMaximumConsecutiveWorkingWeekends": Boolean, 
-  "maximumConsecutiveWorkingWeekends": Number, 
   "minimumWorkingDaysPerWeek": Number, 
-  "maximumConsecutiveWorkingDays": Number, 
-  "minimumShiftStartDistanceMinutes": Number, 
-  "minimumDaysOffPerPlanningPeriod": Number, 
-  "maximumDaysOffPerPlanningPeriod": Number, 
-  "minimumPaidHoursPerPlanningPeriod": Number, 
-  "maximumPaidHoursPerPlanningPeriod": Number, 
   "optionalDays": { 
     "values": [String], 
   },  
@@ -3348,8 +3330,6 @@ WorkPlan <a href="#" onclick="return copyWorkPlanExample()">Copy</a>
     "constrainStopTime": Boolean, 
     "constrainLatestStopTime": Boolean, 
     "latestStopTimeMinutesFromMidnight": Number, 
-    "constrainEarliestStopTime": Boolean, 
-    "earliestStopTimeMinutesFromMidnight": Number, 
     "startIncrementMinutes": Number, 
     "flexiblePaidTime": Boolean, 
     "exactPaidTimeMinutes": Number, 
@@ -3358,10 +3338,6 @@ WorkPlan <a href="#" onclick="return copyWorkPlanExample()">Copy</a>
     "constrainContiguousWorkTime": Boolean, 
     "minimumContiguousWorkTimeMinutes": Number, 
     "maximumContiguousWorkTimeMinutes": Number, 
-    "synchronizeAgentsSchedules": Boolean, 
-    "synchronizationType": String, 
-    "constrainDayOff": Boolean, 
-    "dayOffRule": String, 
     "activities": { 
       "activityCodeId": String, 
       "description": String, 
@@ -3374,8 +3350,6 @@ WorkPlan <a href="#" onclick="return copyWorkPlanExample()">Copy</a>
       "startTimeIncrementMinutes": Number, 
       "countsAsPaidTime": Boolean, 
       "countsAsContiguousWorkTime": Boolean, 
-      "minimumLengthFromShiftStartMinutes": Number, 
-      "minimumLengthFromShiftEndMinutes": Number, 
       "id": String, 
       "delete": Boolean, 
     },  
@@ -7260,17 +7234,7 @@ CreateWorkPlan <a href="#" onclick="return copyCreateWorkPlanExample()">Copy</a>
   "constrainMinimumTimeBetweenShifts": Boolean, 
   "minimumTimeBetweenShiftsMinutes": Number, 
   "maximumDays": Number, 
-  "startDayOfWeekend": String, 
-  "minimumConsecutiveTimeOffPerWeekMinutes": Number, 
-  "constrainMaximumConsecutiveWorkingWeekends": Boolean, 
-  "maximumConsecutiveWorkingWeekends": Number, 
   "minimumWorkingDaysPerWeek": Number, 
-  "maximumConsecutiveWorkingDays": Number, 
-  "minimumShiftStartDistanceMinutes": Number, 
-  "minimumDaysOffPerPlanningPeriod": Number, 
-  "maximumDaysOffPerPlanningPeriod": Number, 
-  "minimumPaidHoursPerPlanningPeriod": Number, 
-  "maximumPaidHoursPerPlanningPeriod": Number, 
   "optionalDays": { 
     "values": [String], 
   },  
@@ -7292,8 +7256,6 @@ CreateWorkPlan <a href="#" onclick="return copyCreateWorkPlanExample()">Copy</a>
     "constrainStopTime": Boolean, 
     "constrainLatestStopTime": Boolean, 
     "latestStopTimeMinutesFromMidnight": Number, 
-    "constrainEarliestStopTime": Boolean, 
-    "earliestStopTimeMinutesFromMidnight": Number, 
     "startIncrementMinutes": Number, 
     "flexiblePaidTime": Boolean, 
     "exactPaidTimeMinutes": Number, 
@@ -7302,10 +7264,6 @@ CreateWorkPlan <a href="#" onclick="return copyCreateWorkPlanExample()">Copy</a>
     "constrainContiguousWorkTime": Boolean, 
     "minimumContiguousWorkTimeMinutes": Number, 
     "maximumContiguousWorkTimeMinutes": Number, 
-    "synchronizeAgentsSchedules": Boolean, 
-    "synchronizationType": String, 
-    "constrainDayOff": Boolean, 
-    "dayOffRule": String, 
     "activities": { 
       "activityCodeId": String, 
       "description": String, 
@@ -7318,8 +7276,6 @@ CreateWorkPlan <a href="#" onclick="return copyCreateWorkPlanExample()">Copy</a>
       "startTimeIncrementMinutes": Number, 
       "countsAsPaidTime": Boolean, 
       "countsAsContiguousWorkTime": Boolean, 
-      "minimumLengthFromShiftStartMinutes": Number, 
-      "minimumLengthFromShiftEndMinutes": Number, 
     },  
   },  
   "agents": { 
@@ -7440,10 +7396,6 @@ CreateManagementUnitApiRequest <a href="#" onclick="return copyCreateManagementU
           "intervalIndex": Number, 
           "shrinkagePercent": Number, 
         },  
-      },  
-      "planningPeriod": { 
-        "weekCount": Number, 
-        "startDate": Date, 
       },  
     },  
     "shiftTrading": { 

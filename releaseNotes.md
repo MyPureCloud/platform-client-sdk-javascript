@@ -1,182 +1,194 @@
-Platform API version: 3616
+Platform API version: 3631
 
 
-# Major Changes (19 changes)
+# Major Changes (55 changes)
 
-**/api/v2/users/{userId}/externalid/{authorityName}** (1 change)
+**GET /api/v2/workforcemanagement/managementunits/{muId}/settings** (1 change)
 
-* Path /api/v2/users/{userId}/externalid/{authorityName} was removed
+* Response 200 type was changed from ManagementUnitSettings to ManagementUnitSettingsResponse
 
-**/api/v2/users/{userId}/externalid** (1 change)
+**PATCH /api/v2/workforcemanagement/managementunits/{muId}/settings** (1 change)
 
-* Path /api/v2/users/{userId}/externalid was removed
+* Response 200 type was changed from ManagementUnitSettings to ManagementUnitSettingsResponse
 
-**/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}** (1 change)
+**ManagementUnitSettings** (1 change)
 
-* Path /api/v2/users/{userId}/externalid/{authorityName}/{externalKey} was removed
+* Model ManagementUnitSettings was removed
 
-**/api/v2/users/externalid/{authorityName}/{externalKey}** (1 change)
+**SchedulingSettings** (1 change)
 
-* Path /api/v2/users/externalid/{authorityName}/{externalKey} was removed
+* Model SchedulingSettings was removed
 
-**GET /api/v2/flows/divisionviews** (1 change)
+**CreateManagementUnitSettings** (1 change)
 
-* Parameter includeSchemas was added
+* Model CreateManagementUnitSettings was removed
 
-**GET /api/v2/routing/queues** (1 change)
+**ManagementUnit** (1 change)
 
-* Parameter active was removed
+* Property settings was changed from ManagementUnitSettings to ManagementUnitSettingsResponse
 
-**LocationCreateUpdateDefinition** (1 change)
+**CreateManagementUnitApiRequest** (1 change)
 
-* Model LocationCreateUpdateDefinition was removed
+* Property settings was changed from CreateManagementUnitSettings to CreateManagementUnitSettingsRequest
 
-**UserExternalIdentifier** (1 change)
+**DomainLogicalInterface** (1 change)
 
-* Model UserExternalIdentifier was removed
+* Property publicNatIpAddress was removed
 
-**EvaluationAggregationQuery** (11 changes)
+**UpdateManagementUnitRequest** (1 change)
 
-* Enum value calibrationId was removed from property alternateTimeDimension
-* Enum value contextId was removed from property alternateTimeDimension
-* Enum value conversationId was removed from property alternateTimeDimension
-* Enum value divisionId was removed from property alternateTimeDimension
-* Enum value evaluationId was removed from property alternateTimeDimension
-* Enum value evaluatorId was removed from property alternateTimeDimension
-* Enum value formId was removed from property alternateTimeDimension
-* Enum value queueId was removed from property alternateTimeDimension
-* Enum value rescind was removed from property alternateTimeDimension
-* Enum value rescored was removed from property alternateTimeDimension
-* Enum value userId was removed from property alternateTimeDimension
+* Property settings was changed from ManagementUnitSettings to ManagementUnitSettingsRequest
+
+**WorkPlan** (10 changes)
+
+* Property startDayOfWeekend was removed
+* Property minimumConsecutiveTimeOffPerWeekMinutes was removed
+* Property constrainMaximumConsecutiveWorkingWeekends was removed
+* Property maximumConsecutiveWorkingWeekends was removed
+* Property maximumConsecutiveWorkingDays was removed
+* Property minimumShiftStartDistanceMinutes was removed
+* Property minimumDaysOffPerPlanningPeriod was removed
+* Property maximumDaysOffPerPlanningPeriod was removed
+* Property minimumPaidHoursPerPlanningPeriod was removed
+* Property maximumPaidHoursPerPlanningPeriod was removed
+
+**WorkPlanActivity** (2 changes)
+
+* Property minimumLengthFromShiftStartMinutes was removed
+* Property minimumLengthFromShiftEndMinutes was removed
+
+**WorkPlanShift** (6 changes)
+
+* Property constrainEarliestStopTime was removed
+* Property earliestStopTimeMinutesFromMidnight was removed
+* Property synchronizeAgentsSchedules was removed
+* Property synchronizationType was removed
+* Property constrainDayOff was removed
+* Property dayOffRule was removed
+
+**CreateWorkPlan** (10 changes)
+
+* Property startDayOfWeekend was removed
+* Property minimumConsecutiveTimeOffPerWeekMinutes was removed
+* Property constrainMaximumConsecutiveWorkingWeekends was removed
+* Property maximumConsecutiveWorkingWeekends was removed
+* Property maximumConsecutiveWorkingDays was removed
+* Property minimumShiftStartDistanceMinutes was removed
+* Property minimumDaysOffPerPlanningPeriod was removed
+* Property maximumDaysOffPerPlanningPeriod was removed
+* Property minimumPaidHoursPerPlanningPeriod was removed
+* Property maximumPaidHoursPerPlanningPeriod was removed
+
+**CreateWorkPlanActivity** (2 changes)
+
+* Property minimumLengthFromShiftStartMinutes was removed
+* Property minimumLengthFromShiftEndMinutes was removed
+
+**CreateWorkPlanShift** (6 changes)
+
+* Property constrainEarliestStopTime was removed
+* Property earliestStopTimeMinutesFromMidnight was removed
+* Property synchronizeAgentsSchedules was removed
+* Property synchronizationType was removed
+* Property constrainDayOff was removed
+* Property dayOffRule was removed
+
+**WorkPlanListItemResponse** (10 changes)
+
+* Property startDayOfWeekend was removed
+* Property minimumConsecutiveTimeOffPerWeekMinutes was removed
+* Property constrainMaximumConsecutiveWorkingWeekends was removed
+* Property maximumConsecutiveWorkingWeekends was removed
+* Property maximumConsecutiveWorkingDays was removed
+* Property minimumShiftStartDistanceMinutes was removed
+* Property minimumDaysOffPerPlanningPeriod was removed
+* Property maximumDaysOffPerPlanningPeriod was removed
+* Property minimumPaidHoursPerPlanningPeriod was removed
+* Property maximumPaidHoursPerPlanningPeriod was removed
 
 
-# Minor Changes (39 changes)
+# Minor Changes (23 changes)
 
-**/api/v2/recordings/deletionprotection** (3 changes)
+**/api/v2/routing/settings/contactcenter** (3 changes)
 
 * Path was added
-* Operation POST was added
-* Operation PUT was added
+* Operation GET was added
+* Operation PATCH was added
 
-**DomainLogicalInterface** (3 changes)
-
-* Optional property useForIndirectEdgeCommunication was added
-* Optional property useForCloudProxyEdgeCommunication was added
-* Optional property publicNatIpAddress was added
-
-**Participant** (2 changes)
-
-* Optional property startAcwTime was added
-* Optional property endAcwTime was added
-
-**MessageEvaluation** (1 change)
+**ManagementUnitSettingsResponse** (1 change)
 
 * Model was added
 
-**ConversationAggregationQuery** (1 change)
+**SchedulingSettingsResponse** (1 change)
 
-* Optional property alternateTimeDimension was added
+* Model was added
 
-**SurveyAggregationQuery** (1 change)
+**CreateManagementUnitSettingsRequest** (1 change)
 
-* Optional property alternateTimeDimension was added
+* Model was added
 
-**CallbackMediaParticipant** (2 changes)
+**SchedulingSettingsRequest** (1 change)
 
-* Optional property startAcwTime was added
-* Optional property endAcwTime was added
+* Model was added
+
+**ValueWrapperPlanningPeriodSettings** (1 change)
+
+* Model was added
+
+**Recording** (1 change)
+
+* Optional property exportedDate was added
+
+**Dependency** (2 changes)
+
+* Enum value DIALOGENGINEBOT was added to property type
+* Enum value DIALOGENGINEBOTVERSION was added to property type
+
+**DependencyObject** (2 changes)
+
+* Enum value DIALOGENGINEBOT was added to property type
+* Enum value DIALOGENGINEBOTVERSION was added to property type
+
+**DomainLogicalInterface** (2 changes)
+
+* Optional property publicNatAddressIpV4 was added
+* Optional property publicNatAddressIpV6 was added
 
 **ReportingExportJobResponse** (1 change)
 
-* Optional property selectedColumns was added
-
-**SelectedColumns** (1 change)
-
-* Model was added
+* Optional property hasCustomParticipantAttributes was added
 
 **ReportingExportJobRequest** (1 change)
 
-* Optional property selectedColumns was added
+* Optional property hasCustomParticipantAttributes was added
 
-**ChatMediaParticipant** (2 changes)
-
-* Optional property startAcwTime was added
-* Optional property endAcwTime was added
-
-**EvaluationAggregationQuery** (1 change)
-
-* Enum value eventTime was added to property alternateTimeDimension
-
-**ParticipantBasic** (2 changes)
-
-* Optional property startAcwTime was added
-* Optional property endAcwTime was added
-
-**SubscriptionOverviewUsage** (2 changes)
-
-* Optional property bundleQuantity was added
-* Optional property isThirdParty was added
-
-**UserAggregationQuery** (1 change)
-
-* Optional property alternateTimeDimension was added
-
-**ConversationDeletionProtectionQuery** (1 change)
+**ManagementUnitSettingsRequest** (1 change)
 
 * Model was added
 
-**CobrowseMediaParticipant** (2 changes)
+**EventLog** (1 change)
 
-* Optional property startAcwTime was added
-* Optional property endAcwTime was added
+* Enum value MESSAGING_CAMPAIGN was added to property category
 
-**FlowDivisionView** (2 changes)
+**EventMessage** (1 change)
 
-* Optional property inputSchema was added
-* Optional property outputSchema was added
+* Enum value CAMPAIGN_STOPPED was added to property code
 
-**SmsPhoneNumber** (1 change)
+**RecordingMetadata** (1 change)
 
-* Optional property capabilities was added
+* Optional property exportedDate was added
 
-**EmailMediaParticipant** (2 changes)
-
-* Optional property startAcwTime was added
-* Optional property endAcwTime was added
-
-**MessageMediaParticipant** (2 changes)
-
-* Optional property startAcwTime was added
-* Optional property endAcwTime was added
-
-**CallMediaParticipant** (2 changes)
-
-* Optional property startAcwTime was added
-* Optional property endAcwTime was added
-
-**LocationCreateDefinition** (1 change)
+**ContactCenterSettings** (1 change)
 
 * Model was added
 
-**FlowAggregationQuery** (1 change)
+**TrusteeBillingOverview** (1 change)
 
-* Optional property alternateTimeDimension was added
-
-**LocationUpdateDefinition** (1 change)
-
-* Model was added
+* Enum value DEV_ORG_MONTH_TO_MONTH was added to property subscriptionType
 
 
-# Point Changes (3 changes)
+# Point Changes (1 change)
 
-**PUT /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}** (1 change)
-
-* Description was changed
-
-**GET /api/v2/quality/conversations/{conversationId}/audits** (1 change)
-
-* Description was changed
-
-**PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}** (1 change)
+**POST /api/v2/notifications/channels** (1 change)
 
 * Description was changed

@@ -2304,6 +2304,7 @@ ReportingExportJobRequest <a href="#" onclick="return copyReportingExportJobRequ
     "columnOrder": Number, 
     "columnName": String, 
   },  
+  "hasCustomParticipantAttributes": Boolean, 
 }
 ```
 

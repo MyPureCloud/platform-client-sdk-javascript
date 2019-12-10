@@ -35,6 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingQueuesDivisionviews**](RoutingApi.html#getRoutingQueuesDivisionviews) | **GET** /api/v2/routing/queues/divisionviews | Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
 [**getRoutingQueuesDivisionviewsAll**](RoutingApi.html#getRoutingQueuesDivisionviewsAll) | **GET** /api/v2/routing/queues/divisionviews/all | Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
 [**getRoutingQueuesMe**](RoutingApi.html#getRoutingQueuesMe) | **GET** /api/v2/routing/queues/me | Get a paged listing of queues the user is a member of.
+[**getRoutingSettingsContactcenter**](RoutingApi.html#getRoutingSettingsContactcenter) | **GET** /api/v2/routing/settings/contactcenter | Get Contact Center Settings
 [**getRoutingSkill**](RoutingApi.html#getRoutingSkill) | **GET** /api/v2/routing/skills/{skillId} | Get Routing Skill
 [**getRoutingSkills**](RoutingApi.html#getRoutingSkills) | **GET** /api/v2/routing/skills | Get the list of routing skills.
 [**getRoutingSmsAddress**](RoutingApi.html#getRoutingSmsAddress) | **GET** /api/v2/routing/sms/addresses/{addressId} | Get an Address by Id for SMS
@@ -49,6 +50,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUserRoutingskills**](RoutingApi.html#getUserRoutingskills) | **GET** /api/v2/users/{userId}/routingskills | List routing skills for user
 [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | **PATCH** /api/v2/routing/queues/{queueId}/users/{memberId} | Update the ring number OR joined status for a User in a Queue
 [**patchRoutingQueueUsers**](RoutingApi.html#patchRoutingQueueUsers) | **PATCH** /api/v2/routing/queues/{queueId}/users | Join or unjoin a set of users for a queue
+[**patchRoutingSettingsContactcenter**](RoutingApi.html#patchRoutingSettingsContactcenter) | **PATCH** /api/v2/routing/settings/contactcenter | Update Contact Center Settings
 [**patchUserRoutinglanguage**](RoutingApi.html#patchUserRoutinglanguage) | **PATCH** /api/v2/users/{userId}/routinglanguages/{languageId} | Update routing language proficiency or state.
 [**patchUserRoutinglanguagesBulk**](RoutingApi.html#patchUserRoutinglanguagesBulk) | **PATCH** /api/v2/users/{userId}/routinglanguages/bulk | Add bulk routing language to user. Max limit 50 languages
 [**patchUserRoutingskillsBulk**](RoutingApi.html#patchUserRoutingskillsBulk) | **PATCH** /api/v2/users/{userId}/routingskills/bulk | Bulk add routing skills to user
@@ -1718,6 +1720,55 @@ apiInstance.getRoutingQueuesMe(opts)
 ### Return type
 
 **UserQueueEntityListing**
+
+<a name="getRoutingSettingsContactcenter"></a>
+
+# ContactCenterSettings getRoutingSettingsContactcenter()
+
+
+
+GET /api/v2/routing/settings/contactcenter
+
+Get Contact Center Settings
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+apiInstance.getRoutingSettingsContactcenter()
+  .then((data) => {
+    console.log(`getRoutingSettingsContactcenter success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingSettingsContactcenter');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**ContactCenterSettings**
 
 <a name="getRoutingSkill"></a>
 
@@ -3412,6 +3463,86 @@ apiInstance.patchRoutingQueueUsers(queueId, body)
 ### Return type
 
 **QueueMemberEntityListing**
+
+<a name="patchRoutingSettingsContactcenter"></a>
+
+# void patchRoutingSettingsContactcenter(body)
+
+
+
+PATCH /api/v2/routing/settings/contactcenter
+
+Update Contact Center Settings
+
+
+
+Requires ANY permissions: 
+
+* routing:settings:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyContactCenterSettingsExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ContactCenterSettingsExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+ContactCenterSettings <a href="#" onclick="return copyContactCenterSettingsExample()">Copy</a>
+
+<div id="ContactCenterSettingsExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "removeSkillsFromBlindTransfer": Boolean, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let body = {}; // Object | Contact Center Settings
+
+apiInstance.patchRoutingSettingsContactcenter(body)
+  .then(() => {
+    console.log('patchRoutingSettingsContactcenter returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchRoutingSettingsContactcenter');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Contact Center Settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="patchUserRoutinglanguage"></a>
 
