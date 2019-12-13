@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 64.0.0
+	 * @version 65.0.0
 	 */
 
 	/**
@@ -233,6 +233,31 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
+			'DELETE', 
+			{ 'integrationId': integrationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a WhatsApp messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 */
+	deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsWhatsappIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}', 
 			'DELETE', 
 			{ 'integrationId': integrationId }, 
 			{  }, 
@@ -3631,6 +3656,31 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Send an agentless outbound message
+	 * Send an agentlesss (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
+	 * @param {Object} body Create agentless outbound messaging request
+	 */
+	postConversationsMessagesAgentless(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessagesAgentless';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/agentless', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a Facebook Integration
 	 * 
 	 * @param {Object} body FacebookIntegrationRequest
@@ -3693,6 +3743,31 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/twitter', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a WhatsApp Integration
+	 * 
+	 * @param {Object} body WhatsAppIntegrationRequest
+	 */
+	postConversationsMessagingIntegrationsWhatsapp(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsWhatsapp';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/whatsapp', 
 			'POST', 
 			{  }, 
 			{  }, 

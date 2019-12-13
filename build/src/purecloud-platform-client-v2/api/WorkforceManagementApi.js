@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 64.0.0
+	 * @version 65.0.0
 	 */
 
 	/**
@@ -1487,6 +1487,35 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{muId}/activitycodes', 
+			'POST', 
+			{ 'muId': muId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query published schedules for given given time range for set of users
+	 * 
+	 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementManagementunitAgentschedulesSearch(muId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'muId' is set
+		if (muId === undefined || muId === null) {
+			throw 'Missing the required parameter "muId" when calling postWorkforcemanagementManagementunitAgentschedulesSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{muId}/agentschedules/search', 
 			'POST', 
 			{ 'muId': muId }, 
 			{  }, 

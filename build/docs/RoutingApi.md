@@ -36,6 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingQueuesDivisionviewsAll**](RoutingApi.html#getRoutingQueuesDivisionviewsAll) | **GET** /api/v2/routing/queues/divisionviews/all | Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
 [**getRoutingQueuesMe**](RoutingApi.html#getRoutingQueuesMe) | **GET** /api/v2/routing/queues/me | Get a paged listing of queues the user is a member of.
 [**getRoutingSettingsContactcenter**](RoutingApi.html#getRoutingSettingsContactcenter) | **GET** /api/v2/routing/settings/contactcenter | Get Contact Center Settings
+[**getRoutingSettingsTranscription**](RoutingApi.html#getRoutingSettingsTranscription) | **GET** /api/v2/routing/settings/transcription | Get Transcription Settings
 [**getRoutingSkill**](RoutingApi.html#getRoutingSkill) | **GET** /api/v2/routing/skills/{skillId} | Get Routing Skill
 [**getRoutingSkills**](RoutingApi.html#getRoutingSkills) | **GET** /api/v2/routing/skills | Get the list of routing skills.
 [**getRoutingSmsAddress**](RoutingApi.html#getRoutingSmsAddress) | **GET** /api/v2/routing/sms/addresses/{addressId} | Get an Address by Id for SMS
@@ -70,6 +71,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putRoutingEmailDomainRoute**](RoutingApi.html#putRoutingEmailDomainRoute) | **PUT** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Update a route
 [**putRoutingMessageRecipient**](RoutingApi.html#putRoutingMessageRecipient) | **PUT** /api/v2/routing/message/recipients/{recipientId} | Update a recipient
 [**putRoutingQueue**](RoutingApi.html#putRoutingQueue) | **PUT** /api/v2/routing/queues/{queueId} | Update a queue
+[**putRoutingSettingsTranscription**](RoutingApi.html#putRoutingSettingsTranscription) | **PUT** /api/v2/routing/settings/transcription | Update Transcription Settings
 [**putRoutingSmsPhonenumber**](RoutingApi.html#putRoutingSmsPhonenumber) | **PUT** /api/v2/routing/sms/phonenumbers/{addressId} | Update a phone number provisioned for SMS.
 [**putRoutingUtilization**](RoutingApi.html#putRoutingUtilization) | **PUT** /api/v2/routing/utilization | Update the utilization settings.
 [**putRoutingWrapupcode**](RoutingApi.html#putRoutingWrapupcode) | **PUT** /api/v2/routing/wrapupcodes/{codeId} | Update wrap-up code
@@ -1769,6 +1771,56 @@ This endpoint does not need any parameter.
 ### Return type
 
 **ContactCenterSettings**
+
+<a name="getRoutingSettingsTranscription"></a>
+
+# TranscriptionSettings getRoutingSettingsTranscription()
+
+
+
+GET /api/v2/routing/settings/transcription
+
+Get Transcription Settings
+
+
+
+Requires ANY permissions: 
+
+* routing:transcriptionSettings:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+apiInstance.getRoutingSettingsTranscription()
+  .then((data) => {
+    console.log(`getRoutingSettingsTranscription success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingSettingsTranscription');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**TranscriptionSettings**
 
 <a name="getRoutingSkill"></a>
 
@@ -7636,6 +7688,87 @@ apiInstance.putRoutingQueue(queueId, body)
 ### Return type
 
 **Queue**
+
+<a name="putRoutingSettingsTranscription"></a>
+
+# TranscriptionSettings putRoutingSettingsTranscription(body)
+
+
+
+PUT /api/v2/routing/settings/transcription
+
+Update Transcription Settings
+
+
+
+Requires ANY permissions: 
+
+* routing:transcriptionSettings:add
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyTranscriptionSettingsExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TranscriptionSettingsExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+TranscriptionSettings <a href="#" onclick="return copyTranscriptionSettingsExample()">Copy</a>
+
+<div id="TranscriptionSettingsExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "transcription": String, 
+  "transcriptionConfidenceThreshold": Number, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let body = {}; // Object | Organization Settings
+
+apiInstance.putRoutingSettingsTranscription(body)
+  .then((data) => {
+    console.log(`putRoutingSettingsTranscription success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingSettingsTranscription');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Organization Settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+**TranscriptionSettings**
 
 <a name="putRoutingSmsPhonenumber"></a>
 

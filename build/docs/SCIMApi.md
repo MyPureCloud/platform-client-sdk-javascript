@@ -7,7 +7,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteScimGroup**](SCIMApi.html#deleteScimGroup) | **DELETE** /api/v2/scim/groups/{groupId} | Delete a group.
 [**deleteScimUser**](SCIMApi.html#deleteScimUser) | **DELETE** /api/v2/scim/users/{userId} | Delete a user
+[**deleteScimV2Group**](SCIMApi.html#deleteScimV2Group) | **DELETE** /api/v2/scim/v2/groups/{groupId} | Delete a group.
 [**deleteScimV2User**](SCIMApi.html#deleteScimV2User) | **DELETE** /api/v2/scim/v2/users/{userId} | Delete a user
 [**getScimGroup**](SCIMApi.html#getScimGroup) | **GET** /api/v2/scim/groups/{groupId} | Get a group
 [**getScimGroups**](SCIMApi.html#getScimGroups) | **GET** /api/v2/scim/groups | Get a list of groups
@@ -27,13 +29,74 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchScimUser**](SCIMApi.html#patchScimUser) | **PATCH** /api/v2/scim/users/{userId} | Modify a user
 [**patchScimV2Group**](SCIMApi.html#patchScimV2Group) | **PATCH** /api/v2/scim/v2/groups/{groupId} | Modify a group
 [**patchScimV2User**](SCIMApi.html#patchScimV2User) | **PATCH** /api/v2/scim/v2/users/{userId} | Modify a user
+[**postScimGroups**](SCIMApi.html#postScimGroups) | **POST** /api/v2/scim/groups | The information used to create a group.
 [**postScimUsers**](SCIMApi.html#postScimUsers) | **POST** /api/v2/scim/users | Create a user
+[**postScimV2Groups**](SCIMApi.html#postScimV2Groups) | **POST** /api/v2/scim/v2/groups | The information used to create a group.
 [**postScimV2Users**](SCIMApi.html#postScimV2Users) | **POST** /api/v2/scim/v2/users | Create a user
 [**putScimGroup**](SCIMApi.html#putScimGroup) | **PUT** /api/v2/scim/groups/{groupId} | Replace a group
 [**putScimUser**](SCIMApi.html#putScimUser) | **PUT** /api/v2/scim/users/{userId} | Replace a user
 [**putScimV2Group**](SCIMApi.html#putScimV2Group) | **PUT** /api/v2/scim/v2/groups/{groupId} | Replace a group
 [**putScimV2User**](SCIMApi.html#putScimV2User) | **PUT** /api/v2/scim/v2/users/{userId} | Replace a user
 {: class="table table-striped"}
+
+<a name="deleteScimGroup"></a>
+
+# void deleteScimGroup(groupId, opts)
+
+
+
+DELETE /api/v2/scim/groups/{groupId}
+
+Delete a group.
+
+
+
+Requires ANY permissions: 
+
+* directory:group:edit
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SCIMApi();
+
+let groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
+let opts = { 
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\".
+};
+
+apiInstance.deleteScimGroup(groupId, opts)
+  .then(() => {
+    console.log('deleteScimGroup returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteScimGroup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **groupId** | **String** | The ID of a group. Returned with GET /api/v2/scim/v2/groups. |  |
+ **ifMatch** | **String** | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deleteScimUser"></a>
 
@@ -93,6 +156,65 @@ apiInstance.deleteScimUser(userId, opts)
 ### Return type
 
 **Empty**
+
+<a name="deleteScimV2Group"></a>
+
+# void deleteScimV2Group(groupId, opts)
+
+
+
+DELETE /api/v2/scim/v2/groups/{groupId}
+
+Delete a group.
+
+
+
+Requires ANY permissions: 
+
+* directory:group:edit
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SCIMApi();
+
+let groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
+let opts = { 
+  'ifMatch': "ifMatch_example" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\".
+};
+
+apiInstance.deleteScimV2Group(groupId, opts)
+  .then(() => {
+    console.log('deleteScimV2Group returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteScimV2Group');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **groupId** | **String** | The ID of a group. Returned with GET /api/v2/scim/v2/groups. |  |
+ **ifMatch** | **String** | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deleteScimV2User"></a>
 
@@ -1399,6 +1521,100 @@ apiInstance.patchScimV2User(userId, body, opts)
 
 **ScimV2User**
 
+<a name="postScimGroups"></a>
+
+# ScimV2Group postScimGroups(body)
+
+
+
+POST /api/v2/scim/groups
+
+The information used to create a group.
+
+PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+
+Requires ANY permissions: 
+
+* directory:group:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyScimV2GroupExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ScimV2GroupExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+ScimV2Group <a href="#" onclick="return copyScimV2GroupExample()">Copy</a>
+
+<div id="ScimV2GroupExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "schemas": [String], 
+  "displayName": String, 
+  "externalId": String, 
+  "members": { 
+    "type": String, 
+    "value": String, 
+    "$ref": String, 
+  },  
+  "meta": { 
+    "resourceType": String, 
+    "lastModified": Date, 
+    "location": String, 
+    "version": String, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SCIMApi();
+
+let body = {}; // Object | The information used to create a group.
+
+apiInstance.postScimGroups(body)
+  .then((data) => {
+    console.log(`postScimGroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postScimGroups');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The information used to create a group. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ScimV2Group**
+
 <a name="postScimUsers"></a>
 
 # ScimV2User postScimUsers(body)
@@ -1512,6 +1728,100 @@ apiInstance.postScimUsers(body)
 ### Return type
 
 **ScimV2User**
+
+<a name="postScimV2Groups"></a>
+
+# ScimV2Group postScimV2Groups(body)
+
+
+
+POST /api/v2/scim/v2/groups
+
+The information used to create a group.
+
+PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+
+Requires ANY permissions: 
+
+* directory:group:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyScimV2GroupExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ScimV2GroupExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+ScimV2Group <a href="#" onclick="return copyScimV2GroupExample()">Copy</a>
+
+<div id="ScimV2GroupExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "schemas": [String], 
+  "displayName": String, 
+  "externalId": String, 
+  "members": { 
+    "type": String, 
+    "value": String, 
+    "$ref": String, 
+  },  
+  "meta": { 
+    "resourceType": String, 
+    "lastModified": Date, 
+    "location": String, 
+    "version": String, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SCIMApi();
+
+let body = {}; // Object | The information used to create a group.
+
+apiInstance.postScimV2Groups(body)
+  .then((data) => {
+    console.log(`postScimV2Groups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postScimV2Groups');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The information used to create a group. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ScimV2Group**
 
 <a name="postScimV2Users"></a>
 
@@ -1666,6 +1976,7 @@ ScimV2Group <a href="#" onclick="return copyScimV2GroupExample()">Copy</a>
   "id": String, 
   "schemas": [String], 
   "displayName": String, 
+  "externalId": String, 
   "members": { 
     "type": String, 
     "value": String, 
@@ -1893,6 +2204,7 @@ ScimV2Group <a href="#" onclick="return copyScimV2GroupExample()">Copy</a>
   "id": String, 
   "schemas": [String], 
   "displayName": String, 
+  "externalId": String, 
   "members": { 
     "type": String, 
     "value": String, 

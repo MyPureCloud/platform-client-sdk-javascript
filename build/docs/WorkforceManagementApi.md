@@ -57,6 +57,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementTimeoffrequest) | **PATCH** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Update a time off request for the current user
 [**postWorkforcemanagementAdherenceHistorical**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceHistorical) | **POST** /api/v2/workforcemanagement/adherence/historical | Request a historical adherence report for users across management units
 [**postWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitActivitycodes) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/activitycodes | Create a new activity code
+[**postWorkforcemanagementManagementunitAgentschedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitAgentschedulesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/agentschedules/search | Query published schedules for given given time range for set of users
 [**postWorkforcemanagementManagementunitHistoricaladherencequery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitHistoricaladherencequery) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/historicaladherencequery | Request a historical adherence report
 [**postWorkforcemanagementManagementunitIntraday**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitIntraday) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/intraday | Get intraday data for the given date for the requested queueIds
 [**postWorkforcemanagementManagementunitMove**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitMove) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/move | Move the requested management unit to a new business unit
@@ -1030,7 +1031,7 @@ Gets the result of a specific scheduling run
 
 Requires ANY permissions: 
 
-* wfm:schedule:generate
+* wfm:schedule:edit
 
 
 
@@ -2492,6 +2493,7 @@ UpdateManagementUnitRequest <a href="#" onclick="return copyUpdateManagementUnit
       "requiresMatchingQueues": Boolean, 
       "requiresMatchingLanguages": Boolean, 
       "requiresMatchingSkills": Boolean, 
+      "requiresMatchingPlanningGroups": Boolean, 
       "activityCategoryRules": { 
         "activityCategory": String, 
         "action": String, 
@@ -2667,7 +2669,7 @@ Marks a specific scheduling run as applied, allowing a new rescheduling run to b
 
 Requires ANY permissions: 
 
-* wfm:schedule:generate
+* wfm:schedule:edit
 
 
 ### Request Body Schema
@@ -2936,6 +2938,7 @@ ManagementUnitSettingsRequest <a href="#" onclick="return copyManagementUnitSett
     "requiresMatchingQueues": Boolean, 
     "requiresMatchingLanguages": Boolean, 
     "requiresMatchingSkills": Boolean, 
+    "requiresMatchingPlanningGroups": Boolean, 
     "activityCategoryRules": { 
       "activityCategory": String, 
       "action": String, 
@@ -3679,6 +3682,93 @@ apiInstance.postWorkforcemanagementManagementunitActivitycodes(muId, opts)
 ### Return type
 
 **ActivityCode**
+
+<a name="postWorkforcemanagementManagementunitAgentschedulesSearch"></a>
+
+# UserScheduleContainer postWorkforcemanagementManagementunitAgentschedulesSearch(muId, opts)
+
+
+
+POST /api/v2/workforcemanagement/managementunits/{muId}/agentschedules/search
+
+Query published schedules for given given time range for set of users
+
+
+
+Requires ANY permissions: 
+
+* wfm:publishedSchedule:view
+* wfm:schedule:view
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyBuSearchAgentSchedulesRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#BuSearchAgentSchedulesRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+BuSearchAgentSchedulesRequest <a href="#" onclick="return copyBuSearchAgentSchedulesRequestExample()">Copy</a>
+
+<div id="BuSearchAgentSchedulesRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "startDate": Date, 
+  "endDate": Date, 
+  "userIds": [String], 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
+  'body': {} // Object | body
+};
+
+apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(muId, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementManagementunitAgentschedulesSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitAgentschedulesSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserScheduleContainer**
 
 <a name="postWorkforcemanagementManagementunitHistoricaladherencequery"></a>
 
@@ -6271,7 +6361,7 @@ Start a scheduling run to compute the reschedule. When the scheduling run finish
 
 Requires ANY permissions: 
 
-* wfm:schedule:edit
+* wfm:schedule:generate
 
 
 ### Request Body Schema
@@ -7410,6 +7500,7 @@ CreateManagementUnitApiRequest <a href="#" onclick="return copyCreateManagementU
       "requiresMatchingQueues": Boolean, 
       "requiresMatchingLanguages": Boolean, 
       "requiresMatchingSkills": Boolean, 
+      "requiresMatchingPlanningGroups": Boolean, 
       "activityCategoryRules": { 
         "activityCategory": String, 
         "action": String, 

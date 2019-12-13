@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsFacebookIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Delete a Facebook messaging integration
 [**deleteConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsLineIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/line/{integrationId} | Delete a LINE messenger integration
 [**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Delete a Twitter messaging integration
+[**deleteConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsWhatsappIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Delete a WhatsApp messaging integration
 [**getAnalyticsConversationDetails**](ConversationsApi.html#getAnalyticsConversationDetails) | **GET** /api/v2/analytics/conversations/{conversationId}/details | Get a conversation by id
 [**getAnalyticsConversationsDetails**](ConversationsApi.html#getAnalyticsConversationsDetails) | **GET** /api/v2/analytics/conversations/details | Gets multiple conversations by id
 [**getAnalyticsConversationsDetailsJob**](ConversationsApi.html#getAnalyticsConversationsDetailsJob) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId} | Get status for async query for conversation details
@@ -128,9 +129,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsMessageMessagesBulk**](ConversationsApi.html#postConversationsMessageMessagesBulk) | **POST** /api/v2/conversations/messages/{conversationId}/messages/bulk | Get messages in batch
 [**postConversationsMessageParticipantReplace**](ConversationsApi.html#postConversationsMessageParticipantReplace) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationsMessages**](ConversationsApi.html#postConversationsMessages) | **POST** /api/v2/conversations/messages | Create an outbound messaging conversation.
+[**postConversationsMessagesAgentless**](ConversationsApi.html#postConversationsMessagesAgentless) | **POST** /api/v2/conversations/messages/agentless | Send an agentless outbound message
 [**postConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#postConversationsMessagingIntegrationsFacebook) | **POST** /api/v2/conversations/messaging/integrations/facebook | Create a Facebook Integration
 [**postConversationsMessagingIntegrationsLine**](ConversationsApi.html#postConversationsMessagingIntegrationsLine) | **POST** /api/v2/conversations/messaging/integrations/line | Create a LINE messenger Integration
 [**postConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#postConversationsMessagingIntegrationsTwitter) | **POST** /api/v2/conversations/messaging/integrations/twitter | Create a Twitter Integration
+[**postConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#postConversationsMessagingIntegrationsWhatsapp) | **POST** /api/v2/conversations/messaging/integrations/whatsapp | Create a WhatsApp Integration
 [**putConversationParticipantFlaggedreason**](ConversationsApi.html#putConversationParticipantFlaggedreason) | **PUT** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Set flagged reason on conversation participant to indicate bad conversation quality.
 [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | **PUT** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata | Set uuiData to be sent on future commands.
 [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | **PUT** /api/v2/conversations/emails/{conversationId}/messages/draft | Update conversation draft reply
@@ -582,6 +585,61 @@ apiInstance.deleteConversationsMessagingIntegrationsTwitterIntegrationId(integra
 ### Return type
 
 void (no response body)
+
+<a name="deleteConversationsMessagingIntegrationsWhatsappIntegrationId"></a>
+
+# WhatsAppIntegration deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId)
+
+
+
+DELETE /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}
+
+Delete a WhatsApp messaging integration
+
+
+
+Requires ANY permissions: 
+
+* messaging:integration:delete
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId)
+  .then((data) => {
+    console.log(`deleteConversationsMessagingIntegrationsWhatsappIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsMessagingIntegrationsWhatsappIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**WhatsAppIntegration**
 
 <a name="getAnalyticsConversationDetails"></a>
 
@@ -45159,6 +45217,89 @@ apiInstance.postConversationsMessages(body)
 
 **MessageConversation**
 
+<a name="postConversationsMessagesAgentless"></a>
+
+# SendAgentlessOutboundMessageResponse postConversationsMessagesAgentless(body)
+
+
+
+POST /api/v2/conversations/messages/agentless
+
+Send an agentless outbound message
+
+Send an agentlesss (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
+
+Requires ANY permissions: 
+
+* conversation:message:create
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copySendAgentlessOutboundMessageRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#SendAgentlessOutboundMessageRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+SendAgentlessOutboundMessageRequest <a href="#" onclick="return copySendAgentlessOutboundMessageRequestExample()">Copy</a>
+
+<div id="SendAgentlessOutboundMessageRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "fromAddress": String, 
+  "toAddress": String, 
+  "toAddressMessengerType": String, 
+  "textBody": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | Create agentless outbound messaging request
+
+apiInstance.postConversationsMessagesAgentless(body)
+  .then((data) => {
+    console.log(`postConversationsMessagesAgentless success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessagesAgentless');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Create agentless outbound messaging request |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SendAgentlessOutboundMessageResponse**
+
 <a name="postConversationsMessagingIntegrationsFacebook"></a>
 
 # FacebookIntegration postConversationsMessagingIntegrationsFacebook(body)
@@ -45419,6 +45560,90 @@ apiInstance.postConversationsMessagingIntegrationsTwitter(body)
 ### Return type
 
 **TwitterIntegration**
+
+<a name="postConversationsMessagingIntegrationsWhatsapp"></a>
+
+# WhatsAppIntegration postConversationsMessagingIntegrationsWhatsapp(body)
+
+
+
+POST /api/v2/conversations/messaging/integrations/whatsapp
+
+Create a WhatsApp Integration
+
+
+
+Requires ANY permissions: 
+
+* messaging:whatsappIntegration:add
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyWhatsAppIntegrationRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#WhatsAppIntegrationRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+WhatsAppIntegrationRequest <a href="#" onclick="return copyWhatsAppIntegrationRequestExample()">Copy</a>
+
+<div id="WhatsAppIntegrationRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "phoneNumber": String, 
+  "wabaCertificate": String, 
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | WhatsAppIntegrationRequest
+
+apiInstance.postConversationsMessagingIntegrationsWhatsapp(body)
+  .then((data) => {
+    console.log(`postConversationsMessagingIntegrationsWhatsapp success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessagingIntegrationsWhatsapp');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | WhatsAppIntegrationRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**WhatsAppIntegration**
 
 <a name="putConversationParticipantFlaggedreason"></a>
 

@@ -736,6 +736,7 @@ declare class ConversationsApi {
   	deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId: string): Promise<void>; 
   	deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId: string): Promise<void>; 
   	deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId: string): Promise<void>; 
+  	deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId: string): Promise<Models.WhatsAppIntegration>; 
   	getAnalyticsConversationDetails(conversationId: string): Promise<Models.AnalyticsConversation>; 
   	getAnalyticsConversationsDetails(opts?: ConversationsApi.getAnalyticsConversationsDetailsOptions): Promise<Models.AnalyticsConversationMultiGetResponse>; 
   	getAnalyticsConversationsDetailsJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
@@ -849,9 +850,11 @@ declare class ConversationsApi {
   	postConversationsMessageMessagesBulk(conversationId: string, opts?: ConversationsApi.postConversationsMessageMessagesBulkOptions): Promise<Models.TextMessageListing>; 
   	postConversationsMessageParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>; 
   	postConversationsMessages(body: Models.CreateOutboundMessagingConversationRequest): Promise<Models.MessageConversation>; 
+  	postConversationsMessagesAgentless(body: Models.SendAgentlessOutboundMessageRequest): Promise<Models.SendAgentlessOutboundMessageResponse>; 
   	postConversationsMessagingIntegrationsFacebook(body: Models.FacebookIntegrationRequest): Promise<Models.FacebookIntegration>; 
   	postConversationsMessagingIntegrationsLine(body: Models.LineIntegrationRequest): Promise<Models.LineIntegration>; 
   	postConversationsMessagingIntegrationsTwitter(body: Models.TwitterIntegrationRequest): Promise<Models.TwitterIntegration>; 
+  	postConversationsMessagingIntegrationsWhatsapp(body: Models.WhatsAppIntegrationRequest): Promise<Models.WhatsAppIntegration>; 
   	putConversationParticipantFlaggedreason(conversationId: string, participantId: string): Promise<void>; 
   	putConversationsCallParticipantCommunicationUuidata(conversationId: string, participantId: string, communicationId: string, body: Models.SetUuiDataRequest): Promise<Models.Empty>; 
   	putConversationsEmailMessagesDraft(conversationId: string, body: Models.EmailMessage): Promise<Models.EmailMessage>; 
@@ -2399,6 +2402,7 @@ declare class RoutingApi {
   	getRoutingQueuesDivisionviewsAll(opts?: RoutingApi.getRoutingQueuesDivisionviewsAllOptions): Promise<Models.QueueEntityListing>; 
   	getRoutingQueuesMe(opts?: RoutingApi.getRoutingQueuesMeOptions): Promise<Models.UserQueueEntityListing>; 
   	getRoutingSettingsContactcenter(): Promise<Models.ContactCenterSettings>; 
+  	getRoutingSettingsTranscription(): Promise<Models.TranscriptionSettings>; 
   	getRoutingSkill(skillId: string): Promise<Models.RoutingSkill>; 
   	getRoutingSkills(opts?: RoutingApi.getRoutingSkillsOptions): Promise<Models.SkillEntityListing>; 
   	getRoutingSmsAddress(addressId: string): Promise<Models.SmsAddress>; 
@@ -2433,6 +2437,7 @@ declare class RoutingApi {
   	putRoutingEmailDomainRoute(domainName: string, routeId: string, body: Models.InboundRoute): Promise<Models.InboundRoute>; 
   	putRoutingMessageRecipient(recipientId: string, body: Models.Recipient): Promise<Models.Recipient>; 
   	putRoutingQueue(queueId: string, body: Models.QueueRequest): Promise<Models.Queue>; 
+  	putRoutingSettingsTranscription(body: Models.TranscriptionSettings): Promise<Models.TranscriptionSettings>; 
   	putRoutingSmsPhonenumber(addressId: string, body: Models.SmsPhoneNumber): Promise<Models.SmsPhoneNumber>; 
   	putRoutingUtilization(body: Models.Utilization): Promise<Models.Utilization>; 
   	putRoutingWrapupcode(codeId: string, body: Models.WrapupCode): Promise<Models.WrapupCode>; 
@@ -2557,7 +2562,9 @@ declare namespace RoutingApi {
 }
 
 declare class SCIMApi {  
+  	deleteScimGroup(groupId: string, opts?: SCIMApi.deleteScimGroupOptions): Promise<void>; 
   	deleteScimUser(userId: string, opts?: SCIMApi.deleteScimUserOptions): Promise<Models.Empty>; 
+  	deleteScimV2Group(groupId: string, opts?: SCIMApi.deleteScimV2GroupOptions): Promise<void>; 
   	deleteScimV2User(userId: string, opts?: SCIMApi.deleteScimV2UserOptions): Promise<Models.Empty>; 
   	getScimGroup(groupId: string, opts?: SCIMApi.getScimGroupOptions): Promise<Models.ScimV2Group>; 
   	getScimGroups(opts?: SCIMApi.getScimGroupsOptions): Promise<Models.ScimGroupListResponse>; 
@@ -2577,7 +2584,9 @@ declare class SCIMApi {
   	patchScimUser(userId: string, body: Models.ScimV2PatchRequest, opts?: SCIMApi.patchScimUserOptions): Promise<Models.ScimV2User>; 
   	patchScimV2Group(groupId: string, body: Models.ScimV2PatchRequest, opts?: SCIMApi.patchScimV2GroupOptions): Promise<Models.ScimV2Group>; 
   	patchScimV2User(userId: string, body: Models.ScimV2PatchRequest, opts?: SCIMApi.patchScimV2UserOptions): Promise<Models.ScimV2User>; 
+  	postScimGroups(body: Models.ScimV2Group): Promise<Models.ScimV2Group>; 
   	postScimUsers(body: Models.ScimV2CreateUser): Promise<Models.ScimV2User>; 
+  	postScimV2Groups(body: Models.ScimV2Group): Promise<Models.ScimV2Group>; 
   	postScimV2Users(body: Models.ScimV2CreateUser): Promise<Models.ScimV2User>; 
   	putScimGroup(groupId: string, body: Models.ScimV2Group, opts?: SCIMApi.putScimGroupOptions): Promise<Models.ScimV2Group>; 
   	putScimUser(userId: string, body: Models.ScimV2User, opts?: SCIMApi.putScimUserOptions): Promise<Models.ScimV2User>; 
@@ -2586,7 +2595,13 @@ declare class SCIMApi {
 }
 
 declare namespace SCIMApi { 
+	export interface deleteScimGroupOptions { 
+		"ifMatch"?: string;
+	}
 	export interface deleteScimUserOptions { 
+		"ifMatch"?: string;
+	}
+	export interface deleteScimV2GroupOptions { 
 		"ifMatch"?: string;
 	}
 	export interface deleteScimV2UserOptions { 
@@ -3522,6 +3537,7 @@ declare class WorkforceManagementApi {
   	patchWorkforcemanagementTimeoffrequest(timeOffRequestId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementTimeoffrequestOptions): Promise<Models.TimeOffRequestResponse>; 
   	postWorkforcemanagementAdherenceHistorical(opts?: WorkforceManagementApi.postWorkforcemanagementAdherenceHistoricalOptions): Promise<Models.WfmHistoricalAdherenceResponse>; 
   	postWorkforcemanagementManagementunitActivitycodes(muId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitActivitycodesOptions): Promise<Models.ActivityCode>; 
+  	postWorkforcemanagementManagementunitAgentschedulesSearch(muId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitAgentschedulesSearchOptions): Promise<Models.UserScheduleContainer>; 
   	postWorkforcemanagementManagementunitHistoricaladherencequery(muId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitHistoricaladherencequeryOptions): Promise<Models.WfmHistoricalAdherenceResponse>; 
   	postWorkforcemanagementManagementunitIntraday(muId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitIntradayOptions): Promise<Models.IntradayResponse>; 
   	postWorkforcemanagementManagementunitMove(muId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitMoveOptions): Promise<Models.MoveManagementUnitResponse>; 
@@ -3616,6 +3632,9 @@ declare namespace WorkforceManagementApi {
 	}
 	export interface postWorkforcemanagementManagementunitActivitycodesOptions { 
 		"body"?: Models.CreateActivityCodeRequest;
+	}
+	export interface postWorkforcemanagementManagementunitAgentschedulesSearchOptions { 
+		"body"?: Models.BuSearchAgentSchedulesRequest;
 	}
 	export interface postWorkforcemanagementManagementunitHistoricaladherencequeryOptions { 
 		"body"?: Models.WfmHistoricalAdherenceQuery;
@@ -4184,6 +4203,7 @@ declare namespace Models {
 		"journeyActionMapVersion"?: string;
 		"protocolCallId"?: string;
 		"provider"?: string;
+		"remote"?: string;
 	}
 	
 	export interface AnalyticsSessionMetric { 
@@ -4793,6 +4813,12 @@ declare namespace Models {
 		"interests"?: Array<string>;
 		"hobbies"?: Array<string>;
 		"spouse"?: string;
+	}
+	
+	export interface BuSearchAgentSchedulesRequest { 
+		"startDate": string;
+		"endDate": string;
+		"userIds"?: Array<string>;
 	}
 	
 	export interface Bullseye { 
@@ -12690,6 +12716,11 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface ManagementUnitReference { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface ManagementUnitSettingsRequest { 
 		"adherence"?: Models.AdherenceSettings;
 		"shortTermForecasting"?: Models.ShortTermForecastingSettings;
@@ -17374,7 +17405,8 @@ declare namespace Models {
 	export interface ScimV2Group { 
 		"id"?: string;
 		"schemas"?: Array<string>;
-		"displayName"?: string;
+		"displayName": string;
+		"externalId"?: string;
 		"members"?: Array<Models.ScimV2MemberReference>;
 		"meta"?: Models.ScimMetadata;
 	}
@@ -17622,6 +17654,25 @@ declare namespace Models {
 		"columnName"?: string;
 	}
 	
+	export interface SendAgentlessOutboundMessageRequest { 
+		"fromAddress": string;
+		"toAddress": string;
+		"toAddressMessengerType": string;
+		"textBody": string;
+	}
+	
+	export interface SendAgentlessOutboundMessageResponse { 
+		"id"?: string;
+		"conversationId"?: string;
+		"fromAddress"?: string;
+		"toAddress"?: string;
+		"messengerType"?: string;
+		"textBody"?: string;
+		"timestamp"?: string;
+		"selfUri"?: string;
+		"user"?: Models.AddressableEntityRef;
+	}
+	
 	export interface SequenceSchedule { 
 		"id"?: string;
 		"name"?: string;
@@ -17777,6 +17828,7 @@ declare namespace Models {
 		"requiresMatchingQueues"?: boolean;
 		"requiresMatchingLanguages"?: boolean;
 		"requiresMatchingSkills"?: boolean;
+		"requiresMatchingPlanningGroups"?: boolean;
 		"activityCategoryRules"?: Array<Models.ShiftTradeActivityRule>;
 	}
 	
@@ -18664,6 +18716,11 @@ declare namespace Models {
 		"url"?: string;
 		"conversation"?: Models.AddressableEntityRef;
 		"communicationId"?: string;
+	}
+	
+	export interface TranscriptionSettings { 
+		"transcription": string;
+		"transcriptionConfidenceThreshold": number;
 	}
 	
 	export interface TransferRequest { 
@@ -20716,6 +20773,14 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface WhatsAppIntegrationRequest { 
+		"id"?: string;
+		"name": string;
+		"phoneNumber": string;
+		"wabaCertificate": string;
+		"selfUri"?: string;
+	}
+	
 	export interface WhatsAppIntegrationUpdateRequest { 
 		"id"?: string;
 		"name"?: string;
@@ -20835,7 +20900,9 @@ declare namespace Models {
 	}
 	
 	export interface WorkPlanReference { 
-		"id": string;
+		"id"?: string;
+		"managementUnit"?: Models.ManagementUnitReference;
+		"selfUri"?: string;
 	}
 	
 	export interface WorkPlanShift { 

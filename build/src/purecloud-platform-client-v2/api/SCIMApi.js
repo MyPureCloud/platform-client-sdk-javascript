@@ -5,7 +5,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 64.0.0
+	 * @version 65.0.0
 	 */
 
 	/**
@@ -19,6 +19,35 @@ class SCIMApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete a group.
+	 * 
+	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;.
+	 */
+	deleteScimGroup(groupId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'groupId' is set
+		if (groupId === undefined || groupId === null) {
+			throw 'Missing the required parameter "groupId" when calling deleteScimGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scim/groups/{groupId}', 
+			'DELETE', 
+			{ 'groupId': groupId }, 
+			{  }, 
+			{ 'If-Match': opts['ifMatch'] }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
+		);
+	}
 
 	/**
 	 * Delete a user
@@ -39,6 +68,35 @@ class SCIMApi {
 			'/api/v2/scim/users/{userId}', 
 			'DELETE', 
 			{ 'userId': userId }, 
+			{  }, 
+			{ 'If-Match': opts['ifMatch'] }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
+		);
+	}
+
+	/**
+	 * Delete a group.
+	 * 
+	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;.
+	 */
+	deleteScimV2Group(groupId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'groupId' is set
+		if (groupId === undefined || groupId === null) {
+			throw 'Missing the required parameter "groupId" when calling deleteScimV2Group';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scim/v2/groups/{groupId}', 
+			'DELETE', 
+			{ 'groupId': groupId }, 
 			{  }, 
 			{ 'If-Match': opts['ifMatch'] }, 
 			{  }, 
@@ -585,6 +643,31 @@ class SCIMApi {
 	}
 
 	/**
+	 * The information used to create a group.
+	 * PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+	 * @param {Object} body The information used to create a group.
+	 */
+	postScimGroups(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postScimGroups';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scim/groups', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
+		);
+	}
+
+	/**
 	 * Create a user
 	 * 
 	 * @param {Object} body The information used to create a user.
@@ -597,6 +680,31 @@ class SCIMApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/scim/users', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
+		);
+	}
+
+	/**
+	 * The information used to create a group.
+	 * PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+	 * @param {Object} body The information used to create a group.
+	 */
+	postScimV2Groups(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postScimV2Groups';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scim/v2/groups', 
 			'POST', 
 			{  }, 
 			{  }, 

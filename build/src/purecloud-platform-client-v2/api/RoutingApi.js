@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 64.0.0
+	 * @version 65.0.0
 	 */
 
 	/**
@@ -799,6 +799,26 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/settings/contactcenter', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Transcription Settings
+	 * 
+	 */
+	getRoutingSettingsTranscription() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/settings/transcription', 
 			'GET', 
 			{  }, 
 			{  }, 
@@ -1762,6 +1782,31 @@ class RoutingApi {
 			'/api/v2/routing/queues/{queueId}', 
 			'PUT', 
 			{ 'queueId': queueId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Transcription Settings
+	 * 
+	 * @param {Object} body Organization Settings
+	 */
+	putRoutingSettingsTranscription(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingSettingsTranscription';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/settings/transcription', 
+			'PUT', 
+			{  }, 
 			{  }, 
 			{  }, 
 			{  }, 
