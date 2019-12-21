@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteAnalyticsConversationsDetailsJob**](AnalyticsApi.html#deleteAnalyticsConversationsDetailsJob) | **DELETE** /api/v2/analytics/conversations/details/jobs/{jobId} | Delete/cancel an async request
 [**deleteAnalyticsReportingSchedule**](AnalyticsApi.html#deleteAnalyticsReportingSchedule) | **DELETE** /api/v2/analytics/reporting/schedules/{scheduleId} | Delete a scheduled report job.
+[**deleteAnalyticsUsersDetailsJob**](AnalyticsApi.html#deleteAnalyticsUsersDetailsJob) | **DELETE** /api/v2/analytics/users/details/jobs/{jobId} | Delete/cancel an async request
 [**getAnalyticsConversationDetails**](AnalyticsApi.html#getAnalyticsConversationDetails) | **GET** /api/v2/analytics/conversations/{conversationId}/details | Get a conversation by id
 [**getAnalyticsConversationsDetails**](AnalyticsApi.html#getAnalyticsConversationsDetails) | **GET** /api/v2/analytics/conversations/details | Gets multiple conversations by id
 [**getAnalyticsConversationsDetailsJob**](AnalyticsApi.html#getAnalyticsConversationsDetailsJob) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId} | Get status for async query for conversation details
@@ -23,6 +24,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsReportingScheduleHistoryRunId**](AnalyticsApi.html#getAnalyticsReportingScheduleHistoryRunId) | **GET** /api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId} | A completed scheduled report job
 [**getAnalyticsReportingSchedules**](AnalyticsApi.html#getAnalyticsReportingSchedules) | **GET** /api/v2/analytics/reporting/schedules | Get a list of scheduled report jobs
 [**getAnalyticsReportingTimeperiods**](AnalyticsApi.html#getAnalyticsReportingTimeperiods) | **GET** /api/v2/analytics/reporting/timeperiods | Get a list of report time periods.
+[**getAnalyticsUsersDetailsJob**](AnalyticsApi.html#getAnalyticsUsersDetailsJob) | **GET** /api/v2/analytics/users/details/jobs/{jobId} | Get status for async query for user details
+[**getAnalyticsUsersDetailsJobResults**](AnalyticsApi.html#getAnalyticsUsersDetailsJobResults) | **GET** /api/v2/analytics/users/details/jobs/{jobId}/results | Fetch a page of results for an async query
 [**postAnalyticsConversationDetailsProperties**](AnalyticsApi.html#postAnalyticsConversationDetailsProperties) | **POST** /api/v2/analytics/conversations/{conversationId}/details/properties | Index conversation properties
 [**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
 [**postAnalyticsConversationsDetailsJobs**](AnalyticsApi.html#postAnalyticsConversationsDetailsJobs) | **POST** /api/v2/analytics/conversations/details/jobs | Query for conversation details asynchronously
@@ -36,6 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsReportingSchedules**](AnalyticsApi.html#postAnalyticsReportingSchedules) | **POST** /api/v2/analytics/reporting/schedules | Create a scheduled report job
 [**postAnalyticsSurveysAggregatesQuery**](AnalyticsApi.html#postAnalyticsSurveysAggregatesQuery) | **POST** /api/v2/analytics/surveys/aggregates/query | Query for survey aggregates
 [**postAnalyticsUsersAggregatesQuery**](AnalyticsApi.html#postAnalyticsUsersAggregatesQuery) | **POST** /api/v2/analytics/users/aggregates/query | Query for user aggregates
+[**postAnalyticsUsersDetailsJobs**](AnalyticsApi.html#postAnalyticsUsersDetailsJobs) | **POST** /api/v2/analytics/users/details/jobs | Query for user details asynchronously
 [**postAnalyticsUsersDetailsQuery**](AnalyticsApi.html#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
 [**postAnalyticsUsersObservationsQuery**](AnalyticsApi.html#postAnalyticsUsersObservationsQuery) | **POST** /api/v2/analytics/users/observations/query | Query for user observations
 [**putAnalyticsReportingSchedule**](AnalyticsApi.html#putAnalyticsReportingSchedule) | **PUT** /api/v2/analytics/reporting/schedules/{scheduleId} | Update a scheduled report job.
@@ -144,6 +148,61 @@ apiInstance.deleteAnalyticsReportingSchedule(scheduleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **scheduleId** | **String** | Schedule ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteAnalyticsUsersDetailsJob"></a>
+
+# void deleteAnalyticsUsersDetailsJob(jobId)
+
+
+
+DELETE /api/v2/analytics/users/details/jobs/{jobId}
+
+Delete/cancel an async request
+
+
+
+Requires ANY permissions: 
+
+* analytics:userDetail:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsUsersDetailsJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsUsersDetailsJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsUsersDetailsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -923,6 +982,120 @@ This endpoint does not need any parameter.
 ### Return type
 
 **[&#39;String&#39;]**
+
+<a name="getAnalyticsUsersDetailsJob"></a>
+
+# AsyncQueryStatus getAnalyticsUsersDetailsJob(jobId)
+
+
+
+GET /api/v2/analytics/users/details/jobs/{jobId}
+
+Get status for async query for user details
+
+
+
+Requires ANY permissions: 
+
+* analytics:userDetail:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.getAnalyticsUsersDetailsJob(jobId)
+  .then((data) => {
+    console.log(`getAnalyticsUsersDetailsJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsUsersDetailsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncQueryStatus**
+
+<a name="getAnalyticsUsersDetailsJobResults"></a>
+
+# AnalyticsUserDetailsAsyncQueryResponse getAnalyticsUsersDetailsJobResults(jobId, opts)
+
+
+
+GET /api/v2/analytics/users/details/jobs/{jobId}/results
+
+Fetch a page of results for an async query
+
+
+
+Requires ANY permissions: 
+
+* analytics:userDetail:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page)
+};
+
+apiInstance.getAnalyticsUsersDetailsJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsUsersDetailsJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsUsersDetailsJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**AnalyticsUserDetailsAsyncQueryResponse**
 
 <a name="postAnalyticsConversationDetailsProperties"></a>
 
@@ -2150,12 +2323,7 @@ ReportingExportJobRequest <a href="#" onclick="return copyReportingExportJobRequ
 ```{"language":"json", "maxHeight": "250px"}
 { 
   "name": String, 
-  "timeZone": { 
-    "displayName": String, 
-    "id": String, 
-    "rawOffset": Number, 
-    "dstsavings": Number, 
-  },  
+  "timeZone": String, 
   "exportFormat": String, 
   "interval": String, 
   "period": String, 
@@ -2758,6 +2926,178 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 ### Return type
 
 **UserAggregateQueryResponse**
+
+<a name="postAnalyticsUsersDetailsJobs"></a>
+
+# AsyncQueryResponse postAnalyticsUsersDetailsJobs(body)
+
+
+
+POST /api/v2/analytics/users/details/jobs
+
+Query for user details asynchronously
+
+
+
+Requires ANY permissions: 
+
+* analytics:userDetail:view
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyAsyncUserDetailsQueryExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#AsyncUserDetailsQueryExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+AsyncUserDetailsQuery <a href="#" onclick="return copyAsyncUserDetailsQueryExample()">Copy</a>
+
+<div id="AsyncUserDetailsQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "interval": String, 
+  "userFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "presenceFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "routingStatusFilters": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "order": String, 
+  "limit": Number, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsUsersDetailsJobs(body)
+  .then((data) => {
+    console.log(`postAnalyticsUsersDetailsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsUsersDetailsJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncQueryResponse**
 
 <a name="postAnalyticsUsersDetailsQuery"></a>
 

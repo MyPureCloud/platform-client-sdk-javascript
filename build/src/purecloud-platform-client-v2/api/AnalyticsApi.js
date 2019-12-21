@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 65.0.0
+	 * @version 66.0.0
 	 */
 
 	/**
@@ -60,6 +60,31 @@ class AnalyticsApi {
 			'/api/v2/analytics/reporting/schedules/{scheduleId}', 
 			'DELETE', 
 			{ 'scheduleId': scheduleId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request
+	 * 
+	 * @param {String} jobId jobId
+	 */
+	deleteAnalyticsUsersDetailsJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsUsersDetailsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/users/details/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -424,6 +449,60 @@ class AnalyticsApi {
 	}
 
 	/**
+	 * Get status for async query for user details
+	 * 
+	 * @param {String} jobId jobId
+	 */
+	getAnalyticsUsersDetailsJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersDetailsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/users/details/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch a page of results for an async query
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
+	 */
+	getAnalyticsUsersDetailsJobResults(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersDetailsJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/users/details/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId }, 
+			{ 'cursor': opts['cursor'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Index conversation properties
 	 * 
 	 * @param {String} conversationId conversationId
@@ -741,6 +820,31 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/users/aggregates/query', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for user details asynchronously
+	 * 
+	 * @param {Object} body query
+	 */
+	postAnalyticsUsersDetailsJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsUsersDetailsJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/users/details/jobs', 
 			'POST', 
 			{  }, 
 			{  }, 

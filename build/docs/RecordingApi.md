@@ -41,7 +41,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postRecordingLocalkeysSettings**](RecordingApi.html#postRecordingLocalkeysSettings) | **POST** /api/v2/recording/localkeys/settings | create settings for local key creation
 [**postRecordingMediaretentionpolicies**](RecordingApi.html#postRecordingMediaretentionpolicies) | **POST** /api/v2/recording/mediaretentionpolicies | Create media retention policy
 [**postRecordingRecordingkeys**](RecordingApi.html#postRecordingRecordingkeys) | **POST** /api/v2/recording/recordingkeys | Create encryption key
-[**postRecordingsDeletionprotection**](RecordingApi.html#postRecordingsDeletionprotection) | **POST** /api/v2/recordings/deletionprotection | Get a list of conversations with protected recordings
 [**putConversationRecording**](RecordingApi.html#putConversationRecording) | **PUT** /api/v2/conversations/{conversationId}/recordings/{recordingId} | Updates the retention records on a recording.
 [**putConversationRecordingAnnotation**](RecordingApi.html#putConversationRecordingAnnotation) | **PUT** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Update annotation
 [**putOrphanrecording**](RecordingApi.html#putOrphanrecording) | **PUT** /api/v2/orphanrecordings/{orphanId} | Updates an orphan recording to a regular recording with retention values
@@ -50,7 +49,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putRecordingMediaretentionpolicy**](RecordingApi.html#putRecordingMediaretentionpolicy) | **PUT** /api/v2/recording/mediaretentionpolicies/{policyId} | Update a media retention policy
 [**putRecordingRecordingkeysRotationschedule**](RecordingApi.html#putRecordingRecordingkeysRotationschedule) | **PUT** /api/v2/recording/recordingkeys/rotationschedule | Update key rotation schedule
 [**putRecordingSettings**](RecordingApi.html#putRecordingSettings) | **PUT** /api/v2/recording/settings | Update the Recording Settings for the Organization
-[**putRecordingsDeletionprotection**](RecordingApi.html#putRecordingsDeletionprotection) | **PUT** /api/v2/recordings/deletionprotection | Apply or revoke recording protection for conversations
 {: class="table table-striped"}
 
 <a name="deleteConversationRecordingAnnotation"></a>
@@ -1608,10 +1606,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -2209,10 +2207,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -2546,10 +2544,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -2882,10 +2880,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -3526,10 +3524,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -4127,10 +4125,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -4464,10 +4462,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -4800,10 +4798,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -5443,10 +5441,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -6044,10 +6042,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -6381,10 +6379,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -6717,10 +6715,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -7355,10 +7353,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -7956,10 +7954,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -8293,10 +8291,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -8629,10 +8627,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -9906,10 +9904,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -9918,10 +9916,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "pageNumber": Number, 
           "total": Number, 
           "firstUri": String, 
-          "selfUri": String, 
-          "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
+          "nextUri": String, 
+          "selfUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -10777,10 +10775,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -10789,10 +10787,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "pageNumber": Number, 
           "total": Number, 
           "firstUri": String, 
-          "selfUri": String, 
-          "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
+          "nextUri": String, 
+          "selfUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -11275,10 +11273,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -11287,10 +11285,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "pageNumber": Number, 
           "total": Number, 
           "firstUri": String, 
-          "selfUri": String, 
-          "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
+          "nextUri": String, 
+          "selfUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -11772,10 +11770,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -11784,10 +11782,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "pageNumber": Number, 
           "total": Number, 
           "firstUri": String, 
-          "selfUri": String, 
-          "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
+          "nextUri": String, 
+          "selfUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -13081,10 +13079,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -13682,10 +13680,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -14019,10 +14017,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -14355,10 +14353,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -14999,10 +14997,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -15600,10 +15598,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -15937,10 +15935,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -16273,10 +16271,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -16916,10 +16914,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -17517,10 +17515,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -17854,10 +17852,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -18190,10 +18188,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -18828,10 +18826,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -19429,10 +19427,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -19766,10 +19764,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -20102,10 +20100,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -21379,10 +21377,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -21391,10 +21389,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "pageNumber": Number, 
           "total": Number, 
           "firstUri": String, 
-          "selfUri": String, 
-          "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
+          "nextUri": String, 
+          "selfUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -22250,10 +22248,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -22262,10 +22260,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "pageNumber": Number, 
           "total": Number, 
           "firstUri": String, 
-          "selfUri": String, 
-          "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
+          "nextUri": String, 
+          "selfUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -22748,10 +22746,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -22760,10 +22758,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "pageNumber": Number, 
           "total": Number, 
           "firstUri": String, 
-          "selfUri": String, 
-          "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
+          "nextUri": String, 
+          "selfUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -23245,10 +23243,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -23257,10 +23255,10 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "pageNumber": Number, 
           "total": Number, 
           "firstUri": String, 
-          "selfUri": String, 
-          "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
+          "nextUri": String, 
+          "selfUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -23415,85 +23413,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 **EncryptionKey**
-
-<a name="postRecordingsDeletionprotection"></a>
-
-# [AddressableEntityRef] postRecordingsDeletionprotection(body)
-
-
-
-POST /api/v2/recordings/deletionprotection
-
-Get a list of conversations with protected recordings
-
-
-
-Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyConversationDeletionProtectionQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ConversationDeletionProtectionQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ConversationDeletionProtectionQuery <a href="#" onclick="return copyConversationDeletionProtectionQueryExample()">Copy</a>
-
-<div id="ConversationDeletionProtectionQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "conversationIds": [String], 
-}
-```
-
-</div>
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RecordingApi();
-
-let body = {}; // Object | conversationIds
-
-apiInstance.postRecordingsDeletionprotection(body)
-  .then((data) => {
-    console.log(`postRecordingsDeletionprotection success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postRecordingsDeletionprotection');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | conversationIds |  |
-{: class="table table-striped"}
-
-### Return type
-
-**[AddressableEntityRef]**
 
 <a name="putConversationRecording"></a>
 
@@ -26339,10 +26258,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -26940,10 +26859,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -27277,10 +27196,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -27613,10 +27532,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -28257,10 +28176,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -28858,10 +28777,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -29195,10 +29114,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -29531,10 +29450,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -30174,10 +30093,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -30775,10 +30694,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -31112,10 +31031,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -31448,10 +31367,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -32086,10 +32005,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -32687,10 +32606,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -33024,10 +32943,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -33360,10 +33279,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -34637,10 +34556,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -34649,10 +34568,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "pageNumber": Number, 
           "total": Number, 
           "firstUri": String, 
-          "selfUri": String, 
-          "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
+          "nextUri": String, 
+          "selfUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -35508,10 +35427,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -35520,10 +35439,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "pageNumber": Number, 
           "total": Number, 
           "firstUri": String, 
-          "selfUri": String, 
-          "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
+          "nextUri": String, 
+          "selfUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -36006,10 +35925,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -36018,10 +35937,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "pageNumber": Number, 
           "total": Number, 
           "firstUri": String, 
-          "selfUri": String, 
-          "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
+          "nextUri": String, 
+          "selfUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -36503,10 +36422,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "nextUri": String, 
+              "selfUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -36515,10 +36434,10 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "pageNumber": Number, 
           "total": Number, 
           "firstUri": String, 
-          "selfUri": String, 
-          "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
+          "nextUri": String, 
+          "selfUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -36788,89 +36707,4 @@ apiInstance.putRecordingSettings(body)
 ### Return type
 
 **RecordingSettings**
-
-<a name="putRecordingsDeletionprotection"></a>
-
-# void putRecordingsDeletionprotection(opts)
-
-
-
-PUT /api/v2/recordings/deletionprotection
-
-Apply or revoke recording protection for conversations
-
-
-
-Requires ANY permissions: 
-
-* recording:deletionProtection:apply
-* recording:deletionProtection:revoke
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyConversationDeletionProtectionQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ConversationDeletionProtectionQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ConversationDeletionProtectionQuery <a href="#" onclick="return copyConversationDeletionProtectionQueryExample()">Copy</a>
-
-<div id="ConversationDeletionProtectionQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "conversationIds": [String], 
-}
-```
-
-</div>
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RecordingApi();
-
-let opts = { 
-  'protect': true, // Boolean | Check for apply, uncheck for revoke (each action requires the respective permission)
-  'body': {} // Object | 
-};
-
-apiInstance.putRecordingsDeletionprotection(opts)
-  .then(() => {
-    console.log('putRecordingsDeletionprotection returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling putRecordingsDeletionprotection');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **protect** | **Boolean** | Check for apply, uncheck for revoke (each action requires the respective permission) | [optional] [default to true] |
- **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-void (no response body)
 

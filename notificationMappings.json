@@ -317,6 +317,14 @@
       "class": "WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete"
     },
     {
+      "topic": "v2.workforcemanagement.businessunits.{id}.schedules",
+      "class": "WfmBuScheduleTopicBuScheduleNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.scheduling.runs",
+      "class": "WfmBuScheduleRunTopicBuSchedulingRunProgressNotification"
+    },
+    {
       "topic": "v2.workforcemanagement.managementunits.{id}",
       "class": "WfmMoveManagementUnitTopicMoveManagementUnitNotification"
     },
@@ -327,6 +335,14 @@
     {
       "topic": "v2.workforcemanagement.managementunits.{id}.schedules",
       "class": "WfmScheduleTopicWfmScheduleNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.users.{id}.schedules.query",
+      "class": "WfmBuScheduleQueryResultTopicBuScheduleSearchResultNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.users.{id}.schedules.search",
+      "class": "WfmBuScheduleSearchResultTopicBuScheduleSearchResultNotification"
     }
   ]
 }

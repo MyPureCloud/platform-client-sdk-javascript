@@ -5,7 +5,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 65.0.0
+	 * @version 66.0.0
 	 */
 
 	/**
@@ -35,6 +35,51 @@ class OAuthApi {
 			'/api/v2/oauth/clients/{clientId}', 
 			'DELETE', 
 			{ 'clientId': clientId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a client that is authorized by the resource owner
+	 * 
+	 * @param {String} clientId The ID of client
+	 */
+	getOauthAuthorization(clientId) { 
+		// verify the required parameter 'clientId' is set
+		if (clientId === undefined || clientId === null) {
+			throw 'Missing the required parameter "clientId" when calling getOauthAuthorization';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/oauth/authorizations/{clientId}', 
+			'GET', 
+			{ 'clientId': clientId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * List clients that are authorized by the resource owner
+	 * 
+	 */
+	getOauthAuthorizations() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/oauth/authorizations', 
+			'GET', 
+			{  }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -82,6 +127,59 @@ class OAuthApi {
 			{  }, 
 			{  }, 
 			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * An OAuth scope
+	 * 
+	 * @param {String} scopeId Scope ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.acceptLanguage The language with which to display the scope description. (default to en-us)
+	 */
+	getOauthScope(scopeId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scopeId' is set
+		if (scopeId === undefined || scopeId === null) {
+			throw 'Missing the required parameter "scopeId" when calling getOauthScope';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/oauth/scopes/{scopeId}', 
+			'GET', 
+			{ 'scopeId': scopeId }, 
+			{  }, 
+			{ 'Accept-Language': opts['acceptLanguage'] }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * The list of OAuth scopes
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.acceptLanguage The language with which to display the scope descriptions. (default to en-us)
+	 */
+	getOauthScopes(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/oauth/scopes', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{ 'Accept-Language': opts['acceptLanguage'] }, 
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 

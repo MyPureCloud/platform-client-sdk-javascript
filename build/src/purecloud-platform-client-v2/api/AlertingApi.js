@@ -5,7 +5,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 65.0.0
+	 * @version 66.0.0
 	 */
 
 	/**

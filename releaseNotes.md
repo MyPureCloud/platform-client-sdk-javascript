@@ -1,119 +1,133 @@
-Platform API version: 3648
+Platform API version: 3660
 
 
-# Major Changes (1 change)
+# Major Changes (5 changes)
 
-**WorkPlanReference** (1 change)
+**/api/v2/recordings/deletionprotection** (1 change)
 
-* id has been made readonly
+* Path /api/v2/recordings/deletionprotection was removed
+
+**TimeZone** (1 change)
+
+* Model TimeZone was removed
+
+**ConversationDeletionProtectionQuery** (1 change)
+
+* Model ConversationDeletionProtectionQuery was removed
+
+**ReportingExportJobResponse** (1 change)
+
+* Property timeZone was changed from TimeZone to string
+
+**ReportingExportJobRequest** (1 change)
+
+* Property timeZone was changed from TimeZone to string
 
 
-# Minor Changes (30 changes)
+# Minor Changes (34 changes)
 
-**/api/v2/routing/settings/transcription** (3 changes)
+**/api/v2/oauth/scopes** (2 changes)
 
 * Path was added
 * Operation GET was added
-* Operation PUT was added
 
-**/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}** (1 change)
+**/api/v2/oauth/scopes/{scopeId}** (2 changes)
 
-* Operation delete was added. Summary: Delete a WhatsApp messaging integration
+* Path was added
+* Operation GET was added
 
-**/api/v2/conversations/messaging/integrations/whatsapp** (1 change)
-
-* Operation post was added. Summary: Create a WhatsApp Integration
-
-**/api/v2/conversations/messages/agentless** (2 changes)
+**/api/v2/audits/query** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/scim/groups/{groupId}** (1 change)
+**/api/v2/audits/query/{transactionId}** (2 changes)
 
-* Operation delete was added. Summary: Delete a group.
+* Path was added
+* Operation GET was added
 
-**/api/v2/scim/groups** (1 change)
+**/api/v2/audits/query/{transactionId}/results** (2 changes)
 
-* Operation post was added. Summary: The information used to create a group.
+* Path was added
+* Operation GET was added
 
-**/api/v2/scim/v2/groups/{groupId}** (1 change)
+**/api/v2/oauth/authorizations/{clientId}** (2 changes)
 
-* Operation delete was added. Summary: Delete a group.
+* Path was added
+* Operation GET was added
 
-**/api/v2/scim/v2/groups** (1 change)
-
-* Operation post was added. Summary: The information used to create a group.
-
-**POST /api/v2/workforcemanagement/managementunits/{muId}/schedules/search** (1 change)
-
-* Response 408 was added
-
-**/api/v2/workforcemanagement/managementunits/{muId}/agentschedules/search** (2 changes)
+**/api/v2/analytics/users/details/jobs** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**BuSearchAgentSchedulesRequest** (1 change)
+**/api/v2/analytics/users/details/jobs/{jobId}** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+
+**/api/v2/analytics/users/details/jobs/{jobId}/results** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/oauth/authorizations** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**OAuthScope** (1 change)
 
 * Model was added
 
-**TranscriptionSettings** (1 change)
+**OAuthScopeListing** (1 change)
 
 * Model was added
 
-**ShiftTradeSettings** (1 change)
+**AsyncQueryStatus** (1 change)
 
-* Optional property requiresMatchingPlanningGroups was added
+* Enum value QUEUED was added to property state
 
-**SegmentDetailQueryPredicate** (1 change)
-
-* Enum value remote was added to property dimension
-
-**ManagementUnitReference** (1 change)
+**AuditQueryExecutionStatusResponse** (1 change)
 
 * Model was added
 
-**WorkPlanReference** (2 changes)
-
-* Optional property managementUnit was added
-* Optional property selfUri was added
-
-**WhatsAppIntegrationRequest** (1 change)
+**AuditQueryFilter** (1 change)
 
 * Model was added
 
-**SendAgentlessOutboundMessageResponse** (1 change)
+**AuditQueryRequest** (1 change)
 
 * Model was added
 
-**SendAgentlessOutboundMessageRequest** (1 change)
+**AuditLogMessage** (1 change)
 
 * Model was added
 
-**ScimV2Group** (1 change)
+**AuditQueryExecutionResultsResponse** (1 change)
 
-* Optional property externalId was added
+* Model was added
 
-**ConversationAggregateQueryPredicate** (1 change)
+**PropertyChange** (1 change)
 
-* Enum value remote was added to property dimension
+* Model was added
 
-**ConversationAggregationQuery** (1 change)
+**OAuthAuthorization** (1 change)
 
-* Enum value remote was added to property groupBy
+* Model was added
 
-**AnalyticsSession** (1 change)
+**AsyncUserDetailsQuery** (1 change)
 
-* Optional property remote was added
+* Model was added
 
-**FlowAggregateQueryPredicate** (1 change)
+**AnalyticsUserDetailsAsyncQueryResponse** (1 change)
 
-* Enum value remote was added to property dimension
+* Model was added
 
-**FlowAggregationQuery** (1 change)
+**OAuthAuthorizationListing** (1 change)
 
-* Enum value remote was added to property groupBy
+* Model was added
 
 
 # Point Changes (0 changes)

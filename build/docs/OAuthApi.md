@@ -8,8 +8,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteOauthClient**](OAuthApi.html#deleteOauthClient) | **DELETE** /api/v2/oauth/clients/{clientId} | Delete OAuth Client
+[**getOauthAuthorization**](OAuthApi.html#getOauthAuthorization) | **GET** /api/v2/oauth/authorizations/{clientId} | Get a client that is authorized by the resource owner
+[**getOauthAuthorizations**](OAuthApi.html#getOauthAuthorizations) | **GET** /api/v2/oauth/authorizations | List clients that are authorized by the resource owner
 [**getOauthClient**](OAuthApi.html#getOauthClient) | **GET** /api/v2/oauth/clients/{clientId} | Get OAuth Client
 [**getOauthClients**](OAuthApi.html#getOauthClients) | **GET** /api/v2/oauth/clients | The list of OAuth clients
+[**getOauthScope**](OAuthApi.html#getOauthScope) | **GET** /api/v2/oauth/scopes/{scopeId} | An OAuth scope
+[**getOauthScopes**](OAuthApi.html#getOauthScopes) | **GET** /api/v2/oauth/scopes | The list of OAuth scopes
 [**postOauthClientSecret**](OAuthApi.html#postOauthClientSecret) | **POST** /api/v2/oauth/clients/{clientId}/secret | Regenerate Client Secret
 [**postOauthClients**](OAuthApi.html#postOauthClients) | **POST** /api/v2/oauth/clients | Create OAuth client
 [**putOauthClient**](OAuthApi.html#putOauthClient) | **PUT** /api/v2/oauth/clients/{clientId} | Update OAuth Client
@@ -69,6 +73,111 @@ apiInstance.deleteOauthClient(clientId)
 ### Return type
 
 void (no response body)
+
+<a name="getOauthAuthorization"></a>
+
+# OAuthAuthorization getOauthAuthorization(clientId)
+
+
+
+GET /api/v2/oauth/authorizations/{clientId}
+
+Get a client that is authorized by the resource owner
+
+
+
+Requires ANY permissions: 
+
+* oauth:client:authorize
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OAuthApi();
+
+let clientId = "clientId_example"; // String | The ID of client
+
+apiInstance.getOauthAuthorization(clientId)
+  .then((data) => {
+    console.log(`getOauthAuthorization success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOauthAuthorization');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **clientId** | **String** | The ID of client |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OAuthAuthorization**
+
+<a name="getOauthAuthorizations"></a>
+
+# OAuthAuthorizationListing getOauthAuthorizations()
+
+
+
+GET /api/v2/oauth/authorizations
+
+List clients that are authorized by the resource owner
+
+
+
+Requires ANY permissions: 
+
+* oauth:client:authorize
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OAuthApi();
+
+apiInstance.getOauthAuthorizations()
+  .then((data) => {
+    console.log(`getOauthAuthorizations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOauthAuthorizations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**OAuthAuthorizationListing**
 
 <a name="getOauthClient"></a>
 
@@ -174,6 +283,120 @@ This endpoint does not need any parameter.
 ### Return type
 
 **OAuthClientEntityListing**
+
+<a name="getOauthScope"></a>
+
+# OAuthScope getOauthScope(scopeId, opts)
+
+
+
+GET /api/v2/oauth/scopes/{scopeId}
+
+An OAuth scope
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OAuthApi();
+
+let scopeId = "scopeId_example"; // String | Scope ID
+let opts = { 
+  'acceptLanguage': "en-us" // String | The language with which to display the scope description.
+};
+
+apiInstance.getOauthScope(scopeId, opts)
+  .then((data) => {
+    console.log(`getOauthScope success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOauthScope');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **scopeId** | **String** | Scope ID |  |
+ **acceptLanguage** | **String** | The language with which to display the scope description. | [optional] [default to en-us] |
+{: class="table table-striped"}
+
+### Return type
+
+**OAuthScope**
+
+<a name="getOauthScopes"></a>
+
+# OAuthScopeListing getOauthScopes(opts)
+
+
+
+GET /api/v2/oauth/scopes
+
+The list of OAuth scopes
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OAuthApi();
+
+let opts = { 
+  'acceptLanguage': "en-us" // String | The language with which to display the scope descriptions.
+};
+
+apiInstance.getOauthScopes(opts)
+  .then((data) => {
+    console.log(`getOauthScopes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOauthScopes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **acceptLanguage** | **String** | The language with which to display the scope descriptions. | [optional] [default to en-us] |
+{: class="table table-striped"}
+
+### Return type
+
+**OAuthScopeListing**
 
 <a name="postOauthClientSecret"></a>
 
