@@ -497,8 +497,9 @@ Get list of reporting metadata.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
 
 
 
@@ -557,8 +558,9 @@ Get a reporting metadata.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
 
 
 
@@ -2582,8 +2584,9 @@ Create a scheduled report job
 
 Create a scheduled report job.
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
 
 
 ### Request Body Schema
@@ -3417,8 +3420,9 @@ Update a scheduled report job.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
 
 
 ### Request Body Schema

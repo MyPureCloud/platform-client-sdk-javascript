@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 66.0.0
+	 * @version 67.0.0
 	 */
 
 	/**
@@ -1505,6 +1505,8 @@ class WorkforceManagementApi {
 	 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
 	 */
 	postWorkforcemanagementManagementunitAgentschedulesSearch(muId, opts) { 
 		opts = opts || {};
@@ -1518,7 +1520,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{muId}/agentschedules/search', 
 			'POST', 
 			{ 'muId': muId }, 
-			{  }, 
+			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] }, 
 			{  }, 
 			{  }, 
 			opts['body'], 

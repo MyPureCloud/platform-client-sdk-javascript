@@ -12,7 +12,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
    /**
     * @module purecloud-platform-client-v2/ApiClient
-    * @version 66.0.0
+    * @version 67.0.0
     */
    class ApiClient {
    	/**
@@ -775,7 +775,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
    		// set header parameters
    		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-   		//request.set({ 'purecloud-sdk': '66.0.0' });
+   		//request.set({ 'purecloud-sdk': '67.0.0' });
 
    		// set request timeout
    		request.timeout(this.timeout);
@@ -900,7 +900,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Alerting service.
    	 * @module purecloud-platform-client-v2/api/AlertingApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -1214,7 +1214,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Analytics service.
    	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -2152,7 +2152,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Architect service.
    	 * @module purecloud-platform-client-v2/api/ArchitectApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -4658,7 +4658,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Audit service.
    	 * @module purecloud-platform-client-v2/api/AuditApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -4759,7 +4759,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Authorization service.
    	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -5836,7 +5836,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Billing service.
    	 * @module purecloud-platform-client-v2/api/BillingApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -5916,7 +5916,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * ContentManagement service.
    	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -7056,7 +7056,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Conversations service.
    	 * @module purecloud-platform-client-v2/api/ConversationsApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -10967,7 +10967,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * ExternalContacts service.
    	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -11875,7 +11875,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Fax service.
    	 * @module purecloud-platform-client-v2/api/FaxApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -12046,7 +12046,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Flows service.
    	 * @module purecloud-platform-client-v2/api/FlowsApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -12117,7 +12117,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * GeneralDataProtectionRegulation service.
    	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -12247,7 +12247,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Geolocation service.
    	 * @module purecloud-platform-client-v2/api/GeolocationApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -12378,7 +12378,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Greetings service.
    	 * @module purecloud-platform-client-v2/api/GreetingsApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -12833,7 +12833,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Groups service.
    	 * @module purecloud-platform-client-v2/api/GroupsApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -13238,7 +13238,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * IdentityProvider service.
    	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -13929,7 +13929,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Integrations service.
    	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -15391,7 +15391,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Languages service.
    	 * @module purecloud-platform-client-v2/api/LanguagesApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -15659,7 +15659,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * License service.
    	 * @module purecloud-platform-client-v2/api/LicenseApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -15873,7 +15873,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Locations service.
    	 * @module purecloud-platform-client-v2/api/LocationsApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -16109,7 +16109,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Messaging service.
    	 * @module purecloud-platform-client-v2/api/MessagingApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -16515,7 +16515,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * MobileDevices service.
    	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -16666,7 +16666,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Notifications service.
    	 * @module purecloud-platform-client-v2/api/NotificationsApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -16811,7 +16811,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
    	/**
    	 * Create a new channel
-   	 * There is a limit of 20 channels per user/app combination. Creating a 21st channel will remove the channel with oldest last used date.
+   	 * There is a limit of 20 channels per user/app combination. Creating a 21st channel will remove the channel with oldest last used date. Channels without an active connection will be removed first.
    	 */
    	postNotificationsChannels() { 
 
@@ -16865,7 +16865,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * OAuth service.
    	 * @module purecloud-platform-client-v2/api/OAuthApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -17134,7 +17134,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Objects service.
    	 * @module purecloud-platform-client-v2/api/ObjectsApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -17371,7 +17371,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Organization service.
    	 * @module purecloud-platform-client-v2/api/OrganizationApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -17581,7 +17581,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * OrganizationAuthorization service.
    	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -18256,7 +18256,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Outbound service.
    	 * @module purecloud-platform-client-v2/api/OutboundApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -20919,7 +20919,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Presence service.
    	 * @module purecloud-platform-client-v2/api/PresenceApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -21186,7 +21186,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Quality service.
    	 * @module purecloud-platform-client-v2/api/QualityApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -22857,7 +22857,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Recording service.
    	 * @module purecloud-platform-client-v2/api/RecordingApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -24045,7 +24045,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * ResponseManagement service.
    	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -24369,7 +24369,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Routing service.
    	 * @module purecloud-platform-client-v2/api/RoutingApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -26337,7 +26337,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * SCIM service.
    	 * @module purecloud-platform-client-v2/api/SCIMApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -27216,7 +27216,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Scripts service.
    	 * @module purecloud-platform-client-v2/api/ScriptsApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -27569,7 +27569,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Search service.
    	 * @module purecloud-platform-client-v2/api/SearchApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -28024,7 +28024,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * SpeechTextAnalytics service.
    	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -28075,7 +28075,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Stations service.
    	 * @module purecloud-platform-client-v2/api/StationsApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -28222,7 +28222,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Suggest service.
    	 * @module purecloud-platform-client-v2/api/SuggestApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -28361,7 +28361,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Telephony service.
    	 * @module purecloud-platform-client-v2/api/TelephonyApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -28469,7 +28469,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * TelephonyProvidersEdge service.
    	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -31824,7 +31824,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Tokens service.
    	 * @module purecloud-platform-client-v2/api/TokensApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -31910,7 +31910,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * UserRecordings service.
    	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -32094,7 +32094,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Users service.
    	 * @module purecloud-platform-client-v2/api/UsersApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -34072,7 +34072,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Utilities service.
    	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -34203,7 +34203,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Voicemail service.
    	 * @module purecloud-platform-client-v2/api/VoicemailApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -34840,7 +34840,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * WebChat service.
    	 * @module purecloud-platform-client-v2/api/WebChatApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -35384,7 +35384,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Widgets service.
    	 * @module purecloud-platform-client-v2/api/WidgetsApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -35530,7 +35530,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * WorkforceManagement service.
    	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   	 * @version 66.0.0
+   	 * @version 67.0.0
    	 */
 
    	/**
@@ -37030,6 +37030,8 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
    	 * @param {Object} opts Optional parameters
    	 * @param {Object} opts.body body
+   	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+   	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
    	 */
    	postWorkforcemanagementManagementunitAgentschedulesSearch(muId, opts) { 
    		opts = opts || {};
@@ -37043,7 +37045,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/workforcemanagement/managementunits/{muId}/agentschedules/search', 
    			'POST', 
    			{ 'muId': muId }, 
-   			{  }, 
+   			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] }, 
    			{  }, 
    			{  }, 
    			opts['body'], 
@@ -37816,7 +37818,7 @@ define(['superagent'], function (superagent) { 'use strict';
     * </pre>
     * </p>
     * @module purecloud-platform-client-v2/index
-    * @version 66.0.0
+    * @version 67.0.0
     */
    class platformClient {
    	constructor() {

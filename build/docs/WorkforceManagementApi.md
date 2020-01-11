@@ -3744,7 +3744,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
-  'body': {} // Object | body
+  'body': {}, // Object | body
+  'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
 };
 
 apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(muId, opts)
@@ -3764,6 +3766,8 @@ apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(muId, opts
 | ------------- | ------------- | ------------- | ------------- |
  **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
+ **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

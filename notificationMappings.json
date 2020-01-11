@@ -337,6 +337,10 @@
       "class": "WfmScheduleTopicWfmScheduleNotification"
     },
     {
+      "topic": "v2.workforcemanagement.managementunits.{id}.shifttrades.state.bulk",
+      "class": "WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification"
+    },
+    {
       "topic": "v2.workforcemanagement.users.{id}.schedules.query",
       "class": "WfmBuScheduleQueryResultTopicBuScheduleSearchResultNotification"
     },

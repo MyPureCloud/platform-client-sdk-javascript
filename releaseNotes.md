@@ -1,133 +1,45 @@
-Platform API version: 3660
+Platform API version: 3684
 
 
-# Major Changes (5 changes)
+# Major Changes (6 changes)
 
-**/api/v2/recordings/deletionprotection** (1 change)
+**POST /api/v2/workforcemanagement/managementunits/{muId}/agentschedules/search** (2 changes)
 
-* Path /api/v2/recordings/deletionprotection was removed
+* Parameter forceAsync was added
+* Parameter forceDownloadService was added
 
-**TimeZone** (1 change)
+**Entity** (1 change)
 
-* Model TimeZone was removed
+* Model Entity was removed
 
-**ConversationDeletionProtectionQuery** (1 change)
+**TrusteeBillingOverview** (1 change)
 
-* Model ConversationDeletionProtectionQuery was removed
+* Property organization was changed from Entity to NamedEntity
 
-**ReportingExportJobResponse** (1 change)
+**AnalyticsRoutingStatusRecord** (1 change)
 
-* Property timeZone was changed from TimeZone to string
+* Property durationMilliseconds was removed
 
-**ReportingExportJobRequest** (1 change)
+**AnalyticsUserPresenceRecord** (1 change)
 
-* Property timeZone was changed from TimeZone to string
+* Property durationMilliseconds was removed
 
 
-# Minor Changes (34 changes)
+# Minor Changes (4 changes)
 
-**/api/v2/oauth/scopes** (2 changes)
+**Metabase** (3 changes)
 
-* Path was added
-* Operation GET was added
-
-**/api/v2/oauth/scopes/{scopeId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/audits/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/audits/query/{transactionId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/audits/query/{transactionId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/oauth/authorizations/{clientId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/analytics/users/details/jobs** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/analytics/users/details/jobs/{jobId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/analytics/users/details/jobs/{jobId}/results** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/oauth/authorizations** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**OAuthScope** (1 change)
-
-* Model was added
-
-**OAuthScopeListing** (1 change)
-
-* Model was added
-
-**AsyncQueryStatus** (1 change)
-
-* Enum value QUEUED was added to property state
-
-**AuditQueryExecutionStatusResponse** (1 change)
-
-* Model was added
-
-**AuditQueryFilter** (1 change)
-
-* Model was added
-
-**AuditQueryRequest** (1 change)
-
-* Model was added
+* Enum value TIE_DIRECT was added to property type
+* Enum value TIE_INDIRECT was added to property type
+* Enum value TIE_CLOUD_PROXY was added to property type
 
 **AuditLogMessage** (1 change)
 
-* Model was added
-
-**AuditQueryExecutionResultsResponse** (1 change)
-
-* Model was added
-
-**PropertyChange** (1 change)
-
-* Model was added
-
-**OAuthAuthorization** (1 change)
-
-* Model was added
-
-**AsyncUserDetailsQuery** (1 change)
-
-* Model was added
-
-**AnalyticsUserDetailsAsyncQueryResponse** (1 change)
-
-* Model was added
-
-**OAuthAuthorizationListing** (1 change)
-
-* Model was added
+* Enum value ReadAll was added to property action
 
 
-# Point Changes (0 changes)
+# Point Changes (1 change)
+
+**POST /api/v2/notifications/channels** (1 change)
+
+* Description was changed

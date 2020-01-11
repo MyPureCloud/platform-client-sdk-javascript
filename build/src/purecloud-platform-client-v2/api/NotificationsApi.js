@@ -5,7 +5,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 66.0.0
+	 * @version 67.0.0
 	 */
 
 	/**
@@ -150,7 +150,7 @@ class NotificationsApi {
 
 	/**
 	 * Create a new channel
-	 * There is a limit of 20 channels per user/app combination. Creating a 21st channel will remove the channel with oldest last used date.
+	 * There is a limit of 20 channels per user/app combination. Creating a 21st channel will remove the channel with oldest last used date. Channels without an active connection will be removed first.
 	 */
 	postNotificationsChannels() { 
 
