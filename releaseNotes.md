@@ -1,45 +1,68 @@
-Platform API version: 3684
+Platform API version: 3704
 
 
-# Major Changes (6 changes)
+# Major Changes (2 changes)
 
-**POST /api/v2/workforcemanagement/managementunits/{muId}/agentschedules/search** (2 changes)
+**GET /api/v2/authorization/divisionspermitted/{subjectId}** (1 change)
 
-* Parameter forceAsync was added
-* Parameter forceDownloadService was added
+* Has been deprecated
 
-**Entity** (1 change)
+**DELETE /api/v2/authorization/divisions/{divisionId}** (1 change)
 
-* Model Entity was removed
-
-**TrusteeBillingOverview** (1 change)
-
-* Property organization was changed from Entity to NamedEntity
-
-**AnalyticsRoutingStatusRecord** (1 change)
-
-* Property durationMilliseconds was removed
-
-**AnalyticsUserPresenceRecord** (1 change)
-
-* Property durationMilliseconds was removed
+* Parameter force was added
 
 
-# Minor Changes (4 changes)
+# Minor Changes (17 changes)
 
-**Metabase** (3 changes)
+**/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions** (2 changes)
 
-* Enum value TIE_DIRECT was added to property type
-* Enum value TIE_INDIRECT was added to property type
-* Enum value TIE_CLOUD_PROXY was added to property type
+* Path was added
+* Operation PUT was added
 
-**AuditLogMessage** (1 change)
+**ConversationDetailQueryPredicate** (1 change)
 
-* Enum value ReadAll was added to property action
+* Enum value tMonitoring was added to property metric
+
+**SegmentDetailQueryPredicate** (1 change)
+
+* Enum value mediaCount was added to property dimension
+
+**TrustMemberCreate** (1 change)
+
+* Optional property roleDivisions was added
+
+**FlowAggregateQueryPredicate** (2 changes)
+
+* Enum value externalMediaCount was added to property dimension
+* Enum value mediaCount was added to property dimension
+
+**FlowAggregationQuery** (2 changes)
+
+* Enum value externalMediaCount was added to property groupBy
+* Enum value mediaCount was added to property groupBy
+
+**UserScheduleAdherence** (1 change)
+
+* Optional property removedFromManagementUnit was added
+
+**AnalyticsSession** (1 change)
+
+* Optional property mediaCount was added
+
+**ConversationAggregateQueryPredicate** (2 changes)
+
+* Enum value externalMediaCount was added to property dimension
+* Enum value mediaCount was added to property dimension
+
+**ConversationAggregationQuery** (3 changes)
+
+* Enum value externalMediaCount was added to property groupBy
+* Enum value mediaCount was added to property groupBy
+* Enum value tMonitoring was added to property metrics
+
+**ConversationAggregationView** (1 change)
+
+* Enum value tMonitoring was added to property target
 
 
-# Point Changes (1 change)
-
-**POST /api/v2/notifications/channels** (1 change)
-
-* Description was changed
+# Point Changes (0 changes)

@@ -702,7 +702,7 @@ apiInstance.getAuthorizationDivisionspermittedMe(permission, opts)
 
 # [AuthzDivision] getAuthorizationDivisionspermittedSubjectId(subjectId, permission, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/authorization/divisionspermitted/{subjectId}
 

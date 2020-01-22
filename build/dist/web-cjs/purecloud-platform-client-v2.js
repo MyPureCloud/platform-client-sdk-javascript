@@ -6071,7 +6071,7 @@ function isSlowBuffer (obj) {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 67.0.0
+ * @version 68.0.0
  */
 class ApiClient {
 	/**
@@ -6834,7 +6834,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '67.0.0' });
+		//request.set({ 'purecloud-sdk': '68.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -6959,7 +6959,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -7273,7 +7273,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -8211,7 +8211,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -10717,7 +10717,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -10818,7 +10818,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -10837,8 +10837,12 @@ class AuthorizationApi {
 	 * Delete a division.
 	 * 
 	 * @param {String} divisionId Division ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.force Force delete this division as well as the grants and objects associated with it (default to false)
 	 */
-	deleteAuthorizationDivision(divisionId) { 
+	deleteAuthorizationDivision(divisionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
 			throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationDivision';
@@ -10848,7 +10852,7 @@ class AuthorizationApi {
 			'/api/v2/authorization/divisions/{divisionId}', 
 			'DELETE', 
 			{ 'divisionId': divisionId }, 
-			{  }, 
+			{ 'force': opts['force'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -11895,7 +11899,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -11975,7 +11979,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -13115,7 +13119,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -17026,7 +17030,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -17934,7 +17938,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -18105,7 +18109,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -18176,7 +18180,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -18306,7 +18310,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -18437,7 +18441,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -18892,7 +18896,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -19297,7 +19301,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -19988,7 +19992,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -21450,7 +21454,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -21718,7 +21722,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -21932,7 +21936,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -22168,7 +22172,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -22574,7 +22578,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -22725,7 +22729,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -22924,7 +22928,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -23193,7 +23197,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -23212,8 +23216,12 @@ class ObjectsApi {
 	 * Delete a division.
 	 * 
 	 * @param {String} divisionId Division ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.force Force delete this division as well as the grants and objects associated with it (default to false)
 	 */
-	deleteAuthorizationDivision(divisionId) { 
+	deleteAuthorizationDivision(divisionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
 			throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationDivision';
@@ -23223,7 +23231,7 @@ class ObjectsApi {
 			'/api/v2/authorization/divisions/{divisionId}', 
 			'DELETE', 
 			{ 'divisionId': divisionId }, 
-			{  }, 
+			{ 'force': opts['force'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -23430,7 +23438,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -23640,7 +23648,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -24249,6 +24257,41 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trusteeOrgId Trustee Organization Id
 	 * @param {String} trusteeUserId Trustee User Id
+	 * @param {Object} body Set of roles with corresponding divisions to apply
+	 */
+	putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId, trusteeUserId, body) { 
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrusteeUserRoledivisions';
+		}
+		// verify the required parameter 'trusteeUserId' is set
+		if (trusteeUserId === undefined || trusteeUserId === null) {
+			throw 'Missing the required parameter "trusteeUserId" when calling putOrgauthorizationTrusteeUserRoledivisions';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOrgauthorizationTrusteeUserRoledivisions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions', 
+			'PUT', 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeUserId': trusteeUserId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Trustee User Roles
+	 * 
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {String} trusteeUserId Trustee User Id
 	 * @param {Array.<Object>} body List of roles
 	 */
 	putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, body) { 
@@ -24315,7 +24358,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -26978,7 +27021,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -27245,7 +27288,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -28916,7 +28959,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -30104,7 +30147,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -30428,7 +30471,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -32396,7 +32439,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -33275,7 +33318,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -33628,7 +33671,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -34083,7 +34126,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -34134,7 +34177,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -34281,7 +34324,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -34420,7 +34463,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -34528,7 +34571,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -37883,7 +37926,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -37969,7 +38012,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -38153,7 +38196,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -40131,7 +40174,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -40262,7 +40305,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -40899,7 +40942,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -41443,7 +41486,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -41589,7 +41632,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -43877,7 +43920,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 67.0.0
+ * @version 68.0.0
  */
 class platformClient {
 	constructor() {

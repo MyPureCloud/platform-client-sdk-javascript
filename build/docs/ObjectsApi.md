@@ -19,7 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteAuthorizationDivision"></a>
 
-# void deleteAuthorizationDivision(divisionId)
+# void deleteAuthorizationDivision(divisionId, opts)
 
 
 
@@ -49,8 +49,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ObjectsApi();
 
 let divisionId = "divisionId_example"; // String | Division ID
+let opts = { 
+  'force': false // Boolean | Force delete this division as well as the grants and objects associated with it
+};
 
-apiInstance.deleteAuthorizationDivision(divisionId)
+apiInstance.deleteAuthorizationDivision(divisionId, opts)
   .then(() => {
     console.log('deleteAuthorizationDivision returned successfully.');
   })
@@ -66,6 +69,7 @@ apiInstance.deleteAuthorizationDivision(divisionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
+ **force** | **Boolean** | Force delete this division as well as the grants and objects associated with it | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type

@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class AuthorizationApi {
 	 * Delete a division.
 	 * 
 	 * @param {String} divisionId Division ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.force Force delete this division as well as the grants and objects associated with it (default to false)
 	 */
-	deleteAuthorizationDivision(divisionId) { 
+	deleteAuthorizationDivision(divisionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
 			throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationDivision';
@@ -35,7 +39,7 @@ class AuthorizationApi {
 			'/api/v2/authorization/divisions/{divisionId}', 
 			'DELETE', 
 			{ 'divisionId': divisionId }, 
-			{  }, 
+			{ 'force': opts['force'] }, 
 			{  }, 
 			{  }, 
 			null, 

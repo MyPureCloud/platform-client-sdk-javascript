@@ -2078,7 +2078,7 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
  **pageSize** | **Number** |  | [optional]  |
  **pageNumber** | **Number** |  | [optional]  |
  **expand** | **String** |  | [optional] <br />**Values**: details |
- **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BusinessUnitActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlans |
+ **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BusinessUnitActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlans |
  **divisionId** | **String** |  | [optional]  |
 {: class="table table-striped"}
 

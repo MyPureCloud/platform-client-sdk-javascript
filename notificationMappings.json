@@ -25,6 +25,10 @@
       "class": "ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification"
     },
     {
+      "topic": "v2.businessunits.{id}.workforcemanagement.intraday",
+      "class": "WfmBuIntradayDataUpdateTopicBuIntradayNotification"
+    },
+    {
       "topic": "v2.contentmanagement.documents.{id}",
       "class": "ContentManagementSingleDocumentTopicDocumentDataV2"
     },
@@ -91,6 +95,10 @@
     {
       "topic": "v2.outbound.dnclists.{id}.importstatus",
       "class": "DnclistImportStatusImportStatus"
+    },
+    {
+      "topic": "v2.outbound.messagingcampaigns.{id}.progress",
+      "class": "OutboundMessagingMessagingCampaignProgressEventCampaignProgress"
     },
     {
       "topic": "v2.outbound.responsesets.{id}",
@@ -327,6 +335,10 @@
     {
       "topic": "v2.workforcemanagement.managementunits.{id}",
       "class": "WfmMoveManagementUnitTopicMoveManagementUnitNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.managementunits.{id}.adherence",
+      "class": "WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate"
     },
     {
       "topic": "v2.workforcemanagement.managementunits.{id}.agents.sync",

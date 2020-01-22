@@ -5,7 +5,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 67.0.0
+	 * @version 68.0.0
 	 */
 
 	/**
@@ -599,6 +599,41 @@ class OrganizationAuthorizationApi {
 			'/api/v2/orgauthorization/trustees/{trusteeOrgId}', 
 			'PUT', 
 			{ 'trusteeOrgId': trusteeOrgId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Trustee User Roles
+	 * 
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {String} trusteeUserId Trustee User Id
+	 * @param {Object} body Set of roles with corresponding divisions to apply
+	 */
+	putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId, trusteeUserId, body) { 
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrusteeUserRoledivisions';
+		}
+		// verify the required parameter 'trusteeUserId' is set
+		if (trusteeUserId === undefined || trusteeUserId === null) {
+			throw 'Missing the required parameter "trusteeUserId" when calling putOrgauthorizationTrusteeUserRoledivisions';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOrgauthorizationTrusteeUserRoledivisions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions', 
+			'PUT', 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeUserId': trusteeUserId }, 
 			{  }, 
 			{  }, 
 			{  }, 

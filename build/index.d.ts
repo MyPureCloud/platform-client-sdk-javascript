@@ -477,7 +477,7 @@ declare namespace AuditApi {
 }
 
 declare class AuthorizationApi {  
-  	deleteAuthorizationDivision(divisionId: string): Promise<void>; 
+  	deleteAuthorizationDivision(divisionId: string, opts?: AuthorizationApi.deleteAuthorizationDivisionOptions): Promise<void>; 
   	deleteAuthorizationRole(roleId: string): Promise<void>; 
   	deleteAuthorizationSubjectDivisionRole(subjectId: string, divisionId: string, roleId: string): Promise<void>; 
   	deleteUserRoles(userId: string): Promise<void>; 
@@ -517,6 +517,9 @@ declare class AuthorizationApi {
 }
 
 declare namespace AuthorizationApi { 
+	export interface deleteAuthorizationDivisionOptions { 
+		"force"?: boolean;
+	}
 	export interface getAuthorizationDivisionOptions { 
 		"objectCount"?: boolean;
 	}
@@ -1616,7 +1619,7 @@ declare namespace OAuthApi {
 }
 
 declare class ObjectsApi {  
-  	deleteAuthorizationDivision(divisionId: string): Promise<void>; 
+  	deleteAuthorizationDivision(divisionId: string, opts?: ObjectsApi.deleteAuthorizationDivisionOptions): Promise<void>; 
   	getAuthorizationDivision(divisionId: string, opts?: ObjectsApi.getAuthorizationDivisionOptions): Promise<Models.AuthzDivision>; 
   	getAuthorizationDivisions(opts?: ObjectsApi.getAuthorizationDivisionsOptions): Promise<Models.AuthzDivisionEntityListing>; 
   	getAuthorizationDivisionsHome(): Promise<Models.AuthzDivision>; 
@@ -1627,6 +1630,9 @@ declare class ObjectsApi {
 }
 
 declare namespace ObjectsApi { 
+	export interface deleteAuthorizationDivisionOptions { 
+		"force"?: boolean;
+	}
 	export interface getAuthorizationDivisionOptions { 
 		"objectCount"?: boolean;
 	}
@@ -1682,6 +1688,7 @@ declare class OrganizationAuthorizationApi {
   	postOrgauthorizationTrusteesAudits(body: Models.TrusteeAuditQueryRequest, opts?: OrganizationAuthorizationApi.postOrgauthorizationTrusteesAuditsOptions): Promise<Models.AuditQueryResponse>; 
   	postOrgauthorizationTrustorAudits(body: Models.TrustorAuditQueryRequest, opts?: OrganizationAuthorizationApi.postOrgauthorizationTrustorAuditsOptions): Promise<Models.AuditQueryResponse>; 
   	putOrgauthorizationTrustee(trusteeOrgId: string, body: Models.Trustee): Promise<Models.Trustee>; 
+  	putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId: string, trusteeUserId: string, body: Models.RoleDivisionGrants): Promise<Models.UserAuthorization>; 
   	putOrgauthorizationTrusteeUserRoles(trusteeOrgId: string, trusteeUserId: string, body: Array<string>): Promise<Models.UserAuthorization>; 
   	putOrgauthorizationTrustorUser(trustorOrgId: string, trusteeUserId: string): Promise<Models.TrustUser>;
 }
@@ -3746,8 +3753,8 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"relyingPartyIdentifier"?: string;
-		"issuerURI"?: string;
 		"certificate"?: string;
+		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
@@ -4236,6 +4243,7 @@ declare namespace Models {
 		"protocolCallId"?: string;
 		"provider"?: string;
 		"remote"?: string;
+		"mediaCount"?: number;
 	}
 	
 	export interface AnalyticsSessionMetric { 
@@ -4515,8 +4523,8 @@ declare namespace Models {
 		"nodeType"?: string;
 		"float"?: boolean;
 		"number"?: boolean;
-		"object"?: boolean;
 		"boolean"?: boolean;
+		"object"?: boolean;
 		"valueNode"?: boolean;
 		"containerNode"?: boolean;
 		"missingNode"?: boolean;
@@ -8343,8 +8351,8 @@ declare namespace Models {
 	export interface CustomerInteractionCenter { 
 		"id"?: string;
 		"name"?: string;
-		"issuerURI"?: string;
 		"certificate"?: string;
+		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
@@ -11338,8 +11346,8 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"relyingPartyIdentifier"?: string;
-		"issuerURI"?: string;
 		"certificate"?: string;
+		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
@@ -11736,8 +11744,8 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"relyingPartyIdentifier"?: string;
-		"issuerURI"?: string;
 		"certificate"?: string;
+		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
@@ -12147,8 +12155,8 @@ declare namespace Models {
 		"nodeType"?: string;
 		"float"?: boolean;
 		"number"?: boolean;
-		"object"?: boolean;
 		"boolean"?: boolean;
+		"object"?: boolean;
 		"valueNode"?: boolean;
 		"containerNode"?: boolean;
 		"missingNode"?: boolean;
@@ -13392,8 +13400,8 @@ declare namespace Models {
 	export interface Okta { 
 		"id"?: string;
 		"name"?: string;
-		"issuerURI"?: string;
 		"certificate"?: string;
+		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
@@ -13402,8 +13410,8 @@ declare namespace Models {
 	export interface OneLogin { 
 		"id"?: string;
 		"name"?: string;
-		"issuerURI"?: string;
 		"certificate"?: string;
+		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
@@ -13617,6 +13625,19 @@ declare namespace Models {
 	
 	export interface OutOfOfficeEventUser { 
 		"id"?: string;
+	}
+	
+	export interface OutboundMessagingMessagingCampaignProgressEventCampaignProgress { 
+		"campaign"?: Models.OutboundMessagingMessagingCampaignProgressEventUriReference;
+		"numberOfContactsCalled"?: number;
+		"totalNumberOfContacts"?: number;
+		"percentage"?: number;
+		"additionalProperties"?: object;
+	}
+	
+	export interface OutboundMessagingMessagingCampaignProgressEventUriReference { 
+		"id"?: string;
+		"name"?: string;
 	}
 	
 	export interface OutboundRoute { 
@@ -14018,8 +14039,8 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"relyingPartyIdentifier"?: string;
-		"issuerURI"?: string;
 		"certificate"?: string;
+		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
@@ -14285,8 +14306,8 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"autoProvisionUsers"?: boolean;
-		"issuerURI"?: string;
 		"certificate"?: string;
+		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
@@ -17210,8 +17231,8 @@ declare namespace Models {
 	export interface Salesforce { 
 		"id"?: string;
 		"name"?: string;
-		"issuerURI"?: string;
 		"certificate"?: string;
+		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
@@ -19024,7 +19045,8 @@ declare namespace Models {
 	
 	export interface TrustMemberCreate { 
 		"id": string;
-		"roleIds": Array<string>;
+		"roleIds"?: Array<string>;
+		"roleDivisions"?: Models.RoleDivisionGrants;
 	}
 	
 	export interface TrustRequest { 
@@ -19941,6 +19963,7 @@ declare namespace Models {
 		"presenceUpdateTime"?: string;
 		"activeQueues"?: Array<Models.QueueReference>;
 		"activeQueuesModifiedTime"?: string;
+		"removedFromManagementUnit"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -20567,6 +20590,65 @@ declare namespace Models {
 		"seconds"?: number;
 	}
 	
+	export interface WfmBuIntradayDataUpdateTopicBuIntradayDataGroup { 
+		"mediaType"?: string;
+		"forecastDataSummary"?: Models.WfmBuIntradayDataUpdateTopicBuIntradayForecastData;
+		"forecastDataPerInterval"?: Array<Models.WfmBuIntradayDataUpdateTopicBuIntradayForecastData>;
+		"scheduleDataSummary"?: Models.WfmBuIntradayDataUpdateTopicBuIntradayScheduleData;
+		"scheduleDataPerInterval"?: Array<Models.WfmBuIntradayDataUpdateTopicBuIntradayScheduleData>;
+		"performancePredictionDataSummary"?: Models.WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData;
+		"performancePredictionDataPerInterval"?: Array<Models.WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData>;
+	}
+	
+	export interface WfmBuIntradayDataUpdateTopicBuIntradayForecastData { 
+		"offered"?: number;
+		"averageHandleTimeSeconds"?: number;
+	}
+	
+	export interface WfmBuIntradayDataUpdateTopicBuIntradayNotification { 
+		"operationId"?: string;
+		"result"?: Models.WfmBuIntradayDataUpdateTopicBuIntradayResult;
+	}
+	
+	export interface WfmBuIntradayDataUpdateTopicBuIntradayResult { 
+		"startDate"?: string;
+		"endDate"?: string;
+		"intervalLengthMinutes"?: number;
+		"intradayDataGroupings"?: Array<Models.WfmBuIntradayDataUpdateTopicBuIntradayDataGroup>;
+		"categories"?: Array<string>;
+		"noDataReason"?: string;
+		"schedule"?: Models.WfmBuIntradayDataUpdateTopicBuScheduleReference;
+		"shortTermForecast"?: Models.WfmBuIntradayDataUpdateTopicBuShortTermForecastReference;
+	}
+	
+	export interface WfmBuIntradayDataUpdateTopicBuIntradayScheduleData { 
+		"onQueueTimeSeconds"?: number;
+	}
+	
+	export interface WfmBuIntradayDataUpdateTopicBuScheduleReference { 
+		"id"?: string;
+		"weekDate"?: Models.WfmBuIntradayDataUpdateTopicLocalDate;
+	}
+	
+	export interface WfmBuIntradayDataUpdateTopicBuShortTermForecastReference { 
+		"id"?: string;
+		"weekDate"?: string;
+		"description"?: string;
+	}
+	
+	export interface WfmBuIntradayDataUpdateTopicIntradayPerformancePredictionData { 
+		"serviceLevelPercent"?: number;
+		"averageSpeedOfAnswerSeconds"?: number;
+		"occupancyPercent"?: number;
+	}
+	
+	export interface WfmBuIntradayDataUpdateTopicLocalDate { 
+		"year"?: number;
+		"month"?: number;
+		"day"?: number;
+		"leapYear"?: boolean;
+	}
+	
 	export interface WfmBuScheduleQueryResultTopicBuScheduleSearchResultNotification { 
 		"operationId"?: string;
 		"businessUnitId"?: string;
@@ -20580,19 +20662,20 @@ declare namespace Models {
 	
 	export interface WfmBuScheduleRunTopicBuScheduleRun { 
 		"id"?: string;
+		"percentComplete"?: number;
+		"intradayRescheduling"?: boolean;
+		"state"?: string;
 		"weekCount"?: number;
 		"schedule"?: Models.WfmBuScheduleRunTopicBuScheduleReference;
-		"schedulingCanceledByUser"?: Models.WfmBuScheduleRunTopicUserReference;
+		"schedulingCanceledBy"?: Models.WfmBuScheduleRunTopicUserReference;
 		"schedulingCompletedTime"?: string;
 		"messageCount"?: number;
 	}
 	
 	export interface WfmBuScheduleRunTopicBuSchedulingRunProgressNotification { 
+		"status"?: string;
 		"operationId"?: string;
-		"state"?: string;
-		"percentComplete"?: number;
-		"intradayRescheduling"?: boolean;
-		"run"?: Models.WfmBuScheduleRunTopicBuScheduleRun;
+		"result"?: Models.WfmBuScheduleRunTopicBuScheduleRun;
 	}
 	
 	export interface WfmBuScheduleRunTopicLocalDate { 
@@ -20952,6 +21035,32 @@ declare namespace Models {
 		"markedAsRead"?: boolean;
 	}
 	
+	export interface WfmUserScheduleAdherenceUpdatedMuTopicQueueReference { 
+		"id"?: string;
+	}
+	
+	export interface WfmUserScheduleAdherenceUpdatedMuTopicUserReference { 
+		"id"?: string;
+	}
+	
+	export interface WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate { 
+		"user"?: Models.WfmUserScheduleAdherenceUpdatedMuTopicUserReference;
+		"managementUnitId"?: string;
+		"scheduledActivityCategory"?: string;
+		"systemPresence"?: string;
+		"organizationSecondaryPresenceId"?: string;
+		"routingStatus"?: string;
+		"actualActivityCategory"?: string;
+		"isOutOfOffice"?: boolean;
+		"adherenceState"?: string;
+		"impact"?: string;
+		"adherenceChangeTime"?: string;
+		"presenceUpdateTime"?: string;
+		"activeQueues"?: Array<Models.WfmUserScheduleAdherenceUpdatedMuTopicQueueReference>;
+		"activeQueuesModifiedTime"?: string;
+		"removedFromManagementUnit"?: boolean;
+	}
+	
 	export interface WfmUserScheduleAdherenceUpdatedTopicQueueReference { 
 		"id"?: string;
 	}
@@ -20975,6 +21084,7 @@ declare namespace Models {
 		"presenceUpdateTime"?: string;
 		"activeQueues"?: Array<Models.WfmUserScheduleAdherenceUpdatedTopicQueueReference>;
 		"activeQueuesModifiedTime"?: string;
+		"removedFromManagementUnit"?: boolean;
 	}
 	
 	export interface WfmVersionedEntityMetadata { 

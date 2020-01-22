@@ -28,6 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOrgauthorizationTrusteesAudits**](OrganizationAuthorizationApi.html#postOrgauthorizationTrusteesAudits) | **POST** /api/v2/orgauthorization/trustees/audits | Get Org Trustee Audits
 [**postOrgauthorizationTrustorAudits**](OrganizationAuthorizationApi.html#postOrgauthorizationTrustorAudits) | **POST** /api/v2/orgauthorization/trustor/audits | Get Org Trustor Audits
 [**putOrgauthorizationTrustee**](OrganizationAuthorizationApi.html#putOrgauthorizationTrustee) | **PUT** /api/v2/orgauthorization/trustees/{trusteeOrgId} | Update Org Trust
+[**putOrgauthorizationTrusteeUserRoledivisions**](OrganizationAuthorizationApi.html#putOrgauthorizationTrusteeUserRoledivisions) | **PUT** /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions | Update Trustee User Roles
 [**putOrgauthorizationTrusteeUserRoles**](OrganizationAuthorizationApi.html#putOrgauthorizationTrusteeUserRoles) | **PUT** /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles | Update Trustee User Roles
 [**putOrgauthorizationTrustorUser**](OrganizationAuthorizationApi.html#putOrgauthorizationTrustorUser) | **PUT** /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId} | Add a Trustee user to the trust.
 {: class="table table-striped"}
@@ -1009,6 +1010,12 @@ TrustMemberCreate <a href="#" onclick="return copyTrustMemberCreateExample()">Co
 { 
   "id": String, 
   "roleIds": [String], 
+  "roleDivisions": { 
+    "grants": { 
+      "roleId": String, 
+      "divisionId": String, 
+    },  
+  },  
 }
 ```
 
@@ -1096,10 +1103,22 @@ TrustCreate <a href="#" onclick="return copyTrustCreateExample()">Copy</a>
   "users": { 
     "id": String, 
     "roleIds": [String], 
+    "roleDivisions": { 
+      "grants": { 
+        "roleId": String, 
+        "divisionId": String, 
+      },  
+    },  
   },  
   "groups": { 
     "id": String, 
     "roleIds": [String], 
+    "roleDivisions": { 
+      "grants": { 
+        "roleId": String, 
+        "divisionId": String, 
+      },  
+    },  
   },  
 }
 ```
@@ -2253,6 +2272,93 @@ apiInstance.putOrgauthorizationTrustee(trusteeOrgId, body)
 ### Return type
 
 **Trustee**
+
+<a name="putOrgauthorizationTrusteeUserRoledivisions"></a>
+
+# UserAuthorization putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId, trusteeUserId, body)
+
+
+
+PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions
+
+Update Trustee User Roles
+
+
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyRoleDivisionGrantsExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#RoleDivisionGrantsExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+RoleDivisionGrants <a href="#" onclick="return copyRoleDivisionGrantsExample()">Copy</a>
+
+<div id="RoleDivisionGrantsExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "grants": { 
+    "roleId": String, 
+    "divisionId": String, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
+
+let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+let body = {}; // Object | Set of roles with corresponding divisions to apply
+
+apiInstance.putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId, trusteeUserId, body)
+  .then((data) => {
+    console.log(`putOrgauthorizationTrusteeUserRoledivisions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putOrgauthorizationTrusteeUserRoledivisions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **trusteeOrgId** | **String** | Trustee Organization Id |  |
+ **trusteeUserId** | **String** | Trustee User Id |  |
+ **body** | **Object** | Set of roles with corresponding divisions to apply |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserAuthorization**
 
 <a name="putOrgauthorizationTrusteeUserRoles"></a>
 
