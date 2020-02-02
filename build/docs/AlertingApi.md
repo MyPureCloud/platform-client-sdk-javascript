@@ -903,6 +903,9 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "alertTypes": [String], 
@@ -1483,6 +1486,9 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "alertTypes": [String], 

@@ -830,6 +830,9 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "createdDate": Date, 
@@ -1229,6 +1232,9 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "modifiedDate": Date, 
@@ -1714,6 +1720,9 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "createdDate": Date, 
@@ -2113,6 +2122,9 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "modifiedDate": Date, 

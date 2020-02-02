@@ -211,7 +211,7 @@ void (no response body)
 
 <a name="getAnalyticsConversationDetails"></a>
 
-# AnalyticsConversation getAnalyticsConversationDetails(conversationId)
+# AnalyticsConversationWithoutAttributes getAnalyticsConversationDetails(conversationId)
 
 
 
@@ -262,11 +262,11 @@ apiInstance.getAnalyticsConversationDetails(conversationId)
 
 ### Return type
 
-**AnalyticsConversation**
+**AnalyticsConversationWithoutAttributes**
 
 <a name="getAnalyticsConversationsDetails"></a>
 
-# AnalyticsConversationMultiGetResponse getAnalyticsConversationsDetails(opts)
+# AnalyticsConversationWithoutAttributesMultiGetResponse getAnalyticsConversationsDetails(opts)
 
 
 
@@ -319,7 +319,7 @@ apiInstance.getAnalyticsConversationsDetails(opts)
 
 ### Return type
 
-**AnalyticsConversationMultiGetResponse**
+**AnalyticsConversationWithoutAttributesMultiGetResponse**
 
 <a name="getAnalyticsConversationsDetailsJob"></a>
 
@@ -2350,8 +2350,46 @@ ReportingExportJobRequest <a href="#" onclick="return copyReportingExportJobRequ
     "outboundCampaignIds": [String], 
     "outboundContactListIds": [String], 
     "contactIds": [String], 
+    "externalContactIds": [String], 
+    "externalOrgIds": [String], 
     "aniList": [String], 
     "durationsMilliseconds": { 
+      "gt": Number, 
+      "gte": Number, 
+      "lt": Number, 
+      "lte": Number, 
+    },  
+    "acdDurationsMilliseconds": { 
+      "gt": Number, 
+      "gte": Number, 
+      "lt": Number, 
+      "lte": Number, 
+    },  
+    "talkDurationsMilliseconds": { 
+      "gt": Number, 
+      "gte": Number, 
+      "lt": Number, 
+      "lte": Number, 
+    },  
+    "acwDurationsMilliseconds": { 
+      "gt": Number, 
+      "gte": Number, 
+      "lt": Number, 
+      "lte": Number, 
+    },  
+    "handleDurationsMilliseconds": { 
+      "gt": Number, 
+      "gte": Number, 
+      "lt": Number, 
+      "lte": Number, 
+    },  
+    "holdDurationsMilliseconds": { 
+      "gt": Number, 
+      "gte": Number, 
+      "lt": Number, 
+      "lte": Number, 
+    },  
+    "abandonDurationsMilliseconds": { 
       "gt": Number, 
       "gte": Number, 
       "lt": Number, 
@@ -2442,6 +2480,7 @@ ReportingExportJobRequest <a href="#" onclick="return copyReportingExportJobRequ
       "isCobrowse": Boolean, 
       "isVoicemail": Boolean, 
       "isFlagged": Boolean, 
+      "isMonitored": Boolean, 
       "filterWrapUpNotes": Boolean, 
       "matchAll": Boolean, 
     },  

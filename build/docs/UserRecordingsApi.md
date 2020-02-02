@@ -1381,6 +1381,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "languagePreference": String, 
+                "lastTokenIssued": OAuthLastTokenIssued, 
                 "selfUri": String, 
               },  
               "agent": { 
@@ -1415,6 +1416,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "languagePreference": String, 
+                "lastTokenIssued": OAuthLastTokenIssued, 
                 "selfUri": String, 
               },  
               "calibration": { 
@@ -1570,8 +1572,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
                 "nextUri": String, 
+                "lastUri": String, 
                 "previousUri": String, 
                 "pageCount": Number, 
               },  
@@ -1582,8 +1584,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
-            "lastUri": String, 
             "nextUri": String, 
+            "lastUri": String, 
             "previousUri": String, 
             "pageCount": Number, 
           },  
@@ -1958,6 +1960,9 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           },  
           "acdAutoAnswer": Boolean, 
           "languagePreference": String, 
+          "lastTokenIssued": { 
+            "dateIssued": Date, 
+          },  
           "selfUri": String, 
         },  
         "agent": { 
@@ -2329,6 +2334,9 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           },  
           "acdAutoAnswer": Boolean, 
           "languagePreference": String, 
+          "lastTokenIssued": { 
+            "dateIssued": Date, 
+          },  
           "selfUri": String, 
         },  
         "calibration": { 
@@ -2603,6 +2611,9 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             },  
             "acdAutoAnswer": Boolean, 
             "languagePreference": String, 
+            "lastTokenIssued": { 
+              "dateIssued": Date, 
+            },  
             "selfUri": String, 
           },  
           "agent": User, 
@@ -2934,8 +2945,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
-              "lastUri": String, 
               "nextUri": String, 
+              "lastUri": String, 
               "previousUri": String, 
               "pageCount": Number, 
             },  
@@ -3035,8 +3046,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
                 "nextUri": String, 
+                "lastUri": String, 
                 "previousUri": String, 
                 "pageCount": Number, 
               },  
@@ -3193,6 +3204,9 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               },  
               "acdAutoAnswer": Boolean, 
               "languagePreference": String, 
+              "lastTokenIssued": { 
+                "dateIssued": Date, 
+              },  
               "selfUri": String, 
             },  
             "agent": { 
@@ -3346,6 +3360,9 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               },  
               "acdAutoAnswer": Boolean, 
               "languagePreference": String, 
+              "lastTokenIssued": { 
+                "dateIssued": Date, 
+              },  
               "selfUri": String, 
             },  
             "calibration": { 
@@ -3383,6 +3400,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "languagePreference": String, 
+                "lastTokenIssued": OAuthLastTokenIssued, 
                 "selfUri": String, 
               },  
               "agent": User, 
@@ -3658,8 +3676,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
-                "lastUri": String, 
                 "nextUri": String, 
+                "lastUri": String, 
                 "previousUri": String, 
                 "pageCount": Number, 
               },  
@@ -3816,6 +3834,9 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               },  
               "acdAutoAnswer": Boolean, 
               "languagePreference": String, 
+              "lastTokenIssued": { 
+                "dateIssued": Date, 
+              },  
               "selfUri": String, 
             },  
             "agent": { 
@@ -3969,6 +3990,9 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               },  
               "acdAutoAnswer": Boolean, 
               "languagePreference": String, 
+              "lastTokenIssued": { 
+                "dateIssued": Date, 
+              },  
               "selfUri": String, 
             },  
             "calibration": { 
@@ -4006,6 +4030,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "languagePreference": String, 
+                "lastTokenIssued": OAuthLastTokenIssued, 
                 "selfUri": String, 
               },  
               "agent": User, 

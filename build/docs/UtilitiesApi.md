@@ -11,7 +11,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIpranges**](UtilitiesApi.html#getIpranges) | **GET** /api/v2/ipranges | Get public ip address ranges for PureCloud
 [**getTimezones**](UtilitiesApi.html#getTimezones) | **GET** /api/v2/timezones | Get time zones list
 [**postCertificateDetails**](UtilitiesApi.html#postCertificateDetails) | **POST** /api/v2/certificate/details | Returns the information about an X509 PEM encoded certificate or certificate chain.
-[**postGmscTokens**](UtilitiesApi.html#postGmscTokens) | **POST** /api/v2/gmsc/tokens | Generate a JWT for use with common cloud.
 {: class="table table-striped"}
 
 <a name="getDate"></a>
@@ -248,53 +247,4 @@ apiInstance.postCertificateDetails(body)
 ### Return type
 
 **ParsedCertificate**
-
-<a name="postGmscTokens"></a>
-
-# Token postGmscTokens()
-
-
-
-POST /api/v2/gmsc/tokens
-
-Generate a JWT for use with common cloud.
-
-
-
-Requires NO permissions: 
-
-
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.UtilitiesApi();
-
-apiInstance.postGmscTokens()
-  .then((data) => {
-    console.log(`postGmscTokens success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postGmscTokens');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-{: class="table table-striped"}
-
-### Return type
-
-**Token**
 

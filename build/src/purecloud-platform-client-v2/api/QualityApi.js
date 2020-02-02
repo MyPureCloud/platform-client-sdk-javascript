@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 68.0.0
+	 * @version 69.0.0
 	 */
 
 	/**
@@ -323,7 +323,7 @@ class QualityApi {
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.recordingId id of the recording
-	 * @param {String} opts.entityType entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording (default to RECORDING)
+	 * @param {String} opts.entityType entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording (default to Recording)
 	 */
 	getQualityConversationAudits(conversationId, opts) { 
 		opts = opts || {};

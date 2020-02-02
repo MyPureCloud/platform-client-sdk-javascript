@@ -4802,6 +4802,9 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
               },  
               "acdAutoAnswer": Boolean, 
               "languagePreference": String, 
+              "lastTokenIssued": { 
+                "dateIssued": Date, 
+              },  
               "selfUri": String, 
             },  
             "startDate": Date, 
@@ -5158,6 +5161,9 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
               },  
               "acdAutoAnswer": Boolean, 
               "languagePreference": String, 
+              "lastTokenIssued": { 
+                "dateIssued": Date, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -5180,6 +5186,9 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
           },  
           "acdAutoAnswer": Boolean, 
           "languagePreference": String, 
+          "lastTokenIssued": { 
+            "dateIssued": Date, 
+          },  
           "selfUri": String, 
         },  
         "startDate": Date, 
@@ -5698,6 +5707,9 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
               },  
               "acdAutoAnswer": Boolean, 
               "languagePreference": String, 
+              "lastTokenIssued": { 
+                "dateIssued": Date, 
+              },  
               "selfUri": String, 
             },  
             "startDate": Date, 
@@ -6054,6 +6066,9 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
               },  
               "acdAutoAnswer": Boolean, 
               "languagePreference": String, 
+              "lastTokenIssued": { 
+                "dateIssued": Date, 
+              },  
               "selfUri": String, 
             },  
             "selfUri": String, 
@@ -6076,6 +6091,9 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
           },  
           "acdAutoAnswer": Boolean, 
           "languagePreference": String, 
+          "lastTokenIssued": { 
+            "dateIssued": Date, 
+          },  
           "selfUri": String, 
         },  
         "selfUri": String, 
@@ -6098,6 +6116,9 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
       },  
       "acdAutoAnswer": Boolean, 
       "languagePreference": String, 
+      "lastTokenIssued": { 
+        "dateIssued": Date, 
+      },  
       "selfUri": String, 
     },  
     "isFullDayRequest": Boolean, 

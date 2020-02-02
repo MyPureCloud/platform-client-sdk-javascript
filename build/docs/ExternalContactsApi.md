@@ -1566,6 +1566,9 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "externalDataSources": { 
@@ -2186,6 +2189,9 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
           },  
           "acdAutoAnswer": Boolean, 
           "languagePreference": String, 
+          "lastTokenIssued": { 
+            "dateIssued": Date, 
+          },  
           "selfUri": String, 
         },  
         "images": { 
@@ -2535,6 +2541,9 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
         },  
         "acdAutoAnswer": Boolean, 
         "languagePreference": String, 
+        "lastTokenIssued": { 
+          "dateIssued": Date, 
+        },  
         "organization": { 
           "id": String, 
           "name": String, 
@@ -3066,6 +3075,9 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "externalDataSources": { 
@@ -3613,6 +3625,9 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
         },  
         "acdAutoAnswer": Boolean, 
         "languagePreference": String, 
+        "lastTokenIssued": { 
+          "dateIssued": Date, 
+        },  
         "selfUri": String, 
       },  
       "images": { 
@@ -3971,6 +3986,9 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
       },  
       "acdAutoAnswer": Boolean, 
       "languagePreference": String, 
+      "lastTokenIssued": { 
+        "dateIssued": Date, 
+      },  
       "organization": { 
         "id": String, 
         "name": String, 
@@ -4491,6 +4509,9 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "externalOrganization": { 
@@ -4944,6 +4965,9 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
           },  
           "acdAutoAnswer": Boolean, 
           "languagePreference": String, 
+          "lastTokenIssued": { 
+            "dateIssued": Date, 
+          },  
           "selfUri": String, 
         },  
         "images": { 
@@ -5293,6 +5317,9 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
         },  
         "acdAutoAnswer": Boolean, 
         "languagePreference": String, 
+        "lastTokenIssued": { 
+          "dateIssued": Date, 
+        },  
         "organization": { 
           "id": String, 
           "name": String, 
@@ -5954,6 +5981,9 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
           },  
           "acdAutoAnswer": Boolean, 
           "languagePreference": String, 
+          "lastTokenIssued": { 
+            "dateIssued": Date, 
+          },  
           "selfUri": String, 
         },  
         "images": { 
@@ -6303,6 +6333,9 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
         },  
         "acdAutoAnswer": Boolean, 
         "languagePreference": String, 
+        "lastTokenIssued": { 
+          "dateIssued": Date, 
+        },  
         "organization": { 
           "id": String, 
           "name": String, 
@@ -6836,6 +6869,9 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "externalDataSources": { 
@@ -7470,6 +7506,9 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
         },  
         "acdAutoAnswer": Boolean, 
         "languagePreference": String, 
+        "lastTokenIssued": { 
+          "dateIssued": Date, 
+        },  
         "selfUri": String, 
       },  
       "images": { 
@@ -7828,6 +7867,9 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
       },  
       "acdAutoAnswer": Boolean, 
       "languagePreference": String, 
+      "lastTokenIssued": { 
+        "dateIssued": Date, 
+      },  
       "organization": { 
         "id": String, 
         "name": String, 
@@ -8353,6 +8395,9 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "externalDataSources": { 
@@ -8898,6 +8943,9 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "externalOrganization": { 
@@ -9351,6 +9399,9 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
           },  
           "acdAutoAnswer": Boolean, 
           "languagePreference": String, 
+          "lastTokenIssued": { 
+            "dateIssued": Date, 
+          },  
           "selfUri": String, 
         },  
         "images": { 
@@ -9700,6 +9751,9 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
         },  
         "acdAutoAnswer": Boolean, 
         "languagePreference": String, 
+        "lastTokenIssued": { 
+          "dateIssued": Date, 
+        },  
         "organization": { 
           "id": String, 
           "name": String, 

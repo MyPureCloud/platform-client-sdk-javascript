@@ -5,7 +5,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 68.0.0
+	 * @version 69.0.0
 	 */
 
 	/**
@@ -104,26 +104,6 @@ class UtilitiesApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Generate a JWT for use with common cloud.
-	 * 
-	 */
-	postGmscTokens() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/gmsc/tokens', 
-			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

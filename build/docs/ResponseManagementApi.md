@@ -794,6 +794,9 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "dateCreated": Date, 
@@ -1284,6 +1287,9 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "dateCreated": Date, 
@@ -1870,6 +1876,9 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "dateCreated": Date, 
@@ -2362,6 +2371,9 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "dateCreated": Date, 

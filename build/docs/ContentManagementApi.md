@@ -2968,6 +2968,9 @@ WorkspaceMember <a href="#" onclick="return copyWorkspaceMemberExample()">Copy</
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "group": { 

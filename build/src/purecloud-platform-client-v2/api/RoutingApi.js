@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 68.0.0
+	 * @version 69.0.0
 	 */
 
 	/**
@@ -215,7 +215,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Delete utilization settings and revert to system defaults.
+	 * Delete the organization-wide max utilization settings and revert to the system default.
 	 * 
 	 */
 	deleteRoutingUtilization() { 
@@ -1025,7 +1025,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Get the utilization settings.
+	 * Get the organization-wide max utilization settings.
 	 * 
 	 */
 	getRoutingUtilization() { 
@@ -1087,6 +1087,38 @@ class RoutingApi {
 			'GET', 
 			{  }, 
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'name': opts['name'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get queues for user
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Boolean} opts.joined Is joined to the queue (default to true)
+	 * @param {Array.<String>} opts.divisionId Division ID(s)
+	 */
+	getUserQueues(userId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getUserQueues';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/queues', 
+			'GET', 
+			{ 'userId': userId }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'joined': opts['joined'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1239,6 +1271,75 @@ class RoutingApi {
 			'PATCH', 
 			{  }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Join or unjoin a queue for a user
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {String} userId User ID
+	 * @param {Object} body Queue Member
+	 */
+	patchUserQueue(queueId, userId, body) { 
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling patchUserQueue';
+		}
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling patchUserQueue';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchUserQueue';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/queues/{queueId}', 
+			'PATCH', 
+			{ 'queueId': queueId,'userId': userId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Join or unjoin a set of queues for a user
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Array.<Object>} body User Queues
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.divisionId Division ID(s)
+	 */
+	patchUserQueues(userId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling patchUserQueues';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchUserQueues';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/queues', 
+			'PATCH', 
+			{ 'userId': userId }, 
+			{ 'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
 			{  }, 
 			{  }, 
 			body, 
@@ -1848,7 +1949,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Update the utilization settings.
+	 * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
 	 * 
 	 * @param {Object} body utilization
 	 */

@@ -1688,6 +1688,9 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
           },  
           "acdAutoAnswer": Boolean, 
           "languagePreference": String, 
+          "lastTokenIssued": { 
+            "dateIssued": Date, 
+          },  
           "selfUri": String, 
         },  
         "queue": { 
@@ -2100,6 +2103,9 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             },  
             "acdAutoAnswer": Boolean, 
             "languagePreference": String, 
+            "lastTokenIssued": { 
+              "dateIssued": Date, 
+            },  
             "selfUri": String, 
           },  
           "queue": { 
@@ -2363,6 +2369,9 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               },  
               "acdAutoAnswer": Boolean, 
               "languagePreference": String, 
+              "lastTokenIssued": { 
+                "dateIssued": Date, 
+              },  
               "selfUri": String, 
             },  
             "queue": { 
@@ -2469,6 +2478,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "languagePreference": String, 
+                "lastTokenIssued": OAuthLastTokenIssued, 
                 "selfUri": String, 
               },  
               "queue": { 
@@ -3226,6 +3236,9 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
           },  
           "acdAutoAnswer": Boolean, 
           "languagePreference": String, 
+          "lastTokenIssued": { 
+            "dateIssued": Date, 
+          },  
           "selfUri": String, 
         },  
         "queue": { 
@@ -3638,6 +3651,9 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             },  
             "acdAutoAnswer": Boolean, 
             "languagePreference": String, 
+            "lastTokenIssued": { 
+              "dateIssued": Date, 
+            },  
             "selfUri": String, 
           },  
           "queue": { 
@@ -3901,6 +3917,9 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               },  
               "acdAutoAnswer": Boolean, 
               "languagePreference": String, 
+              "lastTokenIssued": { 
+                "dateIssued": Date, 
+              },  
               "selfUri": String, 
             },  
             "queue": { 
@@ -4007,6 +4026,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "languagePreference": String, 
+                "lastTokenIssued": OAuthLastTokenIssued, 
                 "selfUri": String, 
               },  
               "queue": { 
@@ -4535,6 +4555,9 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
           },  
           "acdAutoAnswer": Boolean, 
           "languagePreference": String, 
+          "lastTokenIssued": { 
+            "dateIssued": Date, 
+          },  
           "selfUri": String, 
         },  
         "queue": { 
@@ -4947,6 +4970,9 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
             },  
             "acdAutoAnswer": Boolean, 
             "languagePreference": String, 
+            "lastTokenIssued": { 
+              "dateIssued": Date, 
+            },  
             "selfUri": String, 
           },  
           "queue": { 
@@ -5210,6 +5236,9 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
               },  
               "acdAutoAnswer": Boolean, 
               "languagePreference": String, 
+              "lastTokenIssued": { 
+                "dateIssued": Date, 
+              },  
               "selfUri": String, 
             },  
             "queue": { 
@@ -5316,6 +5345,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "languagePreference": String, 
+                "lastTokenIssued": OAuthLastTokenIssued, 
                 "selfUri": String, 
               },  
               "queue": { 
@@ -6221,6 +6251,9 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
           },  
           "acdAutoAnswer": Boolean, 
           "languagePreference": String, 
+          "lastTokenIssued": { 
+            "dateIssued": Date, 
+          },  
           "selfUri": String, 
         },  
         "queue": { 
@@ -6633,6 +6666,9 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
             },  
             "acdAutoAnswer": Boolean, 
             "languagePreference": String, 
+            "lastTokenIssued": { 
+              "dateIssued": Date, 
+            },  
             "selfUri": String, 
           },  
           "queue": { 
@@ -6896,6 +6932,9 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
               },  
               "acdAutoAnswer": Boolean, 
               "languagePreference": String, 
+              "lastTokenIssued": { 
+                "dateIssued": Date, 
+              },  
               "selfUri": String, 
             },  
             "queue": { 
@@ -7002,6 +7041,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "languagePreference": String, 
+                "lastTokenIssued": OAuthLastTokenIssued, 
                 "selfUri": String, 
               },  
               "queue": { 
@@ -7642,6 +7682,9 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
           },  
           "acdAutoAnswer": Boolean, 
           "languagePreference": String, 
+          "lastTokenIssued": { 
+            "dateIssued": Date, 
+          },  
           "selfUri": String, 
         },  
         "queue": { 
@@ -8054,6 +8097,9 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             },  
             "acdAutoAnswer": Boolean, 
             "languagePreference": String, 
+            "lastTokenIssued": { 
+              "dateIssued": Date, 
+            },  
             "selfUri": String, 
           },  
           "queue": { 
@@ -8317,6 +8363,9 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               },  
               "acdAutoAnswer": Boolean, 
               "languagePreference": String, 
+              "lastTokenIssued": { 
+                "dateIssued": Date, 
+              },  
               "selfUri": String, 
             },  
             "queue": { 
@@ -8423,6 +8472,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "languages": [UserRoutingLanguage], 
                 "acdAutoAnswer": Boolean, 
                 "languagePreference": String, 
+                "lastTokenIssued": OAuthLastTokenIssued, 
                 "selfUri": String, 
               },  
               "queue": { 

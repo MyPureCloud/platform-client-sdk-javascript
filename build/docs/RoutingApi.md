@@ -14,7 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingQueueWrapupcode**](RoutingApi.html#deleteRoutingQueueWrapupcode) | **DELETE** /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId} | Delete a wrap-up code from a queue
 [**deleteRoutingSkill**](RoutingApi.html#deleteRoutingSkill) | **DELETE** /api/v2/routing/skills/{skillId} | Delete Routing Skill
 [**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | **DELETE** /api/v2/routing/sms/phonenumbers/{addressId} | Delete a phone number provisioned for SMS.
-[**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | **DELETE** /api/v2/routing/utilization | Delete utilization settings and revert to system defaults.
+[**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | **DELETE** /api/v2/routing/utilization | Delete the organization-wide max utilization settings and revert to the system default.
 [**deleteRoutingWrapupcode**](RoutingApi.html#deleteRoutingWrapupcode) | **DELETE** /api/v2/routing/wrapupcodes/{codeId} | Delete wrap-up code
 [**deleteUserRoutinglanguage**](RoutingApi.html#deleteUserRoutinglanguage) | **DELETE** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove routing language from user
 [**deleteUserRoutingskill**](RoutingApi.html#deleteUserRoutingskill) | **DELETE** /api/v2/users/{userId}/routingskills/{skillId} | Remove routing skill from user
@@ -44,14 +44,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingSmsAvailablephonenumbers**](RoutingApi.html#getRoutingSmsAvailablephonenumbers) | **GET** /api/v2/routing/sms/availablephonenumbers | Get a list of available phone numbers for SMS provisioning.
 [**getRoutingSmsPhonenumber**](RoutingApi.html#getRoutingSmsPhonenumber) | **GET** /api/v2/routing/sms/phonenumbers/{addressId} | Get a phone number provisioned for SMS.
 [**getRoutingSmsPhonenumbers**](RoutingApi.html#getRoutingSmsPhonenumbers) | **GET** /api/v2/routing/sms/phonenumbers | Get a list of provisioned phone numbers.
-[**getRoutingUtilization**](RoutingApi.html#getRoutingUtilization) | **GET** /api/v2/routing/utilization | Get the utilization settings.
+[**getRoutingUtilization**](RoutingApi.html#getRoutingUtilization) | **GET** /api/v2/routing/utilization | Get the organization-wide max utilization settings.
 [**getRoutingWrapupcode**](RoutingApi.html#getRoutingWrapupcode) | **GET** /api/v2/routing/wrapupcodes/{codeId} | Get details about this wrap-up code.
 [**getRoutingWrapupcodes**](RoutingApi.html#getRoutingWrapupcodes) | **GET** /api/v2/routing/wrapupcodes | Get list of wrapup codes.
+[**getUserQueues**](RoutingApi.html#getUserQueues) | **GET** /api/v2/users/{userId}/queues | Get queues for user
 [**getUserRoutinglanguages**](RoutingApi.html#getUserRoutinglanguages) | **GET** /api/v2/users/{userId}/routinglanguages | List routing language for user
 [**getUserRoutingskills**](RoutingApi.html#getUserRoutingskills) | **GET** /api/v2/users/{userId}/routingskills | List routing skills for user
 [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | **PATCH** /api/v2/routing/queues/{queueId}/users/{memberId} | Update the ring number OR joined status for a User in a Queue
 [**patchRoutingQueueUsers**](RoutingApi.html#patchRoutingQueueUsers) | **PATCH** /api/v2/routing/queues/{queueId}/users | Join or unjoin a set of users for a queue
 [**patchRoutingSettingsContactcenter**](RoutingApi.html#patchRoutingSettingsContactcenter) | **PATCH** /api/v2/routing/settings/contactcenter | Update Contact Center Settings
+[**patchUserQueue**](RoutingApi.html#patchUserQueue) | **PATCH** /api/v2/users/{userId}/queues/{queueId} | Join or unjoin a queue for a user
+[**patchUserQueues**](RoutingApi.html#patchUserQueues) | **PATCH** /api/v2/users/{userId}/queues | Join or unjoin a set of queues for a user
 [**patchUserRoutinglanguage**](RoutingApi.html#patchUserRoutinglanguage) | **PATCH** /api/v2/users/{userId}/routinglanguages/{languageId} | Update routing language proficiency or state.
 [**patchUserRoutinglanguagesBulk**](RoutingApi.html#patchUserRoutinglanguagesBulk) | **PATCH** /api/v2/users/{userId}/routinglanguages/bulk | Add bulk routing language to user. Max limit 50 languages
 [**patchUserRoutingskillsBulk**](RoutingApi.html#patchUserRoutingskillsBulk) | **PATCH** /api/v2/users/{userId}/routingskills/bulk | Bulk add routing skills to user
@@ -73,7 +76,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putRoutingQueue**](RoutingApi.html#putRoutingQueue) | **PUT** /api/v2/routing/queues/{queueId} | Update a queue
 [**putRoutingSettingsTranscription**](RoutingApi.html#putRoutingSettingsTranscription) | **PUT** /api/v2/routing/settings/transcription | Update Transcription Settings
 [**putRoutingSmsPhonenumber**](RoutingApi.html#putRoutingSmsPhonenumber) | **PUT** /api/v2/routing/sms/phonenumbers/{addressId} | Update a phone number provisioned for SMS.
-[**putRoutingUtilization**](RoutingApi.html#putRoutingUtilization) | **PUT** /api/v2/routing/utilization | Update the utilization settings.
+[**putRoutingUtilization**](RoutingApi.html#putRoutingUtilization) | **PUT** /api/v2/routing/utilization | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
 [**putRoutingWrapupcode**](RoutingApi.html#putRoutingWrapupcode) | **PUT** /api/v2/routing/wrapupcodes/{codeId} | Update wrap-up code
 [**putUserRoutingskill**](RoutingApi.html#putUserRoutingskill) | **PUT** /api/v2/users/{userId}/routingskills/{skillId} | Update routing skill proficiency or state.
 [**putUserRoutingskillsBulk**](RoutingApi.html#putUserRoutingskillsBulk) | **PUT** /api/v2/users/{userId}/routingskills/bulk | Replace all routing skills assigned to a user
@@ -482,7 +485,7 @@ void (no response body)
 
 DELETE /api/v2/routing/utilization
 
-Delete utilization settings and revert to system defaults.
+Delete the organization-wide max utilization settings and revert to the system default.
 
 
 
@@ -1385,7 +1388,7 @@ apiInstance.getRoutingQueueUsers(queueId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortBy** | **String** | Sort by | [optional] [default to name] |
- **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, authorization.unusedRoles, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
  **joined** | **Boolean** | Filter by joined status | [optional]  |
  **name** | **String** | Filter by queue member name | [optional]  |
  **profileSkills** | **[String]** | Filter by profile skill | [optional]  |
@@ -2249,7 +2252,7 @@ apiInstance.getRoutingSmsPhonenumbers(opts)
 
 GET /api/v2/routing/utilization
 
-Get the utilization settings.
+Get the organization-wide max utilization settings.
 
 
 
@@ -2409,6 +2412,72 @@ apiInstance.getRoutingWrapupcodes(opts)
 ### Return type
 
 **WrapupCodeEntityListing**
+
+<a name="getUserQueues"></a>
+
+# UserQueueEntityListing getUserQueues(userId, opts)
+
+
+
+GET /api/v2/users/{userId}/queues
+
+Get queues for user
+
+
+
+Requires ANY permissions: 
+
+* routing:queue:view
+* routing:queue:join
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let userId = "userId_example"; // String | User ID
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'joined': true, // Boolean | Is joined to the queue
+  'divisionId': ["divisionId_example"] // [String] | Division ID(s)
+};
+
+apiInstance.getUserQueues(userId, opts)
+  .then((data) => {
+    console.log(`getUserQueues success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUserQueues');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **joined** | **Boolean** | Is joined to the queue | [optional] [default to true] |
+ **divisionId** | **[String]** | Division ID(s) | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserQueueEntityListing**
 
 <a name="getUserRoutinglanguages"></a>
 
@@ -2968,6 +3037,9 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "ringNumber": Number, 
@@ -3460,6 +3532,9 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "ringNumber": Number, 
@@ -3595,6 +3670,624 @@ apiInstance.patchRoutingSettingsContactcenter(body)
 ### Return type
 
 void (no response body)
+
+<a name="patchUserQueue"></a>
+
+# UserQueue patchUserQueue(queueId, userId, body)
+
+
+
+PATCH /api/v2/users/{userId}/queues/{queueId}
+
+Join or unjoin a queue for a user
+
+
+
+Requires ANY permissions: 
+
+* routing:queue:join
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyUserQueueExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UserQueueExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+UserQueue <a href="#" onclick="return copyUserQueueExample()">Copy</a>
+
+<div id="UserQueueExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "description": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "modifiedBy": String, 
+  "createdBy": String, 
+  "memberCount": Number, 
+  "mediaSettings": { 
+    "alertingTimeoutSeconds": Number, 
+    "serviceLevel": { 
+      "percentage": Number, 
+      "durationMs": Number, 
+    },  
+  },  
+  "bullseye": { 
+    "rings": { 
+      "expansionCriteria": { 
+        "type": String, 
+        "threshold": Number, 
+      },  
+      "actions": { 
+        "skillsToRemove": { 
+          "name": String, 
+          "id": String, 
+          "selfUri": String, 
+        },  
+      },  
+    },  
+  },  
+  "acwSettings": { 
+    "wrapupPrompt": String, 
+    "timeoutMs": Number, 
+  },  
+  "skillEvaluationMethod": String, 
+  "queueFlow": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "whisperPrompt": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "callingPartyName": String, 
+  "callingPartyNumber": String, 
+  "defaultScripts": { 
+    "id": String, 
+    "name": String, 
+    "versionId": String, 
+    "createdDate": Date, 
+    "modifiedDate": Date, 
+    "publishedDate": Date, 
+    "versionDate": Date, 
+    "startPageId": String, 
+    "startPageName": String, 
+    "features": Object, 
+    "variables": Object, 
+    "customActions": Object, 
+    "pages": { 
+      "id": String, 
+      "name": String, 
+      "versionId": String, 
+      "createdDate": Date, 
+      "modifiedDate": Date, 
+      "rootContainer": {String: Object}, 
+      "properties": {String: Object}, 
+      "selfUri": String, 
+    },  
+    "selfUri": String, 
+  },  
+  "outboundMessagingAddresses": { 
+    "smsAddress": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+  },  
+  "outboundEmailAddress": { 
+    "domain": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+    "route": { 
+      "id": String, 
+      "name": String, 
+      "pattern": String, 
+      "queue": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "priority": Number, 
+      "skills": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "language": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "fromName": String, 
+      "fromEmail": String, 
+      "flow": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "replyEmailAddress": { 
+        "domain": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
+        "route": { 
+          "id": String, 
+          "name": String, 
+          "pattern": String, 
+          "queue": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "priority": Number, 
+          "skills": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "language": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "fromName": String, 
+          "fromEmail": String, 
+          "flow": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "replyEmailAddress": { 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
+            "route": { 
+              "id": String, 
+              "name": String, 
+              "pattern": String, 
+              "queue": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "priority": Number, 
+              "skills": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "language": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "fromName": String, 
+              "fromEmail": String, 
+              "flow": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "replyEmailAddress": { 
+                "domain": DomainEntityRef, 
+                "route": InboundRoute, 
+              },  
+              "autoBcc": { 
+                "email": String, 
+                "name": String, 
+              },  
+              "spamFlow": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "selfUri": String, 
+            },  
+          },  
+          "autoBcc": { 
+            "email": String, 
+            "name": String, 
+          },  
+          "spamFlow": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "selfUri": String, 
+        },  
+      },  
+      "autoBcc": { 
+        "email": String, 
+        "name": String, 
+      },  
+      "spamFlow": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+  },  
+  "joined": Boolean, 
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let queueId = "queueId_example"; // String | Queue ID
+let userId = "userId_example"; // String | User ID
+let body = {}; // Object | Queue Member
+
+apiInstance.patchUserQueue(queueId, userId, body)
+  .then((data) => {
+    console.log(`patchUserQueue success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchUserQueue');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **queueId** | **String** | Queue ID |  |
+ **userId** | **String** | User ID |  |
+ **body** | **Object** | Queue Member |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserQueue**
+
+<a name="patchUserQueues"></a>
+
+# UserQueueEntityListing patchUserQueues(userId, body, opts)
+
+
+
+PATCH /api/v2/users/{userId}/queues
+
+Join or unjoin a set of queues for a user
+
+
+
+Requires ANY permissions: 
+
+* routing:queue:join
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyUserQueueExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UserQueueExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+UserQueue <a href="#" onclick="return copyUserQueueExample()">Copy</a>
+
+<div id="UserQueueExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "description": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "modifiedBy": String, 
+  "createdBy": String, 
+  "memberCount": Number, 
+  "mediaSettings": { 
+    "alertingTimeoutSeconds": Number, 
+    "serviceLevel": { 
+      "percentage": Number, 
+      "durationMs": Number, 
+    },  
+  },  
+  "bullseye": { 
+    "rings": { 
+      "expansionCriteria": { 
+        "type": String, 
+        "threshold": Number, 
+      },  
+      "actions": { 
+        "skillsToRemove": { 
+          "name": String, 
+          "id": String, 
+          "selfUri": String, 
+        },  
+      },  
+    },  
+  },  
+  "acwSettings": { 
+    "wrapupPrompt": String, 
+    "timeoutMs": Number, 
+  },  
+  "skillEvaluationMethod": String, 
+  "queueFlow": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "whisperPrompt": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "callingPartyName": String, 
+  "callingPartyNumber": String, 
+  "defaultScripts": { 
+    "id": String, 
+    "name": String, 
+    "versionId": String, 
+    "createdDate": Date, 
+    "modifiedDate": Date, 
+    "publishedDate": Date, 
+    "versionDate": Date, 
+    "startPageId": String, 
+    "startPageName": String, 
+    "features": Object, 
+    "variables": Object, 
+    "customActions": Object, 
+    "pages": { 
+      "id": String, 
+      "name": String, 
+      "versionId": String, 
+      "createdDate": Date, 
+      "modifiedDate": Date, 
+      "rootContainer": {String: Object}, 
+      "properties": {String: Object}, 
+      "selfUri": String, 
+    },  
+    "selfUri": String, 
+  },  
+  "outboundMessagingAddresses": { 
+    "smsAddress": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+  },  
+  "outboundEmailAddress": { 
+    "domain": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+    "route": { 
+      "id": String, 
+      "name": String, 
+      "pattern": String, 
+      "queue": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "priority": Number, 
+      "skills": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "language": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "fromName": String, 
+      "fromEmail": String, 
+      "flow": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "replyEmailAddress": { 
+        "domain": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
+        "route": { 
+          "id": String, 
+          "name": String, 
+          "pattern": String, 
+          "queue": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "priority": Number, 
+          "skills": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "language": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "fromName": String, 
+          "fromEmail": String, 
+          "flow": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "replyEmailAddress": { 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
+            "route": { 
+              "id": String, 
+              "name": String, 
+              "pattern": String, 
+              "queue": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "priority": Number, 
+              "skills": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "language": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "fromName": String, 
+              "fromEmail": String, 
+              "flow": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "replyEmailAddress": { 
+                "domain": DomainEntityRef, 
+                "route": InboundRoute, 
+              },  
+              "autoBcc": { 
+                "email": String, 
+                "name": String, 
+              },  
+              "spamFlow": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
+              "selfUri": String, 
+            },  
+          },  
+          "autoBcc": { 
+            "email": String, 
+            "name": String, 
+          },  
+          "spamFlow": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "selfUri": String, 
+        },  
+      },  
+      "autoBcc": { 
+        "email": String, 
+        "name": String, 
+      },  
+      "spamFlow": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+  },  
+  "joined": Boolean, 
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let userId = "userId_example"; // String | User ID
+let body = [{}]; // Object | User Queues
+let opts = { 
+  'divisionId': ["divisionId_example"] // [String] | Division ID(s)
+};
+
+apiInstance.patchUserQueues(userId, body, opts)
+  .then((data) => {
+    console.log(`patchUserQueues success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchUserQueues');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **body** | **Object** | User Queues |  |
+ **divisionId** | **[String]** | Division ID(s) | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserQueueEntityListing**
 
 <a name="patchUserRoutinglanguage"></a>
 
@@ -6075,6 +6768,9 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       },  
       "acdAutoAnswer": Boolean, 
       "languagePreference": String, 
+      "lastTokenIssued": { 
+        "dateIssued": Date, 
+      },  
       "selfUri": String, 
     },  
     "lockedClient": { 
@@ -6092,6 +6788,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "configurationVersion": String, 
       "type": String, 
       "secure": Boolean, 
+      "debug": Boolean, 
       "createdBy": User, 
       "createdByClient": { 
         "id": String, 
@@ -6102,6 +6799,26 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "dateCreated": Number, 
       "generationId": String, 
       "publishResultUri": String, 
+      "inputSchema": { 
+        "id": String, 
+        "$schema": String, 
+        "title": String, 
+        "description": String, 
+        "type": String, 
+        "required": [String], 
+        "properties": {String: Object}, 
+        "additionalProperties": Object, 
+      },  
+      "outputSchema": { 
+        "id": String, 
+        "$schema": String, 
+        "title": String, 
+        "description": String, 
+        "type": String, 
+        "required": [String], 
+        "properties": {String: Object}, 
+        "additionalProperties": Object, 
+      },  
       "selfUri": String, 
     },  
     "savedVersion": { 
@@ -6111,6 +6828,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "configurationVersion": String, 
       "type": String, 
       "secure": Boolean, 
+      "debug": Boolean, 
       "createdBy": User, 
       "createdByClient": { 
         "id": String, 
@@ -6121,6 +6839,26 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "dateCreated": Number, 
       "generationId": String, 
       "publishResultUri": String, 
+      "inputSchema": { 
+        "id": String, 
+        "$schema": String, 
+        "title": String, 
+        "description": String, 
+        "type": String, 
+        "required": [String], 
+        "properties": {String: Object}, 
+        "additionalProperties": Object, 
+      },  
+      "outputSchema": { 
+        "id": String, 
+        "$schema": String, 
+        "title": String, 
+        "description": String, 
+        "type": String, 
+        "required": [String], 
+        "properties": {String: Object}, 
+        "additionalProperties": Object, 
+      },  
       "selfUri": String, 
     },  
     "inputSchema": Object, 
@@ -6132,6 +6870,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "configurationVersion": String, 
       "type": String, 
       "secure": Boolean, 
+      "debug": Boolean, 
       "createdBy": User, 
       "createdByClient": { 
         "id": String, 
@@ -6142,6 +6881,66 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "dateCreated": Number, 
       "generationId": String, 
       "publishResultUri": String, 
+      "inputSchema": { 
+        "id": String, 
+        "$schema": String, 
+        "title": String, 
+        "description": String, 
+        "type": String, 
+        "required": [String], 
+        "properties": {String: Object}, 
+        "additionalProperties": Object, 
+      },  
+      "outputSchema": { 
+        "id": String, 
+        "$schema": String, 
+        "title": String, 
+        "description": String, 
+        "type": String, 
+        "required": [String], 
+        "properties": {String: Object}, 
+        "additionalProperties": Object, 
+      },  
+      "selfUri": String, 
+    },  
+    "debugVersion": { 
+      "id": String, 
+      "name": String, 
+      "commitVersion": String, 
+      "configurationVersion": String, 
+      "type": String, 
+      "secure": Boolean, 
+      "debug": Boolean, 
+      "createdBy": User, 
+      "createdByClient": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "configurationUri": String, 
+      "dateCreated": Number, 
+      "generationId": String, 
+      "publishResultUri": String, 
+      "inputSchema": { 
+        "id": String, 
+        "$schema": String, 
+        "title": String, 
+        "description": String, 
+        "type": String, 
+        "required": [String], 
+        "properties": {String: Object}, 
+        "additionalProperties": Object, 
+      },  
+      "outputSchema": { 
+        "id": String, 
+        "$schema": String, 
+        "title": String, 
+        "description": String, 
+        "type": String, 
+        "required": [String], 
+        "properties": {String: Object}, 
+        "additionalProperties": Object, 
+      },  
       "selfUri": String, 
     },  
     "publishedBy": { 
@@ -6531,6 +7330,9 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       },  
       "acdAutoAnswer": Boolean, 
       "languagePreference": String, 
+      "lastTokenIssued": { 
+        "dateIssued": Date, 
+      },  
       "selfUri": String, 
     },  
     "currentOperation": { 
@@ -6914,6 +7716,9 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         },  
         "acdAutoAnswer": Boolean, 
         "languagePreference": String, 
+        "lastTokenIssued": { 
+          "dateIssued": Date, 
+        },  
         "selfUri": String, 
       },  
       "client": { 
@@ -7333,6 +8138,9 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "modifiedBy": User, 
@@ -8212,6 +9020,9 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "selfUri": String, 
   },  
   "modifiedBy": User, 
@@ -8286,7 +9097,7 @@ apiInstance.putRoutingSmsPhonenumber(addressId, body)
 
 PUT /api/v2/routing/utilization
 
-Update the utilization settings.
+Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
 
 
 

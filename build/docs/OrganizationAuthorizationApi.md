@@ -1827,6 +1827,9 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
       },  
       "acdAutoAnswer": Boolean, 
       "languagePreference": String, 
+      "lastTokenIssued": { 
+        "dateIssued": Date, 
+      },  
       "selfUri": String, 
     },  
     "images": { 
@@ -2194,6 +2197,9 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
     },  
     "acdAutoAnswer": Boolean, 
     "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
     "organization": { 
       "id": String, 
       "name": String, 
