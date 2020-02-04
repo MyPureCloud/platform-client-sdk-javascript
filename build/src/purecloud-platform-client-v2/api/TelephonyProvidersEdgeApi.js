@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 69.0.0
+	 * @version 69.1.0
 	 */
 
 	/**
@@ -549,6 +549,106 @@ class TelephonyProvidersEdgeApi {
 			'GET', 
 			{ 'edgeId': edgeId }, 
 			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get networking-related information from an Edge for a target IP or host.
+	 * 
+	 * @param {String} edgeId Edge Id
+	 */
+	getTelephonyProvidersEdgeDiagnosticNslookup(edgeId) { 
+		// verify the required parameter 'edgeId' is set
+		if (edgeId === undefined || edgeId === null) {
+			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeDiagnosticNslookup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup', 
+			'GET', 
+			{ 'edgeId': edgeId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get networking-related information from an Edge for a target IP or host.
+	 * 
+	 * @param {String} edgeId Edge Id
+	 */
+	getTelephonyProvidersEdgeDiagnosticPing(edgeId) { 
+		// verify the required parameter 'edgeId' is set
+		if (edgeId === undefined || edgeId === null) {
+			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeDiagnosticPing';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping', 
+			'GET', 
+			{ 'edgeId': edgeId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get networking-related information from an Edge for a target IP or host.
+	 * 
+	 * @param {String} edgeId Edge Id
+	 */
+	getTelephonyProvidersEdgeDiagnosticRoute(edgeId) { 
+		// verify the required parameter 'edgeId' is set
+		if (edgeId === undefined || edgeId === null) {
+			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeDiagnosticRoute';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/{edgeId}/diagnostic/route', 
+			'GET', 
+			{ 'edgeId': edgeId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get networking-related information from an Edge for a target IP or host.
+	 * 
+	 * @param {String} edgeId Edge Id
+	 */
+	getTelephonyProvidersEdgeDiagnosticTracepath(edgeId) { 
+		// verify the required parameter 'edgeId' is set
+		if (edgeId === undefined || edgeId === null) {
+			throw 'Missing the required parameter "edgeId" when calling getTelephonyProvidersEdgeDiagnosticTracepath';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath', 
+			'GET', 
+			{ 'edgeId': edgeId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -2230,6 +2330,126 @@ class TelephonyProvidersEdgeApi {
 			{  }, 
 			{  }, 
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Nslookup request command to collect networking-related information from an Edge for a target IP or host.
+	 * 
+	 * @param {String} edgeId Edge Id
+	 * @param {Object} body request payload to get network diagnostic
+	 */
+	postTelephonyProvidersEdgeDiagnosticNslookup(edgeId, body) { 
+		// verify the required parameter 'edgeId' is set
+		if (edgeId === undefined || edgeId === null) {
+			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeDiagnosticNslookup';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgeDiagnosticNslookup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup', 
+			'POST', 
+			{ 'edgeId': edgeId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Ping Request command to collect networking-related information from an Edge for a target IP or host.
+	 * 
+	 * @param {String} edgeId Edge Id
+	 * @param {Object} body request payload to get network diagnostic
+	 */
+	postTelephonyProvidersEdgeDiagnosticPing(edgeId, body) { 
+		// verify the required parameter 'edgeId' is set
+		if (edgeId === undefined || edgeId === null) {
+			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeDiagnosticPing';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgeDiagnosticPing';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping', 
+			'POST', 
+			{ 'edgeId': edgeId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Route request command to collect networking-related information from an Edge for a target IP or host.
+	 * 
+	 * @param {String} edgeId Edge Id
+	 * @param {Object} body request payload to get network diagnostic
+	 */
+	postTelephonyProvidersEdgeDiagnosticRoute(edgeId, body) { 
+		// verify the required parameter 'edgeId' is set
+		if (edgeId === undefined || edgeId === null) {
+			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeDiagnosticRoute';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgeDiagnosticRoute';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/{edgeId}/diagnostic/route', 
+			'POST', 
+			{ 'edgeId': edgeId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Tracepath request command to collect networking-related information from an Edge for a target IP or host.
+	 * 
+	 * @param {String} edgeId Edge Id
+	 * @param {Object} body request payload to get network diagnostic
+	 */
+	postTelephonyProvidersEdgeDiagnosticTracepath(edgeId, body) { 
+		// verify the required parameter 'edgeId' is set
+		if (edgeId === undefined || edgeId === null) {
+			throw 'Missing the required parameter "edgeId" when calling postTelephonyProvidersEdgeDiagnosticTracepath';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgeDiagnosticTracepath';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath', 
+			'POST', 
+			{ 'edgeId': edgeId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

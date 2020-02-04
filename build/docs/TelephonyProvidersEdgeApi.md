@@ -26,6 +26,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId**](TelephonyProvidersEdgeApi.html#getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId) | **GET** /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId} | Get a json schema (Deprecated)
 [**getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId**](TelephonyProvidersEdgeApi.html#getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId) | **GET** /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId} | Get metadata for a schema (Deprecated)
 [**getTelephonyProvidersEdge**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdge) | **GET** /api/v2/telephony/providers/edges/{edgeId} | Get edge.
+[**getTelephonyProvidersEdgeDiagnosticNslookup**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeDiagnosticNslookup) | **GET** /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup | Get networking-related information from an Edge for a target IP or host.
+[**getTelephonyProvidersEdgeDiagnosticPing**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeDiagnosticPing) | **GET** /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping | Get networking-related information from an Edge for a target IP or host.
+[**getTelephonyProvidersEdgeDiagnosticRoute**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeDiagnosticRoute) | **GET** /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route | Get networking-related information from an Edge for a target IP or host.
+[**getTelephonyProvidersEdgeDiagnosticTracepath**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeDiagnosticTracepath) | **GET** /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath | Get networking-related information from an Edge for a target IP or host.
 [**getTelephonyProvidersEdgeLine**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeLine) | **GET** /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId} | Get line
 [**getTelephonyProvidersEdgeLines**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeLines) | **GET** /api/v2/telephony/providers/edges/{edgeId}/lines | Get the list of lines.
 [**getTelephonyProvidersEdgeLogicalinterface**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeLogicalinterface) | **GET** /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId} | Get an edge logical interface
@@ -88,6 +92,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTelephonyProvidersEdgesTrunks**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunks) | **GET** /api/v2/telephony/providers/edges/trunks | Get the list of available trunks.
 [**getTelephonyProvidersEdgesTrunksMetrics**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunksMetrics) | **GET** /api/v2/telephony/providers/edges/trunks/metrics | Get the metrics for a list of trunks.
 [**getTelephonyProvidersEdgesTrunkswithrecording**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunkswithrecording) | **GET** /api/v2/telephony/providers/edges/trunkswithrecording | Get Counts of trunks that have recording disabled or enabled
+[**postTelephonyProvidersEdgeDiagnosticNslookup**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeDiagnosticNslookup) | **POST** /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup | Nslookup request command to collect networking-related information from an Edge for a target IP or host.
+[**postTelephonyProvidersEdgeDiagnosticPing**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeDiagnosticPing) | **POST** /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping | Ping Request command to collect networking-related information from an Edge for a target IP or host.
+[**postTelephonyProvidersEdgeDiagnosticRoute**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeDiagnosticRoute) | **POST** /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route | Route request command to collect networking-related information from an Edge for a target IP or host.
+[**postTelephonyProvidersEdgeDiagnosticTracepath**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeDiagnosticTracepath) | **POST** /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath | Tracepath request command to collect networking-related information from an Edge for a target IP or host.
 [**postTelephonyProvidersEdgeLogicalinterfaces**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeLogicalinterfaces) | **POST** /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces | Create an edge logical interface.
 [**postTelephonyProvidersEdgeLogsJobUpload**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeLogsJobUpload) | **POST** /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload | Request that the specified fileIds be uploaded from the Edge.
 [**postTelephonyProvidersEdgeLogsJobs**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeLogsJobs) | **POST** /api/v2/telephony/providers/edges/{edgeId}/logs/jobs | Create a job to upload a list of Edge logs.
@@ -1209,6 +1217,226 @@ apiInstance.getTelephonyProvidersEdge(edgeId, opts)
 ### Return type
 
 **Edge**
+
+<a name="getTelephonyProvidersEdgeDiagnosticNslookup"></a>
+
+# EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticNslookup(edgeId)
+
+
+
+GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup
+
+Get networking-related information from an Edge for a target IP or host.
+
+
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let edgeId = "edgeId_example"; // String | Edge Id
+
+apiInstance.getTelephonyProvidersEdgeDiagnosticNslookup(edgeId)
+  .then((data) => {
+    console.log(`getTelephonyProvidersEdgeDiagnosticNslookup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgeDiagnosticNslookup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **edgeId** | **String** | Edge Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EdgeNetworkDiagnosticResponse**
+
+<a name="getTelephonyProvidersEdgeDiagnosticPing"></a>
+
+# EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticPing(edgeId)
+
+
+
+GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping
+
+Get networking-related information from an Edge for a target IP or host.
+
+
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let edgeId = "edgeId_example"; // String | Edge Id
+
+apiInstance.getTelephonyProvidersEdgeDiagnosticPing(edgeId)
+  .then((data) => {
+    console.log(`getTelephonyProvidersEdgeDiagnosticPing success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgeDiagnosticPing');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **edgeId** | **String** | Edge Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EdgeNetworkDiagnosticResponse**
+
+<a name="getTelephonyProvidersEdgeDiagnosticRoute"></a>
+
+# EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticRoute(edgeId)
+
+
+
+GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route
+
+Get networking-related information from an Edge for a target IP or host.
+
+
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let edgeId = "edgeId_example"; // String | Edge Id
+
+apiInstance.getTelephonyProvidersEdgeDiagnosticRoute(edgeId)
+  .then((data) => {
+    console.log(`getTelephonyProvidersEdgeDiagnosticRoute success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgeDiagnosticRoute');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **edgeId** | **String** | Edge Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EdgeNetworkDiagnosticResponse**
+
+<a name="getTelephonyProvidersEdgeDiagnosticTracepath"></a>
+
+# EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticTracepath(edgeId)
+
+
+
+GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath
+
+Get networking-related information from an Edge for a target IP or host.
+
+
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let edgeId = "edgeId_example"; // String | Edge Id
+
+apiInstance.getTelephonyProvidersEdgeDiagnosticTracepath(edgeId)
+  .then((data) => {
+    console.log(`getTelephonyProvidersEdgeDiagnosticTracepath success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgeDiagnosticTracepath');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **edgeId** | **String** | Edge Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EdgeNetworkDiagnosticResponse**
 
 <a name="getTelephonyProvidersEdgeLine"></a>
 
@@ -4866,6 +5094,334 @@ apiInstance.getTelephonyProvidersEdgesTrunkswithrecording(opts)
 ### Return type
 
 **TrunkRecordingEnabledCount**
+
+<a name="postTelephonyProvidersEdgeDiagnosticNslookup"></a>
+
+# EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticNslookup(edgeId, body)
+
+
+
+POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup
+
+Nslookup request command to collect networking-related information from an Edge for a target IP or host.
+
+
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyEdgeNetworkDiagnosticRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EdgeNetworkDiagnosticRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+EdgeNetworkDiagnosticRequest <a href="#" onclick="return copyEdgeNetworkDiagnosticRequestExample()">Copy</a>
+
+<div id="EdgeNetworkDiagnosticRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "host": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let edgeId = "edgeId_example"; // String | Edge Id
+let body = {}; // Object | request payload to get network diagnostic
+
+apiInstance.postTelephonyProvidersEdgeDiagnosticNslookup(edgeId, body)
+  .then((data) => {
+    console.log(`postTelephonyProvidersEdgeDiagnosticNslookup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgeDiagnosticNslookup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **edgeId** | **String** | Edge Id |  |
+ **body** | **Object** | request payload to get network diagnostic |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EdgeNetworkDiagnostic**
+
+<a name="postTelephonyProvidersEdgeDiagnosticPing"></a>
+
+# EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticPing(edgeId, body)
+
+
+
+POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping
+
+Ping Request command to collect networking-related information from an Edge for a target IP or host.
+
+
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyEdgeNetworkDiagnosticRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EdgeNetworkDiagnosticRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+EdgeNetworkDiagnosticRequest <a href="#" onclick="return copyEdgeNetworkDiagnosticRequestExample()">Copy</a>
+
+<div id="EdgeNetworkDiagnosticRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "host": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let edgeId = "edgeId_example"; // String | Edge Id
+let body = {}; // Object | request payload to get network diagnostic
+
+apiInstance.postTelephonyProvidersEdgeDiagnosticPing(edgeId, body)
+  .then((data) => {
+    console.log(`postTelephonyProvidersEdgeDiagnosticPing success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgeDiagnosticPing');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **edgeId** | **String** | Edge Id |  |
+ **body** | **Object** | request payload to get network diagnostic |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EdgeNetworkDiagnostic**
+
+<a name="postTelephonyProvidersEdgeDiagnosticRoute"></a>
+
+# EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticRoute(edgeId, body)
+
+
+
+POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route
+
+Route request command to collect networking-related information from an Edge for a target IP or host.
+
+
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyEdgeNetworkDiagnosticRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EdgeNetworkDiagnosticRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+EdgeNetworkDiagnosticRequest <a href="#" onclick="return copyEdgeNetworkDiagnosticRequestExample()">Copy</a>
+
+<div id="EdgeNetworkDiagnosticRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "host": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let edgeId = "edgeId_example"; // String | Edge Id
+let body = {}; // Object | request payload to get network diagnostic
+
+apiInstance.postTelephonyProvidersEdgeDiagnosticRoute(edgeId, body)
+  .then((data) => {
+    console.log(`postTelephonyProvidersEdgeDiagnosticRoute success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgeDiagnosticRoute');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **edgeId** | **String** | Edge Id |  |
+ **body** | **Object** | request payload to get network diagnostic |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EdgeNetworkDiagnostic**
+
+<a name="postTelephonyProvidersEdgeDiagnosticTracepath"></a>
+
+# EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticTracepath(edgeId, body)
+
+
+
+POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath
+
+Tracepath request command to collect networking-related information from an Edge for a target IP or host.
+
+
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyEdgeNetworkDiagnosticRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#EdgeNetworkDiagnosticRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+EdgeNetworkDiagnosticRequest <a href="#" onclick="return copyEdgeNetworkDiagnosticRequestExample()">Copy</a>
+
+<div id="EdgeNetworkDiagnosticRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "host": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+
+let edgeId = "edgeId_example"; // String | Edge Id
+let body = {}; // Object | request payload to get network diagnostic
+
+apiInstance.postTelephonyProvidersEdgeDiagnosticTracepath(edgeId, body)
+  .then((data) => {
+    console.log(`postTelephonyProvidersEdgeDiagnosticTracepath success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgeDiagnosticTracepath');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **edgeId** | **String** | Edge Id |  |
+ **body** | **Object** | request payload to get network diagnostic |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EdgeNetworkDiagnostic**
 
 <a name="postTelephonyProvidersEdgeLogicalinterfaces"></a>
 
