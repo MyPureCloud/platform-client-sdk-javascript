@@ -3,7 +3,7 @@ Platform API version: 3739
 
 # SDK Changes
 
-* NO-JIRA make prefix optional
+* API-5122 updated auth token parsing logic
 
 # Major Changes (0 changes)
 

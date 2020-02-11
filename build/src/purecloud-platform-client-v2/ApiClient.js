@@ -2,7 +2,7 @@ import superagent from 'superagent';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 69.2.0
+ * @version 69.2.1
  */
 class ApiClient {
 	/**
@@ -421,17 +421,12 @@ class ApiClient {
 		if(!(typeof window !== 'undefined' && window.location.hash)) return;
 
 		// Process hash string into object
-		var hash = window.location.hash
-			.slice(1).split('&')
-			.reduce((obj, pair) => {
-				var keyValue = pair.split('=');
-				/* Auth does some interesting things with encoding. It encodes the data twice, except 
-				 * for spaces, then replaces all spaces with a plus sign. This process must be done 
-				 * in reverse order to properly extract the state data. 
-				 */
-				obj[keyValue[0]] = decodeURIComponent(decodeURIComponent(keyValue[1].replace(/\+/g, '%20')));
-				return obj;
-			}, {});
+		const hashRegex = new RegExp(`^#*(.+?)=(.+?)$`, 'i');
+		let hash = {};
+		window.location.hash.split('&').forEach((h) => {
+			const match = hashRegex.exec(h);
+			if (match) hash[match[1]] = decodeURIComponent(decodeURIComponent(match[2].replace(/\+/g, '%20')));
+		});
 		
 		// Check for error
 		if (hash.error) {
@@ -765,7 +760,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '69.2.0' });
+		//request.set({ 'purecloud-sdk': '69.2.1' });
 
 		// set request timeout
 		request.timeout(this.timeout);
