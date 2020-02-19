@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -3404,6 +3404,36 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/messages', 
+			'POST', 
+			{ 'conversationId': conversationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Copy attachments from an email message to the current draft.
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body Copy Attachment Request
+	 */
+	postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailMessagesDraftAttachmentsCopy';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsEmailMessagesDraftAttachmentsCopy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy', 
 			'POST', 
 			{ 'conversationId': conversationId }, 
 			{  }, 

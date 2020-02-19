@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -154,6 +154,26 @@ class RoutingApi {
 			'/api/v2/routing/queues/{queueId}/wrapupcodes/{codeId}', 
 			'DELETE', 
 			{ 'queueId': queueId,'codeId': codeId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an organization&#39;s routing settings
+	 * 
+	 */
+	deleteRoutingSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/settings', 
+			'DELETE', 
+			{  }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -782,6 +802,26 @@ class RoutingApi {
 			'GET', 
 			{  }, 
 			{ 'joined': opts['joined'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an organization&#39;s routing settings
+	 * 
+	 */
+	getRoutingSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/settings', 
+			'GET', 
+			{  }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1883,6 +1923,31 @@ class RoutingApi {
 			'/api/v2/routing/queues/{queueId}', 
 			'PUT', 
 			{ 'queueId': queueId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an organization&#39;s routing settings
+	 * 
+	 * @param {Object} body Organization Settings
+	 */
+	putRoutingSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/settings', 
+			'PUT', 
+			{  }, 
 			{  }, 
 			{  }, 
 			{  }, 

@@ -800,6 +800,7 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
     "selfUri": String, 
   },  
   "dateCreated": Date, 
+  "responseType": String, 
   "selfUri": String, 
 }
 ```
@@ -1308,6 +1309,12 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
     "required": [String], 
     "properties": {String: Object}, 
     "additionalProperties": Object, 
+  },  
+  "responseType": String, 
+  "messagingTemplate": { 
+    "name": String, 
+    "namespace": String, 
+    "language": String, 
   },  
   "selfUri": String, 
 }
@@ -1882,6 +1889,7 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
     "selfUri": String, 
   },  
   "dateCreated": Date, 
+  "responseType": String, 
   "selfUri": String, 
 }
 ```
@@ -2392,6 +2400,12 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
     "required": [String], 
     "properties": {String: Object}, 
     "additionalProperties": Object, 
+  },  
+  "responseType": String, 
+  "messagingTemplate": { 
+    "name": String, 
+    "namespace": String, 
+    "language": String, 
   },  
   "selfUri": String, 
 }

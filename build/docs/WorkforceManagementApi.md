@@ -142,7 +142,7 @@ void (no response body)
 
 # void deleteWorkforcemanagementManagementunitActivitycode(muId, acId)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 DELETE /api/v2/workforcemanagement/managementunits/{muId}/activitycodes/{acId}
 
@@ -199,7 +199,7 @@ void (no response body)
 
 # void deleteWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId}
 
@@ -256,7 +256,7 @@ void (no response body)
 
 # void deleteWorkforcemanagementManagementunitServicegoalgroup(managementUnitId, serviceGoalGroupId)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/servicegoalgroups/{serviceGoalGroupId}
 
@@ -313,7 +313,7 @@ void (no response body)
 
 # void deleteWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}
 
@@ -372,7 +372,7 @@ void (no response body)
 
 # void deleteWorkforcemanagementManagementunitWeekShorttermforecast(managementUnitId, weekDateId, forecastId)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}
 
@@ -699,7 +699,7 @@ apiInstance.getWorkforcemanagementManagementunit(muId, opts)
 
 # ActivityCode getWorkforcemanagementManagementunitActivitycode(muId, acId)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/workforcemanagement/managementunits/{muId}/activitycodes/{acId}
 
@@ -756,7 +756,7 @@ apiInstance.getWorkforcemanagementManagementunitActivitycode(muId, acId)
 
 # ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(muId)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/workforcemanagement/managementunits/{muId}/activitycodes
 
@@ -907,7 +907,7 @@ apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId)
 
 # WfmIntradayQueueListing getWorkforcemanagementManagementunitIntradayQueues(muId, _date)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/workforcemanagement/managementunits/{muId}/intraday/queues
 
@@ -964,7 +964,7 @@ apiInstance.getWorkforcemanagementManagementunitIntradayQueues(muId, _date)
 
 # SchedulingRunResponse getWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId}
 
@@ -1021,7 +1021,7 @@ apiInstance.getWorkforcemanagementManagementunitSchedulingRun(managementUnitId, 
 
 # RescheduleResult getWorkforcemanagementManagementunitSchedulingRunResult(managementUnitId, runId)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId}/result
 
@@ -1078,7 +1078,7 @@ apiInstance.getWorkforcemanagementManagementunitSchedulingRunResult(managementUn
 
 # SchedulingRunListResponse getWorkforcemanagementManagementunitSchedulingRuns(managementUnitId)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs
 
@@ -1133,7 +1133,7 @@ apiInstance.getWorkforcemanagementManagementunitSchedulingRuns(managementUnitId)
 
 # ServiceGoalGroup getWorkforcemanagementManagementunitServicegoalgroup(managementUnitId, serviceGoalGroupId)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/servicegoalgroups/{serviceGoalGroupId}
 
@@ -1190,7 +1190,7 @@ apiInstance.getWorkforcemanagementManagementunitServicegoalgroup(managementUnitI
 
 # ServiceGoalGroupList getWorkforcemanagementManagementunitServicegoalgroups(managementUnitId)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/servicegoalgroups
 
@@ -1593,7 +1593,7 @@ apiInstance.getWorkforcemanagementManagementunitUsers(muId)
 
 # WeekScheduleResponse getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}
 
@@ -1659,7 +1659,7 @@ apiInstance.getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, w
 
 # WeekScheduleGenerationResult getWorkforcemanagementManagementunitWeekScheduleGenerationresults(managementUnitId, weekId, scheduleId)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults
 
@@ -1719,7 +1719,7 @@ apiInstance.getWorkforcemanagementManagementunitWeekScheduleGenerationresults(ma
 
 # WeekScheduleListResponse getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules
 
@@ -1785,7 +1785,7 @@ apiInstance.getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, 
 
 # ForecastResultResponse getWorkforcemanagementManagementunitWeekShorttermforecastFinal(managementUnitId, weekDateId, forecastId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/final
 
@@ -1848,7 +1848,7 @@ apiInstance.getWorkforcemanagementManagementunitWeekShorttermforecastFinal(manag
 
 # ShortTermForecastListResponse getWorkforcemanagementManagementunitWeekShorttermforecasts(managementUnitId, weekDateId)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts
 
@@ -2560,7 +2560,7 @@ apiInstance.patchWorkforcemanagementManagementunit(muId, opts)
 
 # ActivityCode patchWorkforcemanagementManagementunitActivitycode(muId, acId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 PATCH /api/v2/workforcemanagement/managementunits/{muId}/activitycodes/{acId}
 
@@ -2659,7 +2659,7 @@ apiInstance.patchWorkforcemanagementManagementunitActivitycode(muId, acId, opts)
 
 # RescheduleResult patchWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId}
 
@@ -2745,7 +2745,7 @@ apiInstance.patchWorkforcemanagementManagementunitSchedulingRun(managementUnitId
 
 # ServiceGoalGroup patchWorkforcemanagementManagementunitServicegoalgroup(managementUnitId, serviceGoalGroupId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/servicegoalgroups/{serviceGoalGroupId}
 
@@ -2865,7 +2865,7 @@ apiInstance.patchWorkforcemanagementManagementunitServicegoalgroup(managementUni
 
 # ManagementUnitSettingsResponse patchWorkforcemanagementManagementunitSettings(muId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 PATCH /api/v2/workforcemanagement/managementunits/{muId}/settings
 
@@ -3105,7 +3105,7 @@ apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(muId, userI
 
 # AsyncWeekScheduleResponse patchWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}
 
@@ -3143,8 +3143,8 @@ UpdateWeekScheduleRequest <a href="#" onclick="return copyUpdateWeekScheduleRequ
     "shifts": { 
       "weekSchedule": { 
         "id": String, 
-        "weekDate": String, 
         "selfUri": String, 
+        "weekDate": String, 
       },  
       "id": String, 
       "startDate": Date, 
@@ -3192,9 +3192,9 @@ UpdateWeekScheduleRequest <a href="#" onclick="return copyUpdateWeekScheduleRequ
   "agentSchedulesVersion": Number, 
   "shortTermForecast": { 
     "id": String, 
+    "selfUri": String, 
     "weekDate": String, 
     "description": String, 
-    "selfUri": String, 
   },  
   "headcountForecast": { 
     "required": { 
@@ -3598,7 +3598,7 @@ apiInstance.postWorkforcemanagementAdherenceHistorical(opts)
 
 # ActivityCode postWorkforcemanagementManagementunitActivitycodes(muId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/workforcemanagement/managementunits/{muId}/activitycodes
 
@@ -3866,7 +3866,7 @@ apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(muId, 
 
 # IntradayResponse postWorkforcemanagementManagementunitIntraday(muId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/workforcemanagement/managementunits/{muId}/intraday
 
@@ -4041,7 +4041,7 @@ apiInstance.postWorkforcemanagementManagementunitMove(muId, opts)
 
 # UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(muId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/workforcemanagement/managementunits/{muId}/schedules/search
 
@@ -4129,7 +4129,7 @@ apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(muId, opts)
 
 # ServiceGoalGroup postWorkforcemanagementManagementunitServicegoalgroups(managementUnitId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/servicegoalgroups
 
@@ -4329,7 +4329,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(muId, opts)
 
 # TimeOffRequestEntityList postWorkforcemanagementManagementunitTimeoffrequestsFetchdetails(muId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests/fetchdetails
 
@@ -4365,1760 +4365,6 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
     "id": String, 
     "user": { 
       "id": String, 
-      "name": String, 
-      "division": { 
-        "id": String, 
-        "name": String, 
-        "selfUri": String, 
-      },  
-      "chat": { 
-        "jabberId": String, 
-      },  
-      "department": String, 
-      "email": String, 
-      "primaryContactInfo": { 
-        "address": String, 
-        "display": String, 
-        "mediaType": String, 
-        "type": String, 
-        "extension": String, 
-      },  
-      "addresses": { 
-        "address": String, 
-        "display": String, 
-        "mediaType": String, 
-        "type": String, 
-        "extension": String, 
-      },  
-      "state": String, 
-      "title": String, 
-      "username": String, 
-      "manager": User, 
-      "images": { 
-        "resolution": String, 
-        "imageUri": String, 
-      },  
-      "version": Number, 
-      "certifications": [String], 
-      "biography": { 
-        "biography": String, 
-        "interests": [String], 
-        "hobbies": [String], 
-        "spouse": String, 
-      },  
-      "employerInfo": { 
-        "officialName": String, 
-        "employeeId": String, 
-        "employeeType": String, 
-        "dateHire": String, 
-      },  
-      "routingStatus": { 
-        "userId": String, 
-        "status": String, 
-        "startTime": Date, 
-      },  
-      "presence": { 
-        "id": String, 
-        "name": String, 
-        "source": String, 
-        "primary": Boolean, 
-        "presenceDefinition": { 
-          "id": String, 
-          "systemPresence": String, 
-          "selfUri": String, 
-        },  
-        "message": String, 
-        "modifiedDate": Date, 
-        "selfUri": String, 
-      },  
-      "conversationSummary": { 
-        "userId": String, 
-        "call": { 
-          "contactCenter": { 
-            "active": Number, 
-            "acw": Number, 
-          },  
-          "enterprise": { 
-            "active": Number, 
-            "acw": Number, 
-          },  
-        },  
-        "callback": { 
-          "contactCenter": { 
-            "active": Number, 
-            "acw": Number, 
-          },  
-          "enterprise": { 
-            "active": Number, 
-            "acw": Number, 
-          },  
-        },  
-        "email": { 
-          "contactCenter": { 
-            "active": Number, 
-            "acw": Number, 
-          },  
-          "enterprise": { 
-            "active": Number, 
-            "acw": Number, 
-          },  
-        },  
-        "message": { 
-          "contactCenter": { 
-            "active": Number, 
-            "acw": Number, 
-          },  
-          "enterprise": { 
-            "active": Number, 
-            "acw": Number, 
-          },  
-        },  
-        "chat": { 
-          "contactCenter": { 
-            "active": Number, 
-            "acw": Number, 
-          },  
-          "enterprise": { 
-            "active": Number, 
-            "acw": Number, 
-          },  
-        },  
-        "socialExpression": { 
-          "contactCenter": { 
-            "active": Number, 
-            "acw": Number, 
-          },  
-          "enterprise": { 
-            "active": Number, 
-            "acw": Number, 
-          },  
-        },  
-        "video": { 
-          "contactCenter": { 
-            "active": Number, 
-            "acw": Number, 
-          },  
-          "enterprise": { 
-            "active": Number, 
-            "acw": Number, 
-          },  
-        },  
-      },  
-      "outOfOffice": { 
-        "id": String, 
-        "name": String, 
-        "user": { 
-          "id": String, 
-          "name": String, 
-          "division": { 
-            "id": String, 
-            "name": String, 
-            "selfUri": String, 
-          },  
-          "chat": { 
-            "jabberId": String, 
-          },  
-          "department": String, 
-          "email": String, 
-          "primaryContactInfo": { 
-            "address": String, 
-            "display": String, 
-            "mediaType": String, 
-            "type": String, 
-            "extension": String, 
-          },  
-          "addresses": { 
-            "address": String, 
-            "display": String, 
-            "mediaType": String, 
-            "type": String, 
-            "extension": String, 
-          },  
-          "state": String, 
-          "title": String, 
-          "username": String, 
-          "manager": User, 
-          "images": { 
-            "resolution": String, 
-            "imageUri": String, 
-          },  
-          "version": Number, 
-          "certifications": [String], 
-          "biography": { 
-            "biography": String, 
-            "interests": [String], 
-            "hobbies": [String], 
-            "spouse": String, 
-          },  
-          "employerInfo": { 
-            "officialName": String, 
-            "employeeId": String, 
-            "employeeType": String, 
-            "dateHire": String, 
-          },  
-          "routingStatus": { 
-            "userId": String, 
-            "status": String, 
-            "startTime": Date, 
-          },  
-          "presence": { 
-            "id": String, 
-            "name": String, 
-            "source": String, 
-            "primary": Boolean, 
-            "presenceDefinition": { 
-              "id": String, 
-              "systemPresence": String, 
-              "selfUri": String, 
-            },  
-            "message": String, 
-            "modifiedDate": Date, 
-            "selfUri": String, 
-          },  
-          "conversationSummary": { 
-            "userId": String, 
-            "call": { 
-              "contactCenter": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-              "enterprise": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-            },  
-            "callback": { 
-              "contactCenter": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-              "enterprise": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-            },  
-            "email": { 
-              "contactCenter": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-              "enterprise": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-            },  
-            "message": { 
-              "contactCenter": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-              "enterprise": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-            },  
-            "chat": { 
-              "contactCenter": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-              "enterprise": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-            },  
-            "socialExpression": { 
-              "contactCenter": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-              "enterprise": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-            },  
-            "video": { 
-              "contactCenter": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-              "enterprise": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-            },  
-          },  
-          "outOfOffice": { 
-            "id": String, 
-            "name": String, 
-            "user": { 
-              "id": String, 
-              "name": String, 
-              "division": { 
-                "id": String, 
-                "name": String, 
-                "selfUri": String, 
-              },  
-              "chat": { 
-                "jabberId": String, 
-              },  
-              "department": String, 
-              "email": String, 
-              "primaryContactInfo": { 
-                "address": String, 
-                "display": String, 
-                "mediaType": String, 
-                "type": String, 
-                "extension": String, 
-              },  
-              "addresses": { 
-                "address": String, 
-                "display": String, 
-                "mediaType": String, 
-                "type": String, 
-                "extension": String, 
-              },  
-              "state": String, 
-              "title": String, 
-              "username": String, 
-              "manager": User, 
-              "images": { 
-                "resolution": String, 
-                "imageUri": String, 
-              },  
-              "version": Number, 
-              "certifications": [String], 
-              "biography": { 
-                "biography": String, 
-                "interests": [String], 
-                "hobbies": [String], 
-                "spouse": String, 
-              },  
-              "employerInfo": { 
-                "officialName": String, 
-                "employeeId": String, 
-                "employeeType": String, 
-                "dateHire": String, 
-              },  
-              "routingStatus": { 
-                "userId": String, 
-                "status": String, 
-                "startTime": Date, 
-              },  
-              "presence": { 
-                "id": String, 
-                "name": String, 
-                "source": String, 
-                "primary": Boolean, 
-                "presenceDefinition": PresenceDefinition, 
-                "message": String, 
-                "modifiedDate": Date, 
-                "selfUri": String, 
-              },  
-              "conversationSummary": { 
-                "userId": String, 
-                "call": MediaSummary, 
-                "callback": MediaSummary, 
-                "email": MediaSummary, 
-                "message": MediaSummary, 
-                "chat": MediaSummary, 
-                "socialExpression": MediaSummary, 
-                "video": MediaSummary, 
-              },  
-              "outOfOffice": { 
-                "id": String, 
-                "name": String, 
-                "user": User, 
-                "startDate": Date, 
-                "endDate": Date, 
-                "active": Boolean, 
-                "indefinite": Boolean, 
-                "selfUri": String, 
-              },  
-              "geolocation": { 
-                "id": String, 
-                "name": String, 
-                "type": String, 
-                "primary": Boolean, 
-                "latitude": Number, 
-                "longitude": Number, 
-                "country": String, 
-                "region": String, 
-                "city": String, 
-                "locations": [LocationDefinition], 
-                "selfUri": String, 
-              },  
-              "station": { 
-                "associatedStation": UserStation, 
-                "effectiveStation": UserStation, 
-                "defaultStation": UserStation, 
-                "lastAssociatedStation": UserStation, 
-              },  
-              "authorization": { 
-                "roles": [DomainRole], 
-                "unusedRoles": [DomainRole], 
-                "permissions": [String], 
-                "permissionPolicies": [ResourcePermissionPolicy], 
-              },  
-              "profileSkills": [String], 
-              "locations": { 
-                "id": String, 
-                "floorplanId": String, 
-                "coordinates": {String: Number}, 
-                "notes": String, 
-                "locationDefinition": LocationDefinition, 
-              },  
-              "groups": { 
-                "id": String, 
-                "name": String, 
-                "description": String, 
-                "dateModified": Date, 
-                "memberCount": Number, 
-                "state": String, 
-                "version": Number, 
-                "type": String, 
-                "images": [UserImage], 
-                "addresses": [GroupContact], 
-                "rulesVisible": Boolean, 
-                "visibility": String, 
-                "owners": [User], 
-                "selfUri": String, 
-              },  
-              "skills": { 
-                "id": String, 
-                "name": String, 
-                "proficiency": Number, 
-                "state": String, 
-                "skillUri": String, 
-                "selfUri": String, 
-              },  
-              "languages": { 
-                "id": String, 
-                "name": String, 
-                "proficiency": Number, 
-                "state": String, 
-                "languageUri": String, 
-                "selfUri": String, 
-              },  
-              "acdAutoAnswer": Boolean, 
-              "languagePreference": String, 
-              "lastTokenIssued": { 
-                "dateIssued": Date, 
-              },  
-              "selfUri": String, 
-            },  
-            "startDate": Date, 
-            "endDate": Date, 
-            "active": Boolean, 
-            "indefinite": Boolean, 
-            "selfUri": String, 
-          },  
-          "geolocation": { 
-            "id": String, 
-            "name": String, 
-            "type": String, 
-            "primary": Boolean, 
-            "latitude": Number, 
-            "longitude": Number, 
-            "country": String, 
-            "region": String, 
-            "city": String, 
-            "locations": { 
-              "id": String, 
-              "name": String, 
-              "contactUser": { 
-                "id": String, 
-                "selfUri": String, 
-              },  
-              "emergencyNumber": { 
-                "e164": String, 
-                "number": String, 
-                "type": String, 
-              },  
-              "address": { 
-                "city": String, 
-                "country": String, 
-                "countryName": String, 
-                "state": String, 
-                "street1": String, 
-                "street2": String, 
-                "zipcode": String, 
-              },  
-              "state": String, 
-              "notes": String, 
-              "version": Number, 
-              "path": [String], 
-              "profileImage": { 
-                "resolution": String, 
-                "imageUri": String, 
-              },  
-              "floorplanImage": { 
-                "resolution": String, 
-                "imageUri": String, 
-              },  
-              "addressVerificationDetails": { 
-                "status": String, 
-                "dateFinished": Date, 
-                "dateStarted": Date, 
-                "service": String, 
-              },  
-              "addressVerified": Boolean, 
-              "addressStored": Boolean, 
-              "images": String, 
-              "selfUri": String, 
-            },  
-            "selfUri": String, 
-          },  
-          "station": { 
-            "associatedStation": { 
-              "id": String, 
-              "name": String, 
-              "type": String, 
-              "associatedUser": User, 
-              "associatedDate": Date, 
-              "defaultUser": User, 
-              "providerInfo": {String: String}, 
-            },  
-            "effectiveStation": { 
-              "id": String, 
-              "name": String, 
-              "type": String, 
-              "associatedUser": User, 
-              "associatedDate": Date, 
-              "defaultUser": User, 
-              "providerInfo": {String: String}, 
-            },  
-            "defaultStation": { 
-              "id": String, 
-              "name": String, 
-              "type": String, 
-              "associatedUser": User, 
-              "associatedDate": Date, 
-              "defaultUser": User, 
-              "providerInfo": {String: String}, 
-            },  
-            "lastAssociatedStation": { 
-              "id": String, 
-              "name": String, 
-              "type": String, 
-              "associatedUser": User, 
-              "associatedDate": Date, 
-              "defaultUser": User, 
-              "providerInfo": {String: String}, 
-            },  
-          },  
-          "authorization": { 
-            "roles": { 
-              "id": String, 
-              "name": String, 
-            },  
-            "unusedRoles": { 
-              "id": String, 
-              "name": String, 
-            },  
-            "permissions": [String], 
-            "permissionPolicies": { 
-              "id": String, 
-              "domain": String, 
-              "entityName": String, 
-              "policyName": String, 
-              "policyDescription": String, 
-              "actionSetKey": String, 
-              "allowConditions": Boolean, 
-              "resourceConditionNode": { 
-                "variableName": String, 
-                "conjunction": String, 
-                "operator": String, 
-                "operands": [ResourceConditionValue], 
-                "terms": [ResourceConditionNode], 
-              },  
-              "namedResources": [String], 
-              "resourceCondition": String, 
-              "actionSet": [String], 
-            },  
-          },  
-          "profileSkills": [String], 
-          "locations": { 
-            "id": String, 
-            "floorplanId": String, 
-            "coordinates": {String: Number}, 
-            "notes": String, 
-            "locationDefinition": { 
-              "id": String, 
-              "name": String, 
-              "contactUser": { 
-                "id": String, 
-                "selfUri": String, 
-              },  
-              "emergencyNumber": { 
-                "e164": String, 
-                "number": String, 
-                "type": String, 
-              },  
-              "address": { 
-                "city": String, 
-                "country": String, 
-                "countryName": String, 
-                "state": String, 
-                "street1": String, 
-                "street2": String, 
-                "zipcode": String, 
-              },  
-              "state": String, 
-              "notes": String, 
-              "version": Number, 
-              "path": [String], 
-              "profileImage": { 
-                "resolution": String, 
-                "imageUri": String, 
-              },  
-              "floorplanImage": { 
-                "resolution": String, 
-                "imageUri": String, 
-              },  
-              "addressVerificationDetails": { 
-                "status": String, 
-                "dateFinished": Date, 
-                "dateStarted": Date, 
-                "service": String, 
-              },  
-              "addressVerified": Boolean, 
-              "addressStored": Boolean, 
-              "images": String, 
-              "selfUri": String, 
-            },  
-          },  
-          "groups": { 
-            "id": String, 
-            "name": String, 
-            "description": String, 
-            "dateModified": Date, 
-            "memberCount": Number, 
-            "state": String, 
-            "version": Number, 
-            "type": String, 
-            "images": { 
-              "resolution": String, 
-              "imageUri": String, 
-            },  
-            "addresses": { 
-              "address": String, 
-              "extension": String, 
-              "display": String, 
-              "type": String, 
-              "mediaType": String, 
-            },  
-            "rulesVisible": Boolean, 
-            "visibility": String, 
-            "owners": { 
-              "id": String, 
-              "name": String, 
-              "division": { 
-                "id": String, 
-                "name": String, 
-                "selfUri": String, 
-              },  
-              "chat": { 
-                "jabberId": String, 
-              },  
-              "department": String, 
-              "email": String, 
-              "primaryContactInfo": { 
-                "address": String, 
-                "display": String, 
-                "mediaType": String, 
-                "type": String, 
-                "extension": String, 
-              },  
-              "addresses": { 
-                "address": String, 
-                "display": String, 
-                "mediaType": String, 
-                "type": String, 
-                "extension": String, 
-              },  
-              "state": String, 
-              "title": String, 
-              "username": String, 
-              "manager": User, 
-              "images": { 
-                "resolution": String, 
-                "imageUri": String, 
-              },  
-              "version": Number, 
-              "certifications": [String], 
-              "biography": { 
-                "biography": String, 
-                "interests": [String], 
-                "hobbies": [String], 
-                "spouse": String, 
-              },  
-              "employerInfo": { 
-                "officialName": String, 
-                "employeeId": String, 
-                "employeeType": String, 
-                "dateHire": String, 
-              },  
-              "routingStatus": { 
-                "userId": String, 
-                "status": String, 
-                "startTime": Date, 
-              },  
-              "presence": { 
-                "id": String, 
-                "name": String, 
-                "source": String, 
-                "primary": Boolean, 
-                "presenceDefinition": PresenceDefinition, 
-                "message": String, 
-                "modifiedDate": Date, 
-                "selfUri": String, 
-              },  
-              "conversationSummary": { 
-                "userId": String, 
-                "call": MediaSummary, 
-                "callback": MediaSummary, 
-                "email": MediaSummary, 
-                "message": MediaSummary, 
-                "chat": MediaSummary, 
-                "socialExpression": MediaSummary, 
-                "video": MediaSummary, 
-              },  
-              "outOfOffice": { 
-                "id": String, 
-                "name": String, 
-                "user": User, 
-                "startDate": Date, 
-                "endDate": Date, 
-                "active": Boolean, 
-                "indefinite": Boolean, 
-                "selfUri": String, 
-              },  
-              "geolocation": { 
-                "id": String, 
-                "name": String, 
-                "type": String, 
-                "primary": Boolean, 
-                "latitude": Number, 
-                "longitude": Number, 
-                "country": String, 
-                "region": String, 
-                "city": String, 
-                "locations": [LocationDefinition], 
-                "selfUri": String, 
-              },  
-              "station": { 
-                "associatedStation": UserStation, 
-                "effectiveStation": UserStation, 
-                "defaultStation": UserStation, 
-                "lastAssociatedStation": UserStation, 
-              },  
-              "authorization": { 
-                "roles": [DomainRole], 
-                "unusedRoles": [DomainRole], 
-                "permissions": [String], 
-                "permissionPolicies": [ResourcePermissionPolicy], 
-              },  
-              "profileSkills": [String], 
-              "locations": { 
-                "id": String, 
-                "floorplanId": String, 
-                "coordinates": {String: Number}, 
-                "notes": String, 
-                "locationDefinition": LocationDefinition, 
-              },  
-              "groups": { 
-                "id": String, 
-                "name": String, 
-                "description": String, 
-                "dateModified": Date, 
-                "memberCount": Number, 
-                "state": String, 
-                "version": Number, 
-                "type": String, 
-                "images": [UserImage], 
-                "addresses": [GroupContact], 
-                "rulesVisible": Boolean, 
-                "visibility": String, 
-                "owners": [User], 
-                "selfUri": String, 
-              },  
-              "skills": { 
-                "id": String, 
-                "name": String, 
-                "proficiency": Number, 
-                "state": String, 
-                "skillUri": String, 
-                "selfUri": String, 
-              },  
-              "languages": { 
-                "id": String, 
-                "name": String, 
-                "proficiency": Number, 
-                "state": String, 
-                "languageUri": String, 
-                "selfUri": String, 
-              },  
-              "acdAutoAnswer": Boolean, 
-              "languagePreference": String, 
-              "lastTokenIssued": { 
-                "dateIssued": Date, 
-              },  
-              "selfUri": String, 
-            },  
-            "selfUri": String, 
-          },  
-          "skills": { 
-            "id": String, 
-            "name": String, 
-            "proficiency": Number, 
-            "state": String, 
-            "skillUri": String, 
-            "selfUri": String, 
-          },  
-          "languages": { 
-            "id": String, 
-            "name": String, 
-            "proficiency": Number, 
-            "state": String, 
-            "languageUri": String, 
-            "selfUri": String, 
-          },  
-          "acdAutoAnswer": Boolean, 
-          "languagePreference": String, 
-          "lastTokenIssued": { 
-            "dateIssued": Date, 
-          },  
-          "selfUri": String, 
-        },  
-        "startDate": Date, 
-        "endDate": Date, 
-        "active": Boolean, 
-        "indefinite": Boolean, 
-        "selfUri": String, 
-      },  
-      "geolocation": { 
-        "id": String, 
-        "name": String, 
-        "type": String, 
-        "primary": Boolean, 
-        "latitude": Number, 
-        "longitude": Number, 
-        "country": String, 
-        "region": String, 
-        "city": String, 
-        "locations": { 
-          "id": String, 
-          "name": String, 
-          "contactUser": { 
-            "id": String, 
-            "selfUri": String, 
-          },  
-          "emergencyNumber": { 
-            "e164": String, 
-            "number": String, 
-            "type": String, 
-          },  
-          "address": { 
-            "city": String, 
-            "country": String, 
-            "countryName": String, 
-            "state": String, 
-            "street1": String, 
-            "street2": String, 
-            "zipcode": String, 
-          },  
-          "state": String, 
-          "notes": String, 
-          "version": Number, 
-          "path": [String], 
-          "profileImage": { 
-            "resolution": String, 
-            "imageUri": String, 
-          },  
-          "floorplanImage": { 
-            "resolution": String, 
-            "imageUri": String, 
-          },  
-          "addressVerificationDetails": { 
-            "status": String, 
-            "dateFinished": Date, 
-            "dateStarted": Date, 
-            "service": String, 
-          },  
-          "addressVerified": Boolean, 
-          "addressStored": Boolean, 
-          "images": String, 
-          "selfUri": String, 
-        },  
-        "selfUri": String, 
-      },  
-      "station": { 
-        "associatedStation": { 
-          "id": String, 
-          "name": String, 
-          "type": String, 
-          "associatedUser": User, 
-          "associatedDate": Date, 
-          "defaultUser": User, 
-          "providerInfo": {String: String}, 
-        },  
-        "effectiveStation": { 
-          "id": String, 
-          "name": String, 
-          "type": String, 
-          "associatedUser": User, 
-          "associatedDate": Date, 
-          "defaultUser": User, 
-          "providerInfo": {String: String}, 
-        },  
-        "defaultStation": { 
-          "id": String, 
-          "name": String, 
-          "type": String, 
-          "associatedUser": User, 
-          "associatedDate": Date, 
-          "defaultUser": User, 
-          "providerInfo": {String: String}, 
-        },  
-        "lastAssociatedStation": { 
-          "id": String, 
-          "name": String, 
-          "type": String, 
-          "associatedUser": User, 
-          "associatedDate": Date, 
-          "defaultUser": User, 
-          "providerInfo": {String: String}, 
-        },  
-      },  
-      "authorization": { 
-        "roles": { 
-          "id": String, 
-          "name": String, 
-        },  
-        "unusedRoles": { 
-          "id": String, 
-          "name": String, 
-        },  
-        "permissions": [String], 
-        "permissionPolicies": { 
-          "id": String, 
-          "domain": String, 
-          "entityName": String, 
-          "policyName": String, 
-          "policyDescription": String, 
-          "actionSetKey": String, 
-          "allowConditions": Boolean, 
-          "resourceConditionNode": { 
-            "variableName": String, 
-            "conjunction": String, 
-            "operator": String, 
-            "operands": { 
-              "type": String, 
-              "value": String, 
-            },  
-            "terms": { 
-              "variableName": String, 
-              "conjunction": String, 
-              "operator": String, 
-              "operands": { 
-                "type": String, 
-                "value": String, 
-              },  
-              "terms": { 
-                "variableName": String, 
-                "conjunction": String, 
-                "operator": String, 
-                "operands": [ResourceConditionValue], 
-                "terms": [ResourceConditionNode], 
-              },  
-            },  
-          },  
-          "namedResources": [String], 
-          "resourceCondition": String, 
-          "actionSet": [String], 
-        },  
-      },  
-      "profileSkills": [String], 
-      "locations": { 
-        "id": String, 
-        "floorplanId": String, 
-        "coordinates": {String: Number}, 
-        "notes": String, 
-        "locationDefinition": { 
-          "id": String, 
-          "name": String, 
-          "contactUser": { 
-            "id": String, 
-            "selfUri": String, 
-          },  
-          "emergencyNumber": { 
-            "e164": String, 
-            "number": String, 
-            "type": String, 
-          },  
-          "address": { 
-            "city": String, 
-            "country": String, 
-            "countryName": String, 
-            "state": String, 
-            "street1": String, 
-            "street2": String, 
-            "zipcode": String, 
-          },  
-          "state": String, 
-          "notes": String, 
-          "version": Number, 
-          "path": [String], 
-          "profileImage": { 
-            "resolution": String, 
-            "imageUri": String, 
-          },  
-          "floorplanImage": { 
-            "resolution": String, 
-            "imageUri": String, 
-          },  
-          "addressVerificationDetails": { 
-            "status": String, 
-            "dateFinished": Date, 
-            "dateStarted": Date, 
-            "service": String, 
-          },  
-          "addressVerified": Boolean, 
-          "addressStored": Boolean, 
-          "images": String, 
-          "selfUri": String, 
-        },  
-      },  
-      "groups": { 
-        "id": String, 
-        "name": String, 
-        "description": String, 
-        "dateModified": Date, 
-        "memberCount": Number, 
-        "state": String, 
-        "version": Number, 
-        "type": String, 
-        "images": { 
-          "resolution": String, 
-          "imageUri": String, 
-        },  
-        "addresses": { 
-          "address": String, 
-          "extension": String, 
-          "display": String, 
-          "type": String, 
-          "mediaType": String, 
-        },  
-        "rulesVisible": Boolean, 
-        "visibility": String, 
-        "owners": { 
-          "id": String, 
-          "name": String, 
-          "division": { 
-            "id": String, 
-            "name": String, 
-            "selfUri": String, 
-          },  
-          "chat": { 
-            "jabberId": String, 
-          },  
-          "department": String, 
-          "email": String, 
-          "primaryContactInfo": { 
-            "address": String, 
-            "display": String, 
-            "mediaType": String, 
-            "type": String, 
-            "extension": String, 
-          },  
-          "addresses": { 
-            "address": String, 
-            "display": String, 
-            "mediaType": String, 
-            "type": String, 
-            "extension": String, 
-          },  
-          "state": String, 
-          "title": String, 
-          "username": String, 
-          "manager": User, 
-          "images": { 
-            "resolution": String, 
-            "imageUri": String, 
-          },  
-          "version": Number, 
-          "certifications": [String], 
-          "biography": { 
-            "biography": String, 
-            "interests": [String], 
-            "hobbies": [String], 
-            "spouse": String, 
-          },  
-          "employerInfo": { 
-            "officialName": String, 
-            "employeeId": String, 
-            "employeeType": String, 
-            "dateHire": String, 
-          },  
-          "routingStatus": { 
-            "userId": String, 
-            "status": String, 
-            "startTime": Date, 
-          },  
-          "presence": { 
-            "id": String, 
-            "name": String, 
-            "source": String, 
-            "primary": Boolean, 
-            "presenceDefinition": { 
-              "id": String, 
-              "systemPresence": String, 
-              "selfUri": String, 
-            },  
-            "message": String, 
-            "modifiedDate": Date, 
-            "selfUri": String, 
-          },  
-          "conversationSummary": { 
-            "userId": String, 
-            "call": { 
-              "contactCenter": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-              "enterprise": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-            },  
-            "callback": { 
-              "contactCenter": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-              "enterprise": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-            },  
-            "email": { 
-              "contactCenter": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-              "enterprise": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-            },  
-            "message": { 
-              "contactCenter": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-              "enterprise": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-            },  
-            "chat": { 
-              "contactCenter": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-              "enterprise": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-            },  
-            "socialExpression": { 
-              "contactCenter": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-              "enterprise": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-            },  
-            "video": { 
-              "contactCenter": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-              "enterprise": { 
-                "active": Number, 
-                "acw": Number, 
-              },  
-            },  
-          },  
-          "outOfOffice": { 
-            "id": String, 
-            "name": String, 
-            "user": { 
-              "id": String, 
-              "name": String, 
-              "division": { 
-                "id": String, 
-                "name": String, 
-                "selfUri": String, 
-              },  
-              "chat": { 
-                "jabberId": String, 
-              },  
-              "department": String, 
-              "email": String, 
-              "primaryContactInfo": { 
-                "address": String, 
-                "display": String, 
-                "mediaType": String, 
-                "type": String, 
-                "extension": String, 
-              },  
-              "addresses": { 
-                "address": String, 
-                "display": String, 
-                "mediaType": String, 
-                "type": String, 
-                "extension": String, 
-              },  
-              "state": String, 
-              "title": String, 
-              "username": String, 
-              "manager": User, 
-              "images": { 
-                "resolution": String, 
-                "imageUri": String, 
-              },  
-              "version": Number, 
-              "certifications": [String], 
-              "biography": { 
-                "biography": String, 
-                "interests": [String], 
-                "hobbies": [String], 
-                "spouse": String, 
-              },  
-              "employerInfo": { 
-                "officialName": String, 
-                "employeeId": String, 
-                "employeeType": String, 
-                "dateHire": String, 
-              },  
-              "routingStatus": { 
-                "userId": String, 
-                "status": String, 
-                "startTime": Date, 
-              },  
-              "presence": { 
-                "id": String, 
-                "name": String, 
-                "source": String, 
-                "primary": Boolean, 
-                "presenceDefinition": PresenceDefinition, 
-                "message": String, 
-                "modifiedDate": Date, 
-                "selfUri": String, 
-              },  
-              "conversationSummary": { 
-                "userId": String, 
-                "call": MediaSummary, 
-                "callback": MediaSummary, 
-                "email": MediaSummary, 
-                "message": MediaSummary, 
-                "chat": MediaSummary, 
-                "socialExpression": MediaSummary, 
-                "video": MediaSummary, 
-              },  
-              "outOfOffice": { 
-                "id": String, 
-                "name": String, 
-                "user": User, 
-                "startDate": Date, 
-                "endDate": Date, 
-                "active": Boolean, 
-                "indefinite": Boolean, 
-                "selfUri": String, 
-              },  
-              "geolocation": { 
-                "id": String, 
-                "name": String, 
-                "type": String, 
-                "primary": Boolean, 
-                "latitude": Number, 
-                "longitude": Number, 
-                "country": String, 
-                "region": String, 
-                "city": String, 
-                "locations": [LocationDefinition], 
-                "selfUri": String, 
-              },  
-              "station": { 
-                "associatedStation": UserStation, 
-                "effectiveStation": UserStation, 
-                "defaultStation": UserStation, 
-                "lastAssociatedStation": UserStation, 
-              },  
-              "authorization": { 
-                "roles": [DomainRole], 
-                "unusedRoles": [DomainRole], 
-                "permissions": [String], 
-                "permissionPolicies": [ResourcePermissionPolicy], 
-              },  
-              "profileSkills": [String], 
-              "locations": { 
-                "id": String, 
-                "floorplanId": String, 
-                "coordinates": {String: Number}, 
-                "notes": String, 
-                "locationDefinition": LocationDefinition, 
-              },  
-              "groups": { 
-                "id": String, 
-                "name": String, 
-                "description": String, 
-                "dateModified": Date, 
-                "memberCount": Number, 
-                "state": String, 
-                "version": Number, 
-                "type": String, 
-                "images": [UserImage], 
-                "addresses": [GroupContact], 
-                "rulesVisible": Boolean, 
-                "visibility": String, 
-                "owners": [User], 
-                "selfUri": String, 
-              },  
-              "skills": { 
-                "id": String, 
-                "name": String, 
-                "proficiency": Number, 
-                "state": String, 
-                "skillUri": String, 
-                "selfUri": String, 
-              },  
-              "languages": { 
-                "id": String, 
-                "name": String, 
-                "proficiency": Number, 
-                "state": String, 
-                "languageUri": String, 
-                "selfUri": String, 
-              },  
-              "acdAutoAnswer": Boolean, 
-              "languagePreference": String, 
-              "lastTokenIssued": { 
-                "dateIssued": Date, 
-              },  
-              "selfUri": String, 
-            },  
-            "startDate": Date, 
-            "endDate": Date, 
-            "active": Boolean, 
-            "indefinite": Boolean, 
-            "selfUri": String, 
-          },  
-          "geolocation": { 
-            "id": String, 
-            "name": String, 
-            "type": String, 
-            "primary": Boolean, 
-            "latitude": Number, 
-            "longitude": Number, 
-            "country": String, 
-            "region": String, 
-            "city": String, 
-            "locations": { 
-              "id": String, 
-              "name": String, 
-              "contactUser": { 
-                "id": String, 
-                "selfUri": String, 
-              },  
-              "emergencyNumber": { 
-                "e164": String, 
-                "number": String, 
-                "type": String, 
-              },  
-              "address": { 
-                "city": String, 
-                "country": String, 
-                "countryName": String, 
-                "state": String, 
-                "street1": String, 
-                "street2": String, 
-                "zipcode": String, 
-              },  
-              "state": String, 
-              "notes": String, 
-              "version": Number, 
-              "path": [String], 
-              "profileImage": { 
-                "resolution": String, 
-                "imageUri": String, 
-              },  
-              "floorplanImage": { 
-                "resolution": String, 
-                "imageUri": String, 
-              },  
-              "addressVerificationDetails": { 
-                "status": String, 
-                "dateFinished": Date, 
-                "dateStarted": Date, 
-                "service": String, 
-              },  
-              "addressVerified": Boolean, 
-              "addressStored": Boolean, 
-              "images": String, 
-              "selfUri": String, 
-            },  
-            "selfUri": String, 
-          },  
-          "station": { 
-            "associatedStation": { 
-              "id": String, 
-              "name": String, 
-              "type": String, 
-              "associatedUser": User, 
-              "associatedDate": Date, 
-              "defaultUser": User, 
-              "providerInfo": {String: String}, 
-            },  
-            "effectiveStation": { 
-              "id": String, 
-              "name": String, 
-              "type": String, 
-              "associatedUser": User, 
-              "associatedDate": Date, 
-              "defaultUser": User, 
-              "providerInfo": {String: String}, 
-            },  
-            "defaultStation": { 
-              "id": String, 
-              "name": String, 
-              "type": String, 
-              "associatedUser": User, 
-              "associatedDate": Date, 
-              "defaultUser": User, 
-              "providerInfo": {String: String}, 
-            },  
-            "lastAssociatedStation": { 
-              "id": String, 
-              "name": String, 
-              "type": String, 
-              "associatedUser": User, 
-              "associatedDate": Date, 
-              "defaultUser": User, 
-              "providerInfo": {String: String}, 
-            },  
-          },  
-          "authorization": { 
-            "roles": { 
-              "id": String, 
-              "name": String, 
-            },  
-            "unusedRoles": { 
-              "id": String, 
-              "name": String, 
-            },  
-            "permissions": [String], 
-            "permissionPolicies": { 
-              "id": String, 
-              "domain": String, 
-              "entityName": String, 
-              "policyName": String, 
-              "policyDescription": String, 
-              "actionSetKey": String, 
-              "allowConditions": Boolean, 
-              "resourceConditionNode": { 
-                "variableName": String, 
-                "conjunction": String, 
-                "operator": String, 
-                "operands": [ResourceConditionValue], 
-                "terms": [ResourceConditionNode], 
-              },  
-              "namedResources": [String], 
-              "resourceCondition": String, 
-              "actionSet": [String], 
-            },  
-          },  
-          "profileSkills": [String], 
-          "locations": { 
-            "id": String, 
-            "floorplanId": String, 
-            "coordinates": {String: Number}, 
-            "notes": String, 
-            "locationDefinition": { 
-              "id": String, 
-              "name": String, 
-              "contactUser": { 
-                "id": String, 
-                "selfUri": String, 
-              },  
-              "emergencyNumber": { 
-                "e164": String, 
-                "number": String, 
-                "type": String, 
-              },  
-              "address": { 
-                "city": String, 
-                "country": String, 
-                "countryName": String, 
-                "state": String, 
-                "street1": String, 
-                "street2": String, 
-                "zipcode": String, 
-              },  
-              "state": String, 
-              "notes": String, 
-              "version": Number, 
-              "path": [String], 
-              "profileImage": { 
-                "resolution": String, 
-                "imageUri": String, 
-              },  
-              "floorplanImage": { 
-                "resolution": String, 
-                "imageUri": String, 
-              },  
-              "addressVerificationDetails": { 
-                "status": String, 
-                "dateFinished": Date, 
-                "dateStarted": Date, 
-                "service": String, 
-              },  
-              "addressVerified": Boolean, 
-              "addressStored": Boolean, 
-              "images": String, 
-              "selfUri": String, 
-            },  
-          },  
-          "groups": { 
-            "id": String, 
-            "name": String, 
-            "description": String, 
-            "dateModified": Date, 
-            "memberCount": Number, 
-            "state": String, 
-            "version": Number, 
-            "type": String, 
-            "images": { 
-              "resolution": String, 
-              "imageUri": String, 
-            },  
-            "addresses": { 
-              "address": String, 
-              "extension": String, 
-              "display": String, 
-              "type": String, 
-              "mediaType": String, 
-            },  
-            "rulesVisible": Boolean, 
-            "visibility": String, 
-            "owners": { 
-              "id": String, 
-              "name": String, 
-              "division": { 
-                "id": String, 
-                "name": String, 
-                "selfUri": String, 
-              },  
-              "chat": { 
-                "jabberId": String, 
-              },  
-              "department": String, 
-              "email": String, 
-              "primaryContactInfo": { 
-                "address": String, 
-                "display": String, 
-                "mediaType": String, 
-                "type": String, 
-                "extension": String, 
-              },  
-              "addresses": { 
-                "address": String, 
-                "display": String, 
-                "mediaType": String, 
-                "type": String, 
-                "extension": String, 
-              },  
-              "state": String, 
-              "title": String, 
-              "username": String, 
-              "manager": User, 
-              "images": { 
-                "resolution": String, 
-                "imageUri": String, 
-              },  
-              "version": Number, 
-              "certifications": [String], 
-              "biography": { 
-                "biography": String, 
-                "interests": [String], 
-                "hobbies": [String], 
-                "spouse": String, 
-              },  
-              "employerInfo": { 
-                "officialName": String, 
-                "employeeId": String, 
-                "employeeType": String, 
-                "dateHire": String, 
-              },  
-              "routingStatus": { 
-                "userId": String, 
-                "status": String, 
-                "startTime": Date, 
-              },  
-              "presence": { 
-                "id": String, 
-                "name": String, 
-                "source": String, 
-                "primary": Boolean, 
-                "presenceDefinition": PresenceDefinition, 
-                "message": String, 
-                "modifiedDate": Date, 
-                "selfUri": String, 
-              },  
-              "conversationSummary": { 
-                "userId": String, 
-                "call": MediaSummary, 
-                "callback": MediaSummary, 
-                "email": MediaSummary, 
-                "message": MediaSummary, 
-                "chat": MediaSummary, 
-                "socialExpression": MediaSummary, 
-                "video": MediaSummary, 
-              },  
-              "outOfOffice": { 
-                "id": String, 
-                "name": String, 
-                "user": User, 
-                "startDate": Date, 
-                "endDate": Date, 
-                "active": Boolean, 
-                "indefinite": Boolean, 
-                "selfUri": String, 
-              },  
-              "geolocation": { 
-                "id": String, 
-                "name": String, 
-                "type": String, 
-                "primary": Boolean, 
-                "latitude": Number, 
-                "longitude": Number, 
-                "country": String, 
-                "region": String, 
-                "city": String, 
-                "locations": [LocationDefinition], 
-                "selfUri": String, 
-              },  
-              "station": { 
-                "associatedStation": UserStation, 
-                "effectiveStation": UserStation, 
-                "defaultStation": UserStation, 
-                "lastAssociatedStation": UserStation, 
-              },  
-              "authorization": { 
-                "roles": [DomainRole], 
-                "unusedRoles": [DomainRole], 
-                "permissions": [String], 
-                "permissionPolicies": [ResourcePermissionPolicy], 
-              },  
-              "profileSkills": [String], 
-              "locations": { 
-                "id": String, 
-                "floorplanId": String, 
-                "coordinates": {String: Number}, 
-                "notes": String, 
-                "locationDefinition": LocationDefinition, 
-              },  
-              "groups": { 
-                "id": String, 
-                "name": String, 
-                "description": String, 
-                "dateModified": Date, 
-                "memberCount": Number, 
-                "state": String, 
-                "version": Number, 
-                "type": String, 
-                "images": [UserImage], 
-                "addresses": [GroupContact], 
-                "rulesVisible": Boolean, 
-                "visibility": String, 
-                "owners": [User], 
-                "selfUri": String, 
-              },  
-              "skills": { 
-                "id": String, 
-                "name": String, 
-                "proficiency": Number, 
-                "state": String, 
-                "skillUri": String, 
-                "selfUri": String, 
-              },  
-              "languages": { 
-                "id": String, 
-                "name": String, 
-                "proficiency": Number, 
-                "state": String, 
-                "languageUri": String, 
-                "selfUri": String, 
-              },  
-              "acdAutoAnswer": Boolean, 
-              "languagePreference": String, 
-              "lastTokenIssued": { 
-                "dateIssued": Date, 
-              },  
-              "selfUri": String, 
-            },  
-            "selfUri": String, 
-          },  
-          "skills": { 
-            "id": String, 
-            "name": String, 
-            "proficiency": Number, 
-            "state": String, 
-            "skillUri": String, 
-            "selfUri": String, 
-          },  
-          "languages": { 
-            "id": String, 
-            "name": String, 
-            "proficiency": Number, 
-            "state": String, 
-            "languageUri": String, 
-            "selfUri": String, 
-          },  
-          "acdAutoAnswer": Boolean, 
-          "languagePreference": String, 
-          "lastTokenIssued": { 
-            "dateIssued": Date, 
-          },  
-          "selfUri": String, 
-        },  
-        "selfUri": String, 
-      },  
-      "skills": { 
-        "id": String, 
-        "name": String, 
-        "proficiency": Number, 
-        "state": String, 
-        "skillUri": String, 
-        "selfUri": String, 
-      },  
-      "languages": { 
-        "id": String, 
-        "name": String, 
-        "proficiency": Number, 
-        "state": String, 
-        "languageUri": String, 
-        "selfUri": String, 
-      },  
-      "acdAutoAnswer": Boolean, 
-      "languagePreference": String, 
-      "lastTokenIssued": { 
-        "dateIssued": Date, 
-      },  
       "selfUri": String, 
     },  
     "isFullDayRequest": Boolean, 
@@ -6129,9 +4375,15 @@ TimeOffRequestLookupList <a href="#" onclick="return copyTimeOffRequestLookupLis
     "fullDayManagementUnitDates": [String], 
     "dailyDurationMinutes": Number, 
     "notes": String, 
-    "submittedBy": User, 
+    "submittedBy": { 
+      "id": String, 
+      "selfUri": String, 
+    },  
     "submittedDate": Date, 
-    "reviewedBy": User, 
+    "reviewedBy": { 
+      "id": String, 
+      "selfUri": String, 
+    },  
     "reviewedDate": Date, 
     "metadata": { 
       "version": Number, 
@@ -6283,7 +4535,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(muId, opts
 
 # AsyncWeekScheduleResponse postWorkforcemanagementManagementunitWeekScheduleCopy(managementUnitId, weekId, scheduleId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy
 
@@ -6376,7 +4628,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekScheduleCopy(managementUnit
 
 # AsyncWeekScheduleResponse postWorkforcemanagementManagementunitWeekScheduleReschedule(managementUnitId, weekId, scheduleId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule
 
@@ -6471,7 +4723,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekScheduleReschedule(manageme
 
 # AsyncWeekScheduleResponse postWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules
 
@@ -6508,8 +4760,8 @@ ImportWeekScheduleRequest <a href="#" onclick="return copyImportWeekScheduleRequ
     "shifts": { 
       "weekSchedule": { 
         "id": String, 
-        "weekDate": String, 
         "selfUri": String, 
+        "weekDate": String, 
       },  
       "id": String, 
       "startDate": Date, 
@@ -6605,7 +4857,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekSchedules(managementUnitId,
 
 # GenerateWeekScheduleResponse postWorkforcemanagementManagementunitWeekSchedulesGenerate(managementUnitId, weekId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/generate
 
@@ -6692,7 +4944,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekSchedulesGenerate(managemen
 
 # PartialUploadResponse postWorkforcemanagementManagementunitWeekSchedulesPartialupload(managementUnitId, weekId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/partialupload
 
@@ -6729,8 +4981,8 @@ UserSchedulesPartialUploadRequest <a href="#" onclick="return copyUserSchedulesP
     "shifts": { 
       "weekSchedule": { 
         "id": String, 
-        "weekDate": String, 
         "selfUri": String, 
+        "weekDate": String, 
       },  
       "id": String, 
       "startDate": Date, 
@@ -6819,7 +5071,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekSchedulesPartialupload(mana
 
 # ShortTermForecastResponse postWorkforcemanagementManagementunitWeekShorttermforecastCopy(managementUnitId, weekDateId, forecastId, body, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy
 
@@ -6910,7 +5162,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekShorttermforecastCopy(manag
 
 # ShortTermForecastResponse postWorkforcemanagementManagementunitWeekShorttermforecasts(managementUnitId, weekDateId, body, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts
 
@@ -7025,7 +5277,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekShorttermforecasts(manageme
 
 # GenerateShortTermForecastResponse postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate(managementUnitId, weekDateId, body, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/generate
 
@@ -7113,7 +5365,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate(
 
 # PartialUploadResponse postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload(managementUnitId, weekDateId, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/partialupload
 
@@ -7534,6 +5786,7 @@ CreateManagementUnitApiRequest <a href="#" onclick="return copyCreateManagementU
     },  
   },  
   "divisionId": String, 
+  "businessUnitId": String, 
 }
 ```
 
@@ -7699,7 +5952,7 @@ apiInstance.postWorkforcemanagementNotificationsUpdate(opts)
 
 # UserScheduleContainer postWorkforcemanagementSchedules(opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/workforcemanagement/schedules
 
@@ -7710,7 +5963,6 @@ Get published schedule for the current user
 Requires ANY permissions: 
 
 * wfm:agentSchedule:view
-* wfm:publishedSchedule:view
 
 
 ### Request Body Schema

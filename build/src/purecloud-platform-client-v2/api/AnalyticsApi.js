@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -206,6 +206,26 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/exports', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all export metadata
+	 * 
+	 */
+	getAnalyticsReportingExportsMetadata() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/exports/metadata', 
 			'GET', 
 			{  }, 
 			{  }, 

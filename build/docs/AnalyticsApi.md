@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsConversationsDetailsJob**](AnalyticsApi.html#getAnalyticsConversationsDetailsJob) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId} | Get status for async query for conversation details
 [**getAnalyticsConversationsDetailsJobResults**](AnalyticsApi.html#getAnalyticsConversationsDetailsJobResults) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async query
 [**getAnalyticsReportingExports**](AnalyticsApi.html#getAnalyticsReportingExports) | **GET** /api/v2/analytics/reporting/exports | Get all view export requests for a user
+[**getAnalyticsReportingExportsMetadata**](AnalyticsApi.html#getAnalyticsReportingExportsMetadata) | **GET** /api/v2/analytics/reporting/exports/metadata | Get all export metadata
 [**getAnalyticsReportingMetadata**](AnalyticsApi.html#getAnalyticsReportingMetadata) | **GET** /api/v2/analytics/reporting/metadata | Get list of reporting metadata.
 [**getAnalyticsReportingReportIdMetadata**](AnalyticsApi.html#getAnalyticsReportingReportIdMetadata) | **GET** /api/v2/analytics/reporting/{reportId}/metadata | Get a reporting metadata.
 [**getAnalyticsReportingReportformats**](AnalyticsApi.html#getAnalyticsReportingReportformats) | **GET** /api/v2/analytics/reporting/reportformats | Get a list of report formats
@@ -484,6 +485,56 @@ This endpoint does not need any parameter.
 ### Return type
 
 **ReportingExportJobListing**
+
+<a name="getAnalyticsReportingExportsMetadata"></a>
+
+# ReportingExportMetadataJobListing getAnalyticsReportingExportsMetadata()
+
+
+
+GET /api/v2/analytics/reporting/exports/metadata
+
+Get all export metadata
+
+
+
+Requires ANY permissions: 
+
+* analytics:dataExport:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+apiInstance.getAnalyticsReportingExportsMetadata()
+  .then((data) => {
+    console.log(`getAnalyticsReportingExportsMetadata success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsReportingExportsMetadata');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**ReportingExportMetadataJobListing**
 
 <a name="getAnalyticsReportingMetadata"></a>
 
@@ -2504,6 +2555,10 @@ ReportingExportJobRequest <a href="#" onclick="return copyReportingExportJobRequ
     "hasJourneyVisitId": Boolean, 
     "oauthClientIds": [String], 
     "apiOperations": [String], 
+    "hasMedia": Boolean, 
+    "roleIds": [String], 
+    "reportsTos": [String], 
+    "locationIds": [String], 
   },  
   "read": Boolean, 
   "locale": String, 

@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingQueue**](RoutingApi.html#deleteRoutingQueue) | **DELETE** /api/v2/routing/queues/{queueId} | Delete a queue
 [**deleteRoutingQueueUser**](RoutingApi.html#deleteRoutingQueueUser) | **DELETE** /api/v2/routing/queues/{queueId}/users/{memberId} | Delete queue member
 [**deleteRoutingQueueWrapupcode**](RoutingApi.html#deleteRoutingQueueWrapupcode) | **DELETE** /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId} | Delete a wrap-up code from a queue
+[**deleteRoutingSettings**](RoutingApi.html#deleteRoutingSettings) | **DELETE** /api/v2/routing/settings | Delete an organization&#39;s routing settings
 [**deleteRoutingSkill**](RoutingApi.html#deleteRoutingSkill) | **DELETE** /api/v2/routing/skills/{skillId} | Delete Routing Skill
 [**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | **DELETE** /api/v2/routing/sms/phonenumbers/{addressId} | Delete a phone number provisioned for SMS.
 [**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | **DELETE** /api/v2/routing/utilization | Delete the organization-wide max utilization settings and revert to the system default.
@@ -35,6 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingQueuesDivisionviews**](RoutingApi.html#getRoutingQueuesDivisionviews) | **GET** /api/v2/routing/queues/divisionviews | Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
 [**getRoutingQueuesDivisionviewsAll**](RoutingApi.html#getRoutingQueuesDivisionviewsAll) | **GET** /api/v2/routing/queues/divisionviews/all | Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
 [**getRoutingQueuesMe**](RoutingApi.html#getRoutingQueuesMe) | **GET** /api/v2/routing/queues/me | Get a paged listing of queues the user is a member of.
+[**getRoutingSettings**](RoutingApi.html#getRoutingSettings) | **GET** /api/v2/routing/settings | Get an organization&#39;s routing settings
 [**getRoutingSettingsContactcenter**](RoutingApi.html#getRoutingSettingsContactcenter) | **GET** /api/v2/routing/settings/contactcenter | Get Contact Center Settings
 [**getRoutingSettingsTranscription**](RoutingApi.html#getRoutingSettingsTranscription) | **GET** /api/v2/routing/settings/transcription | Get Transcription Settings
 [**getRoutingSkill**](RoutingApi.html#getRoutingSkill) | **GET** /api/v2/routing/skills/{skillId} | Get Routing Skill
@@ -74,6 +76,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putRoutingEmailDomainRoute**](RoutingApi.html#putRoutingEmailDomainRoute) | **PUT** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Update a route
 [**putRoutingMessageRecipient**](RoutingApi.html#putRoutingMessageRecipient) | **PUT** /api/v2/routing/message/recipients/{recipientId} | Update a recipient
 [**putRoutingQueue**](RoutingApi.html#putRoutingQueue) | **PUT** /api/v2/routing/queues/{queueId} | Update a queue
+[**putRoutingSettings**](RoutingApi.html#putRoutingSettings) | **PUT** /api/v2/routing/settings | Update an organization&#39;s routing settings
 [**putRoutingSettingsTranscription**](RoutingApi.html#putRoutingSettingsTranscription) | **PUT** /api/v2/routing/settings/transcription | Update Transcription Settings
 [**putRoutingSmsPhonenumber**](RoutingApi.html#putRoutingSmsPhonenumber) | **PUT** /api/v2/routing/sms/phonenumbers/{addressId} | Update a phone number provisioned for SMS.
 [**putRoutingUtilization**](RoutingApi.html#putRoutingUtilization) | **PUT** /api/v2/routing/utilization | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
@@ -361,6 +364,56 @@ apiInstance.deleteRoutingQueueWrapupcode(queueId, codeId)
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
  **codeId** | **String** | Code ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteRoutingSettings"></a>
+
+# void deleteRoutingSettings()
+
+
+
+DELETE /api/v2/routing/settings
+
+Delete an organization&#39;s routing settings
+
+
+
+Requires ANY permissions: 
+
+* routing:settings:edit
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+apiInstance.deleteRoutingSettings()
+  .then(() => {
+    console.log('deleteRoutingSettings returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
 {: class="table table-striped"}
 
 ### Return type
@@ -1725,6 +1778,55 @@ apiInstance.getRoutingQueuesMe(opts)
 ### Return type
 
 **UserQueueEntityListing**
+
+<a name="getRoutingSettings"></a>
+
+# RoutingSettings getRoutingSettings()
+
+
+
+GET /api/v2/routing/settings
+
+Get an organization&#39;s routing settings
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+apiInstance.getRoutingSettings()
+  .then((data) => {
+    console.log(`getRoutingSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**RoutingSettings**
 
 <a name="getRoutingSettingsContactcenter"></a>
 
@@ -4957,6 +5059,20 @@ InboundDomain <a href="#" onclick="return copyInboundDomainExample()">Copy</a>
   "name": String, 
   "mxRecordStatus": String, 
   "subDomain": Boolean, 
+  "mailFromSettings": { 
+    "status": String, 
+    "records": { 
+      "name": String, 
+      "type": String, 
+      "value": String, 
+    },  
+    "mailFromDomain": String, 
+  },  
+  "customSMTPServer": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
   "selfUri": String, 
 }
 ```
@@ -8496,6 +8612,86 @@ apiInstance.putRoutingQueue(queueId, body)
 ### Return type
 
 **Queue**
+
+<a name="putRoutingSettings"></a>
+
+# RoutingSettings putRoutingSettings(body)
+
+
+
+PUT /api/v2/routing/settings
+
+Update an organization&#39;s routing settings
+
+
+
+Requires ANY permissions: 
+
+* routing:settings:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyRoutingSettingsExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#RoutingSettingsExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+RoutingSettings <a href="#" onclick="return copyRoutingSettingsExample()">Copy</a>
+
+<div id="RoutingSettingsExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "resetAgentScoreOnPresenceChange": Boolean, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let body = {}; // Object | Organization Settings
+
+apiInstance.putRoutingSettings(body)
+  .then((data) => {
+    console.log(`putRoutingSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Organization Settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+**RoutingSettings**
 
 <a name="putRoutingSettingsTranscription"></a>
 

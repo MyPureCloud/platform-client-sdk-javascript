@@ -14,7 +14,7 @@ var PureCloudRegionHosts = {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 69.2.1
+ * @version 70.0.0
  */
 class ApiClient {
 	/**
@@ -772,7 +772,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '69.2.1' });
+		//request.set({ 'purecloud-sdk': '70.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -897,7 +897,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -1211,7 +1211,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -1412,6 +1412,26 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/exports', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all export metadata
+	 * 
+	 */
+	getAnalyticsReportingExportsMetadata() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/exports/metadata', 
 			'GET', 
 			{  }, 
 			{  }, 
@@ -2149,7 +2169,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -4655,7 +4675,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -4756,7 +4776,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -5837,7 +5857,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -5917,7 +5937,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -7057,7 +7077,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -10469,6 +10489,36 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Copy attachments from an email message to the current draft.
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body Copy Attachment Request
+	 */
+	postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailMessagesDraftAttachmentsCopy';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsEmailMessagesDraftAttachmentsCopy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy', 
+			'POST', 
+			{ 'conversationId': conversationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Replace this participant with the specified user and/or address
 	 * 
 	 * @param {String} conversationId conversationId
@@ -10968,7 +11018,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -11876,7 +11926,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -12047,7 +12097,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -12118,7 +12168,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -12248,7 +12298,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -12379,7 +12429,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -12834,7 +12884,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -13239,7 +13289,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -13930,7 +13980,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -15392,7 +15442,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -15660,7 +15710,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -15874,7 +15924,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -16110,7 +16160,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -16124,256 +16174,6 @@ class MessagingApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
-
-	/**
-	 * Delete a Facebook messaging integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 */
-	deleteMessagingIntegrationsFacebookIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteMessagingIntegrationsFacebookIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/facebook/{integrationId}', 
-			'DELETE', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a LINE messenger integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 */
-	deleteMessagingIntegrationsLineIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteMessagingIntegrationsLineIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/line/{integrationId}', 
-			'DELETE', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a Twitter messaging integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 */
-	deleteMessagingIntegrationsTwitterIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteMessagingIntegrationsTwitterIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/twitter/{integrationId}', 
-			'DELETE', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of Integrations
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getMessagingIntegrations(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations', 
-			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of Facebook Integrations
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getMessagingIntegrationsFacebook(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/facebook', 
-			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a Facebook messaging integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 */
-	getMessagingIntegrationsFacebookIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getMessagingIntegrationsFacebookIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/facebook/{integrationId}', 
-			'GET', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of LINE messenger Integrations
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getMessagingIntegrationsLine(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/line', 
-			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a LINE messenger integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 */
-	getMessagingIntegrationsLineIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getMessagingIntegrationsLineIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/line/{integrationId}', 
-			'GET', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of Twitter Integrations
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 */
-	getMessagingIntegrationsTwitter(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/twitter', 
-			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a Twitter messaging integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 */
-	getMessagingIntegrationsTwitterIntegrationId(integrationId) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getMessagingIntegrationsTwitterIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/twitter/{integrationId}', 
-			'GET', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
 
 	/**
 	 * Get a list of Messaging Stickers
@@ -16405,118 +16205,13 @@ class MessagingApi {
 		);
 	}
 
-	/**
-	 * Create a Facebook Integration
-	 * 
-	 * @param {Object} body FacebookIntegrationRequest
-	 */
-	postMessagingIntegrationsFacebook(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMessagingIntegrationsFacebook';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/facebook', 
-			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a LINE messenger Integration
-	 * 
-	 * @param {Object} body LineIntegrationRequest
-	 */
-	postMessagingIntegrationsLine(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMessagingIntegrationsLine';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/line', 
-			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create a Twitter Integration
-	 * 
-	 * @param {Object} body TwitterIntegrationRequest
-	 */
-	postMessagingIntegrationsTwitter(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMessagingIntegrationsTwitter';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/twitter', 
-			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a LINE messenger integration
-	 * 
-	 * @param {String} integrationId Integration ID
-	 * @param {Object} body LineIntegrationRequest
-	 */
-	putMessagingIntegrationsLineIntegrationId(integrationId, body) { 
-		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling putMessagingIntegrationsLineIntegrationId';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putMessagingIntegrationsLineIntegrationId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/messaging/integrations/line/{integrationId}', 
-			'PUT', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
 }
 
 class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -16667,7 +16362,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -16866,7 +16561,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -17135,7 +16830,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -17376,7 +17071,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -17586,7 +17281,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -18296,7 +17991,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -20959,7 +20654,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -21226,7 +20921,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -22897,7 +22592,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -24085,7 +23780,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -24409,7 +24104,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -24558,6 +24253,26 @@ class RoutingApi {
 			'/api/v2/routing/queues/{queueId}/wrapupcodes/{codeId}', 
 			'DELETE', 
 			{ 'queueId': queueId,'codeId': codeId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an organization&#39;s routing settings
+	 * 
+	 */
+	deleteRoutingSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/settings', 
+			'DELETE', 
+			{  }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -25186,6 +24901,26 @@ class RoutingApi {
 			'GET', 
 			{  }, 
 			{ 'joined': opts['joined'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an organization&#39;s routing settings
+	 * 
+	 */
+	getRoutingSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/settings', 
+			'GET', 
+			{  }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -26298,6 +26033,31 @@ class RoutingApi {
 	}
 
 	/**
+	 * Update an organization&#39;s routing settings
+	 * 
+	 * @param {Object} body Organization Settings
+	 */
+	putRoutingSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/settings', 
+			'PUT', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update Transcription Settings
 	 * 
 	 * @param {Object} body Organization Settings
@@ -26478,7 +26238,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -26614,6 +26374,8 @@ class SCIMApi {
 	 * 
 	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/groups.
 	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output.
 	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
 	 */
 	getScimGroup(groupId, opts) { 
@@ -26628,7 +26390,7 @@ class SCIMApi {
 			'/api/v2/scim/groups/{groupId}', 
 			'GET', 
 			{ 'groupId': groupId }, 
-			{  }, 
+			{ 'attributes': this.apiClient.buildCollectionParam(opts['attributes'], 'multi'),'excludedAttributes': this.apiClient.buildCollectionParam(opts['excludedAttributes'], 'multi') }, 
 			{ 'If-None-Match': opts['ifNoneMatch'] }, 
 			{  }, 
 			null, 
@@ -26644,6 +26406,8 @@ class SCIMApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
 	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output.
 	 * @param {String} opts.filter Filters results.
 	 */
 	getScimGroups(opts) { 
@@ -26654,7 +26418,7 @@ class SCIMApi {
 			'/api/v2/scim/groups', 
 			'GET', 
 			{  }, 
-			{ 'startIndex': opts['startIndex'],'count': opts['count'],'filter': opts['filter'] }, 
+			{ 'startIndex': opts['startIndex'],'count': opts['count'],'attributes': this.apiClient.buildCollectionParam(opts['attributes'], 'multi'),'excludedAttributes': this.apiClient.buildCollectionParam(opts['excludedAttributes'], 'multi'),'filter': opts['filter'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -26710,6 +26474,55 @@ class SCIMApi {
 	}
 
 	/**
+	 * Get the SCIM schema by id
+	 * 
+	 * @param {Object} schemaId The ID of a schema.
+	 */
+	getScimSchema(schemaId) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null) {
+			throw 'Missing the required parameter "schemaId" when calling getScimSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scim/schemas/{schemaId}', 
+			'GET', 
+			{ 'schemaId': schemaId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
+		);
+	}
+
+	/**
+	 * Get the SCIM schemas
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.filter Filtered results are invalid and will result in a 403 (Unauthorized) return.
+	 */
+	getScimSchemas(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scim/schemas', 
+			'GET', 
+			{  }, 
+			{ 'filter': opts['filter'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
+		);
+	}
+
+	/**
 	 * Get a service provider&#39;s configuration
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -26738,8 +26551,8 @@ class SCIMApi {
 	 * 
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/users.
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
-	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes ant the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
 	 * @param {String} opts.ifNoneMatch TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
 	 */
 	getScimUser(userId, opts) { 
@@ -26770,8 +26583,8 @@ class SCIMApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
 	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
-	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
-	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes ant the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
 	 * @param {String} opts.filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;.
 	 */
 	getScimUsers(opts) { 
@@ -26797,6 +26610,8 @@ class SCIMApi {
 	 * 
 	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups.
 	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output.
 	 * @param {String} opts.ifNoneMatch TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. 
 	 */
 	getScimV2Group(groupId, opts) { 
@@ -26811,7 +26626,7 @@ class SCIMApi {
 			'/api/v2/scim/v2/groups/{groupId}', 
 			'GET', 
 			{ 'groupId': groupId }, 
-			{  }, 
+			{ 'attributes': this.apiClient.buildCollectionParam(opts['attributes'], 'multi'),'excludedAttributes': this.apiClient.buildCollectionParam(opts['excludedAttributes'], 'multi') }, 
 			{ 'If-None-Match': opts['ifNoneMatch'] }, 
 			{  }, 
 			null, 
@@ -26828,6 +26643,8 @@ class SCIMApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
 	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output.
 	 */
 	getScimV2Groups(filter, opts) { 
 		opts = opts || {};
@@ -26841,7 +26658,7 @@ class SCIMApi {
 			'/api/v2/scim/v2/groups', 
 			'GET', 
 			{  }, 
-			{ 'startIndex': opts['startIndex'],'count': opts['count'],'filter': filter }, 
+			{ 'startIndex': opts['startIndex'],'count': opts['count'],'attributes': this.apiClient.buildCollectionParam(opts['attributes'], 'multi'),'excludedAttributes': this.apiClient.buildCollectionParam(opts['excludedAttributes'], 'multi'),'filter': filter }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -26897,6 +26714,55 @@ class SCIMApi {
 	}
 
 	/**
+	 * Get the SCIM schema by id
+	 * 
+	 * @param {Object} schemaId The ID of a schema.
+	 */
+	getScimV2Schema(schemaId) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null) {
+			throw 'Missing the required parameter "schemaId" when calling getScimV2Schema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scim/v2/schemas/{schemaId}', 
+			'GET', 
+			{ 'schemaId': schemaId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
+		);
+	}
+
+	/**
+	 * Get the SCIM schemas
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.filter Filtered results are invalid and will result in a 403 (Unauthorized) return.
+	 */
+	getScimV2Schemas(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scim/v2/schemas', 
+			'GET', 
+			{  }, 
+			{ 'filter': opts['filter'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
+		);
+	}
+
+	/**
 	 * Get a service provider&#39;s configuration
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -26925,8 +26791,8 @@ class SCIMApi {
 	 * 
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/v2/users.
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
-	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes ant the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
 	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
 	 */
 	getScimV2User(userId, opts) { 
@@ -26957,8 +26823,8 @@ class SCIMApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
 	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
-	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
-	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes ant the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
 	 * @param {String} opts.filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;.
 	 */
 	getScimV2Users(opts) { 
@@ -27357,7 +27223,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -27710,7 +27576,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -28165,7 +28031,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -28216,7 +28082,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -28363,7 +28229,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -28502,7 +28368,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -28610,7 +28476,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -32185,7 +32051,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -32271,7 +32137,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -32455,7 +32321,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -34433,7 +34299,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -34544,7 +34410,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -35181,7 +35047,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -35725,7 +35591,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -35871,7 +35737,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 69.2.1
+	 * @version 70.0.0
 	 */
 
 	/**
@@ -38159,7 +38025,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 69.2.1
+ * @version 70.0.0
  */
 class platformClient {
 	constructor() {
