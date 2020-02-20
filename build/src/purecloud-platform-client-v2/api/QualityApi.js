@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 70.0.0
+	 * @version 71.0.0
 	 */
 
 	/**
@@ -1035,18 +1035,19 @@ class QualityApi {
 	/**
 	 * Get a survey as an end-customer, for the purposes of scoring it.
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.customerSurveyUrl customerSurveyUrl
+	 * @param {String} customerSurveyUrl customerSurveyUrl
 	 */
-	getQualitySurveysScorable(opts) { 
-		opts = opts || {};
-		
+	getQualitySurveysScorable(customerSurveyUrl) { 
+		// verify the required parameter 'customerSurveyUrl' is set
+		if (customerSurveyUrl === undefined || customerSurveyUrl === null) {
+			throw 'Missing the required parameter "customerSurveyUrl" when calling getQualitySurveysScorable';
+		}
 
 		return this.apiClient.callApi(
 			'/api/v2/quality/surveys/scorable', 
 			'GET', 
 			{  }, 
-			{ 'customerSurveyUrl': opts['customerSurveyUrl'] }, 
+			{ 'customerSurveyUrl': customerSurveyUrl }, 
 			{  }, 
 			{  }, 
 			null, 

@@ -2029,7 +2029,7 @@ declare class QualityApi {
   	getQualityPublishedformsSurvey(formId: string): Promise<Models.SurveyForm>; 
   	getQualityPublishedformsSurveys(opts?: QualityApi.getQualityPublishedformsSurveysOptions): Promise<Models.SurveyFormEntityListing>; 
   	getQualitySurvey(surveyId: string): Promise<Models.Survey>; 
-  	getQualitySurveysScorable(opts?: QualityApi.getQualitySurveysScorableOptions): Promise<Models.ScorableSurvey>; 
+  	getQualitySurveysScorable(customerSurveyUrl: string): Promise<Models.ScorableSurvey>; 
   	patchQualityFormsSurvey(formId: string, body: Models.SurveyForm): Promise<Models.SurveyForm>; 
   	postAnalyticsEvaluationsAggregatesQuery(body: Models.EvaluationAggregationQuery): Promise<Models.EvaluationAggregateQueryResponse>; 
   	postAnalyticsSurveysAggregatesQuery(body: Models.SurveyAggregationQuery): Promise<Models.SurveyAggregateQueryResponse>; 
@@ -2207,9 +2207,6 @@ declare namespace QualityApi {
 		"pageNumber"?: number;
 		"name"?: string;
 		"onlyLatestEnabledPerContext"?: boolean;
-	}
-	export interface getQualitySurveysScorableOptions { 
-		"customerSurveyUrl"?: string;
 	}
 	export interface postQualityCalibrationsOptions { 
 		"expand"?: string;
@@ -4564,9 +4561,8 @@ declare namespace Models {
 		"valueNode"?: boolean;
 		"containerNode"?: boolean;
 		"missingNode"?: boolean;
-		"pojo"?: boolean;
-		"floatingPointNumber"?: boolean;
 		"integralNumber"?: boolean;
+		"floatingPointNumber"?: boolean;
 		"short"?: boolean;
 		"int"?: boolean;
 		"long"?: boolean;
@@ -4575,6 +4571,7 @@ declare namespace Models {
 		"bigInteger"?: boolean;
 		"textual"?: boolean;
 		"binary"?: boolean;
+		"pojo"?: boolean;
 		"array"?: boolean;
 		"null"?: boolean;
 	}
@@ -5686,8 +5683,8 @@ declare namespace Models {
 		"expirationDate"?: string;
 		"issueDate"?: string;
 		"expired"?: boolean;
-		"signatureValid"?: boolean;
 		"valid"?: boolean;
+		"signatureValid"?: boolean;
 	}
 	
 	export interface Change { 
@@ -12228,9 +12225,8 @@ declare namespace Models {
 		"valueNode"?: boolean;
 		"containerNode"?: boolean;
 		"missingNode"?: boolean;
-		"pojo"?: boolean;
-		"floatingPointNumber"?: boolean;
 		"integralNumber"?: boolean;
+		"floatingPointNumber"?: boolean;
 		"short"?: boolean;
 		"int"?: boolean;
 		"long"?: boolean;
@@ -12239,6 +12235,7 @@ declare namespace Models {
 		"bigInteger"?: boolean;
 		"textual"?: boolean;
 		"binary"?: boolean;
+		"pojo"?: boolean;
 		"array"?: boolean;
 		"null"?: boolean;
 	}

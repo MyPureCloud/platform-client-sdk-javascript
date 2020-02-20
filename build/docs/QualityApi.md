@@ -2253,7 +2253,7 @@ apiInstance.getQualitySurvey(surveyId)
 
 <a name="getQualitySurveysScorable"></a>
 
-# ScorableSurvey getQualitySurveysScorable(opts)
+# ScorableSurvey getQualitySurveysScorable(customerSurveyUrl)
 
 
 
@@ -2278,11 +2278,9 @@ const platformClient = require('purecloud-platform-client-v2');
 
 let apiInstance = new platformClient.QualityApi();
 
-let opts = { 
-  'customerSurveyUrl': "customerSurveyUrl_example" // String | customerSurveyUrl
-};
+let customerSurveyUrl = "customerSurveyUrl_example"; // String | customerSurveyUrl
 
-apiInstance.getQualitySurveysScorable(opts)
+apiInstance.getQualitySurveysScorable(customerSurveyUrl)
   .then((data) => {
     console.log(`getQualitySurveysScorable success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2297,7 +2295,7 @@ apiInstance.getQualitySurveysScorable(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **customerSurveyUrl** | **String** | customerSurveyUrl | [optional]  |
+ **customerSurveyUrl** | **String** | customerSurveyUrl |  |
 {: class="table table-striped"}
 
 ### Return type
