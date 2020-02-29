@@ -122,6 +122,7 @@ declare namespace AnalyticsApi {
 	}
 	export interface getAnalyticsConversationsDetailsJobResultsOptions { 
 		"cursor"?: string;
+		"pageSize"?: number;
 	}
 	export interface getAnalyticsReportingMetadataOptions { 
 		"pageNumber"?: number;
@@ -141,6 +142,7 @@ declare namespace AnalyticsApi {
 	}
 	export interface getAnalyticsUsersDetailsJobResultsOptions { 
 		"cursor"?: string;
+		"pageSize"?: number;
 	}
 }
 
@@ -892,6 +894,7 @@ declare namespace ConversationsApi {
 	}
 	export interface getAnalyticsConversationsDetailsJobResultsOptions { 
 		"cursor"?: string;
+		"pageSize"?: number;
 	}
 	export interface getConversationParticipantWrapupOptions { 
 		"provisional"?: boolean;
@@ -3328,6 +3331,7 @@ declare class UsersApi {
 declare namespace UsersApi { 
 	export interface getAnalyticsUsersDetailsJobResultsOptions { 
 		"cursor"?: string;
+		"pageSize"?: number;
 	}
 	export interface getAuthorizationDivisionspermittedMeOptions { 
 		"name"?: string;
@@ -4561,8 +4565,9 @@ declare namespace Models {
 		"valueNode"?: boolean;
 		"containerNode"?: boolean;
 		"missingNode"?: boolean;
-		"integralNumber"?: boolean;
+		"pojo"?: boolean;
 		"floatingPointNumber"?: boolean;
+		"integralNumber"?: boolean;
 		"short"?: boolean;
 		"int"?: boolean;
 		"long"?: boolean;
@@ -4571,7 +4576,6 @@ declare namespace Models {
 		"bigInteger"?: boolean;
 		"textual"?: boolean;
 		"binary"?: boolean;
-		"pojo"?: boolean;
 		"array"?: boolean;
 		"null"?: boolean;
 	}
@@ -5683,8 +5687,8 @@ declare namespace Models {
 		"expirationDate"?: string;
 		"issueDate"?: string;
 		"expired"?: boolean;
-		"valid"?: boolean;
 		"signatureValid"?: boolean;
+		"valid"?: boolean;
 	}
 	
 	export interface Change { 
@@ -10441,6 +10445,7 @@ declare namespace Models {
 		"mediaType"?: Array<string>;
 		"rescore"?: boolean;
 		"conversationDate"?: string;
+		"conversationEndDate"?: string;
 		"neverRelease"?: boolean;
 		"resourceId"?: string;
 		"resourceType"?: string;
@@ -10867,7 +10872,7 @@ declare namespace Models {
 		"pageAccessToken"?: string;
 		"userAccessToken"?: string;
 		"pageId"?: string;
-		"appId": string;
+		"appId"?: string;
 		"appSecret"?: string;
 		"selfUri"?: string;
 	}
@@ -11311,8 +11316,8 @@ declare namespace Models {
 	}
 	
 	export interface GDPRJourneyCustomer { 
-		"type": string;
-		"id": string;
+		"type"?: string;
+		"id"?: string;
 	}
 	
 	export interface GDPRRequest { 
@@ -12225,8 +12230,9 @@ declare namespace Models {
 		"valueNode"?: boolean;
 		"containerNode"?: boolean;
 		"missingNode"?: boolean;
-		"integralNumber"?: boolean;
+		"pojo"?: boolean;
 		"floatingPointNumber"?: boolean;
+		"integralNumber"?: boolean;
 		"short"?: boolean;
 		"int"?: boolean;
 		"long"?: boolean;
@@ -12235,7 +12241,6 @@ declare namespace Models {
 		"bigInteger"?: boolean;
 		"textual"?: boolean;
 		"binary"?: boolean;
-		"pojo"?: boolean;
 		"array"?: boolean;
 		"null"?: boolean;
 	}

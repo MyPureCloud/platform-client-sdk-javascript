@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 71.0.0
+	 * @version 72.0.0
 	 */
 
 	/**
@@ -271,6 +271,7 @@ class UsersApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
+	 * @param {Number} opts.pageSize The desired maximum number of results
 	 */
 	getAnalyticsUsersDetailsJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -284,7 +285,7 @@ class UsersApi {
 			'/api/v2/analytics/users/details/jobs/{jobId}/results', 
 			'GET', 
 			{ 'jobId': jobId }, 
-			{ 'cursor': opts['cursor'] }, 
+			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'] }, 
 			{  }, 
 			{  }, 
 			null, 

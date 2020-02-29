@@ -12019,8 +12019,8 @@ DomainCertificateAuthority <a href="#" onclick="return copyDomainCertificateAuth
     "expirationDate": Date, 
     "issueDate": Date, 
     "expired": Boolean, 
-    "valid": Boolean, 
     "signatureValid": Boolean, 
+    "valid": Boolean, 
   },  
   "selfUri": String, 
 }
@@ -50247,8 +50247,8 @@ DomainCertificateAuthority <a href="#" onclick="return copyDomainCertificateAuth
     "expirationDate": Date, 
     "issueDate": Date, 
     "expired": Boolean, 
-    "valid": Boolean, 
     "signatureValid": Boolean, 
+    "valid": Boolean, 
   },  
   "selfUri": String, 
 }

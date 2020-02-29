@@ -614,7 +614,8 @@ let apiInstance = new platformClient.UsersApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page)
+  'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page)
+  'pageSize': 56 // Number | The desired maximum number of results
 };
 
 apiInstance.getAnalyticsUsersDetailsJobResults(jobId, opts)
@@ -634,6 +635,7 @@ apiInstance.getAnalyticsUsersDetailsJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
+ **pageSize** | **Number** | The desired maximum number of results | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

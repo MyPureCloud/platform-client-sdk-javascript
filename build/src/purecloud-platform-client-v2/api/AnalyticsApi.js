@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 71.0.0
+	 * @version 72.0.0
 	 */
 
 	/**
@@ -175,6 +175,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
+	 * @param {Number} opts.pageSize The desired maximum number of results
 	 */
 	getAnalyticsConversationsDetailsJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -188,7 +189,7 @@ class AnalyticsApi {
 			'/api/v2/analytics/conversations/details/jobs/{jobId}/results', 
 			'GET', 
 			{ 'jobId': jobId }, 
-			{ 'cursor': opts['cursor'] }, 
+			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -499,6 +500,7 @@ class AnalyticsApi {
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
+	 * @param {Number} opts.pageSize The desired maximum number of results
 	 */
 	getAnalyticsUsersDetailsJobResults(jobId, opts) { 
 		opts = opts || {};
@@ -512,7 +514,7 @@ class AnalyticsApi {
 			'/api/v2/analytics/users/details/jobs/{jobId}/results', 
 			'GET', 
 			{ 'jobId': jobId }, 
-			{ 'cursor': opts['cursor'] }, 
+			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'] }, 
 			{  }, 
 			{  }, 
 			null, 
