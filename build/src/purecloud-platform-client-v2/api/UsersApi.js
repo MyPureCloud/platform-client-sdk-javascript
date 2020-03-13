@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -70,6 +70,31 @@ class UsersApi {
 			'/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}', 
 			'DELETE', 
 			{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	deleteRoutingUserUtilization(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling deleteRoutingUserUtilization';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/utilization', 
+			'DELETE', 
+			{ 'userId': userId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -296,8 +321,8 @@ class UsersApi {
 	}
 
 	/**
-	 * Returns whether or not current user can perform the specified action(s).
-	 * 
+	 * Returns which divisions the current user has the given permission in.
+	 * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
 	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.name Search term to filter by division name
@@ -325,8 +350,73 @@ class UsersApi {
 	}
 
 	/**
-	 * Returns whether or not specified user can perform the specified action(s).
+	 * Returns which divisions the current user has the given permission in.
 	 * 
+	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getAuthorizationDivisionspermittedPagedMe(permission, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'permission' is set
+		if (permission === undefined || permission === null) {
+			throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedPagedMe';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisionspermitted/paged/me', 
+			'GET', 
+			{  }, 
+			{ 'permission': permission,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns which divisions the specified user has the given permission in.
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling getAuthorizationDivisionspermittedPagedSubjectId';
+		}
+		// verify the required parameter 'permission' is set
+		if (permission === undefined || permission === null) {
+			throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedPagedSubjectId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisionspermitted/paged/{subjectId}', 
+			'GET', 
+			{ 'subjectId': subjectId }, 
+			{ 'permission': permission,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns which divisions the specified user has the given permission in.
+	 * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
 	 * @param {String} subjectId Subject ID (user or group)
 	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
 	 * @param {Object} opts Optional parameters
@@ -448,6 +538,31 @@ class UsersApi {
 			'GET', 
 			{  }, 
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jid': this.apiClient.buildCollectionParam(opts['jid'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	getRoutingUserUtilization(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getRoutingUserUtilization';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/utilization', 
+			'GET', 
+			{ 'userId': userId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1693,6 +1808,36 @@ class UsersApi {
 			'/api/v2/users/search', 
 			'POST', 
 			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Object} body utilization
+	 */
+	putRoutingUserUtilization(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling putRoutingUserUtilization';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingUserUtilization';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/utilization', 
+			'PUT', 
+			{ 'userId': userId }, 
 			{  }, 
 			{  }, 
 			{  }, 

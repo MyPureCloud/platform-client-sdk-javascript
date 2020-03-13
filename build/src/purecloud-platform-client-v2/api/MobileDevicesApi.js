@@ -5,7 +5,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**

@@ -3685,7 +3685,7 @@ apiInstance.postWorkforcemanagementManagementunitActivitycodes(muId, opts)
 
 <a name="postWorkforcemanagementManagementunitAgentschedulesSearch"></a>
 
-# UserScheduleContainer postWorkforcemanagementManagementunitAgentschedulesSearch(muId, opts)
+# BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementManagementunitAgentschedulesSearch(muId, opts)
 
 
 
@@ -3772,7 +3772,7 @@ apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(muId, opts
 
 ### Return type
 
-**UserScheduleContainer**
+**BuAsyncAgentSchedulesSearchResponse**
 
 <a name="postWorkforcemanagementManagementunitHistoricaladherencequery"></a>
 

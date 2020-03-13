@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingSettings**](RoutingApi.html#deleteRoutingSettings) | **DELETE** /api/v2/routing/settings | Delete an organization&#39;s routing settings
 [**deleteRoutingSkill**](RoutingApi.html#deleteRoutingSkill) | **DELETE** /api/v2/routing/skills/{skillId} | Delete Routing Skill
 [**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | **DELETE** /api/v2/routing/sms/phonenumbers/{addressId} | Delete a phone number provisioned for SMS.
+[**deleteRoutingUserUtilization**](RoutingApi.html#deleteRoutingUserUtilization) | **DELETE** /api/v2/routing/users/{userId}/utilization | Delete the user&#39;s max utilization settings and revert to the organization-wide default.
 [**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | **DELETE** /api/v2/routing/utilization | Delete the organization-wide max utilization settings and revert to the system default.
 [**deleteRoutingWrapupcode**](RoutingApi.html#deleteRoutingWrapupcode) | **DELETE** /api/v2/routing/wrapupcodes/{codeId} | Delete wrap-up code
 [**deleteUserRoutinglanguage**](RoutingApi.html#deleteUserRoutinglanguage) | **DELETE** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove routing language from user
@@ -46,6 +47,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingSmsAvailablephonenumbers**](RoutingApi.html#getRoutingSmsAvailablephonenumbers) | **GET** /api/v2/routing/sms/availablephonenumbers | Get a list of available phone numbers for SMS provisioning.
 [**getRoutingSmsPhonenumber**](RoutingApi.html#getRoutingSmsPhonenumber) | **GET** /api/v2/routing/sms/phonenumbers/{addressId} | Get a phone number provisioned for SMS.
 [**getRoutingSmsPhonenumbers**](RoutingApi.html#getRoutingSmsPhonenumbers) | **GET** /api/v2/routing/sms/phonenumbers | Get a list of provisioned phone numbers.
+[**getRoutingUserUtilization**](RoutingApi.html#getRoutingUserUtilization) | **GET** /api/v2/routing/users/{userId}/utilization | Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
 [**getRoutingUtilization**](RoutingApi.html#getRoutingUtilization) | **GET** /api/v2/routing/utilization | Get the organization-wide max utilization settings.
 [**getRoutingWrapupcode**](RoutingApi.html#getRoutingWrapupcode) | **GET** /api/v2/routing/wrapupcodes/{codeId} | Get details about this wrap-up code.
 [**getRoutingWrapupcodes**](RoutingApi.html#getRoutingWrapupcodes) | **GET** /api/v2/routing/wrapupcodes | Get list of wrapup codes.
@@ -79,6 +81,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putRoutingSettings**](RoutingApi.html#putRoutingSettings) | **PUT** /api/v2/routing/settings | Update an organization&#39;s routing settings
 [**putRoutingSettingsTranscription**](RoutingApi.html#putRoutingSettingsTranscription) | **PUT** /api/v2/routing/settings/transcription | Update Transcription Settings
 [**putRoutingSmsPhonenumber**](RoutingApi.html#putRoutingSmsPhonenumber) | **PUT** /api/v2/routing/sms/phonenumbers/{addressId} | Update a phone number provisioned for SMS.
+[**putRoutingUserUtilization**](RoutingApi.html#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
 [**putRoutingUtilization**](RoutingApi.html#putRoutingUtilization) | **PUT** /api/v2/routing/utilization | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
 [**putRoutingWrapupcode**](RoutingApi.html#putRoutingWrapupcode) | **PUT** /api/v2/routing/wrapupcodes/{codeId} | Update wrap-up code
 [**putUserRoutingskill**](RoutingApi.html#putUserRoutingskill) | **PUT** /api/v2/users/{userId}/routingskills/{skillId} | Update routing skill proficiency or state.
@@ -524,6 +527,61 @@ apiInstance.deleteRoutingSmsPhonenumber(addressId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **addressId** | **String** | Address ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteRoutingUserUtilization"></a>
+
+# void deleteRoutingUserUtilization(userId)
+
+
+
+DELETE /api/v2/routing/users/{userId}/utilization
+
+Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+
+
+
+Requires ANY permissions: 
+
+* routing:utilization:manage
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let userId = "userId_example"; // String | User ID
+
+apiInstance.deleteRoutingUserUtilization(userId)
+  .then(() => {
+    console.log('deleteRoutingUserUtilization returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingUserUtilization');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2345,6 +2403,62 @@ apiInstance.getRoutingSmsPhonenumbers(opts)
 ### Return type
 
 **SmsPhoneNumberEntityListing**
+
+<a name="getRoutingUserUtilization"></a>
+
+# Utilization getRoutingUserUtilization(userId)
+
+
+
+GET /api/v2/routing/users/{userId}/utilization
+
+Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+
+
+
+Requires ANY permissions: 
+
+* routing:utilization:manage
+* routing:utilization:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let userId = "userId_example"; // String | User ID
+
+apiInstance.getRoutingUserUtilization(userId)
+  .then((data) => {
+    console.log(`getRoutingUserUtilization success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingUserUtilization');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Utilization**
 
 <a name="getRoutingUtilization"></a>
 
@@ -9284,6 +9398,92 @@ apiInstance.putRoutingSmsPhonenumber(addressId, body)
 ### Return type
 
 **SmsPhoneNumber**
+
+<a name="putRoutingUserUtilization"></a>
+
+# Utilization putRoutingUserUtilization(userId, body)
+
+
+
+PUT /api/v2/routing/users/{userId}/utilization
+
+Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+
+
+
+Requires ANY permissions: 
+
+* routing:utilization:manage
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyUtilizationExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UtilizationExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+Utilization <a href="#" onclick="return copyUtilizationExample()">Copy</a>
+
+<div id="UtilizationExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "utilization": { 
+    "maximumCapacity": Number, 
+    "interruptableMediaTypes": [String], 
+    "includeNonAcd": Boolean, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let userId = "userId_example"; // String | User ID
+let body = {}; // Object | utilization
+
+apiInstance.putRoutingUserUtilization(userId, body)
+  .then((data) => {
+    console.log(`putRoutingUserUtilization success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingUserUtilization');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **body** | **Object** | utilization |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Utilization**
 
 <a name="putRoutingUtilization"></a>
 

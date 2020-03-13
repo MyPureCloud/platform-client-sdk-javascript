@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -1436,6 +1436,96 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Returns the state information about an export job
+	 * Returns the state information about an export job.
+	 * @param {String} datatableId id of datatable
+	 * @param {String} exportJobId id of export job
+	 */
+	getFlowsDatatableExportJob(datatableId, exportJobId) { 
+		// verify the required parameter 'datatableId' is set
+		if (datatableId === undefined || datatableId === null) {
+			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableExportJob';
+		}
+		// verify the required parameter 'exportJobId' is set
+		if (exportJobId === undefined || exportJobId === null) {
+			throw 'Missing the required parameter "exportJobId" when calling getFlowsDatatableExportJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}', 
+			'GET', 
+			{ 'datatableId': datatableId,'exportJobId': exportJobId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns the state information about an import job
+	 * Returns the state information about an import job.
+	 * @param {String} datatableId id of datatable
+	 * @param {String} importJobId id of import job
+	 */
+	getFlowsDatatableImportJob(datatableId, importJobId) { 
+		// verify the required parameter 'datatableId' is set
+		if (datatableId === undefined || datatableId === null) {
+			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableImportJob';
+		}
+		// verify the required parameter 'importJobId' is set
+		if (importJobId === undefined || importJobId === null) {
+			throw 'Missing the required parameter "importJobId" when calling getFlowsDatatableImportJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}', 
+			'GET', 
+			{ 'datatableId': datatableId,'importJobId': importJobId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all recent import jobs
+	 * Get all recent import jobs
+	 * @param {String} datatableId id of datatable
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getFlowsDatatableImportJobs(datatableId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'datatableId' is set
+		if (datatableId === undefined || datatableId === null) {
+			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableImportJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/datatables/{datatableId}/import/jobs', 
+			'GET', 
+			{ 'datatableId': datatableId }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Returns a specific row for the datatable
 	 * Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
 	 * @param {String} datatableId id of datatable
@@ -2077,6 +2167,61 @@ class ArchitectApi {
 			{  }, 
 			{  }, 
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Begin an export process for exporting all rows from a datatable
+	 * Create an export job for exporting rows. The caller can then poll for status of the export using the token returned in the response
+	 * @param {String} datatableId id of datatable
+	 */
+	postFlowsDatatableExportJobs(datatableId) { 
+		// verify the required parameter 'datatableId' is set
+		if (datatableId === undefined || datatableId === null) {
+			throw 'Missing the required parameter "datatableId" when calling postFlowsDatatableExportJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/datatables/{datatableId}/export/jobs', 
+			'POST', 
+			{ 'datatableId': datatableId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Begin an import process for importing rows into a datatable
+	 * Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
+	 * @param {String} datatableId id of datatable
+	 * @param {Object} body import job information
+	 */
+	postFlowsDatatableImportJobs(datatableId, body) { 
+		// verify the required parameter 'datatableId' is set
+		if (datatableId === undefined || datatableId === null) {
+			throw 'Missing the required parameter "datatableId" when calling postFlowsDatatableImportJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postFlowsDatatableImportJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/datatables/{datatableId}/import/jobs', 
+			'POST', 
+			{ 'datatableId': datatableId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

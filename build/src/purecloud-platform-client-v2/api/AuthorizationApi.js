@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -236,8 +236,8 @@ class AuthorizationApi {
 	}
 
 	/**
-	 * Returns whether or not current user can perform the specified action(s).
-	 * 
+	 * Returns which divisions the current user has the given permission in.
+	 * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
 	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.name Search term to filter by division name
@@ -265,8 +265,73 @@ class AuthorizationApi {
 	}
 
 	/**
-	 * Returns whether or not specified user can perform the specified action(s).
+	 * Returns which divisions the current user has the given permission in.
 	 * 
+	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getAuthorizationDivisionspermittedPagedMe(permission, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'permission' is set
+		if (permission === undefined || permission === null) {
+			throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedPagedMe';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisionspermitted/paged/me', 
+			'GET', 
+			{  }, 
+			{ 'permission': permission,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns which divisions the specified user has the given permission in.
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling getAuthorizationDivisionspermittedPagedSubjectId';
+		}
+		// verify the required parameter 'permission' is set
+		if (permission === undefined || permission === null) {
+			throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedPagedSubjectId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisionspermitted/paged/{subjectId}', 
+			'GET', 
+			{ 'subjectId': subjectId }, 
+			{ 'permission': permission,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns which divisions the specified user has the given permission in.
+	 * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
 	 * @param {String} subjectId Subject ID (user or group)
 	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
 	 * @param {Object} opts Optional parameters

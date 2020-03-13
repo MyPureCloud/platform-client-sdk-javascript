@@ -15,8 +15,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAuthorizationDivisions**](AuthorizationApi.html#getAuthorizationDivisions) | **GET** /api/v2/authorization/divisions | Retrieve a list of all divisions defined for the organization
 [**getAuthorizationDivisionsHome**](AuthorizationApi.html#getAuthorizationDivisionsHome) | **GET** /api/v2/authorization/divisions/home | Retrieve the home division for the organization.
 [**getAuthorizationDivisionsLimit**](AuthorizationApi.html#getAuthorizationDivisionsLimit) | **GET** /api/v2/authorization/divisions/limit | Returns the maximum allowed number of divisions.
-[**getAuthorizationDivisionspermittedMe**](AuthorizationApi.html#getAuthorizationDivisionspermittedMe) | **GET** /api/v2/authorization/divisionspermitted/me | Returns whether or not current user can perform the specified action(s).
-[**getAuthorizationDivisionspermittedSubjectId**](AuthorizationApi.html#getAuthorizationDivisionspermittedSubjectId) | **GET** /api/v2/authorization/divisionspermitted/{subjectId} | Returns whether or not specified user can perform the specified action(s).
+[**getAuthorizationDivisionspermittedMe**](AuthorizationApi.html#getAuthorizationDivisionspermittedMe) | **GET** /api/v2/authorization/divisionspermitted/me | Returns which divisions the current user has the given permission in.
+[**getAuthorizationDivisionspermittedPagedMe**](AuthorizationApi.html#getAuthorizationDivisionspermittedPagedMe) | **GET** /api/v2/authorization/divisionspermitted/paged/me | Returns which divisions the current user has the given permission in.
+[**getAuthorizationDivisionspermittedPagedSubjectId**](AuthorizationApi.html#getAuthorizationDivisionspermittedPagedSubjectId) | **GET** /api/v2/authorization/divisionspermitted/paged/{subjectId} | Returns which divisions the specified user has the given permission in.
+[**getAuthorizationDivisionspermittedSubjectId**](AuthorizationApi.html#getAuthorizationDivisionspermittedSubjectId) | **GET** /api/v2/authorization/divisionspermitted/{subjectId} | Returns which divisions the specified user has the given permission in.
 [**getAuthorizationPermissions**](AuthorizationApi.html#getAuthorizationPermissions) | **GET** /api/v2/authorization/permissions | Get all permissions.
 [**getAuthorizationProducts**](AuthorizationApi.html#getAuthorizationProducts) | **GET** /api/v2/authorization/products | Get the list of enabled products
 [**getAuthorizationRole**](AuthorizationApi.html#getAuthorizationRole) | **GET** /api/v2/authorization/roles/{roleId} | Get a single organization role.
@@ -506,13 +508,13 @@ This endpoint does not need any parameter.
 
 # [AuthzDivision] getAuthorizationDivisionspermittedMe(permission, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/authorization/divisionspermitted/me
 
-Returns whether or not current user can perform the specified action(s).
+Returns which divisions the current user has the given permission in.
 
-
+This route is deprecated, use authorization/divisionspermitted/paged/me instead.
 
 Requires NO permissions: 
 
@@ -560,6 +562,128 @@ apiInstance.getAuthorizationDivisionspermittedMe(permission, opts)
 
 **[AuthzDivision]**
 
+<a name="getAuthorizationDivisionspermittedPagedMe"></a>
+
+# DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedMe(permission, opts)
+
+
+
+GET /api/v2/authorization/divisionspermitted/paged/me
+
+Returns which divisions the current user has the given permission in.
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let permission = "permission_example"; // String | The permission string, including the object to access, e.g. routing:queue:view
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+apiInstance.getAuthorizationDivisionspermittedPagedMe(permission, opts)
+  .then((data) => {
+    console.log(`getAuthorizationDivisionspermittedPagedMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationDivisionspermittedPagedMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+**DivsPermittedEntityListing**
+
+<a name="getAuthorizationDivisionspermittedPagedSubjectId"></a>
+
+# DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts)
+
+
+
+GET /api/v2/authorization/divisionspermitted/paged/{subjectId}
+
+Returns which divisions the specified user has the given permission in.
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let subjectId = "subjectId_example"; // String | Subject ID (user or group)
+let permission = "permission_example"; // String | The permission string, including the object to access, e.g. routing:queue:view
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+apiInstance.getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts)
+  .then((data) => {
+    console.log(`getAuthorizationDivisionspermittedPagedSubjectId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationDivisionspermittedPagedSubjectId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **subjectId** | **String** | Subject ID (user or group) |  |
+ **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+**DivsPermittedEntityListing**
+
 <a name="getAuthorizationDivisionspermittedSubjectId"></a>
 
 # [AuthzDivision] getAuthorizationDivisionspermittedSubjectId(subjectId, permission, opts)
@@ -568,9 +692,9 @@ apiInstance.getAuthorizationDivisionspermittedMe(permission, opts)
 
 GET /api/v2/authorization/divisionspermitted/{subjectId}
 
-Returns whether or not specified user can perform the specified action(s).
+Returns which divisions the specified user has the given permission in.
 
-
+This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
 
 Requires NO permissions: 
 

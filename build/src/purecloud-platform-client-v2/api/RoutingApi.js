@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -224,6 +224,31 @@ class RoutingApi {
 			'/api/v2/routing/sms/phonenumbers/{addressId}', 
 			'DELETE', 
 			{ 'addressId': addressId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	deleteRoutingUserUtilization(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling deleteRoutingUserUtilization';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/utilization', 
+			'DELETE', 
+			{ 'userId': userId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1055,6 +1080,31 @@ class RoutingApi {
 			'GET', 
 			{  }, 
 			{ 'phoneNumber': opts['phoneNumber'],'phoneNumberType': opts['phoneNumberType'],'phoneNumberStatus': opts['phoneNumberStatus'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	getRoutingUserUtilization(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getRoutingUserUtilization';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/utilization', 
+			'GET', 
+			{ 'userId': userId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -2003,6 +2053,36 @@ class RoutingApi {
 			'/api/v2/routing/sms/phonenumbers/{addressId}', 
 			'PUT', 
 			{ 'addressId': addressId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Object} body utilization
+	 */
+	putRoutingUserUtilization(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling putRoutingUserUtilization';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingUserUtilization';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/utilization', 
+			'PUT', 
+			{ 'userId': userId }, 
 			{  }, 
 			{  }, 
 			{  }, 

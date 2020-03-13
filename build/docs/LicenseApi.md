@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getLicenseToggle**](LicenseApi.html#getLicenseToggle) | **GET** /api/v2/license/toggles/{featureName} | Get PureCloud license feature toggle value.
 [**getLicenseUser**](LicenseApi.html#getLicenseUser) | **GET** /api/v2/license/users/{userId} | Get licenses for specified user.
 [**getLicenseUsers**](LicenseApi.html#getLicenseUsers) | **GET** /api/v2/license/users | Get a page of users and their licenses
+[**postLicenseInfer**](LicenseApi.html#postLicenseInfer) | **POST** /api/v2/license/infer | Get a list of licenses inferred based on a list of roleIds
 [**postLicenseOrganization**](LicenseApi.html#postLicenseOrganization) | **POST** /api/v2/license/organization | Update the organization&#39;s license assignments in a batch.
 [**postLicenseToggle**](LicenseApi.html#postLicenseToggle) | **POST** /api/v2/license/toggles/{featureName} | Switch PureCloud license feature toggle value.
 [**postLicenseUsers**](LicenseApi.html#postLicenseUsers) | **POST** /api/v2/license/users | Fetch user licenses in a batch.
@@ -289,6 +290,62 @@ apiInstance.getLicenseUsers(opts)
 ### Return type
 
 **UserLicensesEntityListing**
+
+<a name="postLicenseInfer"></a>
+
+# **[&#39;String&#39;]** postLicenseInfer(opts)
+
+
+
+POST /api/v2/license/infer
+
+Get a list of licenses inferred based on a list of roleIds
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LicenseApi();
+
+let opts = { 
+  'body': [{}] // Object | The roleIds to use while inferring licenses
+};
+
+apiInstance.postLicenseInfer(opts)
+  .then((data) => {
+    console.log(`postLicenseInfer success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postLicenseInfer');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The roleIds to use while inferring licenses | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**[&#39;String&#39;]**
 
 <a name="postLicenseOrganization"></a>
 

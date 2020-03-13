@@ -5,7 +5,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -134,6 +134,30 @@ class LicenseApi {
 			{  }, 
 			{  }, 
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of licenses inferred based on a list of roleIds
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<Object>} opts.body The roleIds to use while inferring licenses
+	 */
+	postLicenseInfer(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/license/infer', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

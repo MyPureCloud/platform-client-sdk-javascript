@@ -5,7 +5,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**

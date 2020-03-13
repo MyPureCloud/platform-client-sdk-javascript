@@ -101,7 +101,8 @@ let apiInstance = new platformClient.AuditApi();
 let transactionId = "transactionId_example"; // String | Transaction ID
 let opts = { 
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page)
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
 };
 
 apiInstance.getAuditsQueryTransactionIdResults(transactionId, opts)
@@ -122,6 +123,7 @@ apiInstance.getAuditsQueryTransactionIdResults(transactionId, opts)
  **transactionId** | **String** | Transaction ID |  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: user |
 {: class="table table-striped"}
 
 ### Return type

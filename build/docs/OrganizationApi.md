@@ -429,6 +429,7 @@ Organization <a href="#" onclick="return copyOrganizationExample()">Copy</a>
   "defaultSiteId": String, 
   "supportURI": String, 
   "voicemailEnabled": Boolean, 
+  "productPlatform": String, 
   "selfUri": String, 
   "features": {String: Boolean}, 
 }

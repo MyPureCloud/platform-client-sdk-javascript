@@ -5,7 +5,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -52,6 +52,7 @@ class AuditApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 */
 	getAuditsQueryTransactionIdResults(transactionId, opts) { 
 		opts = opts || {};
@@ -65,7 +66,7 @@ class AuditApi {
 			'/api/v2/audits/query/{transactionId}/results', 
 			'GET', 
 			{ 'transactionId': transactionId }, 
-			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'] }, 
+			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 

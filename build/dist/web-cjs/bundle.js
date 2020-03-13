@@ -1983,7 +1983,7 @@ function isSlowBuffer (obj) {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 72.1.0
+ * @version 73.0.0
  */
 class ApiClient {
 	/**
@@ -2741,7 +2741,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '72.1.0' });
+		//request.set({ 'purecloud-sdk': '73.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -2866,7 +2866,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -3180,7 +3180,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -4140,7 +4140,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -5571,6 +5571,96 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Returns the state information about an export job
+	 * Returns the state information about an export job.
+	 * @param {String} datatableId id of datatable
+	 * @param {String} exportJobId id of export job
+	 */
+	getFlowsDatatableExportJob(datatableId, exportJobId) { 
+		// verify the required parameter 'datatableId' is set
+		if (datatableId === undefined || datatableId === null) {
+			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableExportJob';
+		}
+		// verify the required parameter 'exportJobId' is set
+		if (exportJobId === undefined || exportJobId === null) {
+			throw 'Missing the required parameter "exportJobId" when calling getFlowsDatatableExportJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}', 
+			'GET', 
+			{ 'datatableId': datatableId,'exportJobId': exportJobId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns the state information about an import job
+	 * Returns the state information about an import job.
+	 * @param {String} datatableId id of datatable
+	 * @param {String} importJobId id of import job
+	 */
+	getFlowsDatatableImportJob(datatableId, importJobId) { 
+		// verify the required parameter 'datatableId' is set
+		if (datatableId === undefined || datatableId === null) {
+			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableImportJob';
+		}
+		// verify the required parameter 'importJobId' is set
+		if (importJobId === undefined || importJobId === null) {
+			throw 'Missing the required parameter "importJobId" when calling getFlowsDatatableImportJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}', 
+			'GET', 
+			{ 'datatableId': datatableId,'importJobId': importJobId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all recent import jobs
+	 * Get all recent import jobs
+	 * @param {String} datatableId id of datatable
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getFlowsDatatableImportJobs(datatableId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'datatableId' is set
+		if (datatableId === undefined || datatableId === null) {
+			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableImportJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/datatables/{datatableId}/import/jobs', 
+			'GET', 
+			{ 'datatableId': datatableId }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Returns a specific row for the datatable
 	 * Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
 	 * @param {String} datatableId id of datatable
@@ -6219,6 +6309,61 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Begin an export process for exporting all rows from a datatable
+	 * Create an export job for exporting rows. The caller can then poll for status of the export using the token returned in the response
+	 * @param {String} datatableId id of datatable
+	 */
+	postFlowsDatatableExportJobs(datatableId) { 
+		// verify the required parameter 'datatableId' is set
+		if (datatableId === undefined || datatableId === null) {
+			throw 'Missing the required parameter "datatableId" when calling postFlowsDatatableExportJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/datatables/{datatableId}/export/jobs', 
+			'POST', 
+			{ 'datatableId': datatableId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Begin an import process for importing rows into a datatable
+	 * Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
+	 * @param {String} datatableId id of datatable
+	 * @param {Object} body import job information
+	 */
+	postFlowsDatatableImportJobs(datatableId, body) { 
+		// verify the required parameter 'datatableId' is set
+		if (datatableId === undefined || datatableId === null) {
+			throw 'Missing the required parameter "datatableId" when calling postFlowsDatatableImportJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postFlowsDatatableImportJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/datatables/{datatableId}/import/jobs', 
+			'POST', 
+			{ 'datatableId': datatableId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a new row entry for the datatable.
 	 * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
 	 * @param {String} datatableId id of datatable
@@ -6646,7 +6791,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -6693,6 +6838,7 @@ class AuditApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 */
 	getAuditsQueryTransactionIdResults(transactionId, opts) { 
 		opts = opts || {};
@@ -6706,7 +6852,7 @@ class AuditApi {
 			'/api/v2/audits/query/{transactionId}/results', 
 			'GET', 
 			{ 'transactionId': transactionId }, 
-			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'] }, 
+			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -6747,7 +6893,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -6978,8 +7124,8 @@ class AuthorizationApi {
 	}
 
 	/**
-	 * Returns whether or not current user can perform the specified action(s).
-	 * 
+	 * Returns which divisions the current user has the given permission in.
+	 * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
 	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.name Search term to filter by division name
@@ -7007,8 +7153,73 @@ class AuthorizationApi {
 	}
 
 	/**
-	 * Returns whether or not specified user can perform the specified action(s).
+	 * Returns which divisions the current user has the given permission in.
 	 * 
+	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getAuthorizationDivisionspermittedPagedMe(permission, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'permission' is set
+		if (permission === undefined || permission === null) {
+			throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedPagedMe';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisionspermitted/paged/me', 
+			'GET', 
+			{  }, 
+			{ 'permission': permission,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns which divisions the specified user has the given permission in.
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling getAuthorizationDivisionspermittedPagedSubjectId';
+		}
+		// verify the required parameter 'permission' is set
+		if (permission === undefined || permission === null) {
+			throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedPagedSubjectId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisionspermitted/paged/{subjectId}', 
+			'GET', 
+			{ 'subjectId': subjectId }, 
+			{ 'permission': permission,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns which divisions the specified user has the given permission in.
+	 * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
 	 * @param {String} subjectId Subject ID (user or group)
 	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
 	 * @param {Object} opts Optional parameters
@@ -7828,7 +8039,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -7908,7 +8119,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -9048,7 +9259,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -12990,7 +13201,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -13898,7 +14109,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -14069,7 +14280,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -14140,7 +14351,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -14270,7 +14481,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -14401,7 +14612,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -14856,7 +15067,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -15261,7 +15472,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -15952,7 +16163,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -17414,7 +17625,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -17682,7 +17893,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -17818,6 +18029,30 @@ class LicenseApi {
 	}
 
 	/**
+	 * Get a list of licenses inferred based on a list of roleIds
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<Object>} opts.body The roleIds to use while inferring licenses
+	 */
+	postLicenseInfer(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/license/infer', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the organization&#39;s license assignments in a batch.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -17896,7 +18131,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -18132,7 +18367,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -18183,7 +18418,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -18334,7 +18569,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -18533,7 +18768,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -18802,7 +19037,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -19043,7 +19278,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -19253,7 +19488,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -19963,7 +20198,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -22626,7 +22861,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -22893,7 +23128,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -24565,7 +24800,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -25753,7 +25988,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -26077,7 +26312,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -26296,6 +26531,31 @@ class RoutingApi {
 			'/api/v2/routing/sms/phonenumbers/{addressId}', 
 			'DELETE', 
 			{ 'addressId': addressId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	deleteRoutingUserUtilization(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling deleteRoutingUserUtilization';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/utilization', 
+			'DELETE', 
+			{ 'userId': userId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -27127,6 +27387,31 @@ class RoutingApi {
 			'GET', 
 			{  }, 
 			{ 'phoneNumber': opts['phoneNumber'],'phoneNumberType': opts['phoneNumberType'],'phoneNumberStatus': opts['phoneNumberStatus'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	getRoutingUserUtilization(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getRoutingUserUtilization';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/utilization', 
+			'GET', 
+			{ 'userId': userId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -28086,6 +28371,36 @@ class RoutingApi {
 	}
 
 	/**
+	 * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Object} body utilization
+	 */
+	putRoutingUserUtilization(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling putRoutingUserUtilization';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingUserUtilization';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/utilization', 
+			'PUT', 
+			{ 'userId': userId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
 	 * 
 	 * @param {Object} body utilization
@@ -28211,7 +28526,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -29196,7 +29511,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -29549,7 +29864,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -30004,7 +30319,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -30055,7 +30370,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -30202,7 +30517,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -30341,7 +30656,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -30449,7 +30764,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -34024,7 +34339,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -34110,7 +34425,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -34294,7 +34609,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -34359,6 +34674,31 @@ class UsersApi {
 			'/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}', 
 			'DELETE', 
 			{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	deleteRoutingUserUtilization(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling deleteRoutingUserUtilization';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/utilization', 
+			'DELETE', 
+			{ 'userId': userId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -34585,8 +34925,8 @@ class UsersApi {
 	}
 
 	/**
-	 * Returns whether or not current user can perform the specified action(s).
-	 * 
+	 * Returns which divisions the current user has the given permission in.
+	 * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
 	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.name Search term to filter by division name
@@ -34614,8 +34954,73 @@ class UsersApi {
 	}
 
 	/**
-	 * Returns whether or not specified user can perform the specified action(s).
+	 * Returns which divisions the current user has the given permission in.
 	 * 
+	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getAuthorizationDivisionspermittedPagedMe(permission, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'permission' is set
+		if (permission === undefined || permission === null) {
+			throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedPagedMe';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisionspermitted/paged/me', 
+			'GET', 
+			{  }, 
+			{ 'permission': permission,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns which divisions the specified user has the given permission in.
+	 * 
+	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling getAuthorizationDivisionspermittedPagedSubjectId';
+		}
+		// verify the required parameter 'permission' is set
+		if (permission === undefined || permission === null) {
+			throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedPagedSubjectId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisionspermitted/paged/{subjectId}', 
+			'GET', 
+			{ 'subjectId': subjectId }, 
+			{ 'permission': permission,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns which divisions the specified user has the given permission in.
+	 * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
 	 * @param {String} subjectId Subject ID (user or group)
 	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
 	 * @param {Object} opts Optional parameters
@@ -34737,6 +35142,31 @@ class UsersApi {
 			'GET', 
 			{  }, 
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jid': this.apiClient.buildCollectionParam(opts['jid'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	getRoutingUserUtilization(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getRoutingUserUtilization';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/utilization', 
+			'GET', 
+			{ 'userId': userId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -35993,6 +36423,36 @@ class UsersApi {
 	}
 
 	/**
+	 * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Object} body utilization
+	 */
+	putRoutingUserUtilization(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling putRoutingUserUtilization';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingUserUtilization';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/utilization', 
+			'PUT', 
+			{ 'userId': userId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update a user&#39;s CallForwarding
 	 * 
 	 * @param {String} userId User ID
@@ -36273,7 +36733,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -36384,7 +36844,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -37021,7 +37481,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -37565,7 +38025,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -37711,7 +38171,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 72.1.0
+	 * @version 73.0.0
 	 */
 
 	/**
@@ -39999,7 +40459,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 72.1.0
+ * @version 73.0.0
  */
 class platformClient {
 	constructor() {

@@ -55,6 +55,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowVersions**](ArchitectApi.html#getFlowVersions) | **GET** /api/v2/flows/{flowId}/versions | Get flow version list
 [**getFlows**](ArchitectApi.html#getFlows) | **GET** /api/v2/flows | Get a pageable list of flows, filtered by query parameters
 [**getFlowsDatatable**](ArchitectApi.html#getFlowsDatatable) | **GET** /api/v2/flows/datatables/{datatableId} | Returns a specific datatable by id
+[**getFlowsDatatableExportJob**](ArchitectApi.html#getFlowsDatatableExportJob) | **GET** /api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId} | Returns the state information about an export job
+[**getFlowsDatatableImportJob**](ArchitectApi.html#getFlowsDatatableImportJob) | **GET** /api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId} | Returns the state information about an import job
+[**getFlowsDatatableImportJobs**](ArchitectApi.html#getFlowsDatatableImportJobs) | **GET** /api/v2/flows/datatables/{datatableId}/import/jobs | Get all recent import jobs
 [**getFlowsDatatableRow**](ArchitectApi.html#getFlowsDatatableRow) | **GET** /api/v2/flows/datatables/{datatableId}/rows/{rowId} | Returns a specific row for the datatable
 [**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | **GET** /api/v2/flows/datatables/{datatableId}/rows | Returns the rows for the datatable with the given id
 [**getFlowsDatatables**](ArchitectApi.html#getFlowsDatatables) | **GET** /api/v2/flows/datatables | Retrieve a list of datatables for the org
@@ -79,6 +82,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postFlowsActionsPublish**](ArchitectApi.html#postFlowsActionsPublish) | **POST** /api/v2/flows/actions/publish | Publish flow
 [**postFlowsActionsRevert**](ArchitectApi.html#postFlowsActionsRevert) | **POST** /api/v2/flows/actions/revert | Revert flow
 [**postFlowsActionsUnlock**](ArchitectApi.html#postFlowsActionsUnlock) | **POST** /api/v2/flows/actions/unlock | Unlock flow
+[**postFlowsDatatableExportJobs**](ArchitectApi.html#postFlowsDatatableExportJobs) | **POST** /api/v2/flows/datatables/{datatableId}/export/jobs | Begin an export process for exporting all rows from a datatable
+[**postFlowsDatatableImportJobs**](ArchitectApi.html#postFlowsDatatableImportJobs) | **POST** /api/v2/flows/datatables/{datatableId}/import/jobs | Begin an import process for importing rows into a datatable
 [**postFlowsDatatableRows**](ArchitectApi.html#postFlowsDatatableRows) | **POST** /api/v2/flows/datatables/{datatableId}/rows | Create a new row entry for the datatable.
 [**postFlowsDatatables**](ArchitectApi.html#postFlowsDatatables) | **POST** /api/v2/flows/datatables | Create a new datatable with the specified json-schema definition
 [**postFlowsOutcomes**](ArchitectApi.html#postFlowsOutcomes) | **POST** /api/v2/flows/outcomes | Create a flow outcome
@@ -3029,6 +3034,181 @@ apiInstance.getFlowsDatatable(datatableId, opts)
 ### Return type
 
 **DataTable**
+
+<a name="getFlowsDatatableExportJob"></a>
+
+# DataTableExportJob getFlowsDatatableExportJob(datatableId, exportJobId)
+
+
+
+GET /api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}
+
+Returns the state information about an export job
+
+Returns the state information about an export job.
+
+Requires ANY permissions: 
+
+* architect:datatable:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let datatableId = "datatableId_example"; // String | id of datatable
+let exportJobId = "exportJobId_example"; // String | id of export job
+
+apiInstance.getFlowsDatatableExportJob(datatableId, exportJobId)
+  .then((data) => {
+    console.log(`getFlowsDatatableExportJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsDatatableExportJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **datatableId** | **String** | id of datatable |  |
+ **exportJobId** | **String** | id of export job |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DataTableExportJob**
+
+<a name="getFlowsDatatableImportJob"></a>
+
+# DataTableImportJob getFlowsDatatableImportJob(datatableId, importJobId)
+
+
+
+GET /api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}
+
+Returns the state information about an import job
+
+Returns the state information about an import job.
+
+Requires ANY permissions: 
+
+* architect:datatable:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let datatableId = "datatableId_example"; // String | id of datatable
+let importJobId = "importJobId_example"; // String | id of import job
+
+apiInstance.getFlowsDatatableImportJob(datatableId, importJobId)
+  .then((data) => {
+    console.log(`getFlowsDatatableImportJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsDatatableImportJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **datatableId** | **String** | id of datatable |  |
+ **importJobId** | **String** | id of import job |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DataTableImportJob**
+
+<a name="getFlowsDatatableImportJobs"></a>
+
+# EntityListing getFlowsDatatableImportJobs(datatableId, opts)
+
+
+
+GET /api/v2/flows/datatables/{datatableId}/import/jobs
+
+Get all recent import jobs
+
+Get all recent import jobs
+
+Requires ANY permissions: 
+
+* architect:datatable:edit
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let datatableId = "datatableId_example"; // String | id of datatable
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+apiInstance.getFlowsDatatableImportJobs(datatableId, opts)
+  .then((data) => {
+    console.log(`getFlowsDatatableImportJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsDatatableImportJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **datatableId** | **String** | id of datatable |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+**EntityListing**
 
 <a name="getFlowsDatatableRow"></a>
 
@@ -6565,6 +6745,265 @@ apiInstance.postFlowsActionsUnlock(flow)
 ### Return type
 
 **Flow**
+
+<a name="postFlowsDatatableExportJobs"></a>
+
+# DataTableExportJob postFlowsDatatableExportJobs(datatableId)
+
+
+
+POST /api/v2/flows/datatables/{datatableId}/export/jobs
+
+Begin an export process for exporting all rows from a datatable
+
+Create an export job for exporting rows. The caller can then poll for status of the export using the token returned in the response
+
+Requires ANY permissions: 
+
+* architect:datatable:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let datatableId = "datatableId_example"; // String | id of datatable
+
+apiInstance.postFlowsDatatableExportJobs(datatableId)
+  .then((data) => {
+    console.log(`postFlowsDatatableExportJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postFlowsDatatableExportJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **datatableId** | **String** | id of datatable |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DataTableExportJob**
+
+<a name="postFlowsDatatableImportJobs"></a>
+
+# DataTableImportJob postFlowsDatatableImportJobs(datatableId, body)
+
+
+
+POST /api/v2/flows/datatables/{datatableId}/import/jobs
+
+Begin an import process for importing rows into a datatable
+
+Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
+
+Requires ANY permissions: 
+
+* architect:datatable:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyDataTableImportJobExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DataTableImportJobExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+DataTableImportJob <a href="#" onclick="return copyDataTableImportJobExample()">Copy</a>
+
+<div id="DataTableImportJobExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "owner": { 
+    "id": String, 
+    "selfUri": String, 
+  },  
+  "status": String, 
+  "dateCreated": Date, 
+  "dateCompleted": Date, 
+  "uploadURI": String, 
+  "importMode": String, 
+  "errorInformation": { 
+    "message": String, 
+    "code": String, 
+    "status": Number, 
+    "entityId": String, 
+    "entityName": String, 
+    "messageWithParams": String, 
+    "messageParams": {String: String}, 
+    "contextId": String, 
+    "details": { 
+      "errorCode": String, 
+      "fieldName": String, 
+      "entityId": String, 
+      "entityName": String, 
+    },  
+    "errors": { 
+      "message": String, 
+      "code": String, 
+      "status": Number, 
+      "entityId": String, 
+      "entityName": String, 
+      "messageWithParams": String, 
+      "messageParams": {String: String}, 
+      "contextId": String, 
+      "details": { 
+        "errorCode": String, 
+        "fieldName": String, 
+        "entityId": String, 
+        "entityName": String, 
+      },  
+      "errors": { 
+        "message": String, 
+        "code": String, 
+        "status": Number, 
+        "entityId": String, 
+        "entityName": String, 
+        "messageWithParams": String, 
+        "messageParams": {String: String}, 
+        "contextId": String, 
+        "details": { 
+          "errorCode": String, 
+          "fieldName": String, 
+          "entityId": String, 
+          "entityName": String, 
+        },  
+        "errors": { 
+          "message": String, 
+          "code": String, 
+          "status": Number, 
+          "entityId": String, 
+          "entityName": String, 
+          "messageWithParams": String, 
+          "messageParams": {String: String}, 
+          "contextId": String, 
+          "details": { 
+            "errorCode": String, 
+            "fieldName": String, 
+            "entityId": String, 
+            "entityName": String, 
+          },  
+          "errors": { 
+            "message": String, 
+            "code": String, 
+            "status": Number, 
+            "entityId": String, 
+            "entityName": String, 
+            "messageWithParams": String, 
+            "messageParams": {String: String}, 
+            "contextId": String, 
+            "details": { 
+              "errorCode": String, 
+              "fieldName": String, 
+              "entityId": String, 
+              "entityName": String, 
+            },  
+            "errors": { 
+              "message": String, 
+              "code": String, 
+              "status": Number, 
+              "entityId": String, 
+              "entityName": String, 
+              "messageWithParams": String, 
+              "messageParams": {String: String}, 
+              "contextId": String, 
+              "details": { 
+                "errorCode": String, 
+                "fieldName": String, 
+                "entityId": String, 
+                "entityName": String, 
+              },  
+              "errors": { 
+                "message": String, 
+                "code": String, 
+                "status": Number, 
+                "entityId": String, 
+                "entityName": String, 
+                "messageWithParams": String, 
+                "messageParams": {String: String}, 
+                "contextId": String, 
+                "details": [Detail], 
+                "errors": [ErrorBody], 
+              },  
+            },  
+          },  
+        },  
+      },  
+    },  
+  },  
+  "countRecordsUpdated": Number, 
+  "countRecordsDeleted": Number, 
+  "countRecordsFailed": Number, 
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let datatableId = "datatableId_example"; // String | id of datatable
+let body = {}; // Object | import job information
+
+apiInstance.postFlowsDatatableImportJobs(datatableId, body)
+  .then((data) => {
+    console.log(`postFlowsDatatableImportJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postFlowsDatatableImportJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **datatableId** | **String** | id of datatable |  |
+ **body** | **Object** | import job information |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DataTableImportJob**
 
 <a name="postFlowsDatatableRows"></a>
 
