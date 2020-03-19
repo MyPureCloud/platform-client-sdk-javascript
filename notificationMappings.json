@@ -301,6 +301,10 @@
       "class": "VoicemailMessagesTopicVoicemailMessage"
     },
     {
+      "topic": "v2.users.{id}.wem.coaching.appointment",
+      "class": "WemCoachingAppointmentTopicCoachingAppointmentNotification"
+    },
+    {
       "topic": "v2.users.{id}.workforcemanagement.adherence",
       "class": "WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate"
     },

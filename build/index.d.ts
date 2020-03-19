@@ -4607,9 +4607,8 @@ declare namespace Models {
 		"valueNode"?: boolean;
 		"containerNode"?: boolean;
 		"missingNode"?: boolean;
-		"pojo"?: boolean;
-		"floatingPointNumber"?: boolean;
 		"integralNumber"?: boolean;
+		"floatingPointNumber"?: boolean;
 		"short"?: boolean;
 		"int"?: boolean;
 		"long"?: boolean;
@@ -4618,6 +4617,7 @@ declare namespace Models {
 		"bigInteger"?: boolean;
 		"textual"?: boolean;
 		"binary"?: boolean;
+		"pojo"?: boolean;
 		"array"?: boolean;
 		"null"?: boolean;
 	}
@@ -8882,6 +8882,7 @@ declare namespace Models {
 	export interface DialerCampaignProgressEventCampaignProgress { 
 		"campaign"?: Models.DialerCampaignProgressEventUriReference;
 		"numberOfContactsCalled"?: number;
+		"numberOfContactsMessaged"?: number;
 		"totalNumberOfContacts"?: number;
 		"percentage"?: number;
 		"additionalProperties"?: object;
@@ -12391,9 +12392,8 @@ declare namespace Models {
 		"valueNode"?: boolean;
 		"containerNode"?: boolean;
 		"missingNode"?: boolean;
-		"pojo"?: boolean;
-		"floatingPointNumber"?: boolean;
 		"integralNumber"?: boolean;
+		"floatingPointNumber"?: boolean;
 		"short"?: boolean;
 		"int"?: boolean;
 		"long"?: boolean;
@@ -12402,6 +12402,7 @@ declare namespace Models {
 		"bigInteger"?: boolean;
 		"textual"?: boolean;
 		"binary"?: boolean;
+		"pojo"?: boolean;
 		"array"?: boolean;
 		"null"?: boolean;
 	}
@@ -13648,6 +13649,7 @@ declare namespace Models {
 		"addressTo"?: string;
 		"ani"?: string;
 		"dnis"?: string;
+		"teamId"?: string;
 		"scoredAgents"?: Array<Models.AnalyticsScoredAgent>;
 	}
 	
@@ -13880,6 +13882,7 @@ declare namespace Models {
 	export interface OutboundMessagingMessagingCampaignProgressEventCampaignProgress { 
 		"campaign"?: Models.OutboundMessagingMessagingCampaignProgressEventUriReference;
 		"numberOfContactsCalled"?: number;
+		"numberOfContactsMessaged"?: number;
 		"totalNumberOfContacts"?: number;
 		"percentage"?: number;
 		"additionalProperties"?: object;
@@ -14265,11 +14268,6 @@ declare namespace Models {
 	export interface PhonesReboot { 
 		"phoneIds"?: Array<string>;
 		"siteId"?: string;
-	}
-	
-	export interface Photo { 
-		"value"?: string;
-		"type"?: string;
 	}
 	
 	export interface PhysicalInterfaceEntityListing { 
@@ -17826,7 +17824,6 @@ declare namespace Models {
 		"title"?: string;
 		"phoneNumbers"?: Array<Models.ScimPhoneNumber>;
 		"emails"?: Array<Models.ScimEmail>;
-		"photos"?: Array<Models.Photo>;
 		"externalId"?: string;
 		"groups"?: Array<Models.ScimV2GroupReference>;
 		"roles"?: Array<Models.ScimUserRole>;
@@ -17913,7 +17910,6 @@ declare namespace Models {
 		"title"?: string;
 		"phoneNumbers"?: Array<Models.ScimPhoneNumber>;
 		"emails"?: Array<Models.ScimEmail>;
-		"photos"?: Array<Models.Photo>;
 		"externalId"?: string;
 		"groups"?: Array<Models.ScimV2GroupReference>;
 		"roles"?: Array<Models.ScimUserRole>;
@@ -20860,6 +20856,37 @@ declare namespace Models {
 	export interface WeekShiftTradeMatchesSummaryResponse { 
 		"weekDate"?: string;
 		"count"?: number;
+	}
+	
+	export interface WemCoachingAppointmentTopicCoachingAppointmentConversation { 
+		"id"?: string;
+		"action"?: string;
+	}
+	
+	export interface WemCoachingAppointmentTopicCoachingAppointmentDocument { 
+		"id"?: string;
+		"action"?: string;
+	}
+	
+	export interface WemCoachingAppointmentTopicCoachingAppointmentNotification { 
+		"id"?: string;
+		"name"?: string;
+		"dateStart"?: string;
+		"lengthInMinutes"?: number;
+		"status"?: string;
+		"facilitator"?: Models.WemCoachingAppointmentTopicUserReference;
+		"attendees"?: Array<Models.WemCoachingAppointmentTopicUserReference>;
+		"createdBy"?: Models.WemCoachingAppointmentTopicUserReference;
+		"dateCreated"?: string;
+		"modifiedBy"?: Models.WemCoachingAppointmentTopicUserReference;
+		"dateModified"?: string;
+		"conversations"?: Array<Models.WemCoachingAppointmentTopicCoachingAppointmentConversation>;
+		"documents"?: Array<Models.WemCoachingAppointmentTopicCoachingAppointmentDocument>;
+		"changeType"?: string;
+	}
+	
+	export interface WemCoachingAppointmentTopicUserReference { 
+		"id"?: string;
 	}
 	
 	export interface WfmAbandonRate { 
