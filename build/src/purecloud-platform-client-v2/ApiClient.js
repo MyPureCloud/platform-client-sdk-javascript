@@ -2,7 +2,7 @@ import superagent from 'superagent';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 74.0.0
+ * @version 74.0.1
  */
 class ApiClient {
 	/**
@@ -152,10 +152,8 @@ class ApiClient {
 	 */
 	_saveSettings(opts) {
 		try {
-			if (opts.accessToken) {
-				this.authData.accessToken = opts.accessToken;
-				this.authentications['PureCloud OAuth'].accessToken = opts.accessToken;
-			}
+			this.authData.accessToken = opts.accessToken;
+			this.authentications['PureCloud OAuth'].accessToken = opts.accessToken;
 
 			if (opts.state) {
 				this.authData.state = opts.state;
@@ -760,7 +758,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '74.0.0' });
+		//request.set({ 'purecloud-sdk': '74.0.1' });
 
 		// set request timeout
 		request.timeout(this.timeout);
