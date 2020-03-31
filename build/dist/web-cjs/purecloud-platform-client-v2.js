@@ -168,10 +168,6 @@ function fromByteArray (uint8) {
 
 var base64 = require('base64-js')
 var ieee754 = require('ieee754')
-var customInspectSymbol =
-  (typeof Symbol === 'function' && typeof Symbol.for === 'function')
-    ? Symbol.for('nodejs.util.inspect.custom')
-    : null
 
 exports.Buffer = Buffer
 exports.SlowBuffer = SlowBuffer
@@ -208,9 +204,7 @@ function typedArraySupport () {
   // Can typed array instances can be augmented?
   try {
     var arr = new Uint8Array(1)
-    var proto = { foo: function () { return 42 } }
-    Object.setPrototypeOf(proto, Uint8Array.prototype)
-    Object.setPrototypeOf(arr, proto)
+    arr.__proto__ = { __proto__: Uint8Array.prototype, foo: function () { return 42 } }
     return arr.foo() === 42
   } catch (e) {
     return false
@@ -239,7 +233,7 @@ function createBuffer (length) {
   }
   // Return an augmented `Uint8Array` instance
   var buf = new Uint8Array(length)
-  Object.setPrototypeOf(buf, Buffer.prototype)
+  buf.__proto__ = Buffer.prototype
   return buf
 }
 
@@ -289,7 +283,7 @@ function from (value, encodingOrOffset, length) {
   }
 
   if (value == null) {
-    throw new TypeError(
+    throw TypeError(
       'The first argument must be one of type string, Buffer, ArrayBuffer, Array, ' +
       'or Array-like Object. Received type ' + (typeof value)
     )
@@ -297,12 +291,6 @@ function from (value, encodingOrOffset, length) {
 
   if (isInstance(value, ArrayBuffer) ||
       (value && isInstance(value.buffer, ArrayBuffer))) {
-    return fromArrayBuffer(value, encodingOrOffset, length)
-  }
-
-  if (typeof SharedArrayBuffer !== 'undefined' &&
-      (isInstance(value, SharedArrayBuffer) ||
-      (value && isInstance(value.buffer, SharedArrayBuffer)))) {
     return fromArrayBuffer(value, encodingOrOffset, length)
   }
 
@@ -347,8 +335,8 @@ Buffer.from = function (value, encodingOrOffset, length) {
 
 // Note: Change prototype *after* Buffer.from is defined to workaround Chrome bug:
 // https://github.com/feross/buffer/pull/148
-Object.setPrototypeOf(Buffer.prototype, Uint8Array.prototype)
-Object.setPrototypeOf(Buffer, Uint8Array)
+Buffer.prototype.__proto__ = Uint8Array.prototype
+Buffer.__proto__ = Uint8Array
 
 function assertSize (size) {
   if (typeof size !== 'number') {
@@ -452,8 +440,7 @@ function fromArrayBuffer (array, byteOffset, length) {
   }
 
   // Return an augmented `Uint8Array` instance
-  Object.setPrototypeOf(buf, Buffer.prototype)
-
+  buf.__proto__ = Buffer.prototype
   return buf
 }
 
@@ -775,9 +762,6 @@ Buffer.prototype.inspect = function inspect () {
   if (this.length > max) str += ' ... '
   return '<Buffer ' + str + '>'
 }
-if (customInspectSymbol) {
-  Buffer.prototype[customInspectSymbol] = Buffer.prototype.inspect
-}
 
 Buffer.prototype.compare = function compare (target, start, end, thisStart, thisEnd) {
   if (isInstance(target, Uint8Array)) {
@@ -903,7 +887,7 @@ function bidirectionalIndexOf (buffer, val, byteOffset, encoding, dir) {
         return Uint8Array.prototype.lastIndexOf.call(buffer, val, byteOffset)
       }
     }
-    return arrayIndexOf(buffer, [val], byteOffset, encoding, dir)
+    return arrayIndexOf(buffer, [ val ], byteOffset, encoding, dir)
   }
 
   throw new TypeError('val must be string, number or Buffer')
@@ -1232,7 +1216,7 @@ function hexSlice (buf, start, end) {
 
   var out = ''
   for (var i = start; i < end; ++i) {
-    out += hexSliceLookupTable[buf[i]]
+    out += toHex(buf[i])
   }
   return out
 }
@@ -1269,8 +1253,7 @@ Buffer.prototype.slice = function slice (start, end) {
 
   var newBuf = this.subarray(start, end)
   // Return an augmented `Uint8Array` instance
-  Object.setPrototypeOf(newBuf, Buffer.prototype)
-
+  newBuf.__proto__ = Buffer.prototype
   return newBuf
 }
 
@@ -1759,8 +1742,6 @@ Buffer.prototype.fill = function fill (val, start, end, encoding) {
     }
   } else if (typeof val === 'number') {
     val = val & 255
-  } else if (typeof val === 'boolean') {
-    val = Number(val)
   }
 
   // Invalid ranges are not set to a default, so can range check early.
@@ -1816,6 +1797,11 @@ function base64clean (str) {
     str = str + '='
   }
   return str
+}
+
+function toHex (n) {
+  if (n < 16) return '0' + n.toString(16)
+  return n.toString(16)
 }
 
 function utf8ToBytes (string, units) {
@@ -1947,20 +1933,6 @@ function numberIsNaN (obj) {
   // For IE11 support
   return obj !== obj // eslint-disable-line no-self-compare
 }
-
-// Create lookup table for `toString('hex')`
-// See: https://github.com/feross/buffer/issues/219
-var hexSliceLookupTable = (function () {
-  var alphabet = '0123456789abcdef'
-  var table = new Array(256)
-  for (var i = 0; i < 16; ++i) {
-    var i16 = i * 16
-    for (var j = 0; j < 16; ++j) {
-      table[i16 + j] = alphabet[i] + alphabet[j]
-    }
-  }
-  return table
-})()
 
 }).call(this,require("buffer").Buffer)
 },{"base64-js":2,"buffer":3,"ieee754":4}],4:[function(require,module,exports){
@@ -6081,7 +6053,7 @@ function isSlowBuffer (obj) {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 74.0.1
+ * @version 75.0.0
  */
 class ApiClient {
 	/**
@@ -6837,7 +6809,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '74.0.1' });
+		//request.set({ 'purecloud-sdk': '75.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -6962,7 +6934,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -7276,7 +7248,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -8236,7 +8208,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -10887,7 +10859,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -10989,7 +10961,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -11083,31 +11055,6 @@ class AuthorizationApi {
 			'/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}', 
 			'DELETE', 
 			{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Removes all the roles from the user.
-	 * 
-	 * @param {String} userId User ID
-	 */
-	deleteUserRoles(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling deleteUserRoles';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/roles', 
-			'DELETE', 
-			{ 'userId': userId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -12135,7 +12082,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -12215,7 +12162,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -13355,7 +13302,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -17297,7 +17244,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -18205,7 +18152,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -18376,7 +18323,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -18447,7 +18394,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -18577,7 +18524,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -18708,7 +18655,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -19163,7 +19110,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -19568,7 +19515,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -20259,7 +20206,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -21721,7 +21668,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -21989,7 +21936,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -22227,7 +22174,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -22463,7 +22410,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -22514,7 +22461,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -22665,7 +22612,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -22864,7 +22811,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -23133,7 +23080,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -23374,7 +23321,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -23584,7 +23531,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -24294,7 +24241,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -26957,7 +26904,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -27224,7 +27171,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -28896,7 +28843,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -30084,7 +30031,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -30408,7 +30355,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -32622,7 +32569,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -33607,7 +33554,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -33960,7 +33907,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -34415,7 +34362,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -34466,7 +34413,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -34613,7 +34560,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -34752,7 +34699,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -34860,7 +34807,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -38435,7 +38382,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -38521,7 +38468,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -38705,7 +38652,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -38818,31 +38765,6 @@ class UsersApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}', 
-			'DELETE', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Removes all the roles from the user.
-	 * 
-	 * @param {String} userId User ID
-	 */
-	deleteUserRoles(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling deleteUserRoles';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/roles', 
 			'DELETE', 
 			{ 'userId': userId }, 
 			{  }, 
@@ -40829,7 +40751,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -40940,7 +40862,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -41577,7 +41499,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -42121,7 +42043,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -42267,7 +42189,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -44555,7 +44477,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 74.0.1
+ * @version 75.0.0
  */
 class platformClient {
 	constructor() {

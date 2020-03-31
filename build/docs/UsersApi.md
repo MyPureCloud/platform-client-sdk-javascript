@@ -11,7 +11,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteAuthorizationSubjectDivisionRole**](UsersApi.html#deleteAuthorizationSubjectDivisionRole) | **DELETE** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Delete a grant of a role in a division
 [**deleteRoutingUserUtilization**](UsersApi.html#deleteRoutingUserUtilization) | **DELETE** /api/v2/routing/users/{userId}/utilization | Delete the user&#39;s max utilization settings and revert to the organization-wide default.
 [**deleteUser**](UsersApi.html#deleteUser) | **DELETE** /api/v2/users/{userId} | Delete user
-[**deleteUserRoles**](UsersApi.html#deleteUserRoles) | **DELETE** /api/v2/users/{userId}/roles | Removes all the roles from the user.
 [**deleteUserRoutinglanguage**](UsersApi.html#deleteUserRoutinglanguage) | **DELETE** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove routing language from user
 [**deleteUserRoutingskill**](UsersApi.html#deleteUserRoutingskill) | **DELETE** /api/v2/users/{userId}/routingskills/{skillId} | Remove routing skill from user
 [**deleteUserStationAssociatedstation**](UsersApi.html#deleteUserStationAssociatedstation) | **DELETE** /api/v2/users/{userId}/station/associatedstation | Clear associated station
@@ -305,61 +304,6 @@ apiInstance.deleteUser(userId)
 ### Return type
 
 **Empty**
-
-<a name="deleteUserRoles"></a>
-
-# void deleteUserRoles(userId)
-
-
-
-DELETE /api/v2/users/{userId}/roles
-
-Removes all the roles from the user.
-
-
-
-Requires ANY permissions: 
-
-* authorization:grant:delete
-
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.UsersApi();
-
-let userId = "userId_example"; // String | User ID
-
-apiInstance.deleteUserRoles(userId)
-  .then(() => {
-    console.log('deleteUserRoles returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling deleteUserRoles');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** | User ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (no response body)
 
 <a name="deleteUserRoutinglanguage"></a>
 

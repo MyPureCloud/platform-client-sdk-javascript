@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 74.0.1
+	 * @version 75.0.0
 	 */
 
 	/**
@@ -118,31 +118,6 @@ class UsersApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}', 
-			'DELETE', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Removes all the roles from the user.
-	 * 
-	 * @param {String} userId User ID
-	 */
-	deleteUserRoles(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling deleteUserRoles';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/roles', 
 			'DELETE', 
 			{ 'userId': userId }, 
 			{  }, 

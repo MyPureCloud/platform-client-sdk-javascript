@@ -2,7 +2,7 @@ import superagent from 'superagent';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 74.0.1
+ * @version 75.0.0
  */
 class ApiClient {
 	/**
@@ -758,7 +758,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '74.0.1' });
+		//request.set({ 'purecloud-sdk': '75.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
