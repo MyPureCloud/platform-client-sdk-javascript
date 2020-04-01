@@ -4445,6 +4445,14 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
         "owners": User, 
         "selfUri": String, 
       },  
+      "team": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
+        "selfUri": String, 
+      },  
       "skills": { 
         "id": String, 
         "name": String, 
@@ -5360,6 +5368,14 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "selfUri": String, 
+    },  
     "skills": { 
       "id": String, 
       "name": String, 
@@ -5931,6 +5947,14 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "selfUri": String, 
+    },  
     "skills": { 
       "id": String, 
       "name": String, 
@@ -6324,6 +6348,14 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "rulesVisible": Boolean, 
         "visibility": String, 
         "owners": User, 
+        "selfUri": String, 
+      },  
+      "team": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
         "selfUri": String, 
       },  
       "skills": { 
@@ -7566,6 +7598,14 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
         "owners": User, 
         "selfUri": String, 
       },  
+      "team": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
+        "selfUri": String, 
+      },  
       "skills": { 
         "id": String, 
         "name": String, 
@@ -8296,6 +8336,14 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
         "rulesVisible": Boolean, 
         "visibility": String, 
         "owners": User, 
+        "selfUri": String, 
+      },  
+      "team": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
         "selfUri": String, 
       },  
       "skills": { 
@@ -9205,6 +9253,14 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "selfUri": String, 
+    },  
     "skills": { 
       "id": String, 
       "name": String, 
@@ -9776,6 +9832,14 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "selfUri": String, 
+    },  
     "skills": { 
       "id": String, 
       "name": String, 
@@ -10169,6 +10233,14 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "rulesVisible": Boolean, 
         "visibility": String, 
         "owners": User, 
+        "selfUri": String, 
+      },  
+      "team": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
         "selfUri": String, 
       },  
       "skills": { 
@@ -10826,6 +10898,14 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
         "rulesVisible": Boolean, 
         "visibility": String, 
         "owners": User, 
+        "selfUri": String, 
+      },  
+      "team": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
         "selfUri": String, 
       },  
       "skills": { 

@@ -1583,8 +1583,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -1865,6 +1865,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -2142,6 +2150,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -2190,8 +2206,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -2482,6 +2498,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -2530,8 +2554,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -2821,6 +2845,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -2869,8 +2901,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -3301,6 +3333,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "rulesVisible": Boolean, 
             "visibility": String, 
             "owners": User, 
+            "selfUri": String, 
+          },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
             "selfUri": String, 
           },  
           "skills": { 
@@ -3524,8 +3564,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -3806,6 +3846,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -4083,6 +4131,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -4131,8 +4187,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -4423,6 +4479,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -4471,8 +4535,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -4762,6 +4826,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -4810,8 +4882,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -5242,6 +5314,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "rulesVisible": Boolean, 
             "visibility": String, 
             "owners": User, 
+            "selfUri": String, 
+          },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
             "selfUri": String, 
           },  
           "skills": { 
@@ -5464,8 +5544,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -5746,6 +5826,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -6023,6 +6111,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -6071,8 +6167,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -6363,6 +6459,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -6411,8 +6515,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -6702,6 +6806,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -6750,8 +6862,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -7182,6 +7294,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "rulesVisible": Boolean, 
             "visibility": String, 
             "owners": User, 
+            "selfUri": String, 
+          },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
             "selfUri": String, 
           },  
           "skills": { 
@@ -7399,8 +7519,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -7681,6 +7801,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -7958,6 +8086,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -8006,8 +8142,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -8298,6 +8434,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -8346,8 +8490,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -8637,6 +8781,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -8685,8 +8837,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -9117,6 +9269,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "rulesVisible": Boolean, 
             "visibility": String, 
             "owners": User, 
+            "selfUri": String, 
+          },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
             "selfUri": String, 
           },  
           "skills": { 
@@ -9675,6 +9835,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
         "owners": User, 
         "selfUri": String, 
       },  
+      "team": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
+        "selfUri": String, 
+      },  
       "skills": { 
         "id": String, 
         "name": String, 
@@ -9943,8 +10111,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isCritical": Boolean, 
             "isKill": Boolean, 
+            "isCritical": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -9976,8 +10144,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -10379,6 +10547,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
+          "selfUri": String, 
+        },  
         "skills": { 
           "id": String, 
           "name": String, 
@@ -10765,6 +10941,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
+          "selfUri": String, 
+        },  
         "skills": { 
           "id": String, 
           "name": String, 
@@ -10820,8 +11004,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isCritical": Boolean, 
             "isKill": Boolean, 
+            "isCritical": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -10853,8 +11037,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -11266,6 +11450,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
+          "selfUri": String, 
+        },  
         "skills": { 
           "id": String, 
           "name": String, 
@@ -11321,8 +11513,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isCritical": Boolean, 
             "isKill": Boolean, 
+            "isCritical": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -11354,8 +11546,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -11766,6 +11958,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
+          "selfUri": String, 
+        },  
         "skills": { 
           "id": String, 
           "name": String, 
@@ -11821,8 +12021,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isCritical": Boolean, 
             "isKill": Boolean, 
+            "isCritical": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -11854,8 +12054,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -12517,6 +12717,14 @@ Annotation <a href="#" onclick="return copyAnnotationExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "selfUri": String, 
+    },  
     "skills": { 
       "id": String, 
       "name": String, 
@@ -13174,8 +13382,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -13456,6 +13664,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -13733,6 +13949,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -13781,8 +14005,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -14073,6 +14297,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -14121,8 +14353,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -14412,6 +14644,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -14460,8 +14700,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -14892,6 +15132,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "rulesVisible": Boolean, 
             "visibility": String, 
             "owners": User, 
+            "selfUri": String, 
+          },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
             "selfUri": String, 
           },  
           "skills": { 
@@ -15115,8 +15363,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -15397,6 +15645,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -15674,6 +15930,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -15722,8 +15986,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -16014,6 +16278,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -16062,8 +16334,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -16353,6 +16625,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -16401,8 +16681,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -16833,6 +17113,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "rulesVisible": Boolean, 
             "visibility": String, 
             "owners": User, 
+            "selfUri": String, 
+          },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
             "selfUri": String, 
           },  
           "skills": { 
@@ -17055,8 +17343,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -17337,6 +17625,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -17614,6 +17910,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -17662,8 +17966,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -17954,6 +18258,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -18002,8 +18314,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -18293,6 +18605,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -18341,8 +18661,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -18773,6 +19093,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "rulesVisible": Boolean, 
             "visibility": String, 
             "owners": User, 
+            "selfUri": String, 
+          },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
             "selfUri": String, 
           },  
           "skills": { 
@@ -18990,8 +19318,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -19272,6 +19600,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -19549,6 +19885,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -19597,8 +19941,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -19889,6 +20233,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -19937,8 +20289,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -20228,6 +20580,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -20276,8 +20636,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -20708,6 +21068,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "rulesVisible": Boolean, 
             "visibility": String, 
             "owners": User, 
+            "selfUri": String, 
+          },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
             "selfUri": String, 
           },  
           "skills": { 
@@ -21266,6 +21634,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
         "owners": User, 
         "selfUri": String, 
       },  
+      "team": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
+        "selfUri": String, 
+      },  
       "skills": { 
         "id": String, 
         "name": String, 
@@ -21534,8 +21910,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isCritical": Boolean, 
             "isKill": Boolean, 
+            "isCritical": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -21567,8 +21943,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -21970,6 +22346,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
+          "selfUri": String, 
+        },  
         "skills": { 
           "id": String, 
           "name": String, 
@@ -22356,6 +22740,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
+          "selfUri": String, 
+        },  
         "skills": { 
           "id": String, 
           "name": String, 
@@ -22411,8 +22803,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isCritical": Boolean, 
             "isKill": Boolean, 
+            "isCritical": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -22444,8 +22836,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -22857,6 +23249,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
+          "selfUri": String, 
+        },  
         "skills": { 
           "id": String, 
           "name": String, 
@@ -22912,8 +23312,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isCritical": Boolean, 
             "isKill": Boolean, 
+            "isCritical": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -22945,8 +23345,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -23357,6 +23757,14 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
+          "selfUri": String, 
+        },  
         "skills": { 
           "id": String, 
           "name": String, 
@@ -23412,8 +23820,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isCritical": Boolean, 
             "isKill": Boolean, 
+            "isCritical": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -23445,8 +23853,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -24071,6 +24479,14 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
         "owners": User, 
         "selfUri": String, 
       },  
+      "team": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
+        "selfUri": String, 
+      },  
       "skills": { 
         "id": String, 
         "name": String, 
@@ -24531,6 +24947,14 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
         "owners": User, 
         "selfUri": String, 
       },  
+      "team": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
+        "selfUri": String, 
+      },  
       "skills": { 
         "id": String, 
         "name": String, 
@@ -24851,6 +25275,14 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
                 "owners": [User], 
                 "selfUri": String, 
               },  
+              "team": { 
+                "id": String, 
+                "name": String, 
+                "description": String, 
+                "dateModified": Date, 
+                "memberCount": Number, 
+                "selfUri": String, 
+              },  
               "skills": { 
                 "id": String, 
                 "name": String, 
@@ -25092,6 +25524,14 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
               "rulesVisible": Boolean, 
               "visibility": String, 
               "owners": User, 
+              "selfUri": String, 
+            },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
               "selfUri": String, 
             },  
             "skills": { 
@@ -25579,6 +26019,14 @@ Recording <a href="#" onclick="return copyRecordingExample()">Copy</a>
       "rulesVisible": Boolean, 
       "visibility": String, 
       "owners": User, 
+      "selfUri": String, 
+    },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
       "selfUri": String, 
     },  
     "skills": { 
@@ -26075,6 +26523,14 @@ Annotation <a href="#" onclick="return copyAnnotationExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "selfUri": String, 
+    },  
     "skills": { 
       "id": String, 
       "name": String, 
@@ -26488,8 +26944,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -26770,6 +27226,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -27047,6 +27511,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -27095,8 +27567,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -27387,6 +27859,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -27435,8 +27915,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -27726,6 +28206,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -27774,8 +28262,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -28206,6 +28694,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "rulesVisible": Boolean, 
             "visibility": String, 
             "owners": User, 
+            "selfUri": String, 
+          },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
             "selfUri": String, 
           },  
           "skills": { 
@@ -28429,8 +28925,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -28711,6 +29207,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -28988,6 +29492,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -29036,8 +29548,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -29328,6 +29840,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -29376,8 +29896,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -29667,6 +30187,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -29715,8 +30243,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -30147,6 +30675,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "rulesVisible": Boolean, 
             "visibility": String, 
             "owners": User, 
+            "selfUri": String, 
+          },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
             "selfUri": String, 
           },  
           "skills": { 
@@ -30369,8 +30905,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -30651,6 +31187,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -30928,6 +31472,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -30976,8 +31528,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -31268,6 +31820,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -31316,8 +31876,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -31607,6 +32167,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -31655,8 +32223,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -32087,6 +32655,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "rulesVisible": Boolean, 
             "visibility": String, 
             "owners": User, 
+            "selfUri": String, 
+          },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
             "selfUri": String, 
           },  
           "skills": { 
@@ -32304,8 +32880,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -32586,6 +33162,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -32863,6 +33447,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -32911,8 +33503,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -33203,6 +33795,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -33251,8 +33851,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -33542,6 +34142,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "owners": User, 
               "selfUri": String, 
             },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
             "skills": { 
               "id": String, 
               "name": String, 
@@ -33590,8 +34198,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -34022,6 +34630,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "rulesVisible": Boolean, 
             "visibility": String, 
             "owners": User, 
+            "selfUri": String, 
+          },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
             "selfUri": String, 
           },  
           "skills": { 
@@ -34580,6 +35196,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
         "owners": User, 
         "selfUri": String, 
       },  
+      "team": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
+        "selfUri": String, 
+      },  
       "skills": { 
         "id": String, 
         "name": String, 
@@ -34848,8 +35472,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isCritical": Boolean, 
             "isKill": Boolean, 
+            "isCritical": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -34881,8 +35505,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -35284,6 +35908,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
+          "selfUri": String, 
+        },  
         "skills": { 
           "id": String, 
           "name": String, 
@@ -35670,6 +36302,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
+          "selfUri": String, 
+        },  
         "skills": { 
           "id": String, 
           "name": String, 
@@ -35725,8 +36365,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isCritical": Boolean, 
             "isKill": Boolean, 
+            "isCritical": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -35758,8 +36398,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -36171,6 +36811,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
+          "selfUri": String, 
+        },  
         "skills": { 
           "id": String, 
           "name": String, 
@@ -36226,8 +36874,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isCritical": Boolean, 
             "isKill": Boolean, 
+            "isCritical": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -36259,8 +36907,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -36671,6 +37319,14 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
           "owners": User, 
           "selfUri": String, 
         },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
+          "selfUri": String, 
+        },  
         "skills": { 
           "id": String, 
           "name": String, 
@@ -36726,8 +37382,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isCritical": Boolean, 
             "isKill": Boolean, 
+            "isCritical": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -36759,8 +37415,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 

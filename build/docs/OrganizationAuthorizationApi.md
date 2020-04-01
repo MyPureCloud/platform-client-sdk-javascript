@@ -1809,6 +1809,14 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
         "owners": User, 
         "selfUri": String, 
       },  
+      "team": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
+        "selfUri": String, 
+      },  
       "skills": { 
         "id": String, 
         "name": String, 
@@ -2177,6 +2185,14 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
       "rulesVisible": Boolean, 
       "visibility": String, 
       "owners": User, 
+      "selfUri": String, 
+    },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
       "selfUri": String, 
     },  
     "skills": { 

@@ -1548,6 +1548,14 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "selfUri": String, 
+    },  
     "skills": { 
       "id": String, 
       "name": String, 
@@ -2171,6 +2179,14 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
             "owners": User, 
             "selfUri": String, 
           },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
+            "selfUri": String, 
+          },  
           "skills": { 
             "id": String, 
             "name": String, 
@@ -2521,6 +2537,14 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
           "rulesVisible": Boolean, 
           "visibility": String, 
           "owners": User, 
+          "selfUri": String, 
+        },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
           "selfUri": String, 
         },  
         "skills": { 
@@ -3057,6 +3081,14 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "rulesVisible": Boolean, 
       "visibility": String, 
       "owners": User, 
+      "selfUri": String, 
+    },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
       "selfUri": String, 
     },  
     "skills": { 
@@ -3609,6 +3641,14 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
           "owners": User, 
           "selfUri": String, 
         },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
+          "selfUri": String, 
+        },  
         "skills": { 
           "id": String, 
           "name": String, 
@@ -3968,6 +4008,14 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
         "rulesVisible": Boolean, 
         "visibility": String, 
         "owners": User, 
+        "selfUri": String, 
+      },  
+      "team": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
         "selfUri": String, 
       },  
       "skills": { 
@@ -4495,6 +4543,14 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "selfUri": String, 
+    },  
     "skills": { 
       "id": String, 
       "name": String, 
@@ -4951,6 +5007,14 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
             "owners": User, 
             "selfUri": String, 
           },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
+            "selfUri": String, 
+          },  
           "skills": { 
             "id": String, 
             "name": String, 
@@ -5301,6 +5365,14 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
           "rulesVisible": Boolean, 
           "visibility": String, 
           "owners": User, 
+          "selfUri": String, 
+        },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
           "selfUri": String, 
         },  
         "skills": { 
@@ -5969,6 +6041,14 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
             "owners": User, 
             "selfUri": String, 
           },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
+            "selfUri": String, 
+          },  
           "skills": { 
             "id": String, 
             "name": String, 
@@ -6319,6 +6399,14 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
           "rulesVisible": Boolean, 
           "visibility": String, 
           "owners": User, 
+          "selfUri": String, 
+        },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
           "selfUri": String, 
         },  
         "skills": { 
@@ -6857,6 +6945,14 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "rulesVisible": Boolean, 
       "visibility": String, 
       "owners": User, 
+      "selfUri": String, 
+    },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
       "selfUri": String, 
     },  
     "skills": { 
@@ -7496,6 +7592,14 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
           "owners": User, 
           "selfUri": String, 
         },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
+          "selfUri": String, 
+        },  
         "skills": { 
           "id": String, 
           "name": String, 
@@ -7855,6 +7959,14 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
         "rulesVisible": Boolean, 
         "visibility": String, 
         "owners": User, 
+        "selfUri": String, 
+      },  
+      "team": { 
+        "id": String, 
+        "name": String, 
+        "description": String, 
+        "dateModified": Date, 
+        "memberCount": Number, 
         "selfUri": String, 
       },  
       "skills": { 
@@ -8385,6 +8497,14 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "rulesVisible": Boolean, 
       "visibility": String, 
       "owners": User, 
+      "selfUri": String, 
+    },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
       "selfUri": String, 
     },  
     "skills": { 
@@ -8935,6 +9055,14 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
       "owners": User, 
       "selfUri": String, 
     },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "selfUri": String, 
+    },  
     "skills": { 
       "id": String, 
       "name": String, 
@@ -9391,6 +9519,14 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
             "owners": User, 
             "selfUri": String, 
           },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
+            "selfUri": String, 
+          },  
           "skills": { 
             "id": String, 
             "name": String, 
@@ -9741,6 +9877,14 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
           "rulesVisible": Boolean, 
           "visibility": String, 
           "owners": User, 
+          "selfUri": String, 
+        },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
           "selfUri": String, 
         },  
         "skills": { 

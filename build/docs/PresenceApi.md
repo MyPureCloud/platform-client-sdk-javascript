@@ -812,6 +812,14 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "owners": User, 
       "selfUri": String, 
     },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "selfUri": String, 
+    },  
     "skills": { 
       "id": String, 
       "name": String, 
@@ -1212,6 +1220,14 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "rulesVisible": Boolean, 
       "visibility": String, 
       "owners": User, 
+      "selfUri": String, 
+    },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
       "selfUri": String, 
     },  
     "skills": { 
@@ -1702,6 +1718,14 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "owners": User, 
       "selfUri": String, 
     },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "selfUri": String, 
+    },  
     "skills": { 
       "id": String, 
       "name": String, 
@@ -2102,6 +2126,14 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "rulesVisible": Boolean, 
       "visibility": String, 
       "owners": User, 
+      "selfUri": String, 
+    },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
       "selfUri": String, 
     },  
     "skills": { 

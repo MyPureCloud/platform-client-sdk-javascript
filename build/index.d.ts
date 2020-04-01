@@ -10554,7 +10554,11 @@ declare namespace Models {
 	}
 	
 	export interface EntityListing { 
-		"entities"?: Array<object>;
+		"entities"?: Array<Models.DataTableImportJob>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"pageCount"?: number;
 	}
 	
 	export interface Entry { 
@@ -10745,8 +10749,8 @@ declare namespace Models {
 		"commentsRequired"?: boolean;
 		"visibilityCondition"?: Models.VisibilityCondition;
 		"answerOptions"?: Array<Models.AnswerOption>;
-		"isCritical"?: boolean;
 		"isKill"?: boolean;
+		"isCritical"?: boolean;
 	}
 	
 	export interface EvaluationQuestionGroup { 
@@ -13739,6 +13743,7 @@ declare namespace Models {
 		"profileSkills"?: Array<string>;
 		"locations"?: Array<Models.Location>;
 		"groups"?: Array<Models.Group>;
+		"team"?: Models.Team;
 		"skills"?: Array<Models.UserRoutingSkill>;
 		"languages"?: Array<Models.UserRoutingLanguage>;
 		"acdAutoAnswer"?: boolean;
@@ -19029,6 +19034,15 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface Team { 
+		"id"?: string;
+		"name": string;
+		"description"?: string;
+		"dateModified"?: string;
+		"memberCount"?: number;
+		"selfUri"?: string;
+	}
+	
 	export interface TermAttribute { 
 		"id"?: string;
 		"name"?: string;
@@ -19453,6 +19467,7 @@ declare namespace Models {
 		"profileSkills"?: Array<string>;
 		"locations"?: Array<Models.Location>;
 		"groups"?: Array<Models.Group>;
+		"team"?: Models.Team;
 		"skills"?: Array<Models.UserRoutingSkill>;
 		"languages"?: Array<Models.UserRoutingLanguage>;
 		"acdAutoAnswer"?: boolean;
@@ -19795,6 +19810,7 @@ declare namespace Models {
 		"profileSkills"?: Array<string>;
 		"locations"?: Array<Models.Location>;
 		"groups"?: Array<Models.Group>;
+		"team"?: Models.Team;
 		"skills"?: Array<Models.UserRoutingSkill>;
 		"languages"?: Array<Models.UserRoutingLanguage>;
 		"acdAutoAnswer"?: boolean;
@@ -20067,6 +20083,7 @@ declare namespace Models {
 		"profileSkills"?: Array<string>;
 		"locations"?: Array<Models.Location>;
 		"groups"?: Array<Models.Group>;
+		"team"?: Models.Team;
 		"skills"?: Array<Models.UserRoutingSkill>;
 		"languages"?: Array<Models.UserRoutingLanguage>;
 		"acdAutoAnswer"?: boolean;

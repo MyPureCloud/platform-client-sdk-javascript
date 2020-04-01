@@ -1,60 +1,39 @@
-Platform API version: 3856
+Platform API version: 3865
 
 
-# Major Changes (6 changes)
+# Major Changes (1 change)
 
-**/api/v2/users/{userId}/roles** (1 change)
+**EntityListing** (1 change)
 
-* Operation DELETE was removed
-
-**EntityListing** (5 changes)
-
-* Property pageSize was removed
-* Property pageNumber was removed
-* Property total was removed
-* Property pageCount was removed
-* Property entities was changed from DataTableImportJob[] to object[]
+* Property entities was changed from object[] to DataTableImportJob[]
 
 
-# Minor Changes (10 changes)
+# Minor Changes (9 changes)
 
-**SegmentDetailQueryPredicate** (1 change)
+**Team** (1 change)
 
-* Enum value flowOutType was added to property dimension
+* Model was added
 
-**Participant** (1 change)
-
-* Optional property teamId was added
-
-**CobrowseMediaParticipant** (1 change)
+**User** (1 change)
 
 * Optional property team was added
 
-**ChatMediaParticipant** (1 change)
+**OrgUser** (1 change)
 
 * Optional property team was added
 
-**EmailMediaParticipant** (1 change)
+**TrustUser** (1 change)
 
 * Optional property team was added
 
-**CallMediaParticipant** (1 change)
+**EntityListing** (4 changes)
 
-* Optional property team was added
+* Optional property pageSize was added
+* Optional property pageNumber was added
+* Optional property total was added
+* Optional property pageCount was added
 
-**ParticipantBasic** (1 change)
-
-* Optional property teamId was added
-
-**MessageMediaParticipant** (1 change)
-
-* Optional property team was added
-
-**AnalyticsSession** (1 change)
-
-* Optional property flowOutType was added
-
-**CallbackMediaParticipant** (1 change)
+**UserMe** (1 change)
 
 * Optional property team was added
 

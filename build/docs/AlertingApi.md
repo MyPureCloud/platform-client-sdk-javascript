@@ -885,6 +885,14 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       "owners": User, 
       "selfUri": String, 
     },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "selfUri": String, 
+    },  
     "skills": { 
       "id": String, 
       "name": String, 
@@ -1466,6 +1474,14 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       "rulesVisible": Boolean, 
       "visibility": String, 
       "owners": User, 
+      "selfUri": String, 
+    },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
       "selfUri": String, 
     },  
     "skills": { 
