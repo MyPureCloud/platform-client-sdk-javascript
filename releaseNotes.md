@@ -1,41 +1,14 @@
 Platform API version: 3865
 
 
-# Major Changes (1 change)
+# SDK Changes
 
-**EntityListing** (1 change)
+* API-5248 fixed redirect uri encoding
 
-* Property entities was changed from object[] to DataTableImportJob[]
+# Major Changes (0 changes)
 
 
-# Minor Changes (9 changes)
-
-**Team** (1 change)
-
-* Model was added
-
-**User** (1 change)
-
-* Optional property team was added
-
-**OrgUser** (1 change)
-
-* Optional property team was added
-
-**TrustUser** (1 change)
-
-* Optional property team was added
-
-**EntityListing** (4 changes)
-
-* Optional property pageSize was added
-* Optional property pageNumber was added
-* Optional property total was added
-* Optional property pageCount was added
-
-**UserMe** (1 change)
-
-* Optional property team was added
+# Minor Changes (0 changes)
 
 
 # Point Changes (0 changes)
