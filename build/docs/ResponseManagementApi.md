@@ -160,7 +160,8 @@ let apiInstance = new platformClient.ResponseManagementApi();
 
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'messagingTemplateFilter': "messagingTemplateFilter_example" // String | Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel
 };
 
 apiInstance.getResponsemanagementLibraries(opts)
@@ -180,6 +181,7 @@ apiInstance.getResponsemanagementLibraries(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **messagingTemplateFilter** | **String** | Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel | [optional] <br />**Values**: whatsapp |
 {: class="table table-striped"}
 
 ### Return type
@@ -1328,9 +1330,11 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
   },  
   "responseType": String, 
   "messagingTemplate": { 
-    "name": String, 
-    "namespace": String, 
-    "language": String, 
+    "whatsApp": { 
+      "name": String, 
+      "namespace": String, 
+      "language": String, 
+    },  
   },  
   "selfUri": String, 
 }
@@ -2435,9 +2439,11 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
   },  
   "responseType": String, 
   "messagingTemplate": { 
-    "name": String, 
-    "namespace": String, 
-    "language": String, 
+    "whatsApp": { 
+      "name": String, 
+      "namespace": String, 
+      "language": String, 
+    },  
   },  
   "selfUri": String, 
 }

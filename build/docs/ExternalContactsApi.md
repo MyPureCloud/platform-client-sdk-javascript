@@ -41,7 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteExternalcontactsContact"></a>
 
-# void deleteExternalcontactsContact(contactId)
+# Empty deleteExternalcontactsContact(contactId)
 
 
 
@@ -73,8 +73,8 @@ let apiInstance = new platformClient.ExternalContactsApi();
 let contactId = "contactId_example"; // String | ExternalContact ID
 
 apiInstance.deleteExternalcontactsContact(contactId)
-  .then(() => {
-    console.log('deleteExternalcontactsContact returned successfully.');
+  .then((data) => {
+    console.log(`deleteExternalcontactsContact success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
     console.log('There was a failure calling deleteExternalcontactsContact');
@@ -92,11 +92,11 @@ apiInstance.deleteExternalcontactsContact(contactId)
 
 ### Return type
 
-void (no response body)
+**Empty**
 
 <a name="deleteExternalcontactsContactNote"></a>
 
-# void deleteExternalcontactsContactNote(contactId, noteId)
+# Empty deleteExternalcontactsContactNote(contactId, noteId)
 
 
 
@@ -129,8 +129,8 @@ let contactId = "contactId_example"; // String | ExternalContact Id
 let noteId = "noteId_example"; // String | Note Id
 
 apiInstance.deleteExternalcontactsContactNote(contactId, noteId)
-  .then(() => {
-    console.log('deleteExternalcontactsContactNote returned successfully.');
+  .then((data) => {
+    console.log(`deleteExternalcontactsContactNote success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
     console.log('There was a failure calling deleteExternalcontactsContactNote');
@@ -149,11 +149,11 @@ apiInstance.deleteExternalcontactsContactNote(contactId, noteId)
 
 ### Return type
 
-void (no response body)
+**Empty**
 
 <a name="deleteExternalcontactsOrganization"></a>
 
-# void deleteExternalcontactsOrganization(externalOrganizationId)
+# Empty deleteExternalcontactsOrganization(externalOrganizationId)
 
 
 
@@ -185,8 +185,8 @@ let apiInstance = new platformClient.ExternalContactsApi();
 let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
 
 apiInstance.deleteExternalcontactsOrganization(externalOrganizationId)
-  .then(() => {
-    console.log('deleteExternalcontactsOrganization returned successfully.');
+  .then((data) => {
+    console.log(`deleteExternalcontactsOrganization success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
     console.log('There was a failure calling deleteExternalcontactsOrganization');
@@ -204,11 +204,11 @@ apiInstance.deleteExternalcontactsOrganization(externalOrganizationId)
 
 ### Return type
 
-void (no response body)
+**Empty**
 
 <a name="deleteExternalcontactsOrganizationNote"></a>
 
-# void deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId)
+# Empty deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId)
 
 
 
@@ -241,8 +241,8 @@ let externalOrganizationId = "externalOrganizationId_example"; // String | Exter
 let noteId = "noteId_example"; // String | Note Id
 
 apiInstance.deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId)
-  .then(() => {
-    console.log('deleteExternalcontactsOrganizationNote returned successfully.');
+  .then((data) => {
+    console.log(`deleteExternalcontactsOrganizationNote success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
     console.log('There was a failure calling deleteExternalcontactsOrganizationNote');
@@ -261,7 +261,7 @@ apiInstance.deleteExternalcontactsOrganizationNote(externalOrganizationId, noteI
 
 ### Return type
 
-void (no response body)
+**Empty**
 
 <a name="deleteExternalcontactsOrganizationTrustor"></a>
 
@@ -320,7 +320,7 @@ void (no response body)
 
 <a name="deleteExternalcontactsRelationship"></a>
 
-# void deleteExternalcontactsRelationship(relationshipId)
+# Empty deleteExternalcontactsRelationship(relationshipId)
 
 
 
@@ -352,8 +352,8 @@ let apiInstance = new platformClient.ExternalContactsApi();
 let relationshipId = "relationshipId_example"; // String | Relationship Id
 
 apiInstance.deleteExternalcontactsRelationship(relationshipId)
-  .then(() => {
-    console.log('deleteExternalcontactsRelationship returned successfully.');
+  .then((data) => {
+    console.log(`deleteExternalcontactsRelationship success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
     console.log('There was a failure calling deleteExternalcontactsRelationship');
@@ -371,7 +371,7 @@ apiInstance.deleteExternalcontactsRelationship(relationshipId)
 
 ### Return type
 
-void (no response body)
+**Empty**
 
 <a name="getExternalcontactsContact"></a>
 

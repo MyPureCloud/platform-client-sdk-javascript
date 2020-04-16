@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 76.0.1
+	 * @version 77.0.0
 	 */
 
 	/**
@@ -356,7 +356,7 @@ class UsersApi {
 
 	/**
 	 * Returns which divisions the specified user has the given permission in.
-	 * 
+	 * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
 	 * @param {String} subjectId Subject ID (user or group)
 	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
 	 * @param {Object} opts Optional parameters

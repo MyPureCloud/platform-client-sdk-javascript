@@ -1005,12 +1005,12 @@ declare namespace ConversationsApi {
 }
 
 declare class ExternalContactsApi {  
-  	deleteExternalcontactsContact(contactId: string): Promise<void>; 
-  	deleteExternalcontactsContactNote(contactId: string, noteId: string): Promise<void>; 
-  	deleteExternalcontactsOrganization(externalOrganizationId: string): Promise<void>; 
-  	deleteExternalcontactsOrganizationNote(externalOrganizationId: string, noteId: string): Promise<void>; 
+  	deleteExternalcontactsContact(contactId: string): Promise<Models.Empty>; 
+  	deleteExternalcontactsContactNote(contactId: string, noteId: string): Promise<Models.Empty>; 
+  	deleteExternalcontactsOrganization(externalOrganizationId: string): Promise<Models.Empty>; 
+  	deleteExternalcontactsOrganizationNote(externalOrganizationId: string, noteId: string): Promise<Models.Empty>; 
   	deleteExternalcontactsOrganizationTrustor(externalOrganizationId: string): Promise<void>; 
-  	deleteExternalcontactsRelationship(relationshipId: string): Promise<void>; 
+  	deleteExternalcontactsRelationship(relationshipId: string): Promise<Models.Empty>; 
   	getExternalcontactsContact(contactId: string, opts?: ExternalContactsApi.getExternalcontactsContactOptions): Promise<Models.ExternalContact>; 
   	getExternalcontactsContactNote(contactId: string, noteId: string, opts?: ExternalContactsApi.getExternalcontactsContactNoteOptions): Promise<Models.Note>; 
   	getExternalcontactsContactNotes(contactId: string, opts?: ExternalContactsApi.getExternalcontactsContactNotesOptions): Promise<Models.NoteListing>; 
@@ -1542,17 +1542,6 @@ declare namespace LocationsApi {
 	}
 	export interface getLocationsSearchOptions { 
 		"expand"?: Array<string>;
-	}
-}
-
-declare class MessagingApi {  
-  	getMessagingSticker(messengerType: string, opts?: MessagingApi.getMessagingStickerOptions): Promise<Models.MessagingStickerEntityListing>;
-}
-
-declare namespace MessagingApi { 
-	export interface getMessagingStickerOptions { 
-		"pageSize"?: number;
-		"pageNumber"?: number;
 	}
 }
 
@@ -2381,6 +2370,7 @@ declare namespace ResponseManagementApi {
 	export interface getResponsemanagementLibrariesOptions { 
 		"pageNumber"?: number;
 		"pageSize"?: number;
+		"messagingTemplateFilter"?: string;
 	}
 	export interface getResponsemanagementResponseOptions { 
 		"expand"?: string;
@@ -3805,8 +3795,8 @@ declare namespace Models {
 		"name"?: string;
 		"relyingPartyIdentifier"?: string;
 		"certificate"?: string;
-		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
+		"issuerURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
 	}
@@ -4176,8 +4166,8 @@ declare namespace Models {
 		"calibrationId"?: string;
 		"rescored"?: boolean;
 		"deleted"?: boolean;
-		"oTotalScore"?: number;
 		"oTotalCriticalScore"?: number;
+		"oTotalScore"?: number;
 	}
 	
 	export interface AnalyticsFlow { 
@@ -8514,8 +8504,8 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"certificate"?: string;
-		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
+		"issuerURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
 	}
@@ -10554,11 +10544,7 @@ declare namespace Models {
 	}
 	
 	export interface EntityListing { 
-		"entities"?: Array<Models.DataTableImportJob>;
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"total"?: number;
-		"pageCount"?: number;
+		"entities"?: Array<object>;
 	}
 	
 	export interface Entry { 
@@ -11592,8 +11578,8 @@ declare namespace Models {
 		"name"?: string;
 		"relyingPartyIdentifier"?: string;
 		"certificate"?: string;
-		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
+		"issuerURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
 	}
@@ -11990,8 +11976,8 @@ declare namespace Models {
 		"name"?: string;
 		"relyingPartyIdentifier"?: string;
 		"certificate"?: string;
-		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
+		"issuerURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
 	}
@@ -13039,8 +13025,8 @@ declare namespace Models {
 		"settings"?: Models.ManagementUnitSettingsResponse;
 		"metadata"?: Models.WfmVersionedEntityMetadata;
 		"version"?: number;
-		"dateModified"?: string;
 		"modifiedBy"?: Models.UserReference;
+		"dateModified"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -13394,9 +13380,7 @@ declare namespace Models {
 	}
 	
 	export interface MessagingTemplate { 
-		"name": string;
-		"namespace": string;
-		"language": string;
+		"whatsApp"?: Models.WhatsAppDefinition;
 	}
 	
 	export interface MetaData { 
@@ -13673,8 +13657,8 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"certificate"?: string;
-		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
+		"issuerURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
 	}
@@ -13683,8 +13667,8 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"certificate"?: string;
-		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
+		"issuerURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
 	}
@@ -14307,8 +14291,8 @@ declare namespace Models {
 		"name"?: string;
 		"relyingPartyIdentifier"?: string;
 		"certificate"?: string;
-		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
+		"issuerURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
 	}
@@ -14575,8 +14559,8 @@ declare namespace Models {
 		"name"?: string;
 		"autoProvisionUsers"?: boolean;
 		"certificate"?: string;
-		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
+		"issuerURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
 	}
@@ -17552,8 +17536,8 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"certificate"?: string;
-		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
+		"issuerURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
 	}
@@ -20547,6 +20531,7 @@ declare namespace Models {
 		"evaluatorIds"?: Array<string>;
 		"transferred"?: boolean;
 		"abandoned"?: boolean;
+		"answered"?: boolean;
 		"messageTypes"?: Array<string>;
 		"divisionIds"?: Array<string>;
 		"surveyFormIds"?: Array<string>;
@@ -20586,6 +20571,8 @@ declare namespace Models {
 		"roleIds"?: Array<string>;
 		"reportsTos"?: Array<string>;
 		"locationIds"?: Array<string>;
+		"flowOutTypes"?: Array<string>;
+		"providerList"?: Array<string>;
 	}
 	
 	export interface VisibilityCondition { 
@@ -21507,6 +21494,12 @@ declare namespace Models {
 		"version": number;
 		"modifiedBy"?: Models.UserReference;
 		"dateModified"?: string;
+	}
+	
+	export interface WhatsAppDefinition { 
+		"name": string;
+		"namespace": string;
+		"language": string;
 	}
 	
 	export interface WhatsAppId { 
