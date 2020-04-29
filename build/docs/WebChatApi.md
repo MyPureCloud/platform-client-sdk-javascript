@@ -1092,6 +1092,10 @@ CreateWebChatConversationRequest <a href="#" onclick="return copyCreateWebChatCo
   },  
   "memberInfo": { 
     "displayName": String, 
+    "firstName": String, 
+    "lastName": String, 
+    "email": String, 
+    "phoneNumber": String, 
     "avatarImageUrl": String, 
     "customFields": {String: String}, 
   },  

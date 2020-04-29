@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -2168,7 +2168,7 @@ class WorkforceManagementApi {
 
 	/**
 	 * Add a management unit
-	 * 
+	 * It may take a minute or two for a new management unit to be available for api operations
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */

@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -1448,6 +1448,26 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Genesys Facebook App Id
+	 * 
+	 */
+	getConversationsMessagingFacebookApp() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/facebook/app', 
 			'GET', 
 			{  }, 
 			{  }, 

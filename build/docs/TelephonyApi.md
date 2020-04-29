@@ -24,7 +24,7 @@ Fetch SIP metadata
 
 Fetch SIP metadata that matches a given parameter. If exactMatch is passed as a parameter only sip records that have exactly that value will be returned. For example, some records contain conversationId but not all relevant records for that call may contain the conversationId so only a partial view of the call will be reflected
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * telephony:pcap:view
 
@@ -91,7 +91,7 @@ Get signed S3 URL for a pcap download
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * telephony:pcap:view
 
@@ -146,7 +146,7 @@ Request a download of a pcap file to S3
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * telephony:pcap:add
 

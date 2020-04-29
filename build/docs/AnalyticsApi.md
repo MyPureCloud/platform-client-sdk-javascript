@@ -440,7 +440,7 @@ apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, opts)
 
 <a name="getAnalyticsReportingExports"></a>
 
-# ReportingExportJobListing getAnalyticsReportingExports()
+# ReportingExportJobListing getAnalyticsReportingExports(opts)
 
 
 
@@ -450,7 +450,7 @@ Get all view export requests for a user
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * analytics:dataExport:view
 
@@ -469,7 +469,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
 
-apiInstance.getAnalyticsReportingExports()
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+apiInstance.getAnalyticsReportingExports(opts)
   .then((data) => {
     console.log(`getAnalyticsReportingExports success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -481,7 +486,11 @@ apiInstance.getAnalyticsReportingExports()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
@@ -500,7 +509,7 @@ Get all export metadata
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * analytics:dataExport:view
 
@@ -2355,7 +2364,7 @@ Generate a view export request
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * analytics:dataExport:add
 

@@ -6053,7 +6053,7 @@ function isSlowBuffer (obj) {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 77.0.0
+ * @version 78.0.0
  */
 class ApiClient {
 	/**
@@ -6809,7 +6809,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '77.0.0' });
+		//request.set({ 'purecloud-sdk': '78.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -6934,7 +6934,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -7248,7 +7248,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -7445,14 +7445,19 @@ class AnalyticsApi {
 	/**
 	 * Get all view export requests for a user
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
 	 */
-	getAnalyticsReportingExports() { 
+	getAnalyticsReportingExports(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/exports', 
 			'GET', 
 			{  }, 
-			{  }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -8208,7 +8213,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -10859,7 +10864,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -10961,7 +10966,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -12082,7 +12087,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -12162,7 +12167,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -13302,7 +13307,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -14745,6 +14750,26 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Genesys Facebook App Id
+	 * 
+	 */
+	getConversationsMessagingFacebookApp() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/facebook/app', 
 			'GET', 
 			{  }, 
 			{  }, 
@@ -17244,7 +17269,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -18152,7 +18177,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -18323,7 +18348,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -18394,7 +18419,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -18524,7 +18549,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -18655,7 +18680,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -19110,7 +19135,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -19515,7 +19540,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -20206,7 +20231,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -21218,6 +21243,36 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * List permitted user app integrations for the logged in user
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The total page size requested (default to 25)
+	 * @param {Number} opts.pageNumber The page number requested (default to 1)
+	 * @param {String} opts.sortBy variable name requested to sort by
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
+	 * @param {String} opts.nextPage next page token
+	 * @param {String} opts.previousPage Previous page token
+	 * @param {String} opts.appHost The type of UserApp to filter by
+	 */
+	getIntegrationsUserapps(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/userapps', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'appHost': opts['appHost'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update an integration.
 	 * 
 	 * @param {String} integrationId Integration Id
@@ -21668,7 +21723,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -21936,7 +21991,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -22174,7 +22229,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -22410,7 +22465,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -22561,7 +22616,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -22760,7 +22815,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -23029,7 +23084,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -23270,7 +23325,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -23480,7 +23535,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -24190,7 +24245,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -26079,7 +26134,7 @@ class OutboundApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.priority Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue.
 	 * @param {Boolean} opts.clearSystemData Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won&#39;t.
-	 * @param {Boolean} opts.doNotQueue Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts they will not be called until a campaign recycle; False means that updated contacts will be re-queued, according to the &#39;priority&#39; parameter.
+	 * @param {Boolean} opts.doNotQueue Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the &#39;priority&#39; parameter.
 	 */
 	postOutboundContactlistContacts(contactListId, body, opts) { 
 		opts = opts || {};
@@ -26853,7 +26908,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -27120,7 +27175,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -28792,7 +28847,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -29731,6 +29786,31 @@ class RecordingApi {
 	}
 
 	/**
+	 * Get a list of conversations with protected recordings
+	 * 
+	 * @param {Object} body conversationIds
+	 */
+	postRecordingsDeletionprotection(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRecordingsDeletionprotection';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recordings/deletionprotection', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Updates the retention records on a recording.
 	 * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
 	 * @param {String} conversationId Conversation ID
@@ -29974,13 +30054,38 @@ class RecordingApi {
 		);
 	}
 
+	/**
+	 * Apply or revoke recording protection for conversations
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.protect Check for apply, uncheck for revoke (each action requires the respective permission) (default to true)
+	 * @param {Object} opts.body 
+	 */
+	putRecordingsDeletionprotection(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/recordings/deletionprotection', 
+			'PUT', 
+			{  }, 
+			{ 'protect': opts['protect'] }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
 }
 
 class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -30305,7 +30410,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -32519,7 +32624,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -33504,7 +33609,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -33857,7 +33962,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -34312,7 +34417,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -34363,7 +34468,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -34510,7 +34615,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -34649,7 +34754,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -34757,7 +34862,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -38332,7 +38437,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -38418,7 +38523,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -38602,7 +38707,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -40701,7 +40806,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -40812,7 +40917,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -41449,7 +41554,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -41993,7 +42098,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -42139,7 +42244,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -44302,7 +44407,7 @@ class WorkforceManagementApi {
 
 	/**
 	 * Add a management unit
-	 * 
+	 * It may take a minute or two for a new management unit to be available for api operations
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -44427,7 +44532,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 77.0.0
+ * @version 78.0.0
  */
 class platformClient {
 	constructor() {

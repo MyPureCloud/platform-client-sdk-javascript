@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -202,14 +202,19 @@ class AnalyticsApi {
 	/**
 	 * Get all view export requests for a user
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
 	 */
-	getAnalyticsReportingExports() { 
+	getAnalyticsReportingExports(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/exports', 
 			'GET', 
 			{  }, 
-			{  }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
 			{  }, 
 			{  }, 
 			null, 

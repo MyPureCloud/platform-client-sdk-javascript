@@ -1,141 +1,77 @@
-Platform API version: 3884
+Platform API version: 3906
 
 
-# Major Changes (16 changes)
+# Major Changes (2 changes)
 
-**/api/v2/messaging/stickers/{messengerType}** (1 change)
+**GET /api/v2/analytics/reporting/exports** (2 changes)
 
-* Path /api/v2/messaging/stickers/{messengerType} was removed
-
-**DELETE /api/v2/externalcontacts/relationships/{relationshipId}** (1 change)
-
-* Response default was removed
-
-**DELETE /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}** (1 change)
-
-* Response default was removed
-
-**DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}** (1 change)
-
-* Response default was removed
-
-**GET /api/v2/responsemanagement/libraries** (1 change)
-
-* Parameter messagingTemplateFilter was added
-
-**DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}** (1 change)
-
-* Response default was removed
-
-**DELETE /api/v2/externalcontacts/contacts/{contactId}** (1 change)
-
-* Response default was removed
-
-**GET /api/v2/authorization/divisionspermitted/paged/{subjectId}** (1 change)
-
-* Has been deprecated
-
-**EntityListing** (5 changes)
-
-* Property pageSize was removed
-* Property pageNumber was removed
-* Property total was removed
-* Property pageCount was removed
-* Property entities was changed from DataTableImportJob[] to object[]
-
-**MessagingTemplate** (3 changes)
-
-* Property name was removed
-* Property namespace was removed
-* Property language was removed
+* Parameter pageNumber was added
+* Parameter pageSize was added
 
 
-# Minor Changes (30 changes)
+# Minor Changes (21 changes)
 
-**DELETE /api/v2/externalcontacts/relationships/{relationshipId}** (1 change)
+**/api/v2/integrations/userapps** (2 changes)
 
-* Response 200 was added
+* Path was added
+* Operation GET was added
 
-**DELETE /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}** (1 change)
+**/api/v2/conversations/messaging/facebook/app** (2 changes)
 
-* Response 200 was added
+* Path was added
+* Operation GET was added
 
-**DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}** (1 change)
+**/api/v2/recordings/deletionprotection** (3 changes)
 
-* Response 200 was added
+* Path was added
+* Operation POST was added
+* Operation PUT was added
 
-**DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}** (1 change)
-
-* Response 200 was added
-
-**DELETE /api/v2/externalcontacts/contacts/{contactId}** (1 change)
-
-* Response 200 was added
-
-**ViewFilter** (4 changes)
-
-* Optional property answered was added
-* Enum value bot was added to property flowTypes
-* Optional property flowOutTypes was added
-* Optional property providerList was added
-
-**FlowDivisionView** (1 change)
-
-* Enum value BOT was added to property type
-
-**MessagingTemplate** (1 change)
-
-* Optional property whatsApp was added
-
-**Response** (1 change)
-
-* responseType is no longer readonly
-
-**WhatsAppDefinition** (1 change)
+**UserApp** (1 change)
 
 * Model was added
 
-**Flow** (1 change)
+**UserAppConfigurationInfo** (1 change)
 
-* Enum value BOT was added to property type
+* Model was added
 
-**Dependency** (3 changes)
+**UserAppEntityListing** (1 change)
 
-* Enum value BOTFLOW was added to property type
-* Enum value FLOWACTION was added to property type
-* Enum value FLOWDATATYPE was added to property type
+* Model was added
 
-**DependencyObject** (3 changes)
+**WebChatMemberInfo** (4 changes)
 
-* Enum value BOTFLOW was added to property type
-* Enum value FLOWACTION was added to property type
-* Enum value FLOWDATATYPE was added to property type
+* Optional property firstName was added
+* Optional property lastName was added
+* Optional property email was added
+* Optional property phoneNumber was added
 
-**AuditQueryExecutionStatusResponse** (1 change)
+**FacebookAppCredentials** (1 change)
 
-* Enum value PredictiveEngagement was added to property serviceName
+* Model was added
 
-**AuditLogMessage** (7 changes)
+**OAuthAuthorization** (1 change)
 
-* Enum value PredictiveEngagement was added to property serviceName
-* Enum value ApplyProtection was added to property action
-* Enum value RevokeProtection was added to property action
-* Enum value UpdateRetention was added to property action
-* Enum value Segment was added to property entityType
-* Enum value Outcome was added to property entityType
-* Enum value ClickstreamSettings was added to property entityType
+* Optional property pending was added
 
-**AuditQueryRequest** (1 change)
+**GuestMemberInfo** (4 changes)
 
-* Enum value PredictiveEngagement was added to property serviceName
+* Optional property firstName was added
+* Optional property lastName was added
+* Optional property email was added
+* Optional property phoneNumber was added
 
-**AnalyticsFlow** (1 change)
+**ConversationDeletionProtectionQuery** (1 change)
 
-* Enum value BOT was added to property flowType
+* Model was added
 
 
-# Point Changes (1 change)
+# Point Changes (2 changes)
 
-**GET /api/v2/authorization/divisionspermitted/paged/{subjectId}** (1 change)
+**POST /api/v2/outbound/contactlists/{contactListId}/contacts** (1 change)
+
+* Description was changed for parameter doNotQueue
+
+**POST /api/v2/workforcemanagement/managementunits** (1 change)
 
 * Description was changed

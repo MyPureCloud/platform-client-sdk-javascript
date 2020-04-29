@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 77.0.0
+	 * @version 78.0.0
 	 */
 
 	/**
@@ -944,6 +944,31 @@ class RecordingApi {
 	}
 
 	/**
+	 * Get a list of conversations with protected recordings
+	 * 
+	 * @param {Object} body conversationIds
+	 */
+	postRecordingsDeletionprotection(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRecordingsDeletionprotection';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recordings/deletionprotection', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Updates the retention records on a recording.
 	 * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
 	 * @param {String} conversationId Conversation ID
@@ -1181,6 +1206,31 @@ class RecordingApi {
 			{  }, 
 			{  }, 
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Apply or revoke recording protection for conversations
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.protect Check for apply, uncheck for revoke (each action requires the respective permission) (default to true)
+	 * @param {Object} opts.body 
+	 */
+	putRecordingsDeletionprotection(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/recordings/deletionprotection', 
+			'PUT', 
+			{  }, 
+			{ 'protect': opts['protect'] }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

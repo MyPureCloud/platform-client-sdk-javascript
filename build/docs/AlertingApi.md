@@ -32,7 +32,7 @@ Delete an interaction stats alert
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * alerting:alert:delete
 
@@ -87,7 +87,7 @@ Delete an interaction stats rule.
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * alerting:rule:delete
 
@@ -191,7 +191,7 @@ Get an interaction stats alert
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * alerting:alert:view
 
@@ -356,7 +356,7 @@ Get an interaction stats rule.
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * alerting:rule:view
 
@@ -415,7 +415,7 @@ Get an interaction stats rule list.
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * alerting:rule:view
 
@@ -472,7 +472,7 @@ Create an interaction stats rule.
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * alerting:rule:add
 
@@ -977,7 +977,7 @@ Update an interaction stats alert read status
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * alerting:alert:edit
 
@@ -1063,7 +1063,7 @@ Update an interaction stats rule
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * alerting:rule:edit
 
