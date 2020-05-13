@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postDocumentationGknSearch**](SearchApi.html#postDocumentationGknSearch) | **POST** /api/v2/documentation/gkn/search | Search gkn documentation
 [**postDocumentationSearch**](SearchApi.html#postDocumentationSearch) | **POST** /api/v2/documentation/search | Search documentation
 [**postGroupsSearch**](SearchApi.html#postGroupsSearch) | **POST** /api/v2/groups/search | Search groups
+[**postKnowledgeKnowledgebaseSearch**](SearchApi.html#postKnowledgeKnowledgebaseSearch) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search | Search Documents
 [**postLocationsSearch**](SearchApi.html#postLocationsSearch) | **POST** /api/v2/locations/search | Search locations
 [**postSearch**](SearchApi.html#postSearch) | **POST** /api/v2/search | Search resources.
 [**postSearchSuggest**](SearchApi.html#postSearchSuggest) | **POST** /api/v2/search/suggest | Suggest resources.
@@ -922,6 +923,95 @@ apiInstance.postGroupsSearch(body)
 ### Return type
 
 **GroupsSearchResponse**
+
+<a name="postKnowledgeKnowledgebaseSearch"></a>
+
+# KnowledgeSearchResponse postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
+
+
+
+POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search
+
+Search Documents
+
+
+
+Requires ALL permissions: 
+
+* knowledge:knowledgebase:search
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyKnowledgeSearchRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#KnowledgeSearchRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+KnowledgeSearchRequest <a href="#" onclick="return copyKnowledgeSearchRequestExample()">Copy</a>
+
+<div id="KnowledgeSearchRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "query": String, 
+  "pageSize": Number, 
+  "pageNumber": Number, 
+  "documentType": String, 
+  "languageCode": String, 
+  "searchOnDraftDocuments": Boolean, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SearchApi();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
+  .then((data) => {
+    console.log(`postKnowledgeKnowledgebaseSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeKnowledgebaseSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **knowledgeBaseId** | **String** | Knowledge base ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**KnowledgeSearchResponse**
 
 <a name="postLocationsSearch"></a>
 

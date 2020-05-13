@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 78.0.0
+	 * @version 79.0.0
 	 */
 
 	/**
@@ -476,6 +476,7 @@ class ArchitectApi {
 	 * @param {Object} objectType Consumed object type
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.resourceType Types of consuming resources to show.  Only versioned types are allowed here.
+	 * @param {String} opts.version Object version
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Object} opts.flowFilter Show only checkedIn or published flows
@@ -496,7 +497,7 @@ class ArchitectApi {
 			'/api/v2/architect/dependencytracking/consumingresources', 
 			'GET', 
 			{  }, 
-			{ 'id': id,'objectType': objectType,'resourceType': this.apiClient.buildCollectionParam(opts['resourceType'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'flowFilter': opts['flowFilter'] }, 
+			{ 'id': id,'objectType': objectType,'resourceType': this.apiClient.buildCollectionParam(opts['resourceType'], 'multi'),'version': opts['version'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'flowFilter': opts['flowFilter'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -547,6 +548,7 @@ class ArchitectApi {
 	 * @param {Boolean} opts.consumingResources Include resources that consume this item
 	 * @param {Array.<String>} opts.consumedResourceType Types of consumed resources to return, if consumed resources are requested
 	 * @param {Array.<String>} opts.consumingResourceType Types of consuming resources to return, if consuming resources are requested
+	 * @param {Boolean} opts.consumedResourceRequest Indicate that this is going to look up a consumed resource object
 	 */
 	getArchitectDependencytrackingObject(id, opts) { 
 		opts = opts || {};
@@ -560,7 +562,7 @@ class ArchitectApi {
 			'/api/v2/architect/dependencytracking/object', 
 			'GET', 
 			{  }, 
-			{ 'id': id,'version': opts['version'],'objectType': opts['objectType'],'consumedResources': opts['consumedResources'],'consumingResources': opts['consumingResources'],'consumedResourceType': this.apiClient.buildCollectionParam(opts['consumedResourceType'], 'multi'),'consumingResourceType': this.apiClient.buildCollectionParam(opts['consumingResourceType'], 'multi') }, 
+			{ 'id': id,'version': opts['version'],'objectType': opts['objectType'],'consumedResources': opts['consumedResources'],'consumingResources': opts['consumingResources'],'consumedResourceType': this.apiClient.buildCollectionParam(opts['consumedResourceType'], 'multi'),'consumingResourceType': this.apiClient.buildCollectionParam(opts['consumingResourceType'], 'multi'),'consumedResourceRequest': opts['consumedResourceRequest'] }, 
 			{  }, 
 			{  }, 
 			null, 

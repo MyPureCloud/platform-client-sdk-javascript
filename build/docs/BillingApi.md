@@ -27,8 +27,6 @@ Requires ANY permissions:
 
 * billing:subscription:read
 * billing:subscription:view
-* billing:subscription:create
-* billing:subscription:add
 
 
 

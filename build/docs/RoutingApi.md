@@ -54,6 +54,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUserQueues**](RoutingApi.html#getUserQueues) | **GET** /api/v2/users/{userId}/queues | Get queues for user
 [**getUserRoutinglanguages**](RoutingApi.html#getUserRoutinglanguages) | **GET** /api/v2/users/{userId}/routinglanguages | List routing language for user
 [**getUserRoutingskills**](RoutingApi.html#getUserRoutingskills) | **GET** /api/v2/users/{userId}/routingskills | List routing skills for user
+[**patchRoutingEmailDomain**](RoutingApi.html#patchRoutingEmailDomain) | **PATCH** /api/v2/routing/email/domains/{domainId} | Update domain settings
 [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | **PATCH** /api/v2/routing/queues/{queueId}/users/{memberId} | Update the ring number OR joined status for a User in a Queue
 [**patchRoutingQueueUsers**](RoutingApi.html#patchRoutingQueueUsers) | **PATCH** /api/v2/routing/queues/{queueId}/users | Join or unjoin a set of users for a queue
 [**patchRoutingSettingsContactcenter**](RoutingApi.html#patchRoutingSettingsContactcenter) | **PATCH** /api/v2/routing/settings/contactcenter | Update Contact Center Settings
@@ -64,6 +65,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchUserRoutingskillsBulk**](RoutingApi.html#patchUserRoutingskillsBulk) | **PATCH** /api/v2/users/{userId}/routingskills/bulk | Bulk add routing skills to user
 [**postAnalyticsQueuesObservationsQuery**](RoutingApi.html#postAnalyticsQueuesObservationsQuery) | **POST** /api/v2/analytics/queues/observations/query | Query for queue observations
 [**postRoutingEmailDomainRoutes**](RoutingApi.html#postRoutingEmailDomainRoutes) | **POST** /api/v2/routing/email/domains/{domainName}/routes | Create a route
+[**postRoutingEmailDomainTestconnection**](RoutingApi.html#postRoutingEmailDomainTestconnection) | **POST** /api/v2/routing/email/domains/{domainId}/testconnection | Tests the custom SMTP server integration connection set on this domain
 [**postRoutingEmailDomains**](RoutingApi.html#postRoutingEmailDomains) | **POST** /api/v2/routing/email/domains | Create a domain
 [**postRoutingLanguages**](RoutingApi.html#postRoutingLanguages) | **POST** /api/v2/routing/languages | Create Language
 [**postRoutingQueueUsers**](RoutingApi.html#postRoutingQueueUsers) | **POST** /api/v2/routing/queues/{queueId}/users | Bulk add or delete up to 100 queue members
@@ -2819,6 +2821,101 @@ apiInstance.getUserRoutingskills(userId, opts)
 
 **UserSkillEntityListing**
 
+<a name="patchRoutingEmailDomain"></a>
+
+# InboundDomain patchRoutingEmailDomain(domainId, body)
+
+
+
+PATCH /api/v2/routing/email/domains/{domainId}
+
+Update domain settings
+
+
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyInboundDomainPatchRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#InboundDomainPatchRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+InboundDomainPatchRequest <a href="#" onclick="return copyInboundDomainPatchRequestExample()">Copy</a>
+
+<div id="InboundDomainPatchRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "mailFromSettings": { 
+    "status": String, 
+    "records": { 
+      "name": String, 
+      "type": String, 
+      "value": String, 
+    },  
+    "mailFromDomain": String, 
+  },  
+  "customSMTPServer": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let domainId = "domainId_example"; // String | domain ID
+let body = {}; // Object | Domain settings
+
+apiInstance.patchRoutingEmailDomain(domainId, body)
+  .then((data) => {
+    console.log(`patchRoutingEmailDomain success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchRoutingEmailDomain');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainId** | **String** | domain ID |  |
+ **body** | **Object** | Domain settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+**InboundDomain**
+
 <a name="patchRoutingQueueUser"></a>
 
 # QueueMember patchRoutingQueueUser(queueId, memberId, body)
@@ -5148,6 +5245,102 @@ apiInstance.postRoutingEmailDomainRoutes(domainName, body)
 ### Return type
 
 **InboundRoute**
+
+<a name="postRoutingEmailDomainTestconnection"></a>
+
+# TestMessage postRoutingEmailDomainTestconnection(domainId, opts)
+
+
+
+POST /api/v2/routing/email/domains/{domainId}/testconnection
+
+Tests the custom SMTP server integration connection set on this domain
+
+The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyTestMessageExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TestMessageExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+TestMessage <a href="#" onclick="return copyTestMessageExample()">Copy</a>
+
+<div id="TestMessageExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "to": { 
+    "email": String, 
+    "name": String, 
+  },  
+  "from": { 
+    "email": String, 
+    "name": String, 
+  },  
+  "subject": String, 
+  "textBody": String, 
+  "htmlBody": String, 
+  "time": Date, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let domainId = "domainId_example"; // String | domain ID
+let opts = { 
+  'body': {} // Object | TestMessage
+};
+
+apiInstance.postRoutingEmailDomainTestconnection(domainId, opts)
+  .then((data) => {
+    console.log(`postRoutingEmailDomainTestconnection success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingEmailDomainTestconnection');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainId** | **String** | domain ID |  |
+ **body** | **Object** | TestMessage | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**TestMessage**
 
 <a name="postRoutingEmailDomains"></a>
 
@@ -8894,6 +9087,7 @@ TranscriptionSettings <a href="#" onclick="return copyTranscriptionSettingsExamp
 { 
   "transcription": String, 
   "transcriptionConfidenceThreshold": Number, 
+  "contentSearchEnabled": Boolean, 
 }
 ```
 

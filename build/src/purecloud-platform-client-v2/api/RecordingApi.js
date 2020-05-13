@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 78.0.0
+	 * @version 79.0.0
 	 */
 
 	/**
@@ -164,6 +164,7 @@ class RecordingApi {
 	 * @param {Object} opts.formatId The desired media format. (default to WEBM)
 	 * @param {Boolean} opts.download requesting a download format of the recording (default to false)
 	 * @param {String} opts.fileName the name of the downloaded fileName
+	 * @param {String} opts.locale The locale for the requested file when downloading, as an ISO 639-1 code
 	 */
 	getConversationRecording(conversationId, recordingId, opts) { 
 		opts = opts || {};
@@ -181,7 +182,7 @@ class RecordingApi {
 			'/api/v2/conversations/{conversationId}/recordings/{recordingId}', 
 			'GET', 
 			{ 'conversationId': conversationId,'recordingId': recordingId }, 
-			{ 'formatId': opts['formatId'],'download': opts['download'],'fileName': opts['fileName'] }, 
+			{ 'formatId': opts['formatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -374,6 +375,7 @@ class RecordingApi {
 	 * @param {Object} opts.formatId The desired media format. (default to WEBM)
 	 * @param {Boolean} opts.download requesting a download format of the recording (default to false)
 	 * @param {String} opts.fileName the name of the downloaded fileName
+	 * @param {String} opts.locale The locale for the requested file when downloading, as an ISO 639-1 code
 	 */
 	getOrphanrecordingMedia(orphanId, opts) { 
 		opts = opts || {};
@@ -387,7 +389,7 @@ class RecordingApi {
 			'/api/v2/orphanrecordings/{orphanId}/media', 
 			'GET', 
 			{ 'orphanId': orphanId }, 
-			{ 'formatId': opts['formatId'],'download': opts['download'],'fileName': opts['fileName'] }, 
+			{ 'formatId': opts['formatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1073,8 +1075,8 @@ class RecordingApi {
 	}
 
 	/**
-	 * Execute the recording bulk job
-	 * 
+	 * Execute the recording bulk job.
+	 * A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording&#39;s retention.
 	 * @param {String} jobId jobId
 	 * @param {Object} body query
 	 */

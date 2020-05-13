@@ -18,6 +18,7 @@ import GreetingsApi from './api/GreetingsApi.js';
 import GroupsApi from './api/GroupsApi.js';
 import IdentityProviderApi from './api/IdentityProviderApi.js';
 import IntegrationsApi from './api/IntegrationsApi.js';
+import KnowledgeApi from './api/KnowledgeApi.js';
 import LanguagesApi from './api/LanguagesApi.js';
 import LicenseApi from './api/LicenseApi.js';
 import LocationsApi from './api/LocationsApi.js';
@@ -36,7 +37,6 @@ import RoutingApi from './api/RoutingApi.js';
 import SCIMApi from './api/SCIMApi.js';
 import ScriptsApi from './api/ScriptsApi.js';
 import SearchApi from './api/SearchApi.js';
-import SpeechTextAnalyticsApi from './api/SpeechTextAnalyticsApi.js';
 import StationsApi from './api/StationsApi.js';
 import SuggestApi from './api/SuggestApi.js';
 import TelephonyApi from './api/TelephonyApi.js';
@@ -80,7 +80,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 78.0.0
+ * @version 79.0.0
  */
 class platformClient {
 	constructor() {
@@ -180,6 +180,11 @@ class platformClient {
 		 */
 		this.IntegrationsApi = IntegrationsApi;
 		/**
+		 * The KnowledgeApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/KnowledgeApi}
+		 */
+		this.KnowledgeApi = KnowledgeApi;
+		/**
 		 * The LanguagesApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/LanguagesApi}
 		 */
@@ -269,11 +274,6 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/SearchApi}
 		 */
 		this.SearchApi = SearchApi;
-		/**
-		 * The SpeechTextAnalyticsApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/SpeechTextAnalyticsApi}
-		 */
-		this.SpeechTextAnalyticsApi = SpeechTextAnalyticsApi;
 		/**
 		 * The StationsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/StationsApi}

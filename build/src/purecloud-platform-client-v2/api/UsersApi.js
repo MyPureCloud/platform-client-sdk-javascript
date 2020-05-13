@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 78.0.0
+	 * @version 79.0.0
 	 */
 
 	/**
@@ -380,40 +380,6 @@ class UsersApi {
 			'GET', 
 			{ 'subjectId': subjectId }, 
 			{ 'permission': permission,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Returns which divisions the specified user has the given permission in.
-	 * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
-	 * @param {String} subjectId Subject ID (user or group)
-	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.name Search term to filter by division name
-	 */
-	getAuthorizationDivisionspermittedSubjectId(subjectId, permission, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
-			throw 'Missing the required parameter "subjectId" when calling getAuthorizationDivisionspermittedSubjectId';
-		}
-		// verify the required parameter 'permission' is set
-		if (permission === undefined || permission === null) {
-			throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedSubjectId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/authorization/divisionspermitted/{subjectId}', 
-			'GET', 
-			{ 'subjectId': subjectId }, 
-			{ 'name': opts['name'],'permission': permission }, 
 			{  }, 
 			{  }, 
 			null, 

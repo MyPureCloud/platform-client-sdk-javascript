@@ -17,7 +17,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAuthorizationDivisionspermittedMe**](AuthorizationApi.html#getAuthorizationDivisionspermittedMe) | **GET** /api/v2/authorization/divisionspermitted/me | Returns which divisions the current user has the given permission in.
 [**getAuthorizationDivisionspermittedPagedMe**](AuthorizationApi.html#getAuthorizationDivisionspermittedPagedMe) | **GET** /api/v2/authorization/divisionspermitted/paged/me | Returns which divisions the current user has the given permission in.
 [**getAuthorizationDivisionspermittedPagedSubjectId**](AuthorizationApi.html#getAuthorizationDivisionspermittedPagedSubjectId) | **GET** /api/v2/authorization/divisionspermitted/paged/{subjectId} | Returns which divisions the specified user has the given permission in.
-[**getAuthorizationDivisionspermittedSubjectId**](AuthorizationApi.html#getAuthorizationDivisionspermittedSubjectId) | **GET** /api/v2/authorization/divisionspermitted/{subjectId} | Returns which divisions the specified user has the given permission in.
 [**getAuthorizationPermissions**](AuthorizationApi.html#getAuthorizationPermissions) | **GET** /api/v2/authorization/permissions | Get all permissions.
 [**getAuthorizationProducts**](AuthorizationApi.html#getAuthorizationProducts) | **GET** /api/v2/authorization/products | Get the list of enabled products
 [**getAuthorizationRole**](AuthorizationApi.html#getAuthorizationRole) | **GET** /api/v2/authorization/roles/{roleId} | Get a single organization role.
@@ -627,66 +626,6 @@ apiInstance.getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permissi
 ### Return type
 
 **DivsPermittedEntityListing**
-
-<a name="getAuthorizationDivisionspermittedSubjectId"></a>
-
-# [AuthzDivision] getAuthorizationDivisionspermittedSubjectId(subjectId, permission, opts)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-GET /api/v2/authorization/divisionspermitted/{subjectId}
-
-Returns which divisions the specified user has the given permission in.
-
-This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
-
-Requires NO permissions: 
-
-
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AuthorizationApi();
-
-let subjectId = "subjectId_example"; // String | Subject ID (user or group)
-let permission = "permission_example"; // String | The permission string, including the object to access, e.g. routing:queue:view
-let opts = { 
-  'name': "name_example" // String | Search term to filter by division name
-};
-
-apiInstance.getAuthorizationDivisionspermittedSubjectId(subjectId, permission, opts)
-  .then((data) => {
-    console.log(`getAuthorizationDivisionspermittedSubjectId success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getAuthorizationDivisionspermittedSubjectId');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **subjectId** | **String** | Subject ID (user or group) |  |
- **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
- **name** | **String** | Search term to filter by division name | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**[AuthzDivision]**
 
 <a name="getAuthorizationPermissions"></a>
 

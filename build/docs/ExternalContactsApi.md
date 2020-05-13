@@ -8592,7 +8592,7 @@ apiInstance.putExternalcontactsOrganizationNote(externalOrganizationId, noteId, 
 
 <a name="putExternalcontactsOrganizationTrustorTrustorId"></a>
 
-# ExternalOrganization putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId)
+# ExternalOrganizationTrustorLink putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId)
 
 
 
@@ -8645,7 +8645,7 @@ apiInstance.putExternalcontactsOrganizationTrustorTrustorId(externalOrganization
 
 ### Return type
 
-**ExternalOrganization**
+**ExternalOrganizationTrustorLink**
 
 <a name="putExternalcontactsRelationship"></a>
 
