@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 80.0.2
+	 * @version 80.0.3
 	 */
 
 	/**

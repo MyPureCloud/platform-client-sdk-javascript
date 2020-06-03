@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 80.0.2
+	 * @version 80.0.3
 	 */
 
 	/**
